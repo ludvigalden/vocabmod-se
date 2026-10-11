@@ -1,0 +1,668 @@
+// Lexical structure of vocab documents: module roots, packages, scopes,
+// imports, context bindings, and defaults.
+//
+// Composition at scale: tens of thousands of small files, no giant
+// root. Every data file is self-contained: it opens with its own
+// `context` block — an isolated, self-contained fragment begins with
+// that context — so it binds identically whether it is read as an
+// entry document or reached through an import. Glue is two levels deep:
+//
+//   vocab/module.kdl                  imports _registry/*.kdl and
+//                                     **/definitions.kdl (domain/system)
+//   vocab/<domain>/<system>/definitions.kdl
+//                                     the system's one entry: declares
+//                                     the system and its releases,
+//                                     imports the concepts tree, and
+//                                     nests one import per mapping
+//                                     collection inside the collection
+//                                     block it serves
+//   vocab/<domain>/<system>/concepts/<range>.kdl
+//                                     data, self-contained, each file
+//                                     at most 500 lines
+//   vocab/<domain>/<system>/<target>/mappings/<range>.kdl
+//                                     mapping claims, likewise capped,
+//                                     read through their collection's
+//                                     nested import
+//
+// Big trees (icd10, icd10-se, tlv-vnr, kka, tlv-fba, icf,
+// npu) keep their first-level partition directory and pack range files
+// inside it (`<domain>/<system>/concepts/<partition>/<range>.kdl`);
+// medium systems merge each first-level partition into one range file
+// under concepts/ (`concepts/<partition>.kdl`); the small systems slice
+// the sorted code list directly (`concepts/<range>.kdl`). A partition
+// level never splits while its total fits the cap; overflow spills into
+// sibling range files, never into deeper per-code directories.
+// Directory names carry no semantics; parent links in the
+// data are authoritative and the layout mirrors them.
+schema vocab version="0" {
+    types {
+        enum ImportKind {
+            member fragment
+            member package
+            member module
+        }
+        enum PackageRole {
+            member workspace
+            member system
+            member release
+            member collection
+            member fragment
+        }
+        enum CapabilityKind {
+            member reference
+            member definitions
+            member lifecycle
+            member text
+            member relationships
+            member properties
+            member mapping-claims
+            member evidence
+            member reviews
+        }
+        enum Completeness {
+            member partial
+            member complete
+        }
+        enum CoverageBasis {
+            member local-records
+            member source-artifacts
+        }
+
+        object Module {
+            field id GlobalId
+            field version Version
+            field title "list<Text>"
+            field description "list<Text>"
+            field license "optional<LicenseRef>"
+            field access "optional<list<AccessPolicyRef>>"
+            field maintainers "optional<list<AgentRef>>"
+            field publishers "optional<list<AgentRef>>"
+        }
+        object Package {
+            field id String
+            field role "optional<PackageRole>"
+        }
+        object Scope {
+            field label "optional<String>"
+        }
+        object ImportRequest {
+            field path String
+            field kind ImportKind
+            field version "optional<Version>"
+            field optional "optional<Bool>"
+            // kdlith slot projection (by slot).
+            // A whole slot namespace projects too, e.g. `project defaults`.
+            field project "optional<list<String>>"
+        }
+        // Coverage declaration. vocabmod uses an accepted
+        // complete `definitions` capability as the denominator T of a
+        // by-code coverage figure (figures.kdl).
+        object Capability {
+            field id String
+            field revision Version
+            field kind CapabilityKind
+            field scope ReleaseRef
+            field completeness Completeness
+            field authority AgentRef
+            field basis CoverageBasis
+            field artifacts "optional<list<ArtifactRef>>"
+            field fields "list<String>"
+            field locales "optional<list<Locale>>"
+        }
+
+        // The context block. Each child sets slots forward.
+        object ContextBlock {
+            field system "optional<SystemId>"
+            field release "optional<Version>"
+            field source-system "optional<SystemId>"
+            field source-release "optional<Version>"
+            field target-system "optional<SystemId>"
+            field target-release "optional<Version>"
+            field collection "optional<GlobalId>"
+            field collection-version "optional<Version>"
+            field locale "optional<Locale>"
+            field purpose-id "optional<String>"
+            field publisher "optional<GlobalId>"
+            // `system` and `source` both name the bare-code scope.
+            constraints {
+                at-most-one system source-system
+            }
+        }
+        // The defaults block: only the fields this schema declares
+        // as defaultable for the record kinds it binds.
+        object DefaultsBlock {
+            field concept-status "optional<ConceptStatus>"
+            field concept-class "optional<String>"
+            field mapping-preference "optional<Preference>"
+            field mapping-confidence-scheme "optional<String>"
+            field mapping-assessor "optional<String>"
+            field mapping-assessment-method "optional<String>"
+            field relationship-predicate "optional<String>"
+            field mapping-relationship "optional<SemanticRelationship>"
+            field claim-scope "optional<CollectionRef>"
+            field member-set "optional<String>"
+            field amendment-author "optional<String>"
+        }
+    }
+
+    // Lexical state. Fixed bindings reject a second value: a
+    // changed key requires an explicit rebind. kdlith also rejects an
+    // equal repeat, which the binding would otherwise admit.
+    context {
+        // The endpoint scope a bare concept code resolves under: the
+        // `system` binding in definition files, the `source` binding in
+        // claim files. kdlith requires this slot name for context
+        // qualification of references.
+        slot namespace String duplicates=reject
+        slot system-release String duplicates=reject
+        slot target-system String duplicates=reject
+        slot target-release String duplicates=reject
+        slot source-release String duplicates=reject
+        slot collection String duplicates=reject
+        slot collection-version String duplicates=reject
+        slot locale Locale duplicates=reject
+        slot purpose-id String duplicates=reject
+        slot publisher String duplicates=reject
+        // Defaults replace a whole field value.
+        slot concept-status ConceptStatus namespace=defaults duplicates=last-wins
+        slot concept-class String namespace=defaults duplicates=last-wins
+        slot mapping-preference Preference namespace=defaults duplicates=last-wins
+        slot mapping-confidence-scheme String namespace=defaults duplicates=last-wins
+        slot mapping-assessor String namespace=defaults duplicates=last-wins
+        slot mapping-assessment-method String namespace=defaults duplicates=last-wins
+        slot relationship-predicate String namespace=defaults duplicates=last-wins
+        slot mapping-relationship SemanticRelationship namespace=defaults duplicates=last-wins
+        slot claim-scope CollectionRef namespace=defaults duplicates=last-wins
+        slot member-set String namespace=defaults duplicates=last-wins
+        slot amendment-author String namespace=defaults duplicates=last-wins
+    }
+
+    // Lexical containers. Every body node is placed under each of them
+    // and admitted at the root of a self-contained fragment.
+    group containers module package scope
+
+    // ---- Roots and containers -----------------------------------------
+
+    node module role=declaration type=Module {
+        identity {
+            domain modules
+            compose qualified-name id
+        }
+        field id arg=0
+        field version property=version
+        field title {
+            from {
+                children title
+            }
+        }
+        field description {
+            from {
+                children description
+            }
+        }
+        field license property=license
+        field access {
+            from {
+                child access {
+                    args
+                }
+            }
+        }
+        field maintainers {
+            from {
+                child maintainers {
+                    args
+                }
+            }
+        }
+        field publishers {
+            from {
+                child publishers {
+                    args
+                }
+            }
+        }
+        children title min-occurs=1
+        children description
+        children access max-occurs=1
+        children maintainers max-occurs=1
+        children publishers max-occurs=1
+        children provides max-occurs=1
+        children-group body-control
+        children-group body-definitions
+        children-group body-claims
+        children-group body-collections
+        children-group body-facets
+        children-group body-amendments
+        children rebind
+    }
+
+    node package root=#true role=context-control type=Package {
+        parents group=containers
+        field id arg=0
+        field role property=role
+        children-group body-control
+        children-group body-definitions
+        children-group body-claims
+        children-group body-collections
+        children-group body-facets
+        children-group body-amendments
+        children rebind
+    }
+
+    node scope root=#true role=context-control type=Scope {
+        parents group=containers
+        field label property=label
+        children-group body-control
+        children-group body-definitions
+        children-group body-claims
+        children-group body-collections
+        children-group body-facets
+        children-group body-amendments
+        children rebind
+    }
+
+    // Pure ordered grouping of imports; no environment of its own.
+    node imports root=#true role=container {
+        parents group=containers
+        children import
+    }
+
+    // A source import: at a document root, or nested in the collection
+    // block it serves (the mapping tree import of a claims collection).
+    // A nested import is where the system document names the documents
+    // that resolve the collection, so the system needs no second entry.
+    node import root=#true role=source-import type=ImportRequest {
+        parents imports collection group=containers
+        field path arg=0
+        field kind property=kind
+        field version property=version
+        field optional property=optional
+        field project {
+            from {
+                child project {
+                    args
+                }
+            }
+        }
+        children project max-occurs=1
+    }
+
+    // ---- Coverage declarations ----------------------------------------
+
+    node provides parent=module {
+        children capability
+    }
+
+    node capability type=Capability parent=provides {
+        field id arg=0
+        field revision property=revision
+        field kind property=kind
+        field scope property=scope
+        field completeness property=completeness
+        field authority property=authority
+        field basis property=basis
+        field artifacts {
+            from {
+                child artifacts {
+                    args
+                }
+            }
+        }
+        field fields {
+            from {
+                child fields {
+                    args
+                }
+            }
+        }
+        field locales {
+            from {
+                child locales {
+                    args
+                }
+            }
+        }
+        children artifacts max-occurs=1
+        children fields min-occurs=1 max-occurs=1
+        children locales max-occurs=1
+    }
+
+    // ---- Context -------------------------------------------------------
+    //
+    //   context {
+    //       system "KSI" release="2026"
+    //       locale "sv"
+    //   }
+    //   context {
+    //       collection "icd-10-se-snomed-ct" version="2026.1"
+    //       source system="ICD_10_SE" release="2026"
+    //       target system="SNOMED_CT" release="20251130"
+    //   }
+
+    node context root=#true role=context-control type=ContextBlock {
+        parents group=containers
+        field system {
+            from {
+                child system {
+                    argument 0
+                }
+            }
+        }
+        field release {
+            from {
+                child system {
+                    property release
+                }
+            }
+        }
+        field source-system {
+            from {
+                child source {
+                    property system
+                }
+            }
+        }
+        field source-release {
+            from {
+                child source {
+                    property release
+                }
+            }
+        }
+        field target-system {
+            from {
+                child target {
+                    property system
+                }
+            }
+        }
+        field target-release {
+            from {
+                child target {
+                    property release
+                }
+            }
+        }
+        field collection {
+            from {
+                child collection {
+                    argument 0
+                }
+            }
+        }
+        field collection-version {
+            from {
+                child collection {
+                    property version
+                }
+            }
+        }
+        field locale {
+            from {
+                child locale {
+                    argument 0
+                }
+            }
+        }
+        field purpose-id {
+            from {
+                child purpose-id {
+                    argument 0
+                }
+            }
+        }
+        field publisher {
+            from {
+                child publisher {
+                    argument 0
+                }
+            }
+        }
+        children system max-occurs=1
+        children source max-occurs=1
+        children target max-occurs=1
+        children collection max-occurs=1
+        children locale max-occurs=1
+        children purpose-id max-occurs=1
+        children publisher max-occurs=1
+        effects target=following {
+            set namespace field=system
+            set namespace field=source-system
+            set system-release field=release
+            set source-release field=source-release
+            set target-system field=target-system
+            set target-release field=target-release
+            set collection field=collection
+            set collection-version field=collection-version
+            set locale field=locale
+            set purpose-id field=purpose-id
+            set publisher field=publisher
+        }
+    }
+    node system parent=context {
+    }
+    node source parent=context {
+    }
+    node target parent=context {
+    }
+    node collection parent=context {
+    }
+    node locale parent=context {
+    }
+    node purpose-id parent=context {
+    }
+    node publisher parent=context {
+    }
+
+    // Explicit rebinding: `rebind { system "KSI" release="2027" }`
+    // replaces bound keys instead of failing. kdlith has no per-effect
+    // replace, so a rebind removes every key it might touch, not only
+    // the keys the block spells.
+    node rebind root=#true role=context-control type=ContextBlock {
+        parents group=containers
+        field release {
+            from {
+                child system {
+                    property release
+                }
+            }
+        }
+        effects target=following replace=#true {
+            set system-release field=release
+        }
+    }
+
+    // ---- Defaults -------------------------------------------------------
+    //
+    //   defaults {
+    //       concepts { status "active"; class "KSI code" }
+    //       mappings { preference "primary"; assessment-method "source-default-granularity"
+    //                  claim-scope "icd10se-meddra@2026.1" }
+    //       amendments { author "ludvig-alden" }
+    //   }
+    //
+    // A defaults block also nests inside a collection block: its values
+    // apply to the collection's following children there, and the
+    // collection's nested import projects them (project "defaults")
+    // into the mapping files it reads. A uniform mapping collection
+    // states its relationship kind once this way; the mapping lines
+    // then omit the property (an explicit property still wins). A
+    // collection whose assessments all carry one claim scope hoists it
+    // the same way; an assessment's explicit claim-scope child still
+    // wins over the hoisted value.
+
+    node defaults root=#true role=context-control type=DefaultsBlock {
+        parents collection group=containers
+        field concept-status {
+            from {
+                child concepts {
+                    child status {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field concept-class {
+            from {
+                child concepts {
+                    child class {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field mapping-preference {
+            from {
+                child mappings {
+                    child preference {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field mapping-confidence-scheme {
+            from {
+                child mappings {
+                    child confidence-scheme {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field mapping-assessor {
+            from {
+                child mappings {
+                    child assessor {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field mapping-assessment-method {
+            from {
+                child mappings {
+                    child assessment-method {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field relationship-predicate {
+            from {
+                child relationships {
+                    child predicate {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field mapping-relationship {
+            from {
+                child mappings {
+                    child relationship {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field claim-scope {
+            from {
+                child mappings {
+                    child claim-scope {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field member-set {
+            from {
+                child members {
+                    child set {
+                        argument 0
+                    }
+                }
+            }
+        }
+        field amendment-author {
+            from {
+                child amendments {
+                    child author {
+                        argument 0
+                    }
+                }
+            }
+        }
+        children concepts max-occurs=1
+        children mappings max-occurs=1
+        children relationships max-occurs=1
+        children members max-occurs=1
+        children amendments max-occurs=1
+        effects target=following {
+            set concept-status field=concept-status
+            set concept-class field=concept-class
+            set mapping-preference field=mapping-preference
+            set mapping-confidence-scheme field=mapping-confidence-scheme
+            set mapping-assessor field=mapping-assessor
+            set mapping-assessment-method field=mapping-assessment-method
+            set relationship-predicate field=relationship-predicate
+            set mapping-relationship field=mapping-relationship
+            set claim-scope field=claim-scope
+            set member-set field=member-set
+            set amendment-author field=amendment-author
+        }
+    }
+    node concepts parent=defaults {
+        children status max-occurs=1
+        children class max-occurs=1
+    }
+    node status parent=concepts {
+    }
+    node class parent=concepts {
+    }
+    node mappings parent=defaults {
+        children preference max-occurs=1
+        children confidence-scheme max-occurs=1
+        children assessor max-occurs=1
+        children assessment-method max-occurs=1
+        children relationship max-occurs=1
+        children claim-scope max-occurs=1
+    }
+    node preference parent=mappings {
+    }
+    node confidence-scheme parent=mappings {
+    }
+    node assessor parent=mappings {
+    }
+    node assessment-method parent=mappings {
+    }
+    node relationship parent=mappings {
+    }
+    node claim-scope parent=mappings {
+    }
+    node relationships parent=defaults {
+        children predicate max-occurs=1
+    }
+    node predicate parent=relationships {
+    }
+    node members parent=defaults {
+        children set max-occurs=1
+    }
+    node set parent=members {
+    }
+    node amendments parent=defaults {
+        children author max-occurs=1
+    }
+    node author parent=amendments {
+    }
+
+    // `clear-defaults` with no children clears every default. The
+    // selective form, `clear-defaults { concepts "status" }`, which removes
+    // the slots its arguments name, is not supported.
+    node clear-defaults root=#true role=context-control {
+        parents group=containers
+        effects target=following {
+            clear defaults
+        }
+    }
+}

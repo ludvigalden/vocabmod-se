@@ -1,0 +1,861 @@
+// Definitions: agents, licenses, access policies, systems and releases,
+// artifacts, predicates, categories, routing domains, property
+// definitions, and native concepts with their designations, variants,
+// parent links, relationships, and properties.
+//
+// The string→identifier index contract (`string-index@1`): vocabmod
+// resolves an arbitrary string to vocabulary identifiers by projecting
+// one harvest pass over the definitions entries. The harvest is closed:
+// exactly these sources contribute keys, per concept `(system, code)`:
+//
+//   - identity codes: `CODE` (system-scoped) and `SYSTEM:CODE` (global)
+//   - `name` node: key `text`; carries locale and preferred
+//   - `synonym` node: key `text`; carries locale and preferred
+//   - `variant` node: key `text`; carries kind, source, and an optional
+//     locale (absent = locale-less)
+//   - `code-alias` node: key `code`; carries the alias `system` (absent
+//     = the concept's own system, a historical id)
+//
+// `definition` and `description` texts are prose, never harvested;
+// mapping endpoints are references, not designations. The exact index
+// keys on the verbatim string (code keys case-significant per
+// `system.case-sensitive`); the loose index keys on `normalize(text)`
+// under `index-normalization@1`: case-fold, trim and collapse
+// whitespace, unify the dash variants (`-`, `–`, `—`) to `-`, strip
+// surrounding punctuation. Loose matches return candidate sets and
+// never silently collapse. A facet index runs the same normalization
+// over `measurement-definition` `component` / `property-kind` /
+// `specimen` plain strings; keys resolve to sets of codes (a component
+// is not a concept).
+//
+// Publishability: a system is `published`,
+// `reference-only`, `external`, or `local-only`, and a license states
+// whether its content may be redistributed. Concept definitions are authored only
+// for published systems; a reference-only system (SNOMED CT,
+// OMOP/Athena) is declared here and its codes are referenced from
+// mappings, memberships, and metadata without any definition. Nothing
+// fails when a definition is absent: concept references in claims are
+// open-world for reference-only systems. Rejecting a definition
+// of a reference-only system is a vocabmod-tool check (`vocabmod vet`),
+// not a kdlith schema rule.
+schema vocab version="0" {
+    types {
+        object Agent {
+            field id GlobalId
+            field kind AgentKind
+            field name "list<Text>"
+            field identifiers "optional<map<String, String>>"
+        }
+        object License {
+            field id GlobalId
+            field name "list<Text>"
+            field uri "optional<AbsoluteUri>"
+            field redistribution "optional<RedistributionState>"
+        }
+        object AccessPolicy {
+            field id GlobalId
+            field visibility Visibility
+            field allowed-actions "list<String>"
+        }
+
+        // A reproducible census of the tree, emitted by the importer
+        // under scheme census@1 (declared in _registry/conventions.kdl):
+        // per-system concept and designation counts and per-collection
+        // mapping counts with their effective relationship kinds, their
+        // confidence tiers, and their assessed share. Every number is
+        // derived from the emitted tree by the counting rules the scheme
+        // records; none is authored by hand. The census is statistics
+        // about the corpus, not content of the systems it counts.
+        object Census {
+            field id GlobalId
+            field version Version
+            field scheme String
+            field name "list<Text>"
+            field systems "list<CensusSystem>"
+            field collections "list<CensusCollection>"
+        }
+        object CensusSystem {
+            field system SystemId
+            field release Version
+            field concepts U64
+            field inactive U64
+            field retired U64
+            field named U64
+            field sv U64
+            field en U64
+        }
+        object CensusCollection {
+            // The collection id and version, `name@version`.
+            field id String
+            field source SystemId
+            field target SystemId
+            field mappings U64
+            // `omop-binding` declarations: an identifier binding to an
+            // OMOP concept id, counted apart from semantic mappings.
+            field bindings U64
+            field assessed U64
+            field kinds "list<CensusKind>"
+            // Mappings by confidence tier under the schemes
+            // vocabmod-se-confidence@1 (0.87 -> H, 0.71 -> M, else L)
+            // and vocabmod-se-confidence-unassessable@1 (U). A mapping
+            // carrying no confidence enters no tier row, so the tier
+            // rows sum to at most `mappings`.
+            field tiers "list<CensusTier>"
+        }
+        object CensusKind {
+            field kind SemanticRelationship
+            field count U64
+        }
+        object CensusTier {
+            field tier String
+            field count U64
+        }
+
+
+        object System {
+            field id SystemId
+            field name "list<Text>"
+            field kind SystemKind
+            field distribution Distribution
+            field publisher "optional<AgentRef>"
+            field license "optional<LicenseRef>"
+            field access "optional<list<AccessPolicyRef>>"
+            field jurisdiction "optional<String>"
+            field case-sensitive "optional<Bool>"
+            field default-locale "optional<Locale>"
+            field canonical-uri "optional<AbsoluteUri>"
+            // Extension: the system a national edition extends
+            // (ICD-10-SE extends ICD-10). Descriptive only: it creates no
+            // equivalence and no release bridge.
+            field extends "optional<SystemRef>"
+            // Extension: an ordered list of code-prefix patterns the
+            // importer uses to lay the system out on disk. Descriptive.
+            field code-pattern "optional<String>"
+            // Extension: the release this system's codes and labels were
+            // extracted from (the NPU part catalogs are read off NPU
+            // names). Descriptive: it creates no mapping and no bridge.
+            field derived-from "optional<ReleaseRef>"
+        }
+        object Release {
+            field system SystemId
+            field id Version
+            field upstream-version "optional<Version>"
+            field edition "optional<String>"
+            field published-on "optional<Date>"
+            field effective-on "optional<Date>"
+            field previous "optional<ReleaseRef>"
+            field dependencies "optional<list<ReleaseRef>>"
+            field artifacts "optional<list<ArtifactRef>>"
+            // Extension: release labels come from the source file's
+            // header. The source registry's own version string,
+            // kept as provenance when it differs from the release id; it
+            // never identifies the release.
+            field imported-version "optional<String>"
+            field label-source "optional<ReleaseLabelSource>"
+        }
+        enum ReleaseLabelSource {
+            member header description="The release id was read from the source file's header"
+            member registry description="The header named no release; the id is the source registry's version"
+        }
+        object Artifact {
+            field id GlobalId
+            field media-type String
+            field digest "optional<Digest>"
+            field publisher "optional<AgentRef>"
+            field license "optional<LicenseRef>"
+            field location "optional<AbsoluteUri>"
+            field retrieved-at "optional<Instant>"
+        }
+
+        object Predicate {
+            field id GlobalId
+            field name "list<Text>"
+            field direction PredicateDirection
+            field hierarchical "optional<Bool>"
+            field defines-ancestry "optional<Bool>"
+            field require-acyclic "optional<Bool>"
+            field inverse "optional<PredicateRef>"
+            field semantic-uri "optional<AbsoluteUri>"
+        }
+
+        // Extension: a controlled
+        // category catalog per system. A concept's `class` must name a
+        // declared category of its own system; OMOP domain and concept
+        // class lists become categories of the reference-only OMOP system.
+        object Category {
+            field system SystemId
+            field id String
+            field name "list<Text>"
+            field description "list<Text>"
+        }
+        object RoutingDomain {
+            field id GlobalId
+            field names "list<Text>"
+            field descriptions "list<Text>"
+            field parents "list<RoutingDomainRef>"
+        }
+        object PropertyDefinition {
+            field id GlobalId
+            field name "list<Text>"
+            field value-type String
+            field min-count "optional<U64>"
+            field max-count "optional<U64>"
+        }
+
+        // An inline property: `property "id" VALUE`.
+        // The value is any ValueExpr; kdlith does not type it by the
+        // property definition it names.
+        object PropertyItem {
+            field property String
+            field value ValueExpr
+        }
+
+        // A designation item.
+        object Designation {
+            field locale Locale
+            field text String
+            field context "optional<String>"
+            field preferred "optional<Bool>"
+            field id "optional<String>"
+        }
+
+        // A native concept. Header code; system and
+        // release from context. Explicit parent links are an extension
+        // because the source model carries hierarchy only as relationship
+        // assertions. A parent link is a definition-level fact of
+        // the publishing system; vocabmod projects each one to a
+        // `direct` relationship under the system's declared
+        // hierarchical predicate, so the graph model is unchanged.
+        object Concept {
+            field system SystemId
+            field release Version
+            field code Code
+            field parents "list<ConceptRef>"
+            field class "optional<CategoryRef>"
+            field status "optional<ConceptStatus>"
+            field validity "optional<Validity>"
+            field names "list<Designation>"
+            field synonyms "list<Designation>"
+            field variants "list<Variant>"
+            field code-aliases "list<CodeAlias>"
+            field definitions "list<Designation>"
+            field descriptions "list<Designation>"
+            field properties "list<PropertyItem>"
+            // Curator notes kept from the source (every source `comment`
+            // is imported), curated. A note travels with the
+            // claim the source row produced; it sits here only when the
+            // row produced no claim.
+            field comments "list<Note>"
+        }
+
+        // Standalone assertions. Collection and version come
+        // from context.
+        object Relationship {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field source EndpointRef
+            field target EndpointRef
+            field predicate PredicateRef
+            field form RelationshipForm
+            field validity "optional<Validity>"
+            field group "optional<U64>"
+            field evidence "optional<list<EvidenceRef>>"
+        }
+        object DesignationAssertion {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field kind DesignationKind
+            field locale Locale
+            field text String
+            field preferred "optional<Bool>"
+            field usage-context "optional<String>"
+        }
+        object PropertyValue {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field property String
+            field value ValueExpr
+        }
+    }
+
+    // ---- Registries ----------------------------------------------------
+
+    node agent root=#true role=declaration type=Agent {
+        parents group=containers
+        identity {
+            domain agents
+            compose qualified-name id
+        }
+        field id arg=0
+        field kind property=kind
+        field name {
+            from {
+                children name
+            }
+        }
+        children name min-occurs=1
+    }
+
+    node license root=#true role=declaration type=License {
+        parents group=containers
+        identity {
+            domain licenses
+            compose qualified-name id
+        }
+        field id arg=0
+        field name {
+            from {
+                children name
+            }
+        }
+        field uri property=uri
+        field redistribution property=redistribution
+        children name min-occurs=1
+    }
+
+    node access-policy root=#true role=declaration type=AccessPolicy {
+        parents group=containers
+        identity {
+            domain access-policies
+            compose qualified-name id
+        }
+        field id arg=0
+        field visibility property=visibility
+        field allowed-actions {
+            from {
+                child allowed-actions {
+                    args
+                }
+            }
+        }
+        children allowed-actions min-occurs=1 max-occurs=1
+    }
+
+    //   census "vocab-tree" version="1" scheme="census@1" {
+    //       name "en" "..."
+    //       census-system "ICD_10" release="2016" concepts=14262 ... {
+    //           ...
+    //       }
+    //   }
+    //
+    // One census document per tree, regenerated by the importer on
+    // every run (never hand-edited); its rows count what the same run
+    // emitted.
+    node census root=#true role=declaration type=Census {
+        parents group=containers
+        identity {
+            domain censuses
+            compose qualified-name id
+        }
+        field id arg=0
+        field version property=version
+        field scheme property=scheme
+        field name {
+            from {
+                children name
+            }
+        }
+        field systems {
+            from {
+                children census-system
+            }
+        }
+        field collections {
+            from {
+                children census-collection
+            }
+        }
+        children name min-occurs=1
+        children census-system min-occurs=1
+        children census-collection min-occurs=1
+    }
+    node census-system parent=census type=CensusSystem {
+        field system arg=0
+        field release property=release
+        field concepts property=concepts
+        field inactive property=inactive
+        field retired property=retired
+        field named property=named
+        field sv property=sv
+        field en property=en
+    }
+    node census-collection parent=census type=CensusCollection {
+        field id arg=0
+        field source property=source
+        field target property=target
+        field mappings property=mappings
+        field bindings property=bindings
+        field assessed property=assessed
+        field kinds {
+            from {
+                children census-kind
+            }
+        }
+        field tiers {
+            from {
+                children census-tier
+            }
+        }
+        children census-kind
+        children census-tier
+    }
+    node census-kind parent=census-collection type=CensusKind {
+        field kind arg=0
+        field count property=count
+    }
+    //   census-tier "H" count=4123
+    node census-tier parent=census-collection type=CensusTier {
+        field tier arg=0
+        field count property=count
+    }
+
+    //   system "KSI" kind=classification distribution=published publisher="se.ehalsomyndigheten" {
+    //       name "sv" "Klassifikation av socialtjänstens insatser och aktiviteter"
+    //   }
+    //   system "SNOMED_CT" kind=terminology distribution=reference-only {
+    //       name "en" "SNOMED CT"
+    //   }
+    node system root=#true role=declaration type=System {
+        parents group=containers
+        identity {
+            domain systems
+            compose qualified-name id
+        }
+        field id arg=0
+        field kind property=kind
+        field distribution property=distribution
+        field publisher property=publisher
+        field license property=license
+        field jurisdiction property=jurisdiction
+        field case-sensitive property=case-sensitive
+        field default-locale property=default-locale
+        field canonical-uri property=canonical-uri
+        field extends property=extends
+        field code-pattern property=code-pattern
+        field derived-from property=derived-from
+        field name {
+            from {
+                children name
+            }
+        }
+        field access {
+            from {
+                child access {
+                    args
+                }
+            }
+        }
+        children name min-occurs=1
+        children access max-occurs=1
+    }
+
+    //   release "2026" system="KSI" published-on="2026-01-01"
+    node release root=#true role=declaration type=Release {
+        parents group=containers
+        identity {
+            domain releases
+            compose qualified-name system id
+        }
+        field id arg=0
+        field system {
+            from {
+                property system
+                context namespace policy=fallback
+            }
+        }
+        field upstream-version property=upstream-version
+        field edition property=edition
+        field published-on property=published-on
+        field effective-on property=effective-on
+        field previous property=previous
+        field imported-version property=imported-version
+        field label-source property=label-source
+        field dependencies {
+            from {
+                child dependencies {
+                    args
+                }
+            }
+        }
+        field artifacts {
+            from {
+                child artifacts {
+                    args
+                }
+            }
+        }
+        children dependencies max-occurs=1
+        children artifacts max-occurs=1
+    }
+
+    node artifact root=#true role=declaration type=Artifact {
+        parents group=containers
+        identity {
+            domain artifacts
+            compose qualified-name id
+        }
+        field id arg=0
+        field media-type property=media-type
+        field digest property=digest
+        field publisher property=publisher
+        field license property=license
+        field location property=location
+        field retrieved-at property=retrieved-at
+    }
+
+    node predicate root=#true role=declaration type=Predicate {
+        parents group=containers
+        identity {
+            domain predicates
+            compose qualified-name id
+        }
+        field id arg=0
+        field direction property=direction
+        field hierarchical property=hierarchical
+        field defines-ancestry property=defines-ancestry
+        field require-acyclic property=require-acyclic
+        field inverse property=inverse
+        field semantic-uri property=semantic-uri
+        field name {
+            from {
+                children name
+            }
+        }
+        children name min-occurs=1
+    }
+
+    //   category "chapter" { name "en" "KSI chapter heading" }
+    node category root=#true role=declaration type=Category {
+        parents group=containers
+        identity {
+            domain categories
+            compose qualified-name system id
+        }
+        field id arg=0
+        field system {
+            from {
+                property system
+                context namespace policy=fixed
+            }
+        }
+        field name {
+            from {
+                children name
+            }
+        }
+        field description {
+            from {
+                children description
+            }
+        }
+        children name min-occurs=1
+        children description
+    }
+
+    node routing-domain root=#true role=declaration type=RoutingDomain {
+        parents group=containers
+        identity {
+            domain routing-domains
+            compose qualified-name id
+        }
+        field id arg=0
+        field names {
+            from {
+                children name
+            }
+        }
+        field descriptions {
+            from {
+                children description
+            }
+        }
+        field parents {
+            from {
+                children parent compact=#true
+            }
+        }
+        children name min-occurs=1
+        children description
+        children parent
+    }
+
+    node property-definition root=#true role=declaration type=PropertyDefinition {
+        parents group=containers
+        identity {
+            domain property-definitions
+            compose qualified-name id
+        }
+        field id arg=0
+        field value-type property=value-type
+        field min-count property=min-count
+        field max-count property=max-count
+        field name {
+            from {
+                children name
+            }
+        }
+        children name min-occurs=1
+    }
+
+    // ---- Concepts ------------------------------------------------------
+    //
+    //   concept "SA1.AA.ZZ" parent="SA1" {
+    //       name "sv" "Bedömning av lärande och att tillämpa kunskap"
+    //   }
+    //
+    // The compact spellings `parent=`, `class=`, and `status=` bind
+    // exactly as the block children of the same name.
+
+    node concept root=#true role=declaration type=Concept {
+        parents group=containers
+        identity {
+            domain concepts
+            compose qualified-name system code
+        }
+        field code arg=0
+        // A concept takes its system and release from context only
+        // (their effective system and release).
+        field system context=namespace
+        field release context=system-release
+        field parents {
+            from {
+                children parent compact=#true
+            }
+        }
+        field class {
+            from {
+                child class compact=#true
+                context concept-class policy=fallback
+            }
+        }
+        field status {
+            from {
+                child status compact=#true
+                context concept-status policy=fallback
+            }
+        }
+        field validity child=validity
+        field names {
+            from {
+                children name
+            }
+        }
+        field synonyms {
+            from {
+                children synonym
+            }
+        }
+        field variants {
+            from {
+                children variant
+            }
+        }
+        field code-aliases {
+            from {
+                children code-alias
+            }
+        }
+        field definitions {
+            from {
+                children definition
+            }
+        }
+        field descriptions {
+            from {
+                children description
+            }
+        }
+        field properties {
+            from {
+                children property
+            }
+        }
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children validity max-occurs=1
+        // A package nests under the concept it packages (tlv-fba:
+        // pairing was positional; tlv-vnr's root-sibling layout was
+        // folded into the same nesting). The package's code derives
+        // from the enclosing concept. The facet stays its own
+        // declaration: identity, system, and release still come from
+        // context.
+        children drug-package max-occurs=1
+        // A concept of a reference-only or local-only system is never
+        // defined in the published tree (publishability). That
+        // is a vocabmod check, not a schema rule: `vocabmod vet` reads the
+        // `distribution` of the system each concept binds under and
+        // rejects the definition. The schema only carries the marker.
+    }
+
+    // Localized text on metadata records: `name "en" "SNOMED CT"`.
+    node name type=Text {
+        parents agent license system predicate category routing-domain property-definition census
+        field locale arg=0
+        field text arg=1
+    }
+    node description type=Text {
+        parents category routing-domain module
+        field locale arg=0
+        field text arg=1
+    }
+    // A curator note kept verbatim (extension; see Note in common.kdl).
+    //   comment "en" "Coxsackievirus enteritis; no target without the organism."
+    //   comment "en" "Target SNOMED CT 123 = '...'" suspect=quoted-text
+    node comment type=Note {
+        parents concept mapping assessment flag omop-binding measurement-definition drug-package
+        field locale arg=0
+        field text arg=1
+        field suspect property=suspect
+    }
+
+    // A designation on a concept: `name "sv" "..." preferred=#true`.
+    // name, synonym, definition, and description repeat one binding
+    // (kdlith binds each declaration under one name).
+    node name type=Designation parent=concept {
+        field locale arg=0
+        field text arg=1
+        field context property=context
+        field preferred property=preferred
+        field id property=id
+    }
+    node synonym type=Designation parent=concept {
+        field locale arg=0
+        field text arg=1
+        field context property=context
+        field preferred property=preferred
+        field id property=id
+    }
+    // A raw or alternate representation of the concept: a dataset
+    // spelling, an abbreviation, a site display form, a legacy spelling.
+    //   variant "ALAT" kind=abbrev source="Swedish hospital laboratory catalogues"
+    node variant type=Variant parent=concept {
+        field text arg=0
+        field kind property=kind
+        field source property=source
+        field locale property=locale
+        field preferred property=preferred
+    }
+    // An alternate identifier: a code in another namespace, or a
+    // historical id of the concept's own system (`system` absent).
+    //   code-alias "2100550000"
+    node code-alias type=CodeAlias parent=concept {
+        field code arg=0
+        field system property=system
+    }
+    node definition type=Designation parent=concept {
+        field locale arg=0
+        field text arg=1
+        field context property=context
+        field preferred property=preferred
+        field id property=id
+    }
+    node description type=Designation parent=concept {
+        field locale arg=0
+        field text arg=1
+        field context property=context
+        field preferred property=preferred
+        field id property=id
+    }
+    node title type=Text {
+        parents module collection value-set
+        field locale arg=0
+        field text arg=1
+    }
+
+    // `validity from="2026-01-01" to=#null to-state=open origin=imported`
+    // is not expressible as one node: a Bound is an object. Two forms;
+    // an absent `to` is open-ended:
+    //   validity origin=imported { from "2026-01-01" }
+    //   validity origin=imported {
+    //       from "2026-01-01"
+    //       to #null state=open
+    //   }
+    node validity type=Validity {
+        parents concept relationship mapping assessment omop-binding measurement-constraint lab-context drug-strength
+        field origin property=origin
+        field from child=from
+        field to child=to
+        children from min-occurs=1 max-occurs=1
+        // Absent `to` is open-ended (the optional Validity field).
+        children to max-occurs=1
+    }
+    node property type=PropertyItem parent=concept {
+        field property arg=0
+        field value arg=1
+    }
+
+    node from type=Bound parent=validity {
+        field date arg=0
+        field state property=state
+    }
+    node to type=Bound parent=validity {
+        field date arg=0
+        field state property=state
+    }
+
+    // ---- Standalone definition-side assertions -------------------------
+
+    //   relationship "r-001" source="A" target="SNOMED_CT:123" predicate="snomed:is-a" form=direct
+    node relationship root=#true role=record type=Relationship {
+        parents group=containers
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field source property=source
+        field target property=target
+        field predicate {
+            from {
+                property predicate
+                context relationship-predicate policy=fallback
+            }
+        }
+        field form property=form
+        field group property=group
+        field validity child=validity
+        field evidence {
+            from {
+                child evidence {
+                    args
+                }
+            }
+        }
+        children validity max-occurs=1
+        children evidence max-occurs=1
+    }
+
+    node designation root=#true role=record type=DesignationAssertion {
+        parents group=containers
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field kind property=kind
+        field locale {
+            from {
+                property locale
+                context locale policy=fallback
+            }
+        }
+        field text arg=1
+        field preferred property=preferred
+        field usage-context property=usage-context
+    }
+
+    node property-value root=#true role=record type=PropertyValue {
+        parents group=containers
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field property property=property
+        field value arg=1
+    }
+}

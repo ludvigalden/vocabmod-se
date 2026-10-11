@@ -1,0 +1,366 @@
+// Shared scalar types, value objects, codecs, and reference types of the
+// vocab schema.
+schema vocab version="0" {
+    types {
+        // ---- Scalars ----------------------------------------------------
+
+        // A native code: exact, case-significant, never a number.
+        // Data writes it quoted; KDL then never coerces it.
+        string Code {
+            min-length 1
+        }
+        // A system identifier. Upper case throughout, so it can prefix a
+        // code in an endpoint spelling ("SNOMED_CT:63650001") without
+        // ambiguity; it is the official short name, upper-cased, with
+        // every run of space, hyphen, or dot replaced by `_`.
+        string SystemId {
+            pattern "[A-Z][A-Z0-9_]*"
+        }
+        // A global definition identifier: agents, collections, schemes,
+        // value sets, datasets. A controlled namespace prefix is allowed
+        // ("vocabmod:ksi-icf"), never resolved as a URL.
+        string GlobalId {
+            pattern #"[a-z0-9][a-z0-9.-]*(:[A-Za-z0-9][A-Za-z0-9._-]*)*"#
+        }
+        // An assertion identifier, unique within one collection version.
+        string AssertionId {
+            min-length 1
+        }
+        string Version {
+            min-length 1
+        }
+        string Date {
+            pattern "[0-9]{4}-[0-9]{2}-[0-9]{2}"
+        }
+        string Instant {
+            pattern #"[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(\.[0-9]{1,9})?Z"#
+        }
+        // BCP 47, structurally only; registry checks belong to vocabmod.
+        string Locale {
+            pattern #"[a-z]{2,3}(-[A-Za-z0-9]{2,8})*"#
+        }
+        string Digest {
+            pattern "blake3:[0-9a-f]{64}"
+        }
+        string AbsoluteUri {
+            pattern #"[a-z][a-z0-9+.-]*:\S+"#
+        }
+        // A location outside the published tree. It must start with a
+        // host alias ($name/...), so committed documents never carry a
+        // machine path; the host maps the alias (kdlith --alias / --source).
+        // Extension of the general locator, which admits local paths and
+        // URIs; this type admits host aliases only.
+        string AliasedLocation {
+            pattern #"\$[a-z][a-z0-9-]*/\S+"#
+        }
+
+        // ---- Enumerations ----------------------------------------------
+
+        enum SystemKind {
+            member terminology
+            member classification
+            member identifier-namespace
+            member vocabulary
+            member local
+        }
+        // Extension: publishability. How the tree
+        // may carry a system's content.
+        enum Distribution {
+            member published description="Definitions are public and authored in the tree"
+            member reference-only description="Licensed or private: codes are referenced, never defined"
+            member external description="Public, but defined upstream and not in this tree: codes are referenced, never defined; the system's license states any conditions"
+            member local-only description="Never published; documents live outside the tree"
+        }
+        enum AgentKind {
+            member person
+            member organization
+            member consortium
+            member software-agent
+        }
+        enum ResponsibilityRole {
+            member maintainer
+            member author
+            member contributor
+            member publisher
+            member reviewer
+            member rights-holder
+        }
+        enum Visibility {
+            member public
+            member restricted
+            member private
+        }
+        enum RedistributionState {
+            member permitted
+            member prohibited
+            member conditional
+            member unknown
+        }
+        enum ConceptStatus {
+            member active
+            member inactive
+            member retired
+            member unknown
+        }
+        enum DesignationKind {
+            member name
+            member synonym
+            member definition
+            member description
+        }
+        // Extension member `partial_overlap`: the source's `partial` has no
+        // direct equivalent, and folding it into related_to loses the claim
+        // that the two concepts share part of their extension.
+        enum SemanticRelationship {
+            member equivalent
+            member source_is_narrower_than_target
+            member source_is_broader_than_target
+            member related_to
+            member not_related_to
+            member partial_overlap description="Extension: source and target overlap; neither contains the other"
+        }
+        enum Preference {
+            member primary
+            member alternative
+        }
+        // The loss/effect vocabulary for mappings. Direction never lives here — it stays on the
+        // mapping's relationship kind; `effect` says what the mapping
+        // does to the source's meaning beyond that direction.
+        // `preserved` is never spelled: an equivalent with no loss
+        // stays a plain equivalent.
+        enum Effect {
+            member preserved
+            member omitted
+            member changed
+            member unknown
+        }
+        enum Severity {
+            member none
+            member minor
+            member moderate
+            member major
+            member unknown
+        }
+        enum AssessmentOutcome {
+            member not_assessed
+            member mapped
+            member no_match
+            member needs_context
+            member out_of_scope
+        }
+        enum ReviewDecision {
+            member accepted
+            member rejected
+            member needs_changes
+            member withdrawn
+        }
+        // Extension (reviews stay their own attributed decisions).
+        // Imported workflow facts that are not reviews: the source's
+        // invalid_reason manual_review_needed and false_positive.
+        enum WorkflowFlag {
+            member needs-review description="Flagged for review by the source; no reviewer decision exists"
+            member reported-false-positive description="The source reported the claim as a false positive"
+            member label-contradicts-comment description="The importer found the source's own comment contradicting its relationship label"
+            member needs-clinical-review description="The source asks for clinical review before the claim is used"
+            member unmapped description="The importer's inputs hold no target code; nobody has judged whether one exists"
+            member tlv-no-comparison-alternative description="The product is on the TLV 2026 list of stoma products not used as comparison alternatives in TLV investigations; a scope names the comparison family the product is exempt from being an alternative for"
+        }
+        // Extension. Why the importer set a curator note aside for review
+        // before publication; the note itself is kept verbatim.
+        enum NoteSuspicion {
+            member quoted-text description="The note quotes text that may belong to a licensed source"
+        }
+        enum CollectionKind {
+            member mapping
+            member relationship
+            member designation
+            member evidence
+            member review
+            member assessment
+            member property
+            member amendment
+            member observation
+            member mixed
+        }
+        enum PredicateDirection {
+            member forward
+            member symmetric
+        }
+        enum RelationshipForm {
+            member direct
+            member imported-closure
+            member derived-closure
+        }
+        enum ValidityOrigin {
+            member authored
+            member imported
+            member normalized-from-explicit-convention
+            member derived
+        }
+        enum BoundState {
+            member open
+            member unknown
+        }
+        enum ScoreKind {
+            member confidence
+            member dimensional-effect
+            member quality
+            member ranking
+        }
+        enum ScoreDirection {
+            member higher-is-better
+            member lower-is-better
+            member unordered
+        }
+        enum ValueSetMode {
+            member explicit
+            member rule
+            member mixed
+        }
+        enum Membership {
+            member include
+            member exclude
+        }
+
+        // ---- Value objects ---------------------------------------------
+
+        // One localized text: `title "en" "..."`.
+        object Text {
+            field locale Locale
+            field text String
+        }
+        // A validity bound: a date, or `#null state="open|unknown"`.
+        object Bound {
+            field date "nullable<Date>"
+            field state "optional<BoundState>"
+        }
+        // An absent `to` is open-ended; the importer elides the explicit
+        // `to #null state=open` spelling on open validity.
+        object Validity {
+            field from Bound
+            field to "optional<Bound>"
+            field origin ValidityOrigin
+        }
+        // A confidence judgment. The scheme is required
+        // effectively; it may come from a `defaults` scheme.
+        // A curator note kept verbatim from a source (extension; the raw
+        // value survives). Not a rationale: nobody asserted
+        // it as the reason for a claim.
+        object Note {
+            field locale Locale
+            field text String
+            field suspect "optional<NoteSuspicion>"
+        }
+        // Extension. A raw or alternate representation of
+        // a concept: a source spelling, a dataset form, an abbreviated
+        // display. It is an index key, never a designation of the
+        // publishing system.
+        enum VariantKind {
+            member raw description="Verbatim spelling as it appeared in the source dataset"
+            member abbrev description="Shortened or abbreviated rendering"
+            member display description="Site- or dataset-specific display form"
+            member legacy description="Predecessor or retired spelling"
+        }
+        object Variant {
+            field text String
+            field kind "optional<VariantKind>"
+            field source "optional<String>"
+            field locale "optional<Locale>"
+            field preferred "optional<Bool>"
+        }
+        // An alternate identifier of the concept in some namespace, or a
+        // historical id of its own system (the namespace absent).
+        object CodeAlias {
+            field code String
+            field system "optional<SystemId>"
+        }
+        // A unit: a code with an explicit
+        // namespace, or a native unit concept. A code with neither is kept
+        // verbatim and has no numeric meaning until a unit policy names it.
+        object UnitInput {
+            field code String
+            field namespace "optional<String>"
+            field version "optional<Version>"
+            field concept "optional<EndpointRef>"
+        }
+        // A quantity: one exact decimal and one unit.
+        object Quantity {
+            field value Decimal
+            field unit UnitInput
+            field significant-digits "optional<U64>"
+        }
+        object Confidence {
+            field score Decimal
+            field scheme ScoreSchemeRef
+        }
+
+        // ---- Codecs ----------------------------------------------------
+
+        // A native endpoint: "SYSTEM:CODE", or a bare "CODE" filled from
+        // the endpoint scope in context.
+        codec Endpoint output=String {
+            match #"(?:(?<system>[A-Z][A-Za-z0-9_]*):)?(?<code>\S(?:.*\S)?)"#
+            capture system String
+            capture code String
+        }
+        codec SystemName output=String {
+            match #"(?<system>[A-Z][A-Za-z0-9_]*)"#
+            capture system String
+        }
+        // "SYSTEM@RELEASE", e.g. "KSI@2026".
+        codec ReleaseName output=String {
+            match #"(?<system>[A-Z][A-Za-z0-9_]*)@(?<release>\S+)"#
+            capture system String
+            capture release String
+        }
+        codec GlobalName output=String {
+            match #"(?<id>[a-z0-9][a-z0-9.-]*(?::[A-Za-z0-9][A-Za-z0-9._-]*)*)"#
+            capture id String
+        }
+        // A versioned definition: "ID@VERSION", e.g. "source-provenance@1".
+        codec VersionedName output=String {
+            match #"(?<id>[a-z0-9][a-z0-9.-]*(?::[A-Za-z0-9][A-Za-z0-9._-]*)*)@(?<version>\S+)"#
+            capture id String
+            capture version String
+        }
+    }
+
+    // ---- Reference types ----------------------------------------------
+
+    // A concept defined in the tree. Strict: a parent link or class that
+    // names no declaration fails the reading (KDLITH-REF001).
+    reference ConceptRef target=Concept codec=Endpoint lookup=concepts qualification=explicit-or-context {
+        qualifier system String required=#false
+    }
+
+    // A mapping, membership, or metadata endpoint. Open-world: when the
+    // endpoint's system is declared `distribution reference-only` or
+    // `external`, a code with no definition in the tree links as an
+    // external reference instead of failing, and a bare code fills its system from the
+    // endpoint scope the reference type names, not from the one shared
+    // `namespace` slot.
+    reference EndpointRef target=Concept codec=Endpoint lookup=concepts qualification=explicit-or-context {
+        qualifier system String required=#false
+        open-world system-member=distribution values="reference-only external"
+    }
+
+    reference SystemRef target=System codec=SystemName lookup=systems qualification=explicit
+    reference ReleaseRef target=Release codec=ReleaseName lookup=releases qualification=explicit
+    reference AgentRef target=Agent codec=GlobalName lookup=agents qualification=explicit
+    reference LicenseRef target=License codec=GlobalName lookup=licenses qualification=explicit
+    reference AccessPolicyRef target=AccessPolicy codec=GlobalName lookup=access-policies qualification=explicit
+    reference CollectionRef target=Collection codec=VersionedName lookup=collections qualification=explicit
+    reference ScoreSchemeRef target=ScoreScheme codec=VersionedName lookup=score-schemes qualification=explicit
+    reference PredicateRef target=Predicate codec=GlobalName lookup=predicates qualification=explicit
+    reference DimensionRef target=Dimension codec=GlobalName lookup=dimensions qualification=explicit
+    reference RoutingDomainRef target=RoutingDomain codec=GlobalName lookup=routing-domains qualification=explicit
+    reference ValueSetRef target=ValueSet codec=VersionedName lookup=value-sets qualification=explicit
+    reference EvidenceRef target=Evidence codec=GlobalName lookup=evidence qualification=explicit
+    reference ArtifactRef target=Artifact codec=GlobalName lookup=artifacts qualification=explicit
+    reference TranslationTableRef target=TranslationTable codec=VersionedName lookup=translation-tables qualification=explicit
+    // A category is scoped by its system, like a concept: "KSI:chapter".
+    // The qualifier is named for the identity field it fills (`system`).
+    reference CategoryRef target=Category codec=Endpoint lookup=categories qualification=explicit-or-context {
+        qualifier system String required=#false
+    }
+}

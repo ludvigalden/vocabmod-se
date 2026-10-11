@@ -1,0 +1,886 @@
+// Claims: collections, score schemes, dimensions, translation tables,
+// mappings, no-match assessments, workflow flags, evidence, reviews,
+// value sets and members, and OMOP bindings.
+//
+// Every claim is an assertion of one collection version, supplied by
+// context. Its identity is (collection, version, id); vocabmod
+// derives nothing from the file it sits in.
+schema vocab version="0" {
+    types {
+        object Collection {
+            field id GlobalId
+            field version Version
+            field title "list<Text>"
+            field kind CollectionKind
+            field publisher "optional<AgentRef>"
+            field authors "optional<list<AgentRef>>"
+            field license "optional<LicenseRef>"
+            field source-system "optional<SystemRef>"
+            field source-release "optional<Version>"
+            field target-system "optional<SystemRef>"
+            field target-release "optional<Version>"
+            field purpose-id "optional<String>"
+            field purpose "list<Text>"
+            field derived-from "optional<list<CollectionRef>>"
+        }
+        object ScoreScheme {
+            field id GlobalId
+            field version Version
+            field kind ScoreKind
+            field direction ScoreDirection
+            field description "list<Text>"
+            field minimum "optional<Decimal>"
+            field maximum "optional<Decimal>"
+        }
+        object Dimension {
+            field id GlobalId
+            field name "list<Text>"
+            field description "list<Text>"
+            field effects "list<Effect>"
+        }
+
+        // Extension: imported labels are translated through a table. A
+        // versioned, reviewable mapping from a source column's
+        // labels to vocab values. The importer applies it; each claim it
+        // produced cites the table and the raw label (the raw
+        // value and conversion origin survive).
+        object TranslationTable {
+            field id GlobalId
+            field version Version
+            field source-column String
+            field target-field String
+            field description "list<Text>"
+            field entries "ordered-map<String, TranslationEntry>"
+        }
+        // One label. `value` is spelled in the target field's vocabulary;
+        // an entry whose label produces no claim says so with `drop`.
+        object TranslationEntry {
+            field value "optional<String>"
+            field drop "optional<Bool>"
+            field note "optional<String>"
+            constraints {
+                exactly-one-field value drop
+            }
+        }
+        object ImportedLabel {
+            field label String
+            field table TranslationTableRef
+        }
+
+        object EffectItem {
+            field dimension DimensionRef
+            field effect Effect
+            field severity "optional<Severity>"
+        }
+
+        // The `mappings` records. Extensions: `imported` labels (above).
+        // Inline source maps_to/weak_maps_to cells are split into one
+        // mapping each: maps_to → preference primary,
+        // weak_maps_to → preference alternative. The source's per-target
+        // fan-in is not stored: vocabmod
+        // derives fan-in from the claims.
+        object Mapping {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field source EndpointRef
+            field target EndpointRef
+            field relationship SemanticRelationship
+            field preference "optional<Preference>"
+            // Lifecycle role, independent of `preference` (the
+            // source's own grading of mapping strength): a mapping
+            // whose source code the registry withdrew with a known
+            // successor is an alternative to its successor's mapping;
+            // the common case spells nothing and binds primary. No
+            // mapping carries it today — the corpora hold only active
+            // source codes, so a withdrawn-with-successor source has
+            // never occurred as a mapping source; the importer's run
+            // report records the zero so the mechanism stays visible.
+            // The exactly-one-primary invariant for a withdrawn source
+            // spans sibling mappings, which the flat mapping layout
+            // cannot bound (a when branch gates one node's children
+            // on its own properties), so the census carries it.
+            field role Preference {
+                fallback "primary"
+            }
+            field confidence "optional<Confidence>"
+            field validity "optional<Validity>"
+            field assessor "optional<AgentRef>"
+            field assessment-method "optional<String>"
+            field assessed-at "optional<Instant>"
+            // What the mapping does to the source's meaning beyond the
+            // relationship's direction (common.kdl Effect). Derived by
+            // the rubric in _registry/conventions.kdl
+            // (mapping-quality@1) from the claim's own evidence; an
+            // absent effect means the mapping claims no loss.
+            field effect "optional<Effect>"
+            // Derived 0-100 quality (rubric mapping-quality@1 in
+            // _registry/conventions.kdl); absent = not assessed.
+            field quality "optional<U64>"
+            field effects "list<EffectItem>"
+            field rationale "list<Text>"
+            field evidence "list<AssertionRef>"
+            field imported "list<ImportedLabel>"
+            field comments "list<Note>"
+            constraints {
+                bound quality min=0 max=100
+            }
+        }
+
+        // The `assessments` records. Extensions:
+        //  - `assessed-at-unknown` mirrors the source's assessor-unknown
+        //    for imported no-match claims whose time was never recorded;
+        //  - `claim-scope` names collection versions only; the inventory
+        //    digest is computed by vocabmod at lock time rather
+        //    than authored.
+        object Assessment {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field source EndpointRef
+            field outcome AssessmentOutcome
+            field target-system "optional<SystemRef>"
+            field target-release "optional<Version>"
+            field claim-scope "list<CollectionRef>"
+            field purpose-id "optional<String>"
+            field assessor "optional<AgentRef>"
+            field assessor-unknown "optional<String>"
+            field assessed-at "optional<Instant>"
+            field assessed-at-unknown "optional<String>"
+            field reason "optional<String>"
+            field validity "optional<Validity>"
+            field rationale "list<Text>"
+            field imported "list<ImportedLabel>"
+            field comments "list<Note>"
+            constraints {
+                at-most-one assessor assessor-unknown
+                at-most-one assessed-at assessed-at-unknown
+            }
+        }
+
+        // Extension: workflow invalid_reason states. A
+        // source's or the importer's workflow fact about a concept or a
+        // claim. It is not a review: it carries no decision
+        // and no mandate. `target-system` scopes a concept flag to one
+        // target (an `unmapped` Swedish laboratory unit is unmapped toward UCUM).
+        object Flag {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field kind WorkflowFlag
+            field concept "optional<EndpointRef>"
+            field assertion "optional<AssertionRef>"
+            field target-system "optional<SystemRef>"
+            // The comparison family or scope an exception narrows the
+            // flag to (e.g. urostomy products exempt from a TLV list).
+            field scope "optional<String>"
+            field rationale "list<Text>"
+            field imported "list<ImportedLabel>"
+            field comments "list<Note>"
+            constraints {
+                exactly-one-field concept assertion
+            }
+        }
+
+        object Evidence {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field rationale "list<Text>"
+            field method "optional<String>"
+            field author "optional<AgentRef>"
+            field sources "optional<list<ArtifactRef>>"
+        }
+
+        // The `reviews` records. The exact basis revision and the mandate's
+        // basis are lock-computed by vocabmod and not authored here.
+        object Review {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field assertion AssertionRef
+            field decision ReviewDecision
+            field scope "list<String>"
+            field reviewed-at Instant
+            field reviewer AgentRef
+            field rationale "list<Text>"
+            field supersedes "optional<AssertionRef>"
+        }
+
+        object ValueSet {
+            field id GlobalId
+            field version Version
+            field name "list<Text>"
+            field membership ValueSetMode
+            field scope-system "optional<SystemRef>"
+            field purpose "list<Text>"
+        }
+        object Member {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field membership Membership
+            field set ValueSetRef
+        }
+
+        // The OMOP records. OMOP is a
+        // reference-only system: a binding records only that
+        // a native code has an OMOP concept id. OMOP's own fields (domain,
+        // class, standard flag, invalid reason) are read from a local
+        // Athena release when verifying, never published (local.kdl).
+        object OmopSnapshot {
+            field id Version
+            field published-on "optional<Date>"
+            field license "optional<LicenseRef>"
+        }
+        //
+        // Custom OMOP concept ids: ids in the OMOP custom block minted
+        // here are ours, published as `OMOP custom concepts` endpoints — the
+        // declared local custom-concept system, never OHDSI content.
+        // Published repos map only to standard OMOP concepts;
+        // custom-concept mappings are a private-sharing convention. A
+        // maintainer may pin a new id (`assigned=#true`), and any
+        // custom id must fall inside a declared `custom-id-range`
+        // (checked by vocabmod).
+        object OmopBinding {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field omop EndpointRef
+            field assigned "optional<Bool>"
+            field validity "optional<Validity>"
+            field imported "list<ImportedLabel>"
+            field comments "list<Note>"
+        }
+        // Extension. A reserved band of OMOP custom concept ids
+        // (first/last are the observed id edges of everything the tree
+        // publishes under it). Export allocates inside a band; a
+        // binding outside every band is an error (checked by vocabmod).
+        object CustomIdRange {
+            field id GlobalId
+            field first U64
+            field last U64
+            field domain "optional<RoutingDomainRef>"
+            field publisher "optional<AgentRef>"
+            constraints {
+                bound first min=2000000000
+                bound last min=2000000000
+            }
+        }
+
+        codec AssertionName output=String {
+            match #"(?<collection>[a-z0-9][a-z0-9.-]*(?::[A-Za-z0-9][A-Za-z0-9._-]*)*)@(?<version>[^/\s]+)/(?<id>\S+)"#
+            capture collection String
+            capture version String
+            capture id String
+        }
+    }
+
+    // "COLLECTION@VERSION/ID", e.g. "ksi-icf@2026.1/m-SA1".
+    reference AssertionRef target=Mapping codec=AssertionName lookup=assertions qualification=explicit
+
+    // ---- Collections and catalogs --------------------------------------
+    //
+    //   collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping {
+    //       title "en" "ICD-10-SE extension codes to SNOMED CT"
+    //       source system="ICD_10_SE" release="2026"
+    //       target system="SNOMED_CT" release="20251130"
+    //       defaults {
+    //           mappings { relationship "source_is_narrower_than_target" }
+    //       }
+    //       import "snomed/mappings/**/*.kdl" kind=fragment {
+    //           project "defaults"
+    //       }
+    //   }
+    //
+    // The collection block nests the defaults and the import of the
+    // mapping files it owns: what resolves the collection is visible
+    // inside it, so a system needs only its definitions entry. The
+    // nested import projects the defaults namespace, which is how a
+    // uniform collection states its relationship kind once while the
+    // mapping files omit the property.
+
+    node collection root=#true role=declaration type=Collection {
+        parents group=containers
+        identity {
+            domain collections
+            compose qualified-name id version
+        }
+        field id arg=0
+        field version property=version
+        field kind property=kind
+        field publisher property=publisher
+        field license property=license
+        field purpose-id property=purpose-id
+        field title {
+            from {
+                children title
+            }
+        }
+        field purpose {
+            from {
+                children purpose
+            }
+        }
+        field authors {
+            from {
+                child authors {
+                    args
+                }
+            }
+        }
+        field derived-from {
+            from {
+                child derived-from {
+                    args
+                }
+            }
+        }
+        field source-system {
+            from {
+                child source {
+                    property system
+                }
+            }
+        }
+        field source-release {
+            from {
+                child source {
+                    property release
+                }
+            }
+        }
+        field target-system {
+            from {
+                child target {
+                    property system
+                }
+            }
+        }
+        field target-release {
+            from {
+                child target {
+                    property release
+                }
+            }
+        }
+        children title min-occurs=1
+        children authors max-occurs=1
+        children derived-from max-occurs=1
+        children source max-occurs=1
+        children target max-occurs=1
+        children defaults max-occurs=1
+        children import
+    }
+    node purpose type=Text {
+        parents collection value-set
+        field locale arg=0
+        field text arg=1
+    }
+
+    //   score-scheme "reviewer-tiers" version="1" kind=confidence direction=higher-is-better minimum=0 maximum=1
+    node score-scheme root=#true role=declaration type=ScoreScheme {
+        parents group=containers
+        identity {
+            domain score-schemes
+            compose qualified-name id version
+        }
+        field id arg=0
+        field version property=version
+        field kind property=kind
+        field direction property=direction
+        field minimum property=minimum
+        field maximum property=maximum
+        field description {
+            from {
+                children description
+            }
+        }
+        children description min-occurs=1
+    }
+    node description type=Text {
+        parents score-scheme dimension translation-table
+        field locale arg=0
+        field text arg=1
+    }
+
+    node dimension root=#true role=declaration type=Dimension {
+        parents group=containers
+        identity {
+            domain dimensions
+            compose qualified-name id
+        }
+        field id arg=0
+        field effects {
+            from {
+                child effects {
+                    args
+                }
+            }
+        }
+        field name {
+            from {
+                children name
+            }
+        }
+        field description {
+            from {
+                children description
+            }
+        }
+        children name min-occurs=1
+        children description min-occurs=1
+        children effects min-occurs=1 max-occurs=1
+    }
+    node name type=Text parent=dimension {
+        field locale arg=0
+        field text arg=1
+    }
+
+    //   translation-table "mapping-kind" version="1" \
+    //       source-column="maps_to_mapping_type" target-field="relationship" {
+    //       entry "broader" "source_is_narrower_than_target"
+    //       entry "no_match" drop=#true note="becomes a no-match assessment"
+    //   }
+    node translation-table root=#true role=declaration type=TranslationTable {
+        parents group=containers
+        identity {
+            domain translation-tables
+            compose qualified-name id version
+        }
+        field id arg=0
+        field version property=version
+        field source-column property=source-column
+        field target-field property=target-field
+        field description {
+            from {
+                children description
+            }
+        }
+        field entries {
+            from {
+                entries entry key="arg(0)" value=TranslationEntry
+            }
+            duplicate-keys reject
+        }
+        children description min-occurs=1
+        children entry min-occurs=1
+    }
+    node entry type=TranslationEntry parent=translation-table {
+        field value arg=1
+        field drop property=drop
+        field note property=note
+    }
+
+    // ---- Shared claim children -------------------------------------------
+
+    node rationale type=Text {
+        parents mapping assessment flag evidence review measurement-constraint amend
+        field locale {
+            from {
+                argument 0
+            }
+        }
+        field text arg=1
+    }
+    node imported type=ImportedLabel {
+        parents mapping assessment flag omop-binding
+        field label arg=0
+        field table property=table
+    }
+    node effect type=EffectItem parent=effects {
+        field dimension arg=0
+        field effect arg=1
+        field severity property=severity
+    }
+    node effects parent=mapping {
+        children effect
+    }
+    node confidence type=Confidence parent=mapping {
+        field score arg=0
+        field scheme {
+            from {
+                property scheme
+                context mapping-confidence-scheme policy=fallback
+            }
+        }
+    }
+
+    // ---- Mappings ---------------------------------------------------------
+    //
+    //   mapping "A083A.1" source="A083A" target="154355005" {
+    //       imported "broader" table="mapping-kind@1"
+    //       rationale "en" "Coxsackievirus enteritis to Coxackie virus disease."
+    //   }
+    //
+    // `source` binds a bare code under the source scope of the context.
+    // `target` goes bare when the collection's target system is
+    // constant: the field qualifies from the `target-system` slot the
+    // file's context sets, so "SNOMED_CT:154355005" and "154355005" bind
+    // the same endpoint under `target system="SNOMED_CT"`. A collection
+    // with mixed target systems spells every qualifier explicitly.
+    // `relationship` may likewise be omitted where the collection
+    // states it once through its defaults; an explicit property wins.
+
+    node mapping root=#true role=declaration type=Mapping {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field source property=source
+        field target property=target qualify-from=target-system
+        field relationship {
+            from {
+                property relationship
+                context mapping-relationship policy=fallback
+            }
+        }
+        field preference {
+            from {
+                property preference
+                context mapping-preference policy=fallback
+            }
+        }
+        field role property=role
+        field assessor {
+            from {
+                property assessor
+                context mapping-assessor policy=fallback
+            }
+        }
+        field assessment-method {
+            from {
+                property method
+                context mapping-assessment-method policy=fallback
+            }
+        }
+        field assessed-at property=assessed-at
+        field effect property=effect
+        field quality property=quality
+        field confidence child=confidence
+        field validity child=validity
+        field effects {
+            from {
+                child effects {
+                    children effect
+                }
+            }
+        }
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        field evidence {
+            from {
+                child evidence {
+                    args
+                }
+            }
+        }
+        field imported {
+            from {
+                children imported
+            }
+        }
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children confidence max-occurs=1
+        children validity max-occurs=1
+        children effects max-occurs=1
+        children evidence max-occurs=1
+    }
+
+    // ---- Assessments ------------------------------------------------------
+    //
+    //   assessment "V7773.snomed" source="V7773" outcome=no_match target-system="SNOMED_CT"
+    //
+    // The tree emits assessments as single-line childless nodes. The
+    // `assessor-unknown`/`assessed-at-unknown` children stay admitted
+    // for a source that records *why* the value is unknown; the tree
+    // emits none — an absent assessor or assessed-at means unknown.
+    //
+    // Target scope, purpose, and claim scope default from context and the
+    // owning collection; an assessment may name them to differ.
+    //
+    // `target-system` may be spelled where the assessment's true target
+    // differs from the collection's context target; where the
+    // collection target is the truth (e.g. meddra no_match rows, whose
+    // negative evidence is a MedDRA search) the spelling is omitted so
+    // the context value binds.
+    //
+    // `claim-scope` names the collection version the claim is scoped
+    // to. A uniform collection hoists it through its defaults block
+    // (`mappings { claim-scope "..." }`); the assessment then omits the
+    // child and the context value binds as a fallback. An explicit
+    // claim-scope child still wins over the hoisted value. Known
+    // binding-shape note: a context-supplied value into this
+    // list-typed field binds the scalar itself (the export shows a
+    // bare string, not a one-element list); consumers normalizing the
+    // field treat ["x"] and "x" as the same value.
+
+    node assessment root=#true role=declaration type=Assessment {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field source property=source
+        field outcome property=outcome
+        field target-system {
+            from {
+                property target-system
+                context target-system policy=fallback
+            }
+        }
+        field target-release {
+            from {
+                property target-release
+                context target-release policy=fallback
+            }
+        }
+        field purpose-id {
+            from {
+                property purpose-id
+                context purpose-id policy=fallback
+            }
+        }
+        field claim-scope {
+            from {
+                child claim-scope {
+                    args
+                }
+                context claim-scope policy=fallback
+            }
+        }
+        field assessor property=assessor
+        field assessor-unknown child=assessor-unknown
+        field assessed-at property=assessed-at
+        field assessed-at-unknown child=assessed-at-unknown
+        field reason property=reason
+        field validity child=validity
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        field imported {
+            from {
+                children imported
+            }
+        }
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children claim-scope max-occurs=1
+        children validity max-occurs=1
+    }
+
+    //   flag "DISP-17.review" kind=needs-review concept="17"
+    //   flag "0.1.review" kind=needs-clinical-review assertion="spkod-snomed-ct@2026.1/0.1"
+    //   flag "mikrog/dos.ucum" kind=unmapped concept="mikrog/dos" target-system="UCUM"
+    node flag root=#true role=declaration type=Flag {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field kind property=kind
+        field concept property=concept
+        field assertion property=assertion
+        field target-system {
+            from {
+                property target-system
+                context target-system policy=fallback
+            }
+        }
+        field scope property=scope
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        field imported {
+            from {
+                children imported
+            }
+        }
+        field comments {
+            from {
+                children comment
+            }
+        }
+    }
+
+    node evidence root=#true role=declaration type=Evidence {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field method property=method
+        field author property=author
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        field sources {
+            from {
+                child sources {
+                    args
+                }
+            }
+        }
+        children rationale min-occurs=1
+        children sources max-occurs=1
+    }
+
+    node review root=#true role=declaration type=Review {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field assertion property=assertion
+        field decision property=decision
+        field reviewed-at property=reviewed-at
+        field reviewer property=reviewer
+        field supersedes property=supersedes
+        field scope {
+            from {
+                child scope {
+                    args
+                }
+            }
+        }
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        children scope min-occurs=1 max-occurs=1
+    }
+
+    // ---- Value sets -------------------------------------------------------
+
+    node value-set root=#true role=declaration type=ValueSet {
+        parents group=containers
+        identity {
+            domain value-sets
+            compose qualified-name id version
+        }
+        field id arg=0
+        field version property=version
+        field membership property=membership
+        field scope-system property=scope
+        field name {
+            from {
+                children title
+            }
+        }
+        field purpose {
+            from {
+                children purpose
+            }
+        }
+        children title min-occurs=1
+    }
+
+    //   member "GPS.A00" concept="ICD-10:A00" membership=include
+    node member root=#true role=declaration type=Member {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field membership property=membership
+        field set {
+            from {
+                property set
+                context member-set policy=fallback
+            }
+        }
+    }
+
+    // ---- OMOP -------------------------------------------------------------
+
+    node omop-snapshot root=#true role=declaration type=OmopSnapshot {
+        parents group=containers
+        identity {
+            domain omop-snapshots
+            compose qualified-name id
+        }
+        field id arg=0
+        field published-on property=published-on
+        field license property=license
+    }
+
+    //   omop-binding "KKA.AAA00" concept="AAA00" omop="OMOP_CUSTOM:2100120000"
+    node omop-binding root=#true role=declaration type=OmopBinding {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field omop property=omop
+        field assigned property=assigned
+        field validity child=validity
+        field imported {
+            from {
+                children imported
+            }
+        }
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children validity max-occurs=1
+    }
+
+    //   custom-id-range "omop-custom-intervention" first=2100100001 last=2100130445 publisher="ludvig-alden"
+    node custom-id-range root=#true role=declaration type=CustomIdRange {
+        parents group=containers
+        identity {
+            domain custom-id-ranges
+            compose qualified-name id
+        }
+        field id arg=0
+        field first property=first
+        field last property=last
+        field domain property=domain
+        field publisher property=publisher
+    }
+}

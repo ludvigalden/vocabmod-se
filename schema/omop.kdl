@@ -1,0 +1,71 @@
+// The OMOP constants registry (omop profile): vocab/_registry/omop/omop.kdl,
+// the spellings the OMOP export writes, versioned with the corpus.
+//
+// The registry is authored in the translation-table shape the tree's own
+// _registry/conventions.kdl uses (vocabulary_id, domain_id,
+// relationship_id, invalid_reason, language_concept_id, and
+// target_vocabulary_id tables), plus four node kinds only it carries:
+// the registry's version marker, one RELATIONSHIP.csv row per authored
+// relationship spelling, the validity defaults, and one generated
+// custom-id band per tree-defined system. The tool reads it through the
+// generated processor and checks the cross-row rules (every inverse is a
+// defined spelling, every table and band appears once) itself.
+schema vocab version="0" {
+    types {
+        object OmopRegistry {
+            field version Version
+        }
+        object OmopRelationship {
+            field id String
+            field name String
+            field hierarchical Bool
+            field defines-ancestry Bool
+            field inverse String
+        }
+        object OmopValidity {
+            field start Date
+            field end Date
+        }
+        object OmopIdBand {
+            field system SystemId
+            field first U64
+            field last U64
+        }
+    }
+
+    //   omop-registry version="1"
+    node omop-registry role=record type=OmopRegistry profile=omop {
+        field version property=version
+    }
+
+    //   omop-relationship "Maps to" name="Maps to a standard concept" \
+    //       hierarchical=#false defines-ancestry=#false inverse="Mapped from"
+    node omop-relationship role=declaration type=OmopRelationship profile=omop {
+        identity {
+            domain omop-relationships
+            compose qualified-name id
+        }
+        field id arg=0
+        field name property=name
+        field hierarchical property=hierarchical
+        field defines-ancestry property=defines-ancestry
+        field inverse property=inverse
+    }
+
+    //   omop-validity start="1970-01-01" end="2099-12-31"
+    node omop-validity role=record type=OmopValidity profile=omop {
+        field start property=start
+        field end property=end
+    }
+
+    //   omop-id-band "ATC Y-codes" first=2110000000 last=2110099999
+    node omop-id-band role=declaration type=OmopIdBand profile=omop {
+        identity {
+            domain omop-id-bands
+            compose qualified-name system
+        }
+        field system arg=0
+        field first property=first
+        field last property=last
+    }
+}

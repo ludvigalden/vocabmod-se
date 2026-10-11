@@ -1,0 +1,395 @@
+// Domain facets: laboratory measurement definitions, measurement
+// constraints, lab contexts, and the drug product / strength / package
+// records.
+//
+// A facet is a second, kind-specific record of one native endpoint,
+// identified by `(facet kind, system, release, code)`. It sits beside
+// the endpoint's `concept` record, never inside it, and contributes only
+// its own fields. Like a concept it takes its system and release from
+// context, so the same publishability rule applies: facets are authored
+// only for published systems (a vocabmod check, not a schema rule).
+//
+// What the source dataset supplies (lab/ and drug/ directories):
+//
+//   NPU            measurement-definition: unit per block, and a name
+//                  spelling System—Component;Kind-of-property(spec). The
+//                  first three parts stay verbatim plain strings on the
+//                  facet (`component`, `property-kind`, `specimen`); the
+//                  string→identifier and facet indexes are built over
+//                  them
+//   Swedish hospital laboratory catalogues         concepts and LOINC/NPU mappings only; one site's test
+//                  catalogue (a lab-context would only repeat the site)
+//   Swedish laboratory units        concepts of a unit system; their `@UCUM` targets are
+//                  OMOP unit concept ids (key translated on import)
+//   TLV product numbers        drug-package: Varunummer is the package, its `@NPL`
+//                  target the product it packages, `@ATC` a mapping
+//   TLV consumables drug-package without a product (consumables), with
+//                  its article type as a category
+//
+// Every drug-package nests under the concept it packages; the code
+// argument derives from the enclosing concept and is not spelled in
+// data (both the tlv-vnr root-sibling and tlv-fba nested layouts
+// became the nested form).
+//   TLV dose forms  concepts (VNR abbreviations) and rows keyed by `SNOMED CT`
+//                  that are mappings only
+//
+// No source file carries strengths, constraints, or package quantities;
+// those records are bound for completeness and authored by hand.
+schema vocab version="0" {
+    types {
+        enum MeasurementResultType {
+            member quantity
+            member integer
+            member decimal
+            member ordinal
+            member nominal
+            member boolean
+            member text
+            member endpoint
+        }
+        enum MeasurementConstraintKind {
+            member technical-bound
+            member reference-range
+            member contextual-limit
+            member annotation
+        }
+        enum ProductStatus {
+            member active
+            member inactive
+            member withdrawn
+            member unknown
+        }
+        enum MarketingStatus {
+            member marketed
+            member not-marketed
+            member discontinued
+            member unknown
+        }
+
+        // The `measurement-definitions` record: a facet. `specimen`,
+        // `component`, and `property-kind` are the verbatim plain strings
+        // parsed from the NPU name's part structure; consumers join on
+        // string equality through the facet index, not typed references.
+        // Extension: `specification`, the NPU name's parenthesized
+        // clause verbatim ("37°C;procedur", "IFCC 2002"); it is
+        // neither a method nor an endpoint.
+        object MeasurementDefinition {
+            field system SystemId
+            field release Version
+            field code Code
+            field result-type MeasurementResultType
+            field specimen "optional<String>"
+            field component "optional<String>"
+            field property-kind "optional<String>"
+            field method "optional<String>"
+            field unit "optional<UnitInput>"
+            field procedure-defined-unit "optional<Bool>"
+            field specification "optional<String>"
+            field comments "list<Note>"
+        }
+
+        // The `measurement-constraints` record: an assertion. Invariant:
+        // a completed numeric bound has at least one known end, and a
+        // known lower end does not exceed the upper (checked by vocabmod:
+        // the comparison needs the unit policy).
+        object MeasurementConstraint {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field kind MeasurementConstraintKind
+            field lower "optional<Quantity>"
+            field upper "optional<Quantity>"
+            field validity "optional<Validity>"
+            field rationale "list<Text>"
+        }
+
+        // The `lab-contexts` record: how one site performs a measurement.
+        object LabContext {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field concept EndpointRef
+            field site "optional<String>"
+            field specimen "optional<EndpointRef>"
+            field method "optional<String>"
+            field instrument "optional<String>"
+            field unit "optional<UnitInput>"
+            field validity "optional<Validity>"
+        }
+
+        // The `drug-products` record: a facet.
+        object DrugProduct {
+            field system SystemId
+            field release Version
+            field code Code
+            field manufacturer "optional<AgentRef>"
+            field product-status "optional<ProductStatus>"
+            field dose-form "optional<EndpointRef>"
+            field ingredients "list<EndpointRef>"
+        }
+
+        // The `drug-strengths` record: an assertion. Amount
+        // alone, or numerator and denominator together; neither means
+        // unknown strength. A positive denominator is a vocabmod check.
+        object DrugStrength {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field product EndpointRef
+            field ingredient EndpointRef
+            field amount "optional<Quantity>"
+            field numerator "optional<Quantity>"
+            field denominator "optional<Quantity>"
+            field validity "optional<Validity>"
+            constraints {
+                all-or-none numerator denominator
+                at-most-one amount numerator
+            }
+        }
+
+        // The `drug-packages` record: a facet. `product` is optional,
+        // because a reimbursed medical consumable
+        // (TLV förbrukningsartikel) is a package of no drug product.
+        object DrugPackage {
+            field system SystemId
+            field release Version
+            field code Code
+            field product "optional<EndpointRef>"
+            field article-type "optional<CategoryRef>"
+            field marketing-status "optional<MarketingStatus>"
+            field quantity "optional<Quantity>"
+            field container "optional<EndpointRef>"
+            field comments "list<Note>"
+        }
+    }
+
+    // ---- Units and quantities ---------------------------------------------
+    //
+    //   unit "ukat/L" namespace="ucum"
+    //   unit "µkat/L" namespace="npu"
+    //   amount 500 {
+    //       unit "mg" namespace="ucum"
+    //   }
+
+    node unit type=UnitInput {
+        parents measurement-definition lab-context amount numerator denominator lower upper quantity
+        field code arg=0
+        field namespace property=namespace
+        field version property=version
+        field concept property=concept
+    }
+    node amount type=Quantity {
+        parents drug-strength
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+    node numerator type=Quantity {
+        parents drug-strength
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+    node denominator type=Quantity {
+        parents drug-strength
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+    node lower type=Quantity {
+        parents measurement-constraint
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+    node upper type=Quantity {
+        parents measurement-constraint
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+    node quantity type=Quantity {
+        parents drug-package
+        field value arg=0
+        field unit child=unit
+        field significant-digits property=significant-digits
+        children unit min-occurs=1 max-occurs=1
+    }
+
+    // ---- Laboratory ---------------------------------------------------------
+    //
+    //   measurement-definition "NPU01121" result-type=quantity procedure-defined-unit=#true \
+    //       specimen="Plasma" component="Alaninaminotransferas" \
+    //       property-kind="katalytisk koncentration" specification="37°C;procedur" {
+    //       unit "µkat/L" namespace="npu"
+    //   }
+
+    node measurement-definition root=#true role=declaration type=MeasurementDefinition {
+        parents group=containers
+        identity {
+            domain measurement-definitions
+            compose qualified-name system code
+        }
+        field code arg=0
+        field system context=namespace
+        field release context=system-release
+        field result-type property=result-type
+        field specimen property=specimen
+        field component property=component
+        field property-kind property=property-kind
+        field method property=method
+        field unit child=unit
+        field procedure-defined-unit property=procedure-defined-unit
+        field specification property=specification
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children unit max-occurs=1
+    }
+
+    //   measurement-constraint "NPU01121.ref" concept="NPU01121" kind=reference-range {
+    //       upper 0.76 { unit "µkat/L" namespace="npu" }
+    //   }
+    node measurement-constraint root=#true role=declaration type=MeasurementConstraint {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field kind property=kind
+        field lower child=lower
+        field upper child=upper
+        field validity child=validity
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        children lower max-occurs=1
+        children upper max-occurs=1
+        children validity max-occurs=1
+    }
+
+    node lab-context root=#true role=declaration type=LabContext {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field concept property=concept
+        field site property=site
+        field specimen property=specimen
+        field method property=method
+        field instrument property=instrument
+        field unit child=unit
+        field validity child=validity
+        children unit max-occurs=1
+        children validity max-occurs=1
+    }
+
+    // ---- Drugs ---------------------------------------------------------------
+    //
+    //   drug-product "19980529000140" dose-form="EDQM:10221000" {
+    //       ingredients "ATC:N05AX08"
+    //   }
+
+    node drug-product root=#true role=declaration type=DrugProduct {
+        parents group=containers
+        identity {
+            domain drug-products
+            compose qualified-name system code
+        }
+        field code arg=0
+        field system context=namespace
+        field release context=system-release
+        field manufacturer property=manufacturer
+        field product-status property=product-status
+        field dose-form property=dose-form
+        field ingredients {
+            from {
+                child ingredients {
+                    args
+                }
+            }
+        }
+        children ingredients max-occurs=1
+    }
+
+    //   drug-strength "5.risperidone" product="NPL:19980529000140" ingredient="ATC:N05AX08" {
+    //       amount 1 { unit "mg" namespace="ucum" }
+    //   }
+    node drug-strength root=#true role=declaration type=DrugStrength {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field product property=product
+        field ingredient property=ingredient
+        field amount child=amount
+        field numerator child=numerator
+        field denominator child=denominator
+        field validity child=validity
+        children amount max-occurs=1
+        children numerator max-occurs=1
+        children denominator max-occurs=1
+        children validity max-occurs=1
+    }
+
+    //   concept "5" {
+    //       drug-package product="NPL:19980529000140"
+    //   }
+    //   concept "200022" {
+    //       drug-package article-type="stomi"
+    //   }
+    //
+    // A package nests under the concept it packages; its `code`
+    // derives from the enclosing concept's code argument and is not
+    // spelled in data. Root placement stays admitted; a root package
+    // that spells no code fails to bind one. The parent is `concept`
+    // alone (not the containers group): the derived code reads the
+    // enclosing concept, and no container binds a `code` field.
+    node drug-package root=#true role=declaration type=DrugPackage {
+        parents concept
+        identity {
+            domain drug-packages
+            compose qualified-name system code
+        }
+        field code arg=0 {
+            from {
+                parent code
+            }
+        }
+        field system context=namespace
+        field release context=system-release
+        field product property=product
+        field article-type property=article-type
+        field marketing-status property=marketing-status
+        field quantity child=quantity
+        field container property=container
+        field comments {
+            from {
+                children comment
+            }
+        }
+        children quantity max-occurs=1
+    }
+}

@@ -1,0 +1,343 @@
+// Amendments: exact record occurrences changed by assertion
+// (a ResourceRef subject and a ResourceScope basis).
+//
+// An amendment is an assertion of one collection version that changes
+// one exact record occurrence it does not own: a local display name on a
+// public code, a corrected field of an upstream definition. The subject
+// keeps its own authority; vocabmod applies the selected amendments to
+// produce an effective view and never rewrites the subject.
+//
+// One producer writes amendments today. Everything in the tree is
+// importer-generated; the source's corrections of upstream crosswalks
+// (the Socialstyrelsen specialty codes, DISPOSITION) stay mapping claims with notes, not amendments.
+//
+// The bulk form stays one amendment per subject, and nothing repeats per
+// record that the file can say once: the subject's system and release
+// fall back to the file's `context { system … }`, the author to
+// `defaults { amendments { author … } }`, and the shared rationale to
+// the collection's `purpose` (a vocabmod rule; per-amendment `rationale`
+// is optional). One amendment is then six lines:
+//
+//   amend "A000.sv-name" {
+//       subject kind=concept code="A000"
+//       changes {
+//           set-designation name "sv" "Kolera orsakad av Vibrio cholerae 01, biovar cholerae" context="icd-10-se"
+//       }
+//   }
+//
+// `basis` is the digest of the subject revision the amendment was
+// written against. Extension: it is optional. An amendment without one
+// is pinned by `vocabmod lock`, which records the subject's revision in
+// the lock; after that a changed subject is a basis mismatch exactly as
+// for an authored basis. The importer never computes digests.
+// A hand author may still write one, copied from `vocabmod inspect`.
+schema vocab version="0" {
+    types {
+        enum ResourceKind {
+            member module
+            member package
+            member system
+            member release
+            member collection
+            member concept
+            member measurement-definition
+            member drug-product
+            member drug-package
+            member omop-concept
+            member assertion
+            member definition
+        }
+
+        // A ResourceRef: no arguments, a required `kind`, and
+        // exactly the identity components of that kind (the cases below).
+        union ResourceRef {
+            variant module ModuleResource
+            variant package PackageResource
+            variant system SystemResource
+            variant release ReleaseResource
+            variant collection DefinitionResource
+            variant concept FacetResource
+            variant measurement-definition FacetResource
+            variant drug-product FacetResource
+            variant drug-package FacetResource
+            variant omop-concept OmopResource
+            variant assertion AssertionResource
+            variant definition DefinitionResource
+        }
+        object ModuleResource {
+            field kind ResourceKind
+            field module String
+            field version Version
+        }
+        object PackageResource {
+            field kind ResourceKind
+            field module String
+            field version Version
+            field package String
+        }
+        object SystemResource {
+            field kind ResourceKind
+            field system SystemId
+        }
+        object ReleaseResource {
+            field kind ResourceKind
+            field system SystemId
+            field release Version
+        }
+        object FacetResource {
+            field kind ResourceKind
+            field system SystemId
+            field release Version
+            field code Code
+            field include-descendants "optional<Bool>"
+        }
+        object OmopResource {
+            field kind ResourceKind
+            field snapshot Version
+            field concept-id U64
+        }
+        object AssertionResource {
+            field kind ResourceKind
+            field collection GlobalId
+            field version Version
+            field id String
+        }
+        object DefinitionResource {
+            field kind ResourceKind
+            field id String
+            field version "optional<Version>"
+        }
+
+        // An AmendmentOperation is one of a nonempty ordered sequence of
+        // exactly these five operations. Paths come from the vocab
+        // catalog; vocabmod rejects an unknown or protected path
+        // (identity, ownership, source provenance, endpoints, predicate).
+        union AmendmentOperation {
+            variant set SetOperation
+            variant remove RemoveOperation
+            variant set-field SetFieldOperation
+            variant set-designation SetDesignationOperation
+            variant remove-designation RemoveDesignationOperation
+        }
+        // `set "status" "inactive"`. The value is any scalar; kdlith does
+        // not type it by the field the path names.
+        object SetOperation {
+            field path String
+            field value ValueExpr
+            field id "optional<String>"
+        }
+        object RemoveOperation {
+            field path String
+            field id "optional<String>"
+        }
+        // `set-field "validity" { validity ... }`: one structured value
+        // in the exact binding of the field the path names.
+        object SetFieldOperation {
+            field path String
+            field id "optional<String>"
+        }
+        object SetDesignationOperation {
+            field kind DesignationKind
+            field locale Locale
+            field text String
+            field context "optional<String>"
+            field id "optional<String>"
+        }
+        object RemoveDesignationOperation {
+            field designation String
+            field id "optional<String>"
+        }
+
+        object Amendment {
+            field collection GlobalId
+            field collection-version Version
+            field id AssertionId
+            field subject ResourceRef
+            field basis "optional<Digest>"
+            field changes "list<AmendmentOperation>"
+            field rationale "list<Text>"
+            field author AgentRef
+            field scope "list<ResourceRef>"
+            field evidence "optional<list<EvidenceRef>>"
+            field depends-on "optional<list<AssertionRef>>"
+            field supersedes "optional<AssertionRef>"
+        }
+    }
+
+    //   amend "A083.display" basis="blake3:…" author="ludvig-alden" {
+    //       subject kind=concept system="ICD_10" release="2016" code="A083"
+    //       changes {
+    //           set-designation name "sv" "Virusenterit" context="clinical-display"
+    //       }
+    //       rationale "en" "Short display name used in Swedish records."
+    //   }
+    //
+    // The `scope` (required) defaults to the subject when absent;
+    // vocabmod fills it, so a one-subject amendment omits it.
+    node amend root=#true role=declaration type=Amendment {
+        parents group=containers
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
+        field id arg=0
+        field collection context=collection
+        field collection-version context=collection-version
+        field basis property=basis
+        field author {
+            from {
+                property author
+                context amendment-author policy=fallback
+            }
+        }
+        field supersedes property=supersedes
+        field subject child=subject
+        field changes {
+            from {
+                child changes {
+                    children set
+                    children remove
+                    children set-field
+                    children set-designation
+                    children remove-designation
+                }
+            }
+        }
+        field rationale {
+            from {
+                children rationale
+            }
+        }
+        field scope {
+            from {
+                child scope {
+                    children item
+                }
+            }
+        }
+        field evidence {
+            from {
+                child evidence {
+                    args
+                }
+            }
+        }
+        field depends-on {
+            from {
+                child depends-on {
+                    args
+                }
+            }
+        }
+        children subject min-occurs=1 max-occurs=1
+        children changes min-occurs=1 max-occurs=1
+        children scope max-occurs=1
+        children evidence max-occurs=1
+        children depends-on max-occurs=1
+    }
+
+    // `system` and `release` fall back to the file's context, so a bulk
+    // file of concept amendments names only the code.
+    node subject parent=amend {
+        field kind ResourceKind property=kind
+        field module "optional<String>" property=module
+        field package "optional<String>" property=package
+        field system "optional<SystemId>" {
+            from {
+                property system
+                context namespace policy=fallback
+            }
+        }
+        field release "optional<Version>" {
+            from {
+                property release
+                context system-release policy=fallback
+            }
+        }
+        field code "optional<Code>" property=code
+        field collection "optional<GlobalId>" property=collection
+        field version "optional<Version>" property=version
+        field id "optional<String>" property=id
+        field snapshot "optional<Version>" property=snapshot
+        field concept-id "optional<U64>" property=concept-id
+        cases {
+            case property=kind equals=module type=ModuleResource
+            case property=kind equals=package type=PackageResource
+            case property=kind equals=system type=SystemResource
+            case property=kind equals=release type=ReleaseResource
+            case property=kind equals=collection type=DefinitionResource
+            case property=kind equals=concept type=FacetResource
+            case property=kind equals=measurement-definition type=FacetResource
+            case property=kind equals=drug-product type=FacetResource
+            case property=kind equals=drug-package type=FacetResource
+            case property=kind equals=omop-concept type=OmopResource
+            case property=kind equals=assertion type=AssertionResource
+            case property=kind equals=definition type=DefinitionResource
+        }
+    }
+    node item parent=scope {
+        field kind ResourceKind property=kind
+        field module "optional<String>" property=module
+        field package "optional<String>" property=package
+        field system "optional<SystemId>" property=system
+        field release "optional<Version>" property=release
+        field code "optional<Code>" property=code
+        field collection "optional<GlobalId>" property=collection
+        field version "optional<Version>" property=version
+        field id "optional<String>" property=id
+        field snapshot "optional<Version>" property=snapshot
+        field concept-id "optional<U64>" property=concept-id
+        field include-descendants "optional<Bool>" property=include-descendants
+        cases {
+            case property=kind equals=module type=ModuleResource
+            case property=kind equals=package type=PackageResource
+            case property=kind equals=system type=SystemResource
+            case property=kind equals=release type=ReleaseResource
+            case property=kind equals=collection type=DefinitionResource
+            case property=kind equals=concept type=FacetResource
+            case property=kind equals=measurement-definition type=FacetResource
+            case property=kind equals=drug-product type=FacetResource
+            case property=kind equals=drug-package type=FacetResource
+            case property=kind equals=omop-concept type=OmopResource
+            case property=kind equals=assertion type=AssertionResource
+            case property=kind equals=definition type=DefinitionResource
+        }
+    }
+    node scope parent=amend {
+        children item min-occurs=1
+    }
+    node changes parent=amend {
+        children set
+        children remove
+        children set-field
+        children set-designation
+        children remove-designation
+    }
+
+    node set type=SetOperation parent=changes {
+        field path arg=0
+        field value arg=1
+        field id property=id
+    }
+    node remove type=RemoveOperation parent=changes {
+        field path arg=0
+        field id property=id
+    }
+    node set-field type=SetFieldOperation parent=changes {
+        field path arg=0
+        field id property=id
+        value-from-path field=path
+    }
+    //   set-designation name "sv" "Nässjö kommun" context="local-display"
+    node set-designation type=SetDesignationOperation parent=changes {
+        field kind arg=0
+        field locale arg=1
+        field text arg=2
+        field context property=context
+        field id property=id
+    }
+    node remove-designation type=RemoveDesignationOperation parent=changes {
+        field designation arg=0
+        field id property=id
+    }
+}

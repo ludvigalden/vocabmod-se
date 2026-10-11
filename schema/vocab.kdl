@@ -1,0 +1,128 @@
+// The vocab schema definition: the data model of vocabmod's authored
+// terminology tree.
+//
+// Profiles, chosen by path relative to the repository root:
+//
+//   definitions   */definitions.kdl: a system's one entry. It declares
+//                 the system, its releases, categories, and
+//                 collections; each collection nests the defaults and
+//                 the import of the mapping files it owns (projected
+//                 through `project "defaults"`), and the entry root
+//                 imports the concepts tree. What must be imported to
+//                 resolve a system is visible inside its definitions
+//                 entry, so the former claims.kdl second entry is gone
+//                 and no claims profile remains: mapping files bind
+//                 under the default vocab profile like every other
+//                 non-entry document. A collection or the registry may
+//                 also state an expected external import: a pattern
+//                 import matching no document yet (allow-empty) that
+//                 names where external content would land; its import
+//                 item then streams without targets, so an un-imported
+//                 external source stays machine-visible.
+//   vocab         vocab/**: the published tree. Systems, releases,
+//                 concepts, and claims; nothing licensed or private.
+//   local      local/**: release sources and usage datasets that point
+//              at private copies through host aliases. Never committed.
+//   figure     assets/figures/**: figure configurations, committed
+//              beside the tree. They may read local inputs, so a figure
+//              reading admits both. Rendered figures go to assets/**.
+//   omop       vocab/_registry/omop/**: the OMOP constants registry the
+//              export reads (translation tables, relationship rows,
+//              validity defaults, id bands).
+//
+// Contributing documents:
+//
+//   common.kdl       scalars, enums, value objects, codecs, references
+//   structure.kdl    module, package, scope, import, context, defaults
+//   definitions.kdl  registries, systems, releases, concepts, relationships
+//   claims.kdl       collections, mappings, assessments, flags, value sets
+//   facets.kdl       lab and drug facets: measurements, strengths, packages
+//   amendments.kdl   amendments of records owned elsewhere
+//   local.kdl        release sources, datasets, usage (local profile)
+//   figures.kdl      figure configurations (figure profile)
+//   omop.kdl         the OMOP constants registry (omop profile)
+schema vocab version="0" {
+    import "common.kdl"
+    import "structure.kdl"
+    import "definitions.kdl"
+    import "claims.kdl"
+    import "facets.kdl"
+    import "amendments.kdl"
+    import "local.kdl"
+    import "figures.kdl"
+    import "omop.kdl"
+
+    locations {
+        patterns star=#true doublestar=#true
+    }
+
+    // Everything a module, package, or scope body admits, gathered from
+    // the contributing documents. One group per contributor because a
+    // node's argument list cannot wrap.
+    group body-control import imports context defaults clear-defaults package scope
+    group body-definitions agent license access-policy system release artifact predicate category routing-domain property-definition concept
+    group body-claims relationship designation property-value mapping assessment flag evidence review
+    group body-collections collection score-scheme dimension translation-table value-set member omop-snapshot omop-binding custom-id-range
+    group body-facets measurement-definition measurement-constraint lab-context drug-product drug-strength
+    group body-amendments amend
+
+    // The definitions profile is declared before `vocab` so its
+    // path-suffix rule wins the first-match order: selection is
+    // resolved once per entry document, first matching declared rule.
+    //
+    // Both locations rules allow an empty pattern match: a nested
+    // pattern import may state an expected external source (an Athena
+    // table, a licensed release) that has brought no document yet. The
+    // import item then streams without targets, which is how the gap
+    // stays machine-visible; a literal import still fails when its
+    // document is missing.
+    profile definitions {
+        match {
+            path-suffix "definitions.kdl"
+        }
+        roots {
+            allow ImportRequest
+            allow ContextBlock
+            allow System
+            allow Release
+            allow Category
+            allow Collection
+            allow DefaultsBlock
+            allow Concept
+            allow MeasurementDefinition
+            allow DrugPackage
+            allow Mapping
+            allow Assessment
+            allow Flag
+            allow OmopBinding
+        }
+        locations allow-empty=#true {
+            patterns star=#true doublestar=#true
+        }
+    }
+    // The omop profile is declared before `vocab`: its documents sit
+    // under the vocab tree, and selection takes the first matching rule.
+    profile omop extends=vocab {
+        match {
+            path-prefix "vocab/_registry/omop"
+        }
+    }
+    profile vocab default=#true {
+        match {
+            path-prefix "vocab"
+        }
+        locations allow-empty=#true {
+            patterns star=#true doublestar=#true
+        }
+    }
+    profile local extends=vocab {
+        match {
+            path-prefix "local"
+        }
+    }
+    profile figure extends=local {
+        match {
+            path-prefix "assets/figures"
+        }
+    }
+}

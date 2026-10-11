@@ -1,0 +1,168 @@
+// Local, never-published inputs: private copies of
+// licensed releases used to verify referenced codes, and usage datasets
+// used for figure generation.
+//
+// Documents of the `local` profile live outside the published tree: in
+// the repository's ignored `local/` directory, or anywhere a host alias
+// reaches. Every location they name is aliased (`$licensed/...`,
+// `$usage/...`), so even a local document holds no machine path; the
+// host maps each alias with `--alias NAME=DIR`. Nothing in the published
+// tree imports a local document, and nothing fails when none is read:
+// verification and usage-weighted figures then report the input as
+// unavailable (the capability is marked `unavailable`), never as absent codes.
+schema vocab version="0" {
+    types {
+        enum ReleaseFormat {
+            member rf2-snapshot description="SNOMED CT RF2 snapshot directory"
+            member athena-csv description="OHDSI Athena vocabulary download (CONCEPT.csv and companions)"
+            member tdl-export description="NDJSON written by `tdl export` from a TDL corpus"
+            member code-list description="One code per line, UTF-8"
+        }
+        enum VerifyMode {
+            member presence description="Check that every referenced code exists in the release"
+            member presence-and-status description="Also report referenced codes the release marks inactive"
+        }
+        enum CountingUnit {
+            member events description="Recorded events (rows), patient-frequency weighting"
+            member distinct-patients
+            member distinct-encounters
+        }
+        enum UsageFormat {
+            member ndjson description="One object per line: system, code, and one key per declared count"
+            member csv description="Header row naming system, code, and one column per declared count"
+        }
+
+        // A local copy of one release of a system, usually reference-only.
+        // It supplies the `definitions` capability for verification and
+        // the total code count T of a by-code coverage figure; its content
+        // is never copied into the tree.
+        object ReleaseSource {
+            field id GlobalId
+            field release ReleaseRef
+            field format ReleaseFormat
+            field location AliasedLocation
+            field edition "optional<String>"
+            field module-id "optional<String>"
+            field digest "optional<Digest>"
+            field verify "optional<VerifyMode>"
+            // Restricts the codes counted toward T, for a release that
+            // ships several systems (an Athena download): its vocabulary
+            // id, e.g. "SNOMED CT".
+            field vocabulary-id "optional<String>"
+        }
+
+        // The table column holding the count; the entry key when absent.
+        object Count {
+            field unit CountingUnit
+            field column "optional<String>"
+        }
+        // A usage dataset. Counts
+        // stay in the external table; this record says what they mean.
+        object Dataset {
+            field id GlobalId
+            field title "list<Text>"
+            field site "optional<String>"
+            field period-from "optional<Date>"
+            field period-to "optional<Date>"
+            field format UsageFormat
+            field location AliasedLocation
+            field counts "ordered-map<String, Count>"
+            // Disclosure threshold: codes below it are reported only as a
+            // band, never with their count (the reference figure uses 5).
+            field suppress-below "optional<U64>"
+            field suppress-unit "optional<CountingUnit>"
+            field digest "optional<Digest>"
+        }
+        // One authored usage observation, for small
+        // datasets written by hand. Large datasets use the table.
+        object Usage {
+            field dataset GlobalId
+            field concept EndpointRef
+            field count U64
+            field unit CountingUnit
+        }
+    }
+
+    //   release-source "local:snomed-se-20251130" release="SNOMED_CT@20251130" \
+    //       format=rf2-snapshot location="$licensed/SnomedCT_SE1000052_20251130" \
+    //       edition="SE1000052" verify=presence-and-status
+    node release-source role=declaration type=ReleaseSource profile=local {
+        identity {
+            domain release-sources
+            compose qualified-name id
+        }
+        field id arg=0
+        field release property=release
+        field format property=format
+        field location property=location
+        field edition property=edition
+        field module-id property=module-id
+        field digest property=digest
+        field verify property=verify
+        field vocabulary-id property=vocabulary-id
+    }
+
+    //   dataset "local:ed-usage" format=ndjson location="$usage/ed-codes.ndjson" \
+    //       suppress-below=5 suppress-unit=distinct-patients {
+    //       title "en" "Emergency department, recorded codes"
+    //       period from="2019-01-01" to="2024-01-01"
+    //       count "events" unit=events
+    //       count "patients" unit=distinct-patients
+    //   }
+    node dataset role=declaration type=Dataset profile=local {
+        identity {
+            domain datasets
+            compose qualified-name id
+        }
+        field id arg=0
+        field site property=site
+        field format property=format
+        field location property=location
+        field suppress-below property=suppress-below
+        field suppress-unit property=suppress-unit
+        field digest property=digest
+        field title {
+            from {
+                children title
+            }
+        }
+        field period-from {
+            from {
+                child period {
+                    property from
+                }
+            }
+        }
+        field period-to {
+            from {
+                child period {
+                    property to
+                }
+            }
+        }
+        field counts {
+            from {
+                entries count key="arg(0)" value=Count
+            }
+            duplicate-keys reject
+        }
+        children title min-occurs=1
+        children period max-occurs=1
+        children count min-occurs=1
+    }
+    node title type=Text parent=dataset {
+        field locale arg=0
+        field text arg=1
+    }
+    node count type=Count parent=dataset {
+        field unit property=unit
+        field column property=column
+    }
+
+    node usage role=record type=Usage profile=local {
+        field dataset property=dataset
+        field concept property=concept
+        field count arg=0
+        field unit property=unit
+    }
+}

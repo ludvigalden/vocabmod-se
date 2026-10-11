@@ -1,0 +1,852 @@
+// Figure configurations: manually authored documents, kept under
+// assets/figures/, that
+// select claims, concepts, and local datasets and describe the coverage
+// and composition figures vocabmod renders to pdf, svg, and png. The
+// models: vocabulary coverage as a two-track funnel per source
+// vocabulary, and composition as one 100% stacked bar by provenance.
+//
+// Why a profile of the vocab schema and not a sibling schema: every
+// selector names vocab declarations (systems, collections, value sets,
+// categories, datasets, release sources), and those references must link
+// in the same reading as the declarations they name. A sibling schema
+// could only hold strings. The `figure` profile extends `local`, which
+// extends `vocab`, so one reading admits the published tree, the local
+// inputs, and the figure documents; the published tree never admits a
+// figure node.
+//
+// A figure document states what to count and how to draw it; vocabmod
+// computes every number from the definitions, the claims, the local
+// release sources (denominators), and the datasets (weights). No value
+// is authored here, so a figure never goes stale against its data.
+schema vocab version="0" {
+    types {
+        enum FigureFormat {
+            member pdf
+            member svg
+            member png
+        }
+        enum FigureKind {
+            member coverage-funnel description="Per row: by-code and by-weight tracks, nested stages, tiers, presence bands"
+            member composition-bar description="One 100% stacked bar of a claim population by category, with group braces"
+        }
+        // The denominator of a by-code track.
+        enum Denominator {
+            member release description="T: every code of the row's source release, from a complete definitions capability or a release source"
+            member present description="P: codes the dataset records at all"
+            member visible description="V: codes the dataset records at or above the visibility threshold"
+            member defined description="Codes the tree defines under the row's selection"
+        }
+        enum Weighting {
+            member by-code
+            member by-count
+        }
+        enum Unit {
+            member mappings description="Count claims (rows of the assembled map)"
+            member sources description="Count distinct source concepts"
+        }
+        enum NumberStyle {
+            member percent
+            member count
+            member percent-and-count
+        }
+        enum ClaimField {
+            member collection
+            member source-system
+            member target-system
+            member relationship
+            member preference
+            member assessment-method
+            member imported-label
+            member provenance
+        }
+
+        // ---- Selectors ---------------------------------------------------
+        //
+        // A selector is a boolean tree over one population: concepts for a
+        // row's population, claims for a stage or a category. Leaves
+        // compare one field with one or more literal values; `all`, `any`,
+        // and `not` combine. Unknown values never match.
+        union Selector {
+            variant all SelectAll
+            variant any SelectAny
+            variant not SelectNot
+            variant system SelectSystem
+            variant under SelectUnder
+            variant code-prefix SelectCodePrefix
+            variant class SelectClass
+            variant member-of SelectMemberOf
+            variant collection SelectCollection
+            variant target SelectTarget
+            variant target-standard SelectTargetStandard
+            variant relationship SelectRelationship
+            variant preference SelectPreference
+            variant min-confidence SelectMinConfidence
+            variant method SelectMethod
+            variant imported SelectImported
+            variant target-member-of SelectMemberOf
+        }
+        object SelectAll {
+            field members "list<Selector>"
+        }
+        object SelectAny {
+            field members "list<Selector>"
+        }
+        object SelectNot {
+            field members "list<Selector>"
+        }
+        object SelectSystem {
+            field system SystemRef
+        }
+        // Descendants of a concept by its parent links, itself included.
+        object SelectUnder {
+            field concept ConceptRef
+        }
+        object SelectCodePrefix {
+            field prefixes "list<String>"
+        }
+        object SelectClass {
+            field classes "list<CategoryRef>"
+        }
+        object SelectMemberOf {
+            field set ValueSetRef
+        }
+        object SelectCollection {
+            field collections "list<CollectionRef>"
+        }
+        // A claim whose target is in a system; with `chain` the claim may
+        // reach it through further mappings under the figure's policy.
+        object SelectTarget {
+            field system SystemRef
+            field chain "optional<Bool>"
+        }
+        // A claim whose target resolves in the local Athena release to an
+        // OMOP-standard concept — by id or by code, directly or through
+        // one valid `Maps to`. Needs the local
+        // Athena release: a run without one skips the numbers that need
+        // this leaf and names the missing input. On which Athena
+        // vocabulary each target system resolves against, see the
+        // computation's standardness resolver.
+        object SelectTargetStandard {
+        }
+        object SelectRelationship {
+            field relationships "list<SemanticRelationship>"
+        }
+        object SelectPreference {
+            field preference Preference
+        }
+        object SelectMinConfidence {
+            field score Decimal
+            field scheme ScoreSchemeRef
+        }
+        object SelectMethod {
+            field methods "list<String>"
+        }
+        object SelectImported {
+            field table TranslationTableRef
+            field labels "list<String>"
+        }
+
+        // ---- Figure parts --------------------------------------------------
+
+        object Output {
+            field path String
+            field formats "list<FigureFormat>"
+            field width "optional<String>"
+            field dpi "optional<U64>"
+        }
+        object Style {
+            field palette "optional<String>"
+            field font "optional<String>"
+            field preamble "optional<String>"
+        }
+        // A reach stage (fig. 4-2: "Reaches OMOP std. concept", "In the
+        // terminology server's standard-concept vocabulary"). A source
+        // code reaches the stage when a claim matching `claims` exists.
+        // Stages nest: each later stage is drawn over the earlier one.
+        object Stage {
+            field label "list<Text>"
+            field claims Selector
+            field color String
+        }
+        // A tier relaxes the stage claims: strict is drawn solid, a weaker
+        // tier dotted where it adds reach.
+        object Tier {
+            field label "list<Text>"
+            field claims Selector
+            field line "optional<String>"
+        }
+        object Track {
+            field weighting Weighting
+            field label "list<Text>"
+            field denominator "optional<Denominator>"
+            field count "optional<String>"
+            field color String
+            field numbers "optional<NumberStyle>"
+            constraints {
+                exactly-one-field denominator count
+            }
+        }
+        object Bands {
+            field threshold U64
+            field unit CountingUnit
+            field present-label "list<Text>"
+            field below-label "list<Text>"
+            field never-label "list<Text>"
+        }
+        // One row: a source population and the target it is measured
+        // against. The population is concepts when the source system is
+        // published, codes seen in the dataset when it is not.
+        object Row {
+            field label "list<Text>"
+            field population Selector
+            field target SystemRef
+            field denominator "optional<Denominator>"
+            field release-source "optional<GlobalId>"
+            field note "list<Text>"
+        }
+        object Section {
+            field label "list<Text>"
+            field rows "ordered-map<String, Row>"
+        }
+
+        // A segment of a composition bar. The first matching segment in
+        // order wins; a claim matching none is counted as `other` and the
+        // figure reports it, so segments need not be exhaustive but their
+        // misses are never hidden.
+        object Segment {
+            field label "list<Text>"
+            field description "list<Text>"
+            field claims Selector
+            field color String
+        }
+        object Brace {
+            field label "list<Text>"
+            field members "list<String>"
+        }
+
+        object Figure {
+            field id String
+            field kind FigureKind
+            field title "list<Text>"
+            field caption "list<Text>"
+            field output Output
+            field style "optional<Style>"
+            field dataset "optional<GlobalId>"
+            field as-of "optional<Date>"
+            field locale "optional<Locale>"
+            // coverage-funnel
+            field tracks "list<Track>"
+            field stages "ordered-map<String, Stage>"
+            field tiers "ordered-map<String, Tier>"
+            field bands "optional<Bands>"
+            field sections "ordered-map<String, Section>"
+            // composition-bar
+            field unit "optional<Unit>"
+            field population "optional<Selector>"
+            field segments "ordered-map<String, Segment>"
+            field braces "ordered-map<String, Brace>"
+        }
+    }
+
+    // ---- The figure root -------------------------------------------------
+    //
+    //   figure "vocab-coverage" kind=coverage-funnel dataset="local:ed-usage" {
+    //       title "en" "Vocabulary coverage"
+    //       output "assets/figures/dist/vocab-coverage" formats="pdf svg png"
+    //       track by-code denominator=release color="red" { label "en" "By unique code" }
+    //       stage "standard" color="red" { ... }
+    //       section "swedish" { row "icd10se" { ... } }
+    //   }
+    //
+    // The two kinds share one type here; with cases on `kind` (today's
+    // case dispatch) a funnel would refuse `segments` and a bar
+    // `sections`; kdlith offers no way to do that without repeating every
+    // common field binding per case.
+    node figure role=declaration type=Figure profile=figure {
+        identity {
+            domain figures
+            compose qualified-name id
+        }
+        field id arg=0
+        field kind property=kind
+        field dataset property=dataset
+        field as-of property=as-of
+        field locale property=locale
+        field unit property=unit
+        field title {
+            from {
+                children title
+            }
+        }
+        field caption {
+            from {
+                children caption
+            }
+        }
+        field output child=output
+        field style child=style
+        field tracks {
+            from {
+                children track
+            }
+        }
+        field stages {
+            from {
+                entries stage key="arg(0)" value=Stage
+            }
+            duplicate-keys reject
+        }
+        field tiers {
+            from {
+                entries tier key="arg(0)" value=Tier
+            }
+            duplicate-keys reject
+        }
+        field bands child=bands
+        field sections {
+            from {
+                entries section key="arg(0)" value=Section
+            }
+            duplicate-keys reject
+        }
+        field population {
+            from {
+                child population {
+                    child all
+                    child any
+                    child not
+                    child system
+                    child under
+                    child code-prefix
+                    child class
+                    child member-of
+                    child collection
+                    child target
+                    child target-standard
+                    child relationship
+                    child preference
+                    child min-confidence
+                    child method
+                    child imported
+                    child target-member-of
+                }
+            }
+            collision reject
+        }
+        field segments {
+            from {
+                entries segment key="arg(0)" value=Segment
+            }
+            duplicate-keys reject
+        }
+        field braces {
+            from {
+                entries brace key="arg(0)" value=Brace
+            }
+            duplicate-keys reject
+        }
+        children title min-occurs=1
+        children output min-occurs=1 max-occurs=1
+        children style max-occurs=1
+        children bands max-occurs=1
+        children population max-occurs=1
+    }
+
+    node title type=Text {
+        parents figure stage tier track row section segment brace
+        field locale arg=0
+        field text arg=1
+    }
+    node caption type=Text parent=figure {
+        field locale arg=0
+        field text arg=1
+    }
+    node note type=Text parent=row {
+        field locale arg=0
+        field text arg=1
+    }
+
+    //   output "assets/figures/dist/vocab-coverage" formats="pdf svg png" width="16cm"
+    node output type=Output parent=figure {
+        field path arg=0
+        field formats {
+            from {
+                child formats {
+                    args
+                }
+            }
+        }
+        field width property=width
+        field dpi property=dpi
+        children formats min-occurs=1 max-occurs=1
+    }
+    node style type=Style parent=figure {
+        field palette property=palette
+        field font property=font
+        field preamble property=preamble
+    }
+
+    node track type=Track parent=figure {
+        field weighting arg=0
+        field denominator property=denominator
+        field count property=count
+        field color property=color
+        field numbers property=numbers
+        field label {
+            from {
+                children title
+            }
+        }
+        children title min-occurs=1
+    }
+    node stage type=Stage parent=figure {
+        field color property=color
+        field label {
+            from {
+                children title
+            }
+        }
+        field claims {
+            from {
+                child claims {
+                    child all
+                    child any
+                    child not
+                    child system
+                    child under
+                    child code-prefix
+                    child class
+                    child member-of
+                    child collection
+                    child target
+                    child target-standard
+                    child relationship
+                    child preference
+                    child min-confidence
+                    child method
+                    child imported
+                    child target-member-of
+                }
+            }
+            collision reject
+        }
+        children title min-occurs=1
+        children claims min-occurs=1 max-occurs=1
+    }
+    node tier type=Tier parent=figure {
+        field line property=line
+        field label {
+            from {
+                children title
+            }
+        }
+        field claims {
+            from {
+                child claims {
+                    child all
+                    child any
+                    child not
+                    child system
+                    child under
+                    child code-prefix
+                    child class
+                    child member-of
+                    child collection
+                    child target
+                    child target-standard
+                    child relationship
+                    child preference
+                    child min-confidence
+                    child method
+                    child imported
+                    child target-member-of
+                }
+            }
+            collision reject
+        }
+        children title min-occurs=1
+        children claims min-occurs=1 max-occurs=1
+    }
+    node bands type=Bands parent=figure {
+        field threshold property=threshold
+        field unit property=unit
+        field present-label {
+            from {
+                children present
+            }
+        }
+        field below-label {
+            from {
+                children below
+            }
+        }
+        field never-label {
+            from {
+                children never
+            }
+        }
+    }
+    // `present "en" "Present in corpus"`, likewise `below` and `never`.
+    node present type=Text parent=bands {
+        field locale arg=0
+        field text arg=1
+    }
+    node below type=Text parent=bands {
+        field locale arg=0
+        field text arg=1
+    }
+    node never type=Text parent=bands {
+        field locale arg=0
+        field text arg=1
+    }
+
+    node section type=Section parent=figure {
+        field label {
+            from {
+                children title
+            }
+        }
+        field rows {
+            from {
+                entries row key="arg(0)" value=Row
+            }
+            duplicate-keys reject
+        }
+        children title min-occurs=1
+        children row min-occurs=1
+    }
+    node row type=Row parent=section {
+        field target property=target
+        field denominator property=denominator
+        field release-source property=release-source
+        field label {
+            from {
+                children title
+            }
+        }
+        field note {
+            from {
+                children note
+            }
+        }
+        field population {
+            from {
+                child population {
+                    child all
+                    child any
+                    child not
+                    child system
+                    child under
+                    child code-prefix
+                    child class
+                    child member-of
+                    child collection
+                    child target
+                    child target-standard
+                    child relationship
+                    child preference
+                    child min-confidence
+                    child method
+                    child imported
+                    child target-member-of
+                }
+            }
+            collision reject
+        }
+        children title min-occurs=1
+        children population min-occurs=1 max-occurs=1
+    }
+
+    node segment type=Segment parent=figure {
+        field color property=color
+        field label {
+            from {
+                children title
+            }
+        }
+        field description {
+            from {
+                children description
+            }
+        }
+        field claims {
+            from {
+                child claims {
+                    child all
+                    child any
+                    child not
+                    child system
+                    child under
+                    child code-prefix
+                    child class
+                    child member-of
+                    child collection
+                    child target
+                    child target-standard
+                    child relationship
+                    child preference
+                    child min-confidence
+                    child method
+                    child imported
+                    child target-member-of
+                }
+            }
+            collision reject
+        }
+        children title min-occurs=1
+        children claims min-occurs=1 max-occurs=1
+    }
+    node description type=Text parent=segment {
+        field locale arg=0
+        field text arg=1
+    }
+    node brace type=Brace parent=figure {
+        field members {
+            from {
+                child members {
+                    args
+                }
+            }
+        }
+        field label {
+            from {
+                children title
+            }
+        }
+        children title min-occurs=1
+        children members min-occurs=1 max-occurs=1
+    }
+
+    // ---- Selector spellings ----------------------------------------------
+    //
+    // A selector binds from the node that spells its variant, so a
+    // wrapper (`population`, `claims`) or a combinator lists every
+    // variant spelling as a source.
+    //
+    //   claims {
+    //       all {
+    //           target "OMOP"
+    //           preference "primary"
+    //           not {
+    //               relationship "not_related_to" "partial_overlap"
+    //           }
+    //       }
+    //   }
+
+    group selector-hosts population claims all any not
+
+    node population parent=row {
+        children all max-occurs=1
+        children any max-occurs=1
+        children not max-occurs=1
+        children system max-occurs=1
+        children under max-occurs=1
+        children code-prefix max-occurs=1
+        children class max-occurs=1
+        children member-of max-occurs=1
+        children collection max-occurs=1
+        children target max-occurs=1
+        children target-standard max-occurs=1
+        children relationship max-occurs=1
+        children preference max-occurs=1
+        children min-confidence max-occurs=1
+        children method max-occurs=1
+        children imported max-occurs=1
+        children target-member-of max-occurs=1
+    }
+    node population parent=figure {
+        children all max-occurs=1
+        children any max-occurs=1
+        children not max-occurs=1
+        children system max-occurs=1
+        children under max-occurs=1
+        children code-prefix max-occurs=1
+        children class max-occurs=1
+        children member-of max-occurs=1
+        children collection max-occurs=1
+        children target max-occurs=1
+        children target-standard max-occurs=1
+        children relationship max-occurs=1
+        children preference max-occurs=1
+        children min-confidence max-occurs=1
+        children method max-occurs=1
+        children imported max-occurs=1
+        children target-member-of max-occurs=1
+    }
+    node claims {
+        parents stage tier segment
+        children all max-occurs=1
+        children any max-occurs=1
+        children not max-occurs=1
+        children system max-occurs=1
+        children under max-occurs=1
+        children code-prefix max-occurs=1
+        children class max-occurs=1
+        children member-of max-occurs=1
+        children collection max-occurs=1
+        children target max-occurs=1
+        children target-standard max-occurs=1
+        children relationship max-occurs=1
+        children preference max-occurs=1
+        children min-confidence max-occurs=1
+        children method max-occurs=1
+        children imported max-occurs=1
+        children target-member-of max-occurs=1
+    }
+    node all type=SelectAll {
+        parents group=selector-hosts
+        field members {
+            from {
+                children all
+                children any
+                children not
+                children system
+                children under
+                children code-prefix
+                children class
+                children member-of
+                children collection
+                children target
+                children target-standard
+                children relationship
+                children preference
+                children min-confidence
+                children method
+                children imported
+                children target-member-of
+            }
+        }
+    }
+    node any type=SelectAny {
+        parents group=selector-hosts
+        field members {
+            from {
+                children all
+                children any
+                children not
+                children system
+                children under
+                children code-prefix
+                children class
+                children member-of
+                children collection
+                children target
+                children target-standard
+                children relationship
+                children preference
+                children min-confidence
+                children method
+                children imported
+                children target-member-of
+            }
+        }
+    }
+    node not type=SelectNot {
+        parents group=selector-hosts
+        field members {
+            from {
+                children all
+                children any
+                children not
+                children system
+                children under
+                children code-prefix
+                children class
+                children member-of
+                children collection
+                children target
+                children target-standard
+                children relationship
+                children preference
+                children min-confidence
+                children method
+                children imported
+                children target-member-of
+            }
+        }
+    }
+    node system type=SelectSystem {
+        parents group=selector-hosts
+        field system arg=0
+    }
+    node under type=SelectUnder {
+        parents group=selector-hosts
+        field concept arg=0
+    }
+    node code-prefix type=SelectCodePrefix {
+        parents group=selector-hosts
+        field prefixes {
+            from {
+                args
+            }
+        }
+    }
+    node class type=SelectClass {
+        parents group=selector-hosts
+        field classes {
+            from {
+                args
+            }
+        }
+    }
+    node member-of type=SelectMemberOf {
+        parents group=selector-hosts
+        field set arg=0
+    }
+    node target-member-of type=SelectMemberOf {
+        parents group=selector-hosts
+        field set arg=0
+    }
+    node collection type=SelectCollection {
+        parents group=selector-hosts
+        field collections {
+            from {
+                args
+            }
+        }
+    }
+    node target type=SelectTarget {
+        parents group=selector-hosts
+        field system arg=0
+        field chain property=chain
+    }
+    // A leaf with no fields: presence alone selects claims whose target
+    // resolves to a local-Athena OMOP-standard concept.
+    node target-standard type=SelectTargetStandard {
+        parents group=selector-hosts
+    }
+    node relationship type=SelectRelationship {
+        parents group=selector-hosts
+        field relationships {
+            from {
+                args
+            }
+        }
+    }
+    node preference type=SelectPreference {
+        parents group=selector-hosts
+        field preference arg=0
+    }
+    node min-confidence type=SelectMinConfidence {
+        parents group=selector-hosts
+        field score arg=0
+        field scheme property=scheme
+    }
+    node method type=SelectMethod {
+        parents group=selector-hosts
+        field methods {
+            from {
+                args
+            }
+        }
+    }
+    node imported type=SelectImported {
+        parents group=selector-hosts
+        field table property=table
+        field labels {
+            from {
+                args
+            }
+        }
+    }
+}
