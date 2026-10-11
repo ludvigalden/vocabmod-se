@@ -1,0 +1,9 @@
+// The example suites' one module root. It reads the registry (under
+// _registry/) and every system's one entry; each entry reads its own
+// subtree.
+module "vocabmod-se.vocab" version="0.1" {
+    title "en" "vocabmod-se terminology definitions and mappings"
+    maintainers "ludvig-alden"
+    import "_registry/*.kdl" kind=fragment
+    import "**/definitions.kdl" kind=fragment
+}

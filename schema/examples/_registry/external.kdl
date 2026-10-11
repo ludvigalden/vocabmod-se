@@ -1,0 +1,91 @@
+// Licensed and private systems: declared, never defined. Their codes
+// appear only as claim endpoints.
+system "SNOMED_CT" kind=terminology distribution=reference-only license="snomed-ct-affiliate" {
+    name "en" "SNOMED CT"
+}
+release "20251130" system="SNOMED_CT" edition="SE1000052"
+// The SNOMED CT Swedish extension (Socialstyrelsen) is declared
+// code-only so Swedish-extension SCTIDs can be named as mapping
+// endpoints without their definitions: it ships in edition SE1000052
+// with the SNOMED CT release above, and its synonyms and descriptions are
+// licensed and never land in this tree.
+system "SNOMED_CT_SE_EXT" kind=terminology distribution=reference-only license="snomed-ct-affiliate" {
+    name "en" "SNOMED CT Swedish extension"
+}
+// Expected external content that can never be imported (licence); the
+// import resolves to no document, keeping the gap machine-visible.
+import "external/SNOMED_CT_SE_EXT/**/*.kdl" kind=fragment
+system "OMOP_EXT" kind=vocabulary distribution=reference-only {
+    name "en" "OMOP standardized vocabularies, extension concept ids (OHDSI Athena)"
+}
+// This project's own local OMOP custom concepts (the reserved 2.1B
+// band, published by this project); never OHDSI content. The reserved bands
+// live beside the declaration in the tree's registry.
+system "OMOP_CUSTOM" kind=vocabulary distribution=reference-only publisher="ludvig-alden" {
+    name "en" "vocabmod-se local OMOP custom concepts (reserved id bands)"
+}
+// LOINC terms carry the Regenstrief licence: codes only.
+system "LOINC" kind=terminology distribution=reference-only {
+    name "en" "LOINC"
+}
+// MedDRA is licensed by the MSSO: codes only, like SNOMED CT and LOINC.
+system "MEDDRA" kind=terminology distribution=reference-only license="meddra" {
+    name "en" "MedDRA"
+}
+// Public systems defined upstream and not in this tree: referenced by
+// code, like reference-only systems, but free of licence constraints.
+system "ATC" kind=classification distribution=external publisher="int.who" {
+    name "en" "WHO Anatomical Therapeutic Chemical classification"
+}
+// RxNorm is declared in drug/rxnorm/definitions.kdl: code-only, with
+// its rxnorm-atc mapping collection beside it.
+system "NPL" kind=identifier-namespace distribution=external {
+    name "sv" "Nationellt produktregister för läkemedel (NPL-id)"
+}
+// The official SNOMED CT–EDQM Standard Terms dose-form map refset ships under SNOMED CT
+// license terms and is not merged; the snomed-ct-edqm collection is this
+// tree's own mapping.
+system "EDQM" kind=terminology distribution=external {
+    name "en" "EDQM Standard Terms"
+}
+// Ruled not redistributable, a known limitation: the expected import
+// resolves to no document permanently.
+import "external/EDQM/**/*.kdl" kind=fragment
+// Orphanet codes are CC BY 4.0: free to reference and share with
+// attribution, so they are referenced by code like the other external
+// systems and the licence is recorded beside them.
+system "ORPHANET" kind=terminology distribution=external publisher="inserm.orphanet" license="cc-by-4.0" {
+    name "en" "Orphanet nomenclature of rare diseases"
+}
+system "ICD_10_CM" kind=classification distribution=external publisher="us.nchs" {
+    name "en" "International Classification of Diseases, 10th Revision, Clinical Modification"
+}
+// ICD-10-SE extension codes resolve to ICD-10-CM concepts through
+// OMOP's concept ids (OHDSI Athena), not through ICD-10-CM codes —
+// the mapping targets are numeric concept ids, spelled OMOP ICD-10-CM concepts
+// to keep the vocabulary distinct from the ICD10CM classification
+// itself. OHDSI content stays code-only.
+system "OMOP_ICD_10_CM" kind=vocabulary distribution=reference-only {
+    name "en" "OMOP concept ids for ICD-10-CM concepts (OHDSI Athena)"
+}
+// ICD-10 and ICD-10-SE codes resolve to SNOMED CT concepts through
+// OMOP's concept ids (OHDSI Athena), not through SNOMED CT's own ids —
+// the mapping targets are numeric concept ids, spelled OMOP SNOMED CT concepts
+// to keep the vocabulary distinct from the SNOMED CT terminology
+// itself. OHDSI content stays code-only.
+system "OMOP_SNOMED_CT" kind=vocabulary distribution=reference-only {
+    name "en" "OMOP concept ids for SNOMED CT concepts (OHDSI Athena)"
+}
+// UCUM is public under its own license: codes are referenced verbatim,
+// the standard and its unit table are not copied into the tree.
+system "UCUM" kind=terminology distribution=external publisher="org.regenstrief" license="org.regenstrief.ucum" case-sensitive=#true {
+    name "en" "Unified Code for Units of Measure"
+}
+release "2.2" system="UCUM"
+// LISA is SCB's register id space, not a classification the tree
+// defines: its geography folded into Swedish county and municipality codes (the lisa-geo-se bridge
+// collection maps the register's codes onto Swedish county and municipality codes concepts), so LISA
+// is referenced by code and never defined here.
+system "LISA" kind=classification distribution=external publisher="se.scb" {
+    name "en" "SCB LISA demographic reference codes"
+}

@@ -1,0 +1,45 @@
+// How the import normalizes source conventions.
+translation-table "mapping-kind" version="1" source-column="maps_to_mapping_type" target-field="relationship" {
+    description "en" "The source names the target's extent relative to the source."
+    entry "exact_match" "equivalent"
+    entry "broader" "source_is_narrower_than_target" note="the target is broader"
+    entry "narrower" "source_is_broader_than_target" note="the target is narrower"
+    entry "related" "related_to"
+    entry "partial" "partial_overlap"
+    entry "no_match" drop=#true note="Imported as a no-match assessment for the target system"
+}
+translation-table "invalid-reason" version="1" source-column="invalid_reason" target-field="status|assessment|flag" {
+    description "en" "Source invalid_reason values split by what they describe."
+    entry "D" "status:inactive"
+    entry "U" "status:retired"
+    entry "manual_review_needed" "flag:needs-review"
+    entry "false_positive" "flag:reported-false-positive"
+    entry "no_valid_concept" "assessment:no_match"
+    entry "icf_swedish_extension_no_target" "assessment:no_match"
+    entry "no_ucum_equivalent" "assessment:no_match"
+}
+translation-table "source-provenance" version="1" source-column="mapping_provenance" target-field="imported" {
+    description "en" "The source's mapping_provenance, kept as the imported label of each claim it produced."
+    entry "athena" "athena" note="Athena Maps-to crosswalk, inherited"
+    entry "automated" "automated"
+    entry "curated" "curated"
+    entry "manual" "manual"
+    entry "rf2" drop=#true note="SNOMED CT-authored rows are not imported"
+    entry "rf2-se" drop=#true note="SNOMED CT-authored rows are not imported"
+}
+// Fixes source target keys that name the wrong system, and maps raw
+// source keys to their declared systems. The key is the source column
+// (a bare key applies to every source); the value the system the
+// target code really belongs to.
+translation-table "target-key" version="1" source-column="maps_to key" target-field="target system" {
+    description "en" "Source map-cell keys, per source vocabulary, translated to the system the target code belongs to. A bare key (no source prefix) applies to every source."
+    entry "TLV_FBA/ICD-10" "ATC Y-codes" note="Y90 codes are ATC Y-codes, not ICD-10"
+    entry "UNIT_SE/UCUM" "OMOP concepts" note="The values are official OMOP unit concept ids, not UCUM codes"
+    entry "RX_NORM" "RxNorm" note="Declared code-only in _registry/external.kdl"
+    entry "MedDRA" "MedDRA" note="Declared code-only in _registry/external.kdl"
+    entry "Orphanet" "Orphanet" note="Declared code-only in _registry/external.kdl"
+    entry "ICD_10_SE/ICD-10-CM" "OMOP ICD-10-CM concepts" note="The cell values are OMOP concept ids for ICD-10-CM concepts, not ICD-10-CM codes"
+    entry "ICD-10-CM" "ICD-10-CM" note="Declared code-only in _registry/external.kdl"
+}
+// OMOP custom concept ids: the reserved bands live beside the
+// OMOP custom concepts system declaration in _registry/external.kdl.
