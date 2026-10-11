@@ -1,0 +1,21 @@
+system "ICD_10" kind=classification distribution=published publisher="int.who" default-locale="sv" {
+    name "en" "International Statistical Classification of Diseases, 10th revision"
+}
+release "2016" system="ICD_10" label-source=header
+context {
+    system "ICD_10" release="2016"
+}
+category "category" {
+    name "en" "Three-character category"
+}
+category "subcategory" {
+    name "en" "Four-character subcategory"
+}
+collection "icd-10-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "WHO ICD-10 base codes to OMOP extension concepts"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="OMOP_EXT"
+    import "OMOP_EXT/mappings.kdl" kind=fragment
+}
+import "concepts.kdl" kind=fragment
