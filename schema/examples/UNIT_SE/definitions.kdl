@@ -1,0 +1,20 @@
+// Swedish laboratory units: the Swedish laboratory unit spellings normalized in the source dataset.
+// Each unit is bound to its OMOP unit concept (omop-ext/).
+system "UNIT_SE" kind=local distribution=published default-locale="sv" {
+    name "en" "Swedish laboratory measurement units"
+}
+release "2017" system="UNIT_SE" label-source=registry
+context {
+    system "UNIT_SE" release="2017"
+}
+category "unit" {
+    name "en" "Unit"
+}
+collection "unit-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "Swedish laboratory units to OMOP unit concepts"
+    authors "ludvig-alden"
+    source system="UNIT_SE" release="2017"
+    target system="OMOP_EXT"
+    import "OMOP_EXT/mappings.kdl" kind=fragment
+}
+import "concepts.kdl" kind=fragment
