@@ -1,0 +1,34 @@
+// NPU011xx. Each code has its concept and, directly after it, its
+// measurement facet: the NPU name's system, component, and kind of
+// property stay verbatim plain strings, and the string-to-identifier
+// and facet indexes run over them. A `variant` is a spelling the
+// concept answers to that is not a designation; a `code-alias` a
+// historical id of the concept's own system.
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "NPU01121" {
+    name "sv" "Plasma—Alaninaminotransferas;katalytisk koncentration(37°C;procedur)"
+    synonym "sv" "P—ALAT"
+    variant "ALAT" kind=abbrev source="LAB_SE"
+    code-alias "2100510020"
+    validity origin=imported {
+        from "1970-01-01"
+    }
+}
+measurement-definition "NPU01121" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Alaninaminotransferas" property-kind="katalytisk koncentration" specification="37°C;procedur" {
+    unit "µkat/L" namespace="npu"
+}
+concept "NPU01144" {
+    name "sv" "Plasma—Alkaliskt fosfatas;katalytisk koncentration(37°C;procedur)"
+    synonym "sv" "P—ALP(Alkaliskt fosfatas)"
+}
+measurement-definition "NPU01144" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Alkaliskt fosfatas" property-kind="katalytisk koncentration" specification="37°C;procedur" {
+    unit "µkat/L" namespace="npu"
+}

@@ -1,0 +1,28 @@
+// NPU: Nomenclature for Properties and Units (IFCC/IUPAC), the subset
+// the source dataset carries. The source header names no edition, so the release
+// is the source registry's version (label-source=registry).
+system "NPU" kind=terminology distribution=published default-locale="sv" {
+    name "en" "Nomenclature for Properties and Units"
+}
+release "2025" system="NPU" label-source=registry
+context {
+    system "NPU" release="2025"
+}
+category "lab-test" {
+    name "en" "Laboratory test"
+}
+collection "npu-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "NPU to LOINC"
+    authors "ludvig-alden"
+    source system="NPU" release="2025"
+    target system="LOINC"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "LOINC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts.kdl" kind=fragment
