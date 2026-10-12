@@ -1,0 +1,33 @@
+// Varunummer: TLV's package numbers for reimbursed medicinal products.
+// The source header names the release (TLV läkemedel 2026); the source
+// registry's own version string is kept as provenance.
+system "TLV_VNR" kind=identifier-namespace distribution=published publisher="se.tlv" default-locale="sv" {
+    name "sv" "Varunummer"
+}
+release "2026" system="TLV_VNR" label-source=header imported-version="2017"
+context {
+    system "TLV_VNR" release="2026"
+}
+category "package" {
+    name "en" "Medicinal product package"
+}
+collection "tlv-vnr-atc" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "Varunummer packages to ATC"
+    authors "ludvig-alden"
+    source system="TLV_VNR" release="2026"
+    target system="ATC"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "ATC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+    // Expected external input: ATC level-5 assignments for the package
+    // products would land here via OMOP CONCEPT_RELATIONSHIP (Athena);
+    // the pattern matches no document today, so the import resolves
+    // empty and its import item streams without targets.
+    import "ATC/athena/**/*.kdl" kind=fragment
+}
+import "concepts.kdl" kind=fragment

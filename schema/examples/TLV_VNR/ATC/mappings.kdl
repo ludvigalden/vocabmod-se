@@ -1,0 +1,21 @@
+// The source states no granularity for drug rows. A package is narrower
+// than the ATC class of its substance; that relationship is assigned by
+// the importer's per-collection rule, and `method` says so.
+context {
+    collection "tlv-vnr-atc" version="2026.1"
+    source system="TLV_VNR" release="2026"
+    target system="ATC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "importer-assigned-granularity"
+    }
+}
+mapping "5.1" source="5" target="N05AX08"
+// The rubric's hierarchy-step class: the comment corpus names the
+// target as the parent the mapping actually rests on, so the claim
+// omits the source's specificity beyond what `narrower` states, and
+// quality 60 is the rubric's hierarchy-step tier (rubric
+// mapping-quality@1 in _registry/conventions.kdl).
+mapping "861.1" source="861" target="N05AX08" effect=omitted quality=60
