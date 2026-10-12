@@ -1,0 +1,28 @@
+// SoS specialitetskoder: the National Board of Health and Welfare's
+// medical specialty codes. The source files them under lab/; their domain
+// is PROVIDER, so the tree places them under provider/.
+system "SPKOD" kind=classification distribution=published publisher="se.socialstyrelsen" default-locale="sv" {
+    name "sv" "Socialstyrelsens specialitetskoder"
+}
+release "2017" system="SPKOD" label-source=registry
+context {
+    system "SPKOD" release="2017"
+}
+category "specialty" {
+    name "en" "Medical specialty"
+}
+collection "spkod-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "SoS specialty codes to SNOMED CT specialties"
+    authors "ludvig-alden"
+    source system="SPKOD" release="2017"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "SNOMED_CT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts/**/*.kdl" kind=fragment

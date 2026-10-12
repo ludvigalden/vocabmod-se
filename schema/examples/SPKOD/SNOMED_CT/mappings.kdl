@@ -1,0 +1,19 @@
+// Every Socialstyrelsen specialty codes row is a manual mapping the source asks to have clinically
+// reviewed: a mapping plus a needs-clinical-review flag on it. The note
+// quotes a SNOMED CT term, so it is marked for review before publication;
+// it is kept verbatim.
+context {
+    collection "spkod-snomed-ct" version="2026.1"
+    source system="SPKOD" release="2017"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "0.1" source="0" target="394814009" {
+    comment "en" "Manually mapped Swedish specialty Allmänmedicin (Socialstyrelsen specialty code 0) to SNOMED CT 4216158. Replaces phantom target from OHDSI 2017 STCM." suspect=quoted-text
+}
+flag "0.1.review" kind=needs-clinical-review assertion="spkod-snomed-ct@2026.1/0.1"
