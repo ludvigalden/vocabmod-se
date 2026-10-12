@@ -1,0 +1,41 @@
+// Swedish hospital laboratory catalogues: the family of Swedish hospital local laboratory test
+// catalogues. Codes are each laboratory's own test names.
+system "LAB_SE" kind=local distribution=published default-locale="sv" {
+    name "sv" "Lokala laboratoriekataloger (svenska sjukhus)"
+}
+release "2026" system="LAB_SE" label-source=registry
+context {
+    system "LAB_SE" release="2026"
+}
+category "lab-test" {
+    name "en" "Laboratory test"
+}
+collection "lab-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "Swedish hospital laboratory catalogues to LOINC"
+    authors "ludvig-alden"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "LOINC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+collection "lab-se-npu" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "Swedish hospital laboratory catalogues to NPU"
+    authors "ludvig-alden"
+    source system="LAB_SE" release="2026"
+    target system="NPU"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "NPU/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts/**/*.kdl" kind=fragment
