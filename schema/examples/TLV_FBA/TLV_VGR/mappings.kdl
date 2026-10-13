@@ -1,0 +1,19 @@
+// TLV consumables to their varugrupp, the 2026 stoma list subset: one
+// mapping and one tlv-no-comparison-alternative flag per product. The flag's
+// scope carries the undantag column: urostomy products are exempt from
+// the listing.
+context {
+    collection "tlv-fba-tlv-vgr" version="2026.1"
+    source system="TLV_FBA" release="2026"
+    target system="TLV_VGR"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "201049.1" source="201049" target="Y90AA01"
+flag "201049.tlv" kind=tlv-no-comparison-alternative concept="201049"
+mapping "201231.1" source="201231" target="Y90AA01"
+flag "201231.tlv" kind=tlv-no-comparison-alternative concept="201231" scope="urostomi"

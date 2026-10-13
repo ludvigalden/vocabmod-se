@@ -1,0 +1,45 @@
+// TLV förbrukningsartiklar: reimbursed medical consumables, one code
+// per article. The source header names the release.
+system "TLV_FBA" kind=identifier-namespace distribution=published publisher="se.tlv" default-locale="sv" {
+    name "sv" "TLV förbrukningsartiklar"
+}
+release "2026" system="TLV_FBA" label-source=header
+context {
+    system "TLV_FBA" release="2026"
+}
+category "article" {
+    name "en" "Reimbursed consumable article"
+}
+// The source's article_type column, as a category of package.
+category "stomi" {
+    name "sv" "Stomi"
+}
+collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "TLV consumables to their ATC Y-code product group"
+    authors "ludvig-alden"
+    source system="TLV_FBA" release="2026"
+    target system="ATC_YCODE" release="2026"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "ATC_YCODE/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts.kdl" kind=fragment
+collection "tlv-fba-tlv-vgr" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV consumables to their varugrupp (2026 stoma list)"
+    authors "ludvig-alden"
+    source system="TLV_FBA" release="2026"
+    target system="TLV_VGR"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "TLV_VGR/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}

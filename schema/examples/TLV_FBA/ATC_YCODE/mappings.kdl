@@ -1,0 +1,15 @@
+// The source keys these targets `@ICD10`; they are ATC Y-codes. Both
+// endpoints are published, so the targets link to definitions.
+context {
+    collection "tlv-fba-atc-ycode" version="2026.1"
+    source system="TLV_FBA" release="2026"
+    target system="ATC_YCODE" release="2026"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "importer-assigned-granularity"
+    }
+}
+mapping "200022.1" source="200022" target="Y90ME01"
+mapping "200031.1" source="200031" target="Y90CA02"
