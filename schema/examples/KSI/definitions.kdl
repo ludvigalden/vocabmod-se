@@ -1,0 +1,32 @@
+// KSI: Klassifikation av socialtjänstens insatser och aktiviteter.
+system "KSI" kind=classification distribution=published publisher="se.ehalsomyndigheten" default-locale="sv" {
+    name "sv" "Klassifikation av socialtjänstens insatser och aktiviteter"
+}
+release "2026" system="KSI" published-on="2026-01-01"
+context {
+    system "KSI" release="2026"
+}
+category "chapter" {
+    name "en" "Chapter heading"
+}
+category "group" {
+    name "en" "Group"
+}
+category "code" {
+    name "en" "Activity code"
+}
+collection "ksi-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KSI to ICF"
+    authors "ludvig-alden"
+    source system="KSI" release="2026"
+    target system="ICF"
+    defaults {
+        mappings {
+            relationship "related_to"
+        }
+    }
+    import "ICF/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts/**/*.kdl" kind=fragment

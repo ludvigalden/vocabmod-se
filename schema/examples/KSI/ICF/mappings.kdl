@@ -1,0 +1,28 @@
+// KSI social-service codes to ICF mappings, codes VEP
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "ksi-icf" version="2026.1"
+    source system="KSI" release="2026"
+    target system="ICF"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VEP.1" source="VEP" target="d820" {
+    comment "en" """
+        Source VEP 'Beteenden och vanor avseende skolfrånvaro' = behaviors and habits regarding school
+        absence (a KSI behavioral/social-service domain code). Target ICF d820 'Att engagera sig i
+        skolutbildning' (Engaging in school education), the canonical ICF major-life-area concept for
+        school participation; school absence is the inverse/disruption of d820 participation. Source is
+        the inverse/associated domain of d820 (a behavior-domain framing of the area d820 represents as
+        a participation activity), so related rather than exact_match or broader per the
+        about/concept-axis-mismatch pattern established for sibling KSI domain parents (VEC/VED in
+        proposal-0007, VEE/VEN in proposal-0008); weak, not broader/narrower (school-absence
+        behavior is not subsumed by school participation; it is its disruption). d820 verified present
+        in source/function/ICF/concepts.tdl; consistent with VEP.* children mapped to d820 in
+        proposal-0010.
+        """ suspect=quoted-text
+}
