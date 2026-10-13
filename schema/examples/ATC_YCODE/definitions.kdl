@@ -1,0 +1,21 @@
+// ATC Y-codes: the Swedish national product-group extension for
+// reimbursed consumables. No WHO ATC file exists in the source dataset; ATC itself
+// is an external system.
+system "ATC_YCODE" kind=classification distribution=published default-locale="sv" {
+    name "sv" "ATC Y-koder (produktgrupper för förbrukningsartiklar)"
+}
+release "2026" system="ATC_YCODE" label-source=registry
+context {
+    system "ATC_YCODE" release="2026"
+}
+category "y-code" {
+    name "en" "ATC Y-code"
+}
+collection "atc-ycode-omop-custom" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+    title "en" "ATC Y-codes to pinned OMOP custom concept ids"
+    authors "ludvig-alden"
+    source system="ATC_YCODE" release="2026"
+    target system="OMOP_CUSTOM"
+    import "OMOP_CUSTOM/mappings.kdl" kind=fragment
+}
+import "concepts/**/*.kdl" kind=fragment

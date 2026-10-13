@@ -1,0 +1,10 @@
+// Written only when custom ids are published (importer option, off by
+// default): vocabmod otherwise assigns custom ids at export, from the
+// reserved bands declared beside the OMOP custom concepts system. A pinned id
+// must fall inside a declared custom-id-range (checked by vocabmod).
+context {
+    collection "atc-ycode-omop-custom" version="2026.1"
+    source system="ATC_YCODE" release="2026"
+    target system="OMOP_CUSTOM"
+}
+omop-binding "Y90CA01.omop" concept="Y90CA01" omop="OMOP_CUSTOM:2100130000" assigned=#true
