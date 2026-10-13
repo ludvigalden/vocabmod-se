@@ -1,0 +1,18 @@
+// SNOMED CT dose forms to EDQM Standard Terms: our own mappings between
+// two systems the tree does not define (both stay declared in
+// _registry/external.kdl). Codes only; the SNOMED CT dose-form names the
+// source carried are not published.
+collection "snomed-ct-edqm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "SNOMED CT dose forms to EDQM Standard Terms"
+    authors "ludvig-alden"
+    source system="SNOMED_CT" release="20251130"
+    target system="EDQM"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
