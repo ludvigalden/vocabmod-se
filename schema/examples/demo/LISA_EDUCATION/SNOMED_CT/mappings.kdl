@@ -1,0 +1,19 @@
+// LISA education levels to SNOMED CT mappings, codes 1-7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lisa-education-snomed-ct" version="2026.1"
+    source system="LISA_EDUCATION" release="2024"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "1.1" source="1" target="342271000000107" preference=alternative {
+    comment "en" """
+        SUN2000 code 1 = Pre-primary education (Förskoleutbildning). Bare numeric code conflates across
+        attributes; weak-only. Closest standard is one ISCED level above.
+        """
+}

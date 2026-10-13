@@ -1,0 +1,30 @@
+// Utbildningsnivå: the education-level value set the LISA register carries. The source names the
+// codes SUN 2000 levels, but SCB numbers SUN nivå 0-6; these nine codes are the ISCED 2011 levels
+// (code n = level n - 1). The Swedish designations are SCB's own renderings of those levels (the
+// SUN 2020 - ISCED 2011 key file); the English ones the UNESCO ISCED 2011 level names.
+system "LISA_EDUCATION" kind=classification distribution=published publisher="se.scb" default-locale="sv" {
+    name "sv" "Utbildningsnivå (LISA, ISCED 2011)"
+    name "en" "Education level (LISA, ISCED 2011)"
+}
+release "2024" system="LISA_EDUCATION" label-source=registry
+context {
+    system "LISA_EDUCATION" release="2024"
+}
+category "level" {
+    name "en" "Education level"
+}
+collection "lisa-education-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "LISA education levels to SNOMED CT"
+    authors "ludvig-alden"
+    source system="LISA_EDUCATION" release="2024"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "SNOMED_CT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts/**/*.kdl" kind=fragment

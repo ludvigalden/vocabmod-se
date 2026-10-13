@@ -1,0 +1,16 @@
+// Swedish civil status codes to SNOMED CT mappings, codes EP-SP
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "civil-status-se-snomed-ct" version="2026.1"
+    source system="CIVIL_STATUS_SE" release="2024"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "EP.1" source="EP" target="286141000000107" {
+    comment "en" "Exact semantic match for Swedish Efterlevande partner."
+}
