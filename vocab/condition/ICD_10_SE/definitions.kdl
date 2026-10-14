@@ -12,6 +12,23 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
+// Fallback tier: the source grades every row icd10cm_base_fallback
+// (non-standard ICD-10-CM billing concepts), so the collection is
+// preference=alternative throughout.
+collection "icd-10-se-omop-icd-10-cm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to OMOP ICD-10-CM concepts"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_ICD_10_CM"
+    defaults {
+        mappings {
+            claim-scope "icd-10-se-omop-icd-10-cm@2026.1"
+        }
+    }
+    import "OMOP_ICD_10_CM/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 // Standard targets: the OMOP ids resolve to SNOMED CT
 // Condition concepts (standard in the OMOP CDM by domain knowledge;
 // the source itself carries no standard flag).

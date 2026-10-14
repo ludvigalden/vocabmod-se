@@ -1,0 +1,115 @@
+// ICD-10-SE extension codes to OMOP ICD-10-CM concept mappings, codes I8-Y5
+// Fallback tier: the source grades every row icd10cm_base_fallback
+// (non-standard ICD-10-CM billing concepts), so the collection is
+// preference=alternative throughout.
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-icd-10-cm" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_ICD_10_CM"
+}
+defaults {
+    mappings {
+        preference "alternative"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "I803P.1" source="I803P" target="35207884" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Phlebitis and thrombophlebitis of lower extremities, unspecified\""
+}
+mapping "I809P.1" source="I809P" target="35207886" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Phlebitis and thrombophlebitis of unspecified site"
+}
+mapping "I839P.1" source="I839P" target="1569399" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Asymptomatic varicose veins of lower extremities"
+}
+mapping "I872P.1" source="I872P" target="35207904" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish extension I87.2 (venous insufficiency) + P (primary diagnosis marker); (20696009)
+        preserved
+        """
+}
+mapping "I890A.1" source="I890A" target="35207911" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Lymphedema, not elsewhere classified\""
+}
+mapping "I890B.1" source="I890B" target="35207911" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Lymphedema, not elsewhere classified\""
+}
+mapping "I890C.1" source="I890C" target="35207911" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Lymphedema, not elsewhere classified\""
+}
+mapping "I890W.1" source="I890W" target="35207911" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Lymphedema, not elsewhere classified\""
+}
+mapping "I898A.1" source="I898A" target="35207913" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified noninfective disorders of lymphatic vessels and lymph nodes"
+}
+mapping "I898W.1" source="I898W" target="35207913" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified noninfective disorders of lymphatic vessels and lymph nodes"
+}
+assessment "U822A.omop" source="U822A" outcome=no_match
+assessment "U822B.omop" source="U822B" outcome=no_match
+assessment "U822C.omop" source="U822C" outcome=no_match
+assessment "U822W.omop" source="U822W" outcome=no_match
+assessment "U984A.omop" source="U984A" outcome=no_match
+assessment "U984B.omop" source="U984B" outcome=no_match
+assessment "UA41A0.omop" source="UA41A0" outcome=no_match
+assessment "UA41A1.omop" source="UA41A1" outcome=no_match
+assessment "UA41A3.omop" source="UA41A3" outcome=no_match
+assessment "UA41A4.omop" source="UA41A4" outcome=no_match
+assessment "UA41D0.omop" source="UA41D0" outcome=no_match
+assessment "UA41D1.omop" source="UA41D1" outcome=no_match
+assessment "UA41D2.omop" source="UA41D2" outcome=no_match
+assessment "UA41D3.omop" source="UA41D3" outcome=no_match
+assessment "UA41D4.omop" source="UA41D4" outcome=no_match
+assessment "UA45A0.omop" source="UA45A0" outcome=no_match
+assessment "UA45A1.omop" source="UA45A1" outcome=no_match
+assessment "UA45A2.omop" source="UA45A2" outcome=no_match
+assessment "UA45A3.omop" source="UA45A3" outcome=no_match
+assessment "UA45A4.omop" source="UA45A4" outcome=no_match
+assessment "UA53A.omop" source="UA53A" outcome=no_match
+assessment "UA53A0.omop" source="UA53A0" outcome=no_match
+assessment "UA53A1.omop" source="UA53A1" outcome=no_match
+assessment "UA53A2.omop" source="UA53A2" outcome=no_match
+assessment "UA53A3.omop" source="UA53A3" outcome=no_match
+assessment "UA53A4.omop" source="UA53A4" outcome=no_match
+assessment "UA53B.omop" source="UA53B" outcome=no_match
+assessment "UA53B0.omop" source="UA53B0" outcome=no_match
+assessment "UA53B1.omop" source="UA53B1" outcome=no_match
+assessment "UA53B2.omop" source="UA53B2" outcome=no_match
+assessment "UA53B3.omop" source="UA53B3" outcome=no_match
+assessment "UA53B4.omop" source="UA53B4" outcome=no_match
+assessment "Y050A.omop" source="Y050A" outcome=no_match
+assessment "Y050B.omop" source="Y050B" outcome=no_match
+assessment "Y052A.omop" source="Y052A" outcome=no_match
+assessment "Y054A.omop" source="Y054A" outcome=no_match
+assessment "Y054B.omop" source="Y054B" outcome=no_match
+assessment "Y055B.omop" source="Y055B" outcome=no_match
+assessment "Y058A.omop" source="Y058A" outcome=no_match
+assessment "Y058B.omop" source="Y058B" outcome=no_match
+assessment "Y059A.omop" source="Y059A" outcome=no_match
+assessment "Y059B.omop" source="Y059B" outcome=no_match
+mapping "Y071A.1" source="Y071A" target="1575724" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Parent (adoptive) (biological), perpetrator of maltreatment and neglect\""
+}
+mapping "Y071X.1" source="Y071X" target="1575724" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Parent (adoptive) (biological), perpetrator of maltreatment and neglect\""
+}
+assessment "Y078A.omop" source="Y078A" outcome=no_match
+assessment "Y078C.omop" source="Y078C" outcome=no_match
+assessment "Y586A.omop" source="Y586A" outcome=no_match
+assessment "Y589X.omop" source="Y589X" outcome=no_match
+assessment "Y590D.omop" source="Y590D" outcome=no_match
+assessment "Y590W.omop" source="Y590W" outcome=no_match

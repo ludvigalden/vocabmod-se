@@ -1,0 +1,246 @@
+// ICD-10-SE extension codes to OMOP ICD-10-CM concept mappings, codes I4-I7
+// Fallback tier: the source grades every row icd10cm_base_fallback
+// (non-standard ICD-10-CM billing concepts), so the collection is
+// preference=alternative throughout.
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-icd-10-cm" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_ICD_10_CM"
+}
+defaults {
+    mappings {
+        preference "alternative"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "I441A.1" source="I441A" target="35207767" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Atrioventricular block, second degree\""
+}
+mapping "I441B.1" source="I441B" target="35207767" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Atrioventricular block, second degree\""
+}
+mapping "I446A.1" source="I446A" target="1569164" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other and unspecified fascicular block"
+}
+mapping "I446B.1" source="I446B" target="1569164" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other and unspecified fascicular block"
+}
+mapping "I450A.1" source="I450A" target="35207772" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Right fascicular block"
+}
+mapping "I450B.1" source="I450B" target="35207772" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Right fascicular block"
+}
+mapping "I456A.1" source="I456A" target="35207777" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pre-excitation syndrome"
+}
+mapping "I456B.1" source="I456B" target="35207777" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pre-excitation syndrome"
+}
+mapping "I456W.1" source="I456W" target="35207777" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pre-excitation syndrome"
+}
+mapping "I456X.1" source="I456X" target="35207777" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pre-excitation syndrome"
+}
+mapping "I471A.1" source="I471A" target="35207781" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Fifth-char extension A = first episode to I47.1; (67198005) S Condition retained"
+}
+mapping "I472A.1" source="I472A" target="35207782" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ventricular tachycardia"
+}
+mapping "I472B.1" source="I472B" target="35207782" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ventricular tachycardia"
+}
+mapping "I472C.1" source="I472C" target="35207782" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ventricular tachycardia"
+}
+mapping "I489A.1" source="I489A" target="1569174" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension A=first episode of I48.9 (unspecified AF); no standard SNOMED CT for
+        unspecified atrial fibrillation exists; weak to Chronic atrial fibrillation 426749004 as
+        broadest AF subtype
+        """
+}
+mapping "I489B.1" source="I489B" target="1569174" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-char extension for recurrent episode of I48.9; base I48.9 = atrial fibrillation
+        and flutter unspecified; deprecated prior 4108832 combined fibrillation+flutter; best standard
+        is SNOMED CT 49436004 313217
+        """
+}
+mapping "I489C.1" source="I489C" target="1569174" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish extension code of I48.9 (unspecified AFib/flutter); no standard unspecified AFib SNOMED CT
+        exists; (282825002)
+        """
+}
+mapping "I489D.1" source="I489D" target="1569174" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Unspecified atrial fibrillation and atrial flutter"
+}
+mapping "I489E.1" source="I489E" target="1569174" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension code for I48.9 (unspecified AF/flutter); base I48.9 maps to
+        deprecated SNOMED CT 4108832; (440059007) is representative standard subtype; significant
+        granularity loss
+        """
+}
+mapping "I489F.1" source="I489F" target="1569174" relationship=partial_overlap {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fifth-char extension on I48.9 (unspecified atrial fibrillation); base ICD-10 SNOMED CT crosswalk
+        deprecated; (282825002) as closest standard subtype
+        """
+}
+mapping "I495A.1" source="I495A" target="35207789" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sick sinus syndrome"
+}
+mapping "I495B.1" source="I495B" target="35207789" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sick sinus syndrome"
+}
+mapping "I495C.1" source="I495C" target="35207789" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sick sinus syndrome"
+}
+mapping "I498A.1" source="I498A" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I498B.1" source="I498B" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I498C.1" source="I498C" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I498D.1" source="I498D" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I498E.1" source="I498E" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I498W.1" source="I498W" target="35207790" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified cardiac arrhythmias"
+}
+mapping "I501B.1" source="I501B" target="35207792" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Left ventricular failure, unspecified\""
+}
+mapping "I690A.1" source="I690A" target="1569229" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sequelae of nontraumatic subarachnoid hemorrhage"
+}
+mapping "I690B.1" source="I690B" target="1569229" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sequelae of nontraumatic subarachnoid hemorrhage"
+}
+mapping "I702A.1" source="I702A" target="1569272" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Atherosclerosis of native arteries of the extremities"
+}
+mapping "I702C.1" source="I702C" target="1569272" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Atherosclerosis of native arteries of the extremities"
+}
+mapping "I702X.1" source="I702X" target="1569272" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Atherosclerosis of native arteries of the extremities"
+}
+mapping "I709P.1" source="I709P" target="1569320" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other and unspecified atherosclerosis"
+}
+mapping "I738A.1" source="I738A" target="1569326" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified peripheral vascular diseases"
+}
+mapping "I738B.1" source="I738B" target="1569326" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified peripheral vascular diseases"
+}
+mapping "I738C.1" source="I738C" target="1569326" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified peripheral vascular diseases"
+}
+mapping "I738D.1" source="I738D" target="1569326" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified peripheral vascular diseases"
+}
+mapping "I738W.1" source="I738W" target="1569326" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified peripheral vascular diseases"
+}
+mapping "I739A.1" source="I739A" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739B.1" source="I739B" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739C.1" source="I739C" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739D.1" source="I739D" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739P.1" source="I739P" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739W.1" source="I739W" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I739X.1" source="I739X" target="35207860" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Peripheral vascular disease, unspecified\""
+}
+mapping "I776X.2" source="I776X" target="35207874" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "\"Arteritis, unspecified\""
+}
+mapping "I781A.1" source="I781A" target="35207878" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Nevus, non-neoplastic\""
+}
+mapping "I781B.1" source="I781B" target="35207878" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Nevus, non-neoplastic\""
+}
+mapping "I781C.1" source="I781C" target="35207878" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Nevus, non-neoplastic\""
+}
+mapping "I781X.1" source="I781X" target="35207878" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "\"Nevus, non-neoplastic\""
+}
