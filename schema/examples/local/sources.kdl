@@ -1,0 +1,10 @@
+// Local inputs. Never committed: the aliases resolve on the author's
+// machine only (kdlith --alias licensed=DIR --alias usage=DIR).
+release-source "local:snomed-se-20251130" release="SNOMED_CT@20251130" format=rf2-snapshot location="$licensed/SnomedCT_SE1000052_20251130" edition="SE1000052" verify=presence-and-status
+release-source "local:athena-2025-08" release="SNOMED_CT@20251130" format=athena-csv location="$licensed/athena/2025-08" vocabulary-id="SNOMED_CT"
+dataset "local:ed-usage" format=ndjson location="$usage/ed-codes.ndjson" site="Swedish emergency department" suppress-below=5 suppress-unit=distinct-patients {
+    title "en" "Emergency department, recorded codes"
+    period from="2019-01-01" to="2024-01-01"
+    count "events" unit=events
+    count "patients" unit=distinct-patients column="distinct_patients"
+}
