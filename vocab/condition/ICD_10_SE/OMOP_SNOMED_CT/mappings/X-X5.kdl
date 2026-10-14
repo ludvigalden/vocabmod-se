@@ -1,0 +1,434 @@
+// ICD-10-SE extension codes to OMOP SNOMED CT concept mappings, codes X-X5
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_SNOMED_CT"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "X100.2" source="X100" target="4054153" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "4-char external cause (contact with hot drinks) -> exact SNOMED CT match; crosswalk-verified"
+}
+mapping "X4100.3" source="X4100" target="44783281" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Accidental poisoning by antiepileptic/sedative/psychotropic drugs; SNOMED CT Accidental poisoning
+        by psychotropic agent 699011008 covers only psychotropic subset of ICD scope
+        """
+}
+mapping "X4101.3" source="X4101" target="441768" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension of X41 (antiepileptic/sedative/psychotropic poisoning, home/play). No
+        substance-specific standard SNOMED CT. Weak link to 218249005.
+        """
+}
+mapping "X4108.3" source="X4108" target="44783281" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish ext subcode of X41 (accidental poisoning by CNS drugs, housing) -> (699011008); base
+        code concept, activity/location suffix preserved
+        """
+}
+mapping "X4109.3" source="X4109" target="44783281" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        ICD X41 covers antiepileptics/sedatives/hypnotics/anti-Parkinsonism/psychotropic drugs; SNOMED CT
+        candidate only covers psychotropic agents; subset match
+        """
+}
+mapping "X4119.3" source="X4119" target="44783281" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish ext subcode of X41 (accidental poisoning by CNS drugs, institutional location) ->
+        (699011008); base code concept, activity/location suffix preserved
+        """
+}
+mapping "X4188.3" source="X4188" target="44783281" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish ext subcode of X41 (accidental poisoning by CNS drugs, other sectors) -> (699011008);
+        base code concept, activity/location suffix preserved
+        """
+}
+mapping "X4190.3" source="X4190" target="438028" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension of X41 (accidental poisoning by
+        antiepileptics/sedatives/psychotropics NEC).90=unspecified place/sports. Current nonstandard
+        target 443283 (Poisoning by CNS drug) is deprecated. Weak to broad drug poisoning parent.
+        """
+}
+mapping "X4200.3" source="X4200" target="438028" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fully expanded external cause code (accidental poisoning by narcotics with place/activity);
+        external cause specificity lost; weak link to base T40 condition concept SNOMED CT 7895008
+        """
+}
+mapping "X4208.3" source="X4208" target="441768" relationship=equivalent preference=alternative effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        X42 = accidental poisoning by narcotics and hallucinogens NEC.08 = Swedish activity qualifier.
+        Current nonstandard target 443283 SNOMED CT 218249005 is invalid (invalid_reason=D). Closest is
+        441768 which is broader but standard
+        """
+}
+mapping "X4209.3" source="X4209" target="438028" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension of X42 (accidental poisoning by narcotics
+        NEC).09=home/unspecified activity. Base X42 has no standard SNOMED CT Condition equivalent (SNOMED CT
+        has [X] extension Observations only). Current nonstandard target 443283 (Poisoning by CNS drug)
+        is deprecated. Weak to broad d
+        """
+}
+mapping "X4290.3" source="X4290" target="441768" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension of X42 (narcotics/hallucinogen poisoning). No substance-specific standard
+        SNOMED CT. Weak link to 218249005.
+        """
+}
+mapping "X4298.3" source="X4298" target="438028" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension of X42 (accidental poisoning by narcotics NEC).98=other
+        area/other activities. Same analysis as X42.09. Current nonstandard target 443283 is deprecated.
+        Weak to broad drug poisoning parent.
+        """
+}
+mapping "X4299.3" source="X4299" target="441768" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        (443283) is deprecated. X42 is accidental poisoning by narcotics/hallucinogens. (441768)
+        captures intent but is broader (all substances).
+        """
+}
+mapping "X4500.2" source="X4500" target="435983" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension (accidental poisoning by alcohol, housing/sporting) -> 287166006.
+        Replaces deprecated 436607.
+        """
+}
+mapping "X4501.2" source="X4501" target="37165681" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        ICD-10-SE external cause: accidental poisoning by alcohol with place qualifier; prior
+        nonstandard target 436607 deprecated; found valid standard concept 37165681
+        """
+}
+mapping "X4503.2" source="X4503" target="435983" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Swedish extension of X45 (accidental poisoning by alcohol); found standard 287166006 436607"
+}
+mapping "X4504.2" source="X4504" target="435983" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code for accidental poisoning and exposure to alcohol. Prior nonstandard concept
+        is deprecated. Found standard 435983 (standard, Clean SNOMED CT condition equivalent exists despite
+        being an external cause code.
+        """
+}
+mapping "X4509.2" source="X4509" target="435983" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension (accidental poisoning by alcohol, home) -> 287166006. Same as X45.00;
+        replaces deprecated 436607.
+        """
+}
+mapping "X4521.3" source="X4521" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth/sixth-char extension of X45 (.21 = school, local public-play/recreation); base X45
+        (436607) deprecated; weak map to standard replacement 37165681 SNOMED CT 1255412009
+        """
+}
+mapping "X4529.3" source="X4529" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth/sixth-char extension of X45 (.29 = school, local public-unspecified activities);
+        base X45 (436607) deprecated; weak map to standard replacement 37165681 SNOMED CT 1255412009
+        """
+}
+mapping "X4549.3" source="X4549" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth/sixth-char extension of X45 (.49 = street-unspecified activities); base X45
+        (436607) deprecated; weak map to standard replacement 37165681 SNOMED CT 1255412009
+        """
+}
+mapping "X4581.3" source="X4581" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish ext subcode of X45 (accidental poisoning by alcohol, play/recreation) -> (1255412009);
+        base code concept
+        """
+}
+mapping "X4588.3" source="X4588" target="435983" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        X45.88 = accidental poisoning by alcohol with Swedish sector/activity extension; prior target
+        436607 deprecated; 435983 (Accidental poisoning with ethyl alcohol) is standard replacement
+        """
+}
+mapping "X4589.3" source="X4589" target="438028" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code SNOMED CT 7895008 with expansion characters; no standard alcohol-specific
+        poisoning SNOMED CT; weak link to generic
+        """
+}
+mapping "X4590.3" source="X4590" target="435983" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Accidental poisoning by alcohol at sports field; prior nonstandard 436607 deprecated; standard
+        replacement 287166006; X45 covers all alcohols
+        """
+}
+mapping "X4591.3" source="X4591" target="435983" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Accidental poisoning by alcohol at play area; same mapping as X45.90; different activity/place
+        qualifier only; standard replacement for deprecated 436607
+        """
+}
+mapping "X4598.3" source="X4598" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char extension of X45 (accidental poisoning by alcohol); deprecated non-standard target
+        replaced by standard Accidental poisoning by substance with alcohol structure
+        """
+}
+mapping "X4599.3" source="X4599" target="37165681" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish external-cause extension code for accidental alcohol poisoning; standard SNOMED CT
+        equivalent 1255412009 verified but
+        """
+}
+mapping "X503.2" source="X503" target="4102954" relationship=equivalent effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code X50.3 (overexertion from repetitive movements) -> 191992009. Loses overexertion/injury
+        semantics. Crosswalk-verified
+        """
+}
+mapping "X509.2" source="X509" target="4166272" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Overexertion/strenuous movements unspecified -> Overexertion strenuous movements and vibration
+        274930006; crosswalk-verified; Observation domain
+        """
+}
+mapping "X5100.2" source="X5100" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5101.2" source="X5101" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5104.2" source="X5104" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5109.2" source="X5109" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5110.2" source="X5110" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5111.2" source="X5111" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5112.2" source="X5112" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5113.2" source="X5113" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5114.2" source="X5114" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5118.2" source="X5118" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5119.2" source="X5119" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5120.2" source="X5120" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5121.2" source="X5121" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5122.2" source="X5122" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5123.2" source="X5123" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5124.2" source="X5124" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5128.2" source="X5128" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5129.2" source="X5129" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5130.2" source="X5130" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5131.2" source="X5131" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5132.2" source="X5132" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5133.2" source="X5133" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5134.2" source="X5134" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5138.2" source="X5138" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5139.2" source="X5139" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5140.2" source="X5140" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5141.2" source="X5141" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5142.2" source="X5142" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5143.2" source="X5143" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5144.2" source="X5144" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5148.2" source="X5148" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5149.2" source="X5149" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5150.2" source="X5150" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5151.2" source="X5151" target="4022067" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5152.2" source="X5152" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5153.2" source="X5153" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5154.2" source="X5154" target="4022067" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5158.2" source="X5158" target="4022067" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5159.2" source="X5159" target="4022067" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5160.2" source="X5160" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5161.2" source="X5161" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5162.2" source="X5162" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5163.2" source="X5163" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5164.2" source="X5164" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5168.2" source="X5168" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5169.2" source="X5169" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5170.2" source="X5170" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5171.2" source="X5171" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5172.2" source="X5172" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5173.2" source="X5173" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5174.2" source="X5174" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5178.2" source="X5178" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5179.2" source="X5179" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5180.2" source="X5180" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5181.2" source="X5181" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5182.2" source="X5182" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5183.2" source="X5183" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5184.2" source="X5184" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5188.2" source="X5188" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5189.2" source="X5189" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5190.2" source="X5190" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5191.2" source="X5191" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5192.2" source="X5192" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5193.2" source="X5193" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5194.2" source="X5194" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5198.2" source="X5198" target="4022067" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "X5199.2" source="X5199" target="4022067" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

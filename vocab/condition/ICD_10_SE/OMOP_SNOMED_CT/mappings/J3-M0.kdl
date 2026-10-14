@@ -1,0 +1,365 @@
+// ICD-10-SE extension codes to OMOP SNOMED CT concept mappings, codes J3-M0
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_SNOMED_CT"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "J380B.2" source="J380B" target="261599" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380C.2" source="J380C" target="261599" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380W.2" source="J380W" target="261599" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380X.2" source="J380X" target="261599" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381B.2" source="J381B" target="433595" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381D.2" source="J381D" target="433595" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381W.2" source="J381W" target="4209223" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381X.2" source="J381X" target="4209223" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J387B.2" source="J387B" target="4209224" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J387C.2" source="J387C" target="4154764" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J387W.2" source="J387W" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J479.2" source="J479" target="618954" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J819.2" source="J819" target="3654969" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J829.2" source="J829" target="4279553" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J8419.2" source="J8419" target="4197819" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from J84.1 SNOMED CT 51615001; truncation candidate SNOMED CT 51615001 4197819, standard"
+}
+mapping "J8490.3" source="J8490" target="4119786" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated Swedish extension code (.90); base J84.9 resolves to 233703007"
+}
+mapping "J8499.3" source="J8499" target="4119786" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of J84.9 -> truncation target interstitial lung disease; base code
+        carries the standard concept
+        """
+}
+mapping "J958A.2" source="J958A" target="259992" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J9840.2" source="J9840" target="257907" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from J98.4; (19829001); appropriate parent"
+}
+mapping "J9849.2" source="J9849" target="257907" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to J98 category.49 = other specified disorders of lung; truncation target is standard
+        """
+}
+mapping "K137A.2" source="K137A" target="4003008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "K137B.2" source="K137B" target="4163277" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K137D.2" source="K137D" target="4301174" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K3190.3" source="K3190" target="4000609" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char extension of K31.9; truncation-reached concept Disorder of upper gastrointestinal tract
+        """
+}
+mapping "K404A.2" source="K404A" target="4288544" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K404B.2" source="K404B" target="4288544" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K413A.2" source="K413A" target="4178874" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K413B.2" source="K413B" target="4178874" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K5500.2" source="K5500" target="201894" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated to K55.0; crosswalk-verified via prior candidate"
+}
+mapping "K5509.3" source="K5509" target="201894" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fifth-position extension of K55.0 (acute vascular insufficiency of intestine); base concept
+        201894 is standard.09 suffix adds unspecified site/episode detail.
+        """
+}
+mapping "K6310.2" source="K6310" target="193242" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated 5th-char extension of K63.1 (perforation of intestine); base maps to perforation of
+        intestine
+        """
+}
+mapping "K6319.2" source="K6319" target="193242" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Dotted leaf code; resolved via truncation to Perforation of intestine; verified standard"
+}
+mapping "K7200.2" source="K7200" target="4245975" relationship=equivalent effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        K72.00 acute/subacute hepatic failure without coma; SNOMED CT Hepatic failure is parent; slight
+        specificity loss; crosswalk-verified
+        """
+}
+mapping "K7209.3" source="K7209" target="4245975" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Swedish 5th-char extension of K72.0; base concept hepatic failure is standard SNOMED CT and"
+}
+mapping "K7210.3" source="K7210" target="4340390" relationship=equivalent preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension (K72.10 = chronic hepatic failure without coma) -> (235886005);
+        crosswalk-verified, standard
+        """
+}
+mapping "K7290.2" source="K7290" target="4245975" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to K72 base; Hepatic failure verified standard; K72.90 specifies without coma, base
+        concept appropriate.
+        """
+}
+mapping "K7299.2" source="K7299" target="4245975" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf K72.99 resolves to base concept K72 (59927004); verified standard S"
+}
+mapping "L030B.2" source="L030B" target="137057" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L030C.2" source="L030C" target="137057" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L030X.2" source="L030X" target="4100662" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L208C.2" source="L208C" target="133835" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L208G.2" source="L208G" target="4296193" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L401A.2" source="L401A" target="140480" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L408B.2" source="L408B" target="4270887" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L433A.2" source="L433A" target="132703" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L433B.2" source="L433B" target="37119135" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L433X.2" source="L433X" target="132703" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562A.2" source="L562A" target="134438" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562B.2" source="L562B" target="134438" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562C.2" source="L562C" target="4296188" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L564A.2" source="L564A" target="4299673" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L564B.2" source="L564B" target="35622312" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L568A.2" source="L568A" target="4301764" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608A.2" source="L608A" target="4174523" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608C.2" source="L608C" target="4250918" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L608F.2" source="L608F" target="375552" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608G.2" source="L608G" target="375552" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738A.2" source="L738A" target="4305948" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738C.2" source="L738C" target="136773" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738E.2" source="L738E" target="4318372" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L817A.2" source="L817A" target="4174223" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L817C.2" source="L817C" target="141094" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L817E.2" source="L817E" target="37164445" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L817F.2" source="L817F" target="4209297" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L858B.2" source="L858B" target="4112748" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858C.2" source="L858C" target="4112748" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858E.2" source="L858E" target="4155988" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L858G.2" source="L858G" target="4197127" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858J.2" source="L858J" target="4171850" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L942A.2" source="L942A" target="4280820" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L942C.2" source="L942C" target="4030772" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L942X.2" source="L942X" target="4280820" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L950W.2" source="L950W" target="4137275" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L984C.2" source="L984C" target="133547" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L984E.2" source="L984E" target="4262920" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L985B.2" source="L985B" target="141094" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L985C.2" source="L985C" target="4301607" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L988A.2" source="L988A" target="3661498" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L988D.2" source="L988D" target="4209224" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L988W.2" source="L988W" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990A.2" source="L990A" target="4297092" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990B.2" source="L990B" target="37397459" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990D.2" source="L990D" target="37396776" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000E.2" source="M000E" target="4223530" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011B.2" source="M011B" target="37173822" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011E.2" source="M011E" target="4223530" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011F.2" source="M011F" target="4065482" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058A.4" source="M058A" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058B.2" source="M058B" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058C.2" source="M058C" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058D.2" source="M058D" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058F.2" source="M058F" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058G.2" source="M058G" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058H.2" source="M058H" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058L.2" source="M058L" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058M.2" source="M058M" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058N.2" source="M058N" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058X.2" source="M058X" target="80809" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059L.2" source="M059L" target="80809" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059M.2" source="M059M" target="80809" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059N.2" source="M059N" target="80809" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M060L.2" source="M060L" target="80809" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M060M.2" source="M060M" target="80809" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M060N.2" source="M060N" target="80809" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}

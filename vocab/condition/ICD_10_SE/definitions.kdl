@@ -12,6 +12,18 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+collection "icd-10-se-omop-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to OMOP SNOMED CT concepts"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_SNOMED_CT"
+    import "OMOP_SNOMED_CT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "ICD-10-SE to SNOMED CT"
     authors "ludvig-alden"

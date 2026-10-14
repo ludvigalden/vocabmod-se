@@ -1,0 +1,343 @@
+// ICD-10-SE extension codes to OMOP SNOMED CT concept mappings, codes G6-I5
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_SNOMED_CT"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "G649.2" source="G649" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G808B.2" source="G808B" target="4194210" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G918B.2" source="G918B" target="4159151" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G918W.2" source="G918W" target="438244" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G989.2" source="G989" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H020A.2" source="H020A" target="379020" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H191A.2" source="H191A" target="374035" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "H191B.2" source="H191B" target="374035" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "H191X.2" source="H191X" target="374035" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353A.2" source="H353A" target="37163309" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353B.2" source="H353B" target="37163309" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353C.2" source="H353C" target="37163309" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353D.2" source="H353D" target="3657834" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353E.2" source="H353E" target="4195989" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353F.2" source="H353F" target="379010" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353H.2" source="H353H" target="4195050" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353J.2" source="H353J" target="37171228" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H356A.2" source="H356A" target="437312" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H356C.2" source="H356C" target="36717028" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H504B.2" source="H504B" target="4163410" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H505A.2" source="H505A" target="372650" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H511B.2" source="H511B" target="442754" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H559.2" source="H559" target="378165" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I009.2" source="I009" target="321588" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I101.3" source="I101" target="320128" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension of I10 (Essential hypertension). Base I10 maps to Extension
+        encodes episode modifier. Weak to preserve extension suffix.
+        """
+}
+mapping "I10E.3" source="I10E" target="320128" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fifth-character extension: I10 = essential hypertension.E = Swedish episode-of-care suffix. Base
+        I10 maps to SNOMED CT 320128 SNOMED CT 59621000 (standard.E suffix is preserved custom.
+        """
+}
+mapping "I10M.2" source="I10M" target="320128" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated I10 with extension M; crosswalk-verified (320128, 59621000, Essential hypertension,
+        S); extension preserved, base code mapped
+        """
+}
+mapping "I2140.2" source="I2140" target="444406" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "(70422006) which is the correct parent concept"
+}
+mapping "I2190.2" source="I2190" target="312327" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf under I21.9 (acute MI unspecified); (312327) verified standard"
+}
+mapping "I2199.2" source="I2199" target="312327" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code I21.99. Base concept I21 = Acute myocardial infarction. SNOMED CT 312327 (standard,
+        The.99 subtype is a Swedish extension preserved via truncation fallback.
+        """
+}
+mapping "I21P.3" source="I21P" target="312327" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension on I21 (acute MI); base I21 concept (acute myocardial infarction)
+        preserved
+        """
+}
+mapping "I25P.3" source="I25P" target="315286" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated code; Swedish extension.P to I25; (413838009) S Condition"
+}
+mapping "I4209.3" source="I4209" target="4163710" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated Swedish extension code (.09); base I42 already resolves to 399020009; fifth-char
+        extension preserved as custom code
+        """
+}
+mapping "I4219.3" source="I4219" target="316428" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated code; Swedish extension.19 to I42.1; (45227007) S Condition"
+}
+mapping "I4229.2" source="I4229" target="4124693" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated 5th-char extension of I42 (cardiomyopathy); base maps to hypertrophic cardiomyopathy
+        """
+}
+mapping "I4259.3" source="I4259" target="4236332" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated I42.59 (other restrictive cardiomyopathy with site code) -> base I42.5 primary
+        restrictive cardiomyopathy; prior truncation target 4236332 verified standard; fifth-char site
+        modifier preserved
+        """
+}
+mapping "I4280.2" source="I4280" target="321319" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from I42.8; (85898001); crosswalk-verified"
+}
+mapping "I4289.3" source="I4289" target="321319" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I42.8 (other cardiomyopathies); weak target is base Cardiomyopathy
+        concept
+        """
+}
+mapping "I4299.3" source="I4299" target="321319" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code; Swedish 5th-char extension.99 to I42 other cardiomyopathy; (85898001) S
+        Condition as weak target
+        """
+}
+mapping "I471A.3" source="I471A" target="317893" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Fifth-char extension A = first episode to I47.1; (67198005) S Condition retained"
+}
+mapping "I472C.2" source="I472C" target="4135823" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I489A.3" source="I489A" target="4141360" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension A=first episode of I48.9 (unspecified AF); no standard SNOMED CT for
+        unspecified atrial fibrillation exists; weak to Chronic atrial fibrillation 426749004 as
+        broadest AF subtype
+        """
+}
+mapping "I489B.3" source="I489B" target="313217" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-char extension for recurrent episode of I48.9; base I48.9 = atrial fibrillation
+        and flutter unspecified; deprecated prior 4108832 combined fibrillation+flutter; best standard
+        is SNOMED CT 49436004 313217
+        """
+}
+mapping "I489C.3" source="I489C" target="4154290" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish extension code of I48.9 (unspecified AFib/flutter); no standard unspecified AFib SNOMED CT
+        exists; (282825002)
+        """
+}
+mapping "I489E.3" source="I489E" target="4232697" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish fifth-character extension code for I48.9 (unspecified AF/flutter); base I48.9 maps to
+        deprecated SNOMED CT 4108832; (440059007) is representative standard subtype; significant
+        granularity loss
+        """
+}
+mapping "I489F.3" source="I489F" target="4154290" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fifth-char extension on I48.9 (unspecified atrial fibrillation); base ICD-10 SNOMED CT crosswalk
+        deprecated; (282825002) as closest standard subtype
+        """
+}
+mapping "I495A.2" source="I495A" target="4210313" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I5000.3" source="I5000" target="319835" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I50.0; base concept congestive heart failure is standard SNOMED CT
+        and
+        """
+}
+mapping "I5001.3" source="I5001" target="319835" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I50.0 (congestive heart failure); weak target is base CHF concept
+        """
+}
+mapping "I5009.3" source="I5009" target="319835" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I50.0; base concept congestive heart failure is standard SNOMED CT
+        and
+        """
+}
+mapping "I5010.3" source="I5010" target="439846" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Swedish fifth-character extension of I50.1 Left ventricular failure; (85232009) preserved"
+}
+mapping "I5011.3" source="I5011" target="439846" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish extension I50.11 (left ventricular failure without symptoms, NYHA class I) of base
+        I50.1. The.11 encodes asymptomatic status. (439846).
+        """
+}
+mapping "I5019.3" source="I5019" target="439846" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I50.1 (left ventricular failure); base code maps to SNOMED CT
+        85232009, standard and
+        """
+}
+mapping "I5090.2" source="I5090" target="316139" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from I50.9; (84114007); crosswalk-verified"
+}
+mapping "I5091.2" source="I5091" target="316139" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code I50.91. Base concept I50 = Heart failure. SNOMED CT 316139 (standard, The.91 subtype
+        is a Swedish extension detail preserved via truncation fallback.
+        """
+}
+mapping "I5099.2" source="I5099" target="316139" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf I50.99 resolves to base concept I50 (84114007); verified standard S"
+}
+mapping "I5140.2" source="I5140" target="314383" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code I51.40 (myocarditis, unspecified) -> truncation to I51.4 -> crosswalk to SNOMED CT
+        50920009 (Myocarditis). Verified standard
+        """
+}
+mapping "I5149.3" source="I5149" target="314383" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated code from I51 (complications/ill-defined heart disease). Preserved as weak target."
+}
+mapping "I5159.3" source="I5159" target="321320" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code; I51.5 is the base (complications and ill-defined descriptions of heart disease);
+        fifth character.9 encodes unspecified; (64077000) is the I51.5 base concept
+        """
+}
+mapping "I5160.3" source="I5160" target="134057" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated Swedish extension code (.60); base I51 resolves to 49601007; very broad residual
+        parent
+        """
+}
+mapping "I5161.3" source="I5161" target="134057" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of I51.6 (cardiovascular disease unspecified) reached via truncation
+        to 49601007. Extension suffix preserved as custom.
+        """
+}
+mapping "I5169.2" source="I5169" target="134057" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated from I51.6; (49601007); broad parent but appropriate for unspecified cardiovascular
+        complication
+        """
+}
+mapping "I5189.2" source="I5189" target="321588" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated from I51.8/9; crosswalk-verified (321588, 56265001, Heart disease, S); I51.89 is other
+        ill-defined heart diseases mapped to broad heart disease
+        """
+}
+mapping "I5190.2" source="I5190" target="321588" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf I51.90 resolves to base concept I51 (56265001); verified standard S"
+}
+mapping "I5191.3" source="I5191" target="321588" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncation-matched; I51.91 complication of heart disease reaches only broad parent SNOMED CT
+        56265001; specificity lost
+        """
+}
+mapping "I5199.3" source="I5199" target="321588" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code SNOMED CT 56265001; broad parent reached by truncation; appropriate weak mapping —
+        ICD is more specific
+        """
+}

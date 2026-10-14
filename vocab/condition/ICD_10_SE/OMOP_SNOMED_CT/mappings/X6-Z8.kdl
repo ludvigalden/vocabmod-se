@@ -1,0 +1,237 @@
+// ICD-10-SE extension codes to OMOP SNOMED CT concept mappings, codes X6-Z8
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-omop-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_SNOMED_CT"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "X600.3" source="X600" target="4233034" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char extension (.0 = initial encounter) under X60 SNOMED CT 439011002; base concept 439011002
+        is standard SNOMED CT and encounter suffix preserved as custom
+        """
+}
+mapping "X610.3" source="X610" target="4152376" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        fifth-character extension (.0=anticoagulants); base X61 intentional self-poisoning concept
+        preserved; drug class suffix lost
+        """
+}
+mapping "X649.3" source="X649" target="438028" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code X64 SNOMED CT 7895008 with.9 unspecified; weak to broad poisoning parent 438028
+        """
+}
+mapping "X659.2" source="X659" target="444362" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Intentional self-poisoning by unspecified drugs; maps (86849004); standard, Condition"
+}
+mapping "X719.2" source="X719" target="4303690" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Dotted leaf for intentional self-harm by drowning unspecified; crosswalk to 418420002 SNOMED CT
+        418420002 is broad parent (drowning not specified in SNOMED CT) but appropriate for category-level
+        mapping
+        """
+}
+mapping "X720.3" source="X720" target="434849" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf external cause (intentional self-harm by handgun discharge); closest standard SNOMED CT is
+        287184008
+        """
+}
+mapping "X780.2" source="X780" target="4092411" relationship=equivalent effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        ICD leaf code intentional self-harm by sharp glass -> (248062006); crosswalk-verified, loses
+        sharp-glass specificity
+        """
+}
+mapping "X789.2" source="X789" target="4092411" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code -> Self-injurious behavior; exact SNOMED CT match via crosswalk; Observation domain;
+        standard
+        """
+}
+mapping "X956.3" source="X956" target="435166" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Swedish extension.6 to X95 assault by other/unspecified firearm -> (242869008) S Observation"
+}
+mapping "Y0501.3" source="Y0501" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf external cause code for sexual assault; closest standard SNOMED CT is 39379000 (parent event)
+        """
+}
+mapping "Y0504.3" source="Y0504" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of Y05 (sexual assault by bodily force, home/vital activities); weak
+        to SNOMED CT 39379000 (standard, Observation domain); place/activity extension has no SNOMED CT
+        equivalent
+        """
+}
+mapping "Y0509.2" source="Y0509" target="4215102" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Y05 = Sexual assault by bodily force with 5th-char extension.09. (39379000) is verified standard
+        SNOMED CT match; Observation domain.
+        """
+}
+mapping "Y0529.3" source="Y0529" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Sexual assault by bodily force at sports area (ICD-10 Y05.2 group); SNOMED CT 39379000 is
+        appropriate broad match
+        """
+}
+mapping "Y0549.3" source="Y0549" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char extension specifying other perpetrator type; base SNOMED CT Forcible sexual assault is a
+        good match
+        """
+}
+mapping "Y0589.3" source="Y0589" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of Y05 (sexual assault by bodily force, other specified place); weak
+        to SNOMED CT 39379000 (standard, Observation domain); place-of-occurrence extension has no SNOMED CT
+        equivalent
+        """
+}
+mapping "Y0591.3" source="Y0591" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension of Y05 (sexual assault by other specified means); maps to SNOMED CT
+        39379000 SNOMED CT event
+        """
+}
+mapping "Y0593.3" source="Y0593" target="4215102" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code: sexual assault by bodily force unspecified place/activity -> (39379000) S
+        Observation not-dict; place/activity metadata lost
+        """
+}
+mapping "Y1100.3" source="Y1100" target="438028" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code with undetermined intent; current nonstandard target 4244894 SNOMED CT 7895008
+        is deprecated; weak to broad poisoning parent 438028
+        """
+}
+mapping "Y1109.2" source="Y1109" target="4303690" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf external cause (poisoning by psychotropic drugs with unknown intent); best match is
+        418420002; original candidate deprecated (D)
+        """
+}
+mapping "Y1203.3" source="Y1203" target="438946" relationship=equivalent preference=alternative effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Poisoning by narcotics/hallucinogens with unknown intent; prior nonstandard 4244894 deprecated;
+        closest is 216550002; intent mismatch
+        """
+}
+mapping "Y1290.3" source="Y1290" target="435437" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension -> poisoning by narcotics/hallucinogens NEC unknown intent; (4244894)
+        deprecated; only available standard is assault-specific poisoning which forces wrong intent;
+        very loose match
+        """
+}
+mapping "Y1299.3" source="Y1299" target="442562" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code for poisoning by narcotics/hallucinogens with unknown intent; prior
+        candidate 4244894 is deprecated; closest standard is 442562; Y-codes are cause-of-injury not
+        clinical conditions
+        """
+}
+mapping "Y1401.3" source="Y1401" target="442562" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code for drug poisoning with unknown intent; prior SNOMED CT 75478009 4244894
+        deprecated AND semantically wrong (unknown != intentional); weak to SNOMED CT 75478009 442562 as
+        closest condition
+        """
+}
+mapping "Y1403.3" source="Y1403" target="444362" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension of Y14 (poisoning by unspecified drugs, unknown intent). Closest concept
+        is 86849004 (unknown vs suicidal). Very low confidence weak link.
+        """
+}
+mapping "Y1408.3" source="Y1408" target="4196024" relationship=equivalent preference=alternative effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Y-code external cause (drug poisoning undetermined intent); Intentional poisoning by drug has
+        intent mismatch; closest available
+        """
+}
+mapping "Y1429.3" source="Y1429" target="4196024" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Poisoning by drugs with unknown intent at school; prior nonstandard 4244894 (Intentional drug
+        overdose) deprecated; closest concept is 431307001; intent mismatch
+        """
+}
+mapping "Y1491.3" source="Y1491" target="444362" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th/6th-char extension of Y14 (poisoning by unspecified drugs, unknown intent). Same intent
+        mismatch as Y14.03. Very low confidence weak link to suicidal poisoning.
+        """
+}
+mapping "Y289.2" source="Y289" target="4072226" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Leaf code; crosswalk-verified"
+}
+mapping "Z089B.2" source="Z089B" target="4300118" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z089C.2" source="Z089C" target="4162276" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z202A.2" source="Z202A" target="433417" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z202C.2" source="Z202C" target="436033" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z850D.2" source="Z850D" target="443390" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z850F.2" source="Z850F" target="4246127" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z866W.2" source="Z866W" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867A.2" source="Z867A" target="4185607" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867B.2" source="Z867B" target="4231363" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867W.2" source="Z867W" target="4274025" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
