@@ -1,0 +1,15 @@
+// ICD-10-SE extension codes: the Swedish codes with no WHO analogue. Shared codes live in ICD-10;
+// an extension code's parent may be one.
+system "ICD_10_SE" kind=classification distribution=published publisher="se.ehalsomyndigheten" extends="ICD_10" default-locale="sv" {
+    name "sv" "ICD-10-SE, svenska tilläggskoder"
+}
+release "2026" system="ICD_10_SE" label-source=registry imported-version="2017" {
+    dependencies "ICD_10@2016"
+}
+context {
+    system "ICD_10_SE" release="2026"
+}
+category "extension" {
+    name "en" "Swedish five-character extension"
+}
+import "concepts/**/*.kdl" kind=fragment
