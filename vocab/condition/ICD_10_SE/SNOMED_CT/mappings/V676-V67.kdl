@@ -1,0 +1,408 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V676-V67
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V6760.1" source="V6760" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6760 is the Swedish 7-char extension of ICD-10 V67.6 (45570952, SNOMED CT 214031005) with
+        5th digit = (sport/exercise). Target SNOMED CT 437165 = (214031005), the most traffic-specific
+        SNOMED CT target from the V67.6 Athena crosswalk (436292, 437165, 444074). mapping_type=broader:
+        the SNOMED CT target fully captures the traffic accident; the passenger role and activity-context
+        dimensions are dropped. Confidence (moderate): verified Athena crosswalk on the base code,
+        Swedish extension not independently re-verified.
+        """
+}
+mapping "V6761.1" source="V6761" target="217897003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6761 is the Swedish 6th-digit extension of V67.6 (occupant of heavy transport vehicle,
+        passenger, injured in traffic accident in collision with fixed/stationary object), adding the
+        activity dimension SNOMED CT 214031005 217897003 36198007 (play and other leisure). No SNOMED CT
+        standard concept captures the activity dimension; targets inherit from the V67.6 Athena
+        crosswalk (45570952 Maps to 436292/437165/444074). Primary target 436292 (217897003, standard
+        Observation/Event) denotes the collision mechanism, broader than source (subsumes collision
+        aspect; drops vehicle type, occupant role, traffic status, activity). Alternate 437165
+        (214031005) is broader (captures traffic-accident context; loses collision-with-fixed-object
+        specificity). Alternate 444074 (36198007) is broader (victim-status concept, loosest). primary:
+        crosswalk-verified at parent V67.6, activity suffix not independently re-verified (mechanical
+        inheritance, unspecified source dimension).
+        """
+}
+mapping "V6761.2" source="V6761" target="214031005" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6761.3" source="V6761" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6762.1" source="V6762" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6762 is the Swedish 6th-digit extension of V67.6 (heavy-transport-vehicle passenger,
+        traffic accident, collision with fixed/stationary object), adding activity SNOMED CT 214031005
+        217897003 36198007 (work). No SNOMED CT standard concept captures the activity dimension; targets
+        inherit from the V67.6 Athena crosswalk (45570952 Maps to 436292/437165/444074). Primary 436292
+        (217897003, standard) is broader (collision mechanism; drops vehicle/role/traffic/activity). Alt
+        437165 (214031005) broader (traffic-accident context; loses collision specificity). Alt 444074
+        (36198007) broader (victim status, loosest). primary: parent V67.6 crosswalk, activity suffix
+        not independently re-verified.
+        """
+}
+mapping "V6762.2" source="V6762" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6762.3" source="V6762" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6763.1" source="V6763" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6763 is the Swedish 6th-digit extension of V67.6 (heavy-transport-vehicle passenger,
+        traffic accident, collision with fixed/stationary object), adding activity SNOMED CT 214031005
+        217897003 36198007 (other activity). No SNOMED CT standard concept captures the activity dimension;
+        targets inherit from the V67.6 Athena crosswalk (45570952 Maps to 436292/437165/444074). Primary
+        436292 (217897003, standard) is broader (collision mechanism; drops
+        vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context; loses
+        collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent
+        V67.6 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6763.2" source="V6763" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6763.3" source="V6763" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6764.1" source="V6764" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6764 is the Swedish 6th-digit extension of V67.6 (heavy-transport-vehicle passenger,
+        traffic accident, collision with fixed/stationary object), adding activity SNOMED CT 214031005
+        217897003 36198007 (vital activity such as rest, sleep, meals, personal hygiene). No SNOMED CT
+        standard concept captures the activity dimension; targets inherit from the V67.6 Athena
+        crosswalk (45570952 Maps to 436292/437165/444074). Primary 436292 (217897003, standard) is
+        broader (collision mechanism; drops vehicle/role/traffic/activity). Alt 437165 (214031005)
+        broader (traffic-accident context; loses collision specificity). Alt 444074 (36198007) broader
+        (victim status, loosest). primary: parent V67.6 crosswalk, activity suffix not independently
+        re-verified.
+        """
+}
+mapping "V6764.2" source="V6764" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6764.3" source="V6764" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6768.1" source="V6768" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6768 is the Swedish 6th-digit extension of V67.6 (heavy-transport-vehicle passenger,
+        traffic accident, collision with fixed/stationary object), adding activity SNOMED CT 214031005
+        217897003 36198007 (other specified activities). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.6 Athena crosswalk (45570952 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.6 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6768.2" source="V6768" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6768.3" source="V6768" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6769.1" source="V6769" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6769 is the Swedish 6th-digit extension of V67.6 (heavy-transport-vehicle passenger,
+        traffic accident, collision with fixed/stationary object), adding activity SNOMED CT 214031005
+        217897003 36198007 (activity, unspecified). No SNOMED CT standard concept captures the activity
+        dimension; targets inherit from the V67.6 Athena crosswalk (45570952 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.6 crosswalk, unspecified activity suffix not independently re-verified.
+        """
+}
+mapping "V6769.2" source="V6769" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6769.3" source="V6769" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6770.1" source="V6770" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6770 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (sport, exercise). No SNOMED CT standard concept captures the activity
+        dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6770.2" source="V6770" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6770.3" source="V6770" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6771.1" source="V6771" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6771 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (play and leisure). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6771.2" source="V6771" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6771.3" source="V6771" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6772.1" source="V6772" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6772 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (work). No SNOMED CT standard concept captures the activity dimension;
+        targets inherit from the V67.7 Athena crosswalk (45590292 Maps to 436292/437165/444074). Primary
+        436292 (217897003, standard) is broader (collision mechanism; drops
+        vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context; loses
+        collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent
+        V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6772.2" source="V6772" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6772.3" source="V6772" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6773.1" source="V6773" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6773 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (other activity). No SNOMED CT standard concept captures the activity
+        dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6773.2" source="V6773" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6773.3" source="V6773" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6774.1" source="V6774" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6774 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (vital activity). No SNOMED CT standard concept captures the activity
+        dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6774.2" source="V6774" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6774.3" source="V6774" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6778.1" source="V6778" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6778 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (other specified activities). No SNOMED CT standard concept captures
+        the activity dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6778.2" source="V6778" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6778.3" source="V6778" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6779.1" source="V6779" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6779 is the Swedish 6th-digit extension of V67.7 (person on outside of heavy transport
+        vehicle, traffic accident, collision with fixed/stationary object), adding activity SNOMED CT
+        214031005 217897003 36198007 (activity, unspecified). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.7 Athena crosswalk (45590292 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.7 crosswalk, unspecified activity suffix not independently re-verified.
+        """
+}
+mapping "V6779.2" source="V6779" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6779.3" source="V6779" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6790.1" source="V6790" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6790 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (sport, exercise). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6790.2" source="V6790" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6790.3" source="V6790" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6791.1" source="V6791" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6791 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (play and leisure). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6791.2" source="V6791" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6791.3" source="V6791" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6792.1" source="V6792" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6792 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (work). No SNOMED CT standard concept captures the activity
+        dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6792.2" source="V6792" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6792.3" source="V6792" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6793.1" source="V6793" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6793 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (other activity). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6793.2" source="V6793" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6793.3" source="V6793" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6794.1" source="V6794" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6794 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (vital activity). No SNOMED CT standard concept captures the
+        activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6794.2" source="V6794" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6794.3" source="V6794" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6798.1" source="V6798" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6798 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (other specified activities). No SNOMED CT standard concept
+        captures the activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps
+        to 436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6798.2" source="V6798" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6798.3" source="V6798" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6799.1" source="V6799" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6799 is the Swedish 6th-digit extension of V67.9 (unspecified occupant of heavy
+        transport vehicle, traffic accident, collision with fixed/stationary object), adding activity
+        SNOMED CT 214031005 217897003 36198007 (activity, unspecified). No SNOMED CT standard concept captures
+        the activity dimension; targets inherit from the V67.9 Athena crosswalk (45755986 Maps to
+        436292/437165/444074). Primary 436292 (217897003, standard) is broader (collision mechanism;
+        drops vehicle/role/traffic/activity). Alt 437165 (214031005) broader (traffic-accident context;
+        loses collision specificity). Alt 444074 (36198007) broader (victim status, loosest). primary:
+        parent V67.9 crosswalk, unspecified activity suffix not independently re-verified.
+        """
+}
+mapping "V6799.2" source="V6799" target="214031005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6799.3" source="V6799" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

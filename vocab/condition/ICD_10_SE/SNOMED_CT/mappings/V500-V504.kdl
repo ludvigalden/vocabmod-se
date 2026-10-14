@@ -1,0 +1,511 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V500-V504
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V5000.1" source="V5000" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5000 = Swedish-SE extension of V50.0 (Driver of pick-up truck or van injured in
+        collision with pedestrian or animal, driver injured in non-traffic accident) + activity suffix
+        SNOMED CT 214640008 36198007 = idrott, sport, motion. V50.0 base has Athena Maps-to to 437738
+        (Motor vehicle accident off public road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Activity suffix is SE-administrative with no SNOMED CT analogue. Both targets capture
+        part of the clinical content (off-public-road context; victim role) but lose the
+        pick-up-truck/collision-with-pedestrian-or-animal detail. Broader (target subsumes victim
+        aspect, drops vehicle-type and activity), moderate: verified crosswalk for V50.0 base, applied
+        mechanically to SE child.
+        """
+}
+mapping "V5000.2" source="V5000" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5001.1" source="V5001" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5001 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5002.1" source="V5002" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5002 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5003.1" source="V5003" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5003 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5004.1" source="V5004" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5004 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5008.1" source="V5008" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5008 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5009.1" source="V5009" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5009 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5010.1" source="V5010" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5010 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5011.1" source="V5011" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5011 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5012.1" source="V5012" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5012 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5013.1" source="V5013" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5013 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5014.1" source="V5014" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5014 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5018.1" source="V5018" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5018 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5019.1" source="V5019" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5019 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5020.1" source="V5020" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5020 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5021.1" source="V5021" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5021 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5022.1" source="V5022" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5022 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5023.1" source="V5023" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5023 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5024.1" source="V5024" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5024 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5028.1" source="V5028" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5028 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5029.1" source="V5029" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5029 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5030.1" source="V5030" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5030 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5031.1" source="V5031" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5031 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5032.1" source="V5032" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5032 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5033.1" source="V5033" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5033 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5034.1" source="V5034" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5034 is a Swedish national-extension 7-char ICD-10 code encoding SNOMED CT 214640008 PLUS a
+        Swedish-specific activity-dimension suffix (idrott/sport, lek och fritid, förvärvsarbete, annan
+        sysselsättning, vitalaktivitet, andra specificerade, ospecificerad). The activity context has no
+        SNOMED CT or OMOP standard concept analogue - it is a registry-only dimension. The underlying clinical
+        injury event is captured by the parent V50 code crosswalk: V50.0 (driver non-traffic), V50.1
+        (passenger non-traffic), V50.2 (person on outside non-traffic), V50.3 (unspecified occupant
+        non-traffic) all Athena- (Motor vehicle accident off public road, OMOP concept 437738). Target
+        214640008 (SNOMED CT disorder). Best available standard concept; the source's
+        vehicle/role/non-traffic semantics are covered but the activity dimension is dropped. Confidence
+        (low): partial mapping - one axis of a multi-dimensional Swedish-extension code, crosswalk
+        inherited from parent V50 code, not independently re-verified at the 7-char level.
+        """
+}
+mapping "V5038.1" source="V5038" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5038 = Swedish extension of WHO V50.3 (Unspecified occupant of pick-up truck/van injured
+        in nontraffic collision with pedestrian/animal) with activity suffix SNOMED CT 214640008. WHO V50.3
+        (Athena 45756578) has Athena crosswalk to SNOMED CT 437738 (Motor vehicle accident off public road,
+        concept_code 214640008) and 444074. The activity suffix (sport/leisure/work/vital/other) has no
+        SNOMED CT representation in the vehicular-accident hierarchy; the most specific target capturing
+        the nontraffic aspect is 437738. Target is broader: fully contains the accident semantics
+        (off-public-road MVA) but loses the activity-at-time-of-accident dimension. high: verified
+        Athena crosswalk at the WHO parent level, one well-understood breadth dimension (activity) lost.
+        """
+}
+mapping "V5039.1" source="V5039" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5039 = Swedish extension of WHO V50.3 (Unspecified occupant, nontraffic) with activity
+        suffix SNOMED CT 214640008. Same mapping basis as V5038: WHO V50.3 crosswalk to SNOMED CT 437738
+        (Motor vehicle accident off public road). Target broader (activity dimension not represented);
+        high per verified parent crosswalk with one-dimension breadth loss.
+        """
+}
+mapping "V5040.1" source="V5040" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5040 = Swedish extension of WHO V50.4 (Person injured while boarding/alighting from
+        pick-up truck/van in collision with pedestrian/animal) with activity suffix SNOMED CT 242107006.
+        WHO V50.4 (Athena 45575746) has Athena crosswalk to SNOMED CT 4053428 (Accident while boarding or
+        alighting from motor vehicle on road, concept_code 242107006) and 444074. The most specific
+        target is 4053428. Target broader: captures boarding/alighting MVA semantics but loses
+        light-truck specificity and the activity-at-time dimension. high per verified parent crosswalk.
+        """
+}
+mapping "V5041.1" source="V5041" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5041 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}
+mapping "V5042.1" source="V5042" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5042 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}
+mapping "V5043.1" source="V5043" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5043 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}
+mapping "V5044.1" source="V5044" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5044 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}
+mapping "V5048.1" source="V5048" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5048 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}
+mapping "V5049.1" source="V5049" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5049 = Swedish extension of WHO V50.4 (boarding/alighting) with activity suffix SNOMED CT
+        242107006. Same mapping basis as V5040: WHO V50.4 crosswalk to SNOMED CT 4053428. high, broader
+        (activity dimension lost).
+        """
+}

@@ -1,0 +1,607 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V78
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V7820.1" source="V7820" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7820 (Swedish 5-char extension of ICD-10 V78.2): bus occupant (person on outside of
+        vehicle) injured in noncollision nontraffic transport accident, while engaged in sport/exercise.
+        Parent V78.2 (Athena concept 45590322) has verified Athena SNOMED 214640008 36198007 edges to
+        SNOMED CT 437738 (Motor vehicle accident off public road, concept_code 214640008) and 444074
+        (Victim of vehicular AND/OR traffic accident, concept_code 36198007). The Swedish activity
+        subcategory (idrott/sport/motion) has no SNOMED CT representation; target 437738 fully subsumes the
+        nontraffic-accident axis, and 444074 covers the vehicular-accident-victim axis. Mapping type
+        broader: target is the standard parent concept that contains the more specific Swedish code.
+        Confidence (high) for 437738: verified crosswalk, one level of specificity added by the Swedish
+        activity extension; (moderate) for 444074 as the secondary victim-status target. No web research
+        used; Athena-local mirror only.
+        """
+}
+mapping "V7820.2" source="V7820" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7821.1" source="V7821" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7821 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, during play/leisure. Same parent V78.2 crosswalk (Athena
+        45590322 -> 437738, 444074). Activity subcategory (lek och annan fritidsverksamhet) absent from
+        SNOMED CT. Broader mapping, high for primary nontraffic-accident target; moderate for victim-status
+        secondary.
+        """
+}
+mapping "V7821.2" source="V7821" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7822.1" source="V7822" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7822 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, during paid work. Parent V78.2 crosswalk applies (Athena
+        45590322 -> 437738, 444074). Activity (förvärvsarbete) not represented in SNOMED CT. Broader
+        mapping; high for primary, moderate for secondary.
+        """
+}
+mapping "V7822.2" source="V7822" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7823.1" source="V7823" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7823 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, during other activity. Parent V78.2 crosswalk (Athena 45590322
+        -> 437738, 444074). Activity (annan sysselsättning) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7823.2" source="V7823" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7824.1" source="V7824" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7824 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, during vital activity (rest/sleep/meal/hygiene). Parent V78.2
+        crosswalk (Athena 45590322 -> 437738, 444074). Vital-activity subtype absent from SNOMED CT.
+        Broader mapping.
+        """
+}
+mapping "V7824.2" source="V7824" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7828.1" source="V7828" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7828 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, other specified activity. Parent V78.2 crosswalk (Athena
+        45590322 -> 437738, 444074). Activity unspecified-other not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7828.2" source="V7828" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7829.1" source="V7829" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7829 (Swedish 5-char extension of V78.2): person on outside of bus injured in
+        noncollision nontraffic accident, unspecified activity. Parent V78.2 crosswalk (Athena 45590322
+        -> 437738, 444074). Unspecified-activity subtype not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7829.2" source="V7829" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7830.1" source="V7830" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7830 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, during sport/exercise. Parent V78.3 (Athena 45604767) has
+        verified SNOMED CT 214640008 36198007 to SNOMED CT 437738 (Motor vehicle accident off public road) and
+        444074 (Victim of vehicular AND/OR traffic accident). Activity subtype (idrott/sport/motion)
+        absent from SNOMED CT. Broader mapping; high for primary nontraffic target, moderate for secondary
+        victim-status target.
+        """
+}
+mapping "V7830.2" source="V7830" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7831.1" source="V7831" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7831 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, during play/leisure. Parent V78.3 crosswalk (Athena 45604767
+        -> 437738, 444074). Activity (lek och annan fritidsverksamhet) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7831.2" source="V7831" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7832.1" source="V7832" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7832 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, during paid work. Parent V78.3 crosswalk (Athena 45604767 ->
+        437738, 444074). Activity (förvärvsarbete) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7832.2" source="V7832" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7833.1" source="V7833" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7833 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, other activity. Parent V78.3 crosswalk (Athena 45604767 ->
+        437738, 444074). Activity (annan sysselsättning) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7833.2" source="V7833" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7834.1" source="V7834" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7834 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, during vital activity. Parent V78.3 crosswalk (Athena 45604767
+        -> 437738, 444074). Vital-activity subtype not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7834.2" source="V7834" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7838.1" source="V7838" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7838 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, other specified activity. Parent V78.3 crosswalk (Athena
+        45604767 -> 437738, 444074). Other-specified-activity subtype not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7838.2" source="V7838" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7839.1" source="V7839" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7839 (Swedish 5-char extension of V78.3): unspecified bus occupant injured in
+        noncollision nontraffic accident, unspecified activity. Parent V78.3 crosswalk (Athena 45604767
+        -> 437738, 444074). Unspecified-activity subtype not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7839.2" source="V7839" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7840.1" source="V7840" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7840 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, during sport/exercise. Parent V78.4 (Athena 45570972) has a single
+        verified SNOMED CT 214438007 edge to SNOMED CT 443049 (Noncollision motor vehicle traffic accident
+        involving fall down stairs of motor bus while boarding or alighting, passenger of motor vehicle
+        injured; concept_code 214438007). Activity subtype (idrott/sport/motion) not in SNOMED CT. Broader
+        mapping: target covers the bus-boarding/alighting accident axis and subsumes the activity-coded
+        Swedish source. Confidence (high): verified crosswalk, one level of specificity added by the
+        Swedish activity extension.
+        """
+}
+mapping "V7841.1" source="V7841" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7841 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, during play/leisure. Parent V78.4 crosswalk (Athena 45570972 ->
+        443049). Activity (lek och annan fritidsverksamhet) absent from SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7842.1" source="V7842" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7842 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, during paid work. Parent V78.4 crosswalk (Athena 45570972 -> 443049).
+        Activity (förvärvsarbete) not in SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7843.1" source="V7843" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7843 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, other activity. Parent V78.4 crosswalk (Athena 45570972 -> 443049).
+        Activity (annan sysselsättning) not in SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7844.1" source="V7844" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7844 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, during vital activity. Parent V78.4 crosswalk (Athena 45570972 ->
+        443049). Vital-activity subtype not in SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7848.1" source="V7848" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7848 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, other specified activity. Parent V78.4 crosswalk (Athena 45570972 ->
+        443049). Other-specified-activity subtype not in SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7849.1" source="V7849" target="214438007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7849 (Swedish 5-char extension of V78.4): person injured while boarding/alighting a bus
+        in noncollision accident, unspecified activity. Parent V78.4 crosswalk (Athena 45570972 ->
+        443049). Unspecified-activity subtype not in SNOMED CT. Broader mapping; high.
+        """
+}
+mapping "V7850.1" source="V7850" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7850 (Swedish 5-char extension of V78.5): bus driver injured in noncollision traffic
+        accident, during sport/exercise. Parent V78.5 (Athena 45566087) has verified SNOMED CT 242116005
+        36198007 edges to SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision;
+        concept_code 242116005) and 444074 (Victim of vehicular AND/OR traffic accident; concept_code
+        36198007). The Swedish activity subtype (idrott/sport/motion) has no SNOMED CT representation.
+        Target 432509 fully subsumes the noncollision-traffic-accident axis; 444074 covers the
+        vehicular-accident-victim axis. Broader mapping; high for primary traffic target, moderate for
+        secondary victim-status target.
+        """
+}
+mapping "V7850.2" source="V7850" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7851.1" source="V7851" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7851 (Swedish 5-char extension of V78.5): bus driver injured in noncollision traffic
+        accident, during play/leisure. Parent V78.5 crosswalk (Athena 45566087 -> 432509, 444074).
+        Activity (lek och annan fritidsverksamhet) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7851.2" source="V7851" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7852.1" source="V7852" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7852 (Swedish 5-char extension of V78.5): bus driver injured in noncollision traffic
+        accident, during paid work. Parent V78.5 crosswalk (Athena 45566087 -> 432509, 444074). Activity
+        (förvärvsarbete) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7852.2" source="V7852" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7853.1" source="V7853" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7853 (Swedish 5-char extension of V78.5): bus driver injured in noncollision traffic
+        accident, other activity. Parent V78.5 crosswalk (Athena 45566087 -> 432509, 444074). Activity
+        (annan sysselsättning) not in SNOMED CT. Broader mapping.
+        """
+}
+mapping "V7853.2" source="V7853" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7854.1" source="V7854" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7854 is a Swedish national extension of ICD-10 V78.5 (bus driver injured in noncollision
+        transport accident, traffic) subdivided by activity context (here: vital activities such as
+        rest, sleep, meals, personal hygiene). The activity-context dimension has no SNOMED CT
+        representation. SNOMED CT 432509 = (242116005) is the Athena SNOMED 242116005 36198007 crosswalk
+        target for V78.5 and fully subsumes the accident semantics; the activity qualifier is lost.
+        SNOMED CT 444074 = (36198007) is the second V78.5 crosswalk target, broader still. Moderate tier:
+        Athena crosswalk on the parent, Swedish-extension activity dimension not represented.
+        """
+}
+mapping "V7854.2" source="V7854" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7858.1" source="V7858" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7858 is a Swedish national extension of V78.5 (bus driver, noncollision traffic
+        accident) with activity = SNOMED CT 242116005 36198007. No SNOMED CT representation for the activity
+        dimension. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the
+        V78.5 crosswalk target and fully subsumes the accident semantics. 444074 (Victim of vehicular
+        AND/OR traffic accident) is the secondary crosswalk target. Moderate tier: crosswalk on parent,
+        activity dimension lost.
+        """
+}
+mapping "V7858.2" source="V7858" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7859.1" source="V7859" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7859 is a Swedish national extension of V78.5 (bus driver, noncollision traffic
+        accident) with activity = SNOMED CT 242116005 36198007. SNOMED CT 432509 (Accident to motor vehicle on
+        road, not involving collision) is the V78.5 crosswalk target and subsumes the accident
+        semantics; activity is unspecified so nothing is lost on that axis. 444074 (Victim of vehicular
+        AND/OR traffic accident) is the secondary target. Moderate tier: Athena crosswalk on parent.
+        """
+}
+mapping "V7859.2" source="V7859" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7860.1" source="V7860" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7860 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = sport/exercise. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.6 SNOMED CT
+        242116005 36198007 crosswalk target and fully subsumes the accident semantics. 444074 (Victim of
+        vehicular AND/OR traffic accident) is the secondary crosswalk target. Moderate tier.
+        """
+}
+mapping "V7860.2" source="V7860" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7861.1" source="V7861" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7861 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = play/leisure. Activity dimension has no SNOMED CT representation. SNOMED CT
+        432509 (Accident to motor vehicle on road, not involving collision) is the V78.6 crosswalk
+        target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target. Moderate
+        tier.
+        """
+}
+mapping "V7861.2" source="V7861" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7862.1" source="V7862" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7862 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = paid work. Activity dimension has no SNOMED CT representation. SNOMED CT
+        432509 (Accident to motor vehicle on road, not involving collision) is the V78.6 crosswalk
+        target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target. Moderate
+        tier.
+        """
+}
+mapping "V7862.2" source="V7862" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7863.1" source="V7863" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7863 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.6 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7863.2" source="V7863" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7864.1" source="V7864" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7864 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = vital activities. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.6
+        crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7864.2" source="V7864" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7868.1" source="V7868" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7868 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.6 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7868.2" source="V7868" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7869.1" source="V7869" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7869 is a Swedish national extension of V78.6 (bus passenger, noncollision traffic
+        accident) with activity = unspecified. SNOMED CT 432509 (Accident to motor vehicle on road, not
+        involving collision) is the V78.6 crosswalk target; activity is unspecified so nothing lost on
+        that axis. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7869.2" source="V7869" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7870.1" source="V7870" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7870 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = sport/exercise. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.7 SNOMED CT 242116005 36198007 crosswalk target and subsumes the accident semantics. 444074
+        (Victim of vehicular AND/OR traffic accident) is the secondary target. Moderate tier.
+        """
+}
+mapping "V7870.2" source="V7870" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7871.1" source="V7871" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7871 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = play/leisure. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.7
+        crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7871.2" source="V7871" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7872.1" source="V7872" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7872 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = paid work. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.7
+        crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7872.2" source="V7872" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7873.1" source="V7873" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7873 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.7 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7873.2" source="V7873" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7874.1" source="V7874" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7874 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = vital activities. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.7 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7874.2" source="V7874" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7878.1" source="V7878" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7878 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.7 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7878.2" source="V7878" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7879.1" source="V7879" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7879 is a Swedish national extension of V78.7 (person on outside of bus, noncollision
+        traffic accident) with activity = unspecified. SNOMED CT 432509 (Accident to motor vehicle on road,
+        not involving collision) is the V78.7 crosswalk target; activity unspecified so nothing lost on
+        that axis. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7879.2" source="V7879" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7890.1" source="V7890" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7890 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = sport/exercise. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.9 SNOMED CT 242116005 36198007 crosswalk target and subsumes the accident semantics. 444074
+        (Victim of vehicular AND/OR traffic accident) is the secondary crosswalk target. Moderate tier.
+        """
+}
+mapping "V7890.2" source="V7890" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7891.1" source="V7891" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7891 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = play/leisure. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.9
+        crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7891.2" source="V7891" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7892.1" source="V7892" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7892 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = paid work. Activity dimension has no SNOMED CT representation.
+        SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is the V78.9
+        crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7892.2" source="V7892" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7893.1" source="V7893" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7893 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.9 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7893.2" source="V7893" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7894.1" source="V7894" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7894 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = vital activities. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.9 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7894.2" source="V7894" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7898.1" source="V7898" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7898 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = SNOMED CT 242116005 36198007. Activity dimension has no SNOMED CT
+        representation. SNOMED CT 432509 (Accident to motor vehicle on road, not involving collision) is
+        the V78.9 crosswalk target. 444074 (Victim of vehicular AND/OR traffic accident) is the
+        secondary target. Moderate tier.
+        """
+}
+mapping "V7898.2" source="V7898" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7899.1" source="V7899" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7899 is a Swedish national extension of V78.9 (unspecified bus occupant, noncollision
+        traffic accident) with activity = unspecified. SNOMED CT 432509 (Accident to motor vehicle on road,
+        not involving collision) is the V78.9 crosswalk target; activity unspecified so nothing lost on
+        that axis. 444074 (Victim of vehicular AND/OR traffic accident) is the secondary target.
+        Moderate tier.
+        """
+}
+mapping "V7899.2" source="V7899" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

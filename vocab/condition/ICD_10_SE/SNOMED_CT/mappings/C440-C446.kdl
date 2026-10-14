@@ -1,0 +1,457 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes C440-C446
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "C440B.1" source="C440B" target="402819001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440B SNOMED CT 402819001 = superficial growing basal cell carcinoma of lip skin (Swedish
+        subtype of C44.0). Target 4298740 (Basal cell carcinoma of skin of lip) is the most specific
+        SNOMED CT concept covering both site (lip skin) and tumör type (BCC); it subsumes the source but
+        loses the superficial-growth morphology subtype. High tier: small, well-understood breadth
+        mismatch with a defensible standard concept.
+        """
+}
+mapping "C440C.1" source="C440C" target="402819001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440C SNOMED CT 402819001 = morphoeic (sclerosing/infiltrative) basal cell carcinoma of lip
+        skin (Swedish subtype of C44.0). Target 4298740 (Basal cell carcinoma of skin of lip) is the
+        most specific SNOMED CT concept covering both site and tumör type; it subsumes the source but loses
+        the morphoeic subtype. No morphoeic-BCC SNOMED CT concept exists in the mirror. High tier: small,
+        well-understood breadth mismatch.
+        """
+}
+mapping "C440D.1" source="C440D" target="402819001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440D SNOMED CT 402819001 = other basal cell carcinoma of skin of lip. Target SNOMED CT 4298740
+        (concept_code 402819001) = Basal cell carcinoma of skin of lip. Site and histology match
+        exactly; just distinguishes from superficial/morpheaform subtypes, which the standard SNOMED CT
+        concept does not separate. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C440E.1" source="C440E" target="402819001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440E SNOMED CT 402819001 = unspecified basal cell carcinoma of skin of lip. Target SNOMED CT
+        4298740 (402819001) = Basal cell carcinoma of skin of lip. Site+histology match; has no separate
+        SNOMED CT concept — the site-specific BCC concept is the correct standard target.
+        Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C440S.1" source="C440S" target="255071008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440S SNOMED CT 255071008 = squamous cell carcinoma of skin of lip. Target SNOMED CT 4113108
+        (255071008) = Squamous cell carcinoma of lip. Site+histology match at the lip-level (no
+        upper/lower laterality asserted by source). Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C440W.1" source="C440W" target="94032008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440W SNOMED CT 94032008 = other malignant tumors of skin of lip (residual bucket excluding
+        BCC/SCC). Target SNOMED CT 136915 (94032008) = Primary malignant neoplasm of skin of lip — the
+        Athena target for ICD10 C44.0. Target legitimately subsumes the source because the residual
+        bucket is a subset of all primary malignant skin neoplasms of lip. One-level broader;
+        standard_concept=S.
+        """
+}
+mapping "C440X.1" source="C440X" target="94032008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C440X SNOMED CT 94032008 = unspecified malignant tumör of skin of lip. Target SNOMED CT 136915
+        (94032008) = Primary malignant neoplasm of skin of lip — Athena for ICD10 C44.0. Target subsumes
+        the source; has no separate standard concept. One-level broader; standard_concept=S.
+        """
+}
+mapping "C441B.1" source="C441B" target="231832009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441B SNOMED CT 231832009 = superficial basal cell carcinoma of eyelid skin incl. canthus.
+        Best site-matched standard target is SNOMED CT 4335883 (231832009) = Basal cell carcinoma of
+        eyelid; it loses the growth-pattern subtype, so the target is broader. (4300564), preserves the
+        subtype but drops the site; site is clinically dominant for eyelid BCC, so the site-specific
+        concept is the stronger primary target. One-level broader; standard_concept=S.
+        """
+}
+mapping "C441C.1" source="C441C" target="231832009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441C SNOMED CT 231832009 = morpheaform (sclerosing/morphoeic) BCC of eyelid. No
+        site-specific morpheaform BCC concept exists; best site-matched target is SNOMED CT 4335883
+        (231832009) = Basal cell carcinoma of eyelid, which loses the morphoeic subtype (broader). A
+        generic (4297183, 403913006) preserves subtype but drops site; site dominates for eyelid.
+        One-level broader; standard_concept=S.
+        """
+}
+mapping "C441D.1" source="C441D" target="231832009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441D SNOMED CT 231832009 = other basal cell carcinoma of eyelid incl. canthus. Target
+        SNOMED CT 4335883 (231832009) = Basal cell carcinoma of eyelid. Site and histology match; just
+        distinguishes from superficial/morpheaform subtypes, which SNOMED CT does not separate at this
+        site. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C441E.1" source="C441E" target="231832009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441E SNOMED CT 231832009 = unspecified BCC of eyelid incl. canthus. Target SNOMED CT 4335883
+        (231832009) = Basal cell carcinoma of eyelid. Site+histology match; has no separate SNOMED CT
+        concept, so the site-specific BCC is the correct standard target. Standard_concept=S.
+        """
+}
+mapping "C441S.1" source="C441S" target="231831002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441S SNOMED CT 231831002 = squamous cell carcinoma of eyelid incl. canthus. Target SNOMED CT
+        4338759 (231831002) = Squamous cell carcinoma of eyelid. Exact site+histology match.
+        Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C441W.1" source="C441W" target="94021008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441W SNOMED CT 94021008 = other malignant tumors of eyelid skin (residual). Target SNOMED CT
+        435755 (94021008) = Primary malignant neoplasm of skin of eyelid — the Athena target for ICD10
+        C44.1. Subsumes the residual bucket. One-level broader; standard_concept=S.
+        """
+}
+mapping "C441X.1" source="C441X" target="94021008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C441X SNOMED CT 94021008 = unspecified malignant tumör of eyelid skin. Target SNOMED CT 435755
+        (94021008) = Primary malignant neoplasm of skin of eyelid — Athena for ICD10 C44.1. Subsumes the
+        unspecified source. One-level broader; standard_concept=S.
+        """
+}
+mapping "C442B.1" source="C442B" target="402820007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442B SNOMED CT 402820007 = superficial BCC of external ear and external auditory canal.
+        Best site-matched target SNOMED CT 4294416 (402820007) = Basal cell carcinoma of ear; loses subtype
+        (broader). (4300564) preserves subtype but drops site; site dominates. One-level broader;
+        standard_concept=S.
+        """
+}
+mapping "C442C.1" source="C442C" target="402820007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442C SNOMED CT 402820007 = morpheaform (morphoeic/sclerosing) BCC of external ear/auditory
+        canal. No site-specific morpheaform BCC exists; best site-matched target SNOMED CT 4294416
+        (402820007) = Basal cell carcinoma of ear loses the subtype (broader). Site dominates. One-level
+        broader; standard_concept=S.
+        """
+}
+mapping "C442D.1" source="C442D" target="402820007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442D SNOMED CT 402820007 = other BCC of external ear and external auditory canal. Target
+        SNOMED CT 4294416 (402820007) = Basal cell carcinoma of ear. Site+histology match; separates from
+        superficial/morpheaform subtypes which SNOMED CT does not split at this site. Standard_concept=S.
+        """
+}
+mapping "C442E.1" source="C442E" target="402820007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442E SNOMED CT 402820007 = unspecified BCC of external ear/auditory canal. Target SNOMED CT
+        4294416 (402820007) = Basal cell carcinoma of ear. Site+histology match; no separate unspecified
+        SNOMED CT concept exists. Standard_concept=S.
+        """
+}
+mapping "C442S.1" source="C442S" target="403894000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442S SNOMED CT 403894000 = SCC of external ear and external auditory canal. Target SNOMED CT
+        4295624 (403894000) = Squamous cell carcinoma of skin of ear. Exact site+histology match.
+        Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C442W.1" source="C442W" target="94017001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442W SNOMED CT 94017001 = other malignant tumors of external ear/auditory canal skin
+        (residual). Target SNOMED CT 4247350 (94017001) = Primary malignant neoplasm of skin of ear —
+        Athena for ICD10 C44.2. Subsumes the residual bucket. One-level broader; standard_concept=S.
+        """
+}
+mapping "C442X.1" source="C442X" target="94017001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C442X SNOMED CT 94017001 = unspecified malignant tumör of external ear/auditory canal skin.
+        Target SNOMED CT 4247350 (94017001) = Primary malignant neoplasm of skin of ear — Athena for ICD10
+        C44.2. Subsumes the unspecified source. One-level broader; standard_concept=S.
+        """
+}
+mapping "C443B.1" source="C443B" target="402519009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443B SNOMED CT 402519009 = superficial BCC of other/unspecified parts of face. Best
+        site-matched target SNOMED CT 4299417 (402519009) = Basal cell carcinoma of face; loses subtype
+        (broader). (4300564) preserves subtype but drops site; site dominates. One-level broader;
+        standard_concept=S.
+        """
+}
+mapping "C443C.1" source="C443C" target="402519009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443C SNOMED CT 402519009 = morpheaform (morphoeic/sclerosing) BCC of other/unspecified face
+        parts. No site-specific morpheaform BCC; best site-matched target SNOMED CT 4299417 (402519009) =
+        Basal cell carcinoma of face loses subtype (broader). Site dominates. One-level broader;
+        standard_concept=S.
+        """
+}
+mapping "C443D.1" source="C443D" target="402519009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443D SNOMED CT 402519009 = other BCC of other/unspecified face parts. Target SNOMED CT 4299417
+        (402519009) = Basal cell carcinoma of face. Site+histology match; separates from
+        superficial/morpheaform subtypes which SNOMED CT does not split at this site. Standard_concept=S.
+        """
+}
+mapping "C443E.1" source="C443E" target="402519009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443E SNOMED CT 402519009 = unspecified BCC of other/unspecified face parts. Target SNOMED CT
+        4299417 (402519009) = Basal cell carcinoma of face. Site+histology match; no separate
+        unspecified SNOMED CT concept exists. Standard_concept=S.
+        """
+}
+mapping "C443S.1" source="C443S" target="403892001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443S SNOMED CT 403892001 = SCC of other/unspecified parts of face. Target SNOMED CT 4298026
+        (403892001) = Squamous cell carcinoma of skin of face. Exact site+histology match.
+        Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C443W.1" source="C443W" target="94022001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443W SNOMED CT 94022001 = other malignant tumors of other/unspecified face parts
+        (residual). Target SNOMED CT 136917 (94022001) = Primary malignant neoplasm of skin of face —
+        Athena for ICD10 C44.3. Subsumes the residual bucket. One-level broader; standard_concept=S.
+        """
+}
+mapping "C443X.1" source="C443X" target="94022001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C443X SNOMED CT 94022001 = unspecified malignant tumör of skin of other and unspecified
+        parts of face (ICD-10 C44.3 Swedish extension). Target SNOMED CT 136917 (94022001) = Primary
+        malignant neoplasm of skin of face — the Athena crosswalk target for ICD10 C44.3 (also used for
+        parent C443). Target legitimately subsumes the source: is a subset of. One-level broader;
+        standard_concept=S, Athena mirror.
+        """
+}
+mapping "C444B.1" source="C444B" target="403914000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444B SNOMED CT 403914000 = superficial basal cell carcinoma of skin of scalp and neck.
+        Target SNOMED CT 4300564 (403914000) = Superficial basal cell carcinoma matches the superficial-BCC
+        histology exactly but drops the scalp-and-neck site (no single SNOMED CT concept for superficial
+        BCC of scalp-and-neck exists). Per boundary rule, target covers the histology axis only, not the
+        topology axis → partial. Moderate tier per §1: best available target, single-axis match.
+        """
+}
+mapping "C444C.1" source="C444C" target="403913006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444C SNOMED CT 403913006 = morphea-like (morphoeic/sclerosing) basal cell carcinoma of skin
+        of scalp and neck. Target SNOMED CT 4297183 (403913006) = Sclerosing morpheic basal cell carcinoma
+        matches the morphoeic-BCC histology exactly but drops the scalp-and-neck site (no site-specific
+        morphoeic BCC concept exists). Partial: histology covered, topology not. Moderate tier per §1.
+        """
+}
+mapping "C444D.1" source="C444D" target="403915004" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444D SNOMED CT 402509003 403915004 = other basal cell carcinoma of skin of scalp and neck
+        (residual bucket). No single SNOMED CT concept covers BCC of scalp-and-neck combined; best
+        site-matched targets are SNOMED CT 4298032 (403915004) = Basal cell carcinoma of scalp and SNOMED CT
+        4297666 (402509003) = Basal cell carcinoma of neck. Multi-target partial: each target covers one
+        site component of the two-site source. histology residual is not separable in SNOMED CT. Moderate
+        tier per §1.
+        """
+}
+mapping "C444D.2" source="C444D" target="402509003" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "C444E.1" source="C444E" target="254701007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444E SNOMED CT 254701007 = unspecified basal cell carcinoma of skin of scalp and neck. No
+        single SNOMED CT concept for BCC of scalp-and-neck combined; site-split concepts (4298032 scalp,
+        4297666 neck) would each lose half the source. Best single target is SNOMED CT 4112752 (254701007)
+        = Basal cell carcinoma of skin, the BCC parent — fully subsumes the source. Broader: one
+        concept-level climb. Moderate tier per §1: unspecified source, no site-exact target.
+        """
+}
+mapping "C444S.1" source="C444S" target="402815007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C444W.1" source="C444W" target="372122006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444W SNOMED CT 372122006 = other malignant tumors of skin of scalp and neck (residual
+        bucket excluding BCC/SCC). Target SNOMED CT 4162251 (372122006) = Malignant neoplasm of skin head
+        and neck (the existing mapped target for parent C444). Target subsumes the source: ⊂, and the
+        residual bucket is a subset of malignant skin neoplasms of head and neck. Broader; the target
+        also includes face which the source excludes. Low tier per §1: heterogeneous residual source,
+        partial site overshoot.
+        """
+}
+mapping "C444X.1" source="C444X" target="372122006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C444X SNOMED CT 372122006 = unspecified malignant tumör of skin of scalp and neck. Target
+        SNOMED CT 4162251 (372122006) = Malignant neoplasm of skin head and neck — the existing mapped
+        target for parent C444. Target subsumes the source (scalp+neck ⊂ head+neck); aligns under the
+        broader malignant neoplasm category. Broader; target includes face which the source excludes.
+        Moderate tier per §1: unspecified source, one-level broader.
+        """
+}
+mapping "C445B.1" source="C445B" target="403914000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445B SNOMED CT 403914000 = superficial basal cell carcinoma of skin of trunk. Target SNOMED CT
+        4300564 (403914000) = Superficial basal cell carcinoma matches the superficial-BCC histology
+        exactly but drops the trunk site (no SNOMED CT concept for superficial BCC of trunk exists).
+        Partial: histology axis covered, topology axis not. Moderate tier per §1.
+        """
+}
+mapping "C445C.1" source="C445C" target="403913006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445C SNOMED CT 403913006 = morphea-like (morphoeic/sclerosing) basal cell carcinoma of skin
+        of trunk. Target SNOMED CT 4297183 (403913006) = Sclerosing morpheic basal cell carcinoma matches
+        the morphoeic-BCC histology exactly but drops the trunk site (no site-specific morphoeic BCC of
+        trunk exists). Partial: histology covered, topology not. Moderate tier per §1.
+        """
+}
+mapping "C445D.1" source="C445D" target="254701007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445D SNOMED CT 254701007 = other basal cell carcinoma of skin of trunk (residual bucket).
+        No SNOMED CT concept for BCC of trunk as a whole; only sub-site concepts exist (abdomen 4292382,
+        back 4307538, chest wall 4313634). Best single target is SNOMED CT 4112752 (254701007) = Basal cell
+        carcinoma of skin, the BCC parent — fully subsumes the source. Broader: one concept-level climb,
+        loses trunk specificity. High tier per §1: well-understood specificity loss, closest standard
+        concept.
+        """
+}
+mapping "C445E.1" source="C445E" target="254701007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445E SNOMED CT 254701007 = unspecified basal cell carcinoma of skin of trunk. No SNOMED CT
+        concept for BCC of trunk as a whole; best single target is SNOMED CT 4112752 (254701007) = Basal
+        cell carcinoma of skin, the BCC parent — fully subsumes the source. Broader: one concept-level
+        climb. High tier per §1: unspecified source, well-understood specificity loss to nearest
+        ancestor.
+        """
+}
+mapping "C445S.1" source="C445S" target="403899005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445S SNOMED CT 403899005 = squamous cell carcinoma of skin of trunk. Target SNOMED CT 4300557
+        (403899005) = Squamous cell carcinoma of skin of trunk. Exact site+histology match.
+        Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C445W.1" source="C445W" target="94043000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445W SNOMED CT 94043000 = other malignant tumors of skin of trunk (residual bucket
+        excluding BCC/SCC). Target SNOMED CT 133147 (94043000) = Primary malignant neoplasm of skin of
+        trunk — the Athena crosswalk target for ICD10 C44.5 (also used for parent C445). Target subsumes
+        the source: the residual bucket is a subset of primary malignant skin neoplasms of trunk.
+        Broader: one-level. High tier per §1: verified crosswalk, well-understood residual-bucket
+        subsumption.
+        """
+}
+mapping "C445X.1" source="C445X" target="94043000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C445X SNOMED CT 94043000 = unspecified malignant tumör of skin of trunk. Target SNOMED CT
+        133147 (94043000) = Primary malignant neoplasm of skin of trunk — Athena for ICD10 C44.5 (also
+        used for parent C445). Target subsumes the source; has no separate standard concept. Broader:
+        one-level. High tier per §1: verified crosswalk, unspecified source.
+        """
+}
+mapping "C446B.1" source="C446B" target="403914000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446B SNOMED CT 403914000 = superficial basal cell carcinoma of skin of upper limb including
+        shoulder. A site-specific BCC of upper-extremity concept (SNOMED CT 4297667, 402521004) exists, but
+        no site-specific superficial-BCC concept. Target SNOMED CT 4300564 (403914000) = Superficial basal
+        cell carcinoma matches histology exactly, drops site. Per the C441B precedent (eyelid), site
+        dominates for site-specific BCC concepts; here the site-specific option (4297667) loses the
+        growth-pattern subtype. Chose histology-match 4300564 because superficial-growth-pattern is a
+        clinically distinct BCC subtype. Partial: histology covered, topology not. Moderate tier per §1.
+        """
+}
+mapping "C446C.1" source="C446C" target="403913006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446C SNOMED CT 403913006 = morphea-like (morphoeic/sclerosing) basal cell carcinoma of skin
+        of upper limb including shoulder. Target SNOMED CT 4297183 (403913006) = Sclerosing morpheic basal
+        cell carcinoma matches morphoeic-BCC histology exactly but drops the upper-limb site (no
+        site-specific morphoeic BCC concept exists). Partial: histology covered, topology not. Moderate
+        tier per §1.
+        """
+}
+mapping "C446D.1" source="C446D" target="402521004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446D SNOMED CT 402521004 = other basal cell carcinoma of skin of upper limb including
+        shoulder. Target SNOMED CT 4297667 (402521004) = Basal cell carcinoma of upper extremity.
+        Site+histology match; just distinguishes from superficial/morpheaform subtypes, which SNOMED CT
+        does not separate at this site. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C446E.1" source="C446E" target="402521004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446E SNOMED CT 402521004 = unspecified basal cell carcinoma of skin of upper limb including
+        shoulder. Target SNOMED CT 4297667 (402521004) = Basal cell carcinoma of upper extremity.
+        Site+histology match; has no separate standard concept, so the site-specific BCC is the correct
+        standard target. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C446S.1" source="C446S" target="403897007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446S SNOMED CT 403897007 = squamous cell carcinoma of skin of upper limb including
+        shoulder. Target SNOMED CT 4301427 (403897007) = Squamous cell carcinoma of upper extremity. Exact
+        site+histology match. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C446W.1" source="C446W" target="94045007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446W SNOMED CT 94045007 = other malignant tumors of skin of upper limb including shoulder
+        (residual bucket excluding BCC/SCC). Target SNOMED CT 440658 (94045007) = Primary malignant
+        neoplasm of skin of upper limb — Athena for ICD10 C44.6 (also used for parent C446). Target
+        subsumes the source: residual bucket is a subset of primary malignant skin neoplasms of upper
+        limb. Broader: one-level. High tier per §1: verified crosswalk, residual-bucket subsumption.
+        """
+}
+mapping "C446X.1" source="C446X" target="94045007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C446X SNOMED CT 94045007 = unspecified malignant tumör of skin of upper limb including
+        shoulder. Target SNOMED CT 440658 (94045007) = Primary malignant neoplasm of skin of upper limb —
+        Athena for ICD10 C44.6 (also used for parent C446). Target subsumes the source; has no separate
+        standard concept. Broader: one-level. High tier per §1: verified crosswalk, unspecified source.
+        """
+}

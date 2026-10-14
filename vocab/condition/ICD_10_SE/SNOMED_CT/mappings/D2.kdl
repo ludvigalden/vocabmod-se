@@ -1,0 +1,348 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes D2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "D219A.1" source="D219A" target="404035005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219A SNOMED CT 404035005 = Abrikossoff's tumör (granular cell tumör, historically
+        Abrikossoff), unspecified site. Target (Granular cell tumör). Target is the unqualified general
+        Granular cell tumör concept; it fully subsumes the source which is a same-named tumör with
+        unspecified site. High confidence broader map.
+        """
+}
+mapping "D219B.1" source="D219B" target="86959002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219B SNOMED CT 86959002 = Angiomyoma (angiomyoma = angioleiomyoma, a benign smooth-muscle
+        vascular neoplasm), unspecified site. Target (Angiomyoma). Same clinical concept. High rather
+        than exact confidence because no independent ICD-10→SNOMED CT crosswalk exists for D21.9 subcodes
+        in the athena mirror (the D21.9 base code maps to 442105). The unqualified SNOMED CT is the same
+        entity as the source.
+        """
+}
+mapping "D219C.1" source="D219C" target="9671003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219C SNOMED CT 9671003 = Elastofibroma, unspecified site (typically elastofibroma dorsi, a
+        rare fibroelastic tumör of subscapular soft tissue). Target (Elastofibroma). Same clinical
+        entity. High rather than exact because no ICD-10→SNOMED CT crosswalk exists for D21.9 subcodes in
+        the mirror.
+        """
+}
+mapping "D219D.1" source="D219D" target="424568000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219D SNOMED CT 424568000 = Fibroma, unspecified site, a generic residual concept. Target
+        (Fibroma). Target legitimately subsumes the source; however the SNOMED CT concept is itself an
+        unspecific morphologic descriptor covering heterogeneous entities. Low confidence because the
+        ICD-10 D21.9 base crosswalk points elsewhere (442105) and the SNOMED CT bare concept is a
+        heterogeneous bucket; recorded to preserve a specific lead for reviewer.
+        """
+}
+mapping "D219E.1" source="D219E" target="44598004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219E SNOMED CT 44598004 = Leiomyoma, unspecified site. Target (Leiomyoma). Same clinical
+        concept; high rather than exact because no ICD-10→SNOMED CT crosswalk exists for the D21.9 subcode
+        and the SNOMED CT bare concept is broader than site-specific leiomyomas (the source is similarly
+        unspecified-site, so the breadth matches).
+        """
+}
+mapping "D219F.1" source="D219F" target="39143003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219F SNOMED CT 39143003 = Myxoma, unspecified site (a benign gelatinous soft-tissue
+        neoplasm). Target (Myxoma). Same clinical concept. High rather than exact because no
+        ICD-10→SNOMED CT crosswalk exists for D21.9 subcodes and the bare SNOMED CT Myxoma concept is a broad
+        bucket (Myxoma of heart 426191007 is the more commonly used OMOP concept); recorded as the most
+        literal equivalent.
+        """
+}
+mapping "D219X.1" source="D219X" target="92069005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D219X SNOMED CT 92069005 = Unspecified benign tumör of connective and other soft tissue,
+        unspecified site. Target SNOMED CT 442105 (Benign neoplasm of soft tissue) is the Athena canonical
+        standard concept mapped from ICD-10 D21.9 base code (45552335 Maps to 442105). Target fully
+        subsumes the source; one-level broader; high confidence.
+        """
+}
+mapping "D229A.1" source="D229A" target="400096001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229A SNOMED CT 400096001 = Intraepidermal pigmented nevus, unspecified site (a
+        junctional-level melanocytic nevus confined to the intraepidermal compartment). No SNOMED CT
+        concept with the exact phrase exists in the mirror; the closest standard concept is (Melanocytic
+        nevus), the Athena canonical target mapped from ICD-10 D22 (45595739 Maps to 4271013 OMOP id,
+        concept_code 400096001). Target is broader; the source is a specific intraepidermal histologic
+        pattern. Moderate confidence because the target loses the histologic specificity
+        (intraepidermal) and the pigmented qualifier.
+        """
+}
+mapping "D229B.1" source="D229B" target="30494009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229B SNOMED CT 30494009 = Junctional pigmented nevus (junction-type), unspecified site.
+        Target (Junctional nevus). Same clinical-histologic concept; the source additionally specifies
+        but all junctional nevi are by definition melanocytic/pigmented, so this is essentially an
+        equivalence. High rather than exact because the source string includes the qualifier and an
+        unspecified-site framing while the SNOMED CT bare concept is site-unspecified; the Athena ICD-10
+        D22 base crosswalk points to a different broader concept (400096001).
+        """
+}
+mapping "D229C.1" source="D229C" target="112681002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229C SNOMED CT 112681002 = Intradermal pigmented nevus, unspecified site. Target
+        (Intradermal nevus). Same clinical-histologic concept; the source adds the qualifier but
+        intradermal nevus is by definition a melanocytic nevus, so essentially equivalent. High rather
+        than exact because of the pigmented qualifier and because no ICD-10→SNOMED CT crosswalk exists for
+        D22.9 subcodes in the mirror.
+        """
+}
+mapping "D229D.1" source="D229D" target="254805008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229D SNOMED CT 254805008 = Compound pigmented nevus, unspecified site (compound = both
+        junctional and dermal components). Target (Compound nevus of skin). Same clinical-histologic
+        entity; the source adds but compound nevus is by definition melanocytic/pigmented. High rather
+        than exact because the target is skin-site-qualified and no ICD-10→SNOMED CT crosswalk exists for
+        D22.9 subcodes.
+        """
+}
+mapping "D229E.1" source="D229E" target="400096001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229E SNOMED CT 400096001 =, unspecified site. The phrase is not an established
+        clinical/histologic entity in WHO/IARC-recognized classifications or in the SNOMED CT mirror (no
+        SNOMED CT concept exists for this term). The most plausible reading is an obsolete Swedish
+        histochemical descriptor for a melanocytic nevus variant. Best defensible target is (Melanocytic
+        nevus) - the Athena canonical target for ICD-10 D22 (45595739 Maps to 4271013 OMOP id). Target
+        is much broader. Low confidence: the source meaning is genuinely ambiguous and no closer
+        standard concept exists; recorded to preserve the lead rather than assert equivalence.
+        """
+}
+mapping "D229F.1" source="D229F" target="189759009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229F SNOMED CT 189759009 = Atypical melanocytic change (including dysplastic nevus),
+        unspecified site. Target (Dysplastic nevus). Source bundles with the explicit inclusion of
+        dysplastic nevus; the dysplastic nevus is the dominant member of that bucket. High confidence
+        broader map: target is the clinically actionable specific concept, but the source scope is
+        slightly broader (includes non-dysplastic atypia).
+        """
+}
+mapping "D229G.1" source="D229G" target="78325005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229G SNOMED CT 78325005 = Halo nevus (Sutton's nevus), unspecified site. Target (Halo
+        nevus). Same clinical entity. High rather than exact because no ICD-10→SNOMED CT crosswalk exists
+        for D22.9 subcodes in the mirror; the unqualified SNOMED CT Halo nevus concept is otherwise
+        identical in meaning.
+        """
+}
+mapping "D229H.1" source="D229H" target="307602007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229H SNOMED CT 307602007 = halo nevus (Sutton nevus), unspecified site. Target.
+        Athena-local mirror row 40515104 confirms the concept. Same clinical concept; site unspecified
+        on the source side but the histology is exact.
+        """
+}
+mapping "D229J.1" source="D229J" target="400096001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229J SNOMED CT 400096001 = cockarde nevus, a rare/colloquial term for a targetoid
+        melanocytic nevus. No SNOMED CT concept for exists in the Athena-local mirror. Best defensible
+        target is (Melanocytic nevus), which legitimately subsumes every cockarde nevus as a melanocytic
+        nevus but loses the specific morphology. Broader by one level; low confidence because the
+        specific morphology has no standard concept and the term is non-standard.
+        """
+}
+mapping "D229K.1" source="D229K" target="254814003" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source D229K SNOMED CT 254814003 = nevus spilus (speckled lentiginous nevus), unspecified site.
+        Target (Athena-local row 40455155). Same clinical concept; only the site is unspecified.
+        """
+}
+mapping "D229L.1" source="D229L" target="402633003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229L SNOMED CT 402633003 = melanonychia (longitudinal pigmented band of nail). Target
+        (Athena-local row 4297821). Melanonychia is by definition a nail finding, so is inherent; same
+        clinical concept.
+        """
+}
+mapping "D229M.1" source="D229M" target="254806009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229M SNOMED CT 254806009 = blue nevus, unspecified site. Target (Athena-local row 4112844).
+        Same clinical concept; dermal melanocytosis, site unspecified on the source side.
+        """
+}
+mapping "D229N.1" source="D229N" target="88082008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229N SNOMED CT 88082008 = Spitz nevus, unspecified site. Target (Athena-local row 4338112),
+        the SNOMED CT fully-specified name whose synonym is. The two terms are synonyms in SNOMED CT; high
+        rather than exact tier because the SNOMED CT fully-specified name differs from the source term and
+        the concept has been flagged with an inactivation indicator in some editions, so a reviewer
+        should confirm active status.
+        """
+}
+mapping "D229Q.1" source="D229Q" target="254812004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229Q SNOMED CT 254812004 = pigmented spindle cell nevus of Reed, unspecified site. Target
+        (Athena-local row 4112847). Same clinical concept; only the site is unspecified.
+        """
+}
+mapping "D229R.1" source="D229R" target="40467008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229R SNOMED CT 40467008 = Mongolian spot (dermal melanocytosis of lumbosacral region),
+        unspecified site. Target (Athena-local row 4225530). Same clinical concept.
+        """
+}
+mapping "D229S.1" source="D229S" target="201104004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229S SNOMED CT 201104004 = Becker's nevus (acquired bilateral Becker melanosis),
+        unspecified site. Target (Athena-local row 40396894). Same clinical concept.
+        """
+}
+mapping "D229T.1" source="D229T" target="48543002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229T SNOMED CT 48543002 = nevus of Ito (dermal melanocytosis of shoulder/supraclavicular
+        region), unspecified site. Target (Athena-local row 4171838, confirmed active via NIH VSAC).
+        Same clinical concept.
+        """
+}
+mapping "D229W.1" source="D229W" target="400096001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229W SNOMED CT 400096001 = other specified melanocytic nevus (residual Swedish-extension
+        bucket covering melanocytic nevi not elsewhere classified), unspecified site. The parent D22.9
+        maps via Athena crosswalk (ICD10 45571603 →, row 4271013). Target legitimately subsumes the
+        residual bucket but loses the specific histology. Broader by one level; high tier.
+        """
+}
+mapping "D229X.1" source="D229X" target="400096001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D229X SNOMED CT 400096001 = unspecified melanocytic nevus, unspecified site. This is the
+        direct Swedish 5-char extension of D22.9, which Athena crosswalks (ICD10 45571603 →, row
+        4271013). Same clinical concept; crosswalk-verified exact equivalence at the unspecified level.
+        """
+}
+mapping "D239A.1" source="D239A" target="254788004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239A SNOMED CT 254788004 = angiokeratoma, unspecified site. Target (Athena-local row
+        4116061). Same clinical concept; site unspecified on the source side.
+        """
+}
+mapping "D239B.1" source="D239B" target="1296969001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239B SNOMED CT 1296969001 = apocrine hidrocystoma, unspecified site. Target (Athena-local
+        row 1245181). Same clinical concept; site unspecified on the source side.
+        """
+}
+mapping "D239C.1" source="D239C" target="274903001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239C SNOMED CT 274903001 = cylindroma (benign adnexal tumör), unspecified site. Target
+        (Athena-local row 4168381). The SNOMED CT fully-specified name is more specific (eccrine/dermal),
+        whereas the Swedish source is the generic — but in practice cutaneous cylindroma is the eccrine
+        dermal type, and no SNOMED CT exists. High tier: clearly the right target, slightly narrower
+        fully-specified name.
+        """
+}
+mapping "D239D.1" source="D239D" target="427186000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239D SNOMED CT 427186000 = dermatofibroma (benign fibrous histiocytoma), unspecified site.
+        Target (Athena-local row 4144608). Same clinical concept.
+        """
+}
+mapping "D239E.1" source="D239E" target="400099008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239E SNOMED CT 400099008 = eccrine hidradenoma, unspecified site. Target (Athena-local row
+        4271014). Same clinical concept.
+        """
+}
+mapping "D239F.1" source="D239F" target="238748009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239F SNOMED CT 238748009 = senile sebaceous hyperplasia (the Swedish dermatology term
+        denotes sebaceous gland hyperplasia of the elderly, NOT naevus sebaceus of Jadassohn). Target
+        (Athena-local row 4081088). Same clinical concept; high rather than exact tier because the
+        source uses a misleading name that a reviewer may misread as the congenital Jadassohn lesion.
+        """
+}
+mapping "D239G.1" source="D239G" target="274901004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239G SNOMED CT 274901004 = pilomatricoma (calcifying epithelioma of Malherbe), unspecified
+        site. Target (Athena-local row 4166153). Same clinical concept.
+        """
+}
+mapping "D239H.1" source="D239H" target="302828001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239H SNOMED CT 302828001 = syringoma (benign eccrine sweat gland tumör), unspecified site.
+        Target (Athena-local row 4121328). Same clinical concept.
+        """
+}
+mapping "D239J.1" source="D239J" target="274899008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239J SNOMED CT 274899008 = trichofolliculoma (benign hair follicle tumör), unspecified
+        site. Target (Athena-local row 4172078). Same clinical concept.
+        """
+}
+mapping "D239K.1" source="D239K" target="274898000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239K SNOMED CT 274898000 = trichoepithelioma (benign hair follicle tumör), unspecified
+        site. Target (Athena-local row 4168380). Same clinical concept.
+        """
+}
+mapping "D239W.1" source="D239W" target="92384009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239W SNOMED CT 92384009 = other benign tumors of skin (residual Swedish-extension bucket),
+        unspecified site. The parent D23.9 maps via Athena crosswalk (ICD10 45557064 → SNOMED CT 138102
+        92384009). Direct crosswalk-verified equivalence at the same level.
+        """
+}
+mapping "D239X.1" source="D239X" target="92384009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D239X SNOMED CT 92384009 = unspecified benign tumör of skin, unspecified site. This is the
+        direct Swedish 5-char extension of D23.9, which Athena crosswalks (ICD10 45557064 → SNOMED CT
+        138102 92384009). Crosswalk-verified equivalence.
+        """
+}
+mapping "D249.1" source="D249" target="269485000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269485000 [GPS] [IPS] [GPFP]"
+}
+mapping "D279.1" source="D279" target="92260003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 92260003 [GPS] [IPS]"
+}

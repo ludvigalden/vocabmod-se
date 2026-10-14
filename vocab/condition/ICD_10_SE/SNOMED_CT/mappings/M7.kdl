@@ -1,0 +1,155 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M728A.1" source="M728A" target="399903008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M728A SNOMED CT 399903008 = infantile digital fibromatosis (SE extension of M72.8). Target
+        SNOMED CT 4266642 (399903008) = Infantile digital fibromatosis. Exact term-and-concept match.
+        """
+}
+mapping "M728B.1" source="M728B" target="19928005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M728B SNOMED CT 19928005 = juvenile fibromatosis (SE extension of M72.8). Target SNOMED CT
+        4062787 (19928005) = Fibromatosis (unsited parent). No SNOMED CT concept exists; only juvenile
+        hyaline / elastofibromatosis subtypes exist (238861002, 238866007), which are narrower than the
+        source's broad label. The parent Fibromatosis concept is the best standard target and fully
+        subsumes the source. Low tier: target is a true ancestor but loses both the qualifier and any
+        site/specificity, so the breadth mismatch is real.
+        """
+}
+mapping "M728W.1" source="M728W" target="105969002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M728W SNOMED CT 105969002 = other specified fibroblastic disorders (SE residual extension of
+        M72.8). The parent M72.8 maps via Athena to SNOMED CT 253549 (105969002, Disorder of connective
+        tissue). Source is a heterogeneous residual bucket; no single more-specific standard concept
+        defensibly covers the bucket, so the Athena parent target is the best available. Low tier:
+        heterogeneous residual source, mechanical crosswalk not independently re-verified for each
+        member of the bucket.
+        """
+}
+mapping "M791B.1" source="M791B" target="1264014005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791B SNOMED CT 1264014005 = myalgia, shoulder region/upper arm (SE extension of M79.1).
+        Target SNOMED CT 37167227 (1264014005) = Pain in muscle of shoulder. The SE code combines shoulder
+        girdle + upper arm; SNOMED CT (37167227) (37167237). Shoulder target chosen as primary because the
+        shoulder region subsumes upper-arm myalgia clinically. High tier (not) because the SE source
+        combines two sites that SNOMED CT splits; the chosen target is the regional parent.
+        """
+}
+mapping "M791C.1" source="M791C" target="1264016007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791C SNOMED CT 1264016007 = myalgia, elbow/forearm (SE extension of M79.1). Target SNOMED CT
+        37167229 (1264016007) = Pain in muscle of forearm. SNOMED CT has no elbow-specific muscle-pain
+        concept; forearm is the closest site-specific concept and is the Athena target for the ICD-10-CM
+        M79.13 (Myalgia, forearm). Equivalent clinical scope.
+        """
+}
+mapping "M791D.1" source="M791D" target="1264013004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791D SNOMED CT 1264013004 = myalgia, wrist/hand (SE extension of M79.1). Target SNOMED CT
+        37167226 (1264013004) = Pain in muscle of hand. The Athena target for ICD-10-CM M79.14 (Myalgia,
+        hand). SNOMED CT has no wrist-specific muscle-pain concept; the hand concept covers the combined
+        clinical region.
+        """
+}
+mapping "M791E.1" source="M791E" target="1264035007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791E SNOMED CT 1264035007 = myalgia in pelvic region (SE extension of M79.1). Target SNOMED CT
+        37167245 (1264035007) = Pain in muscle of pelvis. Exact site-and-concept match.
+        """
+}
+mapping "M791F.1" source="M791F" target="1264034006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791F SNOMED CT 1264034006 = myalgia, hip/thigh (SE extension of M79.1). Target SNOMED CT
+        37167244 (1264034006) = Pain in muscle of thigh. The Athena target for ICD-10-CM M79.15
+        (Myalgia, pelvic region and thigh). Hip-specific muscle-pain concept absent in SNOMED CT; thigh is
+        the clinically dominant site component.
+        """
+}
+mapping "M791G.1" source="M791G" target="1264028004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791G SNOMED CT 1264028004 = myalgia, knee/lower leg (SE extension of M79.1). Target SNOMED CT
+        37167238 (1264028004) = Pain in muscle of lower leg. The Athena target for ICD-10-CM M79.16
+        (Myalgia, lower leg). Knee-specific muscle-pain concept absent in SNOMED CT; lower leg is the
+        regional parent.
+        """
+}
+mapping "M791H.1" source="M791H" target="1264031003" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M791H SNOMED CT 1264031003 = myalgia, ankle/foot (SE extension of M79.1). SNOMED CT has
+        separate concepts for ankle (37167240, Pain in muscle of ankle joint) and foot (37167241, Pain
+        in muscle of foot); no single concept combines them. Foot target chosen as primary because it is
+        the distal-and-inclusive regional site. High tier rather than because the SE source spans two
+        sites that SNOMED CT splits.
+        """
+}
+mapping "M793A.1" source="M793A" target="403422001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M793B.1" source="M793B" target="238884009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M793B SNOMED CT 238884009 = factitial panniculitis (SE extension of M79.3). Target SNOMED CT
+        4032914 (238884009) = Factitial panniculitis. Exact term-and-concept match.
+        """
+}
+mapping "M793W.1" source="M793W" target="22125009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M793W SNOMED CT 22125009 = other unspecified panniculitis (SE residual extension of M79.3).
+        Target SNOMED CT 432719 (22125009) = Panniculitis (unspecified parent). The Athena target for
+        parent M79.3. Source is a heterogeneous residual; the parent concept fully subsumes it. Moderate
+        tier: residual source, mechanical crosswalk not independently re-verified for each member.
+        """
+}
+mapping "M793X.1" source="M793X" target="22125009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M793X SNOMED CT 22125009 = panniculitis, unspecified (SE extension of M79.3). Target SNOMED CT
+        432719 (22125009) = Panniculitis (unspecified parent). The Athena target for parent M79.3.
+        SNOMED CT also has 4001807 (Panniculitis NOS) and 4002822 (Panniculitis unspecified) but 432719 is
+        the Athena standard mapping and is the parent of those. Moderate tier: unspecified source,
+        crosswalk not independently re-verified.
+        """
+}
+mapping "M796B.1" source="M796B" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796C.1" source="M796C" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796D.1" source="M796D" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796E.1" source="M796E" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796F.1" source="M796F" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796G.1" source="M796G" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M796H.1" source="M796H" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

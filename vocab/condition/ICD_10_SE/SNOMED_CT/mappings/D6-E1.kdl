@@ -1,0 +1,369 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes D6-E1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "D629.1" source="D629" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D659.1" source="D659" target="67406007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D659 SNOMED CT 67406007 = Disseminated intravascular coagulation (DIC). Target SNOMED CT 436093
+        = (concept_code 67406007); WHO D65 crosswalks here via Athena Maps-to. Exact clinical
+        equivalent. Exact-match tier.
+        """
+}
+mapping "D669.1" source="D669" target="28293008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D669 SNOMED CT 28293008 = Hereditary factor VIII deficiency (hemophilia A). Target SNOMED CT
+        434007 = (concept_code 28293008); WHO D66 crosswalks here via Athena Maps-to. Exact clinical
+        equivalent. Exact-match tier.
+        """
+}
+mapping "D679.1" source="D679" target="41788008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D679 SNOMED CT 41788008 = Hereditary factor IX deficiency (hemophilia B). Target SNOMED CT
+        436678 = (concept_code 41788008); WHO D67 crosswalks here via Athena Maps-to. Exact clinical
+        equivalent. Exact-match tier.
+        """
+}
+mapping "D682W.2" source="D682W" target="88776002" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D688W.2" source="D688W" target="64779008" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D709.1" source="D709" target="713530002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D709E.1" source="D709E" target="1156300000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D709E SNOMED CT 1156300000 = Ethnic neutropenia, a Swedish SE-specific code under D70.9.
+        Target SNOMED CT 604245 = (concept_code 1156300000); exact clinical equivalent (ethnic neutropenia
+        is by definition benign). Exact-match tier.
+        """
+}
+mapping "D719.1" source="D719" target="386585008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D721B.1" source="D721B" target="191358004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D721B SNOMED CT 191358004 = Hereditary eosinophilia, a Swedish SE-specific code under D72.1.
+        Target SNOMED CT 4098893 = (concept_code 191358004); exact clinical equivalent. Exact-match tier.
+        """
+}
+mapping "D758A.1" source="D758A" target="65209002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D758A SNOMED CT 65209002 = Basophilia (elevated basophil count), a Swedish SE-specific code
+        under D75.8. Target SNOMED CT 314617 = (concept_code 65209002); exact clinical equivalent.
+        Exact-match tier.
+        """
+}
+mapping "D758B.1" source="D758B" target="414027002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D758B SNOMED CT 414027002 = Idiopathic cytopenia of undetermined significance, a modern
+        hematological entity with no exact SNOMED CT equivalent in the local mirror. Target SNOMED CT 317248 =
+        (concept_code 414027002); the WHO D75.8 crosswalk. Target is a true ancestor (source nests under
+        D75.8) but specificity loss is severe. Low tier: real doubt about how informative the target is
+        for this specific entity.
+        """
+}
+mapping "D758C.1" source="D758C" target="414027002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D758C SNOMED CT 414027002 = Clonal cytopenia of undetermined significance, a modern
+        hematological entity with no exact SNOMED CT equivalent in the local mirror. Target SNOMED CT 317248 =
+        (concept_code 414027002); the WHO D75.8 crosswalk. Target is a true ancestor but specificity
+        loss is severe. Low tier: substantial breadth mismatch.
+        """
+}
+mapping "D758D.1" source="D758D" target="414027002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D758D SNOMED CT 414027002 = Clonal hematopoiesis of indeterminate potential, a modern
+        hematological entity with no exact SNOMED CT equivalent in the local mirror. Target SNOMED CT 317248 =
+        (concept_code 414027002); the WHO D75.8 crosswalk. Target is a true ancestor but very broad. Low
+        tier: substantial breadth mismatch; a human reviewer should add the contemporary SNOMED CT CHIP
+        concept if available in a newer edition.
+        """
+}
+mapping "D758W.1" source="D758W" target="414027002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D758W SNOMED CT 414027002 = Swedish, the residual bucket under WHO D75.8. Target SNOMED CT
+        317248 = (concept_code 414027002); WHO D75.8 crosswalks here via Athena Maps-to. Target
+        legitimately subsumes the source's residual children. High tier: verified crosswalk, one-level
+        breadth mismatch.
+        """
+}
+mapping "D760A.2" source="D760A" target="234437005" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D760C.2" source="D760C" target="234437005" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D763E.1" source="D763E" target="255192005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D763E SNOMED CT 255192005 = Benign cephalic histiocytosis, a Swedish SE-specific code under
+        D76.3. Target SNOMED CT 4113128 = (concept_code 255192005); exact clinical equivalent. Exact-match
+        tier.
+        """
+}
+mapping "D779.1" source="D779" target="414027002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D779 SNOMED CT 414027002 = Other changes in blood and blood-forming organs in diseases
+        classified elsewhere (WHO D77). Target SNOMED CT 317248 = (concept_code 414027002); WHO D77
+        crosswalks here via Athena Maps-to. Target is the general hematopoietic-disorder parent.
+        Broader: target subsumes source. High tier: verified crosswalk.
+        """
+}
+mapping "D800B.1" source="D800B" target="1297036006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D800B SNOMED CT 1297036006 = hereditary agammaglobulinemia, autosomal recessive form. Target
+        (Athena concept_id 1245208) =, standard Concept (S, valid 2024-01-01+). 1:1 semantic equivalence
+        on both inheritance pattern and phenotype. exact-equivalent: name and inheritance match exactly.
+        """
+}
+mapping "D805A.1" source="D805A" target="82286005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D805A SNOMED CT 82286005 = X-linked (sex-linked) hyper-IgM syndrome. The SNOMED CT
+        X-linked-specific concept (234536003 4120628) is invalid (U, retired 2017-07-31). Target (Athena
+        432287) =, standard (S) - the unqualified umbrella that fully subsumes the X-linked form.
+        Broader: target legitimately subsumes the source (X-linked is the prototypical/most common form
+        of hyper-IgM). high: one-level broader with verified crosswalk from base ICD-10 D80.5 -> 432287.
+        """
+}
+mapping "D805W.1" source="D805W" target="82286005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D805W SNOMED CT 82286005 = other immunodeficiency with increased IgM (Swedish residual under
+        D80.5). Target (Athena 432287) =, standard (S). Base ICD-10 D80.5 maps to 432287 via Athena
+        crosswalk; the residual Swedish subcode inherits that target. Broader: target subsumes the
+        heterogeneous residual bucket. high: verified crosswalk, one-level broader.
+        """
+}
+mapping "D811A.1" source="D811A" target="765188009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D811A SNOMED CT 765188009 = SCID with low T- and B-cells, AR, due to RAG1/RAG2 deficiency.
+        Target (Athena 35622943) =, standard (S, valid 2018-07-31+). Exact 1:1 match on etiology
+        (RAG1/RAG2), inheritance (AR), and phenotype (T-/B- SCID). exact-equivalent.
+        """
+}
+mapping "D811W.1" source="D811W" target="190997006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D811W SNOMED CT 190997006 = other specified SCID with low T- and B-cells (Swedish residual
+        under D81.1). Target (Athena 4100976) =, standard (S). Base ICD-10 D81.1 maps to 4100976 via
+        Athena crosswalk; residual Swedish subcode inherits the parent target. Broader: target subsumes
+        the heterogeneous bucket. low: residual/heterogeneous source, parent crosswalk not independently
+        re-verified for the subcode.
+        """
+}
+mapping "D812B.1" source="D812B" target="718107000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D812B SNOMED CT 718107000 = SCID with low/normal B-cells, AR, JAK3 deficiency. Target
+        (Athena 37397461) =, standard (S, valid 2016-07-31+). Exact match on etiology (JAK3) and
+        inheritance (AR); phenotype (T-/B+) is the canonical JAK3-SCID presentation, consistent with
+        framing. exact-equivalent.
+        """
+}
+mapping "D812C.1" source="D812C" target="716378008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D812C SNOMED CT 716378008 = SCID with low/normal B-cells, AR, due to ZAP-70 OR SYK
+        deficiency (a combined Swedish bucket). Target (Athena 37399524) =, standard (S, valid
+        2016-07-31+). Partial: target covers only the ZAP-70 component of the source; the SYK-deficiency
+        component has no standard SNOMED CT concept. low: partial semantic overlap, single aspect of a
+        multi-etiology source.
+        """
+}
+mapping "D812D.1" source="D812D" target="190998001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D812D SNOMED CT 190998001 = Omenn syndrome (a SCID-related disorder: erythroderma,
+        lymphadenopathy, eosinophilia, high IgE; caused by leaky RAG mutations or other recombination
+        defects). No SNOMED CT concept named exists in the mirror. Target (Athena 4101448) =, standard (S);
+        base ICD-10 D81.2 maps here. Broader: Omenn is clinically a SCID variant subsumed by 4101448,
+        but the target drops the Omenn-specific phenotype. low: clinical-scope loss; reviewer may prefer
+        725290000 (Combined immunodeficiency due to partial RAG1 deficiency) as a narrower related
+        alternative.
+        """
+}
+mapping "D812W.1" source="D812W" target="190998001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D812W SNOMED CT 190998001 = other specified SCID with low/normal B-cells (Swedish residual
+        under D81.2). Target (Athena 4101448) =, standard (S). Base ICD-10 D81.2 maps to 4101448 via
+        Athena crosswalk; residual subcode inherits the parent target. Broader: target subsumes the
+        heterogeneous bucket. low: residual source, parent crosswalk not re-verified for the subcode.
+        """
+}
+mapping "D824B.2" source="D824B" target="191009009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D836.1" source="D836" target="191010004" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source D836 is a Swedish national-extension sub-code under CVID (D83.6 absent from standard WHO
+        ICD-10). Base ICD-10 D83 (Common variable immunodeficiency) maps to SNOMED CT 23238000 (Athena
+        435228, SNOMED CT 191010004). Target (Athena 40389201) =, standard (S, valid 2023-07-31+) - the
+        current preferred CVID concept. Broader: target subsumes the Swedish subcode. moderate: Swedish
+        extension with no direct crosswalk, CVID is the legitimate parent but not independently
+        re-verified for this subcode.
+        """
+}
+mapping "D836.2" source="D836" target="191010004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D848A.1" source="D848A" target="78048006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D848B.1" source="D848B" target="234583001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D848B SNOMED CT 234583001 = leukocyte adhesion deficiency type 2 (selectin/CD15 defect).
+        Target (Athena 4125808) =, standard (S). Exact 1:1 match on type, phenotype, and underlying
+        selectin defect. exact-equivalent.
+        """
+}
+mapping "D863A.1" source="D863A" target="91259005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D863A SNOMED CT 91259005 = angiolupoid sarcoidosis (a cutaneous sarcoidosis morphologic
+        variant, Swedish subcode under D86.3 Sarcoidosis of skin). Target (Athena 4235583) =, standard
+        (S). Exact 1:1 match on morphology (angiolupoid) and topography (cutaneous sarcoidosis context).
+        exact-equivalent.
+        """
+}
+mapping "D863C.2" source="D863C" target="55941000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "D898A.1" source="D898A" target="10743271000119103" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D898A SNOMED CT 10743271000119103 = IgG4-related disease. Target (Athena 36717255) =,
+        standard (S, valid 2017-01-31+). Exact 1:1 match. exact-equivalent.
+        """
+}
+mapping "D898W.1" source="D898W" target="234532001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D898W SNOMED CT 234532001 = other specified disease involving the immune system, NEC
+        (Swedish residual under D84.8). Target (Athena 433740) =, standard (S); base ICD-10 D84.8/D84.9
+        map to 433740. Broader: target is the very general immune-disorder umbrella subsuming this
+        heterogeneous residual. weak: substantial specificity loss, residual NEC source - target
+        recorded as a lead, not an assertion.
+        """
+}
+mapping "E029.1" source="E029" target="237567008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E029 SNOMED CT 237567008 = subclinical iodine-deficiency hypothyroidism. Target (Athena
+        4130027) =, standard (S). Base ICD-10 E02 maps to 4130027 via Athena crosswalk. Exact 1:1 match.
+        exact-equivalent.
+        """
+}
+mapping "E0399.1" source="E0399" target="40930008" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source E0399 is a Swedish 5th-character extension on E03.9 (Hypothyroidism, unspecified). Target
+        SNOMED CT 40930008 (Athena 140673) =, standard (S); base ICD-10 E03.9 maps to 140673 via Athena
+        crosswalk. Broader: target subsumes the unspecified Swedish subcode. moderate: Athena crosswalk
+        on the base code, unspecified source, not independently re-verified for the subcode.
+        """
+}
+mapping "E0399.2" source="E0399" target="40930008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E100A.1" source="E100A" target="368101000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E100B.1" source="E100B" target="368101000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E100C.1" source="E100C" target="368101000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E100D.1" source="E100D" target="368101000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E100X.1" source="E100X" target="368101000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E106B.2" source="E106B" target="46635009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E106C.2" source="E106C" target="420868002" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E113F0.2" source="E113F0" target="44054006" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E118P.2" source="E118P" target="44054006" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E14P.1" source="E14P" target="73211009" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source E14P = Swedish episode-of-care suffix (.P) on E14 (unspecified diabetes mellitus). The.P
+        is a process/administrative marker with no clinical analogue. Target SNOMED CT 73211009 (Athena
+        201820) =, standard (S); base ICD-10 E14 maps to 201820 via Athena crosswalk. Broader (and
+        effectively administrative): target captures the underlying diabetes axis only; the.P
+        episode-of-care dimension is dropped. weak: the.P suffix is administrative, so the mapping is a
+        coarse lead, not a clinical assertion - reviewer may instead set invalid_reason for the
+        suffix-only dimension.
+        """
+}
+mapping "E14P.2" source="E14P" target="73211009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E159.1" source="E159" target="230796005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E159 SNOMED CT 230796005 = non-diabetic hypoglycemic coma. Target (Athena 4048805) =,
+        standard (S). Base ICD-10 E15 maps to 4048805 via Athena crosswalk. Exact 1:1 match.
+        exact-equivalent.
+        """
+}
+mapping "E161B.1" source="E161B" target="66149005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E161B SNOMED CT 66149005 = beta-cell hyperplasia, unspecified (Swedish subcode under E16.1
+        Other hypoglycemia). The natural SNOMED CT target (66149005, Athena 4278841) is standard (S) and
+        denotes the morphologic entity directly. Broader: target is the bare beta-cell hyperplasia
+        concept; the Swedish subcode carries an additional clinical-context axis (presents as
+        hypoglycemia under E16.1) that the target does not specify. low: clinically defensible but
+        partial context loss; no exact crosswalk on the Swedish subcode. (Note: 66149005 is the proper
+        beta-cell-hyperplasia concept; the related 237649006 is invalid in the mirror.)
+        """
+}
+mapping "E168D.1" source="E168D" target="237578000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E168D SNOMED CT 237578000 = overproduction of somatostatin (Swedish subcode under E16.8
+        Other specified disorders of pancreatic internal secretion). Target (Athena 4034828) =, standard
+        (S). Exact 1:1 match on hormone (somatostatin) and direction (excess). high: precise term match,
+        no independent crosswalk on the Swedish subcode but unambiguous semantics.
+        """
+}

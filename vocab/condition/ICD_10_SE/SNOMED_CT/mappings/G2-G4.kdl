@@ -1,0 +1,395 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes G2-G4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "G2000.1" source="G2000" target="49049000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source G2000 is a Swedish fifth-character extension of ICD-10 G20 (Parkinson's disease); the.00
+        suffix is a primary-diagnosis/site marker with no independent clinical meaning. Base G20 maps
+        via Athena to SNOMED CT 381270 (49049000). Exact equivalence at the clinical-concept level.
+        """
+}
+mapping "G2000.2" source="G2000" target="49049000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "G2009.1" source="G2009" target="49049000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source G2009 is a Swedish fifth-character extension of ICD-10 G20 (Parkinson's disease).09 is a
+        site specifier preserved as a custom code with no independent clinical meaning. Base G20 Athena
+        crosswalk target SNOMED CT 381270 (49049000). Exact equivalence at the clinical-concept level.
+        """
+}
+mapping "G2009.2" source="G2009" target="49049000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "G209.1" source="G209" target="49049000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G209 = Parkinsons sjukdom = ICD-10 G20. SNOMED CT 381270 (49049000) is the Athena crosswalk
+        target and exact equivalent.
+        """
+}
+mapping "G229.1" source="G229" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G269.1" source="G269" target="60342002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G269 = Basalganglietillstånd och rörelserubbningar vid sjukdomar som klassificeras på
+        annan plats = ICD-10 G26 (extrapyramidal/movement disorders in diseases classified elsewhere).
+        Athena crosswalk for G26 targets SNOMED CT 372604 (60342002). Target subsumes source broadly; low
+        tier because the source is a heterogeneous SNOMED CT 60342002 residual and the target is a very
+        general parent.
+        """
+}
+mapping "G3090.1" source="G3090" target="26929004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source G3090 is a Swedish fifth-character extension of ICD-10 G30 (Alzheimer's disease).90 =
+        unspecified subtype marker with no independent clinical meaning. Base G30 Athena crosswalk
+        target SNOMED CT 378419 (26929004). Exact equivalence at the clinical-concept level.
+        """
+}
+mapping "G3090.2" source="G3090" target="26929004" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "G3099.1" source="G3099" target="26929004" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated to G30; crosswalk-verified via prior candidate"
+}
+mapping "G318A.1" source="G318A" target="312991009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G318A = Degenerativa förändringar vid lewybodydemens = Swedish extension equivalent to
+        ICD-10-CM G31.83 SNOMED CT 312991009 / Dementia with Lewy bodies. ICD-10-CM G31.83 Athena crosswalk
+        targets SNOMED CT 4196433 (312991009). Exact clinical equivalent.
+        """
+}
+mapping "G318W.1" source="G318W" target="80690008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G318W = Andra specificerade degenerativa sjukdomar i nervsystemet = residual of ICD-10
+        G31.8 SNOMED CT 80690008. SNOMED CT 4213310 (80690008) is the Athena crosswalk target for G31.8 and
+        subsumes the heterogeneous residual source. Moderate tier because the source is an residual and
+        the target is a broad parent.
+        """
+}
+mapping "G3509.1" source="G3509" target="24700007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source G3509 is a Swedish fifth-character extension of ICD-10 G35 (Multiple sclerosis); the
+        extension encodes a subtype/episode modifier with no independent clinical meaning at the
+        disorder level. Base G35 Athena crosswalk target SNOMED CT 374919 (24700007). Exact equivalence at
+        the clinical-concept level.
+        """
+}
+mapping "G3509.2" source="G3509" target="24700007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "G359.1" source="G359" target="39181000087106" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G400A.1" source="G400A" target="84757009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G400B.1" source="G400B" target="84757009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G400W.1" source="G400W" target="84757009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G401A.1" source="G401A" target="84340007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401A = Temporallobsepilepsi, partiell, enkel, utan medvetandestörning = temporal lobe
+        epilepsy, simple partial, without impairment of consciousness. SNOMED CT 40636090 (84340007) is the
+        exact clinical equivalent (the simple-partial qualifier is a seizure-semiology modifier, not a
+        distinct disorder).
+        """
+}
+mapping "G401B.1" source="G401B" target="230394006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401B = Frontallobsepilepsi, partiell, enkel, utan medvetandestörning = frontal lobe
+        epilepsy, simple partial. SNOMED CT 4047888 (230394006) is the exact clinical equivalent.
+        """
+}
+mapping "G401C.1" source="G401C" target="230403005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401C = Parietallobsepilepsi, partiell, enkel, utan medvetandestörning = parietal lobe
+        epilepsy, simple partial. SNOMED CT 4046206 (230403005) is the exact clinical equivalent.
+        """
+}
+mapping "G401D.1" source="G401D" target="230404004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401D = Occipitallobsepilepsi, partiell, enkel, utan medvetandestörning = occipital lobe
+        epilepsy, simple partial. SNOMED CT 4046207 (230404004) is the exact clinical equivalent.
+        """
+}
+mapping "G401E.1" source="G401E" target="230381009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401E = Partiell epilepsi, enkel, utan medvetanstörning med sekundär generalisering =
+        simple partial epilepsy with secondary generalization. No SNOMED CT concept captures this exact
+        combination of focal-onset-with-secondary-generalization at the simple-partial level. Best
+        available standard target is SNOMED CT 374915 (230381009), the Athena crosswalk target for ICD-10
+        G40.1; it legitimately subsumes the source. Moderate tier because the secondary-generalization
+        qualifier is lost.
+        """
+}
+mapping "G401X.1" source="G401X" target="230381009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G401X = Partiell epilepsi, enkel, utan medvetandestörning, ospecificerad = simple partial
+        epilepsy, unspecified (residual of G40.1). SNOMED CT 374915 (230381009) is the Athena crosswalk
+        target for ICD-10 G40.1 and subsumes the unspecified residual source. High tier because the
+        crosswalk is verified and the parent is one level up.
+        """
+}
+mapping "G402A.1" source="G402A" target="193000002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402A SNOMED CT 193000002 = temporal lobe epilepsy, complex partial, with impairment of
+        consciousness. Target SNOMED CT 4102345 (Disorder, std=S). The Swedish subcode is the lobe-specific
+        complex-partial variant of G40.2; is the canonical standard concept for temporal lobe epilepsy
+        (40636090 is its non-standard predecessor and itself maps to 4102345 via a Maps-to edge). Exact
+        equivalence at the disorder level.
+        """
+}
+mapping "G402B.1" source="G402B" target="230394006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402B SNOMED CT 230394006 = frontal lobe epilepsy, complex partial, with impairment of
+        consciousness. Target SNOMED CT 4047888 (Disorder, std=S). Exact equivalence at the disorder level;
+        the Swedish subcode is the lobe-specific descendant of ICD-10 G40.2 whose parent maps to SNOMED CT
+        Focal epilepsy.
+        """
+}
+mapping "G402C.1" source="G402C" target="230403005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402C SNOMED CT 230403005 = parietal lobe epilepsy, complex partial, with impairment of
+        consciousness. Target SNOMED CT 4046206 (Disorder, std=S). Exact equivalence at the disorder level.
+        """
+}
+mapping "G402D.1" source="G402D" target="230404004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402D SNOMED CT 230404004 = occipital lobe epilepsy, complex partial, with impairment of
+        consciousness. Target SNOMED CT 4046207 (Disorder, std=S). Exact equivalence at the disorder level.
+        """
+}
+mapping "G402E.1" source="G402E" target="230381009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402E SNOMED CT 230381009 = complex partial epilepsy with secondary generalization. ICD-10
+        base G40.2 maps to SNOMED CT 374915 (Focal epilepsy). The source bundles focal-onset
+        complex-partial epilepsy PLUS secondary generalized seizures; no single standard SNOMED CT concept
+        captures the full combination (4070660 is non-standard, U). Target 374915 (Focal epilepsy,
+        std=S) is the broader focal-epilepsy ancestor that subsumes the focal aspect; the
+        secondary-generalization component is uncovered. Recorded as broader for the focal axis; the
+        missing generalization axis would warrant a separate partial target if a standard concept
+        existed.
+        """
+}
+mapping "G402F.1" source="G402F" target="230381009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402F SNOMED CT 230381009 = complex partial epilepsy with impairment of consciousness,
+        psychomotor. is a legacy synonym for complex partial / focal-impaired-awareness epilepsy without
+        lobe specification. ICD-10 G40.2 maps to SNOMED CT 374915 (Focal epilepsy, std=S). No single
+        standard SNOMED CT concept encodes as a disorder; 374915 is the closest defensible broader
+        ancestor. Moderate tier: legacy source terminology, parent-level crosswalk.
+        """
+}
+mapping "G402X.1" source="G402X" target="230381009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G402X SNOMED CT 230381009 = complex partial epilepsy with impairment of consciousness,
+        unspecified. Unspecified subtype of ICD-10 G40.2, which maps to SNOMED CT 374915 (Focal epilepsy,
+        std=S). With no lobe specified, the only defensible standard target is the focal-epilepsy
+        parent. Moderate tier: unspecified source, parent-level crosswalk.
+        """
+}
+mapping "G403A.1" source="G403A" target="79631006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403B.1" source="G403B" target="79631006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403C.1" source="G403C" target="6204001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403D.1" source="G403D" target="87476004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403E.1" source="G403E" target="84757009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403F.1" source="G403F" target="84757009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G403X.1" source="G403X" target="36803009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G403X SNOMED CT 36803009 = primary generalized idiopathic epilepsy, unspecified. ICD-10
+        G40.3 maps to SNOMED CT 4274575 (Idiopathic generalized epilepsy, std=S). The Swedish subcode is
+        the unspecified variant of G40.3; 4274575 is the direct standard crosswalk target. High tier:
+        verified crosswalk from the parent, small breadth mismatch (unspecified source).
+        """
+}
+mapping "G404A.1" source="G404A" target="28055006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G404A SNOMED CT 28055006 = infantile spasms, West syndrome. Target SNOMED CT 376105 (Disorder,
+        std=S, concept_code 28055006). Exact clinical equivalence: West syndrome is the named disorder
+        encompassing infantile spasms. Note 40322364 (also, concept_code 155042008) is non-standard (U)
+        and replaced by 376105.
+        """
+}
+mapping "G404B.1" source="G404B" target="230418006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G404B SNOMED CT 230418006 = myoclonic-astatic seizures, Lennox-Gastaut syndrome. Target
+        SNOMED CT 4046213 (Disorder, std=S, concept_code 230418006). Exact clinical equivalence:
+        Lennox-Gastaut is the named electroclinical syndrome. Note 40633150 (concept_code 75036009) is
+        non-standard (D) and replaced by 4046213.
+        """
+}
+mapping "G404C.1" source="G404C" target="1208629005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G404C SNOMED CT 1208629005 = myoclonic absences. Target SNOMED CT 37163217 (Clinical Finding,
+        std=S, concept_code 1208629005). Exact equivalence for the seizure phenomenon; Swedish term maps
+        directly to absence seizure.
+        """
+}
+mapping "G404D.1" source="G404D" target="23374007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G404D SNOMED CT 23374007 = atypical absences. Target SNOMED CT 4050738 (Clinical Finding,
+        std=S, concept_code 23374007). Exact clinical equivalence.
+        """
+}
+mapping "G404X.1" source="G404X" target="19598007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G404X SNOMED CT 19598007 = generalized symptomatic epilepsy, unspecified. ICD-10 G40.4
+        (Other generalized epilepsy and epileptic syndromes) maps to SNOMED CT 4055361 (Generalized
+        epilepsy, std=S). The Swedish subcode is symptomatic + unspecified within the G40.4 family; no
+        separate standard SNOMED CT concept is current, so 4055361 is the closest broader standard target.
+        High tier: parent crosswalk, one-level broader.
+        """
+}
+mapping "G471A.1" source="G471A" target="442416002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G471A SNOMED CT 442416002 = idiopathic hypersomnia with long sleep time. Target SNOMED CT
+        40483183 (Disorder, std=S, concept_code 442416002). Exact equivalence; the SNOMED CT
+        fully-specified name mirrors the ICSD-3 criterion of long sleep time.
+        """
+}
+mapping "G471B.1" source="G471B" target="442292004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G471B SNOMED CT 442292004 = idiopathic hypersomnia without long sleep time. Target SNOMED CT
+        40482713 (Disorder, std=S, concept_code 442292004). Exact equivalence.
+        """
+}
+mapping "G471W.1" source="G471W" target="194439006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G471W SNOMED CT 194439006 = other specified hypersomnia, including secondary hypersomnia.
+        ICD-10 G47.1 (Disorders of excessive somnolence) maps to SNOMED CT 4108537 (Disorder of excessive
+        somnolence, std=S). The source is a heterogeneous residual that explicitly includes secondary
+        hypersomnias of varied etiology; no single more-specific standard concept covers the bucket.
+        4108537 is the broader standard parent. Low tier: heterogeneous residual source.
+        """
+}
+mapping "G471X.1" source="G471X" target="194439006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G471X SNOMED CT 194439006 = hypersomnia, unspecified. ICD-10 G47.1 maps to SNOMED CT 4108537
+        (Disorder of excessive somnolence, std=S). Unspecified source; the parent crosswalk is the best
+        broader standard concept. Moderate tier: unspecified source, verified crosswalk.
+        """
+}
+mapping "G474A.1" source="G474A" target="735676003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G474A SNOMED CT 735676003 = narcolepsy type 1 (with cataplexy and/or low CSF hypocretin).
+        Target SNOMED CT 42536721 (Disorder, std=S, concept_code 735676003). Exact equivalence on the
+        ICSD-3 type-1 definition.
+        """
+}
+mapping "G474B.1" source="G474B" target="91521000119104" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G474B SNOMED CT 91521000119104 = narcolepsy type 2 (without cataplexy, normal/unknown
+        hypocretin). Target SNOMED CT 43531721 (Disorder, std=S, concept_code 91521000119104). Exact
+        equivalence on the ICSD-3 type-2 definition; SNOMED CT names the same concept.
+        """
+}
+mapping "G474W.1" source="G474W" target="193042000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G474W SNOMED CT 193042000 = other specified narcolepsy and cataplexy, including secondary
+        narcolepsy. ICD-10 G47.4 maps to SNOMED CT 437854 (Cataplexy and narcolepsy, std=S). The source is
+        a heterogeneous residual that explicitly includes secondary narcolepsy (SNOMED CT 762958); no
+        single standard concept covers the bucket, so the broader G47.4 crosswalk 437854 is the best
+        defensible target. Low tier: heterogeneous residual source.
+        """
+}
+mapping "G474X.1" source="G474X" target="193042000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G474X SNOMED CT 193042000 = narcolepsy and cataplexy, unspecified. ICD-10 G47.4 maps to
+        SNOMED CT 437854 (Cataplexy and narcolepsy, std=S). Unspecified source; parent crosswalk is the
+        best broader standard concept. Moderate tier: unspecified source, verified crosswalk.
+        """
+}
+mapping "G478A.1" source="G478A" target="111488004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G478A SNOMED CT 111488004 = Kleine-Levin syndrome. Target SNOMED CT 4008567 (Disorder, std=S,
+        concept_code 111488004). Exact equivalence.
+        """
+}
+mapping "G478B.1" source="G478B" target="58690002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G478B SNOMED CT 58690002 = parasomnias. Target SNOMED CT 440087 (Disorder, std=S, concept_code
+        58690002). Exact equivalence at the disorder-category level; the Swedish plural groups all
+        ICD-10 G47.8 parasomnia subtypes.
+        """
+}
+mapping "G478C.1" source="G478C" target="84991000119105" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G478C SNOMED CT 84991000119105 = sleep-related movement disorders. Target SNOMED CT 35626941
+        (Disorder, std=S, concept_code 84991000119105). Exact equivalence at the disorder-category level
+        (ICSD-3). High tier: term-for-term match against the standard category concept.
+        """
+}
+mapping "G478W.1" source="G478W" target="39898005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G478W SNOMED CT 39898005 = other specified sleep disorder. ICD-10 G47.8 maps to SNOMED CT
+        435524 (Sleep disorder, std=S, concept_code 39898005). The source is a heterogeneous residual;
+        no single more-specific standard concept covers it, so the G47.8 parent crosswalk is the best
+        broader target. Low tier: heterogeneous residual source.
+        """
+}

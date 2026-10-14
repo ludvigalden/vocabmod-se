@@ -1,0 +1,229 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes X458-X45
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "X458.1" source="X458" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X458 = Swedish ICD-10-SE national extension of X45 SNOMED CT 216633005 (Athena ICD10 concept
+        45756401), refined by Swedish external-cause place axis: annan specificerad plats / andra
+        specificerade platser (other specified place); no specific activity axis (place-only code). The
+        clinical event/exposure is unchanged; the Swedish place/activity qualifiers are external-cause
+        metadata with no distinct standard SNOMED CT clinical analogue. Target SNOMED CT 441465 = sctid
+        216633005. Why this target: Athena ICD10 crosswalk maps base X45 (concept_id 45756401) -> 441465
+        (relationship 45756401, 441465); it is the authoritative standard concept for X45 and fully
+        subsumes every place/activity-specific SE subdivision. mapping_type=broader (target fully
+        contains every clinical meaning of the source; the dropped qualifier is breadth-neutral
+        external-cause metadata, not a partial slice). Confidence (high): verified Athena crosswalk on
+        the base code with a small, well-understood one-level breadth mismatch (the SE place/activity
+        refinement is lost). Athena-local research only.
+        """
+}
+mapping "X4580.1" source="X4580" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4580 = Swedish ICD-10-SE national extension of X45 SNOMED CT 216633005 (Athena ICD10
+        concept 45756401), refined by Swedish external-cause metadata: place=annan specificerad plats /
+        andra specificerade platser (other specified place); activity=idrott, sport, motion (sport,
+        exercise). The clinical event/exposure is unchanged; the Swedish place/activity qualifiers are
+        external-cause metadata with no distinct standard SNOMED CT clinical analogue. Target SNOMED CT 441465
+        = sctid 216633005. Why this target: Athena ICD10 crosswalk maps base X45 (concept_id 45756401)
+        -> 441465 (relationship 45756401, 441465); it is the authoritative standard concept for X45 and
+        fully subsumes every place/activity-specific SE subdivision. mapping_type=broader (target fully
+        contains every clinical meaning of the source; the dropped qualifier is breadth-neutral
+        external-cause metadata, not a partial slice). Confidence (high): verified Athena crosswalk on
+        the base code with a small, well-understood one-level breadth mismatch (the SE place/activity
+        refinement is lost). Athena-local research only.
+        """
+}
+mapping "X4581.1" source="X4581" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4581 = Swedish ICD-10-SE national extension of X45 SNOMED CT 1255412009 216633005 (Athena
+        ICD10 concept 45756401), refined by Swedish external-cause metadata: place=annan specificerad
+        plats / andra specificerade platser (other specified place); activity=lek och annan
+        fritidsverksamhet (play and other leisure activity). The clinical event/exposure is unchanged;
+        the Swedish place/activity qualifiers are external-cause metadata with no distinct standard
+        SNOMED CT clinical analogue. Target SNOMED CT 441465 = sctid 216633005. Why this target: Athena ICD10
+        crosswalk maps base X45 (concept_id 45756401) -> 441465 (relationship 45756401, 441465); it is
+        the authoritative standard concept for X45 and fully subsumes every place/activity-specific SE
+        subdivision. mapping_type=broader (target fully contains every clinical meaning of the source;
+        the dropped qualifier is breadth-neutral external-cause metadata, not a partial slice).
+        Confidence (high): verified Athena crosswalk on the base code with a small, well-understood
+        one-level breadth mismatch (the SE place/activity refinement is lost). Athena-local research
+        only.
+        """
+}
+mapping "X4581.2" source="X4581" target="1255412009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X4582.1" source="X4582" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4582 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4583.1" source="X4583" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4583 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4584.1" source="X4584" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4584 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4588.1" source="X4588" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4588 = SNOMED CT 216633005 287166006 (Swedish national extension). Base X45
+        Athena-crosswalks to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 ->
+        441465. The Swedish extension subdivides the base event by a place/activity/qualifier axis with
+        no distinct standard SNOMED CT clinical analogue; the underlying clinical event is unchanged.
+        Target subsumes the source event -> broader. Confidence : verified Athena crosswalk on base X45,
+        one-level broader (Swedish qualifier dropped).
+        """
+}
+mapping "X4588.2" source="X4588" target="287166006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X4589.1" source="X4589" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4589 = SNOMED CT 216633005 7895008 (Swedish national extension). Base X45 Athena-crosswalks
+        to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4589.2" source="X4589" target="7895008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X459.1" source="X459" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X459 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4590.1" source="X4590" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4590 = SNOMED CT 216633005 287166006 (Swedish national extension). Base X45
+        Athena-crosswalks to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 ->
+        441465. The Swedish extension subdivides the base event by a place/activity/qualifier axis with
+        no distinct standard SNOMED CT clinical analogue; the underlying clinical event is unchanged.
+        Target subsumes the source event -> broader. Confidence : verified Athena crosswalk on base X45,
+        one-level broader (Swedish qualifier dropped).
+        """
+}
+mapping "X4590.2" source="X4590" target="287166006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X4591.1" source="X4591" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4591 = SNOMED CT 216633005 287166006 (Swedish national extension). Base X45
+        Athena-crosswalks to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 ->
+        441465. The Swedish extension subdivides the base event by a place/activity/qualifier axis with
+        no distinct standard SNOMED CT clinical analogue; the underlying clinical event is unchanged.
+        Target subsumes the source event -> broader. Confidence : verified Athena crosswalk on base X45,
+        one-level broader (Swedish qualifier dropped).
+        """
+}
+mapping "X4591.2" source="X4591" target="287166006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X4592.1" source="X4592" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4592 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4593.1" source="X4593" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4593 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4594.1" source="X4594" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source X4594 = SNOMED CT 216633005 (Swedish national extension). Base X45 Athena-crosswalks to
+        SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 -> 441465. The Swedish
+        extension subdivides the base event by a place/activity/qualifier axis with no distinct standard
+        SNOMED CT clinical analogue; the underlying clinical event is unchanged. Target subsumes the source
+        event -> broader. Confidence : verified Athena crosswalk on base X45, one-level broader (Swedish
+        qualifier dropped).
+        """
+}
+mapping "X4598.1" source="X4598" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4598 = SNOMED CT 1255412009 216633005 (Swedish national extension). Base X45
+        Athena-crosswalks to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 ->
+        441465. The Swedish extension subdivides the base event by a place/activity/qualifier axis with
+        no distinct standard SNOMED CT clinical analogue; the underlying clinical event is unchanged.
+        Target subsumes the source event -> broader. Confidence : verified Athena crosswalk on base X45,
+        one-level broader (Swedish qualifier dropped).
+        """
+}
+mapping "X4598.2" source="X4598" target="1255412009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "X4599.1" source="X4599" target="216633005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source X4599 = SNOMED CT 1255412009 216633005 (Swedish national extension). Base X45
+        Athena-crosswalks to SNOMED CT 441465 (concept_code 216633005) via ICD10 relationship 45756401 ->
+        441465. The Swedish extension subdivides the base event by a place/activity/qualifier axis with
+        no distinct standard SNOMED CT clinical analogue; the underlying clinical event is unchanged.
+        Target subsumes the source event -> broader. Confidence : verified Athena crosswalk on base X45,
+        one-level broader (Swedish qualifier dropped).
+        """
+}
+mapping "X4599.2" source="X4599" target="1255412009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

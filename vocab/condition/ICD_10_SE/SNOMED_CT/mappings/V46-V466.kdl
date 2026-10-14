@@ -1,0 +1,582 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V46-V466
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4600.1" source="V4600" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4600 = Swedish extension of V46.0 SNOMED CT 214640008. Parent V46.0 (Athena 45590251)
+        crosswalks to SNOMED CT 437738 (Motor vehicle accident off public road). Target captures the
+        nontraffic motor vehicle accident event; activity qualifier (sport) has no SNOMED CT
+        representation. Broader: target fully contains the injury event, drops the activity detail. High
+        tier: verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V4601.1" source="V4601" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4601 = Swedish extension of V46.0 (car driver, nonmotor vehicle collision, nontraffic
+        accident, leisure). Parent V46.0 (45590251) crosswalks to 437738. Broader mapping; activity not
+        in SNOMED CT. High tier.
+        """
+}
+mapping "V4602.1" source="V4602" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4602 = Swedish extension of ICD-10 V46.0 (driver of car injured in nontraffic collision
+        with nonmotor vehicle, while engaged in förvärvsarbete/paid work). The
+        activity-at-time-of-accident suffix (Y93-style) has no SNOMED CT representation; the core clinical
+        event is the accident. Target SNOMED CT 437738 (concept_code 214640008), which is the verified
+        SNOMED CT 214640008 target for the parent V46.0. Target subsumes the source's accident axis but
+        loses the activity dimension, hence broader. Moderate tier: mechanical crosswalk via parent
+        V46.0, not independently re-verified for the Swedish extension.
+        """
+}
+mapping "V4603.1" source="V4603" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4603 = Swedish extension of V46.0 (driver, nontraffic collision with nonmotor vehicle,
+        during annan sysselsättning/other activity). Activity suffix has no SNOMED CT analogue. Target
+        SNOMED CT 437738 = Motor vehicle accident off public road, the verified Maps to target for parent
+        V46.0. Broader: target subsumes accident axis, drops activity detail. Moderate tier per parent
+        crosswalk.
+        """
+}
+mapping "V4604.1" source="V4604" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4604 = Swedish extension of V46.0 (driver, nontraffic collision with nonmotor vehicle,
+        during vitalaktivitet/vital activity such as rest, sleep, meals, personal hygiene). Activity
+        suffix has no SNOMED CT analogue. Target SNOMED CT 437738 = Motor vehicle accident off public road,
+        the verified Maps to target for parent V46.0. Broader: target subsumes accident axis, drops
+        activity detail. Moderate tier.
+        """
+}
+mapping "V4608.1" source="V4608" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4608 = Swedish extension of V46.0 (driver, nontraffic collision with nonmotor vehicle,
+        during andra specificerade aktiviteter/other specified activities). Activity suffix has no
+        SNOMED CT analogue. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified
+        Maps to target for parent V46.0. Broader: target subsumes accident axis, drops activity detail.
+        Moderate tier.
+        """
+}
+mapping "V4609.1" source="V4609" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4609 = Swedish extension of V46.0 (driver, nontraffic collision with nonmotor vehicle,
+        aktivitet ospecificerad/activity unspecified). The unspecified-activity suffix adds no clinical
+        detail beyond V46.0. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified
+        Maps to target for parent V46.0. Broader: target subsumes accident axis. Moderate tier per
+        parent crosswalk.
+        """
+}
+mapping "V4610.1" source="V4610" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4610 = Swedish extension of V46.1 (passenger of car injured in nontraffic collision with
+        nonmotor vehicle, during idrott sport motion/sports exercise). Activity suffix has no SNOMED CT
+        analogue. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified Maps to
+        target for parent V46.1. Broader: target subsumes accident axis, drops activity detail. Moderate
+        tier.
+        """
+}
+mapping "V4611.1" source="V4611" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4611 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, during lek och fritidsverksamhet/play and leisure). Activity suffix has no SNOMED CT
+        analogue. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified Maps to
+        target for parent V46.1. Broader. Moderate tier.
+        """
+}
+mapping "V4612.1" source="V4612" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4612 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, during förvärvsarbete/paid work). Activity suffix has no SNOMED CT analogue. Target SNOMED CT
+        437738 = Motor vehicle accident off public road, the verified Maps to target for parent V46.1.
+        Broader. Moderate tier.
+        """
+}
+mapping "V4613.1" source="V4613" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4613 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, during annan sysselsättning/other activity). Activity suffix has no SNOMED CT analogue.
+        Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified Maps to target for
+        parent V46.1. Broader. Moderate tier.
+        """
+}
+mapping "V4614.1" source="V4614" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4614 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, during vitalaktivitet/vital activity). Activity suffix has no SNOMED CT analogue. Target
+        SNOMED CT 437738 = Motor vehicle accident off public road, the verified Maps to target for parent
+        V46.1. Broader. Moderate tier.
+        """
+}
+mapping "V4618.1" source="V4618" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4618 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, during andra specificerade aktiviteter/other specified activities). Activity suffix has
+        no SNOMED CT analogue. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified
+        Maps to target for parent V46.1. Broader. Moderate tier.
+        """
+}
+mapping "V4619.1" source="V4619" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4619 = Swedish extension of V46.1 (passenger, nontraffic collision with nonmotor
+        vehicle, aktivitet ospecificerad/activity unspecified). Unspecified-activity suffix adds no
+        detail beyond V46.1. Target SNOMED CT 437738 = Motor vehicle accident off public road, the verified
+        Maps to target for parent V46.1. Broader. Moderate tier.
+        """
+}
+mapping "V4620.1" source="V4620" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4620 = Swedish extension of V46.2 (person on outside of car injured in nontraffic
+        collision with nonmotor vehicle, during idrott sport motion/sports). Activity suffix has no
+        SNOMED CT analogue. Parent V46.2 has two verified Maps to targets: SNOMED CT 444074 (36198007) and
+        SNOMED CT 4069060 (214845000). Both targets subsume the accident axis but drop the activity detail,
+        hence broader. Moderate tier: mechanical crosswalk via parent V46.2.
+        """
+}
+mapping "V4620.2" source="V4620" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4621.1" source="V4621" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4621 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, during lek och fritidsverksamhet/play and leisure). Activity suffix has no SNOMED CT
+        analogue. Targets SNOMED CT 444074 (Victim of vehicular AND/OR traffic accident) and 4069060 (Motor
+        vehicle nontraffic accident involving collision with nonmotor vehicle), the verified Maps to
+        targets for parent V46.2. Broader. Moderate tier.
+        """
+}
+mapping "V4621.2" source="V4621" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4622.1" source="V4622" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4622 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, during förvärvsarbete/paid work). Activity suffix has no SNOMED CT analogue. Targets
+        SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.2. Broader. Moderate
+        tier.
+        """
+}
+mapping "V4622.2" source="V4622" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4623.1" source="V4623" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4623 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, during annan sysselsättning/other activity). Activity suffix has no SNOMED CT analogue.
+        Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.2. Broader.
+        Moderate tier.
+        """
+}
+mapping "V4623.2" source="V4623" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4624.1" source="V4624" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4624 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, during vitalaktivitet/vital activity). Activity suffix has no SNOMED CT analogue. Targets
+        SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.2. Broader. Moderate
+        tier.
+        """
+}
+mapping "V4624.2" source="V4624" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4628.1" source="V4628" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4628 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, during andra specificerade aktiviteter/other specified activities). Activity suffix has
+        no SNOMED CT analogue. Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent
+        V46.2. Broader. Moderate tier.
+        """
+}
+mapping "V4628.2" source="V4628" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4629.1" source="V4629" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4629 = Swedish extension of V46.2 (person on outside, nontraffic collision with nonmotor
+        vehicle, aktivitet ospecificerad/activity unspecified). Unspecified-activity suffix adds no
+        detail beyond V46.2. Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent
+        V46.2. Broader. Moderate tier.
+        """
+}
+mapping "V4629.2" source="V4629" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4630.1" source="V4630" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4630 = Swedish extension of V46.3 (unspecified car occupant injured in nontraffic
+        collision with nonmotor vehicle, during idrott sport motion/sports). Activity suffix has no
+        SNOMED CT analogue. Targets SNOMED CT 444074 (Victim of vehicular AND/OR traffic accident) and 4069060
+        (Motor vehicle nontraffic accident involving collision with nonmotor vehicle), the verified Maps
+        to targets for parent V46.3. Broader. Moderate tier.
+        """
+}
+mapping "V4630.2" source="V4630" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4631.1" source="V4631" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4631 = Swedish extension of V46.3 (unspecified occupant, nontraffic collision with
+        nonmotor vehicle, during lek och fritidsverksamhet/play and leisure). Activity suffix has no
+        SNOMED CT analogue. Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent
+        V46.3. Broader. Moderate tier.
+        """
+}
+mapping "V4631.2" source="V4631" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4632.1" source="V4632" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4632 = Swedish extension of V46.3 (unspecified occupant, nontraffic collision with
+        nonmotor vehicle, during förvärvsarbete/paid work). Activity suffix has no SNOMED CT analogue.
+        Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.3. Broader.
+        Moderate tier.
+        """
+}
+mapping "V4632.2" source="V4632" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4633.1" source="V4633" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4633 = Swedish extension of V46.3 (unspecified occupant, nontraffic collision with
+        nonmotor vehicle, during annan sysselsättning/other activity). Activity suffix has no SNOMED CT
+        analogue. Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.3.
+        Broader. Moderate tier.
+        """
+}
+mapping "V4633.2" source="V4633" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4634.1" source="V4634" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4634 = Swedish extension of V46.3 (unspecified occupant, nontraffic collision with
+        nonmotor vehicle, during vitalaktivitet/vital activity). Activity suffix has no SNOMED CT analogue.
+        Targets SNOMED CT 444074 and 4069060, the verified Maps to targets for parent V46.3. Broader.
+        Moderate tier.
+        """
+}
+mapping "V4634.2" source="V4634" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4638.1" source="V4638" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4638 = Swedish extension of V46.3 (unspecified occupant, nontraffic collision with
+        nonmotor vehicle, during andra specificerade aktiviteter/other specified activities). Activity
+        suffix has no SNOMED CT analogue. Targets SNOMED CT 444074 and 4069060, the verified Maps to targets
+        for parent V46.3. Broader. Moderate tier.
+        """
+}
+mapping "V4638.2" source="V4638" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4639.1" source="V4639" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4639 = Swedish 7-char extension of ICD-10 V46.3: car occupant (unspecified) injured in
+        collision with other nonmotor vehicle, in nontraffic accident, activity unspecified. The
+        7th-digit activity context is a Swedish national extension with no standard equivalent and is
+        dropped. Primary SNOMED CT 214845000 (concept 4069060) = Motor vehicle nontraffic accident
+        involving collision with nonmotor vehicle; Athena Maps-to for V46.3. Broader: drops activity and
+        unspecified-occupant detail. Secondary SNOMED CT 36198007 (concept 444074) = Victim of vehicular
+        AND/OR traffic accident; second Maps-to target, more general. primary (crosswalk-verified,
+        one-level broader); secondary.
+        """
+}
+mapping "V4639.2" source="V4639" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4640.1" source="V4640" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4640 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, person injured while boarding/alighting, during idrott/sport/motion
+        (sport/exercise). Activity digit dropped. Primary SNOMED CT 242107006 (concept 4053428) = Accident
+        while boarding or alighting from motor vehicle on road; Athena Maps-to for V46.4. Broader.
+        Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4640.2" source="V4640" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4641.1" source="V4641" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4641 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, during lek och annan fritidsverksamhet (play/leisure).
+        Activity digit dropped. Primary SNOMED CT 242107006 (4053428) = Accident while boarding or
+        alighting from motor vehicle on road; Athena Maps-to for V46.4. Broader. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4641.2" source="V4641" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4642.1" source="V4642" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4642 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, during förvärvsarbete (paid work). Activity digit dropped.
+        Primary SNOMED CT 242107006 (4053428) = Accident while boarding or alighting from motor vehicle on
+        road; Athena Maps-to for V46.4. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4642.2" source="V4642" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4643.1" source="V4643" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4643 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, annan sysselsättning (other activity). Activity digit
+        dropped. Primary SNOMED CT 242107006 (4053428) = Accident while boarding or alighting from motor
+        vehicle on road; Athena Maps-to for V46.4. Broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4643.2" source="V4643" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4644.1" source="V4644" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4644 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, vitalaktivitet (rest/sleep/meals/personal hygiene).
+        Activity digit dropped. Primary SNOMED CT 242107006 (4053428) = Accident while boarding or
+        alighting from motor vehicle on road; Athena Maps-to for V46.4. Broader. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4644.2" source="V4644" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4648.1" source="V4648" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4648 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, andra specificerade aktiviteter (other specified
+        activities). Activity digit dropped. Primary SNOMED CT 242107006 (4053428) = Accident while
+        boarding or alighting from motor vehicle on road; Athena Maps-to for V46.4. Broader. Secondary
+        SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4648.2" source="V4648" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4649.1" source="V4649" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4649 = Swedish extension of ICD-10 V46.4: car occupant injured in collision with other
+        nonmotor vehicle, boarding/alighting, aktivitet ospecificerad (activity unspecified). Activity
+        digit dropped. Primary SNOMED CT 242107006 (4053428) = Accident while boarding or alighting from
+        motor vehicle on road; Athena Maps-to for V46.4. Broader. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4649.2" source="V4649" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4650.1" source="V4650" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4650 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, in traffic accident, during idrott/sport/motion. Activity digit dropped.
+        Primary SNOMED CT 271579008 (concept 4152175) = Motor vehicle on road in collision with nonmotor
+        vehicle; Athena Maps-to for V46.5. Broader: drops driver role and activity. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4650.2" source="V4650" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4651.1" source="V4651" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4651 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, during lek/fritid. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4651.2" source="V4651" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4652.1" source="V4652" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4652 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, during förvärvsarbete. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4652.2" source="V4652" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4653.1" source="V4653" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4653 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, annan sysselsättning. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4653.2" source="V4653" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4654.1" source="V4654" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4654 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, vitalaktivitet. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4654.2" source="V4654" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4658.1" source="V4658" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4658 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, andra specificerade aktiviteter. Activity digit dropped.
+        Primary SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle;
+        Athena Maps-to for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4658.2" source="V4658" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4659.1" source="V4659" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4659 = Swedish extension of ICD-10 V46.5: car driver injured in collision with other
+        nonmotor vehicle, traffic accident, aktivitet ospecificerad. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.5. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4659.2" source="V4659" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4660.1" source="V4660" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4660 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, during idrott/sport/motion. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.6. Broader: drops passenger role and activity. Secondary SNOMED CT 36198007
+        (444074). primary, secondary.
+        """
+}
+mapping "V4660.2" source="V4660" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4661.1" source="V4661" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4661 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, lek/fritid. Activity digit dropped. Primary SNOMED CT 271579008
+        (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to for V46.6.
+        Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4661.2" source="V4661" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4662.1" source="V4662" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4662 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, förvärvsarbete. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.6. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4662.2" source="V4662" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4663.1" source="V4663" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4663 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, annan sysselsättning. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.6. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4663.2" source="V4663" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4664.1" source="V4664" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4664 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, vitalaktivitet. Activity digit dropped. Primary SNOMED CT
+        271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena Maps-to
+        for V46.6. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4664.2" source="V4664" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4668.1" source="V4668" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4668 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, andra specificerade aktiviteter. Activity digit dropped.
+        Primary SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle;
+        Athena Maps-to for V46.6. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4668.2" source="V4668" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4669.1" source="V4669" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4669 = Swedish extension of ICD-10 V46.6: car passenger injured in collision with other
+        nonmotor vehicle, traffic accident, aktivitet ospecificerad. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.6. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4669.2" source="V4669" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

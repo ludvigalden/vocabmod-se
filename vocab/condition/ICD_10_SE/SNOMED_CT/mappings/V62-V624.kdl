@@ -1,0 +1,586 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V62-V624
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V6200.1" source="V6200" target="214640008" relationship=partial_overlap quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6200 = Swedish extension of V62.0 (driver of heavy transport vehicle, nontraffic,
+        collision with two-/three-wheeled motor vehicle) subdivided by sport/exercise. Target SNOMED CT
+        437738 = (214640008). The nontraffic off-road dimension is captured; the specific collision
+        partner (two-/three-wheeled MV) and the activity dimension are uncovered → partial. Moderate
+        tier: crosswalk-verified V62.0 base target; unmatched specificity.
+        """
+}
+mapping "V6200.2" source="V6200" target="36198007" relationship=partial_overlap quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6201.1" source="V6201" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6201 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by play/leisure. Target 437738 (214640008). Collision-partner specificity and
+        activity dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6201.2" source="V6201" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6202.1" source="V6202" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6202 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by paid work. Target 437738 (214640008). Collision-partner specificity and activity
+        dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6202.2" source="V6202" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6203.1" source="V6203" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6203 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by SNOMED CT 214640008 36198007. Target 437738 (214640008). Collision-partner
+        specificity and activity dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6203.2" source="V6203" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6204.1" source="V6204" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6204 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by vital activities. Target 437738 (214640008). Collision-partner specificity and
+        activity dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6204.2" source="V6204" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6208.1" source="V6208" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6208 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by SNOMED CT 214640008 36198007. Target 437738 (214640008). Collision-partner
+        specificity and activity dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6208.2" source="V6208" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6209.1" source="V6209" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6209 = Swedish extension of V62.0 (driver, nontraffic, vs two-/three-wheeled MV)
+        subdivided by SNOMED CT 214640008 36198007. Target 437738 (214640008). Collision-partner
+        specificity uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6209.2" source="V6209" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6210.1" source="V6210" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6210 = Swedish extension of V62.1 (passenger of heavy transport vehicle, nontraffic,
+        collision with two-/three-wheeled MV) subdivided by sport/exercise. The V62.1 Athena crosswalk
+        yields 437738 + 444074. Target 437738 (214640008). Collision-partner specificity, passenger
+        role, and activity dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6210.2" source="V6210" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6211.1" source="V6211" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6211 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6211.2" source="V6211" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6212.1" source="V6212" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6212 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6212.2" source="V6212" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6213.1" source="V6213" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6213 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6213.2" source="V6213" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6214.1" source="V6214" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6214 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6214.2" source="V6214" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6218.1" source="V6218" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6218 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6218.2" source="V6218" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6219.1" source="V6219" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6219 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.1. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.1 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6219.2" source="V6219" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6220.1" source="V6220" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6220 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6220.2" source="V6220" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6221.1" source="V6221" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6221 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6221.2" source="V6221" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6222.1" source="V6222" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6222 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6222.2" source="V6222" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6223.1" source="V6223" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6223 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6223.2" source="V6223" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6224.1" source="V6224" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6224 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6224.2" source="V6224" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6228.1" source="V6228" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6228 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6228.2" source="V6228" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6229.1" source="V6229" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6229 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.2. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.2 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6229.2" source="V6229" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6230.1" source="V6230" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6230 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6230.2" source="V6230" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6231.1" source="V6231" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6231 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6231.2" source="V6231" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6232.1" source="V6232" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6232 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6232.2" source="V6232" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6233.1" source="V6233" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6233 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6233.2" source="V6233" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6234.1" source="V6234" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6234 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6234.2" source="V6234" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6238.1" source="V6238" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6238 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6238.2" source="V6238" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6239.1" source="V6239" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6239 SNOMED CT 214640008 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.3. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.3 verifies two standard (standard_concept=S) SNOMED CT targets: 437738 (Motor vehicle
+        accident off public road) and 444074 (Victim of vehicular AND/OR traffic accident). Primary
+        437738 is the more specific standard concept matching the nontraffic/boarding context; secondary
+        444074 is the broader standard ancestor also in the crosswalk. mapping_type=broader because the
+        target subsumes the source's vehicle-injury meaning while the source's activity-context detail
+        has no standard representation. : clearly correct, one-level breadth mismatch with a verified
+        Athena crosswalk.
+        """
+}
+mapping "V6239.2" source="V6239" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6240.1" source="V6240" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6240 SNOMED CT 242107006 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.4. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.4 verifies two standard (standard_concept=S) SNOMED CT targets: 4053428 (Accident while
+        boarding or alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Primary 4053428 is the more specific standard concept matching the
+        nontraffic/boarding context; secondary 444074 is the broader standard ancestor also in the
+        crosswalk. mapping_type=broader because the target subsumes the source's vehicle-injury meaning
+        while the source's activity-context detail has no standard representation. : clearly correct,
+        one-level breadth mismatch with a verified Athena crosswalk.
+        """
+}
+mapping "V6240.2" source="V6240" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6241.1" source="V6241" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6241 SNOMED CT 242107006 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.4. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.4 verifies two standard (standard_concept=S) SNOMED CT targets: 4053428 (Accident while
+        boarding or alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Primary 4053428 is the more specific standard concept matching the
+        nontraffic/boarding context; secondary 444074 is the broader standard ancestor also in the
+        crosswalk. mapping_type=broader because the target subsumes the source's vehicle-injury meaning
+        while the source's activity-context detail has no standard representation. : clearly correct,
+        one-level breadth mismatch with a verified Athena crosswalk.
+        """
+}
+mapping "V6241.2" source="V6241" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6242.1" source="V6242" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6242 SNOMED CT 242107006 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.4. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.4 verifies two standard (standard_concept=S) SNOMED CT targets: 4053428 (Accident while
+        boarding or alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Primary 4053428 is the more specific standard concept matching the
+        nontraffic/boarding context; secondary 444074 is the broader standard ancestor also in the
+        crosswalk. mapping_type=broader because the target subsumes the source's vehicle-injury meaning
+        while the source's activity-context detail has no standard representation. : clearly correct,
+        one-level breadth mismatch with a verified Athena crosswalk.
+        """
+}
+mapping "V6242.2" source="V6242" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6243.1" source="V6243" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6243 SNOMED CT 242107006 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.4. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.4 verifies two standard (standard_concept=S) SNOMED CT targets: 4053428 (Accident while
+        boarding or alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Primary 4053428 is the more specific standard concept matching the
+        nontraffic/boarding context; secondary 444074 is the broader standard ancestor also in the
+        crosswalk. mapping_type=broader because the target subsumes the source's vehicle-injury meaning
+        while the source's activity-context detail has no standard representation. : clearly correct,
+        one-level breadth mismatch with a verified Athena crosswalk.
+        """
+}
+mapping "V6243.2" source="V6243" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6244.1" source="V6244" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6244 SNOMED CT 242107006 36198007 is a Swedish ICD-10-SE 5-character extension of base
+        ICD-10 V62.4. The SE code adds an activity-context suffix (sport/work/leisure/etc.) that has no
+        SNOMED CT representation; the clinical injury event is identical to the parent. Athena crosswalk
+        from V62.4 verifies two standard (standard_concept=S) SNOMED CT targets: 4053428 (Accident while
+        boarding or alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Primary 4053428 is the more specific standard concept matching the
+        nontraffic/boarding context; secondary 444074 is the broader standard ancestor also in the
+        crosswalk. mapping_type=broader because the target subsumes the source's vehicle-injury meaning
+        while the source's activity-context detail has no standard representation. : clearly correct,
+        one-level breadth mismatch with a verified Athena crosswalk.
+        """
+}
+mapping "V6244.2" source="V6244" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6248.1" source="V6248" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6248 (Swedish extension) = occupant of heavy transport vehicle injured in collision with
+        two-/three-wheeled motor vehicle, person injured while boarding/alighting, other specified
+        activity. Base ICD-10 V62.4 maps via Athena crosswalk to SNOMED CT 4053428 (Accident while boarding
+        or alighting from motor vehicle on road, 242107006) and 444074 (Victim of vehicular AND/OR
+        traffic accident, 36198007). The Swedish extension adds activity context (sport/work/leisure)
+        that has no SNOMED CT representation; targets fully subsume the accident/injury meaning. Broader:
+        target is a legitimate ancestor of the source's accident mechanism; activity axis is orthogonal
+        external-cause metadata. Moderate tier: verified parent crosswalk applied to a Swedish-extension
+        code, activity specificity lost.
+        """
+}
+mapping "V6248.2" source="V6248" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6249.1" source="V6249" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6249 (Swedish extension) = occupant of heavy transport vehicle injured in collision with
+        two-/three-wheeled motor vehicle, person injured while boarding/alighting, activity unspecified.
+        Base ICD-10 V62.4 maps via Athena crosswalk to SNOMED CT 4053428 (Accident while boarding or
+        alighting from motor vehicle on road) and 444074 (Victim of vehicular AND/OR traffic accident).
+        Unspecified-activity Swedish extension; targets subsume accident mechanism. Broader: true
+        ancestor; activity context (here unspecified) is orthogonal external-cause metadata not in
+        SNOMED CT. Moderate tier: verified parent crosswalk on Swedish-extension code.
+        """
+}
+mapping "V6249.2" source="V6249" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

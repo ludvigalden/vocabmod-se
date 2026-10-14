@@ -1,0 +1,262 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V467-V46
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4670.1" source="V4670" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4670 = Swedish extension of ICD-10 V46.7: person on outside of car injured in collision
+        with other nonmotor vehicle, traffic accident, during idrott/sport/motion. Activity digit
+        dropped. Primary SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor
+        vehicle; Athena Maps-to for V46.7. Broader: drops outside-of-vehicle role and activity.
+        Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4670.2" source="V4670" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4671.1" source="V4671" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4671 = Swedish extension of ICD-10 V46.7: person on outside of car injured in collision
+        with other nonmotor vehicle, traffic accident, lek/fritid. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.7. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4671.2" source="V4671" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4672.1" source="V4672" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4672 = Swedish extension of ICD-10 V46.7: person on outside of car injured in collision
+        with other nonmotor vehicle, traffic accident, förvärvsarbete. Activity digit dropped. Primary
+        SNOMED CT 271579008 (4152175) = Motor vehicle on road in collision with nonmotor vehicle; Athena
+        Maps-to for V46.7. Broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4672.2" source="V4672" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4673.1" source="V4673" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4673 is a Swedish national 6-character extension of base ICD-10 code V467 = Car occupant
+        injured in collision with other nonmotor vehicle, person on outside of vehicle injured in
+        traffic accident (V46.7); the 6th character encodes the activity at time of accident (annan
+        sysselsättning (other activity)). Source definition: same motor-vehicle accident event as the
+        base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4673.2" source="V4673" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4674.1" source="V4674" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4674 is a Swedish national 6-character extension of base ICD-10 code V467 = Car occupant
+        injured in collision with other nonmotor vehicle, person on outside of vehicle injured in
+        traffic accident (V46.7); the 6th character encodes the activity at time of accident
+        (vitalaktivitet (rest/sleep/meal/personal hygiene)). Source definition: same motor-vehicle
+        accident event as the base code, with additional activity-context granularity that has no SNOMED CT
+        representation. Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this
+        target: the SNOMED CT concept(s) are the standard crosswalk targets for the base ICD-10 code
+        (Athena SNOMED 271579008 36198007); they fully subsume the accident event; the activity-context
+        dimension is lost but the injury event semantics are fully covered, so the relationship is
+        broader. Confidence (moderate): best available standard concept, defensible subsumption, but the
+        source is a Swedish extension with an unspecified-activity axis that the standard vocabulary
+        cannot represent.
+        """
+}
+mapping "V4674.2" source="V4674" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4678.1" source="V4678" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4678 is a Swedish national 6-character extension of base ICD-10 code V467 = Car occupant
+        injured in collision with other nonmotor vehicle, person on outside of vehicle injured in
+        traffic accident (V46.7); the 6th character encodes the activity at time of accident (andra
+        specificerade aktiviteter (other specified activities)). Source definition: same motor-vehicle
+        accident event as the base code, with additional activity-context granularity that has no SNOMED CT
+        representation. Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this
+        target: the SNOMED CT concept(s) are the standard crosswalk targets for the base ICD-10 code
+        (Athena SNOMED 271579008 36198007); they fully subsume the accident event; the activity-context
+        dimension is lost but the injury event semantics are fully covered, so the relationship is
+        broader. Confidence (moderate): best available standard concept, defensible subsumption, but the
+        source is a Swedish extension with an unspecified-activity axis that the standard vocabulary
+        cannot represent.
+        """
+}
+mapping "V4678.2" source="V4678" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4679.1" source="V4679" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4679 is a Swedish national 6-character extension of base ICD-10 code V467 = Car occupant
+        injured in collision with other nonmotor vehicle, person on outside of vehicle injured in
+        traffic accident (V46.7); the 6th character encodes the activity at time of accident (aktivitet,
+        ospecificerad (activity, unspecified)). Source definition: same motor-vehicle accident event as
+        the base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4679.2" source="V4679" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4690.1" source="V4690" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4690 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (idrott, sport,
+        motion (sport/exercise)). Source definition: same motor-vehicle accident event as the base code,
+        with additional activity-context granularity that has no SNOMED CT representation. Target(s):
+        SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT concept(s) are
+        the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008 36198007); they
+        fully subsume the accident event; the activity-context dimension is lost but the injury event
+        semantics are fully covered, so the relationship is broader. Confidence (moderate): best
+        available standard concept, defensible subsumption, but the source is a Swedish extension with
+        an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4690.2" source="V4690" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4691.1" source="V4691" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4691 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (lek och annan
+        fritidsverksamhet (play/leisure)). Source definition: same motor-vehicle accident event as the
+        base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4691.2" source="V4691" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4692.1" source="V4692" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4692 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (förvärvsarbete
+        (paid work)). Source definition: same motor-vehicle accident event as the base code, with
+        additional activity-context granularity that has no SNOMED CT representation. Target(s): SNOMED CT
+        444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT concept(s) are the
+        standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008 36198007); they
+        fully subsume the accident event; the activity-context dimension is lost but the injury event
+        semantics are fully covered, so the relationship is broader. Confidence (moderate): best
+        available standard concept, defensible subsumption, but the source is a Swedish extension with
+        an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4692.2" source="V4692" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4693.1" source="V4693" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4693 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (annan
+        sysselsättning (other activity)). Source definition: same motor-vehicle accident event as the
+        base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4693.2" source="V4693" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4694.1" source="V4694" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4694 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (vitalaktivitet
+        (rest/sleep/meal/personal hygiene)). Source definition: same motor-vehicle accident event as the
+        base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4694.2" source="V4694" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4698.1" source="V4698" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4698 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (andra
+        specificerade aktiviteter (other specified activities)). Source definition: same motor-vehicle
+        accident event as the base code, with additional activity-context granularity that has no SNOMED CT
+        representation. Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this
+        target: the SNOMED CT concept(s) are the standard crosswalk targets for the base ICD-10 code
+        (Athena SNOMED 271579008 36198007); they fully subsume the accident event; the activity-context
+        dimension is lost but the injury event semantics are fully covered, so the relationship is
+        broader. Confidence (moderate): best available standard concept, defensible subsumption, but the
+        source is a Swedish extension with an unspecified-activity axis that the standard vocabulary
+        cannot represent.
+        """
+}
+mapping "V4698.2" source="V4698" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4699.1" source="V4699" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4699 is a Swedish national 6-character extension of base ICD-10 code V469 = Car occupant
+        injured in collision with other nonmotor vehicle, unspecified car occupant injured in traffic
+        accident (V46.9); the 6th character encodes the activity at time of accident (aktivitet,
+        ospecificerad (activity, unspecified)). Source definition: same motor-vehicle accident event as
+        the base code, with additional activity-context granularity that has no SNOMED CT representation.
+        Target(s): SNOMED CT 444074 (36198007); SNOMED CT 4152175 (271579008). Why this target: the SNOMED CT
+        concept(s) are the standard crosswalk targets for the base ICD-10 code (Athena SNOMED 271579008
+        36198007); they fully subsume the accident event; the activity-context dimension is lost but the
+        injury event semantics are fully covered, so the relationship is broader. Confidence (moderate):
+        best available standard concept, defensible subsumption, but the source is a Swedish extension
+        with an unspecified-activity axis that the standard vocabulary cannot represent.
+        """
+}
+mapping "V4699.2" source="V4699" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}

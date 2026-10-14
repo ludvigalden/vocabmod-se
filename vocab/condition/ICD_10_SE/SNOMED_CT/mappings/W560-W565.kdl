@@ -1,0 +1,375 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W560-W565
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W560.1" source="W560" target="418589001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5600.1" source="W5600" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5600 = Swedish national 4-digit extension of W56 SNOMED CT 80580005, qualified by place
+        (residential/home area) and activity (sports/exercise). International ICD-10 only has
+        3-character W56, which Athena crosswalks to SNOMED CT 4213723 (concept_code 80580005). No SNOMED CT
+        concept models place- or activity-qualified exposure events as a single concept. Target fully
+        subsumes source; broader mapping at moderate confidence.
+        """
+}
+mapping "W5601.1" source="W5601" target="242620008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5602.1" source="W5602" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5603.1" source="W5603" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5603 = Swedish national 4-digit extension of W56 SNOMED CT 80580005, qualified by place
+        (residential/home area) and activity (other occupation). International ICD-10 only has
+        3-character W56, which Athena crosswalks to SNOMED CT 4213723 (80580005). No SNOMED CT concept models
+        place- or activity-qualified exposure events. Target fully subsumes source; broader mapping at
+        moderate confidence.
+        """
+}
+mapping "W5604.1" source="W5604" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5604 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=home/residential area, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5608.1" source="W5608" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5608 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=home/residential area, activity=other specified activities).
+        Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena
+        crosswalk; the Swedish subcode inherits that target. Broader: target subsumes the marine-animal
+        exposure/injury event in full; the place/activity axis is administrative/epidemiological
+        context, not a separate clinical dimension, so the medical meaning is fully covered. high:
+        verified crosswalk, one-level broader; place/activity specificity lost.
+        """
+}
+mapping "W5609.1" source="W5609" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W561.1" source="W561" target="242577001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5610.1" source="W5610" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5610 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=institutional residence, activity=sport/athletics). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5611.1" source="W5611" target="242620008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5612.1" source="W5612" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5613.1" source="W5613" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5613 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=institutional residence, activity=other activity). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5614.1" source="W5614" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5614 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=institutional residence, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5618.1" source="W5618" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5618 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=institutional residence, activity=other specified activities).
+        Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena
+        crosswalk; the Swedish subcode inherits that target. Broader: target subsumes the marine-animal
+        exposure/injury event in full; the place/activity axis is administrative/epidemiological
+        context, not a separate clinical dimension, so the medical meaning is fully covered. high:
+        verified crosswalk, one-level broader; place/activity specificity lost.
+        """
+}
+mapping "W5619.1" source="W5619" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W562.1" source="W562" target="242577001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5620.1" source="W5620" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5620 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=school/public building, activity=sport/athletics). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5621.1" source="W5621" target="242620008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5622.1" source="W5622" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5623.1" source="W5623" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5623 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=school/public building, activity=other activity). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5624.1" source="W5624" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5624 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=school/public building, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5628.1" source="W5628" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5628 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=school/public building, activity=other specified activities).
+        Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena
+        crosswalk; the Swedish subcode inherits that target. Broader: target subsumes the marine-animal
+        exposure/injury event in full; the place/activity axis is administrative/epidemiological
+        context, not a separate clinical dimension, so the medical meaning is fully covered. high:
+        verified crosswalk, one-level broader; place/activity specificity lost.
+        """
+}
+mapping "W5629.1" source="W5629" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W563.1" source="W563" target="242577001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5630.1" source="W5630" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5630 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=sports/athletics facility, activity=sport/athletics). Target
+        (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the
+        Swedish subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury
+        event in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5631.1" source="W5631" target="242620008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5632.1" source="W5632" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5633.1" source="W5633" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5633 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=sports/athletics facility, activity=other activity). Target
+        (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the
+        Swedish subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury
+        event in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5634.1" source="W5634" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5634 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=sports/athletics facility, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5638.1" source="W5638" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5638 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=sports/athletics facility, activity=other specified activities).
+        Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena
+        crosswalk; the Swedish subcode inherits that target. Broader: target subsumes the marine-animal
+        exposure/injury event in full; the place/activity axis is administrative/epidemiological
+        context, not a separate clinical dimension, so the medical meaning is fully covered. high:
+        verified crosswalk, one-level broader; place/activity specificity lost.
+        """
+}
+mapping "W5639.1" source="W5639" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W564.1" source="W564" target="242577001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5640.1" source="W5640" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5640 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=street/highway, activity=sport/athletics). Target (Athena 4213723)
+        =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish subcode
+        inherits that target. Broader: target subsumes the marine-animal exposure/injury event in full;
+        the place/activity axis is administrative/epidemiological context, not a separate clinical
+        dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level broader;
+        place/activity specificity lost.
+        """
+}
+mapping "W5641.1" source="W5641" target="217704005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5642.1" source="W5642" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5643.1" source="W5643" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5643 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=street/highway, activity=other activity). Target (Athena 4213723)
+        =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish subcode
+        inherits that target. Broader: target subsumes the marine-animal exposure/injury event in full;
+        the place/activity axis is administrative/epidemiological context, not a separate clinical
+        dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level broader;
+        place/activity specificity lost.
+        """
+}
+mapping "W5644.1" source="W5644" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5644 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=street/highway, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5648.1" source="W5648" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5648 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=street/highway, activity=other specified activities). Target
+        (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the
+        Swedish subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury
+        event in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5649.1" source="W5649" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W565.1" source="W565" target="242577001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5650.1" source="W5650" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5650 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=trade/service area, activity=sport/athletics). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5651.1" source="W5651" target="242631000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5652.1" source="W5652" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W5653.1" source="W5653" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5653 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=trade/service area, activity=other activity). Target (Athena
+        4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the Swedish
+        subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury event
+        in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5654.1" source="W5654" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5654 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=trade/service area, activity=vital activity
+        (rest/sleep/meals/hygiene)). Target (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723
+        verified via Athena crosswalk; the Swedish subcode inherits that target. Broader: target
+        subsumes the marine-animal exposure/injury event in full; the place/activity axis is
+        administrative/epidemiological context, not a separate clinical dimension, so the medical
+        meaning is fully covered. high: verified crosswalk, one-level broader; place/activity
+        specificity lost.
+        """
+}
+mapping "W5658.1" source="W5658" target="80580005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5658 SNOMED CT 80580005 = Swedish extension of WHO ICD-10 W56 adding epidemiological
+        place/activity context (place=trade/service area, activity=other specified activities). Target
+        (Athena 4213723) =, standard (S). Base ICD-10 W56 -> 4213723 verified via Athena crosswalk; the
+        Swedish subcode inherits that target. Broader: target subsumes the marine-animal exposure/injury
+        event in full; the place/activity axis is administrative/epidemiological context, not a separate
+        clinical dimension, so the medical meaning is fully covered. high: verified crosswalk, one-level
+        broader; place/activity specificity lost.
+        """
+}
+mapping "W5659.1" source="W5659" target="242651001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

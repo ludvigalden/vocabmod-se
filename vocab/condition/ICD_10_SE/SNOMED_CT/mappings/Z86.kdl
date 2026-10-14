@@ -1,0 +1,90 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes Z86
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Z864A.1" source="Z864A" target="198271000000106" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Z864A = Swedish ICD-10-SE personal-history code: SNOMED CT 198271000000106SNOMED
+        198271000000106/status code (i den egna sjukhistorien), not an active case. Target SNOMED CT
+        44789358 = sctid 198271000000106. Why this target: it is the body-system-level (or analogous
+        history-of) SNOMED CT concept that the SE code's parenthesized ICD-10 chapter (e.g. C15-C26
+        digestive) maps to; it records the same history-of-cancer-by-system semantics. Why exact_match/
+        : the SE code is a more specific (single-organ) personal-history record subsumed by the
+        system-level history-of concept — a verified SNOMED CT concept but a small breadth mismatch (organ
+        specificity lost), so exact_match at. Athena-local research only.
+        """
+}
+mapping "Z864W.1" source="Z864W" target="315748003" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source Z864W = Swedish ICD-10-SE personal-history code: SNOMED CT 315748003SNOMED 315748003/status
+        code (i den egna sjukhistorien), not an active case. Target SNOMED CT 40523873 = sctid 315748003.
+        Why this target: it is the body-system-level (or analogous history-of) SNOMED CT concept that the
+        SE code's parenthesized ICD-10 chapter (e.g. C15-C26 digestive) maps to; it records the same
+        history-of-cancer-by-system semantics. Why exact_match/ : the SE code is a more specific
+        (single-organ) personal-history record subsumed by the system-level history-of concept — a
+        verified SNOMED CT concept but a small breadth mismatch (organ specificity lost), so exact_match
+        at. Athena-local research only.
+        """
+}
+mapping "Z866A.1" source="Z866A" target="161511000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Z866A = Swedish ICD-10-SE personal-history code: SNOMED CT 161511000SNOMED 161511000/status
+        code (i den egna sjukhistorien), not an active case. Target SNOMED CT 4058289 = sctid 161511000.
+        Why this target: it is the body-system-level (or analogous history-of) SNOMED CT concept that the
+        SE code's parenthesized ICD-10 chapter (e.g. C15-C26 digestive) maps to; it records the same
+        history-of-cancer-by-system semantics. Why exact_match/ : the SE code is a more specific
+        (single-organ) personal-history record subsumed by the system-level history-of concept — a
+        verified SNOMED CT concept but a small breadth mismatch (organ specificity lost), so exact_match
+        at. Athena-local research only.
+        """
+}
+mapping "Z866B.1" source="Z866B" target="161511000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Z866B = Swedish ICD-10-SE personal-history code: SNOMED CT 161511000. This is a /status code
+        (i den egna sjukhistorien), not an active case. Target SNOMED CT 4058289 = sctid 161511000. Why
+        this target: it is the body-system-level (or analogous history-of) SNOMED CT concept that the SE
+        code's parenthesized ICD-10 chapter (e.g. C15-C26 digestive) maps to; it records the same
+        history-of-cancer-by-system semantics. Why broader/ : the SE code is a more specific
+        (single-organ) personal-history record subsumed by the system-level history-of concept — a
+        verified SNOMED CT concept but a small breadth mismatch (organ specificity lost), so broader at.
+        Athena-local research only.
+        """
+}
+mapping "Z866W.1" source="Z866W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867A.1" source="Z867A" target="414086009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867B.1" source="Z867B" target="439127006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Z867C.1" source="Z867C" target="429993008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Z867C = Swedish ICD-10-SE personal-history code: SNOMED CT 429993008SNOMED 429993008/status
+        code (i den egna sjukhistorien), not an active case. Target SNOMED CT 4331077 = sctid 429993008.
+        Why this target: it is the body-system-level (or analogous history-of) SNOMED CT concept that the
+        SE code's parenthesized ICD-10 chapter (e.g. C15-C26 digestive) maps to; it records the same
+        history-of-cancer-by-system semantics. Why exact_match/ : the SE code is a more specific
+        (single-organ) personal-history record subsumed by the system-level history-of concept — a
+        verified SNOMED CT concept but a small breadth mismatch (organ specificity lost), so exact_match
+        at. Athena-local research only.
+        """
+}
+mapping "Z867W.1" source="Z867W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,145 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V417-V41
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4170.1" source="V4170" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4170 = Swedish extension of V41.7 (person on outside of vehicle injured in traffic
+        collision with pedal cycle, SNOMED CT 214171003/sport). Target SNOMED CT 4061564 = (concept_code
+        214171003). Base V41.7 has a verified Athena crosswalk to 4061564; Swedish 5th-character adds an
+        activity dimension absent from WHO ICD-10 and SNOMED CT. Target fully subsumes source (every V4170
+        case is a road collision between motor vehicle and pedal cycle); activity and exact
+        role-on-outside detail dropped. Broader; moderate.
+        """
+}
+mapping "V4171.1" source="V4171" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4171 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/play and leisure). Target SNOMED CT 4061564. Base V41.7 verified
+        crosswalk; activity dropped. Broader; moderate.
+        """
+}
+mapping "V4172.1" source="V4172" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4172 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/paid work). Target SNOMED CT 4061564. Base V41.7 verified crosswalk;
+        activity dropped. Broader; moderate.
+        """
+}
+mapping "V4173.1" source="V4173" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4173 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/other activity). Target SNOMED CT 4061564. Base V41.7 verified
+        crosswalk; activity dropped. Broader; moderate.
+        """
+}
+mapping "V4174.1" source="V4174" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4174 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/vital activity). Target SNOMED CT 4061564. Base V41.7 verified
+        crosswalk; activity dropped. Broader; moderate.
+        """
+}
+mapping "V4178.1" source="V4178" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4178 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/other specified activities). Target SNOMED CT 4061564. Base V41.7
+        verified crosswalk; activity dropped. Broader; moderate.
+        """
+}
+mapping "V4179.1" source="V4179" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4179 = Swedish extension of V41.7 (person on outside of vehicle traffic collision with
+        pedal cycle, SNOMED CT 214171003/activity unspecified). Target SNOMED CT 4061564. Base V41.7 verified
+        crosswalk; unspecified activity dropped. Broader; moderate.
+        """
+}
+mapping "V4190.1" source="V4190" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4190 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (sport/exercise). Target SNOMED CT 4061564 = (214171003). Inherited via Athena from WHO
+        V41.9 (concept_id 45604682). Target captures the collision mechanism fully but drops the
+        unspecified-occupant role and the Swedish activity-context suffix; no SNOMED CT concept encodes
+        activity-at-time-of-accident. Broader: target fully subsumes the accident scenario, source is a
+        child by activity suffix. moderate: mechanical crosswalk not independently re-verified, and the
+        activity suffix is a Swedish national extension with no standard analogue.
+        """
+}
+mapping "V4191.1" source="V4191" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4191 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (play and other leisure). Target SNOMED CT 4061564 = (214171003). Inherited via Athena from
+        WHO V41.9 (concept_id 45604682). Target captures the collision mechanism but drops the
+        unspecified-occupant role and Swedish activity suffix; no SNOMED CT concept encodes
+        activity-at-time-of-accident. Broader: target fully subsumes the accident scenario. moderate:
+        mechanical crosswalk, unspecified/extended source.
+        """
+}
+mapping "V4192.1" source="V4192" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4192 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (paid work). Target SNOMED CT 4061564 = (214171003). Inherited via Athena from WHO V41.9
+        (concept_id 45604682). Target captures the collision mechanism but drops the
+        unspecified-occupant role and Swedish activity suffix. Broader: target subsumes the accident
+        scenario. moderate: mechanical crosswalk, extended source.
+        """
+}
+mapping "V4193.1" source="V4193" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4193 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (other activity). Target SNOMED CT 4061564 = (214171003). Inherited via Athena from WHO
+        V41.9 (concept_id 45604682). Target captures the collision mechanism but drops the
+        unspecified-occupant role and Swedish activity suffix. Broader: target subsumes the accident
+        scenario. moderate: mechanical crosswalk, extended source.
+        """
+}
+mapping "V4194.1" source="V4194" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4194 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (vital activity such as rest, sleep, meals, personal hygiene). Target SNOMED CT 4061564 =
+        (214171003). Inherited via Athena from WHO V41.9 (concept_id 45604682). Target captures the
+        collision mechanism but drops the unspecified-occupant role and Swedish activity suffix.
+        Broader: target subsumes the accident scenario. moderate: mechanical crosswalk, extended source.
+        """
+}
+mapping "V4198.1" source="V4198" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4198 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (other specified activities). Target SNOMED CT 4061564 = (214171003). Inherited via Athena
+        from WHO V41.9 (concept_id 45604682). Target captures the collision mechanism but drops the
+        unspecified-occupant role and Swedish activity suffix. Broader: target subsumes the accident
+        scenario. moderate: mechanical crosswalk, extended source.
+        """
+}
+mapping "V4199.1" source="V4199" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4199 = Swedish ICD-10-SE national extension of WHO V41.9 SNOMED CT 214171003, with activity
+        suffix (activity, unspecified). Target SNOMED CT 4061564 = (214171003). Inherited via Athena from
+        WHO V41.9 (concept_id 45604682). Target captures the collision mechanism but drops the
+        unspecified-occupant role; the unspecified activity suffix carries no semantic loss. Broader:
+        target subsumes the accident scenario. moderate: mechanical crosswalk, extended source.
+        """
+}

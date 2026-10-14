@@ -1,0 +1,349 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes I7-J2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "I700A.1" source="I700A" target="81817003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I700A SNOMED CT 81817003 = atherosclerosis of the thoracic aorta, a Swedish extension
+        subcode of ICD-10 I70.0. No SNOMED CT concept for thoracic-aorta atherosclerosis exists in the
+        mirror distinct from the general aortic concept; SNOMED CT 312934 (81817003) is the closest
+        standard concept and the ICD-10 base I70.0 maps to it via Athena. Thoracic ⊂ aorta, so target
+        subsumes source. Confidence : verified crosswalk on the base, one-level breadth mismatch (site
+        qualifier dropped).
+        """
+}
+mapping "I700B.1" source="I700B" target="81817003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I700B SNOMED CT 81817003 = atherosclerosis of the abdominal aorta, a Swedish extension
+        subcode of ICD-10 I70.0. SNOMED CT 37163036 is not the abdominal aorta specifically (it covers
+        visceral branches, not the aorta itself). The best standard concept is SNOMED CT 312934 (81817003),
+        the Athena target of base I70.0; abdominal aorta ⊂ aorta, so the target subsumes the source but
+        drops the abdominal-site qualifier. Confidence : best available standard concept with verified
+        base crosswalk, but a meaningful site qualifier is lost.
+        """
+}
+mapping "I700X.1" source="I700X" target="81817003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I700X SNOMED CT 81817003 = atherosclerosis of aorta, unspecified, the Swedish extension
+        residual of ICD-10 I70.0. The base I70.0 maps via Athena to SNOMED CT 312934 (81817003). The
+        Swedish = unspecified/residual suffix adds no further clinical specificity, so source and target
+        denote the same clinical concept. Confidence : verified crosswalk, exact equivalence on the
+        base, the unspecified Swedish extension does not narrow the meaning.
+        """
+}
+mapping "I702D.1" source="I702D" target="51274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I702D SNOMED CT 51274000 = peripheral atherosclerosis with rest pain, without ulcer, a
+        Swedish extension subcode of ICD-10 I70.2. The base I70.2 maps to SNOMED CT 315558 (51274000).
+        SNOMED CT 44782441 captures claudication but not rest pain, so the base target is the best standard
+        concept. Target subsumes source (drops rest-pain and no-ulcer qualifiers). Confidence : best
+        available standard with verified base crosswalk, but the symptom (rest pain) and
+        complication-absence qualifiers are lost.
+        """
+}
+mapping "I702E.1" source="I702E" target="51274000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I702E SNOMED CT 51274000 = asymptomatic peripheral atherosclerosis, a Swedish extension
+        subcode of ICD-10 I70.2. The base I70.2 maps to SNOMED CT 315558 (51274000). Target subsumes source
+        (drops the asymptomatic qualifier, which is a narrowing modifier). Confidence : verified
+        crosswalk on the base, one-level breadth mismatch from the symptom qualifier.
+        """
+}
+mapping "I710A.1" source="I710A" target="301899003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I710A SNOMED CT 301899003 = Stanford type A aortic dissection. SNOMED CT has no concept by
+        name; the canonical SNOMED CT equivalent is 4199413 (301899003), since by definition Stanford A
+        involves the proximal/ascending aorta. The DeBakey type I/II concepts (4119616, 4124844) overlap
+        but are imaging-based, not Stanford-classification based. Target and source denote the same
+        clinical concept (proximal/ascending aortic dissection). Confidence : clinically equivalent, but
+        no string-level or crosswalk confirmation; the equivalence rests on the definition of Stanford
+        A.
+        """
+}
+mapping "I710B.1" source="I710B" target="1344841005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I710B SNOMED CT 1344841005 = Stanford type B aortic dissection. SNOMED CT 1448923 (1344841005)
+        is the explicit SNOMED CT representation of Stanford type B, which by definition is a dissection of
+        the descending aorta not involving the ascending aorta. Exact equivalence. Confidence : explicit
+        SNOMED CT type-B concept, name-level match.
+        """
+}
+mapping "I710W.1" source="I710W" target="308546005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I710W SNOMED CT 308546005 = other specified aortic dissection, a Swedish extension residual
+        of ICD-10 I71.0. The base I71.0 maps to SNOMED CT 320739 (308546005). The = other-specified suffix
+        narrows the source but no SNOMED CT concept captures the specific Swedish subkind; target subsumes
+        source. Confidence : verified crosswalk on the base, one-level breadth mismatch from the
+        unspecified-other qualifier.
+        """
+}
+mapping "I710X.1" source="I710X" target="308546005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I710X SNOMED CT 308546005 = aortic dissection, unspecified, the Swedish residual of ICD-10
+        I71.0. The base I71.0 maps to SNOMED CT 320739 (308546005). The unspecified suffix adds no further
+        clinical specificity, so source and target denote the same clinical concept. Confidence :
+        verified crosswalk, exact equivalence on the base, the unspecified Swedish extension does not
+        narrow the meaning.
+        """
+}
+mapping "I722A.1" source="I722A" target="36184004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I722A SNOMED CT 36184004 = aneurysm of the renal artery. SNOMED CT 194385 (36184004) is the
+        exact equivalent. Confidence : term-level exact match on a standard SNOMED CT concept.
+        """
+}
+mapping "I722B.1" source="I722B" target="713036004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I722B SNOMED CT 713036004 = dissection of the renal artery. SNOMED CT 37016889 (713036004) is
+        the exact equivalent. Confidence : term-level exact match on a standard SNOMED CT concept.
+        """
+}
+mapping "I724A.1" source="I724A" target="91445000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724A SNOMED CT 91445000 = femoral artery aneurysm. SNOMED CT 4239400 (91445000) is the exact
+        equivalent. Confidence : term-level exact match on a standard SNOMED CT concept.
+        """
+}
+mapping "I724B.1" source="I724B" target="48273005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724B SNOMED CT 48273005 = thrombosed popliteal artery aneurysm (Swedish extension of
+        I72.4). Target (Athena 4167993) =, standard. No SNOMED CT concept specifically for; (125271003)
+        loses the popliteal site. The popliteal-specific aneurysm concept fully contains the source
+        (thrombosis is a complication, not a different anatomy), so target is broader. high: one-level
+        broader, popliteal-site preserved, base ICD-10 I72.4 crosswalk verified.
+        """
+}
+mapping "I724C.1" source="I724C" target="195282001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724C SNOMED CT 195282001 = ruptured popliteal artery aneurysm. Target (Athena 40393164) =.
+        1:1 semantic equivalence on site (popliteal artery), lesion (aneurysm), and complication
+        (rupture). exact-equivalent.
+        """
+}
+mapping "I724D.1" source="I724D" target="48273005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724D SNOMED CT 48273005 = popliteal aneurysm, unspecified (the default Swedish subcode of
+        I72.4). Target (Athena 4167993) =. The unspecified source is co-extensive with the general
+        popliteal aneurysm concept; the more specific thrombosed/ruptured variants are sibling subcodes
+        the source deliberately does not specify. high: verified crosswalk from base ICD-10 I72.4 →
+        4189293 → popliteal-specific target; one-level broader only because is not a separate clinical
+        state.
+        """
+}
+mapping "I724E.1" source="I724E" target="713032002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724E SNOMED CT 713032002 = dissection of artery of lower extremity (Swedish extension of
+        I72.4). Target (Athena 37016885) =. 1:1 semantic equivalence: same site (lower limb artery),
+        same lesion (dissection). exact-equivalent.
+        """
+}
+mapping "I724W.1" source="I724W" target="20981007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724W SNOMED CT 20981007 = aneurysm of lower-extremity artery other than femoral/popliteal
+        (Swedish residual of I72.4). Target (Athena 432933) =. Target subsumes the residual source (any
+        lower-limb artery aneurysm); the femoral/popliteal exclusions are a proper subset of the
+        target's scope. high: one-level broader, site preserved.
+        """
+}
+mapping "I724X.1" source="I724X" target="20981007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I724X SNOMED CT 20981007 = aneurysm of lower-extremity artery, unspecified (Swedish
+        unspecified subcode of I72.4). Target (Athena 432933) =. The unspecified source is co-extensive
+        with the general lower-limb aneurysm concept. high: one-level broader, unspecified source mapped
+        to general disorder.
+        """
+}
+mapping "I740A.1" source="I740A" target="195316005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I740A SNOMED CT 195316005 = embolism and thrombosis of aortic bifurcation (saddle embolus).
+        Target (Athena 40393202) =. The SNOMED CT concept explicitly lists saddle embolus and aortic
+        bifurcation as synonyms. 1:1 semantic equivalence. exact-equivalent.
+        """
+}
+mapping "I740W.1" source="I740W" target="266263009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I740W SNOMED CT 266263009 = embolism and thrombosis of abdominal aorta, other specified
+        (Swedish residual of I74.0). Target (Athena 198446) =. The general abdominal-aorta concept
+        subsumes the residual subcode. high: verified ICD-10 I74.0 → 198446 crosswalk; one-level
+        broader.
+        """
+}
+mapping "I740X.1" source="I740X" target="266263009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I740X SNOMED CT 266263009 = embolism and thrombosis of abdominal aorta, unspecified (Swedish
+        unspecified subcode of I74.0). Target (Athena 198446) =. The source is the direct Swedish
+        equivalent of the general ICD-10 I74.0 category, which crosswalks to 198446. exact-equivalent:
+        crosswalk-verified, same site and lesion.
+        """
+}
+mapping "I776X.1" source="I776X" target="11011871000119101" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension (X suffix) of I77.6; base I77.6 maps to exact standard SNOMED CT
+        11011871000119101; verified against Athena
+        """
+}
+mapping "I819.1" source="I819" target="439127006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I8391.1" source="I8391" target="72866009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char extension (right side, asymptomatic) under I83.9 SNOMED CT 72866009; truncation target
+        72866009 is exact base concept and laterality+asymptomatic qualifiers preserved as custom [GPS]
+        [IPS] [GPFP]
+        """
+}
+mapping "I8391.3" source="I8391" target="72866009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I871A.1" source="I871A" target="234059001" relationship=related_to effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871A SNOMED CT 234059001 = stricture of vein (Swedish extension of I87.1). No SNOMED CT
+        concept specifically for; the closest is 234059001 (Athena 4121647). Stricture and stenosis are
+        near-synonymous luminal narrowings, but the source is a morphological stricture while the SNOMED CT
+        concept is a vascular stenosis — overlap is high but not identity. Recorded as related
+        (defensible clinical association, not strict subsumption). low: real doubt on whether equals in
+        this vascular context.
+        """
+}
+mapping "I871B.1" source="I871B" target="448804008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871B SNOMED CT 448804008 = May-Thurner syndrome (iliac vein compression syndrome, Swedish
+        extension of I87.1). Target (Athena 40491951) =, which is the standard SNOMED CT name for
+        May-Thurner syndrome. 1:1 semantic equivalence. exact-equivalent.
+        """
+}
+mapping "I871C.1" source="I871C" target="63363004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871C SNOMED CT 63363004 = superior vena cava syndrome (Swedish extension of I87.1). Target
+        (Athena 4272799) =. 1:1 semantic equivalence. exact-equivalent.
+        """
+}
+mapping "I871D.1" source="I871D" target="79671001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871D SNOMED CT 79671001 = inferior vena cava syndrome (Swedish extension of I87.1). Target
+        (Athena 4195118) =. 1:1 semantic equivalence. exact-equivalent.
+        """
+}
+mapping "I871W.1" source="I871W" target="14540002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871W SNOMED CT 14540002 = compression of vein, other specified (Swedish residual of I87.1).
+        Target (Athena 317003) =. Target subsumes the residual source. high: verified ICD-10 I87.1 →
+        317003 crosswalk; one-level broader.
+        """
+}
+mapping "I871X.1" source="I871X" target="14540002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I871X SNOMED CT 14540002 = compression of vein, unspecified (Swedish unspecified subcode of
+        I87.1). Target (Athena 317003) =. The unspecified source is the direct Swedish equivalent of the
+        general ICD-10 I87.1 category, which crosswalks to 317003. exact-equivalent: crosswalk-verified.
+        """
+}
+mapping "I872P.2" source="I872P" target="20696009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I898B.1" source="I898B" target="36585007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I898B SNOMED CT 36585007 = lipomelanotic reticulosis (Swedish extension of I89.8), a
+        historic synonym for dermatopathic lymphadenitis (Pautrier-Woringer). Target (Athena 4267788) =.
+        The SNOMED CT concept is the modern name for the same clinicopathological entity; no separate
+        concept exists in SNOMED CT. high: equivalence is well established in dermatopathology literature,
+        only the name differs.
+        """
+}
+mapping "I999.1" source="I999" target="49601007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 49601007 [GPS] [IPS]"
+}
+mapping "J009.1" source="J009" target="82272006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J009 SNOMED CT 82272006 = acute nasopharyngitis (common cold), Swedish unspecified subcode
+        of J00. Target (Athena 260427) =. 1:1 semantic equivalence; crosswalk-verified (ICD-10 J00 →
+        260427). exact-equivalent.
+        """
+}
+mapping "J099.1" source="J099" target="6142004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J099 SNOMED CT 6142004 = influenza due to identified zoonotic or pandemic influenza virus,
+        Swedish unspecified subcode of J09. SNOMED CT has two specific children — 719865001 (pandemic) and
+        1033051000000101 (zoonotic) — each a strict subset of the source's disjunction. Best single
+        target is the parent (Athena 4266367) =, which the ICD-10 J09 → 4266367 crosswalk confirms.
+        high: one-level broader, verified crosswalk; the source's disjunctive scope prevents an exact
+        match to either specific child.
+        """
+}
+mapping "J1010.1" source="J1010" target="10685111000119102" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf J10.10 resolves to base concept J10 (10685111000119102); verified standard S"
+}
+mapping "J1110.1" source="J1110" target="10685111000119102" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5-char truncated code; truncation resolves to standard SNOMED CT (influenza URI); clinical match
+        for J11 (flu with resp manifestations)
+        """
+}
+mapping "J139.1" source="J139" target="233607000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J139 SNOMED CT 233607000 = pneumonia caused by Streptococcus pneumoniae, Swedish unspecified
+        subcode of J13. Target (Athena 258785) =. 1:1 semantic equivalence (pneumococcal = caused by S.
+        pneumoniae); crosswalk-verified (ICD-10 J13 → 258785). exact-equivalent.
+        """
+}
+mapping "J149.1" source="J149" target="70036007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J149 SNOMED CT 70036007 = pneumonia caused by Haemophilus influenzae, Swedish unspecified
+        subcode of J14. Target (Athena 260754) =. 1:1 semantic equivalence; crosswalk-verified (ICD-10
+        J14 → 260754). exact-equivalent.
+        """
+}
+mapping "J229.1" source="J229" target="195742007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J229 SNOMED CT 195742007 = unspecified acute lower respiratory tract infection, Swedish
+        unspecified subcode of J22. Target (Athena 4307774) =. 1:1 semantic equivalence;
+        crosswalk-verified (ICD-10 J22 → 4307774). exact-equivalent.
+        """
+}

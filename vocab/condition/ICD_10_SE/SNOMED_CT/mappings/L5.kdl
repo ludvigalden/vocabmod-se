@@ -1,0 +1,268 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L5
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L506A.1" source="L506A" target="402304007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L506A SNOMED CT 402304007 = allergic contact urticaria. Target SNOMED CT 4292220 / 402304007 =
+        (Athena mirror). Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L506B.1" source="L506B" target="402305008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L506B SNOMED CT 402305008 = non-allergic (non-immunological) contact urticaria. Target
+        SNOMED CT 4270743 / 402305008 = (Athena mirror). Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L506X.1" source="L506X" target="19364004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L506X SNOMED CT 19364004 = contact urticaria, unspecified. Target SNOMED CT 4023944 / 19364004
+        = (Athena mirror; ICD10 L50.6 crosswalk target). Same clinical concept at the unspecified level.
+        Exact equivalent.
+        """
+}
+mapping "L529.1" source="L529" target="32861005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L529 SNOMED CT 32861005 = erythema nodosum. Target SNOMED CT 140176 / 32861005 = (Athena
+        mirror; ICD10 L52 target). Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L529A.1" source="L529A" target="2028007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L529A SNOMED CT 2028007 = the non-tuberculous (Whitfield) variant of erythema induratum.
+        Target SNOMED CT 4067548 / 2028007 = (Athena mirror), which subsumes both tuberculous (Bazin) and
+        non-tuberculous forms. Target is broader than the source's explicit nontuberculosum qualifier.
+        High tier: one-level broader, mirror-verified.
+        """
+}
+mapping "L529X.1" source="L529X" target="32861005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L529X SNOMED CT 32861005 = erythema nodosum, unspecified. Target SNOMED CT 140176 / 32861005 =
+        (ICD10 L52 crosswalk). Same concept at unspecified level. Exact equivalent.
+        """
+}
+mapping "L533A.1" source="L533A" target="201382007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L533A SNOMED CT 201382007 = erythema figuratum perstans, a chronic figurate erythema. No
+        dedicated SNOMED CT concept in the mirror; the closest standard concept is SNOMED CT 40397940 /
+        201382007, the ICD-10 L53.3 rubric that subsumes erythema figuratum perstans. Same rubric, but
+        the source is one specific entity within that rubric — read as exact at the ICD-10-rubric level.
+        Confidence capped at because the target is an ICD-10-indexing concept, not an unqualified
+        clinical equivalent.
+        """
+}
+mapping "L533B.1" source="L533B" target="77300003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L533B SNOMED CT 77300003. Target SNOMED CT 4300083 / 77300003 = (Athena mirror). Same clinical
+        concept. Exact equivalent.
+        """
+}
+mapping "L533W.1" source="L533W" target="201382007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L533W SNOMED CT 201382007 = other chronic figurate erythema. Target SNOMED CT 40397940 /
+        201382007 = (Athena mirror). Same rubric. Exact equivalent.
+        """
+}
+mapping "L538A.1" source="L538A" target="56940005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L538A SNOMED CT 56940005 = palmar erythema. Target SNOMED CT 4210765 / 56940005 = (Athena
+        mirror). Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L538B.1" source="L538B" target="271807003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L538B SNOMED CT 271807003 = asymmetric periflexural exanthem of childhood. Per the SNOMED CT
+        International edition, concept 271807003 is (synonyms APEC, laterothoracic exanthem, unilateral
+        laterothoracic exanthem). The local Athena mirror records concept_id 140214 / 271807003 but with
+        the preferred term; the concept_id is correct and identifies APEC, so the match is exact.
+        Confidence capped at because the mirror's preferred-term attribution differs from the
+        international edition and was not re-verified in the SNOMED CT browser directly.
+        """
+}
+mapping "L538W.1" source="L538W" target="444827008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L538W SNOMED CT 444827008 = other specified erythematous conditions. The parent ICD10 L53.8
+        maps to SNOMED CT 40481101 / 444827008. Target subsumes the residual bucket. High tier: one-level
+        broader, parent crosswalk-verified.
+        """
+}
+mapping "L539A.1" source="L539A" target="402300003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L539A SNOMED CT 402300003 = erythroderma, unspecified (the Swedish parallels the SNOMED CT).
+        Target SNOMED CT 4270742 / 402300003 = (Athena mirror). Same clinical concept at the unspecified
+        level. Confidence because the SNOMED CT name pins where the source only says.
+        """
+}
+mapping "L539B.1" source="L539B" target="200888009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L539B SNOMED CT 200888009 = secondary erythroderma (erythroderma due to another condition).
+        Target SNOMED CT 40396272 / 200888009 = (Athena mirror), which subsumes both primary and secondary
+        forms. Target is one level broader. High tier: mirror-verified, well-understood breadth
+        mismatch.
+        """
+}
+mapping "L539X.1" source="L539X" target="444827008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L539X SNOMED CT 444827008 = erythematous condition, unspecified. The parent ICD10 L53.9 maps
+        to SNOMED CT 40481101 / 444827008. Target subsumes the unspecified source. High tier: parent
+        crosswalk-verified.
+        """
+}
+mapping "L562A.1" source="L562A" target="40275004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562B.1" source="L562B" target="40275004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562C.1" source="L562C" target="402172000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L562X.1" source="L562X" target="200836002" relationship=source_is_broader_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L562X SNOMED CT 200836002 = photocontact dermatitis, unspecified. The parent ICD10 L56.2
+        maps to SNOMED CT 4066470 / 200836002, which is a specific subtype (berloque/phototoxic) of
+        photocontact dermatitis. The source is deliberately unspecified, so this is a forced-downward
+        map to a specific subtype. Moderate tier: parent crosswalk-verified but specificity mismatch.
+        """
+}
+mapping "L564A.1" source="L564A" target="403210001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L564B.1" source="L564B" target="763719001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L564C.1" source="L564C" target="200832000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L564C SNOMED CT 200832000 = hydroa estivale (summer recurrent vesicular/hydroa
+        vacciniforme-spectrum photodermatosis). Target SNOMED CT 4307924 / 200832000 = (Athena mirror).
+        Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L564D.1" source="L564D" target="238525001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L564D SNOMED CT 238525001 = polymorphic light eruption (Swedish national extension subcode
+        of ICD-10 L56.4). Target = Polymorphous light eruption, the exact SNOMED CT equivalent of L56.4
+        confirmed via the Athena ICD10 crosswalk (L56.4 -> 4080921 -> 238525001). Exact clinical
+        equivalence; the Swedish subcode denotes the same disorder. Exact-equivalent tier per rubric §1.
+        """
+}
+mapping "L564W.1" source="L564W" target="238525001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L564W SNOMED CT 238525001 = other polymorphic light dermatitis, a residual Swedish extension
+        subcode of L56.4 covering polymorphic light eruption variants not elsewhere classified. Target.
+        The source is a heterogeneous residual bucket under L56.4; the target is the closest standard
+        concept and subsumes the core clinical meaning. High tier: small breadth mismatch,
+        crosswalk-verified parent (L56.4 -> 238525001).
+        """
+}
+mapping "L568A.1" source="L568A" target="7847004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L568B.1" source="L568B" target="402165001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L568B SNOMED CT 402165001 = acute photodermatitis, unspecified, a Swedish extension under
+        L56.8. Target = Acute effect of ultraviolet radiation on normal skin, the Athena ICD10 crosswalk
+        target for L56.8. The target is broader (covers all acute UV effects, not specifically
+        dermatitis); unspecified source. Moderate tier: crosswalk-verified parent, unspecified source
+        framing.
+        """
+}
+mapping "L568C.1" source="L568C" target="80346008" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L568C SNOMED CT 80346008 = photodermatitis unspecified caused by drug. Target. Clinical
+        equivalence: a drug-induced photo-eruption. High tier: clear term match, no independent
+        crosswalk for this Swedish subcode; the related SNOMED CT 83627000 (Phototoxic drug eruption) is
+        the phototoxic variant while 80346008 is the photoallergic variant -- the unspecified Swedish
+        source subsumes both but 80346008 is the dominant clinical concept.
+        """
+}
+mapping "L568D.1" source="L568D" target="115664001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L568D SNOMED CT 115664001 = photosensitive eczema, unspecified. Target (photoallergic
+        eczema). Clinical equivalence: photosensitive eczema is the photoallergic reaction. High tier:
+        exact term/concept match; no separate Swedish crosswalk.
+        """
+}
+mapping "L568E.1" source="L568E" target="90128006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L568E SNOMED CT 90128006 = light sensitivity / photosensitivity, unspecified. Target.
+        Clinical equivalence: same clinical concept of abnormal light sensitivity. High tier: exact
+        concept match on the finding-level term.
+        """
+}
+mapping "L568W.1" source="L568W" target="402165001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L568W SNOMED CT 402165001 = other specified acute skin changes due to UV radiation (Swedish
+        extension of L56.8). Target = Acute effect of ultraviolet radiation on normal skin, the Athena
+        ICD10 crosswalk target for L56.8. Target subsumes the source (any acute UV effect). Moderate
+        tier: crosswalk-verified parent, heterogeneous residual Swedish subcode.
+        """
+}
+mapping "L578A.1" source="L578A" target="45203005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L578A SNOMED CT 45203005 = chronic solar dermatitis (Swedish extension under L57.8). Target.
+        The target subsumes the source (chronic solar dermatitis is an actinic dermatitis). High tier:
+        small breadth mismatch, clear clinical overlap. Alternative 200862006 (Chronic actinic
+        dermatitis) is a more specific subset; 45203005 is the broader standard concept that fully
+        contains the source.
+        """
+}
+mapping "L578B.1" source="L578B" target="402684002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L578B SNOMED CT 402684002 = colloid milium (Swedish extension under L57.8). Target. Exact
+        SNOMED CT equivalent. Exact-equivalent tier per rubric §1.
+        """
+}
+mapping "L578C.1" source="L578C" target="111200005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L578C SNOMED CT 111200005 = nodular elastosis with cysts and comedones (Favre-Racouchot
+        syndrome). Target. Exact SNOMED CT equivalent (the Swedish source text even includes the eponym).
+        Exact-equivalent tier.
+        """
+}
+mapping "L578W.1" source="L578W" target="200861004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L578W SNOMED CT 200861004 = other skin changes due to chronic exposure to non-ionizing
+        radiation (Swedish extension of L57.8). Target = Skin changes due to chronic exposure to
+        non-ionizing radiation, the Athena ICD10 crosswalk target for L57.8. The target fully subsumes
+        the source (Swedish subcode is a child of L57.8). High tier: one-level broader,
+        crosswalk-verified parent.
+        """
+}

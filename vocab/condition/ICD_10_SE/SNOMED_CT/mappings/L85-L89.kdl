@@ -1,0 +1,302 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L85-L89
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L851A.1" source="L851A" target="201054008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L851A SNOMED CT 201054008 = keratoderma climactericum (Haxthausen). Target SNOMED CT 4307930
+        (concept_code 201054008) = Keratoderma climactericum. Same clinical concept; exact SNOMED CT match
+        in mirror.
+        """
+}
+mapping "L851B.1" source="L851B" target="396227001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L851B SNOMED CT 396227001 = keratoderma associated with esophageal cancer (Howel-Evans
+        syndrome / tylosis with esophageal carcinoma). The mirror contains SNOMED CT 4005989 (concept_code
+        111030006) but that is a syndrome concept, not the keratoderma finding itself, and the source
+        frames the condition as a keratoderma. Best keratoderma-level standard target is SNOMED CT 4213271.
+        Low confidence broader: real doubt because the paraneoplastic/syndromic context is not captured
+        by the target and a syndrome-target alternative may be preferred by a reviewer.
+        """
+}
+mapping "L851W.1" source="L851W" target="396227001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L851W SNOMED CT 396227001 = other acquired keratosis palmaris et plantaris. Target SNOMED CT
+        4213271 (concept_code 396227001) = Acquired palmoplantar keratoderma (synonym: acquired
+        keratosis palmaris et plantaris). Same clinical concept; exact SNOMED CT match. The ICD10 L85.1
+        crosswalk also lands on this concept (45591648 -> 4213271).
+        """
+}
+mapping "L852A.1" source="L852A" target="400123002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L852A SNOMED CT 400123002 = hereditary diffuse palmoplantar keratoderma of
+        Brauer-Brünaer-Fuhs, a rare hereditary variant. No SNOMED CT concept for this specific eponymous
+        variant exists in the mirror. Best available standard target is SNOMED CT 4271018. Low confidence
+        broader: variant-specific identity is lost at the target.
+        """
+}
+mapping "L852B.1" source="L852B" target="402773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L852B SNOMED CT 402773000 = keratoderma maculosa disseminata palmaris et plantaris of
+        Buschke-Fischer-Brauer, a hereditary punctate/nummular PPK. No SNOMED CT concept for this specific
+        eponymous variant exists in the mirror. Best standard target is SNOMED CT 4300110 (concept_code
+        402773000), which subsumes the punctate/macular PPK presentation. Low confidence broader: the
+        disseminated nummular phenotype is not fully captured by the punctate PPK concept.
+        """
+}
+mapping "L852C.1" source="L852C" target="205575004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L852C SNOMED CT 205575004 = keratosis palmoplantaris areata et striata of Siemens, a
+        hereditary striate/areate PPK. Target SNOMED CT 4006456 (concept_code 205575004) = Keratoderma
+        areata. Same areata phenotype; the striata component is a recognized presentation within the
+        areata spectrum. Low-confidence exact_match: SNOMED CT concept exists but the eponymous/striata
+        variant identity is only partially captured, and is a rare SNOMED CT concept warranting reviewer
+        confirmation.
+        """
+}
+mapping "L852D.1" source="L852D" target="4515009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L852D SNOMED CT 4515009 = keratosis punctata of the palmar creases. Target SNOMED CT 4163220
+        (concept_code 4515009) = Keratoderma punctata, the standard SNOMED CT punctate keratoderma concept.
+        Same clinical concept; high-confidence exact_match (small breadth mismatch on crease
+        localization keeps it at).
+        """
+}
+mapping "L852W.1" source="L852W" target="4515009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L852W SNOMED CT 4515009 = other and unspecified keratosis punctata. Target SNOMED CT 4163220.
+        Unspecified Swedish residual maps to the standard punctate keratoderma concept; target subsumes
+        the unspecified source. Moderate tier: unspecified source mapped to parent without independent
+        re-verification.
+        """
+}
+mapping "L858A.1" source="L858A" target="156397002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L858A SNOMED CT 156397002 = cutaneous horn. Target SNOMED CT 40319802 (concept_code 156397002)
+        = Cutaneous horn. Same clinical concept; exact SNOMED CT match in mirror.
+        """
+}
+mapping "L858B.1" source="L858B" target="254666005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858C.1" source="L858C" target="254666005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858D.1" source="L858D" target="110986000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L858D SNOMED CT 110986000 = acquired digital fibrokeratoma. Target SNOMED CT 4004353
+        (concept_code 110986000) = Acquired digital fibrokeratoma. Same clinical concept; exact SNOMED CT
+        match in mirror.
+        """
+}
+mapping "L858E.1" source="L858E" target="28488007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L858F.1" source="L858F" target="201061007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L858F SNOMED CT 201061007 = keratoacanthoma. Target SNOMED CT 40396846 (concept_code 201061007)
+        = Keratoacanthoma. Same clinical concept; exact SNOMED CT match in mirror.
+        """
+}
+mapping "L858G.1" source="L858G" target="5132005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858H.1" source="L858H" target="254670002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L858H SNOMED CT 254670002 = clear cell acanthoma (Degos eponym variant). Target SNOMED CT
+        4115280 (concept_code 254670002) = Clear cell acanthoma. Exact 1:1 clinical equivalence; same
+        dermatological entity. Athena-local confirmed.
+        """
+}
+mapping "L858J.1" source="L858J" target="4859009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L858K.1" source="L858K" target="254744006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L858K SNOMED CT 254744006 = reactive fibrous papule of fingers. No SNOMED CT concept for
+        fibrous papule of finger exists; closest related entity is SNOMED CT 4110730 (254744006) Fibrous
+        papule of face, which is the same lesion type but anatomically restricted to face. Target
+        subsumes the lesion-type axis but not the anatomical-location axis; treated as broader (lesion
+        category) at low confidence because the location mismatch is material.
+        """
+}
+mapping "L858W.1" source="L858W" target="201416004" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source L858W SNOMED CT 201416004 = other specified epidermal thickening (Swedish subcode of L85.8).
+        Target SNOMED CT 40405463 (201416004) = [X]Other specified epidermal thickening. Exact semantic
+        equivalence via the WHO ICD-10 X-expansion crosswalk.
+        """
+}
+mapping "L869.1" source="L869" target="201417008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L869 SNOMED CT 201417008 = keratoderma in diseases classified elsewhere (ICD-10 L86). Target
+        SNOMED CT 40405464 (201417008) = [X]Keratoderma in diseases classified elsewhere. Exact WHO ICD-10
+        X-expansion crosswalk; 1:1 equivalence.
+        """
+}
+mapping "L889.1" source="L889" target="74578003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L889 SNOMED CT 74578003 = pyoderma gangrenosum (ICD-10 L88). Target SNOMED CT 133283 (74578003)
+        = Pyoderma gangrenosum. Verified via Athena ICD10->SNOMED CT crosswalk (45538588 -> 133283). Exact
+        1:1 clinical equivalence.
+        """
+}
+mapping "L889B.1" source="L889B" target="74578003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L889B SNOMED CT 74578003 = fagedenic/vegetans pyoderma, a clinical variant of pyoderma
+        gangrenosum characterized by vegetating/frambesiform lesions. No SNOMED CT concept for or exists
+        (SNOMED CT only has pemphigus/bullous variants). Best defensible target is SNOMED CT 133283 (74578003)
+        Pyoderma gangrenosum, which is the parent disorder that fully subsumes this variant. Low
+        confidence due to loss of the vegetans qualifier and the heterogeneity of the source entity.
+        """
+}
+mapping "L889C.1" source="L889C" target="17732003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L889C SNOMED CT 17732003 = ecthyma gangrenosum, a cutaneous infection typically due to
+        Pseudomonas aeruginosa in immunocompromised hosts. Target SNOMED CT 4070328 (17732003) = Ecthyma
+        gangrenosum. Exact 1:1 clinical equivalence; identical fully-specified name.
+        """
+}
+mapping "L889D.1" source="L889D" target="2396006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L889D SNOMED CT 2396006 = malignant pyoderma, a rare aggressive ulcerative dermatosis.
+        Target SNOMED CT 4035767 (2396006) = Malignant pyoderma. Exact 1:1 clinical equivalence; identical
+        fully-specified name.
+        """
+}
+mapping "L889X.1" source="L889X" target="74578003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L889X SNOMED CT 74578003 = pyoderma gangrenosum, unspecified (the unspecified specifier of
+        L88). Target SNOMED CT 133283 (74578003) = Pyoderma gangrenosum. The unspecified-source maps
+        cleanly to the unqualified SNOMED CT disorder; the qualifier carries no clinical distinction here
+        because is itself unspecific to subtype.
+        """
+}
+mapping "L899A.1" source="L899A" target="1186641008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899A SNOMED CT 1186641008 = pressure ulcer of neck region. Target SNOMED CT 37162063
+        (1186641008) = Pressure injury of cervical region of back. Cervical region of back corresponds
+        anatomically to the neck region; close 1:1 equivalence with a small terminology convention
+        difference (vs). High confidence per Athena-local match.
+        """
+}
+mapping "L899B.1" source="L899B" target="225555001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899B SNOMED CT 225555001 = pressure ulcer of shoulder/upper arm. Target SNOMED CT 4021481
+        (225555001) = Pressure injury of shoulder. The shoulder component is covered exactly; the
+        upper-arm component is not separately represented in SNOMED CT. Target subsumes the shoulder axis
+        of this two-region source; treated as broader with moderate confidence because the upper-arm
+        coverage is implicit rather than explicit.
+        """
+}
+mapping "L899C.1" source="L899C" target="225559007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899C SNOMED CT 225559007 = pressure ulcer of elbow/forearm. Target SNOMED CT 439410
+        (225559007) = Pressure injury of elbow. Elbow component is covered exactly; the forearm
+        component is not represented. Target subsumes the elbow axis only; broader with moderate
+        confidence because the source spans two adjacent anatomical regions.
+        """
+}
+mapping "L899D.1" source="L899D" target="1163215007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899D SNOMED CT 1163215007 = pressure ulcer of wrist/hand. No SNOMED CT concept exists for
+        pressure injury of wrist or hand. Best available standard target is SNOMED CT 37159532 (1163215007)
+        Pressure injury (the unlocated parent), which subsumes the source at the cost of losing the
+        wrist/hand location specificity. Low confidence; broader climb to the unlocated parent is a
+        specificity-loss fallback.
+        """
+}
+mapping "L899E.1" source="L899E" target="225563000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899E SNOMED CT 225563000 = pressure ulcer of pelvic region (a heterogeneous region
+        encompassing buttock, sacral, coccygeal, hip areas). Target SNOMED CT 200485 (225563000) = Pressure
+        injury of buttock, which is the dominant anatomical subregion of the source's pelvic region.
+        SNOMED CT also has 225562005 (sacral) and 699216009 (coccygeal) as narrower alternatives. Buttock
+        chosen as the broadest single defensible target; broader with moderate confidence because the
+        pelvic region is wider than buttock alone.
+        """
+}
+mapping "L899F.1" source="L899F" target="699214007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899F SNOMED CT 699214007 = pressure ulcer of hip/thigh. No SNOMED CT concept for pressure
+        injury of thigh exists. Target SNOMED CT 44782447 (699214007) = Pressure injury of hip covers the
+        hip axis of this two-region source but not the thigh axis. Broader with moderate confidence; one
+        of two anatomical regions is represented.
+        """
+}
+mapping "L899G.1" source="L899G" target="447745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899G SNOMED CT 447745006 = pressure ulcer of knee/lower leg. Target SNOMED CT 40486126
+        (447745006) = Pressure injury of knee covers the knee axis; no SNOMED CT concept for pressure
+        injury of lower leg exists. Broader with moderate confidence; one of two anatomical regions is
+        represented.
+        """
+}
+mapping "L899H.1" source="L899H" target="699211004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899H SNOMED CT 699211004 = pressure ulcer of ankle/foot. Target SNOMED CT 44782446 (699211004)
+        = Pressure injury of ankle covers the ankle axis; SNOMED CT also has 699213001 450201000124101.
+        Ankle chosen as the proximal/dominant location; broader with moderate confidence.
+        """
+}
+mapping "L899J.1" source="L899J" target="1186640009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899J SNOMED CT 1186640009 = pressure ulcer of thoracic region. Target SNOMED CT 37162062
+        (1186640009) = Pressure injury of thoracic region of back. Exact 1:1 anatomical and clinical
+        equivalence.
+        """
+}
+mapping "L899K.1" source="L899K" target="1186639007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899K SNOMED CT 1186639007 = pressure ulcer of lumbar region. Target SNOMED CT 37162061
+        (1186639007) = Pressure injury of lumbar region of back. Exact 1:1 anatomical and clinical
+        equivalence.
+        """
+}
+mapping "L899X.1" source="L899X" target="1163215007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L899X SNOMED CT 1163215007 = pressure ulcer, unspecified location (the unspecified-location
+        specifier of L89). Target SNOMED CT 37159532 (1163215007) = Pressure injury (the unlocated parent
+        concept). Exact 1:1 equivalence via Athena ICD10->SNOMED CT crosswalk (L89 -> 37159532).
+        """
+}

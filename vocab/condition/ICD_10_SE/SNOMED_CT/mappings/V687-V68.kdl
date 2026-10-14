@@ -1,0 +1,168 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V687-V68
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V6870.1" source="V6870" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6870 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509 in Athena; activity-context
+        suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning (broader);
+        person-on-outside role and activity detail dropped. High tier : verified parent crosswalk,
+        one-level breadth loss.
+        """
+}
+mapping "V6871.1" source="V6871" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6871 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6872.1" source="V6872" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6872 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6873.1" source="V6873" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6873 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6874.1" source="V6874" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6874 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6878.1" source="V6878" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6878 = Swedish 7-char extension of V68.7 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.7 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6879.1" source="V6879" target="242116005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6879 (Swedish 5-char extension of ICD-10 V68.7) = occupant of heavy transport vehicle,
+        person on outside of vehicle, injured in noncollision traffic accident, activity unspecified.
+        Parent V68.7 (Athena 45575790) maps to SNOMED CT 432509 (Accident to motor vehicle on road, not
+        involving collision) and 444074 (Victim of vehicular AND/OR traffic accident). The Swedish
+        activity qualifier (unspecified) is below SNOMED CT's granularity for transport-injury events;
+        target fully contains the clinical event. broader: target subsumes source (no activity
+        differentiation). Moderate on primary: inherited crosswalk, not independently re-verified; on
+        444074: general victim concept loses vehicle/collision specificity.
+        """
+}
+mapping "V6879.2" source="V6879" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6890.1" source="V6890" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6890 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = sport/exercise. Parent V68.9 (Athena
+        45556464) maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity.
+        broader: target subsumes source. primary (inherited crosswalk); on 444074 (general victim).
+        """
+}
+mapping "V6890.2" source="V6890" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6891.1" source="V6891" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6891 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = leisure/play. Parent V68.9 (Athena
+        45556464) maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity.
+        broader: target subsumes source. primary; on 444074.
+        """
+}
+mapping "V6891.2" source="V6891" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6892.1" source="V6892" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6892 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = paid work. Parent V68.9 (Athena 45556464)
+        maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity. broader: target
+        subsumes source. primary; on 444074.
+        """
+}
+mapping "V6892.2" source="V6892" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6893.1" source="V6893" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6893 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = other occupation. Parent V68.9 (Athena
+        45556464) maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity.
+        broader: target subsumes source. primary; on 444074.
+        """
+}
+mapping "V6893.2" source="V6893" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6894.1" source="V6894" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6894 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = vital activity (rest/sleep/meals/hygiene).
+        Parent V68.9 (Athena 45556464) maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT
+        granularity. broader: target subsumes source. primary; on 444074.
+        """
+}
+mapping "V6894.2" source="V6894" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6898.1" source="V6898" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6898 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity = other specified. Parent V68.9 (Athena
+        45556464) maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity.
+        broader: target subsumes source. primary; on 444074.
+        """
+}
+mapping "V6898.2" source="V6898" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6899.1" source="V6899" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6899 (Swedish extension of V68.9) = unspecified occupant of heavy transport vehicle
+        injured in noncollision traffic accident, activity unspecified. Parent V68.9 (Athena 45556464)
+        maps to SNOMED CT 432509 and 444074. Activity qualifier below SNOMED CT granularity. broader: target
+        subsumes source. primary; on 444074.
+        """
+}
+mapping "V6899.2" source="V6899" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,400 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes O3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "O300A.1" source="O300A" target="459166009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O300A SNOMED CT 459166009 = dichorionic/diamniotic twin pregnancy (Swedish extension of WHO
+        O30.0). SNOMED CT 43021054 (Dichorionic diamniotic twin pregnancy, concept_code 459166009) is a
+        standard Clinical Finding denoting exactly the same chorionicity/amnionicity combination. 1:1
+        semantic equivalence; exact_match.
+        """
+}
+mapping "O300B.1" source="O300B" target="459168005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O300B SNOMED CT 459168005 = monochorionic/diamniotic twin pregnancy (Swedish extension of
+        WHO O30.0). SNOMED CT 43021951 (Monochorionic diamniotic twin pregnancy, concept_code 459168005) is
+        a standard Clinical Finding denoting exactly the same chorionicity/amnionicity. 1:1 equivalence;
+        exact_match.
+        """
+}
+mapping "O300C.1" source="O300C" target="459171002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O300C SNOMED CT 459171002 = monochorionic/monoamniotic twin pregnancy (Swedish extension of
+        WHO O30.0). SNOMED CT 43021952 (Monochorionic monoamniotic twin pregnancy, concept_code 459171002)
+        is a standard Clinical Finding denoting exactly the same chorionicity/amnionicity. 1:1
+        equivalence; exact_match.
+        """
+}
+mapping "O300X.1" source="O300X" target="65147003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O300X SNOMED CT 65147003 = twin pregnancy, unspecified chorionicity (Swedish extension of
+        WHO O30.0). SNOMED CT 441919 (Twin pregnancy, concept_code 65147003) is the standard Clinical
+        Finding that the WHO O30.0 base crosswalks to via Athena. Source is functionally the
+        WHO-equivalent unspecified twin pregnancy; broader label chosen because the Swedish extension
+        code is distinct from the WHO base. High : verified crosswalk on the WHO parent, one-level
+        broader (chorionicity unspecified).
+        """
+}
+mapping "O312A.1" source="O312A" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O312B.1" source="O312B" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O312X.1" source="O312X" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O342A.1" source="O342A" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342A = Swedish extension of O34.2 SNOMED CT 31821006, specifying scar after a prior
+        cesarean (excl. T-/L-cut). Target SNOMED CT 4135932 = (concept_code 31821006), the verified Athena
+        for the parent O34.2. Target legitimately subsumes every O34.2 subcategory regardless of which
+        prior surgery caused the scar. High tier: one-level broader with verified crosswalk at the
+        parent.
+        """
+}
+mapping "O342B.1" source="O342B" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342B = O34.2 subcategory for uterine scar after two prior cesareans or one T-/L-cut.
+        Target SNOMED CT 4135932 = SNOMED CT 31821006, the parent's verified crosswalk. Total subsumption;
+        high tier.
+        """
+}
+mapping "O342C.1" source="O342C" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342C = O34.2 subcategory for uterine scar after three or more prior cesareans. Target
+        SNOMED CT 4135932 = SNOMED CT 31821006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O342D.1" source="O342D" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342D = O34.2 subcategory for uterine scar after myomectomy. Target SNOMED CT 4135932 =
+        SNOMED CT 31821006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O342E.1" source="O342E" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342E = O34.2 subcategory for uterine scar after septum repair or other uterine plastic
+        surgery. Target SNOMED CT 4135932 = SNOMED CT 31821006, parent's verified crosswalk. Total
+        subsumption; high tier.
+        """
+}
+mapping "O342W.1" source="O342W" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342W = O34.2 subcategory for uterine scar after other specified surgery. Target SNOMED CT
+        4135932 = SNOMED CT 31821006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O342X.1" source="O342X" target="31821006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O342X = O34.2 subcategory for uterine scar after unspecified prior surgery. Target SNOMED CT
+        4135932 = SNOMED CT 31821006, parent's verified crosswalk. Total subsumption but source is
+        unspecified, so moderate tier per rubric.
+        """
+}
+mapping "O347A.1" source="O347A" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O347A = Swedish extension of O34.7 SNOMED CT 1639007, specifying previous female genital
+        mutilation. Target SNOMED CT 197050 = (concept_code 1639007), the verified Athena for parent O34.7.
+        Target subsumes every O34.7 subcategory. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "O347W.1" source="O347W" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O347W = O34.7 subcategory for other specified abnormality of vulva/perineum (e.g.
+        fibrosis, tumör). Target SNOMED CT 197050 = SNOMED CT 1639007, parent's verified crosswalk. Total
+        subsumption; high tier.
+        """
+}
+mapping "O348A.1" source="O348A" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O348A = Swedish extension of O34.8 SNOMED CT 1639007, specifying pelvic organ prolapse.
+        Target SNOMED CT 197050 = (concept_code 1639007), the verified Athena for parent O34.8. Total
+        subsumption; high tier.
+        """
+}
+mapping "O348B.1" source="O348B" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O348B = O34.8 subcategory specifying ovarian tumör as the pelvic organ abnormality.
+        Target SNOMED CT 197050 = SNOMED CT 1639007, parent's verified crosswalk. Target is broader (no
+        pregnancy-affecting ovarian-tumör-specific SNOMED CT standard concept); total subsumption; high
+        tier.
+        """
+}
+mapping "O348C.1" source="O348C" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O348C = O34.8 subcategory for status post prior pelvic-floor/prolapse surgery. Target
+        SNOMED CT 197050 = SNOMED CT 1639007, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O348D.1" source="O348D" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O348D = O34.8 subcategory for prior sphincter rupture. Target SNOMED CT 197050 = SNOMED CT
+        1639007, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O348W.1" source="O348W" target="1639007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O348W = O34.8 subcategory for other specified abnormalities of pelvic organs. Target
+        SNOMED CT 197050 = SNOMED CT 1639007, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O350A.1" source="O350A" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350A = Swedish extension of O35.0 SNOMED CT 1538006, specifying structural intracranial
+        malformation of hemispheres. Target SNOMED CT 375016 = (concept_code 1538006), the verified Athena
+        for parent O35.0. Target subsumes every O35.0 subcategory. High tier: one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "O350B.1" source="O350B" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350B = O35.0 subcategory for structural intracranial malformation of midline/skull base.
+        Target SNOMED CT 375016 = SNOMED CT 1538006, parent's verified crosswalk. Total subsumption; high
+        tier.
+        """
+}
+mapping "O350C.1" source="O350C" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350C = O35.0 subcategory for structural intracranial malformation of posterior cranial
+        fossa. Target SNOMED CT 375016 = SNOMED CT 1538006, parent's verified crosswalk. Total subsumption;
+        high tier.
+        """
+}
+mapping "O350D.1" source="O350D" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350D = O35.0 subcategory for hydrocephalus (without neural tube defect). Target SNOMED CT
+        375016 = SNOMED CT 1538006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O350E.1" source="O350E" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350E = O35.0 subcategory for neural tube defect (with or without hydrocephalus). Target
+        SNOMED CT 375016 = SNOMED CT 1538006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O350W.1" source="O350W" target="1538006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O350W = O35.0 subcategory for other specified (suspected) CNS fetal malformation. Target
+        SNOMED CT 375016 = SNOMED CT 1538006, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O351A.1" source="O351A" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O351B.1" source="O351B" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O351C.1" source="O351C" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O351D.1" source="O351D" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O351E.1" source="O351E" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O351W.1" source="O351W" target="409709004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O358A.1" source="O358A" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358A = Swedish extension of O35.8 SNOMED CT 10743881000119104, specifying craniofacial
+        malformation. Target SNOMED CT 36712695 = (concept_code 10743881000119104), the verified Athena for
+        parent O35.8. Target subsumes every O35.8 subcategory. High tier: one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "O358B.1" source="O358B" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358B = O35.8 subcategory for cleft lip/jaw/palate. Target SNOMED CT 36712695 = SNOMED CT
+        10743881000119104, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O358C.1" source="O358C" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358C = O35.8 subcategory for nuchal hygroma. Target SNOMED CT 36712695 = SNOMED CT
+        10743881000119104, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O358D.1" source="O358D" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358D = O35.8 subcategory for intrathoracic malformation (excl. heart). Target SNOMED CT
+        36712695 = SNOMED CT 10743881000119104, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O358E.1" source="O358E" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358E = O35.8 subcategory for cardiovascular malformation. Target SNOMED CT 36712695 =
+        SNOMED CT 10743881000119104, parent's verified crosswalk. Total subsumption; high tier.
+        """
+}
+mapping "O358F.1" source="O358F" target="205511002" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358F SNOMED CT 205511002 = maternal care for (suspected) fetal damage: diaphragmatic hernia
+        (Swedish 5-char extension of O35.8). Target SNOMED CT 40401453 (205511002). The maternal-care
+        framing of the source has no single SNOMED CT equivalent; the specific congenital anomaly concept
+        is the best disease target. narrower: target is more specific than the source's
+        maternal-care-for framing; the O35.8 parent crosswalk lands on 36712695 (broader, weaker). Chose
+        the specific anomaly at because the maternal-care context is dropped. Athena-local only.
+        """
+}
+mapping "O358G.1" source="O358G" target="205905009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358G SNOMED CT 205905009 = maternal care for (suspected) fetal damage: gastrointestinal
+        malformation (Swedish extension of O35.8). Target SNOMED CT 40403309 (205905009). broader: target
+        subsumes the source's GI-malformation scope. Closest standard concept; the O35.8 parent
+        crosswalk target 36712695 is broader still. Moderate-low confidence: heterogeneous bucket,
+        maternal-care framing dropped. Athena-local.
+        """
+}
+mapping "O358H.1" source="O358H" target="72951007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358H SNOMED CT 72951007 = maternal care for (suspected) fetal gastroschisis. Target SNOMED CT
+        4218764 (72951007). The source names the same congenital anomaly; the maternal-care context is
+        administrative. Exact clinical concept match; high confidence, just short of because the
+        maternal-care framing differs from a pure disorder code. Athena-local verified.
+        """
+}
+mapping "O358J.1" source="O358J" target="271017007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358J SNOMED CT 271017007 = maternal care for (suspected) fetal omphalocele. Target SNOMED CT
+        40356802 (271017007). Source names the same congenital anomaly. Exact clinical concept; because
+        the maternal-care framing differs from a pure disorder code. Athena-local verified.
+        """
+}
+mapping "O358K.1" source="O358K" target="205939008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358K SNOMED CT 205939008 = maternal care for (suspected) fetal damage: kidney and urinary
+        tract malformations (Swedish extension of O35.8). Target SNOMED CT 40403346 (205939008). broader:
+        covers both kidney and urinary tract malformations (source scope). Heterogeneous category; the
+        maternal-care framing is dropped. Low confidence. Athena-local.
+        """
+}
+mapping "O358L.1" source="O358L" target="205947008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358L SNOMED CT 205947008 = maternal care for (suspected) fetal damage: skeletal
+        malformations (excl. limb defects) (Swedish extension of O35.8). Target SNOMED CT 40403355
+        (205947008). broader but includes limb defects the source excludes; closest standard ancestor.
+        Low confidence due to scope mismatch and dropped maternal-care framing. Athena-local.
+        """
+}
+mapping "O358M.1" source="O358M" target="156983003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358M SNOMED CT 156983003 = maternal care for (suspected) fetal damage: limb defects (incl.
+        clubfoot) (Swedish extension of O35.8). Target SNOMED CT 40322432 (156983003). partial: covers limb
+        defects but the source explicitly bundles clubfoot (33163000); a single target captures only one
+        slice of the multi-condition source. Low confidence; maternal-care framing dropped.
+        Athena-local.
+        """
+}
+mapping "O358N.1" source="O358N" target="127332000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358N SNOMED CT 127332000 = maternal care for (suspected) fetal damage: tumör (Swedish
+        extension of O35.8). Target SNOMED CT 4133025 (127332000). Same clinical concept (fetal tumör).
+        (not) because the maternal-care framing differs from a pure disorder code and is non-specific.
+        Athena-local verified.
+        """
+}
+mapping "O358W.1" source="O358W" target="10743881000119104" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O358W SNOMED CT 10743881000119104 = maternal care for other (suspected) specified fetal
+        abnormality and damage (Swedish extension of O35.8, the residual). Target SNOMED CT 36712695 =
+        Suspected fetal abnormality affecting management of mother, the Athena crosswalk target of the
+        WHO parent O35.8. broader: target subsumes the residual bucket. Moderate: crosswalk-verified but
+        unspecified source. Athena-local.
+        """
+}
+mapping "O368A.1" source="O368A" target="10743881000119104" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O368A SNOMED CT 10743881000119104 = maternal care for specified fetal problem: genetic
+        ultrasound soft marker (excl. structural malformations) (Swedish extension of O36.8). No precise
+        SNOMED CT equivalent for; closest standard concept is the O36.8 crosswalk target 36712695. broader,
+        low confidence: target is generic and the soft-marker semantics are largely lost. Athena-local.
+        """
+}
+mapping "O368B.1" source="O368B" target="364758005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O368B SNOMED CT 364758005 = maternal care for specified fetal problem: fetal cardiac
+        arrhythmia (Swedish extension of O36.8). Target SNOMED CT 4271775 (364758005). broader: covers the
+        arrhythmia as a rhythm finding; no precise standard concept in the mirror (only
+        regular/irregular subtypes 4124316/4126570). Low confidence due to breadth. Athena-local.
+        """
+}
+mapping "O368C.1" source="O368C" target="128093000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O368C SNOMED CT 128093000 = maternal care for alloimmune platelet immunization (Swedish
+        extension of O36.8). Target SNOMED CT 4133984 (128093000). related: the source is the
+        maternal-care-for / immunization framing, the target is the disease state; no precise standard
+        concept. Low confidence. Athena-local.
+        """
+}
+mapping "O368D.1" source="O368D" target="275758003" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O368D SNOMED CT 275758003 = maternal care for autoimmune platelet immunization (Swedish
+        extension of O36.8). Target SNOMED CT 40359195 (275758003). related: source is the
+        maternal-care-for framing, target is the disease; no precise maternal-autoimmunization standard
+        concept. Low confidence. Athena-local.
+        """
+}
+mapping "O368W.1" source="O368W" target="10743881000119104" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O368W SNOMED CT 10743881000119104 = maternal care for other known or suspected fetal problem
+        (Swedish extension of O36.8, residual). Target SNOMED CT 36712695 (the O36/O36.8 crosswalk parent).
+        broader: subsumes the unspecified residual. Moderate: crosswalk-verified, unspecified source.
+        Athena-local.
+        """
+}

@@ -1,0 +1,497 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V68-V686
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V6800.1" source="V6800" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6800 is the Swedish 6th-digit extension of V68.0 (driver of heavy transport vehicle,
+        noncollision transport accident, nontraffic), adding activity SNOMED CT 214640008 36198007 (sport,
+        exercise). No SNOMED CT standard concept captures the activity dimension; targets inherit from the
+        V68.0 Athena crosswalk (45546918 Maps to 437738/444074). Primary 437738 (214640008, standard
+        Observation/Event) denotes nontraffic MV accident, broader than source (captures nontraffic MV
+        aspect; drops noncollision-mechanism, vehicle type, role, activity). Alt 444074 (36198007)
+        broader (victim-status concept, loosest; loses nontraffic specificity). primary: parent V68.0
+        crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6800.2" source="V6800" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6801.1" source="V6801" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6801 is the Swedish 6th-digit extension of V68.0 (driver of heavy transport vehicle,
+        noncollision transport accident, nontraffic), adding activity SNOMED CT 214640008 36198007 (play
+        and leisure). No SNOMED CT standard concept captures the activity dimension; targets inherit from
+        the V68.0 Athena crosswalk (45546918 Maps to 437738/444074). Primary 437738 (214640008,
+        standard) is broader (captures nontraffic MV aspect; drops noncollision-mechanism, vehicle type,
+        role, activity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent V68.0
+        crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6801.2" source="V6801" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6802.1" source="V6802" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6802 is the Swedish 6th-digit extension of V68.0 (driver of heavy transport vehicle,
+        noncollision transport accident, nontraffic), adding activity SNOMED CT 214640008 36198007 (work).
+        No SNOMED CT standard concept captures the activity dimension; targets inherit from the V68.0
+        Athena crosswalk (45546918 Maps to 437738/444074). Primary 437738 (214640008, standard) is
+        broader (captures nontraffic MV aspect; drops noncollision-mechanism, vehicle type, role,
+        activity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent V68.0
+        crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6802.2" source="V6802" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6803.1" source="V6803" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6803 is the Swedish 6th-digit extension of V68.0 (driver of heavy transport vehicle,
+        noncollision transport accident, nontraffic), adding activity SNOMED CT 214640008 36198007 (other
+        activity). No SNOMED CT standard concept captures the activity dimension; targets inherit from the
+        V68.0 Athena crosswalk (45546918 Maps to 437738/444074). Primary 437738 (214640008, standard) is
+        broader (captures nontraffic MV aspect; drops noncollision-mechanism, vehicle type, role,
+        activity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent V68.0
+        crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6803.2" source="V6803" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6804.1" source="V6804" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6804 is the Swedish 6th-digit extension of V68.0 (driver of heavy transport vehicle,
+        noncollision transport accident, nontraffic), adding activity SNOMED CT 214640008 36198007 (vital
+        activity). No SNOMED CT standard concept captures the activity dimension; targets inherit from the
+        V68.0 Athena crosswalk (45546918 Maps to 437738/444074). Primary 437738 (214640008, standard) is
+        broader (captures nontraffic MV aspect; drops noncollision-mechanism, vehicle type, role,
+        activity). Alt 444074 (36198007) broader (victim status, loosest). primary: parent V68.0
+        crosswalk, activity suffix not independently re-verified.
+        """
+}
+mapping "V6804.2" source="V6804" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6808.1" source="V6808" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6808 = driver of heavy transport vehicle, noncollision nontraffic accident, SNOMED CT
+        214640008 (Swedish 5th-digit extension of V68.0). Target SNOMED CT 437738 / 214640008 = Motor
+        vehicle accident off public road, the standard crosswalk target for V68.0 driver nontraffic. The
+        Swedish activity subcode adds a contextual activity dimension (sports/leisure/work/vital/other)
+        with no SNOMED CT representation; target captures the transport-accident aspect and is broader
+        relative to the SE source. Moderate tier: mechanical crosswalk via parent V68.0, activity
+        dimension dropped.
+        """
+}
+mapping "V6809.1" source="V6809" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6809 = driver of heavy transport vehicle, noncollision nontraffic accident, activity
+        unspecified (Swedish 5th-digit extension of V68.0). Target SNOMED CT 437738 / 214640008 = Motor
+        vehicle accident off public road, standard crosswalk for V68.0. Activity dimension (unspecified
+        here) has no SNOMED CT counterpart; target is broader relative to the SE source's contextual
+        granularity. Moderate tier: mechanical crosswalk via V68.0.
+        """
+}
+mapping "V6810.1" source="V6810" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6810 = passenger of heavy transport vehicle, noncollision nontraffic accident,
+        sport/athletics activity (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.1 passenger
+        nontraffic. Activity dimension has no SNOMED CT counterpart; target is broader. Moderate tier:
+        mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6811.1" source="V6811" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6811 = passenger of heavy transport vehicle, noncollision nontraffic accident,
+        leisure/play activity (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.1. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6812.1" source="V6812" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6812 = passenger of heavy transport vehicle, noncollision nontraffic accident,
+        income-producing work activity (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.1. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6813.1" source="V6813" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6813 = passenger of heavy transport vehicle, noncollision nontraffic accident, other
+        specified activity (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.1. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6814.1" source="V6814" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6814 = passenger of heavy transport vehicle, noncollision nontraffic accident, vital
+        activity (rest/sleep/meal/personal hygiene) (Swedish 5th-digit extension of V68.1). Target
+        SNOMED CT 437738 / 214640008 = Motor vehicle accident off public road, standard crosswalk for
+        V68.1. Activity dimension dropped. Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6818.1" source="V6818" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6818 = passenger of heavy transport vehicle, noncollision nontraffic accident, other
+        specified activity (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.1. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6819.1" source="V6819" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6819 = passenger of heavy transport vehicle, noncollision nontraffic accident, activity
+        unspecified (Swedish 5th-digit extension of V68.1). Target SNOMED CT 437738 / 214640008 = Motor
+        vehicle accident off public road, standard crosswalk for V68.1. Activity dimension dropped.
+        Moderate tier: mechanical crosswalk via V68.1.
+        """
+}
+mapping "V6820.1" source="V6820" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6820 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        sport/athletics activity (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.2. Activity
+        dimension dropped; target is broader. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6821.1" source="V6821" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6821 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        leisure/play activity (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.2. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6822.1" source="V6822" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6822 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        income-producing work (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.2. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6823.1" source="V6823" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6823 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        other specified activity (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.2. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6824.1" source="V6824" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6824 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        vital activity (rest/sleep/meal/hygiene) (Swedish 5th-digit extension of V68.2). Target SNOMED CT
+        437738 / 214640008 = Motor vehicle accident off public road, standard crosswalk for V68.2.
+        Activity dimension dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6828.1" source="V6828" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6828 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        other specified activity (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.2. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6829.1" source="V6829" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6829 = person on outside of heavy transport vehicle, noncollision nontraffic accident,
+        activity unspecified (Swedish 5th-digit extension of V68.2). Target SNOMED CT 437738 / 214640008 =
+        Motor vehicle accident off public road, standard crosswalk for V68.2. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.2.
+        """
+}
+mapping "V6830.1" source="V6830" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6830 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, sport/athletics activity (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738
+        / 214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6831.1" source="V6831" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6831 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, leisure/play activity (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6832.1" source="V6832" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6832 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, income-producing work (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6833.1" source="V6833" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6833 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, other specified activity (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738
+        / 214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6834.1" source="V6834" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6834 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, vital activity (rest/sleep/meal/hygiene) (Swedish 5th-digit extension of V68.3).
+        Target SNOMED CT 437738 / 214640008 = Motor vehicle accident off public road, standard crosswalk
+        for V68.3. Activity dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6838.1" source="V6838" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6838 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, other specified activity (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738
+        / 214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6839.1" source="V6839" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6839 = unspecified occupant of heavy transport vehicle, noncollision nontraffic
+        accident, activity unspecified (Swedish 5th-digit extension of V68.3). Target SNOMED CT 437738 /
+        214640008 = Motor vehicle accident off public road, standard crosswalk for V68.3. Activity
+        dimension dropped. Moderate tier: mechanical crosswalk via V68.3.
+        """
+}
+mapping "V6840.1" source="V6840" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6840 = person injured while boarding/alighting from heavy transport vehicle in
+        noncollision transport accident, sport/athletics activity (Swedish 5th-digit extension of
+        V68.4). Target SNOMED CT 4053428 / 242107006 (on road), the standard crosswalk target for V68.4.
+        The Swedish activity dimension has no SNOMED CT representation; target is broader. Moderate tier:
+        mechanical crosswalk via V68.4, activity dimension dropped.
+        """
+}
+mapping "V6841.1" source="V6841" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6841 = person injured while boarding/alighting from heavy transport vehicle in
+        noncollision transport accident, leisure/play activity (Swedish 5th-digit extension of V68.4).
+        Target SNOMED CT 4053428 / 242107006 (on road), standard crosswalk for V68.4. Activity dimension
+        dropped. Moderate tier: mechanical crosswalk via V68.4.
+        """
+}
+mapping "V6842.1" source="V6842" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6842 = Swedish 7-char extension of ICD-10 V68.4 SNOMED CT 242107006, with activity context
+        (paid work). Target SNOMED CT 4053428 = (concept_code 242107006). The parent V68.4 has an Athena
+        crosswalk to 4053428; the Swedish extension adds an activity-at-time-of-injury dimension that
+        SNOMED CT does not represent. The target fully subsumes the source's vehicular-accident meaning
+        (broader); the activity detail is dropped. High tier : verified parent crosswalk, one-level
+        breadth loss.
+        """
+}
+mapping "V6843.1" source="V6843" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6843 = Swedish 7-char extension of V68.4 SNOMED CT 242107006, activity context (other
+        activity). Target SNOMED CT 4053428 = (242107006). Parent V68.4 crosswalks to 4053428 in Athena;
+        the Swedish activity-context suffix has no SNOMED CT analogue. Target fully subsumes the source's
+        accident meaning (broader); activity detail dropped. High tier : verified parent crosswalk,
+        one-level breadth loss.
+        """
+}
+mapping "V6844.1" source="V6844" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6844 = Swedish 7-char extension of V68.4 SNOMED CT 242107006, activity context (vital
+        activity: rest/sleep/meal/personal hygiene). Target SNOMED CT 4053428 = (242107006). Parent V68.4
+        crosswalks to 4053428; the activity-context suffix has no SNOMED CT representation. Target fully
+        subsumes the accident meaning (broader); activity detail dropped. High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6848.1" source="V6848" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6848 = Swedish 7-char extension of V68.4 SNOMED CT 242107006, activity context (other
+        specified activities). Target SNOMED CT 4053428 = (242107006). Parent V68.4 crosswalks to 4053428;
+        the activity suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning
+        (broader). High tier : verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6849.1" source="V6849" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6849 = Swedish 7-char extension of V68.4 SNOMED CT 242107006, activity context (activity
+        unspecified). Target SNOMED CT 4053428 = (242107006). Parent V68.4 crosswalks to 4053428; the
+        activity suffix is unspecified and has no SNOMED CT analogue. Target fully subsumes the accident
+        meaning (broader). High tier : verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6850.1" source="V6850" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6850 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context
+        (sport/exercise). Target SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509 in
+        Athena; the activity-context suffix has no SNOMED CT representation. Target fully subsumes the
+        source's vehicular-accident meaning (broader); driver-role and activity detail dropped. High
+        tier : verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6851.1" source="V6851" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6851 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context (play and
+        other leisure). Target SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; the
+        activity-context suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning
+        (broader). High tier : verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6852.1" source="V6852" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6852 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context (paid work).
+        Target SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; the activity-context
+        suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning (broader). High tier :
+        verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6853.1" source="V6853" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6853 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context (other
+        activity). Target SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; activity
+        suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning (broader). High tier :
+        verified parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6854.1" source="V6854" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6854 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6858.1" source="V6858" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6858 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6859.1" source="V6859" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6859 = Swedish 7-char extension of V68.5 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.5 crosswalks to 432509; activity suffix unspecified, no
+        SNOMED CT analogue. Target fully subsumes the accident meaning (broader). High tier : verified
+        parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6860.1" source="V6860" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6860 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509 in Athena; activity-context
+        suffix has no SNOMED CT analogue. Target fully subsumes the accident meaning (broader);
+        passenger-role and activity detail dropped. High tier : verified parent crosswalk, one-level
+        breadth loss.
+        """
+}
+mapping "V6861.1" source="V6861" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6861 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6862.1" source="V6862" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6862 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6863.1" source="V6863" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6863 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6864.1" source="V6864" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6864 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6868.1" source="V6868" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6868 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix has no SNOMED CT
+        analogue. Target fully subsumes the accident meaning (broader). High tier : verified parent
+        crosswalk, one-level breadth loss.
+        """
+}
+mapping "V6869.1" source="V6869" target="242116005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6869 = Swedish 7-char extension of V68.6 SNOMED CT 242116005, activity context. Target
+        SNOMED CT 432509 = (242116005). Parent V68.6 crosswalks to 432509; activity suffix unspecified, no
+        SNOMED CT analogue. Target fully subsumes the accident meaning (broader). High tier : verified
+        parent crosswalk, one-level breadth loss.
+        """
+}

@@ -1,0 +1,340 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes D3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "D349.1" source="D349" target="92439006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D349 SNOMED CT 92439006 = benign neoplasm of thyroid gland. Target (Athena-local row
+        141249). Athena crosswalk (ICD10 45542696 → SNOMED CT 141249, sct 92439006). Crosswalk-verified
+        exact equivalence.
+        """
+}
+mapping "D370A.1" source="D370A" target="271326004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D370A SNOMED CT 271326004 is the Swedish extension subcode (A = pathologically uncertain
+        behavior) of WHO ICD-10 D37.0. Target SNOMED CT 436080 = (concept_code 271326004). Athena crosswalk
+        maps WHO D37.0 (45595754) ->; the SNOMED CT concept subsumes both A (pathologically uncertain) and
+        B (clinically unknown) Swedish variants because SNOMED CT does not distinguish the basis of
+        uncertainty. High tier: verified crosswalk, only the A/B distinction is lost, target fully
+        contains source.
+        """
+}
+mapping "D370B.1" source="D370B" target="271326004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D370B SNOMED CT 271326004 is the Swedish extension subcode (B = clinically unknown behavior)
+        of WHO ICD-10 D37.0. Target SNOMED CT 436080 =. Same rationale as D370A: Athena crosswalk for D37.0
+        (45595754) -> 436080; SNOMED CT covers both uncertain/unknown behavior variants. High tier:
+        verified crosswalk, A/B distinction not represented in SNOMED CT.
+        """
+}
+mapping "D371A.1" source="D371A" target="399967006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D371A (Swedish A variant: pathologically uncertain behavior of stomach) is subcode of WHO
+        D37.1. Target SNOMED CT 201529 = (399967006). Athena crosswalk D37.1 (45591003) -> 201529. SNOMED CT
+        concept subsumes both A and B Swedish variants. High tier.
+        """
+}
+mapping "D371B.1" source="D371B" target="399967006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D371B (Swedish B variant: clinically unknown behavior of stomach) is subcode of WHO
+        D37.1. Target SNOMED CT 201529 = SNOMED CT 399967006. Athena crosswalk D37.1 (45591003) -> 201529.
+        High tier.
+        """
+}
+mapping "D372A.1" source="D372A" target="95088009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D372A (Swedish A variant: pathologically uncertain behavior of small intestine) is
+        subcode of WHO D37.2. Target SNOMED CT 4317816 = (95088009). Athena crosswalk D37.2 (45542697) ->
+        4317816. High tier.
+        """
+}
+mapping "D372B.1" source="D372B" target="95088009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D372B (Swedish B variant: clinically unknown behavior of small intestine) is subcode of
+        WHO D37.2. Target SNOMED CT 4317816 = SNOMED CT 95088009. Athena crosswalk D37.2 (45542697) ->
+        4317816. High tier.
+        """
+}
+mapping "D373A.1" source="D373A" target="94744004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D373A (Swedish A variant: pathologically uncertain behavior of appendix) is subcode of
+        WHO D37.3. Target SNOMED CT 4314207 = (94744004). Athena crosswalk D37.3 (45542698) -> 4314207.
+        High tier.
+        """
+}
+mapping "D373B.1" source="D373B" target="94744004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D373B (Swedish B variant: clinically unknown behavior of appendix) is subcode of WHO
+        D37.3. Target SNOMED CT 4314207 = SNOMED CT 94744004. Athena crosswalk D37.3 (45542698) -> 4314207.
+        High tier.
+        """
+}
+mapping "D374A.1" source="D374A" target="94801006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D374A (Swedish A variant: pathologically uncertain behavior of colon) is subcode of WHO
+        D37.4. Target SNOMED CT 4317409 = (94801006). Athena crosswalk D37.4 (45552347) -> 4317409. High
+        tier.
+        """
+}
+mapping "D374B.1" source="D374B" target="94801006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D374B (Swedish B variant: clinically unknown behavior of colon) is subcode of WHO D37.4.
+        Target SNOMED CT 4317409 = SNOMED CT 94801006. Athena crosswalk D37.4 (45552347) -> 4317409. High
+        tier.
+        """
+}
+mapping "D375A.1" source="D375A" target="95024008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D375A (Swedish A variant: pathologically uncertain behavior of rectum) is subcode of WHO
+        D37.5. Target SNOMED CT 442141 = (95024008). Athena crosswalk D37.5 (45552348) -> 442141. High
+        tier.
+        """
+}
+mapping "D375B.1" source="D375B" target="95024008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D375B (Swedish B variant: clinically unknown behavior of rectum) is subcode of WHO D37.5.
+        Target SNOMED CT 442141 = SNOMED CT 95024008. Athena crosswalk D37.5 (45552348) -> 442141. High tier.
+        """
+}
+mapping "D376A.1" source="D376A" target="271482000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D376A (Swedish A variant: pathologically uncertain behavior of liver, gallbladder and
+        bile ducts) is subcode of WHO D37.6. Target SNOMED CT 199767 = (271482000). Athena crosswalk D37.6
+        (45586102) -> 199767. High tier.
+        """
+}
+mapping "D376B.1" source="D376B" target="271482000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D376B (Swedish B variant: clinically unknown behavior of liver, gallbladder and bile
+        ducts) is subcode of WHO D37.6. Target SNOMED CT 199767 = SNOMED CT 271482000. Athena crosswalk D37.6
+        (45586102) -> 199767. High tier.
+        """
+}
+mapping "D377A.1" source="D377A" target="448908007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D377A (Swedish A variant: pathologically uncertain behavior of other digestive organs) is
+        subcode of WHO D37.7 SNOMED CT 448908007. Target SNOMED CT 40492458 = (448908007). Athena crosswalk
+        D37.7 (45552349) -> 40492458; also D37.9 (45571612) -> 40492458. High tier: target slightly
+        broader (general vs) but verified crosswalk.
+        """
+}
+mapping "D377B.1" source="D377B" target="448908007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D377B (Swedish B variant: clinically unknown behavior of other digestive organs) is
+        subcode of WHO D37.7. Target SNOMED CT 40492458 = SNOMED CT 448908007. Athena crosswalk D37.7
+        (45552349) -> 40492458. High tier.
+        """
+}
+mapping "D380A.1" source="D380A" target="94899001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D380A (Swedish A variant: pathologically uncertain behavior of larynx) is subcode of WHO
+        D38.0. Target SNOMED CT 22274 = (94899001). Athena crosswalk D38.0 (45547596) -> 22274. High tier.
+        """
+}
+mapping "D380B.1" source="D380B" target="94899001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D380B (Swedish B variant: clinically unknown behavior of larynx) is subcode of WHO D38.0.
+        Target SNOMED CT 22274 = SNOMED CT 94899001. Athena crosswalk D38.0 (45547596) -> 22274. High tier.
+        """
+}
+mapping "D381A.1" source="D381A" target="95026005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D381A (Swedish A variant: pathologically uncertain behavior of trachea, bronchus and
+        lung) is subcode of WHO D38.1 SNOMED CT 95026005. Target SNOMED CT 4317685 = (95026005), mapped via
+        Athena crosswalk D38.1 (45605357) -> 4317685. Target is broader than source (general respiratory
+        tract vs trachea/bronchus/lung specifically) — one extra hierarchy level of subsumption, so
+        moderate tier per §1.
+        """
+}
+mapping "D381B.1" source="D381B" target="95026005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D381B (Swedish B variant: clinically unknown behavior of trachea, bronchus and lung) is
+        subcode of WHO D38.1. Target SNOMED CT 4317685 = SNOMED CT 95026005. Athena crosswalk D38.1 (45605357)
+        -> 4317685. Target broader than source (respiratory tract vs trachea/bronchus/lung). Moderate
+        tier.
+        """
+}
+mapping "D382A.1" source="D382A" target="95006006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D382A (Swedish A variant: pathologically uncertain behavior of pleura) is subcode of WHO
+        D38.2. Target SNOMED CT 442140 = (95006006). Athena crosswalk D38.2 (45561912) -> 442140. High
+        tier.
+        """
+}
+mapping "D382B.1" source="D382B" target="95006006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D382B (Swedish B variant: clinically unknown behavior of pleura) is subcode of WHO D38.2.
+        Target SNOMED CT 442140 = SNOMED CT 95006006. Athena crosswalk D38.2 (45561912) -> 442140. High tier.
+        """
+}
+mapping "D383A.1" source="D383A" target="94931004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D383A (Swedish A variant: pathologically uncertain behavior of mediastinum) is subcode of
+        WHO D38.3. Target SNOMED CT 442147 = (94931004). Athena crosswalk D38.3 (45571613) -> 442147. High
+        tier.
+        """
+}
+mapping "D383B.1" source="D383B" target="94931004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D383B (Swedish B variant: clinically unknown behavior of mediastinum) is subcode of WHO
+        D38.3. Target SNOMED CT 442147 = SNOMED CT 94931004. Athena crosswalk D38.3 (45571613) -> 442147. High
+        tier.
+        """
+}
+mapping "D384A.1" source="D384A" target="95136000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D384A (Swedish A variant: pathologically uncertain behavior of thymus) is subcode of WHO
+        D38.4. Target SNOMED CT 439773 = (95136000). Athena crosswalk D38.4 (45605358) -> 439773. High
+        tier.
+        """
+}
+mapping "D384B.1" source="D384B" target="95136000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D384B SNOMED CT 95136000 = Neoplasm of uncertain/unknown behavior of thymus (Swedish A/B
+        national extension for pathologically-uncertain vs clinically-unknown). Target SNOMED CT 439773 =
+        (concept_code 95136000). The WHO ICD-10 D38.4 base code maps to this exact SNOMED CT concept via
+        Athena on 45605358, and the Swedish A/B subcodes are both covered by the same standard concept.
+        Same clinical concept, crosswalk-verified; exact_match.
+        """
+}
+mapping "D385A.1" source="D385A" target="95026005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D385A SNOMED CT 95026005 = Neoplasm of uncertain behavior of other respiratory organs.
+        Target SNOMED CT 4317685 = (95026005). WHO ICD-10 D38.5 (45557075) Maps to 4317685 in Athena.
+        Swedish A/B subcode for pathological-vs-clinical uncertainty; both map to the same standard
+        concept.
+        """
+}
+mapping "D385B.1" source="D385B" target="95026005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D385B SNOMED CT 95026005 = Neoplasm of unknown behavior of other respiratory organs. Same
+        SNOMED CT target 4317685 as D385A; WHO D38.5 crosswalk via Athena, identical clinical concept.
+        """
+}
+mapping "D390A.1" source="D390A" target="95167003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D390A SNOMED CT 95167003 = Neoplasm of uncertain behavior of uterus. Target SNOMED CT 195793 =
+        (95167003). WHO ICD-10 D39.0 (45600595) Maps to 195793 in Athena. Exact clinical-concept
+        equivalence.
+        """
+}
+mapping "D390B.1" source="D390B" target="95167003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D390B SNOMED CT 95167003 = Neoplasm of unknown behavior of uterus. Same SNOMED CT target
+        195793; WHO D39.0 crosswalk.
+        """
+}
+mapping "D391A.1" source="D391A" target="94974001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D391A SNOMED CT 94974001 = Neoplasm of uncertain behavior of ovary. Target SNOMED CT 200675 =
+        (94974001). WHO ICD-10 D39.1 (45576396) Maps to 200675 in Athena. Exact equivalence.
+        """
+}
+mapping "D391B.1" source="D391B" target="94974001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D391B SNOMED CT 94974001 = Neoplasm of unknown behavior of ovary. Same SNOMED CT target 200675;
+        WHO D39.1 crosswalk.
+        """
+}
+mapping "D392A.1" source="D392A" target="95005005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D392A SNOMED CT 95005005 = Invasive mole (a specific gestational trophoblastic neoplasm of
+        uncertain behavior). Target SNOMED CT 194598 = (95005005); WHO ICD-10 D39.2 (45600596) Maps to
+        194598. Invasive mole is a subtype of placental trophoblastic neoplasia — the SNOMED CT target is
+        slightly broader (any placental uncertain-behavior neoplasm) but the crosswalk is verified. High
+        tier, exact-match-with-slight-breadth, score.
+        """
+}
+mapping "D392B.1" source="D392B" target="95005005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D392B SNOMED CT 95005005 = Suspected choriocarcinoma (Swedish national subcode of D39.2).
+        Choriocarcinoma is a specific malignant trophoblastic tumör, but the ICD-10 D39.2 parent sits
+        under and maps to SNOMED CT 194598. The target (uncertain-behavior placental neoplasm) does not
+        assert malignancy, while the source specifically suspects choriocarcinoma — the target is
+        broader on the uncertainty axis but the source's framing adds clinical specificity. Best
+        available standard concept via the D39.2 crosswalk; narrower (target less specific than the
+        suspected-malignancy source framing). Confidence : verified crosswalk with a small breadth
+        mismatch.
+        """
+}
+flag "D392B.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/D392B.1"
+mapping "D392C.1" source="D392C" target="95005005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D392C SNOMED CT 95005005 (PSTT) = a specific subtype of gestational trophoblastic neoplasm.
+        WHO D39.2 (45600596) Maps to SNOMED CT 194598 (95005005). PSTT is a distinct clinico-pathological
+        entity; is broader (any uncertain-behavior placental neoplasm). Best available standard concept
+        via verified crosswalk; narrower because the target is less specific than the PSTT source
+        entity. High.
+        """
+}
+flag "D392C.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/D392C.1"
+mapping "D392X.1" source="D392X" target="95005005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D392X SNOMED CT 95005005 = Neoplasm of uncertain or unknown behavior of placenta,
+        unspecified. Target SNOMED CT 194598 = (95005005). WHO ICD-10 D39.2 (45600596) Maps to 194598.
+        Exact clinical-concept equivalence — the unspecified Swedish subcode aligns directly with the
+        standard placental uncertain-behavior concept.
+        """
+}
+mapping "D397A.1" source="D397A" target="94837001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D397A SNOMED CT 94837001 = Neoplasm of uncertain behavior of other specified female genital
+        organs. Target SNOMED CT 193437 = (94837001). WHO ICD-10 D39.7 (45532982) Maps to 193437 in Athena.
+        The Swedish source is fully contained within the SNOMED CT female-genital-organ uncertain-behavior
+        concept; standard crosswalk verified.
+        """
+}
+mapping "D397B.1" source="D397B" target="94837001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D397B SNOMED CT 94837001 = Neoplasm of unknown behavior of other specified female genital
+        organs. Same SNOMED CT target 193437; WHO D39.7 crosswalk.
+        """
+}

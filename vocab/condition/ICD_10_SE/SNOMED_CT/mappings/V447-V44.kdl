@@ -1,0 +1,193 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V447-V44
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4470.1" source="V4470" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4470 = Swedish 7-char extension of ICD-10 V44.7: person on outside of car injured in
+        collision with heavy transport vehicle or bus in traffic accident, during idrott/sport/motion.
+        Activity digit dropped. Primary SNOMED CT 274913009 (Athena 433930, Maps-to for V44.7); broader
+        (generalizes collision partner, drops role/activity). Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4470.2" source="V4470" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4471.1" source="V4471" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4471 = Swedish 7-char extension of ICD-10 V44.7: person on outside of car injured in
+        collision with heavy transport vehicle or bus in traffic accident, lek/fritid. Activity digit
+        dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4471.2" source="V4471" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4472.1" source="V4472" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4472 = Swedish 7-char extension of ICD-10 V44.7: person on outside of car injured in
+        collision with heavy transport vehicle or bus in traffic accident, förvärvsarbete. Activity
+        digit dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007
+        (444074). primary, secondary.
+        """
+}
+mapping "V4472.2" source="V4472" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4473.1" source="V4473" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4473 = Swedish 7-char extension of ICD-10 V44.7: person on outside of car injured in
+        collision with heavy transport vehicle or bus in traffic accident, annan sysselsättning.
+        Activity digit dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4473.2" source="V4473" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4474.1" source="V4474" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4474 is the Swedish national extension of ICD-10 V44.7 (Car occupant injured in
+        collision with heavy transport vehicle or bus, person on outside of vehicle injured in traffic
+        accident) with an added activity qualifier (vitalaktivitet such as rest/sleep/meal/personal
+        hygiene). The activity dimension has no separate SNOMED CT representation. Targets inherit the
+        verified Athena SNOMED 274913009 36198007 crosswalk of the parent V44.7: SNOMED CT 433930 (Motor
+        vehicle on road in collision with another motor vehicle, 274913009) and 444074 (Victim of
+        vehicular AND/OR traffic accident, 36198007). The target fully captures the accident mechanism;
+        the dropped activity suffix is orthogonal metadata, so the relationship is broader. high:
+        verified crosswalk inherited from parent, small well-understood breadth mismatch (activity
+        qualifier dropped).
+        """
+}
+mapping "V4474.2" source="V4474" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4478.1" source="V4478" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4478 is the Swedish national extension of ICD-10 V44.7 (Car occupant injured in
+        collision with heavy transport vehicle or bus, person on outside of vehicle injured in traffic
+        accident) with activity qualifier SNOMED CT 274913009 36198007 (other specified activities). No
+        SNOMED CT representation for the activity dimension. Targets inherit the verified Athena crosswalk
+        of parent V44.7: SNOMED CT 433930 (274913009) and 444074 (36198007). Accident mechanism fully
+        captured by targets; activity suffix dropped, so broader. high: crosswalk inherited from parent
+        V44.7, small well-understood breadth mismatch.
+        """
+}
+mapping "V4478.2" source="V4478" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4479.1" source="V4479" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4479 is the Swedish national extension of ICD-10 V44.7 with activity qualifier SNOMED CT
+        274913009 36198007 (activity, unspecified). Targets inherit the verified Athena crosswalk of
+        parent V44.7: SNOMED CT 433930 (274913009) and 444074 (36198007). high: crosswalk inherited from
+        parent V44.7; broader (target drops the unspecified activity suffix).
+        """
+}
+mapping "V4479.2" source="V4479" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4490.1" source="V4490" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4490 is the Swedish national extension of ICD-10 V44.9 (Car occupant injured in
+        collision with heavy transport vehicle or bus, unspecified car occupant injured in traffic
+        accident) with activity qualifier SNOMED CT 274913009 36198007 (sport/athletics/exercise). Targets
+        inherit the verified Athena crosswalk of parent V44.9: SNOMED CT 433930 (274913009) and 444074
+        (36198007). Accident mechanism fully captured; activity suffix dropped, so broader. high:
+        crosswalk inherited from parent V44.9.
+        """
+}
+mapping "V4490.2" source="V4490" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4491.1" source="V4491" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4491 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (play and other leisure activities). Targets inherit the verified Athena
+        crosswalk of parent V44.9: SNOMED CT 433930 (274913009) and 444074 (36198007). Broader: accident
+        mechanism captured, activity suffix dropped. high.
+        """
+}
+mapping "V4491.2" source="V4491" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4492.1" source="V4492" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4492 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (paid work). Targets inherit the verified Athena crosswalk of parent V44.9:
+        SNOMED CT 433930 (274913009) and 444074 (36198007). Broader: accident mechanism captured, activity
+        suffix dropped. high.
+        """
+}
+mapping "V4492.2" source="V4492" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4493.1" source="V4493" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4493 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (other activity). Targets inherit the verified Athena crosswalk of parent
+        V44.9: SNOMED CT 433930 (274913009) and 444074 (36198007). Broader: accident mechanism captured,
+        activity suffix dropped. high.
+        """
+}
+mapping "V4493.2" source="V4493" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4494.1" source="V4494" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4494 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (vital activity such as rest/sleep/meal/personal hygiene). Targets inherit
+        the verified Athena crosswalk of parent V44.9: SNOMED CT 433930 (274913009) and 444074 (36198007).
+        Broader: accident mechanism captured, activity suffix dropped. high.
+        """
+}
+mapping "V4494.2" source="V4494" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4498.1" source="V4498" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4498 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (other specified activities). Targets inherit the verified Athena crosswalk
+        of parent V44.9: SNOMED CT 433930 (274913009) and 444074 (36198007). Broader: accident mechanism
+        captured, activity suffix dropped. high.
+        """
+}
+mapping "V4498.2" source="V4498" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4499.1" source="V4499" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4499 is the Swedish national extension of ICD-10 V44.9 with activity qualifier SNOMED CT
+        274913009 36198007 (activity, unspecified). Targets inherit the verified Athena crosswalk of
+        parent V44.9: SNOMED CT 433930 (274913009) and 444074 (36198007). Broader: accident mechanism
+        captured, activity suffix dropped. high.
+        """
+}
+mapping "V4499.2" source="V4499" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

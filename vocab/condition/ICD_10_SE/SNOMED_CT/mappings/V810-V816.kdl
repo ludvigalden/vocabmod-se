@@ -1,0 +1,421 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V810-V816
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V8100.1" source="V8100" target="214878007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8100 (ICD-10-SE) = SNOMED CT 214878007 36198007 = train operator/passenger injured in
+        collision with motor vehicle in nontraffic accident while doing sport/exercise. Swedish
+        extension of ICD-10 V81.0 (Athena 45756063). Base V81.0 has Athena crosswalk to SNOMED CT 4061041
+        (Motor vehicle nontraffic accident involving collision between motor vehicle and railway train,
+        SCTID 214878007) and 444074 (Victim of vehicular AND/OR traffic accident, SCTID 36198007).
+        4061041 is the primary target: specific to the V81.0 nontraffic train/motor-vehicle collision
+        type, one-level broader (drops Swedish activity context). 444074 is a broader secondary (general
+        vehicular accident victim). High/moderate tiers: 4061041 verified crosswalk with minimal breadth
+        loss; 444074 additionally loses the nontraffic-train-collision specificity.
+        """
+}
+mapping "V8100.2" source="V8100" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8101.1" source="V8101" target="214878007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8101 (ICD-10-SE) = SNOMED CT 214878007 36198007 = V81.0 base + Swedish activity suffix. Same
+        base and crosswalk as V8100 (Athena 45756063 → 4061041 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8100 rationale.
+        """
+}
+mapping "V8101.2" source="V8101" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8102.1" source="V8102" target="214878007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8102 (ICD-10-SE) = SNOMED CT 214878007 36198007 = V81.0 base + Swedish activity suffix. Same
+        base and crosswalk as V8100 (Athena 45756063 → 4061041 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8100 rationale.
+        """
+}
+mapping "V8102.2" source="V8102" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8103.1" source="V8103" target="214878007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8103 (ICD-10-SE) = SNOMED CT 214878007 36198007 = V81.0 base + Swedish activity suffix. Same
+        base and crosswalk as V8100 (Athena 45756063 → 4061041 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8100 rationale.
+        """
+}
+mapping "V8103.2" source="V8103" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8104.1" source="V8104" target="214878007" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8104 = Swedish extension of ICD-10 V81.0 (Occupant of railway train injured in collision
+        with motor vehicle in nontraffic accident) + activity SNOMED CT 214878007. Target SNOMED CT 4061041
+        (Athena OMOP concept_id 4061041, code 214878007). Verified crosswalk from parent V81.0 (Athena
+        relationship 45756063 -> 4061041 Maps to). Activity dimension has no SNOMED CT analogue; only the
+        accident-mechanism axis is captured. Confidence partial: real semantic loss on activity axis;
+        primary accident content is well captured by verified crosswalk.
+        """
+}
+mapping "V8108.1" source="V8108" target="214878007" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8108 = Swedish extension of V81.0 (railway-train occupant / collision with motor vehicle
+        / nontraffic accident) + SNOMED CT 214878007. Target SNOMED CT 4061041 (214878007). Verified crosswalk
+        from parent V81.0. Activity dimension has no SNOMED CT target; accident mechanism captured,
+        activity context lost.
+        """
+}
+mapping "V8109.1" source="V8109" target="214878007" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8109 = Swedish extension of V81.0 (railway-train occupant / collision with motor vehicle
+        / nontraffic accident) + SNOMED CT 214878007. Target SNOMED CT 4061041 (214878007). Verified crosswalk
+        from parent V81.0. Unspecified activity has no SNOMED CT analogue; accident mechanism captured.
+        """
+}
+mapping "V8110.1" source="V8110" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8110 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1 (Athena 45756064 -> 4054296). Activity has no SNOMED CT analogue; accident
+        mechanism captured.
+        """
+}
+mapping "V8111.1" source="V8111" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8111 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8112.1" source="V8112" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8112 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8113.1" source="V8113" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8113 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8114.1" source="V8114" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8114 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8118.1" source="V8118" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8118 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8119.1" source="V8119" target="242090001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8119 = Swedish extension of V81.1 (railway-train occupant / collision with motor vehicle
+        / traffic accident) + SNOMED CT 242090001. Target SNOMED CT 4054296 (242090001). Verified crosswalk
+        from parent V81.1. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8120.1" source="V8120" target="213772006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8120 = Swedish extension of V81.2 (railway-train occupant / collision with or hit by
+        rolling stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from
+        parent V81.2 (Athena 45590336 -> 4064538). Activity has no SNOMED CT target; accident mechanism
+        captured.
+        """
+}
+mapping "V8121.1" source="V8121" target="213772006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8121 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8122.1" source="V8122" target="213772006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8122 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8123.1" source="V8123" target="213772006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8123 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8124.1" source="V8124" target="213772006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8124 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8128.1" source="V8128" target="213772006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8128 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8129.1" source="V8129" target="213772006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8129 = Swedish extension of V81.2 (railway-train occupant / collision with rolling
+        stock) + SNOMED CT 213772006. Target SNOMED CT 4064538 (213772006). Verified crosswalk from parent
+        V81.2. Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8130.1" source="V8130" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8130 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3
+        (Athena 45756065 -> 440896). Activity has no SNOMED CT target; accident mechanism captured. Note:
+        440896 is a broader railway-accident concept; V81.3 has no more specific SNOMED CT target in the
+        mirror.
+        """
+}
+mapping "V8131.1" source="V8131" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8131 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8132.1" source="V8132" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8132 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8133.1" source="V8133" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8133 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8134.1" source="V8134" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8134 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8138.1" source="V8138" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8138 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8139.1" source="V8139" target="213770003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8139 = Swedish extension of V81.3 (railway-train occupant / collision with other object)
+        + SNOMED CT 213770003. Target SNOMED CT 440896 (213770003). Verified crosswalk from parent V81.3.
+        Activity dimension has no SNOMED CT target; accident mechanism captured.
+        """
+}
+mapping "V8140.1" source="V8140" target="242085004" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8140 = Swedish extension of V81.4 (Person injured while boarding or alighting from
+        railway train) + SNOMED CT 242085004. Target SNOMED CT 4053559 (242085004). Verified crosswalk from
+        parent V81.4 (Athena 45595148 -> 4053559). Target name closely matches the accident mechanism.
+        Activity has no SNOMED CT target; activity dimension lost. Confidence (one notch above V81.0-3
+        cluster): the target name is a near-exact match for the accident axis, leaving only the
+        activity-axis loss.
+        """
+}
+mapping "V8141.1" source="V8141" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8141 (Swedish ext of ICD-10 V81.4) = SNOMED CT 242085004. Parent V81.4 (concept 45595148)
+        has Athena crosswalk to SNOMED CT 4053559 (Injury while boarding or alighting from train, code
+        242085004). The activity suffix (leisure/free-time) is a Swedish external-cause dimension with
+        no OMOP/SNOMED CT standard representation; the clinically meaningful injury event is exactly
+        captured by 4053559, which subsumes all activity contexts. high: verified crosswalk on parent
+        V81.4, small breadth mismatch from dropped activity dimension; mapping_type broader (target
+        covers the injury axis, source is a more specific activity-qualified instance).
+        """
+}
+mapping "V8142.1" source="V8142" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8142 = SNOMED CT 242085004. Same parent V81.4 crosswalk to SNOMED CT 4053559 (Injury while
+        boarding or alighting from train). Activity suffix is non-clinical external-cause metadata with
+        no OMOP representation. Target subsumes the injury axis; broader. per parent crosswalk.
+        """
+}
+mapping "V8143.1" source="V8143" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8143 = SNOMED CT 242085004. Parent V81.4 crosswalk to SNOMED CT 4053559. Activity suffix
+        dropped as non-clinical metadata; broader.
+        """
+}
+mapping "V8144.1" source="V8144" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8144 = SNOMED CT 242085004. Parent V81.4 crosswalk to SNOMED CT 4053559. Activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8148.1" source="V8148" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8148 = SNOMED CT 242085004. Parent V81.4 crosswalk to SNOMED CT 4053559. Activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8149.1" source="V8149" target="242085004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8149 = SNOMED CT 242085004. Parent V81.4 crosswalk to SNOMED CT 4053559. Unspecified activity;
+        broader.
+        """
+}
+mapping "V8150.1" source="V8150" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8150 = SNOMED CT 213930003. Parent V81.5 (concept 45756066) crosswalks only to broader
+        SNOMED CT 440896 (Railway accident)/444074 (Victim of vehicular accident). The more clinically
+        specific SNOMED CT 4058664 (Fall in, on or from train NOS, code 213930003) captures the
+        fall-in-train event denoted by. Activity suffix (sport) has no OMOP representation and is
+        dropped. moderate: best available specific target, no direct crosswalk on V81.5 to this concept
+        (parent crosswalk is to the broader 440896), equivalence looser. mapping_type broader: target
+        covers the fall-injury axis, source adds activity dimension.
+        """
+}
+mapping "V8151.1" source="V8151" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8151 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS) is best clinical
+        target; activity suffix dropped; broader.
+        """
+}
+mapping "V8152.1" source="V8152" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8152 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8153.1" source="V8153" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8153 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8154.1" source="V8154" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8154 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8158.1" source="V8158" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8158 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8159.1" source="V8159" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Source V8159 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); broader."
+}
+mapping "V8160.1" source="V8160" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8160 = SNOMED CT 213930003. Parent V81.6 (concept 45595149) crosswalks only to broader
+        SNOMED CT 440896/444074. SNOMED CT 4058664 (Fall in, on or from train NOS, code 213930003) is the best
+        clinical target covering the fall-from-train event. Activity suffix dropped. moderate: no direct
+        crosswalk to this specific concept, but semantically precise.
+        """
+}
+mapping "V8161.1" source="V8161" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8161 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8162.1" source="V8162" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8162 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8163.1" source="V8163" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8163 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8164.1" source="V8164" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8164 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8168.1" source="V8168" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8168 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); activity suffix
+        dropped; broader.
+        """
+}
+mapping "V8169.1" source="V8169" target="213930003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Source V8169 = SNOMED CT 213930003. SNOMED CT 4058664 (Fall in, on or from train NOS); broader."
+}

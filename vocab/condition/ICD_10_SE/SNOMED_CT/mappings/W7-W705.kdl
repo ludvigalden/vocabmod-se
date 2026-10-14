@@ -1,0 +1,479 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W7-W705
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W700.1" source="W700" target="221045004" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W700 = Drowning/submersion after fall into natural water, home/home area (4-char, no
+        activity axis). Target SNOMED CT 221045004 = [X]Drowning and submersion following fall into natural
+        water, occurrence at home. Both represent drowning after fall into natural water at home, no
+        further activity axis. Athena crosswalk verified. High tier: verified crosswalk, match at place
+        level.
+        """
+}
+mapping "W7000.1" source="W7000" target="221045004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W7000 = Drowning/submersion after fall into natural water, home area, sport/exercise.
+        Target SNOMED CT 221045004. Swedish code adds activity (sport) axis not in SNOMED CT. Place-level
+        crosswalk verified. High tier: one-axis mismatch (activity).
+        """
+}
+mapping "W7001.1" source="W7001" target="221045004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W7001 = Drowning/submersion after fall into natural water, home area, leisure/recreation.
+        Target SNOMED CT 221045004. Swedish code adds activity (leisure) axis not in SNOMED CT. Place-level
+        crosswalk verified. High tier: one-axis mismatch (activity).
+        """
+}
+mapping "W7002.1" source="W7002" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7002 SNOMED CT 217748000 = Swedish national extension of ICD-10 W70 (Drowning and
+        submersion following fall into natural water) further subdivided by location (home/residential
+        area) and activity (paid work). Target SNOMED CT 436593 (217748000), the standard crosswalk target
+        for the base W70. The target subsumes the clinical event (drowning after fall into natural
+        water); the location/activity context the Swedish extension encodes has no SNOMED CT
+        representation. Low confidence: 6th-digit Swedish extension with no crosswalk, target fully
+        covers the clinical event but loses the location/activity metadata.
+        """
+}
+mapping "W7003.1" source="W7003" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7003 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at home/residential area during other occupation. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7004.1" source="W7004" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7004 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at home/residential area during vital activity (rest/sleep/meals/personal hygiene). Target
+        SNOMED CT 436593 = Accidental drowning and submersion, the standard crosswalk target for base W70.
+        Target subsumes the clinical event; location/activity context not represented in SNOMED CT. Low
+        confidence: 6th-digit Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7008.1" source="W7008" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7008 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at home/residential area during other specified activity. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7009.1" source="W7009" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7009 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at home/residential area, unspecified activity. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W701.1" source="W701" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W701 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence. Target SNOMED CT 436593 = Accidental drowning and submersion, the
+        standard crosswalk target for base W70. Target subsumes the clinical event; location context not
+        represented in SNOMED CT. Low confidence: 5th-digit Swedish extension, no crosswalk, target covers
+        clinical core only.
+        """
+}
+mapping "W7010.1" source="W7010" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7010 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during sport/exercise. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7011.1" source="W7011" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7011 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during play/leisure. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7012.1" source="W7012" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7012 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during paid work. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7013.1" source="W7013" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7013 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during other occupation. Target SNOMED CT 436593 = Accidental drowning
+        and submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7014.1" source="W7014" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7014 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during vital activity (rest/sleep/meals/hygiene). Target SNOMED CT
+        436593 = Accidental drowning and submersion, the standard crosswalk target for base W70. Target
+        subsumes the clinical event; location/activity context not represented in SNOMED CT. Low
+        confidence: 6th-digit Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7018.1" source="W7018" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7018 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence during other specified activity. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7019.1" source="W7019" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7019 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at institutional residence, unspecified activity. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W702.1" source="W702" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W702 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/other institution/public place. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location context not represented in SNOMED CT. Low confidence: 5th-digit Swedish extension, no
+        crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7020.1" source="W7020" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7020 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during sport/exercise. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7021.1" source="W7021" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7021 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during play/leisure. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7022.1" source="W7022" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7022 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during paid work. Target SNOMED CT 436593 = Accidental drowning
+        and submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7023.1" source="W7023" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7023 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during other occupation. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7024.1" source="W7024" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7024 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during vital activity (rest/sleep/meals/hygiene). Target
+        SNOMED CT 436593 = Accidental drowning and submersion, the standard crosswalk target for base W70.
+        Target subsumes the clinical event; location/activity context not represented in SNOMED CT. Low
+        confidence: 6th-digit Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7028.1" source="W7028" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7028 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place during other specified activity. Target SNOMED CT 436593 =
+        Accidental drowning and submersion, the standard crosswalk target for base W70. Target subsumes
+        the clinical event; location/activity context not represented in SNOMED CT. Low confidence:
+        6th-digit Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7029.1" source="W7029" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7029 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at school/institution/public place, unspecified activity. Target SNOMED CT 436593 = Accidental
+        drowning and submersion, the standard crosswalk target for base W70. Target subsumes the
+        clinical event; location/activity context not represented in SNOMED CT. Low confidence: 6th-digit
+        Swedish extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W703.1" source="W703" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W703 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at sports/sports facility. Target SNOMED CT 436593 = Accidental drowning and submersion, the
+        standard crosswalk target for base W70. Target subsumes the clinical event; location context not
+        represented in SNOMED CT. Low confidence: 5th-digit Swedish extension, no crosswalk, target covers
+        clinical core only.
+        """
+}
+mapping "W7030.1" source="W7030" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7030 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at sports facility during sport/exercise. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7031.1" source="W7031" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7031 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at sports facility during play/leisure. Target SNOMED CT 436593 = Accidental drowning and
+        submersion, the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7032.1" source="W7032" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7032 = Swedish extension of W70 (drowning/submersion following fall into natural water)
+        at sports facility during paid work. Target SNOMED CT 436593 = Accidental drowning and submersion,
+        the standard crosswalk target for base W70. Target subsumes the clinical event;
+        location/activity context not represented in SNOMED CT. Low confidence: 6th-digit Swedish
+        extension, no crosswalk, target covers clinical core only.
+        """
+}
+mapping "W7033.1" source="W7033" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7033 = drowning and submersion following fall into natural water (hav, sjö, vattendrag)
+        at sports/athletic facility, other occupation. Parent W70 crosswalks to SNOMED CT 436593
+        (Accidental drowning and submersion, code 217748000). Target is broader: it covers all
+        accidental drowning, not limited to natural-water falls or this specific location/activity.
+        Moderate tier: Athena crosswalk exists for the parent 3-char code; 4/5-digit subcodes are
+        Swedish ICD-10 place-activity modifiers with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7034.1" source="W7034" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7034 = drowning and submersion following fall into natural water at sports/athletic
+        facility, vital activity (rest, sleep, meals, hygiene). Parent W70 crosswalks to SNOMED CT 436593
+        (Accidental drowning and submersion). Target broader: covers all accidental drowning, not
+        restricted to natural-water fall or this location/activity. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7038.1" source="W7038" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7038 = drowning and submersion following fall into natural water at sports/athletic
+        facility, other specified activities. Parent W70 crosswalks to SNOMED CT 436593 (Accidental
+        drowning and submersion). Target broader: covers all accidental drowning. Moderate tier: Athena
+        crosswalk at parent level; subcode is a Swedish place-activity modifier with no individual
+        SNOMED CT equivalent.
+        """
+}
+mapping "W7039.1" source="W7039" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7039 = drowning and submersion following fall into natural water at sports/athletic
+        facility, activity unspecified. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W704.1" source="W704" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W704 = drowning and submersion following fall into natural water on street and highway
+        (no activity specified). Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning, not limited to natural-water falls
+        or street/highway locations. Moderate tier: Athena crosswalk at parent level; 4-digit subcode is
+        a Swedish place modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7040.1" source="W7040" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7040 = drowning and submersion following fall into natural water on street and highway,
+        sports/athletics. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7041.1" source="W7041" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7041 = drowning and submersion following fall into natural water on street and highway,
+        leisure/play. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7042.1" source="W7042" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7042 = drowning and submersion following fall into natural water on street and highway,
+        paid work. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion). Target
+        broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7043.1" source="W7043" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7043 = drowning and submersion following fall into natural water on street and highway,
+        other occupation. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7044.1" source="W7044" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7044 = drowning and submersion following fall into natural water on street and highway,
+        vital activity (rest, sleep, meals, hygiene). Parent W70 crosswalks to SNOMED CT 436593 (Accidental
+        drowning and submersion). Target broader: covers all accidental drowning. Moderate tier: Athena
+        crosswalk at parent level; subcode is a Swedish place-activity modifier with no individual
+        SNOMED CT equivalent.
+        """
+}
+mapping "W7048.1" source="W7048" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7048 = drowning and submersion following fall into natural water on street and highway,
+        other specified activities. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7049.1" source="W7049" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7049 = drowning and submersion following fall into natural water on street and highway,
+        activity unspecified. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W705.1" source="W705" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W705 = drowning and submersion following fall into natural water in trade/service area
+        (no activity specified). Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning, not limited to natural-water falls
+        or trade/service locations. Moderate tier: Athena crosswalk at parent level; 4-digit subcode is
+        a Swedish place modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7050.1" source="W7050" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7050 = drowning and submersion following fall into natural water in trade/service area,
+        sports/athletics. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7051.1" source="W7051" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7051 = drowning and submersion following fall into natural water in trade/service area,
+        leisure/play. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7052.1" source="W7052" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7052 = drowning and submersion following fall into natural water in trade/service area,
+        paid work. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion). Target
+        broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7053.1" source="W7053" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7053 = drowning and submersion following fall into natural water in trade/service area,
+        other occupation. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and submersion).
+        Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at parent level;
+        subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7054.1" source="W7054" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7054 = drowning and submersion following fall into natural water in trade/service area,
+        vital activity (rest, sleep, meals, hygiene). Parent W70 crosswalks to SNOMED CT 436593 (Accidental
+        drowning and submersion). Target broader: covers all accidental drowning. Moderate tier: Athena
+        crosswalk at parent level; subcode is a Swedish place-activity modifier with no individual
+        SNOMED CT equivalent.
+        """
+}
+mapping "W7058.1" source="W7058" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7058 = drowning and submersion following fall into natural water in trade/service area,
+        other specified activities. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7059.1" source="W7059" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7059 = drowning and submersion following fall into natural water in trade/service area,
+        activity unspecified. Parent W70 crosswalks to SNOMED CT 436593 (Accidental drowning and
+        submersion). Target broader: covers all accidental drowning. Moderate tier: Athena crosswalk at
+        parent level; subcode is a Swedish place-activity modifier with no individual SNOMED CT equivalent.
+        """
+}

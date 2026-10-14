@@ -1,0 +1,433 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W69-W695
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W690.1" source="W690" target="217748000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W690 = Swedish extension of W69 (drowning and submersion while in natural water):
+        drowning in sea/lake/watercourse at home/residential area. Target SNOMED CT 436593 (217748000), the
+        Athena Maps-to crosswalk target for parent W69. No standard SNOMED CT concept exists for
+        natural-water drowning with place qualifiers (the [X]Drowning.while in natural water, occurrence
+        at home = SNOMED CT 221034002 is a UK extension, non-standard). Target subsumes source: every W690
+        case is an accidental drowning. Broader one level, high tier per rubric: crosswalk-verified
+        parent, small breadth mismatch.
+        """
+}
+mapping "W6900.1" source="W6900" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6900 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        sport/exercise. Target SNOMED CT 436593. Target subsumes source; drops place+activity. No standard
+        SNOMED CT combines natural water + place + activity. Broader one level, high tier.
+        """
+}
+mapping "W6901.1" source="W6901" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6901 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        leisure/play. Target SNOMED CT 436593. Target subsumes source; drops place+activity. Broader one
+        level, high tier.
+        """
+}
+mapping "W6902.1" source="W6902" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6902 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        during work. Target SNOMED CT 436593. Target subsumes source; drops place+activity. Broader one
+        level, high tier.
+        """
+}
+mapping "W6903.1" source="W6903" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6903 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        other occupation. Target SNOMED CT 436593. Target subsumes source; drops place+activity. Broader
+        one level, high tier.
+        """
+}
+mapping "W6904.1" source="W6904" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6904 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        vital activity. Target SNOMED CT 436593. Target subsumes source; drops place+activity. Broader one
+        level, high tier.
+        """
+}
+mapping "W6908.1" source="W6908" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6908 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        other specified activity. Target SNOMED CT 436593. Target subsumes source; drops place+activity.
+        Broader one level, high tier.
+        """
+}
+mapping "W6909.1" source="W6909" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6909 = Swedish W69 extension: drowning in sea/lake/watercourse at home/residential area,
+        activity unspecified. Target SNOMED CT 436593. Target subsumes source; drops place+activity.
+        Broader one level, high tier.
+        """
+}
+mapping "W691.1" source="W691" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W691 SNOMED CT 217748000 = Swedish national extension of ICD-10 W69 (Drowning and submersion
+        while in natural water), refined with location. The clinical core (drowning in natural water) is
+        identical to the parent W69. Target SNOMED CT 436593 (concept_code 217748000). Parent W69 has a
+        verified Athena crosswalk to 436593 (ICD10 concept 45756317 ->). The target subsumes the
+        source's clinical content but drops the Swedish-specific location+activity axes, so the
+        relationship is broader. Moderate confidence: crosswalk verified at the parent level for W69,
+        but the Swedish extension codes are not directly cross-mapped in Athena.
+        """
+}
+mapping "W6910.1" source="W6910" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6910 SNOMED CT 217748000 = Swedish national extension of ICD-10 W69 (Drowning and
+        submersion while in natural water), refined with location and activity. Clinical core is
+        drowning in natural water, identical to parent W69. Target SNOMED CT 436593 (217748000). Parent W69
+        crosswalk-verified in Athena (ICD10 45756317 ->). Target subsumes the clinical content but drops
+        the location+activity axes. Moderate confidence: crosswalk at parent level only.
+        """
+}
+mapping "W6911.1" source="W6911" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6911 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6912.1" source="W6912" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6912 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6913.1" source="W6913" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6913 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6914.1" source="W6914" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6914 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6918.1" source="W6918" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6918 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6919.1" source="W6919" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6919 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W692.1" source="W692" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W692 SNOMED CT 217748000 = Swedish national extension of ICD-10 W69 (Drowning and submersion
+        while in natural water), refined with location. Clinical core (drowning in natural water)
+        identical to parent W69. Target SNOMED CT 436593 (217748000). Parent W69 Athena crosswalk-verified
+        (45756317 -> 436593). Broader: target subsumes clinical content, drops the Swedish-specific
+        location axis. Moderate confidence.
+        """
+}
+mapping "W6920.1" source="W6920" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6920 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6921.1" source="W6921" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6921 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6922.1" source="W6922" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6922 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6923.1" source="W6923" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6923 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6924.1" source="W6924" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6924 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6928.1" source="W6928" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6928 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6929.1" source="W6929" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6929 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W693.1" source="W693" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W693 SNOMED CT 217748000 = Swedish national extension of ICD-10 W69 (Drowning and submersion
+        while in natural water), refined with location. Clinical core (drowning in natural water)
+        identical to parent W69. Target SNOMED CT 436593 (217748000). Parent W69 Athena crosswalk-verified
+        (45756317 -> 436593). Broader: target subsumes clinical content, drops the Swedish-specific
+        location axis. Moderate confidence.
+        """
+}
+mapping "W6930.1" source="W6930" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6930 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6931.1" source="W6931" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6931 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6932.1" source="W6932" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6932 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6933.1" source="W6933" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6933 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6934.1" source="W6934" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6934 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6938.1" source="W6938" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6938 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W6939.1" source="W6939" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6939 SNOMED CT 217748000 = Swedish extension of W69 (drowning in natural water), refined
+        with location and activity. Clinical core identical to parent W69. Target SNOMED CT 436593
+        (217748000). Parent W69 Athena crosswalk-verified (45756317 -> 436593). Broader: target subsumes
+        clinical content, drops Swedish-specific axes. Moderate confidence.
+        """
+}
+mapping "W694.1" source="W694" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W694 SNOMED CT 217748000 = Swedish national extension of ICD-10 W69 (Drowning and submersion
+        while in natural water), refined with location. Clinical core (drowning in natural water)
+        identical to parent W69. Target SNOMED CT 436593 (217748000). Parent W69 Athena crosswalk-verified
+        (45756317 -> 436593). Broader: target subsumes clinical content, drops the Swedish-specific
+        location axis. Moderate confidence.
+        """
+}
+mapping "W6940.1" source="W6940" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6940 (Swedish national extension) = SNOMED CT 217748000. Adds location+activity
+        subdivisions to base ICD-10 W69. Target SNOMED CT 436593 = (code 217748000), the W69 Maps-to target
+        in Athena. No SNOMED CT concept captures the Swedish activity+location granularity; 436593 fully
+        subsumes all W69.x variants. Low tier: one-level broader parent, but Swedish national extensions
+        add specificity with no standard analogue.
+        """
+}
+mapping "W6941.1" source="W6941" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6941 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6942.1" source="W6942" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6942 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the work-context subdivision; 436593 fully subsumes the
+        source.
+        """
+}
+mapping "W6943.1" source="W6943" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6943 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity subdivision; 436593 fully subsumes the
+        source.
+        """
+}
+mapping "W6944.1" source="W6944" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6944 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity subdivision; 436593 fully subsumes the
+        source.
+        """
+}
+mapping "W6948.1" source="W6948" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6948 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity subdivision; 436593 fully subsumes the
+        source.
+        """
+}
+mapping "W6949.1" source="W6949" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6949 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). 436593 fully subsumes the source; the activity-unspecified frame is even looser.
+        """
+}
+mapping "W695.1" source="W695" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W695 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 = (217748000).
+        436593 fully subsumes the source; only location subdivision, no activity axis. Moderate tier:
+        cleaner broader match than the activity-subdivided children.
+        """
+}
+mapping "W6950.1" source="W6950" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6950 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6951.1" source="W6951" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6951 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6952.1" source="W6952" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6952 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6953.1" source="W6953" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6953 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6954.1" source="W6954" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6954 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6958.1" source="W6958" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6958 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). No SNOMED CT concept captures the activity+location subdivision; 436593 fully subsumes
+        the source.
+        """
+}
+mapping "W6959.1" source="W6959" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6959 (Swedish national extension) = SNOMED CT 217748000. Target SNOMED CT 436593 =
+        (217748000). 436593 fully subsumes the source; activity-unspecified frame makes it even looser.
+        """
+}

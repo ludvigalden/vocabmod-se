@@ -1,0 +1,475 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes T840-T846
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "T840B.1" source="T840B" target="213104001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840B = Swedish national extension: mechanical complication of internal joint prosthesis
+        in shoulder (parent T84.0 = Mechanical complication of internal joint prosthesis, OMOP
+        45570736). Target SNOMED CT 213104001 (OMOP 80269). Source definition: mechanical complication of
+        shoulder joint prosthesis specifically. Target definition: mechanical complication of any
+        internal joint prosthesis. Why this target: the parent T84.0 crosswalk resolves here; the SNOMED CT
+        target is the closest standard concept and the source's shoulder-specific qualifier has no
+        separate SNOMED CT concept. moderate: clinically defensible, loses the joint-site specificity.
+        """
+}
+mapping "T840C.1" source="T840C" target="213104001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840C = Swedish national extension: mechanical complication of internal joint prosthesis
+        in elbow (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Same reasoning as T840B; no
+        elbow-specific SNOMED CT concept exists. moderate.
+        """
+}
+mapping "T840D.1" source="T840D" target="213104001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840D = Swedish national extension: mechanical complication of internal joint prosthesis
+        in wrist/hand (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Same reasoning as T840B; no
+        wrist/hand-specific SNOMED CT concept exists. moderate.
+        """
+}
+mapping "T840F.1" source="T840F" target="213104001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840F = Swedish national extension: mechanical complication of internal joint prosthesis
+        in hip (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Note: SNOMED CT (240267008)
+        (314201008) of hip joint prosthesis, but those assert a specific complication mechanism the
+        source does not specify. The general is the most faithful target. moderate.
+        """
+}
+mapping "T840G.1" source="T840G" target="213104001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840G = Swedish national extension: mechanical complication of internal joint prosthesis
+        in knee (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Same reasoning as T840F; specific
+        knee loosening/dislocation concepts exist but the source does not specify mechanism. moderate.
+        """
+}
+mapping "T840H.1" source="T840H" target="213104001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840H = Swedish national extension: mechanical complication of internal joint prosthesis
+        in ankle/foot (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Same reasoning as T840B; no
+        ankle/foot-specific SNOMED CT concept exists. moderate.
+        """
+}
+mapping "T840X.1" source="T840X" target="213104001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T840X = Swedish national extension: mechanical complication of internal joint prosthesis
+        with other or unspecified localization (parent T84.0). Target SNOMED CT 213104001 (OMOP 80269). Why
+        this target: the parent T84.0 crosswalk resolves here and the source is itself unspecified on
+        site, so the general target is the faithful match. moderate.
+        """
+}
+mapping "T841B.1" source="T841B" target="473043001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T841B = Swedish national extension: mechanical complication of internal fixation
+        instrument in shoulder/upper arm (parent T84.1 = Mechanical complication of internal fixation
+        device of bones of limb, OMOP 45585305). Target SNOMED CT 473043001 (OMOP 43021254). Source
+        definition: mechanical complication of internal fixation in shoulder/upper arm. Target
+        definition: mechanical complication of internal fixation device (any site). Why this target:
+        parent T84.1 crosswalk resolves to the general internal-fixation-device complication concept; no
+        site-specific SNOMED CT concept exists. moderate: clinically defensible, loses site specificity.
+        """
+}
+mapping "T841C.1" source="T841C" target="473043001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T841C = Swedish national extension: mechanical complication of internal fixation
+        instrument in elbow/forearm (parent T84.1). Target SNOMED CT 473043001 (OMOP 43021254). Same
+        reasoning as T841B; no elbow/forearm-specific SNOMED CT concept exists. moderate.
+        """
+}
+mapping "T841D.1" source="T841D" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T841D (Swedish ICD-10-SE) = mechanical complication of internal fixation device in
+        wrist/hand; a site-specific 4-char subtype of WHO T84.1. Target SNOMED CT 4164457 (concept_code
+        4586000) = SNOMED CT 4586000 — the verified Athena crosswalk target of T84.1 (45585290). Target
+        subsumes the site-specific source (one-level broader). Confidence : one-level broader with
+        verified crosswalk.
+        """
+}
+mapping "T841F.1" source="T841F" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T841F = mechanical complication of internal fixation device in hip/thigh; site-specific
+        subtype of WHO T84.1. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena crosswalk target of T84.1,
+        45585290). Target subsumes the source. Confidence : one-level broader, verified crosswalk.
+        """
+}
+mapping "T841G.1" source="T841G" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T841G = mechanical complication of internal fixation device in knee/lower leg;
+        site-specific subtype of WHO T84.1. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena crosswalk
+        target of T84.1). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T841H.1" source="T841H" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T841H = mechanical complication of internal fixation device in ankle/foot; site-specific
+        subtype of WHO T84.1. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena crosswalk target of T84.1).
+        Target subsumes the source. Confidence : one-level broader, verified crosswalk.
+        """
+}
+mapping "T841X.1" source="T841X" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T841X = mechanical complication of internal fixation device of limb bone,
+        other/unspecified site; the unspecified residual of WHO T84.1. Target SNOMED CT 4164457 = SNOMED CT
+        4586000 (Athena crosswalk target of T84.1, 45585290). Target subsumes the source. Confidence :
+        verified crosswalk, one-level broader.
+        """
+}
+mapping "T842A.1" source="T842A" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T842A = mechanical complication of internal fixation device of other bones of cervical
+        spine; site-specific subtype of WHO T84.2. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena
+        crosswalk target of T84.2, 45599795). Target subsumes the source. Confidence : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "T842E.1" source="T842E" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T842E = mechanical complication of internal fixation device of other bones of pelvis;
+        site-specific subtype of WHO T84.2. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena crosswalk
+        target of T84.2). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T842J.1" source="T842J" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T842J = mechanical complication of internal fixation device of other bones of thoracic
+        spine; site-specific subtype of WHO T84.2. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena
+        crosswalk target of T84.2). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T842K.1" source="T842K" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T842K = mechanical complication of internal fixation device of other bones of lumbar
+        spine; site-specific subtype of WHO T84.2. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena
+        crosswalk target of T84.2). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T842X.1" source="T842X" target="4586000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T842X = mechanical complication of internal fixation device of other bones, unspecified
+        site; the unspecified residual of WHO T84.2. Target SNOMED CT 4164457 = SNOMED CT 4586000 (Athena
+        crosswalk target of T84.2, 45599795). Target subsumes the source. Confidence : verified
+        crosswalk, one-level broader.
+        """
+}
+mapping "T843A.1" source="T843A" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843A = mechanical complication of other instruments/implants/transplants in cervical
+        spine; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 (concept_code 473025000) =
+        SNOMED CT 473025000 — the verified Athena crosswalk target of T84.3 (45556283). Target subsumes the
+        source. Confidence : one-level broader, verified crosswalk.
+        """
+}
+mapping "T843B.1" source="T843B" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843B = mechanical complication of other instruments/implants/transplants in
+        shoulder/upper arm; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT
+        473025000 (Athena crosswalk target of T84.3). Target subsumes the source. Confidence : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "T843C.1" source="T843C" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843C = mechanical complication of other instruments/implants/transplants in
+        elbow/forearm; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000
+        (Athena crosswalk target of T84.3). Target subsumes the source. Confidence : one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "T843D.1" source="T843D" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843D = mechanical complication of other instruments/implants/transplants in wrist/hand;
+        site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena crosswalk
+        target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843E.1" source="T843E" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843E = mechanical complication of other instruments/implants/transplants in pelvis;
+        site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena crosswalk
+        target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843F.1" source="T843F" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843F = mechanical complication of other instruments/implants/transplants in hip/thigh;
+        site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena crosswalk
+        target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843G.1" source="T843G" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843G = mechanical complication of other instruments/implants/transplants in knee/lower
+        leg; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena
+        crosswalk target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843H.1" source="T843H" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843H = mechanical complication of other instruments/implants/transplants in ankle/foot;
+        site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena crosswalk
+        target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843J.1" source="T843J" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843J = mechanical complication of other instruments/implants/transplants in thoracic
+        spine; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena
+        crosswalk target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843K.1" source="T843K" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843K = mechanical complication of other instruments/implants/transplants in lumbar
+        spine; site-specific subtype of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena
+        crosswalk target of T84.3). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T843X.1" source="T843X" target="473025000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T843X = mechanical complication of other instruments/implants/transplants, unspecified
+        site; the unspecified residual of WHO T84.3. Target SNOMED CT 43021240 = SNOMED CT 473025000 (Athena
+        crosswalk target of T84.3, 45556283). Target subsumes the source. Confidence : verified
+        crosswalk, one-level broader.
+        """
+}
+mapping "T845B.1" source="T845B" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845B = infection and inflammatory reaction due to internal joint prosthesis in
+        shoulder/upper arm; site-specific subtype of WHO T84.5. Target SNOMED CT 440276 (concept_code
+        31871009) = SNOMED CT 31871009 — the verified Athena crosswalk target of T84.5 (45556287). Target
+        subsumes the source. Confidence : one-level broader, verified crosswalk.
+        """
+}
+mapping "T845C.1" source="T845C" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845C = infection and inflammatory reaction due to internal joint prosthesis in
+        elbow/forearm; site-specific subtype of WHO T84.5. Target SNOMED CT 440276 = SNOMED CT 31871009
+        (Athena crosswalk target of T84.5). Target subsumes the source. Confidence : one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "T845D.1" source="T845D" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845D = infection and inflammatory reaction due to internal joint prosthesis in
+        wrist/hand; site-specific subtype of WHO T84.5. Target SNOMED CT 440276 = SNOMED CT 31871009 (Athena
+        crosswalk target of T84.5). Target subsumes the source. Confidence : one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "T845F.1" source="T845F" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845F = infection and inflammatory reaction due to internal joint prosthesis in
+        hip/thigh; site-specific subtype of WHO T84.5. Target SNOMED CT 440276 = SNOMED CT 31871009 (Athena
+        crosswalk target of T84.5). Note: a more specific SNOMED CT concept (443910006, OMOP concept_id
+        40483734) exists but is narrower than the source (which covers any hip joint prosthesis
+        infection, not only total prostheses); the parent crosswalk target 440276 is the defensible
+        broader match. Confidence : one-level broader, verified crosswalk.
+        """
+}
+mapping "T845G.1" source="T845G" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845G SNOMED CT 31871009 = infection and inflammatory reaction due to internal joint
+        prosthesis, anatomically site-specified (Swedish extension of ICD-10 T84.5). Target SNOMED CT
+        440276 =. Best available standard concept; Athena crosswalk from parent T84.5 -> 440276. The
+        Swedish site specifier has no standard SNOMED CT analogue at this specificity, so the site info is
+        lost. Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is
+        lost on mapping.
+        """
+}
+mapping "T845H.1" source="T845H" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845H SNOMED CT 31871009 = infection and inflammatory reaction due to internal joint
+        prosthesis, anatomically site-specified (Swedish extension of ICD-10 T84.5). Target SNOMED CT
+        440276 =. Best available standard concept; Athena crosswalk from parent T84.5 -> 440276. The
+        Swedish site specifier has no standard SNOMED CT analogue at this specificity, so the site info is
+        lost. Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is
+        lost on mapping.
+        """
+}
+mapping "T845X.1" source="T845X" target="31871009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T845X SNOMED CT 31871009 = infection and inflammatory reaction due to internal joint
+        prosthesis, with other or unspecified localization (Swedish extension of ICD-10 T84.5,
+        unspecified-site code). Target SNOMED CT 440276 =. Best available standard concept; Athena
+        crosswalk from parent T84.5 -> 440276. For the unspecified-site code the target preserves the
+        full clinical meaning (no site to lose). High tier: parent crosswalk verified in Athena,
+        one-level broader (target subsumes source).
+        """
+}
+mapping "T846A.1" source="T846A" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846A SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846B.1" source="T846B" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846B SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846C.1" source="T846C" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846C SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846D.1" source="T846D" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846D SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846E.1" source="T846E" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846E SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846F.1" source="T846F" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846F SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846G.1" source="T846G" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846G SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846H.1" source="T846H" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846H SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846J.1" source="T846J" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846J SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846K.1" source="T846K" target="310609005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846K SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, anatomically site-specified (Swedish extension of ICD-10 T84.6). Target SNOMED CT 4147859
+        =. Best available standard concept; Athena crosswalk from parent T84.6 -> 4147859. The Swedish
+        site specifier has no standard SNOMED CT analogue at this specificity, so the site info is lost.
+        Moderate tier: parent crosswalk verified in Athena, but the anatomical site specifier is lost on
+        mapping.
+        """
+}
+mapping "T846X.1" source="T846X" target="310609005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T846X SNOMED CT 310609005 = infection and inflammatory reaction due to internal fixation
+        device, with other or unspecified localization (Swedish extension of ICD-10 T84.6,
+        unspecified-site code). Target SNOMED CT 4147859 =. Best available standard concept; Athena
+        crosswalk from parent T84.6 -> 4147859. For the unspecified-site code the target preserves the
+        full clinical meaning (no site to lose). High tier: exact term/concept match with the parent
+        crosswalk target for the unspecified-site code.
+        """
+}

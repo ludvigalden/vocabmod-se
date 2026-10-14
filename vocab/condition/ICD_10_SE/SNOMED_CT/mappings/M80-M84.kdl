@@ -1,0 +1,404 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M80-M84
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M800A.1" source="M800A" target="18040001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 18040001 443165006 [GPS] [IPS]"
+}
+mapping "M800A.3" source="M800A" target="443165006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M800B.1" source="M800B" target="443165006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 443165006 [GPS] [IPS] [GPFP]"
+}
+mapping "M800C.1" source="M800C" target="287066008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M800C SNOMED CT 287066008 = postmenopausal osteoporosis with pathological fracture,
+        elbow/forearm (SE extension of M80.0). Target SNOMED CT 440511 (287066008) = Pathological fracture
+        - forearm. The Athena target for ICD-10-CM M80.03X (Postmenopausal osteoporosis with
+        pathological fracture, forearm). The target captures the fracture-site axis of the combined
+        source; the underlying osteoporosis is implicit in the Athena standard mapping. High tier:
+        crosswalk-verified site match.
+        """
+}
+mapping "M800E.1" source="M800E" target="287068009" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M800E SNOMED CT 287068009 = postmenopausal osteoporosis with pathological fracture, pelvic
+        region (SE extension of M80.0). Target SNOMED CT 434140 (287068009) = Pathological fracture -
+        pelvis and/or thigh. The Athena target for ICD-10-CM M80.05X. Note: SE code is pelvis-only while
+        the SNOMED CT target covers pelvis-and-thigh; this is a small breadth mismatch, hence (high) rather
+        than. Best available standard concept for the pelvic site.
+        """
+}
+mapping "M800F.1" source="M800F" target="287068009" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M800F SNOMED CT 287068009 = postmenopausal osteoporosis with pathological fracture,
+        hip/thigh (SE extension of M80.0). Target SNOMED CT 434140 (287068009) = Pathological fracture -
+        pelvis and/or thigh. The Athena target for ICD-10-CM M80.05X (pelvic region and thigh).
+        Hip/thigh is covered by the SNOMED CT concept's component. High tier: crosswalk-verified site
+        match.
+        """
+}
+mapping "M800G.1" source="M800G" target="287069001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M800G SNOMED CT 287069001 = postmenopausal osteoporosis with pathological fracture,
+        knee/lower leg (SE extension of M80.0). Target SNOMED CT 440812 (287069001) = Pathological fracture
+        - lower leg. The Athena target for ICD-10-CM M80.06X (lower leg). Knee-specific concept absent;
+        lower leg is the regional parent. High tier: crosswalk-verified site match.
+        """
+}
+mapping "M800H.1" source="M800H" target="287070000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M800H SNOMED CT 287070000 = postmenopausal osteoporosis with pathological fracture,
+        ankle/foot (SE extension of M80.0). Target SNOMED CT 4115176 (287070000) = Pathological fracture -
+        ankle and/or foot. The Athena target for ICD-10-CM M80.07X. Exact site-scope match (ankle/foot).
+        High tier: crosswalk-verified.
+        """
+}
+mapping "M800J.1" source="M800J" target="203451004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M800J SNOMED CT 203451004 = postmenopausal osteoporosis with pathological fracture, thoracic
+        spine (SE extension of M80.0). Target SNOMED CT 4068133 (203451004) = Osteoporotic fracture of
+        thoracic vertebra. Unlike the other M80.0 sites (which map to generic
+        pathological-fracture-by-site concepts), the thoracic-spine site has a dedicated
+        osteoporotic-fracture SNOMED CT concept that captures both the fracture-site axis and the
+        osteoporosis axis of the combined source. High tier: precise semantic match, slightly below
+        because the source specifies which the SNOMED CT concept does not encode.
+        """
+}
+mapping "M800K.1" source="M800K" target="1245005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M800K (Swedish ICD-10-SE) = postmenopausal osteoporosis with pathological fracture in
+        lumbar spine — a Swedish site-letter extension of ICD-10 M80.0. Target SNOMED CT 1245005 =
+        (concept_code 1295483002), the standard concept that the international parent M80.0 (concept
+        45572553) and all its site variants crosswalk to via Athena. The lumbar-spine site specificity
+        in the Swedish code is not separately represented in SNOMED CT; target fully subsumes the source.
+        broader (target subsumes site-specific source); high tier — verified crosswalk to the
+        international parent, small breadth mismatch (site detail dropped).
+        """
+}
+mapping "M840A.1" source="M840A" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840A (Swedish) = malunion of fracture in cervical spine (halsryggen) — site-letter
+        extension of ICD-10 M84.0. Target SNOMED CT 75634 = (425852005), the standard concept that
+        international M84.0 (45577379) and all M84.0x site variants crosswalk to via Athena SNOMED
+        425852005. Cervical-spine site specificity is not separately represented in SNOMED CT malunion
+        concepts. broader (target subsumes site-specific source); high — verified crosswalk, one-level
+        breadth mismatch (site detail dropped).
+        """
+}
+mapping "M840B.1" source="M840B" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840B (Swedish) = malunion of fracture in shoulder/upper arm (axelled/överarm) —
+        site-letter extension of ICD-10 M84.0; corresponds to international M84.01/M84.02. Target SNOMED CT
+        75634 = (425852005), the standard concept the international site variants crosswalk to. broader;
+        high — verified crosswalk.
+        """
+}
+mapping "M840C.1" source="M840C" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840C (Swedish) = malunion of fracture in elbow/forearm (armbåge/underarm) — site-letter
+        extension of ICD-10 M84.0; corresponds to international M84.03 (forearm). Target SNOMED CT 75634 =
+        (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840D.1" source="M840D" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840D (Swedish) = malunion of fracture in wrist/hand (handled/hand) — site-letter
+        extension of ICD-10 M84.0; corresponds to international M84.04 (hand). Target SNOMED CT 75634 =
+        (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840E.1" source="M840E" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840E (Swedish) = malunion of fracture in pelvis (bäckenet) — site-letter extension of
+        ICD-10 M84.0; corresponds to international M84.05 (pelvic region and thigh). Target SNOMED CT 75634
+        = (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840F.1" source="M840F" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840F (Swedish) = malunion of fracture in hip/femur (höftled/lårben) — site-letter
+        extension of ICD-10 M84.0; corresponds to international M84.05 (pelvic region and thigh). Target
+        SNOMED CT 75634 = (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840G.1" source="M840G" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840G (Swedish) = malunion of fracture in knee/lower leg (knäled/underben) — site-letter
+        extension of ICD-10 M84.0; corresponds to international M84.06 (lower leg). Target SNOMED CT 75634
+        = (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840H.1" source="M840H" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840H (Swedish) = malunion of fracture in ankle/foot (fotled/fot) — site-letter extension
+        of ICD-10 M84.0; corresponds to international M84.07 (ankle and foot). Target SNOMED CT 75634 =
+        (425852005). broader; high — verified crosswalk.
+        """
+}
+mapping "M840J.1" source="M840J" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840J (Swedish) = malunion of fracture in thoracic spine (torakalryggen) — site-letter
+        extension of ICD-10 M84.0. Target SNOMED CT 75634 = (425852005), the standard concept international
+        M84.0 and all site variants crosswalk to. Thoracic-spine site specificity is not separately
+        represented in SNOMED CT malunion concepts. broader; high — verified crosswalk.
+        """
+}
+mapping "M840K.1" source="M840K" target="425852005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M840K (Swedish) = malunion of fracture in lumbar spine (ländryggen) — site-letter
+        extension of ICD-10 M84.0. Target SNOMED CT 75634 = (425852005). Lumbar-spine site specificity not
+        separately represented in SNOMED CT. broader; high — verified crosswalk.
+        """
+}
+mapping "M841A.1" source="M841A" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841A (Swedish) = nonunion/pseudarthrosis in cervical spine (halsryggen) — site-letter
+        extension of ICD-10 M84.1. Target SNOMED CT 73574 = (302941001), the standard concept international
+        M84.1 (45533963) and all M84.1x site variants crosswalk to via Athena SNOMED 302941001.
+        Cervical-spine site specificity not separately represented in SNOMED CT nonunion concepts. broader;
+        high — verified crosswalk.
+        """
+}
+mapping "M841B.1" source="M841B" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841B (Swedish) = nonunion/pseudarthrosis in shoulder/upper arm — site-letter extension
+        of ICD-10 M84.1; corresponds to international M84.11/M84.12. Target SNOMED CT 73574 = (302941001).
+        broader; high — verified crosswalk.
+        """
+}
+mapping "M841C.1" source="M841C" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841C (Swedish) = nonunion/pseudarthrosis in elbow/forearm — site-letter extension of
+        ICD-10 M84.1; corresponds to international M84.13 (forearm). Target SNOMED CT 73574 = (302941001).
+        broader; high — verified crosswalk.
+        """
+}
+mapping "M841D.1" source="M841D" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841D (Swedish) = nonunion/pseudarthrosis in wrist/hand — site-letter extension of ICD-10
+        M84.1; corresponds to international M84.14 (hand). Target SNOMED CT 73574 = (302941001). broader;
+        high — verified crosswalk.
+        """
+}
+mapping "M841E.1" source="M841E" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841E (Swedish) = nonunion/pseudarthrosis in pelvis — site-letter extension of ICD-10
+        M84.1; corresponds to international M84.15 (pelvic region and thigh). Target SNOMED CT 73574 =
+        (302941001). broader; high — verified crosswalk.
+        """
+}
+mapping "M841F.1" source="M841F" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841F (Swedish) = nonunion/pseudarthrosis in hip/femur — site-letter extension of ICD-10
+        M84.1; corresponds to international M84.15 (pelvic region and thigh). Target SNOMED CT 73574 =
+        (302941001). broader; high — verified crosswalk.
+        """
+}
+mapping "M841G.1" source="M841G" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841G (Swedish) = nonunion/pseudarthrosis in knee/lower leg — site-letter extension of
+        ICD-10 M84.1; corresponds to international M84.16 (lower leg). Target SNOMED CT 73574 =
+        (302941001). broader; high — verified crosswalk.
+        """
+}
+mapping "M841H.1" source="M841H" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841H (Swedish) = nonunion/pseudarthrosis in ankle/foot — site-letter extension of ICD-10
+        M84.1; corresponds to international M84.17 (ankle and foot). Target SNOMED CT 73574 = (302941001).
+        broader; high — verified crosswalk.
+        """
+}
+mapping "M841J.1" source="M841J" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841J (Swedish) = nonunion/pseudarthrosis in thoracic spine — site-letter extension of
+        ICD-10 M84.1. Target SNOMED CT 73574 = (302941001). Thoracic-spine site specificity not separately
+        represented in SNOMED CT. broader; high — verified crosswalk.
+        """
+}
+mapping "M841K.1" source="M841K" target="302941001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M841K (Swedish) = nonunion/pseudarthrosis in lumbar spine — site-letter extension of
+        ICD-10 M84.1. Target SNOMED CT 73574 = (302941001). broader; high — verified crosswalk.
+        """
+}
+mapping "M842A.1" source="M842A" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842A (Swedish) = delayed fracture healing in cervical spine (halsryggen) — site-letter
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987 = (134194006), the standard concept
+        international M84.2 (45558007) and all M84.2x site variants crosswalk to via Athena SNOMED
+        134194006. Cervical-spine site specificity not separately represented in SNOMED CT delayed-union
+        concepts. broader; high — verified crosswalk.
+        """
+}
+mapping "M842B.1" source="M842B" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842B (Swedish) = delayed fracture healing in shoulder/upper arm — site-letter extension
+        of ICD-10 M84.2; corresponds to international M84.21/M84.22. Target SNOMED CT 40305987 =
+        (134194006). broader; high — verified crosswalk.
+        """
+}
+mapping "M842C.1" source="M842C" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842C (Swedish) = delayed fracture healing in elbow/forearm — site-letter extension of
+        ICD-10 M84.2; corresponds to international M84.23 (forearm). Target SNOMED CT 40305987 =
+        (134194006). broader; high — verified crosswalk.
+        """
+}
+mapping "M842D.1" source="M842D" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842D (Swedish) = delayed fracture healing in wrist/hand — site-letter extension of
+        ICD-10 M84.2; corresponds to international M84.24 (hand). Target SNOMED CT 40305987 = (134194006).
+        broader; high — verified crosswalk.
+        """
+}
+mapping "M842E.1" source="M842E" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842E SNOMED CT 134194006 = delayed union of fracture in pelvic region. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987 (concept_code 134194006) = Delayed union of
+        fracture, standard concept. Athena crosswalk for parent M84.2* maps all subcodes to 40305987. No
+        site-specific delayed-union SNOMED CT concept exists for pelvis. Target legitimately subsumes the
+        source (one level broader). high: verified crosswalk, well-understood one-level breadth
+        mismatch.
+        """
+}
+mapping "M842F.1" source="M842F" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842F SNOMED CT 134194006 = delayed union of fracture in hip/thigh region. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987 (concept_code 134194006) = Delayed union of
+        fracture, standard concept. Athena crosswalk for M84.25 maps to 40305987. No site-specific
+        delayed-union SNOMED CT concept for hip/femur. Target subsumes source; one level broader. high.
+        """
+}
+mapping "M842G.1" source="M842G" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842G SNOMED CT 134194006 = delayed union of fracture in knee/lower leg. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987. Athena crosswalk for M84.26 maps to 40305987.
+        No site-specific delayed-union SNOMED CT concept for knee/lower leg. Target subsumes source; one
+        level broader. high.
+        """
+}
+mapping "M842H.1" source="M842H" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842H SNOMED CT 134194006 = delayed union of fracture in ankle/foot. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987. Athena crosswalk for M84.27 maps to 40305987.
+        Target subsumes source; one level broader. high.
+        """
+}
+mapping "M842J.1" source="M842J" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842J SNOMED CT 134194006 = delayed union of fracture in thoracic spine. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987. No site-specific delayed-union SNOMED CT concept
+        for thoracic spine. Target subsumes source; one level broader. high.
+        """
+}
+mapping "M842K.1" source="M842K" target="134194006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M842K SNOMED CT 134194006 = delayed union of fracture in lumbar spine. Swedish national
+        extension of ICD-10 M84.2. Target SNOMED CT 40305987. No site-specific delayed-union SNOMED CT concept
+        for lumbar spine. Target subsumes source; one level broader. high.
+        """
+}
+mapping "M843B.1" source="M843B" target="240197007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M843B SNOMED CT 240197007 = stress fracture in shoulder joint/upper arm. Swedish national
+        extension of ICD-10 M84.3. Target SNOMED CT 40441585 (concept_code 240197007) = Stress fracture,
+        standard concept. Athena crosswalk for M84.31 maps to 40441585. Source spans shoulder girdle +
+        upper arm (humerus); no single SNOMED CT stress-fracture concept covers both regions. Target
+        subsumes source; one level broader. high.
+        """
+}
+mapping "M843C.1" source="M843C" target="240197007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M843C SNOMED CT 240197007 = stress fracture in elbow/forearm. Swedish national extension of
+        ICD-10 M84.3. Target SNOMED CT 40441585. Athena crosswalk for M84.33 maps to 40441585. No
+        stress-fracture-of-forearm SNOMED CT concept exists. Target subsumes source; one level broader.
+        high.
+        """
+}
+mapping "M843D.1" source="M843D" target="704064007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M843D SNOMED CT 704064007 = stress fracture in wrist/hand. Swedish national extension of
+        ICD-10 M84.34. Target SNOMED CT 45766818 (concept_code 704064007) = Stress fracture of hand,
+        standard concept. Athena crosswalk for M84.34 maps directly to 45766818. SNOMED CT region includes
+        wrist. Crosswalk-verified; near-exact equivalence. high: verified crosswalk, minor
+        Swedish-extension inference.
+        """
+}
+mapping "M843E.1" source="M843E" target="430907000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M843F.1" source="M843F" target="704061004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M843G.1" source="M843G" target="240197007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M843G SNOMED CT 240197007 = stress fracture in knee/lower leg. Swedish national extension of
+        ICD-10 M84.3. Target SNOMED CT 40441585. Athena crosswalk for M84.36 maps to 40441585. Source spans
+        knee + lower leg; no single SNOMED CT stress-fracture concept covers both. Target subsumes source;
+        one level broader. high.
+        """
+}
+mapping "M843H.1" source="M843H" target="704065008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M843H SNOMED CT 704065008 = stress fracture in ankle/foot. Swedish national extension of
+        ICD-10 M84.37. Target SNOMED CT 45766819 (concept_code 704065008) = Stress fracture of foot,
+        standard concept. Athena crosswalk for M84.37 maps directly to 45766819. SNOMED CT region is the
+        standard equivalent of the ICD-10 ankle/foot grouping. Crosswalk-verified; near-exact
+        equivalence. high.
+        """
+}

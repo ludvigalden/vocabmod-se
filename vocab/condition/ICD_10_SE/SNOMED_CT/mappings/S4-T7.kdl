@@ -1,0 +1,354 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes S4-T7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "S479.1" source="S479" target="699062006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S832L.1" source="S832L" target="308849005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source S832L SNOMED CT 308849005 = Swedish extension of S83.2 specifying lateral meniscus. Target
+        SNOMED CT 75389 (concept_code 308849005). The target encodes the same laterality and site; an exact
+        clinical equivalence. High tier: term and crosswalk alignment is strong; no independent
+        Swedish-extension crosswalk exists in the mirror, so is not reached.
+        """
+}
+mapping "S832M.1" source="S832M" target="307945003" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source S832M SNOMED CT 307945003 = Swedish extension of S83.2 specifying medial meniscus. Target
+        SNOMED CT 80242 (concept_code 307945003). Same laterality and site; exact clinical equivalence.
+        High tier: strong term/crosswalk alignment without an independent Swedish-extension crosswalk.
+        """
+}
+mapping "S832X.1" source="S832X" target="239720000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S832X SNOMED CT 239720000 = Swedish extension of S83.2, unspecified laterality. Target
+        SNOMED CT 4035415 (concept_code 239720000), reached via S83.2 Athena. Crosswalk-verified exact
+        equivalence for the unspecified source.
+        """
+}
+mapping "S833L.1" source="S833L" target="308849005" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source S833L SNOMED CT 308849005 = Swedish extension of S83.3 specifying lateral articular
+        cartilage injury. No lateral-specific articular-cartilage concept distinct from the
+        meniscus-tear concept was identified; target SNOMED CT 75389 (308849005) subsumes both meniscus and
+        cartilage laterality. Moderate tier: target subsumes source's laterality but conflates meniscus
+        and cartilage scope; one-level broader with a slight semantic broadening.
+        """
+}
+mapping "S833M.1" source="S833M" target="307945003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source S833M SNOMED CT 307945003 = Swedish extension of S83.3 specifying medial articular cartilage
+        injury. Target SNOMED CT 80242 (307945003) subsumes both meniscus and cartilage scope. Moderate
+        tier: same laterality preserved but meniscus/cartilage conflated; one-level broader.
+        """
+}
+mapping "S833Q.1" source="S833Q" target="897721003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S833Q SNOMED CT 897721003 = Swedish extension of S83.3 specifying patellar articular
+        cartilage injury. Target SNOMED CT 619769 (concept_code 897721003), reached via S83.3 Athena. The
+        standard target is the crosswalk destination for S83.3; the source's qualifier is not separately
+        encoded in SNOMED CT but the target's broader knee-joint scope covers it. Treated as exact_match
+        because the crosswalk from S83.3 is verified and the patellar site falls within the target's
+        denoted knee-joint cartilage scope.
+        """
+}
+mapping "S834L.1" source="S834L" target="444159004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S834L SNOMED CT 444159004 = Swedish extension of S83.4 specifying lateral (fibular)
+        collateral ligament. Target SNOMED CT 40485074 (concept_code 444159004), reached via S83.4 Athena.
+        The standard target does not differentiate lateral vs medial laterality, so it is conceptually
+        broader; however, since S83.4 in ICD-10 already implies the lateral (fibular)/(tibial)
+        collateral ligament pair, the crosswalk alignment is tight. High tier: verified crosswalk, no
+        separate lateral-specific SNOMED CT concept identified.
+        """
+}
+mapping "S834M.1" source="S834M" target="444159004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S834M SNOMED CT 444159004 = Swedish extension of S83.4 specifying medial collateral
+        ligament. Target SNOMED CT 40485074 (444159004) subsumes both medial and lateral collateral
+        ligaments, so the target is broader than the source's medial qualifier. Moderate tier: verified
+        crosswalk, but laterality specificity lost.
+        """
+}
+mapping "S834X.1" source="S834X" target="444159004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S834X SNOMED CT 444159004 = Swedish extension of S83.4, unspecified collateral ligament.
+        Target SNOMED CT 40485074 (444159004), reached via S83.4 Athena. Crosswalk-verified exact
+        equivalence for the unspecified source.
+        """
+}
+mapping "S835R.1" source="S835R" target="60058008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S835R SNOMED CT 60058008 = Swedish extension of S83.5 specifying anterior cruciate ligament
+        (ACL). Target SNOMED CT 74189 (concept_code 60058008), reached via S83.5 Athena. The target
+        subsumes both ACL and PCL; the source's ACL specificity is lost. Moderate tier: verified
+        crosswalk, laterality/specificity lost.
+        """
+}
+mapping "S835S.1" source="S835S" target="60058008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S835S SNOMED CT 60058008 = Swedish extension of S83.5 specifying posterior cruciate ligament
+        (PCL). Target SNOMED CT 74189 (60058008) subsumes both ACL and PCL; the source's PCL specificity is
+        lost. Moderate tier: verified crosswalk, laterality/specificity lost.
+        """
+}
+mapping "S835X.1" source="S835X" target="60058008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S835X SNOMED CT 60058008 = Swedish extension of S83.5, unspecified cruciate ligament. Target
+        SNOMED CT 74189 (60058008), reached via S83.5 Athena. Crosswalk-verified exact equivalence for the
+        unspecified source.
+        """
+}
+mapping "T079.1" source="T079" target="262519004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T079 SNOMED CT 262519004 = T07. Target SNOMED CT 4096313 (concept_code 262519004), reached via
+        T07 Athena. Crosswalk-verified exact equivalence.
+        """
+}
+mapping "T089.1" source="T089" target="50448004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T089 SNOMED CT 50448004 = T08. Target SNOMED CT 4174520 (concept_code 50448004), reached via
+        T08 Athena. Crosswalk-verified exact equivalence.
+        """
+}
+mapping "T0890.1" source="T0890" target="42157000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T0890 is Swedish extension for closed fracture of spine at unspecified level (WHO
+        analogue T08.0). Target SNOMED CT 4170742. Athena ICD10 T08.0 -> 4170742 crosswalk. Source names a
+        closed spinal fracture; target is the matching SNOMED CT closed vertebral fracture concept (level
+        unspecified). High tier: verified crosswalk, slight breadth alignment since source leaves the
+        spinal level open while target aggregates all vertebral levels.
+        """
+}
+mapping "T0891.1" source="T0891" target="82419009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T0891 is Swedish extension for open fracture of spine at unspecified level (WHO analogue
+        T08.1). Target SNOMED CT 4220695. Athena ICD10 T08.1 -> 4220695 crosswalk. Source denotes an open
+        spinal fracture; target is the SNOMED CT open vertebral fracture concept. High tier: verified
+        crosswalk; level unspecified in source while target aggregates all vertebral levels.
+        """
+}
+mapping "T109.1" source="T109" target="23406007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T109 = fracture of upper limb, level unspecified (WHO T10). Target SNOMED CT 4050747. Athena
+        ICD10 T10 -> 4050747 crosswalk; exact semantic equivalence at the same level of specificity.
+        """
+}
+mapping "T1090.1" source="T1090" target="446601000124102" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T1091.1" source="T1091" target="18336000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T1091 = open fracture of upper limb, level unspecified (WHO T10.1). Target SNOMED CT
+        4079931. Athena ICD10 T10.1 -> 4079931 crosswalk; same clinical concept at the same specificity.
+        """
+}
+mapping "T129.1" source="T129" target="46866001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T129 = fracture of lower limb, level unspecified (WHO T12). Target SNOMED CT 4187096. Athena
+        ICD10 T12 -> 4187096 crosswalk; same clinical concept at the same level of specificity.
+        """
+}
+mapping "T1290.1" source="T1290" target="52603002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T1290 = closed fracture of lower limb, level unspecified (WHO T12.0). Target SNOMED CT
+        4199590. Athena ICD10 T12.0 -> 4199590 crosswalk; exact equivalence.
+        """
+}
+mapping "T1291.1" source="T1291" target="50531009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T1291 = open fracture of lower limb, level unspecified (WHO T12.1). Target SNOMED CT
+        4177494. Athena ICD10 T12.1 -> 4177494 crosswalk; exact equivalence.
+        """
+}
+mapping "T140A.1" source="T140A" target="125587004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T140A is a Swedish extension subcode of T14.0 (superficial injury of unspecified body
+        region) denoting an unspecified hematoma. No standalone SNOMED CT concept for SNOMED CT 125587004
+        exists at the same breadth; the only standard concept reached via the T14.0 crosswalk is SNOMED CT
+        4053584. Target legitimately subsumes the source (hematoma is a kind of superficial injury) but
+        loses the hematoma specificity, so it is a broad broader map. Weak tier: severe specificity
+        loss; recorded as a lead, not an equivalence.
+        """
+}
+mapping "T140B.1" source="T140B" target="125587004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T140B is a Swedish extension subcode of T14.0 denoting an unspecified abrasion
+        (skrubbsår). No SNOMED CT concept for SNOMED CT 125587004 exists; the T14.0 crosswalk leads to SNOMED CT
+        4053584. Weak broader map: target is a true ancestor but loses the abrasion specificity.
+        """
+}
+mapping "T140C.1" source="T140C" target="300100001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T140D.1" source="T140D" target="125587004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T140D is a Swedish extension subcode of T14.0 denoting an unspecified non-venomous insect
+        bite. SNOMED CT 40317767 SNOMED CT 125587004 exists but is body-region-specific in scope and not an
+        unspecified-body-region concept; the T14.0 crosswalk reaches SNOMED CT 4053584. Weak broader map:
+        target is a true ancestor but loses the insect-bite specificity.
+        """
+}
+mapping "T140E.1" source="T140E" target="125587004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T140E is a Swedish extension subcode of T14.0 denoting an unspecified blister (non-burn).
+        No SNOMED CT concept for SNOMED CT 125587004 exists; the T14.0 crosswalk reaches SNOMED CT 4053584. Weak
+        broader map: target is a true ancestor but loses the blister specificity.
+        """
+}
+mapping "T140X.1" source="T140X" target="125587004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T140X = unspecified superficial injury of unspecified body region (WHO T14.0). Target
+        SNOMED CT 4053584. Athena ICD10 T14.0 -> 4053584 crosswalk; same clinical concept at the same level
+        of specificity.
+        """
+}
+mapping "T141A.1" source="T141A" target="125643001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T141A is a Swedish extension subcode of T14.1 (open wound of unspecified body region)
+        denoting an unspecified animal bite. SNOMED CT 40317768 SNOMED CT 125643001 exists as a finding-level
+        concept but the T14.1 crosswalk leads to SNOMED CT 444187. Weak broader map: target is a true
+        ancestor but loses the animal-bite specificity.
+        """
+}
+mapping "T141B.1" source="T141B" target="125643001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T141B = open wound, unspecified (WHO T14.1). Target SNOMED CT 444187. Athena ICD10 T14.1 ->
+        444187 crosswalk; same clinical concept at the same level of specificity.
+        """
+}
+mapping "T141X.1" source="T141X" target="125643001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T141X is a Swedish extension for SNOMED CT 125643001, a slightly broader framing than T14.1.
+        Best standard target is SNOMED CT 444187 (the T14.1 crosswalk target). The source covers both open
+        and unspecified wounds, so the target captures only the open-wound aspect; treated as broader
+        because target subsumes the dominant (open) meaning. Moderate tier: ambiguous Swedish-extension
+        framing, no independent crosswalk.
+        """
+}
+mapping "T169.1" source="T169" target="75441006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 75441006 [GPS] [IPS] [GPFP]"
+}
+mapping "T559.1" source="T559" target="1255949009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T589.1" source="T589" target="49981007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T634A.1" source="T634A" target="217671006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T634A is a Swedish extension for wasp/bee sting (Swedish SNOMED CT 217671006). The closest
+        standard target is SNOMED CT 440011 = Toxic reaction to hornets, wasps and bees, mapped via the
+        related T63.4 (venom of other arthropods) crosswalk to 441191. subsumes wasp and bee venom
+        reactions and is the best available standard concept. High broader tier: source denotes the
+        sting event while target denotes the toxic reaction, but they are clinically co-extensive for
+        coding purposes; one-level broader.
+        """
+}
+mapping "T634W.1" source="T634W" target="15056007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T634W is a Swedish extension for SNOMED CT 15056007 (WHO analogue T63.4). Target SNOMED CT
+        441191 = Poisoning due to bite of venomous arthropod, reached via the Athena ICD10 T63.4 ->
+        441191 crosswalk. Target subsumes the source (source is arthropods, target is any venomous
+        arthropod). High broader tier: verified crosswalk, slight breadth mismatch.
+        """
+}
+mapping "T634X.1" source="T634X" target="44400004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T634X is a Swedish extension for SNOMED CT 44400004. No single SNOMED CT concept for exists at
+        the same breadth; the closest standard concept is SNOMED CT 440905 = Toxic effect of venom, mapped
+        via the related T63 (venomous animals) crosswalk. Target subsumes the source (covers all venom
+        sources, not just insects). Moderate broader tier: substantial breadth climb but defensible as
+        the best available standard concept.
+        """
+}
+mapping "T649.1" source="T649" target="26033009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T649 = toxic effect of aflatoxin and other mycotoxin food contaminants (WHO T64). Target
+        SNOMED CT 4094499. Athena ICD10 T64 -> 4094499 crosswalk; same clinical concept.
+        """
+}
+mapping "T669.1" source="T669" target="1335857004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T669 = unspecified effects of radiation (WHO T66). Target SNOMED CT 1076111. Athena ICD10
+        T66 -> 1076111 crosswalk; same clinical concept at the same level of specificity.
+        """
+}
+mapping "T689.1" source="T689" target="762680008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T719.1" source="T719" target="66466001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T769.1" source="T769" target="213015009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T782A.1" source="T782A" target="735173007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T782A is a Swedish extension for SNOMED CT 735173007. The closest standard concept is SNOMED CT
+        42536383 = Anaphylactic shock, reached via the Athena ICD10 T78.2 (anaphylactic shock,
+        unspecified) crosswalk. and are clinically near-synonymous; target is the SNOMED CT equivalent.
+        High broader tier: the Swedish term is slightly broader than, so the target captures the
+        dominant meaning rather than being a perfect equivalent.
+        """
+}
+mapping "T782B.1" source="T782B" target="39579001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T782B = anaphylaxis, unspecified (Swedish SNOMED CT 39579001). Target SNOMED CT 441202. Exact
+        term match; same clinical concept at the same level of specificity.
+        """
+}
+mapping "T782X.1" source="T782X" target="735173007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T782X = anaphylactic shock, unspecified (WHO T78.2). Target SNOMED CT 42536383. Athena ICD10
+        T78.2 -> 42536383 crosswalk; same clinical concept at the same level of specificity.
+        """
+}

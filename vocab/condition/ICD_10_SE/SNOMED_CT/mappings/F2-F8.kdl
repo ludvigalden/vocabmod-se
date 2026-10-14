@@ -1,0 +1,462 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes F2-F8
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "F219.1" source="F219" target="31027006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F21.9 SNOMED CT 31027006 = schizotypal disorder. ICD-10 F21 maps to SNOMED CT 434010. Same
+        clinical concept; crosswalk-verified.
+        """
+}
+mapping "F249.1" source="F249" target="61831009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F24.9 SNOMED CT 61831009 = induced delusional disorder. ICD-10 F24 maps to SNOMED CT 436952.
+        Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "F289.1" source="F289" target="191525009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F28.9 SNOMED CT 191525009 = other nonorganic psychotic disorders. ICD-10 F28 maps to SNOMED CT
+        4101149. Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "F299.1" source="F299" target="191525009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F29.9 SNOMED CT 191525009 = unspecified nonorganic psychosis. ICD-10 F29 maps to SNOMED CT
+        4101149. Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "F318A.1" source="F318A" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F31.8A SNOMED CT 231497008 = bipolar II disorder, hypomanic episode. SNOMED CT 40433642 is the
+        closest standard concept. No SNOMED CT concept encodes bipolar-II-with-current-hypomanic-episode;
+        target subsumes the episode specifier. Moderate tier: target is the disorder, current-episode
+        specifier lost.
+        """
+}
+mapping "F318B.1" source="F318B" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F31.8B SNOMED CT 231497008 = bipolar II disorder, mild/moderate depressive episode. SNOMED CT
+        40433642 is the closest standard concept. No SNOMED CT concept encodes
+        bipolar-II-with-current-depressive-episode; target subsumes the episode specifier. Moderate
+        tier: target is the disorder, current-episode specifier lost.
+        """
+}
+mapping "F318C.1" source="F318C" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F31.8C SNOMED CT 231497008 = bipolar II disorder, severe depressive episode without
+        psychotic symptoms. SNOMED CT 40433642 is the closest standard concept. No SNOMED CT concept encodes
+        bipolar-II-with-current-severe-depression; target subsumes the episode specifier. Moderate tier:
+        target is the disorder, current-episode specifier lost.
+        """
+}
+mapping "F318D.1" source="F318D" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F31.8D SNOMED CT 231497008 = bipolar II disorder, severe depressive episode with psychotic
+        symptoms. SNOMED CT 40433642 is the closest standard concept. No SNOMED CT concept encodes
+        bipolar-II-with-current-psychotic-depression; target subsumes the episode specifier. Moderate
+        tier: target is the disorder, current-episode specifier lost.
+        """
+}
+mapping "F318E.1" source="F318E" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F31.8E SNOMED CT 231497008 = bipolar II disorder, mixed episode. SNOMED CT 40433642 is the
+        closest standard concept. No SNOMED CT concept encodes bipolar-II-with-current-mixed-episode;
+        target subsumes the episode specifier. Moderate tier: target is the disorder, current-episode
+        specifier lost.
+        """
+}
+mapping "F318F.1" source="F318F" target="231497008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F318F SNOMED CT 231497008 = Bipolar II disorder, currently without active symptoms (in
+        remission/asymptomatic). Target SNOMED CT 40433642 (the standard SNOMED CT concept). No exact
+        crosswalk exists for the SE extension code; SNOMED CT does not expose a concept in the mirror. The
+        target fully subsumes the source (every case is a Bipolar II disorder). One-level broader with
+        verified SNOMED CT parent match, hence high.
+        """
+}
+mapping "F318W.1" source="F318W" target="13746004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F318W SNOMED CT 13746004 = Bipolar disorder, other specified (SE extension of F31.8). Athena
+        crosswalk for the parent F31.8 maps to SNOMED CT 436665 (Bipolar disorder). The target subsumes the
+        source; SE extension not independently re-verified against the SNOMED CT hierarchy beyond the F31.8
+        crosswalk. Moderate.
+        """
+}
+mapping "F323W.1" source="F323W" target="430852001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F323W SNOMED CT 430852001 = Other severe depressive episode with psychotic symptoms (SE
+        extension of F32.3). Parent F32.3 Athena crosswalk maps to SNOMED CT 438406 (Severe major
+        depression, single episode, with psychotic features). Target fully subsumes the source concept.
+        SE extension not independently re-verified; moderate.
+        """
+}
+mapping "F399.1" source="F399" target="46206005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F399 SNOMED CT 46206005 = Unspecified mood [affective] disorder. Athena crosswalk for F39
+        maps to SNOMED CT 444100 (Mood disorder). Target is the standard broader concept fully subsuming
+        the unspecified source. Unspecified source, mechanical crosswalk not re-verified; moderate.
+        """
+}
+mapping "F402B.1" source="F402B" target="54307006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F402B SNOMED CT 54307006 = Animal phobia. Target SNOMED CT 4184002 (Animal phobia),
+        concept_code 54307006. Same clinical concept; verified SNOMED CT term match. No independent Athena
+        crosswalk for the SE extension, but exact term equivalence. High.
+        """
+}
+mapping "F402E.1" source="F402E" target="386810004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F402E SNOMED CT 386810004 = fear of body odour / bromhidrosis phobia. No SNOMED CT concept for
+        bromhidrosofobia exists in the mirror. The closest defensible standard target is SNOMED CT 4304010
+        (Phobic disorder), the parent concept for F40.8. The target subsumes the source but is much
+        broader; loose aspect-level link only. Weak.
+        """
+}
+mapping "F402F.1" source="F402F" target="1343608003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F402F SNOMED CT 1343608003 = Erythrophobia (fear of blushing). Target SNOMED CT 1448873 =
+        Erythrophobia, concept_code matching the source term exactly. Same clinical concept.
+        Exact-equivalent.
+        """
+}
+mapping "F402G.1" source="F402G" target="198280005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F402G SNOMED CT 198280005 = Parasitophobia (fear of parasites / delusional parasitosis).
+        Target SNOMED CT 4112929. Same clinical concept, exact term match. Exact-equivalent.
+        """
+}
+mapping "F402W.1" source="F402W" target="54587008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F402W SNOMED CT 54587008 = Other specified phobias (SE extension of F40.8). Parent F40.2
+        crosswalk target is SNOMED CT 4182847 (Simple phobia) and F40.8 crosswalk is 4304010 (Phobic
+        disorder). The narrower, better-fitting target is 4182847 (Simple phobia) which subsumes.
+        Moderate : SE extension, mechanical crosswalk, one-level broader.
+        """
+}
+mapping "F428A.1" source="F428A" target="247968005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F428A SNOMED CT 247968005 = Hoarding syndrome (pathological collecting). Target SNOMED CT
+        4084868. Same clinical concept; SNOMED CT exact term match. Exact-equivalent.
+        """
+}
+mapping "F428W.1" source="F428W" target="191736004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F428W SNOMED CT 191736004 = Other specified obsessive-compulsive disorder (SE extension of
+        F42.8). Parent F42.8 Athena crosswalk maps to SNOMED CT 440374 (Obsessive-compulsive disorder).
+        Target fully subsumes the source. SE extension; moderate.
+        """
+}
+mapping "F438A.1" source="F438A" target="377171000000101" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "F438W.1" source="F438W" target="67195008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F438W SNOMED CT 67195008 = Other specified reactions to severe stress, other than exhaustion
+        syndrome (SE extension of F43.8). Parent F43.8 Athena crosswalk maps to SNOMED CT 440083 (Acute
+        stress disorder). The target is the standard stress-reaction concept but is broader and not
+        perfectly co-extensive with the residual SE category. Low-moderate : heterogeneous residual
+        source, broader target with partial fit.
+        """
+}
+mapping "F444A.1" source="F444A" target="275472008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "F444B.1" source="F444B" target="64161004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F444B SNOMED CT 64161004 = psychogenically conditioned articulation disorder (SE extension
+        under F44.4, dissociative motor disorders). The clinical content is a psychogenic
+        speech/articulation disorder. SNOMED CT 4272467 is the closest standard concept but covers voice
+        rather than articulation per se; clinically associated but not equivalent. Related link; high
+        end reflects tight clinical association but the target is not a true ancestor or equivalent.
+        """
+}
+mapping "F444W.1" source="F444W" target="1197149002" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F444W SNOMED CT 1197149002 = Other specified psychogenic motor disorder (SE extension of
+        F44.4). SNOMED CT 37162667. Parent F44.4 Athena crosswalk maps to SNOMED CT 4150799 (Dissociative
+        motor disorder), but the source explicitly frames the condition as psychogenic motor, so
+        37162667 is the better-fitting related target (psychogenic movement disorder is clinically
+        associated but sits separately from the dissociative-conversion hierarchy). Related, moderate.
+        """
+}
+mapping "F452A.1" source="F452A" target="83482000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "F452B.1" source="F452B" target="102915009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F452B SNOMED CT 102915009 = Nosophobia (fear of disease). Target SNOMED CT 4012101. Same
+        clinical concept, exact SNOMED CT term match. Exact-equivalent.
+        """
+}
+mapping "F452C.1" source="F452C" target="300930008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F452C SNOMED CT 300930008 = Cancer phobia. Target SNOMED CT 40503118. Same clinical concept,
+        exact SNOMED CT term match. Exact-equivalent.
+        """
+}
+mapping "F452D.1" source="F452D" target="238965007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F452D SNOMED CT 238965007 = Venereophobia (fear of venereal disease). Target SNOMED CT 4033937.
+        Same clinical concept, exact SNOMED CT term match. Exact-equivalent.
+        """
+}
+mapping "F452X.1" source="F452X" target="18193002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F452X SNOMED CT 18193002 = Hypochondriasis, unspecified (SE extension of F45.2). Parent
+        F45.2 Athena crosswalk maps to SNOMED CT 434920 (Hypochondriasis). Same clinical concept at the
+        parent level; the unspecified SE extension maps to the same standard concept. Exact term match
+        with crosswalk; high rather than because source is the unspecified SE extension.
+        """
+}
+mapping "F549.1" source="F549" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "F559.1" source="F559" target="1306692000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F559 SNOMED CT 1306692000 = Abuse of non-dependence-producing substances. Athena crosswalk
+        for F55 maps to SNOMED CT 1448779 (Harmful pattern of substance use). The target is the modern
+        ICD-11/DSM-5-style standard concept that subsumes the older framing. One-level broader; verified
+        crosswalk. High.
+        """
+}
+mapping "F599.1" source="F599" target="231520001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F599 SNOMED CT 231520001 = Unspecified behavioural syndromes associated with physiological
+        disturbances and physical factors. Athena crosswalk for F59 maps to SNOMED CT 4333000 (Behavioral
+        syndrome associated with physiological disturbance and physical factors). Same clinical concept
+        at the unspecified level. Moderate : unspecified source, mechanical crosswalk not re-verified.
+        """
+}
+mapping "F619.1" source="F619" target="33449004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F619 SNOMED CT 33449004 = Mixed and other personality disorders (SE re-scoping of F61).
+        Athena crosswalk for F61 maps to SNOMED CT 441838 (Personality disorder). The SE source names a
+        broader residual category than the WHO F61; the target is the standard broader concept fully
+        subsuming the source. Moderate.
+        """
+}
+mapping "F699.1" source="F699" target="33449004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F699 SNOMED CT 33449004 = Unspecified disorder of adult personality and behaviour. Athena
+        crosswalk for F69 maps to SNOMED CT 441838 (Personality disorder). Target subsumes the source.
+        Unspecified source; moderate.
+        """
+}
+mapping "F799A.1" source="F799A" target="268733006" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F799A SNOMED CT 268733006 = speech difficulties (articulation) in a person with intellectual
+        disability (SE extension of F79.9, unspecified intellectual disability). The source bundles
+        intellectual disability with a developmental articulation disorder. SNOMED CT 40356750 (a
+        partial/related link), not the intellectual disability. Partial aspect only; low.
+        """
+}
+mapping "F799B.1" source="F799B" target="280032002" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F799B SNOMED CT 280032002 = language/speech difficulties in a person with intellectual
+        disability (SE extension of F79.9). The source bundles intellectual disability with a
+        developmental language disorder. SNOMED CT 443361 (partial/related link). Partial aspect only; low.
+        """
+}
+mapping "F799X.1" source="F799X" target="268672004" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F799X SNOMED CT 268672004 = unspecified speech difficulties in a developmentally
+        delayed/intellectually disabled person. Bundles two clinical ideas (speech difficulty +
+        intellectual disability) that no single SNOMED CT concept expresses. Target SNOMED CT 435232
+        (268672004); covers only the speech-difficulty axis, leaving the developmental-delay context
+        uncovered. Partial link, weak tier: only an aspect-level relationship is defensible.
+        """
+}
+mapping "F800A.1" source="F800A" target="229719002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F800A SNOMED CT 229719002 = phonological language disorder; Swedish extension of F80.0.
+        Target SNOMED CT 4039744 (229719002), the canonical SNOMED CT equivalent for F80.0 (Maps to via Athena
+        concept 45571778). Same clinical concept at the same specificity.
+        """
+}
+mapping "F800B.1" source="F800B" target="268674003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F800B SNOMED CT 268674003 = developmental delay of oral motor skills. No SNOMED CT concept for
+        oral-motor developmental delay specifically. Target SNOMED CT 4148091 (268674003), the F82 Maps-to
+        target; legitimately subsumes the oral-motor aspect (source is a specialised child). One-level
+        broader; low tier because oral-motor delay is only one slice of motor-function disorder and is a
+        delay rather than a disorder.
+        """
+}
+mapping "F800C.1" source="F800C" target="63416000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F800C SNOMED CT 63416000 = dyslalia and similar articulation deviation. Target SNOMED CT
+        4269934 (63416000); same clinical concept. High tier (not) because the source also covers, a
+        slight breadth mismatch, and no independent Athena crosswalk for this Swedish extension code.
+        """
+}
+mapping "F801A.1" source="F801A" target="229744005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F801A SNOMED CT 229744005 = grammatical language disorder; Swedish extension of F80.1
+        (expressive language disorder). Target SNOMED CT 4039754 (229744005); closest standard concept for
+        a developmental grammatical/syntactic disorder. Moderate tier: term-level match without an
+        independent crosswalk for this Swedish extension code.
+        """
+}
+mapping "F801B.1" source="F801B" target="229732007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F801B SNOMED CT 229732007 = phonological and grammatical language disorder. Target SNOMED CT
+        4039747 (229732007); standard SNOMED CT concept combining both axes expressed by the source. High
+        tier: tight semantic match, no independent crosswalk for the Swedish extension code.
+        """
+}
+mapping "F801C.1" source="F801C" target="229745006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F801C SNOMED CT 229745006 = semantic language disorder. Target SNOMED CT 4039755 (229745006);
+        same clinical concept. High tier: tight match, no independent Athena crosswalk for the Swedish
+        extension code.
+        """
+}
+mapping "F802A.1" source="F802A" target="367515004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F802A SNOMED CT 367515004 = receptive language delay (word and sentence comprehension);
+        Swedish extension of F80.2. Target SNOMED CT 443443 (367515004), the F80.2 Maps-to target. Target
+        legitimately subsumes the source because delay is a less-severe form within the
+        receptive-language-disorder spectrum. Moderate tier: delay vs disorder breadth mismatch.
+        """
+}
+mapping "F802B.1" source="F802B" target="762317007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F802B SNOMED CT 762317007 = general language delay, receptive and expressive. Target SNOMED CT
+        42538581 (762317007); standard concept covering both axes. High tier: tight combined-axis match;
+        delay-vs-disorder breadth mismatch keeps it below.
+        """
+}
+mapping "F802C.1" source="F802C" target="762319005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F802C SNOMED CT 762319005 = pragmatic language delay. Target SNOMED CT 42538583 (762319005);
+        subsumes the source as a delay framing within the pragmatic-language-disorder spectrum. Low
+        tier: source is delay-only and the target bundles a developmental-language-disorder qualifier,
+        loosening the equivalence.
+        """
+}
+mapping "F808A.1" source="F808A" target="416569005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F808A SNOMED CT 416569005 = prosodic speech disorder; Swedish extension under F80.8. Target
+        SNOMED CT 4211815 = [D] (416569005); the standard SNOMED CT concept covering prosodic disturbance.
+        Moderate tier: term match without an independent crosswalk for the Swedish extension code.
+        """
+}
+mapping "F808B.1" source="F808B" target="69577009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F808B SNOMED CT 69577009 = lisping. Target SNOMED CT 4290272 (69577009); same clinical concept,
+        identical term.
+        """
+}
+mapping "F808C.1" source="F808C" target="63416000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F808C SNOMED CT 63416000 = r-error (rhotacism: inability to pronounce /r/). No SNOMED CT
+        concept for rhotacism specifically. Target SNOMED CT 4269934 (63416000); subsumes rhotacism as one
+        of its articulation-defect children. Low tier: target is genuinely broader and the source is one
+        specific articulation error.
+        """
+}
+mapping "F808D.1" source="F808D" target="63416000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F808D SNOMED CT 63416000 = general interdentalism (articulation with tongue between teeth,
+        affecting multiple sounds). No SNOMED CT concept for interdentalism. Target SNOMED CT 4269934
+        (63416000); subsumes interdentalism as one of its articulation-defect children. Low tier: target
+        is genuinely broader; interdentalism is one specific articulation pattern within dyslalia.
+        """
+}
+mapping "F808W.1" source="F808W" target="268672004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F808W SNOMED CT 268672004 = other specified disorders of speech and language development;
+        Swedish extension code for F80.8. Target SNOMED CT 435232 (268672004), the F80.8 Maps-to target
+        (Athena concept 45566856). Target subsumes the residual source category. High tier: verified
+        crosswalk; one-level broader.
+        """
+}
+mapping "F829.1" source="F829" target="268674003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F829 SNOMED CT 268674003 = specific developmental disorder of motor function (F82). Target
+        SNOMED CT 4148091 (268674003), the F82 Maps-to target via Athena concept 45605516. Same clinical
+        concept.
+        """
+}
+mapping "F839.1" source="F839" target="442059001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F839 SNOMED CT 442059001 = mixed specific developmental disorders (F83). Target SNOMED CT
+        40481800 (442059001), the F83 Maps-to target via Athena concept 45595922. Same clinical concept.
+        """
+}
+mapping "F889.1" source="F889" target="192562009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F889 SNOMED CT 192562009 = other specified disorders of psychological development (F88).
+        Target SNOMED CT 4102986 (192562009), the F88 Maps-to target via Athena concept 45538087. Same
+        clinical concept.
+        """
+}
+mapping "F899.1" source="F899" target="192562009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F899 SNOMED CT 192562009 = unspecified disorder of psychological development (F89). Target
+        SNOMED CT 4102986 (192562009), the F89 Maps-to target via Athena concept 45557220. High tier (not):
+        the source is unspecified and the target is the umbrella category; one-step breadth ambiguity.
+        """
+}

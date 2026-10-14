@@ -1,0 +1,122 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes E8-F0
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "E800B.1" source="E800B" target="67312003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "E800C.1" source="E800C" target="67312003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E802C.1" source="E802C" target="111386004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E802C SNOMED CT 111386004 = hepatoerythropoietic porphyria (HEP), a rare autosomal recessive
+        porphyria caused by homozygous/compound-heterozygous UROD deficiency. Target SNOMED CT 4006312
+        (concept_code 111386004) = Homozygous porphyria cutanea tarda. HEP and homozygous PCT are
+        clinically and aetiologically the same entity (UROD deficiency in trans); SNOMED CT uses the
+        homozygous-PCT label rather than a dedicated HEP concept. High tier: no exact HEP-labelled
+        SNOMED CT concept exists, but the homozygous PCT concept is the recognised standard equivalent. No
+        crosswalk exists for the Swedish C-code; mapping based on clinical equivalence via UROD
+        pathophysiology.
+        """
+}
+mapping "E805A.1" source="E805A" target="8933000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E805A SNOMED CT 8933000 = Crigler-Najjar syndrome type 1. Target SNOMED CT 4229773
+        (concept_code 8933000) = Crigler-Najjar syndrome, type I. Exact clinical and lexical
+        equivalence; SNOMED CT concept is in mirror. Ancestor check confirms 4229773 is a descendant of CN
+        syndrome 4151846 (which is the parent ICD-10 E80.5 crosswalk target). Exact-equivalent tier.
+        """
+}
+mapping "E805B.1" source="E805B" target="68067009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E805B SNOMED CT 68067009 = Crigler-Najjar syndrome type 2 (Arias syndrome). Target SNOMED CT
+        4239041 (concept_code 68067009) = Crigler-Najjar syndrome, type II. Exact clinical and lexical
+        equivalence; SNOMED CT concept in mirror. Ancestor check confirms 4239041 is a descendant of CN
+        syndrome 4151846. Exact-equivalent tier.
+        """
+}
+mapping "E830W.1" source="E830W" target="79886009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E830W SNOMED CT 79886009 = other disorders of copper metabolism (Swedish extension of
+        E83.0). Target SNOMED CT 436672 (concept_code 79886009) = Disorder of copper metabolism. Source
+        ICD-10 parent E83.0 has Athena crosswalk to 436672. Swedish W-code is a child of E83.0; target
+        subsumes it (broader). High tier: crosswalk-verified at parent, one-level breadth mismatch.
+        """
+}
+mapping "E869.1" source="E869" target="816082000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 816082000 [GPS] [IPS] [ICNP]"
+}
+mapping "E881B.1" source="E881B" target="238899009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E881B SNOMED CT 238899009 = lipodystrophia centrifugalis abdominalis infantilis (LCAI).
+        Target SNOMED CT 4081240 (concept_code 238899009) = Lipodystrophia centrifugalis abdominalis
+        infantalis. Exact clinical concept with near-identical lexical name; SNOMED CT concept present in
+        mirror. Exact-equivalent tier.
+        """
+}
+mapping "E888A.1" source="E888A" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "F031.1" source="F031" target="192161009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source F031 (ICD-10 F03.1) = dementia in Alzheimer's disease, early/onset presenile. Target
+        SNOMED CT 40386879 (concept_code 192161009) = Dementia in Alzheimer's disease with early onset.
+        Clinical scope identical (Alzheimer dementia, early/presenile onset); lexical equivalence on
+        early onset. Legacy comment referenced Primary degenerative dementia of the Alzheimer type
+        presenile onset; 40386879 is the more direct SNOMED CT 192161009 416780008 match and is the SNOMED CT
+        browser canonical concept. High tier: no independent Athena crosswalk for the.1 subcode but
+        exact term and hierarchy match.
+        """
+}
+mapping "F031.2" source="F031" target="416780008" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "F038.1" source="F038" target="52448006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source F038 (ICD-10 F03.8) = other dementia (unspecified dementia with other features). Target
+        SNOMED CT 4182210 (concept_code 52448006) = Dementia. The parent ICD-10 F03 (Unspecified dementia)
+        has Athena SNOMED 191449005 52448006 crosswalk to 4182210. F03.8 is a child of F03 with no
+        specific subcode crosswalk; 4182210 (broader). Legacy comment mapped to 191449005 (Uncomplicated
+        senile dementia), but that introduces an unasserted senile specifier; 4182210 is the safer
+        crosswalk-verified broader target. Low tier: residual source category, several specific SNOMED CT
+        subtypes possible, real doubt about which.
+        """
+}
+mapping "F038.2" source="F038" target="191449005" relationship=source_is_narrower_than_target preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "F039.1" source="F039" target="52448006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 52448006 [GPS] [IPS] [GPFP] [NCPT]"
+}
+mapping "F049.1" source="F049" target="105451000119102" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F049 SNOMED CT 105451000119102 = organic amnesic syndrome not induced by alcohol and other
+        psychoactive substances (ICD-10 F04). Target SNOMED CT 36712678 (concept_code 105451000119102) =
+        Amnestic disorder associated with general medical condition. Source ICD-10 F04 has Athena
+        crosswalk to 36712678. Clinical scope matches (non-substance-induced organic amnestic syndrome).
+        High tier: crosswalk-verified, slight terminology breadth mismatch but well-understood.
+        """
+}
+mapping "F099.1" source="F099" target="74732009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

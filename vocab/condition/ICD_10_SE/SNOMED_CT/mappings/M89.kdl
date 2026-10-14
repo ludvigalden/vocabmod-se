@@ -1,0 +1,92 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M89
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M890B.1" source="M890B" target="712537009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M890B SNOMED CT 712537009 = algoneurodystrophy (CRPS) of shoulder/upper arm (Swedish B, WHO
+        M89.01+M89.02). Target 46273207 (712537009), the Athena Maps-to target for M89.01 and M89.02.
+        Broader: subsumes the site-specific source into the upper-limb CRPS concept. One-level broader,
+        crosswalk-verified.
+        """
+}
+mapping "M890C.1" source="M890C" target="712537009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M890C SNOMED CT 712537009 = CRPS of elbow/forearm (Swedish C, WHO M89.03). Target 46273207
+        (712537009), the Athena Maps-to target for M89.03. Broader: upper-limb CRPS subsumes the forearm
+        site. Crosswalk-verified.
+        """
+}
+mapping "M890D.1" source="M890D" target="712537009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M890D SNOMED CT 712537009 = CRPS of wrist/hand (Swedish D, WHO M89.04). Target 46273207
+        (712537009), the Athena Maps-to target for M89.04. Broader: upper-limb CRPS subsumes the hand
+        site. Crosswalk-verified.
+        """
+}
+mapping "M890G.1" source="M890G" target="734986006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M890G SNOMED CT 734986006 = CRPS of knee/lower leg (Swedish G, WHO M89.06). Target 42539474
+        (734986006), the Athena Maps-to target for M89.06. Broader: lower-limb CRPS subsumes the
+        lower-leg site. Crosswalk-verified.
+        """
+}
+mapping "M890H.1" source="M890H" target="734986006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M890H SNOMED CT 734986006 = CRPS of ankle/foot (Swedish H, WHO M89.07). Target 42539474
+        (734986006), the Athena Maps-to target for M89.07. Broader: lower-limb CRPS subsumes the
+        ankle/foot site. Crosswalk-verified.
+        """
+}
+mapping "M895B.1" source="M895B" target="1332016001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M895B SNOMED CT 1332016001 203522001 = osteolysis of shoulder/upper arm region incl.
+        clavicle (Swedish B, WHO M89.51 shoulder + M89.52 upper arm). Target 1075750 (1332016001), the
+        Athena Maps-to target for M89.52; broader (covers humerus, source also names clavicle/shoulder).
+        Secondary 78308 (203522001), the general Maps-to for M89.51; looser. Primary high/broader
+        (crosswalk-verified, partial region overlap); secondary low.
+        """
+}
+mapping "M895B.2" source="M895B" target="203522001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M895E.1" source="M895E" target="1332018000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M895E SNOMED CT 1332018000 = osteolysis of pelvic region (Swedish E, WHO M89.55 pelvic
+        region and thigh). Target 1075752 (1332018000), the Athena Maps-to target for M89.55. Broader:
+        the femur/pelvic-region target subsumes the pelvic source. Crosswalk-verified, one-level
+        broader.
+        """
+}
+mapping "M895G.1" source="M895G" target="128137003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M895G SNOMED CT 128137003 203522001 = osteolysis of knee/lower leg (Swedish G, WHO M89.56).
+        Target 72986 (128137003), the Athena Maps-to target for M89.56; broader but non-specific (a
+        regional disorder concept, not an osteolysis-specific one). Secondary 78308 (203522001), the
+        general concept. Moderate for the regional target (crosswalk-verified but generic), low for the
+        general.
+        """
+}
+mapping "M895G.2" source="M895G" target="203522001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M895H.1" source="M895H" target="156556008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

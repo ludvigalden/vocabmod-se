@@ -1,0 +1,466 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V840-V846
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V8400.1" source="V8400" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8400 = SNOMED CT 217935007 (Driver of special agricultural vehicle injured in traffic
+        accident - sport/exercise). Swedish extension of base ICD-10 V84.0. Target SNOMED CT 436874 =
+        (217935007), the Athena target of base V84.0 (concept 45756150). Target is the closest
+        agricultural-vehicle-related standard concept; subsumes the agricultural-context axis but drops
+        the traffic-vs-nontraffic distinction, the driver role, and the Swedish sport-activity
+        qualifier. Broader with significant specificity loss; tier.
+        """
+}
+mapping "V8401.1" source="V8401" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8401 = SNOMED CT 217935007 (Driver of special agricultural vehicle, traffic accident -
+        play/leisure). Swedish extension of V84.0. Target SNOMED CT 436874 (217935007) is base V84.0
+        crosswalk target. Broader; leisure qualifier and driver role lost.
+        """
+}
+mapping "V8402.1" source="V8402" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8402 = SNOMED CT 217935007 (Driver of special agricultural vehicle, traffic accident -
+        work). Swedish extension of V84.0. Target SNOMED CT 436874 (217935007) is base V84.0 crosswalk
+        target. Broader; work qualifier and driver role lost.
+        """
+}
+mapping "V8403.1" source="V8403" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8403 = SNOMED CT 217935007 (Driver of special agricultural vehicle, traffic accident -
+        other activity). Swedish extension of V84.0. Target SNOMED CT 436874 (217935007) is base V84.0
+        crosswalk target. Broader; activity qualifier and driver role lost.
+        """
+}
+mapping "V8404.1" source="V8404" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8404 = SNOMED CT 217935007 (Driver of special agricultural vehicle, traffic accident -
+        vital activity). Swedish extension of V84.0. Target SNOMED CT 436874 (217935007) is base V84.0
+        crosswalk target. Broader; vital-activity qualifier and driver role lost.
+        """
+}
+mapping "V8408.1" source="V8408" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.08 (Swedish ext) = driver of agricultural vehicle injured in traffic accident - other
+        specified activity. Parent V84.0 maps via Athena to SNOMED CT 432510 (Driver in vehicular AND/OR
+        traffic accident, code 48084008). The Swedish activity-context suffix (idrott/leisure/work/etc.)
+        has no SNOMED CT representation; the parent's occupant-role target is the best standard concept and
+        fully subsumes the source. : one-level broader with verified parent crosswalk, breadth mismatch
+        is the uncodeable activity dimension.
+        """
+}
+mapping "V8409.1" source="V8409" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.09 (Swedish ext) = driver of agricultural vehicle injured in traffic accident -
+        activity unspecified. Parent V84.0 maps via Athena to SNOMED CT 432510 (Driver in vehicular AND/OR
+        traffic accident, 48084008). Target subsumes source; activity suffix uncodeable in SNOMED CT. :
+        one-level broader, verified parent crosswalk.
+        """
+}
+mapping "V8410.1" source="V8410" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.10 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        sport activity. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in vehicular AND/OR
+        traffic accident, 21107000). Target subsumes source; activity suffix uncodeable. : one-level
+        broader, verified parent crosswalk.
+        """
+}
+mapping "V8411.1" source="V8411" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.11 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        leisure activity. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in vehicular AND/OR
+        traffic accident, 21107000). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8412.1" source="V8412" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.12 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        work activity. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in vehicular AND/OR
+        traffic accident, 21107000). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8413.1" source="V8413" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.13 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        other activity. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in vehicular AND/OR
+        traffic accident, 21107000). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8414.1" source="V8414" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.14 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        vital activity (rest/sleep/meal/hygiene). Parent V84.1 maps via Athena to SNOMED CT 434228
+        (Passenger in vehicular AND/OR traffic accident, 21107000). Target subsumes source; activity
+        suffix uncodeable.
+        """
+}
+mapping "V8418.1" source="V8418" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.18 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        other specified activities. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in
+        vehicular AND/OR traffic accident, 21107000). Target subsumes source; activity suffix
+        uncodeable.
+        """
+}
+mapping "V8419.1" source="V8419" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.19 (Swedish ext) = passenger of agricultural vehicle injured in traffic accident -
+        activity unspecified. Parent V84.1 maps via Athena to SNOMED CT 434228 (Passenger in vehicular
+        AND/OR traffic accident, 21107000). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8420.1" source="V8420" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.20 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - sport activity. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source; activity suffix uncodeable. :
+        one-level broader, verified parent crosswalk.
+        """
+}
+mapping "V8421.1" source="V8421" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.21 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - leisure activity. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8422.1" source="V8422" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.22 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - work activity. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8423.1" source="V8423" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.23 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - other activity. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8424.1" source="V8424" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.24 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - vital activity. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8428.1" source="V8428" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.28 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - other specified activities. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of
+        vehicular AND/OR traffic accident, 36198007). Target subsumes source; activity suffix
+        uncodeable.
+        """
+}
+mapping "V8429.1" source="V8429" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.29 (Swedish ext) = person on outside of agricultural vehicle injured in traffic
+        accident - activity unspecified. Parent V84.2 maps via Athena to SNOMED CT 444074 (Victim of
+        vehicular AND/OR traffic accident, 36198007). Target subsumes source; activity suffix
+        uncodeable.
+        """
+}
+mapping "V8430.1" source="V8430" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.30 (Swedish ext) = unspecified occupant (driver or passenger) of agricultural vehicle
+        injured in traffic accident - sport activity. Parent V84.3 maps via Athena to SNOMED CT 444074
+        (Victim of vehicular AND/OR traffic accident, 36198007). Target subsumes source; occupant-role
+        and activity specificity both uncodeable. : verified parent crosswalk.
+        """
+}
+mapping "V8431.1" source="V8431" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.31 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - leisure activity. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8432.1" source="V8432" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.32 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - work activity. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8433.1" source="V8433" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.33 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - other activity. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8434.1" source="V8434" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.34 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - vital activity. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8438.1" source="V8438" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.38 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - other specified activities. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of
+        vehicular AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8439.1" source="V8439" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.39 (Swedish ext) = unspecified occupant of agricultural vehicle injured in traffic
+        accident - activity unspecified. Parent V84.3 maps via Athena to SNOMED CT 444074 (Victim of
+        vehicular AND/OR traffic accident, 36198007). Target subsumes source.
+        """
+}
+mapping "V8440.1" source="V8440" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.40 (Swedish ext) = person injured while boarding/alighting agricultural vehicle -
+        sport activity. Parent V84.4 maps via Athena to SNOMED CT 444074 (Victim of vehicular AND/OR
+        traffic accident, 36198007). Target subsumes source; activity suffix uncodeable. : verified
+        parent crosswalk.
+        """
+}
+mapping "V8441.1" source="V8441" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V84.41 (Swedish ext) = person injured while boarding/alighting agricultural vehicle -
+        leisure activity. Parent V84.4 maps via Athena to SNOMED CT 444074 (Victim of vehicular AND/OR
+        traffic accident, 36198007). Target subsumes source; activity suffix uncodeable.
+        """
+}
+mapping "V8442.1" source="V8442" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8442 SNOMED CT 217935007 = Person injured while boarding/alighting agricultural vehicle,
+        during paid work. Parent V84.4 crosswalks to SNOMED CT 436874 (217935007). The activity suffix
+        (förvärvsarbete) has no SNOMED CT representation; the target subsumes the agricultural-machine
+        accident axis and is broader than the source. Moderate tier: crosswalk at 4-char base, activity
+        detail unresolved.
+        """
+}
+mapping "V8443.1" source="V8443" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8443 SNOMED CT 217935007 = Person injured while boarding/alighting agricultural vehicle,
+        other activity. Parent V84.4 crosswalks to SNOMED CT 436874 (217935007). Activity suffix has no
+        SNOMED CT analogue; target is broader, subsuming the accident mechanism. Moderate tier: crosswalk
+        at 4-char base.
+        """
+}
+mapping "V8444.1" source="V8444" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8444 SNOMED CT 217935007 = boarding/alighting agricultural vehicle, vital activity
+        (rest/sleep/meal/hygiene). Parent V84.4 crosswalks to SNOMED CT 436874 (217935007). Activity suffix
+        unresolved; target broader. Moderate tier: crosswalk at 4-char base.
+        """
+}
+mapping "V8448.1" source="V8448" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8448 SNOMED CT 217935007 = boarding/alighting agricultural vehicle, other specified
+        activity. Parent V84.4 crosswalks to SNOMED CT 436874 (217935007). Activity detail unspecified;
+        target broader. Moderate tier: crosswalk at 4-char base.
+        """
+}
+mapping "V8449.1" source="V8449" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8449 SNOMED CT 217935007 = boarding/alighting agricultural vehicle, activity unspecified.
+        Parent V84.4 crosswalks to SNOMED CT 436874 (217935007). Unspecified activity; target is the
+        agricultural-machine accident concept. Moderate tier: crosswalk at 4-char base.
+        """
+}
+mapping "V8450.1" source="V8450" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8450 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle injured in nontraffic
+        transport accident, during sport/exercise. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008)
+        and 436874 (217935007). Multi-target: driver role + accident mechanism. Activity suffix
+        unresolved; targets are broader. Moderate tier: crosswalk at 4-char base.
+        """
+}
+mapping "V8450.2" source="V8450" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8451.1" source="V8451" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8451 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        play/leisure. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874 (217935007).
+        Targets broader (activity unresolved). Moderate tier.
+        """
+}
+mapping "V8451.2" source="V8451" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8452.1" source="V8452" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8452 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        paid work. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874 (217935007). Targets
+        broader (activity unresolved). Moderate tier.
+        """
+}
+mapping "V8452.2" source="V8452" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8453.1" source="V8453" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8453 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        other activity. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874 (217935007).
+        Targets broader. Moderate tier.
+        """
+}
+mapping "V8453.2" source="V8453" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8454.1" source="V8454" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8454 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        vital activity. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874 (217935007).
+        Targets broader. Moderate tier.
+        """
+}
+mapping "V8454.2" source="V8454" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8458.1" source="V8458" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8458 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        other specified activity. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874
+        (217935007). Targets broader. Moderate tier.
+        """
+}
+mapping "V8458.2" source="V8458" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8459.1" source="V8459" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8459 SNOMED CT 217935007 48084008 = Driver of agricultural vehicle, nontraffic accident,
+        unspecified activity. Parent V84.5 crosswalks to SNOMED CT 432510 (48084008) and 436874
+        (217935007). Targets broader. Moderate tier.
+        """
+}
+mapping "V8459.2" source="V8459" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8460.1" source="V8460" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8460 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        sport/exercise. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874 (217935007).
+        Targets broader (activity unresolved). Moderate tier.
+        """
+}
+mapping "V8460.2" source="V8460" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8461.1" source="V8461" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8461 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        play/leisure. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874 (217935007).
+        Targets broader. Moderate tier.
+        """
+}
+mapping "V8461.2" source="V8461" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8462.1" source="V8462" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8462 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        paid work. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874 (217935007). Targets
+        broader. Moderate tier.
+        """
+}
+mapping "V8462.2" source="V8462" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8463.1" source="V8463" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8463 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        other activity. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874 (217935007).
+        Targets broader. Moderate tier.
+        """
+}
+mapping "V8463.2" source="V8463" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8464.1" source="V8464" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8464 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        vital activity. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874 (217935007).
+        Targets broader. Moderate tier.
+        """
+}
+mapping "V8464.2" source="V8464" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8468.1" source="V8468" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8468 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        other specified activity. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874
+        (217935007). Targets broader. Moderate tier.
+        """
+}
+mapping "V8468.2" source="V8468" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8469.1" source="V8469" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8469 SNOMED CT 21107000 217935007 = Passenger of agricultural vehicle, nontraffic accident,
+        unspecified activity. Parent V84.6 crosswalks to SNOMED CT 434228 (21107000) and 436874
+        (217935007). Targets broader. Moderate tier.
+        """
+}
+mapping "V8469.2" source="V8469" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

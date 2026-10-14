@@ -1,0 +1,459 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W64
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W640.1" source="W640" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W640 (Swedish extension) = SNOMED CT 77588008 (Exposure to other and unspecified animate
+        mechanical forces - home and residential area). OMOP W64 (45756312) SNOMED CT 4298337 (concept_code
+        77588008). Place qualifier not in single SNOMED CT concept; target subsumes the core external-cause
+        meaning; broader. Moderate tier: crosswalk at parent level, place-qualifier specificity lost.
+        """
+}
+mapping "W6400.1" source="W6400" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6400 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - sport/exercise). OMOP W64 (45756312) SNOMED CT 4298337 (77588008).
+        Place/activity axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6401.1" source="W6401" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6401 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - play/leisure). OMOP W64 (45756312) SNOMED CT 4298337 (77588008).
+        Place/activity axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6402.1" source="W6402" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6402 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - paid work). OMOP W64 (45756312) SNOMED CT 4298337 (77588008). Place/activity
+        axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6403.1" source="W6403" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6403 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - other occupation). OMOP W64 (45756312) SNOMED CT 4298337 (77588008).
+        Place/activity axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6404.1" source="W6404" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6404 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - vital activity). OMOP W64 (45756312) SNOMED CT 4298337 (77588008).
+        Place/activity axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6408.1" source="W6408" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6408 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - other specified activities). OMOP W64 (45756312) SNOMED CT 4298337 (77588008).
+        Place/activity axes not in single SNOMED CT concept; broader. Moderate tier.
+        """
+}
+mapping "W6409.1" source="W6409" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6409 (Swedish extension) = SNOMED CT 77588008 (Exposure to other animate mechanical forces
+        - home/residential - activity, unspecified). Unspecified activity qualifier collapses the source
+        conceptually to its parent W640, which SNOMED CT 4298337 (77588008). Following A009→198677
+        precedent (unspecified source via parent crosswalk): moderate tier. Target is technically
+        broader (source is a 6-char child of W64) even if semantically equivalent.
+        """
+}
+mapping "W641.1" source="W641" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W641 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location context
+        (residential institution). Target SNOMED CT 4298337 (concept_code 77588008, standard_concept=S).
+        Parent W64 (concept_id 45756312) has verified Athena crosswalk to 4298337. The target subsumes
+        the source: every exposure to animate mechanical force in a residential institution is an
+        exposure to animate mechanical force. Broader mapping: target is the legitimate ancestor that
+        fully contains the more specific Swedish-extension source. High tier : verified crosswalk from
+        the parent W64, one-level breadth mismatch (location qualifier dropped), well-understood
+        specificity loss.
+        """
+}
+mapping "W6410.1" source="W6410" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6410 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (sports) context. Target SNOMED CT 4298337 (77588008, standard). Parent
+        W64 crosswalk-verified to 4298337. Target subsumes source: every exposure to animate mechanical
+        force during sports in a residential institution is an exposure to animate mechanical force.
+        Broader mapping. High tier.
+        """
+}
+mapping "W6411.1" source="W6411" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6411 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (play/leisure). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6412.1" source="W6412" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6412 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (paid work). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6413.1" source="W6413" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6413 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (other). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6414.1" source="W6414" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6414 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (vital activities: rest, sleep, meals, personal hygiene). Target
+        SNOMED CT 4298337 (77588008, standard). Parent W64 crosswalk-verified to 4298337. Target subsumes
+        source. Broader mapping. High tier.
+        """
+}
+mapping "W6418.1" source="W6418" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6418 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution) and activity (other specified). Target SNOMED CT 4298337 (77588008, standard). Parent
+        W64 crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6419.1" source="W6419" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6419 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (residential
+        institution), activity unspecified. Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W642.1" source="W642" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W642 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location context (school,
+        other institution, public area). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6420.1" source="W6420" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6420 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (sports). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6421.1" source="W6421" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6421 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (play/leisure). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6422.1" source="W6422" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6422 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (paid work). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6423.1" source="W6423" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6423 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (other). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6424.1" source="W6424" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6424 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (vital activities). Target SNOMED CT 4298337 (77588008, standard). Parent
+        W64 crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6428.1" source="W6428" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6428 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution) and activity (other specified). Target SNOMED CT 4298337 (77588008, standard). Parent
+        W64 crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6429.1" source="W6429" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6429 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (school/public
+        institution), activity unspecified. Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W643.1" source="W643" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W643 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location context (sports
+        and athletics facility). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6430.1" source="W6430" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6430 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (sports). Target SNOMED CT 4298337 (77588008, standard). Parent W64 crosswalk-verified
+        to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6431.1" source="W6431" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6431 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (play/leisure). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6432.1" source="W6432" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6432 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (paid work). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6433.1" source="W6433" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6433 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (other). Target SNOMED CT 4298337 (77588008, standard). Parent W64 crosswalk-verified
+        to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6434.1" source="W6434" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6434 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (vital activities). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6438.1" source="W6438" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6438 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports facility)
+        and activity (other specified). Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6439.1" source="W6439" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6439 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location (sports
+        facility), activity unspecified. Target SNOMED CT 4298337 (77588008, standard). Parent W64
+        crosswalk-verified to 4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W644.1" source="W644" target="77588008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W644 SNOMED CT 77588008 = Swedish ICD-10 extension of W64 adding location context (street
+        and highway). Target SNOMED CT 4298337 (77588008, standard). Parent W64 crosswalk-verified to
+        4298337. Target subsumes source. Broader mapping. High tier.
+        """
+}
+mapping "W6471.1" source="W6471" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6471 = SNOMED CT 77588008 (Swedish ICD-10 external-cause extension). The base ICD-10 code
+        W64 (Exposure to other animate mechanical forces) has a verified Athena crosswalk to (Exposure
+        to animate mechanical force, fully-specified name). SNOMED CT target subsumes the source because
+        the source adds two qualifiers (place: agricultural area; activity: play/leisure) that have no
+        SNOMED CT analogue. Mapping is one-level broader (place+activity qualifiers dropped); the
+        activity+place axis is unmodelled in SNOMED CT. Moderate tier: mechanical crosswalk to the base
+        code, source is qualified/unspecified sub-fragment, not independently re-verified at the
+        Swedish-extension granularity.
+        """
+}
+mapping "W6472.1" source="W6472" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6472 = SNOMED CT 77588008 (Swedish ICD-10 external-cause extension). Maps up to (Exposure
+        to animate mechanical force) via the W64 crosswalk; the agricultural-area + paid-work qualifiers
+        have no SNOMED CT representation. One-level broader; moderate tier (Athena crosswalk to base code,
+        qualified sub-fragment).
+        """
+}
+mapping "W6473.1" source="W6473" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6473 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to (Exposure to animate
+        mechanical force); place+activity qualifiers dropped at target. One-level broader; moderate
+        tier.
+        """
+}
+mapping "W6474.1" source="W6474" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6474 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to (Exposure to animate
+        mechanical force); place+activity qualifiers have no SNOMED CT representation. One-level broader;
+        moderate tier.
+        """
+}
+mapping "W6478.1" source="W6478" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6478 = SNOMED CT 77588008 (Swedish ICD-10 extension, residual sub-fragment). Maps up to
+        (Exposure to animate mechanical force); activity qualifier dropped at target. One-level broader;
+        moderate tier.
+        """
+}
+mapping "W6479.1" source="W6479" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6479 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to (Exposure to animate
+        mechanical force); unspecified activity + agricultural-area qualifiers dropped. One-level
+        broader; moderate tier.
+        """
+}
+mapping "W648.1" source="W648" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W648 = SNOMED CT 77588008 (Swedish ICD-10 extension at the place-only qualifier level, no
+        activity). Maps to (Exposure to animate mechanical force) via the W64 crosswalk. The place
+        qualifier has no SNOMED CT analogue, so target subsumes source at one level. High tier: a clean
+        one-level broader map with a verified crosswalk and no activity-axis ambiguity.
+        """
+}
+mapping "W6480.1" source="W6480" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6480 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place+activity qualifiers
+        dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6481.1" source="W6481" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6481 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place+activity qualifiers
+        dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6482.1" source="W6482" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6482 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place+activity qualifiers
+        dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6483.1" source="W6483" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6483 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place+activity qualifiers
+        dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6484.1" source="W6484" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6484 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place+activity qualifiers
+        dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6488.1" source="W6488" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6488 = SNOMED CT 77588008 (Swedish ICD-10 extension, residual). Maps up to; place+activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6489.1" source="W6489" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6489 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place +
+        unspecified-activity qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W649.1" source="W649" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W649 = SNOMED CT 77588008 (Swedish ICD-10 extension at the unspecified-place level, no
+        activity axis). Maps to (Exposure to animate mechanical force) via the W64 crosswalk. Source
+        adds no information beyond the base code; closest standard concept. High tier: verified
+        crosswalk, single-level broader, no qualifier ambiguity.
+        """
+}
+mapping "W6490.1" source="W6490" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6490 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place + activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6491.1" source="W6491" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6491 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place + activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6492.1" source="W6492" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6492 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place + activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6493.1" source="W6493" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6493 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place + activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6494.1" source="W6494" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6494 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; place + activity
+        qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6498.1" source="W6498" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6498 = SNOMED CT 77588008 (Swedish ICD-10 extension, residual). Maps up to; place +
+        activity qualifiers dropped. One-level broader; moderate tier.
+        """
+}
+mapping "W6499.1" source="W6499" target="77588008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6499 = SNOMED CT 77588008 (Swedish ICD-10 extension). Maps up to; both axes unspecified so
+        target fully subsumes the source semantically. One-level broader; moderate tier (mechanical
+        crosswalk, no independent re-verification at the Swedish-extension granularity).
+        """
+}

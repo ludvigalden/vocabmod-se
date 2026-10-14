@@ -1,0 +1,440 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M9-M
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M900E.1" source="M900E" target="1144499001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M900E SNOMED CT 1144499001 = tuberculosis of bone of pelvic region (Swedish E, WHO M90.05
+        pelvic region and thigh). Target 606230 (1144499001), the Athena Maps-to target for M90.05.
+        Broader: pelvis-and-femur TBC subsumes the pelvic source. Crosswalk-verified.
+        """
+}
+mapping "M900F.1" source="M900F" target="1144499001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M900F SNOMED CT 1144499001 = tuberculosis of bone of hip/femur (Swedish F, WHO M90.05 pelvic
+        region and thigh). Target 606230 (1144499001), the Athena Maps-to target for M90.05. Broader:
+        the pelvic-region-and-femur concept subsumes the hip/femur source. Crosswalk-verified.
+        """
+}
+mapping "M900G.1" source="M900G" target="203272003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M900G SNOMED CT 203272003 = tuberculosis of bone of knee/lower leg (Swedish G, WHO M90.06).
+        Target 4001302 (203272003), the Athena Maps-to target for M90.06. Broader: lower-leg TBC
+        subsumes the knee/lower-leg source. Crosswalk-verified.
+        """
+}
+mapping "M900H.1" source="M900H" target="203280005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M900H SNOMED CT 203280005 = tuberculosis of bone of ankle/foot (Swedish H, WHO M90.07).
+        Target 4001304 (203280005), the Athena Maps-to target for M90.07. Broader/near-exact: closely
+        matches the source scope. Crosswalk-verified; one-level broader.
+        """
+}
+mapping "M907B.1" source="M907B" target="287064006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907B SNOMED CT 287064006 704248008 = pathological fracture due to neoplasm of
+        shoulder/upper arm (Swedish B, WHO M90.71 shoulder + M90.72 upper arm). Target 4117701
+        (287064006), Maps-to for M90.71; 45766970 (704248008), Maps-to for M90.72. Both broader/aspect:
+        each covers part of the combined shoulder+upper-arm source. Crosswalk-verified; the two together
+        cover the source.
+        """
+}
+mapping "M907B.2" source="M907B" target="704248008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M907C.1" source="M907C" target="203449003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907C SNOMED CT 203449003 = pathological fracture due to neoplasm of elbow/forearm (Swedish
+        C, WHO M90.73 forearm). Athena Maps-to for M90.73 yields only the general 4067766 (203449003);
+        no forearm-specific standard target exists. Broader but generic; low confidence because of the
+        substantial specificity loss.
+        """
+}
+mapping "M907D.1" source="M907D" target="203449003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907D SNOMED CT 203449003 = pathological fracture due to neoplasm of wrist/hand (Swedish D,
+        WHO M90.74 hand). Athena Maps-to for M90.74 yields only the general 4067766 (203449003); no
+        hand-specific standard target. Broader but generic; low confidence due to specificity loss.
+        """
+}
+mapping "M907E.1" source="M907E" target="426115002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M907F.1" source="M907F" target="203449003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907F SNOMED CT 203449003 704253003 = pathological fracture due to neoplasm of hip/femur
+        (Swedish F, WHO M90.75 pelvic region and thigh). Target 4067766 (203449003), the Athena Maps-to
+        for M90.75 (broader, general). Secondary 45766974 (704253003), a femur-specific standard concept
+        that closely matches the lårben component. Primary high/broader (crosswalk-verified); secondary
+        moderate (covers the femur aspect, source also includes hip).
+        """
+}
+mapping "M907F.2" source="M907F" target="704253003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M907G.1" source="M907G" target="287069001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907G SNOMED CT 203449003 287069001 = pathological fracture due to neoplasm of knee/lower
+        leg (Swedish G, WHO M90.76). Target 440812 (287069001), the Athena Maps-to for M90.76; broader.
+        Secondary 4067766 (general, also Maps-to for M90.76). Primary high/broader (crosswalk-verified);
+        secondary moderate/general.
+        """
+}
+mapping "M907G.2" source="M907G" target="203449003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M907H.1" source="M907H" target="287070000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M907H SNOMED CT 203449003 287070000 = pathological fracture due to neoplasm of ankle/foot
+        (Swedish H, WHO M90.77). Target 4115176 (287070000), the Athena Maps-to for M90.77;
+        broader/near-exact. Secondary 4067766 = general pathologic-fracture-at-neoplasm concept. Primary
+        high/broader (crosswalk-verified); secondary moderate/general.
+        """
+}
+mapping "M907H.2" source="M907H" target="203449003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M908F.1" source="M908F" target="76069003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M908F SNOMED CT 609620004 76069003 = diabetic osteopathy of hip/femur (Swedish F, WHO M90.85
+        pelvic region and thigh, under M90.8 Osteopathy in other diseases). No SNOMED CT concept for
+        diabetic osteopathy specifically. Targets are the Athena Maps-to for M90.85: 75909 (76069003)
+        and 43531054 (609620004). Both are broad regional/general concepts; the diabetes aspect is lost.
+        Low confidence due to major specificity loss, but crosswalk-verified.
+        """
+}
+mapping "M908F.2" source="M908F" target="609620004" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M908G.1" source="M908G" target="128137003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M908G SNOMED CT 128137003 76069003 = diabetic osteopathy of knee/lower leg (Swedish G, WHO
+        M90.86 lower leg). No SNOMED CT concept for diabetic osteopathy. Targets are the Athena Maps-to for
+        M90.86: 72986 (128137003) and 75909 (76069003). Broad regional/general; diabetes aspect lost.
+        Low confidence due to specificity loss, crosswalk-verified.
+        """
+}
+mapping "M908G.2" source="M908G" target="76069003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M908H.1" source="M908H" target="76069003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M908H SNOMED CT 700012005 76069003 = diabetic osteopathy of ankle/foot (Swedish H, WHO
+        M90.87 ankle and foot). No SNOMED CT concept for diabetic osteopathy. Targets are the Athena
+        Maps-to for M90.87: 75909 (76069003) and 44782620 (700012005). Broad general/regional; diabetes
+        aspect lost. Low confidence due to specificity loss, crosswalk-verified.
+        """
+}
+mapping "M908H.2" source="M908H" target="700012005" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M925A.1" source="M925A" target="72047008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M925A SNOMED CT 72047008 = Osgood-Schlatter disease. Target 4217493 (72047008). Exact SNOMED CT
+        equivalent for the named clinical entity; same concept. SNOMED CT browser confirms 72047008 is the
+        active Osgood-Schlatter concept.
+        """
+}
+mapping "M925B.1" source="M925B" target="203388000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M925B SNOMED CT 203388000 = Blount disease (tibia vara). Target 40399804 (203388000). Exact
+        SNOMED CT equivalent for the named clinical entity. SNOMED CT browser confirms 203388000 is the active
+        Blount concept.
+        """
+}
+mapping "M925W.1" source="M925W" target="71488003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M925W SNOMED CT 71488003 = other specified juvenile osteochondrosis (residual category under
+        M92.5). WHO M92.5 (45577488) Maps-to 4230824 (355208009); the residual source has no specific
+        target. Target 40617884 (71488003), the general parent; broader, captures the residual bucket
+        without specificity. Low confidence due to the residual source semantics.
+        """
+}
+mapping "M932B.1" source="M932B" target="82562007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932B SNOMED CT 82562007 = OCD of shoulder/upper arm. No SNOMED CT standard concept for OCD of
+        shoulder/upper-arm region exists (the capitellum site concepts sit under elbow). Target 437359,
+        the ICD-10 M93.2 crosswalk target. One-level broader: target fully subsumes source. High tier
+        per rubric §1 (verified crosswalk, one-level broader).
+        """
+}
+mapping "M932C.1" source="M932C" target="1290779004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932C SNOMED CT 1290779004 82562007 = OCD of elbow/forearm. Primary target 1244757 (SNOMED CT
+        1290779004), standard concept, direct descendant of 437359. Source also covers forearm but no
+        forearm-specific OCD concept exists; elbow target is the dominant component. Broader (target
+        subsumes the elbow axis; the forearm aspect is uncovered, hence secondary). Secondary 437359
+        (ICD-10 M93.2 crosswalk) for the forearm axis. Primary at (one-level broader, standard concept);
+        secondary at (looser fallback).
+        """
+}
+mapping "M932C.2" source="M932C" target="82562007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M932F.1" source="M932F" target="1290778007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932F SNOMED CT 1290778007 = OCD of hip joint/femur. Target 1244756, standard concept.
+        Source and target denote the same clinical concept at the same site specificity.
+        Exact-equivalent tier.
+        """
+}
+mapping "M932G.1" source="M932G" target="1290777002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932G SNOMED CT 1290777002 = OCD of knee/lower leg. Target 1244755, standard concept,
+        descendant of 437359. Knee is the dominant component; source also lists lower leg but no
+        OCD-of-tibia standard concept is in the mirror as standard (40487942 is standard but tibia ≠ the
+        source's =lower-leg framing). One-level broader on the knee axis. High tier.
+        """
+}
+mapping "M932H.1" source="M932H" target="1290781002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932H SNOMED CT 1290780001 1290781002 = OCD of ankle/foot. Primary 1244759 (SNOMED CT
+        1290781002), standard concept. Secondary 1244758 (SNOMED CT 1290780001), standard. Source is a
+        two-site combination; each target covers one component so this is effectively a multi-target
+        partial/broader hybrid — each ankle and foot target individually subsumes its own axis of the
+        source. Primary ankle at, secondary foot at.
+        """
+}
+mapping "M932H.2" source="M932H" target="1290780001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M932X.1" source="M932X" target="82562007" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M932X SNOMED CT 82562007 = OCD, unspecified site. Target 437359, the ICD-10 M93.2 crosswalk
+        target. Unspecified source matches the general SNOMED CT concept exactly. Exact-equivalent tier.
+        """
+}
+mapping "M960A.1" source="M960A" target="673581000119104" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960A SNOMED CT 673581000119104 = pseudarthrosis after cervical-spine fusion. Target
+        37109489, standard concept. Target subsumes the cervical-spine axis (cervical is one region of
+        spinal fusion). One-level broader. High tier. The ICD-10 M96.0 base crosswalk target 4069320
+        (Pseudarthrosis after fusion or arthrodesis) is even broader; 37109489 is the closer standard
+        for spine-specific pseudarthrosis.
+        """
+}
+mapping "M960B.1" source="M960B" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960B SNOMED CT 203521008 = pseudarthrosis after shoulder arthrodesis. Target 4069320,
+        standard concept, the ICD-10 M96.0 crosswalk target. No shoulder-site-specific pseudarthrosis
+        concept exists. One-level broader: target fully subsumes the source. High tier.
+        """
+}
+mapping "M960C.1" source="M960C" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960C SNOMED CT 203521008 = pseudarthrosis after elbow arthrodesis. Target 4069320,
+        standard, ICD-10 M96.0 crosswalk. No elbow-site-specific standard concept. One-level broader.
+        High tier.
+        """
+}
+mapping "M960D.1" source="M960D" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960D SNOMED CT 203521008 = pseudarthrosis after wrist/hand arthrodesis. Target 4069320,
+        standard, ICD-10 M96.0 crosswalk. No wrist/hand-site-specific standard concept. One-level
+        broader. High tier.
+        """
+}
+mapping "M960E.1" source="M960E" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960E SNOMED CT 203521008 = pseudarthrosis after pelvis arthrodesis. Target 4069320,
+        standard, ICD-10 M96.0 crosswalk. No pelvis-site-specific standard concept. One-level broader.
+        High tier.
+        """
+}
+mapping "M960F.1" source="M960F" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960F SNOMED CT 203521008 = pseudarthrosis after hip arthrodesis. Target 4069320, standard,
+        ICD-10 M96.0 crosswalk. No hip-site-specific standard concept. One-level broader. High tier.
+        """
+}
+mapping "M960G.1" source="M960G" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960G SNOMED CT 203521008 = pseudarthrosis after knee arthrodesis. Target 4069320, standard,
+        ICD-10 M96.0 crosswalk. No knee-site-specific standard concept. One-level broader. High tier.
+        """
+}
+mapping "M960H.1" source="M960H" target="203521008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960H SNOMED CT 203521008 = pseudarthrosis after ankle/foot arthrodesis. Target 4069320,
+        standard, ICD-10 M96.0 crosswalk. No ankle/foot-site-specific standard concept. One-level
+        broader. High tier.
+        """
+}
+mapping "M960J.1" source="M960J" target="673581000119104" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960J SNOMED CT 673581000119104 = pseudarthrosis after thoracic-spine fusion. Target
+        37109489, standard concept. Target subsumes the thoracic-spine axis. One-level broader. High
+        tier.
+        """
+}
+mapping "M960K.1" source="M960K" target="673581000119104" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M960K SNOMED CT 673581000119104 = pseudarthrosis after lumbar-spine fusion. Target 37109489,
+        standard concept. Target subsumes the lumbar-spine axis. One-level broader. High tier.
+        """
+}
+mapping "M961A.1" source="M961A" target="28968001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M961A SNOMED CT 28968001 = postlaminectomy syndrome of cervical spine. Target 30501,
+        standard concept. Same clinical concept, same site. Exact-equivalent tier.
+        """
+}
+mapping "M961J.1" source="M961J" target="37432007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M961J SNOMED CT 37432007 = postlaminectomy syndrome of thoracic spine. Target 75630,
+        standard concept. Same clinical concept, same site. Exact-equivalent tier.
+        """
+}
+mapping "M961K.1" source="M961K" target="35731002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M961K SNOMED CT 35731002 = postlaminectomy syndrome of lumbar spine. Target 195625, standard
+        concept. Same clinical concept, same site. Exact-equivalent tier.
+        """
+}
+mapping "M966A.1" source="M966A" target="788937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966A SNOMED CT 788937001 = fracture after implant surgery of cervical spine. Target
+        37311961, standard concept, ICD-10 M96.6 crosswalk. No cervical-spine-site-specific
+        periprosthetic-fracture concept exists. One-level broader. High tier.
+        """
+}
+mapping "M966B.1" source="M966B" target="1268328001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966B SNOMED CT 1268328001 = periprosthetic fracture of shoulder/upper arm. Target 37167508,
+        standard concept. Source covers shoulder + upper-arm; target covers shoulder prosthesis-adjacent
+        fracture. One-level broader (upper-arm axis uncovered). High tier.
+        """
+}
+mapping "M966C.1" source="M966C" target="1303207001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966C SNOMED CT 1303207001 = periprosthetic fracture of elbow/forearm. Target 1075232,
+        standard concept. Elbow is the dominant component; forearm axis uncovered. One-level broader.
+        High tier.
+        """
+}
+mapping "M966D.1" source="M966D" target="1264544004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966D SNOMED CT 1264544004 = periprosthetic fracture of wrist/hand. Target 37167472,
+        standard concept. Source covers wrist + hand; target covers wrist prosthesis-adjacent fracture.
+        One-level broader (hand axis uncovered). High tier.
+        """
+}
+mapping "M966E.1" source="M966E" target="788937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966E SNOMED CT 788937001 = fracture after implant surgery of pelvis. Target 37311961,
+        standard, ICD-10 M96.6 crosswalk. No pelvis-site-specific periprosthetic-fracture concept
+        exists. One-level broader. High tier.
+        """
+}
+mapping "M966F.1" source="M966F" target="15970001000004108" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966F SNOMED CT 15970001000004108 = periprosthetic fracture of hip/femur. Target 46270166,
+        standard concept. Source covers hip + femur; target covers hip periprosthetic fracture.
+        One-level broader (femoral-shaft axis uncovered). High tier.
+        """
+}
+mapping "M966G.1" source="M966G" target="788937001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966G SNOMED CT 788937001 = Swedish 5th-6th char extension of ICD-10 M96.6, fracture after
+        implant surgery in knee joint/lower leg. Target SNOMED CT 37311961 (788937001) is the Athena
+        crosswalk target for parent M96.6. Target legitimately subsumes the source (the regional detail
+        is lost). : crosswalk-verified at the parent code but unspecified/regional source, equivalence
+        not independently re-verified at the Swedish subcode level.
+        """
+}
+mapping "M966H.1" source="M966H" target="788937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966H SNOMED CT 788937001 = fracture after implant surgery in ankle/foot. Same logic as
+        M966G: parent M96.6 crosswalk → SNOMED CT 37311961 (788937001). Target subsumes source; ankle/foot
+        region lost.
+        """
+}
+mapping "M966J.1" source="M966J" target="788937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966J SNOMED CT 788937001 = fracture after implant surgery in thoracic spine. Parent M96.6
+        crosswalk → SNOMED CT 37311961 (788937001). Target subsumes source; thoracic-spine region lost.
+        """
+}
+mapping "M966K.1" source="M966K" target="788937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M966K SNOMED CT 788937001 = fracture after implant surgery in lumbar spine. Parent M96.6
+        crosswalk → SNOMED CT 37311961 (788937001). Target subsumes source; lumbar-spine region lost.
+        """
+}
+mapping "M991A.1" source="M991A" target="202821008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M991A SNOMED CT 202821008 = segmental instability of cervical spine (Swedish extension of
+        M99.1). Target SNOMED CT 4002142 (202821008) is the direct region-specific standard concept.
+        Near-exact term/scope match; not crosswalk-verified at this Swedish subcode but concept matches
+        cleanly.
+        """
+}
+mapping "M991J.1" source="M991J" target="202823006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M991J SNOMED CT 202823006 = segmental instability of thoracic spine. Target SNOMED CT 4002143
+        (202823006) is the direct region-specific standard concept. Near-exact term/scope match.
+        """
+}
+mapping "M991K.1" source="M991K" target="202824000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M991K SNOMED CT 202824000 = segmental instability of lumbar spine. Target SNOMED CT 4000964
+        (202824000) is the direct region-specific standard concept. Near-exact term/scope match.
+        """
+}

@@ -1,0 +1,448 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M00-M05
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M000B.1" source="M000B" target="428437005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000B SNOMED CT 111820003 428437005 = staphylococcal septic arthritis of shoulder (Swedish
+        subcode of M00.0). Target 4180873 (428437005) = — the Athena crosswalk target for M00.01 (Staph
+        arthritis, shoulder). Target 4009329 (111820003) = — the organism-specific SNOMED CT concept
+        (crosswalk target for M00.0 parent); broader because it drops the shoulder site. Multi-target:
+        site-specific (exact for location) + organism-specific (broader, loses site).
+        """
+}
+mapping "M000B.2" source="M000B" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000C.1" source="M000C" target="239779001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000C SNOMED CT 111820003 239779001 = staphylococcal septic arthritis of elbow (Swedish
+        subcode of M00.0). Target 4346971 (239779001) = — site-specific SNOMED CT concept. Target 4009329
+        (111820003) = — organism-specific, broader (drops site). M00.02 (upper arm) crosswalk uses
+        136779 disorder of forearm as the site proxy; 4346971 is the more specific standard target for
+        elbow septic arthritis.
+        """
+}
+mapping "M000C.2" source="M000C" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000D.1" source="M000D" target="428385007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000D SNOMED CT 111820003 428385007 = staph septic arthritis of wrist/hand. Target 4177365
+        (428385007) = — the Athena crosswalk target for M00.04 (Staph arthritis, hand). Target 4009329
+        (111820003) = — organism-specific broader. Wrist also implied; no single wrist+hand septic
+        concept exists, so the hand joint target is the best site-specific standard.
+        """
+}
+mapping "M000D.2" source="M000D" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000E.1" source="M000E" target="84172003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000F.1" source="M000F" target="156466002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000F SNOMED CT 111820003 156466002 = staph septic arthritis of hip. Target 40320296
+        (156466002) = — site-and-etiology specific SNOMED CT concept. Target 4009329 (111820003) = —
+        organism-specific broader. Athena M00.05 crosswalk uses 4286642 (Arthritis of hip, generic) —
+        but 40320296 preserves the septic etiology and is the more specific standard target.
+        """
+}
+mapping "M000F.2" source="M000F" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000G.1" source="M000G" target="156467006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000G SNOMED CT 111820003 156467006 = staph septic arthritis of knee. Target 40320297
+        (156467006) = — site-and-etiology specific. Target 4009329 (111820003) = — organism-specific
+        broader. Athena M00.06 crosswalk uses 4159739 (Arthritis of knee, generic); 40320297 is the more
+        specific standard target.
+        """
+}
+mapping "M000G.2" source="M000G" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000H.1" source="M000H" target="444999002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000H SNOMED CT 111820003 444999002 = staph septic arthritis of ankle/foot. Target 40481620
+        (444999002) = — Athena crosswalk target for M00.07. Target 4009329 (111820003) = —
+        organism-specific broader.
+        """
+}
+mapping "M000H.2" source="M000H" target="111820003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M000X.1" source="M000X" target="111820003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M000X SNOMED CT 111820003 = staph septic arthritis, other/unspecified site (Swedish subcode
+        of M00.0). Target 4009329 (111820003) = — Athena crosswalk target for M00.09 (Staph arthritis,
+        site unspecified). Site is unspecified, so the organism-level standard concept is the best
+        defensible target; broader because the source's is dropped. High tier per Athena crosswalk.
+        """
+}
+mapping "M002B.1" source="M002B" target="428437005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002B SNOMED CT 428437005 51646002 = streptococcal septic arthritis of shoulder (Swedish
+        subcode of M00.2). Target 4180873 (428437005) = — Athena crosswalk target for M00.21. Target
+        4201438 (51646002) = — organism-specific broader (drops site).
+        """
+}
+mapping "M002B.2" source="M002B" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002C.1" source="M002C" target="239779001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002C SNOMED CT 239779001 51646002 = strep septic arthritis of elbow. Target 4346971
+        (239779001) = — site-specific. Target 4201438 (51646002) = — organism-specific broader. No
+        strep+elbow specific SNOMED CT concept; multi-target with site-specific (exact for location) +
+        organism (broader).
+        """
+}
+mapping "M002C.2" source="M002C" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002D.1" source="M002D" target="428385007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002D SNOMED CT 428385007 51646002 = strep septic arthritis of wrist/hand. Target 4177365
+        (428385007) = — best site-specific (Athena M00.24 crosswalk uses 4177365). Target 4201438
+        (51646002) = — organism-specific broader.
+        """
+}
+mapping "M002D.2" source="M002D" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002E.1" source="M002E" target="84172003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002E SNOMED CT 51646002 84172003 = streptococcal septic pelvospondylitis (infective
+        spondylitis of pelvic/vertebral spine). No single SNOMED CT concept for. Target 4223530 (84172003)
+        = — generic spondylitis parent; broader, drops both infective etiology and organism (moderate
+        tier per residual specificity loss). Target 4201438 (51646002) = — organism-specific broader
+        (covers the strep+arthritis aspect, drops the spinal localisation). Together they cover the two
+        axes of the source; no exact standard target exists.
+        """
+}
+mapping "M002E.2" source="M002E" target="51646002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002F.1" source="M002F" target="156466002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002F SNOMED CT 156466002 51646002 = strep septic arthritis of hip. Target 40320296
+        (156466002) = — site-and-etiology specific. Target 4201438 (51646002) = — organism-specific
+        broader.
+        """
+}
+mapping "M002F.2" source="M002F" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002G.1" source="M002G" target="156467006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002G SNOMED CT 156467006 51646002 = strep septic arthritis of knee. Target 40320297
+        (156467006) = — site-and-etiology specific. Target 4201438 (51646002) = — organism-specific
+        broader.
+        """
+}
+mapping "M002G.2" source="M002G" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002H.1" source="M002H" target="444999002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002H SNOMED CT 444999002 51646002 = strep septic arthritis of ankle/foot. Target 40481620
+        (444999002) = — Athena crosswalk target for M00.27. Target 4201438 (51646002) = —
+        organism-specific broader.
+        """
+}
+mapping "M002H.2" source="M002H" target="51646002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M002X.1" source="M002X" target="51646002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M002X SNOMED CT 51646002 = strep septic arthritis, other/unspecified site (Swedish subcode
+        of M00.2). Target 4201438 (51646002) = — Athena crosswalk target for M00.29. Site unspecified;
+        organism-level standard concept is the best target. Broader; high tier per Athena crosswalk.
+        """
+}
+mapping "M008B.1" source="M008B" target="428437005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008B SNOMED CT 428437005 48245008 = arthritis/polyarthritis due to other specified
+        bacteria, shoulder (Swedish subcode of M00.8). Target 4180873 (428437005) = — Athena crosswalk
+        target for M00.81 (other bacteria, shoulder). Target 4167984 (48245008) = — Athena crosswalk
+        target for M00.8 parent; broader because it drops both the shoulder site and the organism
+        restriction.
+        """
+}
+mapping "M008B.2" source="M008B" target="48245008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M008C.1" source="M008C" target="431263002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008C SNOMED CT 431263002 = arthritis/polyarthritis due to other specified bacterial agents,
+        elbow. Target SNOMED CT 4196020 (concept_id) = (431263002). Site and etiology match exactly; Athena
+        crosswalk for the WHO-equivalent M00.83 (Forearm) maps to this concept as the closest
+        site-specific bacterial arthritis. High tier (not) because the source specifies (could be mono-
+        or poly-articular) whereas target is singular.
+        """
+}
+mapping "M008D.1" source="M008D" target="445525001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008D SNOMED CT 428385007 445525001 = bacterial arthritis of wrist/hand region (Swedish site
+        D covers forearm/wrist/hand). Primary target SNOMED CT 40483847 = (445525001) — exact site for
+        wrist, Athena crosswalk target for WHO M00.83. Secondary target SNOMED CT 4177365 = (428385007) —
+        covers the hand aspect the Swedish source also names (Athena crosswalk for WHO M00.84).
+        Multi-target because Swedish D collapses wrist+hand.
+        """
+}
+mapping "M008D.2" source="M008D" target="428385007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M008F.1" source="M008F" target="431606003" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008F SNOMED CT 431606003 = bacterial arthritis/polyarthritis of hip joint. Target SNOMED CT
+        4197765 = (431606003). Site and etiology match; Athena crosswalk for WHO M00.85 (Pelvic region
+        and thigh) maps here. High (not exact) tier because source could include polyarticular
+        presentation while target is single-joint.
+        """
+}
+mapping "M008G.1" source="M008G" target="48245008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008G SNOMED CT 48245008 = bacterial arthritis of knee. No SNOMED CT standard concept exists in
+        the mirror (knee-specific concepts are pyogenic or infective, not bacterial-aetiology). Best
+        available target SNOMED CT 4167984 = (48245008), the parent that fully subsumes this site. Broader
+        mapping, moderate tier (Athena crosswalk assigns 4167984 to multiple M00.8x subcodes as
+        fallback).
+        """
+}
+mapping "M008H.1" source="M008H" target="444999002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008H SNOMED CT 444999002 = bacterial arthritis of ankle/foot. Target SNOMED CT 40481620 =
+        (444999002). Athena crosswalk for WHO M00.87 (Ankle and foot) maps here. Infective (rather than
+        strictly bacterial) but site exact; high tier.
+        """
+}
+mapping "M008X.1" source="M008X" target="48245008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M008X SNOMED CT 48245008 = bacterial arthritis with other/unspecified site. Target SNOMED CT
+        4167984 = (48245008). Source has no site specified, so the unsited bacterial-arthritis parent is
+        the correct standard concept; mapping is broader (target subsumes any site). Athena crosswalk
+        for WHO M00.88/M00.89 assigns 4167984.
+        """
+}
+mapping "M009B.1" source="M009B" target="36678001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009B SNOMED CT 36678001 = pyogenic arthritis, unspecified, shoulder. Target SNOMED CT 81099 =
+        (36678001). Athena crosswalk for WHO M00.91 maps here. Site and pyogenic etiology match; high
+        tier (not because /unspecified organism leaves the bacterial agent unnamed).
+        """
+}
+mapping "M009C.1" source="M009C" target="372939007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009C SNOMED CT 372939007 = pyogenic arthritis, unspecified, elbow. No standard SNOMED CT
+        exists in the mirror at standard_concept level (156463005 is non-standard UK extension). Best
+        available target SNOMED CT 80482 = (372939007), the parent. Broader; moderate tier.
+        """
+}
+mapping "M009D.1" source="M009D" target="372939007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009D SNOMED CT 372939007 = pyogenic arthritis, unspecified, wrist/hand. Wrist-specific
+        standard 156464004 and hand-specific 156465003 are non-standard UK extensions; Athena crosswalk
+        for WHO M00.93/M00.94 falls back to 80482 (372939007). Broader; moderate tier.
+        """
+}
+mapping "M009F.1" source="M009F" target="372939007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009F SNOMED CT 372939007 = pyogenic arthritis, unspecified, hip. Standard SNOMED CT 156466002
+        is non-standard UK extension. Athena crosswalk for WHO M00.95 maps to 80482 (372939007) as
+        fallback. Broader (no site retained); high tier because the source is itself UNS and 80482 is
+        the canonical pyogenic-arthritis standard.
+        """
+}
+mapping "M009G.1" source="M009G" target="372939007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009G SNOMED CT 372939007 = pyogenic arthritis, unspecified, knee. Standard SNOMED CT 156467006
+        is non-standard UK extension. Athena crosswalk for WHO M00.96 falls back to 80482 (372939007).
+        Broader; high tier (source is UNS).
+        """
+}
+mapping "M009H.1" source="M009H" target="372939007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009H SNOMED CT 372939007 = pyogenic arthritis, unspecified, ankle/foot. Standard SNOMED CT
+        156468001 is non-standard UK extension. Athena crosswalk for WHO M00.97 falls back to 80482
+        (372939007). Broader; high tier (source UNS).
+        """
+}
+mapping "M009X.1" source="M009X" target="372939007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M009X SNOMED CT 372939007 = pyogenic arthritis, unspecified, other/unspecified site. Target
+        SNOMED CT 80482 = (372939007), the canonical standard for unspecified pyogenic arthritis. Athena
+        crosswalk for WHO M00.98/M00.99 maps here. Exact equivalence at the unspecified level.
+        """
+}
+mapping "M011B.1" source="M011B" target="661621000124106" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011E.1" source="M011E" target="84172003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011F.1" source="M011F" target="201567003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M011G.1" source="M011G" target="190710003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M011G SNOMED CT 190710003 = tuberculous arthritis of knee. No standard SNOMED CT exists;
+        17136009 is a bone/joint TB concept but not arthritis-specific. Best arthritis target SNOMED CT
+        4098475 = (190710003), the unsited parent — broader; moderate tier (site lost).
+        """
+}
+mapping "M011H.1" source="M011H" target="190710003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M011H SNOMED CT 190710003 = tuberculous arthritis of ankle/foot. No standard SNOMED CT exists;
+        203280005 is bone TB, not arthritis. Best target SNOMED CT 4098475 = (190710003), broader; moderate
+        tier (site lost).
+        """
+}
+mapping "M011X.1" source="M011X" target="190710003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M011X SNOMED CT 190710003 = tuberculous arthritis, other/unspecified site. Target SNOMED CT
+        4098475 = (190710003). Athena crosswalk for WHO M01.18/M01.19 maps here. Exact equivalence at
+        the unspecified level.
+        """
+}
+mapping "M029B.1" source="M029B" target="239784007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029B SNOMED CT 239784007 = reactive arthritis, unspecified, shoulder. No plain standard
+        SNOMED CT exists in the mirror (only the dysentery- or sexually-acquired-qualified variants
+        201497009/201474006). Best target SNOMED CT 40439621 = (239784007), the unsited parent; broader
+        (site lost).
+        """
+}
+mapping "M029C.1" source="M029C" target="201561002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029C SNOMED CT 201561002 = reactive arthritis, unspecified, elbow. Target SNOMED CT 4067299 =
+        (201561002). Site and clinical concept match; high tier (not because source is UNS for the
+        underlying trigger).
+        """
+}
+mapping "M029D.1" source="M029D" target="1290723001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029D SNOMED CT 1290723001 = reactive arthritis, unspecified, wrist/hand. Primary target
+        SNOMED CT 1244729 = (1290723001) — exact for the wrist aspect (the leading site in the Swedish
+        combined). High tier; the hand aspect (1244116) is a partial alternate kept out for clarity.
+        """
+}
+mapping "M029F.1" source="M029F" target="201567003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029F SNOMED CT 201567003 = reactive arthritis, unspecified, hip. Target SNOMED CT 4065482 =
+        (201567003). Site and concept match; high tier.
+        """
+}
+mapping "M029G.1" source="M029G" target="201569000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029G SNOMED CT 201569000 = reactive arthritis, unspecified, knee. Target SNOMED CT 4065483 =
+        (201569000). Site and concept match; high tier.
+        """
+}
+mapping "M029H.1" source="M029H" target="201571000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029H SNOMED CT 201571000 = reactive arthritis, unspecified, ankle/foot. Target SNOMED CT
+        4067301 = (201571000) — exact for the ankle (the leading site in Swedish combined); the foot
+        aspect has 1288006003 (1244519) as a partial alternate. High tier.
+        """
+}
+mapping "M029X.1" source="M029X" target="239784007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M029X SNOMED CT 239784007 = reactive arthritis, unspecified, other/unspecified site. Target
+        SNOMED CT 40439621 = (239784007), the canonical standard reactive-arthritis concept. Athena
+        crosswalk for WHO M02.9 (parent) maps to 4035610 but the more specific 40439621 is the standard
+        reactive-arthritis concept. Exact equivalence at the unspecified level.
+        """
+}
+mapping "M058A.1" source="M058A" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 69896004 [GPS] [IPS] [GPFP]"
+}
+mapping "M058B.1" source="M058B" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058C.1" source="M058C" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058D.1" source="M058D" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058F.1" source="M058F" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058G.1" source="M058G" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058H.1" source="M058H" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058L.1" source="M058L" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058M.1" source="M058M" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058N.1" source="M058N" target="69896004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M058X.1" source="M058X" target="69896004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059L.1" source="M059L" target="69896004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059M.1" source="M059M" target="69896004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M059N.1" source="M059N" target="69896004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}

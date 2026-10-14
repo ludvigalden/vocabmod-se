@@ -1,0 +1,488 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes F1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "F102A.1" source="F102A" target="66590003" relationship=equivalent effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102A SNOMED CT 66590003 = alcohol dependence with physiological signs of dependence
+        (Swedish extension specifying the qualifier of ICD-10 F10.2). Target SNOMED CT 435243 (concept_code
+        66590003) = Alcohol dependence. Source ICD-10 parent F10.2 has Athena crosswalk to 435243.
+        SNOMED CT standard does not separate the physiological-signs qualifier at the standard-concept
+        level, so 435243 is the closest standard target. High tier: crosswalk-verified at parent,
+        qualifier detail not separately standardised.
+        """
+}
+mapping "F102B.1" source="F102B" target="66590003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102B SNOMED CT 66590003 = alcohol dependence without physiological signs of dependence
+        (Swedish extension of F10.2). Target SNOMED CT 435243 (concept_code 66590003) = Alcohol dependence.
+        Parent ICD-10 F10.2 crosswalk-verified to 435243. SNOMED CT does not model the
+        without-physiological-signs qualifier as a separate standard concept. High tier:
+        crosswalk-verified at parent, qualifier detail not separately standardised.
+        """
+}
+mapping "F102C.1" source="F102C" target="66590003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102C SNOMED CT 66590003 = alcohol dependence, active use (Swedish extension encoding the
+        DSM course specifier for F10.2). Target SNOMED CT 435243 (concept_code 66590003) = Alcohol
+        dependence. Parent F10.2 crosswalk-verified to 435243. The course specifier has no separate
+        standard SNOMED CT concept, so the broader alcohol-dependence concept is the best available target.
+        Moderate tier: source carries a course-specifier the standard target does not represent.
+        """
+}
+mapping "F102D.1" source="F102D" target="66590003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102D SNOMED CT 66590003 = alcohol dependence, early full remission (Swedish extension
+        encoding the DSM course specifier for F10.2). Target SNOMED CT 435243. The remission/course
+        specifier has no separate standard SNOMED CT concept in the mirror; 435243 is the
+        crosswalk-verified parent but loses the remission semantics. Low tier: real semantic loss
+        (source is in remission, target asserts current dependence).
+        """
+}
+mapping "F102E.1" source="F102E" target="66590003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102E SNOMED CT 66590003 = alcohol dependence, sustained partial remission (Swedish
+        extension encoding DSM for F10.2). Target SNOMED CT 435243. No separate standard SNOMED CT concept for
+        the remission specifier exists in the mirror; 435243 is the crosswalk-verified parent but loses
+        the remission semantics. Low tier: real semantic loss (source is in remission, target asserts
+        current dependence).
+        """
+}
+mapping "F102F.1" source="F102F" target="66590003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102F SNOMED CT 66590003 = alcohol dependence, sustained full remission (Swedish extension
+        encoding DSM for F10.2). Target SNOMED CT 435243. No separate standard SNOMED CT concept for the
+        remission specifier exists in the mirror; 435243 is the crosswalk-verified parent but loses the
+        remission semantics. Low tier: real semantic loss (source is in remission, target asserts
+        current dependence).
+        """
+}
+mapping "F102X.1" source="F102X" target="66590003" relationship=equivalent effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F102X SNOMED CT 66590003 = alcohol dependence, unspecified (Swedish unspecified extension of
+        F10.2). Target SNOMED CT 435243 (concept_code 66590003) = Alcohol dependence. Parent ICD-10 F10.2
+        has Athena crosswalk to 435243. The unspecified variant maps cleanly to the standard
+        alcohol-dependence concept. High tier: crosswalk-verified at parent, no qualifier detail lost
+        because source is unspecified.
+        """
+}
+mapping "F107A.1" source="F107A" target="1231846001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F107A SNOMED CT 1231846001 = alcohol dementia (alcohol-induced dementia/Alzheimer-style
+        chronic brain syndrome from alcohol). Target SNOMED CT 37164773 (concept_code 1231846001) =
+        Psychosis caused by ethanol. Source ICD-10 parent F10.7 (residual and late-onset psychotic
+        disorder) has Athena crosswalk to 37164773, but the source explicitly denotes alcohol dementia,
+        not generic ethanol psychosis. SNOMED CT has no dedicated standard concept in mirror (candidates
+        192214004 etc. are non-standard [X] cross-mappings). 37164773 is the crosswalk-verified standard
+        target at parent level but the semantic overlap is only partial (broader in the wrong axis).
+        Moderate tier: best available standard concept, partial semantic match.
+        """
+}
+mapping "F107W.1" source="F107W" target="1231846001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F107W = alcohol-induced mental/behavioural disorders as residual or late-onset
+        conditions, excluding alcohol dementia (Swedish extension of F10.7). Target SNOMED CT 37164773
+        (concept_code 1231846001) = Psychosis caused by ethanol. Parent ICD-10 F10.7 has Athena SNOMED
+        1231846001 crosswalk to 37164773. Source is a residual/late-onset specifier set that the SNOMED CT
+        standard concept subsumes (broader). High tier: crosswalk-verified at parent, one-level breadth
+        mismatch.
+        """
+}
+mapping "F112C.1" source="F112C" target="75544000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F112C SNOMED CT 75544000 = opioid dependence, active use (Swedish extension encoding DSM
+        course specifier for F11.2). Target SNOMED CT 438120 (concept_code 75544000) = Opioid dependence.
+        Parent ICD-10 F11.2 has Athena crosswalk to 438120. The course specifier has no separate
+        standard SNOMED CT concept in the mirror; the broader opioid-dependence concept is the
+        crosswalk-verified target. Moderate tier: course-specifier detail not represented in the
+        standard target.
+        """
+}
+mapping "F112D.1" source="F112D" target="75544000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F112D SNOMED CT 75544000 = opioid dependence, early full remission (Swedish extension
+        encoding DSM for F11.2). Target SNOMED CT 438120. The remission specifier has no separate standard
+        SNOMED CT concept in the mirror; 438120 is the crosswalk-verified parent but loses the remission
+        semantics. Low tier: real semantic loss (source is in remission, target asserts current
+        dependence).
+        """
+}
+mapping "F112E.1" source="F112E" target="75544000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F112E SNOMED CT 75544000 = opioid dependence, sustained partial remission (Swedish extension
+        encoding DSM for F11.2). Target SNOMED CT 438120. The remission specifier has no separate standard
+        SNOMED CT concept in the mirror; 438120 is the crosswalk-verified parent but loses the remission
+        semantics. Low tier: real semantic loss (source is in remission, target asserts current
+        dependence).
+        """
+}
+mapping "F112F.1" source="F112F" target="75544000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F112F SNOMED CT 75544000 = opioid dependence, sustained full remission (Swedish extension
+        encoding DSM for F11.2). Target SNOMED CT 438120. The remission specifier has no separate standard
+        SNOMED CT concept in the mirror; 438120 is the crosswalk-verified parent but loses the remission
+        semantics. Low tier: real semantic loss (source is in remission, target asserts current
+        dependence).
+        """
+}
+mapping "F112X.1" source="F112X" target="75544000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F112X SNOMED CT 75544000 = opioid dependence, unspecified (Swedish X-suffix = unspecified
+        qualifier on F11.2 dependence syndrome). Target. F11.2 crosswalk in Athena-local maps to concept
+        438120 (=75544000); the Swedish X-suffix carries no separate clinical meaning beyond the base
+        dependence, and SNOMED CT has no variant for opioid dependence. High tier: verified crosswalk plus
+        exact term match, no independent re-verification needed.
+        """
+}
+mapping "F122C.1" source="F122C" target="723933008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F122C SNOMED CT 723933008 = cannabis dependence with active drug use. Target. Direct
+        semantic equivalence on both axes (substance = cannabis, state = active/current use). High tier:
+        exact term match on a recent SNOMED CT-SD extension concept; no Swedish extension analogue in
+        ICD-10 base so no Athena crosswalk to re-verify.
+        """
+}
+mapping "F122D.1" source="F122D" target="191839003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F122D SNOMED CT 191839003 = cannabis dependence, early full remission (Swedish D-suffix;
+        DSM-style 3-12 month full remission). Target. SNOMED CT does not subdivide remission into
+        early/sustained or partial/full for substance dependence, so the target subsumes the source (any
+        remission state). Moderate tier: defensible best-available target, unspecified remission
+        specifier on the source.
+        """
+}
+mapping "F122E.1" source="F122E" target="191839003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F122E SNOMED CT 191839003 = cannabis dependence, sustained partial remission (Swedish
+        E-suffix). Target. Target subsumes source (loses sustained/partial specifier); best available
+        SNOMED CT concept. Moderate tier.
+        """
+}
+mapping "F122F.1" source="F122F" target="191839003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F122F SNOMED CT 191839003 = cannabis dependence, sustained full remission (Swedish
+        F-suffix). Target. Target subsumes source (loses sustained/full specifier). Moderate tier.
+        """
+}
+mapping "F122X.1" source="F122X" target="85005007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F122X SNOMED CT 85005007 = cannabis dependence, unspecified. Target. F12.2 crosswalk in
+        Athena-local maps to concept 440387 (=85005007); SNOMED CT also offers 191836005 as a near-synonym,
+        but 85005007 is the canonical fully-specified name and the crosswalk target. High tier: verified
+        crosswalk, exact clinical equivalence.
+        """
+}
+mapping "F132C.1" source="F132C" target="191824004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F132C SNOMED CT 191824004 = sedative/hypnotic dependence with active drug use. Target.
+        SNOMED CT lacks a aggregate concept (only substance-specific current-use variants
+        724657002/724658007/724659004 exist for sedative/hypnotic/anxiolytic separately). The chosen
+        target subsumes the source (any state including active use) at the cost of losing the active-use
+        qualifier. Moderate tier: best-available broader target, specifier loss.
+        """
+}
+mapping "F132D.1" source="F132D" target="191827006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F132D SNOMED CT 191827006 = sedative/hypnotic dependence, early full remission. Target.
+        Target subsumes source (any remission state, loses early/full specifier). Moderate tier.
+        """
+}
+mapping "F132E.1" source="F132E" target="191827006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F132E SNOMED CT 191827006 = sedative/hypnotic dependence, sustained partial remission.
+        Target. Target subsumes source. Moderate tier.
+        """
+}
+mapping "F132F.1" source="F132F" target="191827006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F132F SNOMED CT 191827006 = sedative/hypnotic dependence, sustained full remission. Target.
+        Target subsumes source. Moderate tier.
+        """
+}
+mapping "F132X.1" source="F132X" target="191824004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F132X SNOMED CT 191824004 = sedative/hypnotic dependence, unspecified. Target. Direct
+        clinical equivalence on both substance scope (hypnotic/anxiolytic family; source's maps to) and
+        unspecified qualifier. High tier: exact term match, no crosswalk to re-verify (F13.2 base
+        crosswalk lands on 4193868/312098001, the broader sedative-related-disorder concept, but the
+        unspecified-dependence concept is the closer semantic target here).
+        """
+}
+mapping "F142C.1" source="F142C" target="724688003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F142C SNOMED CT 724688003 = cocaine dependence with active drug use. Target. Direct semantic
+        equivalence on both axes. High tier: exact term match.
+        """
+}
+mapping "F142D.1" source="F142D" target="191833002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F142D SNOMED CT 191833002 = cocaine dependence, early full remission. Target. Target
+        subsumes source (any remission state). Moderate tier.
+        """
+}
+mapping "F142E.1" source="F142E" target="191833002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F142E SNOMED CT 191833002 = cocaine dependence, sustained partial remission. Target. Target
+        subsumes source. Moderate tier.
+        """
+}
+mapping "F142F.1" source="F142F" target="191833002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F142F SNOMED CT 191833002 = cocaine dependence, sustained full remission. Target. Target
+        subsumes source. Moderate tier.
+        """
+}
+mapping "F142X.1" source="F142X" target="31956009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F142X SNOMED CT 31956009 = cocaine dependence, unspecified. Target. F14.2 crosswalk in
+        Athena-local maps to concept 436389 (=31956009); SNOMED CT has 191830004 as a near-synonym, but
+        31956009 is the crosswalk target and canonical fully-specified name. High tier: verified
+        crosswalk, exact equivalence.
+        """
+}
+mapping "F152C.1" source="F152C" target="442406005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F152C SNOMED CT 442406005 = dependence on other stimulants (including caffeine) with active
+        drug use. Target. SNOMED CT lacks a aggregate concept (only 724704009 exists, far narrower). The
+        chosen target subsumes the source on the substance axis and drops the active-use qualifier.
+        Moderate tier: best-available broader target, specifier loss.
+        """
+}
+mapping "F152D.1" source="F152D" target="191845006" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F152D SNOMED CT 191845006 = dependence on other stimulants (including caffeine), early full
+        remission. Target. SNOMED CT has no aggregate concept. The chosen target is narrower on the
+        substance axis (amphetamine/psychostimulant subset of F15's — caffeine dependence in remission
+        is not covered) and broader on the remission axis (any remission vs early-full). Narrower call
+        because the substance-scope restriction is the dominant loss. Low tier: real doubt from the
+        substance-scope mismatch; reviewer may prefer the broader 442406005 (which drops the remission
+        state entirely) as an alternative.
+        """
+}
+mapping "F152E.1" source="F152E" target="191845006" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F152E SNOMED CT 191845006 = dependence on other stimulants (including caffeine), sustained
+        partial remission. Target. Same substance-scope narrowing and remission-specifier loss as F152D.
+        Low tier.
+        """
+}
+mapping "F152F.1" source="F152F" target="191845006" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F152F SNOMED CT 191845006 = dependence on other stimulants (including caffeine), sustained
+        full remission. Target. Same substance-scope narrowing and remission-specifier loss as F152D.
+        Low tier.
+        """
+}
+mapping "F152X.1" source="F152X" target="442406005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F152X SNOMED CT 442406005 = dependence on other stimulants (including caffeine),
+        unspecified. Target. F15.2 crosswalk in Athena-local maps to concept 40483172 (=442406005).
+        Target subsumes source on the substance axis (source restricts to; target is any stimulant).
+        High tier: one-level broader with verified crosswalk.
+        """
+}
+mapping "F162C.1" source="F162C" target="724695007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F162C SNOMED CT 724695007 = hallucinogen dependence with active drug use. Target. Direct
+        semantic equivalence on both axes. High tier: exact term match.
+        """
+}
+mapping "F162D.1" source="F162D" target="191851001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F162D SNOMED CT 191851001 = hallucinogen dependence, early full remission. Target. Target
+        subsumes source (any remission state). Moderate tier.
+        """
+}
+mapping "F162E.1" source="F162E" target="191851001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F162E SNOMED CT 191851001 = hallucinogen dependence, sustained partial remission. Target.
+        Target subsumes source. Moderate tier.
+        """
+}
+mapping "F162F.1" source="F162F" target="191851001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F162F SNOMED CT 191851001 = hallucinogen dependence, sustained full remission. Target.
+        Target subsumes source. Moderate tier.
+        """
+}
+mapping "F162X.1" source="F162X" target="38247002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F16.2X SNOMED CT 38247002 = hallucinogen dependence, unspecified course. Parent ICD-10 F16.2
+        maps to SNOMED CT 433180 (exact equivalent of the dependence concept). The Swedish
+        unspecified-course specifier has no SNOMED CT analogue; target subsumes the specifier. Moderate
+        tier: mechanical crosswalk via parent, specifier info lost.
+        """
+}
+mapping "F172C.1" source="F172C" target="56294008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F17.2C SNOMED CT 56294008 = tobacco dependence, currently active use. Parent ICD-10 F17.2
+        maps to SNOMED CT 4209423. No SNOMED CT concept encodes for tobacco; target subsumes the active-use
+        specifier. Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F172D.1" source="F172D" target="56294008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F17.2D SNOMED CT 56294008 = tobacco dependence, early full remission. Parent ICD-10 F17.2
+        maps to SNOMED CT 4209423. No SNOMED CT concept encodes; target subsumes the remission specifier.
+        Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F172E.1" source="F172E" target="56294008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F17.2E SNOMED CT 56294008 = tobacco dependence, sustained partial remission. Parent ICD-10
+        F17.2 maps to SNOMED CT 4209423. No SNOMED CT concept encodes; target subsumes the specifier. Moderate
+        tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F172F.1" source="F172F" target="56294008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F17.2F SNOMED CT 56294008 = tobacco dependence, sustained full remission. Parent ICD-10
+        F17.2 maps to SNOMED CT 4209423. No SNOMED CT concept encodes; target subsumes the specifier. Moderate
+        tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F172X.1" source="F172X" target="56294008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F17.2X SNOMED CT 56294008 = tobacco dependence, unspecified course. Parent ICD-10 F17.2 maps
+        to SNOMED CT 4209423. The Swedish unspecified-course specifier has no SNOMED CT analogue; target
+        subsumes the specifier. Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F182C.1" source="F182C" target="5002000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F18.2C SNOMED CT 5002000 = volatile solvent dependence, currently active use. Parent ICD-10
+        F18.2 maps to SNOMED CT 4176120. No SNOMED CT concept encodes; target subsumes the specifier. Moderate
+        tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F182D.1" source="F182D" target="5002000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F18.2D SNOMED CT 5002000 = volatile solvent dependence, early full remission. Parent ICD-10
+        F18.2 maps to SNOMED CT 4176120. No SNOMED CT concept encodes; target subsumes the specifier. Moderate
+        tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F182E.1" source="F182E" target="5002000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F18.2E SNOMED CT 5002000 = volatile solvent dependence, sustained partial remission. Parent
+        ICD-10 F18.2 maps to SNOMED CT 4176120. No SNOMED CT concept encodes; target subsumes the specifier.
+        Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F182F.1" source="F182F" target="5002000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F18.2F SNOMED CT 5002000 = volatile solvent dependence, sustained full remission. Parent
+        ICD-10 F18.2 maps to SNOMED CT 4176120. No SNOMED CT concept encodes; target subsumes the specifier.
+        Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F182X.1" source="F182X" target="5002000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F18.2X SNOMED CT 5002000 = volatile solvent dependence, unspecified course. Parent ICD-10
+        F18.2 maps to SNOMED CT 4176120. The Swedish unspecified-course specifier has no SNOMED CT analogue;
+        target subsumes the specifier. Moderate tier: parent crosswalk, specifier lost.
+        """
+}
+mapping "F192C.1" source="F192C" target="2403008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F19.2C SNOMED CT 2403008 = multiple/other psychoactive substance dependence, active use.
+        Parent ICD-10 F19.2 maps to SNOMED CT 4080762. No SNOMED CT concept encodes; target subsumes both the
+        polydrug scope and the specifier. Moderate tier: parent crosswalk, polydrug specificity and
+        specifier lost.
+        """
+}
+mapping "F192D.1" source="F192D" target="2403008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F19.2D SNOMED CT 2403008 = multiple/other psychoactive substance dependence, early full
+        remission. Parent ICD-10 F19.2 maps to SNOMED CT 4080762. No SNOMED CT concept encodes; target
+        subsumes both the polydrug scope and the specifier. Moderate tier: parent crosswalk, specificity
+        lost.
+        """
+}
+mapping "F192E.1" source="F192E" target="2403008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F19.2E SNOMED CT 2403008 = multiple/other psychoactive substance dependence, sustained
+        partial remission. Parent ICD-10 F19.2 maps to SNOMED CT 4080762. No SNOMED CT concept encodes; target
+        subsumes both the polydrug scope and the specifier. Moderate tier: parent crosswalk, specificity
+        lost.
+        """
+}
+mapping "F192F.1" source="F192F" target="2403008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F19.2F SNOMED CT 2403008 = multiple/other psychoactive substance dependence, sustained full
+        remission. Parent ICD-10 F19.2 maps to SNOMED CT 4080762. No SNOMED CT concept encodes; target
+        subsumes both the polydrug scope and the specifier. Moderate tier: parent crosswalk, specificity
+        lost.
+        """
+}
+mapping "F192X.1" source="F192X" target="2403008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F19.2X SNOMED CT 2403008 = multiple/other psychoactive substance dependence, unspecified
+        course. Parent ICD-10 F19.2 maps to SNOMED CT 4080762. The Swedish unspecified-course specifier has
+        no SNOMED CT analogue; target subsumes both the polydrug scope and the specifier. Moderate tier:
+        parent crosswalk, specificity lost.
+        """
+}

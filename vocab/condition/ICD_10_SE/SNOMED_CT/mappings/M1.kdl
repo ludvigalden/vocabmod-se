@@ -1,0 +1,284 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M100B.1" source="M100B" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100C.1" source="M100C" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100D.1" source="M100D" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100F.1" source="M100F" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100G.1" source="M100G" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100H.1" source="M100H" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M100X.1" source="M100X" target="90560007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118B.1" source="M118B" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118C.1" source="M118C" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118D.1" source="M118D" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118F.1" source="M118F" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118G.1" source="M118G" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118H.1" source="M118H" target="239834007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M118X.1" source="M118X" target="239834007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M119B.1" source="M119B" target="34427002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119B SNOMED CT 34427002 = crystal arthropathy, unspecified, shoulder region. Swedish B =
+        axelled (shoulder). Target SNOMED CT 74445 (34427002). Site and disorder match exactly; Athena
+        M11.91 crosswalk also maps to 74445. High tier (not) because source is UNS/unspecified and the
+        Swedish body-site suffix is a national extension not independently re-verified against the
+        SNOMED CT hierarchy.
+        """
+}
+mapping "M119C.1" source="M119C" target="428768008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119C SNOMED CT 428768008 = crystal arthropathy, unspecified, of elbow. Swedish C =
+        armbågsled (elbow). Target SNOMED CT 73550 (428768008). Disorder and site match exactly. ICD-10-CM
+        has no M11.9-elbow code, so no Athena crosswalk for this site; SNOMED CT browser confirms 428768008
+        active under 18834007 (Crystal arthropathy). High tier (not) because source is UNS and mapping
+        relies on direct SNOMED CT lookup, not an Athena crosswalk.
+        """
+}
+mapping "M119D.1" source="M119D" target="26241001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119D SNOMED CT 26241001 = crystal arthropathy, unspecified, of wrist/hand. Swedish D
+        combines wrist and hand. Target SNOMED CT 76500 (26241001); Athena M11.94 (hand) crosswalk maps to
+        76500. The source also includes wrist, which has a separate SNOMED CT concept (435038); 76500
+        covers the hand component but not the wrist, so this is broader rather than exact. Moderate-high
+        tier: UNS source plus combined wrist/hand site not perfectly resolved by a single SNOMED CT target.
+        """
+}
+mapping "M119F.1" source="M119F" target="428027008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119F SNOMED CT 428027008 = crystal arthropathy, unspecified, of hip. Swedish F = höftled
+        (hip). Target SNOMED CT 77953 (428027008). Disorder and site match exactly. No ICD-10-CM M11.9-hip
+        code in Athena (the x5 is broader); SNOMED CT browser confirms 428027008 active. High tier (not)
+        because source is UNS and no Athena crosswalk for this exact site.
+        """
+}
+mapping "M119G.1" source="M119G" target="429420005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119G SNOMED CT 429420005 = crystal arthropathy, unspecified, of knee. Swedish G = knäled
+        (knee). Target SNOMED CT 74444 (429420005). Disorder and site match exactly. No ICD-10-CM
+        M11.9-knee code in Athena; SNOMED CT browser confirms 429420005 active. High tier (not) because
+        source is UNS and no Athena crosswalk for this exact site.
+        """
+}
+mapping "M119H.1" source="M119H" target="75468006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119H SNOMED CT 75468006 = crystal arthropathy, unspecified, of ankle/foot. Swedish H =
+        fotled/fot (ankle/foot). Target SNOMED CT 73287 (75468006). Exact disorder and site match. Athena
+        M11.97 (ankle and foot) crosswalk maps to 73287. High tier (not) because source is UNS.
+        """
+}
+mapping "M119X.1" source="M119X" target="18834007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M119X SNOMED CT 18834007 = crystal arthropathy, unspecified, other or unspecified site.
+        Swedish X = annan/ospecificerad. Target SNOMED CT 80484 (18834007). Matches the disorder with no
+        site specified. Athena M11.98 (other) and M11.99 (site unspecified) both crosswalk to 80484.
+        Moderate tier: unspecified source, national extension.
+        """
+}
+mapping "M122B.1" source="M122B" target="202424007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122B SNOMED CT 202424007 = villonodular synovitis (pigmented), shoulder. Target SNOMED CT
+        81383 (202424007). Athena M12.21 crosswalk maps to 81383. Exact disorder+site match.
+        """
+}
+mapping "M122C.1" source="M122C" target="202436001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122C SNOMED CT 202436001 = villonodular synovitis (pigmented), elbow. Target SNOMED CT 4115360
+        (202436001). Exact disorder+site match. No ICD-10-CM M12.2-elbow code in Athena; SNOMED CT browser
+        confirms 202436001 active. High tier (not) because no Athena crosswalk for elbow specifically.
+        """
+}
+mapping "M122D.1" source="M122D" target="202438000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122D SNOMED CT 202438000 = villonodular synovitis (pigmented), wrist/hand. Swedish D
+        combines wrist and hand. Target SNOMED CT 4117722 (202438000); Athena M12.23 (forearm) crosswalk
+        maps to 4117722. The source also includes hand, which has a separate SNOMED CT concept (79112);
+        4117722 covers only the wrist component, so this is broader rather than exact. High tier (not)
+        because combined wrist/hand site not fully resolved by a single target.
+        """
+}
+mapping "M122F.1" source="M122F" target="445304002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122F SNOMED CT 445304002 = villonodular synovitis (pigmented), hip. Target SNOMED CT 40482933
+        (445304002). Exact disorder+site match. No ICD-10-CM M12.2-hip code in Athena; SNOMED CT browser
+        confirms 445304002 active. High tier (not) because no Athena crosswalk for hip specifically.
+        """
+}
+mapping "M122G.1" source="M122G" target="445266000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122G SNOMED CT 445266000 = villonodular synovitis (pigmented), knee. Target SNOMED CT 40482890
+        (445266000). Exact disorder+site match. No ICD-10-CM M12.2-knee code in Athena; SNOMED CT browser
+        confirms 445266000 active. High tier (not) because no Athena crosswalk for knee specifically.
+        """
+}
+mapping "M122H.1" source="M122H" target="202430007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122H SNOMED CT 202430007 = villonodular synovitis (pigmented), ankle/foot. Target SNOMED CT
+        76789 (202430007). Athena M12.27 crosswalk maps to 76789. Exact disorder+site match.
+        """
+}
+mapping "M122X.1" source="M122X" target="1295265008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M122X SNOMED CT 1295265008 = villonodular synovitis (pigmented), other or unspecified site.
+        Target SNOMED CT 1244972 (1295265008). Matches the disorder with no site specified. Athena M12.28
+        (other) and M12.29 (site unspecified) both crosswalk to 1244972. Moderate tier: unspecified
+        source, national extension.
+        """
+}
+mapping "M190B.1" source="M190B" target="201831003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M190B SNOMED CT 201831003 = primary arthrosis, shoulder. Target SNOMED CT 73840 (201831003).
+        Athena M19.01 crosswalk maps to 73840. Exact disorder+site match.
+        """
+}
+mapping "M190C.1" source="M190C" target="313259008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M190C SNOMED CT 313259008 = primary arthrosis, elbow. Target SNOMED CT 4197477 (313259008).
+        Athena M19.02 (upper arm) crosswalk maps to 4197477. The SNOMED CT concept explicitly names elbow;
+        exact disorder+site match.
+        """
+}
+mapping "M190D.1" source="M190D" target="201834006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M190D SNOMED CT 201834006 = primary arthrosis, wrist/hand. Swedish D combines wrist and
+        hand. Target SNOMED CT 75036 (201834006); Athena M19.04 (hand) crosswalk maps to 75036. The source
+        also includes wrist (SNOMED CT 4197476); 75036 covers only the hand component, so this is broader
+        rather than exact. High tier (not) because combined wrist/hand site not fully resolved by a
+        single target.
+        """
+}
+mapping "M190H.1" source="M190H" target="700293006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M191B.1" source="M191B" target="699262001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M191B SNOMED CT 699262001 = post-traumatic arthrosis, shoulder. Target SNOMED CT 44783205
+        (699262001). Athena M19.11 (shoulder) crosswalk maps to 44783205 plus 40484571 (Disorder of
+        joint of shoulder region). 44783205 captures the post-traumatic OA but without site specificity;
+        the target subsumes the source across all sites, so this is broader. Moderate tier: SNOMED CT has
+        no site-specific post-traumatic OA concept, so the mapping loses the shoulder site detail.
+        """
+}
+mapping "M191C.1" source="M191C" target="699262001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M191C SNOMED CT 699262001 = post-traumatic arthrosis, elbow. Target SNOMED CT 44783205
+        (699262001). No site-specific post-traumatic OA concept exists in SNOMED CT; 44783205 is the
+        site-agnostic parent. Broader: target subsumes source but loses elbow site detail. Moderate
+        tier: site specificity sacrificed.
+        """
+}
+mapping "M191D.1" source="M191D" target="699262001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M191D SNOMED CT 699262001 = post-traumatic arthrosis, wrist/hand. Target SNOMED CT 44783205
+        (699262001). No site-specific post-traumatic OA concept exists in SNOMED CT; 44783205 is the
+        site-agnostic parent. Broader: target subsumes source but loses wrist/hand site detail. Moderate
+        tier: site specificity sacrificed, combined wrist/hand site.
+        """
+}
+mapping "M191H.1" source="M191H" target="699262001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M191H SNOMED CT 699262001 = post-traumatic arthrosis, ankle/foot. Target SNOMED CT 44783205
+        (699262001). Athena M19.17 (ankle and foot) crosswalk maps to 44783205 plus 40482662. 44783205
+        is the site-agnostic parent. Broader: target subsumes source but loses ankle/foot site detail.
+        Moderate tier: site specificity sacrificed.
+        """
+}
+mapping "M192B.1" source="M192B" target="35524003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M192B SNOMED CT 35524003 = other secondary arthrosis, shoulder. Target SNOMED CT 80494
+        (35524003). Athena M19.21 (shoulder region) crosswalk maps to 80494 plus 40484571 (Disorder of
+        joint of shoulder region). 80494 captures secondary arthropathy but without site specificity.
+        Broader: target subsumes source across sites. Moderate tier: site specificity sacrificed, is a
+        residual category.
+        """
+}
+mapping "M192C.1" source="M192C" target="35524003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M192C SNOMED CT 35524003 = other secondary arthrosis, elbow. Target SNOMED CT 80494 (35524003).
+        Athena M19.22 (upper arm) crosswalk maps to 80494 plus 76191 (Disorder of upper arm). 80494
+        captures secondary arthropathy but without site specificity. Broader: target subsumes source
+        across sites. Moderate tier: site specificity sacrificed, is a residual category.
+        """
+}
+mapping "M192D.1" source="M192D" target="201852006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M192D SNOMED CT 201852006 = other secondary osteoarthritis of wrist/hand (Swedish 6th-char D
+        = hand/wrist). Target SNOMED CT 79904 (201852006) = Localized, secondary osteoarthritis of the
+        hand. Athena crosswalk from base ICD-10 M19.24 (Other secondary arthrosis, hand) maps to this
+        exact concept. Swedish code is the side-agnostic equivalent of M19.24. Confidence :
+        crosswalk-verified exact clinical match, but Swedish extension code not independently
+        re-verified against M19.24's full scope.
+        """
+}
+mapping "M192H.1" source="M192H" target="201855008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M192H SNOMED CT 201855008 = other secondary osteoarthritis of ankle/foot (Swedish 6th-char H
+        = ankle/foot). Target SNOMED CT 80183 (201855008) = Localized, secondary osteoarthritis of the
+        ankle and/or foot. Athena crosswalk from base ICD-10 M19.27 (Other secondary arthrosis, ankle
+        and foot) does not directly map to 80183 but to 80494 (Arthropathy associated with another
+        disorder) and 40482662 (Disorder of joint of ankle and/or foot). 80183 is the more clinically
+        precise standard concept matching the source semantics. Confidence : exact clinical match,
+        Athena hierarchy confirms the concept exists and is the right specificity.
+        """
+}

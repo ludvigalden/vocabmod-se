@@ -1,0 +1,312 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L3-L4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L304A.1" source="L304A" target="58759008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L304A SNOMED CT 58759008 = intertriginous erythema, Swedish subcode of L30.4 Erythema
+        intertrigo. Target SNOMED CT 4242574 (concept_code 58759008), standard_concept=S; this is the
+        Athena Maps to target for ICD-10 L30.4 (concept_id 45601221). The source is a synonym-level
+        description of the same clinical picture; the target is the standard Intertrigo disorder that
+        subsumes it. High tier: parent-code crosswalk, one-level broader.
+        """
+}
+mapping "L304X.1" source="L304X" target="58759008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L304X SNOMED CT 58759008 = intertriginous eczema, unspecified, Swedish subcode of L30.4.
+        Target SNOMED CT 4242574 (concept_code 58759008), standard_concept=S; this is the Athena Maps to
+        target for the parent ICD-10 L30.4. The source is an subform; target is the closest standard
+        concept. High tier: parent-code crosswalk, slight breadth mismatch on the wording.
+        """
+}
+mapping "L308A.1" source="L308A" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L308B.1" source="L308B" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L308C.1" source="L308C" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L308W.1" source="L308W" target="703938007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L309A.1" source="L309A" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L309B.1" source="L309B" target="703938007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L309C.1" source="L309C" target="703938007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L309D.1" source="L309D" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L309E.1" source="L309E" target="703938007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L309F.1" source="L309F" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L309G.1" source="L309G" target="703938007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L309X.1" source="L309X" target="703938007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L401A.1" source="L401A" target="48277006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L401B.1" source="L401B" target="238612002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L401B SNOMED CT 238612002 = generalized pustular psoriasis of von Zumbusch, Swedish subcode
+        of L40.1. The SNOMED CT concept 4243163 (concept_code 38360005) is non-standard (U) and Athena Maps
+        to 4031142. Target SNOMED CT 4031142 (concept_code 238612002), standard_concept=S; this is also the
+        Athena Maps to target for the parent ICD-10 L40.1. Broader: standard target subsumes the von
+        Zumbusch subtype. High tier: crosswalk-verified via the non-standard concept's Maps to edge.
+        """
+}
+mapping "L401C.1" source="L401C" target="238612002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L401C SNOMED CT 238612002 = recurrent circinate erythematous psoriasis (Lapière), a rare
+        Swedish subcode of L40.1. SNOMED CT 4033785 (238617008, S) is related but the source is
+        erythematous, not pustular, so equivalence is not exact. Target SNOMED CT 4031142 (concept_code
+        238612002), standard_concept=S, the Athena Maps to target for parent ICD-10 L40.1. Broader:
+        standard target subsumes the source as a parent-category concept. Moderate tier: rare subtype,
+        no exact standard target, mapped via parent crosswalk.
+        """
+}
+mapping "L401W.1" source="L401W" target="238612002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L401W SNOMED CT 238612002 = other and unspecified generalized pustular psoriasis, the
+        residual Swedish subcode of L40.1. Target SNOMED CT 4031142 (concept_code 238612002),
+        standard_concept=S, the Athena Maps to target for parent ICD-10 L40.1 (concept_id 45552978).
+        Broader: standard target subsumes the residual bucket. High tier: parent-code crosswalk.
+        """
+}
+mapping "L403A.1" source="L403A" target="3533007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L403A SNOMED CT 3533007 = Andrews' pustular bacterid, a Swedish subcode of L40.3 Pustulosis
+        palmaris et plantaris. Target SNOMED CT 4148213 (concept_code 3533007), standard_concept=S, active.
+        Term-for-term equivalence; SNOMED CT concept exists for this exact clinical entity (distinct from
+        Pustular psoriasis of palms and soles in the SNOMED CT hierarchy). Exact match.
+        """
+}
+mapping "L403B.1" source="L403B" target="239098009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L403B SNOMED CT 239098009 = acropustulosis of infancy, a Swedish subcode of L40.3. Target
+        SNOMED CT 4033202 (concept_code 239098009), standard_concept=S, active. Term-for-term equivalence.
+        Exact match.
+        """
+}
+mapping "L403C.1" source="L403C" target="27520001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L403C SNOMED CT 27520001 = palmoplantar pustular psoriasis, a Swedish subcode of L40.3
+        Pustulosis palmaris et plantaris. Target SNOMED CT 4100184 (concept_code 27520001),
+        standard_concept=S; this is the Athena Maps to target for the parent ICD-10 L40.3 (concept_id
+        45591634). Exact clinical equivalence. Exact match.
+        """
+}
+mapping "L403W.1" source="L403W" target="27520001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L403W SNOMED CT 27520001 = other pustulosis palmaris et plantaris, residual Swedish subcode
+        of L40.3. Target SNOMED CT 4100184 (concept_code 27520001), standard_concept=S, the Athena Maps to
+        target for parent ICD-10 L40.3. Broader: standard target subsumes the residual bucket. High
+        tier: parent-code crosswalk.
+        """
+}
+mapping "L405A.1" source="L405A" target="10629311000119107" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L405A SNOMED CT 10629311000119107 = psoriasis with arthritis mutilans, a Swedish subcode of
+        L40.5 Arthropathic psoriasis. Target SNOMED CT 46274123 (concept_code 10629311000119107),
+        standard_concept=S, active. Term-for-term equivalence: target names the combined clinical entity
+        (psoriasis + arthritis mutilans) the source describes. Note: in the SNOMED CT hierarchy 46274123
+        (4025831) (40319772), so this is a term-level equivalence, not a crosswalk-verified map; hence
+        high rather than exact-equivalent.
+        """
+}
+mapping "L405B.1" source="L405B" target="239803008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L405B SNOMED CT 239803008 = psoriasis with juvenile arthritis, a Swedish subcode of L40.5.
+        Target SNOMED CT 4079734 (concept_code 239803008), standard_concept= (40319772). Term-for-term
+        equivalence; target names the combined entity. High tier (no independent crosswalk).
+        """
+}
+mapping "L405C.1" source="L405C" target="239812005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L405C SNOMED CT 239812005 = psoriasis with distal interphalangeal joint arthritis, a Swedish
+        subcode of L40.5. Target SNOMED CT 4083682 (concept_code 239812005), standard_concept=S;
+        (40319772). Term-for-term equivalence. Exact match.
+        """
+}
+mapping "L405D.1" source="L405D" target="156370009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L405D SNOMED CT 156370009 = psoriasis with spondylitis, a Swedish subcode of L40.5. No exact
+        SNOMED CT concept for exists in the mirror. Target SNOMED CT 40319772 (concept_code 156370009),
+        standard_concept=S, the Athena Maps to target for parent ICD-10 L40.5. Broader: target subsumes
+        the source (psoriatic spondylitis is a recognized pattern within psoriatic arthritis). High
+        tier: parent-code crosswalk.
+        """
+}
+mapping "L405W.1" source="L405W" target="156370009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L405W SNOMED CT 156370009 = psoriasis with other and unspecified arthropathies, the residual
+        Swedish subcode of L40.5. Target SNOMED CT 40319772 (concept_code 156370009), standard_concept=S,
+        the Athena Maps to target for parent ICD-10 L40.5. Broader: standard target subsumes the
+        residual bucket. High tier: parent-code crosswalk.
+        """
+}
+mapping "L408A.1" source="L408A" target="238600001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L408A SNOMED CT 238600001 = inverse/flexural psoriasis, a Swedish subcode of L40.8 Other
+        psoriasis. Target SNOMED CT 4031645 (concept_code 238600001), standard_concept=S, active.
+        Term-for-term equivalence. Exact match.
+        """
+}
+mapping "L408B.1" source="L408B" target="399992009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L408C.1" source="L408C" target="9014002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L408C SNOMED CT 9014002 = atypical psoriasis, a vaguely framed Swedish subcode of L40.8. No
+        exact SNOMED CT concept for exists in the mirror; the source is ambiguous (could denote various
+        atypical morphologies). Target SNOMED CT 140168 (concept_code 9014002), standard_concept=S, the
+        Athena Maps to target for parent ICD-10 L40.8 (concept_id 45567355). Broader: target subsumes
+        the source at the psoriasis-parent level. Low tier: ambiguous source name, no specific standard
+        target.
+        """
+}
+mapping "L408W.1" source="L408W" target="9014002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L408W SNOMED CT 9014002 = other specified psoriasis, the residual Swedish subcode of L40.8.
+        Target SNOMED CT 140168 (concept_code 9014002), standard_concept=S, the Athena Maps to target for
+        parent ICD-10 L40.8. Broader: standard target subsumes the residual bucket. High tier:
+        parent-code crosswalk.
+        """
+}
+mapping "L429.1" source="L429" target="77252004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L429 SNOMED CT 77252004 = pityriasis rosea (Swedish-coded ICD-10 SE row that resolves to
+        L42). Target SNOMED CT 141371 (concept_code 77252004), standard_concept=S; this is the Athena Maps
+        to target for ICD-10 L42 (concept_id 45538573). Exact clinical equivalence. Exact match.
+        """
+}
+mapping "L433A.1" source="L433A" target="4776004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L433B.1" source="L433B" target="724511006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L433X.1" source="L433X" target="4776004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L438A.1" source="L438A" target="25858008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L438A SNOMED CT 25858008 = atrophic lichen planus, a Swedish subcode of L43.8 Other lichen
+        planus. Target SNOMED CT 4093932 (concept_code 25858008), standard_concept=S, active. Term-for-term
+        equivalence (lichen ruber planus is the continental synonym of lichen planus). Exact match.
+        """
+}
+mapping "L438B.1" source="L438B" target="4776004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L438B SNOMED CT 4776004 = erythematous lichen planus (also known as lichen planus actinicus
+        / lichen planus lucidus), a Swedish subcode of L43.8. No exact SNOMED CT concept for exists in the
+        mirror; the only related concept is 4031149 (a different, overlap syndrome). Target SNOMED CT
+        132703 (concept_code 4776004), standard_concept=S, the Athena Maps to target for parent ICD-10
+        L43.8 (concept_id 45577038). Broader: standard target subsumes the source at the
+        lichen-planus-parent level. Low tier: no exact standard target, term-level only.
+        """
+}
+mapping "L438C.1" source="L438C" target="238657006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L438C SNOMED CT 238657006 = ulcerative lichen planus of palms and soles. Target SNOMED CT
+        4031150 / 238657006 = (Athena mirror). Same clinical concept, identical name. Exact equivalent.
+        """
+}
+mapping "L438W.1" source="L438W" target="4776004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L438W SNOMED CT 4776004 = other specified lichen planus (Swedish residual). No specific
+        SNOMED CT concept for the residual bucket; the parent ICD10 L43.8 maps to SNOMED CT 132703 (Lichen
+        planus, 4776004). Target subsumes the source. High tier: one-level broader, crosswalk-verified
+        parent.
+        """
+}
+mapping "L448A.1" source="L448A" target="238924007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L448A SNOMED CT 238924007. Target SNOMED CT 4033927 / 238924007 = (Athena mirror). Same
+        clinical concept. Exact equivalent.
+        """
+}
+mapping "L448B.1" source="L448B" target="238639005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L448B SNOMED CT 238639005. Target SNOMED CT 4081063 / 238639005 = (Athena mirror). Same
+        clinical concept. Exact equivalent.
+        """
+}
+mapping "L448C.1" source="L448C" target="238614001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L448C SNOMED CT 238614001 = a benign acral pustular dermatosis of children's digits. No
+        SNOMED CT concept exists in the mirror. Clinically debated entity, often regarded as a variant of
+        pustular psoriasis / palmoplantar pustulosis of childhood. Target SNOMED CT 4031652 / 238614001 =.
+        Loose clinical association rather than equivalence, hence related at low tier; reviewer should
+        confirm whether a closer target (e.g., palmoplantar pustulosis) is preferred.
+        """
+}
+mapping "L448D.1" source="L448D" target="238640007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L448D SNOMED CT 238640007 = paraneoplastic acrokeratosis (Bazex syndrome). Target SNOMED CT
+        4081064 / 238640007 = (Athena mirror). Same clinical concept. Exact equivalent.
+        """
+}
+mapping "L448W.1" source="L448W" target="22585003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L448W SNOMED CT 22585003 = other specified papulosquamous disorders. The parent ICD10 L44.8
+        maps to SNOMED CT 4330878 / 22585003. Target subsumes the residual bucket. High tier: one-level
+        broader, parent crosswalk-verified.
+        """
+}
+mapping "L459.1" source="L459" target="201377000" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source L459 SNOMED CT 201377000 = papulosquamous conditions in diseases classified elsewhere.
+        Target SNOMED CT 40397934 / 201377000 = (Athena mirror). Same ICD-10 rubric, conceptually
+        equivalent; not because the target carries an ICD-10-indexing marker.
+        """
+}

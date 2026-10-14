@@ -1,0 +1,521 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V01-V03
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V0100.1" source="V0100" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0100.2" source="V0100" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0101.1" source="V0101" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0101.2" source="V0101" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0102.1" source="V0102" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0102.2" source="V0102" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0103.1" source="V0103" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0104.1" source="V0104" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0104 (Swedish extension of V01.0) = Pedestrian injured in collision with bicycle,
+        nontraffic accident, during vital activity (rest/sleep/meal/personal hygiene). Parent ICD-10
+        V01.0 (Pedestrian injured in collision with pedal cycle, nontraffic accident) has Athena SNOMED
+        215142005 crosswalk to SNOMED CT 442247 (Pedal cycle accident involving collision between pedal
+        cycle and pedestrian, pedestrian injured, concept_code 215142005). Swedish code adds
+        activity-context detail not in target. Target subsumes source. broader.
+        """
+}
+mapping "V0108.1" source="V0108" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0108 (Swedish extension of V01.0) = Pedestrian injured in collision with bicycle,
+        nontraffic accident, other specified activities. Parent ICD-10 V01.0 has Athena SNOMED 215142005
+        crosswalk to SNOMED CT 442247 (concept_code 215142005). Swedish code adds activity-context detail.
+        Target subsumes source. broader.
+        """
+}
+mapping "V0109.1" source="V0109" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0109.2" source="V0109" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0110.1" source="V0110" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0110.2" source="V0110" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0111.1" source="V0111" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0111.2" source="V0111" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0112.1" source="V0112" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0112.2" source="V0112" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0113.1" source="V0113" target="215142005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0114.1" source="V0114" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0114 = Swedish extension of V01.1 (Pedestrian injured in collision with pedal cycle,
+        traffic accident) with.4 suffix encoding SNOMED CT 215142005 context. Target (Pedal cycle accident
+        involving collision between pedal cycle and pedestrian, pedestrian injured) is the verified
+        Athena target for the base V01.1 (45556325). Activity-context suffix has no SNOMED CT analogue and
+        is dropped. High tier: parent crosswalk verified, tight pedal-cycle/pedestrian semantic match;
+        one dimension (activity) lost.
+        """
+}
+mapping "V0118.1" source="V0118" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0118 = Swedish extension of V01.1 (Pedestrian injured in collision with pedal cycle,
+        traffic accident) with.8 suffix encoding SNOMED CT 215142005 context. Target is the verified Athena
+        target for V01.1 (45556325). Activity-context suffix has no SNOMED CT analogue. High tier: parent
+        crosswalk verified, tight semantic match; activity dimension lost.
+        """
+}
+mapping "V0119.1" source="V0119" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0119.2" source="V0119" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0128.1" source="V0128" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source V0128 = Swedish extension (.28) of V01 (Pedestrian injured in collision with pedal
+        cycle). Per prior athena note, very close match to SNOMED CT 442247. Target SNOMED CT 215142005 is the
+        verified Athena target for the V01 parent (45756133). High tier: parent crosswalk verified,
+        pedal-cycle/pedestrian collision exactly captured; Swedish.28 subcategory context lost.
+        """
+}
+mapping "V0128.2" source="V0128" target="215142005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "V0190.1" source="V0190" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0190.2" source="V0190" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0191.1" source="V0191" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0191.2" source="V0191" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0192.1" source="V0192" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0192.2" source="V0192" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0193.1" source="V0193" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0193.2" source="V0193" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0194.1" source="V0194" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0194 = Swedish extension of V01.9 (Pedestrian injured in collision with pedal cycle,
+        unspecified whether traffic or nontraffic) with.4 vital-activity suffix. Target SNOMED CT 215142005
+        is the verified Athena target for V01 (45756133). Moderate tier: parent crosswalk verified but
+        unspecified traffic status and activity-context suffix dropped.
+        """
+}
+mapping "V0198.1" source="V0198" target="215142005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0198 = Swedish extension of V01.9 (Pedestrian injured in collision with pedal cycle,
+        unspecified) with.8 SNOMED CT 215142005 suffix. Target is the verified Athena target for V01
+        (45756133). Moderate tier: parent crosswalk verified but unspecified traffic status and
+        activity-context suffix dropped.
+        """
+}
+mapping "V0199.1" source="V0199" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0199.2" source="V0199" target="215142005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0200.1" source="V0200" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0200.2" source="V0200" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0201.1" source="V0201" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0201.2" source="V0201" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0202.1" source="V0202" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0202.2" source="V0202" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0203.1" source="V0203" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0203.2" source="V0203" target="418161006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0204.1" source="V0204" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0204 = Swedish extension of V02.0 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, nontraffic accident) with.4 vital-activity suffix. Target SNOMED CT
+        214640008 (Motor vehicle accident off public road) is the verified Athena target for V02.0
+        (45590157). Moderate tier: parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0208.1" source="V0208" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0208 = Swedish extension of V02.0 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, nontraffic accident) with.8 SNOMED CT 214640008 suffix. Target (Motor
+        vehicle accident off public road) is the verified Athena target for V02.0 (45590157). Moderate
+        tier: parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0209.1" source="V0209" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0209.2" source="V0209" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0210.1" source="V0210" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0210.2" source="V0210" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0211.1" source="V0211" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0211.2" source="V0211" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0212.1" source="V0212" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0212.2" source="V0212" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0213.1" source="V0213" target="214031005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 214031005 32906002 [GPS] [IPS] [GPFP]"
+}
+mapping "V0213.4" source="V0213" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0214.1" source="V0214" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0214 = Swedish extension of V02.1 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, traffic accident) with.4 vital-activity suffix. Targets SNOMED CT
+        418399005 (Motor vehicle accident) and 32906002 (Victim, pedestrian in vehicular AND/OR traffic
+        accident) are the verified Athena SNOMED 32906002 418399005 targets for V02.1 (45561126).
+        Moderate tier: parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0214.2" source="V0214" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0218.1" source="V0218" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0218 = Swedish extension of V02.1 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, traffic accident) with.8 SNOMED CT 32906002 418399005 suffix. Targets
+        SNOMED CT 418399005 and 32906002 are the verified Athena targets for V02.1 (45561126). Moderate
+        tier: parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0218.2" source="V0218" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0219.1" source="V0219" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0219.2" source="V0219" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0290.1" source="V0290" target="418399005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0290.2" source="V0290" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0291.1" source="V0291" target="418399005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0291.2" source="V0291" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0292.1" source="V0292" target="418399005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0292.2" source="V0292" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0293.1" source="V0293" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0293.2" source="V0293" target="418161006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0294.1" source="V0294" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0294 = Swedish extension of V02.9 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, unspecified whether traffic or nontraffic) with.4 vital-activity
+        suffix. Targets SNOMED CT 418399005 and 32906002 are the verified Athena SNOMED 32906002 418399005
+        targets for V02.9 (45580501). Moderate tier: parent crosswalk verified; unspecified traffic
+        status and activity-context suffix dropped.
+        """
+}
+mapping "V0294.2" source="V0294" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0298.1" source="V0298" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0298 = Swedish extension of V02.9 (Pedestrian injured in collision with two- or
+        three-wheeled motor vehicle, unspecified) with.8 SNOMED CT 32906002 418399005 suffix. Targets
+        SNOMED CT 418399005 and 32906002 are the verified Athena targets for V02.9 (45580501). Moderate
+        tier: parent crosswalk verified; unspecified traffic status and activity-context suffix dropped.
+        """
+}
+mapping "V0298.2" source="V0298" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0299.1" source="V0299" target="418399005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0299.2" source="V0299" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0300.1" source="V0300" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0300.2" source="V0300" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0300.3" source="V0300" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0301.1" source="V0301" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0301.2" source="V0301" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0301.3" source="V0301" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0302.1" source="V0302" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0302.2" source="V0302" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0302.3" source="V0302" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0303.1" source="V0303" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0303.2" source="V0303" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0304.1" source="V0304" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0304 = Swedish extension of V03.0 (Pedestrian injured in collision with car, pick-up
+        truck or van, nontraffic accident) with.4 vital-activity suffix. Target SNOMED CT 214640008 (Motor
+        vehicle accident off public road) is the verified Athena target for V03.0 (45585357). Moderate
+        tier: parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0308.1" source="V0308" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0308 = Swedish extension of V03.0 (Pedestrian injured in collision with car, pick-up
+        truck or van, nontraffic accident) with.8 SNOMED CT 214640008 suffix. Target (Motor vehicle
+        accident off public road) is the verified Athena target for V03.0 (45585357). Moderate tier:
+        parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0309.1" source="V0309" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0309.2" source="V0309" target="32906002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0309.3" source="V0309" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0310.1" source="V0310" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0310.2" source="V0310" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0310.3" source="V0310" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0311.1" source="V0311" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0311.2" source="V0311" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0311.3" source="V0311" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0312.1" source="V0312" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0312.2" source="V0312" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0312.3" source="V0312" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0313.1" source="V0313" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0313.2" source="V0313" target="418161006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0314.1" source="V0314" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0314 = Swedish extension of V03.1 (Pedestrian injured in collision with car, pick-up
+        truck or van, traffic accident) with.4 vital-activity suffix. Targets SNOMED CT 418399005 (Motor
+        vehicle accident) and 32906002 (Victim, pedestrian in vehicular AND/OR traffic accident) are the
+        verified Athena SNOMED 32906002 418399005 targets for V03.1 (45580503). Moderate tier: parent
+        crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0314.2" source="V0314" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0318.1" source="V0318" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0318 = Swedish extension of V03.1 (Pedestrian injured in collision with car, pick-up
+        truck or van, traffic accident) with.8 SNOMED CT 32906002 418399005 suffix. Targets SNOMED CT
+        418399005 and 32906002 are the verified Athena targets for V03.1 (45580503). Moderate tier:
+        parent crosswalk verified; activity-context suffix dropped.
+        """
+}
+mapping "V0318.2" source="V0318" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0319.1" source="V0319" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0319.2" source="V0319" target="214206004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0319.3" source="V0319" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0328.1" source="V0328" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source V0328 = Swedish-specific external-cause subcode (.28 extension); prior athena note
+        describes it as SNOMED CT 418399005, a very specific Swedish subcode under V03 with no direct
+        SNOMED CT equivalent. Target (Motor vehicle accident) is the generic target for V03 parent
+        (45756135). Low tier: real doubt remains; the Swedish-specific motorcycle framing is lost and
+        only a generic motor-vehicle-accident parent is defensible.
+        """
+}
+mapping "V0328.2" source="V0328" target="418399005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "V0390.1" source="V0390" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0390.2" source="V0390" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0391.1" source="V0391" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0391.2" source="V0391" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0392.1" source="V0392" target="32906002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0392.2" source="V0392" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0393.1" source="V0393" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0393.2" source="V0393" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0394.1" source="V0394" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0394 = Swedish extension of V03.9 (Pedestrian injured in collision with car, pick-up
+        truck or van, unspecified whether traffic or nontraffic) with.4 vital-activity suffix. Targets
+        SNOMED CT 418399005 and 32906002 are the verified Athena SNOMED 32906002 418399005 targets for
+        V03.9 (45541913). Moderate tier: parent crosswalk verified; unspecified traffic status and
+        activity-context suffix dropped.
+        """
+}
+mapping "V0394.2" source="V0394" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0398.1" source="V0398" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V0398 = Swedish extension of V03.9 (Pedestrian injured in collision with car, pick-up
+        truck or van, unspecified) with.8 SNOMED CT 32906002 418399005 suffix. Targets SNOMED CT 418399005 and
+        32906002 are the verified Athena targets for V03.9 (45541913). Moderate tier: parent crosswalk
+        verified; unspecified traffic status and activity-context suffix dropped.
+        """
+}
+mapping "V0398.2" source="V0398" target="32906002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0399.1" source="V0399" target="32906002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V0399.2" source="V0399" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

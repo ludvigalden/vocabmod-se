@@ -12,4 +12,18 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
+collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to SNOMED CT"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            claim-scope "icd-10-se-snomed-ct@2026.1"
+        }
+    }
+    import "SNOMED_CT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment

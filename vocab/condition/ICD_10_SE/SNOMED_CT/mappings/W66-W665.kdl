@@ -1,0 +1,523 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W66-W665
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W660.1" source="W660" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W660 (Swedish ICD-10 5-char extension of W66 SNOMED CT 221000003, place = home/residential
+        area, no activity axis) encodes the clinical event of bathtub drowning following a fall,
+        occurring at home. Target SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion
+        following fall into bath-tub, occurrence at home. The target is the ICD-10-aligned SNOMED CT
+        equivalent at the same place axis (home). Broader rather than exact because the Swedish code is
+        a national extension with no direct Athena crosswalk, and the SNOMED CT [X] concept is the WHO
+        ICD-10 equivalent. High tier: closest standard concept, place axis matches exactly, no extra
+        axes dropped.
+        """
+}
+mapping "W6600.1" source="W6600" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6600 (Swedish ICD-10 5-char extension of W66, place = home, activity = sport/exercise)
+        encodes the clinical event of bathtub drowning following a fall at home during sport. Target
+        SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence at home. Target captures the clinical drowning event and the place axis; it
+        drops the activity axis (sport/exercise), which has no SNOMED CT analogue (external-cause modifier,
+        not a clinical feature). Broader: target fully contains the clinical event. Moderate tier: place
+        axis matches but the activity qualifier is unmapped, so equivalence is looser than for W660.
+        """
+}
+mapping "W6601.1" source="W6601" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6601 (Swedish ICD-10 5-char extension of W66, place = home, activity = play/leisure)
+        encodes the clinical event of bathtub drowning following a fall at home during play/leisure.
+        Target SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence at home. Target captures the clinical drowning event and the place axis; it
+        drops the activity axis (play/leisure), which has no SNOMED CT analogue. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6602.1" source="W6602" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6602 (Swedish ICD-10 5-char extension of W66, place = home, activity = paid work)
+        encodes the clinical event of bathtub drowning following a fall at home during paid work. Target
+        SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence at home. Target captures the clinical drowning event and the place axis; it
+        drops the activity axis (paid work), which has no SNOMED CT analogue. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6603.1" source="W6603" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6603 (Swedish ICD-10 5-char extension of W66, place = home, activity = other) encodes
+        the clinical event of bathtub drowning following a fall at home during other activity. Target
+        SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence at home. Target captures the clinical drowning event and the place axis; it
+        drops the activity axis (other), which has no SNOMED CT analogue. Broader: target fully contains
+        the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6604.1" source="W6604" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6604 (Swedish ICD-10 5-char extension of W66, place = home, activity = vital activity
+        such as rest/sleep/meals/personal hygiene) encodes the clinical event of bathtub drowning
+        following a fall at home during a vital activity. Target SNOMED CT 40417713 (concept_code
+        221000003) = [X]Drowning and submersion following fall into bath-tub, occurrence at home. Target
+        captures the clinical drowning event and the place axis; it drops the activity axis (vital
+        activity), which has no SNOMED CT analogue. Broader: target fully contains the clinical event.
+        Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6608.1" source="W6608" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6608 (Swedish ICD-10 5-char extension of W66, place = home, activity = other specified)
+        encodes the clinical event of bathtub drowning following a fall at home during another specified
+        activity. Target SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following
+        fall into bath-tub, occurrence at home. Target captures the clinical drowning event and the
+        place axis; it drops the activity axis (other specified), which has no SNOMED CT analogue. Broader:
+        target fully contains the clinical event. Moderate tier: place axis matches, activity qualifier
+        unmapped.
+        """
+}
+mapping "W6609.1" source="W6609" target="221000003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6609 (Swedish ICD-10 5-char extension of W66, place = home, activity = unspecified)
+        encodes the clinical event of bathtub drowning following a fall at home with unspecified
+        activity. Target SNOMED CT 40417713 (concept_code 221000003) = [X]Drowning and submersion following
+        fall into bath-tub, occurrence at home. Target captures the clinical drowning event and the
+        place axis; the unspecified activity is not represented in SNOMED CT. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, the unspecified activity
+        qualifier is unmapped.
+        """
+}
+mapping "W661.1" source="W661" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W661 (Swedish ICD-10 5-char extension of W66 SNOMED CT 221001004, place = institutional
+        residence, no activity axis) encodes the clinical event of bathtub drowning following a fall in
+        an institutional residence. Target SNOMED CT 40417716 (concept_code 221001004) = [X]Drowning and
+        submersion following fall into bath-tub, occurrence in residential institution. The target is
+        the ICD-10-aligned SNOMED CT equivalent at the same place axis (residential institution). Broader
+        rather than exact because the Swedish code is a national extension with no direct Athena
+        crosswalk; the SNOMED CT [X] concept is the WHO ICD-10 equivalent. High tier: closest standard
+        concept, place axis matches exactly, no extra axes dropped.
+        """
+}
+mapping "W6610.1" source="W6610" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6610 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = sport/exercise) encodes the clinical event of bathtub drowning following a fall in an
+        institutional residence during sport. Target SNOMED CT 40417716 (concept_code 221001004) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence in residential institution.
+        Target captures the clinical drowning event and the place axis; it drops the activity axis
+        (sport/exercise), which has no SNOMED CT analogue. Broader: target fully contains the clinical
+        event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6611.1" source="W6611" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6611 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = play/leisure) encodes the clinical event of bathtub drowning following a fall in an
+        institutional residence during play/leisure. Target SNOMED CT 40417716 (concept_code 221001004) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence in residential institution.
+        Target captures the clinical drowning event and the place axis; it drops the activity axis
+        (play/leisure), which has no SNOMED CT analogue. Broader: target fully contains the clinical event.
+        Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6612.1" source="W6612" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6612 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = paid work) encodes the clinical event of bathtub drowning following a fall in an institutional
+        residence during paid work. Target SNOMED CT 40417716 (concept_code 221001004) = [X]Drowning and
+        submersion following fall into bath-tub, occurrence in residential institution. Target captures
+        the clinical drowning event and the place axis; it drops the activity axis (paid work), which
+        has no SNOMED CT analogue. Broader: target fully contains the clinical event. Moderate tier: place
+        axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6613.1" source="W6613" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6613 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = other) encodes the clinical event of bathtub drowning following a fall in an institutional
+        residence during other activity. Target SNOMED CT 40417716 (concept_code 221001004) = [X]Drowning
+        and submersion following fall into bath-tub, occurrence in residential institution. Target
+        captures the clinical drowning event and the place axis; it drops the activity axis (other),
+        which has no SNOMED CT analogue. Broader: target fully contains the clinical event. Moderate tier:
+        place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6614.1" source="W6614" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6614 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = vital activity such as rest/sleep/meals/personal hygiene) encodes the clinical event of
+        bathtub drowning following a fall in an institutional residence during a vital activity. Target
+        SNOMED CT 40417716 (concept_code 221001004) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence in residential institution. Target captures the clinical drowning event and
+        the place axis; it drops the activity axis (vital activity), which has no SNOMED CT analogue.
+        Broader: target fully contains the clinical event. Moderate tier: place axis matches, activity
+        qualifier unmapped.
+        """
+}
+mapping "W6618.1" source="W6618" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6618 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = other specified) encodes the clinical event of bathtub drowning following a fall in an
+        institutional residence during another specified activity. Target SNOMED CT 40417716 (concept_code
+        221001004) = [X]Drowning and submersion following fall into bath-tub, occurrence in residential
+        institution. Target captures the clinical drowning event and the place axis; it drops the
+        activity axis (other specified), which has no SNOMED CT analogue. Broader: target fully contains
+        the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6619.1" source="W6619" target="221001004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6619 (Swedish ICD-10 5-char extension of W66, place = institutional residence, activity
+        = unspecified) encodes the clinical event of bathtub drowning following a fall in an
+        institutional residence with unspecified activity. Target SNOMED CT 40417716 (concept_code
+        221001004) = [X]Drowning and submersion following fall into bath-tub, occurrence in residential
+        institution. Target captures the clinical drowning event and the place axis; the unspecified
+        activity is not represented in SNOMED CT. Broader: target fully contains the clinical event.
+        Moderate tier: place axis matches, the unspecified activity qualifier is unmapped.
+        """
+}
+mapping "W662.1" source="W662" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W662 (Swedish ICD-10 5-char extension of W66 SNOMED CT 221002006, place = school/other
+        institution/public area, no activity axis) encodes the clinical event of bathtub drowning
+        following a fall in a school, other institution or public area. Target SNOMED CT 40417932
+        (concept_code 221002006) = [X]Drowning and submersion following fall into bath-tub, occurrence
+        at school, other institution and public administrative area. The target is the ICD-10-aligned
+        SNOMED CT equivalent at the same place axis. Broader rather than exact because the Swedish code is
+        a national extension with no direct Athena crosswalk. High tier: closest standard concept, place
+        axis matches exactly, no extra axes dropped.
+        """
+}
+mapping "W6620.1" source="W6620" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6620 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = sport/exercise) encodes the clinical event of bathtub drowning following a fall
+        in a school/public area during sport. Target SNOMED CT 40417932 (concept_code 221002006) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence at school, other institution
+        and public administrative area. Target captures the clinical drowning event and the place axis;
+        it drops the activity axis (sport/exercise), which has no SNOMED CT analogue. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6621.1" source="W6621" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6621 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = play/leisure) encodes the clinical event of bathtub drowning following a fall
+        in a school/public area during play/leisure. Target SNOMED CT 40417932 (concept_code 221002006) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence at school, other institution
+        and public administrative area. Target captures the clinical drowning event and the place axis;
+        it drops the activity axis (play/leisure), which has no SNOMED CT analogue. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6622.1" source="W6622" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6622 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = paid work) encodes the clinical event of bathtub drowning following a fall in a
+        school/public area during paid work. Target SNOMED CT 40417932 (concept_code 221002006) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence at school, other institution
+        and public administrative area. Target captures the clinical drowning event and the place axis;
+        it drops the activity axis (paid work), which has no SNOMED CT analogue. Broader: target fully
+        contains the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6623.1" source="W6623" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6623 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = other) encodes the clinical event of bathtub drowning following a fall in a
+        school/public area during other activity. Target SNOMED CT 40417932 (concept_code 221002006) =
+        [X]Drowning and submersion following fall into bath-tub, occurrence at school, other institution
+        and public administrative area. Target captures the clinical drowning event and the place axis;
+        it drops the activity axis (other), which has no SNOMED CT analogue. Broader: target fully contains
+        the clinical event. Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6624.1" source="W6624" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6624 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = vital activity such as rest/sleep/meals/personal hygiene) encodes the clinical
+        event of bathtub drowning following a fall in a school/public area during a vital activity.
+        Target SNOMED CT 40417932 (concept_code 221002006) = [X]Drowning and submersion following fall into
+        bath-tub, occurrence at school, other institution and public administrative area. Target
+        captures the clinical drowning event and the place axis; it drops the activity axis (vital
+        activity), which has no SNOMED CT analogue. Broader: target fully contains the clinical event.
+        Moderate tier: place axis matches, activity qualifier unmapped.
+        """
+}
+mapping "W6628.1" source="W6628" target="221002006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6628 (Swedish ICD-10 5-char extension of W66, place = school/other institution/public
+        area, activity = other specified) encodes the clinical event of bathtub drowning following a
+        fall in a school/public area during another specified activity. Target SNOMED CT 40417932
+        (concept_code 221002006) = [X]Drowning and submersion following fall into bath-tub, occurrence
+        at school, other institution and public administrative area. Target captures the clinical
+        drowning event and the place axis; it drops the activity axis (other specified), which has no
+        SNOMED CT analogue. Broader: target fully contains the clinical event. Moderate tier: place axis
+        matches, activity qualifier unmapped.
+        """
+}
+mapping "W6629.1" source="W6629" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6629 = Swedish-extended ICD-10: SNOMED CT 217773000 The 4th char (2) encodes
+        place-of-occurrence (school/institution/public); the 5th char (9) encodes activity
+        (unspecified). These 4- and 5-char codes do not exist in international ICD-10 and have no Athena
+        crosswalk. Target SNOMED CT 436592 (Accidental drowning or immersion in bathtub, code 217773000) is
+        the Athena-mapped standard equivalent of the W66 parent (Athena concept 45756314 436592). The
+        target captures the core injury event but does not encode the Swedish place/activity modifiers,
+        so the target is broader than the source (target subsumes the injury; source adds place+activity
+        detail). Confidence (low): target is plausible and clinically correct for the injury axis, but
+        no independent crosswalk exists for these Swedish extensions and the place/activity semantics
+        are not represented in SNOMED CT.
+        """
+}
+mapping "W663.1" source="W663" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W663 = Swedish-extended ICD-10: SNOMED CT 217773000 The 4th char (3) encodes place (sports
+        facility); no activity char. International ICD-10 W66 has no 4-char subcategory and no Athena
+        crosswalk for this code. Target SNOMED CT 436592 (Accidental drowning or immersion in bathtub) is
+        the parent W66's standard equivalent. Target captures the injury event; source adds place detail
+        the target lacks, so broader. Confidence (low): correct injury target but no independent
+        crosswalk for the Swedish extension.
+        """
+}
+mapping "W6630.1" source="W6630" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6630 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (0)=sport/exercise. No international ICD-10 equivalent, no Athena crosswalk. Target SNOMED CT
+        436592 (Accidental drowning or immersion in bathtub) is the W66 parent's standard equivalent.
+        Target subsumes the injury but not the place/activity modifiers; broader. Confidence (low):
+        correct injury target, no crosswalk for Swedish extensions, place/activity semantics absent from
+        SNOMED CT.
+        """
+}
+mapping "W6631.1" source="W6631" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6631 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (1)=play/leisure. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader because it
+        lacks place/activity detail. Confidence (low).
+        """
+}
+mapping "W6632.1" source="W6632" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6632 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (2)=paid work. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader because it
+        omits the place/activity modifiers. Confidence (low).
+        """
+}
+mapping "W6633.1" source="W6633" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6633 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (3)=other activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6634.1" source="W6634" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6634 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (4)=vital activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6638.1" source="W6638" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6638 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (8)=other specified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6639.1" source="W6639" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6639 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (3)=sports facility; 5th char
+        (9)=unspecified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W664.1" source="W664" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W664 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street/highway. No
+        international ICD-10 equivalent, no Athena crosswalk for this 4-char Swedish extension. Target
+        SNOMED CT 436592 (Accidental drowning or immersion in bathtub) is the W66 parent's standard
+        equivalent. Target subsumes the injury but lacks the place modifier; broader. Confidence (low):
+        correct injury target, no crosswalk for Swedish extension.
+        """
+}
+mapping "W6640.1" source="W6640" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6640 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char
+        (0)=sport. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6641.1" source="W6641" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6641 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char
+        (1)=play/leisure. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6642.1" source="W6642" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6642 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char (2)=paid
+        work. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6643.1" source="W6643" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6643 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char (3)=other
+        activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6644.1" source="W6644" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6644 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char (4)=vital
+        activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6648.1" source="W6648" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6648 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char (8)=other
+        specified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6649.1" source="W6649" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6649 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (4)=street; 5th char
+        (9)=unspecified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W665.1" source="W665" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W665 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade/commerce/service
+        area. No international ICD-10 equivalent, no Athena crosswalk for this 4-char Swedish extension.
+        Target SNOMED CT 436592 (Accidental drowning or immersion in bathtub) is the W66 parent's standard
+        equivalent. Target subsumes the injury but lacks the place modifier; broader. Confidence (low):
+        correct injury target, no crosswalk for Swedish extension.
+        """
+}
+mapping "W6650.1" source="W6650" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6650 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (0)=sport. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592 (Accidental
+        drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence (low).
+        """
+}
+mapping "W6651.1" source="W6651" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6651 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (1)=play/leisure. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6652.1" source="W6652" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6652 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (2)=paid work. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6653.1" source="W6653" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6653 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (3)=other activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6654.1" source="W6654" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6654 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (4)=vital activity. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6658.1" source="W6658" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6658 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (8)=other specified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}
+mapping "W6659.1" source="W6659" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6659 = Swedish-extended ICD-10: SNOMED CT 217773000 4th char (5)=trade area; 5th char
+        (9)=unspecified. No international equivalent, no Athena crosswalk. Target SNOMED CT 436592
+        (Accidental drowning or immersion in bathtub) is W66's standard equivalent; broader. Confidence
+        (low).
+        """
+}

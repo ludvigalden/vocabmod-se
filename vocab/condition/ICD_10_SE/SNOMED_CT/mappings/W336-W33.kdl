@@ -1,0 +1,306 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W336-W33
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W336.1" source="W336" target="220708006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W336 = Skott från gevär/hagelbössa/tyngre skjutvapen - industriområde, byggarbetsplats
+        (rifle/shotgun discharge, industrial area/construction site). Target SNOMED CT 40421185 = [X]
+        (220708006). Same clinical concept; exact term-equivalent. high (no Swedish-specific crosswalk,
+        term match not independently re-verified).
+        """
+}
+mapping "W3360.1" source="W3360" target="220708006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3360 = W33 at industrial/construction - idrott/sport/motion. Target SNOMED CT 40421185
+        (220708006). Location axis covered, activity axis dropped; partial. low tier.
+        """
+}
+mapping "W3361.1" source="W3361" target="220708006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3361 = W33 at industrial/construction - lek och fritid. Target SNOMED CT 40421185
+        (220708006). Location axis covered, activity axis dropped; partial. low tier.
+        """
+}
+mapping "W3362.1" source="W3362" target="220708006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3362 = W33 at industrial/construction - förvärvsarbete. Target SNOMED CT 40421185
+        (220708006). Location axis covered, activity axis dropped; partial. low tier.
+        """
+}
+mapping "W3363.1" source="W3363" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3363 SNOMED CT 218081007 = Swedish 7-char extension of ICD-10 W33 (Rifle, shotgun and
+        larger firearm discharge) adding place (industrial site/construction site) and activity (other
+        activity). Target SNOMED CT 437167 (concept_code 218081007), the verified Athena target for parent
+        W33 (ICD10 concept_id 45756286). Place/activity axes have no SNOMED CT representation; the clinical
+        core (rifle/shotgun/larger firearm discharge accident) is fully captured. Broader: target
+        subsumes source (every W3363 event is a firearm-missile accident). High : one-level broader,
+        parent crosswalk verified in Athena mirror.
+        """
+}
+mapping "W3364.1" source="W3364" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3364 SNOMED CT 218081007 = Swedish extension of W33 adding place (industrial/construction)
+        and activity (vital activities: rest/sleep/meals/hygiene). Target SNOMED CT 437167 = Accident
+        caused by firearm missile, the verified Maps-to target for parent W33. Place/activity axes have
+        no SNOMED CT analogue; clinical core fully covered. Broader; high (one-level broader, parent
+        crosswalk verified).
+        """
+}
+mapping "W3368.1" source="W3368" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3368 SNOMED CT 218081007 = Swedish extension of W33 adding place (industrial/construction).
+        Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to target for
+        parent W33. Place/activity axes have no SNOMED CT representation; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3369.1" source="W3369" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3369 SNOMED CT 218081007 = Swedish extension of W33 adding place (industrial/construction)
+        and unspecified activity. Target SNOMED CT 437167 = Accident caused by firearm missile, the
+        verified Maps-to target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical
+        core fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W337.1" source="W337" target="218081007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W337 SNOMED CT 218081007 = Swedish 5-char extension of W33 adding place (farm/agricultural
+        area). Parent W33 maps via Athena to SNOMED CT 437167 (Accident caused by firearm missile). The
+        place qualifier (farm) has no SNOMED CT representation; the clinical concept is identical to W33.
+        Treated as exact_match since the Swedish code adds only an activity-place axis without changing
+        the clinical concept. Exact-equivalent : same clinical concept as parent W33.
+        """
+}
+mapping "W3370.1" source="W3370" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3370 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and activity
+        (sport/exercise). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core
+        fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3371.1" source="W3371" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3371 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and activity
+        (play/leisure). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to
+        target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3372.1" source="W3372" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3372 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and activity (paid
+        work). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to target
+        for parent W33. Place/activity axes have no SNOMED CT representation; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3373.1" source="W3373" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3373 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and activity (other
+        activity). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to
+        target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3374.1" source="W3374" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3374 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and activity (vital
+        activities). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to
+        target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core fully
+        covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3378.1" source="W3378" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3378 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm). Target SNOMED CT
+        437167 = Accident caused by firearm missile, the verified Maps-to target for parent W33.
+        Place/activity axes have no SNOMED CT analogue; clinical core fully covered. Broader; high
+        (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3379.1" source="W3379" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3379 SNOMED CT 218081007 = Swedish extension of W33 adding place (farm) and unspecified
+        activity. Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to target
+        for parent W33. Place/activity axes have no SNOMED CT representation; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W338.1" source="W338" target="218081007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W338 SNOMED CT 218081007 = Swedish 5-char extension of W33 adding. The place qualifier has
+        no SNOMED CT representation and the clinical concept is identical to parent W33. Treated as
+        exact_match: same clinical concept as W33. Exact-equivalent : identical to parent W33 crosswalk.
+        """
+}
+mapping "W3380.1" source="W3380" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3380 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        activity (sport/exercise). Target SNOMED CT 437167 = Accident caused by firearm missile, the
+        verified Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation;
+        clinical core fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3381.1" source="W3381" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3381 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        activity (play/leisure). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical core fully
+        covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3382.1" source="W3382" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3382 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        activity (paid work). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core
+        fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3383.1" source="W3383" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3383 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        activity (other activity). Target SNOMED CT 437167 = Accident caused by firearm missile, the
+        verified Maps-to target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical
+        core fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3384.1" source="W3384" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3384 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        activity (vital activities). Target SNOMED CT 437167 = Accident caused by firearm missile, the
+        verified Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation;
+        clinical core fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3388.1" source="W3388" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3388 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified). Target
+        SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to target for parent W33.
+        Place/activity axes have no SNOMED CT analogue; clinical core fully covered. Broader; high
+        (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3389.1" source="W3389" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3389 SNOMED CT 218081007 = Swedish extension of W33 adding place (other specified) and
+        unspecified activity. Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core
+        fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W339.1" source="W339" target="218081007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W339 SNOMED CT 218081007 = Swedish 5-char extension of W33 with unspecified place.
+        Clinically identical to parent W33 (place unspecified). Treated as exact_match: same clinical
+        concept as W33. Exact-equivalent : identical to parent W33 crosswalk.
+        """
+}
+mapping "W3390.1" source="W3390" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3390 SNOMED CT 218081007 = Swedish extension of W33 adding unspecified place and activity
+        (sport/exercise). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core
+        fully covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3391.1" source="W3391" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3391 SNOMED CT 218081007 = Swedish extension of W33 adding unspecified place and activity
+        (play/leisure). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to
+        target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical core fully covered.
+        Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3392.1" source="W3392" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3392 SNOMED CT 218081007 = Swedish extension of W33 adding unspecified place and activity
+        (paid work). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified Maps-to
+        target for parent W33. Place/activity axes have no SNOMED CT representation; clinical core fully
+        covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3393.1" source="W3393" target="218081007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3393 SNOMED CT 218081007 = Swedish extension of W33 adding unspecified place and activity
+        (other activity). Target SNOMED CT 437167 = Accident caused by firearm missile, the verified
+        Maps-to target for parent W33. Place/activity axes have no SNOMED CT analogue; clinical core fully
+        covered. Broader; high (one-level broader, parent crosswalk verified).
+        """
+}
+mapping "W3394.1" source="W3394" target="218081007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3394 is a Swedish ICD-10-SE extension of base WHO code W33 (Rifle, shotgun and larger
+        firearm discharge) with suffixes encoding place (unspecified) and activity (vital activities
+        such as rest, sleep, meals, personal hygiene). WHO W33 has Athena SNOMED 218081007 crosswalk to
+        SNOMED CT 437167 (Accident caused by firearm missile, concept_code 218081007). The Swedish
+        place/activity suffixes have no separate SNOMED CT standard concept; target 437167 fully subsumes
+        the clinical firearm-discharge accident event, losing only the SE-specific location/activity
+        granularity. Confidence (high): crosswalk-verified standard target with a small, well-understood
+        breadth mismatch from the SE extension.
+        """
+}
+mapping "W3398.1" source="W3398" target="218081007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3398 is a Swedish ICD-10-SE extension of base WHO code W33 (Rifle, shotgun and larger
+        firearm discharge) with suffixes encoding place (unspecified) and activity (other specified
+        activities). WHO W33 crosswalks via Athena to SNOMED CT 437167 (Accident caused by firearm missile,
+        218081007). SE place/activity suffixes have no separate SNOMED CT standard concept; 437167 fully
+        subsumes the firearm-discharge accident event. Confidence (high): crosswalk-verified, small
+        breadth mismatch from SE extension.
+        """
+}
+mapping "W3399.1" source="W3399" target="218081007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3399 is a Swedish ICD-10-SE extension of base WHO code W33 (Rifle, shotgun and larger
+        firearm discharge) with suffixes encoding place (unspecified) and activity (unspecified). WHO
+        W33 crosswalks via Athena to SNOMED CT 437167 (Accident caused by firearm missile, 218081007). SE
+        place/activity suffixes have no separate SNOMED CT standard concept; 437167 fully subsumes the
+        clinical firearm-discharge accident. Confidence (high): crosswalk-verified, small breadth
+        mismatch from SE extension.
+        """
+}

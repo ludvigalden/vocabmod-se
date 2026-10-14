@@ -1,0 +1,374 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes K2-K4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "K209.1" source="K209" target="16761005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 16761005 [GPS] [IPS] [GPFP]"
+}
+mapping "K209A.1" source="K209A" target="235599003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K209A SNOMED CT 235599003 = eosinophilic esophagitis (Swedish extension providing a specific
+        code for EoE). Target (standard Disorder). Same clinical concept, exact correspondence.
+        """
+}
+mapping "K209W.1" source="K209W" target="16761005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K209W SNOMED CT 16761005 = other esophagitis (Swedish residual subdivision of WHO K20
+        Oesophagitis). Target = Esophagitis, the K20 Athena target. Target subsumes the source (which is
+        a child of K20).
+        """
+}
+mapping "K309.1" source="K309" target="3696007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K309 SNOMED CT 3696007 = functional dyspepsia (Swedish extension of WHO K30). Target =
+        Nonulcer dyspepsia, the K30 Athena target. Functional dyspepsia is the clinical synonym for
+        non-ulcer dyspepsia; same concept.
+        """
+}
+mapping "K3190.1" source="K3190" target="3411000119107" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source K3190 is a 5th-char Swedish extension of K31.9 (Disease of stomach and duodenum,
+        unspecified). Best standard target is the K31.9 Athena SNOMED 119291004 3411000119107 target
+        SNOMED CT 3411000119107 (standard Disorder). Target legitimately subsumes the unspecified source;
+        moderate tier because the source is an unspecified truncation-level Swedish code and the
+        crosswalk was reached via the WHO parent rather than the Swedish extension itself.
+        """
+}
+mapping "K3190.2" source="K3190" target="119291004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K369.1" source="K369" target="74400008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K369 SNOMED CT 74400008 = other appendicitis (Swedish extension of WHO K36). Target =
+        Appendicitis, the K36 Athena target. Target subsumes the source (other appendicitis is a child
+        of appendicitis).
+        """
+}
+mapping "K379.1" source="K379" target="74400008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K379 SNOMED CT 74400008 = unspecified appendicitis (Swedish extension of WHO K37). Target =
+        Appendicitis, the K37 Athena target. Target subsumes the unspecified source.
+        """
+}
+mapping "K400A.1" source="K400A" target="767748008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K400A SNOMED CT 767748008 = obstructed bilateral inguinal hernia without gangrene, primary
+        (Swedish 5th-char extension of WHO K40.0). Target (K40.0 Athena). The A/B (primary/recurrent)
+        distinction has no SNOMED CT representation; both map to the same obstructed bilateral inguinal
+        hernia concept. The clinical hernia concept is identical for the primary variant.
+        """
+}
+mapping "K400B.1" source="K400B" target="767748008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K400B SNOMED CT 767748008 = obstructed bilateral inguinal hernia without gangrene,
+        recurrent. Target (K40.0 Athena). The recurrent distinction has no SNOMED CT analogue; the clinical
+        hernia concept is identical.
+        """
+}
+mapping "K401A.1" source="K401A" target="7815009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K401A SNOMED CT 7815009 = bilateral inguinal hernia with gangrene, primary (Swedish
+        extension of WHO K40.1). Target (K40.1 Athena). Primary/recurrent distinction has no SNOMED CT
+        analogue; the clinical gangrenous bilateral hernia concept is identical.
+        """
+}
+mapping "K401B.1" source="K401B" target="7815009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K401B SNOMED CT 7815009 = bilateral inguinal hernia with gangrene, recurrent. Target (K40.1
+        Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K402A.1" source="K402A" target="85502002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K402A SNOMED CT 85502002 = bilateral inguinal hernia without obstruction or gangrene,
+        primary (Swedish extension of WHO K40.2). Target (K40.2 Athena). Primary/recurrent distinction
+        has no SNOMED CT analogue.
+        """
+}
+mapping "K402B.1" source="K402B" target="85502002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K402B SNOMED CT 85502002 = bilateral inguinal hernia without obstruction or gangrene,
+        recurrent. Target (K40.2 Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K403A.1" source="K403A" target="196807006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K403A SNOMED CT 196807006 = unilateral/unspecified inguinal hernia with obstruction without
+        gangrene, primary (Swedish extension of WHO K40.3). Target (K40.3 Athena). Primary/recurrent
+        distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K403B.1" source="K403B" target="196807006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K403B SNOMED CT 196807006 = unilateral/unspecified obstructed inguinal hernia without
+        gangrene, recurrent. Target (K40.3 Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K404A.1" source="K404A" target="396232000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K404B.1" source="K404B" target="396232000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K409A.1" source="K409A" target="396232000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K409A SNOMED CT 396232000 = unilateral/unspecified inguinal hernia without obstruction or
+        gangrene, primary (Swedish extension of WHO K40.9). Target (K40.9 Athena). Primary/recurrent
+        distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K409B.1" source="K409B" target="396232000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K409B SNOMED CT 396232000 = unilateral/unspecified inguinal hernia without obstruction or
+        gangrene, recurrent. Target (K40.9 Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K410A.1" source="K410A" target="1083751000119104" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K410A SNOMED CT 1083751000119104 = obstructed bilateral femoral hernia without gangrene,
+        primary (Swedish extension of WHO K41.0). Target (K41.0 Athena). Primary/recurrent distinction
+        has no SNOMED CT analogue.
+        """
+}
+mapping "K410B.1" source="K410B" target="1083751000119104" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K410B SNOMED CT 1083751000119104 = obstructed bilateral femoral hernia without gangrene,
+        recurrent. Target (K41.0 Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K411A.1" source="K411A" target="38163003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K411A SNOMED CT 38163003 = bilateral femoral hernia with gangrene, primary (Swedish
+        extension of WHO K41.1). Target (K41.1 Athena). Primary/recurrent distinction has no SNOMED CT
+        analogue.
+        """
+}
+mapping "K411B.1" source="K411B" target="38163003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K411B SNOMED CT 38163003 = bilateral femoral hernia with gangrene, recurrent. Target (K41.1
+        Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K412A.1" source="K412A" target="768001004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K412A SNOMED CT 768001004 = bilateral femoral hernia without obstruction or gangrene,
+        primary (Swedish extension of WHO K41.2). Target (K41.2 Athena). Primary/recurrent distinction
+        has no SNOMED CT analogue.
+        """
+}
+mapping "K412B.1" source="K412B" target="768001004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K412B SNOMED CT 768001004 = bilateral femoral hernia without obstruction or gangrene,
+        recurrent. Target (K41.2 Athena). Recurrent distinction has no SNOMED CT analogue.
+        """
+}
+mapping "K413A.1" source="K413A" target="50063009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K413B.1" source="K413B" target="50063009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K414A.1" source="K414A" target="45845003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K414A SNOMED CT 45845003 = unilateral/unspecified femoral hernia with gangrene, primary
+        (Swedish extension of WHO K41.4). Target (K41.4 Athena). Primary/recurrent distinction has no
+        SNOMED CT analogue.
+        """
+}
+mapping "K414B.1" source="K414B" target="45845003" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K414B SNOMED CT 45845003 (Swedish extension of ICD-10 K41.4). Target SNOMED CT 4164568
+        (45845003). Athena ICD10 crosswalk maps K41.4 -> 4164568. The Swedish A/B suffix distinguishes
+        primary vs recurrent hernia; SNOMED CT has no concept for recurrence status, so the clinical
+        (hernia type + gangrene) concept maps exactly. High not exact-equivalent because the recurrence
+        axis is uncovered and the source is a national extension.
+        """
+}
+mapping "K419A.1" source="K419A" target="50063009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K419A SNOMED CT 50063009 (Swedish extension of ICD-10 K41.9). Target SNOMED CT 4178874
+        (50063009). Athena ICD10 crosswalk maps K41.9 -> 4178874. Swedish A/B suffix (primary vs
+        recurrent) has no SNOMED CT representation; the hernia-type concept maps exactly. High tier:
+        crosswalk-verified, recurrence axis uncovered by target.
+        """
+}
+mapping "K419B.1" source="K419B" target="50063009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K419B SNOMED CT 50063009 (Swedish extension of ICD-10 K41.9). Target SNOMED CT 4178874
+        (50063009). Same crosswalk and reasoning as K419A; recurrence qualifier (B suffix) is not
+        separately represented in SNOMED CT.
+        """
+}
+mapping "K430A.1" source="K430A" target="196884002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K430A SNOMED CT 196884002 (Swedish extension of ICD-10 K43.0). Target SNOMED CT 201341
+        (196884002). Athena ICD10 crosswalk maps K43.0 -> 201341. Swedish A/B (primary/recurrent) suffix
+        uncovered. High tier: crosswalk-verified, national extension.
+        """
+}
+mapping "K430B.1" source="K430B" target="196884002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K430B SNOMED CT 196884002 (Swedish extension of ICD-10 K43.0). Same SNOMED CT target 201341
+        (Incisional hernia with obstruction) and reasoning as K430A; recurrence qualifier uncovered.
+        """
+}
+mapping "K431A.1" source="K431A" target="18378006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K431A SNOMED CT 18378006 (Swedish extension of ICD-10 K43.1). Target SNOMED CT 199868
+        (18378006). Athena ICD10 crosswalk maps K43.1 -> 199868. High tier: crosswalk-verified; Swedish
+        A/B recurrence suffix uncovered by SNOMED CT.
+        """
+}
+mapping "K431B.1" source="K431B" target="18378006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K431B SNOMED CT 18378006 (Swedish extension of ICD-10 K43.1). Same SNOMED CT target 199868
+        (Incisional hernia with gangrene) and reasoning as K431A; recurrence qualifier uncovered.
+        """
+}
+mapping "K432A.1" source="K432A" target="236037000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K432A SNOMED CT 236037000 (Swedish extension of ICD-10 K43.2). Target SNOMED CT 198464
+        (236037000). Athena ICD10 crosswalk maps K43.2 -> 198464. High tier: crosswalk-verified; Swedish
+        A/B recurrence suffix uncovered.
+        """
+}
+mapping "K432B.1" source="K432B" target="236037000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K432B SNOMED CT 236037000 (Swedish extension of ICD-10 K43.2). Same SNOMED CT target 198464
+        (Incisional hernia) and reasoning as K432A; recurrence qualifier uncovered.
+        """
+}
+mapping "K433A.1" source="K433A" target="722764006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K433A SNOMED CT 722764006 (Swedish extension of ICD-10 K43.3). Target SNOMED CT 36716654
+        (722764006). Athena ICD10 crosswalk maps K43.3 -> 36716654. High tier: crosswalk-verified;
+        Swedish A/B recurrence suffix uncovered.
+        """
+}
+mapping "K433B.1" source="K433B" target="722764006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K433B SNOMED CT 722764006 (Swedish extension of ICD-10 K43.3). Same SNOMED CT target 36716654
+        (Obstructed parastomal hernia) and reasoning as K433A; recurrence qualifier uncovered.
+        """
+}
+mapping "K434A.1" source="K434A" target="723065009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K434A SNOMED CT 723065009 (Swedish extension of ICD-10 K43.4). Target SNOMED CT 36716848
+        (723065009). Athena ICD10 crosswalk maps K43.4 -> 36716848. High tier: crosswalk-verified;
+        Swedish A/B recurrence suffix uncovered.
+        """
+}
+mapping "K434B.1" source="K434B" target="723065009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K434B SNOMED CT 723065009 (Swedish extension of ICD-10 K43.4). Same SNOMED CT target 36716848
+        (Parastomal hernia with gangrene) and reasoning as K434A; recurrence qualifier uncovered.
+        """
+}
+mapping "K435A.1" source="K435A" target="236048007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K435A SNOMED CT 236048007 (Swedish extension of ICD-10 K43.5). Target SNOMED CT 4342896
+        (236048007). Athena ICD10 crosswalk maps K43.5 -> 4342896. High tier: crosswalk-verified;
+        Swedish A/B recurrence suffix uncovered.
+        """
+}
+mapping "K435B.1" source="K435B" target="236048007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K435B SNOMED CT 236048007 (Swedish extension of ICD-10 K43.5). Same SNOMED CT target 4342896
+        (Parastomal hernia) and reasoning as K435A; recurrence qualifier uncovered.
+        """
+}
+mapping "K436A.1" source="K436A" target="414923000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K436A SNOMED CT 414923000 (Swedish extension of ICD-10 K43.6). Target SNOMED CT 197916
+        (414923000). Athena ICD10 crosswalk maps K43.6 -> 197916. High tier: crosswalk-verified; Swedish
+        A/B recurrence suffix uncovered.
+        """
+}
+mapping "K436B.1" source="K436B" target="414923000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K436B SNOMED CT 414923000 (Swedish extension of ICD-10 K43.6). Same SNOMED CT target 197916
+        (Obstructed hernia of anterior abdominal wall) and reasoning as K436A; recurrence qualifier
+        uncovered.
+        """
+}
+mapping "K437A.1" source="K437A" target="414397002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K437A SNOMED CT 414397002 (Swedish extension of ICD-10 K43.7). Target SNOMED CT 194394
+        (414397002). Athena ICD10 crosswalk maps K43.7 -> 194394. High tier: crosswalk-verified; Swedish
+        A/B recurrence suffix uncovered.
+        """
+}
+mapping "K437B.1" source="K437B" target="414397002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K437B SNOMED CT 414397002 (Swedish extension of ICD-10 K43.7). Same SNOMED CT target 194394
+        (Hernia of anterior abdominal wall with gangrene) and reasoning as K437A; recurrence qualifier
+        uncovered.
+        """
+}
+mapping "K439A.1" source="K439A" target="414396006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K439A SNOMED CT 414396006 (Swedish extension of ICD-10 K43.9). Target SNOMED CT 4188155
+        (414396006). Athena ICD10 crosswalk maps K43.9 -> 4188155. High tier: crosswalk-verified;
+        Swedish A/B recurrence suffix uncovered.
+        """
+}
+mapping "K439B.1" source="K439B" target="414396006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K439B SNOMED CT 414396006 (Swedish extension of ICD-10 K43.9). Same SNOMED CT target 4188155
+        (Hernia of anterior abdominal wall) and reasoning as K439A; recurrence qualifier uncovered.
+        """
+}

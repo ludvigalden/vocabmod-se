@@ -1,0 +1,402 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes A7-B1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "A709.1" source="A709" target="75116005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A709 SNOMED CT 75116005 = psittacosis/ornithosis. SNOMED CT 438967 (concept_code 75116005) =
+        Ornithosis, standard Disorder. WHO ICD-10 A70 crosswalks to 438967 via Athena. Psittacosis and
+        ornithosis are synonyms for the same Chlamydia psittaci zoonosis. Exact equivalence.
+        """
+}
+mapping "A789.1" source="A789" target="95890006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A869.1" source="A869" target="34476008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A869 SNOMED CT 34476008 = unspecified viral encephalitis. SNOMED CT 372547 (concept_code
+        34476008) = Viral encephalitis, standard Disorder. WHO ICD-10 A86 (unspecified viral
+        encephalitis) crosswalks to 372547 via Athena. Target subsumes the unspecified source correctly.
+        Confidence : moderate, unspecified source, mechanical crosswalk.
+        """
+}
+mapping "A870A.1" source="A870A" target="111878007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A870A SNOMED CT 111878007 = Coxsackievirus meningitis, an enteroviral meningitis. SNOMED CT
+        434857 (concept_code 111878007) = Coxsackie meningitis, standard Disorder. The non-standard
+        read-code 40383856 (Coxsackie viral meningitis) maps to 434857 via Athena. Exact 1:1
+        equivalence.
+        """
+}
+mapping "A870B.1" source="A870B" target="192667007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A870B SNOMED CT 192667007 = Echovirus meningitis. SNOMED CT 437209 (concept_code 192667007) =
+        Meningitis caused by echovirus, standard Disorder. The non-standard read-code 40383857
+        (Echovirus meningitis) maps to 437209 via Athena. Exact 1:1 equivalence.
+        """
+}
+mapping "A870W.1" source="A870W" target="28192008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A870W SNOMED CT 28192008 = meningitis caused by other specified enterovirus (non-Coxsackie,
+        non-ECHO). SNOMED CT 4102297 (concept_code 28192008) = Meningitis caused by Enterovirus, standard
+        Disorder; WHO ICD-10 A87.0 (Enteroviral meningitis) crosswalks to 4102297 via Athena. The target
+        subsumes every enteroviral meningitis, including the ones the source singles out. Confidence :
+        moderate, broader over a residual source.
+        """
+}
+mapping "A899.1" source="A899" target="302810003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A899 SNOMED CT 302810003 = unspecified viral CNS infection. SNOMED CT 381783 (concept_code
+        302810003) = Viral infection of central nervous system, standard Disorder. WHO ICD-10 A89
+        (unspecified viral CNS infection) crosswalks to 381783 via Athena. Target subsumes the
+        unspecified source. Confidence : moderate, unspecified source, mechanical crosswalk.
+        """
+}
+mapping "A919.1" source="A919" target="38362002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "A949.1" source="A949" target="40610006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A949 SNOMED CT 40610006 = unspecified arthropod-borne viral fever. SNOMED CT 438685
+        (concept_code 40610006) = Arbovirus infection, standard Disorder. WHO ICD-10 A94 (unspecified
+        arthropod-borne viral fever) crosswalks to 438685 via Athena. Target subsumes the unspecified
+        source. Confidence : moderate, unspecified source, mechanical crosswalk.
+        """
+}
+mapping "A988A.1" source="A988A" target="359761005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A988A SNOMED CT 359761005 = Puumala virus infection (vole fever) WITHOUT renal involvement.
+        SNOMED CT 441784 (concept_code 359761005) = Disease caused by Hantavirus, standard Disorder, the
+        broader parent that subsumes all hantavirus disease (Puumala, Hantaan, Seoul, etc.) with or
+        without renal/pulmonary features. The clinically tighter 4269558 (Puumala virus nephropathy,
+        364756009) was rejected because the source explicitly excludes renal involvement — using it
+        would be partial/wrong. 441784 fully contains the source; confidence (two-level broader climb,
+        unspecified systemic framing).
+        """
+}
+mapping "A988W.1" source="A988W" target="240523007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A988W SNOMED CT 240523007 = other specified viral hemorrhagic fever. SNOMED CT 4347554
+        (concept_code 240523007) = Viral hemorrhagic fever, standard Disorder. WHO ICD-10 A98.8 (other
+        specified viral hemorrhagic fevers) crosswalks to 4347554 via Athena. Target subsumes the
+        heterogeneous source. Confidence : moderate, broader over a residual source.
+        """
+}
+mapping "A999.1" source="A999" target="716584007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B001A.1" source="B001A" target="1475003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B001A SNOMED CT 1475003 = herpes labialis, recurrent HSV-1 cold sores of the lip. SNOMED CT
+        4033227 (concept_code 1475003) = Herpes labialis, standard Disorder. Exact 1:1 equivalence; the
+        Swedish term is the direct calque of the SNOMED CT fully-specified name.
+        """
+}
+mapping "B001B.1" source="B001B" target="186552002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B001B SNOMED CT 186552002 = herpes facialis, HSV vesicular eruption of the face (a broader
+        location than just the lip). No standard SNOMED CT concept exists in the mirror. SNOMED CT 4092538
+        (concept_code 186552002) = Herpesviral vesicular dermatitis, standard Disorder, and is the WHO
+        ICD-10 B00.1 target — it covers herpetic vesicles of all skin sites including the face. Target
+        subsumes the facial-specific source. The lip-specific 4033227 (Herpes labialis) is narrower than
+        the face and was rejected. Confidence : broader climb, less specific than ideal.
+        """
+}
+mapping "B001W.1" source="B001W" target="88594005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B001X.1" source="B001X" target="88594005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B039.1" source="B039" target="67924001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B039 SNOMED CT 67924001 = smallpox (variola). SNOMED CT 134573 (concept_code 67924001) =
+        Smallpox, standard Disorder. WHO ICD-10 B03 crosswalks to 134573 via Athena. Exact equivalence.
+        """
+}
+mapping "B049.1" source="B049" target="359814004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B049 SNOMED CT 359814004 = mpox (formerly monkeypox). SNOMED CT 4234275 (concept_code
+        359814004) = Mpox, standard Disorder. WHO ICD-10 B04 (Monkeypox) crosswalks to 4234275 via
+        Athena. The Swedish source uses the updated nomenclature that SNOMED CT also adopted (359814004 was
+        renamed from Monkeypox). Exact equivalence.
+        """
+}
+mapping "B079.1" source="B079" target="57019003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 57019003 [GPS] [IPS] [GPFP]"
+}
+mapping "B079A.1" source="B079A" target="57019003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079A SNOMED CT 57019003 = common wart, HPV-induced cutaneous wart. SNOMED CT 140641
+        (concept_code 57019003) = Verruca vulgaris, standard Disorder. WHO ICD-10 B07 crosswalks to
+        140641 via Athena. Exact 1:1 equivalence.
+        """
+}
+mapping "B079B.1" source="B079B" target="186691003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079B SNOMED CT 186691003 (filiform wart, Swedish national subcode of B07). Target SNOMED CT
+        40376576 (concept_code 186691003) = identical clinical concept. Exact term match in Athena-local
+        SNOMED CT mirror; same morphology, same body-site-independent framing.
+        """
+}
+mapping "B079C.1" source="B079C" target="123156006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079C SNOMED CT 123156006 (flat/plane wart). Target SNOMED CT 40287655 (123156006) = exact term
+        and concept match in Athena-local mirror. Same clinical entity.
+        """
+}
+mapping "B079D.1" source="B079D" target="154363006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079D SNOMED CT 154363006 (plantar wart). Target SNOMED CT 40319623 (154363006) = same clinical
+        concept, exact term-equivalent. High (not) because the SNOMED CT mirror lists a synonym concept
+        137785 (63440008) which is an alternate lexical form; the standard is the preferred crosswalk
+        target and the two names are interchangeable, but without an independent crosswalk verification
+        the small ambiguity is flagged.
+        """
+}
+mapping "B079W.1" source="B079W" target="266199007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079W SNOMED CT 266199007 = (Swedish national subcode of B07, residual). Target SNOMED CT
+        4143964 (266199007) = exact lexical and semantic match. The standard concept corresponds
+        directly to the ICD-10 residual bucket.
+        """
+}
+mapping "B079X.1" source="B079X" target="186693000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B079X SNOMED CT 186693000 = (Swedish national subcode of B07). Target SNOMED CT 4087601
+        (186693000) = exact term-equivalent. The ICD10 base B07 (45532863) crosswalks to SNOMED CT 140641,
+        but for the *unspecified* Swedish subcode the semantically correct standard concept is the
+        unspecified-warts concept 4087601.
+        """
+}
+mapping "B080A.1" source="B080A" target="74050005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B080A SNOMED CT 74050005 = Orf (contagious pustular dermatitis, parapoxvirus of
+        sheep/goats). Target SNOMED CT 436333 (74050005) = exact clinical equivalent; is the historical
+        clinical synonym for Orf.
+        """
+}
+mapping "B080B.1" source="B080B" target="414017008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B080B SNOMED CT 414017008 = (paravaccinia / Milker's nodule, parapoxvirus). Target SNOMED CT
+        443725 (414017008) = clinical equivalent; false cowpox (Milker's nodule) is the canonical
+        parapoxvirus disease of humans. Note SNOMED CT also has 4090834 (186507000) but the Parapoxvirus
+        disease concept is the active standard. High tier: tight synonym match, no separate crosswalk to
+        re-verify.
+        """
+}
+mapping "B080C.1" source="B080C" target="70090004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B080C SNOMED CT 70090004 = (orthopoxvirus). Target SNOMED CT 432237 (70090004) = exact term and
+        concept match.
+        """
+}
+mapping "B080W.1" source="B080W" target="414015000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B080W SNOMED CT 414015000 = (Swedish national subcode of B08.0). Target SNOMED CT 443724
+        (414015000) = genus-level pathogen-disease concept that legitimately subsumes every
+        orthopoxvirus infection (cowpox, smallpox, vaccinia, monkeypox), including the residual bucket.
+        The ICD10 base B08.0 (45566534) crosswalks to this same SNOMED CT concept. Broader because the
+        target covers the full genus while the source is the residual sub-bucket. High tier: verified
+        crosswalk on the base code, one-level subsumption.
+        """
+}
+mapping "B099.1" source="B099" target="49882001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B099 SNOMED CT 34014006 49882001 = (B09). The ICD10 base B09 (45532866) crosswalks in Athena
+        to SNOMED CT 440029 and 4212577 — both are very broad. The clinically defensible best target is
+        SNOMED CT 140020 (49882001) (a viral infection with skin/mucous membrane rash), which matches the
+        source's clinical framing (virus + exanthem) more tightly than the pathogen-genus parent. 140020
+        is broader (subsumes the source under the standard exanthem concept); 440029 is recorded as a
+        weaker broader alternate because the Athena crosswalk lists it for the base code. Moderate tier
+        for the primary: source, no independent crosswalk to 140020. Low tier for the alternate: very
+        broad pathogen parent.
+        """
+}
+mapping "B099.2" source="B099" target="34014006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180A.1" source="B180A" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180B.1" source="B180B" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180C.1" source="B180C" target="41889008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180D.1" source="B180D" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180E.1" source="B180E" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180F.1" source="B180F" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180G.1" source="B180G" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180H.1" source="B180H" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180W.1" source="B180W" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B180X.1" source="B180X" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181A.1" source="B181A" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181B.1" source="B181B" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181C.1" source="B181C" target="41889008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181D.1" source="B181D" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181E.1" source="B181E" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181F.1" source="B181F" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181G.1" source="B181G" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181H.1" source="B181H" target="1187537008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181W.1" source="B181W" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B181X.1" source="B181X" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182A.1" source="B182A" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182B.1" source="B182B" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182C.1" source="B182C" target="41889008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182D.1" source="B182D" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182E.1" source="B182E" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182F.1" source="B182F" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182G.1" source="B182G" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182H.1" source="B182H" target="1187537008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182W.1" source="B182W" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B182X.1" source="B182X" target="76783007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188A.1" source="B188A" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188B.1" source="B188B" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188C.1" source="B188C" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188D.1" source="B188D" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188E.1" source="B188E" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188F.1" source="B188F" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188G.1" source="B188G" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188H.1" source="B188H" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188W.1" source="B188W" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B188X.1" source="B188X" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189A.1" source="B189A" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189B.1" source="B189B" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189C.1" source="B189C" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189D.1" source="B189D" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189E.1" source="B189E" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189F.1" source="B189F" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189G.1" source="B189G" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189H.1" source="B189H" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189W.1" source="B189W" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B189X.1" source="B189X" target="3738000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

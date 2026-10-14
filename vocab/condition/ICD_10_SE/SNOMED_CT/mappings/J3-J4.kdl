@@ -1,0 +1,378 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes J3-J4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "J303A.1" source="J303A" target="429195002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J303A SNOMED CT 429195002 = perennial (non-seasonal) allergic rhinitis caused by animal
+        dander/fur (Swedish extension of J30.3). Target (Athena 443558) =. 1:1 semantic equivalence:
+        same cause (animal dander), same phenotype (allergic rhinitis); the qualifier is intrinsic to
+        animal-dander allergy. exact-equivalent.
+        """
+}
+mapping "J303B.1" source="J303B" target="449729000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J303B SNOMED CT 449729000 = perennial (non-seasonal) allergic rhinitis caused by house dust
+        mites (Swedish extension of J30.3). Target (Athena 42709857) =. 1:1 semantic equivalence: same
+        cause (dust mite), same phenotype; dust-mite allergy is by definition perennial.
+        exact-equivalent.
+        """
+}
+mapping "J303W.1" source="J303W" target="446096008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J303W SNOMED CT 446096008 = perennial allergic rhinitis caused by other agents (Swedish
+        residual of J30.3). Target (Athena 40486433) =. Target subsumes the residual source (perennial
+        AR due to any unspecified agent). No specific-causative-agent target fits the heterogeneous
+        residual. high: one-level broader, phenotype preserved.
+        """
+}
+mapping "J369.1" source="J369" target="15033003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J369 SNOMED CT 15033003 = peritonsillar abscess (Swedish unspecified subcode of J36; is the
+        Swedish clinical term for quinsy/peritonsillar abscess). Target (Athena 440751) =. 1:1 semantic
+        equivalence; crosswalk-verified (ICD-10 J36 → 440751). exact-equivalent.
+        """
+}
+mapping "J370A.1" source="J370A" target="17904003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J370A SNOMED CT 17904003 = chronic hypertrophic laryngitis. Target SNOMED CT 4076837 (17904003)
+        = Hypertrophic laryngitis, the exact SNOMED CT equivalent. Term-string match confirmed against
+        athena-local SNOMED CT mirror; no crosswalk divergence. exact_match.
+        """
+}
+mapping "J370B.1" source="J370B" target="59454008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J370B SNOMED CT 59454008 = chronic laryngitis sicca. Target SNOMED CT 4241326 (59454008) =
+        Laryngitis sicca, child of 24970. Exact SNOMED CT equivalent by name and scope; verified via
+        athena-local SNOMED CT mirror. exact_match.
+        """
+}
+mapping "J370C.1" source="J370C" target="29951006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J370C SNOMED CT 29951006 = monocorditis, unilateral inflammation of a single vocal fold (a
+        chronic laryngitis variant). No SNOMED CT concept for monocorditis/unilateral vocal-fold
+        inflammation exists in the mirror. Target SNOMED CT 24970 (29951006) = Chronic laryngitis, the
+        legitimate ancestor that fully contains it (broader, one-level above). because the climb loses
+        the unilateral/specificity detail and there is no independent crosswalk.
+        """
+}
+mapping "J370W.1" source="J370W" target="29951006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J370W SNOMED CT 29951006 = other specified chronic laryngitis, an ICD-10 SE residual bucket.
+        Target SNOMED CT 24970 (29951006) = Chronic laryngitis, the parent concept; legitimate broader
+        ancestor that fully contains the residual. because heterogeneous residual source, no specific
+        SNOMED CT analogue; the broader parent is the only defensible target.
+        """
+}
+mapping "J370X.1" source="J370X" target="195816003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J370X SNOMED CT 195816003 = chronic laryngitis, unspecified. Target SNOMED CT 4112510
+        (195816003) = Chronic laryngitis NOS, the SNOMED CT NOS equivalent, child of 24970. Exact
+        term-and-scope match without an independent crosswalk; high rather than because the NOS-vs-NOS
+        equivalence is verified by name only.
+        """
+}
+mapping "J380A.1" source="J380A" target="89927005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J380A SNOMED CT 89927005 = immobilized vocal cord/fixed vocal cord. The ICD-10 parent J38.0
+        (45543265) maps via Athena crosswalk to SNOMED CT 4233244 (89927005) = Paralysis of larynx. is
+        broader than paralysis (covers mechanical fixation, e.g. cricoarytenoid joint fixation, as well
+        as neural paresis); is the crosswalk target for the parent and is a defensible broader/related
+        concept for this child. moderate: Athena crosswalk at the parent level, mechanical-vs-neural
+        overlap not re-verified.
+        """
+}
+mapping "J380B.1" source="J380B" target="302912005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380C.1" source="J380C" target="302912005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380D.1" source="J380D" target="89927005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J380D SNOMED CT 89927005 = paresis of the superior laryngeal nerve. The ICD-10 parent J38.0
+        (45543265) maps via Athena crosswalk to SNOMED CT 4233244 (89927005) = Paralysis of larynx. No
+        specific SNOMED CT concept for superior-laryngeal-nerve paresis exists in the mirror (only 4317969
+        is neuralgia not paresis). Target 4233244 fully contains the source (paralysis of larynx
+        subsumes superior laryngeal nerve paresis); broader. because the crosswalk is at the parent
+        level.
+        """
+}
+mapping "J380W.1" source="J380W" target="302912005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J380X.1" source="J380X" target="302912005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381A.1" source="J381A" target="9078005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J381A SNOMED CT 9078005 = vocal cord polyp. Target SNOMED CT 4233816 (9078005) = Polyp of vocal
+        cord, exact SNOMED CT equivalent. The ICD-10 parent J38.1 (45591557) crosswalks to SNOMED CT 28179
+        (broader), but the specific child 4233816 matches the source one-to-one. exact_match by name and
+        scope.
+        """
+}
+mapping "J381B.1" source="J381B" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381D.1" source="J381D" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381W.1" source="J381W" target="441456002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J381X.1" source="J381X" target="441456002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J383A.1" source="J383A" target="249444002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383A SNOMED CT 249444002 = vocal cord cyst. Target SNOMED CT 4091499 (249444002) = Vocal cord
+        cyst, exact SNOMED CT equivalent. Verified via athena-local SNOMED CT mirror; no crosswalk divergence.
+        exact_match.
+        """
+}
+mapping "J383B.1" source="J383B" target="232450005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383B SNOMED CT 232450005 = vocal cord sulcus (groove). Target SNOMED CT 4051613 (232450005) =
+        Sulcus vocalis of vocal cord, exact SNOMED CT equivalent. Verified via athena-local SNOMED CT mirror.
+        exact_match.
+        """
+}
+mapping "J383C.1" source="J383C" target="232454001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383C SNOMED CT 232454001 = vergeture (scar/stria) of the vocal cord. Target SNOMED CT 4051615
+        (232454001) = Scarred plaque of vocal fold cover. Vergeture is the French/Swedish clinical term
+        for a scarred stripe of the vocal-fold cover; is the matching concept. high: name and scope
+        agree but no independent crosswalk to verify the term equivalence.
+        """
+}
+mapping "J383D.1" source="J383D" target="232454001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383D SNOMED CT 232454001 = scarring of the vocal cord (general). Target SNOMED CT 4051615
+        (232454001) = Scarred plaque of vocal fold cover, the closest SNOMED CT scar concept; 4051615 names
+        a localized scarred plaque, so it is broader than general vocal-cord scarring but the closest
+        standard target. moderate: term and scope overlap without independent verification; not an exact
+        1:1 match because is more specific than general scarring.
+        """
+}
+mapping "J383E.1" source="J383E" target="427907007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383E SNOMED CT 427907007 = vocal cord atrophy / vocal cord insufficiency. Target SNOMED CT
+        4323489 (427907007) = Atrophy of vocal cord. Exact SNOMED CT equivalent for the atrophy component;
+        is the functional consequence of atrophy and not separately coded. exact_match.
+        """
+}
+mapping "J383F.1" source="J383F" target="11316005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383F SNOMED CT 11316005 = granulomatous inflammation of the membranous portion of the vocal
+        cords. Target SNOMED CT 4012609 (11316005) = Granuloma of vocal cords. The target fully contains
+        the source (any granuloma of vocal cords); source is more specific (membranous portion).
+        Broader. moderate: Athena-local term match, no independent crosswalk.
+        """
+}
+mapping "J383G.1" source="J383G" target="232447007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383G SNOMED CT 232447007 = acquired laryngeal web / vocal cord adhesion (synechia). Target
+        SNOMED CT 4049247 (232447007) = Acquired laryngeal web, exact SNOMED CT equivalent. A vocal-cord
+        adhesion/synechia is clinically the acquired laryngeal web concept. high: name and scope agree;
+        no independent crosswalk.
+        """
+}
+mapping "J383H.1" source="J383H" target="699876008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383H SNOMED CT 699876008 = varix/ectasia (kärlektasi = vascular ectasia) of the vocal cord.
+        Target SNOMED CT 44783883 (699876008) = Varix of vocal cord, exact SNOMED CT equivalent. high: name
+        and clinical scope agree; no independent crosswalk.
+        """
+}
+mapping "J383J.1" source="J383J" target="232446003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383J SNOMED CT 232446003 = vocal cord hematoma. Target SNOMED CT 4051612 (232446003) = Vocal
+        cord hematoma, exact SNOMED CT equivalent. Verified via athena-local SNOMED CT mirror. exact_match.
+        """
+}
+mapping "J383K.1" source="J383K" target="71086005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383K SNOMED CT 71086005 = leukoplakia of the vocal cord. Target SNOMED CT 4323991 (71086005) =
+        Leukoplakia of vocal cords, exact SNOMED CT equivalent. Verified via athena-local SNOMED CT mirror.
+        exact_match.
+        """
+}
+mapping "J383N.1" source="J383N" target="57781000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383N SNOMED CT 57781000 = interarytenoid irritation of the vocal cord (interarytenoid
+        region inflammation/irritation). No specific SNOMED CT concept for interarytenoid irritation exists
+        in the mirror; the only related concepts are neoplasms of the interarytenoid fold. Target SNOMED CT
+        254669 (57781000) = Disorder of vocal cord, the parent that fully contains the source. Broader,
+        because the climb loses all specificity and the source's's clinical scope is loosely covered.
+        """
+}
+mapping "J383Q.1" source="J383Q" target="71450000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383Q SNOMED CT 71450000 = contact ulcer and other ulcers of the vocal process region.
+        Target SNOMED CT 4324126 (71450000) = Contact ulcer of vocal folds, the SNOMED CT equivalent for the
+        dominant (contact ulcer) component. exact_match for the contact-ulcer axis; the residual is
+        subsumed.
+        """
+}
+mapping "J383R.1" source="J383R" target="12181000119103" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383R SNOMED CT 12181000119103 = contact granuloma and other granulomas of the vocal process
+        region. Target SNOMED CT 46270018 (12181000119103) = Contact granuloma of larynx, the SNOMED CT
+        equivalent for the dominant component. exact_match; residual is subsumed by the same concept.
+        """
+}
+mapping "J383W.1" source="J383W" target="57781000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383W SNOMED CT 57781000 = other specified diseases of the vocal cord, an ICD-10 SE residual
+        bucket. No specific SNOMED CT target applies across the heterogeneous residual. Target SNOMED CT
+        254669 (57781000) = Disorder of vocal cord, the legitimate broader ancestor that fully contains
+        the source. low because heterogeneous residual; the broader parent is the only defensible
+        target.
+        """
+}
+mapping "J383X.1" source="J383X" target="57781000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J383X SNOMED CT 57781000 = unspecified disorder/changes of the vocal cord. Target SNOMED CT
+        254669 (57781000) = Disorder of vocal cord. The ICD-10 parent J38.3 (45562449) crosswalks via
+        Athena to, and the unspecified source lines up with the SNOMED CT parent concept 1:1. moderate:
+        Athena crosswalk, unspecified source.
+        """
+}
+mapping "J387A.1" source="J387A" target="195866009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J387A SNOMED CT 195866009 = interarytenoid pachydermia (a form of laryngeal pachydermia /
+        chronic hyperplastic laryngitis variant). Target SNOMED CT 4112518 (195866009) = Laryngeal
+        pachydermia, the exact SNOMED CT equivalent for this clinical entity. exact_match by name and
+        scope.
+        """
+}
+mapping "J387B.1" source="J387B" target="441457006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J387C.1" source="J387C" target="271587009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J387D.1" source="J387D" target="60600009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J387D SNOMED CT 60600009 = asymmetry of vocal cord mobility or larynx (a functional finding,
+        not a disorder). No specific SNOMED CT concept exists in the mirror; closest standard target is
+        SNOMED CT 31602 (60600009) = Disorder of the larynx, the parent Athena crosswalk target for ICD-10
+        J38.7 (45601129). Broader; because the source is a functional asymmetry, only loosely a
+        disorder, and the broader parent loses all specificity.
+        """
+}
+mapping "J387E.1" source="J387E" target="306959001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J387E SNOMED CT 306959001 = paradoxical vocal cord mobility. Target. Exact 1:1 match on the
+        same clinical concept (vocal cord adducting on inspiration/abducting on expiration).
+        Athena-local mirror confirms concept exists and is active.
+        """
+}
+mapping "J387W.1" source="J387W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J409.1" source="J409" target="32398004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J409 SNOMED CT 32398004 = bronchitis unspecified acute or chronic. Base ICD-10 J40
+        crosswalks via Athena to (Bronchitis, general). Target subsumes the unspecified source
+        (acute/chronic not distinguished). High tier: verified crosswalk, one-level broader.
+        """
+}
+mapping "J429.1" source="J429" target="63480004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J429 SNOMED CT 63480004 = unspecified chronic bronchitis. Base ICD-10 J42 crosswalks via
+        Athena to (Chronic bronchitis). The Swedish.9 extension is the unspecified subdivision; the base
+        concept is co-extensive. Exact-equivalent tier per Athena crosswalk.
+        """
+}
+mapping "J450A.1" source="J450A" target="389145006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J450A SNOMED CT 389145006 = allergic asthma, acute, infection-triggered. Base ICD-10 J45.0
+        maps to (Allergic asthma). The Swedish A-subdivision specifies the trigger (respiratory
+        infection); the SNOMED CT target does not subdivide by trigger, so it legitimately subsumes the
+        source. High tier: verified crosswalk, one-level broader on trigger axis.
+        """
+}
+mapping "J450B.1" source="J450B" target="389145006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J450B SNOMED CT 389145006 = allergic asthma, acute, allergen-triggered. Base ICD-10 J45.0
+        maps to (Allergic asthma). Swedish B-subdivision specifies allergen trigger; target does not
+        subdivide by trigger, so it subsumes the source. High tier: verified crosswalk, one-level
+        broader.
+        """
+}
+mapping "J450W.1" source="J450W" target="389145006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J450W SNOMED CT 389145006 = other allergic asthma, acute. Base ICD-10 J45.0 maps to
+        (Allergic asthma). Swedish W-residual subdivision still within allergic asthma; target subsumes
+        the source. High tier: verified crosswalk, one-level broader.
+        """
+}
+mapping "J451A.1" source="J451A" target="266361008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J451A SNOMED CT 266361008 = non-allergic asthma, acute, infection-triggered. Base ICD-10
+        J45.1 maps to (Intrinsic asthma). Swedish A-subdivision specifies infection trigger; target does
+        not subdivide by trigger, so it subsumes the source. High tier: verified crosswalk, one-level
+        broader.
+        """
+}
+mapping "J451W.1" source="J451W" target="266361008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J451W SNOMED CT 266361008 = other non-allergic asthma, acute. Base ICD-10 J45.1 maps to
+        (Intrinsic asthma). Swedish W-residual subdivision still within intrinsic asthma; target
+        subsumes the source. High tier: verified crosswalk, one-level broader.
+        """
+}
+mapping "J469.1" source="J469" target="733858005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J479.1" source="J479" target="879963005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

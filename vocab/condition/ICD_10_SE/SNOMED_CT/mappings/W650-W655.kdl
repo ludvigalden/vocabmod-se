@@ -1,0 +1,395 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W650-W655
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W650.1" source="W650" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W650 = SNOMED CT 217773000 (Swedish ICD-10 external-cause extension). The base ICD-10 code
+        W65 (Accidental drowning and submersion while in bath-tub) has a verified Athena crosswalk to
+        (Accidental drowning or immersion in bathtub). The source adds the home-place qualifier; the
+        SNOMED CT concept 220988004 (Drowning and submersion while in bath-tub, occurrence at home)
+        captures the place axis specifically but is an [X] extension concept. Mapping to 217773000 is
+        broader (drops the place qualifier); one-level broader with a verified crosswalk. High tier.
+        """
+}
+mapping "W6500.1" source="W6500" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6500 = SNOMED CT 217773000 (Swedish ICD-10 extension). Maps to (Accidental drowning or
+        immersion in bathtub) via the W65 crosswalk. Place (home) + activity (sports) qualifiers have no
+        SNOMED CT analogue at this granularity; the place-specific SNOMED CT 220988004 captures only the home
+        axis, leaving the activity axis uncovered. One-level broader; moderate tier.
+        """
+}
+mapping "W6501.1" source="W6501" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W6501 = SNOMED CT 217773000 (Swedish ICD-10 extension). Maps to (Accidental drowning or
+        immersion in bathtub) via the W65 crosswalk. Place (home) + activity (play/leisure) qualifiers
+        dropped; no SNOMED CT concept models the activity axis. One-level broader; moderate tier.
+        """
+}
+mapping "W6502.1" source="W6502" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6502 SNOMED CT 217773000 = drowning/submersion in bathtub at home during work. Swedish
+        ICD-10 external-cause extension encoding place (home) + activity (work) on base code W65.
+        Target: SNOMED CT 436592 (217773000). Best available standard concept: captures the mechanism
+        (drowning in bathtub) but not the place/activity qualifiers. Parent W65 has Athena crosswalk
+        SNOMED CT 217773000 436592. Moderate tier: best available standard target, verified crosswalk from
+        parent code, but source is more specific (place+activity) than target.
+        """
+}
+mapping "W6503.1" source="W6503" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6503 SNOMED CT 217773000 = drowning/submersion in bathtub at home during other occupation.
+        Swedish external-cause extension (place=home, activity=other occupation). Target: SNOMED CT 436592.
+        Same reasoning as W6502: captures mechanism only, not place/activity. Parent W65 crosswalk
+        verified. Moderate tier.
+        """
+}
+mapping "W6504.1" source="W6504" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6504 SNOMED CT 217773000 = drowning/submersion in bathtub at home during vital activity
+        (rest, sleep, meal, hygiene). Swedish external-cause extension (place=home, activity=vital).
+        Target: SNOMED CT 436592. Mechanism captured, place/activity not. Parent W65 crosswalk verified.
+        Moderate tier.
+        """
+}
+mapping "W6508.1" source="W6508" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6508 SNOMED CT 217773000 = drowning/submersion in bathtub at home, other specified
+        activity. Swedish external-cause extension (place=home, activity=other specified). Target:
+        SNOMED CT 436592. Moderate tier: best available standard, crosswalk from parent W65.
+        """
+}
+mapping "W6509.1" source="W6509" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6509 SNOMED CT 217773000 = drowning/submersion in bathtub at home, unspecified activity.
+        Swedish external-cause extension (place=home, activity=unspecified). Target: SNOMED CT 436592.
+        Moderate tier: best available standard, crosswalk from parent W65.
+        """
+}
+mapping "W651.1" source="W651" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W651 SNOMED CT 217773000 = drowning/submersion in bathtub, institutional residence (place
+        only, no activity qualifier). Swedish external-cause extension (place=institutional). Target:
+        SNOMED CT 436592. Moderate tier: best available standard, parent W65 crosswalk verified.
+        """
+}
+mapping "W6510.1" source="W6510" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6510 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence
+        during sports. Target: SNOMED CT 436592. Moderate tier: best available standard, mechanism
+        captured, place/activity not.
+        """
+}
+mapping "W6511.1" source="W6511" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6511 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence
+        during leisure/play. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk
+        from parent W65.
+        """
+}
+mapping "W6512.1" source="W6512" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6512 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence
+        during work. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from
+        parent W65.
+        """
+}
+mapping "W6513.1" source="W6513" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6513 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence
+        during other occupation. Target: SNOMED CT 436592. Moderate tier: best available standard,
+        crosswalk from parent W65.
+        """
+}
+mapping "W6514.1" source="W6514" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6514 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence
+        during vital activity. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk
+        from parent W65.
+        """
+}
+mapping "W6518.1" source="W6518" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6518 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence,
+        other specified activity. Target: SNOMED CT 436592. Moderate tier: best available standard,
+        crosswalk from parent W65.
+        """
+}
+mapping "W6519.1" source="W6519" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6519 SNOMED CT 217773000 = drowning/submersion in bathtub at institutional residence,
+        unspecified activity. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk
+        from parent W65.
+        """
+}
+mapping "W652.1" source="W652" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W652 SNOMED CT 217773000 = drowning/submersion in bathtub at school/institution/public
+        building (place only). Target: SNOMED CT 436592. Moderate tier: best available standard, parent W65
+        crosswalk verified.
+        """
+}
+mapping "W6520.1" source="W6520" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6520 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building during
+        sports. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from parent
+        W65.
+        """
+}
+mapping "W6521.1" source="W6521" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6521 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building during
+        leisure/play. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from
+        parent W65.
+        """
+}
+mapping "W6522.1" source="W6522" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6522 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building during
+        work. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from parent W65.
+        """
+}
+mapping "W6523.1" source="W6523" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6523 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building during
+        other occupation. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from
+        parent W65.
+        """
+}
+mapping "W6524.1" source="W6524" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6524 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building during
+        vital activity. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from
+        parent W65.
+        """
+}
+mapping "W6528.1" source="W6528" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6528 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building, other
+        specified activity. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk
+        from parent W65.
+        """
+}
+mapping "W6529.1" source="W6529" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6529 SNOMED CT 217773000 = drowning/submersion in bathtub at school/public building,
+        unspecified activity. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk
+        from parent W65.
+        """
+}
+mapping "W653.1" source="W653" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W653 SNOMED CT 217773000 = drowning/submersion in bathtub at sports facility (place only).
+        Target: SNOMED CT 436592. Moderate tier: best available standard, parent W65 crosswalk verified.
+        """
+}
+mapping "W6530.1" source="W6530" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6530 SNOMED CT 217773000 = drowning/submersion in bathtub at sports facility during
+        sports. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from parent
+        W65.
+        """
+}
+mapping "W6531.1" source="W6531" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6531 SNOMED CT 217773000 = drowning/submersion in bathtub at sports facility during
+        leisure/play. Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from
+        parent W65.
+        """
+}
+mapping "W6532.1" source="W6532" target="217773000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source: W6532 SNOMED CT 217773000 = drowning/submersion in bathtub at sports facility during work.
+        Target: SNOMED CT 436592. Moderate tier: best available standard, crosswalk from parent W65.
+        """
+}
+mapping "W6533.1" source="W6533" target="220991004" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6533 = SNOMED CT 220991004 (drowning/submersion in bathtub, sports/athletics area, other
+        activity). Three coded dimensions: bathtub + place + activity. Target = covers bathtub+place but
+        drops the activity dimension. Best available standard concept; activity aspect has no SNOMED CT
+        equivalent. Partial per boundary rule (multi-aspect source, target covers only bathtub+place
+        slice). Low : real doubt whether dropped activity is clinically material, but no closer target
+        exists.
+        """
+}
+mapping "W6534.1" source="W6534" target="220991004" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6534 = bathtub drowning at sports/athletics area during vital activity
+        (resting/sleeping/eating/personal hygiene). Target SNOMED CT 220991004 = bathtub drowning at sports
+        and athletics area. Target covers bathtub+place; activity (vital activity) is uncovered.
+        Partial; low tier per partial-with-uncovered-aspect rule.
+        """
+}
+mapping "W6538.1" source="W6538" target="220991004" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6538 = bathtub drowning at sports/athletics area, other specified activities. Target
+        SNOMED CT 220991004 = bathtub drowning at sports and athletics area. Activity dimension uncovered.
+        Partial.
+        """
+}
+mapping "W6539.1" source="W6539" target="220991004" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6539 = bathtub drowning at sports/athletics area, activity unspecified. Target SNOMED CT
+        220991004 = bathtub drowning at sports and athletics area. Unspecified activity maps cleanly on
+        bathtub+place axis; closest standard concept. Partial (activity dimension uncovered).
+        """
+}
+mapping "W654.1" source="W654" target="220992006" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W654 = SNOMED CT 220992006 (bathtub drowning, street and highway). Target =. Same clinical
+        concept at same granularity (bathtub + street/highway, no activity dimension). Athena-local
+        SNOMED CT mirror term match confirms equivalence. High : exact term match without independent
+        crosswalk.
+        """
+}
+mapping "W6540.1" source="W6540" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6540 = bathtub drowning at street/highway during sport/exercise. Target SNOMED CT 220992006
+        = bathtub drowning on street and highway. Activity (sport) uncovered. Partial.
+        """
+}
+mapping "W6541.1" source="W6541" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6541 = bathtub drowning at street/highway during play/leisure. Target SNOMED CT 220992006 =
+        bathtub drowning on street and highway. Activity uncovered. Partial.
+        """
+}
+mapping "W6542.1" source="W6542" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6542 = bathtub drowning at street/highway during paid work. Target SNOMED CT 220992006 =
+        bathtub drowning on street and highway. Activity uncovered. Partial.
+        """
+}
+mapping "W6543.1" source="W6543" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6543 = bathtub drowning at street/highway, other activity. Target SNOMED CT 220992006 =
+        bathtub drowning on street and highway. Activity uncovered. Partial.
+        """
+}
+mapping "W6544.1" source="W6544" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6544 = bathtub drowning at street/highway during vital activity. Target SNOMED CT 220992006
+        = bathtub drowning on street and highway. Activity uncovered. Partial.
+        """
+}
+mapping "W6548.1" source="W6548" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6548 = bathtub drowning at street/highway, other specified activities. Target SNOMED CT
+        220992006 = bathtub drowning on street and highway. Activity uncovered. Partial.
+        """
+}
+mapping "W6549.1" source="W6549" target="220992006" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6549 = bathtub drowning at street/highway, activity unspecified. Target SNOMED CT 220992006
+        = bathtub drowning on street and highway. Unspecified activity aligns cleanly on bathtub+place
+        axis. Partial.
+        """
+}
+mapping "W655.1" source="W655" target="220994007" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W655 = SNOMED CT 220994007 (bathtub drowning, trade/service area). Target =. Same clinical
+        concept at same granularity. High : exact Athena-local SNOMED CT term match.
+        """
+}
+mapping "W6550.1" source="W6550" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6550 = bathtub drowning at trade/service area during sport/exercise. Target SNOMED CT
+        220994007 = bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6551.1" source="W6551" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6551 = bathtub drowning at trade/service area during play/leisure. Target SNOMED CT
+        220994007 = bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6552.1" source="W6552" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6552 = bathtub drowning at trade/service area during paid work. Target SNOMED CT 220994007
+        = bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6553.1" source="W6553" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6553 = bathtub drowning at trade/service area, other activity. Target SNOMED CT 220994007 =
+        bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6554.1" source="W6554" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6554 = bathtub drowning at trade/service area during vital activity. Target SNOMED CT
+        220994007 = bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6558.1" source="W6558" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6558 = bathtub drowning at trade/service area, other specified activities. Target SNOMED CT
+        220994007 = bathtub drowning at trade and service area. Activity uncovered. Partial.
+        """
+}
+mapping "W6559.1" source="W6559" target="220994007" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W6559 = bathtub drowning at trade/service area, activity unspecified. Target SNOMED CT
+        220994007 = bathtub drowning at trade and service area. Unspecified activity aligns cleanly on
+        bathtub+place axis. Partial.
+        """
+}

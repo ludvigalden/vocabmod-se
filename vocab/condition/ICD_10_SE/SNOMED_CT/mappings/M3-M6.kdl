@@ -1,0 +1,550 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M3-M6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M328A.1" source="M328A" target="55464009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M328A SNOMED CT 55464009 = SLE without detectable antinuclear antibodies. SNOMED CT has no
+        concept for ANA-negative SLE specifically (search of SNOMED CT concepts returns only ANA-negative
+        juvenile arthritis variants). Best defensible target is SNOMED CT 257628 (55464009, Systemic lupus
+        erythematosus), which fully subsumes the source as the parent SLE concept. Broader map: target
+        subsumes the source. Moderate tier: best available standard target but loses the ANA-negative
+        qualifier; the M32.8 parent crosswalk maps to 257628 (Athena M32.8 -> 257628).
+        """
+}
+mapping "M328B.1" source="M328B" target="238926009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M328B SNOMED CT 238926009 = Rowell's syndrome (LE + EM-like eruption + characteristic
+        serology). SNOMED CT 4033928 (238926009) denotes the identical clinical entity; the SNOMED CT FSN
+        matches the source verbatim. Standard concept with a self-map in SNOMED/relationships.tdl.
+        Exact-equivalent tier.
+        """
+}
+mapping "M328C.1" source="M328C" target="239891002" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M328C SNOMED CT 239891002 = subacute cutaneous lupus erythematosus (SCLE). SNOMED CT 4343923
+        (239891002, Subacute cutaneous lupus erythematosus) denotes the same disorder. Athena
+        SNOMED/relationships.tdl maps 40396334 (the older SCLE concept) -> 4343923, confirming the
+        standard target. Source is a Swedish extension under M32.8; the closest standard concept matches
+        the source's clinical scope. High tier (not): source term is just which is conventionally
+        subacute *cutaneous* LE in Swedish coding, and the target is the standard SCLE concept, but the
+        absence of in the source leaves a small breadth mismatch.
+        """
+}
+mapping "M328D.1" source="M328D" target="239889005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M328D SNOMED CT 239889005 = bullous SLE. SNOMED CT 4346976 (239889005, Bullous systemic lupus
+        erythematosus) is the identical clinical entity; FSN matches verbatim. Standard concept with a
+        self-map in SNOMED/relationships.tdl. Exact-equivalent tier.
+        """
+}
+mapping "M328W.1" source="M328W" target="55464009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M328W SNOMED CT 55464009 = Swedish extension equivalent to ICD-10 M32.8. The Athena
+        crosswalk for M32.8 (concept 45572445) -> 257628 (Systemic lupus erythematosus). The target
+        fully subsumes the residual source bucket. Broader map: the parent SLE concept subsumes every.
+        High tier: verified crosswalk at the M32.8 level; one level broader.
+        """
+}
+mapping "M350A.1" source="M350A" target="83901003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 197679002 83901003 [GPS] [IPS] [GPFP]"
+}
+mapping "M350A.6" source="M350A" target="197679002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M350B.1" source="M350B" target="83901003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 31996006 83901003 [GPS] [IPS] [GPFP]"
+}
+mapping "M350B.6" source="M350B" target="31996006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M459.1" source="M459" target="9631008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 9631008 [GPS] [IPS] [GPFP]"
+}
+mapping "M479A.1" source="M479A" target="387800004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M479A SNOMED CT 387800004 = spondylosis, unspecified, cervical region. Crosswalk of M47.92
+        in ICD10/relationships.tdl yields SNOMED CT 4308802 (387800004, Cervical spondylosis). Target is
+        the cervical-region spondylosis concept. High tier: site-specific standard target with verified
+        crosswalk; the source's qualifier is the default for the target concept.
+        """
+}
+mapping "M479J.1" source="M479J" target="387802007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M479J SNOMED CT 387802007 = spondylosis, unspecified, thoracic region. Crosswalk of M47.94
+        in ICD10/relationships.tdl yields SNOMED CT 4302686 (387802007, Thoracic spondylosis).
+        Site-specific standard target with verified crosswalk. High tier.
+        """
+}
+mapping "M479K.1" source="M479K" target="239880009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M479K SNOMED CT 239880009 = spondylosis, unspecified, lumbar region. Crosswalk of M47.96 in
+        ICD10/relationships.tdl yields SNOMED CT 4346975 (239880009, Lumbar spondylosis). Site-specific
+        standard target with verified crosswalk. High tier.
+        """
+}
+mapping "M479X.1" source="M479X" target="8847002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M479X SNOMED CT 8847002 = spondylosis, unspecified, site unspecified. Crosswalk of M47.99
+        (42617673) in ICD10/relationships.tdl yields SNOMED CT 4227449 (8847002, Spondylosis).
+        Site-unspecified standard target with verified crosswalk. High tier.
+        """
+}
+mapping "M480A.1" source="M480A" target="83561009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M480A SNOMED CT 83561009 = central spinal stenosis in cervical region. Crosswalk of M48.02
+        (42617675) in ICD10/relationships.tdl yields SNOMED CT 436785 (83561009, Spinal stenosis in
+        cervical region). SNOMED CT does not distinguish central-vs-lateral at the cervical-region level,
+        so the central qualifier is not separately coded; the target denotes cervical spinal stenosis
+        generally. Site-specific standard target with verified crosswalk. High tier (small breadth
+        mismatch on the qualifier is acceptable because SNOMED CT's regional concept is the canonical
+        representation).
+        """
+}
+mapping "M480J.1" source="M480J" target="41341006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M480J SNOMED CT 41341006 = central spinal stenosis in thoracic region. Crosswalk of M48.04
+        (42617677) in ICD10/relationships.tdl yields SNOMED CT 321661 (41341006, Spinal stenosis of
+        thoracic region). Site-specific standard target with verified crosswalk. Same central-qualifier
+        note as M480A. High tier.
+        """
+}
+mapping "M480K.1" source="M480K" target="18347007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M480K SNOMED CT 18347007 = central spinal stenosis in lumbar region. Crosswalk of M48.06
+        (42617679) in ICD10/relationships.tdl yields SNOMED CT 136788 (18347007, Spinal stenosis of lumbar
+        region). Site-specific standard target with verified crosswalk. High tier.
+        """
+}
+mapping "M480W.1" source="M480W" target="76107001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M480W SNOMED CT 76107001 = central spinal stenosis, site unspecified. Crosswalk of M48.09
+        (42617682) in ICD10/relationships.tdl yields SNOMED CT 77079 (76107001, Spinal stenosis).
+        Site-unspecified standard target with verified crosswalk. High tier.
+        """
+}
+mapping "M484A.1" source="M484A" target="11312121000119103" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M484A SNOMED CT 11312121000119103 = stress fracture of a cervical vertebra. Crosswalk of
+        M48.42 (42617714) in ICD10/relationships.tdl yields SNOMED CT 45770877 (11312121000119103, Stress
+        fracture of cervical vertebra). FSN matches the source verbatim. High tier (not): target is an
+        extension-era SNOMED CT concept (10-char SNOMED CT code) self-mapped in relationships.tdl, so
+        crosswalk-verified but not a classic long-standard concept.
+        """
+}
+mapping "M484J.1" source="M484J" target="11312161000119108" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M484J SNOMED CT 11312161000119108 = stress fracture of a thoracic vertebra. Crosswalk of
+        M48.44 (42619394) in ICD10/relationships.tdl yields SNOMED CT 45757329 (11312161000119108, Stress
+        fracture of thoracic vertebra). FSN matches verbatim. High tier (extension-era SNOMED CT concept).
+        """
+}
+mapping "M484K.1" source="M484K" target="281934008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M484X.1" source="M484X" target="441499007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M488A.1" source="M488A" target="83561009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M488A SNOMED CT 83561009 = lateral/root-canal spinal stenosis in the cervical region. SNOMED CT
+        has no region-specific lateral spinal stenosis concept: the only lateral-stenosis concepts are
+        40521992 (316910006) which is a non-region-specific UK-extension concept, and SNOMED CT's maps_to
+        for that points to 4116359 (an placeholder, not a clinical standard). The best region-specific
+        clinical standard concept is therefore SNOMED CT 436785 (83561009, Spinal stenosis in cervical
+        region), which fully subsumes the source as the parent cervical-stenosis concept. Broader map:
+        target subsumes the source but loses the lateral-vs-central distinction. Moderate tier: SNOMED CT
+        does not distinguish lateral from central stenosis at this regional level; defensible
+        best-available target but with real specificity loss.
+        """
+}
+mapping "M488J.1" source="M488J" target="41341006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M488J SNOMED CT 41341006 = lateral spinal stenosis in thoracic region. Same pattern as
+        M488A: no region-specific lateral-stenosis SNOMED CT concept exists. Best regional standard target
+        is SNOMED CT 321661 (41341006, Spinal stenosis of thoracic region). Broader map with specificity
+        loss on the lateral qualifier. Moderate tier.
+        """
+}
+mapping "M488K.1" source="M488K" target="18347007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M488K SNOMED CT 18347007 = lateral spinal stenosis in lumbar region. Same pattern as
+        M488A/J: no region-specific lateral-stenosis SNOMED CT concept exists. Best regional standard
+        target is SNOMED CT 136788 (18347007, Spinal stenosis of lumbar region). Broader map with
+        specificity loss on the lateral qualifier. Moderate tier.
+        """
+}
+mapping "M488W.1" source="M488W" target="372109003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M488W SNOMED CT 372109003 = Swedish extension code corresponding to the ICD-10 base category
+        M48.8. Crosswalk of M48.8 (45562742) in ICD10/relationships.tdl yields SNOMED CT 4157453
+        (372109003, Disorder of joint of spine). Note: this is the crosswalk target Athena records for
+        the residual bucket, mapped at the code-level rather than the regional subcodes (the regional
+        subcodes M48.8x map to region-specific spine-disorder targets). The target is the standard
+        residual concept that the source's parent rolls up to. High tier: verified crosswalk; minor
+        breadth mismatch in that the target is more generic than, which is the closest standard concept
+        available.
+        """
+}
+mapping "M510J.1" source="M510J" target="44983007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M510J SNOMED CT 44983007 = thoracic intervertebral disc disorder with myelopathy. Crosswalk
+        of M51.0 (45582168) in ICD10/relationships.tdl yields SNOMED CT 78832 (44983007, Intervertebral
+        disc disorder with myelopathy). SNOMED CT does not code a thoracic-region variant of
+        disc-disorder-with-myelopathy; the target is the body-level concept. Site-unspecified standard
+        target with verified crosswalk. High tier: the target is the canonical SNOMED CT representation of
+        M51.0; the Swedish source adds a thoracic-region qualifier that the target does not separately
+        encode, but the underlying clinical concept matches.
+        """
+}
+mapping "M510K.1" source="M510K" target="34139004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M510K = Swedish 5-char extension of ICD-10 M51.0 (Lumbar and other intervertebral disc
+        disorders with myelopathy), specifying lumbar region. SNOMED CT 141104 = SNOMED CT 34139004
+        (concept_code 34139004), a standard Disorder concept. Descendant of 78832 (Intervertebral disc
+        disorder with myelopathy) which is the ICD10 M51.0 Maps-to crosswalk target. Same clinical
+        concept, region-matched: exact equivalence.
+        """
+}
+mapping "M511J.1" source="M511J" target="202734002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M511J = Swedish extension of ICD-10 M51.1 (Lumbar and other intervertebral disc disorders
+        with radiculopathy) specifying thoracic region with radiculitis. SNOMED CT 4069204 = (202734002),
+        standard Disorder concept. The ICD10 M51.1 crosswalk targets are 75344 (Intervertebral disc
+        disorder) and 4216397 (Nerve root disorder), both region-agnostic; the regional SNOMED CT
+        descendant is a closer semantic match for the thoracic-region Swedish extension. Disc
+        degeneration/herniation with radiculitis maps cleanly to disc disorder with radiculopathy. High
+        (not) because the Swedish SNOMED CT 202734002 (radiculitis) maps to and the source bundles
+        degeneration/herniation where target specifies prolapse.
+        """
+}
+mapping "M511K.1" source="M511K" target="202735001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M511K = Swedish extension of ICD-10 M51.1 specifying lumbar region with radiculitis
+        (sciatica). SNOMED CT 4069205 = (202735001), standard Disorder concept. Closer regional match than
+        the ICD10 M51.1 Maps-to parents (75344, 4216397). Source explicitly notes ischias (sciatica), a
+        radiculopathy presentation. High tier: regional and clinical concept aligns, but SNOMED CT
+        202735001 vs and degeneration/herniation vs prolapse framing leaves a small breadth gap.
+        """
+}
+mapping "M5459.1" source="M5459" target="279039007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        M54.59 other low back pain.59 is Swedish extension qualifier. Base M54.5 = low back pain. SNOMED CT
+        194133 SNOMED CT 279039007 verified, The qualifier is a minor extension.
+        """
+}
+mapping "M610C.1" source="M610C" target="70917000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M610C = Swedish extension of ICD-10 M61.0 (Myositis ossificans traumatica) specifying
+        elbow/forearm. SNOMED CT 77653 = (70917000), standard Disorder; the ICD10 M61.0 Maps-to crosswalk
+        target. SNOMED CT has regional descendants of 77653 for shoulder, upper arm, thigh, lower leg, hand
+        but NOT for forearm/elbow; the parent is the closest standard target that fully subsumes the
+        source. Broader (one-level climb) because the source is region-specified and the target is
+        region-agnostic.
+        """
+}
+mapping "M610F.1" source="M610F" target="298261000119105" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M610F = Swedish extension of M61.0 (Myositis ossificans traumatica) specifying hip
+        joint/thigh (höftled/lårben). SNOMED CT 1076882 = (298261000119105), a regional descendant of
+        77653. Same clinical concept (traumatic myositis ossificans) and region (thigh). High tier
+        rather than because the Swedish source also names the hip joint, which the target does not
+        explicitly cover, and the concept is a UK SNOMED CT extension (10-digit concept code).
+        """
+}
+mapping "M610X.1" source="M610X" target="70917000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M610X = Swedish extension of M61.0 with SNOMED CT 70917000. SNOMED CT 77653 = (70917000), the
+        exact ICD10 M61.0 Maps-to crosswalk target. Source is the unspecified/localization-agnostic
+        form; target is the region-agnostic parent. Exact equivalence.
+        """
+}
+mapping "M620A.1" source="M620A" target="62629000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M620A = Swedish extension of M62.0 (Diastasis of muscle) specifying abdominal rectus
+        diastasis. SNOMED CT 4269062 = (62629000), standard Disorder concept. Same clinical concept
+        (separation of the rectus abdominis muscles). Exact equivalence.
+        """
+}
+mapping "M620W.1" source="M620W" target="111248006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M620W = Swedish extension of M62.0 for SNOMED CT 111248006 (residual category). SNOMED CT 77076
+        = (111248006), standard Disorder; the ICD10 M62.0 Maps-to crosswalk target. Target legitimately
+        subsumes every specific muscle diastasis the residual source may encode. Broader (one-level
+        climb) because the source is the residual/other-specified form and the target is the unspecified
+        parent.
+        """
+}
+mapping "M621B.1" source="M621B" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621B = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        shoulder/upper arm. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to
+        crosswalk target. SNOMED CT has very few regional descendants of 72413 (only plantaris-specific);
+        the region-agnostic parent is the closest standard target that fully subsumes the source.
+        Broader (one-level climb).
+        """
+}
+mapping "M621C.1" source="M621C" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621C = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        elbow/forearm. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to crosswalk
+        target. No region-specific descendant exists for forearm/elbow. Broader (one-level climb).
+        """
+}
+mapping "M621D.1" source="M621D" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621D = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        wrist/hand. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to crosswalk
+        target. No region-specific descendant for wrist/hand. Broader (one-level climb).
+        """
+}
+mapping "M621F.1" source="M621F" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621F = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        hip/thigh. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to crosswalk
+        target. No region-specific descendant for hip/thigh muscle rupture (the quadriceps concepts are
+        tendon, not muscle). Broader (one-level climb).
+        """
+}
+mapping "M621G.1" source="M621G" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621G = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        knee/lower leg. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to crosswalk
+        target. No region-specific muscle (vs tendon) descendant. Broader (one-level climb).
+        """
+}
+mapping "M621H.1" source="M621H" target="29191005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M621H = Swedish extension of M62.1 (Other rupture of muscle, nontraumatic) specifying
+        ankle/foot. SNOMED CT 72413 = (29191005), standard Disorder; the ICD10 M62.1 Maps-to crosswalk
+        target. No region-specific descendant. Broader (one-level climb).
+        """
+}
+mapping "M625A.1" source="M625A" target="88092000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 88092000 [GPS] [IPS] [GPFP] [NCPT]"
+}
+mapping "M625W.1" source="M625W" target="88092000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M625W = Swedish extension of M62.5 (Muscle wasting and atrophy, not elsewhere classified)
+        for SNOMED CT 88092000. SNOMED CT 78236 = (88092000), standard Disorder; the ICD10 M62.5 Maps-to
+        crosswalk target. Target is the region- and cause-agnostic parent; SNOMED CT has many regional
+        descendants (forearm, thigh, etc.) but the source is the residual form, so the parent is the
+        closest defensible target. Broader (one-level climb).
+        """
+}
+mapping "M659B.1" source="M659B" target="416209007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M659C.1" source="M659C" target="67801009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M659D.1" source="M659D" target="416209007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M659F.1" source="M659F" target="67801009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M659G.1" source="M659G" target="67801009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M659H.1" source="M659H" target="416209007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M662B.1" source="M662B" target="415574006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662B = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        shoulder/upper arm. SNOMED CT 4214076 = (415574006), standard Disorder; the regional-agnostic
+        parent. SNOMED CT descendants of 4214076 exist only for hand (left/right), not for shoulder/upper
+        arm, so the parent is the closest standard target that fully subsumes the source. Broader
+        (one-level climb).
+        """
+}
+mapping "M662C.1" source="M662C" target="415574006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662C = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        elbow/forearm. SNOMED CT 4214076 = (415574006), standard Disorder parent. No elbow/forearm
+        descendant. Broader (one-level climb).
+        """
+}
+mapping "M662D.1" source="M662D" target="415574006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662D = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        wrist/hand. SNOMED CT 4214076 = (415574006), standard Disorder; the ICD10 M66.2 Maps-to crosswalk
+        target. SNOMED CT has hand-specific descendants (37207824 left, 37207825 right) but no
+        laterality-neutral hand concept; the source is laterality-neutral, so the parent is the closest
+        equivalent. Treated as exact because the parent is the crosswalk target and the source covers
+        the same anatomical category (hand) as the existing descendants.
+        """
+}
+mapping "M662F.1" source="M662F" target="415574006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662F = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        hip/thigh. SNOMED CT 4214076 = (415574006), standard Disorder parent. No hip/thigh descendant.
+        Broader (one-level climb).
+        """
+}
+mapping "M662G.1" source="M662G" target="415574006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662G = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        knee/lower leg. SNOMED CT 4214076 = (415574006), standard Disorder parent. No knee/lower-leg
+        descendant. Broader (one-level climb).
+        """
+}
+mapping "M662H.1" source="M662H" target="415574006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M662H = Swedish extension of M66.2 (Spontaneous rupture of extensor tendons) specifying
+        ankle/foot. SNOMED CT 4214076 = (415574006), standard Disorder parent. No ankle/foot descendant
+        (plantar fascia concepts are aponeurosis, not extensor tendon). Broader (one-level climb).
+        """
+}
+mapping "M663B.1" source="M663B" target="414872006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663B = Swedish extension of M66.3 (Spontaneous rupture of flexor tendons) explicitly
+        naming biceps in shoulder/upper arm. SNOMED CT 76201 = (414872006), standard Disorder concept.
+        Biceps brachii is the flexor of the elbow/upper arm; SNOMED CT 414872006 and are clinically
+        equivalent rupture mechanisms. SNOMED CT 4188441 (Spontaneous rupture of flexor tendons, the M66.3
+        crosswalk parent) is a broader alternative; 76201 is the biceps-specific descendant-equivalent.
+        High tier rather than because vs framing and the SNOMED CT concept is generic to upper arm, not
+        shoulder-specific.
+        """
+}
+mapping "M663C.1" source="M663C" target="415575007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663C = Swedish extension of M66.3 (Spontaneous rupture of flexor tendons) specifying
+        elbow/forearm. SNOMED CT 4188441 = (415575007), standard Disorder parent. SNOMED CT descendants of
+        4188441 exist only for hand (left/right); no elbow/forearm descendant. Broader (one-level
+        climb).
+        """
+}
+mapping "M663D.1" source="M663D" target="415575007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663D = Swedish extension of M66.3 (Spontaneous rupture of flexor tendons) specifying
+        wrist/hand. SNOMED CT 4188441 = (415575007), standard Disorder; the ICD10 M66.3 Maps-to crosswalk
+        target. SNOMED CT has hand-specific descendants (37207826 left, 37207827 right) but the source is
+        laterality-neutral, so the parent is the closest equivalent. Exact equivalence (parent is the
+        crosswalk target, source covers the same hand anatomical category as the descendants).
+        """
+}
+mapping "M663F.1" source="M663F" target="415575007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663F = Swedish extension of M66.3 (Spontaneous rupture of flexor tendons) specifying
+        hip/thigh. SNOMED CT 4188441 = (415575007), standard Disorder parent. No hip/thigh descendant.
+        Broader (one-level climb).
+        """
+}
+mapping "M663G.1" source="M663G" target="415575007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663G SNOMED CT 415575007 = spontaneous rupture of flexor tendon, knee/lower leg (SE
+        extension of ICD-10 M66.3). Target SNOMED CT 4188441 (415575007) = Spontaneous rupture of flexor
+        tendons, the Athena target for the parent M66.3. No site-specific spontaneous flexor tendon
+        rupture concept exists for knee/lower leg, so the parent concept is the best standard target and
+        fully subsumes the source (broader). High tier: parent crosswalk verified, one-level breadth
+        mismatch.
+        """
+}
+mapping "M663H.1" source="M663H" target="415575007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M663H SNOMED CT 415575007 = spontaneous rupture of flexor tendon, ankle/foot (SE extension
+        of M66.3). Target SNOMED CT 4188441 (415575007) = Spontaneous rupture of flexor tendons.
+        (209784008) exists but is not a concept; the parent spontaneous concept is the best defensible
+        standard target and fully subsumes the source. High tier: parent crosswalk verified, one-level
+        breadth mismatch.
+        """
+}
+mapping "M674D.1" source="M674D" target="287029002" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M674D SNOMED CT 287029002 = ganglion of wrist/hand (SE extension of M67.4). Target SNOMED CT
+        4117691 (287029002) = Ganglion/synovial cyst - wrist. The SE code combines wrist+hand but the
+        wrist site concept is the clinically dominant component; the ICD-10-CM equivalent M67.4X1 maps
+        (4115166), but the SE phrase is led by the wrist site. Exact term-and-scope match for the wrist
+        component; wrist target chosen as primary because is named first in the SE code. Equivalent
+        tier.
+        """
+}
+mapping "M674H.1" source="M674H" target="287033009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M674H SNOMED CT 287033009 = ganglion of ankle/foot (SE extension of M67.4). Target SNOMED CT
+        4118010 (287033009) = Ganglion/synovial cyst - ankle/foot. Exact scope match: SNOMED CT concept
+        explicitly covers ankle and foot combined, mirroring the SE source.
+        """
+}
+mapping "M674L.1" source="M674L" target="202098006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M674L SNOMED CT 202098006 = ganglion of lateral meniscus, knee/lower leg (SE extension of
+        M67.4). Target SNOMED CT 4117230 (202098006) = Cyst of lateral meniscus. and are clinically
+        equivalent designations for the same lesion. Exact scope match for the lateral-meniscus
+        component.
+        """
+}
+mapping "M674M.1" source="M674M" target="202083009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M674M SNOMED CT 202083009 = ganglion of medial meniscus, knee/lower leg (SE extension of
+        M67.4). Target SNOMED CT 4115689 (202083009) = Cyst of medial meniscus. Equivalent clinical
+        concept; exact scope match.
+        """
+}

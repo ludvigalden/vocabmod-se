@@ -1,0 +1,380 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes N-N5
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "N109.1" source="N109" target="28637003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N109 SNOMED CT 28637003 = Swedish short code for ICD-10 N10 Acute tubulo-interstitial
+        nephritis. Athena crosswalk N10 → SNOMED CT 4102631 (28637003). Same clinical concept,
+        crosswalk-verified. exact_match.
+        """
+}
+mapping "N129.1" source="N129" target="428255004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N129 SNOMED CT 428255004 = N12 Tubulo-interstitial nephritis, not specified as acute or
+        chronic. Athena crosswalk N12 → SNOMED CT 4177206 (428255004). Same clinical concept,
+        crosswalk-verified.
+        """
+}
+mapping "N199.1" source="N199" target="42399005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N199 SNOMED CT 42399005 = N19 Unspecified kidney failure. Athena crosswalk N19 → SNOMED CT
+        192359 (42399005). Same clinical concept, crosswalk-verified.
+        """
+}
+mapping "N239.1" source="N239" target="7093002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N239 SNOMED CT 7093002 = N23 Unspecified renal colic. Athena crosswalk N23 → SNOMED CT 201690
+        (7093002). Same clinical concept, crosswalk-verified.
+        """
+}
+mapping "N269.1" source="N269" target="32916005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 32916005 [GPS] [IPS] [GPFP]"
+}
+mapping "N342A.1" source="N342A" target="31822004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N342A SNOMED CT 31822004 = inflammation of the external urethral meatus, a Swedish extension
+        of N34.2 Other urethritis. Target SNOMED CT 195862 (31822004) is the Athena crosswalk target for
+        parent N34.2. Target is broader (it covers urethral inflammation generally, not specifically the
+        external meatus); no meatus-specific inflammation standard concept found in the mirror. : real
+        semantic distance from the regional specificity of the source.
+        """
+}
+mapping "N342B.1" source="N342B" target="31822004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N342B SNOMED CT 31822004 = postmenopausal (atrophic) urethritis, a Swedish extension of
+        N34.2. No SNOMED CT concept or exists in the mirror; the closest standard concept is SNOMED CT 195862
+        (31822004) (crosswalk target of parent N34.2). Target is broader, drops the
+        atrophic/postmenopausal etiology. : clinically related but real specificity loss.
+        """
+}
+mapping "N342C.1" source="N342C" target="197907002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N342C SNOMED CT 197907002 = ulceration/wound of the urethral meatus, Swedish extension of
+        N34.2. Target SNOMED CT 4059734 (197907002) is a near-exact region- and lesion-specific standard
+        concept. : term/scope match, no crosswalk at this Swedish subcode.
+        """
+}
+mapping "N342E.1" source="N342E" target="44741008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N342E SNOMED CT 44741008 = inflammation of the Cowper (bulbourethral) gland, Swedish
+        extension of N34.2. Target SNOMED CT 4264352 (44741008) is an exact term-and-scope match.
+        """
+}
+mapping "N342W.1" source="N342W" target="31822004" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N342W SNOMED CT 31822004 = other and unspecified urethritis, the residual Swedish extension
+        of N34.2. Athena crosswalk for N34.2 → SNOMED CT 195862 (31822004). The residual bucket maps to the
+        general urethritis concept. : crosswalk-verified at parent, residual/unspecified source.
+        """
+}
+mapping "N394A.1" source="N394A" target="87557004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N394A SNOMED CT 87557004 = urge incontinence, Swedish extension of N39.4 Other specified
+        urinary incontinence. Target SNOMED CT 193326 (87557004) is an exact term-and-scope match.
+        """
+}
+mapping "N394B.1" source="N394B" target="397878005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N394B SNOMED CT 397878005 = overflow incontinence, Swedish extension of N39.4. Target SNOMED CT
+        197378 (397878005) is an exact term-and-scope match.
+        """
+}
+mapping "N394C.1" source="N394C" target="413343005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N394C SNOMED CT 413343005 = mixed urinary incontinence (co-occurring stress and urge),
+        Swedish extension of N39.4. Target SNOMED CT 443524 (413343005) is an exact term-and-scope match.
+        """
+}
+mapping "N394D.1" source="N394D" target="236655005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N394D SNOMED CT 236655005 = incontinence in dysfunctional and dyscoordinated micturition,
+        Swedish extension of N39.4. Target SNOMED CT 200774 (236655005) is the closest standard concept for
+        the dyscoordinated-miction mechanism; the source also covers general dysfunctional voiding.
+        Target is broader (it captures the dyssynergia mechanism; source includes a wider
+        dysfunctional-miction set). : tight clinical match on the dominant mechanism, one-level broader.
+        """
+}
+mapping "N394W.1" source="N394W" target="165232002" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N394W SNOMED CT 165232002 = other specified urinary incontinence, residual Swedish extension
+        of N39.4. Athena crosswalk for N39.4 → SNOMED CT 197672 (165232002). Residual source mapped to the
+        general concept. : crosswalk-verified at parent, residual/unspecified source.
+        """
+}
+mapping "N409.1" source="N409" target="266569009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N409 SNOMED CT 266569009 = prostate enlargement (Swedish short code for N40 Hyperplasia of
+        prostate). Athena crosswalk N40 → SNOMED CT 198803 (266569009). Target is broader: source is (could
+        be benign or other), target asserts benign hyperplasia specifically. : crosswalk-verified at
+        parent, well-understood breadth mismatch.
+        """
+}
+mapping "N449.1" source="N449" target="81996005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N449 SNOMED CT 81996005 = torsion of testis (Swedish short code for N44 Torsion of testis).
+        Athena crosswalk N44 → SNOMED CT 435315 (81996005). Same clinical concept, crosswalk-verified.
+        """
+}
+mapping "N469.1" source="N469" target="2904007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2904007 [GPS] [IPS] [GPFP]"
+}
+mapping "N469A.1" source="N469A" target="359559003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469A SNOMED CT 359559003 = male infertility due to azoospermia, Swedish extension of N46
+        Male infertility. Target SNOMED CT 4234128 (359559003) is an exact term-and-scope match (the
+        concept is male by context).
+        """
+}
+mapping "N469B.1" source="N469B" target="71349004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469B SNOMED CT 71349004 = male infertility due to semen-quality disorders other than
+        azoospermia (e.g. oligo-/astheno-/terato-zoospermia), Swedish extension of N46. Target SNOMED CT
+        194419 (71349004) is the dominant member of this residual bucket but only covers the
+        oligospermia slice, not astheno-/terato-zoospermia. Target is broader than the source only
+        insofar as loosely subsumes reduced-semen-quality; strictly it is partial. : clinically related,
+        residual/heterogeneous source.
+        """
+}
+mapping "N469C.1" source="N469C" target="2904007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469C SNOMED CT 2904007 = male infertility due to partner factors. Target SNOMED CT 198197
+        (disorder, standard). The source is a Swedish-extension aetiology-specific subdivision of N46;
+        SNOMED CT has no equivalent partner-factor male-infertility concept, so the target legitimately
+        subsumes the source. High tier: parent ICD-10 N46 -> 198197 crosswalk verified in mirror;
+        one-level broader.
+        """
+}
+mapping "N469D.1" source="N469D" target="2904007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469D SNOMED CT 2904007 = male infertility, social factors with possible effect on
+        fertility. Target SNOMED CT 198197 (standard). No SNOMED CT concept encodes social-factor male
+        infertility; the target fully subsumes the source. High tier: parent crosswalk N46 -> 198197
+        verified; one-level broader.
+        """
+}
+mapping "N469E.1" source="N469E" target="2904007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469E SNOMED CT 2904007 = male infertility, unexplained after workup. Target SNOMED CT 198197
+        (standard). No SNOMED CT equivalent for; target subsumes source. High tier: parent crosswalk
+        verified; one-level broader.
+        """
+}
+mapping "N469W.1" source="N469W" target="2904007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469W SNOMED CT 2904007 = male infertility of other specified cause. Target SNOMED CT 198197
+        (standard). Heterogeneous residual source; no single more-specific SNOMED CT target applies, so the
+        parent concept subsumes it. High tier: parent crosswalk N46 -> 198197 verified; one-level
+        broader.
+        """
+}
+mapping "N469X.1" source="N469X" target="2904007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N469X SNOMED CT 2904007 = male infertility, unspecified cause. Target SNOMED CT 198197
+        (standard, active). The ICD-10 parent N46 -> 198197 crosswalk is verified in mirror; an
+        unspecified source mapping to the unspecialised SNOMED CT equivalent is an exact semantic match.
+        """
+}
+mapping "N479.1" source="N479" target="266570005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N479 SNOMED CT 266570005 = Swedish category for disorders of prepuce (covers phimosis,
+        paraphimosis, redundant prepuce). Target SNOMED CT 436155 (standard). The target is the closest
+        single SNOMED CT concept covering the prepuce-disorder family; it does not include paraphimosis, so
+        the subsumption is not total, but it is the best single target. High tier: best-available SNOMED CT
+        standard concept, one-level broader with partial coverage of paraphimosis noted.
+        """
+}
+mapping "N479A.1" source="N479A" target="449826002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N479A SNOMED CT 449826002 = tight/stuck foreskin; in Swedish clinical usage this denotes
+        phimosis. Target SNOMED CT 42709954 (standard, active; concept_code 449826002). Direct clinical
+        equivalence.
+        """
+}
+mapping "N479B.1" source="N479B" target="449826002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "N479C.1" source="N479C" target="13758004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N479C SNOMED CT 13758004 = paraphimosis. Target SNOMED CT 4028998 (standard, active;
+        concept_code 13758004). Direct clinical equivalence.
+        """
+}
+mapping "N479D.1" source="N479D" target="39526006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N479D SNOMED CT 39526006 = redundant prepuce. Target SNOMED CT 4215724 (standard, active;
+        concept_code 39526006). Direct clinical equivalence.
+        """
+}
+mapping "N479X.1" source="N479X" target="266570005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N479X SNOMED CT 266570005 = disorder of prepuce, unspecified. Target SNOMED CT 436155
+        (standard). Best available standard concept for the unspecified prepuce-disorder category; the
+        target subsumes the bulk of N47 sources but excludes paraphimosis. Moderate tier: unspecified
+        source, mechanical selection from mirror hierarchy rather than independently re-verified
+        crosswalk.
+        """
+}
+mapping "N480A.1" source="N480A" target="198033005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N480A SNOMED CT 198033005 = balanitis xerotica obliterans (lichen sclerosus of glans penis).
+        Target SNOMED CT 141917 (standard, active; concept_code 198033005). Direct clinical equivalence.
+        """
+}
+mapping "N480X.1" source="N480X" target="3323003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N480X SNOMED CT 3323003 = leukoplakia of penis, unspecified. Target SNOMED CT 195009 (standard,
+        active). ICD-10 parent N48.0 -> 195009 crosswalk verified in mirror; unspecified source matches
+        the unspecialised SNOMED CT concept.
+        """
+}
+mapping "N481B.1" source="N481B" target="9076009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N481B SNOMED CT 9076009 = balanitis circinata (Reiter's balanitis). Target SNOMED CT 4236740
+        (standard, active; concept_code 9076009). Direct clinical equivalence; Swedish is the circinate
+        variant denoted by the SNOMED CT term.
+        """
+}
+mapping "N481C.1" source="N481C" target="397889003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N481C SNOMED CT 397889003 = gangrenous balanitis. Target SNOMED CT 4262326 (standard, active;
+        concept_code 397889003). Direct clinical equivalence.
+        """
+}
+mapping "N481D.1" source="N481D" target="236743008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N481D SNOMED CT 236743008 = plasma cell balanitis (balanitis circumscripta plasmacellularis,
+        Zoon's balanitis). Target SNOMED CT 4032459 (standard, active; concept_code 236743008). The
+        non-standard concept 40391979 maps to 4032459 via a edge in the mirror; direct clinical
+        equivalence.
+        """
+}
+mapping "N481E.1" source="N481E" target="300521006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N481E SNOMED CT 300521006 = ulcer of prepuce. Target SNOMED CT 4104297 (standard, active;
+        concept_code 300521006). Direct clinical equivalence; the SNOMED CT concept is more specific than
+        the ICD-10 parent N48.5 -> 4294393 (Ulcer of penis) and matches the source's prepuce-localised
+        scope.
+        """
+}
+mapping "N481W.1" source="N481W" target="46090001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N481W SNOMED CT 46090001 = other and unspecified balanoposthitis. Target SNOMED CT 436466
+        (standard, active). ICD-10 parent N48.1 -> 436466 crosswalk verified in mirror. The source
+        bundles and residuals; the target subsumes both. Moderate tier: residual/unspecified source,
+        crosswalk applied without independent re-verification of each subcase.
+        """
+}
+mapping "N498A.1" source="N498A" target="398318005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N498W.1" source="N498W" target="128478005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N498W SNOMED CT 128478005 = other specified inflammation of male genital organs. Target
+        SNOMED CT 197605 (standard). ICD-10 parent N49.8 -> 197605 crosswalk verified in mirror. The source
+        is the Swedish residual subdivision; the target subsumes it. High tier: crosswalk-verified
+        parent, one-level broader.
+        """
+}
+mapping "N501A.1" source="N501A" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N501B.1" source="N501B" target="66259004" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N501B SNOMED CT 66259004 = hematocele, unspecified (in ICD-10 chapter XIV male-genital
+        block, so male is implied). Target SNOMED CT 4282300 (standard, active; concept_code 66259004). The
+        target asserts male specificity the source left unspecified, hence narrower. High tier: best
+        matching standard concept, ICD-10 context disambiguates male scope; one-level narrower.
+        """
+}
+mapping "N501W.1" source="N501W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N508C.1" source="N508C" target="9750001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N508C SNOMED CT 9750001 = ulcer of scrotum. Target SNOMED CT 4321736 (standard, active;
+        concept_code 9750001). Direct clinical equivalence.
+        """
+}
+mapping "N508D.1" source="N508D" target="88995000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N508D SNOMED CT 88995000 = edema of scrotum. Target SNOMED CT 4230799 (standard, active;
+        concept_code 88995000). Direct clinical equivalence.
+        """
+}
+mapping "N508E.1" source="N508E" target="234107009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N508E SNOMED CT 234107009 = chylocele of tunica vaginalis, unspecified, non-filarial. Target
+        SNOMED CT 4119771 (standard, active). The more specific 435602 (Chylocele of tunica vaginalis) is
+        non-standard in the mirror and maps to 4119771 via a edge; the standard target subsumes the
+        source (covers filarial and non-filarial). High tier: best available standard target via mirror
+        crosswalk, one-level broader.
+        """
+}
+mapping "N508F.1" source="N508F" target="1354863007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N508F SNOMED CT 1354863007 = chronic pelvic pain syndrome in male (Urology CPPS). Target
+        SNOMED CT 1450067 (standard, active; concept_code 1354863007). Direct clinical equivalence; the
+        SNOMED CT concept is the canonical male CPPS entity.
+        """
+}
+mapping "N508W.1" source="N508W" target="64557000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N508W SNOMED CT 64557000 = other disorders of male genital organs. Target SNOMED CT 196738
+        (standard). ICD-10 parent N50.8 -> 196738 crosswalk verified in mirror; the target subsumes the
+        residual source. High tier: crosswalk-verified parent, one-level broader.
+        """
+}

@@ -1,0 +1,501 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes H3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "H312A.1" source="H312A" target="74469006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H312A SNOMED CT 74469006 = regional choroidal dystrophy (Swedish extension under H31.2
+        Hereditary choroidal dystrophy). SNOMED CT has specific partial/regional concepts (435261
+        193468002; 4108965 193470006) but no exact standard concept in the crosswalk. Target SNOMED CT
+        441852 (74469006), the standard concept that H31.2 maps to via Athena crosswalk. broader (target
+        subsumes the regional-specific source); low confidence — verified crosswalk to the parent, but
+        the regional subclass specificity is lost and a more specific partial-dystrophy target may be a
+        better fit.
+        """
+}
+mapping "H312B.1" source="H312B" target="193472003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H312B SNOMED CT 193472003 = diffuse choroidal dystrophy (Swedish extension under H31.2).
+        Target SNOMED CT 4102055 (193472003). The SNOMED CT concept denotes a total/diffuse choroidal
+        dystrophy, fully subsuming the source's diffuse scope. broader (target is the standard bucket
+        that subsumes the source); high confidence — well-understood subsumption, one level broader.
+        """
+}
+mapping "H312C.1" source="H312C" target="74469006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H312C SNOMED CT 74469006 = general vascular dystrophy of choroid (Swedish extension under
+        H31.2). This is a vascular-aetiology choroidal dystrophy concept with no obvious SNOMED CT
+        equivalent in the crosswalk; the SNOMED CT choroidal-dystrophy concepts are
+        anatomical/pattern-based, not vascular. Target SNOMED CT 441852 (74469006), the standard concept
+        that H31.2 maps to via Athena crosswalk. broader (target subsumes the source); low confidence —
+        verified crosswalk to the parent, but the vascular aetiology specificity is lost and the
+        semantic overlap is partial.
+        """
+}
+mapping "H312X.1" source="H312X" target="74469006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H312X SNOMED CT 74469006 = unspecified choroidal dystrophy (Swedish extension under H31.2).
+        Target SNOMED CT 441852 (74469006), the standard concept that H31.2 maps to via Athena crosswalk.
+        The source denotes an unspecified hereditary choroidal dystrophy, which is exactly the meaning
+        of the parent Hereditary choroidal dystrophy concept. exact_match; high confidence — verified
+        crosswalk and exact scope match.
+        """
+}
+mapping "H330A.1" source="H330A" target="3598000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330A SNOMED CT 3598000 = partial retinal detachment with a round or oval hole (Swedish
+        extension under H33.0 Retinal detachment with retinal break). Target SNOMED CT 376102 (3598000). A
+        round/oval retinal hole is a single retinal defect/break; the SNOMED CT concept denotes partial RD
+        with a single defect, matching the source's description. exact_match; high confidence — close
+        semantic match on partial RD with single break.
+        """
+}
+mapping "H330B.1" source="H330B" target="4178006" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330B = partial retinal detachment with multiple round/oval holes. Target SNOMED CT 378413
+        (concept_code 4178006) = Partial recent retinal detachment with multiple defects. The source
+        specifies break morphology (round/oval holes) which the target does not capture, and the target
+        adds SNOMED CT 4178006 which the source does not assert. Best available standard concept that
+        captures; narrower because target adds recency. Low confidence per rubric §1: partial semantic
+        overlap.
+        """
+}
+mapping "H330C.1" source="H330C" target="3598000" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330C = partial retinal detachment with a single horseshoe hole. Target SNOMED CT 376102
+        (concept_code 3598000) = Partial recent retinal detachment with single defect. Source specifies
+        horseshoe morphology; target only says SNOMED CT 3598000 and adds. Best available standard for
+        single-defect partial RD; narrower due to recency and lost morphology.
+        """
+}
+mapping "H330D.1" source="H330D" target="4178006" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330D = partial retinal detachment with multiple horseshoe holes. Target SNOMED CT 378413
+        (concept_code 4178006) = Partial recent retinal detachment with multiple defects. Target
+        captures multi-defect partial RD but not horseshoe morphology, and adds SNOMED CT 4178006.
+        Narrower; low confidence.
+        """
+}
+mapping "H330E.1" source="H330E" target="712508005" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330E = partial retinal detachment with oral dialysis (oradialys). Target SNOMED CT 46273181
+        (concept_code 712508005) = Rhegmatogenous retinal detachment due to retinal dialysis. Target
+        captures dialysis-specific RD precisely but asserts SNOMED CT 712508005 (which an oral dialysis is,
+        by definition) and does not specify; it is more specific on mechanism and less specific on
+        extent. Best dialysis-specific RD concept available; moderate confidence, narrower.
+        """
+}
+mapping "H330F.1" source="H330F" target="19620000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330F = partial retinal detachment with equatorial break. No SNOMED CT concept for RD with
+        equatorial break specifically. Target SNOMED CT 4055484 (concept_code 19620000) = Rhegmatogenous
+        retinal detachment, the ICD-10 H33.0 crosswalk target (verified via ICD10 relationships.tdl).
+        Broader parent fully subsumes the source; low confidence because specificity on extent (partial)
+        and break location (equatorial) is lost.
+        """
+}
+mapping "H330G.1" source="H330G" target="4178006" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330G = partial retinal detachment with multiple holes of different types. Target SNOMED CT
+        378413 (concept_code 4178006) = Partial recent retinal detachment with multiple defects.
+        Captures the SNOMED CT 4178006 axis but not mixed morphology, and adds. Narrower; low confidence.
+        """
+}
+mapping "H330H.1" source="H330H" target="19620000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330H = subtotal or total retinal detachment with hole. No single SNOMED CT concept for
+        SNOMED CT 19620000 as a disjunctive group. Target SNOMED CT 4055484 (concept_code 19620000) =
+        Rhegmatogenous retinal detachment (the H33.0 crosswalk target) fully subsumes both subtotal and
+        total rhegmatogenous RD. Broader; low confidence due to lost extent specificity.
+        """
+}
+mapping "H330X.1" source="H330X" target="19620000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H330X = unspecified retinal detachment with hole. Target SNOMED CT 4055484 (concept_code
+        19620000) = Rhegmatogenous retinal detachment, the ICD-10 H33.0 crosswalk target (verified via
+        ICD10 relationships.tdl). Broader parent for an unspecified source; moderate confidence per §1
+        SNOMED CT 19620000 tier.
+        """
+}
+mapping "H333A.1" source="H333A" target="302888003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333A = round or oval retinal holes, single or multiple (without detachment). Target
+        SNOMED CT 4120318 (concept_code 302888003) = Retinal round hole. The target is the parent concept
+        for round holes (parent of 374641 SNOMED CT 302888003); it fully subsumes the source's morphology
+        but is less specific on number/detachment status. ICD-10 H33.3 crosswalks to 37168131 (Multiple
+        breaks of retina without detachment), which only covers the multiple case. Broader; high
+        confidence.
+        """
+}
+mapping "H333B.1" source="H333B" target="193341001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333B = horseshoe retinal tears, single or multiple, without detachment. Target SNOMED CT
+        439303 (concept_code 193341001) = Horseshoe retinal tear without detachment. Exact morphological
+        match; target covers the horseshoe tear without detachment. Source admits single or multiple but
+        morphology is identical.
+        """
+}
+mapping "H333C.1" source="H333C" target="232003005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333C = oradialys (oral retinal dialysis). Target SNOMED CT 4335996 (concept_code 232003005)
+        = Retinal dialysis. Exact clinical concept; retinal dialysis is the standard term for an oral
+        disinsertion tear.
+        """
+}
+mapping "H333D.1" source="H333D" target="95690009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333D = ekvatoriell bristning (equatorial retinal break). No SNOMED CT concept for
+        equatorial break specifically. Target SNOMED CT 4317972 (concept_code 95690009) = Retinal tear, the
+        direct parent of the retinal-break subtypes in the SNOMED CT hierarchy. Broader; low confidence
+        because location specificity is lost.
+        """
+}
+mapping "H333W.1" source="H333W" target="1275618002" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333W = annat retinalhål eller flera hål av olika typ (other retinal hole, or multiple
+        holes of different types). Target SNOMED CT 37168131 (concept_code 1275618002) = Multiple breaks of
+        retina without detachment, the ICD-10 H33.3 crosswalk target (verified via ICD10
+        relationships.tdl). Source is broader than just SNOMED CT 1275618002 (includes) but the
+        multiple-types case dominates; broader, moderate confidence.
+        """
+}
+mapping "H333X.1" source="H333X" target="95690009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H333X = ospecificerat retinalhål (unspecified retinal hole). Target SNOMED CT 4317972
+        (concept_code 95690009) = Retinal tear, the parent retinal-break concept. Broader parent for an
+        unspecified source; moderate confidence per §1 SNOMED CT 95690009 tier.
+        """
+}
+mapping "H348A.1" source="H348A" target="68478007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H348A = centralocklusion av retinalven (central retinal vein occlusion). Target SNOMED CT
+        313761 (concept_code 68478007) = Central retinal vein occlusion. Exact 1:1 clinical equivalence.
+        """
+}
+mapping "H348B.1" source="H348B" target="24596005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H348B = grenocklusion av retinalven (branch retinal vein occlusion). Target SNOMED CT 312622
+        (concept_code 24596005) = Venous retinal branch occlusion. Exact 1:1 clinical equivalence.
+        """
+}
+mapping "H348C.1" source="H348C" target="28578008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H348C = incipient retinalvensocklusion (incipient retinal vein occlusion). Target SNOMED CT
+        4102317 (concept_code 28578008) = Incipient occlusion of retinal vein. Exact term and clinical
+        equivalence.
+        """
+}
+mapping "H348X.1" source="H348X" target="1237532002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H348X = ospecificerad form av retinalvensocklusion (unspecified retinal vein occlusion).
+        Target SNOMED CT 37165085 (concept_code 1237532002) = Retinal vein occlusion, the direct parent of
+        central/branch/hemicentral RVO in the SNOMED CT hierarchy (parent of 313761 and 312622 via ancestor
+        440392). Broader parent for an unspecified source; high confidence (exact term match,
+        hierarchy-verified, no independent crosswalk).
+        """
+}
+mapping "H351A.1" source="H351A" target="408847006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351A = ROP: demarcation line between vascularized and avascular retina (ROP stage 1).
+        Target SNOMED CT 375250 (concept_code 408847006) = Retinopathy of prematurity stage 1 - demarcation
+        line. Exact stage and morphology match.
+        """
+}
+mapping "H351B.1" source="H351B" target="408848001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351B = ROP: mild ridge, no dilated/tortuous vessels (ROP stage 2 without plus disease).
+        Target SNOMED CT 375251 (concept_code 408848001) = Retinopathy of prematurity stage 2 -
+        intraretinal ridge. Exact stage match; both specify ridge without plus disease.
+        """
+}
+mapping "H351C.1" source="H351C" target="408848001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351C = ROP: ridge with tortuous and dilated vessels in posterior pole (ROP stage 2 with
+        plus disease). No SNOMED CT concept combines stage 2 with plus disease. Target SNOMED CT 375251
+        (concept_code 408848001) = ROP stage 2 - intraretinal ridge, the parent stage concept. Broader:
+        subsumes the stage-2 ridge axis, drops the plus-disease modifier. High confidence on the stage
+        axis.
+        """
+}
+mapping "H351D.1" source="H351D" target="408849009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351D = ROP: ridge with extraretinal fibrovascular proliferation, no plus disease (ROP
+        stage 3 without plus). Target SNOMED CT 379009 (concept_code 408849009) = Retinopathy of
+        prematurity stage 3 - ridge with extraretinal fibrovascular proliferation. Exact stage and
+        morphology match.
+        """
+}
+mapping "H351E.1" source="H351E" target="408849009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351E = ROP: ridge with extraretinal fibrovascular proliferation AND plus disease (ROP
+        stage 3 with plus). No SNOMED CT concept combines stage 3 with plus disease. Target SNOMED CT 379009
+        (concept_code 408849009) = ROP stage 3 - ridge with extraretinal fibrovascular proliferation.
+        Broader: subsumes the stage-3 axis, drops the plus-disease modifier. High confidence on the
+        stage axis.
+        """
+}
+mapping "H351F.1" source="H351F" target="408850009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351F = ROP: subtotal retinal detachment (ROP stage 4). Target SNOMED CT 443519
+        (concept_code 408850009) = Retinopathy of prematurity stage 4 - subtotal retinal detachment.
+        Exact stage match.
+        """
+}
+mapping "H351G.1" source="H351G" target="408851008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351G = ROP: total retinal detachment, retrolental fibroplasia (ROP stage 5). Target
+        SNOMED CT 443520 (concept_code 408851008) = Retinopathy of prematurity stage 5 - total retinal
+        detachment. Exact stage match; retrolental fibroplasia is the historical synonym for end-stage
+        ROP.
+        """
+}
+mapping "H351L.1" source="H351L" target="415297005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351L SNOMED CT 415297005 = ROP stages 1-2 (Swedish national extension, ICD-10 base H35.1).
+        Targets: SNOMED CT 373766 (415297005, std=S) is the parent concept from the Athena ICD10 H35.1
+        crosswalk, broader over both stages. SNOMED CT 375250 (408847006) and SNOMED CT 375251 (408848001) are
+        the specific stage targets (both std=S). Source bundles two stages into one code; the parent is
+        broader, the two stage concepts together cover the source's range. for the broader parent (one
+        level up, crosswalk-verified); for the stage-specific narrower targets (forced-downward on a
+        bundled source).
+        """
+}
+mapping "H351M.1" source="H351M" target="415297005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351M SNOMED CT 415297005 = ROP stages 3-5, untreated (Swedish national extension, base
+        H35.1). SNOMED CT 373766 (415297005, std=S) is the crosswalk-verified parent concept, broader over
+        the stage range. SNOMED CT 379009 (408849009, std=S), 443519 (408850009, std=S), 443520 (408851008,
+        std=S) are the specific stage targets. The qualifier has no separate SNOMED CT representation; it
+        is a treatment-status modifier, not a different disorder. Parent broader at; individual stage
+        narrower targets at (forced-downward on a multi-stage source).
+        """
+}
+mapping "H351N.1" source="H351N" target="415297005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351N SNOMED CT 415297005 = ROP stages 3-5, treated (Swedish national extension, base
+        H35.1). Same clinical stages as H351M; the (treated) qualifier is a treatment-status modifier
+        with no separate SNOMED CT disorder concept. SNOMED CT 373766 (415297005, std=S) is the
+        crosswalk-verified parent, broader over stages 3-5. Stage-specific targets 379009/443519/443520
+        are narrower alternatives. Parent broader at.
+        """
+}
+mapping "H351X.1" source="H351X" target="415297005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H351X SNOMED CT 415297005 = ROP, unspecified form (Swedish national extension, base H35.1).
+        SNOMED CT 373766 (415297005, std=S) is the Athena ICD10 H35.1 crosswalk target. The unspecified
+        Swedish source maps to the general ROP concept at the same level of specificity.
+        Crosswalk-verified exact equivalence at the concept level.
+        """
+}
+mapping "H353A.1" source="H353A" target="1208895006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353B.1" source="H353B" target="1208895006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353C.1" source="H353C" target="1208895006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353D.1" source="H353D" target="15989991000119102" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353E.1" source="H353E" target="312901001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353F.1" source="H353F" target="367649002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353G.1" source="H353G" target="232006002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H353G SNOMED CT 232006002 312902008 = Macular hole and macular pseudohole (Swedish national
+        extension, base H35.3). ICD10CM analogue H35.34 maps to SNOMED CT 4030035 (Macular retinal cyst).
+        Source bundles two distinct clinical entities: macular hole and macular pseudohole. SNOMED CT
+        4338894 (232006002, std=S) covers the hole axis and is broader over the bundled source (parent
+        of both). SNOMED CT 4195990 (312902008, std=S) covers the pseudohole axis only (partial). No single
+        SNOMED CT concept expresses the combination. Broader parent at; partial pseudohole target at.
+        """
+}
+mapping "H353G.2" source="H353G" target="312902008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353H.1" source="H353H" target="312922007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353J.1" source="H353J" target="331821000119106" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H353W.1" source="H353W" target="737273002" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H353W SNOMED CT 737273002 = Other degeneration of posterior pole (Swedish national
+        extension, base H35.3). SNOMED CT 42537727 (737273002, std=S) is the Athena ICD10 H35.3 crosswalk
+        target. The Swedish residual maps to the general posterior-pole degeneration concept at the same
+        specificity. Crosswalk-verified; (residual source, exact term match without independent
+        re-verification).
+        """
+}
+mapping "H353X.1" source="H353X" target="737273002" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H353X SNOMED CT 737273002 = Degeneration of posterior pole, unspecified (Swedish national
+        extension, base H35.3). SNOMED CT 42537727 (737273002, std=S) is the Athena ICD10 H35.3 crosswalk
+        target. Unspecified source maps to the general concept. Moderate tier per the rubric: Athena
+        crosswalk with an unspecified source, not independently re-verified.
+        """
+}
+mapping "H355A.1" source="H355A" target="79556007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H355A SNOMED CT 79556007 = Vitreoretinal dystrophy (Swedish national extension, base H35.5).
+        SNOMED CT 373772 (79556007, std=S) is the exact term match and the Athena ICD10CM H35.51 crosswalk
+        target. Exact equivalence.
+        """
+}
+mapping "H355B.1" source="H355B" target="41799005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H355B SNOMED CT 41799005 = Retinitis pigmentosa-like conditions (Swedish national extension,
+        base H35.5). The source is deliberately broader than RP itself: it covers pseudoretinitis
+        pigmentosa and other RP-mimicking disorders. SNOMED CT 377270 (41799005, std=S) is the Athena ICD10
+        H35.5 crosswalk parent; it legitimately subsumes the RP-like family. SNOMED CT 4103381 (28835009,
+        std=S) is narrower (the prototypical disorder, not the full scope). Broader parent at; the RP
+        concept would be a narrower alternate.
+        """
+}
+mapping "H355C.1" source="H355C" target="342581000119102" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H355C SNOMED CT 342581000119102 = Retinal pigment epithelial dystrophy (Swedish national
+        extension, base H35.5). ICD10CM H35.54 maps to SNOMED CT 45757713 (342581000119102, std=S). Exact
+        term and crosswalk match; (exact term match without an independent ICD-10-SE-specific crosswalk).
+        """
+}
+mapping "H355W.1" source="H355W" target="41799005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H355W SNOMED CT 41799005 = Other hereditary retinal dystrophy (Swedish national extension,
+        base H35.5). SNOMED CT 377270 (41799005, std=S) is the Athena ICD10 H35.5 crosswalk target. The
+        Swedish residual maps to the general hereditary retinal dystrophy concept. Crosswalk-verified;
+        (residual source, exact crosswalk match).
+        """
+}
+mapping "H355X.1" source="H355X" target="41799005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H355X SNOMED CT 41799005 = Hereditary retinal dystrophy, unspecified (Swedish national
+        extension, base H35.5). SNOMED CT 377270 (41799005, std=S) is the Athena ICD10 H35.5 crosswalk
+        target. Unspecified source maps to the general concept. Moderate tier : Athena crosswalk with an
+        unspecified source.
+        """
+}
+mapping "H356A.1" source="H356A" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H356B.1" source="H356B" target="28998008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H356B SNOMED CT 28998008 = Intraretinal hemorrhage (Swedish national extension, base H35.6).
+        SNOMED CT 374025 (28998008, std=S) is the Athena ICD10 H35.6 crosswalk target. The Swedish is a
+        location specifier within the broader retinal-hemorrhage category; the standard concept covers
+        it. Crosswalk-verified; (location-specified source, general standard target).
+        """
+}
+mapping "H356C.1" source="H356C" target="678101000119107" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H356W.1" source="H356W" target="28998008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H356W SNOMED CT 28998008 = Retinal hemorrhages with various locations (Swedish national
+        extension, base H35.6). SNOMED CT 374025 (28998008, std=S) is the Athena ICD10 H35.6 crosswalk
+        target. The source explicitly spans multiple locations, so the general retinal-hemorrhage
+        concept is the correct single target. Crosswalk-verified.
+        """
+}
+mapping "H356X.1" source="H356X" target="28998008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H356X SNOMED CT 28998008 = Unspecified retinal hemorrhage (Swedish national extension, base
+        H35.6). SNOMED CT 374025 (28998008, std=S) is the Athena ICD10 H35.6 crosswalk target. Unspecified
+        source maps to the general concept. Moderate tier : Athena crosswalk with an unspecified source.
+        """
+}
+mapping "H360A.1" source="H360A" target="4855003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H360A SNOMED CT 390718008 4855003 = Non-proliferative diabetic retinopathy (Swedish national
+        extension, base H36.0). SNOMED CT 4174977 (4855003, std=S) is the Athena ICD10 H36.0 crosswalk
+        target, broader over both NPDR and PDR. SNOMED CT 40560648 (390718008, std=U) is the specific NPDR
+        concept but is non-standard (use with caution). The broader standard concept at is the primary
+        mapping; the non-standard narrower concept at is recorded as a lead.
+        """
+}
+mapping "H360A.2" source="H360A" target="390718008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H360B.1" source="H360B" target="4855003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H360B SNOMED CT 154679002 4855003 = Proliferative diabetic retinopathy (Swedish national
+        extension, base H36.0). SNOMED CT 4174977 (4855003, std=S) is the Athena ICD10 H36.0 crosswalk
+        target, broader over the DR spectrum. SNOMED CT 40321141 (154679002, std=U) is the specific PDR
+        concept but is non-standard. Broader standard concept at primary; non-standard narrower PDR at
+        as a lead.
+        """
+}
+mapping "H360B.2" source="H360B" target="154679002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H360X.1" source="H360X" target="4855003" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H360X SNOMED CT 4855003 = Unspecified diabetic retinopathy (Swedish national extension, base
+        H36.0). SNOMED CT 4174977 (4855003, std=S) is the Athena ICD10 H36.0 crosswalk target. Unspecified
+        DR source maps to the general concept. Moderate tier : Athena crosswalk with an unspecified
+        source.
+        """
+}

@@ -1,0 +1,511 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W16
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W160.1" source="W160" target="217121009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1600.1" source="W1600" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1600 = Swedish extension of W16 SNOMED CT 217115005 with place (bostad och
+        bostadsområde/home) and activity (idrott/sport/motion). Target SNOMED CT 436589 (concept_code
+        217115005) =. Athena crosswalk W16→436589 verified; target subsumes every Swedish
+        activity/place-specific child. Activity/place dimensions have no SNOMED CT analogue. High tier :
+        one-level broader, verified base crosswalk.
+        """
+}
+mapping "W1601.1" source="W1601" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1602.1" source="W1602" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1603.1" source="W1603" target="217118007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1604.1" source="W1604" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1604 = Swedish extension of W16 SNOMED CT 217115005 with place (bostad) and activity
+        (vitalaktivitet). Target SNOMED CT 436589 (217115005) =. Base crosswalk verified; target subsumes
+        source. High tier: one-level broader.
+        """
+}
+mapping "W1608.1" source="W1608" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1608 = Swedish extension of W16 SNOMED CT 217115005 with place (bostad) and activity (andra
+        specificerade aktiviteter). Target SNOMED CT 436589 (217115005) =. Base crosswalk verified; target
+        subsumes source. High tier: one-level broader.
+        """
+}
+mapping "W1609.1" source="W1609" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1609 = Swedish extension of W16 SNOMED CT 217115005 with place (bostad) and activity
+        (ospecificerad). Target SNOMED CT 436589 (217115005) =. Base crosswalk verified; target subsumes
+        source. High tier: one-level broader.
+        """
+}
+mapping "W161.1" source="W161" target="217115005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1610.1" source="W1610" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1610 = Swedish 5-char extension of ICD-10 W16 SNOMED CT 217115005, with place=institutional
+        residence and activity=sport/exercise. Target SNOMED CT 436589 (concept_code 217115005) =, the
+        standard concept that W16 maps to via the Athena crosswalk (ICD10/relationships.tdl: 45756254 ->
+        436589). The target fully subsumes the source: every such accident regardless of
+        location/activity is an. The Swedish place/activity granularity has no separate SNOMED CT
+        representation. High tier : one-level broader with verified crosswalk; the Swedish extension
+        adds non-clinical scene detail that does not change the disorder concept.
+        """
+}
+mapping "W1611.1" source="W1611" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1612.1" source="W1612" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1613.1" source="W1613" target="217115005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1614.1" source="W1614" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1614 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=institutional residence, activity=vital activity (rest/sleep/meal/personal hygiene).
+        Target SNOMED CT 436589 = SNOMED CT 217115005, the Athena crosswalk target of W16. Target fully
+        subsumes the source (place/activity are scene modifiers, not part of the disorder concept). High
+        tier : one-level broader, verified crosswalk; Swedish scene granularity has no SNOMED CT analogue.
+        """
+}
+mapping "W1618.1" source="W1618" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1618 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=institutional residence, activity=other specified. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source; scene modifiers have no
+        separate SNOMED CT representation. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1619.1" source="W1619" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1619 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=institutional residence, activity=unspecified. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk; Swedish scene granularity has no SNOMED CT analogue.
+        """
+}
+mapping "W162.1" source="W162" target="217115005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1620.1" source="W1620" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1620 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=school/other institution/public building, activity=sport/exercise. Target SNOMED CT 436589 =
+        SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene
+        modifiers do not change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1621.1" source="W1621" target="90619006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 90619006 [GPS]"
+}
+mapping "W1622.1" source="W1622" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1623.1" source="W1623" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1623 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=school/other institution/public building, activity=other occupation. Target SNOMED CT 436589
+        = SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene
+        granularity has no SNOMED CT analogue. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1624.1" source="W1624" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1624 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=school/other institution/public building, activity=vital activity. Target SNOMED CT 436589 =
+        SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene
+        modifiers do not change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1628.1" source="W1628" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1628 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=school/other institution/public building, activity=other specified. Target SNOMED CT 436589 =
+        SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source. High tier :
+        one-level broader, verified crosswalk; scene granularity has no SNOMED CT analogue.
+        """
+}
+mapping "W1629.1" source="W1629" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1629 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=school/other institution/public building, activity=unspecified. Target SNOMED CT 436589 =
+        SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source. High tier :
+        one-level broader, verified crosswalk.
+        """
+}
+mapping "W163.1" source="W163" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1630.1" source="W1630" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1630 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=sports/sport facility, activity=sport/exercise. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source; scene modifiers do not
+        change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1631.1" source="W1631" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1632.1" source="W1632" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1633.1" source="W1633" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1634.1" source="W1634" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1634 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=sports/sport facility, activity=vital activity. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk; scene granularity has no SNOMED CT analogue.
+        """
+}
+mapping "W1638.1" source="W1638" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1638 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=sports/sport facility, activity=other specified. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W1639.1" source="W1639" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1639 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=sports/sport facility, activity=unspecified. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W164.1" source="W164" target="217115005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1640.1" source="W1640" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1640 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=street and road, activity=sport/exercise. Target SNOMED CT 436589 = SNOMED CT 217115005 (Athena
+        crosswalk target of W16). Target fully subsumes the source; scene modifiers do not change the
+        disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1641.1" source="W1641" target="217748000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1642.1" source="W1642" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1643.1" source="W1643" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1643 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=street and road, activity=other occupation. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W1644.1" source="W1644" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1644 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=street and road, activity=vital activity. Target SNOMED CT 436589 = SNOMED CT 217115005 (Athena
+        crosswalk target of W16). Target fully subsumes the source; scene modifiers do not change the
+        disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1648.1" source="W1648" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1648 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=street and road, activity=other specified. Target SNOMED CT 436589 = SNOMED CT 217115005 (Athena
+        crosswalk target of W16). Target fully subsumes the source. High tier : one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W1649.1" source="W1649" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1649 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=street and road, activity=unspecified. Target SNOMED CT 436589 = SNOMED CT 217115005 (Athena
+        crosswalk target of W16). Target fully subsumes the source. High tier : one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W165.1" source="W165" target="217121009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1650.1" source="W1650" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1650 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=retail/trade/service area, activity=sport/exercise. Target SNOMED CT 436589 = SNOMED CT
+        217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene modifiers do
+        not change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1651.1" source="W1651" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1652.1" source="W1652" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1653.1" source="W1653" target="217118007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1654.1" source="W1654" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1654 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=retail/trade/service area, activity=vital activity. Target SNOMED CT 436589 = SNOMED CT
+        217115005 (Athena crosswalk target of W16). Target fully subsumes the source. High tier :
+        one-level broader, verified crosswalk.
+        """
+}
+mapping "W1658.1" source="W1658" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1658 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=retail/trade/service area, activity=other specified. Target SNOMED CT 436589 = SNOMED CT
+        217115005 (Athena crosswalk target of W16). Target fully subsumes the source. High tier :
+        one-level broader, verified crosswalk.
+        """
+}
+mapping "W1659.1" source="W1659" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1659 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=retail/trade/service area, activity=unspecified. Target SNOMED CT 436589 = SNOMED CT 217115005
+        (Athena crosswalk target of W16). Target fully subsumes the source. High tier : one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W166.1" source="W166" target="217115005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1660.1" source="W1660" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1660 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=industrial area/construction site, activity=sport/exercise. Target SNOMED CT 436589 = SNOMED CT
+        217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene modifiers do
+        not change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1661.1" source="W1661" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1662.1" source="W1662" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1663.1" source="W1663" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1663 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=industrial area/construction site, activity=other occupation. Target SNOMED CT 436589 =
+        SNOMED CT 217115005 (Athena crosswalk target of W16). Target fully subsumes the source. High tier :
+        one-level broader, verified crosswalk.
+        """
+}
+mapping "W1664.1" source="W1664" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1664 = Swedish extension of W16 (diving/jumping into water injury, not drowning),
+        place=industrial area/construction site, activity=vital activity. Target SNOMED CT 436589 = SNOMED CT
+        217115005 (Athena crosswalk target of W16). Target fully subsumes the source; scene modifiers do
+        not change the disorder concept. High tier : one-level broader, verified crosswalk.
+        """
+}
+mapping "W1668.1" source="W1668" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1668 (Swedish extension of ICD-10 W16) = SNOMED CT 217115005. The base ICD-10 code W16 has
+        an Athena crosswalk (concept 45756254 -> 436589) to. The Swedish extension only refines
+        place/activity, which has no separate SNOMED CT standard concept; the base SNOMED CT concept fully
+        subsumes every W16xx child. One-level broader with verified parent crosswalk.
+        """
+}
+mapping "W1669.1" source="W1669" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1669 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk
+        45756254 -> 436589. Extension refines place/activity only; no separate standard target exists.
+        Target fully subsumes source. One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W167.1" source="W167" target="217115005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1670.1" source="W1670" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1670 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1671.1" source="W1671" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1672.1" source="W1672" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1673.1" source="W1673" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1673 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1674.1" source="W1674" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1674 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1678.1" source="W1678" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1678 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1679.1" source="W1679" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1679 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W168.1" source="W168" target="217115005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1680.1" source="W1680" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1680 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1681.1" source="W1681" target="217120005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1682.1" source="W1682" target="217116006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1683.1" source="W1683" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1684.1" source="W1684" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1684 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1688.1" source="W1688" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1688 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1689.1" source="W1689" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1689 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W169.1" source="W169" target="217115005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1690.1" source="W1690" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1690 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1691.1" source="W1691" target="217748000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1692.1" source="W1692" target="217115005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W1693.1" source="W1693" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1693 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1694.1" source="W1694" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1694 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1698.1" source="W1698" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1698 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}
+mapping "W1699.1" source="W1699" target="217115005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1699 (Swedish extension of W16) = SNOMED CT 217115005. Base W16 -> via Athena crosswalk.
+        Extension refines place/activity only; no separate standard target. Target subsumes source.
+        One-level broader, verified parent crosswalk.
+        """
+}

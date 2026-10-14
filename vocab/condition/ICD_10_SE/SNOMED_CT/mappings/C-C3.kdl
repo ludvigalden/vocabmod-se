@@ -1,0 +1,239 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes C-C3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "C019.1" source="C019" target="93687001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C019 SNOMED CT 93687001 = malignant neoplasm of base of tongue; Swedish spelling of WHO
+        ICD-10 C01.9. Crosswalk-verified: ICD10 mirror concept_id 45571487 (C01) SNOMED CT 256633
+        (concept_code 93687001). Same clinical concept, same level of specificity.
+        """
+}
+mapping "C079.1" source="C079" target="372004005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C079 SNOMED CT 372004005 = malignant neoplasm of parotid gland; Swedish spelling of WHO
+        ICD-10 C07.9. Crosswalk-verified: ICD10 45576298 (C07) SNOMED CT 434588 (concept_code 372004005).
+        Same clinical concept.
+        """
+}
+mapping "C129.1" source="C129" target="93978008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C129 SNOMED CT 93978008 = malignant neoplasm of piriform sinus; Swedish spelling of WHO
+        ICD-10 C12.9. Crosswalk-verified: ICD10 45576301 (C12) SNOMED CT 435190 (concept_code 93978008).
+        Same clinical concept.
+        """
+}
+mapping "C160A.1" source="C160A" target="93738008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C160A SNOMED CT 93738008 = malignant neoplasm of gastroesophageal junction, Siewert type I
+        (Swedish national extension of C16.0 cardia). Target SNOMED CT 432838 (concept_code 93738008), via
+        the ICD10 C16.0 (45556964) crosswalk. SNOMED CT has no Siewert-typed subconcept, so the target
+        fully subsumes the source but drops the Siewert I (distal esophageal adenocarcinoma)
+        specificity. Moderate : a verified crosswalk but the Siewert typology is lost.
+        """
+}
+mapping "C160B.1" source="C160B" target="93738008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C160B SNOMED CT 93738008 = malignant neoplasm of gastroesophageal junction, Siewert type II
+        (Swedish national extension of C16.0 cardia). Target SNOMED CT 432838 (concept_code 93738008), via
+        ICD10 C16.0 crosswalk. SNOMED CT has no Siewert II (true cardia) subconcept; the target fully
+        contains the source but loses the Siewert typology. Moderate : verified crosswalk, specificity
+        loss.
+        """
+}
+mapping "C160C.1" source="C160C" target="93738008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C160C SNOMED CT 93738008 = malignant neoplasm of gastroesophageal junction, Siewert type III
+        (Swedish national extension of C16.0 cardia). Target SNOMED CT 432838 (concept_code 93738008), via
+        ICD10 C16.0 crosswalk. SNOMED CT has no Siewert III (subcardial gastric) subconcept; target fully
+        contains source, Siewert typology lost. Moderate : verified crosswalk, specificity loss.
+        """
+}
+mapping "C160X.1" source="C160X" target="93738008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C160X SNOMED CT 93738008 = malignant neoplasm of cardia, unspecified Siewert type (Swedish
+        national extension of C16.0). Target SNOMED CT 432838 (concept_code 93738008), via ICD10 C16.0
+        (45556964) crosswalk. Source is the unspecified-Siewert variant, which is exactly co-extensive
+        with the plain cardia concept (Siewert typology intentionally absent on both sides). High :
+        verified crosswalk, no breadth mismatch on the unspecified level.
+        """
+}
+mapping "C199.1" source="C199" target="93980002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C199 SNOMED CT 93980002 = malignant neoplasm of rectosigmoid junction; Swedish spelling of
+        WHO ICD-10 C19.9. Crosswalk-verified: ICD10 45561791 (C19) SNOMED CT 438699 (concept_code
+        93980002). Same clinical concept.
+        """
+}
+mapping "C209.1" source="C209" target="93984006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C209 SNOMED CT 93984006 = malignant neoplasm of rectum; Swedish spelling of WHO ICD-10
+        C20.9. Crosswalk-verified: ICD10 45542587 (C20) SNOMED CT 74582 (concept_code 93984006). Same
+        clinical concept.
+        """
+}
+mapping "C2290.1" source="C2290" target="109841003" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source C2290 is a truncated Swedish row whose name carries no clinical text; per the input row's
+        own comment, truncation resolves it to C22.0 SNOMED CT 109841003 93870000 (liver cell carcinoma
+        specifically). Crosswalk-verified: ICD10 45552247 (C22.0) SNOMED CT 4001171 (concept_code
+        109841003). High : exact target, but the source code is a truncation artifact rather than a
+        clean ICD-10 concept, so a small residual-doubt haircut from.
+        """
+}
+mapping "C2290.2" source="C2290" target="93870000" relationship=equivalent preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "C2299.1" source="C2299" target="95214007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source C2299 is a Swedish 5th-char extension of C22.9 SNOMED CT 93870000 95214007 (per the input
+        row's own comment, it is a extension of C22.9). Crosswalk-verified: ICD10 45537795 (C22.9)
+        SNOMED CT 201519 (concept_code 95214007). Target fully subsumes the source (liver unspecified →
+        primary malignant neoplasm of liver). Moderate : unspecified source with a Swedish-extension
+        code, crosswalk not independently re-verified for the 5th-char extension.
+        """
+}
+mapping "C2299.2" source="C2299" target="93870000" relationship=source_is_narrower_than_target preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "C239.1" source="C239" target="372139008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C239 SNOMED CT 372139008 = malignant neoplasm of gallbladder; Swedish spelling of WHO ICD-10
+        C23.9. Crosswalk-verified: ICD10 45590880 (C23) SNOMED CT 197806 (concept_code 372139008). Same
+        clinical concept.
+        """
+}
+mapping "C339.1" source="C339" target="363432004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C339 SNOMED CT 363432004 = malignant neoplasm of trachea; Swedish spelling of WHO ICD-10
+        C33.9. Crosswalk-verified: ICD10 45585989 (C33) SNOMED CT 4177112 (concept_code 363432004). Same
+        clinical concept.
+        """
+}
+mapping "C349A.1" source="C349A" target="254634000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349A SNOMED CT 254634000 = squamous cell carcinoma of lung (Swedish national
+        histology-specific extension of C34.9). Target SNOMED CT 4110705 (concept_code 254634000). Same
+        clinical concept at the same histology+site specificity. High rather than : the source is a
+        Swedish 5th-char histology extension with no independent crosswalk in the mirror; target
+        identified by name+site match against the SNOMED CT concept.
+        """
+}
+mapping "C349B.1" source="C349B" target="254632001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349B SNOMED CT 254632001 = small cell lung cancer (Swedish national histology-specific
+        extension of C34.9). Target SNOMED CT 4110591 (concept_code 254632001). Same clinical concept; the
+        SNOMED CT (4112739) is a synonym. High : no independent crosswalk for the Swedish 5th-char code;
+        equivalence verified by name+site.
+        """
+}
+mapping "C349C.1" source="C349C" target="254626006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349C SNOMED CT 254626006 = adenocarcinoma of lung (Swedish national histology-specific
+        extension of C34.9). Target SNOMED CT 4112738 (concept_code 254626006). Same clinical concept. High
+        : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349D.1" source="C349D" target="307595008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349D SNOMED CT 307595008 = bronchioloalveolar lung cancer (Swedish national
+        histology-specific extension of C34.9). Target SNOMED CT 40515095 (concept_code 307595008). Same
+        clinical concept. High : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349E.1" source="C349E" target="254629004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349E SNOMED CT 254629004 = large cell lung cancer (Swedish national histology-specific
+        extension of C34.9). Target SNOMED CT 4110589 (concept_code 254629004). Same clinical concept. High
+        : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349F.1" source="C349F" target="707405009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349F SNOMED CT 707405009 = adenosquamous lung cancer (Swedish national histology-specific
+        extension of C34.9). Target SNOMED CT 45768881 (concept_code 707405009). Same clinical concept.
+        High : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349G.1" source="C349G" target="707456000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349G SNOMED CT 707456000 = undifferentiated lung cancer, non-small-cell (Swedish national
+        histology-specific extension of C34.9). Target SNOMED CT 45768920 (concept_code 707456000). Same
+        clinical concept; framing in source vs in target is a small terminological gap (a subset of
+        NSCLC). High : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349H.1" source="C349H" target="254627002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349H SNOMED CT 254627002 = lung carcinoid (Swedish national histology-specific extension of
+        C34.9). Target SNOMED CT 257513 (concept_code 254627002). Same clinical concept. High : no
+        independent crosswalk; equivalence by name+site. (SNOMED CT 254627002 765056 is an alternate but
+        uses a UK-extension code; 257513 is the standard international-edition concept.)
+        """
+}
+mapping "C349J.1" source="C349J" target="707465007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349J SNOMED CT 707465007 = mucoepidermoid lung cancer (Swedish national histology-specific
+        extension of C34.9). Target SNOMED CT 45772939 (concept_code 707465007). Same clinical concept.
+        High : no independent crosswalk; equivalence by name+site.
+        """
+}
+mapping "C349K.1" source="C349K" target="707466008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349K SNOMED CT 707466008 = adenoid cystic carcinoma of lung. Target SNOMED CT 45768928
+        (concept_code 707466008, standard_concept=S). The target fully-specified name matches source
+        semantics exactly. Exact-equivalent tier: same clinical concept, 1:1 equivalence.
+        """
+}
+mapping "C349X.1" source="C349X" target="93986008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C349X SNOMED CT 93986008 = malignant neoplasm of bronchus/lung, unspecified histologic type
+        (Swedish extension of WHO C34.9). Target SNOMED CT 4311499 (concept_code 93986008,
+        standard_concept=S) is the Athena crosswalk target for WHO C34.9 Bronchus or lung, unspecified.
+        Broader: target subsumes the source (lung is part of respiratory tract); the source's
+        histologic-unspecified framing is not preserved. Moderate tier: mechanical Athena crosswalk,
+        unspecified source, not independently re-verified. Closer lung-specific SNOMED CT targets (e.g.
+        40382429) are non-standard (invalid_reason=D in mirror) and were rejected.
+        """
+}
+mapping "C379.1" source="C379" target="94096009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C379 SNOMED CT 94096009 = malignant neoplasm of thymus (WHO ICD-10 C37). Target SNOMED CT
+        438368 (concept_code 94096009, standard_concept=S), and this is the Athena crosswalk target for
+        WHO C37. Exact-equivalent: same clinical concept, crosswalk-verified.
+        """
+}

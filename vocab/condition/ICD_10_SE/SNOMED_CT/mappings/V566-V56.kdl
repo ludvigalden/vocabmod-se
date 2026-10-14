@@ -1,0 +1,243 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V566-V56
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V5660.1" source="V5660" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5660 = Swedish subdivision of V56.6 (Passenger of pick-up truck/van injured in traffic
+        collision with nonmotor vehicle; activity = sport/exercise). Activity suffix is
+        Swedish-administrative, no SNOMED CT analogue. Target SNOMED CT 4152175 — base V56.6 crosswalk target;
+        fully covers the traffic crash scenario. 444074 = Victim of vehicular/traffic accident — broader
+        context. Both broader: target subsumes crash, drops Swedish activity dimension. Moderate tier:
+        verified base-level Athena crosswalk, mechanical extension to Swedish subcode.
+        """
+}
+mapping "V5660.2" source="V5660" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5661.1" source="V5661" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5661 = Swedish subdivision of V56.6 (Passenger of pick-up truck/van in traffic collision
+        with nonmotor vehicle; activity = leisure). Activity suffix is Swedish-administrative, no SNOMED CT
+        analogue. Target SNOMED CT 4152175 = Motor vehicle on road in collision with nonmotor vehicle —
+        base V56.6 crosswalk target. 444074 = Victim of vehicular/traffic accident — broader context.
+        Both broader. Moderate tier: verified base-level crosswalk, mechanical extension.
+        """
+}
+mapping "V5661.2" source="V5661" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5662.1" source="V5662" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5662 = Swedish subdivision of V56.6 (Passenger of pick-up truck/van in traffic collision
+        with nonmotor vehicle; activity = paid work). Activity suffix is Swedish-administrative, no
+        SNOMED CT analogue. Target SNOMED CT 4152175 = Motor vehicle on road in collision with nonmotor
+        vehicle — base V56.6 crosswalk target. 444074 = Victim of vehicular/traffic accident — broader
+        context. Both broader. Moderate tier: verified base-level crosswalk, mechanical extension.
+        """
+}
+mapping "V5662.2" source="V5662" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5663.1" source="V5663" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5663 = Swedish subdivision of V56.6 (Passenger of pick-up truck/van in traffic collision
+        with nonmotor vehicle; activity = other activity). Activity suffix is Swedish-administrative, no
+        SNOMED CT analogue. Target SNOMED CT 4152175 = Motor vehicle on road in collision with nonmotor
+        vehicle — base V56.6 crosswalk target. 444074 = Victim of vehicular/traffic accident — broader
+        context. Both broader. Moderate tier: verified base-level crosswalk, mechanical extension.
+        """
+}
+mapping "V5663.2" source="V5663" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5664.1" source="V5664" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5664 = Swedish subdivision of V56.6 (Passenger of pick-up truck/van in traffic collision
+        with nonmotor vehicle; activity = vital activity such as rest/sleep/meals/personal hygiene).
+        Activity suffix is Swedish-administrative, no SNOMED CT analogue. Target SNOMED CT 4152175 = Motor
+        vehicle on road in collision with nonmotor vehicle — base V56.6 crosswalk target. 444074 =
+        Victim of vehicular/traffic accident — broader context. Both broader. Moderate tier: verified
+        base-level crosswalk, mechanical extension.
+        """
+}
+mapping "V5664.2" source="V5664" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5668.1" source="V5668" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5668 = Swedish 7-char extension of ICD-10 V56.6 (passenger of pick-up truck/van,
+        collision with nonmotor vehicle, traffic accident) further specified by activity SNOMED CT
+        271579008 (other specified activities). Parent V56.6 crosswalks to SNOMED CT 4152175 (Motor vehicle
+        on road in collision with nonmotor vehicle, concept_code 271579008). Target captures the
+        accident/injury component (vehicle type, collision partner, traffic status, occupant role) but
+        drops the activity-context component, which has no single standard SNOMED CT concept for. Partial
+        (multi-axis source). Moderate confidence: crosswalk inherited from parent V56.6, not
+        independently re-verified at the Swedish-extension level.
+        """
+}
+mapping "V5669.1" source="V5669" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5669 = Swedish extension of V56.6 (passenger, traffic, nonmotor vehicle collision) with
+        activity SNOMED CT 271579008 (unspecified). Parent V56.6 crosswalks to SNOMED CT 4152175. Activity is
+        unspecified so no activity-context target emitted. Target covers accident component only;
+        partial because the multi-axis source (accident + activity) is only half-covered by this single
+        target.
+        """
+}
+mapping "V5670.1" source="V5670" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5670 = Swedish extension of V56.7 (person on outside of vehicle, traffic, nonmotor
+        vehicle collision) with activity SNOMED CT 271579008 57701003 (sport). Primary 4152175 (Motor
+        vehicle on road in collision with nonmotor vehicle) covers the accident axis. Secondary 440288
+        (Accident while engaged in sports activity, concept_code 57701003) covers the activity axis.
+        Both partial: each covers one component of the two-axis source. Secondary at (low) because the
+        sport-activity concept is generic and not vehicle-specific.
+        """
+}
+mapping "V5670.2" source="V5670" target="57701003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5671.1" source="V5671" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5671 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 1067601000000108 271579008 (play and leisure). Primary 4152175 covers accident
+        axis. Secondary 42689728 (Injury whilst engaged in leisure activity, concept_code
+        1067601000000108) covers activity axis. Both partial. Secondary at (UK extension concept,
+        leisure-activity generic).
+        """
+}
+mapping "V5671.2" source="V5671" target="1067601000000108" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5672.1" source="V5672" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5672 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 17542004 271579008 (paid work). Primary 4152175 covers accident axis. Secondary
+        4069443 (Accident while engaged in work-related activity, concept_code 17542004) covers activity
+        axis. Both partial. Secondary at (generic work-accident concept, not vehicle-specific).
+        """
+}
+mapping "V5672.2" source="V5672" target="17542004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5673.1" source="V5673" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5673 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 271579008 (other occupation). Primary 4152175 covers accident axis. No standard
+        SNOMED CT concept for activity context. Partial: accident axis covered, activity axis dropped.
+        """
+}
+mapping "V5674.1" source="V5674" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5674 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 271579008 (vital activities: rest, sleep, meals, personal hygiene). Primary
+        4152175 covers accident axis. No single standard SNOMED CT concept captures this broad grouping
+        (42689795 covers only sleeping). Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5678.1" source="V5678" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5678 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 271579008 (other specified activities). Primary 4152175 covers accident axis. No
+        standard SNOMED CT concept for. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5679.1" source="V5679" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5679 = Swedish extension of V56.7 (person outside, traffic, nonmotor collision) with
+        activity SNOMED CT 271579008 (unspecified). Primary 4152175 covers accident axis. Activity
+        unspecified, no activity target. Partial: multi-axis source, single-axis coverage.
+        """
+}
+mapping "V5690.1" source="V5690" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5690 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 271579008 57701003 (sport). Primary 4152175 covers accident axis. Secondary
+        440288 (Accident while engaged in sports activity) covers activity axis. Both partial.
+        """
+}
+mapping "V5690.2" source="V5690" target="57701003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5691.1" source="V5691" target="271579008" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5691 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 1067601000000108 271579008 (play and leisure). Primary 4152175 covers
+        accident axis. Secondary 42689728 (Injury whilst engaged in leisure activity) covers activity
+        axis. Both partial.
+        """
+}
+mapping "V5691.2" source="V5691" target="1067601000000108" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5692.1" source="V5692" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5692 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 17542004 271579008 (paid work). Primary 4152175 covers accident axis.
+        Secondary 4069443 (Accident while engaged in work-related activity) covers activity axis. Both
+        partial.
+        """
+}
+mapping "V5692.2" source="V5692" target="17542004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5693.1" source="V5693" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5693 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 271579008 (other occupation). Primary 4152175 covers accident axis. No
+        standard SNOMED CT concept for. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5694.1" source="V5694" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5694 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 271579008 (vital activities: rest, sleep, meals, hygiene). Primary 4152175
+        covers accident axis. No single standard SNOMED CT concept for this broad vital-activities
+        grouping. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5698.1" source="V5698" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5698 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 271579008 (other specified activities). Primary 4152175 covers accident
+        axis. No standard SNOMED CT concept for. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5699.1" source="V5699" target="271579008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5699 = Swedish extension of V56.9 (unspecified occupant, traffic, nonmotor collision)
+        with activity SNOMED CT 271579008 (unspecified). Primary 4152175 covers accident axis. Activity
+        unspecified, no activity target. Partial: multi-axis source, single-axis coverage.
+        """
+}

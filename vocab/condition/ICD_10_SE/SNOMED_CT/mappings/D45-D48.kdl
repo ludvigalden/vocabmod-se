@@ -1,0 +1,216 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes D45-D48
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "D459.1" source="D459" target="109992005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D459 SNOMED CT 109992005 = polycythemia vera, myeloproliferative neoplasm. Target SNOMED CT
+        135214 (=109992005) = Polycythemia vera (clinical). Athena crosswalk D45 → 135214; identical
+        clinical concept. Exact-equivalent.
+        """
+}
+mapping "D480A.1" source="D480A" target="722694005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D480A SNOMED CT 722694005 = neoplasm of pathologically uncertain behavior of bone and
+        articular cartilage. Target SNOMED CT 36716624 (=722694005) = Neoplasm of uncertain behavior of
+        bone and articular cartilage. Athena crosswalk D48.0 → 36716624. High confidence.
+        """
+}
+mapping "D480B.1" source="D480B" target="722694005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D480B SNOMED CT 722694005 = neoplasm of clinically unknown behavior of bone and articular
+        cartilage. Target SNOMED CT 36716624 (=722694005) = Neoplasm of uncertain behavior of bone and
+        articular cartilage. Athena crosswalk D48.0 → 36716624. High confidence.
+        """
+}
+mapping "D481A.1" source="D481A" target="404083008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481A SNOMED CT 404083008 = angiomyxoma, a soft tissue neoplasm of uncertain behavior.
+        Target SNOMED CT 4301654 (=404083008) = Angiomyxoma. Exact term match in SNOMED CT; no separate ICD10
+        crosswalk available at this Swedish sub-code level but parent D48.1 (374313). The specific
+        angiomyxoma concept is clinically exact. High confidence (exact term match without independent
+        crosswalk).
+        """
+}
+mapping "D481B.1" source="D481B" target="399994005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481B SNOMED CT 399994005 = desmoid tumör (desmoid-type fibromatosis). Target SNOMED CT 4219874
+        (=399994005) = Desmoid fibromatosis. Exact clinical concept; term match. High confidence.
+        """
+}
+mapping "D481C.1" source="D481C" target="37159008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481C SNOMED CT 37159008 = congenital generalized fibromatosis. Target (=1285183007) =
+        Congenital generalized fibromatosis. Exact term and clinical concept match. High confidence.
+        """
+}
+mapping "D481D.1" source="D481D" target="238864005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481D SNOMED CT 238864005 = aggressive infantile fibromatosis. Target SNOMED CT 4033882
+        (=238864005) = Aggressive infantile fibromatosis. Exact clinical concept and term match. High
+        confidence.
+        """
+}
+mapping "D481E.1" source="D481E" target="36060005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481E SNOMED CT 36060005 = hemangiopericytoma, unspecified. Target SNOMED CT 4263234
+        (=36060005) = Hemangiopericytoma. Exact clinical concept match; UNS (unspecified) source maps to
+        the general SNOMED CT concept. High confidence.
+        """
+}
+mapping "D481W.1" source="D481W" target="94805002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D481W SNOMED CT 94805002 = other neoplasm of uncertain or unknown behavior of connective
+        tissue and other soft tissue (residual category). Target SNOMED CT 374313 (=94805002) = Neoplasm of
+        uncertain behavior of soft tissues. Athena crosswalk D48.1 → 374313. Target subsumes the source
+        (broader); source is a residual bucket. Moderate confidence: heterogeneous residual category.
+        """
+}
+mapping "D482A.1" source="D482A" target="109917000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D482A SNOMED CT 109917000 = neoplasm of pathologically uncertain behavior of peripheral
+        nerves and autonomic nervous system. Target SNOMED CT 4002341 (=109917000) = Neoplasm of uncertain
+        behavior of peripheral nerves and peripheral autonomic nervous system. Athena crosswalk D48.2 →
+        4002341. High confidence.
+        """
+}
+mapping "D482B.1" source="D482B" target="109917000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D482B SNOMED CT 109917000 = neoplasm of clinically unknown behavior of peripheral nerves and
+        autonomic nervous system. Target SNOMED CT 4002341 (=109917000) = Neoplasm of uncertain behavior of
+        peripheral nerves and peripheral autonomic nervous system. Athena crosswalk D48.2 → 4002341.
+        High confidence.
+        """
+}
+mapping "D483A.1" source="D483A" target="95132003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D483A SNOMED CT 95132003 = Swedish subdivision of WHO D48.3 (Neoplasm of uncertain behavior
+        of retroperitoneum), specifying pathological-method uncertainty. Target SNOMED CT 4315953 =
+        (concept_code 95132003); WHO D48.3 crosswalks here via Athena Maps-to edge. SNOMED CT conflates the
+        Swedish A/B uncertainty split into a single concept, so target is broader than source. High
+        tier: verified crosswalk, one-level breadth mismatch.
+        """
+}
+mapping "D483B.1" source="D483B" target="95132003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D483B SNOMED CT 95132003 = Swedish subdivision of WHO D48.3 specifying clinically-unknown
+        behavior (no pathology performed). Same SNOMED CT target 4315953 as D483A; SNOMED CT does not split
+        the A/B uncertainty distinction. Broader: target subsumes source. High tier: verified crosswalk,
+        one-level breadth mismatch.
+        """
+}
+mapping "D484A.1" source="D484A" target="189401003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D484A SNOMED CT 189401003 = Swedish subdivision of WHO D48.4 (Neoplasm of uncertain behavior
+        of peritoneum), pathological-method uncertainty. Target SNOMED CT 4099495 = (concept_code
+        189401003); WHO D48.4 crosswalks here via Athena Maps-to. SNOMED CT conflates the SE A/B split.
+        Broader: target subsumes source. High tier: verified crosswalk, one-level breadth mismatch.
+        """
+}
+mapping "D484B.1" source="D484B" target="189401003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D484B SNOMED CT 189401003 = Swedish subdivision of WHO D48.4 specifying clinically-unknown
+        behavior. Same SNOMED CT target 4099495; SNOMED CT does not split the A/B distinction. Broader. High
+        tier: verified crosswalk, one-level breadth mismatch.
+        """
+}
+mapping "D485A.1" source="D485A" target="254755006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D485A SNOMED CT 254755006 = Atypical fibroxanthoma of skin. Target SNOMED CT 40455089 =
+        (concept_code 254755006). Exact SNOMED CT equivalent; same clinical concept and same body site
+        (skin). Exact-match tier.
+        """
+}
+mapping "D485B.1" source="D485B" target="95087004" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D485B SNOMED CT 95087004 (bathing suit nevus) = acquired melanocytic nevus distribution
+        pattern in swimsuit-covered areas; a Swedish SE-specific clinical descriptor with no exact
+        SNOMED CT equivalent in the mirror. Target SNOMED CT 135777 = (concept_code 95087004); the WHO D48.5
+        crosswalk. The target is a true ancestor (source nests under D48.5 in ICD-10) but specificity
+        loss is substantial and the clinical entity (bathing suit nevus) is only loosely captured. Low
+        tier: real breadth mismatch, no closer standard concept available.
+        """
+}
+mapping "D485C.1" source="D485C" target="254819008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D485C SNOMED CT 254819008 = Dysplastic nevus syndrome (also known as FAMM, B-K mole
+        syndrome). Target SNOMED CT 4112850 = (concept_code 254819008); canonical SNOMED CT synonym for
+        dysplastic nevus syndrome. Exact clinical equivalent. Exact-match tier.
+        """
+}
+mapping "D485D.1" source="D485D" target="12933008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D485D SNOMED CT 12933008 = Sweat gland tumör, unspecified. Target SNOMED CT 4044192 =
+        (concept_code 12933008). Exact SNOMED CT equivalent; both are the unspecified/general sweat gland
+        tumör concept. Exact-match tier.
+        """
+}
+mapping "D485W.1" source="D485W" target="95087004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D485W SNOMED CT 95087004 = Swedish, a residual bucket under WHO D48.5. Target SNOMED CT 135777
+        = (concept_code 95087004); WHO D48.5 crosswalks here via Athena Maps-to. Target legitimately
+        subsumes the source's children. High tier: verified crosswalk, one-level breadth mismatch.
+        """
+}
+mapping "D486A.1" source="D486A" target="269497004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D486A SNOMED CT 269497004 = Swedish subdivision of WHO D48.6 (Neoplasm of uncertain behavior
+        of breast), pathological-method uncertainty. Target SNOMED CT 72578 = (concept_code 269497004); WHO
+        D48.6 crosswalks here via Athena Maps-to. SNOMED CT does not split the A/B distinction. Broader:
+        target subsumes source. High tier.
+        """
+}
+mapping "D486B.1" source="D486B" target="269497004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D486B SNOMED CT 269497004 = Swedish subdivision of WHO D48.6 specifying clinically-unknown
+        behavior. Same SNOMED CT target 72578; SNOMED CT does not split the A/B distinction. Broader. High
+        tier.
+        """
+}
+mapping "D487A.1" source="D487A" target="118616009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D487A SNOMED CT 118616009 = Swedish subdivision of WHO D48.7 (Neoplasm of uncertain behavior
+        of other specified sites), pathological-method uncertainty. Target SNOMED CT 432582 = (concept_code
+        118616009); WHO D48.7 crosswalks here via Athena Maps-to. Target is the general parent
+        (anatomically non-specific). Broader. High tier: verified crosswalk, breadth mismatch.
+        """
+}
+mapping "D487B.1" source="D487B" target="118616009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D487B SNOMED CT 118616009 = Swedish subdivision of WHO D48.7 specifying clinically-unknown
+        behavior. Same SNOMED CT target 432582. Broader. High tier: verified crosswalk.
+        """
+}

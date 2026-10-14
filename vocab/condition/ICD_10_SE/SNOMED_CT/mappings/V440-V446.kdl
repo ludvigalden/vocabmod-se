@@ -1,0 +1,596 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V440-V446
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4400.1" source="V4400" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4400 is a Swedish national extension of ICD-10 V4x adding activity context
+        (sport/leisure/work/unspecified) to a car-occupant injury in collision with heavy transport
+        vehicle or bus. Role: driver. Target SNOMED CT 437738 = Motor vehicle accident off public road, the
+        standard crosswalk target for the corresponding base ICD-10 V4x category (e.g.
+        V43.0/V43.5/V43.4). Activity and role granularity present in the Swedish source has no SNOMED CT
+        representation; target captures the accident mechanism. broader: target subsumes the source's
+        accident type; activity/role detail is lost. : verified crosswalk from the parent ICD-10 code,
+        one level broader.
+        """
+}
+mapping "V4401.1" source="V4401" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4401 is a Swedish national extension of ICD-10 V4x adding activity context
+        (sport/leisure/work/unspecified) to a car-occupant injury in collision with heavy transport
+        vehicle or bus. Role: driver. Target SNOMED CT 437738 = Motor vehicle accident off public road, the
+        standard crosswalk target for the corresponding base ICD-10 V4x category (e.g.
+        V43.0/V43.5/V43.4). Activity and role granularity present in the Swedish source has no SNOMED CT
+        representation; target captures the accident mechanism. broader: target subsumes the source's
+        accident type; activity/role detail is lost. : verified crosswalk from the parent ICD-10 code,
+        one level broader.
+        """
+}
+mapping "V4402.1" source="V4402" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4402 is a Swedish national extension of ICD-10 V4x adding activity context
+        (sport/leisure/work/unspecified) to a car-occupant injury in collision with heavy transport
+        vehicle or bus. Role: driver. Target SNOMED CT 437738 = Motor vehicle accident off public road, the
+        standard crosswalk target for the corresponding base ICD-10 V4x category (e.g.
+        V43.0/V43.5/V43.4). Activity and role granularity present in the Swedish source has no SNOMED CT
+        representation; target captures the accident mechanism. broader: target subsumes the source's
+        accident type; activity/role detail is lost. : verified crosswalk from the parent ICD-10 code,
+        one level broader.
+        """
+}
+mapping "V4403.1" source="V4403" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4403 = Swedish national extension of ICD-10 V44.0 (car occupant driver injured in
+        nontraffic collision with heavy transport vehicle/bus) plus an activity qualifier (annan
+        sysselsättning). The base V44.0 maps via Athena to SNOMED CT 437738 (Motor vehicle accident off
+        public road) and 444074 (Victim of vehicular AND/OR traffic accident). The activity qualifier
+        has no SNOMED CT analogue; both targets are partial (cover injury axis only, drop the activity
+        axis). per partial boundary rule.
+        """
+}
+mapping "V4403.2" source="V4403" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4404.1" source="V4404" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4404 = Swedish extension of V44.0 (driver nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier vitalaktivitet (vital activity: rest/sleep/meal/personal
+        hygiene). Base V44.0 maps to SNOMED CT 437738 (Motor vehicle accident off public road) and 444074
+        (Victim of vehicular AND/OR traffic accident). Activity qualifier has no SNOMED CT target; partial
+        mapping.
+        """
+}
+mapping "V4404.2" source="V4404" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4408.1" source="V4408" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4408 = Swedish extension of V44.0 (driver nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier andra specificerade aktiviteter (other specified
+        activities). Base V44.0 maps to SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue;
+        partial mapping.
+        """
+}
+mapping "V4408.2" source="V4408" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4409.1" source="V4409" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4409 = Swedish extension of V44.0 (driver nontraffic collision with heavy transport
+        vehicle/bus) plus aktivitet ospecificerad (activity unspecified). Base V44.0 maps to SNOMED CT
+        437738 and 444074. The unspecified activity axis has no SNOMED CT target; partial mapping.
+        """
+}
+mapping "V4409.2" source="V4409" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4410.1" source="V4410" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4410 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier idrott/sport/motion. Base V44.1 maps to SNOMED CT 437738 and
+        444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4410.2" source="V4410" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4411.1" source="V4411" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4411 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier lek/fritid. Base V44.1 maps to SNOMED CT 437738 and 444074.
+        Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4411.2" source="V4411" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4412.1" source="V4412" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4412 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier förvärvsarbete (paid work). Base V44.1 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4412.2" source="V4412" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4413.1" source="V4413" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4413 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier annan sysselsättning. Base V44.1 maps to SNOMED CT 437738 and
+        444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4413.2" source="V4413" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4414.1" source="V4414" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4414 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus activity qualifier vitalaktivitet. Base V44.1 maps to SNOMED CT 437738 and
+        444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4414.2" source="V4414" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4418.1" source="V4418" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4418 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus andra specificerade aktiviteter. Base V44.1 maps to SNOMED CT 437738 and 444074.
+        Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4418.2" source="V4418" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4419.1" source="V4419" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4419 = Swedish extension of V44.1 (passenger nontraffic collision with heavy transport
+        vehicle/bus) plus aktivitet ospecificerad. Base V44.1 maps to SNOMED CT 437738 and 444074. Activity
+        axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4419.2" source="V4419" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4420.1" source="V4420" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4420 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus activity qualifier idrott/sport/motion. Base V44.2 maps
+        to SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4420.2" source="V4420" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4421.1" source="V4421" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4421 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus activity qualifier lek/fritid. Base V44.2 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4421.2" source="V4421" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4422.1" source="V4422" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4422 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus activity qualifier förvärvsarbete. Base V44.2 maps to
+        SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4422.2" source="V4422" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4423.1" source="V4423" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4423 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus activity qualifier annan sysselsättning. Base V44.2 maps
+        to SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4423.2" source="V4423" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4424.1" source="V4424" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4424 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus activity qualifier vitalaktivitet. Base V44.2 maps to
+        SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4424.2" source="V4424" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4428.1" source="V4428" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4428 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus andra specificerade aktiviteter. Base V44.2 maps to
+        SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4428.2" source="V4428" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4429.1" source="V4429" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4429 = Swedish extension of V44.2 (person on outside of vehicle nontraffic collision
+        with heavy transport vehicle/bus) plus aktivitet ospecificerad. Base V44.2 maps to SNOMED CT 437738
+        and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4429.2" source="V4429" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4430.1" source="V4430" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4430 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus activity qualifier idrott/sport/motion. Base V44.3 maps to
+        SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4430.2" source="V4430" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4431.1" source="V4431" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4431 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus activity qualifier lek/fritid. Base V44.3 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4431.2" source="V4431" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4432.1" source="V4432" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4432 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus activity qualifier förvärvsarbete. Base V44.3 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4432.2" source="V4432" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4433.1" source="V4433" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4433 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus activity qualifier annan sysselsättning. Base V44.3 maps to
+        SNOMED CT 437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4433.2" source="V4433" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4434.1" source="V4434" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4434 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus activity qualifier vitalaktivitet. Base V44.3 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4434.2" source="V4434" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4438.1" source="V4438" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4438 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus andra specificerade aktiviteter. Base V44.3 maps to SNOMED CT
+        437738 and 444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4438.2" source="V4438" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4439.1" source="V4439" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4439 = Swedish extension of V44.3 (unspecified car occupant nontraffic collision with
+        heavy transport vehicle/bus) plus aktivitet ospecificerad. Base V44.3 maps to SNOMED CT 437738 and
+        444074. Activity axis has no SNOMED CT analogue; partial mapping.
+        """
+}
+mapping "V4439.2" source="V4439" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4440.1" source="V4440" target="242107006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4440 = Swedish 7-char extension of ICD-10 V44.4: car occupant (driver/passenger) injured
+        in collision with heavy transport vehicle or bus, person injured while boarding/alighting,
+        during sport/exercise. The 7th-digit activity context (idrott/sport/motion) is a Swedish
+        national extension with no standard equivalent and is dropped. Primary target SNOMED CT 242107006
+        (Accident while boarding or alighting from motor vehicle on road) is the Athena Maps-to target
+        for V44.4 (concept 4053428); it is broader because it drops the collision partner (heavy
+        truck/bus) and the activity context. Secondary target SNOMED CT 36198007 (Victim of vehicular
+        AND/OR traffic accident, concept 444074) is the second Athena Maps-to target for V44.4, more
+        general. high for primary: crosswalk-verified, one-level broader; moderate for secondary.
+        """
+}
+mapping "V4440.2" source="V4440" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4441.1" source="V4441" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4441 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, person injured while boarding/alighting, during lek och annan
+        fritidsverksamhet (play/leisure). Activity-context digit dropped (no standard equivalent).
+        Primary SNOMED CT 242107006 (Athena concept 4053428, Maps-to for V44.4); broader (drops collision
+        partner + activity). Secondary SNOMED CT 36198007 (concept 444074). primary, secondary.
+        """
+}
+mapping "V4441.2" source="V4441" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4442.1" source="V4442" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4442 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, boarding/alighting, during förvärvsarbete (paid work). Activity
+        digit dropped. Primary SNOMED CT 242107006 (Athena 4053428, Maps-to for V44.4); broader. Secondary
+        SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4442.2" source="V4442" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4443.1" source="V4443" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4443 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, boarding/alighting, annan sysselsättning (other activity).
+        Activity digit dropped. Primary SNOMED CT 242107006 (Athena 4053428); broader. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4443.2" source="V4443" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4444.1" source="V4444" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4444 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, boarding/alighting, vitalaktivitet (vital activity:
+        rest/sleep/meal/hygiene). Activity digit dropped. Primary SNOMED CT 242107006 (Athena 4053428);
+        broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4444.2" source="V4444" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4448.1" source="V4448" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4448 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, boarding/alighting, andra specificerade aktiviteter (other
+        specified activities). Activity digit dropped. Primary SNOMED CT 242107006 (Athena 4053428);
+        broader. Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4448.2" source="V4448" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4449.1" source="V4449" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4449 = Swedish 7-char extension of ICD-10 V44.4: car occupant injured in collision with
+        heavy transport vehicle or bus, boarding/alighting, aktivitet ospecificerad (unspecified
+        activity). Activity digit (9=unspecified) carries no extra clinical information. Primary SNOMED CT
+        242107006 (Athena 4053428); broader only by dropping collision partner. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4449.2" source="V4449" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4450.1" source="V4450" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4450 = Swedish 7-char extension of ICD-10 V44.5: car occupant (driver) injured in
+        collision with heavy transport vehicle or bus in traffic accident, during idrott/sport/motion.
+        Activity-context digit dropped (no standard equivalent). Primary SNOMED CT 274913009 (Athena
+        concept 433930, Maps-to for V44.5); broader because it generalizes the collision partner (heavy
+        truck/bus -> any motor vehicle) and drops role/activity. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4450.2" source="V4450" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4451.1" source="V4451" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4451 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, during lek/fritid. Activity digit dropped.
+        Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4451.2" source="V4451" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4452.1" source="V4452" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4452 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, during förvärvsarbete. Activity digit
+        dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4452.2" source="V4452" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4453.1" source="V4453" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4453 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, annan sysselsättning. Activity digit
+        dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4453.2" source="V4453" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4454.1" source="V4454" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4454 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, vitalaktivitet. Activity digit dropped.
+        Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4454.2" source="V4454" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4458.1" source="V4458" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4458 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, andra specificerade aktiviteter. Activity
+        digit dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007
+        (444074). primary, secondary.
+        """
+}
+mapping "V4458.2" source="V4458" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4459.1" source="V4459" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4459 = Swedish 7-char extension of ICD-10 V44.5: driver of car injured in collision with
+        heavy transport vehicle or bus in traffic accident, aktivitet ospecificerad. Activity digit
+        (9=unspecified) carries no extra clinical information. Primary SNOMED CT 274913009 (Athena 433930);
+        broader only by collision-partner generalization. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4459.2" source="V4459" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4460.1" source="V4460" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4460 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, during idrott/sport/motion. Activity
+        digit dropped. Primary SNOMED CT 274913009 (Athena 433930, Maps-to for V44.6); broader (generalizes
+        collision partner, drops role/activity). Secondary SNOMED CT 36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4460.2" source="V4460" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4461.1" source="V4461" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4461 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, lek/fritid. Activity digit dropped.
+        Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4461.2" source="V4461" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4462.1" source="V4462" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4462 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, förvärvsarbete. Activity digit dropped.
+        Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4462.2" source="V4462" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4463.1" source="V4463" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4463 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, annan sysselsättning. Activity digit
+        dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074).
+        primary, secondary.
+        """
+}
+mapping "V4463.2" source="V4463" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4464.1" source="V4464" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4464 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, vitalaktivitet. Activity digit dropped.
+        Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4464.2" source="V4464" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4468.1" source="V4468" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4468 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, andra specificerade aktiviteter.
+        Activity digit dropped. Primary SNOMED CT 274913009 (Athena 433930); broader. Secondary SNOMED CT
+        36198007 (444074). primary, secondary.
+        """
+}
+mapping "V4468.2" source="V4468" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4469.1" source="V4469" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4469 = Swedish 7-char extension of ICD-10 V44.6: passenger of car injured in collision
+        with heavy transport vehicle or bus in traffic accident, aktivitet ospecificerad. Activity digit
+        (9=unspecified) carries no extra clinical information. Primary SNOMED CT 274913009 (Athena 433930);
+        broader only by collision-partner generalization. Secondary SNOMED CT 36198007 (444074). primary,
+        secondary.
+        """
+}
+mapping "V4469.2" source="V4469" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

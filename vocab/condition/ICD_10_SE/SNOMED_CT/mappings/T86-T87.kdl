@@ -1,0 +1,487 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes T86-T87
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "T860A.1" source="T860A" target="234519006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T860A = Swedish subcode of T86.0 SNOMED CT 234519006. T86.0 Athena-maps to SNOMED CT 4125659
+        (Bone marrow transplant rejection, concept_code 234519006). The Swedish A-suffix carries no
+        extra clinical detail beyond the parent. Exact 1:1 equivalence.
+        """
+}
+mapping "T860B.1" source="T860B" target="75744002" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T860B = Swedish subcode of T86.0 denoting graft-versus-host disease (GVHD) arising post
+        bone-marrow transplant. SNOMED CT 40626511 (Graft versus host disease, concept_code 75744002) is
+        the canonical standard concept for GVHD. The source is the explicit GVHD manifestation; this is
+        an exact clinical equivalence. Verified via the SNOMED CT concept registry.
+        """
+}
+mapping "T861A.1" source="T861A" target="236574008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861A = SNOMED CT 236574008. SNOMED CT 4128371 (Acute rejection of renal transplant,
+        concept_code 236574008) is the kidney-specific acute rejection concept; the source's
+        cell-mediated qualifier is not separately representable in a single standard concept (the
+        generic 4230765). Target subsumes the source as an acute rejection of renal transplant; broader,
+        one level of specificity lost. High-.
+        """
+}
+mapping "T861B.1" source="T861B" target="705154007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861B = SNOMED CT 705154007. SNOMED CT 45771487 (Acute vascular graft rejection, concept_code
+        705154007) captures the vascular-rejection aspect but is not kidney-specific; no kidney-specific
+        acute vascular rejection concept exists. Target is broader (loses renal-transplant context).
+        Moderate because the crosswalk is aspect-matched but not organ-specific. Alternate 4128371
+        (Acute rejection of renal transplant) would preserve organ context but lose the vascular
+        subtype; 45771487 chosen as the more clinically specific match to the rejection pattern.
+        """
+}
+mapping "T861C.1" source="T861C" target="236574008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861C = SNOMED CT 236574008. SNOMED CT 4128371 (Acute rejection of renal transplant) is the
+        best standard target; the biopsy-verification status is a methodology attribute, not a separate
+        clinical concept. Target subsumes the source; broader, one attribute lost. High.
+        """
+}
+mapping "T861D.1" source="T861D" target="236578006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861D = SNOMED CT 236578006. SNOMED CT 4128372 (Chronic rejection of renal transplant,
+        concept_code 236578006) is the kidney-specific chronic rejection concept; biopsy-verification is
+        a methodology attribute, not a separate clinical concept. Target subsumes the source; broader,
+        one attribute lost. High.
+        """
+}
+mapping "T861E.1" source="T861E" target="236578006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861E = SNOMED CT 236578006. Same reasoning as T861D: SNOMED CT 4128372 (Chronic rejection of
+        renal transplant) subsumes the source; the verification-status attribute is not separately
+        coded. Broader; high.
+        """
+}
+mapping "T861F.1" source="T861F" target="35006009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861F = SNOMED CT 35006009. SNOMED CT 4148383 (Graft failure due to recurrent recipient
+        disease, concept_code 35006009) denotes exactly graft failure caused by recurrence of the
+        original recipient disease. Exact semantic equivalence despite the source being kidney-specific
+        and the SNOMED CT concept being graft-generic; the kidney context is implicit but the concept is
+        the canonical match.
+        """
+}
+mapping "T861W.1" source="T861W" target="58797008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861W = SNOMED CT 58797008. This is a residual bucket for specified causes not elsewhere
+        classified. SNOMED CT 199991 (Disorder of transplanted kidney, concept_code 58797008) is the Athena
+        crosswalk target for parent T86.1 and is the legitimate ancestor of all kidney-transplant
+        disorders. Target subsumes the source; broader. Moderate because the source is a heterogeneous
+        residual.
+        """
+}
+mapping "T861X.1" source="T861X" target="58797008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T861X = SNOMED CT 58797008. SNOMED CT 199991 (Disorder of transplanted kidney) is the Athena
+        crosswalk target for parent T86.1 and is the broad kidney-transplant-disorder concept. Target
+        subsumes the source; broader. Moderate because the source is unspecified.
+        """
+}
+mapping "T862A.1" source="T862A" target="432843002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862A = SNOMED CT 432843002. SNOMED CT 4202285 (Acute rejection of cardiac transplant,
+        concept_code 432843002) is the heart-specific acute rejection concept; the cell-mediated
+        qualifier is not separately representable. Target subsumes the source; broader, one level of
+        specificity lost. High.
+        """
+}
+mapping "T862B.1" source="T862B" target="432843002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862B = SNOMED CT 432843002. No heart-specific acute vascular rejection concept exists.
+        SNOMED CT 4202285 (Acute rejection of cardiac transplant) preserves the cardiac-transplant context
+        but loses the vascular-rejection subtype; the alternative 45771487 (Acute vascular graft
+        rejection) preserves the vascular pattern but loses the organ context. 4202285 chosen as more
+        clinically actionable. Broader; moderate because either way one axis is lost.
+        """
+}
+mapping "T862C.1" source="T862C" target="432843002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862C = SNOMED CT 432843002. SNOMED CT 4202285 (Acute rejection of cardiac transplant) is the
+        best heart-specific acute rejection concept; biopsy-verification status is a methodology
+        attribute, not a separate clinical concept. Target subsumes the source; broader. High.
+        """
+}
+mapping "T862D.1" source="T862D" target="792842004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862D = SNOMED CT 792842004 (chronic allograft vasculopathy of the transplanted heart).
+        SNOMED CT 37312532 (Coronary arteriosclerosis in artery of transplanted heart, concept_code
+        792842004) is the canonical concept for transplant-related coronary arteriosclerosis.
+        (objectively verified) is a verification-status attribute, not a separate clinical entity.
+        Target subsumes the source; broader, one attribute lost. Alternate 4119951 (Accelerated coronary
+        artery disease in transplanted heart, 233844002) is a near-synonym but 37312532 is the more
+        direct arteriosclerosis concept. High.
+        """
+}
+mapping "T862W.1" source="T862W" target="429257001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862W (Swedish extension of T86.2) = SNOMED CT 429257001 — heart transplant
+        failure/rejection, other specified cause. WHO T86.2 crosswalks via Athena to (Disorder of
+        transplanted heart). Target fully subsumes the source (any heart-transplant failure/rejection is
+        a disorder of the transplanted heart); the Swedish subcode adds cause-specific detail the SNOMED CT
+        concept does not carry, so the map is broader, one level. Confidence : verified crosswalk to a
+        clearly correct standard concept with a well-understood breadth mismatch.
+        """
+}
+mapping "T862X.1" source="T862X" target="429257001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T862X = SNOMED CT 429257001 — heart transplant failure/rejection, unspecified cause. WHO
+        T86.2 crosswalks to (Disorder of transplanted heart). Target subsumes the unspecified-source
+        concept; broader, one level. Confidence per the rubric (one-level broader with verified
+        crosswalk).
+        """
+}
+mapping "T863A.1" source="T863A" target="312603000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T863A (Swedish extension of T86.3) = SNOMED CT 312603000 — lung transplant acute
+        biopsy-verified rejection. Note: WHO T86.3 denotes heart-LUNG transplant failure/rejection, but
+        the Swedish extension narrows this to lung-only transplant. The WHO crosswalk target SNOMED CT
+        213152006 (Heart-lung transplant failure and rejection) is semantically wrong for the Swedish
+        lung-only meaning. Best lung-specific standard concept is (Lung transplant rejection), which
+        subsumes acute biopsy-verified rejection. Broader, one level. Confidence : lung-specific
+        standard concept, clearly correct, with a small breadth mismatch on acuity/verification detail.
+        Source meaning (lung-only) verified against the Swedish concept name; crosswalk overridden
+        because the WHO T86.3 scope differs from the Swedish extension.
+        """
+}
+mapping "T863B.1" source="T863B" target="312603000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T863C.1" source="T863C" target="4120002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T863W.1" source="T863W" target="312603000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T863W = SNOMED CT 312603000 — lung transplant failure/rejection, other specified cause.
+        Swedish extension narrowing WHO T86.3 (heart-lung) to lung-only. Best lung-specific standard
+        concept is (Lung transplant rejection); may include failure without rejection, so the target
+        does not fully cover the source's scope — broader rather than exact. Confidence : lung-specific
+        target is clinically defensible but the broader failure-vs-rejection distinction is loose for an
+        source.
+        """
+}
+mapping "T863X.1" source="T863X" target="44165003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T863X = SNOMED CT 44165003 — lung transplant failure/rejection, unspecified cause. Swedish
+        extension of WHO T86.3 (heart-lung), narrowed to lung-only. The unspecified framing fits
+        (Complication of transplanted lung), the broadest lung-transplant-complication standard concept;
+        it fully subsumes both failure and rejection. Broader. Confidence : best available standard
+        concept for an unspecified source where the WHO crosswalk target (213152006) is semantically
+        wrong for the Swedish lung-only meaning.
+        """
+}
+mapping "T864A.1" source="T864A" target="235911006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864A (Swedish extension of T86.4) = SNOMED CT 235911006 — liver transplant acute
+        biopsy-verified rejection. (Liver transplant rejection) subsumes acute/chronic/biopsy-verified
+        subtypes. Broader, one level (target lacks the acuity/verification detail). Confidence : clearly
+        correct liver-specific standard concept, small breadth mismatch.
+        """
+}
+mapping "T864B.1" source="T864B" target="235911006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864B = SNOMED CT 235911006 — liver transplant non-acute (chronic) biopsy-verified
+        rejection. (Liver transplant rejection) subsumes this; broader one level.
+        """
+}
+mapping "T864C.1" source="T864C" target="427380004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T864D.1" source="T864D" target="235911006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864D = SNOMED CT 235911006 — liver transplant chronic non-biopsy-verified rejection. (Liver
+        transplant rejection) subsumes this; broader one level.
+        """
+}
+mapping "T864E.1" source="T864E" target="33167004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864E = SNOMED CT 33167004 — recurrence of underlying disease in the liver transplant. This
+        is neither failure nor rejection; it is disease recurrence in the graft. No SNOMED CT concept for
+        exists in the mirror (only specific instances e.g. recurrent HCV). Best defensible standard
+        concept is (Complication of transplanted liver), which broadly subsumes any post-transplant
+        complication including disease recurrence. Broader with significant specificity loss. Confidence
+        : real doubt — the target is loose, but it is the best available standard concept covering this
+        clinical idea.
+        """
+}
+mapping "T864W.1" source="T864W" target="33167004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864W = SNOMED CT 33167004 — liver transplant failure/rejection/complication, other
+        specified cause. WHO T86.4 crosswalks to (Complication of transplanted liver). Target subsumes
+        any specified-cause liver-transplant complication. Broader. Confidence : verified crosswalk with
+        unspecified/other-specified source.
+        """
+}
+mapping "T864X.1" source="T864X" target="33167004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T864X = SNOMED CT 33167004 — liver transplant failure/rejection, unspecified cause. WHO
+        T86.4 crosswalks to (Complication of transplanted liver). Target subsumes the unspecified
+        source. Broader. Confidence per the rubric (Athena crosswalk, unspecified source).
+        """
+}
+mapping "T868A.1" source="T868A" target="431506006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T868B.1" source="T868B" target="431506006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "T868C.1" source="T868C" target="431506006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T868D.1" source="T868D" target="431506006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T868E.1" source="T868E" target="79369007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T868E (Swedish extension of T86.8) = SNOMED CT 79369007 — pancreas transplant
+        failure/rejection, other specified cause. WHO T86.8 crosswalks generically to SNOMED CT 429490004
+        (Disorder affecting transplanted structure), but a pancreas-specific standard concept exists:
+        (Complication of transplanted pancreas), which subsumes failure and rejection. Broader one
+        level. Confidence : pancreas-specific target, clearly correct, small breadth mismatch on cause
+        detail.
+        """
+}
+mapping "T868F.1" source="T868F" target="431506006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "T868W.1" source="T868W" target="429490004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T868W = SNOMED CT 429490004 — failure/rejection of other specified transplanted
+        organs/tissues. Matches WHO T86.8 scope exactly; WHO crosswalk target (Disorder affecting
+        transplanted structure) is the broad generic standard concept. Broader with significant
+        specificity loss (no organ-specific target can be asserted since the source is deliberately
+        non-organ-specific). Confidence : verified crosswalk, broad target for a deliberately generic
+        source.
+        """
+}
+mapping "T873B.1" source="T873B" target="81196009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873B (Swedish extension of T87.3) = SNOMED CT 81196009 — neuroma of amputation stump,
+        shoulder/upper arm. WHO T87.3 crosswalks to (Neuroma of amputation stump). Location-specific
+        SNOMED CT concepts exist only at the upper-limb/lower-limb level and are laterality-specific
+        (left/right); the Swedish source specifies region (shoulder/upper arm) without laterality. The
+        general SNOMED CT concept 81196009 fully subsumes the source; broader one level (target lacks the
+        location detail). Confidence : verified crosswalk, small breadth mismatch.
+        """
+}
+mapping "T873C.1" source="T873C" target="81196009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873C = SNOMED CT 81196009 — neuroma of amputation stump, elbow/forearm. Same reasoning as
+        T873B: WHO T87.3 crosswalks to (Neuroma of amputation stump), broader one level.
+        """
+}
+mapping "T873D.1" source="T873D" target="81196009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873D = SNOMED CT 81196009 — neuroma of amputation stump, wrist/hand. Same reasoning as
+        T873B: WHO T87.3 crosswalks to, broader one level.
+        """
+}
+mapping "T873F.1" source="T873F" target="81196009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873F = SNOMED CT 81196009 — neuroma of amputation stump, hip/thigh. Same reasoning as
+        T873B: WHO T87.3 crosswalks to, broader one level.
+        """
+}
+mapping "T873G.1" source="T873G" target="81196009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873G = SNOMED CT 81196009 — neuroma of amputation stump, knee/lower leg. Same reasoning as
+        T873B: WHO T87.3 crosswalks to, broader one level.
+        """
+}
+mapping "T873H.1" source="T873H" target="81196009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873H = SNOMED CT 81196009 — neuroma of amputation stump, ankle/foot. Same reasoning as
+        T873B: WHO T87.3 crosswalks to, broader one level.
+        """
+}
+mapping "T873X.1" source="T873X" target="81196009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T873X = SNOMED CT 81196009 — neuroma of amputation stump, unspecified location. WHO T87.3
+        crosswalks to (Neuroma of amputation stump). Same clinical concept at the same level of
+        specificity; exact match.
+        """
+}
+mapping "T874B.1" source="T874B" target="427769002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874B (Swedish extension of T87.4) = SNOMED CT 427769002 — infection of amputation stump,
+        shoulder/upper arm. WHO T87.4 crosswalks to (Infection of amputation stump). Location-specific
+        SNOMED CT concepts exist only at upper-limb/lower-limb level and are laterality-specific; the
+        Swedish source specifies region without laterality. The general SNOMED CT concept fully subsumes
+        the source; broader one level.
+        """
+}
+mapping "T874C.1" source="T874C" target="427769002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874C = SNOMED CT 427769002 — infection of amputation stump, elbow/forearm. Same reasoning
+        as T874B: WHO T87.4 crosswalks to, broader one level.
+        """
+}
+mapping "T874D.1" source="T874D" target="427769002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874D = SNOMED CT 427769002 — infection of amputation stump, wrist/hand. Same reasoning as
+        T874B: WHO T87.4 crosswalks to, broader one level.
+        """
+}
+mapping "T874F.1" source="T874F" target="427769002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874F = SNOMED CT 427769002 — infection of amputation stump, hip/thigh. Same reasoning as
+        T874B: WHO T87.4 crosswalks to, broader one level.
+        """
+}
+mapping "T874G.1" source="T874G" target="427769002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874G = SNOMED CT 427769002 — infection of amputation stump, knee/lower leg. Same reasoning
+        as T874B: WHO T87.4 crosswalks to, broader one level.
+        """
+}
+mapping "T874H.1" source="T874H" target="427769002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874H (Swedish extension of T87.4) = Infection of amputation stump at ankle/foot. Target
+        SNOMED CT 4176170 (concept_code 427769002). The parent ICD-10 T87.4 has an Athena SNOMED 427769002
+        crosswalk to 4176170. The Swedish code adds anatomic site specificity (ankle/foot) absent from
+        the SNOMED CT target, so the target subsumes the source (broader). One-level specificity loss =
+        high tier.
+        """
+}
+mapping "T874X.1" source="T874X" target="427769002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T874X (Swedish extension of T87.4) = Infection of amputation stump, unspecified location.
+        Functionally identical to ICD-10 T87.4 (Infection of amputation stump), which has an Athena
+        SNOMED CT 427769002 crosswalk to SNOMED CT 4176170 (Infection of amputation stump, concept_code
+        427769002). Same clinical concept at the same specificity = exact_match.
+        """
+}
+mapping "T875B.1" source="T875B" target="213246001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875B (Swedish extension of T87.5) = Necrosis of amputation stump at shoulder/upper arm.
+        Target SNOMED CT 4308713 (concept_code 213246001). Parent ICD-10 T87.5 crosswalk-verified to
+        4308713. Swedish code adds anatomic site (shoulder/upper arm); target does not distinguish site,
+        so target subsumes source. One-level specificity loss = broader.
+        """
+}
+mapping "T875C.1" source="T875C" target="213246001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875C (Swedish extension of T87.5) = Necrosis of amputation stump at elbow/forearm.
+        Target SNOMED CT 4308713 (concept_code 213246001). Parent T87.5 crosswalk-verified. Source adds
+        anatomic site; target subsumes it. broader.
+        """
+}
+mapping "T875D.1" source="T875D" target="213246001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875D (Swedish extension of T87.5) = Necrosis of amputation stump at wrist/hand. Target
+        SNOMED CT 4308713 (concept_code 213246001). Parent T87.5 crosswalk-verified. Source adds anatomic
+        site; target subsumes it. broader.
+        """
+}
+mapping "T875F.1" source="T875F" target="213246001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875F (Swedish extension of T87.5) = Necrosis of amputation stump at hip/femur. Target
+        SNOMED CT 4308713 (concept_code 213246001). Parent T87.5 crosswalk-verified. Source adds anatomic
+        site; target subsumes it. broader.
+        """
+}
+mapping "T875G.1" source="T875G" target="213246001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875G (Swedish extension of T87.5) = Necrosis of amputation stump at knee/lower leg.
+        Target SNOMED CT 4308713 (concept_code 213246001). Parent T87.5 crosswalk-verified. Source adds
+        anatomic site; target subsumes it. broader.
+        """
+}
+mapping "T875H.1" source="T875H" target="213246001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875H (Swedish extension of T87.5) = Necrosis of amputation stump at ankle/foot. Target
+        SNOMED CT 4308713 (concept_code 213246001). Parent T87.5 crosswalk-verified. Source adds anatomic
+        site; target subsumes it. broader.
+        """
+}
+mapping "T875X.1" source="T875X" target="213246001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T875X (Swedish extension of T87.5) = Necrosis of amputation stump, unspecified location.
+        Functionally identical to ICD-10 T87.5 (Necrosis of amputation stump), which has an Athena
+        SNOMED CT 213246001 crosswalk to SNOMED CT 4308713 (Necrosis of amputation stump, concept_code
+        213246001). Same clinical concept at same specificity = exact_match.
+        """
+}
+mapping "T876B.1" source="T876B" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876C.1" source="T876C" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876D.1" source="T876D" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876F.1" source="T876F" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876G.1" source="T876G" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876H.1" source="T876H" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "T876X.1" source="T876X" target="267038008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

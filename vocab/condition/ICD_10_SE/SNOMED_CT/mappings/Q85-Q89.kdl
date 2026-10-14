@@ -1,0 +1,350 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes Q85-Q89
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Q858A.1" source="Q858A" target="54411001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q858A Swedish extension for Peutz-Jeghers syndrome. Target SNOMED CT 4182399 (concept_code
+        54411001) SNOMED CT 54411001, standard_concept=S, identical clinical entity. Exact 1:1 match.
+        """
+}
+mapping "Q858B.1" source="Q858B" target="19886006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q858B Swedish extension for Sturge-Weber syndrome (Dimitris variant naming included).
+        Target SNOMED CT 4057962 (19886006) SNOMED CT 19886006, standard_concept=S. Same clinical entity; the
+        alternate eponym refers to the same disorder.
+        """
+}
+mapping "Q858C.1" source="Q858C" target="46659004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q858C Swedish extension for von Hippel-Lindau syndrome. Target SNOMED CT 4263213 (46659004)
+        SNOMED CT 46659004, standard_concept=S. Exact 1:1 equivalence.
+        """
+}
+mapping "Q858W.1" source="Q858W" target="78572006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q858W = Swedish residual SNOMED CT 78572006 under ICD-10 Q85.8 (Other phakomatoses, NEC).
+        Athena ICD10 crosswalk maps Q85.8 to SNOMED CT 4302754 (78572006, standard_concept=S), which is the
+        OMOP broader parent for phakomatoses. The residual bucket is heterogeneous; target subsumes all
+        specified phakomatoses not elsewhere classified. Moderate tier: crosswalk-verified parent for a
+        residual source.
+        """
+}
+mapping "Q870A.1" source="Q870A" target="205260006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870A Swedish extension SNOMED CT 205260006. Target SNOMED CT 4004944 (205260006),
+        standard_concept=S. Same clinical concept; the Swedish term is a direct translation.
+        """
+}
+mapping "Q870B.1" source="Q870B" target="63661009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870B Swedish extension explicitly names Apert in brackets: SNOMED CT 63661009 = Apert
+        syndrome. Target SNOMED CT 4273081 (63661009), standard_concept=S. The source codes the eponym
+        directly, so this is 1:1 despite the broader category name.
+        """
+}
+mapping "Q870C.1" source="Q870C" target="205798005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870C Swedish extension SNOMED CT 205798005. Target SNOMED CT 4007742 (205798005),
+        standard_concept=S, the SNOMED CT term for the cyclopia malformation. Exact match.
+        """
+}
+mapping "Q870D.1" source="Q870D" target="205418005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870D Swedish extension SNOMED CT 205418005. Target SNOMED CT 4003957 (205418005),
+        standard_concept=S. Exact 1:1 match.
+        """
+}
+mapping "Q870E.1" source="Q870E" target="1216940001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q870G.1" source="Q870G" target="763833006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870G Swedish extension SNOMED CT 763833006 (OFD type 1, Papillon-Léage-Psaume). Target
+        SNOMED CT 35622373 (763833006), standard_concept=S, current pre-coordinated type-1 concept. Exact
+        match. (Older 40443953 is non-standard U.)
+        """
+}
+mapping "Q870J.1" source="Q870J" target="7903009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870J SNOMED CT 7903009 is the ICD-10 synonym for Hallermann-Streiff syndrome (Dyscephalia
+        mandibulo-oculo-facialis; F-U syndrome). Target SNOMED CT 4194517 (7903009), standard_concept=S.
+        The two names denote the same clinical entity; SNOMED CT uses the eponym as the preferred term.
+        """
+}
+mapping "Q870K.1" source="Q870K" target="109419009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870K Swedish extension SNOMED CT 109419009. Target SNOMED CT 4032994 (109419009),
+        standard_concept=S. Mandibuloacral dysplasia and mandibuloacral dysostosis are accepted names
+        for the same disorder (MAD). Exact match.
+        """
+}
+mapping "Q870L.1" source="Q870L" target="38993008" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q870M.1" source="Q870M" target="65094009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870M SNOMED CT 65094009 (a very rare ectodermal dysplasia affecting hair, teeth, nails). No
+        SNOMED CT concept with this exact name exists. SNOMED CT 4305592 is a DIFFERENT entity (involves
+        bone/osseous changes, not nails) and is NOT a match. Best available standard target is the Q87.0
+        crosswalk parent 4274970 (standard_concept=S), which subsumes all Q87.0 sub-codes broadly but
+        only loosely covers this ultra-rare syndrome. Low tier: genuine doubt, no defensible specific
+        target.
+        """
+}
+mapping "Q870N.1" source="Q870N" target="38215007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q870N Swedish extension SNOMED CT 38215007 (ODD syndrome). Target SNOMED CT 4243018 (38215007),
+        standard_concept=S. Same clinical entity; SNOMED CT uses the concatenated form. Exact match.
+        """
+}
+mapping "Q870W.1" source="Q870W" target="400038003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q871A.1" source="Q871A" target="14921002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871A Swedish extension SNOMED CT 14921002 (Aarskog-Scott syndrome, faciogenital dysplasia).
+        Target SNOMED CT 4032940 (14921002), standard_concept=S. Exact match.
+        """
+}
+mapping "Q871B.1" source="Q871B" target="21086008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871B Swedish extension SNOMED CT 21086008. Target SNOMED CT 4052211 (21086008),
+        standard_concept=S. Exact match.
+        """
+}
+mapping "Q871C.1" source="Q871C" target="40354009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871C Swedish extension SNOMED CT 40354009 (Cornelia de Lange syndrome). Target SNOMED CT
+        4227105 (40354009), standard_concept=S. Exact match.
+        """
+}
+mapping "Q871D.1" source="Q871D" target="2593002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871D Swedish extension SNOMED CT 2593002. Target SNOMED CT 4093756 (2593002),
+        standard_concept=S. Exact match.
+        """
+}
+mapping "Q871E.1" source="Q871E" target="205824006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871E Swedish extension SNOMED CT 205824006. Target SNOMED CT 4118400 (205824006),
+        standard_concept=S, the canonical SNOMED CT term. Exact match. (Concept 40644196 is also standard
+        but the 4118400 form is the one used in the OMOP crosswalk.)
+        """
+}
+mapping "Q871F.1" source="Q871F" target="89392001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871F Swedish extension SNOMED CT 89392001. Target SNOMED CT 441963 (89392001),
+        standard_concept=S. Exact match.
+        """
+}
+mapping "Q871G.1" source="Q871G" target="15069006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871G Swedish extension SNOMED CT 15069006. Target SNOMED CT 4034695 (15069006),
+        standard_concept=S. Exact match.
+        """
+}
+mapping "Q871J.1" source="Q871J" target="57917004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871J Swedish extension SNOMED CT 57917004 (bird-headed dwarfism). Target SNOMED CT 4240091
+        (57917004), standard_concept=S. Exact match.
+        """
+}
+mapping "Q871K.1" source="Q871K" target="111303009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871K Swedish extension SNOMED CT 111303009 (congenital ichthyosis with spastic di/triplegia
+        and mental retardation). Target SNOMED CT 4006297 (111303009), standard_concept=S. Exact match.
+        """
+}
+mapping "Q871W.1" source="Q871W" target="205808005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q871W = Swedish residual SNOMED CT 205808005 under ICD-10 Q87.1. Athena ICD10 crosswalk maps
+        Q87.1 directly to SNOMED CT 4007583 (205808005, standard_concept=S). The target subsumes the entire
+        residual category. High tier: crosswalk-verified one-level broader parent for the residual
+        source.
+        """
+}
+mapping "Q872B.1" source="Q872B" target="59078009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q872B Swedish extension SNOMED CT 59078009. Target SNOMED CT 4240977 (59078009),
+        standard_concept=S. Exact match.
+        """
+}
+mapping "Q872C.1" source="Q872C" target="22199006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q872C Swedish extension SNOMED CT 22199006 (hereditary osteo-onychodysplasia, HOOD). Target
+        SNOMED CT 4318821 (22199006), standard_concept=S. Exact match.
+        """
+}
+mapping "Q872D.1" source="Q872D" target="45582004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q872D SNOMED CT 45582004 (Swedish SE extension of Q87.2) = Rubinstein-Taybi syndrome. Target
+        (concept_id 4166857) = Rubinstein-Taybi syndrome, standard_concept=S, Disorder. The non-standard
+        SNOMED CT 157032007 (concept_id 40322488) is mapped from 4166857 via / edges in the mirror,
+        confirming the standard target. Exact equivalence.
+        """
+}
+mapping "Q872W.1" source="Q872W" target="41443008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q872W SNOMED CT 41443008 (Swedish residual of Q87.2). Target (concept_id 4190397) = Multiple
+        malformation syndrome with limb defect as major feature, standard=S. WHO ICD-10 Q87.2 crosswalks
+        to this target via Athena edge. Heterogeneous Swedish residual; broad target legitimately
+        subsumes all limb-predominant malformation syndromes. : residual source, mechanical crosswalk
+        not independently re-verified per category.
+        """
+}
+mapping "Q878A.1" source="Q878A" target="770414008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q878A SNOMED CT 770414008 = Alport syndrome. Target (concept_id 36674698) = Alport syndrome,
+        standard=S, Disorder. Verified generic concept (active 2019+, parent of autosomal
+        dominant/recessive/X-linked subtypes 717766000/717767009/717768004). Exact 1:1 equivalence.
+        """
+}
+mapping "Q878B.1" source="Q878B" target="5619004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q878B SNOMED CT 5619004 = Laurence-Moon-Biedl syndrome (Swedish clinical usage bundles
+        Laurence-Moon and Bardet-Biedl, which SNOMED CT separates). Target (concept_id 4209284) =
+        Bardet-Biedl syndrome, standard=S; this is the active standard concept that the deprecated
+        SNOMED CT 232060005 (concept_id 40436251) Maps to per mirror relationship. Target is broader in the
+        clinical sense that Bardet-Biedl is now the preferred term for the BBS phenotype; the Swedish
+        source uses the historical combined name. : crosswalk-verified to the standard concept, small
+        breadth mismatch from the historical lumping.
+        """
+}
+mapping "Q878C.1" source="Q878C" target="57838006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q878C SNOMED CT 57838006 = Usher syndrome (retinitis pigmentosa with progressive
+        sensorineural hearing loss). No generic SNOMED CT concept exists in the mirror — only the
+        type-specific descendants 232057003 (type 1), 232058008 (type 2) and the type-1F descendant
+        514793471000119104. The closest standard ancestor that fully subsumes all Usher types is
+        (concept_id 4240613) = Retinitis pigmentosa-deafness syndrome, standard=S; ancestor of both
+        Usher type 1 and type 2 per the SNOMED CT ancestor table. : target legitimately subsumes the
+        source, but is a coarser category (broader) and there is no exact generic concept.
+        """
+}
+mapping "Q878D.1" source="Q878D" target="88469006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q878D SNOMED CT 88469006 = Zellweger syndrome (cerebrohepatorenal syndrome). Target
+        (concept_id 4228533) = Zellweger syndrome, standard=S, Disorder, Maps to itself. Exact 1:1
+        equivalence.
+        """
+}
+mapping "Q878W.1" source="Q878W" target="400038003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q878W SNOMED CT 400038003 (Swedish residual of Q87.8). Target (concept_id 4266662) =
+        Congenital malformation syndrome, standard=S; WHO Q87.8 crosswalks here via Athena.
+        Heterogeneous Swedish residual bucket; broad target is the legitimate ancestor. : residual
+        source, no specific target ascertainable.
+        """
+}
+mapping "Q898A.1" source="Q898A" target="276654001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898A SNOMED CT 276654001 (Autosomal dominant malformation NEC, Swedish residual of Q89.8).
+        No SNOMED CT concept encodes the inheritance-pattern-only malformation category. Target (concept_id
+        4079975) = Congenital malformation, standard=S; WHO Q89.8 crosswalks here. Inheritance
+        information is lost; broader target. : residual source with aspect loss.
+        """
+}
+mapping "Q898B.1" source="Q898B" target="276654001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898B SNOMED CT 276654001 (Autosomal recessive malformation NEC, Swedish residual of Q89.8).
+        Same reasoning as Q898A: no SNOMED CT equivalent for the inheritance-pattern malformation category;
+        map to WHO Q89.8 target (concept_id 4079975, Congenital malformation, standard=S). Inheritance
+        information lost; broader.
+        """
+}
+mapping "Q898C.1" source="Q898C" target="276654001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898C SNOMED CT 276654001 (X-linked recessive malformation NEC, Swedish residual of Q89.8).
+        Same as Q898A/B: no SNOMED CT equivalent; map to WHO Q89.8 crosswalk target (concept_id 4079975,
+        Congenital malformation, standard=S). Inheritance pattern lost; broader.
+        """
+}
+mapping "Q898D.1" source="Q898D" target="276654001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898D SNOMED CT 276654001 (Congenital cyst NEC, Swedish residual of Q89.8). No generic
+        SNOMED CT concept exists; site-specific variants (urachus, spleen, vulva, etc.) are too specific to
+        choose. Map to WHO Q89.8 crosswalk target (concept_id 4079975, Congenital malformation,
+        standard=S). Site info absent; broader. : residual source, aspect loss.
+        """
+}
+mapping "Q898E.1" source="Q898E" target="18822004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898E SNOMED CT 18822004 = Centrofacial lentiginosis (Bureau-Barrière-Thomas). Target
+        (concept_id 4077596) = Centrofacial lentiginosis syndrome, standard=S, Maps to itself. Exact
+        clinical equivalence; because the SNOMED CT FSN is where the Swedish source is — minor breadth
+        mismatch, no crosswalk to re-verify.
+        """
+}
+mapping "Q898F.1" source="Q898F" target="733491005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898F SNOMED CT 733491005 = Cutaneous lentiginosis with atrial myxoma, i.e. the LAMB/NAME
+        syndrome presentation of Carney complex. Target (concept_id 37116686) = Carney complex,
+        standard=S, active 2017+. Carney complex is the unifying standard disorder whose diagnostic
+        criteria include the lentigines + atrial myxoma presentation; exact clinical match. : no
+        independent crosswalk, term-string inference.
+        """
+}
+mapping "Q898G.1" source="Q898G" target="111306001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898G SNOMED CT 111306001 = Multiple lentigines syndrome (LEOPARD syndrome). Target
+        (concept_id 4009625) = Multiple lentigines syndrome, standard=S, Maps to itself. Exact 1:1
+        equivalence.
+        """
+}
+mapping "Q898W.1" source="Q898W" target="276654001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q898W SNOMED CT 276654001 (Swedish residual of Q89.8). Heterogeneous bucket; map to WHO
+        Q89.8 crosswalk target (concept_id 4079975, Congenital malformation, standard=S). : residual
+        source, no specific target.
+        """
+}

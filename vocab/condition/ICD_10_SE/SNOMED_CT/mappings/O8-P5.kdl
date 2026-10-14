@@ -1,0 +1,366 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes O8-P5
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "O800A.1" source="O800A" target="309469004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O800A SNOMED CT 309469004 = spontaneous delivery, singleton, occiput anterior. Target SNOMED CT
+        4205240 = (concept_code 309469004), the ICD10 O80.0 crosswalk target. Occiput-anterior is the
+        typical vertex presentation; the target covers this exactly. exact_match.
+        """
+}
+mapping "O800B.1" source="O800B" target="309469004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O800B SNOMED CT 309469004 = spontaneous delivery, singleton, occiput posterior. Target
+        SNOMED CT 4205240 = (concept_code 309469004), the ICD10 O80.0 crosswalk target. No SNOMED CT concept
+        distinguishes occiput-posterior spontaneous delivery; the target subsumes all vertex
+        presentations including occiput posterior. high: verified crosswalk, one-level broader (the
+        occiput-posterior specificity is lost).
+        """
+}
+mapping "O800W.1" source="O800W" target="309469004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O800W SNOMED CT 309469004 = spontaneous delivery, singleton, other specified cephalic
+        presentation. Target SNOMED CT 4205240 = (concept_code 309469004), the ICD10 O80.0 crosswalk
+        target. The target subsumes all specified cephalic variants under the general vertex-delivery
+        concept. high: verified crosswalk, one-level broader.
+        """
+}
+mapping "O800X.1" source="O800X" target="309469004" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O800X SNOMED CT 309469004 = spontaneous delivery, singleton, vertex unspecified. Target
+        SNOMED CT 4205240 = (concept_code 309469004), the ICD10 O80.0 crosswalk target. Exact equivalence:
+        the unspecified Swedish subcode corresponds to the general spontaneous vertex delivery concept.
+        exact_match.
+        """
+}
+mapping "O813A.1" source="O813A" target="200130005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O813A SNOMED CT 200130005 = forceps delivery, occiput anterior. Target SNOMED CT 435022 =
+        (concept_code 200130005), the ICD10 O81.3 crosswalk target. No SNOMED CT concept specifies the
+        cephalic presentation for forceps delivery; the target subsumes all forceps deliveries. high:
+        verified crosswalk, one-level broader.
+        """
+}
+mapping "O813B.1" source="O813B" target="200130005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O813B SNOMED CT 200130005 = forceps delivery, occiput posterior. Target SNOMED CT 435022 =
+        (concept_code 200130005), the ICD10 O81.3 crosswalk target. The target subsumes all forceps
+        deliveries regardless of presentation. high: verified crosswalk, one-level broader.
+        """
+}
+mapping "O813W.1" source="O813W" target="200130005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O813W SNOMED CT 200130005 = forceps delivery, other specified head presentation. Target
+        SNOMED CT 435022 = (concept_code 200130005), the ICD10 O81.3 crosswalk target. The target subsumes
+        all specified head-presentation variants under the general forceps delivery concept. high:
+        verified crosswalk, one-level broader.
+        """
+}
+mapping "O813X.1" source="O813X" target="200130005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O813X SNOMED CT 200130005 = forceps delivery, unspecified presentation. Target SNOMED CT 435022
+        = (concept_code 200130005), the ICD10 O81.3 crosswalk target. Exact equivalence: the unspecified
+        Swedish subcode corresponds to the general forceps delivery concept. exact_match.
+        """
+}
+mapping "O814A.1" source="O814A" target="200138003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O814A SNOMED CT 200138003 = vacuum extractor delivery, occiput anterior. Target SNOMED CT
+        442069 = (concept_code 200138003), the ICD10 O81.4 crosswalk target. No SNOMED CT concept specifies
+        cephalic presentation for vacuum delivery; the target subsumes all vacuum deliveries. high:
+        verified crosswalk, one-level broader.
+        """
+}
+mapping "O814B.1" source="O814B" target="200138003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O814B SNOMED CT 200138003 = vacuum extractor delivery, occiput posterior. Target SNOMED CT
+        442069 = (concept_code 200138003), the ICD10 O81.4 crosswalk target. The target subsumes all
+        vacuum deliveries regardless of presentation. high: verified crosswalk, one-level broader.
+        """
+}
+mapping "O814W.1" source="O814W" target="200138003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O814W SNOMED CT 200138003 = vacuum extractor delivery, other specified head presentation.
+        Target SNOMED CT 442069 = (concept_code 200138003), the ICD10 O81.4 crosswalk target. The target
+        subsumes all specified head-presentation variants under the general vacuum delivery concept.
+        high: verified crosswalk, one-level broader.
+        """
+}
+mapping "O814X.1" source="O814X" target="200138003" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O814X SNOMED CT 200138003 = vacuum extractor delivery, unspecified presentation. Target
+        SNOMED CT 442069 = (concept_code 200138003), the ICD10 O81.4 crosswalk target. Exact equivalence:
+        the unspecified Swedish subcode corresponds to the general vacuum delivery concept. exact_match.
+        """
+}
+mapping "O859.1" source="O859" target="123301002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O859 SNOMED CT 123301002 = puerperal fever (childbed fever). Target SNOMED CT 40288708 =
+        (concept_code 123301002). Exact term and semantic equivalence. The ICD10 base O85 maps to
+        4102318 (Puerperal sepsis), but the Swedish term 'Barnsä (40288708). exact_match.
+        """ suspect=quoted-text
+}
+mapping "O911A.1" source="O911A" target="270502007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O911A SNOMED CT 270502007 = purulent mastitis associated with childbirth. Target SNOMED CT
+        443263 = (concept_code 270502007), the ICD10 O91.1 crosswalk target. The source denotes purulent
+        mastitis (infection with pus) in the puerperium; the target denotes obstetric breast abscess. A
+        purulent mastitis is clinically closely related to breast abscess (purulence implies abscess
+        formation or progression). The target subsumes the purulent-mastitis/abscess spectrum under the
+        obstetric context. high: verified crosswalk, near-equivalent with slight breadth mismatch.
+        """
+}
+mapping "O911B.1" source="O911B" target="270502007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O911B SNOMED CT 270502007 = breast abscess/boil associated with childbirth. Target SNOMED CT
+        443263. The Swedish code groups abscess AND other non-purulent breast infections; 443263 is the
+        abscess-specific standard target. The ICD10 base O91 Maps to several SNOMED CT targets (72390
+        non-purulent mastitis, 443263 abscess, 444244 nipple infection); 443263 is the best single
+        target since = abscess. broader because source groups multiple infection types and target covers
+        the abscess subcase.
+        """
+}
+mapping "O911X.1" source="O911X" target="270502007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O911X SNOMED CT 270502007 = unspecified breast abscess associated with childbirth. Target
+        SNOMED CT 443263 (Athena Maps to from base ICD10 O91.1). The unspecified subtype inherits the
+        parent crosswalk. Moderate tier: unspecified source, parent crosswalk not independently
+        re-verified for the Swedish extension.
+        """
+}
+mapping "O949.1" source="O949" target="721203003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "O959.1" source="O959" target="59283008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O959 SNOMED CT 59283008 = obstetric death of unspecified cause. Target SNOMED CT 4244279 =
+        Maternal death, the ICD10 O95 Maps to target in Athena. Source is unspecified-cause obstetric
+        death; target is the general maternal death concept. broader because the source is the
+        obstetric-cause-unspecified subclass of maternal death; tier moderate because unspecified
+        source.
+        """
+}
+mapping "O984A.1" source="O984A" target="111879004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O984A SNOMED CT 111879004 = hepatitis A in the mother complicating pregnancy, childbirth and
+        puerperium. The source bundles (a) hepatitis A infection and (b) the pregnancy-complication
+        framing. Best SNOMED CT target for the hepatitis A component is 196625 (Viral hepatitis A without
+        hepatic coma); no specific SNOMED CT concept exists for. partial because target covers only the
+        hepatitis A component, not the obstetric-complication aspect. Low tier due to partial overlap
+        and absence of a combined standard concept.
+        """
+}
+mapping "O984B.1" source="O984B" target="111891008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O984B SNOMED CT 111891008 = hepatitis B in the mother complicating pregnancy, childbirth and
+        puerperium. Source bundles hepatitis B + pregnancy-complication. Best SNOMED CT target for the
+        hepatitis B component is 198683 (Viral hepatitis B without hepatic coma). partial because the
+        obstetric-complication aspect is uncovered. No combined standard concept exists; low tier.
+        """
+}
+mapping "O984C.1" source="O984C" target="50711007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O984C SNOMED CT 50711007 = hepatitis C in the mother complicating pregnancy, childbirth and
+        puerperium. Source bundles hepatitis C + pregnancy-complication. Best SNOMED CT target for the
+        hepatitis C component is 197494 (Viral hepatitis C). partial because the obstetric-complication
+        framing is uncovered. Low tier.
+        """
+}
+mapping "O984W.1" source="O984W" target="199203001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O984W SNOMED CT 199203001 = other specified hepatitis in the mother complicating pregnancy.
+        Target SNOMED CT 4063037 (ICD10 O98.4 Maps to target). The Swedish subtype inherits the base
+        crosswalk; target is broader because is a heterogeneous residual that the general
+        viral-hepatitis-complicating-pregnancy concept subsumes.
+        """
+}
+mapping "O984X.1" source="O984X" target="199203001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O984X SNOMED CT 199203001 = unspecified hepatitis in the mother complicating pregnancy.
+        Target SNOMED CT 4063037 (ICD10 O98.4 Maps to target). The unspecified subtype inherits the base
+        crosswalk; broader because the source is the unspecified-organism subclass. Moderate tier.
+        """
+}
+mapping "O988A.1" source="O988A" target="661000119105" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O988A SNOMED CT 661000119105 = Group B streptococcal syndrome in the mother complicating
+        pregnancy. Source bundles Group B strep infection + pregnancy-complication framing. Best SNOMED CT
+        target for the infectious component is 45763610 (Infection due to Streptococcus Group B); the
+        only pregnancy-specific SNOMED CT concept is 37016152 which is a carrier-state, not a syndrome.
+        partial because the pregnancy-complication aspect is uncovered. Low tier due to partial overlap.
+        """
+}
+mapping "O988W.1" source="O988W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P008A.1" source="P008A" target="55464009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P008B.1" source="P008B" target="86081009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "P008C.1" source="P008C" target="65172003" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P008W.1" source="P008W" target="1004081001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P008W SNOMED CT 1004081001 = fetus and newborn affected by other maternal conditions. Target
+        SNOMED CT 604987 (ICD10 P00 Maps to target). The Swedish subtype inherits the parent crosswalk;
+        broader because the source is the residual other-specified subclass. Moderate tier.
+        """
+}
+mapping "P041A.1" source="P041A" target="199547006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P041W.1" source="P041W" target="199547006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P041W SNOMED CT 199547006 = fetus and newborn affected by other maternal medication. Target
+        SNOMED CT 4060672 (ICD10 P04.1 Maps to target). The Swedish subtype inherits the base crosswalk.
+        broader because the source groups multiple unspecified drugs under a residual category that the
+        target subsumes. Moderate tier.
+        """
+}
+mapping "P070A.1" source="P070A" target="276612004" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P070A SNOMED CT 276612004 = extremely low birth weight, less than 500 g. Target SNOMED CT
+        4173323. The Swedish extension is a weight-band subdivision of extreme low birth weight; no
+        SNOMED CT concept exists for the <500 g sub-band specifically. 4173323 is the closest standard
+        concept covering the extreme-low-birthweight category; mapped as exact_match at the available
+        granularity because the source is fully within the same clinical category. High tier.
+        """
+}
+mapping "P070B.1" source="P070B" target="276612004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P070B SNOMED CT 276612004 = extremely low birth weight, 500-749 g. Target SNOMED CT 4173323.
+        Same weight-band subdivision pattern as P070A; no SNOMED CT sub-band concept exists. Clinical
+        category is identical; high tier.
+        """
+}
+mapping "P070C.1" source="P070C" target="276612004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P070C SNOMED CT 276612004 = extremely low birth weight, 750-999 g. Target SNOMED CT 4173323.
+        Same pattern; high tier.
+        """
+}
+mapping "P070X.1" source="P070X" target="276612004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P070X SNOMED CT 276612004 = extremely low birth weight, <1000 g, exact weight not specified.
+        Target SNOMED CT 4173323. The source is the catch-all extreme-low-birthweight category, exactly
+        co-extensive with the SNOMED CT concept. High tier.
+        """
+}
+mapping "P071A.1" source="P071A" target="276611006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P071A SNOMED CT 276611006 = other low birth weight, 1000-1499 g. Target SNOMED CT 4079858 (the
+        standard concept for 1000-1499 g band). The Swedish extension is a weight-band subdivision
+        matching the very-low-birthweight category. High tier.
+        """
+}
+mapping "P071B.1" source="P071B" target="276610007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P071B SNOMED CT 276610007 = other low birth weight, 1500-1999 g. Target SNOMED CT 4171115 (the
+        general low-birthweight category). No SNOMED CT sub-band concept for 1500-1999 g exists; 4079858
+        (very low) is defined for <1500 g so does not apply. broader because target subsumes the entire
+        low-birthweight range including this band. Moderate tier.
+        """
+}
+mapping "P071C.1" source="P071C" target="276610007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P071C SNOMED CT 276610007 = other low birth weight, 2000-2499 g. Target SNOMED CT 4171115. No
+        sub-band SNOMED CT concept exists; broader because target subsumes the entire low-birthweight
+        range. Moderate tier.
+        """
+}
+mapping "P071X.1" source="P071X" target="276610007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P071X SNOMED CT 276610007 = other low birth weight, 1000-2499 g, exact weight not specified.
+        Target SNOMED CT 4171115. The source is the catch-all low-birthweight category which is
+        co-extensive with the SNOMED CT concept. High tier.
+        """
+}
+mapping "P211A.1" source="P211A" target="57284007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P211A SNOMED CT 57284007 = mild, short-lived neonatal asphyxia, Apgar < 4 at 1 minute. Note:
+        the Swedish name pairs (mild) with Apgar < 4 at 1 min, which is the severe-band threshold; this
+        is internally inconsistent but the Apgar < 4 at 1 min criterion corresponds to SNOMED CT 432427
+        (Severe birth asphyxia). Mapped as exact_match at the available SNOMED CT granularity. Moderate
+        tier due to the internal inconsistency in the source name.
+        """
+}
+mapping "P211B.1" source="P211B" target="77362009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P211B SNOMED CT 77362009 = moderate neonatal asphyxia, Apgar < 4 at 5 minutes. Target SNOMED CT
+        434759. The (moderate) framing matches the mild-to-moderate asphyxia category; Apgar < 4 at 5
+        min is more severe but the Swedish classification places this in the moderate bucket. Moderate
+        tier due to threshold ambiguity.
+        """
+}
+mapping "P293A.1" source="P293A" target="276515008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P293A SNOMED CT 276515008 = delayed closure of ductus arteriosus, symptomatic. Target SNOMED CT
+        4171090. Exact semantic match on the core disorder; the Swedish qualifier denotes symptomatic
+        presentation which is not separately coded in SNOMED CT. High tier.
+        """
+}
+mapping "P293B.1" source="P293B" target="70995007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P389.1" source="P389" target="42052009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 42052009 [GPS] [GPFP]"
+}
+mapping "P539.1" source="P539" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P539A.1" source="P539A" target="52675005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P539B.1" source="P539B" target="52675005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,549 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes C43
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "C430B.1" source="C430B" target="403924008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C430C.1" source="C430C" target="402556000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C430D.1" source="C430D" target="93640008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C430D SNOMED CT 93640008 = nodular malignant melanoma of lip (Swedish 5-char extension
+        combining site=C43.0 lip + histology=nodular). No single SNOMED CT concept combines lip site with
+        nodular histology. Two equally defensible broader parents exist: SNOMED CT 140048 (Malignant
+        melanoma of skin of lip, 93640008, S) covers the site axis, and SNOMED CT 4112760 (Nodular
+        malignant melanoma of skin, 254731001, S) covers the histology axis. Site-axis target chosen as
+        primary broader map (Athena crosswalk resolves WHO C43.0 → 4089860; 140048 is the
+        closely-equivalent site concept). Moderate tier: best-available standard concept for an
+        unspecified-source extension code, two-level semantic loss.
+        """
+}
+mapping "C430F.1" source="C430F" target="93640008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C430F SNOMED CT 93640008 = superficial spreading malignant melanoma of lip (Swedish
+        extension combining lip site + superficial-spreading histology). No single SNOMED CT concept
+        combines lip site with superficial-spreading histology. Broader parent SNOMED CT 140048 (93640008,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. The WHO C43.0 Athena
+        crosswalk target is 4089860 (Malignant melanoma of lip, 188030005); 140048 is the
+        site-equivalent standard concept. Moderate tier: best-available standard for an extension code
+        with semantic loss.
+        """
+}
+mapping "C430X.1" source="C430X" target="372244006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C431B.1" source="C431B" target="93224002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C431B SNOMED CT 93224002 = desmoplastic malignant melanoma of eyelid including canthus
+        (Swedish extension combining eyelid site + desmoplastic histology). No single SNOMED CT concept
+        combines eyelid site with desmoplastic histology. Broader parent SNOMED CT 434590 (93224002,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. This is also the
+        Athena crosswalk target for WHO C43.1. Moderate tier: best-available standard for an extension
+        code, semantic loss on histology.
+        """
+}
+mapping "C431C.1" source="C431C" target="93224002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C431C SNOMED CT 93224002 = lentigo maligna melanoma of eyelid including canthus (Swedish
+        extension combining eyelid site + lentigo maligna histology). No single SNOMED CT concept combines
+        eyelid site with lentigo maligna histology. Broader parent SNOMED CT 434590 (93224002,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. This is the Athena
+        crosswalk target for WHO C43.1. Moderate tier.
+        """
+}
+mapping "C431D.1" source="C431D" target="93224002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C431D SNOMED CT 93224002 = nodular malignant melanoma of eyelid including canthus (Swedish
+        extension combining eyelid site + nodular histology). No single SNOMED CT concept combines eyelid
+        site with nodular histology. Broader parent SNOMED CT 434590 (93224002, standard_concept=S) covers
+        the site axis fully; the histology axis is lost. Athena crosswalk target for WHO C43.1. Moderate
+        tier.
+        """
+}
+mapping "C431F.1" source="C431F" target="93224002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C431F SNOMED CT 93224002 = superficial spreading malignant melanoma of eyelid including
+        canthus (Swedish extension combining eyelid site + superficial-spreading histology). No single
+        SNOMED CT concept combines eyelid site with superficial-spreading histology. Broader parent SNOMED CT
+        434590 (93224002, standard_concept=S) covers the site axis fully; the histology axis is lost.
+        Athena crosswalk target for WHO C43.1. Moderate tier.
+        """
+}
+mapping "C431X.1" source="C431X" target="93224002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C431X SNOMED CT 93224002 = malignant melanoma of eyelid including canthus, unspecified
+        histologic subtype (Swedish extension of WHO C43.1). The source adds no histologic information
+        beyond WHO C43.1, so the broader map to SNOMED CT 434590 (93224002, standard_concept=S) loses no
+        clinical content; this is the Athena crosswalk target for WHO C43.1. High tier: one-level
+        broader with verified crosswalk, no histologic-axis loss because the source is already
+        unspecified.
+        """
+}
+mapping "C432B.1" source="C432B" target="93220006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C432B SNOMED CT 93220006 = desmoplastic malignant melanoma of external ear and external
+        auditory canal (Swedish extension combining ear site + desmoplastic histology). No single SNOMED CT
+        concept combines ear site with desmoplastic histology. Broader parent SNOMED CT 444462 (93220006,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. This is the Athena
+        crosswalk target for WHO C43.2. Moderate tier.
+        """
+}
+mapping "C432C.1" source="C432C" target="93220006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C432C SNOMED CT 93220006 = lentigo maligna melanoma of external ear and external auditory
+        canal (Swedish extension combining ear site + lentigo maligna histology). No single SNOMED CT
+        concept combines ear site with lentigo maligna histology. Broader parent SNOMED CT 444462
+        (93220006, standard_concept=S) covers the site axis fully; the histology axis is lost. Athena
+        crosswalk target for WHO C43.2. Moderate tier.
+        """
+}
+mapping "C432D.1" source="C432D" target="93220006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C432D SNOMED CT 93220006 = nodular malignant melanoma of external ear and external auditory
+        canal (Swedish extension combining ear site + nodular histology). No single SNOMED CT concept
+        combines ear site with nodular histology. Broader parent SNOMED CT 444462 (93220006,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. Athena crosswalk
+        target for WHO C43.2. Moderate tier.
+        """
+}
+mapping "C432F.1" source="C432F" target="93220006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C432F SNOMED CT 93220006 = superficial spreading malignant melanoma of external ear and
+        external auditory canal (Swedish extension combining ear site + superficial-spreading
+        histology). No single SNOMED CT concept combines ear site with superficial-spreading histology.
+        Broader parent SNOMED CT 444462 (93220006, standard_concept=S) covers the site axis fully; the
+        histology axis is lost. Athena crosswalk target for WHO C43.2. Moderate tier.
+        """
+}
+mapping "C432X.1" source="C432X" target="93220006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C432X SNOMED CT 93220006 = malignant melanoma of external ear and external auditory canal,
+        unspecified histologic subtype (Swedish extension of WHO C43.2). The source adds no histologic
+        information beyond WHO C43.2, so the broader map to SNOMED CT 444462 (93220006, standard_concept=S)
+        loses no clinical content; this is the Athena crosswalk target for WHO C43.2. High tier:
+        one-level broader with verified crosswalk, no histologic-axis loss because the source is already
+        unspecified.
+        """
+}
+mapping "C433B.1" source="C433B" target="93225001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C433B SNOMED CT 93225001 = desmoplastic malignant melanoma of other and unspecified parts of
+        face (Swedish extension combining face site + desmoplastic histology). No single SNOMED CT concept
+        combines face site with desmoplastic histology. Broader parent SNOMED CT 133713 (93225001,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. This is the Athena
+        crosswalk target for WHO C43.3. Moderate tier.
+        """
+}
+mapping "C433C.1" source="C433C" target="93225001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C433C SNOMED CT 93225001 = lentigo maligna melanoma of other and unspecified parts of face
+        (Swedish extension combining face site + lentigo maligna histology). No single SNOMED CT concept
+        combines face site with lentigo maligna histology. Broader parent SNOMED CT 133713 (93225001,
+        standard_concept=S) covers the site axis fully; the histology axis is lost. Athena crosswalk
+        target for WHO C43.3. Moderate tier.
+        """
+}
+mapping "C433D.1" source="C433D" target="93225001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C433D SNOMED CT 93225001 = nodular malignant melanoma of other and unspecified parts of face
+        (Swedish extension combining face site + nodular histology). No single SNOMED CT concept combines
+        face site with nodular histology. Broader parent SNOMED CT 133713 (93225001, standard_concept=S)
+        covers the site axis fully; the histology axis is lost. Athena crosswalk target for WHO C43.3.
+        Moderate tier.
+        """
+}
+mapping "C433F.1" source="C433F" target="93225001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C433F SNOMED CT 93225001 = superficial spreading malignant melanoma of other and unspecified
+        parts of face (Swedish extension combining face site + superficial-spreading histology). No
+        single SNOMED CT concept combines face site with superficial-spreading histology. Broader parent
+        SNOMED CT 133713 (93225001, standard_concept=S) covers the site axis fully; the histology axis is
+        lost. Athena crosswalk target for WHO C43.3. Moderate tier.
+        """
+}
+mapping "C433X.1" source="C433X" target="93225001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C433X SNOMED CT 93225001 = malignant melanoma of other and unspecified parts of face,
+        unspecified histologic subtype (Swedish extension of WHO C43.3). The source adds no histologic
+        information beyond WHO C43.3, so the broader map to SNOMED CT 133713 (93225001, standard_concept=S)
+        loses no clinical content; this is the Athena crosswalk target for WHO C43.3. High tier:
+        one-level broader with verified crosswalk, no histologic-axis loss because the source is already
+        unspecified.
+        """
+}
+mapping "C434B.1" source="C434B" target="269578002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C434B SNOMED CT 269578002 = desmoplastic malignant melanoma of scalp and neck (Swedish
+        extension combining scalp+neck site + desmoplastic histology). No single SNOMED CT concept combines
+        scalp/neck site with desmoplastic histology. WHO C43.4 has no single SNOMED CT site crosswalk (it
+        splits to 442143 scalp and 440050 neck); SNOMED CT 4149850 (269578002, standard_concept=S) is the
+        broader site-axis parent that subsumes both scalp and neck. Histology axis lost. Moderate tier.
+        """
+}
+mapping "C434C.1" source="C434C" target="269578002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C434C SNOMED CT 269578002 = lentigo maligna melanoma of scalp and neck (Swedish extension
+        combining scalp+neck site + lentigo maligna histology). No single SNOMED CT concept combines
+        scalp/neck site with lentigo maligna histology. WHO C43.4 has no single SNOMED CT site crosswalk
+        (it splits to 442143 scalp and 440050 neck); SNOMED CT 4149850 (269578002, standard_concept=S) is
+        the broader site-axis parent that subsumes both scalp and neck. Histology axis lost. Moderate
+        tier.
+        """
+}
+mapping "C434D.1" source="C434D" target="269578002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C434D SNOMED CT 269578002 = nodular malignant melanoma of scalp and neck (Swedish extension
+        combining scalp+neck site + nodular histology). No single SNOMED CT concept combines scalp/neck
+        site with nodular histology. WHO C43.4 has no single SNOMED CT site crosswalk (it splits to 442143
+        scalp and 440050 neck); SNOMED CT 4149850 (269578002, standard_concept=S) is the broader site-axis
+        parent that subsumes both scalp and neck. Histology axis lost. Moderate tier.
+        """
+}
+mapping "C434F.1" source="C434F" target="269578002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C434F SNOMED CT 269578002 = superficial spreading malignant melanoma of scalp and neck
+        (Swedish extension combining scalp+neck site + superficial-spreading histology). No single
+        SNOMED CT concept combines scalp/neck site with superficial-spreading histology. WHO C43.4 has no
+        single SNOMED CT site crosswalk (it splits to 442143 scalp and 440050 neck); SNOMED CT 4149850
+        (269578002, standard_concept=S) is the broader site-axis parent that subsumes both scalp and
+        neck. Histology axis lost. Moderate tier.
+        """
+}
+mapping "C434X.1" source="C434X" target="269578002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C434X SNOMED CT 269578002 = malignant melanoma of scalp and neck, unspecified histologic
+        subtype (Swedish extension of WHO C43.4). WHO C43.4 splits across two SNOMED CT site concepts
+        (442143 scalp, 440050 neck); neither alone subsumes both sites. SNOMED CT 4149850 (269578002,
+        standard_concept=S) is the broader site-axis parent that covers both. Moderate (not high) tier
+        because the broader target spans head+neck, which is wider than the source's scalp+neck scope.
+        """
+}
+mapping "C435B.1" source="C435B" target="402556000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C435C.1" source="C435C" target="402558004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C435D.1" source="C435D" target="402558004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C435F.1" source="C435F" target="269579005" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C435F SNOMED CT 254730000 269579005 = superficial spreading malignant melanoma of trunk
+        (Swedish national morphology+site subtype of ICD-10 C43.5). Primary target 4153890 (Malignant
+        melanoma of trunk, SNOMED CT 269579005) is the Athena crosswalk target for parent C43.5; it
+        subsumes the source on body site but loses the morphology subtype, so broader. Secondary target
+        4110725 (Superficial spreading malignant melanoma of skin, SNOMED CT 254730000) captures the
+        morphology axis but drops the site. Moderate/low tiers: crosswalk-verified parent, specificity
+        loss on morphology.
+        """
+}
+mapping "C435F.2" source="C435F" target="254730000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C435X.1" source="C435X" target="402558004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436A.1" source="C436A" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436A SNOMED CT 254732008 269580008 = acral lentiginous malignant melanoma of upper limb
+        including shoulder (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of
+        upper limb, SNOMED CT 269580008) is the Athena crosswalk target for parent C43.6; broader, loses
+        morphology. Secondary target 4110726 (Acral lentiginous malignant melanoma of skin, SNOMED CT
+        254732008) captures morphology, loses site.
+        """
+}
+mapping "C436A.2" source="C436A" target="254732008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436B.1" source="C436B" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436B SNOMED CT 269580008 403924008 = desmoplastic malignant melanoma of upper limb
+        including shoulder (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of
+        upper limb, SNOMED CT 269580008) is the crosswalk target for parent C43.6; broader. Secondary
+        target 4298034 (Desmoplastic malignant melanoma, SNOMED CT 403924008) captures morphology, loses
+        site.
+        """
+}
+mapping "C436B.2" source="C436B" target="403924008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436C.1" source="C436C" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436C SNOMED CT 269580008 302837001 = lentigo maligna melanoma of upper limb including
+        shoulder (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of upper limb,
+        SNOMED CT 269580008) is the crosswalk target for parent C43.6; broader. Secondary target 4116198
+        (Lentigo maligna melanoma, SNOMED CT 302837001) captures morphology, loses site.
+        """
+}
+mapping "C436C.2" source="C436C" target="302837001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436D.1" source="C436D" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436D SNOMED CT 254731001 269580008 = nodular malignant melanoma of upper limb including
+        shoulder (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of upper limb,
+        SNOMED CT 269580008) is the crosswalk target for parent C43.6; broader. Secondary target 4112760
+        (Nodular malignant melanoma of skin, SNOMED CT 254731001) captures morphology, loses site.
+        """
+}
+mapping "C436D.2" source="C436D" target="254731001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436E.1" source="C436E" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436E SNOMED CT 269580008 = subungual malignant melanoma of upper limb including shoulder
+        (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of upper limb) is the
+        crosswalk target for parent C43.6; broader, loses both subungual location and morphology. No
+        subungual-melanoma SNOMED CT concept exists in the mirror; single target. Low tier: real
+        specificity loss on the subungual qualifier.
+        """
+}
+mapping "C436F.1" source="C436F" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436F SNOMED CT 254730000 269580008 = superficial spreading malignant melanoma of upper limb
+        including shoulder (Swedish subtype of C43.6). Primary target 4149851 (Malignant melanoma of
+        upper limb, SNOMED CT 269580008) is the crosswalk target for parent C43.6; broader. Secondary
+        target 4110725 (Superficial spreading malignant melanoma of skin, SNOMED CT 254730000) captures
+        morphology, loses site.
+        """
+}
+mapping "C436F.2" source="C436F" target="254730000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C436X.1" source="C436X" target="269580008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C436X SNOMED CT 269580008 = unspecified malignant melanoma of upper limb including shoulder
+        (Swedish subtype of C43.6 with unspecified morphology). Target 4149851 (Malignant melanoma of
+        upper limb) is the Athena crosswalk target for parent C43.6. Since the source is also
+        unspecified-morphology, the breadth mismatch is minimal; high tier.
+        """
+}
+mapping "C437A.1" source="C437A" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437A SNOMED CT 254732008 269581007 = acral lentiginous malignant melanoma of lower limb
+        including hip (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower
+        limb, SNOMED CT 269581007) is the Athena crosswalk target for parent C43.7; broader, loses
+        morphology. Secondary target 4110726 (Acral lentiginous malignant melanoma of skin, SNOMED CT
+        254732008) captures morphology, loses site.
+        """
+}
+mapping "C437A.2" source="C437A" target="254732008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C437B.1" source="C437B" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437B SNOMED CT 269581007 403924008 = desmoplastic malignant melanoma of lower limb
+        including hip (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower
+        limb, SNOMED CT 269581007) is the crosswalk target for parent C43.7; broader. Secondary target
+        4298034 (Desmoplastic malignant melanoma, SNOMED CT 403924008) captures morphology, loses site.
+        """
+}
+mapping "C437B.2" source="C437B" target="403924008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C437C.1" source="C437C" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437C SNOMED CT 269581007 302837001 = lentigo maligna melanoma of lower limb including hip
+        (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower limb, SNOMED CT
+        269581007) is the crosswalk target for parent C43.7; broader. Secondary target 4116198 (Lentigo
+        maligna melanoma, SNOMED CT 302837001) captures morphology, loses site.
+        """
+}
+mapping "C437C.2" source="C437C" target="302837001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C437D.1" source="C437D" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437D SNOMED CT 254731001 269581007 = nodular malignant melanoma of lower limb including hip
+        (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower limb, SNOMED CT
+        269581007) is the crosswalk target for parent C43.7; broader. Secondary target 4112760 (Nodular
+        malignant melanoma of skin, SNOMED CT 254731001) captures morphology, loses site.
+        """
+}
+mapping "C437D.2" source="C437D" target="254731001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C437E.1" source="C437E" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437E SNOMED CT 269581007 = subungual malignant melanoma of lower limb including hip
+        (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower limb) is the
+        crosswalk target for parent C43.7; broader, loses subungual qualifier and morphology. No
+        subungual-melanoma SNOMED CT concept exists in the mirror; single target. Low tier: real
+        specificity loss on the subungual qualifier.
+        """
+}
+mapping "C437F.1" source="C437F" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437F SNOMED CT 254730000 269581007 = superficial spreading malignant melanoma of lower limb
+        including hip (Swedish subtype of C43.7). Primary target 4151263 (Malignant melanoma of lower
+        limb, SNOMED CT 269581007) is the crosswalk target for parent C43.7; broader. Secondary target
+        4110725 (Superficial spreading malignant melanoma of skin, SNOMED CT 254730000) captures
+        morphology, loses site.
+        """
+}
+mapping "C437F.2" source="C437F" target="254730000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C437X.1" source="C437X" target="269581007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C437X SNOMED CT 269581007 = unspecified malignant melanoma of lower limb including hip
+        (Swedish subtype of C43.7 with unspecified morphology). Target 4151263 (Malignant melanoma of
+        lower limb) is the Athena crosswalk target for parent C43.7. Since the source is also
+        unspecified-morphology, the breadth mismatch is minimal; high tier.
+        """
+}
+mapping "C438B.1" source="C438B" target="402556000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C438C.1" source="C438C" target="302836005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C438D.1" source="C438D" target="402556000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C438F.1" source="C438F" target="109267002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C438F SNOMED CT 109267002 254730000 = superficial spreading malignant melanoma of skin with
+        overlapping growth/sites (Swedish subtype of C43.8). Primary target 133419 (Overlapping
+        malignant melanoma of skin, SNOMED CT 109267002) is the Athena crosswalk target for parent C43.8;
+        broader, loses morphology. Secondary target 4110725 (Superficial spreading malignant melanoma of
+        skin, SNOMED CT 254730000) captures morphology, loses overlapping-site qualifier.
+        """
+}
+mapping "C438F.2" source="C438F" target="254730000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C438X.1" source="C438X" target="372244006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439A.1" source="C439A" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439A SNOMED CT 1268881002 254732008 = acral lentiginous melanoma of skin with unspecified
+        site (Swedish subtype of C43.9). Primary target 37167720 (Primary malignant melanoma of skin,
+        SNOMED CT 1268881002) is the Athena crosswalk target for parent C43.9; broader, loses morphology.
+        Secondary target 4110726 (Acral lentiginous malignant melanoma of skin, SNOMED CT 254732008)
+        captures morphology.
+        """
+}
+mapping "C439A.2" source="C439A" target="254732008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439B.1" source="C439B" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439B SNOMED CT 1268881002 403924008 = desmoplastic malignant melanoma of skin with
+        unspecified site (Swedish subtype of C43.9). Primary target 37167720 (Primary malignant melanoma
+        of skin, SNOMED CT 1268881002) is the crosswalk target for parent C43.9; broader. Secondary target
+        4298034 (Desmoplastic malignant melanoma, SNOMED CT 403924008) captures morphology.
+        """
+}
+mapping "C439B.2" source="C439B" target="403924008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439C.1" source="C439C" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439C SNOMED CT 1268881002 302837001 = lentigo maligna melanoma of skin with unspecified
+        site (Swedish subtype of C43.9). Primary target 37167720 (Primary malignant melanoma of skin,
+        SNOMED CT 1268881002) is the crosswalk target for parent C43.9; broader. Secondary target 4116198
+        (Lentigo maligna melanoma, SNOMED CT 302837001) captures morphology.
+        """
+}
+mapping "C439C.2" source="C439C" target="302837001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439D.1" source="C439D" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439D SNOMED CT 1268881002 254731001 = nodular melanoma of skin with unspecified site
+        (Swedish subtype of C43.9). Primary target 37167720 (Primary malignant melanoma of skin, SNOMED CT
+        1268881002) is the crosswalk target for parent C43.9; broader. Secondary target 4112760 (Nodular
+        malignant melanoma of skin, SNOMED CT 254731001) captures morphology.
+        """
+}
+mapping "C439D.2" source="C439D" target="254731001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439E.1" source="C439E" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439E SNOMED CT 1268881002 = subungual malignant melanoma with unspecified site (Swedish
+        subtype of C43.9). Primary target 37167720 (Primary malignant melanoma of skin) is the crosswalk
+        target for parent C43.9; broader, loses both subungual qualifier and morphology. No
+        subungual-melanoma SNOMED CT concept exists in the mirror; single target. Low tier: real
+        specificity loss on the subungual qualifier.
+        """
+}
+mapping "C439F.1" source="C439F" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439F SNOMED CT 1268881002 254730000 = superficial spreading melanoma of skin with
+        unspecified site (Swedish subtype of C43.9). Primary target 37167720 (Primary malignant melanoma
+        of skin, SNOMED CT 1268881002) is the crosswalk target for parent C43.9; broader. Secondary target
+        4110725 (Superficial spreading malignant melanoma of skin, SNOMED CT 254730000) captures
+        morphology.
+        """
+}
+mapping "C439F.2" source="C439F" target="254730000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C439X.1" source="C439X" target="1268881002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C439X SNOMED CT 1268881002 = unspecified malignant melanoma of skin with unspecified site
+        (Swedish subtype of C43.9 with unspecified morphology). Target 37167720 (Primary malignant
+        melanoma of skin) is the Athena crosswalk target for parent C43.9. Since the source is also
+        unspecified-morphology and unspecified-site, the breadth mismatch is minimal; high tier.
+        """
+}

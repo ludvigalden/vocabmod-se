@@ -1,0 +1,254 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes C447-C449
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "C447B.1" source="C447B" target="403914000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447B SNOMED CT 403914000 = superficial basal cell carcinoma of skin of lower limb including
+        hip. A site-specific BCC of lower-extremity concept (SNOMED CT 4299418, 402522006) exists, but no
+        site-specific superficial-BCC concept. Target SNOMED CT 4300564 (403914000) = Superficial basal
+        cell carcinoma matches histology exactly, drops site. Per the C446B rationale, the
+        superficial-growth-pattern is a clinically distinct BCC subtype worth preserving. Partial:
+        histology covered, topology not. Moderate tier per §1.
+        """
+}
+mapping "C447C.1" source="C447C" target="403913006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447C SNOMED CT 403913006 = morphea-like (morphoeic/sclerosing) basal cell carcinoma of skin
+        of lower limb including hip. Target SNOMED CT 4297183 (403913006) = Sclerosing morpheic basal cell
+        carcinoma matches morphoeic-BCC histology exactly but drops the lower-limb site (no
+        site-specific morphoeic BCC concept exists). Partial: histology covered, topology not. Moderate
+        tier per §1.
+        """
+}
+mapping "C447D.1" source="C447D" target="402522006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447D SNOMED CT 402522006 = other basal cell carcinoma of skin of lower limb including hip.
+        Target SNOMED CT 4299418 (402522006) = Basal cell carcinoma of lower extremity. Site+histology
+        match; just distinguishes from superficial/morpheaform subtypes, which SNOMED CT does not separate
+        at this site. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C447E.1" source="C447E" target="402522006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447E SNOMED CT 402522006 = unspecified basal cell carcinoma of skin of lower limb including
+        hip. Target SNOMED CT 4299418 (402522006) = Basal cell carcinoma of lower extremity. Site+histology
+        match; has no separate standard concept, so the site-specific BCC is the correct standard
+        target. Standard_concept=S, Athena mirror.
+        """
+}
+mapping "C447S.1" source="C447S" target="402815007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C447W.1" source="C447W" target="372124007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447W SNOMED CT 372124007 = other specified malignant neoplasm of skin of lower limb
+        including hip (ICD-10 C44.7 subextension). Target SNOMED CT 4162993 (Malignant neoplasm of skin of
+        lower limb, concept_code 372124007) covers the body site but not the histology residual bucket.
+        Broader: site subsumed, residual histology undifferentiated. Low tier per §1: residual source
+        bucket, no specific histology crosswalk.
+        """
+}
+mapping "C447X.1" source="C447X" target="372124007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C447X SNOMED CT 372124007 = unspecified malignant neoplasm of skin of lower limb including
+        hip. Target SNOMED CT 4162993 (Malignant neoplasm of skin of lower limb, 372124007). Body site
+        matches exactly; unspecified histology aligns with general. Moderate tier: exact site match,
+        unspecified source histology, no independent crosswalk re-verification.
+        """
+}
+mapping "C448B.1" source="C448B" target="403914000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448B SNOMED CT 403914000 = superficial basal cell carcinoma of skin with overlapping lesion
+        (ICD-10 C44.8 Swedish extension). Target SNOMED CT 4300564 (Superficial basal cell carcinoma,
+        403914000) matches the superficial-BCC histology exactly but drops the (overlapping-lesion)
+        topographic qualifier. Partial: histology aspect covered, topology aspect not. Moderate tier per
+        §1.
+        """
+}
+mapping "C448C.1" source="C448C" target="403913006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448C SNOMED CT 403913006 = morphea-like (morphoeic) basal cell carcinoma of skin with
+        overlapping lesion. Target SNOMED CT 4297183 (Sclerosing morpheic basal cell carcinoma, 403913006)
+        matches the morphoeic-BCC histology exactly but drops the overlapping-lesion topographic
+        qualifier. Partial: histology covered, topology not. Moderate tier.
+        """
+}
+mapping "C448D.1" source="C448D" target="254701007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448D SNOMED CT 254701007 = other basal cell carcinoma of skin with overlapping lesion
+        (residual bucket). Target SNOMED CT 4112752 (Basal cell carcinoma of skin, 254701007) is the BCC
+        parent; it subsumes the source but cannot capture either the histology subtype or the
+        overlapping-lesion topology. Broader. Low tier per §1: residual source, two-axis specificity
+        loss.
+        """
+}
+mapping "C448E.1" source="C448E" target="254701007" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448E SNOMED CT 254701007 = unspecified basal cell carcinoma of skin with overlapping
+        lesion. Target SNOMED CT 4112752 (Basal cell carcinoma of skin, 254701007) matches the BCC
+        histology but drops the overlapping-lesion topology qualifier. Partial: histology covered,
+        topology not. Moderate tier.
+        """
+}
+mapping "C448S.1" source="C448S" target="402815007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C448W.1" source="C448W" target="254650008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448W SNOMED CT 254650008 = other malignant neoplasms of skin with overlapping lesion
+        (residual bucket). Target SNOMED CT 4111920 (Malignant epithelial neoplasm of skin, 254650008) is a
+        broad epithelial-skin-malignancy parent; it subsumes the source but loses both the histology and
+        the overlapping-lesion topology. Broader. Low tier per §1: heterogeneous residual source.
+        """
+}
+mapping "C448X.1" source="C448X" target="188143008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C448X SNOMED CT 188143008 = unspecified malignant neoplasm of skin with overlapping lesion.
+        Target SNOMED CT 4091340 (Malignant neoplasm of skin NOS, 188143008) matches the
+        unspecified-skin-malignancy axis but drops the overlapping-lesion topology qualifier. Partial.
+        Moderate tier per §1: unspecified source, single best target.
+        """
+}
+mapping "C449A.1" source="C449A" target="254703005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449A SNOMED CT 254703005 = fibroepithelioma of skin, unspecified site. Target SNOMED CT
+        4115293 (Fibroepithelioma of Pinkus, 254703005) is the SNOMED CT equivalent of fibroepithelioma of
+        skin. Site unspecified on source; SNOMED CT concept is morphology-only (no site), so equivalence
+        holds at the histology level. High tier: term-equivalent, no independent crosswalk re-verified.
+        """
+}
+mapping "C449B.1" source="C449B" target="403914000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449B SNOMED CT 403914000 = superficial basal cell carcinoma, unspecified site. Target
+        SNOMED CT 4300564 (Superficial basal cell carcinoma, 403914000). Histology matches exactly; source
+        site is unspecified so no topographic mismatch. High tier: term-equivalent SNOMED CT concept, no
+        independent crosswalk.
+        """
+}
+mapping "C449C.1" source="C449C" target="403913006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449C SNOMED CT 403913006 = morphea-like (morphoeic) basal cell carcinoma, unspecified site.
+        Target SNOMED CT 4297183 (Sclerosing morpheic basal cell carcinoma, 403913006). Histology matches
+        exactly. High tier: term-equivalent SNOMED CT concept.
+        """
+}
+mapping "C449D.1" source="C449D" target="254701007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449D SNOMED CT 254701007 = other basal cell carcinoma, unspecified site (residual bucket).
+        Target SNOMED CT 4112752 (Basal cell carcinoma of skin, 254701007) is the BCC parent; subsumes the
+        residual source but cannot capture the subtype. Broader. Moderate tier per §1.
+        """
+}
+mapping "C449E.1" source="C449E" target="254701007" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449E SNOMED CT 254701007 = unspecified basal cell carcinoma, unspecified site. Target
+        SNOMED CT 4112752 (Basal cell carcinoma of skin, 254701007). Both source axes
+        (histology=unspecified BCC, site=unspecified) align with the general BCC-of-skin concept. High
+        tier: term-equivalent, unspecified source to general target.
+        """
+}
+mapping "C449H.1" source="C449H" target="32272007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449H SNOMED CT 32272007 = sweat gland carcinoma, unspecified site. Target SNOMED CT 4136528
+        (Sweat gland adenocarcinoma, 32272007). is clinically equivalent to sweat gland adenocarcinoma;
+        source site unspecified, target is morphology-only. High tier: term-equivalent SNOMED CT concept.
+        """
+}
+mapping "C449J.1" source="C449J" target="255094009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449J SNOMED CT 255094009 = sebaceous gland carcinoma of skin, unspecified site. Target
+        SNOMED CT 40456780 (Malignant neoplasm of sebaceous gland, 255094009). Clinically equivalent
+        histology; source site unspecified. High tier: term-equivalent SNOMED CT concept.
+        """
+}
+mapping "C449K.1" source="C449K" target="721540005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449K SNOMED CT 721540005 = other malignant adnexal tumör of skin, unspecified site
+        (residual bucket). Target SNOMED CT 36715782 (Primary adnexal carcinoma of skin, 721540005)
+        subsumes the adnexal-carcinoma axis but cannot capture the subtype. Broader. Low tier per §1:
+        heterogeneous residual source.
+        """
+}
+mapping "C449L.1" source="C449L" target="721540005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449L SNOMED CT 721540005 = unspecified malignant adnexal tumör of skin. Target SNOMED CT
+        36715782 (Primary adnexal carcinoma of skin, 721540005). Both source axes (histology=unspecified
+        malignant adnexal, site=unspecified) align with the general adnexal-carcinoma-of-skin concept.
+        Moderate tier per §1: best available standard concept, mechanical match not crosswalk-verified.
+        """
+}
+mapping "C449Q.1" source="C449Q" target="89906000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449Q SNOMED CT 89906000 = verrucous carcinoma of skin, unspecified site. No skin-specific
+        verrucous carcinoma SNOMED CT concept exists in the mirror (only oral/genital/laryngeal/tracheal
+        variants). Target SNOMED CT 4233949 (Verrucous carcinoma, 89906000) is the morphology-level parent;
+        it subsumes the source but loses the skin-specific topology. Broader. Low tier per §1:
+        cross-hierarchy topographic ambiguity.
+        """
+}
+mapping "C449R.1" source="C449R" target="254650008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449R SNOMED CT 254650008 = other epithelial malignant tumör of skin, unspecified site
+        (residual bucket). Target SNOMED CT 4111920 (Malignant epithelial neoplasm of skin, 254650008)
+        subsumes the source but cannot capture the epithelial subtype. Broader. Low tier per §1:
+        heterogeneous residual source.
+        """
+}
+mapping "C449S.1" source="C449S" target="254651007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449S SNOMED CT 254651007 = squamous cell carcinoma of skin, unspecified site. Target SNOMED CT
+        4111921 (Squamous cell carcinoma of skin, 254651007). Histology matches exactly; source site
+        unspecified so no topographic mismatch. High tier: term-equivalent SNOMED CT concept.
+        """
+}
+mapping "C449W.1" source="C449W" target="188143008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449W SNOMED CT 188143008 = other malignant neoplasms of skin, unspecified site (residual
+        bucket). Target SNOMED CT 4091340 (Malignant neoplasm of skin NOS, 188143008) subsumes the source
+        but loses the histology axis. Broader. Low tier per §1: heterogeneous residual source.
+        """
+}
+mapping "C449X.1" source="C449X" target="188143008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C449X SNOMED CT 188143008 = unspecified malignant neoplasm of skin, unspecified site. Target
+        SNOMED CT 4091340 (Malignant neoplasm of skin NOS, 188143008). Both source axes
+        (histology=unspecified, site=unspecified) align with the general skin-malignancy NOS concept.
+        High tier: term-equivalent, unspecified-source to general-target.
+        """
+}

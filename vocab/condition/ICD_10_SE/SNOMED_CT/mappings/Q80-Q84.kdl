@@ -1,0 +1,400 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes Q80-Q84
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Q808A.1" source="Q808A" target="403782004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q808B.1" source="Q808B" target="67510007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q808C.1" source="Q808C" target="54336006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q808D.1" source="Q808D" target="2355008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q808D SNOMED CT 2355008 = Rud's syndrome (congenital ichthyosis with epilepsy and
+        hypogonadism). Target SNOMED CT 4052869 = (code 2355008). Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q808E.1" source="Q808E" target="723551003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q808E SNOMED CT 723551003 = trichothiodystrophy. Target SNOMED CT 37109718 = (code 723551003).
+        Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q808W.1" source="Q808W" target="782957005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q822A.1" source="Q822A" target="205566001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q822A SNOMED CT 205566001 = urticaria pigmentosa (cutaneous mastocytosis variant). Target
+        SNOMED CT 40401884 = (code 205566001). Exact 1:1 clinical equivalence. SNOMED CT also has a duplicate
+        concept 4301385 (78745000) with the same name; 40401884 is retained as primary.
+        """
+}
+mapping "Q822B.1" source="Q822B" target="42613003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q822B SNOMED CT 42613003 = diffuse cutaneous mastocytosis. Target SNOMED CT 40468073 = (code
+        42613003). SNOMED CT's name for this clinical entity is the diffuse erythrodermic variant of
+        urticaria pigmentosa, which is the accepted synonym for diffuse cutaneous mastocytosis. Exact
+        1:1 clinical equivalence.
+        """
+}
+mapping "Q822C.1" source="Q822C" target="134333006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q822C SNOMED CT 134333006 = cutaneous mastocytoma (solitary mastocytoma). Target SNOMED CT
+        40306588 = (code 134333006). Exact 1:1 equivalence; the source qualifier (cutaneous) is implicit
+        because a mastocytoma in this congenital-skin context is by definition cutaneous. A more
+        specific concept 40644493 (8400002) also exists but 40306588 is the cleaner direct match.
+        """
+}
+mapping "Q822D.1" source="Q822D" target="6883004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q822D SNOMED CT 6883004 = TMEP (a cutaneous mastocytosis variant). Target SNOMED CT 40625218 =
+        (code 6883004). Exact 1:1 clinical equivalence. A second SNOMED CT concept 4219464 (8214000) also
+        exists; 40625218 is preferred as it names the mastocytosis-family variant explicitly.
+        """
+}
+mapping "Q822X.1" source="Q822X" target="397007003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q822X SNOMED CT 397007003 = mastocytosis, unspecified. Target SNOMED CT 439412 = (code
+        397007003), which is also the Athena crosswalk target for the base ICD-10 Q82.2. Exact-level
+        clinical equivalence at the unspecified mast-cell-disorder level; high rather than because the
+        SNOMED CT concept name is slightly broader than and includes rare non-mastocytosis mast-cell
+        proliferations.
+        """
+}
+mapping "Q825A.1" source="Q825A" target="56975005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q825A SNOMED CT 56975005 = strawberry nevus (capillary hemangioma of infancy). Target SNOMED CT
+        4211532 = (code 56975005). Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q825B.1" source="Q825B" target="205560007" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source Q825B SNOMED CT 205560007 = nevus flammeus (port-wine stain). Target SNOMED CT 40401878 = (code
+        205560007) — a combined concept whose name explicitly includes nevus flammeus. High rather than
+        because the SNOMED CT concept is a combined/umbrella term rather than a pure nevus-flammeus
+        concept; no cleaner standalone SNOMED CT concept for nevus flammeus was located in the mirror.
+        """
+}
+mapping "Q825C.1" source="Q825C" target="254206003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q825C SNOMED CT 254206003 = vascular nevus, unspecified. Target SNOMED CT 4110112 = (code
+        254206003). Exact 1:1 clinical equivalence at the NOS level for a congenital vascular nevus.
+        """
+}
+mapping "Q825D.1" source="Q825D" target="398723007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q825D SNOMED CT 398723007 = verrucous nevus (a congenital epidermal nevus variant). Target
+        SNOMED CT 4160749 = (code 398723007). SNOMED CT names the canonical clinical entity; the Swedish is
+        the short synonym. Exact clinical equivalence; high rather than because the source omits from
+        the name and a reviewer may want to confirm scope.
+        """
+}
+mapping "Q825E.1" source="Q825E" target="399995006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q825F.1" source="Q825F" target="35962006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q825G.1" source="Q825G" target="707136009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q825H.1" source="Q825H" target="239121009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q825H SNOMED CT 239121009 = syringocystadenoma papilliferum, a benign adnexal
+        hamartoma/nevus of skin. Target SNOMED CT 4346196 = (code 239121009). Exact 1:1 clinical
+        equivalence.
+        """
+}
+mapping "Q825X.1" source="Q825X" target="195381005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q825X SNOMED CT 195381005 = congenital non-neoplastic nevus, unspecified. Target SNOMED CT
+        135287 = (code 195381005), which is also the Athena crosswalk target for the base ICD-10 Q82.5.
+        Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q828B.1" source="Q828B" target="58588007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828D.1" source="Q828D" target="403789008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828E.1" source="Q828E" target="723830005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828F.1" source="Q828F" target="254666005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828G.1" source="Q828G" target="402599005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828H.1" source="Q828H" target="403766000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828J.1" source="Q828J" target="277812008" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828K.1" source="Q828K" target="239064000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q828K SNOMED CT 239064000 = keratolytic winter erythema (also known as erythrokeratolysis
+        hiemalis). Target SNOMED CT 4033645 = (code 239064000). Exact 1:1 clinical equivalence; SNOMED CT uses
+        the synonym for the same disorder.
+        """
+}
+mapping "Q828L.1" source="Q828L" target="879814007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828M.1" source="Q828M" target="8654005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828N.1" source="Q828N" target="254666005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828Q.1" source="Q828Q" target="403812000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q828R.1" source="Q828R" target="400018004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q828S.1" source="Q828S" target="4434006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q828S SNOMED CT 4434006 = Bloom syndrome (congenital telangiectatic erythema, DNA-repair
+        disorder). Target SNOMED CT 4185900 = (code 4434006). Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q828T.1" source="Q828T" target="80432009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q828T SNOMED CT 80432009 = porokeratosis of Mibelli. Target SNOMED CT 4213059 = (code
+        80432009). Exact 1:1 clinical equivalence. SNOMED CT also has 40396874 (201087007) with the same
+        name; 4213059 is retained as primary.
+        """
+}
+mapping "Q828W.1" source="Q828W" target="199879009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q828W SNOMED CT 199879009 = other congenital malformations of skin (residual bucket of
+        Q82.8). Target SNOMED CT 132446 = (code 199879009), which is also the Athena crosswalk target for
+        the base ICD-10 Q82.8. Exact-level match for the residual congenital-skin-anomaly category; high
+        rather than because the source is a heterogeneous residual bucket and the target is a generic
+        parent.
+        """
+}
+mapping "Q841A.1" source="Q841A" target="205596006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841A SNOMED CT 205596006 = congenital beaded-hair shaft disorder. Target SNOMED CT 40401917 is
+        the exact clinical concept (SNOMED CT code 205596006). Same disorder; exact equivalence.
+        """
+}
+mapping "Q841B.1" source="Q841B" target="247556005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841B SNOMED CT 247556005 = alternating light/dark bands in hair shaft. Target SNOMED CT
+        40449076 is the exact clinical concept.
+        """
+}
+mapping "Q841C.1" source="Q841C" target="17170005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841C SNOMED CT 17170005 = twisted hair shaft. Target SNOMED CT 4065905 is the exact clinical
+        concept.
+        """
+}
+mapping "Q841D.1" source="Q841D" target="21049007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841D SNOMED CT 21049007 = congenital retention of vellus hairs in follicles. Target SNOMED CT
+        4051148 (21049007) is the disorder without the congenital specifier; the SNOMED CT concept subsumes
+        both acquired and congenital forms so it is broader than the source which restricts to
+        congenita. High tier: exact term match but no separate congenital SNOMED CT concept.
+        """
+}
+mapping "Q841E.1" source="Q841E" target="239124001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841E SNOMED CT 239124001 = congenital circumscribed woolly-hair patch. Target SNOMED CT
+        4343206 (239124001) is the same clinical concept; minor spelling variation only.
+        """
+}
+mapping "Q841W.1" source="Q841W" target="65033000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q841W SNOMED CT 65033000 = residual bucket. Target SNOMED CT 132724 (65033000) is the ICD10
+        Q84.1 crosswalk target and fully subsumes the residual. Low tier: heterogeneous residual source;
+        crosswalk-dominant but real doubt remains about what each constituent maps to.
+        """
+}
+mapping "Q842A.1" source="Q842A" target="90575004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q842A SNOMED CT 90575004 = persistent lanugo hair. Target SNOMED CT 4236176 (90575004) is the
+        exact clinical concept.
+        """
+}
+mapping "Q842B.1" source="Q842B" target="56797000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q842B SNOMED CT 56797000 = congenital hypertrichosis (any pattern). Target SNOMED CT 4209750
+        (56797000) is the general congenital hypertrichosis concept which subsumes the source; high tier
+        but broader since several specific congenital hypertrichosis entities (lanuginosa, universalis,
+        circumscribed) exist that the source does not differentiate.
+        """
+}
+mapping "Q842C.1" source="Q842C" target="400126005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q842C SNOMED CT 400126005 = keratosis pilaris atrophy of eyebrows. Target SNOMED CT 4266806
+        (400126005) is the exact clinical concept.
+        """
+}
+mapping "Q842W.1" source="Q842W" target="65033000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q842W SNOMED CT 65033000 = residual. Target SNOMED CT 132724 (65033000) is the ICD10 Q84.2
+        crosswalk target and subsumes the residual. Low tier: heterogeneous residual source, real doubt
+        about constituent mappings.
+        """
+}
+mapping "Q846A.1" source="Q846A" target="276449002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846A SNOMED CT 276449002 = congenital clubbing of nails. Target SNOMED CT 4173029 (276449002)
+        is the exact clinical concept.
+        """
+}
+mapping "Q846B.1" source="Q846B" target="18749008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846B SNOMED CT 18749008 = congenital koilonychia (spoon nails). Target SNOMED CT 4093641
+        (18749008) is the exact clinical concept.
+        """
+}
+mapping "Q846C.1" source="Q846C" target="69192004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846C SNOMED CT 69192004 = congenital brittle nails. No dedicated SNOMED CT concept for
+        congenital brittle nails. Closest standard target SNOMED CT 4289447 (69192004, synonym) captures
+        the brittle-nail symptom but is not intrinsically congenital. Related link: tight clinical
+        association but the congenital/acquired distinction is unrepresented; cap at per the
+        related-tier guidance.
+        """
+}
+mapping "Q846D.1" source="Q846D" target="69192004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846D SNOMED CT 69192004 = congenital onychorrhexis (longitudinal ridging). No dedicated
+        congenital SNOMED CT concept exists. Target SNOMED CT 4289447 (69192004) — synonyms include brittle
+        nails and onychorrhexis is a feature of trachyonychia — subsumes the source as a broader
+        nail-dystrophy concept. Low/broader tier: term-level match but no congenital specifier in the
+        target.
+        """
+}
+mapping "Q846E.1" source="Q846E" target="403281007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846E SNOMED CT 403281007 = Iso-Kikuchi congenital onychodysplasia of index fingers. Target
+        SNOMED CT 4293577 (403281007) is the exact clinical concept (Iso-Kikuchi syndrome).
+        """
+}
+mapping "Q846F.1" source="Q846F" target="403284004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846F SNOMED CT 403284004 = congenital nail atrophy. Target SNOMED CT 4293578 (403284004) is
+        the exact clinical concept.
+        """
+}
+mapping "Q846G.1" source="Q846G" target="35964007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846G SNOMED CT 35964007 = congenital ectopic nail tissue. No dedicated SNOMED CT concept
+        exists. Target SNOMED CT 138864 (35964007) is the ICD10 Q84.6 crosswalk target and the nearest
+        standard ancestor fully subsuming the source. Low/broader tier: specific entity has no standard
+        concept.
+        """
+}
+mapping "Q846H.1" source="Q846H" target="35964007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846H SNOMED CT 35964007 = congenital flat nails. No dedicated SNOMED CT concept exists. Target
+        SNOMED CT 138864 (35964007) is the ICD10 Q84.6 crosswalk target and the nearest standard ancestor.
+        Low/broader tier: specific entity has no standard concept.
+        """
+}
+mapping "Q846J.1" source="Q846J" target="403280008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846J SNOMED CT 403280008 = congenital supernumerary nails. Target SNOMED CT 4296335
+        (403280008) is the exact clinical concept (synonym Polyunguia).
+        """
+}
+mapping "Q846W.1" source="Q846W" target="35964007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q846W SNOMED CT 35964007 = residual. Target SNOMED CT 138864 (35964007) is the ICD10 Q84.6
+        crosswalk target and subsumes the residual. Low/broader tier: heterogeneous residual source.
+        """
+}
+mapping "Q848A.1" source="Q848A" target="35484002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q848A SNOMED CT 35484002 = congenital absence of skin. Target SNOMED CT 4148874 (35484002) is
+        the exact clinical concept.
+        """
+}
+mapping "Q848B.1" source="Q848B" target="205573006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q848B SNOMED CT 205573006 = focal dermal hypoplasia (Goltz syndrome). Target SNOMED CT 4006455
+        (205573006) is the exact clinical concept.
+        """
+}
+mapping "Q848C.1" source="Q848C" target="403771007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q848C SNOMED CT 403771007 = bitemporal scars with abnormal eyelashes (Setleis syndrome).
+        Target SNOMED CT 4300449 (403771007, synonym Setleis syndrome) is the exact clinical concept.
+        """
+}
+mapping "Q848D.1" source="Q848D" target="254238008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q848D SNOMED CT 254238008 = familial focal facial dermal dysplasia. Target SNOMED CT 4111474
+        (254238008) is the exact clinical concept.
+        """
+}
+mapping "Q848W.1" source="Q848W" target="38164009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q848W SNOMED CT 38164009 = residual. Target SNOMED CT 432725 (38164009) is the ICD10 Q84.8
+        crosswalk target and subsumes the residual. Low/broader tier: heterogeneous residual source;
+        crosswalk-dominant.
+        """
+}

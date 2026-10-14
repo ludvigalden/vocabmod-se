@@ -1,0 +1,443 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes J6-K1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "J609.1" source="J609" target="29422001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J609 SNOMED CT 29422001 = pneumoconiosis due to coal dust (coalworker). Base ICD-10 J60 maps
+        via Athena to (Coal workers' pneumoconiosis). The.9 Swedish extension is the unspecified
+        subdivision; the base concept is co-extensive. Exact-equivalent per verified crosswalk.
+        """
+}
+mapping "J619.1" source="J619" target="22607003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J619 SNOMED CT 22607003 = pneumoconiosis due to asbestos and other mineral fibres. Base
+        ICD-10 J61 maps via Athena to (Asbestosis). The.9 Swedish extension is the unspecified
+        subdivision. Exact-equivalent per verified crosswalk.
+        """
+}
+mapping "J649.1" source="J649" target="40122008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J649 SNOMED CT 40122008 = unspecified pneumoconiosis. Base ICD-10 J64 maps via Athena to
+        (Pneumoconiosis). The.9 Swedish extension is the unspecified subdivision. Exact-equivalent per
+        verified crosswalk.
+        """
+}
+mapping "J659.1" source="J659" target="196017002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J659 SNOMED CT 196017002 = pneumoconiosis associated with tuberculosis. Base ICD-10 J65 maps
+        via Athena to (Pneumoconiosis associated with tuberculosis). Exact-equivalent per verified
+        crosswalk.
+        """
+}
+mapping "J809.1" source="J809" target="67782005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J809 SNOMED CT 67782005 = adult respiratory distress syndrome (ARDS). Base ICD-10 J80 maps
+        via Athena to (Acute respiratory distress syndrome). Exact-equivalent per verified crosswalk.
+        """
+}
+mapping "J809A.1" source="J809A" target="67782005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J809A SNOMED CT 67782005 = mild ARDS by Berlin severity criteria. No SNOMED CT concept exists
+        for severity-graded ARDS. Base ICD-10 J80 → (ARDS general) subsumes all severities. Moderate
+        tier: severity specificity of source lost in the broader target; verified crosswalk to the
+        parent.
+        """
+}
+mapping "J809B.1" source="J809B" target="67782005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J809B SNOMED CT 67782005 = moderate ARDS by Berlin severity criteria. No SNOMED CT
+        severity-specific ARDS concept exists. Base ICD-10 J80 → (ARDS general) subsumes all severities.
+        Moderate tier: severity specificity lost.
+        """
+}
+mapping "J809C.1" source="J809C" target="67782005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J809C SNOMED CT 67782005 = severe ARDS by Berlin severity criteria. No SNOMED CT
+        severity-specific ARDS concept exists. Base ICD-10 J80 → (ARDS general) subsumes all severities.
+        Moderate tier: severity specificity lost.
+        """
+}
+mapping "J809X.1" source="J809X" target="67782005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J809X SNOMED CT 67782005 = ARDS without severity specification. Base ICD-10 J80 maps via
+        Athena to (Acute respiratory distress syndrome). The Swedish X-extension is the
+        unspecified-severity subdivision; co-extensive with the general SNOMED CT concept. Exact-equivalent
+        per verified crosswalk.
+        """
+}
+mapping "J819.1" source="J819" target="840522009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "J829.1" source="J829" target="367542003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J8419.1" source="J8419" target="51615001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from J84.1 SNOMED CT 51615001; truncation candidate SNOMED CT 51615001 4197819, standard"
+}
+mapping "J8490.1" source="J8490" target="233703007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source J8490 is a Swedish 5th-char extension (.90) of base ICD-10 J84.9 (Interstitial pulmonary
+        disease, unspecified). Base J84.9 maps via Athena SNOMED 233703007 to (Interstitial lung
+        disease). The.90 Swedish extension is a truncation residual; target subsumes the source at the
+        base concept level. High tier: verified crosswalk, per legacy comment.
+        """
+}
+mapping "J8490.2" source="J8490" target="233703007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "J8499.1" source="J8499" target="233703007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source J8499 is a Swedish 5th-char extension (.99) of base ICD-10 J84.9 (Interstitial pulmonary
+        disease, unspecified). Base J84.9 maps via Athena SNOMED 233703007 to (Interstitial lung
+        disease). Swedish extension is a truncation residual; target subsumes the source. High tier:
+        verified crosswalk, per legacy comment.
+        """
+}
+mapping "J8499.2" source="J8499" target="233703007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "J909.1" source="J909" target="60046008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J909 SNOMED CT 60046008 = pleural effusion NEC. Base ICD-10 J90 maps via Athena to (Pleural
+        effusion). The.9 Swedish extension is the unspecified subdivision; co-extensive with the base
+        concept. Exact-equivalent per verified crosswalk.
+        """
+}
+mapping "J919.1" source="J919" target="60046008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J919 SNOMED CT 60046008 = pleural effusion in conditions classified elsewhere. Base ICD-10
+        J91 maps via Athena to (Pleural effusion). The source codes the effusion in the context of
+        another underlying condition; the SNOMED CT target captures the effusion as a standalone finding
+        and subsumes the source. High tier: verified crosswalk, target is the standard pleural effusion
+        concept.
+        """
+}
+mapping "J958A.1" source="J958A" target="429271009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "J958B.1" source="J958B" target="196187007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J958B SNOMED CT 196187007 = pneumatocele caused by ECMO treatment. No SNOMED CT concept exists
+        for ECMO-induced pneumatocele, and the only pneumatocele concept (275503004) is a
+        narrower/specific variant not matching this source. Best defensible target is the base J95.8
+        crosswalk: (Postprocedural respiratory disorders) which fully subsumes the source. Low tier:
+        significant specificity loss, but target is a verified crosswalk ancestor.
+        """
+}
+mapping "J958W.1" source="J958W" target="196187007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source J958W SNOMED CT 196187007 = other specified respiratory disease post-procedure. Base ICD-10
+        J95.8 maps via Athena to (Postprocedural respiratory disorders). The Swedish W-residual
+        subdivision still falls within the base category. High tier: verified crosswalk, one-level
+        broader.
+        """
+}
+mapping "J9840.1" source="J9840" target="19829001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from J98.4; (19829001); appropriate parent"
+}
+mapping "J9849.1" source="J9849" target="19829001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to J98 category.49 = other specified disorders of lung; truncation target is standard
+        """
+}
+mapping "K070A.1" source="K070A" target="235081004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K070A SNOMED CT 235081004 = macrognathia (enlarged jaw). Exact 1:1 match on the same
+        clinical concept. Athena-local mirror confirms the concept exists and is active.
+        """
+}
+mapping "K070B.1" source="K070B" target="155669005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K070B SNOMED CT 155669005 = micrognathia (small jaw). Exact 1:1 match on the same clinical
+        concept. Athena-local mirror confirms the concept exists and is active.
+        """
+}
+mapping "K121A.1" source="K121A" target="69254008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K121A SNOMED CT 69254008 = denture stomatitis (chronic atrophic candidiasis of palate under
+        a denture). Target (Athena 4239344) =, standard Clinical Finding. Exact 1:1 match on clinical
+        concept (inflammation of oral mucosa associated with a dental prosthesis). exact-equivalent:
+        identical name and clinical scope. Note: 196576008 (Athena 40398484) is an alternate concept;
+        69254008 is preferred (the older, non-defaults-row active concept used in the OMOP vocabulary).
+        """
+}
+mapping "K121C.1" source="K121C" target="450005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K121C SNOMED CT 450005 = ulcerative stomatitis (oral mucosal ulceration). Target (Athena
+        4260546) =, standard Clinical Finding. Base ICD-10 K12.1 has no direct crosswalk; the Swedish
+        subcode names a recognized SNOMED CT disorder. Broader/uncertain: while the term matches exactly,
+        the source sits under an unspecified K12.1 umbrella and the SNOMED CT target is itself a parent
+        stomatitis concept, so clinical equivalence is term-string-derived rather than
+        crosswalk-verified. high: precise term match, no independent crosswalk.
+        """
+}
+mapping "K121D.1" source="K121D" target="61170000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K121D SNOMED CT 61170000 = vesicular stomatitis (oral mucosal inflammation with
+        vesicles/blisters). No specific SNOMED CT concept exists in the mirror (only unrelated Enteroviral
+        vesicular pharyngitis / Vesicular reaction findings). Target (Athena 138455) =, standard
+        Clinical Finding; base ICD-10 K12 maps here via crosswalk. Broader: target fully subsumes the
+        source but loses the vesicular-morphology qualifier. low: real specificity loss; reviewer may
+        prefer an oral-blistering-disorder concept (e.g., pemphigus) if clinically indicated.
+        """
+}
+mapping "K121W.1" source="K121W" target="61170000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K121W SNOMED CT 61170000 = other forms of stomatitis (Swedish residual under K12.1). Target
+        (Athena 138455) =, standard Clinical Finding; base ICD-10 K12 maps here via crosswalk. Broader:
+        target subsumes the heterogeneous residual bucket. low: heterogeneous residual source, parent
+        crosswalk not independently re-verified for the subcode.
+        """
+}
+mapping "K121X.1" source="K121X" target="61170000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K121X SNOMED CT 61170000 = stomatitis, unspecified. Target (Athena 138455) =, standard
+        Clinical Finding; base ICD-10 K12 maps here via crosswalk. Broader: target subsumes the
+        unspecified Swedish subcode. moderate: unspecified source, parent crosswalk, not independently
+        re-verified for the subcode.
+        """
+}
+mapping "K130A.1" source="K130A" target="155662001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130A SNOMED CT 155662001 = angular cheilitis (inflammation at the labial commissures).
+        Target (Athena 40316641) =, standard Clinical Finding. Exact 1:1 match on clinical concept and
+        topography. exact-equivalent: identical name and clinical scope.
+        """
+}
+mapping "K130B.1" source="K130B" target="196560004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130B SNOMED CT 196560004 = exfoliative cheilitis (continuous shedding of the labial
+        vermilion). Target (Athena 40398466) =, standard Clinical Finding. Exact 1:1 match on clinical
+        concept. exact-equivalent.
+        """
+}
+mapping "K130C.1" source="K130C" target="26374003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130C SNOMED CT 26374003 = glandular cheilitis (inflammation of the labial minor salivary
+        glands). Target (Athena 4096456) =, standard Clinical Finding. Exact 1:1 match on the
+        glandular-cheilitis entity. exact-equivalent. (Alternate concept 196561000/Athena 40398468 is
+        the synonym; 26374003 is the canonical Clinical Finding.)
+        """
+}
+mapping "K130D.1" source="K130D" target="7847004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130D SNOMED CT 7847004 = cheilitis, unspecified. Target (Athena 4301764) =, standard
+        Clinical Finding. Broader: target is the unqualified umbrella cheilitis concept. high: one-level
+        broader; precise term alignment on the unqualified cheilitis concept. (Note: 196557006/Athena
+        40398463 is an alternate concept; 7847004 is preferred.)
+        """
+}
+mapping "K130E.1" source="K130E" target="36269003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130E SNOMED CT 36269003 = cheilodynia (pain of the lip). Target (Athena 4264585) =,
+        standard Clinical Finding. Exact 1:1 match on clinical concept (lip pain). high: precise term
+        match; no independent crosswalk on the Swedish subcode but unambiguous semantics. (Alternate
+        concept 196555003/Athena 40398461 is a synonym; 36269003 is preferred.)
+        """
+}
+mapping "K130G.1" source="K130G" target="155662001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130G SNOMED CT 155662001 = perlèche (synonym for angular cheilitis), NEC. Target (Athena
+        40316641) =, standard Clinical Finding. Perlèche is clinically synonymous with angular
+        cheilitis, so the conceptual equivalence is exact; recorded as broader only because the source
+        carries an NEC framing (other conditions classified elsewhere). low: conceptually
+        near-equivalent but the source's NEC positioning adds ambiguity, and no explicit perlèche
+        synonym exists in the mirror. Reviewer may promote to exact_match.
+        """
+}
+mapping "K130H.1" source="K130H" target="90678009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130H SNOMED CT 90678009 = ulceration of the lip. No specific standard concept exists in the
+        mirror (only SNOMED CT 90678009 399049001, which carries extra morphology). Target (Athena 135858)
+        =, standard Clinical Finding; base ICD-10 K13.0 maps here via crosswalk. Broader: target fully
+        subsumes the source but loses the ulceration qualifier. low: real specificity loss, parent
+        crosswalk not re-verified for the subcode.
+        """
+}
+mapping "K130J.1" source="K130J" target="196559009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130J SNOMED CT 196559009 = plasma cell cheilitis (chronic cheilitis with dense plasma-cell
+        infiltrate of the labial vermilion). Target (Athena 40398465) =, standard Clinical Finding.
+        Exact 1:1 match on the named clinicopathologic entity. exact-equivalent. (Alternate concept
+        235140005/Athena 4123734 is a synonym.)
+        """
+}
+mapping "K130K.1" source="K130K" target="196558001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130K SNOMED CT 196558001 = factitial cheilitis (self-induced lip inflammation). Target
+        (Athena 40398464) =, standard Clinical Finding. Exact 1:1 match on the named entity (Latin
+        factitia = English factitious). exact-equivalent. (Alternate concept 109805003/Athena 4001660 is
+        a synonym.)
+        """
+}
+mapping "K130L.1" source="K130L" target="90678009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130L SNOMED CT 90678009 = eczema of the lips (lip dermatitis). No specific SNOMED CT or
+        concept exists in the mirror. Target (Athena 135858) =, standard Clinical Finding; base ICD-10
+        K13.0 maps here via crosswalk. Broader: target fully subsumes the source but loses the
+        eczematous-morphology qualifier. low: real specificity loss; reviewer may prefer a
+        contact-dermatitis or atopic-dermatitis concept if clinically indicated.
+        """
+}
+mapping "K130M.1" source="K130M" target="788631003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130M SNOMED CT 788631003 = labial melanotic macule (benign pigmented lesion of the lip
+        vermilion). Target (Athena 37312806) =, standard Clinical Finding. Exact 1:1 match on topography
+        (lip) and morphology (melanotic macule). exact-equivalent.
+        """
+}
+mapping "K130X.1" source="K130X" target="90678009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K130X SNOMED CT 90678009 = diseases of lips, unspecified. Target (Athena 135858) =, standard
+        Clinical Finding; base ICD-10 K13.0 maps here via crosswalk. Broader: target subsumes the
+        unspecified Swedish subcode. moderate: Athena crosswalk on the base code, unspecified source,
+        not independently re-verified for the subcode.
+        """
+}
+mapping "K132A.1" source="K132A" target="69299000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K132A SNOMED CT 69299000 = erythroplakia of mouth OR tongue (a combined Swedish bucket
+        spanning both topographies). No single SNOMED CT concept covers. Target (Athena 4238875) =,
+        standard Clinical Finding; chosen as the dominant (oral) site. Broader: target fully covers the
+        mouth portion but loses the tongue-erythroplakia dimension. low: combined topography source,
+        partial coverage; a second target (22974009) could be added as a partial companion but the
+        source is recorded here under the broader oral target only. Reviewer may decompose.
+        """
+}
+mapping "K132B.1" source="K132B" target="6121001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K132B SNOMED CT 6121001 = focal epithelial hyperplasia of Heck (Heck's disease, HPV-induced
+        benign proliferation of oral mucosal epithelium). No SNOMED CT concept named or exists in the
+        mirror. Target (Athena 4247520) =, standard Clinical Finding. Broader: target subsumes the
+        Heck-variant under the oral-mucosa umbrella (Heck's disease is the canonical focal epithelial
+        hyperplasia of the oral cavity). high: well-understood one-level breadth mismatch, term and
+        topography match.
+        """
+}
+mapping "K132C.1" source="K132C" target="109619000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K132C SNOMED CT 109619000 = leukokeratosis nicotina palati (nicotine stomatitis; smoker's
+        palate, a white keratotic lesion of the hard palate from tobacco). Target (Athena 40274727) =,
+        standard Clinical Finding. Exact 1:1 match: leukokeratosis nicotina palati is the European
+        synonym for nicotine stomatitis. exact-equivalent.
+        """
+}
+mapping "K132X.1" source="K132X" target="196564008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K132X SNOMED CT 196564008 = leukoplakia of oral mucosa and tongue. Target (Athena 40398471)
+        =, standard Clinical Finding. Exact-match-aligned: the source's primary site is oral mucosa,
+        with tongue as a secondary listed site; 196564008 is the canonical oral-mucosa leukoplakia
+        concept. high: precise term match on the primary site; the source's combined mouth+tongue
+        framing is a minor breadth extension. Reviewer may add 196567001 as a partial companion.
+        """
+}
+mapping "K134A.1" source="K134A" target="8090002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K134A SNOMED CT 8090002 = eosinophilic granuloma of the oral mucosa (a benign intraoral
+        lesion, distinct from Langerhans-cell histiocytosis of bone). Target (Athena 4214006) =,
+        standard Clinical Finding. Exact 1:1 match on topography and histology. exact-equivalent.
+        """
+}
+mapping "K134B.1" source="K134B" target="76813008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K134B SNOMED CT 76813008 = pyogenic granuloma of the oral mucosa (a benign vascular
+        proliferation). Target (Athena 4296032) =, standard Clinical Finding. Exact 1:1 match on
+        topography and histology. exact-equivalent.
+        """
+}
+mapping "K134C.1" source="K134C" target="708013001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K134C SNOMED CT 708013001 = verruciform xanthoma of the oral mucosa (a rare benign lesion
+        with foamy histiocytes and a papillary surface). Target (Athena 45769376) =, standard Clinical
+        Finding. Exact 1:1 match on topography (oral mucosa) and histology (verruciform xanthoma).
+        exact-equivalent.
+        """
+}
+mapping "K134W.1" source="K134W" target="41188003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K134W SNOMED CT 41188003 = other granuloma-like conditions of the oral mucosa (Swedish
+        residual under K13.4). Target (Athena 139057) =, standard Clinical Finding; base ICD-10 K13 maps
+        to the related parent axis. Broader: target subsumes the heterogeneous granuloma-like residual
+        bucket. low: heterogeneous residual source, parent crosswalk not independently re-verified for
+        the subcode.
+        """
+}
+mapping "K137A.1" source="K137A" target="109786006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "K137B.1" source="K137B" target="399165002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K137C.1" source="K137C" target="829988004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K137C SNOMED CT 829988004 = localized oral purpura. Target (standard, active). Same clinical
+        concept, exact term correspondence.
+        """
+}
+mapping "K137D.1" source="K137D" target="403663003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "K137W.1" source="K137W" target="1089981000119106" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K137W SNOMED CT 1089981000119106 = other and unspecified changes/lesions of oral mucosa
+        (Swedish subdivision of WHO K13.7). Target = Lesion of oral mucosa, the K13.7 Athena target.
+        Target legitimately subsumes the residual/unspecified Swedish source.
+        """
+}

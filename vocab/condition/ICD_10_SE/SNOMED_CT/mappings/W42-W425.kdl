@@ -1,0 +1,437 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W42-W425
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W420.1" source="W420" target="218229001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W4200.1" source="W4200" target="6300007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4200 SNOMED CT 6300007 is the Swedish national extension of ICD-10 W42 (Exposure to noise)
+        scoped to residential area + sport/activity. Target =, the Athena crosswalk target for parent
+        W42 (OMOP concept 45756295 -> 434238). The target denotes the same clinical event (noise
+        exposure) and fully subsumes the source; the residential/activity context is administrative
+        detail with no separate SNOMED CT representation, making the target one level broader than the
+        source. High : parent crosswalk-verified, well-understood breadth mismatch.
+        """
+}
+mapping "W4201.1" source="W4201" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4201 SNOMED CT 6300007 = exposure to noise at home/residential area during leisure
+        activity. Target SNOMED CT 434238 is the OMOP standard concept that the parent W42 maps to via
+        verified Athena crosswalk. The setting/activity detail has no OMOP standard analogue —
+        non-standard [X]Exposure-to-noise-by-place concepts (40421549 at home, etc.) exist but are
+        themselves non-standard and map upward to 434238. Target fully subsumes the source (every
+        leisure noise exposure at home is an exposure to noise). High tier: one-level broader, verified
+        crosswalk, well-understood breadth mismatch.
+        """
+}
+mapping "W4202.1" source="W4202" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4202 SNOMED CT 6300007 = exposure to noise at home/residential area during paid work.
+        SNOMED CT 4301229 is the work-specific descendant, but the home/residential-area context is not
+        occupational, so the standard general target 434238 is the closest defensible standard concept
+        (parent W42 maps to it via verified Athena crosswalk). Target fully subsumes the source. High
+        tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4203.1" source="W4203" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4203 SNOMED CT 6300007 = exposure to noise at home/residential area during other activity.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the home/other-activity detail. Target fully subsumes
+        the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4204.1" source="W4204" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4204 SNOMED CT 6300007 = exposure to noise at home during vital activities (rest, sleep,
+        meals, personal hygiene). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps
+        to via verified Athena crosswalk. No OMOP standard analogue for the vital-activity detail.
+        Target fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4208.1" source="W4208" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4208 SNOMED CT 6300007 = exposure to noise at home/residential area during other specified
+        activities (residual). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to
+        via verified Athena crosswalk. No OMOP standard analogue for the activity detail. Target fully
+        subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4209.1" source="W4209" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4209 SNOMED CT 6300007 = exposure to noise at home/residential area, activity unspecified.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk; the unspecified-activity framing maps cleanly to the general noise-exposure target.
+        Target fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W421.1" source="W421" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W421 SNOMED CT 6300007 = exposure to noise in institutional residence (unspecified
+        activity). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via
+        verified Athena crosswalk. A non-standard [X] (40421550) exists but is itself non-standard and
+        maps to 434238. Target fully subsumes the source. High tier: one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "W4210.1" source="W4210" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4210 SNOMED CT 6300007 = exposure to noise in institutional residence during
+        sport/exercise. Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via
+        verified Athena crosswalk. No OMOP standard analogue for the sport/institution detail. Target
+        fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4211.1" source="W4211" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4211 SNOMED CT 6300007 = exposure to noise in institutional residence during leisure.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the leisure/institution detail. Target fully subsumes
+        the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4212.1" source="W4212" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4212 SNOMED CT 6300007 = exposure to noise in institutional residence during paid work.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. SNOMED CT 4301229 is the work-specific descendant but the residential-institution
+        context is not strictly occupational, so the general standard target is the closest defensible
+        match. Target fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4213.1" source="W4213" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4213 SNOMED CT 6300007 = exposure to noise in institutional residence during other
+        activity. Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified
+        Athena crosswalk. No OMOP standard analogue for the institution/other-activity detail. Target
+        fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4214.1" source="W4214" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4214 SNOMED CT 6300007 = exposure to noise in institutional residence during vital
+        activities (rest, sleep, meals, hygiene). Target SNOMED CT 434238 is the OMOP standard concept that
+        parent W42 maps to via verified Athena crosswalk. No OMOP standard analogue for the
+        institution/vital-activity detail. Target fully subsumes the source. High tier: one-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W4218.1" source="W4218" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4218 SNOMED CT 6300007 = exposure to noise in institutional residence during other
+        specified activities (residual). Target SNOMED CT 434238 is the OMOP standard concept that parent
+        W42 maps to via verified Athena crosswalk. No OMOP standard analogue for the
+        institution/activity detail. Target fully subsumes the source. High tier: one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W4219.1" source="W4219" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4219 SNOMED CT 6300007 = exposure to noise in institutional residence, activity
+        unspecified. Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via
+        verified Athena crosswalk; the unspecified-activity framing maps cleanly to the general
+        noise-exposure target. Target fully subsumes the source. High tier: one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "W422.1" source="W422" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W422 SNOMED CT 6300007 = exposure to noise in school, other institution and public premises
+        (unspecified activity). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps
+        to via verified Athena crosswalk. A non-standard [X] (40421551) exists but is itself
+        non-standard and maps to 434238. Target fully subsumes the source. High tier: one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W4220.1" source="W4220" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4220 SNOMED CT 6300007 = exposure to noise in school/public premises during sport/exercise.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the sport/school detail. Target fully subsumes the
+        source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4221.1" source="W4221" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4221 SNOMED CT 6300007 = exposure to noise in school/public premises during leisure. Target
+        SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the leisure/school detail. Target fully subsumes the
+        source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4222.1" source="W4222" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4222 SNOMED CT 6300007 = exposure to noise in school/public premises during paid work.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. SNOMED CT 4301229 is the work-specific descendant but the school/public-premises context
+        is not strictly occupational, so the general standard target is the closest defensible match.
+        Target fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4223.1" source="W4223" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4223 SNOMED CT 6300007 = exposure to noise in school/public premises during other activity.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the school/other-activity detail. Target fully subsumes
+        the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4224.1" source="W4224" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4224 SNOMED CT 6300007 = exposure to noise in school/public premises during vital
+        activities (rest, sleep, meals, hygiene). Target SNOMED CT 434238 is the OMOP standard concept that
+        parent W42 maps to via verified Athena crosswalk. No OMOP standard analogue for the
+        school/vital-activity detail. Target fully subsumes the source. High tier: one-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W4228.1" source="W4228" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4228 SNOMED CT 6300007 = exposure to noise in school/public premises during other specified
+        activities (residual). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to
+        via verified Athena crosswalk. No OMOP standard analogue for the school/activity detail. Target
+        fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4229.1" source="W4229" target="6300007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4229 SNOMED CT 6300007 = exposure to noise in school/public premises, activity unspecified.
+        Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk; the unspecified-activity framing maps cleanly to the general noise-exposure target.
+        Target fully subsumes the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W423.1" source="W423" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W423 SNOMED CT 6300007 = exposure to noise at sports and athletics facility (unspecified
+        activity). Target SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via
+        verified Athena crosswalk. A non-standard [X] (40421552) exists but is itself non-standard and
+        maps to 434238. Target fully subsumes the source. High tier: one-level broader, verified
+        crosswalk.
+        """
+}
+mapping "W4230.1" source="W4230" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4230 SNOMED CT 6300007 = exposure to noise at sports facility during sport/exercise. Target
+        SNOMED CT 434238 is the OMOP standard concept that parent W42 maps to via verified Athena
+        crosswalk. No OMOP standard analogue for the sport/sports-facility detail. Target fully subsumes
+        the source. High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4231.1" source="W4231" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4231 SNOMED CT 6300007 = exposure to noise at sports facility during leisure. Target SNOMED CT
+        434238 is the OMOP standard concept that parent W42 maps to via verified Athena crosswalk. No
+        OMOP standard analogue for the leisure/sports-facility detail. Target fully subsumes the source.
+        High tier: one-level broader, verified crosswalk.
+        """
+}
+mapping "W4232.1" source="W4232" target="220804000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4232 SNOMED CT 220804000 = noise exposure at sports/athletics facility during paid work.
+        Target SNOMED CT 40421552 ([X]Exposure to noise, occurrence at sports and athletics area,
+        concept_code 220804000) covers the location axis but not the activity-context axis. Best
+        available standard concept; target legitimately subsumes the source (location parent). One-level
+        broader; high tier per rubric §1.
+        """
+}
+mapping "W4233.1" source="W4233" target="220804000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4233 SNOMED CT 220804000 = noise exposure at sports/athletics facility during other
+        activity. Target SNOMED CT 40421552 ([X]Exposure to noise, occurrence at sports and athletics area)
+        covers location but not the activity-context axis. Best available standard concept; target
+        subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4234.1" source="W4234" target="220804000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4234 SNOMED CT 220804000 = noise exposure at sports facility during vital activities
+        (rest/sleep/meals/hygiene). Target SNOMED CT 40421552 ([X]Exposure to noise, occurrence at sports
+        and athletics area) covers location only. Target subsumes the source. One-level broader; high
+        tier.
+        """
+}
+mapping "W4238.1" source="W4238" target="220804000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4238 SNOMED CT 220804000 = noise exposure at sports facility during other specified
+        activities. Target SNOMED CT 40421552 ([X]Exposure to noise, occurrence at sports and athletics
+        area) covers location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4239.1" source="W4239" target="220804000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4239 SNOMED CT 220804000 = noise exposure at sports facility, unspecified activity. Target
+        SNOMED CT 40421552 ([X]Exposure to noise, occurrence at sports and athletics area) is the
+        location-only equivalent. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W424.1" source="W424" target="220805004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W424 SNOMED CT 220805004 = noise exposure - street and road. Target SNOMED CT 40421553
+        ([X]Exposure to noise, occurrence on street and highway, concept_code 220805004) is the same
+        clinical concept at the same specificity. Location-only, no activity split on either side.
+        """
+}
+mapping "W4240.1" source="W4240" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4240 SNOMED CT 220805004 = noise exposure on street/road during sport/exercise. Target
+        SNOMED CT 40421553 ([X]Exposure to noise, occurrence on street and highway) covers location only.
+        Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4241.1" source="W4241" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4241 SNOMED CT 220805004 = noise exposure on street/road during play/leisure. Target SNOMED CT
+        40421553 ([X]Exposure to noise, occurrence on street and highway) covers location only. Target
+        subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4242.1" source="W4242" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4242 SNOMED CT 220805004 = noise exposure on street/road during paid work. Target SNOMED CT
+        40421553 ([X]Exposure to noise, occurrence on street and highway) covers location only. Target
+        subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4243.1" source="W4243" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4243 SNOMED CT 220805004 = noise exposure on street/road during other activity. Target
+        SNOMED CT 40421553 ([X]Exposure to noise, occurrence on street and highway) covers location only.
+        Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4244.1" source="W4244" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4244 SNOMED CT 220805004 = noise exposure on street/road during vital activities. Target
+        SNOMED CT 40421553 ([X]Exposure to noise, occurrence on street and highway) covers location only.
+        Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4248.1" source="W4248" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4248 SNOMED CT 220805004 = noise exposure on street/road during other specified activities.
+        Target SNOMED CT 40421553 ([X]Exposure to noise, occurrence on street and highway) covers location
+        only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4249.1" source="W4249" target="220805004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4249 SNOMED CT 220805004 = noise exposure on street/road, unspecified activity. Target
+        SNOMED CT 40421553 ([X]Exposure to noise, occurrence on street and highway) is the location-only
+        equivalent. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W425.1" source="W425" target="220806003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W425 SNOMED CT 220806003 = noise exposure - shop/trade/service area. Target SNOMED CT 40421554
+        ([X]Exposure to noise, occurrence at trade and service area, concept_code 220806003) is the same
+        clinical concept at the same specificity. Location-only, no activity split on either side.
+        """
+}
+mapping "W4250.1" source="W4250" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4250 SNOMED CT 220806003 = noise exposure at shop/trade/service area during sport/exercise.
+        Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area) covers
+        location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4251.1" source="W4251" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4251 SNOMED CT 220806003 = noise exposure at shop/trade/service area during play/leisure.
+        Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area) covers
+        location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4252.1" source="W4252" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4252 SNOMED CT 220806003 = noise exposure at shop/trade/service area during paid work.
+        Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area) covers
+        location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4253.1" source="W4253" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4253 SNOMED CT 220806003 = noise exposure at shop/trade/service area during other activity.
+        Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area) covers
+        location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4254.1" source="W4254" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4254 SNOMED CT 220806003 = noise exposure at shop/trade/service area during vital
+        activities. Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area)
+        covers location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4258.1" source="W4258" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4258 SNOMED CT 220806003 = noise exposure at shop/trade/service area during other specified
+        activities. Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area)
+        covers location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4259.1" source="W4259" target="220806003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4259 SNOMED CT 220806003 = noise exposure at shop/trade/service area, unspecified activity.
+        Target SNOMED CT 40421554 ([X]Exposure to noise, occurrence at trade and service area) is the
+        location-only equivalent. Target subsumes the source. One-level broader; high tier.
+        """
+}

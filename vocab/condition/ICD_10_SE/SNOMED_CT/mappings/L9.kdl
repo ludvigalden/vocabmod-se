@@ -1,0 +1,374 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L9
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L908A.1" source="L908A" target="201080009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908A SNOMED CT 201080009 = senile atrophy of the skin. Target SNOMED CT 40396866 (201080009) =
+        Atrophia cutis senilis. Exact 1:1 clinical and lexical equivalence; identical Latin name.
+        """
+}
+mapping "L908B.1" source="L908B" target="238828009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908B SNOMED CT 238828009 = atrophia maculosa varioliformis cutis, historically a synonym
+        for anetoderma (macular atrophy of the skin). Target SNOMED CT 4032902 (238828009) = Anetoderma,
+        the modern clinical concept. The source is the older Latin descriptor for what SNOMED CT calls
+        anetoderma; the equivalence is close but the source terminology is historical, so
+        broader/moderate is safer than asserting full 1:1 identity (the source may also refer to the
+        perifollicular variant).
+        """
+}
+mapping "L908C.1" source="L908C" target="201081008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908C SNOMED CT 201081008 (Atrophoderma neuriticum) = atrophoderma neuriticum. Target SNOMED CT
+        40396868 (201081008) = Atrophoderma neuriticum. Exact 1:1 clinical and lexical equivalence;
+        identical fully-specified name.
+        """
+}
+mapping "L908D.1" source="L908D" target="238844000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908D SNOMED CT 238844000 = Gowers panatrophy (an eponymous localized panatrophy of the
+        skin). Target SNOMED CT 4033366 (238844000) = Gower's panatrophy. Exact 1:1 clinical equivalence
+        via eponymous match.
+        """
+}
+mapping "L908E.1" source="L908E" target="32274008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908E SNOMED CT 32274008 = stellate and discoid pseudoscars of Colomb, a combined source
+        bundling both stellate pseudoscar and discoid pseudoscar (an eponymous variant). No single
+        SNOMED CT concept covers both. Best single target is SNOMED CT 4138260 (32274008) Stellate spontaneous
+        pseudoscars, which captures the stellate axis; the discoid axis has no SNOMED CT equivalent.
+        Broader with low confidence because the source bundles two clinical patterns and the target
+        subsumes only one.
+        """
+}
+mapping "L908W.1" source="L908W" target="400190005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L908W SNOMED CT 400190005 = ICD-10 L90.8, a residual bucket of specified atrophic skin
+        disorders. Target SNOMED CT 134118 = (concept_code 400190005). Athena crosswalk maps L90.8
+        (45538603) to 134118. The target is the general parent atrophic condition; the source is a
+        heterogeneous residual, so target legitimately subsumes source. High tier: crosswalk-verified
+        one-level broader.
+        """
+}
+mapping "L920A.1" source="L920A" target="402364005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L920A SNOMED CT 402364005 = generalized/disseminated granuloma annulare. Target SNOMED CT
+        4299292 = (concept_code 402364005). Exact semantic equivalence by identical name and clinical
+        scope.
+        """
+}
+mapping "L920B.1" source="L920B" target="402365006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L920B SNOMED CT 402365006 = perforating granuloma annulare. Target SNOMED CT 4299293 =
+        (concept_code 402365006). Exact 1:1 match.
+        """
+}
+mapping "L920X.1" source="L920X" target="65508009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L920X SNOMED CT 65508009 = granuloma annulare, unspecified. Maps to ICD-10 L92.0 (45543398)
+        which Athena crosswalks to SNOMED CT 4277253 (concept_code 65508009). Exact match for the
+        unspecified parent.
+        """
+}
+mapping "L923A.1" source="L923A" target="200716007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L923A SNOMED CT 200716007 = Swedish term for pilonidal sinus. Target SNOMED CT 4066724 =
+        (concept_code 200716007). The Swedish source denotes pilonidal sinus without specifying abscess
+        status; the NOS SNOMED CT concept is the best general equivalent. High tier: tight eponymous/term
+        equivalence but no independent crosswalk.
+        """
+}
+mapping "L923B.1" source="L923B" target="17919002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L923B SNOMED CT 17919002 = silica granuloma of skin. Target SNOMED CT 4077006 = (concept_code
+        17919002). Exact 1:1 match.
+        """
+}
+mapping "L923W.1" source="L923W" target="724611004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L923W SNOMED CT 724611004 = ICD-10 L92.3, other/unspecified. Athena crosswalks L92.3
+        (45596396) to SNOMED CT 37117206 (concept_code 724611004). The target soft-tissue scope subsumes
+        both skin and subcutis; source is the unspecified residual. High tier: crosswalk-verified,
+        target legitimately subsumes source.
+        """
+}
+mapping "L942A.1" source="L942A" target="6595006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L942B.1" source="L942B" target="201318004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L942B SNOMED CT 201318004 = cutaneous calculus. Target SNOMED CT 40397869 = (concept_code
+        201318004). Exact term and concept equivalence; high rather than because no Athena crosswalk was
+        followed (term-level match).
+        """
+}
+mapping "L942C.1" source="L942C" target="129750001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L942D.1" source="L942D" target="404074003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L942D SNOMED CT 404074003 = cutaneous ossification. Target SNOMED CT 4301653 = (concept_code
+        404074003). Osteosis cutis and osteoma cutis are clinically synonymous (ectopic bone formation
+        in skin). High tier: well-established synonymy without an independent crosswalk.
+        """
+}
+mapping "L942X.1" source="L942X" target="6595006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L944A.1" source="L944A" target="239062001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L944A SNOMED CT 239062001 = Degos' cocarde erythrokeratoderma. Target SNOMED CT 4346194 =
+        (concept_code 239062001). Exact 1:1 eponymous match.
+        """
+}
+mapping "L944B.1" source="L944B" target="239063006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L944B SNOMED CT 239063006 = Gottron's progressive symmetric erythrokeratoderma. Target
+        SNOMED CT 4033644 = (concept_code 239063006). Exact 1:1 match.
+        """
+}
+mapping "L944C.1" source="L944C" target="254184006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L944C SNOMED CT 254184006 = Mendes da Costa's disease. Target SNOMED CT 40461243 =
+        (concept_code 254184006). Exact 1:1 match.
+        """
+}
+mapping "L944X.1" source="L944X" target="247455006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L944X SNOMED CT 247455006 = Gottron papules, unspecified. Maps to ICD-10 L94.4 (45543399)
+        which Athena crosswalks to SNOMED CT 4083305 (concept_code 247455006). Exact match.
+        """
+}
+mapping "L950A.1" source="L950A" target="238762002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L950A SNOMED CT 238762002 = Milian's white atrophy, the classic name for livedoid
+        vasculitis. Target SNOMED CT 4033864 = (concept_code 238762002). Atrophie blanche is the
+        well-established clinicopathological synonym for livedoid vasculitis. High tier: tight synonymy
+        rather than crosswalk-verified identity.
+        """
+}
+mapping "L950B.1" source="L950B" target="247478000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L950B SNOMED CT 247478000 = livedo with nodules, a clinical pattern description with no
+        exact SNOMED CT concept. Target SNOMED CT 4083796 = (concept_code 247478000), the general parent
+        finding. The target subsumes the livedo component but does not capture the nodular qualifier;
+        one-level broader with real doubt about whether the source denotes livedoid vasculitis or a
+        separate nodular livedo. Low tier per the rubric for ambiguous/residual sources.
+        """
+}
+mapping "L950C.1" source="L950C" target="238762002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L950C SNOMED CT 238762002 = livedoid vasculitis. Target SNOMED CT 4033864 = (concept_code
+        238762002). Exact 1:1 translation match.
+        """
+}
+mapping "L950W.1" source="L950W" target="31996006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L979.1" source="L979" target="10641391000119104" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L979A.1" source="L979A" target="59483006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L979A SNOMED CT 59483006 = perforating disease of the foot (neuropathic perforating foot
+        ulcer). Target SNOMED CT 4244554 = (concept_code 59483006). Exact 1:1 clinical match.
+        """
+}
+mapping "L979B.1" source="L979B" target="1237173008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L979B SNOMED CT 1237173008 = Martorell ulcer (hypertensive ischemic leg ulcer). Target
+        SNOMED CT 37164965 = (concept_code 1237173008). Eponymous equivalence; the SNOMED CT concept scopes to
+        lower limb (typical site for Martorell ulcer). High tier: tight eponymous match without
+        independent crosswalk; lower-limb qualifier is the natural anatomical scope of the source.
+        """
+}
+mapping "L979C.1" source="L979C" target="301020006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L979C SNOMED CT 301020006 = foot ulcer, unspecified. Target SNOMED CT 40503219 = (concept_code
+        301020006). Exact 1:1 match for unspecified foot ulcer.
+        """
+}
+mapping "L979X.1" source="L979X" target="238790003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L979X SNOMED CT 238790003 = unspecified leg ulcer not elsewhere classified. Target SNOMED CT
+        4033351 = (concept_code 238790003). Exact 1:1 match.
+        """
+}
+mapping "L981A.1" source="L981A" target="238958004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L981A SNOMED CT 238958004 = dermatillomania / neurotic excoriations / skin-picking disorder.
+        Target SNOMED CT 4033045 = (concept_code 238958004), the SNOMED CT concept for
+        excoriation/skin-picking disorder. Exact 1:1 clinical match.
+        """
+}
+mapping "L981X.1" source="L981X" target="27720003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L981X SNOMED CT 27720003 = dermatitis factitia, unspecified. Maps to ICD-10 L98.1
+        (45553016), for which Athena crosswalks to SNOMED CT 4292673; the more specific SNOMED CT concept
+        133285 (concept_code 27720003) is the exact clinical equivalent of the source term. Exact match.
+        """
+}
+mapping "L984A.1" source="L984A" target="19429009" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L984A SNOMED CT 19429009 = skin ulcer, unspecified. Maps to ICD-10 L98.4 (45533667), which
+        Athena crosswalks to SNOMED CT 134441 (concept_code 19429009). The source is the unspecified
+        Swedish extension of L98.4; the crosswalk target is the closest standard concept. High tier:
+        crosswalk-verified, but the source framing is slightly more general than the chronic-specific
+        target, so rather than.
+        """
+}
+mapping "L984B.1" source="L984B" target="238400007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L984B SNOMED CT 238400007 = Meleney's progressive synergistic gangrene. Target SNOMED CT
+        4080302 = (concept_code 238400007), which is Meleney's gangrene. Exact 1:1 clinical match.
+        """
+}
+mapping "L984C.1" source="L984C" target="70759006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L984D.1" source="L984D" target="33726002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L984D SNOMED CT 33726002 = trophic ulcer, unspecified. Target SNOMED CT 40533394 =
+        (concept_code 33726002). Exact 1:1 match for the unspecified case.
+        """
+}
+mapping "L984E.1" source="L984E" target="46742003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L984F.1" source="L984F" target="32940002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L984F SNOMED CT 32940002 (Swedish national-extension subcode of ICD10 L98.4 Chronic ulcer of
+        skin, NEC) denotes phagedenic/tropical ulcer of skin. Target SNOMED CT 4139615 (32940002) = — exact
+        SNOMED CT equivalent for the clinical concept. Athena crosswalk verified via SNOMED CT-side edges.
+        Exact term-and-scope equivalence.
+        """
+}
+mapping "L984W.1" source="L984W" target="19429009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L984W SNOMED CT 19429009 = Other chronic skin ulcer, not elsewhere classified (Swedish
+        subcode of L98.4). Target SNOMED CT 134441 (19429009) = — the Athena crosswalk target for L98.4.
+        Target subsumes the source's bucket; one-level broader. High tier per Athena crosswalk.
+        """
+}
+mapping "L985A.1" source="L985A" target="110981005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L985A SNOMED CT 110981005 = focal mucinosis of skin. Target SNOMED CT 4007446 (110981005) =.
+        Exact SNOMED CT equivalent; identical clinical concept.
+        """
+}
+mapping "L985B.1" source="L985B" target="88996004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L985C.1" source="L985C" target="78146007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L985D.1" source="L985D" target="238946004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L985D SNOMED CT 238946004 = reticular erythematous mucinosis (REM syndrome). Target SNOMED CT
+        4081254 (238946004) =. Exact SNOMED CT equivalent.
+        """
+}
+mapping "L985W.1" source="L985W" target="402721001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L985W SNOMED CT 402721001 = Other and unspecified skin mucinosis (residual subcode of L98.5
+        Mucinosis of skin). Target SNOMED CT 4299569 (402721001) = — the SNOMED CT parent that subsumes all
+        cutaneous mucinoses. Athena crosswalk for L98.5 → 4033501 (Diffuse cutaneous mucinosis) is one
+        specific child; for the residual bucket the parent is the best defensible target. Broader:
+        target fully contains source; high tier (well-understood breadth mismatch).
+        """
+}
+mapping "L988A.1" source="L988A" target="838551007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L988B.1" source="L988B" target="19719003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L988B SNOMED CT 19719003 = benign lymphocytic infiltration of skin, Jessner-Kanof. Target
+        SNOMED CT 4059145 (19719003) =. Exact SNOMED CT equivalent.
+        """
+}
+mapping "L988C.1" source="L988C" target="128865003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L988C SNOMED CT 128865003 = benign lymphocytoma cutis (cutaneous B-cell pseudolymphoma).
+        Target SNOMED CT 4028724 (128865003) = — the SNOMED CT standard concept that denotes lymphocytoma
+        cutis. High tier: term-level equivalence confirmed via SNOMED CT hierarchy (synonymous lesion); no
+        separate lymphocytoma-cutis concept exists at higher specificity.
+        """
+}
+mapping "L988D.1" source="L988D" target="441457006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L988W.1" source="L988W" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990A.1" source="L990A" target="38606009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990B.1" source="L990B" target="718105008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990C.1" source="L990C" target="111032003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L990C SNOMED CT 111032003 of skin = macular cutaneous amyloidosis. Target SNOMED CT 4005990
+        (111032003) =. Exact SNOMED CT equivalent.
+        """
+}
+mapping "L990D.1" source="L990D" target="716704007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L990W.1" source="L990W" target="201337008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L990W SNOMED CT 201337008 = other amyloidosis of skin (residual subcode of L99.0 Amyloidosis
+        of skin). Target SNOMED CT 4067189 (201337008) = — the SNOMED CT parent that subsumes all cutaneous
+        amyloidoses. Source is the residual bucket; the parent is the best defensible target. Broader;
+        high tier.
+        """
+}

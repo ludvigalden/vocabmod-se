@@ -1,0 +1,513 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes P6-Q3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "P609.1" source="P609" target="34417008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P609 SNOMED CT 34417008 = DIC in fetus and newborn. Target SNOMED CT 432443 (ICD10 P60 Maps to
+        target). Exact equivalence, crosswalk-verified.
+        """
+}
+mapping "P610A.1" source="P610A" target="13292000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P610A SNOMED CT 13292000 = neonatal alloimmune thrombocytopenia (FNAIT). Target SNOMED CT
+        40292199. Exact semantic equivalence; the source explicitly names FNAIT which is the same
+        clinical entity. High tier (no independent crosswalk for this Swedish extension code, but the
+        term match is unambiguous).
+        """
+}
+mapping "P610B.1" source="P610B" target="7933002" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source P610B SNOMED CT 7933002 = autoimmune thrombocytopenia in the newborn. The closest neonatal
+        SNOMED CT concept is 4195579 (Neonatal thrombocytopenia associated with maternal idiopathic
+        thrombocytopenic purpura), which presumes a maternal ITP origin rather than a primary neonatal
+        autoimmune process. There is no SNOMED CT concept for primary neonatal autoimmune thrombocytopenia.
+        related because the maternal-ITP association is not equivalent to a neonatal autoimmune process;
+        the link is clinically defensible but not identity. Low tier.
+        """
+}
+mapping "P610W.1" source="P610W" target="206514004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P610W SNOMED CT 206514004 = other specified transient thrombocytopenia of newborn. Target
+        SNOMED CT 4071193 (concept_code 206514004) =. Source is the Swedish-extension residual for
+        transient neonatal thrombocytopenia; is the matching standard concept for transient neonatal
+        thrombocytopenia. High tier: clinical scope matches at the same level of specificity, but no
+        independent Athena crosswalk for the Swedish subcode.
+        """
+}
+mapping "P704A.1" source="P704A" target="52767006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P704A = transient neonatal hypoglycemia (blood glucose <2.2 mmol/l) within first 0-6h of
+        life; Swedish time-windowed subcode of ICD-10 P70.4 (Other neonatal hypoglycaemia). Target
+        SNOMED CT 23034 (52767006) = Neonatal hypoglycemia, which is the Athena SNOMED 52767006 target for
+        P70.4. The source adds time-window specificity that the SNOMED CT concept does not encode; the
+        target subsumes the source. Broader: target subsumes source. Tier low : time-window specificity
+        is lost, and several Swedish subcodes (P704A/B) both roll up to the same target.
+        """
+}
+mapping "P704B.1" source="P704B" target="52767006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P704B = transient neonatal hypoglycemia (blood glucose <2.2 mmol/l) >6h after birth;
+        Swedish time-windowed subcode of P70.4. Target SNOMED CT 23034 (52767006) Neonatal hypoglycemia is
+        the Athena crosswalk target for P70.4 and fully subsumes this source. Broader: target subsumes
+        source. : specificity of timing threshold lost; sibling subcode P704A also rolls up here.
+        """
+}
+mapping "P759.1" source="P759" target="86092005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P759 = meconium ileus in cystic fibrosis; Swedish P75.9 subcode (the ICD10 mirror records
+        P75 = SNOMED CT 86092005 under id 45606711, which is the same clinical concept). Target SNOMED CT
+        193174 (86092005) = Cystic fibrosis with meconium ileus. Exact semantic equivalence,
+        crosswalk-verified (45606711 Maps to 193174 in ICD10/relationships.tdl).
+        """
+}
+mapping "P779.1" source="P779" target="43752006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 43752006 [GPS] [IPS]"
+}
+mapping "P779A.1" source="P779A" target="43752006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P779B.1" source="P779B" target="43752006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P779X.1" source="P779X" target="43752006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P838A.1" source="P838A" target="206553008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P838A = Bronze baby syndrome, Swedish subcode of P83.8 (Other specified conditions of
+        integument specific to fetus and newborn). Target SNOMED CT 4049037 (206553008) = SNOMED CT 206553008.
+        Same clinical concept, identical scope. High/exact tier: SNOMED CT term is the direct English
+        equivalent; crosswalk at parent P83.8 -> 201958 exists but the specific SNOMED CT concept 4049037
+        is a closer 1:1 match.
+        """
+}
+mapping "P838B.1" source="P838B" target="774080007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "P838C.1" source="P838C" target="4244005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P838C = Urticaria neonatorum. Target SNOMED CT 4174400 (4244005) = Urticaria neonatorum.
+        Identical clinical concept and term; 1:1 equivalence.
+        """
+}
+mapping "P838D.1" source="P838D" target="247441003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P838E.1" source="P838E" target="239092005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P838E = Transient neonatal pustulosis (Swedish SNOMED CT 239092005). Target SNOMED CT 4033200
+        (239092005) = Transient neonatal pustulosis. Identical clinical concept and term; 1:1
+        equivalence.
+        """
+}
+mapping "P838W.1" source="P838W" target="111474003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P838W = SNOMED CT 111474003 (Other specified conditions of integument specific to fetus and
+        newborn), the Swedish residual subcode under P83.8. Target SNOMED CT 201958 (111474003) =, which is
+        the Athena target for P83.8 (id 45553650). The target is the broader standard parent concept
+        that subsumes all P83.8 subcodes. Broader: target subsumes source. High tier : verified
+        crosswalk, one-level broader.
+        """
+}
+mapping "P909.1" source="P909" target="87476004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P909 = Seizures in newborn (Swedish SNOMED CT 87476004); corresponds to ICD-10 P90
+        (Convulsions of newborn, id 45539253). Target SNOMED CT 380533 (87476004) = Neonatal seizure.
+        Crosswalk-verified: 45539253 Maps to 380533 in ICD10/relationships.tdl. Exact equivalence.
+        """
+}
+mapping "P909A.1" source="P909A" target="87476004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P909A = Seizures with EEG/aEEG verification (Swedish subcode of P90). Target SNOMED CT
+        380533 (87476004) = Neonatal seizure (parent target). The source specifies the diagnostic
+        verification modality (EEG/aEEG) which the SNOMED CT concept does not encode; SNOMED CT (1287615008)
+        but that is a different, more specific clinical entity. Broader: target subsumes the source
+        without the modality qualifier. Low tier : specificity of EEG verification is lost.
+        """
+}
+mapping "P909B.1" source="P909B" target="87476004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P909B = Seizures without EEG/aEEG verification (Swedish subcode of P90). Target SNOMED CT
+        380533 (87476004) = Neonatal seizure. The source distinguishes clinically-unconfirmed seizures;
+        does not encode verification status. Broader: target subsumes source. Low tier : verification
+        specificity lost, sibling subcode P909A also rolls up here.
+        """
+}
+mapping "P909C.1" source="P909C" target="1287615008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P909C = Silent seizures (EEG/aEEG diagnosed) — Swedish SNOMED CT 1287615008, i.e.
+        electrographic-only/subclinical seizures detectable only on EEG/aEEG monitoring. Target SNOMED CT
+        1244418 (1287615008) =. Target denotes the same clinical entity (seizure activity detected only
+        on EEG, not clinically apparent). Moderate tier : the SNOMED CT concept adds which the source does
+        not specify; this is the closest standard concept for the electrographic-only neonatal seizure.
+        """
+}
+mapping "P910D.1" source="P910D" target="722929005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P910D = Perinatal arterial stroke (Swedish SNOMED CT 722929005), Swedish subcode under P91
+        (disturbances of cerebral status of newborn). Target SNOMED CT 36716757 (722929005) =. Same
+        clinical concept; SNOMED CT term is the fully specified equivalent. Exact tier: 1:1 equivalence,
+        concept verified in mirror.
+        """
+}
+mapping "P910W.1" source="P910W" target="206576006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P910W = Other specified cerebral ischemia in newborn (Swedish residual subcode; sibling
+        of P91.0 Neonatal cerebral ischaemia). Target SNOMED CT 4049043 (206576006) = Neonatal cerebral
+        ischemia, which is the Athena SNOMED 206576006 target for P91.0 (45563230). The source is the
+        residual bucket that sits at the same level as P91.0; the SNOMED CT concept for neonatal cerebral
+        ischemia is the closest standard target and subsumes the source. Broader. Moderate tier :
+        crosswalk at sibling level not independently re-verified.
+        """
+}
+mapping "P910Y.1" source="P910Y" target="206576006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P910Y = Cerebral ischemia in newborn, unspecified (Swedish SNOMED CT 206576006). Target
+        SNOMED CT 4049043 (206576006) = Neonatal cerebral ischemia. The unspecified source maps directly to
+        the general SNOMED CT disorder; no separate SNOMED CT concept exists. Broader: target subsumes source.
+        Moderate tier : unspecified source, Athena crosswalk at the P91.0 sibling level.
+        """
+}
+mapping "P916A.1" source="P916A" target="389100007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P916B.1" source="P916B" target="703302009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "P916C.1" source="P916C" target="703300001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "P916X.1" source="P916X" target="389100007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P939.1" source="P939" target="206570000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P939 = Reactions and intoxications caused by drugs administered to fetus and newborn;
+        Swedish subcode equivalent to ICD-10 P93 (45592352). Target SNOMED CT 4049042 (206570000) = SNOMED CT
+        206570000. Crosswalk-verified: 45592352 Maps to 4049042 in ICD10/relationships.tdl. Exact
+        equivalence.
+        """
+}
+mapping "P959.1" source="P959" target="276507005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P959 = Fetal death of unspecified cause; corresponds to ICD-10 P95 (45582632). Target
+        SNOMED CT 4079844 (276507005) = Fetal death. Crosswalk-verified: 45582632 Maps to 4079844 in
+        ICD10/relationships.tdl. Exact equivalence.
+        """
+}
+mapping "P959A.1" source="P959A" target="276507005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P959A = Stillborn, gestational age <22 completed weeks (Swedish
+        gestational-age-stratified subcode of P95). Target SNOMED CT 4079844 (276507005) = Fetal death, the
+        parent SNOMED CT concept. The source specifies a gestational-age stratum that SNOMED CT does not
+        encode in this concept. Broader: target subsumes source without the gestational age detail. Low
+        tier : gestational-age specificity lost, multiple Swedish subcodes (P959A/B/C) all roll up to
+        the same target.
+        """
+}
+mapping "P959B.1" source="P959B" target="276507005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P959B = Stillborn, gestational age 22-27 completed weeks (Swedish subcode of P95). Target
+        SNOMED CT 4079844 (276507005) = Fetal death. Same reasoning as P959A: target subsumes source;
+        gestational-age specificity lost. Broader. Low tier.
+        """
+}
+mapping "P959C.1" source="P959C" target="276507005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source P959C = Stillborn, gestational age >=28 completed weeks (Swedish subcode of P95). Target
+        SNOMED CT 4079844 (276507005) = Fetal death. Same reasoning as P959A/B: target subsumes source;
+        gestational-age specificity lost. Broader. Low tier.
+        """
+}
+mapping "P959X.1" source="P959X" target="237364002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q029.1" source="Q029" target="715462003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q040A.1" source="Q040A" target="5102002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q040B.1" source="Q040B" target="204043002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q040B = SNOMED CT 204043002 (Swedish subcode of Q04, Other congenital malformations of
+        brain). Target SNOMED CT 4070168 (204043002) = Hypoplasia of corpus callosum. The source describes
+        a thin/poorly-developed corpus callosum, which is the clinical definition of corpus callosum
+        hypoplasia. High tier : direct semantic match, but no Athena crosswalk at the Swedish subcode
+        level.
+        """
+}
+mapping "Q040C.1" source="Q040C" target="253152005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q040C = Double cortex (Swedish SNOMED CT 253152005), a Swedish subcode of Q04. Target SNOMED CT
+        4102685 (253152005) = Laminar heterotopia, whose synonyms include, and (verified via SNOMED CT
+        browser synonym set). Exact equivalence: the source is the Swedish translation of the well-known
+        clinical synonym.
+        """
+}
+mapping "Q182A.1" source="Q182A" target="42801006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q182A = SNOMED CT 42801006 (accessory auricle/outer ear on the neck), a Swedish subcode of
+        Q18.2 (Other branchial cleft malformations). This is the cervical variant of accessory auricle.
+        Target SNOMED CT 40468774 (42801006) = Accessory auricle of ear, the closest standard concept. The
+        SNOMED CT concept does not encode the cervical location specifically; it subsumes all accessory
+        auricle locations. Broader: target subsumes source. Moderate tier : clinical match is clear but
+        location specificity is lost and there is no dedicated cervical-aural SNOMED CT concept.
+        """
+}
+mapping "Q182W.1" source="Q182W" target="398302004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q182W = SNOMED CT 398302004 (other and unspecified branchial cleft malformations); Swedish
+        residual subcode of Q18.8 (45563238). Target SNOMED CT 439394 (398302004) = Congenital anomaly of
+        face, which is the Athena target for Q18.8. Broader: target subsumes source. High tier :
+        verified crosswalk at Q18.8 level.
+        """
+}
+mapping "Q2829.1" source="Q2829" target="234142008" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source Q2829 = fifth-character Swedish extension of Q28.2 (Arteriovenous malformation of
+        cerebral vessels). Per input entry, base Q28.2 concept is preserved. Target SNOMED CT 4121803
+        (234142008) = Cerebral arteriovenous malformation, which is the Athena SNOMED 234142008 target
+        for Q28.2 (45592370). Crosswalk-verified; the fifth-character extension does not alter the
+        clinical concept. Exact equivalence.
+        """
+}
+mapping "Q2829.2" source="Q2829" target="234142008" relationship=equivalent preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q2839.1" source="Q2839" target="65587001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated leaf under Q28.3 (other malformations of cerebral vessels); (372721) verified standard
+        """
+}
+mapping "Q353A.1" source="Q353A" target="253997002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q353A SNOMED CT 253997002 = submucous cleft of soft palate (Swedish 5-character extension of
+        Q35.3 Cleft soft palate). Target SNOMED CT 4109045 (253997002). The submucous variant is a specific
+        subtype of soft-palate cleft; no SNOMED CT concept for exists (only 35621848 4183320). Target
+        subsumes the source. Moderate tier: SNOMED CT hierarchy confirms broader scope, no crosswalk for
+        the Swedish extension code.
+        """
+}
+mapping "Q353B.1" source="Q353B" target="253997002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q353B SNOMED CT 253997002 = subtotal cleft of soft palate (Swedish extension of Q35.3).
+        Target SNOMED CT 4109045 (253997002). is a completeness qualifier not represented separately in
+        SNOMED CT; the target is the broader soft-palate cleft concept. Moderate tier: Swedish extension
+        specificity has no 1:1 SNOMED CT representation.
+        """
+}
+mapping "Q353C.1" source="Q353C" target="253997002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q353C SNOMED CT 253997002 = total cleft of soft palate (Swedish extension of Q35.3). Target
+        SNOMED CT 4109045 (253997002). denotes complete cleft, which is the prototype of soft-palate cleft;
+        the SNOMED CT concept does not distinguish total vs subtotal. High tier: well-understood breadth
+        match with one-level specificity loss on completeness qualifier.
+        """
+}
+mapping "Q355A.1" source="Q355A" target="63567004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q355A SNOMED CT 63567004 = subtotal cleft hard palate + total cleft soft palate (Swedish
+        extension of Q35.5 Cleft hard and soft palate). Target SNOMED CT 4272171 (63567004). Completeness
+        qualifiers (subtotal/total) per palate segment have no SNOMED CT representation. Target subsumes
+        source at the hard+soft level. Moderate tier: clear breadth match, specificity loss on
+        completeness grading.
+        """
+}
+mapping "Q355B.1" source="Q355B" target="63567004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q355B SNOMED CT 63567004 = total cleft hard palate + total cleft soft palate (Swedish
+        extension of Q35.5). Target SNOMED CT 4272171 (63567004). corresponds to the prototype complete
+        cleft of hard and soft palate; the SNOMED CT concept does not separately encode completeness. High
+        tier: strong semantic match with minor qualifier loss.
+        """
+}
+mapping "Q355W.1" source="Q355W" target="63567004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q355W SNOMED CT 63567004 = other cleft hard and soft palate (Swedish residual/extension of
+        Q35.5). Target SNOMED CT 4272171 (63567004). Residual source with no further specificity; the
+        SNOMED CT parent is the only defensible target. Moderate tier: residual source, broader target.
+        """
+}
+mapping "Q360A.1" source="Q360A" target="304068004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q360A SNOMED CT 304068004 = bilateral cleft lip (Swedish extension of Q36.0). Target SNOMED CT
+        4127128 (304068004). Exact 1:1 semantic equivalence; crosswalk-verified via parent Q36.0 →
+        4127128.
+        """
+}
+mapping "Q360B.1" source="Q360B" target="788875002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q360B SNOMED CT 788875002 = bilateral cleft lip and jaw (alveolar process of maxilla;
+        Swedish extension of Q36.0). Target SNOMED CT 37312022 (788875002). Exact 1:1 equivalence: in
+        Swedish cleft terminology denotes the alveolar process of the maxilla. Laterality (bilateral)
+        matches on both axes.
+        """
+}
+mapping "Q361A.1" source="Q361A" target="204608004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q361A SNOMED CT 204608004 = medial cleft lip (Swedish extension of Q36.1 Cleft lip, median).
+        Target SNOMED CT 4004138 (204608004). and are synonyms for the midline cleft lip.
+        Crosswalk-verified via parent Q36.1 → 4004138.
+        """
+}
+mapping "Q361B.1" source="Q361B" target="699700006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q361B SNOMED CT 699700006 = medial cleft lip and jaw (Swedish extension of Q36.1). Target
+        SNOMED CT 44783589 (699700006). Exact 1:1 equivalence: median/medial cleft lip + alveolar process
+        involvement. Laterality (median) matches.
+        """
+}
+mapping "Q369A.1" source="Q369A" target="80281008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q369A SNOMED CT 80281008 = unilateral cleft lip (Swedish extension of Q36.9 Cleft lip,
+        unilateral). Target SNOMED CT 133861 (80281008). The SNOMED CT concept is the general without
+        laterality; it subsumes the unilateral source. High tier: crosswalk-verified via parent Q36.9 →
+        133861; one-level breadth mismatch (laterality lost).
+        """
+}
+mapping "Q369B.1" source="Q369B" target="373643003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q369B SNOMED CT 373643003 = unilateral cleft lip and jaw (Swedish extension of Q36.9).
+        Target SNOMED CT 4162452 (373643003). No unilateral-specific SNOMED CT concept combining lip +
+        alveolus exists without palate involvement; the target subsumes the source at the cost of
+        laterality. High tier: covers both components (lip + alveolus), one-level breadth mismatch on
+        laterality.
+        """
+}
+mapping "Q372A.1" source="Q372A" target="762583001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q372B.1" source="Q372B" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q373A.1" source="Q373A" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q373B.1" source="Q373B" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q374A.1" source="Q374A" target="762586009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q374B.1" source="Q374B" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q375A.1" source="Q375A" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q375B.1" source="Q375B" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q378A.1" source="Q378A" target="80281008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q378B.1" source="Q378B" target="87979003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q379A.1" source="Q379A" target="66948001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q379A SNOMED CT 66948001 = unspecified cleft palate with unilateral cleft lip (Swedish
+        extension of Q37.9). Target SNOMED CT 134144 (66948001). Crosswalk-verified via parent Q37.9 →
+        134144. The target is broader (laterality and palate-specificity lost). High tier: closest
+        standard concept, one-level breadth mismatch.
+        """
+}
+mapping "Q379B.1" source="Q379B" target="337471007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q379B SNOMED CT 337471007 = unspecified cleft palate with unilateral cleft lip and jaw
+        (Swedish extension of Q37.9). Target SNOMED CT 4221171 (337471007). The target covers all three
+        components (lip, jaw/alveolus, palate) but loses laterality and is itself a generic combination
+        concept. Low tier: source bundles three components with laterality unspecified on the palate
+        side; the target is the only standard concept covering all three, but the semantic match is
+        loose.
+        """
+}
+mapping "Q385A.1" source="Q385A" target="128336000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q385A SNOMED CT 128336000 = congenital palatal insufficiency (Swedish extension of Q38.5
+        Congenital malformations of palate, NEC). No SNOMED CT concept for exists; the closest standard
+        target is 4027567 (128336000), the broader parent. Moderate tier: defensible ancestor, source
+        specificity (insufficiency vs. structural anomaly) not represented.
+        """
+}
+mapping "Q385W.1" source="Q385W" target="276654001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q385X.1" source="Q385X" target="276654001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "Q386A.1" source="Q386A" target="403368002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q386A SNOMED CT 403368002 = Fordyce spots/granules of the lips (Swedish extension of Q38.6
+        Other congenital malformations of mouth). Target SNOMED CT 4296359 (403368002). Exact 1:1 semantic
+        equivalence: is the clinical Latin for Fordyce spots on the lips.
+        """
+}
+mapping "Q386B.1" source="Q386B" target="389203001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "Q386W.1" source="Q386W" target="128334002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q386W SNOMED CT 128334002 = other and unspecified congenital malformations of oral cavity
+        (Swedish residual of Q38.6). Target SNOMED CT 133303 (128334002). Residual heterogeneous source;
+        the target is the broad parent. Low tier: residual bucket, generic ancestor.
+        """
+}

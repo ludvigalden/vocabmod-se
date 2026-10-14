@@ -1,0 +1,370 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes R6-S1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "R600A.1" source="R600A" target="445088006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R600A SNOMED CT 445088006 = facial edema, unspecified. Target. Exact term and scope match in
+        the SNOMED CT mirror.
+        """
+}
+mapping "R600B.1" source="R600B" target="234102003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R600B SNOMED CT 234102003 = lipedema, a chronic disorder of adipose tissue causing bilateral
+        symmetrical enlargement of the legs due to abnormal fat deposition. Target. Exact term and scope
+        match in the SNOMED CT mirror. Target replaces retired SNOMED CT 1051131000000109 (Athena Maps-to
+        successor).
+        """
+}
+mapping "R600C.1" source="R600C" target="449707004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R600C SNOMED CT 449707004 = lower leg edema, unspecified. Target. Exact term and scope match
+        in the SNOMED CT mirror.
+        """
+}
+mapping "R600X.1" source="R600X" target="274724004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R600X Swedish extension SNOMED CT 274724004 = localized edema, unspecified. Target SNOMED CT
+        4171917 (Localized edema, 274724004) is the parent R60.0 crosswalk target. Exact concept match
+        on the localized-edema axis; the source modifier is non-semantic (no organism/cause detail
+        lost). Confidence : exact clinical concept match via the R60.0 Athena edge, not independently
+        re-verified.
+        """
+}
+mapping "R610A.1" source="R610A" target="303089000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R610A SNOMED CT 303089000 = axillary hyperhidrosis. Target SNOMED CT 4123306 (Hyperhidrosis of
+        axilla, 303089000) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R610B.1" source="R610B" target="403375001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R610B SNOMED CT 403375001 = hyperhidrosis of hands and feet (palmoplantar). Target SNOMED CT
+        4299805 (Palmoplantar hyperhidrosis, 403375001) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R610X.1" source="R610X" target="274674005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R610X SNOMED CT 274674005 = localized hyperhidrosis, unspecified. Target SNOMED CT 141652
+        (Localized hyperhidrosis, 274674005) is the parent R61.0 crosswalk target and matches the
+        localized-hyperhidrosis concept exactly; carries no additional semantic content.
+        exact-equivalent.
+        """
+}
+mapping "R628A.1" source="R628A" target="432788009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R628A SNOMED CT 432788009 = pediatric failure to thrive. Target SNOMED CT 4334175 (Pediatric
+        failure to thrive, 432788009) is the same clinical concept, restricted to children, matching the
+        Swedish qualifier. exact-equivalent.
+        """
+}
+mapping "R628B.1" source="R628B" target="59892004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R628B SNOMED CT 59892004 = infantilism, unspecified. Target SNOMED CT 4245973 (Infantilism,
+        59892004) is the same clinical concept. (ospecificerad) adds no semantic detail. Confidence :
+        exact term/concept match but the source is a heterogeneous/unspecified residual (R62 sub-class),
+        and infantilism has multiple subtype concepts (renal, celiac, pancreatic) — the UNS source may
+        aggregate them, so a small breadth-mismatch risk remains.
+        """
+}
+mapping "R628W.1" source="R628W" target="271616002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R628W SNOMED CT 271616002 = other unspecified growth/development disturbance, a residual
+        bucket under R62 (lack of expected normal physiological development). Target SNOMED CT 4154783
+        (Finding of general physiological development, 271616002) is the R62 Athena crosswalk target — a
+        broad ancestor that subsumes all R62 children including this residual. Confidence :
+        residual/unspecified source, one-level broader target, heterogeneous bucket.
+        """
+}
+mapping "R649.1" source="R649" target="238108007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R649 SNOMED CT 238108007 = cachexia/emaciation. Target SNOMED CT 134765 (Cachexia, 238108007)
+        is the parent R64 Athena crosswalk target and exact clinical equivalent. exact-equivalent.
+        """
+}
+mapping "R699.1" source="R699" target="39104002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R699 SNOMED CT 39104002 = unknown and unspecified causes of morbidity (R69). Target SNOMED CT
+        4192174 (Illness, 39104002) is the R69 Athena crosswalk target. Exact concept-level match (R69
+        is a catch-all for unspecified illness); confidence because the source is deliberately
+        non-specific and is correspondingly broad.
+        """
+}
+mapping "R719.1" source="R719" target="12222001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R719 SNOMED CT 12222001 = abnormality of red blood cells (R71). Target SNOMED CT 4044812
+        (Abnormality of red blood cells, 12222001) is the R71 Athena crosswalk target and exact clinical
+        equivalent. exact-equivalent.
+        """
+}
+mapping "R729.1" source="R729" target="134199001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R729 SNOMED CT 134199001 = abnormal white blood cell finding, NOS (R72). Target SNOMED CT
+        4047533 (White blood cell abnormality, 134199001) is the R72 Athena crosswalk target and exact
+        clinical equivalent. exact-equivalent.
+        """
+}
+mapping "R730A.1" source="R730A" target="154720005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R730A SNOMED CT 154720005 = impaired glucose tolerance. Target SNOMED CT 40321187 (Impaired
+        glucose tolerance, 154720005) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R730B.1" source="R730B" target="714628002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R730B SNOMED CT 714628002 = latent diabetes / prediabetes. Target SNOMED CT 37018196
+        (Prediabetes, 714628002) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R730X.1" source="R730X" target="274858002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R730X SNOMED CT 274858002 = abnormal glucose tolerance test, unspecified. Target SNOMED CT
+        440216 (Glucose tolerance test outside reference range, 274858002) is the parent R73.0 Athena
+        crosswalk target and the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R759.1" source="R759" target="165816005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R761A.1" source="R761A" target="268375009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R761A SNOMED CT 268375009 = tuberculin (Mantoux) test negative. Target SNOMED CT 4149239
+        (Mantoux: negative, 268375009) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R761B.1" source="R761B" target="268376005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R761B SNOMED CT 268376005 = tuberculin (Mantoux) test positive. Target SNOMED CT 4151893
+        (Mantoux: positive, 268376005) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R761C.1" source="R761C" target="268376005" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R761C SNOMED CT 268376005 = tuberculin test strongly positive. No SNOMED CT concept
+        distinguishes from Mantoux; the only standard target is SNOMED CT 4151893 (Mantoux: positive,
+        268376005). The target is narrower — it loses the qualifier the source asserts. Confidence per
+        the narrower-pitfall guidance: specificity silently lost, single available standard concept.
+        """
+}
+mapping "R761D.1" source="R761D" target="26576000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R761D SNOMED CT 26576000 = positive skin test for other (non-tuberculous) mycobacteria. No
+        SNOMED CT concept captures specifically; the closest standard target is SNOMED CT 132740 (Positive
+        skin test reaction, 26576000), a broad ancestor that subsumes all positive skin test reactions.
+        Confidence : weak/broader — target loses both the and specificity pairing; recorded as a lead
+        for reviewers.
+        """
+}
+mapping "R761E.1" source="R761E" target="63672004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R761E SNOMED CT 63672004 = negative skin test for other (non-tuberculous) mycobacteria. No
+        specific SNOMED CT concept exists; closest standard target is SNOMED CT 4270183 (Absent skin test
+        reaction, 63672004), a broad ancestor. Confidence : weak/broader — target loses the
+        mycobacterial specificity; reviewer lead.
+        """
+}
+mapping "R809.1" source="R809" target="12491000132101" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "R819.1" source="R819" target="166929004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R919.1" source="R919" target="274533004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R929.1" source="R929" target="274530001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R931A.1" source="R931A" target="8186001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R931A SNOMED CT 8186001 = cardiac X-ray showing enlarged heart (cardiomegaly on imaging).
+        Target SNOMED CT 314658 (Cardiomegaly, 8186001) is the same clinical concept; the imaging modality
+        is the detection method, not a separate finding. Confidence : exact clinical concept match but
+        the source is imaging-derived (modality-specific), not independently crosswalk-verified.
+        """
+}
+mapping "R931B.1" source="R931B" target="274531002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R931B SNOMED CT 274531002 = abnormal finding on cardiac ultrasound. Target SNOMED CT 435081
+        (Abnormal findings diagnostic imaging heart+coronary circulation, 274531002) is the parent R93.1
+        Athena crosswalk target and matches the abnormal-cardiac-imaging concept; modality (ultrasound
+        vs other) is not distinguished at this SNOMED CT level. Confidence : exact concept match at the
+        available SNOMED CT granularity.
+        """
+}
+mapping "R931W.1" source="R931W" target="274531002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R931W SNOMED CT 274531002 = other abnormal finding on radiological exam of heart and
+        coronary circulation (R93.1 residual). Target SNOMED CT 435081 (Abnormal findings diagnostic
+        imaging heart+coronary circulation, 274531002) is the R93.1 Athena crosswalk target and subsumes
+        this residual bucket. Confidence : broader target covering a heterogeneous residual source.
+        """
+}
+mapping "R943A.1" source="R943A" target="102594003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R943A SNOMED CT 102594003 = abnormal ECG (parent R94.3 cardiovascular function studies).
+        Target SNOMED CT 320536 (Electrocardiogram abnormal, 102594003) is the same clinical concept.
+        exact-equivalent.
+        """
+}
+mapping "R943B.1" source="R943B" target="442767003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R943B SNOMED CT 442767003 = abnormal phonocardiogram. Target SNOMED CT 40484947
+        (Phonocardiogram abnormal, 442767003) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R943C.1" source="R943C" target="442774008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R943C SNOMED CT 442774008 = abnormal vectorcardiogram. Target SNOMED CT 40484955
+        (Vectorcardiogram abnormal, 442774008) is the same clinical concept. exact-equivalent.
+        """
+}
+mapping "R943W.1" source="R943W" target="274525000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R943W SNOMED CT 274525000 = Swedish extension of R94.3. Target SNOMED CT 137989 (concept_code
+        274525000), reached via the R94.3 Athena edge. Target legitimately subsumes the Swedish
+        sub-code; one-level broader. High tier: verified crosswalk to the parent, slight Swedish
+        residual scope (the letter is a national extension).
+        """
+}
+mapping "R948A.1" source="R948A" target="442618008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R948A SNOMED CT 442618008 = Swedish extension under R94.8 denoting abnormal basal metabolic
+        rate test. Target SNOMED CT 40484102 (442618008), reached via R94.8 Athena. Target is a generic
+        abnormal-evaluation finding that subsumes the source, but the mapping loses the metabolic-test
+        specificity. Low tier: heterogenous residual parent, single SNOMED CT target dominates but real
+        doubt remains about whether a more specific BMR concept exists.
+        """
+}
+mapping "R948B.1" source="R948B" target="442618008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R948B SNOMED CT 442618008 = Swedish extension under R94.8 denoting abnormal bladder function
+        test (urodynamics). Target SNOMED CT 40484102 (442618008), reached via R94.8 Athena. Target is
+        generic and subsumes the source, but loses the urodynamic specificity. Low tier: same
+        residual-parent issue as R948A; no specific abnormal-bladder-function-test standard concept
+        identified in the mirror.
+        """
+}
+mapping "R948X.1" source="R948X" target="442618008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R948X SNOMED CT 442618008 = Swedish extension under R94.8, unspecified abnormal function
+        study. Target SNOMED CT 40484102 (442618008), via R94.8 Athena. The source is an unspecified
+        residual; the generic SNOMED CT target is the standard crosswalk destination. Moderate tier:
+        unspecified source, mechanical crosswalk not independently re-verified.
+        """
+}
+mapping "R97.1" source="R97" target="250724005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        ICD-10 symptom/sign code maps to SNOMED CT Measurement domain (SNOMED CT 250724005); domain mismatch
+        between Condition and Measurement.
+        """
+}
+mapping "R97.2" source="R97" target="250724005" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "R989.1" source="R989" target="15355001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R989 SNOMED CT 15355001 = R98. Target SNOMED CT 443882 (concept_code 15355001), reached via R98
+        Athena. Exact 1:1 crosswalk-verified equivalence; the Swedish 9-suffix is a national
+        administrative rendering of the same code.
+        """
+}
+mapping "R999.1" source="R999" target="87309006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R999 SNOMED CT 87309006 = R99. Target SNOMED CT 441413 (concept_code 87309006), reached via R99
+        Athena. Exact 1:1 crosswalk-verified equivalence.
+        """
+}
+mapping "S134A.1" source="S134A" target="39848009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S134A SNOMED CT 39848009 = Swedish national extension under S13.4 denoting Whiplash
+        Associated Disorder grade I (the Quebec Task Force grading). Target SNOMED CT 4218389 (concept_code
+        39848009). The target is the standard whiplash concept but does not differentiate the WAD grade
+        I severity, so it subsumes the source. Moderate tier: no SNOMED CT concept for WAD grade I exists
+        in the mirror; target is the best available standard, but loses severity specificity.
+        """
+}
+mapping "S134B.1" source="S134B" target="39848009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S134B SNOMED CT 39848009 = Swedish extension denoting WAD grade II. Target SNOMED CT 4218389
+        (39848009); same broader reasoning as S134A — the standard whiplash concept subsumes the grade
+        but does not encode grade II severity. Moderate tier: best available standard target, severity
+        specificity lost.
+        """
+}
+mapping "S134C.1" source="S134C" target="39848009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S134C SNOMED CT 39848009 = Swedish extension denoting WAD grade III. Target SNOMED CT 4218389
+        (39848009); same broader reasoning as S134A/B — the standard whiplash concept subsumes the grade
+        but does not encode grade III severity. Moderate tier: best available standard target, severity
+        specificity lost.
+        """
+}
+mapping "S134W.1" source="S134W" target="262522002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S134W SNOMED CT 262522002 = Swedish extension under S13.4 denoting cervical-spine
+        distortions/sprains other than whiplash. Target SNOMED CT 4096315 (concept_code 262522002), reached
+        via S13.4 Athena. The target is the standard cervical-spine injury concept; it subsumes the
+        residual source. Moderate tier: residual Swedish sub-code, the standard crosswalk destination is
+        generic.
+        """
+}
+mapping "S169.1" source="S169" target="95847005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S189.1" source="S189" target="110014005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source S189 SNOMED CT 110014005 = S18. Target SNOMED CT 4002499 (concept_code 110014005), reached via
+        S18 Athena. Exact 1:1 crosswalk-verified equivalence (the SNOMED CT fully-specified name denotes
+        the same clinical concept).
+        """
+}

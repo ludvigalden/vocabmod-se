@@ -1,0 +1,374 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V26
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V2600.1" source="V2600" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2600 = Swedish extension of V26.0 (motorcycle driver injured in non-traffic collision
+        with other nonmotor vehicle), activity=sport. Parent V26.0 has Athena SNOMED 214640008 crosswalk
+        to SNOMED CT 437738 (Motor vehicle accident off public road, 214640008) only. Target is broad: it
+        captures the off-public-road event but drops the rider role, the nonmotor-vehicle collision
+        counterpart, and the activity dimension. Low tier : single broad target with multiple
+        specificity dimensions lost; no closer standard concept exists in the mirror.
+        """
+}
+mapping "V2601.1" source="V2601" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2602.1" source="V2602" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2602 = Swedish extension of V26.0 (motorcycle driver, non-traffic collision with
+        nonmotor vehicle), activity=work. Same parent crosswalk as V2600. See V2600 comment for full
+        reasoning.
+        """
+}
+mapping "V2603.1" source="V2603" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2603 = Swedish extension of V26.0 (motorcycle driver, non-traffic collision with
+        nonmotor vehicle), activity=other. Same parent crosswalk as V2600. See V2600 comment for full
+        reasoning.
+        """
+}
+mapping "V2604.1" source="V2604" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2604 = Swedish extension of V26.0 (motorcycle driver, non-traffic collision with
+        nonmotor vehicle), activity=vital. Same parent crosswalk as V2600. See V2600 comment for full
+        reasoning.
+        """
+}
+mapping "V2608.1" source="V2608" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2608 = Swedish extension of V26.0 (motorcycle driver, non-traffic collision with
+        nonmotor vehicle), activity=other specified. Same parent crosswalk as V2600. See V2600 comment
+        for full reasoning.
+        """
+}
+mapping "V2609.1" source="V2609" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2610.1" source="V2610" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2610 = Swedish extension of V26.1 (motorcycle passenger injured in non-traffic collision
+        with other nonmotor vehicle), activity=sport. Parent V26.1 has Athena SNOMED 214640008 crosswalk
+        to SNOMED CT 437738 (Motor vehicle accident off public road, 214640008) only. Target is broad:
+        drops rider role, collision counterpart, and activity. Low tier : single broad target with
+        multiple specificity dimensions lost.
+        """
+}
+mapping "V2611.1" source="V2611" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2612.1" source="V2612" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2612 = Swedish extension of V26.1 (motorcycle passenger, non-traffic collision with
+        nonmotor vehicle), activity=work. Same parent crosswalk as V2610. See V2610 comment for full
+        reasoning.
+        """
+}
+mapping "V2613.1" source="V2613" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2613 = Swedish extension of V26.1 (motorcycle passenger, non-traffic collision with
+        nonmotor vehicle), activity=other. Same parent crosswalk as V2610. See V2610 comment for full
+        reasoning.
+        """
+}
+mapping "V2614.1" source="V2614" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2614 = Swedish extension of V26.1 (motorcycle passenger, non-traffic collision with
+        nonmotor vehicle), activity=vital. Same parent crosswalk as V2610. See V2610 comment for full
+        reasoning.
+        """
+}
+mapping "V2618.1" source="V2618" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2618 = Swedish extension of V26.1 (motorcycle passenger, non-traffic collision with
+        nonmotor vehicle), activity=other specified. Same parent crosswalk as V2610. See V2610 comment
+        for full reasoning.
+        """
+}
+mapping "V2619.1" source="V2619" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2620.1" source="V2620" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2620 is the Swedish national extension of ICD-10 V26.2 (Motorcycle rider injured in
+        nontraffic accident, unspecified rider) with activity context SNOMED CT 214640008. Parent V26.2
+        (concept_id 45585382) has Athena edge to SNOMED CT 437738 = (214640008). The SE extension adds only
+        Swedish-activity-context detail with no SNOMED CT clinical analogue; the injury-disorder concept is
+        fully subsumed by the parent's target. Broader (target subsumes the source's clinical scope via
+        the parent), confidence (verified Athena crosswalk on the parent; one-level broader).
+        """
+}
+mapping "V2621.1" source="V2621" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2622.1" source="V2622" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2622 is the Swedish national extension of ICD-10 V26.2 (Motorcycle rider injured in
+        nontraffic accident, unspecified rider) with activity context SNOMED CT 214640008. Parent V26.2
+        maps via Athena to SNOMED CT 437738 =. SE extension adds only Swedish-activity-context detail with
+        no SNOMED CT clinical analogue; injury-disorder concept is fully subsumed by the parent's target.
+        Broader, confidence.
+        """
+}
+mapping "V2623.1" source="V2623" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2623 is the Swedish national extension of ICD-10 V26.2 (Motorcycle rider injured in
+        nontraffic accident, unspecified rider) with activity context SNOMED CT 214640008. Parent V26.2
+        maps via Athena to SNOMED CT 437738 =. SE extension adds only Swedish-activity-context detail;
+        injury-disorder concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2624.1" source="V2624" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2624 is the Swedish national extension of ICD-10 V26.2 (Motorcycle rider injured in
+        nontraffic accident, unspecified rider) with activity context SNOMED CT 214640008. Parent V26.2
+        maps via Athena to SNOMED CT 437738 =. SE extension adds only Swedish-activity-context detail;
+        injury-disorder concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2628.1" source="V2628" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2628 is the Swedish national extension of ICD-10 V26.2 (Motorcycle rider injured in
+        nontraffic accident, unspecified rider) with activity context SNOMED CT 214640008. Parent V26.2
+        maps via Athena to SNOMED CT 437738 =. SE extension adds only Swedish-activity-context detail;
+        injury-disorder concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2629.1" source="V2629" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2630.1" source="V2630" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2630 is the Swedish national extension of ICD-10 V26.3 (Person injured while boarding or
+        alighting from motorcycle) with activity context SNOMED CT 242107006. Parent V26.3 (concept_id
+        45756275) has Athena edge to SNOMED CT 4053428 = (242107006). SE extension adds only
+        Swedish-activity-context detail; injury-disorder concept fully subsumed by parent target.
+        Broader, confidence.
+        """
+}
+mapping "V2631.1" source="V2631" target="127348004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 127348004 [GPS] [GPFP]"
+}
+mapping "V2632.1" source="V2632" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2632 is the Swedish national extension of ICD-10 V26.3 (Person injured while boarding or
+        alighting from motorcycle) with activity context SNOMED CT 242107006. Parent V26.3 maps via Athena
+        to SNOMED CT 4053428 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2633.1" source="V2633" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2633 is the Swedish national extension of ICD-10 V26.3 (Person injured while boarding or
+        alighting from motorcycle) with activity context SNOMED CT 242107006. Parent V26.3 maps via Athena
+        to SNOMED CT 4053428 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2634.1" source="V2634" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2634 is the Swedish national extension of ICD-10 V26.3 (Person injured while boarding or
+        alighting from motorcycle) with activity context SNOMED CT 242107006. Parent V26.3 maps via Athena
+        to SNOMED CT 4053428 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2638.1" source="V2638" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2638 is the Swedish national extension of ICD-10 V26.3 (Person injured while boarding or
+        alighting from motorcycle) with activity context SNOMED CT 242107006. Parent V26.3 maps via Athena
+        to SNOMED CT 4053428 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2639.1" source="V2639" target="127348004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 127348004 [GPS] [GPFP]"
+}
+mapping "V2640.1" source="V2640" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2640 is the Swedish national extension of ICD-10 V26.4 (Driver of motorcycle injured in
+        traffic accident) with activity context SNOMED CT 48084008. Parent V26.4 (concept_id 45541952) has
+        Athena edges including SNOMED CT 432510 = (48084008), the role-specific target. SE extension adds
+        only Swedish-activity-context detail; injury-disorder concept fully subsumed. Broader,
+        confidence.
+        """
+}
+mapping "V2641.1" source="V2641" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2642.1" source="V2642" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2642 is the Swedish national extension of ICD-10 V26.4 (Driver of motorcycle injured in
+        traffic accident) with activity context SNOMED CT 48084008. Parent V26.4 maps via Athena to SNOMED CT
+        432510 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept fully
+        subsumed. Broader, confidence.
+        """
+}
+mapping "V2643.1" source="V2643" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2643 is the Swedish national extension of ICD-10 V26.4 (Driver of motorcycle injured in
+        traffic accident) with activity context SNOMED CT 48084008. Parent V26.4 maps via Athena to SNOMED CT
+        432510 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept fully
+        subsumed. Broader, confidence.
+        """
+}
+mapping "V2644.1" source="V2644" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2644 is the Swedish national extension of ICD-10 V26.4 (Driver of motorcycle injured in
+        traffic accident) with activity context SNOMED CT 48084008. Parent V26.4 maps via Athena to SNOMED CT
+        432510 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept fully
+        subsumed. Broader, confidence.
+        """
+}
+mapping "V2648.1" source="V2648" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2648 is the Swedish national extension of ICD-10 V26.4 (Driver of motorcycle injured in
+        traffic accident) with activity context SNOMED CT 48084008. Parent V26.4 maps via Athena to SNOMED CT
+        432510 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept fully
+        subsumed. Broader, confidence.
+        """
+}
+mapping "V2649.1" source="V2649" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2650.1" source="V2650" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2650 is the Swedish national extension of ICD-10 V26.5 (Passenger of motorcycle injured
+        in traffic accident) with activity context SNOMED CT 21107000. Parent V26.5 (concept_id 45590202)
+        has Athena edges including SNOMED CT 434228 = (21107000), the role-specific target. SE extension
+        adds only Swedish-activity-context detail; injury-disorder concept fully subsumed. Broader,
+        confidence.
+        """
+}
+mapping "V2651.1" source="V2651" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2652.1" source="V2652" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2652 is the Swedish national extension of ICD-10 V26.5 (Passenger of motorcycle injured
+        in traffic accident) with activity context SNOMED CT 21107000. Parent V26.5 maps via Athena to
+        SNOMED CT 434228 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept
+        fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2653.1" source="V2653" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2653 is the Swedish national extension of ICD-10 V26.5 (Passenger of motorcycle injured
+        in traffic accident) with activity context SNOMED CT 21107000. Parent V26.5 maps via Athena to
+        SNOMED CT 434228 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept
+        fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2654.1" source="V2654" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2654 is the Swedish national extension of ICD-10 V26.5 (Passenger of motorcycle injured
+        in traffic accident) with activity context SNOMED CT 21107000. Parent V26.5 maps via Athena to
+        SNOMED CT 434228 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept
+        fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2658.1" source="V2658" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2658 is the Swedish national extension of ICD-10 V26.5 (Passenger of motorcycle injured
+        in traffic accident) with activity context SNOMED CT 21107000. Parent V26.5 maps via Athena to
+        SNOMED CT 434228 =. SE extension adds only Swedish-activity-context detail; injury-disorder concept
+        fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2659.1" source="V2659" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2690.1" source="V2690" target="10298002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2690 is the Swedish national extension of ICD-10 V26.9 (Unspecified motorcycle rider
+        injured in traffic accident) with activity context SNOMED CT 10298002. Parent V26.9 (concept_id
+        45537179) has Athena edges including SNOMED CT 438310 = (10298002), the role-specific target. SE
+        extension adds only Swedish-activity-context detail; injury-disorder concept fully subsumed.
+        Broader, confidence.
+        """
+}
+mapping "V2691.1" source="V2691" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V2692.1" source="V2692" target="10298002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2692 is the Swedish national extension of ICD-10 V26.9 (Unspecified motorcycle rider
+        injured in traffic accident) with activity context SNOMED CT 10298002. Parent V26.9 maps via Athena
+        to SNOMED CT 438310 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2693.1" source="V2693" target="10298002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2693 is the Swedish national extension of ICD-10 V26.9 (Unspecified motorcycle rider
+        injured in traffic accident) with activity context SNOMED CT 10298002. Parent V26.9 maps via Athena
+        to SNOMED CT 438310 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2694.1" source="V2694" target="10298002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2694 is the Swedish national extension of ICD-10 V26.9 (Unspecified motorcycle rider
+        injured in traffic accident) with activity context SNOMED CT 10298002. Parent V26.9 maps via Athena
+        to SNOMED CT 438310 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2698.1" source="V2698" target="10298002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V2698 is the Swedish national extension of ICD-10 V26.9 (Unspecified motorcycle rider
+        injured in traffic accident) with activity context SNOMED CT 10298002. Parent V26.9 maps via Athena
+        to SNOMED CT 438310 =. SE extension adds only Swedish-activity-context detail; injury-disorder
+        concept fully subsumed. Broader, confidence.
+        """
+}
+mapping "V2699.1" source="V2699" target="10298002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

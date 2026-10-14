@@ -1,0 +1,346 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes E2-E7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "E250C.1" source="E250C" target="840509001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E250C SNOMED CT 840509001 = congenital adrenal hyperplasia, late-onset / non-classic form
+        (Swedish subcode under E25.0 CAH). Target (Athena 3654957) =, standard (S, valid 2020-07-31+).
+        Exact 1:1 match on phenotype (non-classic / late-onset CAH); the dominant underlying etiology
+        (21-hydroxylase deficiency) is implied. exact-equivalent.
+        """
+}
+mapping "E250D.1" source="E250D" target="1217041008" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "E345B.1" source="E345B" target="75164001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E348C.1" source="E348C" target="111307005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E348C SNOMED CT 111307005 = leprechaunism (Donohue syndrome, severe insulin-receptor defect;
+        Swedish subcode under E34.8 Other specified endocrine disorders). Target (Athena 4006979) =,
+        standard (S). Exact 1:1 match on the eponymous syndrome. exact-equivalent.
+        """
+}
+mapping "E348D.1" source="E348D" target="51626007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E348D SNOMED CT 51626007 = Werner syndrome (adult progeria; Swedish subcode under E34.8).
+        Target (Athena 4197821) =, standard (S). Exact 1:1 match. exact-equivalent.
+        """
+}
+mapping "E348E.1" source="E348E" target="238872007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E348E SNOMED CT 238872007 = acrogeria, Gottron type (Swedish subcode under E34.8). Target
+        (Athena 4033480) =, standard (S). Exact 1:1 match on the entity; Gottron is the canonical
+        acrogeria eponym. exact-equivalent.
+        """
+}
+mapping "E409.1" source="E409" target="58262005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E409 SNOMED CT 58262005 = severe protein malnutrition (Kwashiorkor). Target (Athena 432593)
+        =, standard (S). Base ICD-10 E40 maps to 432593 via Athena crosswalk. Exact 1:1 match.
+        exact-equivalent.
+        """
+}
+mapping "E419.1" source="E419" target="29740003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E419 SNOMED CT 29740003 (severe energy undernutrition) is the Swedish 9-suffix equivalent of
+        WHO ICD-10 E41 Nutritional marasmus. Athena ICD10 mirror crosswalk E41 -> SNOMED CT 440370
+        (concept_code 29740003). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E429.1" source="E429" target="272588001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E439.1" source="E439" target="360549009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E439 SNOMED CT 360549009 (unspecified severe malnutrition) is the Swedish 9-suffix
+        equivalent of WHO ICD-10 E43 Unspecified severe protein-energy malnutrition. Athena crosswalk
+        E43 -> SNOMED CT 4233565 (concept_code 360549009). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E459.1" source="E459" target="74257000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E459 SNOMED CT 74257000 (delayed development after protein-energy malnutrition) is the
+        Swedish 9-suffix equivalent of WHO ICD-10 E45 Retarded development after protein-energy
+        malnutrition. Athena crosswalk E45 -> SNOMED CT 435773 (concept_code 74257000). Same clinical
+        concept; crosswalk-verified.
+        """
+}
+mapping "E469.1" source="E469" target="272588001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E529.1" source="E529" target="418279001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E529 SNOMED CT 418279001 (niacin deficiency/pellagra) is the Swedish 9-suffix equivalent of
+        WHO ICD-10 E52 Niacin deficiency [pellagra]. Athena crosswalk E52 -> SNOMED CT 4303664
+        (concept_code 418279001). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E549.1" source="E549" target="76169001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E549 SNOMED CT 76169001 (ascorbic acid deficiency) is the Swedish 9-suffix equivalent of WHO
+        ICD-10 E54 Ascorbic acid deficiency. Athena crosswalk E54 -> SNOMED CT 439787 (concept_code
+        76169001). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E589.1" source="E589" target="190656001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E589 SNOMED CT 190656001 (dietary calcium deficiency) is the Swedish 9-suffix equivalent of
+        WHO ICD-10 E58 Dietary calcium deficiency. Athena crosswalk E58 -> SNOMED CT 4096201 (concept_code
+        190656001). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E599.1" source="E599" target="83920001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "E609.1" source="E609" target="190661004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E609 SNOMED CT 190661004 (dietary zinc deficiency) is the Swedish 9-suffix equivalent of WHO
+        ICD-10 E60 Dietary zinc deficiency. Athena crosswalk E60 -> SNOMED CT 4101283 (concept_code
+        190661004). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E659.1" source="E659" target="414916001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E689.1" source="E689" target="190971000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E689 SNOMED CT 190971000 (sequelae of overnutrition/hyperalimentation) is the Swedish
+        9-suffix equivalent of WHO ICD-10 E68 Sequelae of hyperalimentation. Athena crosswalk E68 ->
+        SNOMED CT 4098618 (concept_code 190971000). Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "E700X.1" source="E700X" target="68528007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E700X SNOMED CT 68528007 is the Swedish unspecified (UNS) code for hyperphenylalaninemia due
+        to PAH deficiency, sitting under WHO ICD-10 E70.0 Classical phenylketonuria (which Athena maps
+        to SNOMED CT 432872 concept_code 7573000). Because the source is deliberately UNS and spans the
+        E70.0/E70.1 BH4-deficiency group, the broader SNOMED CT 4287416 (concept_code 68528007) — the WHO
+        E70.1 crosswalk target — is the best standard concept: it subsumes all PAH- and BH4-related
+        hyperphenylalaninemias without forcing a more specific child. high: legitimate one-level broader
+        map with crosswalk-verified ancestor.
+        """
+}
+mapping "E701A.1" source="E701A" target="58256000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E701A SNOMED CT 58256000 is the Swedish specific code for dihydropteridine reductase (DHPR)
+        deficiency, a Swedish subcode under WHO ICD-10 E70.1 Other hyperphenylalaninaemias. SNOMED CT
+        4241461 (concept_code 58256000) denotes the same clinical concept. Mirror lookup of the SNOMED CT
+        concept (id 4241461, name, concept_code 58256000) confirms 1:1 equivalence.
+        """
+}
+mapping "E701B.1" source="E701B" target="68724006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E701B SNOMED CT 68724006 (defect of tetrahydrobiopterin synthesis) is the Swedish specific
+        code for the BH4 synthesis defect form of hyperphenylalaninemia, a subcode under WHO ICD-10
+        E70.1. SNOMED CT 4286169 (concept_code 68724006) denotes the same clinical concept. Mirror lookup
+        confirms 1:1 equivalence.
+        """
+}
+mapping "E701W.1" source="E701W" target="68528007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E701W SNOMED CT 68528007 is the Swedish residual bucket under WHO ICD-10 E70.1. Athena maps
+        E70.1 -> SNOMED CT 4287416 (concept_code 68528007), which legitimately subsumes every
+        BH4-metabolism defect in this residual category (DHPR deficiency and BH4 synthesis defect are
+        the named siblings E701A/B and have their own exact maps; this W-code catches the rest). high:
+        crosswalk-verified one-level broader ancestor covering a heterogeneous residual.
+        """
+}
+mapping "E702D.1" source="E702D" target="57414003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E702D SNOMED CT 57414003 (tyrosinosis) is the Swedish specific code under WHO ICD-10 E70.2
+        Disorders of tyrosine metabolism. SNOMED CT concept 4211975 (concept_code 57414003) is the active
+        clinical concept (synonyms include). The alternate SNOMED CT 40388136 (concept_code 190692002) is
+        the [X] ICD-10-derived extension row; 57414003 is the preferred OMOP standard concept for the
+        disorder itself. high rather than because no ICD10CM/ICD10 crosswalk explicitly pins E70.2 ->
+        57414003 (E70.2 crosswalks to the broader SNOMED CT 57414003 37200009), so this is a term-verified
+        but not crosswalk-verified equivalence.
+        """
+}
+mapping "E702W.1" source="E702W" target="37200009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E702W SNOMED CT 37200009 is the Swedish residual bucket under WHO ICD-10 E70.2. Athena maps
+        E70.2 -> SNOMED CT 4291019 (concept_code 37200009), which subsumes every tyrosine-metabolism
+        disorder in the residual. high: crosswalk-verified one-level broader ancestor covering a
+        heterogeneous residual.
+        """
+}
+mapping "E703A.1" source="E703A" target="111396008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E703A SNOMED CT 111396008 is the Swedish specific code for Chédiak-Higashi syndrome, a
+        subcode under WHO ICD-10 E70.3 Albinism. SNOMED CT 4006317 (concept_code 111396008) denotes the
+        same clinical concept. Crosswalk-verified via ICD10CM E70.330 ->. Mirror synonyms confirm
+        equivalence (Chediak-Steinbrinck-Higashi syndrome is a recorded synonym).
+        """
+}
+mapping "E703B.1" source="E703B" target="17827007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E703B SNOMED CT 17827007 is the Swedish specific code for Cross syndrome (oculocerebral
+        hypopigmentation syndrome, Cross type), a subcode under WHO ICD-10 E70.3 Albinism. SNOMED CT
+        4072144 (concept_code 17827007) denotes the same clinical concept (synonym:). No ICD10CM
+        crosswalk pins this rare syndrome, so this is a term-verified but not crosswalk-verified
+        equivalence — high rather than.
+        """
+}
+mapping "E703C.1" source="E703C" target="9311003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E703C SNOMED CT 9311003 is the Swedish specific code for Hermansky-Pudlak syndrome, a
+        subcode under WHO ICD-10 E70.3 Albinism. SNOMED CT 4245912 (concept_code 9311003) denotes the same
+        clinical concept. Crosswalk-verified via ICD10CM E70.331 ->.
+        """
+}
+mapping "E703E.1" source="E703E" target="52692001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E703E SNOMED CT 52692001 is the Swedish specific code for albinoidism, a subcode under WHO
+        ICD-10 E70.3 Albinism. SNOMED CT 4199609 (concept_code 52692001) denotes the same clinical concept.
+        Mirror lookup confirms 1:1 equivalence; SNOMED CT hierarchy places Albinoidism as a child of
+        Albinism, matching the E70.3 parent.
+        """
+}
+mapping "E711A.1" source="E711A" target="7046009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E711A SNOMED CT 7046009 is the Swedish specific code for hyperleucine-isoleucinemia, a
+        subcode under WHO ICD-10 E71.1 Other disorders of branched-chain amino-acid metabolism. SNOMED CT
+        4322457 (concept_code 7046009) denotes the same clinical concept. Mirror lookup confirms 1:1
+        term equivalence.
+        """
+}
+mapping "E711B.1" source="E711B" target="70731005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E711D.1" source="E711D" target="69080001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "E720W.1" source="E720W" target="16784003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E720W SNOMED CT 16784003 is the Swedish residual bucket under WHO ICD-10 E72.0 Disorders of
+        amino-acid transport. Athena maps E72.0 -> SNOMED CT 438391 (concept_code 16784003), which subsumes
+        every amino-acid-transport disorder in this residual. high: crosswalk-verified one-level broader
+        ancestor covering a heterogeneous residual.
+        """
+}
+mapping "E722A.1" source="E722A" target="23501004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E722A SNOMED CT 23501004 (argininemia / hyperargininemia) is the Swedish specific code for
+        arginase deficiency, a subcode under WHO ICD-10 E72.2 Disorders of urea cycle metabolism. SNOMED CT
+        4053156 (concept_code 23501004) denotes the same clinical concept — argininemia is the
+        biochemical phenotype caused by arginase deficiency. Mirror lookup confirms 1:1 equivalence.
+        """
+}
+mapping "E722C.1" source="E722C" target="15489004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E722C SNOMED CT 15489004 (citrullinemia) is the Swedish specific code for citrullinemia, a
+        subcode under WHO ICD-10 E72.2 Disorders of urea cycle metabolism. SNOMED CT 40321787 (concept_code
+        15489004) is the canonical OMOP concept for the disorder (subtypes neonatal/late-onset/subacute
+        exist as children but the parent concept is the standard target for an unspecified citrullinemia
+        source). Mirror lookup confirms term equivalence.
+        """
+}
+mapping "E722W.1" source="E722W" target="36444000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E722W SNOMED CT 36444000 is the Swedish residual bucket under WHO ICD-10 E72.2 Disorders of
+        urea cycle metabolism. Athena maps E72.2 -> SNOMED CT 434311 (concept_code 36444000), which
+        subsumes every urea-cycle disorder in this residual. high: crosswalk-verified one-level broader
+        ancestor covering a heterogeneous residual.
+        """
+}
+mapping "E752B.1" source="E752B" target="1296731001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E752D.1" source="E752D" target="1260366004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "E752W.1" source="E752W" target="238028008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E752W SNOMED CT 238028008 is the Swedish residual bucket under WHO ICD-10 E75.2 Other
+        sphingolipidosis. Athena maps E75.2 -> SNOMED CT 4079874 (concept_code 238028008), which subsumes
+        every sphingolipidosis in this residual. high: crosswalk-verified one-level broader ancestor
+        covering a heterogeneous residual.
+        """
+}
+mapping "E762C.1" source="E762C" target="69463008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "E762E.1" source="E762E" target="88393000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "E762F.1" source="E762F" target="43916004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E762F SNOMED CT 43916004 is the Swedish specific code for Sly syndrome
+        (mucopolysaccharidosis type VII / beta-glucuronidase deficiency), a subcode under WHO ICD-10
+        E76.2 Other mucopolysaccharidoses. SNOMED CT 4184782 (concept_code 43916004) denotes the same
+        clinical concept (synonyms:). Mirror lookup confirms 1:1 equivalence.
+        """
+}
+mapping "E762W.1" source="E762W" target="11380006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E762W SNOMED CT 11380006 = other specified mucopolysaccharidoses (Swedish extension of
+        E76.2). Target SNOMED CT 433446 (concept_code 11380006) = Mucopolysaccharidosis. Source ICD-10
+        parent E76.2 has Athena crosswalk to 433446. Swedish W-code is a child of E76.2, so the SNOMED CT
+        MPS concept legitimately subsumes it (broader, one level). High tier: crosswalk-verified at
+        parent, well-understood breadth mismatch.
+        """
+}
+mapping "E780A.1" source="E780A" target="31654005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E780A SNOMED CT 31654005 = familial hypercholesterolemia. Target SNOMED CT 40520092
+        (concept_code 31654005) = Familial hypercholesterolemia. Exact clinical and lexical equivalence;
+        SNOMED CT concept present in mirror. Exact-equivalent tier.
+        """
+}
+mapping "E780W.1" source="E780W" target="267432004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source E780W SNOMED CT 267432004 = other specified isolated/pure hypercholesterolemia (Swedish
+        extension of E78.0). Target SNOMED CT 437827 (concept_code 267432004) = Pure hypercholesterolemia.
+        Source ICD-10 parent E78.0 has Athena crosswalk to 437827. Swedish W-code is a child of E78.0;
+        target subsumes it (broader). Moderate tier: unspecified source variety, mechanical crosswalk at
+        parent level.
+        """
+}
+mapping "E782L.1" source="E782L" target="63103006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}

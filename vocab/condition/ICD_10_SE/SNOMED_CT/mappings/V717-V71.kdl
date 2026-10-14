@@ -1,0 +1,169 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V717-V71
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V7170.1" source="V7170" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7170 = Swedish extension of V71.7 (Bus occupant, person on outside of vehicle injured in
+        traffic accident, collision with pedal cycle) with activity SNOMED CT 214171003 (sport/exercise).
+        Target SNOMED CT 4061564 (214171003, Motor vehicle on road in collision with pedal cycle) is the
+        Athena Maps-to target for base V71.7. Target captures the collision event but loses the
+        person-on-outside role, the bus-specificity, and the activity dimension. Broader on multiple
+        axes. Moderate tier: best available standard target; meaningful specificity loss.
+        """
+}
+mapping "V7171.1" source="V7171" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7171 = Swedish extension of V71.7 (bus occupant, person on outside, traffic accident,
+        pedal cycle collision) with activity SNOMED CT 214171003 (play/leisure). Target SNOMED CT 4061564
+        (214171003, Motor vehicle on road in collision with pedal cycle) is the Athena Maps-to target
+        for base V71.7. Person-on-outside role, bus-specificity, and activity lost. Broader. Moderate
+        tier.
+        """
+}
+mapping "V7172.1" source="V7172" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7172 = Swedish extension of V71.7 (bus occupant, person on outside, traffic accident,
+        pedal cycle collision) with activity SNOMED CT 214171003 (paid work). Target SNOMED CT 4061564
+        (214171003, Motor vehicle on road in collision with pedal cycle) is the Athena Maps-to target
+        for base V71.7. Person-on-outside role, bus-specificity, and activity lost. Broader. Moderate
+        tier.
+        """
+}
+mapping "V7173.1" source="V7173" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7173 = Swedish extension of V71.7 (bus occupant, person on outside, traffic accident,
+        pedal cycle collision) with activity SNOMED CT 214171003 (other activity). Target SNOMED CT 4061564
+        (214171003, Motor vehicle on road in collision with pedal cycle) is the Athena Maps-to target
+        for base V71.7. Person-on-outside role, bus-specificity, and activity lost. Broader. Moderate
+        tier.
+        """
+}
+mapping "V7174.1" source="V7174" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7174 = Swedish extension of V71.7 (bus occupant, person on outside, traffic accident,
+        pedal cycle collision) with activity SNOMED CT 214171003 (vital activity). Target SNOMED CT 4061564
+        (214171003, Motor vehicle on road in collision with pedal cycle) is the Athena Maps-to target
+        for base V71.7. Person-on-outside role, bus-specificity, and activity lost. Broader. Moderate
+        tier.
+        """
+}
+mapping "V7178.1" source="V7178" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7178 = Swedish extension of V71.7 (bus occupant, person on outside, traffic accident,
+        pedal cycle collision) with activity SNOMED CT 214171003 (other specified activities). Target
+        SNOMED CT 4061564 (214171003, Motor vehicle on road in collision with pedal cycle) is the Athena
+        Maps-to target for base V71.7. Person-on-outside role, bus-specificity, and activity lost.
+        Broader. Moderate tier.
+        """
+}
+mapping "V7179.1" source="V7179" target="214171003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7179 = Swedish 5-char extension of ICD-10 V71.7 SNOMED CT 214171003 36198007, with 5th
+        char. The activity suffix (sport/work/leisure/etc.) is a Swedish context modifier with no SNOMED CT
+        analogue; the underlying injury concept is V71.7. Athena ICD10 V71.7 crosswalk (concept
+        45756000) Maps to SNOMED CT 4061564 (214171003, std=S) and SNOMED CT 444074 (36198007, std=S). 4061564
+        is broader (subsumes the collision type); 444074 is a more general broader traffic-accident
+        victim concept. for the specific collision target (one-level broader, crosswalk-verified); for
+        the generic victim concept.
+        """
+}
+mapping "V7179.2" source="V7179" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7190.1" source="V7190" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7190 = Swedish 5-char extension of ICD-10 V71.9 SNOMED CT 214171003 36198007, with 5th
+        char. Activity suffix has no SNOMED CT analogue. Athena V71.9 crosswalk (concept 45756001) Maps to
+        4061564 (Motor vehicle on road in collision with pedal cycle, 214171003, std=S) and 444074
+        (Victim of vehicular AND/OR traffic accident, 36198007, std=S). Both broader; the
+        unspecified-occupant qualifier and activity suffix are subsumed. specific / generic.
+        """
+}
+mapping "V7190.2" source="V7190" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7191.1" source="V7191" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7191 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 (MV on road in collision with
+        pedal cycle, std=S) and 444074 (Victim of vehicular/traffic accident, std=S). Activity suffix is
+        subsumed; both targets broader.
+        """
+}
+mapping "V7191.2" source="V7191" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7192.1" source="V7192" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7192 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 and 444074. Activity suffix
+        subsumed; both broader.
+        """
+}
+mapping "V7192.2" source="V7192" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7193.1" source="V7193" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7193 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 and 444074. Activity suffix
+        subsumed; both broader.
+        """
+}
+mapping "V7193.2" source="V7193" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7194.1" source="V7194" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7194 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 and 444074. Activity suffix
+        subsumed; both broader.
+        """
+}
+mapping "V7194.2" source="V7194" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7198.1" source="V7198" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7198 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 and 444074. Activity suffix
+        subsumed; both broader.
+        """
+}
+mapping "V7198.2" source="V7198" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7199.1" source="V7199" target="214171003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7199 = Swedish extension of V71.9 (bus/pedal cycle, unspecified occupant, traffic) with
+        activity SNOMED CT 214171003 36198007. Same V71.9 crosswalk: 4061564 and 444074. Activity suffix
+        subsumed; both broader.
+        """
+}
+mapping "V7199.2" source="V7199" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

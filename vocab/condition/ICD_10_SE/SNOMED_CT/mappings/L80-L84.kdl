@@ -1,0 +1,376 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L80-L84
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L809.1" source="L809" target="56727007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L809 SNOMED CT 56727007 = vitiligo. Target SNOMED CT 138502 (Vitiligo, standard_concept=S) is
+        an exact match; Athena ICD10 L80 -> crosswalk confirms.
+        """
+}
+mapping "L814A.1" source="L814A" target="398744007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814A SNOMED CT 398744007 = lentigo (generic). Target SNOMED CT 4160756 (Lentigo,
+        standard_concept=S) is the active standard concept; the older 40397833 (Lentigo) and 40625816
+        (Lentigo) are retired (D). Exact name match, high confidence (not) because the source name is
+        generic and the SNOMED CT hierarchy contains several more specific active subtypes (solar, simplex)
+        the source might have meant.
+        """
+}
+mapping "L814B.1" source="L814B" target="49765009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814B SNOMED CT 49765009 is a historical/clinical term for patchy brown-grey
+        hyperpigmentation of the back (also called /); SNOMED CT has no concept literally named. Best
+        defensible target is SNOMED CT 4172432 (Hyperpigmentation of skin, standard_concept=S), which fully
+        subsumes the entity. Broader, low confidence: clinical term not represented in SNOMED CT; Athena
+        L81.4 (Other melanin hyperpigmentation) maps to 4172432 as the closest neighbor.
+        """
+}
+mapping "L814C.1" source="L814C" target="24285001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814C SNOMED CT 24285001 = pigmented contact dermatitis from cosmetics (Swedish extension of
+        L81.4). Target SNOMED CT 4085267 (concept_code 24285001) is the standard
+        pigmented-contact-dermatitis concept in SNOMED CT and is widely used as its clinical equivalent.
+        Moderate (not) tier: the Swedish term and Riehl's melanosis are clinically near-synonymous in
+        dermato-epidemiology but no Athena crosswalk confirms a 1:1 equivalence at this
+        national-extension code, and some authors distinguish Riehl's (lichenoid) from broader pigmented
+        cosmetic dermatitis.
+        """
+}
+mapping "L814D.1" source="L814D" target="403716006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814D SNOMED CT 403716006 = lentigines induced by PUVA (psoralen+UVA) therapy. Target SNOMED CT
+        4297914 (403716006) is an exact 1:1 clinical equivalent at the same specificity (standard
+        Disorder, valid 2003-2099).
+        """
+}
+mapping "L814E.1" source="L814E" target="24285001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814E SNOMED CT 24285001 = Riehl's melanosis. Target SNOMED CT 4085267 (24285001) is an exact
+        name-equivalent standard Disorder.
+        """
+}
+mapping "L814W.1" source="L814W" target="49765009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L814W SNOMED CT 49765009 = residual/unspecified bucket for L81.4 other melanin
+        hyperpigmentation (Swedish national extension). Target SNOMED CT 4172432 (49765009) is the Athena
+        target for the parent ICD-10 L81.4 and fully subsumes every code in this residual bucket.
+        Moderate (not): unspecified source, residual semantics, target is one level broader than the
+        parent already.
+        """
+}
+mapping "L817A.1" source="L817A" target="49465005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L817B.1" source="L817B" target="41486008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L817B SNOMED CT 41486008 = eczematid-like purpura (Doucas-Kapetanakis), a pigmented purpuric
+        dermatosis under L81.7. Target SNOMED CT 4189651 (41486008) is the exact clinical equivalent
+        (standard Disorder).
+        """
+}
+mapping "L817C.1" source="L817C" target="88996004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L817D.1" source="L817D" target="20343006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L817D SNOMED CT 20343006 = Gougerot-Blum pigmented purpuric lichenoid dermatosis. Target
+        SNOMED CT 4067764 (20343006) is the exact eponymous equivalent.
+        """
+}
+mapping "L817E.1" source="L817E" target="1230397006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L817F.1" source="L817F" target="56231002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L817X.1" source="L817X" target="1230397006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L817X SNOMED CT 1230397006 = unspecified pigmented purpura (the unspecified code under
+        L81.7). Target SNOMED CT 37164445 (1230397006) is the Athena target for parent ICD-10 L81.7 and the
+        legitimate ancestor that subsumes all sub-types (Gougerot-Blum, Doucas-Kapetanakis, Schamberg,
+        Majocchi, etc.). Broader one level; high tier (not): unspecified source mapped to its verified
+        parent crosswalk.
+        """
+}
+mapping "L818A.1" source="L818A" target="445072006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818A SNOMED CT 445072006 = iron (haemosiderin) pigmentation of skin, under L81.8. Target
+        SNOMED CT 40482035 (445072006) is the exact clinical equivalent; and are dermato-pathological
+        synonyms for cutaneous haemosiderin deposition.
+        """
+}
+mapping "L818B.1" source="L818B" target="341000119102" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818B SNOMED CT 341000119102 = tattoo (presence of), under L81.8. Target SNOMED CT 42872418
+        (341000119102) is the active standard Clinical Finding; the older 4294527 was retired
+        (invalid_reason U, ended 2010), so 42872418 is the correct current standard. High (not): the
+        SNOMED CT concept is at granularity while the Swedish code is a pure observational finding under a
+        pigmentary-disorders parent; minor breadth mismatch.
+        """
+}
+mapping "L818C.1" source="L818C" target="89629006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818C SNOMED CT 89629006 = argyria (silver deposition, predominantly cutaneous). Target
+        SNOMED CT 4230052 (89629006) is the exact clinical equivalent; preferred over the broader 4115586
+        (which is a non-Condition Qualifier Value, not a Disorder).
+        """
+}
+mapping "L818D.1" source="L818D" target="125377002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818D SNOMED CT 125377002 = arsenic-induced cutaneous pigmentation. Target SNOMED CT 4053961
+        (125377002) is an exact name-equivalent.
+        """
+}
+mapping "L818E.1" source="L818E" target="49765009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818E SNOMED CT 49765009 = cutaneous gold deposition (gold-pigmentation), under L81.8. The
+        mirror has only SNOMED CT 4189234 (a different body site, not usable). Best defensible standard
+        target is SNOMED CT 4172432 (49765009), the verified parent of cutaneous metallic pigmentations; it
+        fully subsumes chrysiasis clinically. Low : one-level-broader map with real specificity loss;
+        reviewer may prefer a request for a new SNOMED CT concept.
+        """
+}
+mapping "L818F.1" source="L818F" target="239088003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818F SNOMED CT 239088003 = Dermatopathia pigmentosa reticularis (rare hereditary reticulate
+        hyperpigmentation). Target SNOMED CT 4082499 (239088003) is the exact eponymous equivalent.
+        """
+}
+mapping "L818G.1" source="L818G" target="239085000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818G SNOMED CT 239085000 = Dohi's dyschromatosis symmetrica hereditaria (acral/EXT
+        reticulate hypo- and hyper-pigmentation). Target SNOMED CT 4082497 (239085000) is the SNOMED CT
+        concept that denotes this entity (extremities is the anatomical scope of Dohi's disease).
+        """
+}
+mapping "L818H.1" source="L818H" target="239082002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818H SNOMED CT 239082002 = dyschromatosis universalis hereditaria (generalized reticulate
+        pigmentary anomaly). Target SNOMED CT 4034572 (239082002) is the exact name-equivalent.
+        """
+}
+mapping "L818J.1" source="L818J" target="78631004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818J SNOMED CT 78631004 = erythromelanosis follicularis faciei et colli. Target SNOMED CT
+        4303066 (78631004) is the exact clinical equivalent (face/neck = faciei et colli).
+        """
+}
+mapping "L818K.1" source="L818K" target="110989007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818K SNOMED CT 110989007 = pigmented peribuccal erythrosis of Brocq. Target SNOMED CT 4007448
+        (110989007) is the exact eponymous equivalent.
+        """
+}
+mapping "L818L.1" source="L818L" target="110284009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818L SNOMED CT 110284009 = drug-induced pigmentation of skin, under L81.8. Target SNOMED CT
+        4001995 (110284009) is the exact clinical equivalent.
+        """
+}
+mapping "L818M.1" source="L818M" target="239133004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818M SNOMED CT 239133004 = Kitamura's reticulate acropigmentation. Target SNOMED CT 4346198
+        (239133004) is the exact eponymous equivalent.
+        """
+}
+mapping "L818N.1" source="L818N" target="239054009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818N SNOMED CT 239054009 = Dowling-Degos disease (reticulate pigmented anomaly of
+        flexures). Target SNOMED CT 4082367 (239054009) is the exact clinical equivalent (Dowling-Degos
+        disease is the eponymous name for this entity).
+        """
+}
+mapping "L818Q.1" source="L818Q" target="58942006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818Q SNOMED CT 58942006 = erythema dyschromicum perstans (ashy dermatosis). Target SNOMED CT
+        4244099 (58942006) is the exact name-equivalent (the -ium/-um ending is spelling variance only).
+        """
+}
+mapping "L818W.1" source="L818W" target="414032001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L818W SNOMED CT 414032001 = residual bucket for L81.8. Target SNOMED CT 4185471 (414032001) is
+        the Athena target for the parent ICD-10 L81 (Other disorders of pigmentation) and is the
+        legitimate ancestor that fully subsumes every code in this heterogeneous residual bucket.
+        Moderate (one or more levels broader; unspecified residual source).
+        """
+}
+mapping "L829.1" source="L829" target="394726009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829 SNOMED CT 394726009 = seborrheic keratosis. Target SNOMED CT 40568467 (394726009) is the
+        Athena target for parent ICD-10 L82 and the exact clinical equivalent.
+        """
+}
+mapping "L829A.1" source="L829A" target="254669003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829A SNOMED CT 254669003 = dermatosis papulosa nigra (small dark benign papules on
+        face/neck, predominantly in darker skin phototypes; clinically a variant of seborrheic
+        keratosis). Target SNOMED CT 4115279 (254669003, Disorder class) is the exact clinical equivalent;
+        preferred over the older Morph-Abnormality record 4014363 which is a finding morphology, not a
+        disorder.
+        """
+}
+mapping "L829B.1" source="L829B" target="102606000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829B SNOMED CT 102606000 = Leser-Trélat sign/syndrome: the sudden explosive eruption of
+        seborrheic keratoses signalling internal malignancy (a paraneoplastic phenomenon, not a
+        dermatosis of the keratoses themselves). Target SNOMED CT 4010977 (disease) and the target as;
+        clinically identical entity but the granularity of vs introduces minor doubt.
+        """
+}
+mapping "L829C.1" source="L829C" target="403869001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829C SNOMED CT 403869001 = stucco keratosis. Target SNOMED CT 4298021 (concept_code 403869001)
+        = Stucco keratosis. Same clinical concept; exact term and SNOMED CT match in Athena mirror.
+        """
+}
+mapping "L829D.1" source="L829D" target="394728005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829D SNOMED CT 394728005 = inverted follicular keratosis. Target SNOMED CT 4190451
+        (concept_code 394728005) = Inverted follicular keratosis. Same clinical concept; exact SNOMED CT
+        match in mirror.
+        """
+}
+mapping "L829X.1" source="L829X" target="394726009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L829X SNOMED CT 394726009 = seborrheic keratosis, unspecified (Swedish extension
+        unspecified-level code under L82). Target SNOMED CT 40568467 (concept_code 394726009) = Seborrheic
+        keratosis, the standard SNOMED CT concept reached by ICD10 L82 crosswalk (ICD10 concept 45548208 ->
+        40568467). Unspecified Swedish subcode maps up to the parent SNOMED CT disorder; one-level broader,
+        high tier.
+        """
+}
+mapping "L839.1" source="L839" target="402599005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839 SNOMED CT 402599005 = acanthosis nigricans. Target SNOMED CT 4299544 (concept_code
+        402599005) = Acanthosis nigricans. Same clinical concept; exact SNOMED CT match.
+        """
+}
+mapping "L839A.1" source="L839A" target="402599005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839A SNOMED CT 402599005 = confluent and reticulated papillomatosis of Gougerot-Carteaud, a
+        rare distinct entity. No SNOMED CT concept for this specific disorder exists in the Athena mirror.
+        Best available standard target is SNOMED CT 4299544 (both are benign papillomatous hyperpigmented
+        disorders with histologic overlap). Target subsumes the source only loosely; low confidence
+        broader, real doubt whether the standard concept covers this distinct entity.
+        """
+}
+mapping "L839B.1" source="L839B" target="402599005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839B SNOMED CT 402599005 = malignant acanthosis nigricans (paraneoplastic, associated with
+        internal malignancy). Target SNOMED CT 4299544 (concept_code 402599005), the standard parent
+        concept. No separate SNOMED CT concept for the malignant/paraneoplastic variant exists in the
+        mirror. Target legitimately subsumes the source; one-level broader, high tier.
+        """
+}
+mapping "L839C.1" source="L839C" target="72129000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839C SNOMED CT 72129000 = benign acquired acanthosis nigricans. Target SNOMED CT 140489
+        (concept_code 72129000) = Acquired acanthosis nigricans. Same clinical concept (acquired benign
+        form); exact SNOMED CT match in mirror.
+        """
+}
+mapping "L839D.1" source="L839D" target="72129000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839D SNOMED CT 72129000 = pseudoacanthosis nigricans of obesity. Target SNOMED CT 140489
+        (concept_code 72129000) = Acquired acanthosis nigricans, the standard SNOMED CT concept that covers
+        obesity-related pseudoacanthosis nigricans (a recognized subtype of acquired acanthosis
+        nigricans). High-confidence exact_match on the acquired-acanthosis concept; the obesity
+        substrate is captured clinically by the acquired form.
+        """
+}
+mapping "L839E.1" source="L839E" target="72129000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839E SNOMED CT 72129000 = drug-induced acanthosis nigricans. Target SNOMED CT 140489.
+        Drug-induced cases are clinically an acquired form; no separate SNOMED CT concept for drug-induced
+        acanthosis nigricans exists in the mirror. Target subsumes the source; moderate tier (mechanical
+        mapping to the acquired parent, etiology not separately coded).
+        """
+}
+mapping "L839X.1" source="L839X" target="402599005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L839X SNOMED CT 402599005 = acanthosis nigricans, unspecified. Target SNOMED CT 4299544
+        (concept_code 402599005). The unspecified Swedish subcode maps to the standard SNOMED CT disorder
+        concept; same clinical concept, unspecified organism/etiology not affecting concept identity.
+        Moderate tier: unspecified source via mechanical mapping.
+        """
+}
+mapping "L849.1" source="L849" target="201037000" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source L849 SNOMED CT 201037000 = corns and callosities. Target SNOMED CT 137063 (concept_code
+        201037000) = Corns and callus. Same clinical concept; exact SNOMED CT match in mirror.
+        """
+}
+mapping "L849A.1" source="L849A" target="201040000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L849A SNOMED CT 201040000 = callosity (skin thickening). Target SNOMED CT 4067069 (concept_code
+        201040000) = Callosity. Same clinical concept; exact SNOMED CT match.
+        """
+}
+mapping "L849B.1" source="L849B" target="201037000" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source L849B SNOMED CT 201037000 = clavus (corn). Target SNOMED CT 137063. The Athena mirror does not
+        expose a SNOMED CT concept for corn/clavus alone distinct from the combined concept (ICD10 L84
+        SNOMED CT 201037000 4067069 is the callosity side; clavus is bundled into the corns-and-callus
+        concept). High-confidence exact match on the combined standard concept; small breadth mismatch
+        (target slightly broader by also including callus) keeps it at.
+        """
+}
+mapping "L849X.1" source="L849X" target="201037000" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source L849X SNOMED CT 201037000 = corns and callosities, unspecified. Target SNOMED CT 137063. Same
+        clinical concept; moderate tier because the unspecified Swedish subcode is mapped mechanically
+        to the parent without independent re-verification.
+        """
+}

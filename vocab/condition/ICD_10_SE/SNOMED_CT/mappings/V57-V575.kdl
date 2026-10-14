@@ -1,0 +1,616 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V57-V575
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V5700.1" source="V5700" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5700 = Swedish extension of V57.0 (driver of pick-up truck/van, collision with
+        fixed/stationary object, non-traffic accident) with activity SNOMED CT 217897003 57701003 (sport).
+        Parent V57.0 crosswalks to SNOMED CT 436292 (Accidental collision with stationary object,
+        concept_code 217897003). Primary covers accident axis; secondary 440288 (Accident while engaged
+        in sports activity) covers activity axis. Both partial.
+        """
+}
+mapping "V5700.2" source="V5700" target="57701003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5701.1" source="V5701" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5701 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 1067601000000108 217897003 (play and leisure). Primary 436292 covers accident
+        axis. Secondary 42689728 (Injury whilst engaged in leisure activity) covers activity axis. Both
+        partial.
+        """
+}
+mapping "V5701.2" source="V5701" target="1067601000000108" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5702.1" source="V5702" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5702 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 17542004 217897003 (paid work). Primary 436292 covers accident axis. Secondary
+        4069443 (Accident while engaged in work-related activity) covers activity axis. Both partial.
+        """
+}
+mapping "V5702.2" source="V5702" target="17542004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5703.1" source="V5703" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5703 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 217897003 (other occupation). Primary 436292 covers accident axis. No standard
+        SNOMED CT concept for. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5704.1" source="V5704" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5704 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 217897003 (vital activities: rest, sleep, meals, hygiene). Primary 436292 covers
+        accident axis. No single standard SNOMED CT concept for this broad vital-activities grouping.
+        Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5708.1" source="V5708" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5708 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 217897003 (other specified activities). Primary 436292 covers accident axis. No
+        standard SNOMED CT concept for. Partial: accident covered, activity axis dropped.
+        """
+}
+mapping "V5709.1" source="V5709" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5709 = Swedish extension of V57.0 (driver, non-traffic, fixed object collision) with
+        activity SNOMED CT 217897003 (unspecified). Primary 436292 covers accident axis. Activity
+        unspecified, no activity target. Partial: multi-axis source, single-axis coverage.
+        """
+}
+mapping "V5710.1" source="V5710" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5710 = Swedish extension of V57.1 (passenger, non-traffic, fixed object collision) with
+        activity SNOMED CT 217897003 57701003 (sport). Parent V57.1 crosswalks to SNOMED CT 436292 (Accidental
+        collision with stationary object). Primary covers accident axis; secondary 440288 (Accident
+        while engaged in sports activity) covers activity axis. Both partial.
+        """
+}
+mapping "V5710.2" source="V5710" target="57701003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5711.1" source="V5711" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5711 = Swedish extension of V57.1 (passenger, non-traffic, fixed object collision) with
+        activity SNOMED CT 1067601000000108 217897003 (play and leisure). Primary 436292 covers accident
+        axis. Secondary 42689728 (Injury whilst engaged in leisure activity) covers activity axis. Both
+        partial.
+        """
+}
+mapping "V5711.2" source="V5711" target="1067601000000108" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5712.1" source="V5712" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5712 (Swedish extension of ICD-10 V57.1) = passenger of light truck injured in
+        nontraffic collision with fixed/stationary object, while engaged in forvärvsarbete (work).
+        SNOMED CT has no concept encoding the work-activity dimension; the parent V57.1 crosswalk is
+        followed. 437738 (captures the non-traffic aspect, the most specific axis). 436292 (captures the
+        collision-with-fixed-object axis). 444074 (general vehicular-accident victim concept). All three
+        are legitimate ancestors that fully contain the source; the dropped activity axis is a one-level
+        breadth mismatch. for the two specific targets (verified crosswalk on parent, small breadth
+        mismatch); for the general victim concept.
+        """
+}
+mapping "V5712.2" source="V5712" target="217897003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5712.3" source="V5712" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5713.1" source="V5713" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5713 (Swedish extension of V57.1) = passenger of light truck in nontraffic collision
+        with fixed/stationary object, during annan sysselsättning (other activity). Same clinical event
+        as V57.1; activity context has no SNOMED CT encoding. Parent V57.1 crosswalk followed: 437738
+        (captures non-traffic axis), 436292 (captures collision axis), 444074 (general). Broader
+        targets; for the two specific, for the general.
+        """
+}
+mapping "V5713.2" source="V5713" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5713.3" source="V5713" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5714.1" source="V5714" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5714 (Swedish extension of V57.1) = passenger of light truck in nontraffic collision
+        with fixed/stationary object, during vitalaktivitet (rest/sleep/meal/hygiene). Same clinical
+        event as V57.1; activity context has no SNOMED CT encoding. Parent V57.1 crosswalk: 437738, 436292,
+        444074. Broader.
+        """
+}
+mapping "V5714.2" source="V5714" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5714.3" source="V5714" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5718.1" source="V5718" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5718 (Swedish extension of V57.1) = passenger of light truck in nontraffic collision
+        with fixed/stationary object, andra specificerade aktiviteter (other specified activity). Same
+        clinical event as V57.1; activity context has no SNOMED CT encoding. Parent V57.1 crosswalk:
+        437738, 436292, 444074. Broader.
+        """
+}
+mapping "V5718.2" source="V5718" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5718.3" source="V5718" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5719.1" source="V5719" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5719 (Swedish extension of V57.1) = passenger of light truck in nontraffic collision
+        with fixed/stationary object, aktivitet ospecificerad (activity unspecified). Same clinical
+        event as V57.1; activity context has no SNOMED CT encoding. Parent V57.1 crosswalk: 437738, 436292,
+        444074. Broader.
+        """
+}
+mapping "V5719.2" source="V5719" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5719.3" source="V5719" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5720.1" source="V5720" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5720 (Swedish extension of V57.2) = person on outside of light truck injured in
+        nontraffic collision with fixed/stationary object, during idrott/sport/motion. SNOMED CT has no
+        concept for the sport-activity dimension; parent V57.2 crosswalk followed. 437738 (captures
+        non-traffic axis). 436292 (captures collision axis). 444074 (general). Broader.
+        """
+}
+mapping "V5720.2" source="V5720" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5720.3" source="V5720" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5721.1" source="V5721" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5721 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, during lek/fritid (play/leisure). Same clinical event as
+        V57.2; activity context has no SNOMED CT encoding. Parent V57.2 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5721.2" source="V5721" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5721.3" source="V5721" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5722.1" source="V5722" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5722 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, during forvärvsarbete (work). Same clinical event as
+        V57.2; activity context has no SNOMED CT encoding. Parent V57.2 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5722.2" source="V5722" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5722.3" source="V5722" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5723.1" source="V5723" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5723 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, during annan sysselsättning (other activity). Same
+        clinical event as V57.2; activity context has no SNOMED CT encoding. Parent V57.2 crosswalk:
+        437738, 436292, 444074. Broader.
+        """
+}
+mapping "V5723.2" source="V5723" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5723.3" source="V5723" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5724.1" source="V5724" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5724 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, during vitalaktivitet. Same clinical event as V57.2;
+        activity context has no SNOMED CT encoding. Parent V57.2 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5724.2" source="V5724" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5724.3" source="V5724" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5728.1" source="V5728" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5728 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, andra specificerade aktiviteter. Same clinical event as
+        V57.2; activity context has no SNOMED CT encoding. Parent V57.2 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5728.2" source="V5728" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5728.3" source="V5728" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5729.1" source="V5729" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5729 (Swedish extension of V57.2) = person on outside of light truck in nontraffic
+        collision with fixed/stationary object, aktivitet ospecificerad. Same clinical event as V57.2;
+        activity context has no SNOMED CT encoding. Parent V57.2 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5729.2" source="V5729" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5729.3" source="V5729" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5730.1" source="V5730" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5730 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, during idrott/sport/motion. SNOMED CT has no concept for
+        the sport-activity dimension; parent V57.3 crosswalk followed. 437738 (captures non-traffic
+        axis). 436292 (captures collision axis). 444074 (general). Broader.
+        """
+}
+mapping "V5730.2" source="V5730" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5730.3" source="V5730" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5731.1" source="V5731" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5731 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, during lek/fritid. Same clinical event as V57.3;
+        activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5731.2" source="V5731" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5731.3" source="V5731" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5732.1" source="V5732" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5732 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, during forvärvsarbete. Same clinical event as V57.3;
+        activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5732.2" source="V5732" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5732.3" source="V5732" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5733.1" source="V5733" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5733 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, during annan sysselsättning. Same clinical event as
+        V57.3; activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5733.2" source="V5733" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5733.3" source="V5733" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5734.1" source="V5734" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5734 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, during vitalaktivitet. Same clinical event as V57.3;
+        activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5734.2" source="V5734" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5734.3" source="V5734" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5738.1" source="V5738" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5738 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, andra specificerade aktiviteter. Same clinical event as
+        V57.3; activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5738.2" source="V5738" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5738.3" source="V5738" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5739.1" source="V5739" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5739 (Swedish extension of V57.3) = unspecified occupant of light truck in nontraffic
+        collision with fixed/stationary object, aktivitet ospecificerad. Same clinical event as V57.3;
+        activity context has no SNOMED CT encoding. Parent V57.3 crosswalk: 437738, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5739.2" source="V5739" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5739.3" source="V5739" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5740.1" source="V5740" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5740 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, during idrott/sport/motion. SNOMED CT has no concept for
+        the sport-activity dimension; parent V57.4 crosswalk followed. 4053428 (captures the
+        boarding/alighting axis, the most specific axis). 436292 (captures collision axis). 444074
+        (general). Broader.
+        """
+}
+mapping "V5740.2" source="V5740" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5740.3" source="V5740" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5741.1" source="V5741" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5741 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, during lek/fritid. Same clinical event as V57.4;
+        activity context has no SNOMED CT encoding. Parent V57.4 crosswalk: 4053428, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5741.2" source="V5741" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5741.3" source="V5741" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5742.1" source="V5742" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5742 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, during forvärvsarbete. Same clinical event as V57.4;
+        activity context has no SNOMED CT encoding. Parent V57.4 crosswalk: 4053428, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5742.2" source="V5742" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5742.3" source="V5742" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5743.1" source="V5743" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5743 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, during annan sysselsättning. Same clinical event as
+        V57.4; activity context has no SNOMED CT encoding. Parent V57.4 crosswalk: 4053428, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5743.2" source="V5743" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5743.3" source="V5743" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5744.1" source="V5744" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5744 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, during vitalaktivitet. Same clinical event as V57.4;
+        activity context has no SNOMED CT encoding. Parent V57.4 crosswalk: 4053428, 436292, 444074.
+        Broader.
+        """
+}
+mapping "V5744.2" source="V5744" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5744.3" source="V5744" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5748.1" source="V5748" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5748 (Swedish extension of V57.4) = person injured while boarding/alighting light truck
+        in collision with fixed/stationary object, andra specificerade aktiviteter. Same clinical event
+        as V57.4; activity context has no SNOMED CT encoding. Parent V57.4 crosswalk: 4053428, 436292,
+        444074. Broader.
+        """
+}
+mapping "V5748.2" source="V5748" target="217897003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5748.3" source="V5748" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5749.1" source="V5749" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5749 (Swedish ICD-10-SE) = occupant of pick-up truck/van injured in collision with
+        fixed/stationary object while boarding/alighting, activity unspecified. Swedish national
+        extension of WHO V57.4 (Athena concept_id 45575767). The activity dimension (Swedish 5th-6th
+        char extension) has no SNOMED CT representation. Targets inherited from WHO V57.4 Athena SNOMED
+        217897003 242107006 36198007 crosswalk: 436292 (collision mechanism facet), 444074
+        (victim-status facet), 4053428 (boarding/alighting facet). Each target covers one aspect of the
+        multi-faceted transport-injury source (partial); no single SNOMED CT concept captures the full
+        combination. low: inherited parent crosswalk applied to a Swedish activity-extension code, not
+        independently re-verified, activity specificity lost.
+        """
+}
+mapping "V5749.2" source="V5749" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5749.3" source="V5749" target="242107006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5750.1" source="V5750" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5750 (Swedish ICD-10-SE) = driver of pick-up truck/van injured in collision with
+        fixed/stationary object in traffic accident, during sport/activity. Swedish national extension
+        of WHO V57.5 (Athena 45595098); activity dimension unrepresented in SNOMED CT. Targets inherited
+        from WHO V57.5 Athena SNOMED 214031005 217897003 36198007: 436292 (mechanism), 437165 (accident
+        context), 444074 (victim status). Each target covers one facet (partial); no single SNOMED CT
+        concept captures the full source. low: inherited parent crosswalk on a Swedish
+        activity-extension, not independently re-verified.
+        """
+}
+mapping "V5750.2" source="V5750" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5750.3" source="V5750" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5751.1" source="V5751" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5751 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, during leisure/play. Swedish extension of WHO V57.5 (Athena 45595098);
+        activity dimension lost. Targets inherited from V57.5 SNOMED CT 214031005 217897003 36198007:
+        436292 collision mechanism, 437165 motor vehicle traffic accident, 444074 victim of traffic
+        accident. Each partial (one facet). low: inherited parent crosswalk, Swedish activity-extension.
+        """
+}
+mapping "V5751.2" source="V5751" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5751.3" source="V5751" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5752.1" source="V5752" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5752 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, during paid work. Swedish extension of WHO V57.5 (Athena 45595098);
+        activity dimension lost. Targets inherited from V57.5 SNOMED CT 214031005 217897003 36198007:
+        436292, 437165, 444074. Each partial (one facet). low.
+        """
+}
+mapping "V5752.2" source="V5752" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5752.3" source="V5752" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5753.1" source="V5753" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5753 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, other activity. Swedish extension of WHO V57.5 (Athena 45595098);
+        activity dimension lost. Targets inherited from V57.5 SNOMED CT 214031005 217897003 36198007:
+        436292, 437165, 444074. Each partial. low.
+        """
+}
+mapping "V5753.2" source="V5753" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5753.3" source="V5753" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5754.1" source="V5754" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5754 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, during vital activity (rest/sleep/meal/hygiene). Swedish extension of
+        WHO V57.5 (Athena 45595098); activity dimension lost. Targets inherited from V57.5 SNOMED CT
+        214031005 217897003 36198007: 436292, 437165, 444074. Each partial. low.
+        """
+}
+mapping "V5754.2" source="V5754" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5754.3" source="V5754" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5758.1" source="V5758" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5758 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, other specified activity. Swedish extension of WHO V57.5 (Athena
+        45595098); activity dimension lost. Targets inherited from V57.5 SNOMED CT 214031005 217897003
+        36198007: 436292, 437165, 444074. Each partial. low.
+        """
+}
+mapping "V5758.2" source="V5758" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5758.3" source="V5758" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5759.1" source="V5759" target="217897003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5759 (Swedish ICD-10-SE) = driver of pick-up truck/van, collision with fixed/stationary
+        object, traffic accident, activity unspecified. Swedish extension of WHO V57.5 (Athena
+        45595098); activity dimension lost. Targets inherited from V57.5 SNOMED CT 214031005 217897003
+        36198007: 436292, 437165, 444074. Each partial. low.
+        """
+}
+mapping "V5759.2" source="V5759" target="214031005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V5759.3" source="V5759" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

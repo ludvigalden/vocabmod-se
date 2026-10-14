@@ -1,0 +1,418 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L208A.1" source="L208A" target="24079001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208A SNOMED CT 24079001 = atopic dermatitis in children without food allergy. Target SNOMED CT
+        133834 (concept_code 24079001) = Atopic dermatitis, the Athena crosswalk target for L20 and
+        L20.8. SNOMED CT has no concept for specifically. The target subsumes the source; broader, moderate
+        confidence because the food-allergy exclusion qualifier is lost.
+        """
+}
+mapping "L208B.1" source="L208B" target="24079001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208B SNOMED CT 24079001 = atopic dermatitis in children with food allergy. Target SNOMED CT
+        133834 (concept_code 24079001) = Atopic dermatitis, the crosswalk target for L20. SNOMED CT has no
+        combined concept. The target covers only the dermatitis axis; the food allergy component is
+        uncovered. Broader for the dermatitis axis (a partial-decomposition alternative was considered
+        but a single broader target is cleaner here); low confidence because the with-food-allergy
+        qualifier is clinically significant and lost in mapping.
+        """
+}
+mapping "L208C.1" source="L208C" target="43116000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L208D.1" source="L208D" target="57092006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208D SNOMED CT 57092006 = flexural eczema not elsewhere classified. Target SNOMED CT 4210912
+        (concept_code 57092006) = Flexural eczema. Exact term match for this clinical pattern. High
+        confidence (not) because no independent Athena crosswalk exists for this Swedish extension code.
+        """
+}
+mapping "L208E.1" source="L208E" target="200775004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208E SNOMED CT 200775004 = atopic neurodermatitis. Target SNOMED CT 4066382 (concept_code
+        200775004) = Atopic neurodermatitis. Exact term match. High confidence because this is a
+        term-equivalent match without an independent crosswalk for the Swedish code.
+        """
+}
+mapping "L208F.1" source="L208F" target="50650004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208F SNOMED CT 50650004 = diffuse neurodermatitis. Target SNOMED CT 4179769 (concept_code
+        50650004) = Diffuse neurodermatitis of Brocq. Exact term match for this specific historical
+        entity. High confidence; the SNOMED CT concept adds the Brocq eponym but is the standard concept
+        for this disorder.
+        """
+}
+mapping "L208G.1" source="L208G" target="402197001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L208W.1" source="L208W" target="24079001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L208W SNOMED CT 24079001 = other specified atopic dermatitis, a residual Swedish code under
+        L20.8. Target SNOMED CT 133834 (concept_code 24079001) = Atopic dermatitis, the crosswalk target
+        for L20.8. The residual bucket maps to the parent; broader, low confidence due to source
+        heterogeneity.
+        """
+}
+mapping "L210A.1" source="L210A" target="62742006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L210A SNOMED CT 62742006 = cradle cap (infantile seborrheic dermatitis of the scalp,
+        literally). Target SNOMED CT 4267578 (concept_code 62742006) = Cradle cap. Exact term match for
+        this well-known infant condition.
+        """
+}
+mapping "L210B.1" source="L210B" target="156329007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L210B SNOMED CT 156329007 = seborrheic dermatitis of the scalp. Target SNOMED CT 137626
+        (concept_code 156329007) = Seborrheic dermatitis of scalp, the Athena crosswalk target for
+        ICD-10 L21.0 (Seborrhoea capitis). Exact term match confirmed by crosswalk; high confidence
+        because the Swedish code is a national subdivision without its own independent crosswalk.
+        """
+}
+mapping "L210C.1" source="L210C" target="77592001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L210C SNOMED CT 77592001 = seborrhea sicca (dry seborrhea of the scalp). Target SNOMED CT
+        40625944 (concept_code 77592001) = Seborrhea sicca. Exact term match.
+        """
+}
+mapping "L210W.1" source="L210W" target="28431005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L210W SNOMED CT 28431005 = other seborrhea capitis, a residual Swedish code under L21.0.
+        Target SNOMED CT 40370679 (concept_code 28431005) = Seborrhea capitis. The residual bucket maps to
+        the parent; broader, moderate confidence.
+        """
+}
+mapping "L218B.1" source="L218B" target="402210009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L218B SNOMED CT 402210009 = seborrheic dermatitis of the face. Target SNOMED CT 4298602
+        (concept_code 402210009) = Facial seborrheic dermatitis. Exact term match for the site-specific
+        entity. High confidence because no independent Athena crosswalk exists for the Swedish code.
+        """
+}
+mapping "L218C.1" source="L218C" target="50563003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L218C SNOMED CT 50563003 = seborrheic dermatitis of the trunk. No SNOMED CT standard concept
+        exists for specifically. Target SNOMED CT 137053 (concept_code 50563003) = Seborrheic dermatitis
+        (general), the crosswalk target for L21. The target subsumes the source; broader, moderate
+        confidence because the trunk site specificity is lost.
+        """
+}
+mapping "L218W.1" source="L218W" target="50563003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L218W SNOMED CT 50563003 = other specified seborrheic dermatitis, a residual Swedish code
+        under L21.8. Target SNOMED CT 137053 (concept_code 50563003) = Seborrheic dermatitis, the crosswalk
+        target for L21.8. The residual bucket maps to the parent; broader, low confidence due to source
+        heterogeneity.
+        """
+}
+mapping "L229.1" source="L229" target="91487003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229 SNOMED CT 91487003 = diaper dermatitis. Target SNOMED CT 200164 (91487003) = Diaper rash,
+        the exact SNOMED CT equivalent. Athena ICD10 L22 -> crosswalk confirms identity.
+        """
+}
+mapping "L229A.1" source="L229A" target="91487003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229A SNOMED CT 91487003 = diaper erythema, a Swedish synonym for diaper dermatitis. Target
+        SNOMED CT 200164 (91487003) = Diaper rash. Same clinical concept, follows L22 crosswalk.
+        """
+}
+mapping "L229B.1" source="L229B" target="91487003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229B SNOMED CT 91487003 = diaper rash, Swedish synonym. Target SNOMED CT 200164 (91487003) =
+        Diaper rash. Exact term and clinical equivalence, follows L22 crosswalk.
+        """
+}
+mapping "L229C.1" source="L229C" target="111188005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229C SNOMED CT 111188005 = psoriasiform diaper dermatitis. Target SNOMED CT 4009501
+        (111188005) = Psoriasiform napkin eruption. Exact SNOMED CT equivalent for this specific clinical
+        variant.
+        """
+}
+mapping "L229D.1" source="L229D" target="91487003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229D SNOMED CT 91487003 = papuloulcerous variant of diaper dermatitis. No specific SNOMED CT
+        concept for papuloulcerous diaper dermatitis exists in the mirror. Target SNOMED CT 200164
+        (91487003) = Diaper rash, the parent that fully subsumes this variant. One-level broader;
+        follows L22 crosswalk; variant-specific morphology lost.
+        """
+}
+mapping "L229E.1" source="L229E" target="240710003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229E SNOMED CT 240710003. Target SNOMED CT 4080453 (240710003) = Granuloma gluteale infantum.
+        Exact SNOMED CT equivalent.
+        """
+}
+mapping "L229X.1" source="L229X" target="91487003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L229X SNOMED CT 91487003 = diaper dermatitis, unspecified. Target SNOMED CT 200164 (91487003) =
+        Diaper rash (the unspecified/general form). Unspecified source maps directly to the general
+        SNOMED CT disorder; follows L22 crosswalk.
+        """
+}
+mapping "L230A.1" source="L230A" target="1155943009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L230B.1" source="L230B" target="1155943009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L230C.1" source="L230C" target="1155943009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L230X.1" source="L230X" target="1155943009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L231A.1" source="L231A" target="200842003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L231A SNOMED CT 200842003 = allergic contact dermatitis due to colophony (rosin). No
+        colophony-specific SNOMED CT target in mirror. Target SNOMED CT 4066471 (200842003) = Allergic contact
+        dermatitis caused by adhesive; colophony is a common adhesive/resin allergen, so the L23.1
+        adhesive parent is the closest standard concept. Broader: adhesive ACD subsumes the
+        colophony-specific case only partially (colophony is also used outside adhesives), but it is the
+        ICD-10 L23.1 crosswalk target and the best available.
+        """
+}
+mapping "L231X.1" source="L231X" target="200842003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L231X SNOMED CT 200842003 = allergic contact dermatitis due to adhesives and resins. Target
+        SNOMED CT 4066471 (200842003) = Allergic contact dermatitis caused by adhesive. Exact L23.1
+        crosswalk target; matches the Swedish (adhesives) directly.
+        """
+}
+mapping "L232A.1" source="L232A" target="200843008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L232A SNOMED CT 200843008 = allergic contact dermatitis due to perfume ingredients. Target
+        SNOMED CT 4066735 (200843008) = Allergic contact dermatitis caused by cosmetic. Perfume is a
+        subcategory of cosmetic; the target is broader than perfume-specific ACD but is the closest
+        standard concept (the L23.2 crosswalk). Narrower fits the direction: source is more specific
+        (perfume) than the target (cosmetic).
+        """
+}
+flag "L232A.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/L232A.1"
+mapping "L232X.1" source="L232X" target="200843008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L232X SNOMED CT 200843008 = allergic contact dermatitis due to cosmetics. Target SNOMED CT
+        4066735 (200843008) = Allergic contact dermatitis caused by cosmetic. Exact L23.2 crosswalk
+        match.
+        """
+}
+mapping "L234A.1" source="L234A" target="200845001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L234A SNOMED CT 200845001 = allergic contact dermatitis due to PPDA. Target SNOMED CT 4064029
+        (200845001) = Allergic contact dermatitis caused by dye. PPDA is a specific dye allergen; source
+        is more specific (PPDA) than the target (dye in general), so the target is broader. Best
+        available standard concept (the L23.4 crosswalk); no PPDA-specific SNOMED CT concept in the mirror.
+        """
+}
+flag "L234A.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/L234A.1"
+mapping "L234X.1" source="L234X" target="200845001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L234X SNOMED CT 200845001 = allergic contact dermatitis due to dyes. Target SNOMED CT 4064029
+        (200845001) = Allergic contact dermatitis caused by dye. Exact L23.4 crosswalk match.
+        """
+}
+mapping "L235B.1" source="L235B" target="10676871000119103" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235C.1" source="L235C" target="10676871000119103" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235D.1" source="L235D" target="10676871000119103" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235E.1" source="L235E" target="10676871000119103" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235F.1" source="L235F" target="10676871000119103" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235G.1" source="L235G" target="10676871000119103" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L235W.1" source="L235W" target="10676871000119103" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L238A.1" source="L238A" target="238575004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L238A SNOMED CT 238575004 = allergic contact dermatitis due to airborne allergen. No
+        airborne-ACD-specific SNOMED CT concept in mirror. Target SNOMED CT 4031019 (238575004) = Allergic
+        contact dermatitis (the L23.8 crosswalk parent). Broader by two levels of specificity (lost both
+        and qualifier).
+        """
+}
+mapping "L238B.1" source="L238B" target="238575004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L238B SNOMED CT 238575004 = allergic contact dermatitis due to shoes. No shoe-specific ACD
+        SNOMED CT concept in mirror. Target SNOMED CT 4031019 (238575004) = Allergic contact dermatitis (L23.8
+        crosswalk parent). Broader by two levels; shoe-specificity lost.
+        """
+}
+mapping "L238C.1" source="L238C" target="238575004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L238C SNOMED CT 238575004 = allergic contact dermatitis due to socks. No sock-specific ACD
+        SNOMED CT concept in mirror. Target SNOMED CT 4031019 (238575004) = Allergic contact dermatitis (L23.8
+        crosswalk parent). Broader by two levels; sock-specificity lost.
+        """
+}
+mapping "L238D.1" source="L238D" target="238575004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L238D SNOMED CT 238575004 = allergic contact dermatitis due to textiles. (762757008) exists
+        but is a UK extension not in the standard mirror. Target SNOMED CT 4031019 (238575004) = Allergic
+        contact dermatitis (L23.8 crosswalk parent). Broader by two levels; textile-specificity lost.
+        """
+}
+mapping "L238W.1" source="L238W" target="238575004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L238W SNOMED CT 238575004 = allergic contact dermatitis due to other specified substances
+        (the L23.8 residual). Target SNOMED CT 4031019 (238575004) = Allergic contact dermatitis (L23.8
+        crosswalk parent). Broader by one level; this is the standard crosswalk target for the
+        unspecified-other bucket.
+        """
+}
+mapping "L269.1" source="L269" target="399992009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L269 SNOMED CT 399992009 = exfoliative dermatitis. Target SNOMED CT 4270887 (399992009) =
+        Erythroderma. Erythroderma is the SNOMED CT fully-specified equivalent for exfoliative dermatitis
+        (the two terms are clinically synonymous). Athena L26 crosswalk confirms.
+        """
+}
+mapping "L282A.1" source="L282A" target="55608001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L282A SNOMED CT 55608001 = strofulus (prurigo simplex subacuta of infancy/childhood, also
+        called infantile papular urticaria). No strofulus-specific SNOMED CT concept in mirror. Target
+        SNOMED CT 4206461 (55608001) = Prurigo simplex, the closest standard concept (strofulus is a
+        juvenile variant of prurigo simplex). Target is broader (prurigo simplex subsumes strofulus);
+        recorded as narrower because the source is the more specific juvenile form, but the available
+        target is the general concept. Moderate confidence: clinical overlap is tight but not exact.
+        """
+}
+flag "L282A.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/L282A.1"
+mapping "L282B.1" source="L282B" target="238587006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L282B SNOMED CT 238587006 = chronic prurigo in adults. Target SNOMED CT 4080937 (238587006) =
+        Chronic prurigo. Exact SNOMED CT equivalent.
+        """
+}
+mapping "L282C.1" source="L282C" target="238588001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L282C SNOMED CT 238588001 = dermographic prurigo. Target SNOMED CT 4080938 (238588001) =
+        Dermographic prurigo. Exact SNOMED CT equivalent.
+        """
+}
+mapping "L282D.1" source="L282D" target="238589009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L282D SNOMED CT 238589009. Target SNOMED CT 4033778 (238589009) = Prurigo pigmentosa. Exact
+        SNOMED CT equivalent.
+        """
+}
+mapping "L282W.1" source="L282W" target="64144002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L282W SNOMED CT 64144002 = other and unspecified prurigo (the L28.2 residual). Target SNOMED CT
+        135618 (64144002) = Pruritic rash, the L28.2 crosswalk target. Broader: pruritic rash subsumes
+        all prurigo variants plus other pruritic eruptions; appropriate for the unspecified residual.
+        """
+}
+mapping "L298A.1" source="L298A" target="418363000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298A SNOMED CT 418363000 = generalized pruritus due to non-skin disease (supplementary
+        code). Target SNOMED CT 4169287 (418363000) = Itching of skin, the SNOMED CT finding for pruritus.
+        Source is a supplementary etiology-linking code; target captures the pruritus finding but not
+        the linkage. Broader; moderate confidence due to the lost etiology context.
+        """
+}
+mapping "L298B.1" source="L298B" target="42570001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298B SNOMED CT 42570001 = senile pruritus, a Swedish subcode of ICD-10 L29.8 Other
+        pruritus. Target SNOMED CT 4174551 (concept_code 42570001), standard_concept=S, active disorder.
+        Term-for-term equivalence; SNOMED CT concept exists for this exact clinical entity. Exact match.
+        """
+}
+mapping "L298C.1" source="L298C" target="201025002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298C SNOMED CT 201025002 = winter itch, Swedish subcode of L29.8. Target SNOMED CT 4066839
+        (concept_code 201025002), standard_concept=S. The non-standard SNOMED CT 40630387 (7867008) Maps to
+        4066839; concept_code 201025002 is the active equivalent. Crosswalk-verified via Athena Maps to
+        edge. Exact match.
+        """
+}
+mapping "L298D.1" source="L298D" target="64144002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298D SNOMED CT 64144002 = localized itch, a Swedish subcode of L29.8 Other pruritus. No
+        exact SNOMED CT concept for exists in the mirror (SNOMED CT models pruritus by site, e.g. Pruritus
+        ani/vulvae/scalp, not as a generic localized form). Target SNOMED CT 135618 (concept_code
+        64144002), standard_concept=S; this is the Athena Maps to target for ICD-10 L29.8 (concept_id
+        45601220). Broader: target subsumes the source's clinical meaning at a less specific level.
+        Moderate tier: parent-code crosswalk, unspecified/localized source.
+        """
+}
+mapping "L298E.1" source="L298E" target="724843002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298E SNOMED CT 724843002 = drug-induced pruritus, Swedish subcode of L29.8. Target SNOMED CT
+        37110563 (concept_code 724843002), standard_concept=S, active since 2017-07-31. Term-for-term
+        equivalence; SNOMED CT concept exists for this exact clinical entity. Exact match.
+        """
+}
+mapping "L298W.1" source="L298W" target="64144002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L298W SNOMED CT 64144002 = residual bucket under L29.8. Heterogeneous residual source; no
+        single SNOMED CT concept captures all members. Target SNOMED CT 135618 (concept_code 64144002),
+        standard_concept=S; this is the Athena Maps to target for the parent ICD-10 L29.8 (concept_id
+        45601220). Broader: target is the closest standard concept covering the bucket. Moderate tier
+        per the rubric residual-bucket row.
+        """
+}

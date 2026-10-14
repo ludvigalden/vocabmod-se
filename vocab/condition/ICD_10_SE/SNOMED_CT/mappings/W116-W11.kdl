@@ -1,0 +1,306 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W116-W11
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W116.1" source="W116" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W116 is a Swedish extension of W11 SNOMED CT 86591008 encoding
+        place=industriområde/byggarbetsplats (industrial/construction area), no activity suffix. Target
+        SNOMED CT 432803 (86591008) is the WHO W11 crosswalk target and the only valid standard concept for
+        ladder falls. The place-specific SNOMED CT candidate 40419982 is retired (invalid_reason=U).
+        Broader mapping: 432803 subsumes the source, but place specificity is lost. Confidence
+        (moderate).
+        """
+}
+mapping "W1160.1" source="W1160" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1160 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=idrott/sport/motion. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. Both place-specific and
+        activity-specific SNOMED CT candidates are retired (40419982 place=industrial U; no active standard
+        concept for). Broader: target subsumes source; both axes lost. Confidence (moderate).
+        """
+}
+mapping "W1161.1" source="W1161" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1161 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=lek och annan fritidsverksamhet (play/leisure). Target SNOMED CT 432803 (86591008) SNOMED CT
+        86591008 is the W11 crosswalk target and the only valid standard ladder-fall concept; place- and
+        activity-specific SNOMED CT candidates are retired or absent. Broader: target subsumes source.
+        Confidence (moderate).
+        """
+}
+mapping "W1162.1" source="W1162" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1162 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=förvärvsarbete (paid work). Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. SNOMED CT 17542004 (S, valid)
+        exists as an activity-axis concept but is a different disorder axis (the activity context, not
+        the fall itself) and combining it with 432803 would require a multi-target partial decomposition
+        without an OMOP convention supporting it for external-cause codes. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1163.1" source="W1163" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1163 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=annan sysselsättning. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source; both place and activity axes lost. Confidence (moderate).
+        """
+}
+mapping "W1164.1" source="W1164" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1164 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=vitalaktivitet (vila/sömn/måltid/personlig hygien). Target SNOMED CT 432803 (86591008)
+        SNOMED CT 86591008 is the W11 crosswalk target and the only valid standard ladder-fall concept;
+        place- and activity-specific SNOMED CT candidates are retired or absent. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1168.1" source="W1168" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1168 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=andra specificerade aktiviteter (residual SNOMED CT 86591008). Target SNOMED CT 432803
+        (86591008) is the W11 crosswalk target and the only valid standard ladder-fall concept. Broader:
+        target subsumes the heterogeneous residual source. Confidence (moderate).
+        """
+}
+mapping "W1169.1" source="W1169" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1169 is a Swedish 6-char extension of W11 encoding place=industri/byggarbetsplats AND
+        activity=ospecificerad. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes the
+        doubly-unspecified source. Confidence (moderate).
+        """
+}
+mapping "W117.1" source="W117" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W117 is a Swedish extension of W11 encoding place=lantbruksområde (agricultural area), no
+        activity suffix. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the WHO W11 crosswalk target
+        and the only valid standard concept for ladder falls. The place-specific SNOMED CT candidate
+        40419983 is retired (invalid_reason=U). Broader mapping: 432803 subsumes source; place
+        specificity lost. Confidence (moderate).
+        """
+}
+mapping "W1170.1" source="W1170" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1170 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=idrott/sport/motion. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept; place- and activity-specific
+        SNOMED CT candidates are retired or absent. Broader: target subsumes source. Confidence (moderate).
+        """
+}
+mapping "W1171.1" source="W1171" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1171 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=lek och annan fritidsverksamhet. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the
+        W11 crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1172.1" source="W1172" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1172 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=förvärvsarbete. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes source; both
+        axes lost. Confidence (moderate).
+        """
+}
+mapping "W1173.1" source="W1173" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1173 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=annan sysselsättning. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1174.1" source="W1174" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1174 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=vitalaktivitet. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes source.
+        Confidence (moderate).
+        """
+}
+mapping "W1178.1" source="W1178" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1178 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=andra specificerade aktiviteter (residual). Target SNOMED CT 432803 (86591008) SNOMED CT
+        86591008 is the W11 crosswalk target and the only valid standard ladder-fall concept. Broader:
+        target subsumes heterogeneous residual source. Confidence (moderate).
+        """
+}
+mapping "W1179.1" source="W1179" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1179 is a Swedish 6-char extension of W11 encoding place=lantbruksområde AND
+        activity=ospecificerad. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes
+        doubly-unspecified source. Confidence (moderate).
+        """
+}
+mapping "W118.1" source="W118" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W118 is a Swedish extension of W11 encoding place=andra specificerade platser (other
+        specified places), no activity suffix. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the
+        WHO W11 crosswalk target and the only valid standard concept for ladder falls. The
+        place-specific SNOMED CT candidate 40419984 is retired (invalid_reason=U). Broader mapping: 432803
+        subsumes source; place specificity lost. Confidence (moderate).
+        """
+}
+mapping "W1180.1" source="W1180" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1180 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=idrott/sport/motion. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1181.1" source="W1181" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1181 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=lek och annan fritidsverksamhet. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the
+        W11 crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1182.1" source="W1182" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1182 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=förvärvsarbete. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes source.
+        Confidence (moderate).
+        """
+}
+mapping "W1183.1" source="W1183" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1183 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=annan sysselsättning. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11
+        crosswalk target and the only valid standard ladder-fall concept. Broader: target subsumes
+        source. Confidence (moderate).
+        """
+}
+mapping "W1184.1" source="W1184" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1184 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=vitalaktivitet. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes source.
+        Confidence (moderate).
+        """
+}
+mapping "W1188.1" source="W1188" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1188 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=andra specificerade aktiviteter (residual). Target SNOMED CT 432803 (86591008) SNOMED CT
+        86591008 is the W11 crosswalk target and the only valid standard ladder-fall concept. Broader:
+        target subsumes heterogeneous residual source. Confidence (moderate).
+        """
+}
+mapping "W1189.1" source="W1189" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1189 is a Swedish 6-char extension of W11 encoding place=andra specificerade platser AND
+        activity=ospecificerad. Target SNOMED CT 432803 (86591008) SNOMED CT 86591008 is the W11 crosswalk
+        target and the only valid standard ladder-fall concept. Broader: target subsumes
+        doubly-unspecified source. Confidence (moderate).
+        """
+}
+mapping "W119.1" source="W119" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W119 SNOMED CT 86591008 = Swedish extension of ICD-10 W11 (Fall on and from ladder) with
+        place unspecified and activity dimension added. Target SNOMED CT 432803 (86591008), the standard
+        concept that the mirror's ICD10 W11 maps to via crosswalk. The Swedish place/activity specifiers
+        have no SNOMED CT event-level equivalent; the target fully subsumes the mechanism-of-injury axis.
+        One-level broader with verified crosswalk high tier.
+        """
+}
+mapping "W1190.1" source="W1190" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1190 = Swedish extension of W11 (ladder fall), place unspecified, during sport/exercise.
+        Target SNOMED CT 432803; the sport/activity context has no SNOMED CT event-level representation.
+        Target subsumes the injury-mechanism axis. One-level broader, verified crosswalk.
+        """
+}
+mapping "W1191.1" source="W1191" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1191 = Swedish extension of W11 (ladder fall), place unspecified, during leisure/play.
+        Target SNOMED CT 432803; activity context not represented in SNOMED CT event concept. One-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W1192.1" source="W1192" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1192 = Swedish extension of W11 (ladder fall), place unspecified, during paid work.
+        Target SNOMED CT 432803; work-activity context not represented in SNOMED CT event concept. One-level
+        broader, verified crosswalk.
+        """
+}
+mapping "W1193.1" source="W1193" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1193 = Swedish extension of W11 (ladder fall), place unspecified, other activity. Target
+        SNOMED CT 432803; activity context not represented in SNOMED CT event concept. One-level broader,
+        verified crosswalk.
+        """
+}
+mapping "W1194.1" source="W1194" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1194 = Swedish extension of W11 (ladder fall), place unspecified, during vital activity
+        (rest/sleep/meals/hygiene). Target SNOMED CT 432803; activity context not represented in SNOMED CT
+        event concept. One-level broader, verified crosswalk.
+        """
+}
+mapping "W1198.1" source="W1198" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1198 = Swedish extension of W11 (ladder fall), place unspecified, other specified
+        activity. Target SNOMED CT 432803; activity context not represented in SNOMED CT event concept.
+        One-level broader, verified crosswalk.
+        """
+}
+mapping "W1199.1" source="W1199" target="86591008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1199 = Swedish extension of W11 (ladder fall), place unspecified, activity unspecified.
+        With both place and activity unspecified, this is semantically equivalent to the base W11
+        concept. Target SNOMED CT 432803 (86591008), the verified SNOMED CT 86591008 target for W11. One-level
+        broader (Swedish extension code wraps the base ICD-10 code) with verified crosswalk high.
+        """
+}

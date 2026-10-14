@@ -1,0 +1,293 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W576-W57
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W576.1" source="W576" target="217706007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W576: Bitten/stung by non-venomous insect/arthropod - industrial area/construction site
+        (place qualifier only). Target SNOMED CT 437478 (Bite of nonvenomous arthropod). The source adds
+        place-of-occurrence (industrial/construction) qualifier not present in SNOMED CT. Parent W57
+        crosswalks to this SNOMED CT concept. Broader: target subsumes source; no SNOMED CT concept captures
+        the place granularity. Moderate : Athena crosswalk-verified parent, unspecified-place source.
+        """
+}
+mapping "W5760.1" source="W5760" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5760: Bitten/stung by non-venomous insect/arthropod - industrial/construction area -
+        sports/exercise. Target SNOMED CT 437478 (Bite of nonvenomous arthropod). Same analysis as W576:
+        place+activity qualifiers not in SNOMED CT; parent crosswalk verified. Broader, moderate.
+        """
+}
+mapping "W5761.1" source="W5761" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5761 = Swedish extension of W57 SNOMED CT 217706007, adding place/activity detail
+        (industrial area/construction site - play and other leisure). Target SNOMED CT 437478 (concept_code
+        217706007) is the standard concept that W57 maps to via Athena crosswalk. Target subsumes the
+        source: the source's clinical content is identical to W57 (the activity/location subdivisions
+        carry no separate SNOMED CT representation). Broader because the target is the parent injury
+        concept; moderate tier (re-baselined from legacy) reflects unspecified-source crosswalk without
+        independent re-verification.
+        """
+}
+mapping "W5762.1" source="W5762" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5762 = Swedish extension of W57, place/activity = industrial area/construction site -
+        paid work. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57. Target subsumes source; activity/location has no SNOMED CT analogue. Broader, moderate.
+        """
+}
+mapping "W5763.1" source="W5763" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5763 = Swedish extension of W57, place/activity = industrial area/construction site -
+        other activity. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target
+        for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5764.1" source="W5764" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5764 = Swedish extension of W57, place/activity = industrial area/construction site -
+        vital activity (rest, sleep, meals, personal hygiene). Target SNOMED CT 437478 (217706007, SNOMED CT
+        217706007) is the Athena Maps-to target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5768.1" source="W5768" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5768 = Swedish extension of W57, place/activity = industrial area/construction site -
+        other specified activities. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena
+        Maps-to target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5769.1" source="W5769" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5769 = Swedish extension of W57, place/activity = industrial area/construction site -
+        activity, unspecified. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to
+        target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W577.1" source="W577" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W577 = Swedish 4-char extension of W57, place = agricultural area. Target SNOMED CT 437478
+        (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57. Target subsumes
+        source; the place subdivision has no SNOMED CT representation. Broader, moderate (re-baselined from
+        legacy).
+        """
+}
+mapping "W5770.1" source="W5770" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5770 = Swedish extension of W57, place/activity = agricultural area - sport, exercise.
+        Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57;
+        subsumes source. Broader, moderate.
+        """
+}
+mapping "W5771.1" source="W5771" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5771 = Swedish extension of W57, place/activity = agricultural area - play and other
+        leisure. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5772.1" source="W5772" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5772 = Swedish extension of W57, place/activity = agricultural area - paid work. Target
+        SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57;
+        subsumes source. Broader, moderate.
+        """
+}
+mapping "W5773.1" source="W5773" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5773 = Swedish extension of W57, place/activity = agricultural area - other activity.
+        Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57;
+        subsumes source. Broader, moderate.
+        """
+}
+mapping "W5774.1" source="W5774" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5774 = Swedish extension of W57, place/activity = agricultural area - vital activity
+        (rest, sleep, meals, personal hygiene). Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is
+        the Athena Maps-to target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5778.1" source="W5778" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5778 = Swedish extension of W57, place/activity = agricultural area - other specified
+        activities. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5779.1" source="W5779" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5779 = Swedish extension of W57, place/activity = agricultural area - activity,
+        unspecified. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W578.1" source="W578" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W578 = Swedish 4-char extension of W57, place = other specified places. Target SNOMED CT
+        437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57. Target
+        subsumes source; the place subdivision has no SNOMED CT representation. Broader, moderate
+        (re-baselined from legacy).
+        """
+}
+mapping "W5780.1" source="W5780" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5780 = Swedish extension of W57, place/activity = other specified places - sport,
+        exercise. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5781.1" source="W5781" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5781 = Swedish extension of W57, place/activity = other specified places - play and
+        other leisure. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target
+        for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5782.1" source="W5782" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5782 = Swedish extension of W57, place/activity = other specified places - paid work.
+        Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57;
+        subsumes source. Broader, moderate.
+        """
+}
+mapping "W5783.1" source="W5783" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5783 = Swedish extension of W57, place/activity = other specified places - other
+        activity. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5784.1" source="W5784" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5784 = Swedish extension of W57, place/activity = other specified places - vital
+        activity (rest, sleep, meals, personal hygiene). Target SNOMED CT 437478 (217706007, SNOMED CT
+        217706007) is the Athena Maps-to target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5788.1" source="W5788" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5788 = Swedish extension of W57, place/activity = other specified places - other
+        specified activities. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to
+        target for parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5789.1" source="W5789" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5789 = Swedish extension of W57, place/activity = other specified places - activity,
+        unspecified. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W579.1" source="W579" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W579 = Swedish SNOMED CT 10461000 217706007 extension of W57. Prior corpus annotator
+        proposed SNOMED CT 136575 (Nonvenomous insect bite with infection) at legacy, but that target adds
+        an infection qualifier absent from the ICD code (narrower, weak). Replacing with SNOMED CT 437478
+        (217706007) - the Athena Maps-to target for parent W57 - which fully subsumes the source without
+        adding qualifiers. Broader, moderate.
+        """
+}
+mapping "W579.2" source="W579" target="10461000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "W5790.1" source="W5790" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5790 = Swedish extension of W57, place/activity = unspecified place - sport, exercise.
+        Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for parent W57;
+        subsumes source. Broader, moderate.
+        """
+}
+mapping "W5791.1" source="W5791" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5791 = Swedish extension of W57, place/activity = unspecified place - play and other
+        leisure. Target SNOMED CT 437478 (217706007, SNOMED CT 217706007) is the Athena Maps-to target for
+        parent W57; subsumes source. Broader, moderate.
+        """
+}
+mapping "W5792.1" source="W5792" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5792 = Swedish 5-char extension of W57 SNOMED CT 217706007 with place unspecified +
+        paid-work activity context. Target SNOMED CT 437478 (concept_code 217706007). Athena crosswalk
+        verifies W57 -> 437478. The 5-char SE extension adds place/activity sub-classification with no
+        SNOMED CT equivalent; target subsumes the injury mechanism fully. Broader: target is the parent
+        mechanism concept; one level of breadth (lost place/activity context). High : verified Athena
+        crosswalk, injury mechanism essentially exact, only context modifier dropped.
+        """
+}
+mapping "W5793.1" source="W5793" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5793 = Swedish 5-char extension of W57 SNOMED CT 217706007 with place unspecified +
+        other-activity context. Target SNOMED CT 437478 (concept_code 217706007). Athena crosswalk verifies
+        W57 -> 437478. Broader: target is the parent mechanism concept; one level of breadth (lost
+        place/activity context). High : verified Athena crosswalk, injury mechanism essentially exact,
+        only context modifier dropped.
+        """
+}
+mapping "W5794.1" source="W5794" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5794 = Swedish 5-char extension of W57 SNOMED CT 217706007 with place unspecified +
+        vital-activity (rest/sleep/meals/personal hygiene) context. Target SNOMED CT 437478 (concept_code
+        217706007). Athena crosswalk verifies W57 -> 437478. Broader: target is the parent mechanism
+        concept; one level of breadth (lost place/activity context). High : verified Athena crosswalk,
+        injury mechanism essentially exact, only context modifier dropped.
+        """
+}
+mapping "W5798.1" source="W5798" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5798 = Swedish 5-char extension of W57 SNOMED CT 217706007 with place unspecified + other
+        specified activity. Target SNOMED CT 437478 (concept_code 217706007). Athena crosswalk verifies W57
+        -> 437478. Broader: target is the parent mechanism concept; one level of breadth (lost
+        place/activity context). High : verified Athena crosswalk, injury mechanism essentially exact,
+        only context modifier dropped.
+        """
+}
+mapping "W5799.1" source="W5799" target="217706007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5799 = Swedish 5-char extension of W57 SNOMED CT 217706007 with place unspecified +
+        activity unspecified. Target SNOMED CT 437478 (concept_code 217706007). Athena crosswalk verifies
+        W57 -> 437478. Broader: target is the parent mechanism concept; one level of breadth (lost
+        place/activity context). High : verified Athena crosswalk, injury mechanism essentially exact,
+        only context modifier dropped.
+        """
+}

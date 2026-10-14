@@ -1,0 +1,532 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V790-V796
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V7900.1" source="V7900" target="127349007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7900.2" source="V7900" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7901.1" source="V7901" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7901 is a Swedish national extension of V79.0 (bus driver injured in collision with
+        other/unspecified motor vehicle, nontraffic accident) subdivided by activity (here:
+        play/leisure). Activity dimension has no SNOMED CT representation. SNOMED CT 432510 = (48084008) is
+        the V79.0 SNOMED CT 214640008 48084008 crosswalk target and subsumes the accident semantics. SNOMED CT
+        437738 = (214640008) is the secondary V79.0 crosswalk target, capturing the nontraffic aspect.
+        Moderate tier: Athena crosswalk on parent, Swedish activity dimension lost.
+        """
+}
+mapping "V7901.2" source="V7901" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7902.1" source="V7902" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7902 = Swedish extension of V79.0 (Driver of bus injured in collision with other and
+        unspecified motor vehicles in nontraffic accident) with activity suffix SNOMED CT 214640008
+        48084008 (förvärvsarbete / paid work). Activity suffix is the Y93-style activity-at-injury axis
+        and does not change the accident classification. Parent V79.0 (Athena 45561298) has Athena
+        crosswalks to SNOMED CT 432510 (Driver in vehicular AND/OR traffic accident, 48084008) and 437738
+        (Motor vehicle accident off public road, 214640008). Targets broader: they describe the
+        accident/role category at a level above the Swedish activity-extended source. Confidence high :
+        verified Athena crosswalk on parent, one-level broader.
+        """
+}
+mapping "V7902.2" source="V7902" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7903.1" source="V7903" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7903 = Swedish extension of V79.0 (bus driver, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 48084008 (annan
+        sysselsättning / other occupation). Activity suffix is the Y93-style activity axis. Parent V79.0
+        (45561298) crosswalks to SNOMED CT 432510 (Driver in vehicular accident) and 437738 (Motor vehicle
+        accident off public road). Targets broader.
+        """
+}
+mapping "V7903.2" source="V7903" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7904.1" source="V7904" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7904 = Swedish extension of V79.0 (bus driver, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 48084008 (vitalaktivitet
+        såsom vila, sömn, måltid / vital activity). Activity suffix is the Y93-style activity axis.
+        Parent V79.0 (45561298) crosswalks to SNOMED CT 432510 and 437738. Targets broader.
+        """
+}
+mapping "V7904.2" source="V7904" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7908.1" source="V7908" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7908 = Swedish extension of V79.0 (bus driver, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 48084008 (andra
+        specificerade aktiviteter / other specified activities). Activity suffix is the Y93-style
+        activity axis. Parent V79.0 (45561298) crosswalks to SNOMED CT 432510 and 437738. Targets broader.
+        """
+}
+mapping "V7908.2" source="V7908" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7909.1" source="V7909" target="127349007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7909.2" source="V7909" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7910.1" source="V7910" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7910.2" source="V7910" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7911.1" source="V7911" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7911 = Swedish extension of V79.1 (Passenger of bus injured in collision with other and
+        unspecified motor vehicles in nontraffic accident) with activity suffix SNOMED CT 21107000
+        214640008 (lek och annan fritidsverksamhet / play and leisure). Activity suffix is the Y93-style
+        activity axis. Parent V79.1 (Athena 45551741) has Athena crosswalks to SNOMED CT 434228 (Passenger
+        in vehicular AND/OR traffic accident, 21107000) and 437738 (Motor vehicle accident off public
+        road, 214640008). Targets broader.
+        """
+}
+mapping "V7911.2" source="V7911" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7912.1" source="V7912" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7912 = Swedish extension of V79.1 (bus passenger, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 21107000 214640008 (förvärvsarbete
+        / paid work). Activity suffix is the Y93-style activity axis. Parent V79.1 (45551741) crosswalks
+        to SNOMED CT 434228 and 437738. Targets broader.
+        """
+}
+mapping "V7912.2" source="V7912" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7913.1" source="V7913" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7913 = Swedish extension of V79.1 (bus passenger, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 21107000 214640008 (annan
+        sysselsättning / other occupation). Activity suffix is the Y93-style activity axis. Parent V79.1
+        (45551741) crosswalks to SNOMED CT 434228 and 437738. Targets broader.
+        """
+}
+mapping "V7913.2" source="V7913" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7914.1" source="V7914" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7914 = Swedish extension of V79.1 (bus passenger, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 21107000 214640008 (vitalaktivitet
+        / vital activity). Activity suffix is the Y93-style activity axis. Parent V79.1 (45551741)
+        crosswalks to SNOMED CT 434228 and 437738. Targets broader.
+        """
+}
+mapping "V7914.2" source="V7914" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7918.1" source="V7918" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7918 = Swedish extension of V79.1 (bus passenger, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 21107000 214640008 (andra
+        specificerade aktiviteter / other specified activities). Activity suffix is the Y93-style
+        activity axis. Parent V79.1 (45551741) crosswalks to SNOMED CT 434228 and 437738. Targets broader.
+        """
+}
+mapping "V7918.2" source="V7918" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7919.1" source="V7919" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7919.2" source="V7919" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7920.1" source="V7920" target="127348004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 127348004 214845000 [GPS] [GPFP]"
+}
+mapping "V7920.2" source="V7920" target="214845000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7921.1" source="V7921" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7921 = Swedish extension of V79.2 (Unspecified bus occupant injured in collision with
+        other and unspecified motor vehicles in nontraffic accident) with activity suffix SNOMED CT
+        214640008 36198007 (lek och annan fritidsverksamhet / play and leisure). Activity suffix is the
+        Y93-style activity axis. Parent V79.2 (Athena 45756058) has Athena crosswalks to SNOMED CT 437738
+        (Motor vehicle accident off public road, 214640008) and 444074 (Victim of vehicular AND/OR
+        traffic accident, 36198007). Targets broader.
+        """
+}
+mapping "V7921.2" source="V7921" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7922.1" source="V7922" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7922 = Swedish extension of V79.2 (unspecified bus occupant, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 36198007 (förvärvsarbete
+        / paid work). Activity suffix is the Y93-style activity axis. Parent V79.2 (45756058) crosswalks
+        to SNOMED CT 437738 and 444074. Targets broader.
+        """
+}
+mapping "V7922.2" source="V7922" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7923.1" source="V7923" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7923 = Swedish extension of V79.2 (unspecified bus occupant, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 36198007 (annan
+        sysselsättning / other occupation). Activity suffix is the Y93-style activity axis. Parent V79.2
+        (45756058) crosswalks to SNOMED CT 437738 and 444074. Targets broader.
+        """
+}
+mapping "V7923.2" source="V7923" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7924.1" source="V7924" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7924 = Swedish extension of V79.2 (unspecified bus occupant, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 36198007 (vitalaktivitet
+        / vital activity). Activity suffix is the Y93-style activity axis. Parent V79.2 (45756058)
+        crosswalks to SNOMED CT 437738 and 444074. Targets broader.
+        """
+}
+mapping "V7924.2" source="V7924" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7928.1" source="V7928" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7928 = Swedish extension of V79.2 (unspecified bus occupant, nontraffic collision with
+        other/unspecified motor vehicles) with activity suffix SNOMED CT 214640008 36198007 (andra
+        specificerade aktiviteter / other specified activities). Activity suffix is the Y93-style
+        activity axis. Parent V79.2 (45756058) crosswalks to SNOMED CT 437738 and 444074. Targets broader.
+        """
+}
+mapping "V7928.2" source="V7928" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7929.1" source="V7929" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7929.2" source="V7929" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7930.1" source="V7930" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7930 = Swedish extension of V79.3 (Bus occupant [any] injured in unspecified nontraffic
+        accident) with activity suffix SNOMED CT 214640008 36198007 (idrott, sport, motion / sport,
+        exercise). Activity suffix is the Y93-style activity axis. Parent V79.3 (Athena 45566090) has
+        Athena crosswalks to SNOMED CT 437738 (Motor vehicle accident off public road, 214640008) and
+        444074 (Victim of vehicular AND/OR traffic accident, 36198007). Targets broader.
+        """
+}
+mapping "V7930.2" source="V7930" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7931.1" source="V7931" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7931 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (lek och annan fritidsverksamhet / play and leisure).
+        Activity suffix is the Y93-style activity axis. Parent V79.3 (45566090) crosswalks to SNOMED CT
+        437738 and 444074. Targets broader.
+        """
+}
+mapping "V7931.2" source="V7931" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7932.1" source="V7932" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7932 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (förvärvsarbete / paid work). Activity suffix is the
+        Y93-style activity axis. Parent V79.3 (45566090) crosswalks to SNOMED CT 437738 and 444074. Targets
+        broader.
+        """
+}
+mapping "V7932.2" source="V7932" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7933.1" source="V7933" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7933 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (annan sysselsättning / other occupation). Activity
+        suffix is the Y93-style activity axis. Parent V79.3 (45566090) crosswalks to SNOMED CT 437738 and
+        444074. Targets broader.
+        """
+}
+mapping "V7933.2" source="V7933" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7934.1" source="V7934" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7934 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (vitalaktivitet / vital activity). Activity suffix is
+        the Y93-style activity axis. Parent V79.3 (45566090) crosswalks to SNOMED CT 437738 and 444074.
+        Targets broader.
+        """
+}
+mapping "V7934.2" source="V7934" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7938.1" source="V7938" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7938 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (andra specificerade aktiviteter / other specified
+        activities). Activity suffix is the Y93-style activity axis. Parent V79.3 (45566090) crosswalks
+        to SNOMED CT 437738 and 444074. Targets broader.
+        """
+}
+mapping "V7938.2" source="V7938" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7939.1" source="V7939" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7939 = Swedish extension of V79.3 (bus occupant, unspecified nontraffic accident) with
+        activity suffix SNOMED CT 214640008 36198007 (aktivitet, ospecificerad / activity, unspecified).
+        Activity suffix is the Y93-style activity axis. Parent V79.3 (45566090) crosswalks to SNOMED CT
+        437738 and 444074. Targets broader.
+        """
+}
+mapping "V7939.2" source="V7939" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7940.1" source="V7940" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7940.2" source="V7940" target="127349007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7941.1" source="V7941" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7941 = Swedish extension of V79.4 (Driver of bus injured in collision with other and
+        unspecified motor vehicles in traffic accident) with activity suffix SNOMED CT 274913009 48084008
+        (lek och annan fritidsverksamhet / play and leisure). Activity suffix is the Y93-style activity
+        axis and does not change the accident classification. Parent V79.4 (Athena 45590326) has Athena
+        crosswalks to SNOMED CT 432510 (Driver in vehicular AND/OR traffic accident, 48084008) and 433930
+        (Motor vehicle on road in collision with another motor vehicle, 274913009). Targets broader.
+        """
+}
+mapping "V7941.2" source="V7941" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7942.1" source="V7942" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7942 = Swedish extension of V79.4 (bus driver, traffic collision with other/unspecified
+        motor vehicles) with activity suffix SNOMED CT 274913009 48084008 (förvärvsarbete / paid work).
+        Activity suffix is the Y93-style activity axis. Parent V79.4 (45590326) crosswalks to SNOMED CT
+        432510 and 433930. Targets broader.
+        """
+}
+mapping "V7942.2" source="V7942" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7943.1" source="V7943" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7943 = Swedish extension of V79.4 (bus driver, traffic collision with other/unspecified
+        motor vehicles) with activity suffix SNOMED CT 274913009 48084008 (annan sysselsättning / other
+        occupation). Activity suffix is the Y93-style activity axis. Parent V79.4 (45590326) crosswalks
+        to SNOMED CT 432510 and 433930. Targets broader.
+        """
+}
+mapping "V7943.2" source="V7943" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7944.1" source="V7944" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7944 = Swedish extension of V79.4 (bus driver, traffic collision with other/unspecified
+        motor vehicles) with activity suffix SNOMED CT 274913009 48084008 (vitalaktivitet / vital
+        activity). Activity suffix is the Y93-style activity axis. Parent V79.4 (45590326) crosswalks to
+        SNOMED CT 432510 and 433930. Targets broader.
+        """
+}
+mapping "V7944.2" source="V7944" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7948.1" source="V7948" target="127349007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7948 = Swedish extension of ICD-10 V79.4 (Driver of bus injured in collision with
+        unspecified motor vehicles in traffic accident) with activity suffix SNOMED CT 127349007 (other
+        specified activities). Target SNOMED CT 435988 (concept_code 127349007) =, standard concept,
+        Observation/Event domain. Athena ICD10CM crosswalk for V79.40 maps to 433930 (Motor vehicle on
+        road in collision with another motor vehicle) and 435988; 435988 is selected as it captures the
+        driver-role axis that distinguishes V79.4 within the bus-occupant block. Mapping is broader:
+        target fully subsumes the transport-injury axis but drops the bus-specificity and the Swedish
+        activity qualifier (orthogonal context dimension not represented in SNOMED CT injury concepts).
+        Confidence (low) per rubric: Swedish national extension with activity dimension lost, crosswalk
+        sourced from ICD10CM base code rather than Swedish code directly, and the bus-collision context
+        is generalized to.
+        """
+}
+mapping "V7949.1" source="V7949" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7949.2" source="V7949" target="127349007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7950.1" source="V7950" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7950.2" source="V7950" target="21107000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7951.1" source="V7951" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7951 = Swedish extension of ICD-10 V79.5 (Passenger on bus injured in collision with
+        unspecified motor vehicles in traffic accident) with activity suffix SNOMED CT 21107000
+        (leisure/play). Target SNOMED CT 434228 (concept_code 21107000) =, standard concept. Athena ICD10CM
+        crosswalk for V79.50 maps to 433930 and 434228; 434228 captures the passenger-role axis specific
+        to V79.5. Broader: target subsumes the passenger-in-traffic-accident axis but drops
+        bus-specificity and the Swedish activity qualifier. Confidence (low): Swedish extension with
+        activity dimension lost, ICD10CM-derived crosswalk, bus context generalized.
+        """
+}
+mapping "V7952.1" source="V7952" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7952 = Swedish extension of ICD-10 V79.5 (Passenger on bus injured in collision with
+        unspecified motor vehicles in traffic accident) with activity suffix SNOMED CT 21107000
+        (work/forvärvsarbete). Same base code V79.5 as V7951; only the Swedish activity qualifier
+        differs. Target SNOMED CT 434228 (21107000) =, standard. Broader: target subsumes passenger-injury
+        axis, drops bus-specificity and the work-activity context. Confidence (low): Swedish extension,
+        activity dimension lost, ICD10CM-derived crosswalk.
+        """
+}
+mapping "V7953.1" source="V7953" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7953 = Swedish extension of ICD-10 V79.5 (Passenger on bus, unspecified motor vehicles,
+        traffic accident) with activity suffix SNOMED CT 21107000 (other specified activity). Same base
+        V79.5; only Swedish activity qualifier differs. Target SNOMED CT 434228 (21107000) =, standard.
+        Broader: subsumes passenger-injury axis, drops bus-specificity and activity context. Confidence
+        (low).
+        """
+}
+mapping "V7954.1" source="V7954" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7954 = Swedish extension of ICD-10 V79.5 (Passenger on bus, unspecified motor vehicles,
+        traffic accident) with activity suffix SNOMED CT 21107000 (vital activity: rest, sleep, meal,
+        personal hygiene). Same base V79.5; only Swedish activity qualifier differs. Target SNOMED CT
+        434228 (21107000) =, standard. Broader: subsumes passenger-injury axis, drops bus-specificity
+        and vital-activity context. Confidence (low).
+        """
+}
+mapping "V7958.1" source="V7958" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7958 = Swedish extension of ICD-10 V79.5 (Passenger on bus, unspecified motor vehicles,
+        traffic accident) with activity suffix SNOMED CT 21107000 (other specified activities). Same base
+        V79.5; only Swedish activity qualifier differs. Target SNOMED CT 434228 (21107000) =, standard.
+        Broader: subsumes passenger-injury axis, drops bus-specificity and activity context. Confidence
+        (low).
+        """
+}
+mapping "V7959.1" source="V7959" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7959.2" source="V7959" target="21107000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7960.1" source="V7960" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7960.2" source="V7960" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7961.1" source="V7961" target="127348004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7961 = Swedish extension of ICD-10 V79.6 (Unspecified bus occupant injured in collision
+        with unspecified motor vehicles in traffic accident) with activity suffix SNOMED CT 127348004
+        (leisure). Target SNOMED CT 440897 (concept_code 127348004) =, standard concept. Athena ICD10CM
+        crosswalk for V79.60 maps to 433930 and 440897; 440897 selected as it is role-neutral (matches).
+        Broader: target subsumes the victim-of-traffic-accident axis but drops bus-specificity, the
+        unspecified-occupant role, and the Swedish activity qualifier. Confidence (low): Swedish
+        extension, activity dimension lost, generalized victim concept.
+        """
+}
+mapping "V7962.1" source="V7962" target="127348004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7962 = Swedish extension of ICD-10 V79.6 (Unspecified bus occupant, unspecified motor
+        vehicles, traffic accident) with activity suffix SNOMED CT 127348004 (work). Same base V79.6; only
+        Swedish activity qualifier differs. Target SNOMED CT 440897 (127348004) =, standard. Broader:
+        subsumes victim axis, drops bus-specificity and work-activity context. Confidence (low).
+        """
+}
+mapping "V7963.1" source="V7963" target="127348004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7963 = Swedish extension of ICD-10 V79.6 (Unspecified bus occupant, unspecified motor
+        vehicles, traffic accident) with activity suffix SNOMED CT 127348004 (other specified activity).
+        Same base V79.6; only Swedish activity qualifier differs. Target SNOMED CT 440897 (127348004) =,
+        standard. Broader: subsumes victim axis, drops bus-specificity and activity context. Confidence
+        (low).
+        """
+}
+mapping "V7964.1" source="V7964" target="127348004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7964 = Swedish extension of ICD-10 V79.6 (Unspecified bus occupant, unspecified motor
+        vehicles, traffic accident) with activity suffix SNOMED CT 127348004 (vital activity). Same base
+        V79.6; only Swedish activity qualifier differs. Target SNOMED CT 440897 (127348004) =, standard.
+        Broader: subsumes victim axis, drops bus-specificity and vital-activity context. Confidence
+        (low).
+        """
+}
+mapping "V7968.1" source="V7968" target="127348004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7968 = Swedish extension of ICD-10 V79.6 (Unspecified bus occupant, unspecified motor
+        vehicles, traffic accident) with activity suffix SNOMED CT 127348004 (other specified activities).
+        Same base V79.6; only Swedish activity qualifier differs. Target SNOMED CT 440897 (127348004) =,
+        standard. Broader: subsumes victim axis, drops bus-specificity and activity context. Confidence
+        (low).
+        """
+}
+mapping "V7969.1" source="V7969" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7969.2" source="V7969" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

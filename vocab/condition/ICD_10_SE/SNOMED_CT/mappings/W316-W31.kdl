@@ -1,0 +1,264 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W316-W31
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W316.1" source="W316" target="15185003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W316 = Swedish 4-char extension of W31 specifying place=SNOMED CT 15185003 (industrial area,
+        construction site). Base ICD-10 W31 (45756284) Athena-maps to SNOMED CT 4035493 (15185003). No
+        SNOMED CT standard concept distinguishes machinery contact on industrial/construction sites from
+        generic contact. Target fully subsumes source (broader); the place axis is dropped. Confidence
+        (moderate): crosswalk-verified, one specificity level dropped (place only, no activity subcode).
+        """
+}
+mapping "W3160.1" source="W3160" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3160 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity=
+        (sport/athletics/exercise). No SNOMED CT standard captures machinery-contact in
+        industrial/construction setting during sport. Base W31 Athena-maps to SNOMED CT 4035493. Broader;
+        due to dropped place+activity axes.
+        """
+}
+mapping "W3161.1" source="W3161" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3161 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (play and other
+        leisure). No SNOMED CT standard represents this place+activity machinery-contact context. Base W31
+        maps to SNOMED CT 4035493 via Athena. Broader; due to dropped specificity.
+        """
+}
+mapping "W3162.1" source="W3162" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3162 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (paid work).
+        The construction/industrial workplace setting is the most clinically relevant context for
+        machinery contact, but no SNOMED CT concept encodes it. Base W31 maps to SNOMED CT 4035493 via Athena.
+        Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3163.1" source="W3163" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3163 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (other
+        activity). No SNOMED CT standard captures this place+activity context. Base W31 Athena-maps to
+        SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3164.1" source="W3164" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3164 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (vital
+        activity). No SNOMED CT concept captures machinery contact in industrial/construction context
+        during vital activity. Base W31 maps to SNOMED CT 4035493 via Athena. Broader; due to dropped
+        specificity.
+        """
+}
+mapping "W3168.1" source="W3168" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3168 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (other
+        specified activities). No SNOMED CT standard represents this place+activity machinery-contact
+        context. Base W31 Athena-maps to SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3169.1" source="W3169" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3169 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (unspecified
+        activity). No SNOMED CT concept encodes machinery contact specifically in industrial/construction
+        areas. Base W31 maps to SNOMED CT 4035493 via Athena. Target is broader (drops the place axis);
+        confidence.
+        """
+}
+mapping "W317.1" source="W317" target="15185003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W317 = Swedish 4-char extension of W31 specifying place=SNOMED CT 15185003 (agricultural
+        area). Base ICD-10 W31 (45756284) Athena-maps to SNOMED CT 4035493 (15185003). No SNOMED CT standard
+        concept distinguishes machinery contact in agricultural setting from generic contact. Target
+        subsumes source (broader); place axis dropped. Confidence (moderate): crosswalk-verified, one
+        specificity level dropped (place only).
+        """
+}
+mapping "W3170.1" source="W3170" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3170 = Swedish extension of W31 with place=SNOMED CT 15185003 (agricultural area) and
+        activity= (sport). No SNOMED CT standard captures machinery-contact in agricultural setting during
+        sport. Base W31 Athena-maps to SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3171.1" source="W3171" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3171 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (play/leisure).
+        No SNOMED CT concept represents this place+activity machinery-contact context. Base W31 maps to
+        SNOMED CT 4035493 via Athena. Broader; due to dropped specificity.
+        """
+}
+mapping "W3172.1" source="W3172" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3172 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (paid work).
+        Agricultural machinery contact during paid work is the canonical W30/W31 occupational scenario,
+        but no SNOMED CT concept encodes it specifically. Base W31 maps to SNOMED CT 4035493 via Athena.
+        Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3173.1" source="W3173" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3173 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (other
+        activity). No SNOMED CT standard captures this place+activity context. Base W31 Athena-maps to
+        SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3174.1" source="W3174" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3174 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (vital
+        activity). No SNOMED CT concept captures machinery contact in agricultural context during vital
+        activity. Base W31 maps to SNOMED CT 4035493 via Athena. Broader; due to dropped specificity.
+        """
+}
+mapping "W3178.1" source="W3178" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3178 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (other
+        specified activities). No SNOMED CT standard represents this place+activity machinery-contact
+        context. Base W31 Athena-maps to SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3179.1" source="W3179" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3179 = Swedish extension of W31 with place=SNOMED CT 15185003 and activity= (unspecified
+        activity). No SNOMED CT concept encodes machinery contact specifically in agricultural areas. Base
+        W31 maps to SNOMED CT 4035493 via Athena. Broader (drops place axis); confidence.
+        """
+}
+mapping "W318.1" source="W318" target="15185003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 15185003 [GPS]"
+}
+mapping "W3180.1" source="W3180" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3180 = Swedish extension of W31 with place=SNOMED CT 15185003 (other specified places) and
+        activity= (sport). No SNOMED CT concept captures place+activity machinery-contact context. Base W31
+        Athena-maps to SNOMED CT 4035493. Broader; due to dropped place+activity axes.
+        """
+}
+mapping "W3181.1" source="W3181" target="269716005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269716005 [GPS] [IPS]"
+}
+mapping "W3182.1" source="W3182" target="269716005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269716005 [GPS] [IPS]"
+}
+mapping "W3183.1" source="W3183" target="269716005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269716005 [GPS] [IPS]"
+}
+mapping "W3184.1" source="W3184" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3184 = Swedish extension of W31 with place=SNOMED CT 15185003 (other specified places) and
+        activity= (vital activity). No SNOMED CT standard represents this place+activity machinery-contact
+        context. Base W31 maps to SNOMED CT 4035493 via Athena. Broader; due to dropped specificity.
+        """
+}
+mapping "W3188.1" source="W3188" target="15185003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3188 = Swedish extension of W31 with place=SNOMED CT 15185003 (other specified places) and
+        activity= (other specified activities). No SNOMED CT standard captures this doubly-residual
+        place+activity machinery-contact context. Base W31 Athena-maps to SNOMED CT 4035493. Broader; due
+        to dropped place+activity axes.
+        """
+}
+mapping "W3189.1" source="W3189" target="269716005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269716005 [GPS] [IPS]"
+}
+mapping "W319.1" source="W319" target="15185003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 15185003 [GPS]"
+}
+mapping "W3190.1" source="W3190" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3190 SNOMED CT 15185003 = Swedish extension of ICD-10 W31 (Contact with other and
+        unspecified machinery) annotated with activity context (sport/exercise) and unspecified place.
+        Target SNOMED CT 4035493 (concept_code 15185003) is the verified Athena crosswalk target for base
+        W31. The Swedish subcode adds only administrative activity/place metadata; clinically it is the
+        same event as W31. Target subsumes the source (broader), one-level breadth mismatch,
+        crosswalk-verified.
+        """
+}
+mapping "W3191.1" source="W3191" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3191 = Swedish extension of W31 (Contact with machinery) with activity context SNOMED CT
+        15185003 (play/leisure), place unspecified. Target SNOMED CT 4035493 (15185003) is the verified
+        Athena crosswalk target for base W31. Subcode adds only administrative metadata; broader,
+        one-level, crosswalk-verified.
+        """
+}
+mapping "W3192.1" source="W3192" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3192 = Swedish extension of W31 (Contact with machinery) with activity context SNOMED CT
+        15185003 (paid work), place unspecified. Target SNOMED CT 4035493 (15185003) is the verified Athena
+        crosswalk target for base W31. Subcode adds only administrative metadata; broader, one-level,
+        crosswalk-verified.
+        """
+}
+mapping "W3193.1" source="W3193" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3193 = Swedish extension of W31 (Contact with machinery) with activity context SNOMED CT
+        15185003 (other activity), place unspecified. Target SNOMED CT 4035493 (15185003) is the verified
+        Athena crosswalk target for base W31. Subcode adds only administrative metadata; broader,
+        one-level, crosswalk-verified.
+        """
+}
+mapping "W3194.1" source="W3194" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3194 = Swedish extension of W31 (Contact with machinery) with activity context SNOMED CT
+        15185003 (vital activity: rest/sleep/meal/hygiene), place unspecified. Target SNOMED CT 4035493
+        (15185003) is the verified Athena crosswalk target for base W31. Subcode adds only
+        administrative metadata; broader, one-level, crosswalk-verified.
+        """
+}
+mapping "W3198.1" source="W3198" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3198 = Swedish extension of W31 (Contact with machinery) with activity context SNOMED CT
+        15185003 (other specified activities), place unspecified. Target SNOMED CT 4035493 (15185003) is
+        the verified Athena crosswalk target for base W31. Subcode adds only administrative metadata;
+        broader, one-level, crosswalk-verified.
+        """
+}
+mapping "W3199.1" source="W3199" target="15185003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3199 = Swedish extension of W31 (Contact with machinery) with activity SNOMED CT 15185003
+        (unspecified), place unspecified. Target SNOMED CT 4035493 (15185003) is the verified Athena
+        crosswalk target for base W31. Subcode is essentially the unspecified-unspecified child of W31;
+        broader, one-level, crosswalk-verified.
+        """
+}

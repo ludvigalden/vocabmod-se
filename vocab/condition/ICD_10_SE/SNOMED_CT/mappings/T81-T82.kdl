@@ -1,0 +1,225 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes T81-T82
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "T818A.1" source="T818A" target="236085004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T818A is a Swedish extension for SNOMED CT 236085004 (anastomotic leak of the bowel). The
+        closest standard target is SNOMED CT 4341249. Target subsumes the source (covers the full GI tract
+        rather than only); a true ancestor. High broader tier: well-understood breadth mismatch,
+        clinically defensible as the best available standard concept.
+        """
+}
+mapping "T818W.1" source="T818W" target="116224001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T818W is a Swedish extension residual bucket for SNOMED CT 116224001 (WHO analogue T81.8).
+        Target SNOMED CT 442019 = Complication of procedure, reached via the Athena ICD10 T81.8 -> 442019
+        crosswalk. Target is a true ancestor but is a heterogeneous residual source, so confidence is
+        capped at low. Real doubt remains about whether 442019 fully captures the source's scope.
+        """
+}
+mapping "T823A.1" source="T823A" target="370512004" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T823A = Swedish national extension specifying graft migration as a complication of other
+        vascular grafts (parent ICD-10 T82.3 = Mechanical complication of other vascular grafts, OMOP
+        concept 45546700). Target SNOMED CT 370512004 (OMOP 4152602). Source definition: graft migration in
+        vascular graft context. Target definition: migration of any implant/internal device. Why this
+        target: closest specific SNOMED CT concept for the migration complication; no SNOMED CT concept exists
+        for specifically. moderate: target is best available and clinically defensible but the target is
+        broader (any implant, not vascular graft specific) and not crosswalk-verified for this Swedish
+        extension.
+        """
+}
+mapping "T823B.1" source="T823B" target="417023008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T823B = Swedish national extension specifying stent fracture as a complication of other
+        vascular grafts (parent T82.3). Target SNOMED CT 417023008 (OMOP 4218328). Source definition: stent
+        fracture in vascular graft/prosthesis context. Target definition: stent fracture (any stent).
+        Why this target: exact semantic match for the complication type (stent fracture); the SNOMED CT
+        concept is generic for any stent fracture and does not specify vascular graft context. moderate:
+        clinically defensible match on the complication type; the source additionally qualifies the
+        context (vascular graft prosthesis) which the target does not capture, so it is broader rather
+        than exact.
+        """
+}
+mapping "T823W.1" source="T823W" target="111741004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T823W = Swedish national extension SNOMED CT 111741004 (parent T82.3). Target (OMOP
+        40276352). Source definition: residual bucket for any other specified mechanical complication of
+        vascular grafts. Target definition: mechanical complication of other vascular
+        device/implant/graft. Why this target: this is the SNOMED CT concept that the parent T82.3 itself
+        maps to (via OMOP crosswalk); it is the closest standard concept covering the same device
+        family. low: source is a heterogeneous residual bucket and target is necessarily non-specific.
+        """
+}
+mapping "T823X.1" source="T823X" target="111741004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T823X = Swedish national extension SNOMED CT 111741004 (parent T82.3). Target (OMOP
+        40276352). Source definition: unspecified mechanical complication of other vascular grafts.
+        Target definition: mechanical complication of other vascular device/implant/graft. Why this
+        target: closest standard concept covering the same device family; the parent T82.3 crosswalk
+        resolves here. low: unspecified source mapped to a moderately broad target.
+        """
+}
+mapping "T828A.1" source="T828A" target="69920000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828A = Swedish national extension specifying bleeding/hemorrhage as a complication of
+        cardiac and vascular prosthesis/implant/graft (parent T82.8 = Other specified complications of
+        cardiac and vascular prosthetic devices). Target SNOMED CT 69920000 (OMOP 4320635). Source
+        definition: bleeding complication of cardiac/vascular prosthesis. Target definition: hemorrhage
+        due to any device/implant/graft. Why this target: precise match on the complication mechanism
+        (device-related hemorrhage); target is broader across device types. moderate: best available,
+        clinically defensible, slight breadth mismatch.
+        """
+}
+mapping "T828B.1" source="T828B" target="87266004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828B = Swedish national extension specifying embolism as a complication of
+        cardiac/vascular prosthesis (parent T82.8). Target SNOMED CT 87266004 (OMOP 4337373). Source
+        definition: embolic complication of cardiac/vascular prosthesis. Target definition: embolism due
+        to any device/implant/graft. Why this target: precise match on the complication mechanism;
+        target broader across device types. moderate.
+        """
+}
+mapping "T828C.1" source="T828C" target="87266004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828C = Swedish national extension specifying distal embolization as a complication of
+        cardiac/vascular prosthesis (parent T82.8). Target SNOMED CT 87266004 (OMOP 4337373). Source
+        definition: distal embolization (emboli traveling downstream) from cardiac/vascular prosthesis.
+        Target definition: embolism due to any device/implant/graft. Why this target: no SNOMED CT concept
+        for specifically; the general device-related embolism concept is the closest standard target.
+        low: target loses both the qualifier and the cardiac/vascular specificity.
+        """
+}
+mapping "T828D.1" source="T828D" target="234194005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828D = Swedish national extension specifying thrombosis as a complication of
+        cardiac/vascular prosthesis (parent T82.8). Target SNOMED CT 234194005 (OMOP 4120280). Source
+        definition: thrombotic complication of cardiac/vascular prosthesis, implant or graft. Target
+        definition: thrombosis of vascular graft. Why this target: precise match for graft thrombosis;
+        source additionally covers cardiac prostheses and non-graft implants so target is slightly
+        narrower on device scope but a strong clinical match for the dominant case. moderate: clinically
+        defensible, slight scope mismatch on device type.
+        """
+}
+mapping "T828F.1" source="T828F" target="111748005" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T828F = Swedish national extension: stenosis in graft or native vessel with ischemic
+        symptoms, as a complication of cardiac/vascular prosthesis (parent T82.8). Target SNOMED CT
+        111748005 (OMOP 4008710). Source definition: device/graft-related stenosis with ischemia. Target
+        definition: stenosis due to any device/implant/graft. Why this target: closest standard concept
+        for device-related stenosis; target does not capture the ischemic-symptom qualifier or the
+        graft-vs-native-vessel distinction. moderate: clinically defensible, loses the ischemia
+        qualifier.
+        """
+}
+mapping "T828G.1" source="T828G" target="111748005" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source T828G = Swedish national extension: stenosis in graft or native vessel without ischemic
+        symptoms, as a complication of cardiac/vascular prosthesis (parent T82.8). Target SNOMED CT
+        111748005 (OMOP 4008710). Why this target: same reasoning as T828F; target does not distinguish
+        the without-ischemia qualifier. moderate.
+        """
+}
+mapping "T828H.1" source="T828H" target="443089001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828H = Swedish national extension: pseudoaneurysm as a complication of cardiac/vascular
+        prosthesis (parent T82.8). Target SNOMED CT 443089001 (OMOP 40479758). Source definition:
+        pseudoaneurysm complicating cardiac/vascular prosthesis. Target definition: pseudoaneurysm
+        (generic). Why this target: no SNOMED CT concept for that broadly covers the source; the generic
+        pseudoaneurysm concept is the closest standard target. low: target loses the device-related
+        etiology.
+        """
+}
+mapping "T828J.1" source="T828J" target="439470001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828J = Swedish national extension: AV-fistula as a complication of cardiac/vascular
+        prosthesis (parent T82.8). Target SNOMED CT 439470001 (OMOP 4234480). Source definition:
+        arteriovenous fistula complicating cardiac/vascular prosthesis/implant/graft. Target definition:
+        arteriovenous fistula (generic, acquired). Why this target: no SNOMED CT concept for as a general
+        category; the generic AV-fistula concept is the closest standard target. low: target loses the
+        device-related etiology.
+        """
+}
+mapping "T828K.1" source="T828K" target="234200002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SE-mirror sctid 234200002 is ACTIVE in RF2 20260701
+        (valid_end 2099-12-31, invalid_reason empty, mapping_provenance rf2); athena SNOMED CT omop
+        4125010. Source definition: T828K = Swedish national extension SNOMED CT 234200002 = aortoenteric
+        fistula as a complication of cardiac/vascular prosthesis, implant or graft (parent T82.8 = Other
+        specified complications of cardiac and vascular prosthetic devices, OMOP 45585258). Target
+        definition:, a fistula between a vascular graft and the enteric tract; its is-a parents in the
+        SE mirror are 234190001 (Disorder of vascular graft) and 38851006 (Fistula of intestine),
+        confirming the device-complication + enteric-fistula semantics. Why this target: a secondary
+        aortoenteric fistula (aortoenteric fistula following aortic prosthesis/graft placement) IS a
+        vascular-graft-enteric fistula — the aortic prosthesis is the vascular graft and the bowel
+        communication is the enteric fistula. This is the specific device-complication fistula concept;
+        405585001 is explicitly traumatic and does not apply. The target is broader than the source: it covers any vascular-graft enteric
+        fistula (not only aortoenteric), and the source additionally covers cardiac prostheses and
+        non-graft implants, so there is a small well-understood breadth mismatch on device type. Why
+        this tier (moderate): target is the best available standard concept and clinically defensible
+        for the dominant case (aortic graft enteric fistula), crosswalk-consistent with the established
+        T828* sibling pattern in the ICD-10-SE corpus (T828A-L map T82.8 Swedish extensions to specific
+        SNOMED CT complication concepts at - broader), but not independently crosswalk-verified for this
+        Swedish subcode (the athena T82.8 Maps-to edge targets only 43021974) and the target is broader
+        on device scope. A defensible active standard target exists, so the mapping carries no invalid_reason.
+        mapping_type broader (target subsumes the source on the fistula mechanism; source is a specific
+        instance of the target category).
+        """
+}
+mapping "T828L.1" source="T828L" target="417444002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828L = Swedish national extension: endoleak as a complication of cardiac/vascular
+        prosthesis (parent T82.8). Target SNOMED CT 417444002 (OMOP 4217230). Source definition: endoleak
+        complicating vascular prosthesis (typically endovascular graft). Target definition: endoleak.
+        Why this target: endoleak is by definition a complication of endovascular vascular grafts, so
+        the target's clinical scope aligns closely with the source; target is broader only in not naming
+        the prosthesis type explicitly. high: tight clinical match, single well-understood breadth
+        mismatch.
+        """
+}
+mapping "T828M.1" source="T828M" target="473031002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828M = Swedish national extension: vessel rupture as a complication of cardiac/vascular
+        prosthesis (parent T82.8). No SNOMED CT concept for SNOMED CT 473031002 exists in the mirror; specific
+        artery-rupture concepts (e.g. 46126003, 82889007) are traumatic/non-device etiologies. Target
+        (OMOP 43021245) is the parent concept that the T82 chapter maps to. Why this target: closest
+        defensible standard ancestor covering device-related vascular complications; loses the
+        specificity. low: meaningful loss of the specific complication mechanism.
+        """
+}
+mapping "T828W.1" source="T828W" target="473031002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T828W = Swedish national extension SNOMED CT 473031002 (parent T82.8). Target (OMOP
+        43021245). Why this target: parent concept covering the device family; the source is a
+        heterogeneous residual bucket so no more specific target is defensible. low: residual source,
+        non-specific target.
+        """
+}

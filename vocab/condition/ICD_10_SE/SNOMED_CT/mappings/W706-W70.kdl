@@ -1,0 +1,291 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W706-W70
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W706.1" source="W706" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W706 = drowning and submersion following fall into natural water in
+        industrial/construction area (no activity specified). Parent W70 crosswalks to SNOMED CT 436593
+        (Accidental drowning and submersion). Target broader: covers all accidental drowning, not
+        limited to natural-water falls or industrial locations. Moderate tier: Athena crosswalk at
+        parent level; 4-digit subcode is a Swedish place modifier with no individual SNOMED CT equivalent.
+        """
+}
+mapping "W7060.1" source="W7060" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7060 = drowning and submersion following fall into natural water in
+        industrial/construction area, sports/athletics. Parent W70 crosswalks to SNOMED CT 436593
+        (Accidental drowning and submersion). Target broader: covers all accidental drowning. Moderate
+        tier: Athena crosswalk at parent level; subcode is a Swedish place-activity modifier with no
+        individual SNOMED CT equivalent.
+        """
+}
+mapping "W7061.1" source="W7061" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7061 = drowning and submersion following fall into natural water in
+        industrial/construction area, leisure/play. Parent W70 crosswalks to SNOMED CT 436593 (Accidental
+        drowning and submersion). Target broader: covers all accidental drowning. Moderate tier: Athena
+        crosswalk at parent level; subcode is a Swedish place-activity modifier with no individual
+        SNOMED CT equivalent.
+        """
+}
+mapping "W7062.1" source="W7062" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7062 = drowning and submersion following fall into natural water in
+        industrial/construction area, paid work. Parent W70 crosswalks to SNOMED CT 436593 (Accidental
+        drowning and submersion). Target broader: covers all accidental drowning. Moderate tier: Athena
+        crosswalk at parent level; subcode is a Swedish place-activity modifier with no individual
+        SNOMED CT equivalent.
+        """
+}
+mapping "W7063.1" source="W7063" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7063 = drowning and submersion following fall into natural water in
+        industrial/construction area, other occupation. Parent W70 crosswalks to SNOMED CT 436593
+        (Accidental drowning and submersion). Target broader: covers all accidental drowning. Moderate
+        tier: Athena crosswalk at parent level; subcode is a Swedish place-activity modifier with no
+        individual SNOMED CT equivalent.
+        """
+}
+mapping "W7064.1" source="W7064" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7064: drowning/submersion after fall into natural water, industrial area, vital
+        activities. SNOMED CT 436593 (217748000). Target subsumes the source: captures the drowning event
+        but loses place-of-occurrence and activity detail. Athena crosswalk from parent W70 to 436593
+        verified; no more specific SNOMED CT concept exists for place+activity qualified drowning. Moderate
+        tier: crosswalk-verified but granularity loss from place/activity modifiers.
+        """
+}
+mapping "W7068.1" source="W7068" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7068: drowning/submersion after fall into natural water, industrial area, other
+        specified activities. SNOMED CT 436593. Target subsumes source; place/activity qualifiers have no
+        SNOMED CT analogue. Athena crosswalk from W70 to 436593. Moderate: crosswalk-verified, detail loss.
+        """
+}
+mapping "W7069.1" source="W7069" target="217748000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7069: drowning/submersion after fall into natural water, industrial area, unspecified
+        activity. SNOMED CT 436593. Target subsumes source; no more specific SNOMED CT for place+activity
+        qualified drowning. Athena crosswalk verified. Moderate: crosswalk-verified, unspecified
+        activity source.
+        """
+}
+mapping "W707.1" source="W707" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W707: drowning/submersion after fall into natural water, farm area (4th char only, no
+        activity). SNOMED CT 436593. Target subsumes source; place qualifier lost. Athena crosswalk from
+        W70 verified. Moderate: one-level broader via place detail.
+        """
+}
+mapping "W7070.1" source="W7070" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7070: drowning/submersion after fall into natural water, farm area, sports. SNOMED CT
+        436593. Target subsumes source; place/activity detail lost. Athena crosswalk verified. Moderate:
+        crosswalk-verified, granularity loss.
+        """
+}
+mapping "W7071.1" source="W7071" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7071: drowning/submersion after fall into natural water, farm area, leisure. SNOMED CT
+        436593. Target subsumes source. Athena crosswalk verified. Moderate: crosswalk-verified, detail
+        loss from place/activity.
+        """
+}
+mapping "W7072.1" source="W7072" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7072: drowning/submersion after fall into natural water, farm area, paid work. SNOMED CT
+        436593. Target subsumes source; place/activity qualifiers have no SNOMED CT equivalent. Athena
+        crosswalk verified. Moderate: crosswalk-verified, granularity loss.
+        """
+}
+mapping "W7073.1" source="W7073" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7073: drowning/submersion after fall into natural water, farm area, other occupation.
+        SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate: crosswalk-verified,
+        detail loss.
+        """
+}
+mapping "W7074.1" source="W7074" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7074: drowning/submersion after fall into natural water, farm area, vital activities.
+        SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate: crosswalk-verified,
+        granularity loss from place/activity.
+        """
+}
+mapping "W7078.1" source="W7078" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7078: drowning/submersion after fall into natural water, farm area, other specified
+        activities. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7079.1" source="W7079" target="217748000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7079: drowning/submersion after fall into natural water, farm area, unspecified
+        activity. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, unspecified activity source.
+        """
+}
+mapping "W708.1" source="W708" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W708: drowning/submersion after fall into natural water, other specified places (4th char
+        only). SNOMED CT 436593. Target subsumes source; place qualifier lost. Athena crosswalk verified.
+        Moderate: one-level broader via place detail.
+        """
+}
+mapping "W7080.1" source="W7080" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7080: drowning/submersion after fall into natural water, other specified places, sports.
+        SNOMED CT 436593. Target subsumes source; place/activity lost. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7081.1" source="W7081" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7081: drowning/submersion after fall into natural water, other specified places,
+        leisure. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7082.1" source="W7082" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7082: drowning/submersion after fall into natural water, other specified places, paid
+        work. SNOMED CT 436593. Target subsumes source; place/activity detail lost. Athena crosswalk
+        verified. Moderate: crosswalk-verified, granularity loss.
+        """
+}
+mapping "W7083.1" source="W7083" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7083: drowning/submersion after fall into natural water, other specified places, other
+        occupation. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7084.1" source="W7084" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7084: drowning/submersion after fall into natural water, other specified places, vital
+        activities. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, granularity loss.
+        """
+}
+mapping "W7088.1" source="W7088" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7088: drowning/submersion after fall into natural water, other specified places, other
+        specified activities. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified.
+        Moderate: crosswalk-verified, detail loss.
+        """
+}
+mapping "W7089.1" source="W7089" target="217748000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7089: drowning/submersion after fall into natural water, other specified places,
+        unspecified activity. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified.
+        Moderate: crosswalk-verified, unspecified activity.
+        """
+}
+mapping "W709.1" source="W709" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W709: drowning/submersion after fall into natural water, unspecified place (4th char
+        only). SNOMED CT 436593. Target subsumes source; place qualifier lost. Athena crosswalk verified.
+        Moderate: one-level broader.
+        """
+}
+mapping "W7090.1" source="W7090" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7090: drowning/submersion after fall into natural water, unspecified place, sports.
+        SNOMED CT 436593. Target subsumes source; place/activity lost. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7091.1" source="W7091" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7091: drowning/submersion after fall into natural water, unspecified place, leisure.
+        SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate: crosswalk-verified,
+        detail loss.
+        """
+}
+mapping "W7092.1" source="W7092" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7092: drowning/submersion after fall into natural water, unspecified place, paid work.
+        SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate: crosswalk-verified,
+        granularity loss.
+        """
+}
+mapping "W7093.1" source="W7093" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7093: drowning/submersion after fall into natural water, unspecified place, other
+        occupation. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7094.1" source="W7094" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7094: drowning/submersion after fall into natural water, unspecified place, vital
+        activities. SNOMED CT 436593. Target subsumes source. Athena crosswalk verified. Moderate:
+        crosswalk-verified, detail loss.
+        """
+}
+mapping "W7098.1" source="W7098" target="217748000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7098 = drowning and submersion following fall into natural water, unspecified place,
+        other specified activity. Target SNOMED CT 436593 (217748000), the sole standard concept in this
+        hierarchy. SNOMED CT has non-standard [X] concepts for place-modified variants (e.g. 40417989,
+        occurrence at unspecified place) but no activity-modified variants; all [X] concepts have
+        invalid_reason=D in Athena. Parent ICD-10 W70 crosswalks to 436593. The 5-char code adds
+        unspecified place + activity detail that no standard SNOMED CT concept captures; the target fully
+        subsumes the source but at 3+ levels of hierarchy above. Weak tier: extreme specificity loss
+        (mechanism, place, activity all dropped), but subsumption is total and parent
+        crosswalk-confirmed.
+        """
+}
+mapping "W7099.1" source="W7099" target="217748000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W7099 = drowning and submersion following fall into natural water, unspecified place,
+        unspecified activity. Target SNOMED CT 436593 (217748000). Same reasoning as W7098: the only
+        standard SNOMED CT concept; non-standard [X] place-modified concepts exist but are deprecated. The
+        source adds activity granularity (even if unspecified) beyond what any standard concept encodes.
+        Weak tier: broad target, total subsumption, parent crosswalk-confirmed, 3+ hierarchy levels
+        lost.
+        """
+}

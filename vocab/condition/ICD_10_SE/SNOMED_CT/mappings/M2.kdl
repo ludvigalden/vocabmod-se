@@ -1,0 +1,544 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes M2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "M210C.1" source="M210C" target="70123009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M210F.1" source="M210F" target="33754009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "M210G.1" source="M210G" target="52012001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M210G SNOMED CT 52012001 = genu valgum / knock knee (Swedish 6th-char G = knee/lower leg).
+        Target SNOMED CT 80504 (52012001) = Acquired genu valgum. Athena crosswalk from base ICD-10 M21.06
+        (Valgus deformity, lower leg) maps directly to 80504. The Swedish code specifies genu (knee)
+        which is the same clinical concept as. Confidence : crosswalk-verified exact match, Swedish
+        extension code corresponds to M21.06.
+        """
+}
+mapping "M211C.1" source="M211C" target="15935181000119105" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M211F.1" source="M211F" target="12067001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M211F SNOMED CT 12067001 = coxa vara deformity of hip (Swedish 6th-char F = pelvic
+        region/thigh, here specifically hip). Target SNOMED CT 81948 (12067001) = Acquired coxa vara. Base
+        ICD-10 M21.15 (Varus deformity, pelvic region and thigh) crosswalks to 37162978 (Deformity of
+        bone of pelvis), but 81948 is the more clinically precise SNOMED CT concept that exactly denotes
+        coxa vara. Confidence : exact clinical concept match, SNOMED CT browser confirms 12067001 is the
+        canonical acquired coxa vara.
+        """
+}
+mapping "M211G.1" source="M211G" target="79168008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "M217F.1" source="M217F" target="203601000" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M217F SNOMED CT 203601000 = unequal leg length in femur. Target SNOMED CT 40400785 (203601000)
+        = Acquired unequal leg length. The source is specifically about femur shortening, but SNOMED CT
+        only has side-specific femur-shortening concepts (601060 left femur, 601063 right femur) without
+        a side-agnostic femur-specific target. 40400785 is the parent that subsumes all lower-limb
+        length inequality including the femur-shortening cases. Confidence : target is broader than
+        source (target subsumes both femur and tibia cases, both sides), but is the best side-agnostic
+        standard concept.
+        """
+}
+mapping "M217G.1" source="M217G" target="203601000" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M217G SNOMED CT 203601000 = unequal leg length in lower leg (tibia/fibula). Target SNOMED CT
+        40400785 (203601000) = Acquired unequal leg length. SNOMED CT has side-specific tibia-shortening
+        concepts (601062 left, 601065 right) but no side-agnostic tibia-specific target. 40400785
+        subsumes all lower-limb length inequality. Confidence : target is broader than source, but is
+        the best side-agnostic standard concept.
+        """
+}
+mapping "M217X.1" source="M217X" target="203601000" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source M217X SNOMED CT 203601000 = unequal limb length, unspecified. Target SNOMED CT 40400785
+        (203601000) = Acquired unequal leg length. Base ICD-10 M21.7 parent (45548352) crosswalks to
+        45757656 (Acquired unequal limb length, 300261000119100), but 40400785 is the leg-specific
+        equivalent which is more precise for the Swedish code that specifies (leg). Confidence :
+        crosswalk-verified at the M21.7 parent level, but unspecified source and Swedish-extension code
+        reduce from to.
+        """
+}
+mapping "M230L.1" source="M230L" target="202098006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M230L SNOMED CT 202098006 = cystic meniscus, lateral, in knee. Target SNOMED CT 4117230
+        (202098006) = Cyst of lateral meniscus. Athena crosswalk from base ICD-10 M23.04/M23.06 (Cystic
+        meniscus, lateral collateral/anterior horn/other lateral) maps to 4117230. Swedish lateral code
+        corresponds directly. Confidence : crosswalk-verified exact clinical match.
+        """
+}
+mapping "M230M.1" source="M230M" target="202083009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M230M SNOMED CT 202083009 = cystic meniscus, medial, in knee. Target SNOMED CT 4115689
+        (202083009) = Cyst of medial meniscus. Athena crosswalk from base ICD-10 M23.0x medial codes
+        maps to 4301617 (Cyst of semilunar cartilage, the broader parent). 4115689 is the more
+        clinically precise concept that exactly denotes medial meniscus cyst. Confidence : exact
+        clinical concept match confirmed in SNOMED CT browser; more precise than the Athena crosswalk
+        target.
+        """
+}
+mapping "M231L.1" source="M231L" target="202099003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M231L SNOMED CT 202099003 = discoid meniscus, lateral, in knee. Target SNOMED CT 4115691
+        (202099003) = Congenital discoid lateral meniscus of knee. Athena crosswalk from base ICD-10
+        M23.16 (Discoid meniscus, other and unspecified lateral) maps to 4115691. Confidence :
+        crosswalk-verified exact clinical match.
+        """
+}
+mapping "M231M.1" source="M231M" target="239721001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M231M SNOMED CT 239721001 = discoid meniscus, medial, in knee. Target SNOMED CT 4035416
+        (239721001) = Congenital discoid meniscus of knee. Athena crosswalk from base ICD-10 M23.1x
+        medial codes (M23.11/12/13) all map to 4035416, the side-agnostic discoid meniscus concept. No
+        medial-specific discoid meniscus standard concept exists in SNOMED CT. Confidence : target is
+        broader than source (subsumes both medial and lateral), best available standard concept.
+        """
+}
+mapping "M232L.1" source="M232L" target="202100006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M232L SNOMED CT 202100006 = old meniscus rupture, lateral, in knee. Target SNOMED CT 40401728
+        (202100006) = Old tear of lateral meniscus. Athena crosswalk from base ICD-10 M23.2x lateral
+        codes maps to multiple horn-specific concepts (433288 anterior horn, 433556 posterior horn,
+        437954 derangement of lateral meniscus). 40401728 is the unified concept that best matches the
+        Swedish side-agnostic lateral old-rupture code. Confidence : exact clinical concept match, more
+        precise than the heterogeneous Athena crosswalk targets.
+        """
+}
+mapping "M232M.1" source="M232M" target="202084003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M232M SNOMED CT 202084003 = old meniscus rupture, medial, in knee. Target SNOMED CT 40401711
+        (202084003) = Old tear of medial meniscus. Athena crosswalk from base ICD-10 M23.2x medial codes
+        maps to horn-specific or injury-specific concepts (435904 anterior horn, 75051 posterior horn,
+        46273646 derangement due to injury). 40401711 is the unified concept that best matches the
+        Swedish side-agnostic medial old-rupture code. Confidence : exact clinical concept match.
+        """
+}
+mapping "M233L.1" source="M233L" target="21333004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M233L SNOMED CT 21333004 = other meniscus changes, lateral, in knee. This is a residual
+        bucket. Target SNOMED CT 437954 (21333004) = Derangement of lateral meniscus. Athena crosswalk from
+        base ICD-10 M23.3x lateral codes maps variously to 75346 (Derangement of meniscus), 433556
+        (posterior horn), 437954 (lateral). 437954 is the lateral-specific meniscus derangement concept,
+        the best aggregate target for this heterogeneous source bucket. Confidence : residual source
+        bucket with real semantic ambiguity, but lateral meniscus derangement is the dominant meaning.
+        """
+}
+mapping "M233M.1" source="M233M" target="111222003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M233M SNOMED CT 111222003 = other meniscus changes, medial, in knee. Residual bucket. Target
+        SNOMED CT 77066 (111222003) = Derangement of medial meniscus. Athena crosswalk from base ICD-10
+        M23.3x medial codes all map to 75346 (Derangement of meniscus, the broader parent). 77066 is the
+        medial-specific meniscus derangement concept, more precise than the Athena crosswalk target.
+        Confidence : residual source bucket with real ambiguity, but medial meniscus derangement is the
+        dominant meaning.
+        """
+}
+mapping "M240B.1" source="M240B" target="202156005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M240B SNOMED CT 202156005 = loose body in shoulder joint. Target SNOMED CT 4117404 (202156005)
+        = Loose body in shoulder joint. Athena crosswalk from base ICD-10 M24.01 (Loose body in joint,
+        shoulder region) maps directly to 4117404. Confidence : crosswalk-verified exact match.
+        """
+}
+mapping "M240C.1" source="M240C" target="202158006" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M240C SNOMED CT 202158006 = loose body in elbow joint. Target SNOMED CT 4117242 (202158006) =
+        Loose body in elbow joint. Base ICD-10 M24.02 (Loose body in joint, upper arm) crosswalks to
+        76191 (Disorder of upper arm) and 79104 (Loose body in joint, generic), but 4117242 is the
+        elbow-specific concept that exactly matches the source. Confidence : exact clinical concept
+        match confirmed in SNOMED CT browser.
+        """
+}
+mapping "M240D.1" source="M240D" target="202159003" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M240D SNOMED CT 202159003 = loose body in wrist/hand. Target SNOMED CT 4117405 (202159003) =
+        Loose body in wrist joint. Athena crosswalk from base ICD-10 M24.03 (Loose body in joint,
+        forearm) maps to 4117405. The Swedish code covers wrist/hand; the wrist-joint target is the best
+        single standard concept (hand-joint loose body 77071 also exists but the wrist concept is the
+        Athena crosswalk target). Confidence : crosswalk-verified; minor wrist-vs-hand breadth mismatch
+        keeps this at rather than.
+        """
+}
+mapping "M240F.1" source="M240F" target="202160008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M240F SNOMED CT 202160008 = loose body in hip joint. Target SNOMED CT 4115830 (202160008) =
+        Loose body in hip joint. Athena crosswalk from base ICD-10 M24.05 (Loose body in joint, pelvic
+        region and thigh) maps to 4115830. Confidence : crosswalk-verified exact match.
+        """
+}
+mapping "M240H.1" source="M240H" target="267917000" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M240H SNOMED CT 267917000 = loose body in ankle/foot. Target SNOMED CT 78509 (267917000) =
+        Loose body in joint of ankle and/or foot. Athena crosswalk from base ICD-10 M24.07 (Loose body
+        in joint, ankle and foot) maps directly to 78509. Confidence : crosswalk-verified exact match.
+        """
+}
+mapping "M242B.1" source="M242B" target="67374007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M242B SNOMED CT 67374007 = ligamentous instability in shoulder joint. Target SNOMED CT 4285734
+        (67374007) = Instability of joint. SNOMED CT has only side-specific shoulder instability concepts
+        (759898 right, 759899 left) without a side-agnostic shoulder-specific standard. The Athena
+        crosswalk from M24.21 (Disorder of ligament, shoulder) maps to 77630 (Disorder of shoulder)
+        which is far too broad. 4285734 is the canonical instability-of-joint concept that subsumes
+        shoulder. Confidence : target is broader than source (loses shoulder specificity), best
+        side-agnostic standard concept.
+        """
+}
+mapping "M242C.1" source="M242C" target="67374007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M242C SNOMED CT 67374007 = ligamentous instability in elbow joint. Target SNOMED CT 4285734
+        (67374007) = Instability of joint. SNOMED CT has only side-specific elbow instability concepts
+        (36676849 left, 36687080 right) without a side-agnostic elbow-specific standard. 4285734 is the
+        canonical instability-of-joint concept that subsumes elbow. Confidence : target is broader than
+        source (loses elbow specificity), best side-agnostic standard concept.
+        """
+}
+mapping "M242D.1" source="M242D" target="445188009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M242D SNOMED CT 445188009 = ligamentous instability in wrist/finger. Target SNOMED CT 40482478
+        (445188009) = Instability of hand joint. This is the side-agnostic hand-joint instability
+        concept. The source covers wrist and fingers; the target covers the hand joint region.
+        Confidence : clinically correct side-agnostic match, but wrist-vs-finger-vs-hand breadth
+        mismatch and Swedish extension code reduce from.
+        """
+}
+mapping "M242H.1" source="M242H" target="813001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M242H SNOMED CT 813001 = ligamentous instability in ankle. Target SNOMED CT 4218552 (813001) =
+        Ankle instability. Side-agnostic ankle instability concept that exactly matches the source.
+        Confidence : exact clinical concept match, side-agnostic standard concept.
+        """
+}
+mapping "M242X.1" source="M242X" target="67374007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M242X SNOMED CT 67374007 = ligamentous instability, other or unspecified site. Target SNOMED CT
+        4285734 (67374007) = Instability of joint. The source is explicitly unspecified/other site, so
+        the side- and site-agnostic parent is the correct match. Confidence : crosswalk at parent level
+        M24.2 maps to 442628 (Disorder of ligament) but the source is specifically about instability, so
+        4285734 is semantically more precise; unspecified source keeps this at.
+        """
+}
+mapping "M244B.1" source="M244B" target="202221002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244B SNOMED CT 202221002 = recurrent dislocation/subluxation of shoulder joint (Swedish
+        ICD-10-SE extension; B = shoulder region, equivalent to base ICD-10 M24.41). Target SNOMED CT
+        4117249 (Athena concept 4117249, SNOMED CT code 202221002). Athena crosswalk ICD10 M24.41
+        (42617153). Exact clinical equivalence at shoulder-region specificity; high tier rather than
+        because the Swedish code uses a regional letter extension rather than the base ICD-10
+        4-character code, so the equivalence is regional-letter-mapped rather than a direct WHO
+        crosswalk.
+        """
+}
+mapping "M244C.1" source="M244C" target="202222009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244C SNOMED CT 202222009 = recurrent dislocation/subluxation of elbow joint (Swedish
+        extension; C = upper arm/elbow, equivalent to base ICD-10 M24.42). Target SNOMED CT 78510. Athena
+        crosswalk ICD10 M24.42 (42617154). Exact clinical equivalence; high tier because regional-letter
+        mapping rather than direct WHO code.
+        """
+}
+mapping "M244D.1" source="M244D" target="202230005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244D SNOMED CT 202230005 = recurrent dislocation/subluxation of wrist/hand (Swedish
+        extension; D combines wrist+hand, spanning base ICD-10 M24.43 forearm/wrist and M24.44 hand).
+        Target SNOMED CT 4115841, the Athena target for ICD10 M24.43 (42617155). The target covers the
+        wrist component fully and is the first-listed site in the Swedish label, but does not cover the
+        hand component, so it is broader (covers a portion of the combined source) — actually partial
+        over the combined scope. Rated moderate: combined Swedish source, single-target chosen, Athena
+        crosswalk to wrist only. Hand dislocation target 77962 (Recurrent dislocation of joint of hand)
+        is the alternate component.
+        """
+}
+mapping "M244F.1" source="M244F" target="429190007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244F SNOMED CT 429190007 = recurrent dislocation/subluxation of hip joint (Swedish
+        extension; F = pelvic region and thigh, equivalent to base ICD-10 M24.45). Target SNOMED CT 76199.
+        Athena crosswalk ICD10 M24.45 (42617157). Exact clinical equivalence; high tier due to
+        regional-letter mapping.
+        """
+}
+mapping "M244G.1" source="M244G" target="202245003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244G SNOMED CT 202245003 = recurrent dislocation/subluxation of knee joint (excluding
+        patella) (Swedish extension; G = lower leg, equivalent to base ICD-10 M24.46). Target SNOMED CT
+        77637, Athena target for ICD10 M24.46 (42617158). The Swedish qualifier narrows the source
+        slightly versus the SNOMED CT target, but patellar dislocation is typically coded separately
+        (M22.0/M22.1), so the standard target remains the best fit. High tier.
+        """
+}
+mapping "M244H.1" source="M244H" target="50952009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M244H SNOMED CT 50952009 = recurrent dislocation/subluxation of ankle/foot (Swedish
+        extension; H = ankle and foot, equivalent to base ICD-10 M24.47). Target SNOMED CT 76783, Athena
+        target for ICD10 M24.47 (42617159). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245B.1" source="M245B" target="90116003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245B SNOMED CT 90116003 = contracture of shoulder joint (Swedish extension; B = shoulder
+        region, equivalent to base ICD-10 M24.51). Target SNOMED CT 76503, Athena target for ICD10 M24.51
+        (42617163). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245C.1" source="M245C" target="239734000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245C SNOMED CT 239734000 = contracture of elbow joint (Swedish extension; C = upper
+        arm/elbow, equivalent to base ICD-10 M24.52). Target SNOMED CT 74127, Athena target for ICD10
+        M24.52 (42617164). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245D.1" source="M245D" target="239735004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245D SNOMED CT 239735004 = contracture of wrist/finger (Swedish extension; D combines
+        wrist+hand/fingers, spanning base ICD-10 M24.53 forearm/wrist and M24.54 hand). Target SNOMED CT
+        440820, Athena target for ICD10 M24.53 (42617165). Wrist is the first-listed site; the target
+        covers the wrist component but not the finger/hand component, so it is broader over the combined
+        scope (partial over the full combined meaning). Moderate tier due to combined Swedish source.
+        """
+}
+mapping "M245F.1" source="M245F" target="239738002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245F SNOMED CT 239738002 = contracture of hip joint (Swedish extension; F = pelvic region
+        and thigh, equivalent to base ICD-10 M24.55). Target SNOMED CT 75343, Athena target for ICD10
+        M24.55 (42617167). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245G.1" source="M245G" target="239739005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245G SNOMED CT 239739005 = contracture of knee joint (Swedish extension; G = lower leg,
+        equivalent to base ICD-10 M24.56). Target SNOMED CT 80492, Athena target for ICD10 M24.56
+        (42617168). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245H.1" source="M245H" target="156556008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245H SNOMED CT 156556008 = contracture of ankle joint (Swedish extension; H = ankle and
+        foot, equivalent to base ICD-10 M24.57). Target SNOMED CT 40320758, Athena target for ICD10 M24.57
+        (42617169). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M245X.1" source="M245X" target="7890003" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M245X SNOMED CT 7890003 = contracture of joint, other or unspecified site (Swedish
+        extension; X = other/unspecified, equivalent to base ICD-10 M24.58 other and M24.59
+        unspecified). Target SNOMED CT 73290, Athena target for ICD10 M24.58 (42617170) and M24.59
+        (42617171). Unspecified source; the general target is the correct standard concept. Moderate
+        tier: unspecified source, Athena crosswalk.
+        """
+}
+mapping "M246B.1" source="M246B" target="302481000119109" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M246C.1" source="M246C" target="202307002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M246C SNOMED CT 202307002 = ankylosis of elbow joint (Swedish extension; C = upper
+        arm/elbow, equivalent to base ICD-10 M24.62). Target SNOMED CT 4115208, Athena target for ICD10
+        M24.62 (42617174). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M246D.1" source="M246D" target="56923001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M246D SNOMED CT 56923001 = ankylosis of wrist/hand (Swedish extension; D combines
+        wrist+hand, spanning base ICD-10 M24.63 forearm/wrist and M24.64 hand). Target SNOMED CT 81101,
+        Athena target for ICD10 M24.64 (42617176). The alternate wrist target 4117391 (Ankylosis of the
+        wrist joint) covers the wrist component; the chosen hand target covers the broader hand/finger
+        component which dominates clinically. Broader over the combined source; moderate tier.
+        """
+}
+mapping "M246E.1" source="M246E" target="16065006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M246E SNOMED CT 16065006 = ankylosis of sacroiliac joint (Swedish extension; E designates
+        the sacroiliac joint here, a Swedish-specific body-site letter not present in the WHO M24.6x
+        subcode table where SI joint is bundled under M24.68). Target SNOMED CT 4052955, the direct SNOMED CT
+        equivalent found via the SNOMED CT concept registry. No direct ICD10 WHO 4-char crosswalk exists
+        for SI ankylosis specifically, but the SNOMED CT concept is an exact clinical match. High tier.
+        """
+}
+mapping "M246F.1" source="M246F" target="267934008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M246F SNOMED CT 267934008 = ankylosis of hip joint (Swedish extension; F = pelvic region and
+        thigh, equivalent to base ICD-10 M24.65). Target SNOMED CT 74450, Athena target for ICD10 M24.65
+        (42617177). The target subsumes the hip-joint-specific source; broader by one level
+        (pelvis+hip). High tier.
+        """
+}
+mapping "M246G.1" source="M246G" target="302611000119101" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "M246H.1" source="M246H" target="156556008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "M254B.1" source="M254B" target="40884005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254B SNOMED CT 40884005 = joint effusion of shoulder (Swedish extension; B = shoulder
+        region, equivalent to base ICD-10 M25.41). Target SNOMED CT 72407, Athena target for ICD10 M25.41
+        (42619347). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M254C.1" source="M254C" target="202373004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254C SNOMED CT 202373004 = joint effusion of elbow (Swedish extension; C = upper arm/elbow,
+        equivalent to base ICD-10 M25.42). Target SNOMED CT 4117881, Athena target for ICD10 M25.42
+        (42617242). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M254D.1" source="M254D" target="1293274007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254D SNOMED CT 1293274007 = joint effusion of wrist/hand (Swedish extension; D combines
+        wrist+hand, spanning base ICD-10 M25.43 forearm/wrist and M25.44 hand). Target SNOMED CT 1244938,
+        Athena target for ICD10 M25.43 (42617243). Wrist first-listed; alternate hand target 78834
+        (Effusion of joint of hand) covers the other component. Broader over the combined scope;
+        moderate tier.
+        """
+}
+mapping "M254F.1" source="M254F" target="202379000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254F SNOMED CT 202379000 = joint effusion of hip (Swedish extension; F = pelvic region and
+        thigh, equivalent to base ICD-10 M25.45). Target SNOMED CT 4117712, Athena target for ICD10 M25.45
+        (42617245). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M254G.1" source="M254G" target="202381003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254G SNOMED CT 202381003 = joint effusion of knee (Swedish extension; G = lower leg,
+        equivalent to base ICD-10 M25.46). Target SNOMED CT 4115991, Athena target for ICD10 M25.46
+        (42617246). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M254H.1" source="M254H" target="4819006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M254H SNOMED CT 4819006 = joint effusion of ankle/foot (Swedish extension; H = ankle and
+        foot, equivalent to base ICD-10 M25.47). Target SNOMED CT 77072, Athena target for ICD10 M25.47
+        (42617247). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M255B.1" source="M255B" target="267949000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255B SNOMED CT 267949000 = joint pain, unspecified, in shoulder (Swedish extension; B =
+        shoulder region, equivalent to base ICD-10 M25.51). Target SNOMED CT 78232, Athena target for ICD10
+        M25.51 (42617251). Exact clinical equivalence; high tier.
+        """
+}
+mapping "M255C.1" source="M255C" target="57676002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255C SNOMED CT 57676002 = joint pain, unspecified, in elbow (Swedish extension; C = upper
+        arm/elbow, equivalent to base ICD-10 M25.52). Athena crosswalk for ICD10 M25.52 (42617252)
+        yields two targets: 76191 (Disorder of upper arm) and 77074 (Pain of joint). Chosen target
+        SNOMED CT 77074, the clinically appropriate one of the two Athena targets, but it is broader
+        (general joint pain, no elbow specificity). The SNOMED CT browser lists 4116166 as a more specific
+        concept, but no Athena ICD10 crosswalk reaches it. Moderate tier: unspecified source, broader
+        target, no elbow-specific crosswalk.
+        """
+}
+mapping "M255D.1" source="M255D" target="202472008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255D SNOMED CT 202472008 = Swedish 5-char extension of ICD-10 M25.5, localised to
+        wrist/hand. Crosswalk of base M25.54 in ICD10/relationships.tdl yields SNOMED CT 78234 (202472008,
+        Pain of joint of hand). Target denotes same clinical concept (joint pain at the wrist/hand).
+        High tier: site-specific standard concept, verified crosswalk at the parent level.
+        """
+}
+mapping "M255E.1" source="M255E" target="49218002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255E SNOMED CT 49218002 = Swedish 5-char extension of M25.5, localised to the pelvic
+        region. Crosswalk of base M25.55 in ICD10/relationships.tdl yields SNOMED CT 4170554 (49218002,
+        Pain of hip region). Target denotes the same regional arthralgia concept the source encodes.
+        High tier: site-specific standard target, verified crosswalk.
+        """
+}
+mapping "M255F.1" source="M255F" target="1348356003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255F SNOMED CT 1348356003 = Swedish extension of M25.5 localised to the hip joint
+        specifically. SNOMED CT 1449135 (1348356003, Pain of hip joint) is a precise joint-level (not
+        regional) hip arthralgia concept. Region-level fallback 4170554 (Pain of hip region) exists but
+        the joint-specific concept matches the source's (hip joint) wording exactly. High tier: SNOMED CT
+        standard concept with matching joint-level scope; crosswalk-verified at parent level (M25.55 ->
+        4170554).
+        """
+}
+mapping "M255G.1" source="M255G" target="156599003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255G SNOMED CT 156599003 = Swedish extension of M25.5 localised to the knee. SNOMED CT
+        40320805 (156599003, Knee joint pain) is a joint-level knee arthralgia concept. The Athena
+        crosswalk does not list a knee-specific row for M25.5x (only M25.56 -> 72986), so the mapping is
+        via SNOMED CT term equivalence rather than a direct Athena crosswalk, but the SNOMED CT concept is
+        standard and joint-level appropriate. High tier with no crosswalk:.
+        """
+}
+mapping "M255H.1" source="M255H" target="267954009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source M255H SNOMED CT 267954009 = Swedish extension of M25.5 localised to ankle/foot. Crosswalk of
+        base M25.57 in ICD10/relationships.tdl yields SNOMED CT 78508 (267954009, Pain of joint of ankle
+        and/or foot). Target denotes same clinical concept. High tier: site-specific standard target
+        with verified crosswalk.
+        """
+}
+mapping "M258F.1" source="M258F" target="11568002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}

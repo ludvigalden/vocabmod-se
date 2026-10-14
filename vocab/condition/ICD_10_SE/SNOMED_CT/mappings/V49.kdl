@@ -1,0 +1,612 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V49
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4900.1" source="V4900" target="127349007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4900.2" source="V4900" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4901.1" source="V4901" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.01 = driver of car injured in collision with MV in nontraffic accident while at
+        leisure/play (Swedish sub-code of V49.0 adding activity context). Base ICD-10 V49.0 (Athena
+        45595080) crosswalks to SNOMED CT 432510 (Driver in vehicular AND/OR traffic accident, standard,
+        active) and 437738 (Motor vehicle accident off public road). The Swedish code adds activity
+        (leisure) which has no separate SNOMED CT target; the standard targets fully subsume the source.
+        broader, one level, verified crosswalk =.
+        """
+}
+mapping "V4901.2" source="V4901" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4902.1" source="V4902" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.02 = driver of car injured in collision with MV in nontraffic accident while working
+        (Swedish sub-code of V49.0). Same parent V49.0 crosswalk to SNOMED CT 432510 and 437738. Activity
+        (paid work) not separately modeled in SNOMED CT; targets subsume the source. broader, one level =.
+        """
+}
+mapping "V4902.2" source="V4902" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4903.1" source="V4903" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.03 = driver of car injured in collision with MV in nontraffic accident during other
+        activity (Swedish sub-code of V49.0). Same parent crosswalk to SNOMED CT 432510 and 437738.
+        Activity type not modeled in SNOMED CT; targets subsume the source. broader, one level =.
+        """
+}
+mapping "V4903.2" source="V4903" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4904.1" source="V4904" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.04 = driver of car injured in collision with MV in nontraffic accident during vital
+        activity (rest, sleep, meal, personal hygiene) (Swedish sub-code of V49.0). Same parent
+        crosswalk to SNOMED CT 432510 and 437738. Vital-activity context not modeled in SNOMED CT; targets
+        subsume the source. broader, one level =.
+        """
+}
+mapping "V4904.2" source="V4904" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4908.1" source="V4908" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.08 = driver of car injured in collision with MV in nontraffic accident during other
+        specified activity (Swedish residual sub-code of V49.0). Same parent crosswalk to SNOMED CT 432510
+        and 437738. Activity context not modeled in SNOMED CT; targets subsume the source. broader, one
+        level =.
+        """
+}
+mapping "V4908.2" source="V4908" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4909.1" source="V4909" target="127349007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4909.2" source="V4909" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4910.1" source="V4910" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4910.2" source="V4910" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4911.1" source="V4911" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.11 = passenger of car injured in collision with MV in nontraffic accident at leisure
+        (Swedish sub-code of V49.1). Base ICD-10 V49.1 (Athena 45756573) crosswalks to SNOMED CT 434228
+        (Passenger in vehicular AND/OR traffic accident) and 437738 (Motor vehicle accident off public
+        road). Activity context not modeled in SNOMED CT; targets subsume the source. broader, one level =.
+        """
+}
+mapping "V4911.2" source="V4911" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4912.1" source="V4912" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.12 = passenger of car injured in collision with MV in nontraffic accident while
+        working (Swedish sub-code of V49.1). Same parent crosswalk to SNOMED CT 434228 and 437738. Activity
+        not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4912.2" source="V4912" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4913.1" source="V4913" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.13 = passenger of car injured in collision with MV in nontraffic accident during
+        other activity (Swedish sub-code of V49.1). Same parent crosswalk to SNOMED CT 434228 and 437738.
+        Activity not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4913.2" source="V4913" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4914.1" source="V4914" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.14 = passenger of car injured in collision with MV in nontraffic accident during
+        vital activity (Swedish sub-code of V49.1). Same parent crosswalk to SNOMED CT 434228 and 437738.
+        Vital-activity context not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4914.2" source="V4914" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4918.1" source="V4918" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.18 = passenger of car injured in collision with MV in nontraffic accident during
+        other specified activity (Swedish residual sub-code of V49.1). Same parent crosswalk to SNOMED CT
+        434228 and 437738. Activity not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4918.2" source="V4918" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4919.1" source="V4919" target="21107000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4919.2" source="V4919" target="214640008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4920.1" source="V4920" target="214640008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4920.2" source="V4920" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4920.3" source="V4920" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4921.1" source="V4921" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.21 = unspecified car occupant injured in collision with MV in nontraffic accident at
+        leisure (Swedish sub-code of V49.2). Base ICD-10 V49.2 (Athena 45551686) crosswalks to SNOMED CT
+        437738 (Motor vehicle accident off public road) and 444074 (Victim of vehicular AND/OR traffic
+        accident). Activity context not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4921.2" source="V4921" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4922.1" source="V4922" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.22 = unspecified car occupant injured in collision with MV in nontraffic accident
+        while working (Swedish sub-code of V49.2). Same parent crosswalk to SNOMED CT 437738 and 444074.
+        Activity not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4922.2" source="V4922" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4923.1" source="V4923" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.23 = unspecified car occupant injured in collision with MV in nontraffic accident
+        during other activity (Swedish sub-code of V49.2). Same parent crosswalk to SNOMED CT 437738 and
+        444074. Activity not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4923.2" source="V4923" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4924.1" source="V4924" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.24 = unspecified car occupant injured in collision with MV in nontraffic accident
+        during vital activity (Swedish sub-code of V49.2). Same parent crosswalk to SNOMED CT 437738 and
+        444074. Vital-activity context not modeled in SNOMED CT; targets subsume source. broader, one level
+        =.
+        """
+}
+mapping "V4924.2" source="V4924" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4928.1" source="V4928" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.28 = unspecified car occupant injured in collision with MV in nontraffic accident
+        during other specified activity (Swedish residual sub-code of V49.2). Same parent crosswalk to
+        SNOMED CT 437738 and 444074. Activity not modeled in SNOMED CT; targets subsume source. broader, one
+        level =.
+        """
+}
+mapping "V4928.2" source="V4928" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4929.1" source="V4929" target="127348004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 127348004 214845000 426772002 [GPS] [GPFP]"
+}
+mapping "V4929.2" source="V4929" target="214845000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4929.3" source="V4929" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4930.1" source="V4930" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.30 = unspecified car occupant injured in unspecified nontraffic accident during
+        sport/exercise (Swedish sub-code of V49.3). Base ICD-10 V49.3 (Athena 45556423) crosswalks to
+        SNOMED CT 444074 (Victim of vehicular AND/OR traffic accident). Sport/exercise activity context not
+        modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4931.1" source="V4931" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.31 = unspecified car occupant injured in unspecified nontraffic accident at leisure
+        (Swedish sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074. Activity context not
+        modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4932.1" source="V4932" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.32 = unspecified car occupant injured in unspecified nontraffic accident while
+        working (Swedish sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074. Activity not
+        modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4933.1" source="V4933" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.33 = unspecified car occupant injured in unspecified nontraffic accident during other
+        activity (Swedish sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074. Activity not
+        modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4934.1" source="V4934" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.34 = unspecified car occupant injured in unspecified nontraffic accident during vital
+        activity (Swedish sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074. Vital-activity
+        context not modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4938.1" source="V4938" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.38 = unspecified car occupant injured in unspecified nontraffic accident during other
+        specified activity (Swedish residual sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074.
+        Activity not modeled in SNOMED CT; target subsumes source. broader, one level =.
+        """
+}
+mapping "V4939.1" source="V4939" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.39 = unspecified car occupant injured in unspecified nontraffic accident, activity
+        unspecified (Swedish residual sub-code of V49.3). Same parent crosswalk to SNOMED CT 444074. Target
+        subsumes source. broader, one level =.
+        """
+}
+mapping "V4940.1" source="V4940" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4940.2" source="V4940" target="127349007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4941.1" source="V4941" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.41 = driver of car injured in collision with MV in traffic accident at leisure
+        (Swedish sub-code of V49.4). Base ICD-10 V49.4 (Athena 45756574) crosswalks to SNOMED CT 432510
+        (Driver in vehicular AND/OR traffic accident) and 433930 (Motor vehicle on road in collision
+        with another motor vehicle). Activity context not modeled in SNOMED CT; targets subsume source.
+        broader, one level =.
+        """
+}
+mapping "V4941.2" source="V4941" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4942.1" source="V4942" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.42 = driver of car injured in collision with MV in traffic accident while working
+        (Swedish sub-code of V49.4). Same parent crosswalk to SNOMED CT 432510 and 433930. Activity not
+        modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4942.2" source="V4942" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4943.1" source="V4943" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V49.43 = driver of car injured in collision with MV in traffic accident during other
+        activity (Swedish sub-code of V49.4). Same parent crosswalk to SNOMED CT 432510 and 433930.
+        Activity not modeled in SNOMED CT; targets subsume source. broader, one level =.
+        """
+}
+mapping "V4943.2" source="V4943" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4944.1" source="V4944" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4944 = Swedish-SE extension of V49.4 (Driver of car injured in collision with motor
+        vehicle in traffic accident) with 6th-char activity suffix SNOMED CT 274913009 48084008 =
+        vitalaktiviteter (vital activities: rest/sleep/meal/personal hygiene). V49.4 base has Athena
+        Maps-to to 432510 (Driver in vehicular AND/OR traffic accident) and 433930 (Motor vehicle on
+        road in collision with another motor vehicle). The activity suffix is a Swedish national
+        administrative add-on with no SNOMED CT analogue; targets fully capture the injury-role and
+        collision axes but are silent on the activity dimension. Broader: target subsumes the clinical
+        injury content, drops only the administrative activity axis. Confidence moderate: crosswalk
+        verified for the base V49.4 code, applied mechanically to the SE-extension child, not
+        independently re-verified.
+        """
+}
+mapping "V4944.2" source="V4944" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4948.1" source="V4948" target="48084008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4948 = Swedish-SE extension of V49.4 (Driver of car injured in collision with motor
+        vehicle in traffic accident) with 6th-char activity suffix SNOMED CT 274913009 48084008 = andra
+        specificerade aktiviteter (other specified activities). Same mapping basis as V4944: V49.4 base
+        crosswalk to 432510 (Driver) and 433930 (collision); activity suffix is SE-administrative with
+        no SNOMED CT target. Broader, moderate.
+        """
+}
+mapping "V4948.2" source="V4948" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4949.1" source="V4949" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4949.2" source="V4949" target="127349007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4950.1" source="V4950" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4950.2" source="V4950" target="21107000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4951.1" source="V4951" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4951 = Swedish-SE extension of V49.5 (Passenger in car injured in collision with motor
+        vehicle in traffic accident) with activity suffix SNOMED CT 21107000 274913009 = lek och annan
+        fritidsverksamhet (play and other leisure). V49.5 base has Athena Maps-to to 434228 (Passenger
+        in vehicular AND/OR traffic accident) and 433930 (Motor vehicle on road in collision with
+        another motor vehicle). Activity suffix is SE-administrative, no SNOMED CT analogue. Broader,
+        moderate.
+        """
+}
+mapping "V4951.2" source="V4951" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4952.1" source="V4952" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4952 = V49.5 (Passenger in car injured in collision with motor vehicle in traffic) +
+        activity suffix SNOMED CT 21107000 274913009 = förvärvsarbete (work). Same V49.5 base crosswalk to
+        434228 (Passenger) and 433930 (collision); activity suffix is SE-administrative. Broader,
+        moderate.
+        """
+}
+mapping "V4952.2" source="V4952" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4953.1" source="V4953" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4953 = V49.5 (Passenger in car injured in collision with motor vehicle in traffic) +
+        activity suffix SNOMED CT 21107000 274913009 = annan sysselsättning (other activity). Same V49.5
+        base crosswalk to 434228 (Passenger) and 433930 (collision); activity suffix is
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4953.2" source="V4953" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4954.1" source="V4954" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4954 = V49.5 (Passenger in car injured in collision with motor vehicle in traffic) +
+        activity suffix SNOMED CT 21107000 274913009 = vitalaktiviteter. Same V49.5 base crosswalk to
+        434228 (Passenger) and 433930 (collision); activity suffix is SE-administrative. Broader,
+        moderate.
+        """
+}
+mapping "V4954.2" source="V4954" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4958.1" source="V4958" target="21107000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4958 = V49.5 (Passenger in car injured in collision with motor vehicle in traffic) +
+        activity suffix SNOMED CT 21107000 274913009 = andra specificerade aktiviteter. Same V49.5 base
+        crosswalk to 434228 (Passenger) and 433930 (collision); activity suffix is SE-administrative.
+        Broader, moderate.
+        """
+}
+mapping "V4958.2" source="V4958" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4959.1" source="V4959" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4959.2" source="V4959" target="21107000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4960.1" source="V4960" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4960.2" source="V4960" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4960.3" source="V4960" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4961.1" source="V4961" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4961 = Swedish-SE extension of V49.6 (Unspecified car occupant injured in collision with
+        motor vehicle in traffic accident) + activity suffix SNOMED CT 36198007 = lek och fritid. V49.6
+        base has Athena Maps-to to 444074 (Victim of vehicular AND/OR traffic accident). Activity suffix
+        is SE-administrative with no SNOMED CT analogue; target captures the victim-of-traffic-accident
+        axis, drops the car-occupant specificity and the activity dimension. Broader (deeper climb —
+        target is the role-agnostic parent), moderate: verified crosswalk for V49.6 base, applied
+        mechanically to SE child.
+        """
+}
+mapping "V4962.1" source="V4962" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4962 = V49.6 (Unspecified car occupant injured in collision with motor vehicle in
+        traffic) + activity suffix SNOMED CT 36198007 = förvärvsarbete. Same V49.6 base crosswalk to 444074
+        (Victim of vehicular AND/OR traffic accident); activity suffix SE-administrative. Broader,
+        moderate.
+        """
+}
+mapping "V4963.1" source="V4963" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4963 = V49.6 (Unspecified car occupant injured in collision with motor vehicle in
+        traffic) + activity suffix SNOMED CT 36198007 = annan sysselsättning. Same V49.6 base crosswalk to
+        444074; activity suffix SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4964.1" source="V4964" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4964 = V49.6 (Unspecified car occupant injured in collision with motor vehicle in
+        traffic) + activity suffix SNOMED CT 36198007 = vitalaktiviteter. Same V49.6 base crosswalk to
+        444074; activity suffix SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4968.1" source="V4968" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4968 = V49.6 (Unspecified car occupant injured in collision with motor vehicle in
+        traffic) + activity suffix SNOMED CT 36198007 = andra specificerade aktiviteter. Same V49.6 base
+        crosswalk to 444074; activity suffix SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4969.1" source="V4969" target="274913009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4969.2" source="V4969" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4969.3" source="V4969" target="426772002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4980.1" source="V4980" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4980 = Swedish-SE extension of V49.8 (Car occupant [any] injured in other specified
+        transport accidents) + activity suffix SNOMED CT 36198007 = idrott, sport, motion. V49.8 base has
+        Athena Maps-to to 444074 (Victim of vehicular AND/OR traffic accident). Activity suffix
+        SE-administrative; the base is itself a residual bucket. Target is role- and
+        accident-type-agnostic victim concept. Broader, moderate: verified crosswalk for V49.8 base,
+        applied to SE child.
+        """
+}
+mapping "V4981.1" source="V4981" target="418399005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4981.2" source="V4981" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4982.1" source="V4982" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4982 = V49.8 (Car occupant injured in other specified transport accidents) + activity
+        suffix SNOMED CT 36198007 = förvärvsarbete. Same V49.8 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4983.1" source="V4983" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4983 = V49.8 (Car occupant injured in other specified transport accidents) + activity
+        suffix SNOMED CT 36198007 = annan sysselsättning. Same V49.8 base crosswalk to 444074; activity
+        suffix SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4984.1" source="V4984" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4984 = V49.8 (Car occupant injured in other specified transport accidents) + activity
+        suffix SNOMED CT 36198007 = vitalaktiviteter. Same V49.8 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4988.1" source="V4988" target="36198007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4989.1" source="V4989" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4989 = V49.8 (Car occupant injured in other specified transport accidents) + activity
+        suffix SNOMED CT 36198007 = aktivitet, ospecificerad (unspecified activity). Same V49.8 base
+        crosswalk to 444074; activity suffix is SE-administrative and itself unspecified. Broader,
+        moderate.
+        """
+}
+mapping "V4990.1" source="V4990" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4990 = Swedish-SE extension of V49.9 (Car occupant [any] injured in unspecified traffic
+        accident) + activity suffix SNOMED CT 36198007 = idrott, sport, motion. V49.9 base has Athena
+        Maps-to to 444074 (Victim of vehicular AND/OR traffic accident). Both the base and the activity
+        suffix are non-specific; target is the role-agnostic victim concept. Broader, moderate.
+        """
+}
+mapping "V4991.1" source="V4991" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4991 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = lek och fritid. Same V49.9 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4992.1" source="V4992" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4992 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = förvärvsarbete. Same V49.9 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4993.1" source="V4993" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4993 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = annan sysselsättning. Same V49.9 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4994.1" source="V4994" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4994 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = vitalaktiviteter. Same V49.9 base crosswalk to 444074; activity suffix
+        SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4998.1" source="V4998" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4998 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = andra specificerade aktiviteter. Same V49.9 base crosswalk to 444074; activity
+        suffix SE-administrative. Broader, moderate.
+        """
+}
+mapping "V4999.1" source="V4999" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4999 = V49.9 (Car occupant injured in unspecified traffic accident) + activity suffix
+        SNOMED CT 36198007 = aktivitet, ospecificerad. Same V49.9 base crosswalk to 444074; activity suffix
+        SE-administrative and itself unspecified. Broader, moderate.
+        """
+}

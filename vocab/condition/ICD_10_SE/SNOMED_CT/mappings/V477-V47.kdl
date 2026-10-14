@@ -1,0 +1,151 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V477-V47
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V4770.1" source="V4770" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4770 = Swedish 6-char extension of WHO V47.7 (Car occupant — person on outside of
+        vehicle injured in traffic accident, collision with fixed/stationary object) + activity suffix
+        SNOMED CT 36198007 = idrott/sport/motion. The activity digit is a Swedish national administrative
+        extension with no SNOMED CT analogue. Target SNOMED CT 444074 (concept_code 36198007) = — the Athena
+        crosswalk target for WHO V47.7 (concept_id 45604711). Target subsumes the source: every
+        person-on-outside traffic-accident victim is a victim of a vehicular/traffic accident; the
+        activity dimension is dropped as administrative metadata. high: Athena-verified crosswalk,
+        well-understood one-level breadth (activity context not represented in SNOMED CT).
+        """
+}
+mapping "V4771.1" source="V4771" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4771 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = lek och annan
+        fritidsverksamhet (play/leisure). Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074
+        (36198007) =, the Athena crosswalk target for WHO V47.7 (45604711). Broader: target subsumes
+        source; activity context dropped. : crosswalk-verified, one-level breadth.
+        """
+}
+mapping "V4772.1" source="V4772" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4772 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = förvärvsarbete (paid
+        work). Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =, Athena
+        crosswalk for WHO V47.7 (45604711). Broader: target subsumes source; work-context dropped. :
+        crosswalk-verified.
+        """
+}
+mapping "V4773.1" source="V4773" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4773 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = annan sysselsättning
+        (other activity). Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =,
+        Athena crosswalk for WHO V47.7 (45604711). Broader: target subsumes source. :
+        crosswalk-verified.
+        """
+}
+mapping "V4774.1" source="V4774" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4774 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = vitalaktivitet (vital
+        activity: rest/sleep/meals/hygiene). Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074
+        (36198007) =, Athena crosswalk for WHO V47.7 (45604711). Broader: target subsumes source. :
+        crosswalk-verified.
+        """
+}
+mapping "V4778.1" source="V4778" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4778 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = andra specificerade
+        aktiviteter (other specified activities). Activity digit has no SNOMED CT analogue. Target SNOMED CT
+        444074 (36198007) =, Athena crosswalk for WHO V47.7 (45604711). Broader: target subsumes source.
+        : crosswalk-verified.
+        """
+}
+mapping "V4779.1" source="V4779" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4779 = Swedish extension of WHO V47.7 (person on outside of vehicle, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = aktivitet, ospecificerad
+        (activity unspecified). Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007)
+        =, Athena crosswalk for WHO V47.7 (45604711). Broader: target subsumes source. :
+        crosswalk-verified.
+        """
+}
+mapping "V4790.1" source="V4790" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4790 = Swedish extension of WHO V47.9 (unspecified car occupant injured in traffic
+        accident, collision with stationary object) + activity suffix SNOMED CT 36198007 =
+        idrott/sport/motion. Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =,
+        Athena crosswalk for WHO V47.9 (concept_id 45566022). Broader: target subsumes source; activity
+        dropped. : crosswalk-verified.
+        """
+}
+mapping "V4791.1" source="V4791" target="217897003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4791.2" source="V4791" target="214031005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4791.3" source="V4791" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4792.1" source="V4792" target="217897003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "@SNOMED CT: 4145511"
+}
+mapping "V4792.2" source="V4792" target="214031005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4792.3" source="V4792" target="127348004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V4793.1" source="V4793" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4793 = Swedish extension of WHO V47.9 (unspecified car occupant, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = annan sysselsättning.
+        Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =, Athena crosswalk for
+        WHO V47.9 (45566022). Broader: target subsumes source. : crosswalk-verified.
+        """
+}
+mapping "V4794.1" source="V4794" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4794 = Swedish extension of WHO V47.9 (unspecified car occupant, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = vitalaktivitet. Activity
+        digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =, Athena crosswalk for WHO V47.9
+        (45566022). Broader: target subsumes source. : crosswalk-verified.
+        """
+}
+mapping "V4798.1" source="V4798" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4798 = Swedish extension of WHO V47.9 (unspecified car occupant, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = andra specificerade
+        aktiviteter. Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =, Athena
+        crosswalk for WHO V47.9 (45566022). Broader: target subsumes source. : crosswalk-verified.
+        """
+}
+mapping "V4799.1" source="V4799" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V4799 = Swedish extension of WHO V47.9 (unspecified car occupant, traffic accident,
+        collision with stationary object) + activity suffix SNOMED CT 36198007 = aktivitet, ospecificerad.
+        Activity digit has no SNOMED CT analogue. Target SNOMED CT 444074 (36198007) =, Athena crosswalk for
+        WHO V47.9 (45566022). Broader: target subsumes source. : crosswalk-verified.
+        """
+}

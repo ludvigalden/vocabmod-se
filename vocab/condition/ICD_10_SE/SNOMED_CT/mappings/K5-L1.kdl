@@ -1,0 +1,423 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes K5-L1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "K522A.1" source="K522A" target="266451002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K522A SNOMED CT 266451002 (Swedish extension of ICD-10 K52.2). Target SNOMED CT 192674
+        (266451002). Athena ICD10 crosswalk maps K52.2 -> 192674. The specification is not separately
+        represented in SNOMED CT. High tier: crosswalk-verified, national extension.
+        """
+}
+mapping "K522X.1" source="K522X" target="266451002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K522X SNOMED CT 266451002 (Swedish extension of ICD-10 K52.2). Target SNOMED CT 192674
+        (266451002). Athena ICD10 crosswalk maps K52.2 -> 192674. Source is an unspecified variant (food
+        unknown) of K52.2; the same SNOMED CT concept covers both specified and unspecified food-trigger
+        forms. Moderate per the rubric:.
+        """
+}
+mapping "K529A.1" source="K529A" target="236135005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K529A SNOMED CT 236135005 (Swedish national extension code placed under K52.9). Target
+        SNOMED CT 4340533 (236135005). Exact clinical concept match: both denote abnormally high output
+        from a stoma (ileostomy/colostomy). No Athena crosswalk exists for this Swedish extension code
+        (K52.9 maps to a different general gastroenteritis concept, not the high-output-stoma finding);
+        target found by mirror concept-name lookup. High : exact term-and-scope match without an
+        independent crosswalk.
+        """
+}
+mapping "K529W.1" source="K529W" target="266453004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K529W SNOMED CT 266453004 (Swedish national extension code placed under K52.9). Target
+        SNOMED CT 4141627 (266453004). Athena ICD10 crosswalk maps K52.9 -> 201618 (Disorder of intestine),
+        an over-broad parent; the closer clinical match for this source is 4141627, found by
+        concept-name lookup in the SNOMED CT mirror. Moderate : unspecified source, no independent
+        crosswalk to this specific target.
+        """
+}
+mapping "K5500.1" source="K5500" target="91489000" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated to K55.0; crosswalk-verified via prior candidate"
+}
+mapping "K5509.1" source="K5509" target="91489000" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source K5509 is the Swedish fifth-position extension of K55.0 (acute vascular disorders of
+        intestine), adding unspecified site/episode detail. Target SNOMED CT 201894 (91489000), the
+        standard concept that base K55.0 (45538536) maps to via Athena SNOMED 91489000. Target subsumes
+        the source. High tier: verified crosswalk from the base code, Swedish extension is a true child.
+        """
+}
+mapping "K5509.2" source="K5509" target="91489000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K6310.1" source="K6310" target="56905009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated 5th-char extension of K63.1 (perforation of intestine); base maps to perforation of
+        intestine
+        """
+}
+mapping "K6319.1" source="K6319" target="56905009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Dotted leaf code; resolved via truncation to Perforation of intestine; verified standard"
+}
+mapping "K7200.1" source="K7200" target="59927004" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        K72.00 acute/subacute hepatic failure without coma; SNOMED CT Hepatic failure is parent; slight
+        specificity loss; crosswalk-verified
+        """
+}
+mapping "K7209.1" source="K7209" target="59927004" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source K7209 is the Swedish fifth-char extension of K72.0 (acute and subacute hepatic failure).
+        Target SNOMED CT 4245975 (59927004), the standard concept that base K72.0 (45557674) maps to via
+        Athena. Target subsumes the source. High tier: verified crosswalk from the base code.
+        """
+}
+mapping "K7209.2" source="K7209" target="59927004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K7210.1" source="K7210" target="235886005" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 5th-char extension (K72.10 = chronic hepatic failure without coma) -> (235886005);
+        crosswalk-verified, standard
+        """
+}
+mapping "K7210.2" source="K7210" target="235886005" relationship=equivalent preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "K7290.1" source="K7290" target="59927004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to K72 base; Hepatic failure verified standard; K72.90 specifies without coma, base
+        concept appropriate.
+        """
+}
+mapping "K7299.1" source="K7299" target="59927004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf K72.99 resolves to base concept K72 (59927004); verified standard S"
+}
+mapping "K830A.1" source="K830A" target="197441003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K830A SNOMED CT 197441003 = sclerosing cholangitis, a Swedish subcode under K83.0. Target
+        SNOMED CT 4058821 (197441003), standard concept. In clinical usage denotes primary sclerosing
+        cholangitis (the secondary form is rare and usually qualified). High tier (not): no Athena
+        crosswalk at the Swedish-extension level, but concept identity is tight; base K83.0 crosswalk to
+        195856 is broader.
+        """
+}
+mapping "K830X.1" source="K830X" target="82403002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K830X SNOMED CT 82403002 = cholangitis, other or unspecified. Target SNOMED CT 195856
+        (82403002), standard concept, identical to the base K83.0 (45552955) Athena target. Exact
+        equivalence.
+        """
+}
+mapping "K900A.1" source="K900A" target="396331005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K900A SNOMED CT 396331005 = celiac disease, confirmed. Target SNOMED CT 194992 (396331005),
+        standard concept; base K90.0 (45586745) Athena SNOMED 396331005 194992. The Swedish suffix
+        encodes diagnostic certainty, not a different clinical entity; identity holds.
+        """
+}
+mapping "K900B.1" source="K900B" target="396331005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K900B SNOMED CT 396331005 = celiac disease, probable but unconfirmed. Target SNOMED CT 194992
+        (396331005), standard concept. Target subsumes the source (covers both confirmed and probable);
+        certainty qualifier has no separate SNOMED CT concept. High tier: crosswalk from base K90.0,
+        one-level broader on certainty.
+        """
+}
+mapping "K900X.1" source="K900X" target="396331005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source K900X SNOMED CT 396331005 = celiac disease, unspecified. Target SNOMED CT 194992 (396331005),
+        standard concept; base K90.0 Athena SNOMED 396331005 194992. The unspecified certainty suffix
+        does not change the clinical identity.
+        """
+}
+mapping "L009.1" source="L009" target="200946001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L009 SNOMED CT 200946001 = staphylococcal scalded skin syndrome. Target SNOMED CT 132392
+        (200946001), standard concept; base L00 (45596352) Athena SNOMED 200946001 132392. Exact
+        equivalence.
+        """
+}
+mapping "L010A.1" source="L010A" target="53396004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L010A SNOMED CT 53396004 = Bockhart impetigo. Target SNOMED CT 4200680 (53396004), standard
+        concept. Exact name and concept-code match.
+        """
+}
+mapping "L010X.1" source="L010X" target="48277006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L010X SNOMED CT 48277006 = impetigo, unspecified. Target SNOMED CT 140480 (48277006), standard
+        concept; base L01.0 (45572243) Athena SNOMED 48277006 140480. Exact equivalence.
+        """
+}
+mapping "L029A.1" source="L029A" target="31928004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L029B.1" source="L029B" target="31928004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L029C.1" source="L029C" target="31928004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L029D.1" source="L029D" target="31928004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L030A.1" source="L030A" target="238408000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L030A SNOMED CT 238408000 = nail infection, a Swedish subcode under L03.0 (cellulitis of
+        finger and toe). Target SNOMED CT 4080305 (238408000), standard concept. Exact name/concept match
+        for the Swedish concept; the SNOMED CT target is independent of the ICD-10 L03.0 hierarchy.
+        """
+}
+mapping "L030B.1" source="L030B" target="71906005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L030C.1" source="L030C" target="71906005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L030X.1" source="L030X" target="27561001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L080A.1" source="L080A" target="762694009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L080A SNOMED CT 762694009 = ecthyma, a Swedish subcode under L08.0 (pyoderma). Target SNOMED CT
+        42538853 (762694009), standard concept (the older 4311823 is invalid). Exact equivalence.
+        """
+}
+mapping "L080B.1" source="L080B" target="70759006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L080B SNOMED CT 70759006 = purulent dermatitis, clinically equivalent to pyoderma. Target
+        SNOMED CT 133547 (70759006), standard concept, also the base L08.0 (45572260) Athena target. Exact
+        equivalence.
+        """
+}
+mapping "L080C.1" source="L080C" target="74578003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L080C SNOMED CT 74578003 = dermatitis gangrenosa, clinically pyoderma gangrenosum. Target
+        SNOMED CT 133283 (74578003), standard concept. Exact equivalence.
+        """
+}
+mapping "L080X.1" source="L080X" target="70759006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L080X SNOMED CT 70759006 = pyoderma, unspecified. Target SNOMED CT 133547 (70759006), standard
+        concept; matches the base L08.0 Athena target. Exact equivalence.
+        """
+}
+mapping "L088A.1" source="L088A" target="70759006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L088A SNOMED CT 70759006 = pyoderma vegetans, a Swedish subcode under L08.8. No standard
+        SNOMED CT concept exists; the closest named relative is 4032807 (a related but not identical
+        entity). Best fully-standard subsuming target is SNOMED CT 133547. Moderate tier: looser
+        equivalence, no crosswalk at the Swedish-extension level.
+        """
+}
+mapping "L088B.1" source="L088B" target="51212009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L088B SNOMED CT 51212009 = pitted keratolysis. Target SNOMED CT 4201010 (51212009), standard
+        concept (other Pitted keratolysis entries are invalid). Exact equivalence.
+        """
+}
+mapping "L088C.1" source="L088C" target="238413001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L088C SNOMED CT 238413001 = botryomycosis. Target SNOMED CT 4080308 (238413001), standard
+        concept (the older 40607571 is invalid). Exact equivalence.
+        """
+}
+mapping "L088W.1" source="L088W" target="430348006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L088W SNOMED CT 430348006 = other local infections of skin and subcutaneous tissue. Target
+        SNOMED CT 443600 (430348006), standard concept; matches the base L08.8 (45601211) Athena target.
+        Exact equivalence.
+        """
+}
+mapping "L120A.1" source="L120A" target="77090002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L120A SNOMED CT 77090002 = generalized bullous pemphigoid, a Swedish subcode under L12.0.
+        Target SNOMED CT 4298692 (77090002), standard concept; base L12.0 (45533635) Athena SNOMED 77090002
+        4298692. No separate SNOMED CT concept for the generalized distribution variant; target subsumes
+        the source. High tier: verified crosswalk from the base code.
+        """
+}
+mapping "L120B.1" source="L120B" target="77090002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L120B SNOMED CT 77090002 = localized bullous pemphigoid. Target SNOMED CT 4298692 (77090002),
+        standard concept; no separate SNOMED CT concept for the localized distribution variant. Target
+        subsumes the source. High tier: base L12.0 crosswalk verified.
+        """
+}
+mapping "L120W.1" source="L120W" target="77090002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L120W SNOMED CT 77090002 = other bullous pemphigoid. Target SNOMED CT 4298692 (77090002),
+        standard concept; residual bucket. Target subsumes the source. High tier: base L12.0 crosswalk
+        verified.
+        """
+}
+mapping "L121A.1" source="L121A" target="34250006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L121A SNOMED CT 34250006 = mucous membrane pemphigoid, unspecified. Target SNOMED CT 4142060
+        (34250006), standard concept; base L12.1 (45562533) Athena SNOMED 34250006 4142060. Exact
+        equivalence.
+        """
+}
+mapping "L121B.1" source="L121B" target="34250006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L121B SNOMED CT 34250006 = generalized cicatricial pemphigoid. Target SNOMED CT 4142060
+        (34250006), standard concept; no separate SNOMED CT concept for the generalized cicatricial
+        variant. Target subsumes the source. High tier: base L12.1 crosswalk verified.
+        """
+}
+mapping "L121C.1" source="L121C" target="402442000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L121C SNOMED CT 402442000 = Brunsting-Perry type cicatricial pemphigoid. Target SNOMED CT
+        4299404 (402442000), standard concept. Exact name and concept match.
+        """
+}
+mapping "L121W.1" source="L121W" target="34250006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L121W SNOMED CT 34250006 = other scarring/cicatricial pemphigoid, a Swedish subdivision of
+        ICD-10 L12.1 (Cicatricial pemphigoid). Target SNOMED CT 4142060 (concept_code 34250006), the
+        standard concept that L12.1 maps to via Athena crosswalk. The Swedish code is a residual of the
+        cicatricial pemphigoid category, so the parent target subsumes it fully. Broader because the
+        source is a subcategory of the target; moderate confidence because the source is a residual
+        bucket not independently re-verified.
+        """
+}
+mapping "L122A.1" source="L122A" target="5906000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L122A SNOMED CT 5906000 = juvenile dermatitis herpetiformis. Target SNOMED CT 138500
+        (concept_code 5906000) = Juvenile dermatitis herpetiformis, an exact term match. Exact
+        equivalence at (not because the SNOMED CT concept is the dedicated juvenile-onset concept, matching
+        the source's clinical scope precisely).
+        """
+}
+mapping "L122B.1" source="L122B" target="95330001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L122B SNOMED CT 95330001 = juvenile linear IgA dermatosis. Target SNOMED CT 4317262
+        (concept_code 95330001) = Linear IgA dermatosis. The SNOMED CT concept is the general linear IgA
+        dermatosis (no juvenile-specific concept exists). The source specifies juvenile onset, but
+        linear IgA dermatosis in children is the same disease process; SNOMED CT does not distinguish a
+        juvenile subtype separately, so the target is the closest equivalent. Exact term match on the
+        core disease entity; high confidence because the SNOMED CT concept is the standard concept for this
+        disease.
+        """
+}
+mapping "L122C.1" source="L122C" target="238941009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L122C SNOMED CT 238941009 = juvenile pemphigoid. Target SNOMED CT 4033499 (concept_code
+        238941009) = Juvenile pemphigoid, an exact term match. High confidence (not) because this is an
+        exact term match without an independent Athena crosswalk for the Swedish extension code.
+        """
+}
+mapping "L122D.1" source="L122D" target="109250009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L122D SNOMED CT 109250009 = chronic bullous dermatosis of childhood. Target SNOMED CT 4031099
+        (concept_code 109250009) = Chronic bullous dermatosis of childhood. This is the Athena crosswalk
+        target for ICD-10 L12.2; exact equivalence confirmed by crosswalk.
+        """
+}
+mapping "L122W.1" source="L122W" target="109250009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L122W SNOMED CT 109250009 = other chronic bullous disorder of childhood, a Swedish residual
+        code subdividing ICD-10 L12.2. Target SNOMED CT 4031099 (concept_code 109250009) = Chronic bullous
+        dermatosis of childhood, the crosswalk target for L12.2. The residual maps up to the parent;
+        broader, moderate confidence because the source is a heterogeneous residual.
+        """
+}
+mapping "L138A.1" source="L138A" target="95330001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L138A SNOMED CT 95330001 = linear IgA dermatosis in adults. Target SNOMED CT 4317262
+        (concept_code 95330001) = Linear IgA dermatosis. Exact semantic equivalence: SNOMED CT does not
+        have a separate adult-onset concept; the general linear IgA dermatosis concept is the standard
+        concept for this disease. The adult specification is a clinical qualifier the standard
+        vocabulary does not encode separately.
+        """
+}
+mapping "L138B.1" source="L138B" target="7231009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L138B SNOMED CT 7231009 = atypical bullous dermatosis, a Swedish residual code under ICD-10
+        L13 (Other bullous disorders). Target SNOMED CT 137944 (concept_code 7231009) = Bullous dermatosis,
+        the crosswalk target for L13 and L13.9. The atypical variant is fully subsumed by the general
+        bullous dermatosis concept; broader, moderate confidence due to the unspecified qualifier.
+        """
+}
+mapping "L138C.1" source="L138C" target="238943007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L138C SNOMED CT 238943007 = eosinophilic spongiosis. Target SNOMED CT 4081253 (concept_code
+        238943007) = Eosinophilic spongiosis. Exact term match for this specific clinicopathological
+        entity.
+        """
+}
+mapping "L138W.1" source="L138W" target="7231009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L138W SNOMED CT 7231009 = other specified bullous dermatoses, a residual Swedish code under
+        ICD-10 L13.8. Target SNOMED CT 137944 (concept_code 7231009) = Bullous dermatosis, the crosswalk
+        target for L13.8. The residual bucket maps to the parent; broader, low confidence because the
+        source is heterogeneous and the mapping is non-specific.
+        """
+}
+mapping "L149.1" source="L149" target="7231009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L149 SNOMED CT 7231009 = bullous disorders in diseases classified elsewhere (ICD-10 L14).
+        Target SNOMED CT 137944 (concept_code 7231009) = Bullous dermatosis, the most general standard
+        bullous dermatosis concept. The source is a code bundling bullous manifestations of systemic
+        diseases; no single SNOMED CT concept captures this combination. Broader (the general bullous
+        concept subsumes the bullous component); low confidence because the underlying-disease axis is
+        uncovered, but no better single target exists.
+        """
+}

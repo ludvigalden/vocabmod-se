@@ -1,0 +1,625 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes I3-I6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "I389.1" source="I389" target="89736004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I38.9 SNOMED CT 89736004 = endocarditis, valve unspecified. Target SNOMED CT 4232337
+        (concept_code 89736004). Athena crosswalk: ICD10 I38 (45543172) Maps to. The unspecified-valve
+        qualifier is exactly what I38 denotes; clinical equivalence holds.
+        """
+}
+mapping "I4209.1" source="I4209" target="399020009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I4209 = Swedish fifth-char.09 extension on base I42.0 (dilated cardiomyopathy). Athena
+        crosswalk: ICD10 I42.0 (45586581) Maps to SNOMED CT 4163710 (Dilated cardiomyopathy, concept_code
+        399020009). The Swedish.09 site/activity modifier does not change the underlying cardiomyopathy
+        type.
+        """
+}
+mapping "I4209.2" source="I4209" target="399020009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I4219.1" source="I4219" target="45227007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I4219 = Swedish fifth-char.19 extension on base I42.1 (hypertrophic obstructive
+        cardiomyopathy). Athena crosswalk: ICD10 I42.1 (45538382) Maps to SNOMED CT 316428 (Hypertrophic
+        obstructive cardiomyopathy, concept_code 45227007). The.19 Swedish modifier does not alter the
+        clinical cardiomyopathy.
+        """
+}
+mapping "I4219.2" source="I4219" target="45227007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I4229.1" source="I4229" target="233873004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated 5th-char extension of I42 (cardiomyopathy); base maps to hypertrophic cardiomyopathy
+        """
+}
+mapping "I4259.1" source="I4259" target="415295002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I4259 = Swedish fifth-char.59 extension on base I42.5 (other restrictive cardiomyopathy).
+        Athena crosswalk: ICD10 I42.5 (45586582) Maps to SNOMED CT 4190773 (Restrictive cardiomyopathy,
+        concept_code 415295002). The site modifier in the.59 suffix is administrative and does not
+        change the restrictive-cardiomyopathy concept.
+        """
+}
+mapping "I4259.2" source="I4259" target="90828009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I4280.1" source="I4280" target="85898001" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from I42.8; (85898001); crosswalk-verified"
+}
+mapping "I4289.1" source="I4289" target="85898001" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I4289 = Swedish fifth-char.89 extension on base I42.8 (other cardiomyopathies). I42.8 is
+        a heterogeneous residual bucket; Athena maps ICD10 I42.8 (45533451) to SNOMED CT 321319
+        (Cardiomyopathy, concept_code 85898001). Target is the legitimate parent concept that subsumes
+        every member of the SNOMED CT 85898001 bucket; one-level broader. High tier: small breadth mismatch
+        with verified crosswalk.
+        """
+}
+mapping "I4289.2" source="I4289" target="85898001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I4299.1" source="I4299" target="85898001" relationship=equivalent effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I4299 = Swedish fifth-char.99 extension on base I42.9 (cardiomyopathy, unspecified).
+        Athena crosswalk: ICD10 I42.9 (45581773) Maps to SNOMED CT 321319 (Cardiomyopathy, concept_code
+        85898001). The unspecified qualifier matches the SNOMED CT general-cardiomyopathy concept exactly.
+        """
+}
+mapping "I4299.2" source="I4299" target="85898001" relationship=equivalent preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I471A.2" source="I471A" target="67198005" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I489A.2" source="I489A" target="426749004" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I489B.2" source="I489B" target="49436004" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I489C.2" source="I489C" target="282825002" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I489E.2" source="I489E" target="440059007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I489F.2" source="I489F" target="282825002" relationship=partial_overlap preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5000.1" source="I5000" target="42343007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5000 = Swedish fifth-char.00 extension on base I50.0 (congestive heart failure). Athena
+        crosswalk: ICD10 I50.0 (45567179) Maps to SNOMED CT 319835 (Congestive heart failure, concept_code
+        42343007). The.00 Swedish modifier is administrative and does not change the clinical concept.
+        """
+}
+mapping "I5000.2" source="I5000" target="42343007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5001.1" source="I5001" target="42343007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5001 = Swedish fifth-char.01 extension on base I50.0 (congestive heart failure). Athena
+        crosswalk: ICD10 I50.0 (45567179) Maps to SNOMED CT 319835 (Congestive heart failure, 42343007).
+        Modifier is administrative.
+        """
+}
+mapping "I5001.2" source="I5001" target="42343007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5009.1" source="I5009" target="42343007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5009 = Swedish fifth-char.09 extension on base I50.0 (congestive heart failure). Athena
+        crosswalk: ICD10 I50.0 (45567179) Maps to SNOMED CT 319835 (Congestive heart failure, 42343007).
+        The.09 unspecified modifier does not change the clinical concept.
+        """
+}
+mapping "I5009.2" source="I5009" target="42343007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5010.1" source="I5010" target="85232009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5010 = Swedish fifth-char.00 extension on base I50.1 (left ventricular failure). Athena
+        crosswalk: ICD10 I50.1 (45543181) Maps to SNOMED CT 439846 (Left heart failure, concept_code
+        85232009). Exact clinical equivalence.
+        """
+}
+mapping "I5010.2" source="I5010" target="85232009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5011.1" source="I5011" target="85232009" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5011 = Swedish I50.11 SNOMED CT 85232009 on base I50.1. The.11 encodes asymptomatic/NYHA-I
+        status, which no standard SNOMED CT target carries. Target SNOMED CT 439846 (Left heart failure,
+        85232009) is the base I50.1 crosswalk target; it legitimately subsumes the asymptomatic case but
+        drops the NYHA-I qualifier. High tier: one-level broader with verified crosswalk; specificity
+        lost is a documented functional-status qualifier.
+        """
+}
+mapping "I5011.2" source="I5011" target="85232009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5019.1" source="I5019" target="85232009" relationship=equivalent effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5019 = Swedish fifth-char.99 (unspecified) extension on base I50.1 (left ventricular
+        failure). Athena crosswalk: ICD10 I50.1 (45543181) Maps to SNOMED CT 439846 (Left heart failure,
+        85232009). Unspecified qualifier matches the general concept.
+        """
+}
+mapping "I5019.2" source="I5019" target="85232009" relationship=equivalent preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I501A.1" source="I501A" target="703272007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I501A = SNOMED CT 703272007 — heart failure with reduced ejection fraction. Target SNOMED CT
+        45766164 (concept_code 703272007). Direct concept-to-concept match; the SNOMED CT fully-specified
+        name is the English equivalent of the Swedish source term.
+        """
+}
+mapping "I501C.1" source="I501C" target="446221000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I501C = SNOMED CT 446221000 — heart failure with preserved ejection fraction. Target.
+        Clinical equivalence: HFpEF ≡ heart failure with normal/preserved EF; the SNOMED CT term is the
+        canonical OMOP standard concept for this phenotype. Target replaces retired SNOMED CT
+        749821000000101 (Athena Maps-to successor).
+        """
+}
+mapping "I501X.1" source="I501X" target="85232009" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I501X = SNOMED CT 85232009 — left heart failure, unspecified. Target SNOMED CT 439846
+        (concept_code 85232009). Athena crosswalk base I50.1 (45543181) Maps to 439846; the unspecified
+        qualifier on the Swedish source matches the general left-heart-failure concept exactly.
+        """
+}
+mapping "I5090.1" source="I5090" target="84114007" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated from I50.9; (84114007); crosswalk-verified"
+}
+mapping "I5091.1" source="I5091" target="84114007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code I50.91. Base concept I50 = Heart failure. SNOMED CT 316139 (standard, The.91 subtype
+        is a Swedish extension detail preserved via truncation fallback.
+        """
+}
+mapping "I5099.1" source="I5099" target="84114007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf I50.99 resolves to base concept I50 (84114007); verified standard S"
+}
+mapping "I5140.1" source="I5140" target="50920009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code I51.40 (myocarditis, unspecified) -> truncation to I51.4 -> crosswalk to SNOMED CT
+        50920009 (Myocarditis). Verified standard
+        """
+}
+mapping "I5149.1" source="I5149" target="50920009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5149 = Swedish fifth-char.99 (unspecified) extension on base I51.4 (myocarditis,
+        unspecified). Athena crosswalk: ICD10 I51.4 (45596208) Maps to SNOMED CT 314383 (Myocarditis,
+        concept_code 50920009). The unspecified qualifier on both sides aligns; the clinical concept is
+        myocarditis.
+        """
+}
+mapping "I5149.2" source="I5149" target="50920009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5159.1" source="I5159" target="64077000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5159 = Swedish fifth-char.99 extension on base I51.5 (myocardial degeneration). Athena
+        crosswalk: ICD10 I51.5 (45548023) Maps to SNOMED CT 321320 (Myocardial degeneration, concept_code
+        64077000). Direct concept-to-concept match.
+        """
+}
+mapping "I5159.2" source="I5159" target="64077000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5160.1" source="I5160" target="49601007" relationship=equivalent effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5160 = Swedish fifth-char.60 extension on base I51.6 (cardiovascular disease,
+        unspecified). Athena crosswalk: ICD10 I51.6 (45596209) Maps to SNOMED CT 134057 (Disorder of
+        cardiovascular system, concept_code 49601007). The unspecified-level ICD category and the SNOMED CT
+        general-cardiovascular-disorder concept denote the same clinical scope; the.60 suffix is
+        administrative.
+        """
+}
+mapping "I5160.2" source="I5160" target="49601007" relationship=equivalent preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5161.1" source="I5161" target="49601007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5161 = Swedish fifth-char.61 extension on base I51.6 (cardiovascular disease,
+        unspecified). Athena crosswalk: ICD10 I51.6 (45596209) Maps to SNOMED CT 134057 (Disorder of
+        cardiovascular system, 49601007). Same clinical scope as I5160; suffix is administrative.
+        """
+}
+mapping "I5161.2" source="I5161" target="49601007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5169.1" source="I5169" target="49601007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated from I51.6; (49601007); broad parent but appropriate for unspecified cardiovascular
+        complication
+        """
+}
+mapping "I5189.1" source="I5189" target="56265001" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated from I51.8/9; crosswalk-verified (321588, 56265001, Heart disease, S); I51.89 is other
+        ill-defined heart diseases mapped to broad heart disease
+        """
+}
+mapping "I5190.1" source="I5190" target="56265001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf I51.90 resolves to base concept I51 (56265001); verified standard S"
+}
+mapping "I5191.1" source="I5191" target="56265001" relationship=equivalent effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5191 = Swedish I51.91 (complication of heart disease) extension. Athena crosswalk: ICD10
+        I51.9 (45562356) Maps to SNOMED CT 321588 (Heart disease, concept_code 56265001). The ICD SNOMED CT
+        56265001 source and the SNOMED CT general concept are equivalent at the unspecified level.
+        """
+}
+mapping "I5191.2" source="I5191" target="56265001" relationship=equivalent preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I5199.1" source="I5199" target="56265001" relationship=equivalent effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I5199 = Swedish fifth-char.99 (unspecified) extension on base I51.9 (ill-defined heart
+        diseases, unspecified). Athena crosswalk: ICD10 I51.9 (45562356) Maps to SNOMED CT 321588 (Heart
+        disease, 56265001). Unspecified ICD category aligns with the SNOMED CT general heart-disease
+        concept.
+        """
+}
+mapping "I5199.2" source="I5199" target="56265001" relationship=equivalent preference=alternative effect=omitted quality=60 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6089.1" source="I6089" target="270907008" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6089 is a Swedish 5th-character extension of ICD-10 I60.8 SNOMED CT 21454007 270907008
+        (Athena concept_id 45538391), which Athena maps to SNOMED CT 4148906 (270907008). The.89 Swedish
+        extension encodes a laterality/episode modifier not represented in the SNOMED CT concept, so the
+        target legitimately subsumes the source. Confidence : verified crosswalk on the base code, small
+        breadth mismatch from the extension.
+        """
+}
+mapping "I6089.2" source="I6089" target="21454007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6090.1" source="I6090" target="21454007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated fifth-character code; maps cleanly to subarachnoid hemorrhage base I60.9 concept"
+}
+mapping "I6091.1" source="I6091" target="270907008" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6091 is a Swedish 5th-character extension of ICD-10 I60.9 SNOMED CT 21454007 270907008
+        (Athena concept_id 45591472), which Athena maps to SNOMED CT 4148906 (270907008). The.91 Swedish
+        extension adds an episode/activity modifier absent from the SNOMED CT concept, so the target
+        subsumes the source. Confidence : verified crosswalk on the base, extension-level breadth
+        mismatch.
+        """
+}
+mapping "I6091.2" source="I6091" target="21454007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6099.1" source="I6099" target="21454007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to I60 category.99 = unspecified subarachnoid hemorrhage; truncation target is
+        standard and
+        """
+}
+mapping "I6109.1" source="I6109" target="20908003" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6109 is a Swedish 5th-character extension of ICD-10 I61.0 SNOMED CT 20908003 (Athena
+        concept_id 45605803), which Athena maps to SNOMED CT 4049659 (20908003). The.09 Swedish extension
+        encodes a modifier (laterality/episode) not in the SNOMED CT concept; target subsumes source.
+        Confidence : verified crosswalk on the base, one-level breadth mismatch from the extension.
+        """
+}
+mapping "I6109.2" source="I6109" target="20908003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6129.1" source="I6129" target="291531000119108" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6129 is a Swedish 5th-character extension of ICD-10 I61.2 SNOMED CT 291531000119108
+        73020009 (Athena concept_id 45567186), which Athena maps to SNOMED CT 42535425 (291531000119108).
+        The.29 Swedish extension encodes a modifier absent from the SNOMED CT concept, so the target
+        subsumes the source. Confidence : verified crosswalk on the base, extension-level breadth
+        mismatch.
+        """
+}
+mapping "I6129.2" source="I6129" target="73020009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6139.1" source="I6139" target="95454007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf under I61.3 (brain stem hemorrhage); (4319328) verified standard"
+}
+mapping "I6149.1" source="I6149" target="75038005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        (75038005) which is the correct site-specific match for intracerebral hemorrhage of cerebellum
+        """
+}
+mapping "I6159.1" source="I6159" target="195168007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6159 is a Swedish 5th-character extension of ICD-10 I61.5 SNOMED CT 195168007 (Athena
+        concept_id 45557547), which Athena maps to SNOMED CT 4110185 (195168007). The.59 extension encodes
+        a laterality modifier (unspecified in base) not represented in the SNOMED CT concept; target
+        subsumes source. Confidence : verified crosswalk on the base, extension-level breadth mismatch.
+        """
+}
+mapping "I6159.2" source="I6159" target="195168007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6190.1" source="I6190" target="274100004" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated to I61; crosswalk-verified via prior candidate"
+}
+mapping "I6191.1" source="I6191" target="274100004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to I61 base; Cerebral hemorrhage verified standard; I61.91 specifies unspecified
+        intracerebral hemorrhage, base concept appropriate.
+        """
+}
+mapping "I6199.1" source="I6199" target="274100004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated 5th/6th-char extension of I61 (intracerebral haemorrhage); base maps to cerebral
+        hemorrhage
+        """
+}
+mapping "I6339.1" source="I6339" target="195189003" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncation-matched dotted leaf; I63.39 cerebral infarction other artery thrombosis -> condition
+        SNOMED CT cerebral artery thrombosis; crosswalk-verified
+        """
+}
+mapping "I6341.1" source="I6341" target="705128004" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Exact leaf-code match: Cerebral infarction due to embolism of middle cerebral artery.
+        Crosswalk-verified, Resolved via truncation to same concept.
+        """
+}
+mapping "I6349.1" source="I6349" target="195190007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        fifth-character extension; base I63.4 cerebral infarction due to embolism concept preserved.9
+        specifies other cerebral artery [GPS] [IPS]
+        """
+}
+mapping "I6349.2" source="I6349" target="195190007" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6359.1" source="I6359" target="433891000124100" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code: cerebral infarction due to unspecified occlusion/stenosis of other cerebral
+        artery. The truncation target (4110192, cerebral infarction due to thrombosis of cerebral
+        arteries) is but slightly more specific than the source code. The semantically closer candidate
+        (762933
+        """
+}
+mapping "I6359.2" source="I6359" target="195189003" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6390.1" source="I6390" target="432504007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to I63 base; Cerebral infarction verified standard; I63.90 specifies unspecified
+        cerebral infarction, base concept appropriate.
+        """
+}
+mapping "I6399.1" source="I6399" target="432504007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code I63.99. Base concept I63 = Cerebral infarction. SNOMED CT 443454 (standard, The.99
+        subtype is a Swedish extension preserved via truncation fallback.
+        """
+}
+mapping "I6400.1" source="I6400" target="230690007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6400 is a Swedish 5th-character extension of ICD-10 I64 SNOMED CT 230690007 (Athena
+        concept_id 45548032), which Athena maps to SNOMED CT 381316 (230690007). The.00 extension encodes
+        an episode/activity modifier not in the SNOMED CT concept; target subsumes source. Confidence :
+        verified crosswalk on the base, extension-level breadth mismatch.
+        """
+}
+mapping "I6400.2" source="I6400" target="230690007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6409.1" source="I6409" target="230690007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6409 is a Swedish fifth-character extension of ICD-10 I64 SNOMED CT 230690007 (Athena
+        concept_id 45548032), which Athena maps to SNOMED CT 381316 (230690007). The.09 extension encodes
+        an episode/activity modifier; target subsumes source. Confidence : verified crosswalk on the
+        base, extension-level breadth mismatch.
+        """
+}
+mapping "I6409.2" source="I6409" target="230690007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I649.1" source="I649" target="62914000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I6510.1" source="I6510" target="54519002" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6510 is a Swedish fifth-character extension of ICD-10 I65.1 SNOMED CT 1204164005 54519002
+        (Athena concept_id 45562369), which Athena maps to SNOMED CT 442263 (54519002). The.10 extension
+        encodes an episode modifier not in the SNOMED CT concept; target subsumes source. Confidence :
+        verified crosswalk on the base, extension-level breadth mismatch.
+        """
+}
+mapping "I6510.2" source="I6510" target="1204164005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6519.1" source="I6519" target="54519002" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6519 is a Swedish 5th-character extension of ICD-10 I65.1 SNOMED CT 1204164005 54519002
+        (Athena concept_id 45562369), which Athena maps to SNOMED CT 442263 (54519002). The.19 extension
+        encodes an episode modifier; target subsumes source. Confidence : verified crosswalk on the
+        base, extension-level breadth mismatch.
+        """
+}
+mapping "I6519.2" source="I6519" target="1204164005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6520.1" source="I6520" target="64586002" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6520 is a Swedish fifth-character extension of ICD-10 I65.2 SNOMED CT 433821000124102
+        64586002 (Athena concept_id 45552808), which Athena maps to SNOMED CT 442615 (64586002). The.20
+        extension encodes an episode modifier not in the SNOMED CT concept; target subsumes source.
+        Confidence : verified crosswalk on the base, extension-level breadth mismatch.
+        """
+}
+mapping "I6520.2" source="I6520" target="433821000124102" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6529.1" source="I6529" target="64586002" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish extension I65.29 (unspecified carotid occlusion/stenosis); Carotid artery stenosis
+        captures clinical entity; crosswalk-verified
+        """
+}
+mapping "I6600.1" source="I6600" target="21290001000004104" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6600 is a Swedish fifth-character extension of ICD-10 I66.0 SNOMED CT 195232006
+        21290001000004104 (Athena concept_id 45567190), which Athena maps to SNOMED CT 765404
+        (21290001000004104). The.00 extension encodes an episode modifier not in the SNOMED CT concept;
+        target subsumes source. Confidence : verified crosswalk on the base, extension-level breadth
+        mismatch.
+        """
+}
+mapping "I6600.2" source="I6600" target="195232006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6690.1" source="I6690" target="430831000124106" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code resolved to specific posterior cerebral artery concept 762707 (Occlusion and
+        stenosis of posterior cerebral artery without infarction); verified standard.
+        """
+}
+mapping "I6691.1" source="I6691" target="838275008" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I6691 is a Swedish SNOMED CT 430831000124106 838275008 extension on the I66 chapter (ICD-10
+        I66, Athena concept_id 45538398). The base I66 maps to SNOMED CT 3654597 (838275008). The.91 suffix
+        is ambiguous in the source (the prior-export comment references SNOMED CT 430831000124106 838275008
+        430831000124106, but no Swedish codebook confirms that.91 binds specifically to I66.2). Mapping
+        to the base I66 target is the defensible broader choice; the prior posterior-cerebral-specific
+        candidate (SNOMED CT 762707) is not used because the suffix-to-subcode binding is unverified.
+        Confidence : ambiguous residual Swedish suffix, broader base target only.
+        """
+}
+mapping "I6691.2" source="I6691" target="430831000124106" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I67P.1" source="I67P" target="62914000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I67P is a Swedish national-extension SNOMED CT 62914000 suffix on ICD-10 I67 (Athena
+        concept_id 45581786). The base I67 maps to SNOMED CT 381591 (62914000), a standard concept. The
+        Swedish extension encodes a national subclassification not represented in SNOMED CT; the target
+        legitimately subsumes the source. Confidence : crosswalk-verified on the base, but the suffix
+        semantics are unspecified and the source-to-base binding is a truncation, not a verified exact
+        code.
+        """
+}
+mapping "I67P.2" source="I67P" target="62914000" relationship=source_is_narrower_than_target preference=alternative quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6910.1" source="I6910" target="195241001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated Swedish extension code (.10); base I69.1 resolves to 195241001"
+}
+mapping "I6910.2" source="I6910" target="195241001" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6919.1" source="I6919" target="195241001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code; truncation resolved to Sequelae of intracerebral hemorrhage (exact match); crosswalk
+        candidate 434056 is broader parent
+        """
+}
+mapping "I6930.1" source="I6930" target="195243003" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated Swedish extension code (.30); base I69.3 resolves to 195243003"
+}
+mapping "I6930.2" source="I6930" target="195243003" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6939.1" source="I6939" target="195243003" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish 4th-char extension I69.39 (Other sequelae of cerebral infarction) of base I69.3. The.39
+        subcode distinguishes SNOMED CT 195243003 from specified sequelae subcategories; (4112026).
+        """
+}
+mapping "I6939.2" source="I6939" target="195243003" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I6940.1" source="I6940" target="195239002" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated to I69.9; crosswalk-verified via prior candidate"
+}
+mapping "I6949.1" source="I6949" target="195239002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated to I69 category base; Late effects of cerebrovascular disease verified standard; I69.4
+        specifies effects of cerebral infarction, candidate covers broader I69.
+        """
+}

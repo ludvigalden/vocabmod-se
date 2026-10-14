@@ -1,0 +1,295 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W426-W429
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W426.1" source="W426" target="220807007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W426 SNOMED CT 220807007 = noise exposure - industrial area/construction site. Target SNOMED CT
+        40421555 ([X]Exposure to noise, occurrence at industrial and construction area, concept_code
+        220807007) is the same clinical concept at the same specificity. Location-only, no activity
+        split on either side.
+        """
+}
+mapping "W4260.1" source="W4260" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4260 SNOMED CT 220807007 = noise exposure at industrial/construction area during
+        sport/exercise. Target SNOMED CT 40421555 ([X]Exposure to noise, occurrence at industrial and
+        construction area) covers location only. Target subsumes the source. One-level broader; high
+        tier.
+        """
+}
+mapping "W4261.1" source="W4261" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4261 SNOMED CT 220807007 = noise exposure at industrial/construction area during
+        play/leisure. Target SNOMED CT 40421555 ([X]Exposure to noise, occurrence at industrial and
+        construction area) covers location only. Target subsumes the source. One-level broader; high
+        tier.
+        """
+}
+mapping "W4262.1" source="W4262" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4262 SNOMED CT 220807007 = noise exposure at industrial/construction area during paid work.
+        Target SNOMED CT 40421555 ([X]Exposure to noise, occurrence at industrial and construction area)
+        covers location only. Target subsumes the source. One-level broader; high tier.
+        """
+}
+mapping "W4263.1" source="W4263" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4263 = SNOMED CT 220807007 (Exposure to noise at industrial/construction area, other
+        activity). Target SNOMED CT 40421555 (concept_code 220807007) =. The target fully subsumes the
+        source (place dimension matches exactly; the source's qualifier has no SNOMED CT representation, so
+        the target is broader by dropping the activity axis). Moderate tier: precise place-equivalent
+        from the SNOMED CT [X] noise-occurrence hierarchy, but activity specificity lost and no independent
+        crosswalk for this Swedish 6-char extension.
+        """
+}
+mapping "W4264.1" source="W4264" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4264 = SNOMED CT 220807007 (Exposure to noise at industrial/construction area, vital
+        activities such as rest, sleep, meals, personal hygiene). Target SNOMED CT 40421555 (220807007) =.
+        Target subsumes source on place; the vital-activity qualifier has no SNOMED CT analogue. Broader by
+        dropping activity axis. Moderate tier: precise place match, activity specificity lost.
+        """
+}
+mapping "W4268.1" source="W4268" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4268 = SNOMED CT 220807007 (Exposure to noise at industrial/construction area, other
+        specified activities). Target SNOMED CT 40421555 (220807007) =. Target subsumes source on place;
+        residual qualifier has no SNOMED CT representation. Broader. Moderate tier: precise place match,
+        activity lost.
+        """
+}
+mapping "W4269.1" source="W4269" target="220807007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4269 = SNOMED CT 220807007 (Exposure to noise at industrial/construction area, unspecified
+        activity). Target SNOMED CT 40421555 (220807007) =. Place matches exactly; unspecified activity
+        adds no information the target lacks. Broader-to-near-exact; scored moderate because no
+        independent crosswalk exists for this Swedish extension.
+        """
+}
+mapping "W427.1" source="W427" target="220808002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W427 = SNOMED CT 220808002 (Exposure to noise - agricultural area). Target SNOMED CT 40421556
+        (220808002) =. Same clinical concept: noise exposure at an agricultural/farm setting. SNOMED CT [X]
+        hierarchy concept that is the direct equivalent of ICD-10 W42 agricultural subcode. Exact match.
+        """
+}
+mapping "W4270.1" source="W4270" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4270 = SNOMED CT 220808002 (Exposure to noise at agricultural area, sport/athletics).
+        Target SNOMED CT 40421556 (220808002) =. Place matches; sport/activity qualifier has no SNOMED CT
+        representation. Broader by dropping activity axis. Moderate tier.
+        """
+}
+mapping "W4271.1" source="W4271" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4271 = SNOMED CT 220808002 (Exposure to noise at agricultural area, play and other
+        leisure). Target SNOMED CT 40421556 (220808002) =. Place matches; leisure qualifier has no SNOMED CT
+        representation. Broader. Moderate tier.
+        """
+}
+mapping "W4272.1" source="W4272" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4272 = SNOMED CT 220808002 78427001 (Exposure to noise at agricultural area,
+        employment/work). Two-target row. Primary target SNOMED CT 40421556 (220808002) = subsumes the
+        place+noise axis but drops the work context (broader). Secondary target SNOMED CT 4301229
+        (78427001) = captures the work-activity axis but drops the place (partial). No single SNOMED CT
+        concept combines place + occupational context for noise exposure.
+        """
+}
+mapping "W4272.2" source="W4272" target="78427001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W4273.1" source="W4273" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4273 = SNOMED CT 220808002 (Exposure to noise at agricultural area, other activity). Target
+        SNOMED CT 40421556 (220808002) =. Place matches; qualifier has no SNOMED CT representation. Broader.
+        Moderate tier.
+        """
+}
+mapping "W4274.1" source="W4274" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4274 = SNOMED CT 220808002 (Exposure to noise at agricultural area, vital activities).
+        Target SNOMED CT 40421556 (220808002) =. Place matches; vital-activity qualifier has no SNOMED CT
+        analogue. Broader. Moderate tier.
+        """
+}
+mapping "W4278.1" source="W4278" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4278 = SNOMED CT 220808002 (Exposure to noise at agricultural area, other specified
+        activities). Target SNOMED CT 40421556 (220808002) =. Place matches; residual activity qualifier
+        has no SNOMED CT representation. Broader. Moderate tier.
+        """
+}
+mapping "W4279.1" source="W4279" target="220808002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4279 = SNOMED CT 220808002 (Exposure to noise at agricultural area, unspecified activity).
+        Target SNOMED CT 40421556 (220808002) =. Place matches; unspecified activity adds nothing. Broader
+        (near-exact on place). Moderate tier: no independent crosswalk.
+        """
+}
+mapping "W428.1" source="W428" target="220809005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W428 = SNOMED CT 220809005 (Exposure to noise - other specified places). Target SNOMED CT
+        40421557 (220809005) =. Same clinical concept: noise exposure at a specified but non-categorized
+        place. Direct SNOMED CT equivalent. Exact match.
+        """
+}
+mapping "W4280.1" source="W4280" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4280 = SNOMED CT 220809005 (Exposure to noise at other specified places, sport). Target
+        SNOMED CT 40421557 (220809005) =. Place matches; sport qualifier has no SNOMED CT representation.
+        Broader. Moderate tier.
+        """
+}
+mapping "W4281.1" source="W4281" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4281 = SNOMED CT 220809005 (Exposure to noise at other specified places, leisure). Target
+        SNOMED CT 40421557 (220809005) =. Place matches; leisure qualifier has no SNOMED CT representation.
+        Broader. Moderate tier.
+        """
+}
+mapping "W4282.1" source="W4282" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4282 = SNOMED CT 220809005 78427001 (Exposure to noise at other specified places,
+        employment). Two-target row. Primary SNOMED CT 40421557 (220809005) = covers place+noise (broader,
+        drops work). Secondary SNOMED CT 4301229 (78427001) = covers work+noise (partial, drops place). No
+        single SNOMED CT combines both axes.
+        """
+}
+mapping "W4282.2" source="W4282" target="78427001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W4283.1" source="W4283" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4283 = SNOMED CT 220809005 (Exposure to noise at other specified places, other activity).
+        Target SNOMED CT 40421557 (220809005) =. Place matches; qualifier has no SNOMED CT representation.
+        Broader. Moderate tier.
+        """
+}
+mapping "W4284.1" source="W4284" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4284 = SNOMED CT 220809005 (Exposure to noise at other specified places, vital activities).
+        Target SNOMED CT 40421557 (220809005) =. Place matches; vital-activity qualifier has no SNOMED CT
+        analogue. Broader. Moderate tier.
+        """
+}
+mapping "W4288.1" source="W4288" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4288 = SNOMED CT 220809005 (Exposure to noise at other specified places, other specified
+        activities). Target SNOMED CT 40421557 (220809005) =. Place matches; residual activity qualifier
+        has no SNOMED CT representation. Broader. Moderate tier.
+        """
+}
+mapping "W4289.1" source="W4289" target="220809005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4289 = SNOMED CT 220809005 (Exposure to noise at other specified places, unspecified
+        activity). Target SNOMED CT 40421557 (220809005) =. Place matches; unspecified activity adds
+        nothing. Broader (near-exact). Moderate tier.
+        """
+}
+mapping "W429.1" source="W429" target="6300007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 6300007 [GPS]"
+}
+mapping "W4290.1" source="W4290" target="220810000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4290 = SNOMED CT 220810000 (Exposure to noise at unspecified place, sport). Target SNOMED CT
+        40421559 (220810000) =. Place matches (unspecified); sport qualifier has no SNOMED CT
+        representation. Broader by dropping activity axis. Moderate tier.
+        """
+}
+mapping "W4291.1" source="W4291" target="220810000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4291 = SNOMED CT 220810000 (Exposure to noise at unspecified place, leisure). Target SNOMED CT
+        40421559 (220810000) =. Place matches; leisure qualifier has no SNOMED CT representation. Broader.
+        Moderate tier.
+        """
+}
+mapping "W4292.1" source="W4292" target="220810000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4292 = SNOMED CT 220810000 78427001 (Exposure to noise at unspecified place, employment).
+        Two-target row. Primary SNOMED CT 40421559 (220810000) = covers place+noise (broader, drops work).
+        Secondary SNOMED CT 4301229 (78427001) = covers the work-activity axis (partial). Place is
+        unspecified so primary target is near-exact on the place dimension.
+        """
+}
+mapping "W4292.2" source="W4292" target="78427001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "W4293.1" source="W4293" target="220810000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4293 = SNOMED CT 220810000 (Exposure to noise at unspecified place, other activity). Target
+        SNOMED CT 40421559 (220810000) =. Place matches; has no SNOMED CT representation. Broader. Moderate
+        tier.
+        """
+}
+mapping "W4294.1" source="W4294" target="220810000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4294 = SNOMED CT 220810000 (Exposure to noise at unspecified place, vital activities).
+        Target SNOMED CT 40421559 (220810000) =. Place matches; vital-activity qualifier has no SNOMED CT
+        analogue. Broader. Moderate tier.
+        """
+}
+mapping "W4298.1" source="W4298" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4298 SNOMED CT 6300007 is a Swedish-SE extension subclassifying W42 (Exposure to noise) by
+        place and activity. Target SNOMED CT 434238 = (OMOP concept 434238, concept_code 6300007). The
+        Athena ICD10 crosswalk maps parent W42 (concept_id 45756295) to via a verified edge. The Swedish
+        place/activity qualifier has no separate SNOMED CT standard target; the parent target fully
+        subsumes the source (any noise exposure regardless of place/activity is captured). broader:
+        target is a true ancestor that totally contains the source. Confidence (high): verified
+        crosswalk on the parent, one-level-broader on a Swedish extension with no independent SNOMED CT
+        analogue.
+        """
+}
+mapping "W4299.1" source="W4299" target="6300007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W4299 SNOMED CT 6300007 is a Swedish-SE extension subclassifying W42 (Exposure to noise),
+        unspecified place and activity. Target SNOMED CT 434238 = (concept_code 6300007). The Athena ICD10
+        crosswalk maps parent W42 to via a verified edge. The Swedish-SE place/activity detail has no
+        SNOMED CT standard target; the parent target fully subsumes the source. broader: target is a true
+        ancestor totally containing the source. Confidence (high): verified parent crosswalk,
+        one-level-broader on a Swedish extension.
+        """
+}

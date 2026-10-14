@@ -1,0 +1,316 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W586-W58
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W586.1" source="W586" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W586 = Bitten or attacked by crocodile or alligator - industrial/construction area.
+        Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction area) modifier has no
+        standard representation. Broader because target subsumes mechanism but omits place specificity.
+        Moderate tier: crosswalk-verified base mechanism, expanded code not in standard vocabularies.
+        """
+}
+mapping "W5860.1" source="W5860" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5860 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        sports. Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction) and activity
+        (sports) modifiers have no standard representation. Broader because target subsumes mechanism
+        but omits place/activity. Moderate tier: crosswalk-verified base mechanism, expanded code not in
+        standard vocabularies.
+        """
+}
+mapping "W5861.1" source="W5861" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5861 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        leisure. Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction) and
+        activity (leisure) modifiers have no standard representation. Broader because target subsumes
+        mechanism but omits place/activity. Moderate tier: crosswalk-verified base mechanism, expanded
+        code not in standard vocabularies.
+        """
+}
+mapping "W5862.1" source="W5862" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5862 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        paid work. Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction) and
+        activity (work) modifiers have no standard representation. Broader because target subsumes
+        mechanism but omits place/activity. Moderate tier: crosswalk-verified base mechanism, expanded
+        code not in standard vocabularies.
+        """
+}
+mapping "W5863.1" source="W5863" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5863 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        other occupation. Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction)
+        and activity (other occupation) modifiers have no standard representation. Broader because
+        target subsumes mechanism but omits place/activity. Moderate tier: crosswalk-verified base
+        mechanism, expanded code not in standard vocabularies.
+        """
+}
+mapping "W5864.1" source="W5864" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5864 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        vital activities. Target SNOMED CT 17982002. Mechanism captured; place (industrial/construction)
+        and activity (vital activities) modifiers have no standard representation. Broader because
+        target subsumes mechanism but omits place/activity. Moderate tier: crosswalk-verified base
+        mechanism, expanded code not in standard vocabularies.
+        """
+}
+mapping "W5868.1" source="W5868" target="17982002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W5868 = Bitten or attacked by crocodile or alligator - industrial/construction area -
+        other specified activities. Target SNOMED CT 17982002. Mechanism captured; place
+        (industrial/construction) and activity (other specified) modifiers have no standard
+        representation. Broader because target subsumes mechanism but omits place/activity. Moderate
+        tier: crosswalk-verified base mechanism, expanded code not in standard vocabularies.
+        """
+}
+mapping "W5869.1" source="W5869" target="220949001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: bitten/struck by crocodile or alligator at an
+        industrial/construction area during an unspecified activity. Target SNOMED CT 40417656 = SNOMED CT
+        220949001 (concept_code 220949001). The target matches the injury+place axis exactly; the
+        source's activity qualifier (here) has no SNOMED CT representation in this family, so the target
+        legitimately subsumes the source (every such case is a crocodile injury at an
+        industrial/construction area). Broader one-level: activity specificity lost, well-understood.
+        Athena-local crosswalk confirms the W58 base maps to SNOMED CT 4077127, and 40417656 is the
+        crocodile-specific descendant with the matching place qualifier.
+        """
+}
+mapping "W587.1" source="W587" target="220950001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: bitten/struck by crocodile or alligator on a farm (no activity
+        specified). Target SNOMED CT 40417657 = SNOMED CT 220950001 (concept_code 220950001). Exact match on
+        injury+place; source lacks an activity qualifier, target has none either. Strictly this is close
+        to exact_match, but assigning broader/ because the Swedish W587 is the parent of W5870-W5879
+        (activity-qualified children) and the SNOMED CT target does not distinguish those, so the target is
+        the place-only standard equivalent. Athena-local: W58 base maps to 4077127; 40417657 is the
+        farm-place crocodile descendant.
+        """
+}
+mapping "W5870.1" source="W5870" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during sport/athletics.
+        Target SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; the sport/activity axis
+        has no SNOMED CT representation in the crocodile family, so target subsumes source (broader,
+        one-level loss of the activity qualifier). Athena-local crosswalk confirms W58 base -> 4077127;
+        40417657 is the farm-place descendant.
+        """ suspect=quoted-text
+}
+mapping "W5871.1" source="W5871" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during play/leisure. Target
+        SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; the leisure/activity axis has
+        no SNOMED CT representation in this family. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5872.1" source="W5872" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during paid work. Target
+        SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; the work/activity axis has no
+        SNOMED CT representation in this family. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5873.1" source="W5873" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during other occupation.
+        Target SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; the activity axis has no
+        SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local crosswalk
+        basis.
+        """ suspect=quoted-text
+}
+mapping "W5874.1" source="W5874" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during vital activity
+        (rest/sleep/meals/personal hygiene). Target SNOMED CT 40417657 = '[X] (220950001). Target matches
+        injury+place; the vital-activity axis has no SNOMED CT representation. Broader, one-level loss of
+        activity qualifier. Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5878.1" source="W5878" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm during other specified
+        activity. Target SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; the activity
+        axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5879.1" source="W5879" target="220950001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite on a farm, unspecified activity. Target
+        SNOMED CT 40417657 = '[X] (220950001). Target matches injury+place; activity is unspecified in
+        source and absent in target. Broader (conservatively — see W587 rationale). Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W588.1" source="W588" target="220951002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place (place-only
+        parent). Target SNOMED CT 40417659 = SNOMED CT 220951002 (concept_code 220951002). Target matches
+        injury+place exactly; source is the place-only parent of W5880-W5889 (activity-qualified
+        children) and target does not distinguish those, so broader is the conservative assignment.
+        Athena-local: W58 base -> 4077127; 40417659 is the other-specified-place crocodile descendant.
+        """
+}
+mapping "W5880.1" source="W5880" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during
+        sport/athletics. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place;
+        sport/activity axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5881.1" source="W5881" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during
+        play/leisure. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place;
+        leisure/activity axis has no SNOMED CT representation. Broader, one-level loss of activity
+        qualifier. Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5882.1" source="W5882" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during paid
+        work. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place; work/activity axis
+        has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5883.1" source="W5883" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during other
+        occupation. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place; activity
+        axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5884.1" source="W5884" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during vital
+        activity. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place; vital-activity
+        axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5888.1" source="W5888" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place during other
+        specified activity. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place;
+        activity axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5889.1" source="W5889" target="220951002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at other specified place, unspecified
+        activity. Target SNOMED CT 40417659 = '[X] (220951002). Target matches injury+place; activity
+        unspecified in source, absent in target. Broader (conservatively). Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W589.1" source="W589" target="220952009" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place (place-only
+        parent). Target SNOMED CT 40417660 = SNOMED CT 220952009 (concept_code 220952009). Target matches
+        injury + exactly; source is the place-only parent of W5890-W5899 (activity-qualified children),
+        target does not distinguish those, so broader is the conservative assignment. Athena-local: W58
+        base -> 4077127; 40417660 is the unspecified-place crocodile descendant.
+        """
+}
+mapping "W5890.1" source="W5890" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during
+        sport/athletics. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place;
+        sport/activity axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5891.1" source="W5891" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during
+        play/leisure. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place;
+        leisure/activity axis has no SNOMED CT representation. Broader, one-level loss of activity
+        qualifier. Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5892.1" source="W5892" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during paid work.
+        Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place; work/activity axis has
+        no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local crosswalk
+        basis.
+        """ suspect=quoted-text
+}
+mapping "W5893.1" source="W5893" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during other
+        occupation. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place; activity
+        axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5894.1" source="W5894" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during vital
+        activity. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place; vital-activity
+        axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier. Athena-local
+        crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5898.1" source="W5898" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place during other
+        specified activity. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place;
+        activity axis has no SNOMED CT representation. Broader, one-level loss of activity qualifier.
+        Athena-local crosswalk basis.
+        """ suspect=quoted-text
+}
+mapping "W5899.1" source="W5899" target="220952009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = Swedish W58 extension: crocodile/alligator bite at unspecified place, unspecified
+        activity. Target SNOMED CT 40417660 = '[X] (220952009). Target matches injury+place; activity
+        unspecified in source and absent in target. Broader (conservatively). Athena-local crosswalk
+        basis.
+        """ suspect=quoted-text
+}

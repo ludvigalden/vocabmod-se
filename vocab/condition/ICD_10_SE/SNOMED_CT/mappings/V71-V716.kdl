@@ -1,0 +1,463 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V71-V716
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V7100.1" source="V7100" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V71.00 = Swedish extension of V71.0 SNOMED CT 214640008 36198007 + activity. Base V71.0
+        (Athena 45755991) maps to SNOMED CT 437738 (Motor vehicle accident off public road) + 444074
+        (Victim of vehicular AND/OR traffic accident). Targets are broader: they capture the nontraffic
+        motor-vehicle accident event but lose bus-vs-pedal-cycle specificity, driver role, and activity
+        context. : mechanical crosswalk from base code, Swedish activity dimension not represented.
+        """
+}
+mapping "V7100.2" source="V7100" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7101.1" source="V7101" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V71.01 = Swedish extension of V71.0 (bus driver, nontraffic collision with pedal cycle) +
+        activity SNOMED CT 214640008 36198007. Base crosswalk to SNOMED CT 437738 + 444074. Broader — role,
+        collision partner, and activity lost.
+        """
+}
+mapping "V7101.2" source="V7101" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7102.1" source="V7102" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V71.02 = Swedish extension of V71.0 (bus driver, nontraffic collision with pedal cycle) +
+        activity SNOMED CT 214640008 36198007. Base crosswalk to SNOMED CT 437738 + 444074. Broader.
+        """
+}
+mapping "V7102.2" source="V7102" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7103.1" source="V7103" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V71.03 = Swedish extension of V71.0 (bus driver, nontraffic collision with pedal cycle) +
+        activity SNOMED CT 214640008 36198007. Base crosswalk to SNOMED CT 437738 + 444074. Broader.
+        """
+}
+mapping "V7103.2" source="V7103" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7104.1" source="V7104" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V71.04 = Swedish extension of V71.0 (bus driver, nontraffic collision with pedal cycle) +
+        activity SNOMED CT 214640008 36198007. Base crosswalk to SNOMED CT 437738 + 444074. Broader.
+        """
+}
+mapping "V7104.2" source="V7104" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7108.1" source="V7108" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7108 = Swedish extension of ICD-10 V71.0 (bus driver injured in nontraffic collision
+        with pedal cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (concept_code
+        214640008). This is the Athena crosswalk target for parent V71.0 (concept_id 45755994); the
+        activity sub-character has no SNOMED CT representation. Target fully subsumes source (every such
+        bus-pedal-cycle nontraffic injury is a motor vehicle accident off public road) but loses both
+        bus-vs-other-vehicle specificity and the activity context. Low tier : broader with real
+        specificity loss across two axes (vehicle type, activity).
+        """
+}
+mapping "V7109.1" source="V7109" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7109 = Swedish extension of V71.0 (bus driver, nontraffic, collision with pedal cycle)
+        with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), the Athena Maps-to target
+        for parent V71.0. Source is fully contained by target; activity and bus/cycle specificity lost.
+        Low broader.
+        """
+}
+mapping "V7110.1" source="V7110" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7110 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1 (concept 45755995). Target subsumes source; loses bus/passenger/cycle and
+        activity detail. Low broader.
+        """
+}
+mapping "V7111.1" source="V7111" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7111 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7112.1" source="V7112" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7112 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7113.1" source="V7113" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7113 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7114.1" source="V7114" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7114 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7118.1" source="V7118" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7118 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7119.1" source="V7119" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7119 = Swedish extension of V71.1 (bus passenger, nontraffic, collision with pedal
+        cycle) with activity SNOMED CT 214640008. Target SNOMED CT 437738 = (214640008), Athena Maps-to target
+        for parent V71.1. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7120.1" source="V7120" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7120 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000). Athena Maps-to
+        target for parent V71.2 (concept 45755996). Target subsumes source (bus is motor vehicle; pedal
+        cycle is nonmotor vehicle; nontraffic = off public highway); loses person-on-outside and
+        activity specificity. Low broader.
+        """
+}
+mapping "V7121.1" source="V7121" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7121 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7122.1" source="V7122" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7122 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7123.1" source="V7123" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7123 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7124.1" source="V7124" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7124 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7128.1" source="V7128" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7128 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7129.1" source="V7129" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7129 = Swedish extension of V71.2 (person on outside of bus, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.2. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7130.1" source="V7130" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7130 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3 (concept 45755997). Target subsumes source; activity context lost. Low
+        broader.
+        """
+}
+mapping "V7131.1" source="V7131" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7131 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7132.1" source="V7132" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7132 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7133.1" source="V7133" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7133 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7134.1" source="V7134" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7134 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7138.1" source="V7138" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7138 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7139.1" source="V7139" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7139 = Swedish extension of V71.3 (unspecified bus occupant, nontraffic, collision with
+        pedal cycle) with activity SNOMED CT 214845000. Target SNOMED CT 4069060 = (214845000), Athena Maps-to
+        target for parent V71.3. Target subsumes source; activity context lost. Low broader.
+        """
+}
+mapping "V7140.1" source="V7140" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7140 = Swedish extension of V71.4 (person injured while boarding/alighting bus in
+        collision with pedal cycle) with activity SNOMED CT 242107006. Target SNOMED CT 4053428 = (242107006),
+        Athena Maps-to target for parent V71.4 (concept 45755998). Target subsumes source; loses
+        pedal-cycle-collision context and activity. Low broader.
+        """
+}
+mapping "V7141.1" source="V7141" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7141 = Swedish extension of V71.4 (person injured while boarding/alighting bus in
+        collision with pedal cycle) with activity SNOMED CT 242107006. Target SNOMED CT 4053428 = (242107006),
+        Athena Maps-to target for parent V71.4. Target subsumes source; loses pedal-cycle-collision
+        context and activity. Low broader.
+        """
+}
+mapping "V7142.1" source="V7142" target="242107006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7142 = Swedish national extension of ICD-10 V71.4 (Bus occupant injured in collision
+        with pedal cycle, person injured while boarding or alighting) with added activity context SNOMED CT
+        242107006 (paid work). Target SNOMED CT 4053428 (242107006, Accident while boarding or alighting
+        from motor vehicle on road) is the Athena crosswalk target for the base V71.4 code. The activity
+        dimension (work/sport/leisure) has no SNOMED CT analogue and is lost; the injury event is fully
+        captured. Broader because target subsumes the source (source adds activity specificity).
+        Moderate tier: Athena crosswalk-verified base, but unspecified-activity Swedish extension not
+        independently re-verified; one dimension dropped.
+        """
+}
+mapping "V7143.1" source="V7143" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7143 = Swedish extension of V71.4 (bus occupant, boarding/alighting, collision with
+        pedal cycle) with activity SNOMED CT 242107006 (other activity). Target SNOMED CT 4053428 (242107006,
+        Accident while boarding or alighting from motor vehicle on road) is the Athena Maps-to target
+        for base V71.4. Activity dimension lost; injury event captured. Broader (target subsumes
+        source). Moderate tier per Athena crosswalk base with Swedish-extension activity dropped.
+        """
+}
+mapping "V7144.1" source="V7144" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7144 = Swedish extension of V71.4 (bus occupant, boarding/alighting, collision with
+        pedal cycle) with activity SNOMED CT 242107006 (vital activity such as rest, sleep, meals, personal
+        hygiene). Target SNOMED CT 4053428 (242107006, Accident while boarding or alighting from motor
+        vehicle on road) is the Athena Maps-to target for base V71.4. Activity dimension lost. Broader
+        (target subsumes source). Moderate tier.
+        """
+}
+mapping "V7148.1" source="V7148" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7148 = Swedish extension of V71.4 (bus occupant, boarding/alighting, collision with
+        pedal cycle) with activity SNOMED CT 242107006 (other specified activities). Target SNOMED CT 4053428
+        (242107006, Accident while boarding or alighting from motor vehicle on road) is the Athena
+        Maps-to target for base V71.4. Activity dimension lost. Broader. Moderate tier.
+        """
+}
+mapping "V7149.1" source="V7149" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7149 = Swedish extension of V71.4 (bus occupant, boarding/alighting, collision with
+        pedal cycle) with activity SNOMED CT 242107006 (unspecified activity). Target SNOMED CT 4053428
+        (242107006, Accident while boarding or alighting from motor vehicle on road) is the Athena
+        Maps-to target for base V71.4. Source adds an unspecified-activity dimension that carries no
+        extra clinical meaning; target fully captures the injury event. Broader (slightly). Moderate
+        tier.
+        """
+}
+mapping "V7150.1" source="V7150" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7150 = Swedish extension of V71.5 (Bus occupant, driver injured in traffic accident,
+        collision with pedal cycle) with activity SNOMED CT 214172005 (sport/exercise). Target SNOMED CT
+        442452 (214172005, Motor vehicle traffic accident involving collision between motor vehicle and
+        pedal cycle, driver of motor vehicle injured) is the Athena Maps-to target for base V71.5.
+        Target is more general (any motor vehicle, not bus-specific) and drops the activity dimension.
+        Broader on two axes. Moderate tier.
+        """
+}
+mapping "V7151.1" source="V7151" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7151 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (play and other leisure). Target SNOMED CT 442452
+        (214172005, driver injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for
+        base V71.5. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7152.1" source="V7152" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7152 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (paid work). Target SNOMED CT 442452 (214172005, driver
+        injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for base V71.5.
+        Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7153.1" source="V7153" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7153 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (other activity). Target SNOMED CT 442452 (214172005,
+        driver injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for base V71.5.
+        Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7154.1" source="V7154" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7154 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (vital activity). Target SNOMED CT 442452 (214172005,
+        driver injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for base V71.5.
+        Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7158.1" source="V7158" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7158 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (other specified activities). Target SNOMED CT 442452
+        (214172005, driver injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for
+        base V71.5. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7159.1" source="V7159" target="214172005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7159 = Swedish extension of V71.5 (bus occupant, driver, traffic accident, pedal cycle
+        collision) with activity SNOMED CT 214172005 (unspecified activity). Target SNOMED CT 442452
+        (214172005, driver injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for
+        base V71.5. Unspecified-activity dimension carries no extra meaning; bus-specificity lost.
+        Broader. Moderate tier.
+        """
+}
+mapping "V7160.1" source="V7160" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7160 = Swedish extension of V71.6 (Bus occupant, passenger injured in traffic accident,
+        collision with pedal cycle) with activity SNOMED CT 214174006 (sport/exercise). Target SNOMED CT
+        442454 (214174006, Motor vehicle traffic accident involving collision between motor vehicle and
+        pedal cycle, passenger of motor vehicle injured) is the Athena Maps-to target for base V71.6.
+        Target is more general (any motor vehicle) and drops the activity dimension. Broader on two
+        axes. Moderate tier.
+        """
+}
+mapping "V7161.1" source="V7161" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7161 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (play/leisure). Target SNOMED CT 442454 (214174006,
+        passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for base
+        V71.6. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7162.1" source="V7162" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7162 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (paid work). Target SNOMED CT 442454 (214174006,
+        passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to target for base
+        V71.6. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7163.1" source="V7163" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7163 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (other activity). Target SNOMED CT 442454
+        (214174006, passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to target
+        for base V71.6. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7164.1" source="V7164" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7164 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (vital activity). Target SNOMED CT 442454
+        (214174006, passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to target
+        for base V71.6. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7168.1" source="V7168" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7168 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (other specified activities). Target SNOMED CT
+        442454 (214174006, passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to
+        target for base V71.6. Activity and bus-specificity lost. Broader. Moderate tier.
+        """
+}
+mapping "V7169.1" source="V7169" target="214174006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7169 = Swedish extension of V71.6 (bus occupant, passenger, traffic accident, pedal
+        cycle collision) with activity SNOMED CT 214174006 (unspecified activity). Target SNOMED CT 442454
+        (214174006, passenger injured in MV-pedal cycle traffic accident) is the Athena Maps-to target
+        for base V71.6. Unspecified-activity carries no extra meaning; bus-specificity lost. Broader.
+        Moderate tier.
+        """
+}

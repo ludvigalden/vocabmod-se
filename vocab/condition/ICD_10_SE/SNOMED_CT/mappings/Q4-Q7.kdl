@@ -1,0 +1,151 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes Q4-Q7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Q431A.1" source="Q431A" target="204741009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q431A SNOMED CT 204741009 = Hirschsprung disease with short segment (Swedish extension of
+        Q43.1). Target SNOMED CT 4002470 (204741009). Exact 1:1 semantic equivalence on segment length.
+        """
+}
+mapping "Q431B.1" source="Q431B" target="204739008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q431B SNOMED CT 204739008 = Hirschsprung disease with ultrashort segment (Swedish extension
+        of Q43.1). No SNOMED CT concept for exists. Target SNOMED CT 194149 (204739008), the parent crosswalk
+        target for Q43.1. Moderate tier: best available standard concept, segment-length specificity
+        lost.
+        """
+}
+mapping "Q431X.1" source="Q431X" target="204739008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q431X SNOMED CT 204739008 = congenital megacolon, unspecified (Swedish extension of Q43.1).
+        Target SNOMED CT 194149 (204739008). Crosswalk-verified via parent Q43.1 → 194149; the source
+        matches the general Hirschsprung/congenital aganglionic megacolon concept.
+        """
+}
+mapping "Q442A.1" source="Q442A" target="82821008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q442A SNOMED CT 82821008 = extrahepatic biliary atresia (Swedish extension of Q44.2 Atresia
+        of bile ducts). Target SNOMED CT 4220532 (82821008). Exact 1:1 semantic equivalence on extrahepatic
+        location.
+        """
+}
+mapping "Q442B.1" source="Q442B" target="253807009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q442B SNOMED CT 253807009 = intrahepatic biliary atresia (Swedish extension of Q44.2).
+        Target SNOMED CT 4109620 (253807009). Exact 1:1 semantic equivalence on intrahepatic location.
+        """
+}
+mapping "Q658A.1" source="Q658A" target="33754009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q658A SNOMED CT 33754009 = congenital coxa valga (Swedish extension of Q65.8). Target SNOMED CT
+        74471 (33754009). Exact 1:1 semantic equivalence.
+        """
+}
+mapping "Q658B.1" source="Q658B" target="74820003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q658B SNOMED CT 74820003 = congenital coxa vara (Swedish extension of Q65.8). Target SNOMED CT
+        81402 (74820003). Exact 1:1 semantic equivalence.
+        """
+}
+mapping "Q658C.1" source="Q658C" target="253950003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q658C SNOMED CT 253950003 = acetabular dysplasia (Swedish extension of Q65.8, congenital
+        context). Target SNOMED CT 40460084 (253950003). Exact 1:1 semantic equivalence in the congenital
+        context of Q65.8.
+        """
+}
+mapping "Q658W.1" source="Q658W" target="205335008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q658W SNOMED CT 205335008 = other specified congenital deformity of hip joint (Swedish
+        extension of ICD-10 Q65.8). Target SNOMED CT 4006287 (code 205335008) =. Semantic 1:1 equivalence:
+        both denote the residual bucket for congenital hip joint deformity. The base WHO ICD-10 Q65.8
+        (concept_id 45558421) maps via Athena to SNOMED CT 201956 (Congenital anomaly of lower limb) — a
+        broader parent — but is a closer, exact equivalent for this specific subconcept.
+        """
+}
+mapping "Q741A.1" source="Q741A" target="156992000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q741A SNOMED CT 156992000 = congenital genu valgum (knock knee), a Swedish subcode of Q74.1
+        (Congenital malformation of knee). Target SNOMED CT 40322442 = (code 156992000). Exact 1:1 clinical
+        equivalence. Note: base ICD-10 Q74.1 maps via Athena to the broader SNOMED CT 73872; the Swedish
+        subcode is finer-grained and matches the specific valgus-deformity SNOMED CT concept.
+        """
+}
+mapping "Q741B.1" source="Q741B" target="205341001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q741B SNOMED CT 205341001 = congenital genu varum (bow leg), a Swedish subcode of Q74.1.
+        SNOMED CT has no concept explicitly named (the valgus counterpart 156992000 exists, but no
+        symmetric varus sibling was found). Target SNOMED CT 4004959 = (code 205341001): closest defensible
+        standard concept, semantically a -feeling but really exact-match-level residual since the source
+        has no perfect SNOMED CT twin. High not because the target is NOS-level rather than varus-specific.
+        Reviewer note: consider whether 73872 (broader) is preferred for merge consistency.
+        """
+}
+mapping "Q741C.1" source="Q741C" target="61293001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q741C SNOMED CT 61293001 = congenital patellar malformation, a Swedish subcode of Q74.1. No
+        SNOMED CT concept for exists in the mirror; the closest specific concept found is 4204342
+        (309244002), which is only one extreme of the source's heterogeneous scope (patellar hypoplasia,
+        aplasia, dysplasia). Target SNOMED CT 73872 = (code 61293001) is the Athena-mapped parent of Q74.1;
+        it legitimately subsumes all patellar malformations as knee-joint deformities. Broader, low
+        confidence: subsumption is total but specificity loss is real.
+        """
+}
+mapping "Q741X.1" source="Q741X" target="61293001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q741X SNOMED CT 61293001 = congenital knee malformation, unspecified. This is the Swedish
+        unspecified-level subcode of Q74.1. Target SNOMED CT 73872 = (code 61293001), which is also the
+        Athena crosswalk target for Q74.1. Exact clinical equivalence at the unspecified level: both
+        denote the NOS knee deformity without further specification.
+        """
+}
+mapping "Q764A.1" source="Q764A" target="71311003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q764A SNOMED CT 71311003 = congenital kyphosis, a Swedish subcode of Q76.4 (Other congenital
+        malformations of spine, not associated with scoliosis). Target SNOMED CT 4322951 = (code 71311003).
+        Exact 1:1 clinical equivalence. The base WHO Q76.4 maps to the broader SNOMED CT 81670 (Congenital
+        anomaly of spine); the Swedish subcode allows the specific kyphosis target.
+        """
+}
+mapping "Q764B.1" source="Q764B" target="254036004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q764B SNOMED CT 254036004 = congenital lordosis, a Swedish subcode of Q76.4. Target SNOMED CT
+        40460180 = (code 254036004). Exact 1:1 clinical equivalence.
+        """
+}
+mapping "Q764W.1" source="Q764W" target="74877002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source Q764W SNOMED CT 74877002 = other specified congenital malformation of spine not associated
+        with scoliosis. This is the residual bucket alongside Q76.4. Target SNOMED CT 81670 = (code
+        74877002), which is also the Athena crosswalk target for the base Q76.4. Although the source is,
+        no SNOMED CT concept captures that residual-with-exclusion framing; 81670 is the closest defensible
+        exact-level match for the residual spine-malformation category minus scoliosis. High rather than
+        due to the loss of the exclusion.
+        """
+}

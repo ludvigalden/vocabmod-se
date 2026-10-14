@@ -1,0 +1,422 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes R4-R5
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "R418A.1" source="R418A" target="110352000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R418A SNOMED CT 110352000 = mild cognitive impairment, subjective (patient-reported). Target
+        SNOMED CT 439795 (concept_code 110352000), standard Clinical Finding. The target subsumes the
+        source; qualifier is not separately represented in SNOMED CT. High tier: closest standard concept,
+        one-level broader.
+        """
+}
+mapping "R418W.1" source="R418W" target="384821006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R418W SNOMED CT 384821006 = other and unspecified symptoms and signs involving cognitive
+        function and awareness (Swedish extension of ICD-10 R41.8). Target SNOMED CT 4293175 (concept_code
+        384821006), standard Observation. This is the Athena crosswalk target for ICD-10 R41.8; the
+        target is a broad parent that subsumes the source. Low confidence because the target is very
+        broad and the source is a residual category.
+        """
+}
+mapping "R429.1" source="R429" target="271789005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R429 SNOMED CT 271789005 = dizziness and giddiness. Target SNOMED CT 433316 (concept_code
+        271789005), standard Clinical Finding, confirmed via Athena ICD10 Maps to crosswalk (ICD-10 R42
+        -> 433316). Exact semantic equivalence.
+        """
+}
+mapping "R470A.1" source="R470A" target="20301004" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R470A SNOMED CT 20301004 87486003 bundles dysphasia AND aphasia into one code. Target 1
+        SNOMED CT 441594 (concept_code 20301004), standard Clinical Finding — covers only the dysphasia
+        axis. Target 2 SNOMED CT 440424 (concept_code 87486003), standard Clinical Finding — covers only
+        the aphasia axis. Neither single target captures the full combination; each is partial.
+        Multi-target decomposition. Confirmed via Athena ICD-10 R47.0 Maps to crosswalk (parent
+        4024716).
+        """
+}
+mapping "R470A.2" source="R470A" target="87486003" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "R470B.1" source="R470B" target="280032002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R470B SNOMED CT 280032002 = pragmatic language disorder (impairment of social/pragmatic
+        language use). No exact standard SNOMED CT concept exists — 46284797 is a UK extension
+        (invalid_reason=D). Target SNOMED CT 443361 (concept_code 280032002), standard Disorder. The target
+        subsumes the source as a broader language disorder category. Low confidence: the target is a
+        broader developmental category, and pragmatic language disorder is not exclusively
+        developmental.
+        """
+}
+mapping "R470C.1" source="R470C" target="280032002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R470C SNOMED CT 280032002 = other specified language disorder (residual category). Target
+        SNOMED CT 443361 (concept_code 280032002), standard Disorder. The target is the best available
+        standard language disorder concept and subsumes the unspecified source. Low confidence: residual
+        source category with heterogeneous content.
+        """
+}
+mapping "R470D.1" source="R470D" target="280032002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R470D SNOMED CT 280032002 = unspecified language disorder. Target SNOMED CT 443361
+        (concept_code 280032002), standard Disorder. Best available standard language disorder concept;
+        target subsumes the unspecified source. Low confidence: unspecified source, and the target is
+        specifically developmental which the source does not assert.
+        """
+}
+mapping "R471A.1" source="R471A" target="36685002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R471B.1" source="R471B" target="8011004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R471B SNOMED CT 8011004 = dysarthrophonia (combined dysarthria and dysphonia). Target SNOMED CT
+        4196636 (concept_code 8011004), standard Clinical Finding, confirmed via Athena ICD-10 R47.1
+        Maps to crosswalk. The target captures the dysarthria component but the source also includes
+        dysphonia; strictly the target is partial, but dysarthria is the dominant clinical concept and
+        the Athena crosswalk treats R47.1 as mapping to dysarthria. High tier: verified crosswalk,
+        one-level broader.
+        """
+}
+mapping "R471W.1" source="R471W" target="8011004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R471W SNOMED CT 8011004 = other specified dysarthria/dysarthrophonia (residual). Target
+        SNOMED CT 4196636 (concept_code 8011004), standard Clinical Finding. The target subsumes the
+        source; Athena crosswalk from R47.1. Moderate confidence: residual source, one-level broader.
+        """
+}
+mapping "R471X.1" source="R471X" target="8011004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R471X SNOMED CT 8011004 = dysarthria/dysarthrophonia, unspecified. Target SNOMED CT 4196636
+        (concept_code 8011004), standard Clinical Finding, Athena crosswalk from R47.1. The target is
+        the best available standard concept and clinically equivalent to the dysarthria component of the
+        source. High tier: verified crosswalk, unspecified source maps to the general disorder.
+        """
+}
+mapping "R478A.1" source="R478A" target="29164008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R478A SNOMED CT 29164008 = articulation difficulties due to anatomical cause (e.g. cleft
+        palate). No exact standard SNOMED CT concept exists for this specific etiology-framed speech
+        disorder. Target SNOMED CT 435642 (concept_code 29164008), standard Clinical Finding, confirmed via
+        Athena ICD-10 R47.8 Maps to crosswalk. Target subsumes the source. Low confidence: the target is
+        broad and loses the anatomical-etiology specificity.
+        """
+}
+mapping "R478B.1" source="R478B" target="232416001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R478B SNOMED CT 232416001 = velopharyngeal insufficiency, unspecified. Target SNOMED CT 4048189
+        (concept_code 232416001), standard Disorder. Near-exact match: velopharyngeal insufficiency and
+        incompetence are clinically synonymous terms for the same condition. High tier: the target names
+        the same clinical concept; the (4150457) is deprecated (invalid_reason=D).
+        """
+}
+mapping "R478C.1" source="R478C" target="58120009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R478C SNOMED CT 58120009 = compensatory articulation pattern (maladaptive articulation
+        learned to compensate for structural defect). Target SNOMED CT 4240830 (concept_code 58120009),
+        standard Clinical Finding. Near-exact semantic equivalence; both denote the same speech
+        pathology concept. High tier: no independent crosswalk but the term match is precise.
+        """
+}
+mapping "R478D.1" source="R478D" target="20937004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "R478W.1" source="R478W" target="29164008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R478W SNOMED CT 29164008 = other specified speech disturbance (residual). Target SNOMED CT
+        435642 (concept_code 29164008), standard Clinical Finding, Athena crosswalk from R47.8. Target
+        subsumes the residual source. Low confidence: heterogeneous residual category.
+        """
+}
+mapping "R478X.1" source="R478X" target="29164008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R478X SNOMED CT 29164008 = speech disturbance, unspecified. Target SNOMED CT 435642
+        (concept_code 29164008), standard Clinical Finding, Athena crosswalk from R47.8. The target is
+        the exact SNOMED CT equivalent of the unspecified source; both denote the general speech
+        disturbance concept.
+        """
+}
+mapping "R482A.1" source="R482A" target="361274000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R482B.1" source="R482B" target="68345001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R482B SNOMED CT 68345001 = verbal apraxia (apraxia of speech). The direct SNOMED CT concept
+        4159584 is non-standard (invalid_reason=U). Target SNOMED CT 132342 (concept_code 68345001),
+        standard Clinical Finding, confirmed via Athena ICD-10 R48.2 Maps to crosswalk. The target
+        subsumes verbal apraxia as a broader parent concept. High tier: verified crosswalk, one-level
+        broader.
+        """
+}
+mapping "R490A.1" source="R490A" target="16617009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490A SNOMED CT 16617009 = functional childhood hoarseness. No exact standard SNOMED CT concept
+        exists. Target SNOMED CT 40326053 (concept_code 16617009), standard Disorder. Childhood hoarseness
+        is a type of dysphonia; the target subsumes the source. Moderate confidence: the target is
+        broad, losing the childhood-onset and functional etiology qualifiers.
+        """
+}
+mapping "R490B.1" source="R490B" target="16617009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490B SNOMED CT 16617009 = functional dysphonia (voice disorder without organic cause).
+        Target SNOMED CT 40326053 (concept_code 16617009), standard Disorder. The target subsumes
+        functional dysphonia as the parent concept; the (4042710) (4039729) subtypes are children. High
+        tier: the target is the direct parent and the best available standard concept.
+        """
+}
+mapping "R490C.1" source="R490C" target="16617009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490C SNOMED CT 16617009 = habitual dysphonia (dysphonia from vocal misuse/habit). No exact
+        standard SNOMED CT concept exists. Target SNOMED CT 40326053 (concept_code 16617009), standard
+        Disorder. The target subsumes the source. Moderate confidence: (4042710) but is not an exact
+        match.
+        """
+}
+mapping "R490D.1" source="R490D" target="16617009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490D SNOMED CT 16617009 = age-related hoarseness (presbyphonia). No exact standard SNOMED CT
+        concept exists. Target SNOMED CT 40326053 (concept_code 16617009), standard Disorder. The target
+        subsumes the source. Moderate confidence: the target is broad, losing the age-related etiology
+        qualifier.
+        """
+}
+mapping "R490W.1" source="R490W" target="16617009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490W SNOMED CT 16617009 = other specified dysphonia (residual). Target SNOMED CT 40326053
+        (concept_code 16617009), standard Disorder. The target subsumes the residual source. Moderate
+        confidence: residual category, one-level broader.
+        """
+}
+mapping "R490X.1" source="R490X" target="16617009" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R490X SNOMED CT 16617009 = dysphonia, unspecified. Target SNOMED CT 40326053 (concept_code
+        16617009), standard Disorder. The target is the exact SNOMED CT equivalent of the unspecified
+        source; both denote the general dysphonia concept. High tier: confirmed via Athena ICD-10 R49.0
+        Maps to crosswalk (R49.0 -> 4168556 40326053 is the direct parent and semantically exact for an
+        unspecified dysphonia source).
+        """
+}
+mapping "R492A.1" source="R492A" target="25728009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492A SNOMED CT 25728009 = open nasality/hypernasality, a resonance disorder where too much
+        air escapes through the nose during speech. Target. Exact term and scope match in the SNOMED CT
+        mirror.
+        """
+}
+mapping "R492B.1" source="R492B" target="23646007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492B SNOMED CT 23646007 = mixed nasality, a combination of hyper- and hyponasality. Target.
+        Exact term and scope match in the SNOMED CT mirror.
+        """
+}
+mapping "R492C.1" source="R492C" target="10314002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492C SNOMED CT 10314002 = closed nasality/hyponasality, where too little air resonates in
+        the nasal cavity (as in nasal obstruction). Target. Exact term and scope match in the SNOMED CT
+        mirror.
+        """
+}
+mapping "R492D.1" source="R492D" target="274573005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492D SNOMED CT 274573005 = guttural resonance disorder, a harsh/pharyngeal voice quality
+        not fitting hyper- or hyponasality. Target SNOMED CT 4168556 (parent for R49.2), the closest
+        standard concept available. The target is broader: it covers nasality disorders generally but
+        does not capture the distinct guttural/pharyngeal quality. No specific SNOMED CT concept for
+        guttural resonance exists in the mirror. Low confidence due to partial semantic overlap — the
+        target does not fully represent this clinical entity.
+        """
+}
+mapping "R492W.1" source="R492W" target="274573005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492W SNOMED CT 274573005 = other specified resonance disorder, a residual code under R49.2
+        for specified nasality/resonance disorders not elsewhere classified. Target SNOMED CT 4168556 =
+        Hypernasality and hyponasality, the parent concept for R49.2 via Athena crosswalk. Broader: the
+        target subsumes all resonance disorders in this category. Moderate tier: unspecified parent
+        crosswalk, residual source.
+        """
+}
+mapping "R492X.1" source="R492X" target="274573005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R492X SNOMED CT 274573005 = resonance disorder, unspecified. Target SNOMED CT 4168556 =
+        Hypernasality and hyponasality, the parent concept for R49.2 via Athena crosswalk. Broader: the
+        target subsumes the unspecified source. Moderate tier: unspecified source mapped to the general
+        parent category via verified crosswalk.
+        """
+}
+mapping "R498A.1" source="R498A" target="8614008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498A SNOMED CT 8614008 = phonasthenia, vocal fatigue/weakness from overuse of the voice.
+        Target. Exact term and scope match in the SNOMED CT mirror.
+        """
+}
+mapping "R498B.1" source="R498B" target="289186000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498B SNOMED CT 289186000 = pubophonia/voice mutation disorder, a disturbance of the voice
+        change during puberty. No specific SNOMED CT concept for pubophonia or voice mutation exists in the
+        mirror. Target SNOMED CT 4128827 = Voice production finding, the parent concept for R49.8 via
+        Athena crosswalk. Broader: the target subsumes all voice production findings. Low confidence:
+        the target is a generic finding that does not capture the specific pubertal voice disorder.
+        """
+}
+mapping "R498C.1" source="R498C" target="289186000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498C SNOMED CT 289186000 = deviant/abnormal voice pitch. No specific SNOMED CT concept for
+        abnormal voice pitch in the mirror. Target SNOMED CT 4128827 = Voice production finding, the parent
+        for R49.8 via Athena crosswalk. Broader: the target subsumes all voice production findings. Low
+        confidence: generic parent does not capture the specific pitch abnormality.
+        """
+}
+mapping "R498D.1" source="R498D" target="289186000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498D SNOMED CT 289186000 = singing voice disorder. No specific SNOMED CT concept for singing
+        voice disorder exists in the mirror (concepts for singers' nodes/chorditis are distinct
+        conditions). Target SNOMED CT 4128827 = Voice production finding, the parent for R49.8 via Athena
+        crosswalk. Broader: the target subsumes all voice production findings. Low confidence: generic
+        parent does not capture the singing-voice-specific disorder.
+        """
+}
+mapping "R498E.1" source="R498E" target="229642003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498E SNOMED CT 229642003 = ventricular band (false cord) phonation, a dysphonia where the
+        ventricular folds participate in voice production. Target. Exact term and scope match in the
+        SNOMED CT mirror.
+        """
+}
+mapping "R498F.1" source="R498F" target="55938009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498F SNOMED CT 55938009 = voice tremor, an involuntary rhythmic shaking of the vocal
+        apparatus affecting voice quality. Target. Exact term and scope match in the SNOMED CT mirror.
+        """
+}
+mapping "R498W.1" source="R498W" target="289186000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498W SNOMED CT 289186000 = other specified voice disturbances. Target SNOMED CT 4128827 =
+        Voice production finding, the parent concept for R49.8 via Athena crosswalk. Broader: the target
+        subsumes all specified voice disturbance subtypes. Moderate tier: verified crosswalk to parent,
+        residual source category.
+        """
+}
+mapping "R498X.1" source="R498X" target="289186000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R498X SNOMED CT 289186000 = voice disturbance, unspecified. Target SNOMED CT 4128827 = Voice
+        production finding, the parent concept for R49.8 via Athena crosswalk. Broader: the target
+        subsumes the unspecified source. Moderate tier: verified crosswalk, unspecified source.
+        """
+}
+mapping "R519.1" source="R519" target="25064002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 25064002 [GPS] [IPS] [GPFP] [NCPT]"
+}
+mapping "R522A.1" source="R522A" target="735644008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R522A SNOMED CT 735644008 = chronic nociceptive pain, persistent pain arising from
+        nociceptor activation in non-neural tissue. Target. Exact term and scope match in the SNOMED CT
+        mirror.
+        """
+}
+mapping "R522B.1" source="R522B" target="735936005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R522B SNOMED CT 735936005 = chronic neuropathic pain, persistent pain caused by a lesion or
+        disease of the somatosensory nervous system. Target. Exact term and scope match in the SNOMED CT
+        mirror.
+        """
+}
+mapping "R522C.1" source="R522C" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R539.1" source="R539" target="271795006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R539 SNOMED CT 271795006 = malaise and fatigue. Target SNOMED CT 439926 = Malaise and fatigue,
+        the exact clinical equivalent verified via Athena crosswalk from ICD-10 R53. Exact term and
+        scope match.
+        """
+}
+mapping "R549.1" source="R549" target="18726006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R549 SNOMED CT 18726006 = senility, the state of being old/feeble. Target SNOMED CT 4090207
+        (18726006), the Athena crosswalk target for ICD-10 R54. The target is broader than the source:
+        denotes weakness/feebleness of old age, while covers the general state of senility. High tier:
+        verified crosswalk, small breadth mismatch — asthenia is the closest standard concept for the
+        general senility state.
+        """
+}
+mapping "R559.1" source="R559" target="271787007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R568A.1" source="R568A" target="41510006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R568A SNOMED CT 41510006 = affective seizures/breath-holding spells, a paroxysmal event in
+        young children triggered by emotional upset, leading to crying, breath-holding, cyanosis, and
+        sometimes brief loss of consciousness/anoxic convulsions. Target. The target is broader: it
+        covers all anoxic seizures regardless of trigger, while the source is specifically the
+        affective/breath-holding subtype. High tier: the source is a well-known clinical subtype of
+        anoxic seizure, and this is the closest standard concept. No specific SNOMED CT concept for
+        breath-holding spells or affective seizures exists in the mirror.
+        """
+}
+mapping "R568X.1" source="R568X" target="91175000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R568X SNOMED CT 91175000 = convulsions/seizures, unspecified. Target SNOMED CT 377091 =
+        Seizure, the Athena crosswalk target for ICD-10 R56.8 (other and unspecified convulsions). The
+        target is broader: covers all seizure types. High tier: verified crosswalk from the parent code,
+        small breadth mismatch.
+        """
+}
+mapping "R589.1" source="R589" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R589 SNOMED CT 131148009 = bleeding/hemorrhage not elsewhere classified. Target SNOMED CT
+        437312 (131148009), the Athena crosswalk target for ICD-10 R58. Exact term and scope match.
+        """
+}

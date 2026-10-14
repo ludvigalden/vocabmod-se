@@ -1,0 +1,370 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes H4-I2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "H400A.1" source="H400A" target="4210003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400A SNOMED CT 4210003 = Ocular hypertension (Swedish national extension, base H40.0).
+        SNOMED CT 381290 (4210003, std=S) is the exact term match and the Athena ICD10CM H40.05 crosswalk
+        target. Crosswalk-verified exact equivalence.
+        """
+}
+mapping "H400B.1" source="H400B" target="419422001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400B SNOMED CT 419422001 = Narrow chamber angle (Swedish national extension, base H40.0).
+        SNOMED CT 4304101 (419422001, std=S) is the exact term match for the anatomical narrow-angle
+        finding. The ICD10CM H40.03 crosswalk resolves to a glaucoma concept, but the Swedish source is
+        explicitly, so the finding-level narrow-angle concept is the correct target. (exact term match,
+        finding vs disorder nuance).
+        """
+}
+mapping "H400C.1" source="H400C" target="12451000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400C SNOMED CT 12451000 = Suspected optic disc excavation/cupping (Swedish national
+        extension, base H40.0). SNOMED CT 4049851 (12451000, std=S) is the exact term match for the optic
+        disc cupping finding. The qualifier marks this as a glaucoma-suspect finding; the cupping
+        concept is the underlying finding. (exact term match, suspect qualifier not separately
+        represented).
+        """
+}
+mapping "H400D.1" source="H400D" target="44219007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400D SNOMED CT 44219007 = Exfoliation syndrome without confirmed glaucoma diagnosis
+        (Swedish national extension, base H40.0). SNOMED CT 433197 (44219007, std=S) is the standard
+        concept for pseudoexfoliation/exfoliation syndrome. The (without confirmed glaucoma) (437273);
+        the lens-capsule finding is the correct target. Broader (the standard concept covers exfoliation
+        with or without glaucoma).
+        """
+}
+mapping "H400E.1" source="H400E" target="392133001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400E SNOMED CT 392133001 = Pigment dispersion syndrome without confirmed glaucoma diagnosis
+        (Swedish national extension, base H40.0). SNOMED CT 4189719 (392133001, std=S) is the exact term
+        match. The qualifier confirms this is the syndrome without glaucoma, which is exactly what
+        4189719 denotes. (exact term match).
+        """
+}
+mapping "H400W.1" source="H400W" target="833278008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400W SNOMED CT 833278008 = Other type of suspected glaucoma (Swedish national extension,
+        base H40.0). SNOMED CT 3663197 (833278008, std=S) is the Athena ICD10CM H40.0 crosswalk target. The
+        Swedish residual for glaucoma suspects maps to the general glaucoma-suspect concept. Broader
+        over the specific suspect subtypes.
+        """
+}
+mapping "H400X.1" source="H400X" target="833278008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H400X SNOMED CT 833278008 = Suspected glaucoma, unspecified (Swedish national extension,
+        base H40.0). SNOMED CT 3663197 (833278008, std=S) is the Athena ICD10CM H40.0 crosswalk target.
+        Unspecified source maps to the general concept. Moderate tier : Athena crosswalk with an
+        unspecified source.
+        """
+}
+mapping "H401A.1" source="H401A" target="77075001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401A SNOMED CT 77075001 = chronic simple glaucoma with open angle, the historical/clinical
+        synonym for primary open-angle glaucoma (ICD-10 WHO H40.1). Target SNOMED CT 435262 (concept_code
+        77075001), standard concept. The base ICD-10 H40.1 has an Athena crosswalk to 435262; and denote
+        the same clinical concept. Exact equivalence, crosswalk-verified.
+        """
+}
+mapping "H401B.1" source="H401B" target="46168003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401B SNOMED CT 46168003 = pigmentary glaucoma with open angle. Target SNOMED CT 436975
+        (concept_code 46168003), standard concept. Exact 1:1 clinical equivalence; the open-angle
+        qualifier is intrinsic to pigmentary glaucoma.
+        """
+}
+mapping "H401C.1" source="H401C" target="111514006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401C SNOMED CT 111514006 = capsular glaucoma (glaucoma associated with
+        pseudoexfoliation/exfoliation syndrome), open angle. Target SNOMED CT 437273 (concept_code
+        111514006), standard concept. Swedish is the established clinical equivalent of
+        pseudoexfoliation/exfoliation capsular glaucoma.
+        """
+}
+mapping "H401D.1" source="H401D" target="50485007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401D SNOMED CT 50485007 = low-tension glaucoma with open angle (i.e. normal-tension
+        open-angle glaucoma). Target SNOMED CT 441561 (concept_code 50485007), standard concept. Exact
+        clinical equivalence.
+        """
+}
+mapping "H401W.1" source="H401W" target="77075001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401W SNOMED CT 77075001 = other specified primary open-angle glaucoma — a residual bucket.
+        Target SNOMED CT 435262 (77075001), the parent concept that subsumes all primary open-angle
+        glaucoma subtypes. The base ICD-10 H40.1 crosswalks to 435262; the target fully contains the
+        source (broader), but the source is a heterogeneous residual, so confidence is low per the
+        rubric for residual/ambiguous sources.
+        """
+}
+mapping "H401X.1" source="H401X" target="77075001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H401X SNOMED CT 77075001 = primary open-angle glaucoma, unspecified. Target SNOMED CT 435262
+        (77075001), standard concept, the exact Athena crosswalk target of the base ICD-10 H40.1. The
+        Swedish (unspecified) maps to the same concept as the base; high rather than because the source
+        adds an unspecified qualifier not encoded in the target.
+        """
+}
+mapping "H438A.1" source="H438A" target="60189009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H438A SNOMED CT 60189009 = vitreous degeneration. Target SNOMED CT 320420 (concept_code
+        60189009), standard concept. Exact term and clinical equivalence.
+        """
+}
+mapping "H438B.1" source="H438B" target="40572002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H438B SNOMED CT 40572002 = vitreous detachment (posterior vitreous detachment). Target
+        (concept_code 393583008), standard concept. Exact clinical equivalence.
+        """
+}
+mapping "H469.1" source="H469" target="66760008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 66760008 [GPS] [IPS] [GPFP]"
+}
+mapping "H480A.1" source="H480A" target="24003004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H480A SNOMED CT 24003004 = postinflammatory optic atrophy. Target SNOMED CT 372915
+        (concept_code 24003004), standard concept. Exact 1:1 equivalence.
+        """
+}
+mapping "H480B.1" source="H480B" target="76976005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H480B SNOMED CT 76976005 = optic atrophy due to intracranial neoplasm — the source bundles
+        optic atrophy with an intracranial neoplasm cause. No SNOMED CT standard concept for this exact
+        combination exists in the mirror. Target SNOMED CT 372914 (76976005), the standard concept that
+        subsumes the optic-atrophy axis of the source (broader). The neoplasm-cause axis is dropped. Low
+        confidence : the target captures the primary clinical finding but loses the etiology.
+        """
+}
+mapping "H480C.1" source="H480C" target="76976005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H480C SNOMED CT 76976005 = optic atrophy due to other intracranial disorder. As with H480B,
+        no exact standard concept exists. Target SNOMED CT 372914 (76976005), the parent that subsumes the
+        optic-atrophy axis (broader). Etiology is dropped; low.
+        """
+}
+mapping "H480W.1" source="H480W" target="76976005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H480W SNOMED CT 76976005 = optic atrophy in diseases classified elsewhere (residual bucket).
+        The base ICD-10 H48.0 crosswalks to SNOMED CT 372914 (Optic atrophy). Target (76976005), standard
+        concept, fully contains the optic-atrophy axis (broader). Heterogeneous residual source; low.
+        """
+}
+mapping "H503A.1" source="H503A" target="27590007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H503A SNOMED CT 27590007 = intermittent esotropia. Target SNOMED CT 4100058 (concept_code
+        27590007), standard concept. Exact equivalence.
+        """
+}
+mapping "H503B.1" source="H503B" target="63988001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H503B SNOMED CT 63988001 = intermittent exotropia. Target SNOMED CT 4274499 (concept_code
+        63988001), standard concept. Exact equivalence.
+        """
+}
+mapping "H503X.1" source="H503X" target="194105004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H503X SNOMED CT 194105004 = intermittent heterotropia, unspecified. Target SNOMED CT 4109728
+        (concept_code 194105004), standard concept. Exact equivalence (UNS/NOS alignment).
+        """
+}
+mapping "H504A.1" source="H504A" target="70486007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H504A SNOMED CT 70486007 = cyclotropia (rotational/torsional tropia). Target SNOMED CT 372647
+        (concept_code 70486007), standard concept. Exact equivalence.
+        """
+}
+mapping "H504B.1" source="H504B" target="399252000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "H504C.1" source="H504C" target="194110000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H504C SNOMED CT 194110000 = microtropia (microtropia, a small-angle strabismus). Target
+        SNOMED CT 40387857 (concept_code 194110000), standard concept. Exact equivalence.
+        """
+}
+mapping "H504D.1" source="H504D" target="14785004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H504D SNOMED CT 14785004 = monofixation syndrome. Target SNOMED CT 378433 (concept_code
+        14785004), standard concept. Exact equivalence.
+        """
+}
+mapping "H504X.1" source="H504X" target="128602000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H504X SNOMED CT 128602000 = heterotropia, unspecified. The base ICD-10 H50.4 crosswalks to
+        SNOMED CT 377870 (Heterotropia). Target (concept_code 128602000), standard concept. Exact clinical
+        equivalence.
+        """
+}
+mapping "H505A.1" source="H505A" target="59257003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H505B.1" source="H505B" target="62176008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H505B SNOMED CT 62176008 = esophoria (latent inward deviation). Target SNOMED CT 373212
+        (concept_code 62176008), standard concept. Exact equivalence.
+        """
+}
+mapping "H505C.1" source="H505C" target="46343005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H505C SNOMED CT 46343005 = exophoria (latent outward deviation). Target SNOMED CT 380109
+        (concept_code 46343005), standard concept. Exact equivalence.
+        """
+}
+mapping "H505D.1" source="H505D" target="60017001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H505D SNOMED CT 60017001 = cyclophoria (latent torsional deviation). Target SNOMED CT 381871
+        (concept_code 60017001), standard concept. Exact equivalence.
+        """
+}
+mapping "H505X.1" source="H505X" target="14619009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H505X SNOMED CT 14619009 = heterophoria, unspecified. The base ICD-10 H50.5 crosswalks to
+        SNOMED CT 381870 (Phoria). Target (concept_code 14619009), standard concept, which is the SNOMED CT
+        clinical equivalent of heterophoria. Exact equivalence.
+        """
+}
+mapping "H511A.1" source="H511A" target="65940002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H511A SNOMED CT 65940002 = convergence insufficiency. Target SNOMED CT 40621507 (concept_code
+        65940002), standard concept. Exact equivalence.
+        """
+}
+mapping "H511B.1" source="H511B" target="67320001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H559.1" source="H559" target="563001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H719.1" source="H719" target="363668000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 363668000 [GPS] [IPS] [GPFP]"
+}
+mapping "H829.1" source="H829" target="87118001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 87118001 [GPS] [GPFP]"
+}
+mapping "I009.1" source="I009" target="56265001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "I101.1" source="I101" target="59621000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I101 is a Swedish fifth-character extension of I10 (Essential hypertension); the
+        extension encodes an episode-of-care modifier not represented in standard OMOP. The base ICD-10
+        I10 crosswalks to SNOMED CT 320128 (Essential hypertension, concept_code 59621000). Target 320128
+        (broader); the episode modifier is dropped. High tier : crosswalk-verified at the base level
+        with a small, well-understood breadth mismatch from the Swedish extension suffix.
+        """
+}
+mapping "I101.2" source="I101" target="59621000" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I109.1" source="I109" target="59621000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source I10.9 SNOMED CT 59621000 = essential hypertension, unspecified (Swedish 4th-char.9 =
+        unspecified). Target SNOMED CT 320128 (concept_code 59621000). Athena crosswalk: ICD10 I10
+        (45591453) Maps to. The.9 unspecified qualifier adds no clinical distinction beyond the base I10
+        category. Exact-equivalent tier.
+        """
+}
+mapping "I10E.1" source="I10E" target="59621000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I10E = Swedish fifth-char.E (episode-of-care) extension on base I10 essential
+        hypertension.E encodes administrative encounter context, not a clinical variant. Base I10
+        (45591453) crosswalks via Athena Maps-to to SNOMED CT 320128 (Essential hypertension, 59621000).
+        The episode suffix does not alter the clinical concept.
+        """
+}
+mapping "I10E.2" source="I10E" target="59621000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I10M.1" source="I10M" target="59621000" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated I10 with extension M; crosswalk-verified (320128, 59621000, Essential hypertension,
+        S); extension preserved, base code mapped
+        """
+}
+mapping "I2140.1" source="I2140" target="70422006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "(70422006) which is the correct parent concept"
+}
+mapping "I2190.1" source="I2190" target="57054005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Truncated leaf under I21.9 (acute MI unspecified); (312327) verified standard"
+}
+mapping "I2199.1" source="I2199" target="57054005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Truncated code I21.99. Base concept I21 = Acute myocardial infarction. SNOMED CT 312327 (standard,
+        The.99 subtype is a Swedish extension preserved via truncation fallback.
+        """
+}
+mapping "I21P.1" source="I21P" target="57054005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I21P = Swedish fifth-char.P extension on base I21 (acute myocardial infarction).P is an
+        administrative/activity suffix with no clinical content. Athena crosswalk: ICD10 I21 (45538370)
+        Maps to SNOMED CT 312327 (Acute myocardial infarction, concept_code 57054005). Exact-equivalent
+        tier.
+        """
+}
+mapping "I21P.2" source="I21P" target="57054005" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "I25P.1" source="I25P" target="413838009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source I25P = Swedish fifth-char.P extension on base I25 (chronic ischemic heart disease).P is
+        an administrative suffix. Athena crosswalk: ICD10 I25 (45581765) Maps to SNOMED CT 315286 (Chronic
+        ischemic heart disease, concept_code 413838009). Exact-equivalent tier.
+        """
+}
+mapping "I25P.2" source="I25P" target="413838009" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

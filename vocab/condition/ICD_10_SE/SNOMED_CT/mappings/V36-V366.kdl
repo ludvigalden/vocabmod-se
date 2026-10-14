@@ -1,0 +1,459 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V36-V366
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V3600.1" source="V3600" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3600 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + occupant
+        + nontraffic setting + sport activity. Target SNOMED CT 437738 (214640008) is the Athena crosswalk
+        target for parent V36.0 and captures only the off-public-road mechanism axis; drops occupant,
+        counterpart-vehicle, and activity dimensions. Partial, weak per standards §1.
+        """
+}
+mapping "V3601.1" source="V3601" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3601 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        leisure. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism axis. Partial,
+        weak.
+        """
+}
+mapping "V3602.1" source="V3602" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3602 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        work. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism. Partial, weak.
+        """
+}
+mapping "V3603.1" source="V3603" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3603 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        activity. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism. Partial, weak.
+        """
+}
+mapping "V3604.1" source="V3604" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3604 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        vital activity. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism. Partial,
+        weak.
+        """
+}
+mapping "V3608.1" source="V3608" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3608 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        activity. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism. Partial, weak.
+        """
+}
+mapping "V3609.1" source="V3609" target="214640008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3609 = Swedish 6-char extension of V36.0 SNOMED CT 214640008. Bundles mechanism + driver +
+        activity. Target SNOMED CT 437738 (214640008) covers only off-public-road mechanism. Partial, weak.
+        """
+}
+mapping "V3610.1" source="V3610" target="214640008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3610 = Swedish 6th-char extension of ICD-10 V36.1: passenger of three-wheeled motor
+        vehicle, nontraffic collision with nonmotor vehicle, during sport. Target SNOMED CT 437738. Parent
+        V36.1 (concept 45756484) has Athena SNOMED 214640008 edge to 437738; Swedish extension only adds
+        activity-context (sport) which SNOMED CT does not represent, so target fully subsumes source. High
+        tier: crosswalk-verified on parent, one-level broader.
+        """
+}
+mapping "V3611.1" source="V3611" target="214640008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3611 = Swedish extension of V36.1: passenger nontraffic collision, during leisure.
+        Target SNOMED CT 437738. Parent V36.1 crosswalk-verified to 437738; Swedish activity detail
+        (leisure) has no SNOMED CT representation, target subsumes source. High tier.
+        """
+}
+mapping "V3612.1" source="V3612" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3612 = Swedish extension of V36.1: passenger nontraffic collision, during work. Target
+        SNOMED CT 437738. Parent V36.1 crosswalk-verified to 437738; work-context dropped. High tier.
+        """
+}
+mapping "V3613.1" source="V3613" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3613 = Swedish extension of V36.1: passenger nontraffic collision, other activity.
+        Target SNOMED CT 437738. Parent V36.1 crosswalk-verified; activity-context dropped. High tier.
+        """
+}
+mapping "V3614.1" source="V3614" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3614 = Swedish extension of V36.1: passenger nontraffic collision, vital activity
+        (rest/sleep/meal/hygiene). Target SNOMED CT 437738. Parent V36.1 crosswalk-verified;
+        activity-context dropped. High tier.
+        """
+}
+mapping "V3618.1" source="V3618" target="214640008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3618 = Swedish extension of V36.1: passenger nontraffic collision, other specified
+        activity. Target SNOMED CT 437738. Parent V36.1 crosswalk-verified; activity-context dropped. High
+        tier.
+        """
+}
+mapping "V3619.1" source="V3619" target="214640008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3619 = Swedish extension of V36.1: passenger nontraffic collision, unspecified activity.
+        Target SNOMED CT 437738. Parent V36.1 crosswalk-verified. High tier.
+        """
+}
+mapping "V3620.1" source="V3620" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3620 = Swedish extension of V36.2: person on outside of three-wheeled motor vehicle,
+        nontraffic collision with nonmotor vehicle, during sport. Target SNOMED CT 4069060. Parent V36.2
+        (concept 45756485) has Athena SNOMED 214845000 edge to 4069060; Swedish activity-context
+        dropped, target subsumes source. High tier.
+        """
+}
+mapping "V3621.1" source="V3621" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3621 = Swedish extension of V36.2: person on outside, nontraffic collision, leisure.
+        Target SNOMED CT 4069060. Parent V36.2 crosswalk-verified to 4069060; activity-context dropped.
+        High tier.
+        """
+}
+mapping "V3622.1" source="V3622" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3622 = Swedish extension of V36.2: person on outside, nontraffic collision, work. Target
+        SNOMED CT 4069060. Parent V36.2 crosswalk-verified; work-context dropped. High tier.
+        """
+}
+mapping "V3623.1" source="V3623" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3623 = Swedish extension of V36.2: person on outside, nontraffic collision, other
+        activity. Target SNOMED CT 4069060. Parent V36.2 crosswalk-verified; activity-context dropped. High
+        tier.
+        """
+}
+mapping "V3624.1" source="V3624" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3624 = Swedish extension of V36.2: person on outside, nontraffic collision, vital
+        activity. Target SNOMED CT 4069060. Parent V36.2 crosswalk-verified; activity-context dropped. High
+        tier.
+        """
+}
+mapping "V3628.1" source="V3628" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3628 = Swedish extension of V36.2: person on outside, nontraffic collision, other
+        specified activity. Target SNOMED CT 4069060. Parent V36.2 crosswalk-verified; activity-context
+        dropped. High tier.
+        """
+}
+mapping "V3629.1" source="V3629" target="214845000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3629 = Swedish extension of V36.2: person on outside, nontraffic collision, unspecified
+        activity. Target SNOMED CT 4069060. Parent V36.2 crosswalk-verified. High tier.
+        """
+}
+mapping "V3630.1" source="V3630" target="214845000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3630 = Swedish extension of V36.3: unspecified occupant of three-wheeled motor vehicle,
+        nontraffic collision with nonmotor vehicle, during sport. Target SNOMED CT 4069060. Parent V36.3
+        (concept 45756486) has Athena SNOMED 214845000 edge to 4069060; Swedish activity-context
+        dropped, target subsumes source. High tier.
+        """
+}
+mapping "V3631.1" source="V3631" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3631 = Swedish extension of V36.3: unspecified occupant, nontraffic collision, leisure.
+        Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified to 4069060; activity-context dropped.
+        High tier.
+        """
+}
+mapping "V3632.1" source="V3632" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3632 = Swedish extension of V36.3: unspecified occupant, nontraffic collision, work.
+        Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified; work-context dropped. High tier.
+        """
+}
+mapping "V3633.1" source="V3633" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3633 = Swedish extension of V36.3: unspecified occupant, nontraffic collision, other
+        activity. Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified; activity-context dropped. High
+        tier.
+        """
+}
+mapping "V3634.1" source="V3634" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3634 = Swedish extension of V36.3: unspecified occupant, nontraffic collision, vital
+        activity. Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified; activity-context dropped. High
+        tier.
+        """
+}
+mapping "V3638.1" source="V3638" target="214845000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3638 = Swedish extension of V36.3: unspecified occupant, nontraffic collision, other
+        specified activity. Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified; activity-context
+        dropped. High tier.
+        """
+}
+mapping "V3639.1" source="V3639" target="214845000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3639 = Swedish extension of V36.3: unspecified occupant, nontraffic collision,
+        unspecified activity. Target SNOMED CT 4069060. Parent V36.3 crosswalk-verified. High tier.
+        """
+}
+mapping "V3640.1" source="V3640" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3640 = Swedish extension of V36.4: person injured while boarding/alighting three-wheeled
+        motor vehicle in collision with nonmotor vehicle, during sport. Target SNOMED CT 4053428. Parent
+        V36.4 (concept 45756487) has Athena SNOMED 242107006 edge to 4053428; Swedish activity-context
+        dropped, target subsumes source. High tier.
+        """
+}
+mapping "V3641.1" source="V3641" target="242107006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3641 = Swedish extension of V36.4: boarding/alighting collision, leisure. Target SNOMED CT
+        4053428. Parent V36.4 crosswalk-verified to 4053428; activity-context dropped. High tier.
+        """
+}
+mapping "V3642.1" source="V3642" target="242107006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3642 = Swedish extension of V36.4: boarding/alighting collision, work. Target SNOMED CT
+        4053428. Parent V36.4 crosswalk-verified; work-context dropped. High tier.
+        """
+}
+mapping "V3643.1" source="V3643" target="242107006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3643 = Swedish extension of V36.4: boarding/alighting collision, other activity. Target
+        SNOMED CT 4053428. Parent V36.4 crosswalk-verified; activity-context dropped. High tier.
+        """
+}
+mapping "V3644.1" source="V3644" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3644 = Swedish 5-char extension of ICD-10 V36.4 (occupant of three-wheeled motor vehicle
+        injured while boarding/alighting in collision with nonmotor vehicle) with added activity suffix
+        SNOMED CT 242107006 36198007 (vital activity such as rest, sleep, meals, personal hygiene).
+        Targets: 444074 (Athena Maps to for V36.4 base), 4053428 (Athena Maps to for V36.4 base). The
+        activity suffix has no SNOMED CT representation; targets are the base-code equivalents and fully
+        subsume the source (broader). Moderate tier: mechanical Athena crosswalk on the base code,
+        Swedish-extension activity suffix unverified.
+        """
+}
+mapping "V3644.2" source="V3644" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3648.1" source="V3648" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3648 = Swedish 5-char extension of ICD-10 V36.4 with activity suffix SNOMED CT 242107006
+        36198007 (other specified activities). Targets 444074 and 4053428 are the Athena Maps to for
+        V36.4 base. Activity suffix has no SNOMED CT representation; targets subsume the source (broader).
+        Moderate tier: mechanical crosswalk on base code.
+        """
+}
+mapping "V3648.2" source="V3648" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3649.1" source="V3649" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3649 = Swedish 5-char extension of ICD-10 V36.4 with activity suffix SNOMED CT 242107006
+        36198007 (activity, unspecified). Targets 444074 and 4053428 are the Athena Maps to for V36.4
+        base. Activity suffix has no SNOMED CT representation; targets subsume the source (broader).
+        Moderate tier: mechanical crosswalk on base code.
+        """
+}
+mapping "V3649.2" source="V3649" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3650.1" source="V3650" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3650 = Swedish 5-char extension of ICD-10 V36.5 (driver of three-wheeled motor vehicle
+        injured in traffic collision with nonmotor vehicle) with activity suffix SNOMED CT 271579008
+        36198007 (sport, exercise). Targets 444074 and 4152175 are the Athena Maps to for V36.5 base.
+        Activity suffix has no SNOMED CT representation; targets subsume the source (broader). Moderate
+        tier.
+        """
+}
+mapping "V3650.2" source="V3650" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3651.1" source="V3651" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3651 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007 (play and other leisure). Targets 444074 and 4152175 are the Athena Maps to for V36.5
+        base. Activity suffix has no SNOMED CT representation; targets subsume the source (broader).
+        Moderate tier.
+        """
+}
+mapping "V3651.2" source="V3651" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3652.1" source="V3652" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3652 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007 (paid work). Targets 444074 and 4152175 are the Athena Maps to for V36.5 base. Activity
+        suffix has no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3652.2" source="V3652" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3653.1" source="V3653" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3653 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007 (other occupation). Targets 444074 and 4152175 are the Athena Maps to for V36.5 base.
+        Activity suffix has no SNOMED CT representation; targets subsume the source (broader). Moderate
+        tier.
+        """
+}
+mapping "V3653.2" source="V3653" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3654.1" source="V3654" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3654 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.5 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3654.2" source="V3654" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3658.1" source="V3658" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3658 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.5 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3658.2" source="V3658" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3659.1" source="V3659" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3659 = Swedish 5-char extension of ICD-10 V36.5 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.5 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3659.2" source="V3659" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3660.1" source="V3660" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3660 = Swedish 5-char extension of ICD-10 V36.6 (passenger of three-wheeled motor
+        vehicle injured in traffic collision with nonmotor vehicle) with activity suffix SNOMED CT
+        271579008 36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity
+        suffix has no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3660.2" source="V3660" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3661.1" source="V3661" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3661 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3661.2" source="V3661" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3662.1" source="V3662" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3662 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3662.2" source="V3662" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3663.1" source="V3663" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3663 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3663.2" source="V3663" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3664.1" source="V3664" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3664 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3664.2" source="V3664" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3668.1" source="V3668" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3668 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3668.2" source="V3668" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V3669.1" source="V3669" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V3669 = Swedish 5-char extension of ICD-10 V36.6 with activity suffix SNOMED CT 271579008
+        36198007. Targets 444074 and 4152175 are the Athena Maps to for V36.6 base. Activity suffix has
+        no SNOMED CT representation; targets subsume the source (broader). Moderate tier.
+        """
+}
+mapping "V3669.2" source="V3669" target="271579008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}

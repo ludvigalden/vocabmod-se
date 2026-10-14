@@ -1,0 +1,382 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes A0-A6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "A083A.1" source="A083A" target="154355005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A083A SNOMED CT 154355005 = enteritis caused by Coxsackievirus (a Swedish 5th-char subcode
+        of A08.3, which itself has no OMOP crosswalk in the mirror). Target SNOMED CT 40319614
+        (concept_code 154355005) =, the closest standard concept in the mirror covering Coxsackie gut
+        infection. Broader: the target subsumes the source (no enteritis-specific SNOMED CT concept exists
+        in the mirror). High tier: exact pathogen match but the target is one level broader (any
+        Coxsackie disease vs enteritis specifically).
+        """
+}
+mapping "A083B.1" source="A083B" target="446755003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A083B SNOMED CT 446755003 = enteritis caused by Echovirus. Target SNOMED CT 40489339
+        (concept_code 446755003) =, a precise clinical equivalent in the mirror. High tier: exact term
+        and clinical-scope match without an independent crosswalk (no Maps-to edge for this Swedish
+        subcode in the mirror).
+        """
+}
+mapping "A083W.1" source="A083W" target="266071000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A083W SNOMED CT 266071000 = enteritis caused by other specified virus (residual subcode of
+        A08.3). No virus-specific SNOMED CT target can be chosen without knowing the organism. Target
+        SNOMED CT 198678 =, the Athena crosswalk target for the A08 parent (45755296 Maps to 198678).
+        Broader: target subsumes the source. Low tier: residual source; crosswalk climbs two levels
+        (A08.3->A08) and loses the viral aetiology.
+        """
+}
+mapping "A1690.1" source="A1690" target="186202007" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source A1690 is a Swedish 5th-char extension on A16.9 (respiratory TB, not bacteriologically
+        confirmed). Name is the bare code (no Swedish label). The legacy comment already proposes SNOMED CT
+        154283005 (Pulmonary tuberculosis); mirror has no such concept_id. Best mirror-resolvable
+        crosswalk: A16 (45576232) Maps to SNOMED CT 261774 (concept_code 186202007) = SNOMED CT 154283005
+        186202007. Broader: the A16 parent subsumes the A16.9 child. Low tier: 5th-char extension
+        without a Swedish label leaves the exact scope ambiguous; crosswalk is one level broader than
+        the source.
+        """
+}
+mapping "A1690.2" source="A1690" target="154283005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "A184C.1" source="A184C" target="10528009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A184C SNOMED CT 10528009 = lupus vulgaris, unspecified (cutaneous TB). Target SNOMED CT 4019692
+        (concept_code 10528009) =, the clinical equivalent. The (unspecified) qualifier on the source
+        adds no clinical information beyond the diagnosis, so an exact_match is defensible. High tier:
+        exact term match without an independent crosswalk.
+        """
+}
+mapping "A184D.1" source="A184D" target="402974000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "A184E.1" source="A184E" target="247441003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A184F.1" source="A184F" target="32861005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "A184G.1" source="A184G" target="240380008" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A184G SNOMED CT 240380008 = tuberculous skin ulcer. Target SNOMED CT 4347434 (concept_code
+        240380008) =, the only tuberculous-ulcer concept in the mirror. Narrower: the target adds
+        specificity the source did not assert. Moderate tier: best available standard concept;
+        unspecified acuity on source.
+        """
+}
+mapping "A184H.1" source="A184H" target="33893009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "A184J.1" source="A184J" target="271423008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A184J SNOMED CT 271423008 = acne scrofulosorum, a rare tuberculid presentation of cutaneous
+        TB. No SNOMED CT concept for acne scrofulosorum exists in the mirror. Target SNOMED CT 4153291
+        (concept_code 271423008) =, the Athena crosswalk target for A18.4 (45547395 Maps to 4153291).
+        Broader: target subsumes the source. Moderate tier: crosswalk-verified parent; loses the
+        specific tuberculid morphology.
+        """
+}
+mapping "A184K.1" source="A184K" target="88996004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A184L.1" source="A184L" target="41156006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A184L SNOMED CT 41156006 = papulonecrotic tuberculid. Target SNOMED CT 4165552 (concept_code
+        41156006) =, the clinical equivalent (Latin/English synonym of the Swedish term). High tier:
+        exact clinical-scope match without an independent crosswalk.
+        """
+}
+mapping "A184X.1" source="A184X" target="66986005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "A339.1" source="A339" target="43424001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A339 SNOMED CT 43424001 = tetanus neonatorum. Target SNOMED CT 133024 (concept_code 43424001)
+        =, the Athena crosswalk target for A33 (45552175 Maps to 133024). Exact-equivalent : same
+        clinical concept, crosswalk-verified.
+        """
+}
+mapping "A349.1" source="A349" target="76902006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A359.1" source="A359" target="76902006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A359 SNOMED CT 76902006 = other tetanus. Target SNOMED CT 435740 (concept_code 76902006) =, the
+        Athena crosswalk target for A35 (45542526 Maps to 435740). Exact-equivalent : same clinical
+        concept, crosswalk-verified.
+        """
+}
+mapping "A389.1" source="A389" target="30242009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 30242009 [GPS] [IPS] [GPFP]"
+}
+mapping "A469.1" source="A469" target="44653001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A513A.1" source="A513A" target="123203001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A513A SNOMED CT 123203001 = condyloma latum, a secondary-syphilis skin lesion (subcode of
+        A51.3). Target SNOMED CT 40288148 (concept_code 123203001) =, the clinical equivalent in the
+        mirror. High tier: exact term and scope match without an independent crosswalk for this Swedish
+        subcode.
+        """
+}
+mapping "A513B.1" source="A513B" target="59307008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A513B SNOMED CT 59307008 = syphilitic (secondary) alopecia. Target SNOMED CT 133959
+        (concept_code 59307008) =, the clinical equivalent in the mirror. High tier: exact
+        clinical-scope match without an independent crosswalk.
+        """
+}
+mapping "A513C.1" source="A513C" target="55768006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A513C SNOMED CT 55768006 = syphilitic leukoderma (a secondary-syphilis pigment change).
+        Target SNOMED CT 4185826 (concept_code 55768006) =, the clinical equivalent in the mirror. High
+        tier: exact term and scope match without an independent crosswalk.
+        """
+}
+mapping "A513X.1" source="A513X" target="186850003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A513X SNOMED CT 186850003 = secondary syphilis of skin and mucous membranes, unspecified
+        (Swedish unspecified subcode of A51.3). Target SNOMED CT 4093309 (concept_code 186850003) =, the
+        Athena crosswalk target for A51.3 (45537730 Maps to 4093309). Moderate tier: crosswalk-verified
+        exact clinical concept; the qualifier on the source adds nothing beyond the parent diagnosis, so
+        exact_match is defensible, but the crosswalk was not independently re-verified.
+        """
+}
+mapping "A540A.1" source="A540A" target="20943002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540A SNOMED CT 20943002 = gonococcal cervicitis, unspecified. Target SNOMED CT 193136
+        (concept_code 20943002) =. The mirror also offers 4034007 (Gonococcal cervicitis, unspecified
+        acuity) as a candidate; the acute-specific concept is the more common standard reading of an
+        ICD-10 UNS gonococcal cervicitis, but the source does not specify acuity, so 193136 is the
+        clinical equivalent. High tier: term and scope match without an independent crosswalk.
+        """
+}
+mapping "A540C.1" source="A540C" target="236682002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540C SNOMED CT 236682002 = gonococcal urethritis, unspecified. Target SNOMED CT 4128397
+        (concept_code 236682002) =, the clinical equivalent. High tier: exact term and scope match
+        without an independent crosswalk for this Swedish subcode.
+        """
+}
+mapping "A540D.1" source="A540D" target="2390000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540D SNOMED CT 2390000 = gonococcal vulvovaginitis, unspecified. Target SNOMED CT 4033947
+        (concept_code 2390000) =, the closest equivalent in the mirror (the non-acute 4034010 is also
+        available but the acute form is the standard reading of an unspecified ICD-10 case). High tier:
+        term and scope match without an independent crosswalk.
+        """
+}
+mapping "A540E.1" source="A540E" target="15628003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540E SNOMED CT 15628003 = gonococcal balanitis (acute) (chronic). No
+        gonococcal-balanitis-specific SNOMED CT concept exists in the mirror. Target SNOMED CT 433417
+        (concept_code 15628003) =, the Athena crosswalk target for A54 (45547415 Maps to 433417).
+        Broader: target subsumes the source. Moderate tier: crosswalk-verified parent; loses the
+        balanitis site specificity.
+        """
+}
+mapping "A540F.1" source="A540F" target="238419002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540F SNOMED CT 238419002 = gonococcal lymphangitis of penis. Target SNOMED CT 4080310
+        (concept_code 238419002) =, the precise clinical equivalent in the mirror. High tier: exact term
+        and scope match without an independent crosswalk for this Swedish subcode.
+        """
+}
+mapping "A540X.1" source="A540X" target="15628003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A540X SNOMED CT 15628003 = gonococcal infection of genitals and lower urinary tract without
+        abscess, unspecified (Swedish unspecified subcode of A54.0). Target SNOMED CT 433417 (concept_code
+        15628003) =, the Athena crosswalk target for A54.0 (45547416 Maps to 433417). Broader: target
+        subsumes the source. High tier: crosswalk-verified; the unspecified source maps cleanly to the
+        general gonorrhea concept but loses the lower-tract site specificity.
+        """
+}
+mapping "A559.1" source="A559" target="186946009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A559 SNOMED CT 186946009 = lymphogranuloma venereum due to Chlamydia (Swedish code for A55).
+        Target SNOMED CT 194287 (concept_code 186946009) =, the Athena crosswalk target for A55 (45552190
+        Maps to 194287). Exact-equivalent : same clinical concept, crosswalk-verified.
+        """
+}
+mapping "A560A.1" source="A560A" target="237084006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A560A SNOMED CT 237084006 = chlamydial cervicitis (Swedish subcode of A56.0). Target SNOMED CT
+        4127403 (concept_code 237084006) =, the precise clinical equivalent in the mirror. High tier:
+        exact term and scope match without an independent crosswalk for this Swedish subcode.
+        """
+}
+mapping "A560C.1" source="A560C" target="236682002" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A560C SNOMED CT 236682002 = chlamydial urethritis. The mirror has no
+        chlamydial-urethritis-specific SNOMED CT concept (only 51131008, an OMOP concept not resolvable to
+        a SNOMED CT id in the mirror, and the generic 4128397). The closest defensible standard concept is
+        the A56 parent crosswalk: A56 (45755304) Maps to 45757283 (concept_code 112121000119105).
+        Related: that target describes the broader chlamydial STI, not urethritis specifically. Low
+        tier: residual organism mismatch; recorded as a lead for review rather than a confident map.
+        """
+}
+mapping "A560D.1" source="A560D" target="237097008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A560D SNOMED CT 237097008 = chlamydial vulvovaginitis (Swedish subcode of A56.0). Target
+        SNOMED CT 4127408 (concept_code 237097008) =, the precise clinical equivalent in the mirror. High
+        tier: exact term and scope match without an independent crosswalk for this Swedish subcode.
+        """
+}
+mapping "A560X.1" source="A560X" target="112121000119105" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A560X SNOMED CT 112121000119105 = chlamydial infection of lower urogenital tract,
+        unspecified (Swedish unspecified subcode of A56.0). Target SNOMED CT 45757283 (concept_code
+        112121000119105) =, the Athena crosswalk target for the A56 parent (45755304 Maps to 45757283).
+        Broader: target subsumes the source. Moderate tier: crosswalk-verified; the source is a
+        site-specific unspecified subcode mapped up to the general chlamydial-STI concept.
+        """
+}
+mapping "A579.1" source="A579" target="266143009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A579 SNOMED CT 266143009 = chancroid, the Haemophilus ducreyi STI. SNOMED CT 138973
+        (concept_code 266143009) = Chancroid, standard Disorder. The WHO ICD-10 A57 crosswalks to this
+        same SNOMED CT via the Athena edge, confirming 1:1 equivalence. Source name adds the Swedish
+        synonym but denotes the same clinical concept.
+        """
+}
+mapping "A589.1" source="A589" target="28867007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A589 SNOMED CT 28867007 = donovanosis, Klebsiella granulomatis STI. SNOMED CT 199726
+        (concept_code 28867007) = Granuloma inguinale, standard Disorder. WHO ICD-10 A58 crosswalks to
+        this SNOMED CT concept via Athena. Exact 1:1 equivalence.
+        """
+}
+mapping "A630A.1" source="A630A" target="240542006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A630A SNOMED CT 240542006 = pointed/condyloma acuminatum, anogenital warts caused by HPV.
+        SNOMED CT 198075 (concept_code 240542006) = Condyloma acuminatum of the anogenital region, standard
+        Disorder. WHO ICD-10 A63.0 crosswalks to 198075 via Athena. Exact equivalence.
+        """
+}
+mapping "A630B.1" source="A630B" target="91554004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A630B SNOMED CT 91554004 = flat condyloma, the syphilitic lesion (Condyloma latum), distinct
+        from condyloma acuminatum. SNOMED CT 4239550 (concept_code 91554004) = Condyloma latum, standard
+        Disorder. Exact 1:1 equivalence; the Swedish is the established translation of Condyloma latum.
+        """
+}
+mapping "A630C.1" source="A630C" target="402913004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A630C SNOMED CT 402913004 = bowenoid papulosis, an HPV-related genital intraepithelial
+        neoplasia. SNOMED CT 4291604 (concept_code 402913004) = Bowenoid papulosis, standard Disorder. The
+        non-standard SNOMED CT 3521558 (896541000000108, UK extension) maps to 4291604 via Athena. Exact
+        equivalence.
+        """
+}
+mapping "A630X.1" source="A630X" target="240542006" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A630X SNOMED CT 240542006 = condyloma, unspecified (Swedish national residual, not in WHO
+        ICD-10). The source is deliberately non-specific about which kind of condyloma. SNOMED CT 198075
+        (concept_code 240542006) = Condyloma acuminatum of the anogenital region, the standard target
+        that WHO A63.0 maps to. The target is more specific than the source's framing — (4239550) is a
+        known minority reading. Confidence : narrower map forced by an unspecified source, with real
+        residual ambiguity between acuminate and latum.
+        """
+}
+mapping "A638A.1" source="A638A" target="1163504003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A638A SNOMED CT 1163504003 = Mycoplasma genitalium infection, an STI. SNOMED CT 37160826
+        (concept_code 1163504003) = Mycoplasma genitalium infection, standard Disorder. Exact 1:1
+        semantic equivalence.
+        """
+}
+mapping "A638W.1" source="A638W" target="8098009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A638W SNOMED CT 8098009 = other specified predominantly STI, a Swedish residual bucket
+        (sibling to A63.8). SNOMED CT 440647 (concept_code 8098009) = Sexually transmitted infectious
+        disease, standard Disorder, and is the WHO A63.8/A64 target. Target legitimately subsumes every,
+        but the source is a heterogeneous residual so confidence sits at (broader, heterogeneous
+        residual source).
+        """
+}
+mapping "A649.1" source="A649" target="8098009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A649 SNOMED CT 8098009 = unspecified STI. SNOMED CT 440647 (concept_code 8098009) = Sexually
+        transmitted infectious disease, standard Disorder; WHO ICD-10 A64 (STI, unspecified) crosswalks
+        to 440647 via Athena. Target subsumes the unspecified source exactly as the WHO analogue does.
+        Confidence : moderate, mechanical crosswalk not independently re-verified and source is
+        unspecified.
+        """
+}
+mapping "A659.1" source="A659" target="76272004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "A691A.1" source="A691A" target="186963008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A691A SNOMED CT 186963008 = Vincent's angina, acute necrotizing ulcerative gingivitis caused
+        by Borrelia vincentii / fusospirochetal complex. SNOMED CT 26908 (concept_code 186963008) =
+        Vincent's angina, standard Disorder. The non-standard read-code 4148105 (Vincent's angina NOS)
+        maps to 26908 via Athena. Exact clinical equivalence; rather than because the synonym chain
+        (Vincent's angina → necrotizing ulcerative gingivitis) was confirmed via the read-code crosswalk
+        rather than a direct ICD-10.
+        """
+}
+mapping "A691B.1" source="A691B" target="450005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "A691W.1" source="A691W" target="399050001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source A691W SNOMED CT 399050001 = other Vincent infection, a Swedish residual covering Vincent's
+        infection outside the classic gingival presentation (e.g. oropharynx, tonsil). SNOMED CT 4163133
+        (concept_code 399050001) = Acute necrotizing ulcerative gingivitis, standard Disorder, and is
+        the WHO A69.1 target. The target covers the dominant gingival Vincent presentation but may not
+        fully capture extra-gingival sites, so it is broader-but-imperfect over a heterogeneous
+        residual; confidence.
+        """
+}

@@ -1,0 +1,403 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V825-V829
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V8250.1" source="V8250" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish source = SNOMED CT 213770003 36198007 = streetcar occupant injured by fall in streetcar
+        (base ICD-10 V82.5, Athena concept 45756140). 5th-char Swedish activity-context extension has no
+        OMOP/SNOMED CT representation. Primary SNOMED CT 440896 =; secondary 444074 =. Mapping rationale: the
+        Swedish 5th-character activity suffix (idrott/lek/arbete/etc.) is a national-extension dimension
+        with no SNOMED CT or OMOP analogue; the clinical accident content is fully captured by the base V82.X
+        SNOMED CT target(s), so each SNOMED CT target subsumes the clinical meaning of the source (broader).
+        Confidence (high): one-level breadth mismatch with a verified Athena crosswalk on the base
+        ICD-10 V82.X parent.
+        """
+}
+mapping "V8250.2" source="V8250" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8251.1" source="V8251" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish source = SNOMED CT 213770003 36198007 = streetcar occupant injured by fall in streetcar
+        (base ICD-10 V82.5, Athena concept 45756140). 5th-char Swedish activity-context extension has no
+        OMOP/SNOMED CT representation. Primary SNOMED CT 440896 =; secondary 444074 =. Mapping rationale: the
+        Swedish 5th-character activity suffix (idrott/lek/arbete/etc.) is a national-extension dimension
+        with no SNOMED CT or OMOP analogue; the clinical accident content is fully captured by the base V82.X
+        SNOMED CT target(s), so each SNOMED CT target subsumes the clinical meaning of the source (broader).
+        Confidence (high): one-level breadth mismatch with a verified Athena crosswalk on the base
+        ICD-10 V82.X parent.
+        """
+}
+mapping "V8251.2" source="V8251" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8252.1" source="V8252" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish source = SNOMED CT 213770003 36198007 = streetcar occupant injured by fall in streetcar
+        (base ICD-10 V82.5, Athena concept 45756140). 5th-char Swedish activity-context extension has no
+        OMOP/SNOMED CT representation. Primary SNOMED CT 440896 =; secondary 444074 =. Mapping rationale: the
+        Swedish 5th-character activity suffix (idrott/lek/arbete/etc.) is a national-extension dimension
+        with no SNOMED CT or OMOP analogue; the clinical accident content is fully captured by the base V82.X
+        SNOMED CT target(s), so each SNOMED CT target subsumes the clinical meaning of the source (broader).
+        Confidence (high): one-level breadth mismatch with a verified Athena crosswalk on the base
+        ICD-10 V82.X parent.
+        """
+}
+mapping "V8252.2" source="V8252" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8253.1" source="V8253" target="213770003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8253 = SNOMED CT 213770003 36198007 (Swedish extension of ICD-10 V82.5, refined with
+        activity context). The base ICD-10 code V82.5 has Athena crosswalk SNOMED CT 213770003 (Railway
+        accident) and 36198007 (Victim of vehicular AND/OR traffic accident). The Swedish activity
+        qualifier has no standard SNOMED CT encoding, so the target subsumes the source on the
+        accident-type axis while losing the activity attribute. for the primary railway-accident target:
+        verified Athena crosswalk from the parent code, one-level broader. 36198007 secondary broader at
+        (also crosswalk-verified but more generic).
+        """
+}
+mapping "V8253.2" source="V8253" target="36198007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8254.1" source="V8254" target="213770003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8254 = SNOMED CT 213770003 36198007 (Swedish extension of V82.5, activity = vital
+        activity). Base V82.5 maps via Athena to SNOMED CT 213770003 (Railway accident) and 36198007
+        (Victim of vehicular AND/OR traffic accident). Activity qualifier lost. Broader on accident
+        axis; primary crosswalk-verified broader, secondary.
+        """
+}
+mapping "V8254.2" source="V8254" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8258.1" source="V8258" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8258 = Swedish extension of V82.5 (fall in streetcar), activity = SNOMED CT 213770003
+        36198007. Base V82.5 Athena crosswalk → SNOMED CT 213770003 (Railway accident) + 36198007 (Victim
+        of vehicular AND/OR traffic accident). Broader; activity lost. primary, secondary.
+        """
+}
+mapping "V8258.2" source="V8258" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8259.1" source="V8259" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8259 = Swedish extension of V82.5 (fall in streetcar), activity unspecified. Base V82.5
+        Athena crosswalk → SNOMED CT 213770003 (Railway accident) + 36198007 (Victim of vehicular AND/OR
+        traffic accident). Broader; primary, secondary.
+        """
+}
+mapping "V8259.2" source="V8259" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8260.1" source="V8260" target="213770003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8260 = Swedish extension of V82.6 (fall from streetcar), activity = sport/exercise. Base
+        V82.6 Athena crosswalk → SNOMED CT 213770003 (Railway accident) + 36198007 (Victim of vehicular
+        AND/OR traffic accident). Broader; activity lost. primary crosswalk-verified broader, secondary.
+        """
+}
+mapping "V8260.2" source="V8260" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8261.1" source="V8261" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8261 = Swedish extension of V82.6 (fall from streetcar), activity = play/leisure. Base
+        V82.6 Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8261.2" source="V8261" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8262.1" source="V8262" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8262 = Swedish extension of V82.6 (fall from streetcar), activity = work. Base V82.6
+        Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary, secondary.
+        """
+}
+mapping "V8262.2" source="V8262" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8263.1" source="V8263" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8263 = Swedish extension of V82.6 (fall from streetcar), activity = other. Base V82.6
+        Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary, secondary.
+        """
+}
+mapping "V8263.2" source="V8263" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8264.1" source="V8264" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8264 = Swedish extension of V82.6 (fall from streetcar), activity = vital activity. Base
+        V82.6 Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8264.2" source="V8264" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8268.1" source="V8268" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8268 = Swedish extension of V82.6 (fall from streetcar), activity = other specified.
+        Base V82.6 Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8268.2" source="V8268" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8269.1" source="V8269" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8269 = Swedish extension of V82.6 (fall from streetcar), activity unspecified. Base
+        V82.6 Athena crosswalk → SNOMED CT 213770003 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8269.2" source="V8269" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8270.1" source="V8270" target="213859004" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8270 = Swedish extension of V82.7 (derailment without antecedent collision), activity =
+        sport. Base V82.7 Athena crosswalk → SNOMED CT 213859004 (Railway accident involving derailment
+        without antecedent collision) + 36198007 (Victim of vehicular AND/OR traffic accident). Broader;
+        activity lost. primary crosswalk-verified broader, secondary.
+        """
+}
+mapping "V8270.2" source="V8270" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8271.1" source="V8271" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8271 = Swedish extension of V82.7 (derailment without collision), activity =
+        play/leisure. Base V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost.
+        primary, secondary.
+        """
+}
+mapping "V8271.2" source="V8271" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8272.1" source="V8272" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8272 = Swedish extension of V82.7 (derailment without collision), activity = work. Base
+        V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8272.2" source="V8272" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8273.1" source="V8273" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8273 = Swedish extension of V82.7 (derailment without collision), activity = other. Base
+        V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8273.2" source="V8273" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8274.1" source="V8274" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8274 = Swedish extension of V82.7 (derailment without collision), activity = vital
+        activity. Base V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost.
+        primary, secondary.
+        """
+}
+mapping "V8274.2" source="V8274" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8278.1" source="V8278" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8278 = Swedish extension of V82.7 (derailment without collision), activity = other
+        specified. Base V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost.
+        primary, secondary.
+        """
+}
+mapping "V8278.2" source="V8278" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8279.1" source="V8279" target="213859004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8279 = Swedish extension of V82.7 (derailment without collision), activity unspecified.
+        Base V82.7 Athena crosswalk → SNOMED CT 213859004 + 36198007. Broader; activity lost. primary,
+        secondary.
+        """
+}
+mapping "V8279.2" source="V8279" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8280.1" source="V8280" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8280 = Swedish extension of V82.8 (other specified transport accidents of streetcar
+        occupant), activity = sport. Base V82.8 Athena crosswalk → SNOMED CT 213770003 (Railway accident,
+        generic) + 36198007 (Victim of vehicular AND/OR traffic accident). V82.8 is itself a residual
+        bucket (SNOMED CT 213770003 36198007), so the crosswalk target is generic railway accident rather
+        than a specific accident type; combined with lost activity qualifier, confidence drops to
+        moderate. Secondary 36198007 also at.
+        """
+}
+mapping "V8280.2" source="V8280" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8281.1" source="V8281" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8281 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity = play/leisure. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8
+        residual bucket; moderate.
+        """
+}
+mapping "V8281.2" source="V8281" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8282.1" source="V8282" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8282 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity = work. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8 residual
+        bucket; moderate.
+        """
+}
+mapping "V8282.2" source="V8282" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8283.1" source="V8283" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8283 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity = other. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8 residual
+        bucket; moderate.
+        """
+}
+mapping "V8283.2" source="V8283" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8284.1" source="V8284" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8284 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity = vital activity. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8
+        residual bucket; moderate.
+        """
+}
+mapping "V8284.2" source="V8284" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8288.1" source="V8288" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8288 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity = other specified. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8
+        residual bucket; moderate.
+        """
+}
+mapping "V8288.2" source="V8288" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8289.1" source="V8289" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8289 = Swedish extension of V82.8 (other specified streetcar transport accident),
+        activity unspecified. Base V82.8 Athena crosswalk → SNOMED CT 213770003 + 36198007. V82.8 residual
+        bucket; moderate.
+        """
+}
+mapping "V8289.2" source="V8289" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8290.1" source="V8290" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8290 = Swedish 7-char extension of ICD-10 V82.9 SNOMED CT 213770003 + activity suffix. The
+        activity-context suffix is a Swedish national extension with no SNOMED CT analogue; the clinical
+        event is fully captured by V82.9's standard crosswalk. Target = (Athena concept 440896);
+        streetcars/trams are rail vehicles, making this the most specific standard concept. Type
+        broader: target subsumes source (drops only the non-clinical activity suffix). Confidence
+        moderate: Athena crosswalk via parent V82.9, unspecified source, Swedish extension not
+        independently re-verified.
+        """
+}
+mapping "V8291.1" source="V8291" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8291 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (play/leisure). Activity
+        suffix has no SNOMED CT analogue. Target =. Type broader: target fully subsumes clinical event.
+        Confidence moderate: parent crosswalk, unspecified source.
+        """
+}
+mapping "V8292.1" source="V8292" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8292 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (paid work). Activity
+        suffix has no SNOMED CT analogue. Target =. Type broader: target fully subsumes clinical event.
+        Confidence moderate: parent crosswalk, unspecified source.
+        """
+}
+mapping "V8293.1" source="V8293" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8293 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (other activity). Activity
+        suffix has no SNOMED CT analogue. Target =. Type broader: target fully subsumes clinical event.
+        Confidence moderate: parent crosswalk, unspecified source.
+        """
+}
+mapping "V8294.1" source="V8294" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8294 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (vital activity:
+        rest/sleep/meal/hygiene). Activity suffix has no SNOMED CT analogue. Target =. Type broader: target
+        fully subsumes clinical event. Confidence moderate: parent crosswalk, unspecified source.
+        """
+}
+mapping "V8298.1" source="V8298" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8298 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (other specified
+        activities). Activity suffix has no SNOMED CT analogue. Target =. Type broader: target fully
+        subsumes clinical event. Confidence moderate: parent crosswalk, unspecified source.
+        """
+}
+mapping "V8299.1" source="V8299" target="213770003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8299 = Swedish extension of V82.9 + activity SNOMED CT 213770003 (activity unspecified).
+        Activity suffix has no SNOMED CT analogue. Target =. Type broader: target fully subsumes clinical
+        event. Confidence moderate: parent crosswalk, unspecified source.
+        """
+}

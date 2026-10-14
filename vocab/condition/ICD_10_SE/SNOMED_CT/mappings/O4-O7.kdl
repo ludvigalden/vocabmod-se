@@ -1,0 +1,483 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes O4-O7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "O409.1" source="O409" target="86203003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 86203003 [GPS] [IPS] [GPFP]"
+}
+mapping "O430A.1" source="O430A" target="199625002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O430A SNOMED CT 199625002 = placental transfusion syndrome: fetomaternal transfusion
+        (Swedish extension of O43.0). Target SNOMED CT 4064697 (the O43.0 crosswalk target). broader:
+        covers all placental transfusion syndromes including fetomaternal. Moderate: crosswalk-verified,
+        Swedish code is more specific than the WHO parent. Athena-local.
+        """
+}
+mapping "O430B.1" source="O430B" target="237299001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O430B SNOMED CT 237299001 = placental transfusion syndrome: twin transfusion (Swedish
+        extension of O43.0). Target SNOMED CT 40444368 (237299001). Exact clinical concept match. because
+        the source uses framing rather than the standalone disorder. Athena-local verified.
+        """
+}
+mapping "O430W.1" source="O430W" target="199625002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O430W SNOMED CT 199625002 = other specified placental transfusion syndrome (Swedish
+        extension of O43.0, residual). Target SNOMED CT 4064697 (O43.0 crosswalk target). broader: subsumes
+        the residual. Moderate: crosswalk-verified, unspecified-other source. Athena-local.
+        """
+}
+mapping "O430X.1" source="O430X" target="199625002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O430X SNOMED CT 199625002 = placental transfusion syndrome, unspecified (Swedish extension
+        of O43.0). Target SNOMED CT 4064697 (O43.0 crosswalk target). broader/exact-equivalent of the
+        unspecified parent. Moderate: crosswalk-verified, unspecified source. Athena-local.
+        """
+}
+mapping "O432A.1" source="O432A" target="70129008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O432A SNOMED CT 70129008 = placenta accreta/increta (Swedish extension of O43.2, combining
+        accreta+increta). Target SNOMED CT 4289303 (70129008). Best single standard concept; the broader
+        spectrum concept 4129831 is the WHO O43.2 crosswalk target. Chose the specific accreta at; the
+        (4037762) is not separately targeted. Athena-local verified.
+        """
+}
+mapping "O432B.1" source="O432B" target="25585008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O432B SNOMED CT 25585008 = placenta percreta (Swedish extension of O43.2). Target SNOMED CT
+        4103298 (25585008). Exact 1:1 clinical concept match. Athena-local verified.
+        """
+}
+mapping "O432X.1" source="O432X" target="237296008" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O432X SNOMED CT 237296008 = abnormally adherent placenta, unspecified (Swedish extension of
+        O43.2, the unspecified parent). Target SNOMED CT 4129831 (237296008), the WHO O43.2 crosswalk
+        target. broader: subsumes accreta/increta/percreta. Moderate: crosswalk-verified, unspecified
+        source. Athena-local.
+        """
+}
+mapping "O470A.1" source="O470A" target="199047001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O470A SNOMED CT 199047001 = false labor without cervical change before 37 weeks (Swedish
+        extension of O47.0). Target SNOMED CT 4062557 (the O47 crosswalk target). broader: subsumes all
+        false labor. Moderate: crosswalk-verified; specific sub-concept (before 37 weeks, without
+        cervical change) has no precise SNOMED CT target. Athena-local.
+        """
+}
+mapping "O470B.1" source="O470B" target="199049003" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source O470B SNOMED CT 199049003 = threatened premature labor before 37 weeks (Swedish extension of
+        O47.0). Target SNOMED CT 139888 (199049003). Closest standard concept; exact clinical match for
+        threatened preterm labor before 37 weeks. (not higher) because the qualifier in the SNOMED CT name
+        is an outcome not asserted by the source. Athena-local verified.
+        """
+}
+mapping "O470X.1" source="O470X" target="199047001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O470X SNOMED CT 199047001 = false labor and threatened premature labor before 37 weeks,
+        unspecified (Swedish extension of O47.0, combining/unspecified parent). Target SNOMED CT 4062557
+        (O47 crosswalk target). broader: covers the false-labor axis; the (139888) is a separate target
+        not bundled here. Moderate: crosswalk-verified, unspecified combined source. Athena-local.
+        """
+}
+mapping "O489.1" source="O489" target="90968009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O489 SNOMED CT 90968009 = post-term pregnancy (Swedish national code, equivalent to WHO
+        O48). Target SNOMED CT 432695 (the O48 crosswalk target). Exact 1:1 clinical concept match.
+        Athena-local crosswalk verified.
+        """
+}
+mapping "O49.1" source="O49" target="90968009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O49 (Swedish national extension) = graviditetslängd v. 40+0–41+6, gestational age 40+0
+        through 41+6 weeks. No WHO ICD-10 O49 concept exists (it is a Swedish-specific code), and no
+        SNOMED CT concept encodes the precise 40–41 week band. Best defensible standard target is SNOMED CT
+        432695 (concept_code 90968009, SNOMED CT 90968009), which the WHO O48 crosswalks to and which
+        legitimately subsumes the 40–41 week range. Broader because the target covers all post-term
+        gestations, not just weeks 40–41. moderate: best available standard concept, mechanical
+        crosswalk via O48, source specificity (week range) is lost.
+        """
+}
+mapping "O490.1" source="O490" target="90968009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O490 (Swedish extension) = graviditetslängd v. 40+0–40+6, gestational age exactly week
+        40. No SNOMED CT concept encodes the precise single-week band; best standard target is SNOMED CT
+        432695 (90968009, SNOMED CT 90968009), the crosswalk target of WHO O48 Prolonged pregnancy.
+        Broader: target subsumes the source week-40 post-term state. moderate: best available,
+        mechanical crosswalk via O48, source specificity lost.
+        """
+}
+mapping "O491.1" source="O491" target="90968009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O491 (Swedish extension) = graviditetslängd v. 41+0–41+6, gestational age exactly week
+        41. No SNOMED CT concept encodes the precise week-41 band; best standard target is SNOMED CT 432695
+        (90968009, SNOMED CT 90968009), the crosswalk target of WHO O48 Prolonged pregnancy. Broader:
+        target subsumes the source week-41 post-term state. moderate: best available, mechanical
+        crosswalk via O48, source specificity lost.
+        """
+}
+mapping "O601A.1" source="O601A" target="10761141000119107" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O601A (Swedish extension) = för tidigt spontant värkarbete med prematurbörd, extremt
+        förtidig (förlossning före utgången av graviditetsvecka 28) = preterm spontaneous labor with
+        preterm delivery, extreme (delivery before end of gestational week 28). WHO O60.1 crosswalks to
+        SNOMED CT 44784550 (698716002). For the <28w stratum the best week-band-equivalent SNOMED CT is
+        45757175 (10761141000119107, SNOMED CT 10761141000119107), since delivery before 28 weeks falls in
+        the second trimester. Narrower: the target is more specific (second-trimester with delivery)
+        than the source's extreme-preterm stratum, but it is the closest standard concept matching the
+        week band. moderate: trimester-band alignment is defensible, not independently re-verified;
+        source uses absolute week cutoff rather than trimester label.
+        """
+}
+mapping "O601B.1" source="O601B" target="10761191000119104" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O601B (Swedish extension) = preterm spontaneous labor with preterm delivery, very preterm
+        (delivery from week 29 to before end of week 32). WHO O60.1 crosswalks to SNOMED CT 44784550
+        (698716002). The 29–32 week stratum falls in the third trimester; best week-band-equivalent
+        SNOMED CT is 45757176 (10761191000119104, SNOMED CT 10761191000119104). Narrower: target is more
+        specific than source stratum. moderate: trimester-band alignment is defensible; week-29–32 is a
+        strict subset of third-trimester preterm.
+        """
+}
+mapping "O601C.1" source="O601C" target="10761191000119104" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O601C (Swedish extension) = preterm spontaneous labor with preterm delivery, moderately
+        preterm (delivery from week 33 to before end of week 37). WHO O60.1 crosswalks to SNOMED CT
+        44784550 (698716002). The 33–37 week stratum falls in the third trimester; best
+        week-band-equivalent SNOMED CT is 45757176 (10761191000119104, SNOMED CT 10761191000119104). Narrower:
+        target is more specific than source stratum (target covers any third-trimester preterm, source
+        is 33–37w). moderate.
+        """
+}
+mapping "O601X.1" source="O601X" target="698716002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O601X (Swedish extension) = preterm spontaneous labor with preterm delivery, unspecified
+        week band (delivery before end of week 37). WHO O60.1 SNOMED CT 698716002 crosswalks directly to
+        SNOMED CT 44784550 (698716002). The unspecified Swedish code is co-extensive with the WHO O60.1
+        base concept. exact_match at high (rather than): verified crosswalk exists via O60.1, but the
+        source is the Swedish-extension unspecified form, not independently re-verified against the
+        SNOMED CT hierarchy.
+        """
+}
+mapping "O603A.1" source="O603A" target="6383007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O603A (Swedish extension) = prematurbörd utan spontant värkarbete, extremt förtidig
+        förlossning (delivery before end of week 28). WHO O60.3 SNOMED CT 6383007 crosswalks to SNOMED CT
+        4273560 (6383007). No SNOMED CT concept encodes a <28w stratum of preterm delivery without labor.
+        Best available target is the WHO-base crosswalk target 4273560. Broader: target covers all
+        premature labor, source is the extreme-preterm no-labor subset. low: real doubt about precision
+        — the target conflates labor/no-labor and any gestational age; the Swedish source carries both
+        pieces of specificity, neither is in the target.
+        """
+}
+mapping "O603B.1" source="O603B" target="6383007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O603B (Swedish extension) = preterm delivery without spontaneous labor, very preterm
+        (delivery from week 29 to before end of week 32). WHO O60.3 crosswalks to SNOMED CT 4273560
+        (6383007, SNOMED CT 6383007). No SNOMED CT concept encodes a 29–32w no-labor stratum. Best available
+        target is the WHO-base crosswalk target 4273560. Broader: target subsumes the source. low:
+        target lacks the no-labor qualifier and the week band.
+        """
+}
+mapping "O603C.1" source="O603C" target="6383007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O603C (Swedish extension) = preterm delivery without spontaneous labor, moderately
+        preterm (delivery from week 33 to before end of week 37). WHO O60.3 crosswalks to SNOMED CT 4273560
+        (6383007, SNOMED CT 6383007). No SNOMED CT concept encodes a 33–37w no-labor stratum. Best available
+        target is the WHO-base crosswalk target 4273560. Broader: target subsumes the source. low:
+        target lacks the no-labor qualifier and the week band.
+        """
+}
+mapping "O603X.1" source="O603X" target="6383007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O603X (Swedish extension) = preterm delivery without spontaneous labor, unspecified. WHO
+        O60.3 SNOMED CT 6383007 crosswalks directly to SNOMED CT 4273560 (6383007). The unspecified Swedish
+        code is co-extensive with the WHO O60.3 base concept. exact_match at high: verified crosswalk,
+        source is the Swedish-extension unspecified form rather than WHO O60.3 itself; the target name
+        is slightly broader than the no-labor source but is the standard crosswalk target.
+        """
+}
+mapping "O610A.1" source="O610A" target="77854008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O610A (Swedish extension) = försök till medicinskt igångsättande av värkarbetet:
+        förlossning inom 48 timmar = attempted medical induction of labor with delivery within 48 hours.
+        WHO O61.0 SNOMED CT 77854008 crosswalks to SNOMED CT 438491 (77854008). The Swedish code is a
+        finer-grained outcome stratum (delivery within 48h vs after) of medical-induction attempt; no
+        SNOMED CT concept encodes the time-to-delivery stratum. Best standard target is 438491. Broader:
+        target subsumes the source (every within-48h medical-induction attempt is a medical-induction
+        attempt). moderate: verified crosswalk, source time stratum lost. Note: source semantics are
+        which is not strictly, but WHO O61.0 is the closest standard analogue and is the documented
+        crosswalk target.
+        """
+}
+mapping "O610B.1" source="O610B" target="77854008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O610B (Swedish extension) = attempted medical induction of labor, delivery after more
+        than 48 hours, including failed induction. WHO O61.0 crosswalks to SNOMED CT 438491 (77854008,
+        SNOMED CT 77854008). The Swedish >48h stratum (including failed induction) is the closer of the two
+        strata to the WHO framing, but still encodes a time-band the target lacks. Best standard target
+        is 438491. Broader: target subsumes the source. moderate.
+        """
+}
+mapping "O610X.1" source="O610X" target="77854008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O610X (Swedish extension) = attempted medical induction of labor, unspecified
+        time-to-delivery. WHO O61.0 SNOMED CT 77854008 crosswalks directly to SNOMED CT 438491 (77854008). The
+        unspecified Swedish code is co-extensive with the WHO O61.0 base concept. exact_match at high:
+        verified crosswalk via O61.0, source is the Swedish-extension unspecified form; minor caveat
+        that the Swedish text frames the source as rather than, but the crosswalk is the documented
+        standard target.
+        """
+}
+mapping "O611A.1" source="O611A" target="90188009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O611A (Swedish extension) = försök till mekaniskt igångsättande av värkarbetet,
+        förlossning inom 48 timmar = attempted mechanical/instrumental induction of labor, delivery
+        within 48h. WHO O61.1 SNOMED CT 90188009 crosswalks to SNOMED CT 437622 (90188009). The Swedish code
+        is a finer-grained outcome stratum (within-48h delivery) of mechanical-induction attempt; no
+        SNOMED CT concept encodes the time-to-delivery stratum. Best standard target is 437622. Broader:
+        target subsumes the source. moderate.
+        """
+}
+mapping "O611B.1" source="O611B" target="90188009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O611B (Swedish extension) = attempted mechanical induction of labor, delivery after more
+        than 48 hours, including failed induction. WHO O61.1 crosswalks to SNOMED CT 437622 (90188009,
+        SNOMED CT 90188009). The Swedish >48h stratum (including failed induction) is the closer of the two
+        strata to the WHO framing. Best standard target is 437622. Broader: target subsumes the source.
+        moderate.
+        """
+}
+mapping "O611X.1" source="O611X" target="90188009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O611X (Swedish extension) = attempted mechanical induction of labor, unspecified
+        time-to-delivery. WHO O61.1 SNOMED CT 90188009 crosswalks directly to SNOMED CT 437622 (90188009). The
+        unspecified Swedish code is co-extensive with the WHO O61.1 base concept. exact_match at high:
+        verified crosswalk via O61.1.
+        """
+}
+mapping "O701A.1" source="O701A" target="6234006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701A (Swedish extension) = perinealbristning av andra graden: skada som omfattar mindre
+        än halva perinealkroppen = second-degree perineal laceration: injury involving less than half of
+        the perineal body. WHO O70.1 SNOMED CT 6234006 crosswalks to SNOMED CT 198492 (6234006). No SNOMED CT
+        concept encodes the less-than-half-perineal-body subtype. Best standard target is 198492.
+        Broader: target subsumes the source. moderate: verified crosswalk via O70.1, anatomical-extent
+        qualifier lost.
+        """
+}
+mapping "O701B.1" source="O701B" target="6234006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701B (Swedish extension) = second-degree perineal laceration: injury involving more than
+        half of the perineal body. WHO O70.1 crosswalks to SNOMED CT 198492 (6234006, SNOMED CT 6234006). No
+        SNOMED CT concept encodes the more-than-half-perineal-body subtype. Best standard target is 198492.
+        Broader: target subsumes the source. moderate.
+        """
+}
+mapping "O701C.1" source="O701C" target="6234006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701C (Swedish extension) = second-degree perineal laceration: perineal body involvement
+        plus deeper-than-2cm tear in lower vagina. WHO O70.1 crosswalks to SNOMED CT 198492 (6234006,
+        SNOMED CT 6234006). No SNOMED CT concept encodes the lower-vaginal-extension subtype. Best standard
+        target is 198492. Broader: target subsumes the source. moderate.
+        """
+}
+mapping "O701D.1" source="O701D" target="6234006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701D (Swedish extension) = second-degree perineal laceration: perineal body involvement
+        plus tear extending to upper vagina, deeper than 2cm. WHO O70.1 crosswalks to SNOMED CT 198492
+        (6234006, SNOMED CT 6234006). No SNOMED CT concept encodes the upper-vaginal-extension subtype. Best
+        standard target is 198492. Broader: target subsumes the source. moderate.
+        """
+}
+mapping "O701E.1" source="O701E" target="6234006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701E (Swedish extension) = second-degree perineal laceration: unilateral injury to m.
+        levator ani. WHO O70.1 crosswalks to SNOMED CT 198492 (6234006, SNOMED CT 6234006). The Swedish source
+        is a partial-axis coding that bundles a second-degree perineal tear with a unilateral levator
+        ani injury; the levator ani component is third-degree-equivalent pelvic-floor injury and is not
+        captured by the second-degree-perineal-laceration target. 198492 covers only the
+        second-degree-perineal axis, missing the levator ani component. Partial: target captures one
+        component of a multi-part source. low: defensible lead, real doubt because the levator ani axis
+        is uncovered.
+        """
+}
+mapping "O701F.1" source="O701F" target="6234006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701F (Swedish extension) = second-degree perineal laceration: bilateral injury to m.
+        levator ani. WHO O70.1 crosswalks to SNOMED CT 198492 (6234006, SNOMED CT 6234006). The Swedish source
+        bundles a second-degree perineal tear with a bilateral levator ani injury; the levator ani
+        component is third-degree-equivalent pelvic-floor injury and is not captured by the
+        second-degree-perineal target. 198492 covers only the second-degree-perineal axis, missing the
+        bilateral levator ani component. Partial: target captures one component of a multi-part source.
+        low: defensible lead, real doubt because the levator ani axis is uncovered.
+        """
+}
+mapping "O701W.1" source="O701W" target="6234006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701W (Swedish extension) = second-degree perineal laceration, other specified. Residual
+        SNOMED CT 6234006 bucket for second-degree perineal tears not elsewhere classified. WHO O70.1
+        crosswalks to SNOMED CT 198492 (6234006). Best standard target is 198492. Broader: target subsumes
+        the heterogeneous source. low: residual/heterogeneous source; one SNOMED CT target dominates but
+        real doubt remains about what specific second-degree subtype each instance encodes.
+        """
+}
+mapping "O701X.1" source="O701X" target="6234006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O701X (Swedish extension) = second-degree perineal laceration, unspecified. WHO O70.1
+        SNOMED CT 6234006 crosswalks directly to SNOMED CT 198492 (6234006). The unspecified Swedish code is
+        co-extensive with the WHO O70.1 base concept. exact_match at high: verified crosswalk via O70.1.
+        """
+}
+mapping "O702C.1" source="O702C" target="449807005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O702C SNOMED CT 449807005 = third degree perineal laceration involving less than 50% of
+        external anal sphincter. Target. Exact 1:1 semantic equivalence: the Swedish national subcode
+        corresponds precisely to the SNOMED CT 3a subtype. exact_match. Target replaces retired SNOMED CT
+        781111000000105 (Athena Maps-to successor).
+        """
+}
+mapping "O702D.1" source="O702D" target="449808000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O702D SNOMED CT 449808000 = third degree perineal laceration involving more than 50% of EAS,
+        including total EAS rupture without IAS involvement. Target. Exact 1:1 equivalence with the
+        SNOMED CT 3b subtype. exact_match. Target replaces retired SNOMED CT 781121000000104 (Athena Maps-to
+        successor).
+        """
+}
+mapping "O702E.1" source="O702E" target="449809008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O702E SNOMED CT 449809008 = third degree perineal laceration involving both external and
+        internal anal sphincter. Target. Exact 1:1 equivalence with the SNOMED CT 3c subtype. exact_match.
+        Target replaces retired SNOMED CT 781131000000102 (Athena Maps-to successor).
+        """
+}
+mapping "O702F.1" source="O702F" target="10217006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O702F SNOMED CT 10217006 = third degree perineal laceration involving only the internal anal
+        sphincter. No exact SNOMED CT concept exists for an isolated IAS tear framed as third-degree
+        (SNOMED CT 3c subtype 3544345 requires EAS involvement). Target SNOMED CT 193830 = (concept_code
+        10217006), the ICD10 O70.2 crosswalk target. Target legitimately subsumes the source as the
+        parent third-degree concept. Moderate tier: the source is a Swedish-specific subcode with no
+        exact standard analogue, and an isolated-IAS tear is clinically atypical within the 3rd-degree
+        framing. Related candidate 4170460 was considered but rejected as primary since the source
+        explicitly frames the tear as a perineal laceration.
+        """
+}
+mapping "O702X.1" source="O702X" target="10217006" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O702X SNOMED CT 10217006 = third degree perineal laceration, unspecified. Target SNOMED CT
+        193830 = (concept_code 10217006), the ICD10 O70.2 crosswalk target. Exact 1:1 equivalence: the
+        unspecified Swedish subcode maps directly to the general third-degree concept. exact_match.
+        """
+}
+mapping "O721A.1" source="O721A" target="47821001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O721A SNOMED CT 47821001 = atonic hemorrhage after placental expulsion. Target SNOMED CT 443929
+        = (concept_code 47821001), the ICD10 O72.1 crosswalk target. No SNOMED CT concept specifies atonic
+        postpartum hemorrhage as a distinct disorder; the target subsumes the source as the general
+        immediate postpartum hemorrhage concept. The atonic mechanism is the most common PPH cause and
+        is implicit. high: verified crosswalk with one-level broader target.
+        """
+}
+mapping "O721B.1" source="O721B" target="47821001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O721B SNOMED CT 47821001 = bleeding in the third stage of labor due to obstetric injury.
+        Target SNOMED CT 443929 = (concept_code 47821001), the ICD10 O72.1 crosswalk target. The source
+        bundles a hemorrhage with an obstetric-trauma cause; no single SNOMED CT concept captures both the
+        hemorrhage and the traumatic etiology. The target subsumes only the hemorrhage axis (broader).
+        moderate: the traumatic-cause component is lost, and the classification of this Swedish subcode
+        under O72.1 rather than O72.0 adds residual ambiguity about the exact stage.
+        """
+}
+mapping "O721X.1" source="O721X" target="47821001" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O721X SNOMED CT 47821001 = immediate postpartum hemorrhage, unspecified. Target SNOMED CT
+        443929 = (concept_code 47821001), the ICD10 O72.1 crosswalk target. Exact equivalence: the
+        unspecified Swedish subcode corresponds to the general postpartum hemorrhage concept.
+        exact_match.
+        """
+}
+mapping "O756A.1" source="O756A" target="199662000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O756A SNOMED CT 199662000 = rupture of membranes without contractions at term (PROM at term)
+        with spontaneous labor onset. Target SNOMED CT 4060691 = (concept_code 199662000), the ICD10 O75.6
+        crosswalk target. The source does not specify the 24-hour threshold, so the target is slightly
+        more specific on timing; however the crosswalk is verified and the concept covers PROM with
+        spontaneous onset. high.
+        """
+}
+mapping "O756B.1" source="O756B" target="199662000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O756B SNOMED CT 199662000 = rupture of membranes without contractions at term (PROM at term)
+        with induced labor. Target SNOMED CT 4060691 = (concept_code 199662000), the ICD10 O75.6 crosswalk
+        target. The target describes spontaneous labor onset whereas the source specifies induction; the
+        target still subsumes the PROM component but loses the induction qualifier. high: verified
+        crosswalk with a one-level breadth mismatch on the induction attribute.
+        """
+}
+mapping "O756X.1" source="O756X" target="199662000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O756X SNOMED CT 199662000 = delayed delivery, unspecified, after spontaneous or unspecified
+        rupture of membranes. Target SNOMED CT 4060691 = (concept_code 199662000), the ICD10 O75.6
+        crosswalk target. The unspecified Swedish subcode corresponds to the base O75.6 concept.
+        exact_match.
+        """
+}

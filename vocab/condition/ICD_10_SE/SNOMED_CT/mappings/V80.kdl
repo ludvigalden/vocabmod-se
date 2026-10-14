@@ -1,0 +1,618 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V80
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V8000.1" source="V8000" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8000 = Swedish extension of ICD-10 V80.0 (Animal-rider injured by fall from or being
+        thrown from animal in noncollision accident) with activity suffix SNOMED CT 215189007 (sports).
+        Target SNOMED CT 442212 (concept_code 215189007) =, standard concept. Athena ICD10CM crosswalk for
+        V80.010 maps to 440921 (Traumatic injury, overly broad) and 442212; 442212 is the more specific
+        relevant accident-event concept. The directly-corresponding SNOMED CT [X] concept 220159004 is
+        deprecated (invalid_reason=D) and is therefore not used. Broader: target subsumes the
+        animal-vehicle-accident axis but drops the rider-fall specificity and the Swedish
+        sports-activity qualifier. Confidence (low): deprecated direct equivalent forces a broader
+        fallback; activity dimension lost.
+        """
+}
+mapping "V8001.1" source="V8001" target="417746004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 215189007 417746004 [GPS] [IPS] [GPFP]"
+}
+mapping "V8001.4" source="V8001" target="215189007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8002.1" source="V8002" target="215227000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8003.1" source="V8003" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8003 = Swedish extension of ICD-10 V80.0 (Animal-rider injured by fall from or being
+        thrown from animal in noncollision accident) with activity suffix SNOMED CT 215189007 (other
+        specified activity). Same base V80.0 as V8000; only Swedish activity qualifier differs. Target
+        SNOMED CT 442212 (215189007) =, standard. Direct SNOMED CT equivalent 220159004 is deprecated.
+        Broader: subsumes animal-vehicle-accident axis, drops rider-fall specificity and activity
+        context. Confidence (low).
+        """
+}
+mapping "V8004.1" source="V8004" target="215258004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8004 = Swedish 5-char extension of ICD-10 V80.0 (rider/occupant injured by fall from or
+        being thrown from animal/animal-drawn vehicle in noncollision accident), with 5th char SNOMED CT
+        215258004 36198007 = vital activity (rest, sleep, meal, personal hygiene). Target SNOMED CT 442402
+        (215258004) is the standard crosswalk target for parent V80.0 (Athena ICD10 45546945 -> 442402
+        Maps to); the activity qualifier has no separate SNOMED CT concept, so parent target subsumes the
+        source -> broader. : verified crosswalk via parent, but source is a Swedish 5-char
+        activity-bearing extension not independently re-verified. Alt target 444074 (Victim of vehicular
+        AND/OR traffic accident) is the broader victim concept also mapped from V80.0; weaker (two
+        levels broader).
+        """
+}
+mapping "V8004.2" source="V8004" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8008.1" source="V8008" target="215258004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8008 = Swedish 5-char extension of V80.0 (fall from animal/animal-drawn vehicle,
+        noncollision), 5th char SNOMED CT 215258004 36198007 = other specified activity. Same parent V80.0
+        (ICD10 45546945) -> SNOMED CT 442402 crosswalk; activity qualifier has no separate SNOMED CT target,
+        so parent target subsumes source -> broader. per parent crosswalk, Swedish extension not
+        independently re-verified. Alt 444074 (Victim of vehicular AND/OR traffic accident) is the
+        broader victim concept.
+        """
+}
+mapping "V8008.2" source="V8008" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8009.1" source="V8009" target="215258004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8009 = Swedish 5-char extension of V80.0 (fall from animal/animal-drawn vehicle,
+        noncollision), 5th char SNOMED CT 215258004 36198007 = unspecified activity. Same parent V80.0
+        (ICD10 45546945) -> SNOMED CT 442402 crosswalk; activity qualifier has no separate SNOMED CT target ->
+        broader. : verified crosswalk via parent, Swedish extension unspecified-activity not
+        independently re-verified. Alt 444074 broader victim concept.
+        """
+}
+mapping "V8009.2" source="V8009" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8010.1" source="V8010" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8010 = Swedish 5-char extension of V80.1 (rider/occupant injured in collision with
+        pedestrian or animal), 5th char SNOMED CT 36198007 = sport. Parent V80.1 (ICD10 45570979) -> SNOMED CT
+        444074 (Victim of vehicular AND/OR traffic accident, 36198007) Maps to; only standard target for
+        V80.1. Activity qualifier has no separate SNOMED CT concept, so parent target subsumes source ->
+        broader. : crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8011.1" source="V8011" target="215285006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8012.1" source="V8012" target="215215003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8013.1" source="V8013" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8013 = Swedish 5-char extension of V80.1 (collision with pedestrian or animal), 5th char
+        SNOMED CT 36198007 = other activity. Parent V80.1 (ICD10 45570979) -> SNOMED CT 444074 Maps to; only
+        standard target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk via
+        parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8014.1" source="V8014" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8014 = Swedish 5-char extension of V80.1 (collision with pedestrian or animal), 5th char
+        SNOMED CT 36198007 = vital activity. Parent V80.1 (ICD10 45570979) -> SNOMED CT 444074 Maps to; only
+        standard target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk via
+        parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8018.1" source="V8018" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8018 = Swedish 5-char extension of V80.1 (collision with pedestrian or animal), 5th char
+        SNOMED CT 36198007 = other specified activity. Parent V80.1 (ICD10 45570979) -> SNOMED CT 444074 Maps
+        to; only standard target. Activity qualifier has no separate SNOMED CT target -> broader. :
+        crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8019.1" source="V8019" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8019 = Swedish 5-char extension of V80.1 (collision with pedestrian or animal), 5th char
+        SNOMED CT 36198007 = unspecified activity. Parent V80.1 (ICD10 45570979) -> SNOMED CT 444074 Maps to;
+        only standard target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk
+        via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8020.1" source="V8020" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8020 = Swedish 5-char extension of V80.2 (rider/occupant injured in collision with pedal
+        cycle), 5th char SNOMED CT 36198007 = sport. Parent V80.2 (ICD10 45561301) -> SNOMED CT 444074 (Victim
+        of vehicular AND/OR traffic accident) Maps to; only standard target. Activity qualifier has no
+        separate SNOMED CT target -> broader. : crosswalk via parent, Swedish extension not independently
+        re-verified.
+        """
+}
+mapping "V8021.1" source="V8021" target="417746004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 242151002 417746004 [GPS] [IPS] [GPFP]"
+}
+mapping "V8021.4" source="V8021" target="242151002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8022.1" source="V8022" target="242151002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8023.1" source="V8023" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8023 = Swedish 5-char extension of V80.2 (collision with pedal cycle), 5th char SNOMED CT
+        36198007 = other activity. Parent V80.2 (ICD10 45561301) -> SNOMED CT 444074 Maps to; only standard
+        target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk via parent,
+        Swedish extension not independently re-verified.
+        """
+}
+mapping "V8024.1" source="V8024" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8024 = Swedish 5-char extension of V80.2 (collision with pedal cycle), 5th char SNOMED CT
+        36198007 = vital activity. Parent V80.2 (ICD10 45561301) -> SNOMED CT 444074 Maps to; only standard
+        target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk via parent,
+        Swedish extension not independently re-verified.
+        """
+}
+mapping "V8028.1" source="V8028" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8028 = Swedish 5-char extension of V80.2 (collision with pedal cycle), 5th char SNOMED CT
+        36198007 = other specified activity. Parent V80.2 (ICD10 45561301) -> SNOMED CT 444074 Maps to;
+        only standard target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk
+        via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8029.1" source="V8029" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8029 = Swedish 5-char extension of V80.2 (collision with pedal cycle), 5th char SNOMED CT
+        36198007 = unspecified activity. Parent V80.2 (ICD10 45561301) -> SNOMED CT 444074 Maps to; only
+        standard target. Activity qualifier has no separate SNOMED CT target -> broader. : crosswalk via
+        parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8030.1" source="V8030" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8030 = Swedish 5-char extension of V80.3 (rider/occupant injured in collision with two-
+        or three-wheeled motor vehicle), 5th char SNOMED CT 215189007 36198007 = sport. Parent V80.3 (ICD10
+        45570981) -> SNOMED CT 442212 (Animal-drawn vehicle accident, 215189007) and 444074 (Victim of
+        vehicular AND/OR traffic accident) Maps to. Activity qualifier has no separate SNOMED CT target ->
+        broader. : crosswalk via parent, Swedish extension not independently re-verified. Note: Athena
+        maps V80.3 to 442212 (Animal-drawn vehicle accident) which is a quirk of the OMOP crosswalk but
+        is the standard target. Alt 444074 weaker (broader victim concept).
+        """
+}
+mapping "V8030.2" source="V8030" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8031.1" source="V8031" target="214149008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8032.1" source="V8032" target="214166005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8033.1" source="V8033" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8033 = Swedish 5-char extension of V80.3 (collision with two-/three-wheeled motor
+        vehicle), 5th char SNOMED CT 215189007 36198007 = other activity. Parent V80.3 (ICD10 45570981) ->
+        SNOMED CT 442212 and 444074 Maps to; only standard targets. Activity qualifier has no separate
+        SNOMED CT target -> broader. : crosswalk via parent, Swedish extension not independently
+        re-verified.
+        """
+}
+mapping "V8033.2" source="V8033" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8034.1" source="V8034" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8034 = Swedish 5-char extension of V80.3 (collision with two-/three-wheeled motor
+        vehicle), 5th char SNOMED CT 215189007 36198007 = vital activity. Parent V80.3 (ICD10 45570981) ->
+        SNOMED CT 442212 and 444074 Maps to; only standard targets. Activity qualifier has no separate
+        SNOMED CT target -> broader. : crosswalk via parent, Swedish extension not independently
+        re-verified.
+        """
+}
+mapping "V8034.2" source="V8034" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8038.1" source="V8038" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8038 = Swedish 5-char extension of V80.3 (collision with two-/three-wheeled motor
+        vehicle), 5th char SNOMED CT 215189007 36198007 = other specified activity. Parent V80.3 (ICD10
+        45570981) -> SNOMED CT 442212 and 444074 Maps to; only standard targets. Activity qualifier has no
+        separate SNOMED CT target -> broader. : crosswalk via parent, Swedish extension not independently
+        re-verified.
+        """
+}
+mapping "V8038.2" source="V8038" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8039.1" source="V8039" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8039 = Swedish 5-char extension of V80.3 (collision with two-/three-wheeled motor
+        vehicle), 5th char SNOMED CT 215189007 36198007 = unspecified activity. Parent V80.3 (ICD10
+        45570981) -> SNOMED CT 442212 and 444074 Maps to; only standard targets. Activity qualifier has no
+        separate SNOMED CT target -> broader. : crosswalk via parent, Swedish extension not independently
+        re-verified.
+        """
+}
+mapping "V8039.2" source="V8039" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8040.1" source="V8040" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8040 = Swedish 5-char extension of V80.4 (rider/occupant injured in collision with car,
+        pick-up truck, van, heavy transport vehicle or bus), 5th char SNOMED CT 215189007 36198007 = sport.
+        Parent V80.4 (ICD10 45537296) -> SNOMED CT 442212 (Animal-drawn vehicle accident) and 444074
+        (Victim of vehicular AND/OR traffic accident) Maps to. Activity qualifier has no separate SNOMED CT
+        target -> broader. : crosswalk via parent, Swedish extension not independently re-verified. Alt
+        444074 weaker (broader victim concept).
+        """
+}
+mapping "V8040.2" source="V8040" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8041.1" source="V8041" target="214149008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8042.1" source="V8042" target="214166005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8043.1" source="V8043" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8043 = Swedish 5-char extension of V80.4 (collision with car/truck/bus), 5th char SNOMED CT
+        215189007 36198007 = other activity. Parent V80.4 (ICD10 45537296) -> SNOMED CT 442212 and 444074
+        Maps to; only standard targets. Activity qualifier has no separate SNOMED CT target -> broader. :
+        crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8043.2" source="V8043" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8044.1" source="V8044" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8044 = Swedish 5-char extension of V80.4 (collision with car/truck/bus), 5th char SNOMED CT
+        215189007 36198007 = vital activity. Parent V80.4 (ICD10 45537296) -> SNOMED CT 442212 and 444074
+        Maps to; only standard targets. Activity qualifier has no separate SNOMED CT target -> broader. :
+        crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8044.2" source="V8044" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8048.1" source="V8048" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8048 = Swedish 5-char extension of V80.4 (collision with car/truck/bus), 5th char SNOMED CT
+        215189007 36198007 = other specified activity. Parent V80.4 (ICD10 45537296) -> SNOMED CT 442212
+        and 444074 Maps to; only standard targets. Activity qualifier has no separate SNOMED CT target ->
+        broader. : crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8048.2" source="V8048" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8049.1" source="V8049" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8049 = Swedish 5-char extension of V80.4 (collision with car/truck/bus), 5th char SNOMED CT
+        215189007 36198007 = unspecified activity. Parent V80.4 (ICD10 45537296) -> SNOMED CT 442212 and
+        444074 Maps to; only standard targets. Activity qualifier has no separate SNOMED CT target ->
+        broader. : crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8049.2" source="V8049" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8050.1" source="V8050" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8050 = Swedish 5-char extension of V80.5 (rider/occupant injured in collision with other
+        specified motor vehicle), 5th char SNOMED CT 36198007 = sport. Parent V80.5 (ICD10 45756060) ->
+        SNOMED CT 444074 (Victim of vehicular AND/OR traffic accident, 36198007) Maps to; only standard
+        target. Activity qualifier has no separate SNOMED CT concept -> broader. : crosswalk via parent,
+        Swedish extension not independently re-verified.
+        """
+}
+mapping "V8051.1" source="V8051" target="214149008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8052.1" source="V8052" target="214166005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8053.1" source="V8053" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8053 = Swedish 5-char extension of V80.5 (collision with other specified motor vehicle),
+        5th char SNOMED CT 36198007 = other activity. Parent V80.5 (ICD10 45756060) -> SNOMED CT 444074 Maps
+        to; only standard target. Activity qualifier has no separate SNOMED CT target -> broader. :
+        crosswalk via parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V8054.1" source="V8054" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8054 (ICD-10-SE) = SNOMED CT 36198007 = rider/occupant of animal-drawn vehicle injured in
+        collision with other specified motor vehicle while engaged in vital activity
+        (rest/sleep/meals/personal hygiene). Swedish national extension of ICD-10 V80.5 (Athena concept
+        45756060) adding an activity-context 4th digit. Base V80.5 has Athena crosswalk to SNOMED CT 444074
+        (Victim of vehicular AND/OR traffic accident, SCTID 36198007). Target subsumes source: it
+        captures the vehicular-accident nature but drops the Swedish activity dimension, which has no
+        SNOMED CT representation. Moderate tier: verified crosswalk but unspecified-source/lost-dimension
+        breadth.
+        """
+}
+mapping "V8058.1" source="V8058" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8058 (ICD-10-SE) = SNOMED CT 36198007 = V80.5 base + Swedish activity suffix. Same base as
+        V8054 (Athena 45756060 → SNOMED CT 444074). Target subsumes source; activity dimension lost.
+        Moderate tier per V8054 rationale.
+        """
+}
+mapping "V8059.1" source="V8059" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8059 (ICD-10-SE) = SNOMED CT 36198007 = V80.5 base + Swedish activity suffix. Same base as
+        V8054 (Athena 45756060 → SNOMED CT 444074). Target subsumes source. Moderate tier per V8054
+        rationale.
+        """
+}
+mapping "V8060.1" source="V8060" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8060 (ICD-10-SE) = SNOMED CT 215189007 36198007 = rider/occupant of animal-drawn vehicle
+        injured in collision with railway train while doing sport/exercise. Swedish extension of ICD-10
+        V80.6 (Athena 45756061). Base V80.6 has Athena crosswalk to SNOMED CT 442212 (Animal-drawn vehicle
+        accident, SCTID 215189007) and 444074 (Victim of vehicular AND/OR traffic accident, SCTID
+        36198007). 442212 is the primary target: specific to the V80 animal-drawn-vehicle accident
+        family, one-level broader (drops Swedish activity context). 444074 is a broader secondary
+        (general vehicular accident victim). High/moderate tiers: verified crosswalk; 442212 loses only
+        the activity dimension; 444074 additionally loses the animal-drawn-vehicle specificity.
+        """
+}
+mapping "V8060.2" source="V8060" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8061.1" source="V8061" target="269662007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8062.1" source="V8062" target="215189007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8063.1" source="V8063" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8063 (ICD-10-SE) = SNOMED CT 215189007 36198007 = V80.6 base + Swedish activity suffix. Same
+        base and crosswalk as V8060 (Athena 45756061 → 442212 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8060 rationale.
+        """
+}
+mapping "V8063.2" source="V8063" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8064.1" source="V8064" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8064 (ICD-10-SE) = SNOMED CT 215189007 36198007 = V80.6 base + Swedish activity suffix. Same
+        base and crosswalk as V8060 (Athena 45756061 → 442212 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8060 rationale.
+        """
+}
+mapping "V8064.2" source="V8064" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8068.1" source="V8068" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8068 (ICD-10-SE) = SNOMED CT 215189007 36198007 = V80.6 base + Swedish activity suffix. Same
+        base and crosswalk as V8060 (Athena 45756061 → 442212 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8060 rationale.
+        """
+}
+mapping "V8068.2" source="V8068" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8069.1" source="V8069" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8069 (ICD-10-SE) = SNOMED CT 215189007 36198007 = V80.6 base + Swedish activity suffix. Same
+        base and crosswalk as V8060 (Athena 45756061 → 442212 + 444074). Targets subsumes source;
+        activity dimension lost. Tiers per V8060 rationale.
+        """
+}
+mapping "V8069.2" source="V8069" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8070.1" source="V8070" target="36198007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8070 (ICD-10-SE) = SNOMED CT 36198007 = rider/occupant of animal-drawn vehicle injured in
+        collision with other nonmotor vehicle while doing sport/exercise. Swedish extension of ICD-10
+        V80.7 (Athena 45590330). Base V80.7 has Athena crosswalk to SNOMED CT 444074 (Victim of vehicular
+        AND/OR traffic accident, SCTID 36198007). Target subsumes source; activity dimension lost.
+        Moderate tier: verified crosswalk but broad target with lost activity context.
+        """
+}
+mapping "V8071.1" source="V8071" target="215189007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8072.1" source="V8072" target="417746004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 269661000 417746004 [GPS] [IPS] [GPFP]"
+}
+mapping "V8072.4" source="V8072" target="269661000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8073.1" source="V8073" target="271579008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8074.1" source="V8074" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8074 (ICD-10-SE) = SNOMED CT 36198007 = V80.7 base + Swedish activity suffix. Same base as
+        V8070 (Athena 45590330 → 444074). Target subsumes source; activity dimension lost. Moderate tier
+        per V8070 rationale.
+        """
+}
+mapping "V8078.1" source="V8078" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8078 (ICD-10-SE) = SNOMED CT 36198007 = V80.7 base + Swedish activity suffix. Same base as
+        V8070 (Athena 45590330 → 444074). Target subsumes source; activity dimension lost. Moderate tier
+        per V8070 rationale.
+        """
+}
+mapping "V8079.1" source="V8079" target="36198007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8080.1" source="V8080" target="271580006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8080 (ICD-10-SE) = SNOMED CT 271580006 = rider/occupant of animal-drawn vehicle injured in
+        collision with fixed or stationary object while doing sport/exercise. Swedish extension of
+        ICD-10 V80.8 (Athena 45590334). Base V80.8 has Athena crosswalk to SNOMED CT 4152176 (Collision
+        between animal-drawn vehicle and fixed object, SCTID 271580006). Target is specific to the V80.8
+        accident type and one-level broader (drops Swedish activity dimension). High tier: verified
+        crosswalk, minimal breadth loss.
+        """
+}
+mapping "V8081.1" source="V8081" target="274909002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8082.1" source="V8082" target="271580006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8083.1" source="V8083" target="271580006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8083 (ICD-10-SE) = SNOMED CT 271580006 = V80.8 base + Swedish activity suffix. Same base as
+        V8080 (Athena 45590334 → 4152176). Target subsumes source; activity dimension lost. High tier
+        per V8080 rationale.
+        """
+}
+mapping "V8084.1" source="V8084" target="271580006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8084 (ICD-10-SE) = SNOMED CT 271580006 = V80.8 base + Swedish activity suffix. Same base as
+        V8080 (Athena 45590334 → 4152176). Target subsumes source; activity dimension lost. High tier
+        per V8080 rationale.
+        """
+}
+mapping "V8088.1" source="V8088" target="271580006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8088 (ICD-10-SE) = SNOMED CT 271580006 = V80.8 base + Swedish activity suffix. Same base as
+        V8080 (Athena 45590334 → 4152176). Target subsumes source; activity dimension lost. High tier
+        per V8080 rationale.
+        """
+}
+mapping "V8089.1" source="V8089" target="271580006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8089 (ICD-10-SE) = SNOMED CT 271580006 = V80.8 base + Swedish activity suffix. Same base as
+        V8080 (Athena 45590334 → 4152176). Target subsumes source; activity dimension lost. High tier
+        per V8080 rationale.
+        """
+}
+mapping "V8090.1" source="V8090" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8090 (ICD-10-SE) = SNOMED CT 215189007 418161006 = rider/occupant of animal-drawn vehicle
+        injured in other and unspecified transport accidents while doing sport/exercise. Swedish
+        extension of ICD-10 V80.9 (Athena 45580678). Base V80.9 has Athena crosswalk to SNOMED CT 442212
+        (Animal-drawn vehicle accident, SCTID 215189007) and 4168046 (Vehicle accident, SCTID
+        418161006). 442212 is the primary target: specific to the V80 animal-drawn-vehicle accident
+        family, one-level broader (drops Swedish activity context). 4168046 is a broad secondary
+        (general vehicle accident). High/low tiers: 442212 verified crosswalk with minimal breadth loss;
+        4168046 is a very broad ancestor.
+        """
+}
+mapping "V8090.2" source="V8090" target="418161006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8091.1" source="V8091" target="269662007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8092.1" source="V8092" target="215189007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8093.1" source="V8093" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8093 (ICD-10-SE) = SNOMED CT 215189007 418161006 = V80.9 base + Swedish activity suffix.
+        Same base and crosswalk as V8090 (Athena 45580678 → 442212 + 4168046). Targets subsumes source;
+        activity dimension lost. Tiers per V8090 rationale.
+        """
+}
+mapping "V8093.2" source="V8093" target="418161006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8094.1" source="V8094" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8094 (ICD-10-SE) = SNOMED CT 215189007 418161006 = V80.9 base + Swedish activity suffix.
+        Same base and crosswalk as V8090 (Athena 45580678 → 442212 + 4168046). Targets subsumes source;
+        activity dimension lost. Tiers per V8090 rationale.
+        """
+}
+mapping "V8094.2" source="V8094" target="418161006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8098.1" source="V8098" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8098 (ICD-10-SE) = SNOMED CT 215189007 418161006 = V80.9 base + Swedish activity suffix.
+        Same base and crosswalk as V8090 (Athena 45580678 → 442212 + 4168046). Targets subsumes source;
+        activity dimension lost. Tiers per V8090 rationale.
+        """
+}
+mapping "V8098.2" source="V8098" target="418161006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V8099.1" source="V8099" target="215189007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V8099 (ICD-10-SE) = SNOMED CT 215189007 418161006 = V80.9 base + Swedish activity suffix.
+        Same base and crosswalk as V8090 (Athena 45580678 → 442212 + 4168046). Targets subsumes source;
+        activity dimension lost. Tiers per V8090 rationale.
+        """
+}
+mapping "V8099.2" source="V8099" target="418161006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,277 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W226-W22
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W226.1" source="W226" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W226 (ICD-10-SE) = struck by/against other object(s) in an industrial area/construction
+        site (place only). Swedish extension of WHO W22; WHO W22 (Athena 45756260) Maps-to SNOMED CT 441192
+        (217848007 SNOMED CT 217848007, standard). Source adds a place qualifier; target subsumes it.
+        One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2260.1" source="W2260" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2260 (ICD-10-SE) = struck by/against other object(s) in an industrial area/construction
+        site, while doing sport/exercise. Swedish 7-char extension of WHO W22; see W226 for reasoning.
+        WHO W22 Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2261.1" source="W2261" target="217848007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2261 = Swedish national extension of W22 SNOMED CT 217848007 at an industrial/construction
+        area during leisure/play. Swedish codes add a place+activity axis (7th-char extension) with no
+        standard OMOP/SNOMED CT equivalent combining both. Parent W22 crosswalks via Athena to SNOMED CT
+        441192 (Accidentally struck by or against objects or persons, concept_code 217848007), which
+        legitimately subsumes every W22XX child regardless of place/activity. One-level broader,
+        crosswalk-verified via parent W22.
+        """
+}
+mapping "W2262.1" source="W2262" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2262 = Swedish extension of W22 at industrial/construction area during paid work. Parent
+        W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons),
+        which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2263.1" source="W2263" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2263 = Swedish extension of W22 at industrial/construction area during other activity.
+        Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or
+        persons), which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2264.1" source="W2264" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2264 = Swedish extension of W22 at industrial/construction area during vital activity
+        (rest/sleep/meals/hygiene). Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by
+        or against objects or persons), which subsumes the place+activity granularity. One-level
+        broader, crosswalk-verified.
+        """
+}
+mapping "W2268.1" source="W2268" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2268 = Swedish extension of W22 at industrial/construction area, other specified
+        activity. Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects
+        or persons), which subsumes the place+activity granularity. One-level broader,
+        crosswalk-verified.
+        """
+}
+mapping "W2269.1" source="W2269" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2269 = Swedish extension of W22 at industrial/construction area, unspecified activity.
+        Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or
+        persons), which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W227.1" source="W227" target="217848007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W227 = Swedish code for W22 SNOMED CT 217848007 on a farm/agricultural setting (place
+        qualifier only, no activity axis). SNOMED CT 441192 (Accidentally struck by or against objects or
+        persons) is the crosswalk-verified Athena target for the W22 family.
+        """
+}
+mapping "W2270.1" source="W2270" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2270 = Swedish extension of W22 on farm during sport/exercise. Parent W22 maps via
+        Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes
+        the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2271.1" source="W2271" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2271 = Swedish extension of W22 on farm during leisure/play. Parent W22 maps via Athena
+        to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes the
+        place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2272.1" source="W2272" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2272 = Swedish extension of W22 on farm during paid work. Parent W22 maps via Athena to
+        SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes the
+        place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2273.1" source="W2273" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2273 = Swedish extension of W22 on farm during other activity. Parent W22 maps via
+        Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes
+        the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2274.1" source="W2274" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2274 = Swedish extension of W22 on farm during vital activity
+        (rest/sleep/meals/hygiene). Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by
+        or against objects or persons), which subsumes the place+activity granularity. One-level
+        broader, crosswalk-verified.
+        """
+}
+mapping "W2278.1" source="W2278" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2278 = Swedish extension of W22 on farm, other specified activity. Parent W22 maps via
+        Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes
+        the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2279.1" source="W2279" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2279 = Swedish extension of W22 on farm, unspecified activity. Parent W22 maps via
+        Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which subsumes
+        the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W228.1" source="W228" target="217848007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217848007 [GPS] [IPS]"
+}
+mapping "W2280.1" source="W2280" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2280 = Swedish extension of W22 at other specified place during sport/exercise. Parent
+        W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons),
+        which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2281.1" source="W2281" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2281 = Swedish extension of W22 at other specified place during leisure/play. Parent W22
+        maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2282.1" source="W2282" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2282 = Swedish extension of W22 at other specified place during paid work. Parent W22
+        maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2283.1" source="W2283" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2283 = Swedish extension of W22 at other specified place during other activity. Parent
+        W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons),
+        which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2284.1" source="W2284" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2284 = Swedish extension of W22 at other specified place during vital activity
+        (rest/sleep/meals/hygiene). Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by
+        or against objects or persons), which subsumes the place+activity granularity. One-level
+        broader, crosswalk-verified.
+        """
+}
+mapping "W2288.1" source="W2288" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2288 = Swedish extension of W22 at other specified place, other specified activity.
+        Parent W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or
+        persons), which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2289.1" source="W2289" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2289 = Swedish extension of W22 at other specified place, unspecified activity. Parent
+        W22 maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons),
+        which subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W229.1" source="W229" target="217900005" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        External cause code W22.9 SNOMED CT 217900005; is exact match; standard, researched code meaning
+        online
+        """
+}
+mapping "W2290.1" source="W2290" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2290 = Swedish extension of W22 at unspecified place during sport/exercise. Parent W22
+        maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2291.1" source="W2291" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2291 = Swedish extension of W22 at unspecified place during leisure/play. Parent W22
+        maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2292.1" source="W2292" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2292 = Swedish extension of W22 at unspecified place during paid work. Parent W22 maps
+        via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2293.1" source="W2293" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2293 = Swedish extension of W22 at unspecified place during other activity. Parent W22
+        maps via Athena to SNOMED CT 441192 (Accidentally struck by or against objects or persons), which
+        subsumes the place+activity granularity. One-level broader, crosswalk-verified.
+        """
+}
+mapping "W2294.1" source="W2294" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2294 SNOMED CT 217848007 is a Swedish 5-char extension of ICD-10 W22 (concept 45756260),
+        adding place= and activity= qualifiers. Target SNOMED CT 441192 (concept 217848007) is the Athena
+        crosswalk target of parent W22. SNOMED CT does not model the activity/place subdivisions of Swedish
+        external-cause codes; the parent mechanism fully subsumes the source's clinical injury meaning,
+        with the activity/place qualifier dropped. One-level broader with verified crosswalk = high.
+        """
+}
+mapping "W2298.1" source="W2298" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2298 SNOMED CT 217848007 is a Swedish 5-char extension of ICD-10 W22 (concept 45756260),
+        with place= and activity=. Target SNOMED CT 441192 (217848007) is the crosswalk target of parent
+        W22. SNOMED CT lacks activity/place subdivisions; parent fully subsumes the source. One-level
+        broader with verified crosswalk = high.
+        """
+}
+mapping "W2299.1" source="W2299" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2299 SNOMED CT 217848007 is a Swedish 5-char extension of ICD-10 W22 (concept 45756260),
+        with both place and activity unspecified. Target SNOMED CT 441192 (217848007) is the crosswalk
+        target of parent W22. Equivalent to the parent in clinical injury meaning (the
+        unspecified-unspecified qualifier is null information). One-level broader with verified
+        crosswalk = high.
+        """
+}

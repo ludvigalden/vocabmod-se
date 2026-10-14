@@ -1,0 +1,396 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes R0-R3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "R029.1" source="R029" target="372070002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R029 SNOMED CT 372070002 = Gangrene NEC (synonym for WHO R02). WHO R02 crosswalks to
+        (concept_id 439928) = Gangrenous disorder, standard=S, Disorder. : crosswalk-verified,
+        unspecified site.
+        """
+}
+mapping "R029A.1" source="R029A" target="90900004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R029B.1" source="R029B" target="128045006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R029B SNOMED CT 128045006 = Gangrenous cellulitis. Target (concept_id 435613) = Cellulitis,
+        standard=S, Disorder. No exact standard concept exists in the mirror (only site-specific or
+        mycosis-specific variants like 240780005). is more general than the gangrenous subtype; forced
+        downward narrower mapping. : real doubt, aspect loss of the qualifier.
+        """
+}
+flag "R029B.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/R029B.1"
+mapping "R029X.1" source="R029X" target="372070002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R029X SNOMED CT 372070002 = duplicate Swedish extension code for gangrene NEC (parallel to
+        R029). Same reasoning as R029: WHO R02 crosswalks to (concept_id 439928) = Gangrenous disorder,
+        standard=S. : crosswalk-verified, unspecified site.
+        """
+}
+mapping "R057.1" source="R057" target="68154008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R057 SNOMED CT 68154008 = Chronic cough. Target (concept_id 4195384) = Chronic cough,
+        standard=S, Clinical Finding. Exact 1:1 equivalence.
+        """
+}
+mapping "R059.1" source="R059" target="225576006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R068A.1" source="R068A" target="78275009" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R068A SNOMED CT 78275009 = Obstructive sleep-related breathing disorder (Swedish SE
+        extension of R06.8). OSDB is a broad umbrella spanning simple snoring through obstructive sleep
+        apnea/hypopnea in adults and children. No exact OSDB standard concept exists in the mirror; the
+        dominant clinically-coded target is (concept_id 442588) = Obstructive sleep apnea syndrome,
+        standard=S. SNOMED CT 386813002 (Abnormal breathing, the WHO R06.8 crosswalk target, concept_id
+        4305080) is broader still. Chose 78275009 as the clinically-actionable narrower target since
+        OSDB in Swedish practice usually denotes the OSA end of the spectrum. : forced narrower mapping;
+        the source is broader than OSAS.
+        """
+}
+flag "R068A.1.label-check" kind=label-contradicts-comment assertion="icd-10-se-snomed-ct@2026.1/R068A.1"
+mapping "R068W.1" source="R068W" target="386813002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R068W SNOMED CT 386813002 (Other and unspecified breathing abnormality, Swedish residual of
+        R06.8). WHO R06.8 crosswalks to (concept_id 4305080) = Abnormal breathing, standard=S.
+        Heterogeneous residual; target legitimately subsumes the source. : crosswalk-verified,
+        unspecified source.
+        """
+}
+mapping "R104A.1" source="R104A" target="35363006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R104A SNOMED CT 35363006 = Infantile colic. Target (concept_id 4146835) = Infantile colic,
+        standard=S, Clinical Finding. Exact 1:1 equivalence.
+        """
+}
+mapping "R104X.1" source="R104X" target="21522001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R104X SNOMED CT 21522001 = Abdominal pain UNS (Swedish SE residual of R10.4). WHO R10.4
+        crosswalks to (concept_id 200219) = Abdominal pain, standard=S. : crosswalk-verified,
+        unspecified source.
+        """
+}
+mapping "R119.1" source="R119" target="16932000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R119 SNOMED CT 16932000 = Nausea and vomiting. Target (concept_id 27674) = Nausea and
+        vomiting, standard=S, Disorder; WHO R11 crosswalk target. Exact 1:1 equivalence.
+        """
+}
+mapping "R119A.1" source="R119A" target="422587007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R119A SNOMED CT 422587007 = Nausea (Swedish SE subdivision of R11). Target (concept_id
+        31967) = Nausea, standard=S, Clinical Finding. Exact 1:1 equivalence; the source isolates nausea
+        from the combined R11 bucket.
+        """
+}
+mapping "R119B.1" source="R119B" target="422400008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R119B SNOMED CT 422400008 = vomiting (Swedish national extension of ICD-10 R11, isolated
+        vomiting without nausea). Target SNOMED CT 441408 (concept_code 422400008), an exact semantic
+        match. Note: the Athena ICD10 R11 crosswalk points to SNOMED CT 27674 which is broader than the
+        source (source excludes nausea); the specific concept 441408 is the correct 1:1 target.
+        """
+}
+mapping "R129.1" source="R129" target="16331000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R129 SNOMED CT 16331000 = heartburn (Swedish extension of ICD-10 R12). Target SNOMED CT 23325
+        (concept_code 16331000), confirmed by Athena ICD10 R12 crosswalk. Exact 1:1 equivalence.
+        """
+}
+mapping "R139.1" source="R139" target="40739000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R139 SNOMED CT 40739000 = dysphagia/swallowing difficulty (Swedish extension of ICD-10 R13).
+        Target SNOMED CT 31317 (concept_code 40739000), confirmed by Athena ICD10 R13 crosswalk. Exact 1:1
+        equivalence.
+        """
+}
+mapping "R149.1" source="R149" target="267052005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R149 SNOMED CT 267052005 = flatulence and related conditions (Swedish extension of ICD-10
+        R14). Target SNOMED CT 4145806 (concept_code 267052005). The source covers flatulence plus
+        unspecified, so the target legitimately subsumes the dominant (flatulence) axis but is slightly
+        narrower than the source's full scope; however no single SNOMED CT concept captures the group, and
+        4145806 is the closest standard concept. High tier: exact term match on the primary axis, with
+        minor breadth mismatch. The Athena R14 crosswalk target 4091513 is a procedure-like finding;
+        4145806 is the better disorder-level match.
+        """
+}
+mapping "R159.1" source="R159" target="72042002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 72042002 [GPS] [IPS] [GPFP] [ICNP]"
+}
+mapping "R189.1" source="R189" target="389026000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R189 SNOMED CT 389026000 = ascites (Swedish extension of ICD-10 R18). Target SNOMED CT 200528
+        (concept_code 389026000), confirmed by Athena ICD10 R18 crosswalk. Exact 1:1 equivalence.
+        """
+}
+mapping "R198A.1" source="R198A" target="427207001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R198A SNOMED CT 427207001 = abdominal compartment syndrome (Swedish extension under ICD-10
+        R19). Target SNOMED CT 443527 (concept_code 427207001). Exact semantic match on the fully-specified
+        SNOMED CT concept; no Athena crosswalk exists for this Swedish 5th-character extension, but the
+        term equivalence is verbatim.
+        """
+}
+mapping "R198W.1" source="R198W" target="386617003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R198W SNOMED CT 386617003 = (Swedish extension of ICD-10 R19.8, a heterogeneous residual
+        bucket). Target SNOMED CT 4302537 (concept_code 386617003), confirmed by the Athena ICD10 R19.8
+        crosswalk. The target is a broad parent that fully subsumes every member of this residual
+        source; low tier because the source is a heterogeneous catch-all and the target carries little
+        specific information.
+        """
+}
+mapping "R219.1" source="R219" target="271807003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R219 SNOMED CT 271807003 = unspecified skin rash/eruption (Swedish extension of ICD-10 R21).
+        Target SNOMED CT 140214 (concept_code 271807003), confirmed by the Athena ICD10 R21 crosswalk. The
+        target is a broad morphologic finding that subsumes the unspecified source. Moderate tier:
+        Athena crosswalk, unspecified source, not independently re-verified against the hierarchy.
+        """
+}
+mapping "R231A.1" source="R231A" target="279990005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R231B.1" source="R231B" target="238773009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R231B SNOMED CT 238773009 = idiopathic livedo reticularis (Swedish extension of ICD-10
+        R23.1, re-segmented for this specific clinical entity). Target SNOMED CT 4033867 (concept_code
+        238773009). Exact 1:1 semantic match; no crosswalk exists for this Swedish sub-code but the
+        SNOMED CT fully-specified name is verbatim.
+        """
+}
+mapping "R231C.1" source="R231C" target="238776001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R231C SNOMED CT 238776001 = idiopathic livedo reticularis with systemic involvement (Swedish
+        extension of ICD-10 R23.1). Target SNOMED CT 4033868 (concept_code 238776001). Exact 1:1 semantic
+        match; SNOMED CT fully-specified name is verbatim.
+        """
+}
+mapping "R231D.1" source="R231D" target="201302005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R231D SNOMED CT 201302005 = naevus anemicus / nevus anemicus (Swedish extension of ICD-10
+        R23.1). Target SNOMED CT 40397852 (concept_code 201302005). Exact 1:1 semantic match; SNOMED CT
+        concept name is the same clinical entity (British/American spelling variant only).
+        """
+}
+mapping "R231W.1" source="R231W" target="1237486008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R231W SNOMED CT 1237486008 = (Swedish residual extension of ICD-10 R23.1 Pallor). Target
+        SNOMED CT 37165080 (concept_code 1237486008), confirmed by the Athena ICD10 R23.1 crosswalk. The
+        target fully subsumes the pallor axis of the source. Low tier: the source is a heterogeneous
+        residual, so the target captures only the generic pallor meaning without specificity.
+        """
+}
+mapping "R233A.1" source="R233A" target="1156411007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R233B.1" source="R233B" target="271813007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R233C.1" source="R233C" target="238824006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R233C SNOMED CT 238824006 = Achenbach's syndrome (paroxysmal hematoma of the finger; Swedish
+        extension under ICD-10 R23.3). Target SNOMED CT 4032901 (concept_code 238824006); the SNOMED CT
+        synonym table lists as a synonym. Exact 1:1 equivalence via the SNOMED CT synonym.
+        """
+}
+mapping "R233D.1" source="R233D" target="238479007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R233D SNOMED CT 238479007 = purpura traumatica pedis, the Swedish dermatology term for black
+        heel / talon noir (a traumatic purpura of the heel/foot; Swedish extension under ICD-10 R23.3).
+        Target SNOMED CT 4030995 (concept_code 238479007). Exact 1:1 equivalence; and are established
+        clinical synonyms for the same entity.
+        """
+}
+mapping "R233E.1" source="R233E" target="271813007" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "R233W.1" source="R233W" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R234A.1" source="R234A" target="50765007" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source R234A SNOMED CT 50765007 = desquamation of the skin (Swedish extension of ICD-10 R23.4
+        Changes in skin texture). Target SNOMED CT 4179794 (concept_code 50765007). The target denotes
+        abnormal shedding of skin, matching the source's clinical meaning. High tier: exact term/concept
+        match; no Athena crosswalk for this Swedish sub-code, and is the canonical SNOMED CT concept for
+        the source's clinical intent (desquamation as a finding, not the normal physiologic process).
+        """
+}
+mapping "R234B.1" source="R234B" target="34319007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R234B SNOMED CT 34319007 = induration of the skin (Swedish extension of ICD-10 R23.4).
+        Target SNOMED CT 4145436 (concept_code 34319007). Exact 1:1 semantic match; SNOMED CT fully-specified
+        name is verbatim.
+        """
+}
+mapping "R234C.1" source="R234C" target="239065004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R234C SNOMED CT 239065004 = keratolysis exfoliativa (a superficial peeling of the
+        palms/soles; Swedish extension of ICD-10 R23.4). Target SNOMED CT 4033194 (concept_code 239065004).
+        Exact 1:1 semantic match; SNOMED CT fully-specified name is verbatim.
+        """
+}
+mapping "R234D.1" source="R234D" target="31478005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R234D SNOMED CT 31478005 = skin fissure / rhagades (Swedish extension of ICD-10 R23.4).
+        Target SNOMED CT 4135572 (concept_code 31478005), the SNOMED CT concept for fissures of the skin.
+        Exact 1:1 semantic match; is the Swedish clinical term for rhagades.
+        """
+}
+mapping "R234W.1" source="R234W" target="274672009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R234W SNOMED CT 274672009 = (Swedish residual extension of ICD-10 R23.4 Changes in skin
+        texture). Target SNOMED CT 140842 (concept_code 274672009), confirmed by the Athena ICD10 R23.4
+        crosswalk. The target fully subsumes the source. Low tier: the source is a heterogeneous
+        residual.
+        """
+}
+mapping "R238A.1" source="R238A" target="26825009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R238B.1" source="R238B" target="92465005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R238C.1" source="R238C" target="25694009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R238C SNOMED CT 25694009 = papule, unspecified (Swedish extension of ICD-10 R23.8). Target
+        SNOMED CT 4105835 (concept_code 25694009), the canonical SNOMED CT morphologic concept for a papule.
+        High tier: exact term match on the fully-specified name; no Athena crosswalk for this Swedish
+        sub-code but the SNOMED CT concept is the unambiguous standard target for an unspecified papule.
+        """
+}
+mapping "R238D.1" source="R238D" target="86708008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R238D SNOMED CT 86708008 = seborrhea, unspecified (Swedish extension of ICD-10 R23.8).
+        Target SNOMED CT 138821 (concept_code 86708008), the canonical SNOMED CT concept. High tier: exact
+        term match on the fully-specified name; the SNOMED CT concept fully covers the unspecified source.
+        No Athena crosswalk for this Swedish sub-code.
+        """
+}
+mapping "R238E.1" source="R238E" target="247434009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R238E SNOMED CT 247434009 = skin wrinkles (Swedish extension of ICD-10 R23.8). Target SNOMED CT
+        4090572 (concept_code 247434009). High tier: exact term match on the fully-specified name; the
+        SNOMED CT concept denotes the same skin finding. No Athena crosswalk for this Swedish sub-code.
+        """
+}
+mapping "R238W.1" source="R238W" target="106076001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R238W SNOMED CT 106076001 = (Swedish residual extension of ICD-10 R23.8). Target SNOMED CT
+        141960 (concept_code 106076001), confirmed by the Athena ICD10 R23 and R23.8 crosswalks. The
+        target is an extremely broad parent finding that subsumes the residual source. Weak tier: the
+        source is a heterogeneous catch-all and the target carries essentially no specific information;
+        recorded to preserve the crosswalk lead for a reviewer rather than to assert a real mapping.
+        """
+}
+mapping "R319.1" source="R319" target="53298000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 53298000 [GPS] [IPS]"
+}
+mapping "R329.1" source="R329" target="165232002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R329 SNOMED CT 165232002 = unspecified urinary incontinence (Swedish extension of ICD-10
+        R32). Target SNOMED CT 197672 (concept_code 165232002), confirmed by the Athena ICD10 R32
+        crosswalk. Exact 1:1 equivalence; the source's qualifier does not change the target concept
+        (SNOMED CT has no separate unspecified-level concept here).
+        """
+}
+mapping "R339.1" source="R339" target="782390002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R349.1" source="R349" target="271846001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R349 SNOMED CT 271846001 = anuria and oliguria (Swedish extension of ICD-10 R34, covering
+        both absent and diminished urine output). Target SNOMED CT 4158349 (concept_code 271846001),
+        confirmed by the Athena ICD10 R34 crosswalk. The target is the SNOMED CT parent concept that
+        subsumes both anuria and oliguria, so it fully contains the combined source. High tier: verified
+        crosswalk and the target legitimately covers both source entities.
+        """
+}
+mapping "R349A.1" source="R349A" target="2472002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R349A SNOMED CT 2472002 = anuria (absence of urine output). Target SNOMED CT 4090272
+        (concept_code 2472002), standard Clinical Finding. Exact 1:1 semantic equivalence; the Swedish
+        extension code names the same clinical concept as the SNOMED CT term.
+        """
+}
+mapping "R349B.1" source="R349B" target="83128009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R349B SNOMED CT 83128009 = oliguria (diminished urine output). Target SNOMED CT 4306451
+        (concept_code 83128009), standard Clinical Finding, descendant of 4158349. Exact 1:1 semantic
+        equivalence.
+        """
+}
+mapping "R359.1" source="R359" target="42021008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R359A.1" source="R359A" target="1297073009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "R359B.1" source="R359B" target="139394000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "R359C.1" source="R359C" target="162116003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source R359C SNOMED CT 162116003 = pollakiuria (frequent urination with small volumes). Target
+        SNOMED CT 4012368 (concept_code 162116003), standard Observation Clinical Finding. Near-exact
+        match; pollakiuria and increased frequency of urination denote the same clinical concept. High
+        tier rather than exact because the source is a Swedish extension code without an independent
+        Athena crosswalk.
+        """
+}
+mapping "R369.1" source="R369" target="9957009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 9957009 [GPS] [IPS] [GPFP]"
+}

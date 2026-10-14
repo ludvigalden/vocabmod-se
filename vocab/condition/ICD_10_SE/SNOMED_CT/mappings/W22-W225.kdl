@@ -1,0 +1,379 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W22-W225
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W220.1" source="W220" target="302979006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2200.1" source="W2200" target="217848007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2200 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target, fully
+        subsumes the source mechanism. Sibling W2209 (home + unspecified activity) -> 4319710
+        (stationary object); activity-specific siblings diverge (W2201/2202 -> 432788, W2204 ->
+        4312316). For no closer stationary-object variant exists; the W22 (441192) is the legitimate
+        ancestor. Broader: target subsumes mechanism axis. moderate: crosswalk follow from base
+        W22->441192, not independently re-verified.
+        """
+}
+mapping "W2201.1" source="W2201" target="217896007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2202.1" source="W2202" target="217896007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2203.1" source="W2203" target="217896007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2204.1" source="W2204" target="217118007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2208.1" source="W2208" target="217900005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2208 = Swedish ICD-10-SE extension of W22 SNOMED CT 217900005 with place= and activity=.
+        Target (Athena 4319710) =. Best available standard concept: corpus precedent for
+        home+unspecified (W2209 -> 4319710); the under home inherits the same stationary-object-at-home
+        target. Broader: target subsumes mechanism axis. moderate: follows corpus precedent (W2209 ->
+        4319710), not independently re-verified.
+        """
+}
+mapping "W2209.1" source="W2209" target="217900005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W221.1" source="W221" target="23321002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 23321002 [GPS]"
+}
+mapping "W2210.1" source="W2210" target="217848007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217848007 [GPS] [IPS]"
+}
+mapping "W2211.1" source="W2211" target="217848007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217848007 [GPS] [IPS]"
+}
+mapping "W2212.1" source="W2212" target="217848007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217848007 [GPS] [IPS]"
+}
+mapping "W2213.1" source="W2213" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2213 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: corpus precedent for institutional
+        residence (W221, W2210-W2212, W2219 all -> 441192). Broader: target subsumes mechanism axis.
+        moderate: follows corpus precedent for institutional-residence extensions, crosswalk from base
+        W22->441192.
+        """
+}
+mapping "W2214.1" source="W2214" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2214 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: corpus precedent for institutional
+        residence (W221/W2210-W2212/W2219 -> 441192); no vital-activity-specific SNOMED CT concept exists.
+        Broader: target subsumes mechanism axis. moderate: follows corpus precedent, crosswalk from base
+        W22->441192.
+        """
+}
+mapping "W2218.1" source="W2218" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2218 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: corpus precedent for institutional
+        residence (W221/W2210-W2212/W2219 -> 441192). Broader: target subsumes mechanism axis. moderate:
+        follows corpus precedent, crosswalk from base W22->441192.
+        """
+}
+mapping "W2219.1" source="W2219" target="217848007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217848007 [GPS] [IPS]"
+}
+mapping "W222.1" source="W222" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W222 = Swedish ICD-10-SE 4-char extension of W22 SNOMED CT 217848007 with place= (no
+        activity dimension). Target (Athena 441192) =. Best available standard concept: W22 base
+        crosswalk target; corpus precedent for extensions without a closer place/activity-specific
+        target is the base 441192 (W228 other specified places -> 441192). Broader: target subsumes
+        mechanism axis. moderate: crosswalk follow from base W22->441192, not independently re-verified.
+        """
+}
+mapping "W2220.1" source="W2220" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2220 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; no
+        school+sport-specific SNOMED CT standard concept exists for. Broader: target subsumes mechanism
+        axis. moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2221.1" source="W2221" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2221 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; no
+        school+leisure-specific SNOMED CT standard concept exists. Broader: target subsumes mechanism axis.
+        moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2222.1" source="W2222" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2222 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; no
+        school+work-specific SNOMED CT standard concept exists. Broader: target subsumes mechanism axis.
+        moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2223.1" source="W2223" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2223 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; no
+        school+other-activity-specific SNOMED CT standard concept exists. Broader: target subsumes
+        mechanism axis. moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2224.1" source="W2224" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2224 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; no
+        vital-activity-specific SNOMED CT standard concept exists. Broader: target subsumes mechanism axis.
+        moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2228.1" source="W2228" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2228 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; corpus
+        precedent W228 (other specified places) -> 441192. Broader: target subsumes mechanism axis.
+        moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2229.1" source="W2229" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2229 = Swedish ICD-10-SE extension of W22 SNOMED CT 217848007 with place= and activity=.
+        Target (Athena 441192) =. Best available standard concept: W22 base crosswalk target; corpus
+        precedent W228 (other specified places) -> 441192. Broader: target subsumes mechanism axis.
+        moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W223.1" source="W223" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W223 = Swedish ICD-10-SE 4-char extension of W22 SNOMED CT 217848007 with place= (no
+        activity dimension). Target (Athena 441192) =. Best available standard concept: W22 base
+        crosswalk target; although 435997 exists, W223 is specifically (not sports-equipment as W21), so
+        the W22 base target is the correct ancestor rather than the sports-context concept. Broader:
+        target subsumes mechanism axis. moderate: crosswalk follow from base W22->441192.
+        """
+}
+mapping "W2230.1" source="W2230" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2230 (ICD-10-SE) = SNOMED CT 217848007: struck by/against other object(s) at a sports
+        venue, while doing sport/exercise. This is a Swedish 7-character extension of WHO ICD-10 W22
+        (Striking against or struck by other object(s)). The WHO parent W22 (Athena concept 45756260)
+        carries a crosswalk to SNOMED CT 441192 (concept_code 217848007, standard concept, Observation
+        domain). The Swedish extension subdivides W22 by place and activity; no SNOMED CT concept exists at
+        that combined granularity. Target 441192 fully subsumes every W22.XXX place/activity variant
+        (source is a child of the parent the target represents), so this is a one-level broader map with
+        a verified crosswalk. Confidence per rubric §1 (high).
+        """
+}
+mapping "W2231.1" source="W2231" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2231 (ICD-10-SE) = struck by/against other object(s) at a sports venue, during
+        play/leisure. Swedish 7-char extension of WHO W22; see W2230 entry for full reasoning. WHO W22
+        (Athena 45756260) Maps-to SNOMED CT 441192 (217848007 SNOMED CT 217848007, standard). Target subsumes
+        the source (one-level broader, verified crosswalk).
+        """
+}
+mapping "W2232.1" source="W2232" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2232 (ICD-10-SE) = struck by/against other object(s) at a sports venue, while working
+        for profit. Swedish 7-char extension of WHO W22; see W2230 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2233.1" source="W2233" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2233 (ICD-10-SE) = struck by/against other object(s) at a sports venue, during other
+        forms of work. Swedish 7-char extension of WHO W22; see W2230 for reasoning. WHO W22 Maps-to
+        SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2234.1" source="W2234" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2234 (ICD-10-SE) = struck by/against other object(s) at a sports venue, during vital
+        activities (rest/sleep/eating/hygiene). Swedish 7-char extension of WHO W22; see W2230 for
+        reasoning. WHO W22 Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk;
+        confidence.
+        """
+}
+mapping "W2238.1" source="W2238" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2238 (ICD-10-SE) = struck by/against other object(s) at a sports venue, other specified
+        activities. Swedish 7-char extension of WHO W22; see W2230 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2239.1" source="W2239" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2239 (ICD-10-SE) = struck by/against other object(s) at a sports venue, unspecified
+        activity. Swedish 7-char extension of WHO W22; see W2230 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W224.1" source="W224" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W224 (ICD-10-SE) = struck by/against other object(s) on a street/road (place only, no
+        activity qualifier). Swedish extension of WHO W22; WHO W22 (Athena 45756260) Maps-to SNOMED CT
+        441192 (217848007 SNOMED CT 217848007, standard). Source adds a street/road place qualifier absent
+        in the target; target fully subsumes the source. One-level broader, verified crosswalk;
+        confidence.
+        """
+}
+mapping "W2240.1" source="W2240" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2240 (ICD-10-SE) = struck by/against other object(s) on a street/road, while doing
+        sport/exercise. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to
+        SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2241.1" source="W2241" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2241 (ICD-10-SE) = struck by/against other object(s) on a street/road, during
+        play/leisure. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to
+        SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2242.1" source="W2242" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2242 (ICD-10-SE) = struck by/against other object(s) on a street/road, while working for
+        profit. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2243.1" source="W2243" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2243 (ICD-10-SE) = struck by/against other object(s) on a street/road, other forms of
+        work. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to SNOMED CT 441192
+        (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2244.1" source="W2244" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2244 (ICD-10-SE) = struck by/against other object(s) on a street/road, during vital
+        activities. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2248.1" source="W2248" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2248 (ICD-10-SE) = struck by/against other object(s) on a street/road, other specified
+        activities. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2249.1" source="W2249" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2249 (ICD-10-SE) = struck by/against other object(s) on a street/road, unspecified
+        activity. Swedish 7-char extension of WHO W22; see W224 for reasoning. WHO W22 Maps-to SNOMED CT
+        441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W225.1" source="W225" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W225 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area (place
+        only). Swedish extension of WHO W22; WHO W22 (Athena 45756260) Maps-to SNOMED CT 441192 (217848007
+        SNOMED CT 217848007, standard). Source adds a place qualifier; target subsumes it. One-level
+        broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2250.1" source="W2250" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2250 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area, while
+        doing sport/exercise. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22
+        Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2251.1" source="W2251" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2251 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area,
+        during play/leisure. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22
+        Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2252.1" source="W2252" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2252 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area, while
+        working for profit. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22 Maps-to
+        SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2253.1" source="W2253" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2253 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area, other
+        forms of work. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22 Maps-to
+        SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2254.1" source="W2254" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2254 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area,
+        during vital activities. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22
+        Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2258.1" source="W2258" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2258 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area, other
+        specified activities. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22
+        Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}
+mapping "W2259.1" source="W2259" target="217848007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2259 (ICD-10-SE) = struck by/against other object(s) in a shop/trade/service area,
+        unspecified activity. Swedish 7-char extension of WHO W22; see W225 for reasoning. WHO W22
+        Maps-to SNOMED CT 441192 (217848007). One-level broader, verified crosswalk; confidence.
+        """
+}

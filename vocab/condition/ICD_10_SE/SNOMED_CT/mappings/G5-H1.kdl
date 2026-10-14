@@ -1,0 +1,447 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes G5-H1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "G550A.1" source="G550A" target="193118002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G550A SNOMED CT 193118002 = compression of nerve roots/plexus in cervical spine in
+        neoplastic disease. SNOMED CT 4102360 = (concept_code 193118002), the standard concept that the
+        parent ICD-10 G55.0 maps to via Athena edge. The Swedish subcode adds a cervical-spine site
+        modifier absent from the SNOMED CT parent; the SNOMED CT target fully subsumes the source (every
+        cervical neoplastic compression is a neoplastic nerve root compression), so the relationship is
+        broader (target subsumes source). High tier: well-understood one-level breadth mismatch with
+        verified crosswalk.
+        """
+}
+mapping "G550J.1" source="G550J" target="193118002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G550J = compression of nerve roots/plexus in thoracic spine in neoplastic disease. Same
+        reasoning as G550A: SNOMED CT 4102360 SNOMED CT 193118002 fully subsumes the source (thoracic site is
+        a child of the unspecified parent). Athena crosswalk for G55.0 → 4102360 is verified. High tier,
+        broader.
+        """
+}
+mapping "G550K.1" source="G550K" target="193118002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G550K = compression of nerve roots/plexus in lumbar spine in neoplastic disease. Same
+        reasoning as G550A/J: SNOMED CT 4102360 fully subsumes the source (lumbar site is a child of the
+        unspecified parent). Verified crosswalk. High tier, broader.
+        """
+}
+mapping "G550X.1" source="G550X" target="193118002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G550X = compression of nerve roots/plexus, unspecified site, in neoplastic disease.
+        Co-extensive with SNOMED CT 4102360 SNOMED CT 193118002 (Athena edge from G55.0). Exact equivalence at
+        the unspecified level.
+        """
+}
+mapping "G562B.1" source="G562B" target="193135003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G562B SNOMED CT 193135003 = ulnar nerve entrapment at shoulder/upper arm. SNOMED CT 40391559 =
+        (concept_code 193135003). The Swedish code adds a site modifier (shoulder/upper arm) absent from
+        the SNOMED CT general concept; the SNOMED CT parent fully contains the source. SNOMED CT does have
+        site-specific ulnar entrapment concepts (e.g. at elbow 230631009, at wrist 230632002) but none
+        for the shoulder/upper-arm level; the parent is the best available standard target. Moderate
+        tier: best-available parent, site specificity lost.
+        """
+}
+mapping "G562C.1" source="G562C" target="230631009" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G562C SNOMED CT 230631009 = ulnar nerve entrapment at elbow/forearm. SNOMED CT 4043721 =
+        (concept_code 230631009). Site matches (elbow); the source also covers forearm, but the
+        entrapment clinically localises to the elbow (cubital tunnel), making 4043721 the closest
+        standard concept. Athena has the elbow-specific concept as standard. High tier.
+        """
+}
+mapping "G562D.1" source="G562D" target="230632002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G562D SNOMED CT 230632002 = ulnar nerve entrapment at wrist/hand. SNOMED CT 40429586 =
+        (concept_code 230632002). Site matches; the wrist-level entrapment (Guyon's canal) is the
+        standard concept the source points to. High tier.
+        """
+}
+mapping "G562X.1" source="G562X" target="193135003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G562X SNOMED CT 193135003 = ulnar nerve entrapment, unspecified site. SNOMED CT 40391559 =
+        (concept_code 193135003). Co-extensive at the unspecified level.
+        """
+}
+mapping "G563B.1" source="G563B" target="609590004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G563B SNOMED CT 609590004 = radial nerve entrapment at shoulder/upper arm. SNOMED CT 43531026 =
+        (concept_code 609590004), the parent standard concept. No site-specific radial entrapment
+        concept for the shoulder/upper-arm level exists in SNOMED CT; the parent fully contains the source.
+        Moderate tier: best-available parent, site specificity lost.
+        """
+}
+mapping "G563C.1" source="G563C" target="609590004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G563C SNOMED CT 609590004 = radial nerve entrapment at elbow/forearm. SNOMED CT 43531026 = is
+        the best available standard parent; the SNOMED CT posterior interosseous/superficial branch
+        entrapment concepts are partial/narrower and not direct equivalents of the ICD source. Moderate
+        tier.
+        """
+}
+mapping "G563D.1" source="G563D" target="609590004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G563D SNOMED CT 609590004 = radial nerve entrapment at wrist/hand. SNOMED CT 43531026 = is the
+        closest parent; the (942021000000109) is a site-specific descendant but represents only the
+        superficial branch, not the whole radial nerve. Moderate tier: best-available parent.
+        """
+}
+mapping "G563X.1" source="G563X" target="609590004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G563X SNOMED CT 609590004 = radial nerve entrapment, unspecified site. SNOMED CT 43531026 =
+        (concept_code 609590004). Co-extensive at the unspecified level.
+        """
+}
+mapping "G649.1" source="G649" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G710A.1" source="G710A" target="76670001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G710A SNOMED CT 76670001 = hereditary muscular dystrophy, Duchenne type. SNOMED CT 4296473 =
+        (concept_code 76670001). Exact clinical equivalence.
+        """
+}
+mapping "G710B.1" source="G710B" target="111507009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G710B SNOMED CT 111507009 = hereditary muscular dystrophy, Becker (benign) type. SNOMED CT
+        40274880 = (concept_code 111507009), the modern standard active concept. Exact clinical
+        equivalence.
+        """
+}
+mapping "G710W.1" source="G710W" target="73297009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G710W SNOMED CT 73297009 = other specified muscular dystrophy (a residual bucket for
+        non-Duchenne/Becker/congenital forms). SNOMED CT 4247802 = (concept_code 73297009), the parent
+        standard concept. The source is heterogeneous; the parent is the best available standard
+        concept. Moderate tier: residual source, broader target, partially unspecified.
+        """
+}
+mapping "G710X.1" source="G710X" target="73297009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G710X SNOMED CT 73297009 = muscular dystrophy (not congenital), unspecified. SNOMED CT 4247802
+        = (concept_code 73297009), the standard concept that ICD-10 G71.0 maps to via Athena. At the
+        unspecified level the two are effectively co-extensive (excluding congenital forms, which the
+        SNOMED CT parent does include via its descendants but the parent concept itself does not assert);
+        the exclusion of congenital is handled at the ICD chapter level. High tier.
+        """
+}
+mapping "G723A.1" source="G723A" target="240093008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G723A SNOMED CT 240093008 = hypokalemic periodic paralysis. SNOMED CT 4344049 = (concept_code
+        240093008). Exact clinical equivalence.
+        """
+}
+mapping "G723B.1" source="G723B" target="15973007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G723B SNOMED CT 15973007 = hyperkalemic periodic paralysis. SNOMED CT 40325524 = (concept_code
+        15973007). Exact clinical equivalence; the familial form is the standard SNOMED CT representation
+        of hyperkalemic periodic paralysis.
+        """
+}
+mapping "G801A.1" source="G801A" target="58193001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G801A SNOMED CT 58193001 = cerebral palsy, spastic diplegia, in premature infants. SNOMED CT
+        132617 = (concept_code 58193001), the standard concept that ICD-10 G80.1 maps to via Athena. The
+        prematurity modifier is aetiology/context, not a different disorder; the spastic diplegia
+        concept is the standard clinical match. Exact equivalence at the disorder level.
+        """
+}
+mapping "G801B.1" source="G801B" target="58193001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G801B SNOMED CT 58193001 = cerebral palsy, spastic diplegia, in term-born infants. SNOMED CT
+        132617 = (concept_code 58193001), Athena crosswalk target of G80.1. Same reasoning as G801A: the
+        gestational-age modifier is context, not a different disorder. Exact equivalence at the disorder
+        level.
+        """
+}
+mapping "G801X.1" source="G801X" target="58193001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G801X SNOMED CT 58193001 = cerebral palsy, spastic diplegia, unspecified. SNOMED CT 132617 =
+        (concept_code 58193001). Co-extensive at the unspecified level; Athena edge for G80.1.
+        """
+}
+mapping "G803A.1" source="G803A" target="230780007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G803A SNOMED CT 230780007 = cerebral palsy, dystonic / fluctuating tone syndrome. SNOMED CT
+        4045844 = (concept_code 230780007), the Athena target for G80.3. The dystonic/tonusväxling
+        presentation is the dyskinetic cerebral palsy subtype. Exact equivalence.
+        """
+}
+mapping "G803B.1" source="G803B" target="75019001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G803B SNOMED CT 75019001 = cerebral palsy, athetoid. SNOMED CT 375525 = (concept_code
+        75019001), a specific standard concept under the dyskinetic cerebral palsy parent. Exact
+        clinical equivalence.
+        """
+}
+mapping "G803X.1" source="G803X" target="230780007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G803X SNOMED CT 230780007 = dyskinetic cerebral palsy, unspecified. SNOMED CT 4045844 =
+        (concept_code 230780007), the Athena crosswalk target for G80.3. Co-extensive at the unspecified
+        level.
+        """
+}
+mapping "G804A.1" source="G804A" target="278512001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G804A SNOMED CT 278512001 = cerebral palsy with dysequilibrium/ataxia. SNOMED CT 4150300 =
+        (concept_code 278512001), the Athena target for G80.4. The dysequilibrium-ataxia presentation is
+        the ataxic cerebral palsy subtype. Exact equivalence.
+        """
+}
+mapping "G804W.1" source="G804W" target="278512001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G804W SNOMED CT 278512001 = other ataxic cerebral palsy (Swedish extension to ICD-10 G80.4
+        ataxic CP). Target SNOMED CT 4150300 (278512001), the standard concept that G80.4 maps to via
+        Athena crosswalk. The Swedish (other) qualifies it as a residual subclass of ataxic CP, fully
+        contained by the parent ataxic CP concept. broader (target subsumes source); high confidence —
+        verified crosswalk to the parent, one level broader for the residual subclass.
+        """
+}
+mapping "G808B.1" source="G808B" target="79520009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G808C.1" source="G808C" target="702318008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G808C SNOMED CT 702318008 = mixed syndromes of cerebral palsy. Target SNOMED CT 45765392
+        (702318008), an exact semantic equivalent. The SNOMED CT (4134120) in the hierarchy and denotes CP
+        combining features of multiple CP types. Exact 1:1 term and scope match.
+        """
+}
+mapping "G808W.1" source="G808W" target="128188000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G808W SNOMED CT 128188000 = other specified form of cerebral palsy (Swedish residual
+        extension to G80.8). Heterogeneous residual bucket with no single specific SNOMED CT equivalent.
+        Target SNOMED CT 4134120 (128188000), the parent concept that G80.8/G80.9 map to via Athena
+        crosswalk. broader (target fully subsumes source); moderate confidence — verified crosswalk to
+        the parent for the residual bucket, but unspecified-source looser equivalence.
+        """
+}
+mapping "G918A.1" source="G918A" target="230745008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G918A SNOMED CT 230745008 = hydrocephalus with ventricular dilatation (Swedish extension
+        under G91.8 Other hydrocephalus). Ventricular dilatation is the defining/anatomical consequence
+        of hydrocephalus, so the concept is a specifying variant of hydrocephalus rather than a distinct
+        disease. Target SNOMED CT 4043738 (230745008), the standard concept that G91.8 maps to via Athena
+        crosswalk. broader (target subsumes the source); high confidence — verified crosswalk, one level
+        broader for the specifying variant.
+        """
+}
+mapping "G918B.1" source="G918B" target="371116000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G918W.1" source="G918W" target="47032000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G929.1" source="G929" target="28394000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "G989.1" source="G989" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "H020A.1" source="H020A" target="33168009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "H020B.1" source="H020B" target="44427000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H020B SNOMED CT 44427000 = trichiasis (Swedish extension under H02.0 Entropion and
+        trichiasis of eyelid, isolating the trichiasis-only concept). Target SNOMED CT 136982 (44427000),
+        exact 1:1 semantic equivalent. The source explicitly separates trichiasis from entropion; is the
+        matching trichiasis-without-entropion concept.
+        """
+}
+mapping "H101A.1" source="H101A" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101A SNOMED CT 67678004 = acute atopic conjunctivitis caused by tree (deciduous) pollen
+        (Swedish allergen-specific extension to H10.1). No SNOMED CT concept exists for tree-pollen-caused
+        acute atopic conjunctivitis. Target SNOMED CT 380111 (67678004), the standard concept that H10.1
+        maps to via Athena crosswalk. broader (target fully subsumes the allergen-specific source);
+        moderate confidence — verified crosswalk to the parent, but specificity of the causative
+        allergen is lost.
+        """
+}
+mapping "H101B.1" source="H101B" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101B SNOMED CT 67678004 = acute atopic conjunctivitis caused by grass pollen (Swedish
+        allergen-specific extension to H10.1). No SNOMED CT concept for grass-pollen-caused acute atopic
+        conjunctivitis. Target SNOMED CT 380111 (67678004), the standard concept that H10.1 maps to via
+        Athena crosswalk. broader (target fully subsumes the allergen-specific source); moderate
+        confidence — verified crosswalk to the parent, causative allergen specificity lost.
+        """
+}
+mapping "H101C.1" source="H101C" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101C SNOMED CT 67678004 = acute atopic conjunctivitis caused by Compositae (Asteraceae)
+        pollen (Swedish allergen-specific extension to H10.1). No SNOMED CT concept for
+        Compositae-pollen-caused acute atopic conjunctivitis. Target SNOMED CT 380111 (67678004), the
+        standard concept that H10.1 maps to via Athena crosswalk. broader (target fully subsumes the
+        allergen-specific source); moderate confidence — verified crosswalk to the parent, causative
+        allergen specificity lost.
+        """
+}
+mapping "H101D.1" source="H101D" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101D SNOMED CT 67678004 = acute atopic conjunctivitis caused by unspecified pollen (Swedish
+        extension to H10.1). Target SNOMED CT 380111 (67678004), the standard concept that H10.1 maps to
+        via Athena crosswalk. broader (target subsumes the pollen-specified source); high confidence —
+        verified crosswalk, source is unspecified pollen which is essentially co-extensive with the
+        parent atopic conjunctivitis concept in clinical practice.
+        """
+}
+mapping "H101E.1" source="H101E" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101E SNOMED CT 67678004 = acute atopic conjunctivitis caused by animal epithelium/dander
+        (Swedish allergen-specific extension to H10.1). No SNOMED CT concept for animal-epithelium-caused
+        acute atopic conjunctivitis. Target SNOMED CT 380111 (67678004), the standard concept that H10.1
+        maps to via Athena crosswalk. broader (target fully subsumes the allergen-specific source);
+        moderate confidence — verified crosswalk to the parent, causative allergen specificity lost.
+        """
+}
+mapping "H101W.1" source="H101W" target="67678004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101W SNOMED CT 67678004 = acute atopic conjunctivitis caused by other allergen (Swedish
+        residual extension to H10.1). Heterogeneous residual bucket. Target SNOMED CT 380111 (67678004),
+        the standard concept that H10.1 maps to via Athena crosswalk. broader (target fully subsumes the
+        source); moderate confidence — verified crosswalk to the parent for a residual source bucket.
+        """
+}
+mapping "H101X.1" source="H101X" target="67678004" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H101X SNOMED CT 67678004 = conjunctivitis, allergic unspecified (Swedish extension to
+        H10.1). The source is the broad allergic conjunctivitis (any allergic conjunctivitis, not
+        specifically the acute atopic form). Target SNOMED CT 380111 (67678004) is the standard concept
+        that H10.1 maps to via Athena crosswalk, but it represents only the acute atopic subtype.
+        narrower (target is more specific than the unspecified-allergic source); moderate confidence —
+        verified crosswalk to a specific subtype, but the source is deliberately non-specific so target
+        adds specificity the source did not assert.
+        """
+}
+mapping "H150A.1" source="H150A" target="63454000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H150A SNOMED CT 63454000 = anterior scleritis (Swedish extension under H15.0 Scleritis).
+        Target SNOMED CT 441582 (63454000), exact 1:1 semantic equivalent. Direct anatomical-localisation
+        match.
+        """
+}
+mapping "H150B.1" source="H150B" target="49429000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H150B SNOMED CT 49429000 = posterior scleritis (Swedish extension under H15.0 Scleritis).
+        Target SNOMED CT 40602182 (49429000), exact 1:1 semantic equivalent. Direct anatomical-localisation
+        match.
+        """
+}
+mapping "H150X.1" source="H150X" target="78370002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H150X SNOMED CT 78370002 = scleritis of unspecified localisation (Swedish extension under
+        H15.0). Target SNOMED CT 434944 (78370002), the standard concept that H15.0 maps to via Athena
+        crosswalk. The source denotes scleritis without anterior/posterior specification, which is
+        exactly the meaning of the parent Scleritis concept. exact_match; high confidence — verified
+        crosswalk and exact scope match.
+        """
+}
+mapping "H185A.1" source="H185A" target="193834002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H185A SNOMED CT 193834002 = epithelial corneal dystrophy (Swedish extension under H18.5
+        Hereditary corneal dystrophies). Target SNOMED CT 4109246 (193834002). Epithelial dystrophies are
+        anterior-layer dystrophies; the closest standard concept is the anterior corneal dystrophy
+        bucket. broader (target subsumes the epithelial-specific source within the anterior category);
+        high confidence — well-understood subsumption, one level broader.
+        """
+}
+mapping "H185B.1" source="H185B" target="193834002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H185B SNOMED CT 193834002 = Bowman's membrane dystrophy (Swedish extension under H18.5). The
+        SNOMED CT mirror has no specific Bowman-layer corneal dystrophy concept (Reis-Bücklers 231930000
+        and Thiel-Behnke 417065002 exist as specific clinical entities but are not in the standard
+        crosswalk). Target SNOMED CT 4109246 (193834002); Bowman-layer dystrophies are anterior corneal
+        dystrophies. broader (target subsumes the source); moderate confidence — anatomically correct
+        subsumption, but a more specific SNOMED CT target (Reis-Bücklers/Thiel-Behnke) may exist that the
+        crosswalk does not surface.
+        """
+}
+mapping "H185C.1" source="H185C" target="231931001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H185C SNOMED CT 231931001 = stromal corneal dystrophy (Swedish extension under H18.5).
+        Target SNOMED CT 438428 (231931001), exact 1:1 semantic equivalent. Direct layer-specific match.
+        """
+}
+mapping "H185D.1" source="H185D" target="16949007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H185D SNOMED CT 16949007 = endothelial corneal dystrophy (Swedish extension under H18.5).
+        Target SNOMED CT 40340091 (16949007), exact 1:1 semantic equivalent. Direct layer-specific match.
+        """
+}
+mapping "H185X.1" source="H185X" target="77797009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source H185X SNOMED CT 77797009 = unspecified corneal dystrophy (Swedish extension under H18.5).
+        Target SNOMED CT 374043 (77797009), the standard concept that H18.5 maps to via Athena crosswalk.
+        The source denotes an unspecified hereditary corneal dystrophy, which is exactly the meaning of
+        the parent Hereditary corneal dystrophy concept. exact_match; high confidence — verified
+        crosswalk and exact scope match.
+        """
+}
+mapping "H191A.1" source="H191A" target="5888003" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "H191B.1" source="H191B" target="5888003" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "H191X.1" source="H191X" target="5888003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,388 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W3-W305
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W300.1" source="W300" target="217939001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W3000.1" source="W3000" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3000 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. SNOMED CT captures machinery+place axis
+        exactly; the Swedish activity suffix (sport) is a separate dimension with no SNOMED CT
+        representation and is dropped. Partial single-component match. Moderate tier per §1: best
+        available standard concept, SNOMED CT [X] mechanical crosswalk not independently re-verified.
+        """
+}
+mapping "W3001.1" source="W3001" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3001 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured; activity suffix
+        (leisure) is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3002.1" source="W3002" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3002 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured; activity suffix
+        (paid work) is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3003.1" source="W3003" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3003 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured; activity suffix
+        (other) is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3004.1" source="W3004" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3004 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured; vital-activity
+        suffix is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3008.1" source="W3008" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3008 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured; activity suffix
+        is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3009.1" source="W3009" target="220668001" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3009 = Swedish ICD-10-SE SNOMED CT 220668001. Target SNOMED CT 40420911 (220668001) =
+        [X]Contact with agricultural machinery, occurrence at home. Place axis captured;
+        unspecified-activity suffix adds no clinical information and is dropped. Partial
+        single-component match. Moderate tier.
+        """
+}
+mapping "W301.1" source="W301" target="217935007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "W3010.1" source="W3010" target="220669009" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3010 = Swedish ICD-10-SE SNOMED CT 220669009. Target SNOMED CT 40420912 (220669009) =
+        [X]Contact with agricultural machinery, occurrence in residential institution. SNOMED CT captures
+        machinery+place axis exactly; the Swedish activity suffix (sport) has no SNOMED CT representation
+        and is dropped. Partial single-component match. Moderate tier per §1.
+        """
+}
+mapping "W3011.1" source="W3011" target="220669009" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3011 = Swedish ICD-10-SE SNOMED CT 220669009. Target SNOMED CT 40420912 (220669009) =
+        [X]Contact with agricultural machinery, occurrence in residential institution. Place axis
+        captured; activity suffix (leisure) is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3012.1" source="W3012" target="220669009" relationship=partial_overlap {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W3012 = Swedish ICD-10-SE SNOMED CT 220669009. Target SNOMED CT 40420912 (220669009) =
+        [X]Contact with agricultural machinery, occurrence in residential institution. Place axis
+        captured; activity suffix (paid work) is dropped. Partial single-component match. Moderate tier.
+        """
+}
+mapping "W3013.1" source="W3013" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3013 (Swedish extension of W30 SNOMED CT 217935007, place=institutional living,
+        activity=other) denotes an agricultural-machinery contact accident. WHO base W30 crosswalks to
+        (OMOP 436874) via Athena Maps to. The Swedish 5-char extensions add place/activity context with
+        no separate SNOMED CT representation; the base concept subsumes all of them, so target is broader.
+        : mechanical crosswalk from WHO base, not independently re-verified for each Swedish extension.
+        """
+}
+mapping "W3014.1" source="W3014" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3014 (Swedish extension of W30 SNOMED CT 217935007, place=institutional living,
+        activity=vital activity such as rest/sleep/meal/personal hygiene). WHO base W30 crosswalks to
+        (OMOP 436874). Place/activity context has no separate SNOMED CT target; base concept subsumes the
+        source, so broader. : mechanical crosswalk from WHO base.
+        """
+}
+mapping "W3018.1" source="W3018" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3018 (Swedish extension of W30, place=institutional living, activity=other specified).
+        WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). No separate SNOMED CT target for the
+        Swedish place/activity extension; base concept subsumes source, so broader. : mechanical
+        crosswalk.
+        """
+}
+mapping "W3019.1" source="W3019" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3019 (Swedish extension of W30, place=institutional living, activity=unspecified). WHO
+        base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Unspecified-activity Swedish extension;
+        base concept subsumes source, so broader. : mechanical crosswalk, unspecified source.
+        """
+}
+mapping "W302.1" source="W302" target="217937004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W3020.1" source="W3020" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3020 (Swedish extension of W30, place=school/other institution/public building,
+        activity=sport/exercise). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874).
+        Place/activity context has no SNOMED CT target; base subsumes source, broader.
+        """
+}
+mapping "W3021.1" source="W3021" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3021 (Swedish extension of W30, place=school/other institution/public building,
+        activity=play/leisure). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes
+        source, broader.
+        """
+}
+mapping "W3022.1" source="W3022" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3022 (Swedish extension of W30, place=school/other institution/public building,
+        activity=paid work). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes
+        source, broader.
+        """
+}
+mapping "W3023.1" source="W3023" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3023 (Swedish extension of W30, place=school/other institution/public building,
+        activity=other). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes
+        source, broader.
+        """
+}
+mapping "W3024.1" source="W3024" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3024 (Swedish extension of W30, place=school/other institution/public building,
+        activity=vital activity). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base
+        subsumes source, broader.
+        """
+}
+mapping "W3028.1" source="W3028" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3028 (Swedish extension of W30, place=school/other institution/public building,
+        activity=other specified). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base
+        subsumes source, broader.
+        """
+}
+mapping "W3029.1" source="W3029" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3029 (Swedish extension of W30, place=school/other institution/public building,
+        activity=unspecified). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874).
+        Unspecified-activity extension; base subsumes source, broader.
+        """
+}
+mapping "W303.1" source="W303" target="217956009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W3030.1" source="W3030" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3030 (Swedish extension of W30, place=sports/athletics facility,
+        activity=sport/exercise). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base
+        subsumes source, broader.
+        """
+}
+mapping "W3031.1" source="W3031" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3031 (Swedish extension of W30, place=sports/athletics facility, activity=play/leisure).
+        WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3032.1" source="W3032" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3032 (Swedish extension of W30, place=sports/athletics facility, activity=paid work).
+        WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3033.1" source="W3033" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3033 (Swedish extension of W30, place=sports/athletics facility, activity=other). WHO
+        base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3034.1" source="W3034" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3034 (Swedish extension of W30, place=sports/athletics facility, activity=vital
+        activity). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source,
+        broader.
+        """
+}
+mapping "W3038.1" source="W3038" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3038 (Swedish extension of W30, place=sports/athletics facility, activity=other
+        specified). WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source,
+        broader.
+        """
+}
+mapping "W3039.1" source="W3039" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3039 (Swedish extension of W30, place=sports/athletics facility, activity=unspecified).
+        WHO base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Unspecified-activity extension; base
+        subsumes source, broader.
+        """
+}
+mapping "W304.1" source="W304" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W304 = Swedish 4-char extension W30.4 SNOMED CT 217935007 (place=street/highway, no activity
+        breakdown). WHO base W30 crosswalks to (OMOP 436874) via Athena Maps to. The Swedish place
+        extension has no separate SNOMED CT target; the base concept subsumes it, so broader. : mechanical
+        crosswalk from WHO base, Swedish extension not independently re-verified.
+        """
+}
+mapping "W3040.1" source="W3040" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3040 (Swedish extension of W30, place=street/highway, activity=sport/exercise). WHO base
+        W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3041.1" source="W3041" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3041 (Swedish extension of W30, place=street/highway, activity=play/leisure). WHO base
+        W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3042.1" source="W3042" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3042 (Swedish extension of W30, place=street/highway, activity=paid work). WHO base W30
+        crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3043.1" source="W3043" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3043 (Swedish extension of W30, place=street/highway, activity=other). WHO base W30
+        crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3044.1" source="W3044" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3044 (Swedish extension of W30, place=street/highway, activity=vital activity). WHO base
+        W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3048.1" source="W3048" target="217935007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3048 (Swedish extension of W30, place=street/highway, activity=other specified). WHO
+        base W30 crosswalks to SNOMED CT 217935007 (OMOP 436874). Base subsumes source, broader.
+        """
+}
+mapping "W3049.1" source="W3049" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3049 SNOMED CT 217935007 = agricultural machinery accident on street/highway, unspecified
+        activity. Swedish ICD-10-SE extension of base ICD-10 W30. Target SNOMED CT 436874 (217935007) is
+        the Athena crosswalk target for W30. The source adds place (street/highway) and activity
+        (unspecified) modifiers that have no separate standard SNOMED CT concept; the target subsumes the
+        clinical core (the accident) and drops circumstantial detail. Broader (one-level):
+        crosswalk-verified parent target with source-side modifiers absent from target.
+        """
+}
+mapping "W305.1" source="W305" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W305 SNOMED CT 217935007 = agricultural machinery accident in trade/service area. Swedish
+        ICD-10-SE place-specific extension of W30. Target SNOMED CT 436874 is the W30 crosswalk target.
+        Source adds a place modifier with no separate SNOMED CT concept; target subsumes the accident,
+        drops place. Broader (one-level), crosswalk-verified.
+        """
+}
+mapping "W3050.1" source="W3050" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3050 = agricultural machinery accident in trade/service area during sport/exercise.
+        Swedish ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the
+        W30 crosswalk target; place/activity have no separate SNOMED CT concept. Target subsumes the
+        accident clinical core, drops modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3051.1" source="W3051" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3051 = agricultural machinery accident in trade/service area during leisure/play.
+        Swedish ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the
+        W30 crosswalk target; modifiers have no separate SNOMED CT concept. Target subsumes accident, drops
+        modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3052.1" source="W3052" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3052 = agricultural machinery accident in trade/service area during paid work. Swedish
+        ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the W30
+        crosswalk target; modifiers have no separate SNOMED CT concept. Target subsumes accident, drops
+        modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3053.1" source="W3053" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3053 = agricultural machinery accident in trade/service area during other activity.
+        Swedish ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the
+        W30 crosswalk target; modifiers have no separate SNOMED CT concept. Target subsumes accident, drops
+        modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3054.1" source="W3054" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3054 = agricultural machinery accident in trade/service area during vital activity
+        (rest/sleep/eating/hygiene). Swedish ICD-10-SE extension of W30 with place+activity modifiers.
+        Target SNOMED CT 436874 is the W30 crosswalk target; modifiers have no separate SNOMED CT concept.
+        Target subsumes accident, drops modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3058.1" source="W3058" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3058 = agricultural machinery accident in trade/service area, other specified activity.
+        Swedish ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the
+        W30 crosswalk target; modifiers have no separate SNOMED CT concept. Target subsumes accident, drops
+        modifiers. Broader, crosswalk-verified.
+        """
+}
+mapping "W3059.1" source="W3059" target="217935007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W3059 = agricultural machinery accident in trade/service area, unspecified activity.
+        Swedish ICD-10-SE extension of W30 with place+activity modifiers. Target SNOMED CT 436874 is the
+        W30 crosswalk target; modifiers have no separate SNOMED CT concept. Target subsumes accident, drops
+        modifiers. Broader, crosswalk-verified.
+        """
+}

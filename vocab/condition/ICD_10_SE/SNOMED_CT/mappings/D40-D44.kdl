@@ -1,0 +1,444 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes D40-D44
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "D400A.1" source="D400A" target="95014000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D400A SNOMED CT 95014000 = Neoplasm of uncertain behavior of prostate. Target SNOMED CT 201527
+        = (95014000). WHO ICD-10 D40.0 (45552351) Maps to 201527 in Athena. Exact equivalence.
+        """
+}
+mapping "D400B.1" source="D400B" target="95014000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D400B SNOMED CT 95014000 = Neoplasm of unknown behavior of prostate. Same SNOMED CT target
+        201527; WHO D40.0 crosswalk.
+        """
+}
+mapping "D401A.1" source="D401A" target="95127004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D401A SNOMED CT 95127004 = Neoplasm of uncertain behavior of testis. Target SNOMED CT 440971 =
+        (95127004). WHO ICD-10 D40.1 (45542700) Maps to 440971 in Athena. Exact equivalence.
+        """
+}
+mapping "D401B.1" source="D401B" target="95127004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D401B SNOMED CT 95127004 = Neoplasm of unknown behavior of testis. Same SNOMED CT target
+        440971; WHO D40.1 crosswalk.
+        """
+}
+mapping "D407A.1" source="D407A" target="94925002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D407A SNOMED CT 94925002 = Neoplasm of uncertain behavior of other specified male genital
+        organs. Target SNOMED CT 197518 = (94925002). WHO ICD-10 D40.7 (45532983) Maps to 197518 in Athena.
+        The Swedish source is fully contained within the SNOMED CT concept; crosswalk verified.
+        """
+}
+mapping "D407B.1" source="D407B" target="94925002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D407B SNOMED CT 94925002 = Neoplasm of unknown behavior of other specified male genital
+        organs. Same SNOMED CT target 197518; WHO D40.7 crosswalk.
+        """
+}
+mapping "D410A.1" source="D410A" target="94889006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D410A SNOMED CT 94889006 = Neoplasm of uncertain behavior of kidney. Target SNOMED CT 198402 =
+        (94889006). WHO ICD-10 D41.0 (45581311) Maps to 198402 in Athena. Exact equivalence.
+        """
+}
+mapping "D410B.1" source="D410B" target="94889006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D410B SNOMED CT 94889006 = Neoplasm of unknown behavior of kidney. Same SNOMED CT target
+        198402; WHO D41.0 crosswalk.
+        """
+}
+mapping "D411A.1" source="D411A" target="95161002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D411A SNOMED CT 95161002 = Neoplasm of uncertain behavior of renal pelvis. WHO ICD-10 D41.1
+        (45605363) Maps to SNOMED CT 442129 (95161002) in Athena. The SNOMED CT target is anatomically
+        ureter-focused but is the standard concept OMOP designates for the renal-pelvis ICD-10 source;
+        SNOMED CT lacks a separate renal-pelvis uncertain-behavior concept, so 442129 is broader
+        (upper-urinary-tract grouping). Verified crosswalk with a small anatomical breadth mismatch:
+        high, broader.
+        """
+}
+mapping "D411B.1" source="D411B" target="95161002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D411B SNOMED CT 95161002 = Neoplasm of unknown behavior of renal pelvis. Same SNOMED CT target
+        442129 via WHO D41.1 crosswalk; broader (ureter-grouping target), high.
+        """
+}
+mapping "D412A.1" source="D412A" target="95161002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D412A SNOMED CT 95161002 = Neoplasm of uncertain behavior of ureter. Target SNOMED CT 442129 =
+        (95161002). Exact clinical-concept equivalence — source and target denote the same disorder at
+        the same specificity. WHO D41.2 is the ureter subcode and is its direct equivalent; the D41.1
+        renal-pelvis row in this mirror also maps here (see D411), but for D41.2 ureter the match is
+        exact.
+        """
+}
+mapping "D412B.1" source="D412B" target="95161002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D412B SNOMED CT 95161002 = Neoplasm of unknown behavior of ureter. Same SNOMED CT target
+        442129; exact clinical-concept equivalence.
+        """
+}
+mapping "D413A.1" source="D413A" target="95163004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D413A SNOMED CT 95163004 = Swedish ICD-10 national extension subdividing WHO D41.3 (Neoplasm
+        of uncertain or unknown behavior of urethra) into the pathologically-uncertain variant. Target
+        SNOMED CT 4316746 = (95163004), the Athena crosswalk target for parent D41.3. The SNOMED CT target
+        collapses both the uncertain-behavior (A) and unknown-behavior (B) variants into one concept, so
+        it subsumes the more specific Swedish source. High tier: verified crosswalk to the parent WHO
+        code, one-level broader because the source adds the pathology-vs-clinical distinction the target
+        lacks.
+        """
+}
+mapping "D413B.1" source="D413B" target="95163004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D413B SNOMED CT 95163004 = Swedish ICD-10 national extension subdividing WHO D41.3 into the
+        clinically-unknown variant. Target SNOMED CT 4316746 = (95163004), Athena for parent D41.3. SNOMED CT
+        target named collapses both uncertain (A) and unknown (B); target subsumes the source. High
+        tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D414A.1" source="D414A" target="94754000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D414A SNOMED CT 94754000 = Swedish extension of WHO D41.4 (Neoplasm of uncertain or unknown
+        behavior of bladder), pathologically-uncertain variant. Target SNOMED CT 198401 = (94754000),
+        Athena for parent D41.4. Target subsumes both A/B variants. High tier: verified parent
+        crosswalk, one-level broader.
+        """
+}
+mapping "D414B.1" source="D414B" target="94754000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D414B SNOMED CT 94754000 = Swedish extension of WHO D41.4, clinically-unknown variant.
+        Target SNOMED CT 198401 = (94754000), Athena for parent D41.4. Target collapses both
+        uncertain/unknown variants; subsumes source. High tier: verified parent crosswalk, one-level
+        broader.
+        """
+}
+mapping "D417A.1" source="D417A" target="95165006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D417A SNOMED CT 95165006 = Swedish extension of WHO D41.7 (Neoplasm of uncertain or unknown
+        behavior of other urinary organs), pathologically-uncertain variant. Target SNOMED CT 79765 =
+        (95165006), Athena for parent D41.7. Target is the urinary-system-level concept that subsumes
+        the source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D417B.1" source="D417B" target="95165006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D417B SNOMED CT 95165006 = Swedish extension of WHO D41.7, clinically-unknown variant.
+        Target SNOMED CT 79765 = (95165006), Athena for parent D41.7. Target subsumes both A/B variants.
+        High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D420A.1" source="D420A" target="94787001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D420A SNOMED CT 94787001 = Swedish extension of WHO D42.0 (Neoplasm of uncertain or unknown
+        behavior of cerebral meninges), pathologically-uncertain variant. Target SNOMED CT 4314637 =
+        (94787001), Athena for parent D42.0. Target subsumes both A/B variants. High tier: verified
+        parent crosswalk, one-level broader.
+        """
+}
+mapping "D420B.1" source="D420B" target="94787001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D420B SNOMED CT 94787001 = Swedish extension of WHO D42.0, clinically-unknown variant.
+        Target SNOMED CT 4314637 = (94787001), Athena for parent D42.0. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D421A.1" source="D421A" target="95109002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D421A SNOMED CT 95109002 = Swedish extension of WHO D42.1 (Neoplasm of uncertain or unknown
+        behavior of spinal meninges), pathologically-uncertain variant. Target SNOMED CT 4317020 =
+        (95109002), Athena for parent D42.1. Target subsumes both A/B variants. High tier: verified
+        parent crosswalk, one-level broader.
+        """
+}
+mapping "D421B.1" source="D421B" target="95109002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D421B SNOMED CT 95109002 = Swedish extension of WHO D42.1, clinically-unknown variant.
+        Target SNOMED CT 4317020 = (95109002), Athena for parent D42.1. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D430A.1" source="D430A" target="189487001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D430A SNOMED CT 189487001 = Swedish extension of WHO D43.0 (Neoplasm of uncertain or unknown
+        behavior of brain, supratentorial), pathologically-uncertain variant. Target SNOMED CT 4094118 =
+        (189487001), Athena for parent D43.0. Target name covers both uncertain/unknown; subsumes the
+        source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D430B.1" source="D430B" target="189487001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D430B SNOMED CT 189487001 = Swedish extension of WHO D43.0, clinically-unknown variant.
+        Target SNOMED CT 4094118 = (189487001), Athena for parent D43.0. Target covers both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D431A.1" source="D431A" target="189488006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D431A SNOMED CT 189488006 = Swedish extension of WHO D43.1 (Neoplasm of uncertain or unknown
+        behavior of brain, infratentorial), pathologically-uncertain variant. Target SNOMED CT 4096519 =
+        (189488006), Athena for parent D43.1. Target name covers both variants; subsumes source. High
+        tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D431B.1" source="D431B" target="189488006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D431B SNOMED CT 189488006 = Swedish extension of WHO D43.1, clinically-unknown variant.
+        Target SNOMED CT 4096519 = (189488006), Athena for parent D43.1. Target covers both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D433A.1" source="D433A" target="94807005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D433A SNOMED CT 94807005 = Swedish extension of WHO D43.3 (Neoplasm of uncertain or unknown
+        behavior of cranial nerves), pathologically-uncertain variant. Target SNOMED CT 4313379 =
+        (94807005), Athena for parent D43.3. Target subsumes both A/B variants. High tier: verified
+        parent crosswalk, one-level broader.
+        """
+}
+mapping "D433B.1" source="D433B" target="94807005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D433B SNOMED CT 94807005 = Swedish extension of WHO D43.3, clinically-unknown variant.
+        Target SNOMED CT 4313379 = (94807005), Athena for parent D43.3. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D434A.1" source="D434A" target="95108005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D434A SNOMED CT 95108005 = Swedish extension of WHO D43.4 (Neoplasm of uncertain or unknown
+        behavior of spinal cord), pathologically-uncertain variant. Target SNOMED CT 4317822 = (95108005),
+        Athena for parent D43.4. Target subsumes both A/B variants. High tier: verified parent
+        crosswalk, one-level broader.
+        """
+}
+mapping "D434B.1" source="D434B" target="95108005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D434B SNOMED CT 95108005 = Swedish extension of WHO D43.4, clinically-unknown variant.
+        Target SNOMED CT 4317822 = (95108005), Athena for parent D43.4. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D437A.1" source="D437A" target="94784008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D437A SNOMED CT 94784008 = Swedish extension of WHO D43.7 (Neoplasm of uncertain or unknown
+        behavior of other parts of central nervous system), pathologically-uncertain variant. Target
+        SNOMED CT 4315940 = (94784008), Athena for parent D43.7. Target is the CNS-level concept subsuming
+        the source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D437B.1" source="D437B" target="94784008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D437B SNOMED CT 94784008 = Swedish extension of WHO D43.7, clinically-unknown variant.
+        Target SNOMED CT 4315940 = (94784008), Athena for parent D43.7. Target subsumes both A/B variants.
+        High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D440A.1" source="D440A" target="95138004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D440A SNOMED CT 95138004 = Swedish extension of WHO D44.0 (Neoplasm of uncertain or unknown
+        behavior of thyroid gland), pathologically-uncertain variant. Target SNOMED CT 4317826 =
+        (95138004), Athena for parent D44.0. Target subsumes both A/B variants. High tier: verified
+        parent crosswalk, one-level broader.
+        """
+}
+mapping "D440B.1" source="D440B" target="95138004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D440B SNOMED CT 95138004 = Swedish extension of WHO D44.0, clinically-unknown variant.
+        Target SNOMED CT 4317826 = (95138004), Athena for parent D44.0. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D441A.1" source="D441A" target="94730005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D441A SNOMED CT 94730005 = Swedish extension of WHO D44.1 (Neoplasm of uncertain or unknown
+        behavior of adrenal gland), pathologically-uncertain variant. Target SNOMED CT 196365 = (94730005),
+        Athena for parent D44.1. Target subsumes both A/B variants. High tier: verified parent
+        crosswalk, one-level broader.
+        """
+}
+mapping "D441B.1" source="D441B" target="94730005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D441B SNOMED CT 94730005 = Swedish extension of WHO D44.1, clinically-unknown variant.
+        Target SNOMED CT 196365 = (94730005), Athena for parent D44.1. Target collapses both variants;
+        subsumes source. High tier: verified parent crosswalk, one-level broader.
+        """
+}
+mapping "D442A.1" source="D442A" target="94983006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D442A SNOMED CT 94983006 = Swedish extension of WHO D44.2 (Neoplasm of uncertain or unknown
+        behavior of parathyroid gland), pathologically-uncertain variant. Target SNOMED CT 4316887 =
+        (94983006), Athena for parent D44.2. Target subsumes both A/B variants. High tier: verified
+        parent crosswalk, one-level broader.
+        """
+}
+mapping "D442B.1" source="D442B" target="94983006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D442B SNOMED CT 94983006 = neoplasm of clinically uncertain/unknown behavior of parathyroid
+        gland. Target SNOMED CT 4316887 (=94983006) = Neoplasm of uncertain behavior of parathyroid gland.
+        Athena ICD10 crosswalk for parent D44.2 maps to this SNOMED CT concept; Swedish A/B subcodes split
+        by pathological-vs-clinical uncertainty but both fall under the same standard concept. High
+        confidence: one-level breadth difference, crosswalk-verified.
+        """
+}
+mapping "D443A.1" source="D443A" target="95004009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D443A SNOMED CT 95004009 = neoplasm of pathologically uncertain behavior of pituitary gland.
+        Target SNOMED CT 27835 (=95004009) = Neoplasm of uncertain behavior of pituitary gland. Athena
+        crosswalk D44.3 → 27835; Swedish A/B split by pathological vs clinical uncertainty but no
+        separate SNOMED CT concept exists. High confidence.
+        """
+}
+mapping "D443B.1" source="D443B" target="95004009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D443B SNOMED CT 95004009 = neoplasm of clinically unknown behavior of pituitary gland.
+        Target SNOMED CT 27835 (=95004009) = Neoplasm of uncertain behavior of pituitary gland. Athena
+        crosswalk D44.3 → 27835; both A (pathologically uncertain) and B (clinically unknown) collapse
+        to the same standard concept. High confidence.
+        """
+}
+mapping "D444A.1" source="D444A" target="94808000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D444A SNOMED CT 94808000 = neoplasm of pathologically uncertain behavior of craniopharyngeal
+        duct. Target SNOMED CT 442167 (=94808000) = Neoplasm of uncertain behavior of craniopharyngeal
+        duct. Athena crosswalk D44.4 → 442167; exact match, Swedish A/B subcode split not separately
+        represented. High confidence.
+        """
+}
+mapping "D444B.1" source="D444B" target="94808000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D444B SNOMED CT 94808000 = neoplasm of clinically unknown behavior of craniopharyngeal duct.
+        Target SNOMED CT 442167 (=94808000) = Neoplasm of uncertain behavior of craniopharyngeal duct.
+        Athena crosswalk D44.4 → 442167. High confidence.
+        """
+}
+mapping "D445A.1" source="D445A" target="95002008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D445A SNOMED CT 95002008 = neoplasm of pathologically uncertain behavior of pineal gland.
+        Target SNOMED CT 22871 (=95002008) = Neoplasm of uncertain behavior of pineal gland. Athena
+        crosswalk D44.5 → 22871; exact clinical concept. High confidence.
+        """
+}
+mapping "D445B.1" source="D445B" target="95002008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D445B SNOMED CT 95002008 = neoplasm of clinically unknown behavior of pineal gland. Target
+        SNOMED CT 22871 (=95002008) = Neoplasm of uncertain behavior of pineal gland. Athena crosswalk
+        D44.5 → 22871. High confidence.
+        """
+}
+mapping "D446A.1" source="D446A" target="94779002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D446A SNOMED CT 94779002 = neoplasm of pathologically uncertain behavior of carotid body.
+        Target SNOMED CT 4314634 (=94779002) = Neoplasm of uncertain behavior of carotid body. Athena
+        crosswalk D44.6 → 4314634; exact concept. High confidence.
+        """
+}
+mapping "D446B.1" source="D446B" target="94779002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D446B SNOMED CT 94779002 = neoplasm of clinically unknown behavior of carotid body. Target
+        SNOMED CT 4314634 (=94779002) = Neoplasm of uncertain behavior of carotid body. Athena crosswalk
+        D44.6 → 4314634. High confidence.
+        """
+}
+mapping "D447A.1" source="D447A" target="189473001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D447A SNOMED CT 189473001 = neoplasm of pathologically uncertain behavior of aortic body and
+        other paraganglia. Target SNOMED CT 27516 (=189473001) = Neoplasm of uncertain behavior of
+        paraganglia. Athena crosswalk D44.7 → 27516. Target fully covers source scope. High confidence.
+        """
+}
+mapping "D447B.1" source="D447B" target="189473001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D447B SNOMED CT 189473001 = neoplasm of clinically unknown behavior of aortic body and other
+        paraganglia. Target SNOMED CT 27516 (=189473001) = Neoplasm of uncertain behavior of paraganglia.
+        Athena crosswalk D44.7 → 27516. High confidence.
+        """
+}
+mapping "D448A.1" source="D448A" target="94938005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D448A SNOMED CT 94938005 = neoplasm with multiglandular involvement, type I (Swedish
+        sub-classification by type). Target SNOMED CT 4316507 (=94938005) = Neoplasm of uncertain behavior
+        of multiple endocrine glands. Athena crosswalk D44.8 → 4316507. Target subsumes the
+        multiglandular localization source but does not encode the Swedish type I/II/III distinction;
+        one-level broader. Moderate confidence: standard target lacks the Swedish type sub-gradation.
+        """
+}
+mapping "D448B.1" source="D448B" target="94938005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D448B SNOMED CT 94938005 = neoplasm with multiglandular involvement, type II. Target SNOMED CT
+        4316507 (=94938005) = Neoplasm of uncertain behavior of multiple endocrine glands. Athena
+        crosswalk D44.8 → 4316507. Swedish type II subdivision not represented in SNOMED CT. Broader,
+        moderate confidence.
+        """
+}
+mapping "D448C.1" source="D448C" target="94938005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D448C SNOMED CT 94938005 = neoplasm with multiglandular involvement, type III. Target SNOMED CT
+        4316507 (=94938005) = Neoplasm of uncertain behavior of multiple endocrine glands. Athena
+        crosswalk D44.8 → 4316507. Swedish type III subdivision not represented in SNOMED CT. Broader,
+        moderate confidence.
+        """
+}

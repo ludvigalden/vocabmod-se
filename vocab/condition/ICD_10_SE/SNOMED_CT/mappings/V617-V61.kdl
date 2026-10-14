@@ -1,0 +1,151 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V617-V61
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V6170.1" source="V6170" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6170 = Swedish extension of V61.7 (person on outside of heavy transport vehicle,
+        traffic, vs pedal cycle) subdivided by sport/exercise. The V61.7 Athena crosswalk yields 444074
+        (SNOMED CT 36198007, 36198007) and 4069060 (a nontraffic concept that contradicts the traffic
+        source), so only 444074 is defensible. No SNOMED CT concept for exists in the mirror.
+        Activity-context and person-on-outside role both partially uncovered. Weak tier: only a generic
+        vehicular-accident victim target remains.
+        """
+}
+mapping "V6171.1" source="V6171" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6171 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by play/leisure. Only generic vehicular-accident victim target 444074 (36198007) is
+        defensible; the person-on-outside role and activity dimension are uncovered. Weak tier.
+        """
+}
+mapping "V6172.1" source="V6172" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6172 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by paid work. Only generic vehicular-accident victim target 444074 (36198007) is
+        defensible; person-on-outside role and activity dimension uncovered. Weak tier.
+        """
+}
+mapping "V6173.1" source="V6173" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6173 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 36198007. Only generic vehicular-accident victim target 444074 (36198007)
+        is defensible; person-on-outside role and activity dimension uncovered. Weak tier.
+        """
+}
+mapping "V6174.1" source="V6174" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6174 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by vital activities. Only generic vehicular-accident victim target 444074 (36198007)
+        is defensible; person-on-outside role and activity dimension uncovered. Weak tier.
+        """
+}
+mapping "V6178.1" source="V6178" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6178 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 36198007. Only generic vehicular-accident victim target 444074 (36198007)
+        is defensible; person-on-outside role and activity dimension uncovered. Weak tier.
+        """
+}
+mapping "V6179.1" source="V6179" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6179 = Swedish extension of V61.7 (person on outside, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 36198007. Only generic vehicular-accident victim target 444074 (36198007)
+        is defensible; person-on-outside role uncovered. Weak tier.
+        """
+}
+mapping "V6190.1" source="V6190" target="214171003" relationship=partial_overlap quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6190 = Swedish extension of V61.9 (unspecified occupant of heavy transport vehicle,
+        traffic, vs pedal cycle) subdivided by sport/exercise. Target SNOMED CT 4061564 = (214171003) —
+        captures the traffic + pedal-cycle collision. 444074 = generic vehicular-accident victim. The
+        activity dimension (sport) is uncovered → partial. Moderate tier: crosswalk-verified V61.9 base
+        target; activity extension unmatched.
+        """
+}
+mapping "V6190.2" source="V6190" target="36198007" relationship=partial_overlap quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6191.1" source="V6191" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6191 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by play/leisure. Target 4061564 (214171003). Activity dimension uncovered → partial.
+        Moderate tier.
+        """
+}
+mapping "V6191.2" source="V6191" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6192.1" source="V6192" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6192 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by paid work. Target 4061564 (214171003). Activity dimension uncovered → partial.
+        Moderate tier.
+        """
+}
+mapping "V6192.2" source="V6192" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6193.1" source="V6193" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6193 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 214171003 36198007. Target 4061564 (214171003). Activity dimension
+        uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6193.2" source="V6193" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6194.1" source="V6194" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6194 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by vital activities. Target 4061564 (214171003). Activity dimension uncovered →
+        partial. Moderate tier.
+        """
+}
+mapping "V6194.2" source="V6194" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6198.1" source="V6198" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6198 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 214171003 36198007. Target 4061564 (214171003). Activity dimension
+        uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6198.2" source="V6198" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V6199.1" source="V6199" target="214171003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V6199 = Swedish extension of V61.9 (unspecified occupant, traffic, vs pedal cycle)
+        subdivided by SNOMED CT 214171003 36198007. Target 4061564 (214171003). Activity-unspecified
+        dimension uncovered → partial. Moderate tier.
+        """
+}
+mapping "V6199.2" source="V6199" target="36198007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

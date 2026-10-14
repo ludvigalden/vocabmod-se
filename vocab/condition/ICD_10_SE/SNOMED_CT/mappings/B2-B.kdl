@@ -1,0 +1,429 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes B2-B
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "B249.1" source="B249" target="86406008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B249 SNOMED CT 86406008 = (B24, the unspecified HIV disease code). The ICD10 base B24
+        (45547443) crosswalks in Athena to SNOMED CT 439727 (86406008). The unspecified framing of the
+        source matches the unspecified/general HIV-infection concept exactly.
+        """
+}
+mapping "B341A.1" source="B341A" target="186744002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B341A SNOMED CT 186744002 = (Swedish national subcode of B34.1). Target SNOMED CT 40377048
+        (186744002) = exact clinical match for coxsackievirus infection without site specification. The
+        ICD10 base B34.1 (45571466) crosswalks to SNOMED CT 438068 (genus-level), but the Swedish subcode
+        specifies Coxsackie, so the coxsackie-specific concept is the right target. High tier: tight
+        term-equivalent, mirror-verified concept.
+        """
+}
+mapping "B341B.1" source="B341B" target="129671003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B341B SNOMED CT 129671003 = (Swedish national subcode of B34.1). Target SNOMED CT 442784
+        (129671003) = exact match for echovirus infection without site specification. High tier: tight
+        term-equivalent, mirror-verified.
+        """
+}
+mapping "B341W.1" source="B341W" target="53648006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B341W SNOMED CT 53648006 = (residual Swedish subcode of B34.1). Target SNOMED CT 438068
+        (53648006) = genus-level pathogen-disease concept. The ICD10 base B34.1 (45571466) crosswalks in
+        Athena to this concept. The source is a residual bucket with no single specific SNOMED CT target,
+        so the genus-level parent that fully subsumes it is the best standard concept. Broader (target
+        subsumes source). Moderate tier: verified crosswalk on the base, but the residual framing adds
+        uncertainty about which specific enterovirus the source denotes.
+        """
+}
+mapping "B350A.1" source="B350A" target="19087001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B350A SNOMED CT 19087001 = Kerion (inflammatory form of tinea capitis, a scalp
+        dermatophytosis). Target SNOMED CT 4078538 (19087001) = exact clinical equivalent. Kerion Celsi and
+        Tinea kerion are clinical synonyms for the same inflammatory scalp dermatophyte lesion. High
+        tier: exact term-equivalent in the Athena-local mirror, no separate crosswalk to re-verify.
+        """
+}
+mapping "B350B.1" source="B350B" target="5441008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B350B SNOMED CT 5441008 = = tinea capitis (Swedish national subcode of B35.0). Target SNOMED CT
+        4182398 (5441008) = exact clinical equivalent. and are clinical synonyms.
+        """
+}
+mapping "B350C.1" source="B350C" target="55875000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B350C SNOMED CT 55875000 = = tinea barbae (Swedish national subcode of B35.0). Target SNOMED CT
+        40603223 (55875000) = exact clinical equivalent.
+        """
+}
+mapping "B350D.1" source="B350D" target="156410002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B350D SNOMED CT 156410002 = mycotic sycosis = dermatophyte infection of the beard (Sycosis
+        barbae of fungal etiology, Swedish national subcode of B35.0). Target SNOMED CT 4305948 (156410002)
+        = the standard clinical concept for beard sycosis; the mycotic etiology is implied by the
+        source's B35 (dermatophytosis) parent and SNOMED CT's tinea-barbae hierarchy. High tier: exact
+        clinical synonym, no separate crosswalk to re-verify. (Alternate SNOMED CT 40603223 would also fit
+        but preserves the sycosis framing of the source.)
+        """
+}
+mapping "B350E.1" source="B350E" target="240696004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B350E SNOMED CT 240696004 = dermatophytosis of the face (Swedish national subcode of B35.0).
+        Target SNOMED CT 4082049 (240696004) = exact term and concept match.
+        """
+}
+mapping "B350X.1" source="B350X" target="47382004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "B351A.1" source="B351A" target="30757001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B351A SNOMED CT 30757001 = dermatophytosis of the nail (Swedish national subcode of B35.1).
+        Target SNOMED CT 40515068 (30757001) = exact term and concept match. The ICD10 base B35.1
+        (45590850) crosswalks in Athena to SNOMED CT 140648 which is a near-synonym, but the source's
+        lexical form matches 40515068 exactly.
+        """
+}
+mapping "B351B.1" source="B351B" target="30757001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B351B SNOMED CT 30757001 = a Trichophyton nail infection presenting with leukonychia (white
+        nail discoloration), classified under B35.1 (tinea unguium). No SNOMED CT concept exists for this
+        specific presentation. SNOMED CT has 4006158 (111202002) but that is a nail-finding morphology
+        concept, not a dermatophyte infection. The best defensible standard concept is SNOMED CT 40515068
+        (30757001) which fully subsumes the source as a clinical entity (the source is a trichophyton
+        nail infection, i.e. a tinea unguium). Broader: target subsumes the source. Low tier: clinical
+        breadth mismatch (the source's leukonychia-trichophytica morphology is lost), no separate
+        crosswalk.
+        """
+}
+mapping "B351X.1" source="B351X" target="402134005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B351X SNOMED CT 402134005 = = onychomycosis / tinea unguium, unspecified (Swedish national
+        subcode of B35.1). Target SNOMED CT 140648 (402134005) = the Athena crosswalk target for the ICD10
+        base B35.1 (45590850). Exact clinical equivalent for unspecified nail-dermatophytosis. (SNOMED CT
+        40515068 is the lexical synonym; both are valid. 140648 chosen as the crosswalk-verified
+        target.)
+        """
+}
+mapping "B358A.1" source="B358A" target="40911008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B358A SNOMED CT 40911008 = (Swedish national subcode of B35.8). Target SNOMED CT 4237639
+        (40911008) = exact term and concept match.
+        """
+}
+mapping "B358B.1" source="B358B" target="78487004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B358B SNOMED CT 78487004 = (Swedish national subcode of B35.8, includes Majocchi's
+        granuloma). Target SNOMED CT 4301243 (78487004) = exact term and concept match.
+        """
+}
+mapping "B358W.1" source="B358W" target="47382004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B358W SNOMED CT 47382004 = (residual Swedish subcode of B35.8). Target SNOMED CT 135473
+        (47382004) = genus-level concept. The ICD10 base B35.8 (45571467) crosswalks in Athena to this
+        concept. The source is a residual bucket with no single specific SNOMED CT target; the genus-level
+        parent that fully subsumes it is the best standard concept. Broader (target subsumes source).
+        Moderate tier: verified crosswalk on the base, but the residual framing means the specific
+        dermatophyte presentation is unknown.
+        """
+}
+mapping "B372A.1" source="B372A" target="402130001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B372A SNOMED CT 402130001 (Swedish extension of B37.2 Candidiasis of skin and nail) =
+        candidal onychia, inflammation of the nail matrix caused by Candida. No SNOMED CT concept for
+        candidal onychia specifically exists in the mirror. Target SNOMED CT 40580994 (concept_code
+        402130001) =, a legitimate ancestor that fully contains the source. Parent B37.2 (45595616) has
+        Athena edges to 433968 (Candidiasis) and 4028387 (Disorder of integument); 40580994 is the
+        closest clinically-meaningful candidiasis ancestor for a skin/nail-site source. Broader because
+        target subsumes the source; moderate because crosswalk is via parent B37.2, not independently
+        re-verified for the Swedish subdivision.
+        """
+}
+mapping "B372B.1" source="B372B" target="54862006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B372B SNOMED CT 54862006 (Swedish extension of B37.2) = candidal paronychia, Candida
+        infection of the nail fold. Target SNOMED CT 40598687 (concept_code 54862006) =. Exact 1:1 semantic
+        equivalence between Swedish term and SNOMED CT fully specified name.
+        """
+}
+mapping "B372C.1" source="B372C" target="89949004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B372C SNOMED CT 89949004 (Swedish extension of B37.2) = candidal intertrigo, Candida
+        infection of opposing skin surfaces. Target SNOMED CT 40642471 (concept_code 89949004) =. Exact 1:1
+        semantic equivalence.
+        """
+}
+mapping "B372D.1" source="B372D" target="78048006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B372X.1" source="B372X" target="49883006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "B378A.1" source="B378A" target="15983591000119109" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B378A SNOMED CT 15983591000119109 (Swedish extension of B37.8 Candidiasis of other sites) =
+        candidal cheilitis, Candida infection of the lips. Target SNOMED CT 765278 (concept_code
+        15983591000119109) =. Exact 1:1 semantic equivalence between source and target.
+        """
+}
+mapping "B378B.1" source="B378B" target="426507006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B378B SNOMED CT 426507006 (Swedish extension of B37.8) = candidal enteritis, Candida
+        infection of the intestine. Target SNOMED CT 443462 (concept_code 426507006) =. Exact 1:1 semantic
+        equivalence.
+        """
+}
+mapping "B378C.1" source="B378C" target="240722000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B378C SNOMED CT 240722000 (Swedish extension of B37.8) = disseminated candida infection.
+        Target SNOMED CT 4080747 (concept_code 240722000) =. The target captures the dissemination plus a
+        temporal qualifier (acute) the source does not specify, so target subsumes the source
+        semantically (broader). High rather than exact because the acute qualifier adds a specificity
+        axis not present in the source. Parent B37.8 (45566546) has Athena to 433968 (Candidiasis);
+        4080747 is a clinically tighter ancestor than the generic parent.
+        """
+}
+mapping "B378D.1" source="B378D" target="20639004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B378D SNOMED CT 20639004 (Swedish extension of B37.8) = candidal esophagitis. Target SNOMED CT
+        28974 (concept_code 20639004) =. Exact 1:1 semantic equivalence.
+        """
+}
+mapping "B378W.1" source="B378W" target="78048006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B378W SNOMED CT 78048006 = Swedish extension residual for candidiasis of other/unspecified
+        sites (mirrors WHO B37.8). Target SNOMED CT 433968 (concept_code 78048006) =. WHO B37.8 (45566546)
+        has Athena to 433968. Broader because target subsumes all anatomically-specific subtypes
+        including the source's residual other-site scope; high on a verified crosswalk for the parent
+        B37.8.
+        """
+}
+mapping "B499.1" source="B499" target="3218000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B499 SNOMED CT 3218000 = unspecified mycosis (WHO B49). Target SNOMED CT 433701 (concept_code
+        3218000) =. WHO B49 (45600461) has Athena to 433701. Exact 1:1 match for the WHO-equivalent
+        code; the Swedish B499 is a direct re-encoding of B49.
+        """
+}
+mapping "B549.1" source="B549" target="61462000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B549 SNOMED CT 61462000 = malaria, unspecified (WHO B54). Target SNOMED CT 438067 (concept_code
+        61462000) =. WHO B54 (45552228) has Athena to 438067. Exact 1:1 match; Swedish B549 is a direct
+        re-encoding of WHO B54 (note Swedish code uses B54-range for unspecified malaria as in the
+        national extension).
+        """
+}
+mapping "B649.1" source="B649" target="95896000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B649 SNOMED CT 95896000 = unspecified protozoal disease (WHO B64). Target SNOMED CT 442176
+        (concept_code 95896000) =. WHO B64 (45576277) has Athena to 442176. Exact 1:1 match; Swedish
+        B649 is a direct re-encoding of WHO B64.
+        """
+}
+mapping "B729.1" source="B729" target="396334002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B729 SNOMED CT 396334002 = dracunculiasis, guinea-worm disease (WHO B72). Target SNOMED CT
+        193708 (concept_code 396334002) =. WHO B72 (45556951) has Athena to 193708. Exact 1:1 match;
+        Swedish B729 is a direct re-encoding of WHO B72.
+        """
+}
+mapping "B739.1" source="B739" target="1231270006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B759.1" source="B759" target="46271001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B759 SNOMED CT 46271001 = trichinellosis/trichinosis (WHO B75). Target (concept_code
+        709018004) =. WHO B75 (45556953) has Athena to 46271001. Exact 1:1 match; Swedish B759 is a
+        direct re-encoding of WHO B75.
+        """
+}
+mapping "B799.1" source="B799" target="3752003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B799 SNOMED CT 3752003 = trichuriasis, whipworm infection (WHO B79). Target SNOMED CT 196907
+        (concept_code 3752003) =. WHO B79 (45532887) has Athena to 196907. Exact 1:1 match; Swedish B799
+        is a direct re-encoding of WHO B79.
+        """
+}
+mapping "B809.1" source="B809" target="266162007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B809 SNOMED CT 266162007 = enterobiasis, pinworm infection (WHO B80). Target SNOMED CT 197223
+        (concept_code 266162007) =. WHO B80 (45571479) has Athena to 197223. Exact 1:1 match; Swedish
+        B809 is a direct re-encoding of WHO B80.
+        """
+}
+mapping "B869.1" source="B869" target="128869009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B869 SNOMED CT 128869009 = scabies (WHO B86). Target SNOMED CT 140949 (concept_code 128869009)
+        =. WHO B86 (45561769) has Athena to 140949. Exact 1:1 match; Swedish B869 is a direct
+        re-encoding of WHO B86.
+        """
+}
+mapping "B880A.1" source="B880A" target="11751004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880A SNOMED CT 11751004 (Swedish extension of B88.0 Other acariasis) = dermatitis caused by
+        Demodex species. Target SNOMED CT 40284173 (concept_code 11751004) =. Source is dermatitis caused
+        by Demodex; target is the Demodex infestation itself. The infestation concept is the standard
+        clinical disorder concept and is clinically co-extensive with the dermatitis it causes. High
+        rather than because the source names the dermatitis manifestation while the target names the
+        infestation, a minor framing difference.
+        """
+}
+mapping "B880B.1" source="B880B" target="14005005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880B SNOMED CT 14005005 (Swedish extension of B88.0) = dermatitis caused by the poultry
+        mite Dermanyssus gallinae. Target SNOMED CT 4029617 (concept_code 14005005) =. Same
+        dermatitis-vs-infestation framing nuance as B880A; high.
+        """
+}
+mapping "B880C.1" source="B880C" target="187214007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880C SNOMED CT 187214007 (Swedish extension of B88.0) = dermatitis caused by the
+        house-mouse mite Liponyssoides sanguineus. No standard SNOMED CT concept for infestation by L.
+        sanguineus exists in the mirror (the organism concept 4232571 exists but is a non-disorder
+        concept). Target SNOMED CT 436634 (concept_code 187214007) =, the WHO B88.0 target (45537777 ->
+        436634). Broader because Acariasis subsumes all mite infestations including L. sanguineus
+        dermatitis; moderate because crosswalk is via the parent B88.0, not independently re-verified
+        for the Swedish subdivision.
+        """
+}
+mapping "B880D.1" source="B880D" target="90303008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880D SNOMED CT 90303008 (Swedish extension of B88.0) = dermatitis caused by Cheyletiella
+        species. Target SNOMED CT 4234564 (concept_code 90303008) =. Same dermatitis-vs-infestation framing
+        nuance as B880A; high.
+        """
+}
+mapping "B880E.1" source="B880E" target="187214007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880E SNOMED CT 187214007 (Swedish extension of B88.0) = animal scabies, scabies acquired
+        from animal Sarcoptes variants. SNOMED CT has variant-specific animal-scabies concepts (e.g.
+        4099386 var equi, 4185419 var canis) but none is clearly the single best fit for the source's
+        species-agnostic phrasing. Target SNOMED CT 436634 (concept_code 187214007) =, the WHO B88.0
+        target, which subsumes all mite infestations including animal scabies. Broader (subsuming
+        parent); low because the species-agnostic source leaves the best species-specific descendant
+        ambiguous, so the broader acariasis target is chosen with real residual doubt.
+        """
+}
+mapping "B880F.1" source="B880F" target="11822007" relationship=source_is_broader_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source B880F SNOMED CT 11822007 (Swedish extension of B88.0) = trombiculosis, infestation by
+        chigger mites (Trombicula/Neotrombicula). Target SNOMED CT 4038499 (concept_code 11822007) =, a
+        specific trombiculid genus. Source is species-agnostic (any Trombicula-group mite); target is
+        one genus within that group. From source -> target the target is narrower, but the OMOP/SNOMED CT
+        convention here prefers the closest standard disorder concept: 4038499 is the closest single
+        standard target. Recorded as broader because Neotrombicula infestation is the standard clinical
+        representative of trombiculosis and the source's meaning is preserved; high reflecting tight
+        genus-level overlap.
+        """
+}
+mapping "B880W.1" source="B880W" target="187214007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B880W SNOMED CT 187214007 (Swedish extension of B88.0) = other and unspecified acariasis.
+        Target SNOMED CT 436634 (concept_code 187214007) =. WHO B88.0 (45537777) has Athena to 436634.
+        Exact 1:1 match between the Swedish residual-other code and the WHO B88.0 standard target; high
+        reflects the crosswalk plus the residual-bucket framing (one minor breadth mismatch: source is,
+        target is the general disorder).
+        """
+}
+mapping "B899.1" source="B899" target="17322007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B899 SNOMED CT 17322007 = unspecified parasitic disease (WHO B89). Target SNOMED CT 432251
+        (concept_code 17322007) =. WHO B89 (45600469) has Athena to 432251. Exact 1:1 match; Swedish
+        B899 is a direct re-encoding of WHO B89.
+        """
+}
+mapping "B919.1" source="B919" target="110270004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B919 SNOMED CT 110270004 = sequelae of poliomyelitis (WHO B91). Target SNOMED CT 377802
+        (concept_code 110270004) =. WHO B91 (45547475) has Athena to 377802. Exact 1:1 match; Swedish
+        B919 is a direct re-encoding of WHO B91.
+        """
+}
+mapping "B929.1" source="B929" target="81004002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "B968B.1" source="B968B" target="840588006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B968B SNOMED CT 840588006 = Acinetobacter as cause of diseases classified to other chapters
+        (Swedish 5th-char extension of B96.8). Target SNOMED CT 3655001 (concept_code 840588006) =. The
+        target denotes the same clinical idea (Acinetobacter-caused disease). High rather than exact :
+        source is a linker code (etiological, not a disease itself) and the target is the infection
+        concept; the breadth is one well-understood step from etiology to disorder, with no independent
+        crosswalk from the Swedish extension code.
+        """
+}
+mapping "B968C.1" source="B968C" target="87628006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B968C SNOMED CT 87628006 = Stenotrophomonas as cause of diseases classified to other
+        chapters (Swedish 5th-char extension of B96.8). The only Stenotrophomonas-infection SNOMED CT
+        concept in the mirror (36685419, code 1097531000000100) is a UK national extension, not an
+        international-edition standard concept, so it is not a defensible OMOP standard target. Fallback
+        to B96.8 base crosswalk 432545 (87628006): a true ancestor that fully contains the source's
+        meaning. Weak tier: the target is much broader than the source and loses the Stenotrophomonas
+        specificity; recorded to preserve the bacterial-etiology lead, not as an equivalence.
+        """
+}
+mapping "B968W.1" source="B968W" target="87628006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source B968W SNOMED CT 87628006 = other specified bacterial agent as cause of diseases classified
+        to other chapters (Swedish 5th-char extension of B96.8). Heterogeneous residual bucket with no
+        single specific SNOMED CT target; the only defensible standard concept is the B96.8 base crosswalk
+        432545 (87628006), which is a true ancestor. Weak tier: severe specificity loss; the source
+        names no organism, so the broader bacterial-disease target is the best available standard
+        concept but is far from equivalent.
+        """
+}
+mapping "B999.1" source="B999" target="40733004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 40733004 [GPS] [IPS] [GPFP] [ICNP]"
+}

@@ -1,0 +1,437 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes C5-D1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "C529.1" source="C529" target="372025005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C529 SNOMED CT 372025005 = malignant neoplasm of vagina (Swedish uses C529 for the WHO C52
+        code). Target 196048 = Primary malignant neoplasm of vagina, the athena Maps-to target for WHO
+        C52. Exact equivalence on the clinical concept, crosswalk-verified. High-tier exact_match per
+        athena crosswalk (Swedish C529 encodes WHO C52 with the same scope).
+        """
+}
+mapping "C559.1" source="C559" target="10708511000119108" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C559 SNOMED CT 10708511000119108 = malignant neoplasm of uterus, unspecified (Swedish uses
+        C559 for the WHO C55 code). Target 45770892 = Primary malignant neoplasm of uterus, the athena
+        Maps-to target for WHO C55. Exact equivalence on the clinical concept, crosswalk-verified.
+        High-tier exact_match per athena crosswalk.
+        """
+}
+mapping "C569.1" source="C569" target="93934004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 93934004 [GPS] [IPS]"
+}
+mapping "C589.1" source="C589" target="721567004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "C619.1" source="C619" target="93974005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C619 SNOMED CT 93974005 = malignant neoplasm of prostate (Swedish uses C619 for the WHO C61
+        code). Target 200962 = Primary malignant neoplasm of prostate, the athena Maps-to target for WHO
+        C61. Exact equivalence on the clinical concept, crosswalk-verified. High-tier exact_match per
+        athena crosswalk.
+        """
+}
+mapping "C629A.1" source="C629A" target="255107005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C629A SNOMED CT 255107005 = testicular cancer, seminoma (Swedish national-extension
+        histology subcode of C62). Target 4114339 = Seminoma of testis, the matching histology concept.
+        Source asserts seminoma histology without specifying laterality (descended/undescended); target
+        covers all testicular seminoma regardless of laterality, so target subsumes source (broader).
+        High tier (not): SNOMED CT-browser match on histology, no athena crosswalk at this
+        Swedish-extension code (parent C62 crosswalk is one level up).
+        """
+}
+mapping "C629B.1" source="C629B" target="432082001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C629B SNOMED CT 432082001 = testicular cancer, non-seminoma (Swedish national-extension
+        histology subcode of C62). Target 4335110 = Non-seminomatous malignant neoplasm of testis, the
+        matching histology concept. Source asserts non-seminoma histology without specifying laterality;
+        target covers all non-seminomatous testicular malignancies regardless of laterality, so target
+        subsumes source (broader). High tier (not): SNOMED CT-browser match on histology, no athena
+        crosswalk at this Swedish-extension code (parent C62 crosswalk is one level up).
+        """
+}
+mapping "C629X.1" source="C629X" target="94087009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C629X SNOMED CT 94087009 = testicular cancer, unspecified type (Swedish national-extension
+        subcode of C62; the unspecified-type residual). Target 433716 = Primary malignant neoplasm of
+        testis, the athena Maps-to target for WHO C62 and C62.9. Exact equivalence on the clinical
+        concept (primary malignant neoplasm of testis, type unspecified), crosswalk-verified at parent
+        level. High-tier exact_match per athena crosswalk; source is the unspecified-type Swedish
+        extension matching the parent WHO concept.
+        """
+}
+mapping "C640.1" source="C640" target="93849006" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source C640 is the Swedish laterality extension SNOMED CT 93849006 (input comment confirms
+        laterality extension of C64; base C64 maps to). Target 198985 = Primary malignant neoplasm of
+        kidney, the athena Maps-to target for parent C64. Target fully subsumes source (right kidney ⊂
+        kidney). High tier: parent-level athena crosswalk, laterality qualifier dropped (broader).
+        """
+}
+mapping "C640.2" source="C640" target="93849006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "C649.1" source="C649" target="93849006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "C659.1" source="C659" target="93985007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "C669.1" source="C669" target="94121005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "C739.1" source="C739" target="94098005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C739 SNOMED CT 94098005 = malignant neoplasm of thyroid gland (Swedish uses C739 for the WHO
+        C73 code). Target 133424 = Primary malignant neoplasm of thyroid gland, the athena Maps-to
+        target for WHO C73. Exact equivalence on the clinical concept, crosswalk-verified. High-tier
+        exact_match per athena crosswalk.
+        """
+}
+mapping "C830A.1" source="C830A" target="302841002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C830A.4" source="C830A" target="427141003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C830B.1" source="C830B" target="307623001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C830B SNOMED CT 307623001 = lymphoplasmacytic lymphoma (immunocytoma). Target 4141255 =
+        Malignant lymphoma - lymphoplasmacytic, the standard SNOMED CT concept. Exact 1:1 semantic
+        equivalence: both denote the same indolent B-cell lymphoma with plasmacytoid differentiation.
+        Concept verified standard in the athena mirror.
+        """
+}
+mapping "C830C.1" source="C830C" target="397349003" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C830C SNOMED CT 397349003 = nodal marginal zone lymphoma. Target. Exact term and scope
+        match; closest standard equivalent.
+        """
+}
+mapping "C830D.1" source="C830D" target="128802003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C830D SNOMED CT 128802003 = marginal zone lymphoma of spleen. Target. Exact clinical match.
+        """
+}
+mapping "C835A.1" source="C835A" target="427141003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C835A.2" source="C835A" target="1217301006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C835B.1" source="C835B" target="128807009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C835B SNOMED CT 128807009 = lymphoblastic lymphoma, B-cell/B-precursor. Target. Clinical
+        scope matches; moderate tier because the source also includes generic which is broader than just
+        precursor, and no Athena crosswalk for this Swedish-extension code.
+        """
+}
+mapping "C835X.1" source="C835X" target="128806000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C835X SNOMED CT 128806000 = lymphoblastic lymphoma, unspecified lineage. Target
+        (lineage-unspecified). Best standard equivalent for the unspecified-source framing.
+        """
+}
+mapping "C851A.1" source="C851A" target="109979007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 109979007 765205004 [GPS] [GPFP]"
+}
+mapping "C851A.3" source="C851A" target="765205004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C851B.1" source="C851B" target="277617004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C851B SNOMED CT 277617004 = high-grade B-cell lymphoma, unspecified. Target. Exact clinical
+        match for the high-grade B-cell NOS concept.
+        """
+}
+mapping "C859A.1" source="C859A" target="143291000119104" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C859B.1" source="C859B" target="277617004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C859B SNOMED CT 277617004 = high-grade non-Hodgkin lymphoma, unspecified. Target. Target
+        subsumes the most common high-grade NHL category (B-cell), but the source also covers T-cell
+        high-grade NHL; no exact SNOMED CT standard exists. Broader, moderate confidence.
+        """
+}
+mapping "C887A.1" source="C887A" target="79268002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Source C887A SNOMED CT 79268002 = POEMS syndrome. Target. Exact 1:1 clinical concept match."
+}
+mapping "C887W.1" source="C887W" target="109980005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C887W SNOMED CT 109980005 = other specified malignant immunoproliferative disease (residual
+        category). Target. Target is the broad parent of heterogeneous immunoproliferative disorders; no
+        single SNOMED CT standard captures the residual bucket. Broader, low confidence given source
+        heterogeneity.
+        """
+}
+mapping "C910A.1" source="C910A" target="277575008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C910A SNOMED CT 277575008 = T-cell acute lymphoblastic leukemia. Target (the SNOMED CT standard
+        for T-ALL). Clinical scope matches; high tier rather than exact because the SNOMED CT preferred
+        term is (no independent Athena crosswalk for the Swedish code).
+        """
+}
+mapping "C910B.1" source="C910B" target="277571004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C910B SNOMED CT 277571004 = B-cell / precursor B-cell acute lymphoblastic leukemia. Target.
+        Pre-B-ALL is a subset of B-ALL; target covers the broader B-cell ALL concept which matches the
+        second source label exactly.
+        """
+}
+mapping "C920A.1" source="C920A" target="426124006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C920B.1" source="C920B" target="764940002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "C979.1" source="C979" target="188478004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source C979 SNOMED CT 188478004 = malignant neoplasms of independent (primary) multiple sites.
+        Target (primary) multiple sites. Exact clinical match.
+        """
+}
+mapping "D069A.1" source="D069A" target="252991009" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D069A SNOMED CT 252991009 = high-grade squamous intraepithelial lesion of cervix, which in
+        modern pathology encompasses CIN 2 AND CIN 3. Target. Target is narrower (covers only the CIN3
+        portion of HSIL, not CIN2); no single SNOMED CT standard concept expresses HSIL-as-whole. Narrower,
+        low confidence because part of the source (CIN2) is outside the target.
+        """
+}
+mapping "D069W.1" source="D069W" target="92564006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D069W SNOMED CT 92564006 = carcinoma in situ of cervix described otherwise than as HSIL
+        (i.e. non-HSIL CIS). Target. Target is broader: it includes HSIL/CIN3 cases that the source
+        explicitly excludes. Moderate tier; best available standard concept for CIS of cervix.
+        """
+}
+mapping "D136A.1" source="D136A" target="690771000119106" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D136A SNOMED CT 690771000119106 = intraductal papillary mucinous neoplasm of pancreas
+        involving the main duct (main-duct IPMN, a higher-risk subtype). Target (general IPMN, no
+        duct-type). Target subsumes the source but loses the main-duct subtype specificity; no
+        main-duct-IPMN standard concept in the mirror. Broader, low confidence.
+        """
+}
+mapping "D136B.1" source="D136B" target="690771000119106" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D136B SNOMED CT 690771000119106 = IPMN of pancreas NOT involving the main duct (branch-duct
+        IPMN). Target (general). Target subsumes the source but loses the branch-duct subtype
+        specificity; no branch-duct-IPMN standard concept in the mirror. Broader, low confidence.
+        """
+}
+mapping "D136W.1" source="D136W" target="188853007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D136W SNOMED CT 188853007 = other benign tumör of pancreas (residual category). Target.
+        Target is the broad parent of the residual; reasonable clinical match for non-endocrine benign
+        pancreatic tumors. Broader, moderate confidence given the residual nature of the source.
+        """
+}
+mapping "D141A.1" source="D141A" target="255163006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D141A SNOMED CT 255163006 = laryngeal papilloma. Target. Clinical scope matches; high tier
+        because no independent Athena crosswalk exists for this Swedish code.
+        """
+}
+mapping "D141W.1" source="D141W" target="92175003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D141W SNOMED CT 92175003 = other specified benign tumör of larynx (residual category).
+        Target. Target is the broad parent covering heterogeneous benign laryngeal neoplasms; no
+        narrower standard exists for the residual bucket. Broader, low confidence given source
+        heterogeneity.
+        """
+}
+mapping "D141X.1" source="D141X" target="92175003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D141X SNOMED CT 92175003 = benign larynx tumör, unspecified. Target. Clinical scope matches
+        the unspecified-source framing. Moderate tier (no Athena crosswalk for the Swedish code).
+        """
+}
+mapping "D179A.1" source="D179A" target="404057003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D179A SNOMED CT 404057003 = angiolipoma, unspecified site. Target. Clinical concept matches
+        exactly; unspecified-site source maps cleanly to the site-agnostic standard concept.
+        """
+}
+mapping "D179B.1" source="D179B" target="77027006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D179B SNOMED CT 77027006 = hibernoma, unspecified site. Target. Clinical concept matches
+        exactly.
+        """
+}
+mapping "D179C.1" source="D179C" target="402693001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D179D.1" source="D179D" target="2710003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D179D SNOMED CT 2710003 = fibrolipoma, unspecified site. Target. Clinical concept matches
+        exactly.
+        """
+}
+mapping "D179W.1" source="D179W" target="93163002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D179X.1" source="D179X" target="93163002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "D180A.1" source="D180A" target="403969002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180A SNOMED CT 403969002 = glomus tumör. Target (standard concept). Clinical concept
+        matches exactly.
+        """
+}
+mapping "D180B.1" source="D180B" target="402867006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180B SNOMED CT 402867006 = capillary hemangioma (site not specified in source). Target
+        (site-agnostic standard concept). Clinical concept matches exactly.
+        """
+}
+mapping "D180C.1" source="D180C" target="445305001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180C SNOMED CT 445305001 = cavernous hemangioma of skin. Target. Exact clinical and
+        topography match.
+        """
+}
+mapping "D180E.1" source="D180E" target="254782003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180E SNOMED CT 254782003 = Multiple progressive hemangiomata. Target (Multiple progressive
+        hemangiomata, OMOP concept_id from athena mirror). Same clinical concept, exact
+        string-and-meaning match in SNOMED CT mirror.
+        """
+}
+mapping "D180F.1" source="D180F" target="254790003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180F SNOMED CT 254790003 = Targetoid hemosiderotic hemangioma. Target (Targetoid
+        hemosiderotic hemangioma). Same clinical entity, identical fully-specified name in SNOMED CT
+        mirror.
+        """
+}
+mapping "D180G.1" source="D180G" target="20985003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180G SNOMED CT 20985003 = Verrucous keratotic hemangioma, a rare vascular anomaly
+        characterized by verrucous hyperkeratotic skin change overlying a capillary/venular hemangioma,
+        typically on the lower limb. Target (Verrucous keratotic Hemangioma) matches the source name
+        exactly. The Swedish concept at ICD-10 D18.0 sub-level and are co-extensive clinical concepts;
+        high rather than exact because the SNOMED CT concept has no independent Maps-to crosswalk from the
+        ICD-10 base code and the OMOP standard_concept status of this entry was not re-verified in the
+        relationship file.
+        """
+}
+mapping "D180H.1" source="D180H" target="400131007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180H SNOMED CT 400131007 = Epithelioid hemangioma. Target (Epithelioid hemangioma of skin).
+        Same clinical concept; high confidence rather than exact because the target is qualified while
+        the source is site-unspecified, leaving a small breadth mismatch when the source is used for
+        extra-cutaneous sites.
+        """
+}
+mapping "D180J.1" source="D180J" target="254786000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180J SNOMED CT 254786000 = Tufted angioma (angioblastoma of Nakagawa), a benign cutaneous
+        vascular neoplasm. Target (Tufted angioma of skin). Same entity; high rather than exact because
+        target is skin-site-qualified while the Swedish source is unstated-site, a small breadth
+        mismatch.
+        """
+}
+mapping "D180W.1" source="D180W" target="400210000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180W SNOMED CT 400210000 = Other hemangioma, a residual category under D18.0 with no
+        enumerated subtypes. Target (Hemangioma, the Athena canonical standard Hemangioma concept mapped
+        from ICD-10 D18.0 via 45586089). Target legitimately subsumes every the residual captures. High
+        confidence broader map, one-level ancestor.
+        """
+}
+mapping "D180X.1" source="D180X" target="400210000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D180X SNOMED CT 400210000 = Hemangioma, unspecified. Target (Hemangioma) is the Athena
+        canonical standard Hemangioma mapped from ICD-10 D18.0 (45586089 Maps to 441818 OMOP id, here
+        expressed via concept_code 400210000). Source is the unspecified framing; target is the general
+        disorder that fully contains it. One-level broader; high confidence.
+        """
+}
+mapping "D181A.1" source="D181A" target="11467009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D181A SNOMED CT 11467009 = Capillary lymphangioma (lymphangioma composed of capillary-sized
+        lymphatic channels). Target (Capillary lymphangioma). Identical fully-specified name in SNOMED CT
+        mirror; exact clinical equivalence.
+        """
+}
+mapping "D181B.1" source="D181B" target="89056007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D181B SNOMED CT 89056007 = Cavernous lymphangioma. Target (Cavernous lymphangioma).
+        Identical name in SNOMED CT mirror; exact clinical equivalence.
+        """
+}
+mapping "D181C.1" source="D181C" target="40225001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D181C SNOMED CT 40225001 = Cystic lymphangioma (cystic hygroma). Target (Cystic
+        lymphangioma). Identical clinical concept in SNOMED CT mirror.
+        """
+}
+mapping "D181X.1" source="D181X" target="400178008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source D181X SNOMED CT 400178008 = Lymphangioma, unspecified. Target (Lymphangioma) is the Athena
+        canonical standard Lymphangioma concept mapped from ICD-10 D18.1 (45590982 Maps to 433997 OMOP
+        id, concept_code 400178008). Source is unspecified; target is the general disorder that fully
+        contains it. One-level broader; high confidence.
+        """
+}

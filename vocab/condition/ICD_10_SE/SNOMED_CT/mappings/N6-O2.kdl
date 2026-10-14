@@ -1,0 +1,484 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes N6-O2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "N619.1" source="N619" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N629.1" source="N629" target="372281005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N629 SNOMED CT 372281005 = hypertrophy of breast (Swedish extension equivalent of ICD-10
+        N62). Target SNOMED CT 78474 (standard, active). ICD-10 parent N62 -> 78474 crosswalk verified in
+        mirror. Direct clinical equivalence.
+        """
+}
+mapping "N639.1" source="N639" target="89164003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N639 SNOMED CT 89164003 = unspecified lump in breast (WHO base N63). Target SNOMED CT 80767
+        (concept_code 89164003), the WHO N63 target in the Athena ICD10/SNOMED CT crosswalk. Identical
+        clinical concept; crosswalk-verified.
+        """
+}
+mapping "N729.1" source="N729" target="37610005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N729 SNOMED CT 37610005 = WHO N72 Inflammatory disease of cervix uteri. Target SNOMED CT 444078
+        (concept_code 37610005), the Athena crosswalk target for ICD10 N72. Same clinical concept;
+        crosswalk-verified.
+        """
+}
+mapping "N768A.1" source="N768A" target="398318005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N768A SNOMED CT 398318005 = Fournier's gangrene of vagina and vulva (Swedish extension).
+        Target SNOMED CT 4161947 (concept_code 398318005). Fournier's gangrene classically affects
+        perineum/scrotum; modern usage does include vulvar/perineal necrotizing fasciitis but the SNOMED CT
+        concept is not vagina/vulva-specific. The Swedish code is broader in site than the standard
+        Fournier's concept. Related link only, low confidence per rubric (no exact standard analogue for
+        the vulvovaginal site).
+        """
+}
+mapping "N768B.1" source="N768B" target="237092002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N768B SNOMED CT 237092002 = bacterial vaginosis (Swedish extension; WHO equivalent under
+        N76.x). Target SNOMED CT 40443349 (concept_code 237092002). Same clinical concept; term match.
+        """
+}
+mapping "N768W.1" source="N768W" target="442506007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N768W SNOMED CT 442506007 = WHO base N76.8. Target SNOMED CT 40483613 (concept_code 442506007),
+        the Athena crosswalk target for ICD10 N76.8. Target subsumes the source (broader).
+        Crosswalk-verified.
+        """
+}
+mapping "N818A.1" source="N818A" target="283380005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818A SNOMED CT 283380005 = defectively-healed injury up to half of the perineal body
+        (Swedish obstetric injury extension; N818 series denotes old/unhealed pelvic floor trauma, not
+        female genital prolapse despite WHO N81 base). Target SNOMED CT 4152967 (concept_code 283380005).
+        The standard concept captures the underlying injury type but not the qualifier nor the
+        perineal-body extent. Related link only; low confidence.
+        """
+}
+mapping "N818B.1" source="N818B" target="283380005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818B SNOMED CT 283380005 = defectively-healed injury of more than half of the perineal
+        body. Target SNOMED CT 4152967 (283380005). Related link; same reasoning as N818A: target captures
+        underlying injury, not the Swedish extent/defective-healing granularity.
+        """
+}
+mapping "N818D.1" source="N818D" target="6303009" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818D SNOMED CT 6303009 = defectively-healed lower vaginal injury including pelvic floor
+        muscles and rectovaginal fascia. Target SNOMED CT 192368 (concept_code 6303009). Captures the
+        underlying old vaginal tear but not the pelvic-floor/rectovaginal-fascia extent nor the
+        defective-healing qualifier. Related link, low confidence.
+        """
+}
+mapping "N818E.1" source="N818E" target="6303009" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818E SNOMED CT 6303009 = defectively-healed upper vaginal rupture. Target SNOMED CT 192368
+        (6303009). Related link; same reasoning as N818D.
+        """
+}
+mapping "N818F.1" source="N818F" target="249643003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818F SNOMED CT 249643003 = defectively-healed anal sphincter injury up to half of external
+        sphincter. Target SNOMED CT 194691 (concept_code 249643003). Captures the healed-sphincter-tear
+        concept but not the Swedish extent/external-vs-internal distinction. Related, low confidence.
+        """
+}
+mapping "N818G.1" source="N818G" target="249643003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818G SNOMED CT 249643003 = defectively-healed anal sphincter injury >half external
+        sphincter. Target SNOMED CT 194691 (249643003). Related; same reasoning as N818F.
+        """
+}
+mapping "N818H.1" source="N818H" target="249643003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818H SNOMED CT 249643003 = defectively-healed anal sphincter injury involving both internal
+        and external sphincters. Target SNOMED CT 194691 (249643003). Related; the SNOMED CT target does not
+        distinguish internal+external extent.
+        """
+}
+mapping "N818J.1" source="N818J" target="249643003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818J SNOMED CT 249643003 = defectively-healed isolated internal anal sphincter injury.
+        Target SNOMED CT 194691 (249643003) is the only available standard concept, but it does not
+        specifically denote isolated internal sphincter injury. Weak related link only.
+        """
+}
+mapping "N818K.1" source="N818K" target="249643003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818K SNOMED CT 249643003 = defectively-healed injury of internal+external sphincters plus
+        rectal mucosa (effectively a fourth-degree obstetric tear sequel). Target SNOMED CT 194691
+        (249643003). Related; the rectal-mucosa component is not represented. Alternative (broader)
+        target would be 40639242 (8719006) but that is an acute obstetric injury, not a chronic
+        defective-healing state. Related link, low confidence.
+        """
+}
+mapping "N818L.1" source="N818L" target="722833004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818L SNOMED CT 722833004 = unilateral avulsion/rupture of levator ani and puborectalis.
+        Target SNOMED CT 36716682 (concept_code 722833004). The SNOMED CT target is the closest standard
+        concept for levator avulsion; it is bilateral/unilateral-non-specific and puborectalis is not
+        separately denoted. Broader target; low confidence.
+        """
+}
+mapping "N818M.1" source="N818M" target="722833004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818M SNOMED CT 722833004 = bilateral avulsion/rupture of levator ani and puborectalis.
+        Target SNOMED CT 36716682 (722833004). Same reasoning as N818L; laterality not preserved by the
+        standard concept.
+        """
+}
+mapping "N818N.1" source="N818N" target="737255000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818N SNOMED CT 737255000 = other specified old injury of the pelvic floor. Target SNOMED CT
+        42537715 (concept_code 737255000). The target subsumes the source (any old pelvic-floor muscular
+        injury is an injury of muscle of pelvis); no specific standard concept exists. Broader, moderate
+        confidence.
+        """
+}
+mapping "N818P.1" source="N818P" target="737255000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818P SNOMED CT 737255000 = unspecified old injury of pelvic floor muscles and muscle
+        attachments. Target SNOMED CT 42537715 (737255000). Broader; same reasoning as N818N.
+        """
+}
+mapping "N818W.1" source="N818W" target="198276000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N818W SNOMED CT 198276000 = other specified female genital prolapse (Swedish extension of
+        WHO N81.8). Target SNOMED CT 4113818 (concept_code 198276000). Same clinical concept;
+        term-equivalent.
+        """
+}
+mapping "N869.1" source="N869" target="156011009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N869 SNOMED CT 156011009 = WHO N86 Erosion and ectropion of cervix uteri. Target SNOMED CT
+        40318168 = Erosion &/or ectropion of cervix (concept_code 156011009). Same clinical concept;
+        term-equivalent.
+        """
+}
+mapping "N908A.1" source="N908A" target="49697000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N908A SNOMED CT 49697000 = old superficial injury of vulva and perineum (Swedish extension
+        under WHO N90). Target SNOMED CT 40603330 (concept_code 49697000). Related: the source is broader
+        (perineum included, not strictly laceration) than the vulva-only laceration target. Low
+        confidence.
+        """
+}
+mapping "N908W.1" source="N908W" target="198377006" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N908W SNOMED CT 198377006 = WHO N90.8. Target SNOMED CT 195603 (concept_code 198377006), the
+        Athena crosswalk target for ICD10 N90.8. Target subsumes the source. Crosswalk-verified.
+        """
+}
+mapping "N950A.1" source="N950A" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N950B.1" source="N950B" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N950W.1" source="N950W" target="131148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "N950X.1" source="N950X" target="76742009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N950X SNOMED CT 76742009 = WHO N95.0. Target SNOMED CT 195321 (concept_code 76742009), the
+        Athena crosswalk target for ICD10 N95.0. Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "N969.1" source="N969" target="102878001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N969 SNOMED CT 102878001 = WHO N96. Target SNOMED CT 4011615 (concept_code 102878001), the
+        Athena crosswalk target for ICD10 N96. Same clinical concept; crosswalk-verified.
+        """
+}
+mapping "N978A.1" source="N978A" target="6738008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N978A SNOMED CT 6738008 = female infertility due to immunological causes (Swedish national
+        5-char extension of N97.8). SNOMED CT mirror has no specific immunological-infertility concept
+        (closest hits are abnormal immunological findings in serum, which are findings not the
+        disorder). Best defensible standard target is SNOMED CT 201909 (Female infertility, concept_code
+        6738008), the standard concept that the WHO-equivalent N97 group maps to via Athena crosswalk.
+        Broader: target fully subsumes the source (every immunological-infertility case is female
+        infertility). Low confidence : Swedish extension code, no exact or one-level-broader SNOMED CT
+        target, and the specific aetiology is lost.
+        """
+}
+mapping "N978B.1" source="N978B" target="6738008" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N978B SNOMED CT 6738008 = female infertility where social/contextual factors may affect
+        fertility (Swedish extension of N97.8). SNOMED CT has no standard concept for social-factor-related
+        infertility; the disorder axis alone is represented by SNOMED CT 201909 (Female infertility). The
+        link is clinical-association only (source is about infertility with a social-determinants
+        framing, not a distinct disorder), so this is a related lead rather than an equivalence or
+        subsumption. Weak : loose aspect-level relationship, target recorded as a reviewer lead, not
+        asserted as identity.
+        """
+}
+mapping "N978C.1" source="N978C" target="237145004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N978C SNOMED CT 237145004 = female infertility, unexplained after investigation (Swedish
+        extension of N97.8). SNOMED CT 4129550 (Unexplained infertility, concept_code 237145004) is a
+        standard Clinical Finding that denotes exactly unexplained infertility. 1:1 semantic equivalence
+        on the female-infertility-unexplained axis; exact_match at.
+        """
+}
+mapping "N978D.1" source="N978D" target="6738008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N978D SNOMED CT 6738008 = female infertility associated with endometriosis (Swedish
+        extension of N97.8). SNOMED CT (40280614) but no standard concept for the combined
+        infertility-with-endometriosis disorder; the source bundles two clinical ideas. Best single
+        standard target for the infertility axis is SNOMED CT 201909 (Female infertility), which is broader
+        (subsumes the infertility axis). A partial endometriosis-only target was considered but would
+        drop the infertility axis entirely, so the broader infertility target is preferred as the
+        primary. Low : Swedish extension code, multi-axial source, no exact combined target.
+        """
+}
+mapping "N978W.1" source="N978W" target="6738008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source N978W SNOMED CT 6738008 = female infertility of other specified origin (Swedish extension
+        mapping to the WHO N97.8 bucket). Heterogeneous residual category. SNOMED CT 201909 (Female
+        infertility) is the standard target that the WHO N97 group maps to via Athena; broader (target
+        subsumes every aetiology in the residual). Low : residual Swedish extension code, unspecified
+        aetiology, no specific SNOMED CT target.
+        """
+}
+mapping "O049A.1" source="O049A" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049A SNOMED CT 285409006 = legal abortion up to and including gestational week 9+0 (Swedish
+        national extension carving out the WHO O04 code by gestational age). SNOMED CT has no standard
+        concept that captures legal-abortion-by-gestational-week. SNOMED CT 4115153 (Medical termination of
+        pregnancy, concept_code 285409006) is the standard Procedure that the WHO O04 base code maps to
+        via Athena crosswalk; it is broader (subsumes the procedure regardless of gestational week).
+        High : verified crosswalk on the parent, one-level broader (gestational-age detail lost).
+        """
+}
+mapping "O049B.1" source="O049B" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049B SNOMED CT 285409006 = legal abortion gestational week 9+1 through 12+0 (Swedish
+        extension of WHO O04). Same reasoning as O049A: SNOMED CT 4115153 (Medical termination of
+        pregnancy) is the standard Procedure target via Athena crosswalk on the WHO parent; broader
+        (gestational-age stratification lost). High.
+        """
+}
+mapping "O049C.1" source="O049C" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049C SNOMED CT 285409006 = legal abortion week 12+1 through 18+0 (Swedish extension of WHO
+        O04). Same reasoning as O049A: SNOMED CT 4115153 (Medical termination of pregnancy) via Athena
+        crosswalk on the WHO parent; broader. High.
+        """
+}
+mapping "O049D.1" source="O049D" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049D SNOMED CT 285409006 = legal abortion week 18+1 through 22+0 (Swedish extension of WHO
+        O04). Same reasoning as O049A: SNOMED CT 4115153 (Medical termination of pregnancy) via Athena
+        crosswalk on the WHO parent; broader. High.
+        """
+}
+mapping "O049E.1" source="O049E" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049E SNOMED CT 285409006 = legal abortion from gestational week 22+1 onwards (Swedish
+        extension of WHO O04, late termination). Same reasoning as O049A: SNOMED CT 4115153 (Medical
+        termination of pregnancy) via Athena crosswalk on the WHO parent; broader. High.
+        """
+}
+mapping "O049X.1" source="O049X" target="285409006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O049X SNOMED CT 285409006 = legal abortion, gestational age unspecified (Swedish extension
+        of WHO O04). SNOMED CT 4115153 (Medical termination of pregnancy) is the standard Procedure target
+        via Athena crosswalk (the WHO O04 base maps here); the source is functionally equivalent to the
+        WHO parent at the unspecified-gestational-age level, but the Swedish code remains an extension,
+        so broader is the safer label. High.
+        """
+}
+mapping "O119.1" source="O119" target="198997005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 198997005 [GPS]"
+}
+mapping "O139.1" source="O139" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 77386006 [GPS] [IPS] [GPFP]"
+}
+mapping "O169.1" source="O169" target="288250001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "O169.3" source="O169" target="288250001" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "O240B.1" source="O240B" target="34818008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240B SNOMED CT 34818008 = pre-existing type 1 diabetes in pregnancy, White class B (Swedish
+        extension of WHO O24.0). SNOMED CT 4146514 (Pregestational diabetes mellitus AND/OR impaired
+        glucose tolerance, modified White class B, concept_code 34818008) is a standard Disorder whose
+        fully-specified name denotes exactly the modified-White-B pregestational diabetes class. The WHO
+        O24.0 base also crosswalks to 43531008 (Pre-existing type 1 diabetes mellitus in pregnancy),
+        which is broader; the Swedish extension additionally specifies White class B, which is captured
+        exactly by 4146514. High : exact on the White-class axis, but the SNOMED CT concept is (slightly
+        broader on diabetes type) rather than strictly type 1, so not.
+        """
+}
+mapping "O240C.1" source="O240C" target="38063000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240C SNOMED CT 38063000 = pre-existing type 1 diabetes in pregnancy, White class C (Swedish
+        extension of WHO O24.0). SNOMED CT 4242853 (Pregestational diabetes mellitus AND/OR impaired
+        glucose tolerance, modified White class C, concept_code 38063000) is the standard Disorder
+        denoting exactly the modified-White-C pregestational diabetes class. Same reasoning as O240B.
+        High : exact on White class but is slightly broader than strictly type 1.
+        """
+}
+mapping "O240D.1" source="O240D" target="33669002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240D SNOMED CT 33669002 = pre-existing type 1 diabetes in pregnancy, White class D (Swedish
+        extension of WHO O24.0). SNOMED CT 4144221 (Pregestational diabetes mellitus AND/OR impaired
+        glucose tolerance, modified White class D, concept_code 33669002) is the standard Disorder
+        denoting exactly the modified-White-D class. Same reasoning as O240B. High.
+        """
+}
+mapping "O240E.1" source="O240E" target="609564002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240E SNOMED CT 609564002 = pre-existing type 1 diabetes in pregnancy, White class E
+        (Swedish extension of WHO O24.0; White E = vascular disease of >10 years duration). The SNOMED CT
+        mirror has modified-White classes B, C, D, F, FR, R, A but NO class-E concept. Best defensible
+        standard target is SNOMED CT 43531008 (Pre-existing type 1 diabetes mellitus in pregnancy,
+        concept_code 609564002) — the standard Disorder that WHO O24.0 crosswalks to. Broader: target
+        subsumes the source (every White-E pregestational type 1 case is pre-existing type 1 DM in
+        pregnancy) but loses the White-E vascular stratification. Low : deeper-than-one-level broader
+        climb, specific White class lost.
+        """
+}
+mapping "O240F.1" source="O240F" target="4307007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240F SNOMED CT 4307007 = pre-existing type 1 diabetes in pregnancy, White class F (Swedish
+        extension of WHO O24.0; White F = nephropathy). SNOMED CT 4182243 (Pregestational diabetes mellitus
+        AND/OR impaired glucose tolerance, modified White class F, concept_code 4307007) is the standard
+        Disorder denoting exactly the modified-White-F class. Same reasoning as O240B. High.
+        """
+}
+mapping "O240X.1" source="O240X" target="609564002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O240X SNOMED CT 609564002 = pre-existing type 1 diabetes in pregnancy, White class
+        unspecified (Swedish extension of WHO O24.0). SNOMED CT 43531008 (Pre-existing type 1 diabetes
+        mellitus in pregnancy, concept_code 609564002) is the standard Disorder that the WHO O24.0 base
+        crosswalks to via Athena. The source is functionally the WHO-equivalent unspecified type 1 DM in
+        pregnancy; broader label chosen because the Swedish extension code is distinct from the WHO
+        code. High : verified crosswalk on the WHO parent, one-level broader.
+        """
+}
+mapping "O244A.1" source="O244A" target="11687002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O244A SNOMED CT 11687002 = gestational diabetes mellitus, untreated (White class A) (Swedish
+        extension of WHO O24.4). SNOMED CT has White-A pregestational concept 4219466 but no standard
+        White-A gestational concept; the specific GDM-class-B/C/D SNOMED CT concepts
+        (4226245/4228102/4222834) are non-standard (U) and are Class B/C/D anyway. Best defensible
+        standard target is SNOMED CT 4024659 (Gestational diabetes mellitus, concept_code 11687002), the
+        standard Disorder that the WHO O24.4 base crosswalks to. Broader (target subsumes untreated and
+        treated GDM alike). High : verified crosswalk on the WHO parent, one-level broader.
+        """
+}
+mapping "O244B.1" source="O244B" target="11687002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O244B SNOMED CT 11687002 = gestational diabetes mellitus, drug-treated (White class AB)
+        (Swedish extension of WHO O24.4). Same reasoning as O244A: no standard drug-treated GDM concept
+        exists in the mirror; SNOMED CT 4024659 (Gestational diabetes mellitus) is the standard target that
+        WHO O24.4 crosswalks to. Broader. High.
+        """
+}
+mapping "O244X.1" source="O244X" target="11687002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O244X SNOMED CT 11687002 = diabetes arising in pregnancy, unspecified (Swedish extension of
+        WHO O24.4). SNOMED CT 4024659 (Gestational diabetes mellitus, concept_code 11687002) is the
+        standard Disorder that WHO O24.4 crosswalks to. Source is functionally the unspecified
+        WHO-equivalent. Broader (Swedish extension distinct from WHO base). High.
+        """
+}
+mapping "O259.1" source="O259" target="272588001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268A.1" source="O268A" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268B.1" source="O268B" target="22253000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268C.1" source="O268C" target="43064006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268D.1" source="O268D" target="57406009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268E.1" source="O268E" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268F.1" source="O268F" target="239103006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source O268F SNOMED CT 239103006 = Besnier's prurigo of pregnancy (Swedish extension of WHO O26.8).
+        SNOMED CT 4033204 (Prurigo of pregnancy, concept_code 239103006) is a standard Disorder denoting
+        exactly prurigo of pregnancy. The Besnier eponym is a historical synonym for prurigo of
+        pregnancy; SNOMED CT 4066727 (Besnier's prurigo) also exists but is not the gestation-specific
+        concept. 4033204 is the right target. High : exact on the pregnancy-prurigo axis; rather than
+        because the eponym introduces minor ambiguity between the gestational and non-gestational
+        prurigo concepts, and 4033204 omits the eponym.
+        """
+}
+mapping "O268G.1" source="O268G" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "O268W.1" source="O268W" target="77386006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

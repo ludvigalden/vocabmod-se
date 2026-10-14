@@ -1,0 +1,380 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W29-W295
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W290.1" source="W290" target="47235009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 47235009 [GPS]"
+}
+mapping "W2900.1" source="W2900" target="218016007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2900 SNOMED CT 218016007 is a Swedish-ICD-10-SE extension of base ICD-10 W29 (Contact with
+        other powered hand tools and household machinery) subdivided by home + sport. Target SNOMED CT
+        432807 (concept_code 218016007) is the standard concept the base W29 maps to via Athena
+        crosswalk. The target name is narrower than the full W29 scope (powered hand tools not all
+        cutting/piercing), but it is the standard crosswalk target and the closest available; subsumes
+        the activity variant. Broader, Athena crosswalk not independently re-verified — moderate tier.
+        """
+}
+mapping "W2901.1" source="W2901" target="218016007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2901 (other powered hand tool/household machinery - home - play/leisure) is a
+        Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is the
+        Athena standard target for base W29. Target is the crosswalk-defined standard concept; closest
+        available. Broader, moderate tier (crosswalk not re-verified).
+        """
+}
+mapping "W2902.1" source="W2902" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2902 (other powered hand tool/household machinery - home - paid work) is a
+        Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is the
+        Athena standard target for base W29. Target subsumes the activity variant. Broader, moderate
+        tier.
+        """
+}
+mapping "W2903.1" source="W2903" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2903 (other powered hand tool/household machinery - home - other activity) is a
+        Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is the
+        standard target for base W29 via Athena crosswalk. Broader, moderate tier.
+        """
+}
+mapping "W2904.1" source="W2904" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2904 (other powered hand tool/household machinery - home - vital activity) is a
+        Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is the
+        Athena standard target for base W29. Broader, moderate tier.
+        """
+}
+mapping "W2908.1" source="W2908" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2908 (other powered hand tool/household machinery - home - other specified activities)
+        is a Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is
+        the standard target for base W29 via Athena crosswalk. Broader, moderate tier.
+        """
+}
+mapping "W2909.1" source="W2909" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2909 (other powered hand tool/household machinery - home - activity unspecified) is a
+        Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT 218016007) is the
+        Athena standard target for base W29. Broader, moderate tier.
+        """
+}
+mapping "W291.1" source="W291" target="218030002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2910.1" source="W2910" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2910 SNOMED CT 218016007 is a Swedish-ICD-10-SE extension of W29 subdivided by
+        institutional residence + sport. Target SNOMED CT 432807 (218016007) is the Athena standard target
+        for base W29. Target subsumes the place/activity variant. Broader, moderate tier.
+        """
+}
+mapping "W2911.1" source="W2911" target="218016007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2911 (other powered hand tool/household machinery - institutional residence -
+        play/leisure) is a Swedish-ICD-10-SE extension of W29. Target SNOMED CT 432807 (218016007, SNOMED CT
+        218016007) is the standard target for base W29 via Athena crosswalk. Broader, moderate tier.
+        """
+}
+mapping "W2912.1" source="W2912" target="220657001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2912 = SNOMED CT 220657001 (Swedish extension of W29 contact with powered hand
+        tools/household machinery, in residential institution, during paid work). Target SNOMED CT 40420899
+        (code 220657001) = — the ICD-10 Chapter XX external-cause extension that matches the W29 +
+        place-of-occurrence (residential institution) axis exactly. The activity dimension
+        (förvärvsarbete / paid work) has no SNOMED CT analogue; the target fully subsumes the source
+        because every W29-in-residential-institution-during-paid-work event is a
+        W29-in-residential-institution event. Moderate : best available standard concept, name-level 1:1
+        on the place axis but the activity specificity is lost and no independent crosswalk verifies the
+        Swedish 5-char extensions.
+        """
+}
+mapping "W2913.1" source="W2913" target="220657001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2913 = SNOMED CT 220657001 (W29 in residential institution, other activity). Target SNOMED CT
+        40420899 (220657001) =. Target matches the place axis exactly; the dimension is lost. Broader:
+        target fully subsumes source. Moderate tier — name-level place match, no activity representation
+        in SNOMED CT, no crosswalk for Swedish extensions.
+        """
+}
+mapping "W2914.1" source="W2914" target="220657001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2914 = SNOMED CT 220657001 (W29 in residential institution, vital activity such as rest,
+        sleep, meals, personal hygiene). Target SNOMED CT 40420899 (220657001) = place-matched
+        residential-institution concept. Vital-activity dimension has no SNOMED CT analogue; broader.
+        Moderate tier.
+        """
+}
+mapping "W2918.1" source="W2918" target="220657001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2918 = SNOMED CT 220657001 (W29 in residential institution, other specified activities).
+        Target SNOMED CT 40420899 (220657001) = place-matched concept; activity specificity lost. Broader,
+        moderate.
+        """
+}
+mapping "W2919.1" source="W2919" target="220657001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2919 = SNOMED CT 220657001 (W29 in residential institution, unspecified activity). Target
+        SNOMED CT 40420899 (220657001) = place-matched concept; source is itself unspecified on activity so
+        the broader mapping loses negligible information. Moderate tier.
+        """
+}
+mapping "W292.1" source="W292" target="47235009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 47235009 [GPS]"
+}
+mapping "W2920.1" source="W2920" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2920 = SNOMED CT 220658006 (W29 at school/other institution and public area, during
+        sport/exercise). Target SNOMED CT 40420900 (220658006) =. Place axis matches exactly; activity
+        (sport) dimension lost. Broader, moderate — name-level place match, no activity representation,
+        no Swedish-extension crosswalk.
+        """
+}
+mapping "W2921.1" source="W2921" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2921 = SNOMED CT 220658006 (W29 at school/public area, play/leisure). Target SNOMED CT
+        40420900 (220658006) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2922.1" source="W2922" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2922 = SNOMED CT 220658006 (W29 at school/public area, paid work). Target SNOMED CT 40420900
+        (220658006) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2923.1" source="W2923" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2923 = SNOMED CT 220658006 (W29 at school/public area, other activity). Target SNOMED CT
+        40420900 (220658006) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2924.1" source="W2924" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2924 = SNOMED CT 220658006 (W29 at school/public area, vital activity). Target SNOMED CT
+        40420900 (220658006) = place-matched concept; vital-activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2928.1" source="W2928" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2928 = SNOMED CT 220658006 (W29 at school/public area, other specified activities). Target
+        SNOMED CT 40420900 (220658006) = place-matched concept; activity specificity lost. Broader,
+        moderate.
+        """
+}
+mapping "W2929.1" source="W2929" target="220658006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2929 = SNOMED CT 220658006 (W29 at school/public area, unspecified activity). Target SNOMED CT
+        40420900 (220658006) = place-matched concept; source is itself unspecified on activity. Broader,
+        moderate.
+        """
+}
+mapping "W293.1" source="W293" target="302980009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2930.1" source="W2930" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2930 = SNOMED CT 220659003 (W29 at sports/athletics area, during sport). Target SNOMED CT
+        40420901 (220659003) =. Place axis matches exactly; activity (sport) dimension lost. Broader,
+        moderate — name-level place match, no activity representation in SNOMED CT, no Swedish-extension
+        crosswalk.
+        """
+}
+mapping "W2931.1" source="W2931" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2931 = SNOMED CT 220659003 (W29 at sports area, play/leisure). Target SNOMED CT 40420901
+        (220659003) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2932.1" source="W2932" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2932 = SNOMED CT 220659003 (W29 at sports area, paid work). Target SNOMED CT 40420901
+        (220659003) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2933.1" source="W2933" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2933 = SNOMED CT 220659003 (W29 at sports area, other activity). Target SNOMED CT 40420901
+        (220659003) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2934.1" source="W2934" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2934 = SNOMED CT 220659003 (W29 at sports area, vital activity). Target SNOMED CT 40420901
+        (220659003) = place-matched concept; vital-activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2938.1" source="W2938" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2938 = SNOMED CT 220659003 (W29 at sports area, other specified activities). Target SNOMED CT
+        40420901 (220659003) = place-matched concept; activity specificity lost. Broader, moderate.
+        """
+}
+mapping "W2939.1" source="W2939" target="220659003" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2939 = SNOMED CT 220659003 (W29 at sports area, unspecified activity). Target SNOMED CT
+        40420901 (220659003) = place-matched concept; source is itself unspecified on activity. Broader,
+        moderate.
+        """
+}
+mapping "W294.1" source="W294" target="242749007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "W2940.1" source="W2940" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2940 = SNOMED CT 220661007 (W29 on street/highway, during sport). Target SNOMED CT 40420904
+        (220661007) =. Place axis matches exactly; activity (sport) dimension lost. Broader, moderate —
+        name-level place match, no activity representation in SNOMED CT, no Swedish-extension crosswalk.
+        """
+}
+mapping "W2941.1" source="W2941" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2941 = SNOMED CT 220661007 (W29 on street/highway, play/leisure). Target SNOMED CT 40420904
+        (220661007) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2942.1" source="W2942" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2942 = SNOMED CT 220661007 (W29 on street/highway, paid work). Target SNOMED CT 40420904
+        (220661007) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2943.1" source="W2943" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2943 = SNOMED CT 220661007 (W29 on street/highway, other activity). Target SNOMED CT 40420904
+        (220661007) = place-matched concept; activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2944.1" source="W2944" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2944 = SNOMED CT 220661007 (W29 on street/highway, vital activity). Target SNOMED CT 40420904
+        (220661007) = place-matched concept; vital-activity dimension lost. Broader, moderate.
+        """
+}
+mapping "W2948.1" source="W2948" target="220661007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source W2948 = SNOMED CT 220661007 (W29 on street/highway, other specified activities). Target
+        SNOMED CT 40420904 (220661007) = place-matched concept; activity specificity lost. Broader,
+        moderate.
+        """
+}
+mapping "W2949.1" source="W2949" target="218016007" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2949 (Swedish ICD-10-SE extension) = SNOMED CT 218016007. The base ICD-10 code W29 (concept
+        45756282) has an Athena crosswalk to SNOMED CT 432807 (concept_code 218016007). The Swedish
+        extension adds place-of-occurrence (street/road) and activity qualifiers absent from the SNOMED CT
+        target; the target captures only the core contact event. Target subsumes the source (every W2949
+        event is an instance of 432807), so mapping_type=broader. Confidence (high): one-level broader,
+        crosswalk-verified for parent W29; specificity loss is only the place/activity axes.
+        """
+}
+mapping "W295.1" source="W295" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W295 = SNOMED CT 218016007. Base W29 (ICD10 45756282) Maps-to SNOMED CT 432807 (218016007).
+        Target captures the core contact event; source adds place-of-occurrence (trade/service area) not
+        in target. Target subsumes source. Confidence : one-level broader, crosswalk-verified for
+        parent.
+        """
+}
+mapping "W2950.1" source="W2950" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2950 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity qualifiers absent from target; target captures the core contact event and fully
+        subsumes source. Confidence : one-level broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2951.1" source="W2951" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2951 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity; target captures core contact event and subsumes source. Confidence : one-level
+        broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2952.1" source="W2952" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2952 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity; target captures core contact event and subsumes source. Confidence : one-level
+        broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2953.1" source="W2953" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2953 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity; target captures core contact event and subsumes source. Confidence : one-level
+        broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2954.1" source="W2954" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2954 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity; target captures core contact event and subsumes source. Confidence : one-level
+        broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2958.1" source="W2958" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2958 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds
+        place+activity; target captures core contact event and subsumes source. Confidence : one-level
+        broader, crosswalk-verified for parent.
+        """
+}
+mapping "W2959.1" source="W2959" target="218016007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W2959 = SNOMED CT 218016007. Base W29 Maps-to SNOMED CT 432807 (218016007). Source adds place
+        (trade/service area); target captures core contact event and subsumes source. Confidence :
+        one-level broader, crosswalk-verified for parent.
+        """
+}

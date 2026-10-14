@@ -1,0 +1,447 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V73-V736
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V7300.1" source="V7300" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7300 = Swedish extension of ICD-10 V73.0 SNOMED CT 214640008 36198007, activity =
+        idrott/sport/motion. V73.0 has Athena crosswalk to SNOMED CT 437738 (Motor vehicle accident off
+        public road, SNOMED CT 214640008) + 444074 (Victim of vehicular accident). Activity dimension lost;
+        targets broader (also drop the bus/driver specificity). Moderate confidence.
+        """
+}
+mapping "V7300.2" source="V7300" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7301.1" source="V7301" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7301 = Swedish extension of ICD-10 V73.0 (bus driver, nontraffic collision with
+        car/pickup/van), activity = lek/fritid. Same SNOMED CT crosswalk as V73.0. Activity dimension lost;
+        targets broader. Moderate confidence.
+        """
+}
+mapping "V7301.2" source="V7301" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7302.1" source="V7302" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7302 = Swedish extension of ICD-10 V73.0 (bus driver, nontraffic collision with
+        car/pickup/van), activity = förvärvsarbete. Same SNOMED CT crosswalk as V73.0. Activity dimension
+        lost; targets broader. Moderate confidence.
+        """
+}
+mapping "V7302.2" source="V7302" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7303.1" source="V7303" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7303 = Swedish extension of ICD-10 V73.0 (bus driver, nontraffic collision with
+        car/pickup/van), activity = annan sysselsättning. Same SNOMED CT crosswalk as V73.0. Activity
+        dimension lost; targets broader. Moderate confidence.
+        """
+}
+mapping "V7303.2" source="V7303" target="36198007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "V7304.1" source="V7304" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7304 = Swedish extension of WHO V73.0 (bus driver, nontraffic accident, collision with
+        car/pickup/van) refined with activity=vital activity (rest/sleep/meals/hygiene). Target SNOMED CT
+        437738 = SNOMED CT 214640008 (concept_code 214640008). WHO V73.0 maps to 437738 via Athena
+        crosswalk; the Swedish activity subcode adds only an external-cause activity descriptor not
+        represented in SNOMED CT, so the target fully subsumes the source clinically. Broader: source is
+        more specific than the target due to the activity axis. Moderate tier: mechanical crosswalk from
+        the WHO parent, Swedish extension not independently re-verified.
+        """
+}
+mapping "V7308.1" source="V7308" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7308 = Swedish extension of WHO V73.0 (bus driver, nontraffic accident, collision with
+        car/pickup/van) refined with activity=other specified activities. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.0 maps to 437738 via Athena crosswalk; the activity
+        subcode adds an external-cause descriptor not in SNOMED CT, so the target subsumes the source.
+        Broader; moderate tier.
+        """
+}
+mapping "V7309.1" source="V7309" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7309 = Swedish extension of WHO V73.0 (bus driver, nontraffic accident, collision with
+        car/pickup/van) refined with activity=unspecified. Target SNOMED CT 437738 = SNOMED CT 214640008
+        (concept_code 214640008). WHO V73.0 maps to 437738 via Athena crosswalk; the Swedish activity
+        subcode adds no clinical specificity beyond the WHO parent. Broader; moderate tier.
+        """
+}
+mapping "V7310.1" source="V7310" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7310 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=sport/exercise. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk; activity
+        subcode adds only an external-cause descriptor. Broader; moderate tier.
+        """
+}
+mapping "V7311.1" source="V7311" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7311 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=play/leisure. Target SNOMED CT 437738 = SNOMED CT 214640008
+        (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk. Broader; moderate tier.
+        """
+}
+mapping "V7312.1" source="V7312" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7312 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=paid work. Target SNOMED CT 437738 = SNOMED CT 214640008
+        (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk. Broader; moderate tier.
+        """
+}
+mapping "V7313.1" source="V7313" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7313 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=other occupation. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7314.1" source="V7314" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7314 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=vital activity. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7318.1" source="V7318" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7318 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=other specified activities. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7319.1" source="V7319" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7319 = Swedish extension of WHO V73.1 (bus passenger, nontraffic accident, collision
+        with car/pickup/van) refined with activity=unspecified. Target SNOMED CT 437738 = SNOMED CT 214640008
+        (concept_code 214640008). WHO V73.1 maps to 437738 via Athena crosswalk. Broader; moderate tier.
+        """
+}
+mapping "V7320.1" source="V7320" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7320 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=sport/exercise. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7321.1" source="V7321" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7321 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=play/leisure. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7322.1" source="V7322" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7322 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=paid work. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7323.1" source="V7323" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7323 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=other occupation. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7324.1" source="V7324" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7324 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=vital activity. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7328.1" source="V7328" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7328 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=other specified activities. Target SNOMED CT
+        437738 = SNOMED CT 214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena
+        crosswalk. Broader; moderate tier.
+        """
+}
+mapping "V7329.1" source="V7329" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7329 = Swedish extension of WHO V73.2 (person on outside of bus, nontraffic accident,
+        collision with car/pickup/van) refined with activity=unspecified. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.2 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7330.1" source="V7330" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7330 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=sport/exercise. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7331.1" source="V7331" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7331 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=play/leisure. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7332.1" source="V7332" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7332 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=paid work. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7333.1" source="V7333" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7333 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=other occupation. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7334.1" source="V7334" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7334 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=vital activity. Target SNOMED CT 437738 =
+        SNOMED CT 214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk.
+        Broader; moderate tier.
+        """
+}
+mapping "V7338.1" source="V7338" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7338 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=other specified activities. Target SNOMED CT
+        437738 = SNOMED CT 214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena
+        crosswalk. Broader; moderate tier.
+        """
+}
+mapping "V7339.1" source="V7339" target="214640008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7339 = Swedish extension of WHO V73.3 (unspecified bus occupant, nontraffic accident,
+        collision with car/pickup/van) refined with activity=unspecified. Target SNOMED CT 437738 = SNOMED CT
+        214640008 (concept_code 214640008). WHO V73.3 maps to 437738 via Athena crosswalk. Broader;
+        moderate tier.
+        """
+}
+mapping "V7340.1" source="V7340" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7340 = Swedish extension of WHO V73.4 (person injured while boarding/alighting from bus,
+        collision with car/pickup/van) refined with activity=sport/exercise. Target SNOMED CT 4053428 =
+        SNOMED CT 242107006 (concept_code 242107006). WHO V73.4 maps to 4053428 via Athena crosswalk;
+        activity subcode adds only an external-cause descriptor not in SNOMED CT. Broader; moderate tier.
+        """
+}
+mapping "V7341.1" source="V7341" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7341 = Swedish 7-char extension of ICD-10 V73.4 SNOMED CT 242107006, with activity context
+        (play/leisure). Target SNOMED CT 4053428 = (Athena Maps to from V73.4 / concept 45580661). SNOMED CT
+        target fully subsumes the injury event; the Swedish activity extension has no SNOMED CT analogue
+        and is dropped. High tier: clear crosswalk from the parent code, one-level breadth mismatch from
+        the activity extension.
+        """
+}
+mapping "V7342.1" source="V7342" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7342 = Swedish extension of V73.4 (bus occupant, boarding/alighting) with activity
+        SNOMED CT 242107006 (paid work). Target SNOMED CT 4053428 = (Athena Maps to from V73.4). Target
+        subsumes the injury event; activity extension dropped. High tier: parent crosswalk, one-level
+        breadth loss.
+        """
+}
+mapping "V7343.1" source="V7343" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7343 = Swedish extension of V73.4 (bus occupant, boarding/alighting) with activity
+        SNOMED CT 242107006 (other activity). Target SNOMED CT 4053428 =. Target subsumes the injury event;
+        activity extension dropped. High tier: parent crosswalk.
+        """
+}
+mapping "V7344.1" source="V7344" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7344 = Swedish extension of V73.4 (bus occupant, boarding/alighting) with activity
+        SNOMED CT 242107006 (vital activity: rest, sleep, meal, personal hygiene). Target SNOMED CT 4053428 =.
+        Target subsumes injury event; activity extension dropped. High tier: parent crosswalk.
+        """
+}
+mapping "V7348.1" source="V7348" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7348 = Swedish extension of V73.4 (bus occupant, boarding/alighting) with activity
+        SNOMED CT 242107006 (other specified activities). Target SNOMED CT 4053428 =. Target subsumes injury
+        event; activity extension dropped. High tier: parent crosswalk.
+        """
+}
+mapping "V7349.1" source="V7349" target="242107006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7349 = Swedish extension of V73.4 (bus occupant, boarding/alighting) with activity
+        SNOMED CT 242107006 (unspecified activity). Target SNOMED CT 4053428 =. Target subsumes injury event;
+        closest standard concept. High tier: parent crosswalk.
+        """
+}
+mapping "V7350.1" source="V7350" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7350 = Swedish extension of V73.5 SNOMED CT 274913009 with activity (sport/exercise).
+        Target SNOMED CT 433930 = (Athena Maps to from V73.5 / 45570965). Target subsumes the collision
+        event; Swedish activity extension dropped. High tier: parent crosswalk, one-level breadth loss.
+        """
+}
+mapping "V7351.1" source="V7351" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7351 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7352.1" source="V7352" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7352 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7353.1" source="V7353" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7353 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7354.1" source="V7354" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7354 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7358.1" source="V7358" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7358 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7359.1" source="V7359" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7359 = Swedish extension of V73.5 (bus driver, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7360.1" source="V7360" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7360 = Swedish extension of V73.6 SNOMED CT 274913009 with activity. Target SNOMED CT 433930 =
+        (Athena Maps to from V73.6 / 45595128). Target subsumes collision event; activity extension
+        dropped. High tier: parent crosswalk.
+        """
+}
+mapping "V7361.1" source="V7361" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7361 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7362.1" source="V7362" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7362 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7363.1" source="V7363" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7363 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7364.1" source="V7364" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7364 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7368.1" source="V7368" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7368 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}
+mapping "V7369.1" source="V7369" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V7369 = Swedish extension of V73.6 (bus passenger, traffic accident) with activity SNOMED CT
+        274913009. Target SNOMED CT 433930 =. Target subsumes collision event; activity extension dropped.
+        High tier: parent crosswalk.
+        """
+}

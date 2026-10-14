@@ -1,0 +1,126 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes V527-V529
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "V5270.1" source="V5270" target="274913009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5270 = Swedish extension of V52.7 (person on outside of pick-up truck/van injured in
+        traffic collision with 2/3-wheeled motor vehicle) with activity-context SNOMED CT 274913009. Parent
+        V52.7 (Athena 45756606) maps to = via Athena 433930. Broader: target subsumes source on injury
+        axis; activity dimension has no SNOMED CT analogue. low tier.
+        """
+}
+mapping "V5271.1" source="V5271" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5271 (Swedish 5-char extension of ICD-10 V52) = SNOMED CT 418399005. Base V52 (ICD10CM
+        1575465) has Athena edge to SNOMED CT 435134 (Motor vehicle accident, concept_code 418399005,
+        standard Observation). The Swedish extension adds vehicle-role (person on outside) and activity
+        context (leisure); no SNOMED CT concept captures this combined specificity. Target 435134 fully
+        subsumes the accident aspect (broader); the activity-context axis is dropped. Low tier :
+        heterogeneous Swedish-extension source bundling activity context; crosswalk not independently
+        re-verified at the 5-char level.
+        """
+}
+mapping "V5272.1" source="V5272" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5272 (Swedish 5-char extension of V52) = same base V52 collision scenario, activity =
+        paid work. Base V52 → SNOMED CT 435134 (Motor vehicle accident, 418399005, standard). Target
+        subsumes the accident aspect (broader); work-context dropped. Low : same heterogeneous
+        Swedish-extension reasoning as V5271.
+        """
+}
+mapping "V5273.1" source="V5273" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5273 (Swedish 5-char extension of V52) = same base V52 collision, activity = other
+        occupation. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader: target subsumes accident
+        axis, activity dropped. Low.
+        """
+}
+mapping "V5274.1" source="V5274" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5274 (Swedish 5-char extension of V52) = same base V52 collision, activity = vital
+        activity (rest/sleep/meals/hygiene). Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader:
+        target subsumes accident axis, activity dropped. Low.
+        """
+}
+mapping "V5278.1" source="V5278" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5278 (Swedish 5-char extension of V52) = same base V52 collision, activity = other
+        specified. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader: target subsumes accident
+        axis, activity dropped. Low.
+        """
+}
+mapping "V5279.1" source="V5279" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5279 (Swedish 5-char extension of V52) = same base V52 collision, activity =
+        unspecified. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader: target subsumes
+        accident axis. Low : heterogeneous Swedish extension source.
+        """
+}
+mapping "V5290.1" source="V5290" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5290 (Swedish 5-char extension of V52) = unspecified occupant of pick-up truck/van in
+        collision with two-/three-wheeled motor vehicle in traffic, activity = sport/exercise. Base V52
+        → SNOMED CT 435134 (Motor vehicle accident). Broader: target subsumes accident axis, activity
+        dropped. Low.
+        """
+}
+mapping "V5291.1" source="V5291" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5291 (Swedish 5-char extension of V52) = same V52 base collision, unspecified occupant,
+        activity = play/leisure. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}
+mapping "V5292.1" source="V5292" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5292 (Swedish 5-char extension of V52) = same V52 base collision, activity = paid work.
+        Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}
+mapping "V5293.1" source="V5293" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5293 (Swedish 5-char extension of V52) = same V52 base collision, activity = other
+        occupation. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}
+mapping "V5294.1" source="V5294" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5294 (Swedish 5-char extension of V52) = same V52 base collision, activity = vital
+        activity. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}
+mapping "V5298.1" source="V5298" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5298 (Swedish 5-char extension of V52) = same V52 base collision, activity = other
+        specified. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}
+mapping "V5299.1" source="V5299" target="418399005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source V5299 (Swedish 5-char extension of V52) = same V52 base collision, activity =
+        unspecified. Base V52 → SNOMED CT 435134 (Motor vehicle accident). Broader. Low.
+        """
+}

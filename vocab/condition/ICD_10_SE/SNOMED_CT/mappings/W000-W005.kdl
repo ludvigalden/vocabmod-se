@@ -1,0 +1,432 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W000-W005
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W000.1" source="W000" target="33036003" relationship=equivalent effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Leaf code Fall on same level due to ice and snow -> SNOMED CT 33036003; crosswalk-verified;
+        ice/snow cause dropped
+        """
+}
+mapping "W0000.1" source="W0000" target="242387001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0000 SNOMED CT 242387001 = Swedish 5-char extension of ICD-10 W00 (concept 45756242) +
+        place=home + activity=sport. Target SNOMED CT 4053863 (242387001). Athena crosswalk W00 → 4053863
+        verified. The accident concept itself matches exactly; place/activity suffixes are contextual
+        metadata for injury surveillance with no separate SNOMED CT target. High tier (not): verified
+        crosswalk but source carries place+activity context not in the target.
+        """
+}
+mapping "W0001.1" source="W0001" target="242387001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0001 = W00 + place=home + activity=play/leisure. Target SNOMED CT 4053863 via Athena
+        crosswalk W00 → 4053863. Accident concept matches exactly; contextual qualifiers dropped. High
+        tier.
+        """
+}
+mapping "W0002.1" source="W0002" target="242387001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0002 = W00 + place=home + activity=paid work. Target SNOMED CT 4053863 via Athena crosswalk
+        W00 → 4053863. Accident concept matches exactly; contextual qualifiers dropped. High tier.
+        """
+}
+mapping "W0003.1" source="W0003" target="242387001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0003 = W00 + place=home + activity=other work. Target SNOMED CT 4053863 via Athena
+        crosswalk W00 → 4053863. Accident concept matches exactly; contextual qualifiers dropped. High
+        tier.
+        """
+}
+mapping "W0004.1" source="W0004" target="242387001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0004 = W00 + place=home + activity=vital activity. Target SNOMED CT 4053863 via Athena
+        crosswalk W00 → 4053863. Accident concept matches exactly; contextual qualifiers dropped. High
+        tier.
+        """
+}
+mapping "W0008.1" source="W0008" target="242387001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0008 = W00 + place=home + activity=other specified. Target SNOMED CT 4053863 via Athena
+        crosswalk W00 → 4053863. Accident concept matches exactly; contextual qualifiers dropped. High
+        tier.
+        """
+}
+mapping "W0009.1" source="W0009" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0009 = Swedish 5-digit extension of W00 SNOMED CT 242387001, place=home/residential area,
+        activity=unspecified. Target SNOMED CT 4053863 (242387001) =, the verified Athena crosswalk target
+        for parent ICD10 W00 (45756242->4053863). Target subsumes source: every W0009 fall is a fall due
+        to ice/snow. Broader because target drops the Swedish place+activity granularity (no standard
+        SNOMED CT concept distinguishes fall-on-ice by activity). Moderate tier: best available standard
+        concept via inherited crosswalk, Swedish extension detail not represented in standard.
+        """
+}
+mapping "W001.1" source="W001" target="217083007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 217083007 [GPS]"
+}
+mapping "W0010.1" source="W0010" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0010 = Swedish extension of W00, place=residential institution, activity=sport/exercise.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0011.1" source="W0011" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0011 = Swedish extension of W00, place=residential institution, activity=play/leisure.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0012.1" source="W0012" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0012 = Swedish extension of W00, place=residential institution, activity=paid work.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0013.1" source="W0013" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0013 = Swedish extension of W00, place=residential institution, activity=other. Target
+        SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for parent W00.
+        Target subsumes source. Broader because target drops place+activity granularity. Moderate tier:
+        inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0014.1" source="W0014" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0014 = Swedish extension of W00, place=residential institution, activity=vital activity
+        (rest/sleep/meals/personal hygiene). Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001,
+        verified Athena crosswalk target for parent W00. Target subsumes source. Broader because target
+        drops place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail
+        not in standard.
+        """
+}
+mapping "W0018.1" source="W0018" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0018 = Swedish extension of W00, place=residential institution, activity=other
+        specified. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk
+        target for parent W00. Target subsumes source. Broader because target drops place+activity
+        granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0019.1" source="W0019" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0019 = Swedish extension of W00, place=residential institution, activity=unspecified.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W002.1" source="W002" target="242408008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 242408008 [GPS] [IPS]"
+}
+mapping "W0020.1" source="W0020" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0020 = Swedish extension of W00, place=school/other institution/public area,
+        activity=sport/exercise. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W0021.1" source="W0021" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0021 = Swedish extension of W00, place=school/other institution/public area,
+        activity=play/leisure. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W0022.1" source="W0022" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0022 = Swedish extension of W00, place=school/other institution/public area,
+        activity=paid work. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W0023.1" source="W0023" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0023 = Swedish extension of W00, place=school/other institution/public area,
+        activity=other. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk
+        target for parent W00. Target subsumes source. Broader because target drops place+activity
+        granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0024.1" source="W0024" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0024 = Swedish extension of W00, place=school/other institution/public area,
+        activity=vital activity. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W0028.1" source="W0028" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0028 = Swedish extension of W00, place=school/other institution/public area,
+        activity=other specified. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W0029.1" source="W0029" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0029 = Swedish extension of W00, place=school/other institution/public area,
+        activity=unspecified. Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena
+        crosswalk target for parent W00. Target subsumes source. Broader because target drops
+        place+activity granularity. Moderate tier: inherited crosswalk, Swedish extension detail not in
+        standard.
+        """
+}
+mapping "W003.1" source="W003" target="242387001" relationship=equivalent effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W003 = Swedish extension of W00, place=sports/athletics area (no activity sub-division).
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Source adds only place=sports area to W00; target captures the ice/snow fall. High
+        tier: crosswalk-verified parent, single place-axis addition with no activity detail lost. Closer
+        to equivalence than the 5-digit activity-distinguished codes.
+        """
+}
+mapping "W0030.1" source="W0030" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0030 = Swedish extension of W00, place=sports/athletics area, activity=sport/exercise.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0031.1" source="W0031" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0031 = Swedish extension of W00, place=sports/athletics area, activity=play/leisure.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0032.1" source="W0032" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0032 = Swedish extension of W00, place=sports/athletics area, activity=paid work. Target
+        SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for parent W00.
+        Target subsumes source. Broader because target drops place+activity granularity. Moderate tier:
+        inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0033.1" source="W0033" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0033 = Swedish extension of W00, place=sports/athletics area, activity=other. Target
+        SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for parent W00.
+        Target subsumes source. Broader because target drops place+activity granularity. Moderate tier:
+        inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0034.1" source="W0034" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0034 = Swedish extension of W00, place=sports/athletics area, activity=vital activity.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0038.1" source="W0038" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0038 = Swedish extension of W00, place=sports/athletics area, activity=other specified.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0039.1" source="W0039" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0039 = Swedish extension of W00, place=sports/athletics area, activity=unspecified.
+        Target SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for
+        parent W00. Target subsumes source. Broader because target drops place+activity granularity.
+        Moderate tier: inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W004.1" source="W004" target="242387001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W004 = Swedish extension of W00, place=street/highway (no activity sub-division). Target
+        SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for parent W00.
+        Source adds only place=street/highway to W00; target captures the ice/snow fall. High tier:
+        crosswalk-verified parent, single place-axis addition. Equivalence is near-exact modulo the
+        place qualifier.
+        """
+}
+mapping "W0040.1" source="W0040" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0040 = Swedish extension of W00, place=street/highway, activity=sport/exercise. Target
+        SNOMED CT 4053863 (242387001) = SNOMED CT 242387001, verified Athena crosswalk target for parent W00.
+        Target subsumes source. Broader because target drops place+activity granularity. Moderate tier:
+        inherited crosswalk, Swedish extension detail not in standard.
+        """
+}
+mapping "W0041.1" source="W0041" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0041 = Swedish activity subdivision of ICD-10 W00 SNOMED CT 242387001 (street/road - play
+        and other leisure activity). The international ICD-10 W00 base code (Athena concept 45756242)
+        has a crosswalk to SNOMED CT 4053863 (242387001). The Swedish 5th/6th-character extension records
+        place/activity context but does not change the clinical injury concept. Target subsumes the
+        source (drops the activity subdivision), so. High tier : verified Athena crosswalk on the base
+        W00, one-level breadth mismatch from the Swedish activity extension.
+        """
+}
+mapping "W0042.1" source="W0042" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0042 = Swedish activity subdivision of W00 SNOMED CT 242387001 (street/road - paid work).
+        Base ICD-10 W00 (Athena 45756242) maps to SNOMED CT 4053863 (242387001). Activity extension adds
+        workplace context, not a different injury. Target subsumes source (broader). high: verified
+        crosswalk on base W00, one-level Swedish breadth.
+        """
+}
+mapping "W0043.1" source="W0043" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0043 = Swedish activity subdivision of W00 SNOMED CT 242387001 (street/road - other
+        activity). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes source (broader).
+        high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0044.1" source="W0044" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0044 = Swedish activity subdivision of W00 SNOMED CT 242387001 (street/road - vital
+        activity such as rest, sleep, meals, personal hygiene). Base ICD-10 W00 maps to SNOMED CT 4053863
+        (242387001). Target subsumes source (broader). high: verified W00 crosswalk, one-level Swedish
+        breadth.
+        """
+}
+mapping "W0048.1" source="W0048" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0048 = Swedish activity subdivision of W00 SNOMED CT 242387001 (street/road - other
+        specified activities). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes
+        source (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0049.1" source="W0049" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0049 = Swedish activity subdivision of W00 SNOMED CT 242387001 (street/road - activity
+        unspecified). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes source
+        (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W005.1" source="W005" target="242387001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W005 = Swedish 4th-character subdivision of W00 by place: SNOMED CT 242387001. The base
+        ICD-10 W00 maps to SNOMED CT 4053863 (242387001). This Swedish row adds a place specifier but the
+        underlying clinical concept is the W00 fall. Treated as exact_match to the W00 SNOMED CT equivalent
+        at because the place subdivision is administrative context, not a different clinical injury.
+        """
+}
+mapping "W0050.1" source="W0050" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0050 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        sport, exercise). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes source
+        (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0051.1" source="W0051" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0051 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        play and other leisure). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes
+        source (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0052.1" source="W0052" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0052 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        paid work). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes source
+        (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0053.1" source="W0053" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0053 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        other activity). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes source
+        (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0054.1" source="W0054" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0054 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        vital activity such as rest, sleep, meals, hygiene). Base ICD-10 W00 maps to SNOMED CT 4053863
+        (242387001). Target subsumes source (broader). high: verified W00 crosswalk, one-level Swedish
+        breadth.
+        """
+}
+mapping "W0058.1" source="W0058" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0058 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        other specified activities). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes
+        source (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}
+mapping "W0059.1" source="W0059" target="242387001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W0059 = Swedish activity subdivision of W00 SNOMED CT 242387001 (shop/trade/service area -
+        activity unspecified). Base ICD-10 W00 maps to SNOMED CT 4053863 (242387001). Target subsumes
+        source (broader). high: verified W00 crosswalk, one-level Swedish breadth.
+        """
+}

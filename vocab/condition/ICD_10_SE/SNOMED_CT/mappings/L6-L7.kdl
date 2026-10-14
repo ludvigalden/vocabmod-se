@@ -1,0 +1,539 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes L6-L7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "L603A.1" source="L603A" target="13733009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603A SNOMED CT 13733009 = median canaliform nail dystrophy of Heller (Swedish extension
+        under L60.3). Target. Exact SNOMED CT equivalent (eponym matches). Exact-equivalent tier.
+        """
+}
+mapping "L603B.1" source="L603B" target="724849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603B SNOMED CT 724849003 = hapalonychia (soft nails, a Swedish extension under L60.3).
+        Target. Hapalonychia is the clinical term for nail softness/fragility; 724849003 is the SNOMED CT
+        finding that captures this. Exact-equivalent tier: clinical synonym match.
+        """
+}
+mapping "L603C.1" source="L603C" target="66270006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603C SNOMED CT 66270006 = koilonychia (spoon nails, Swedish extension under L60.3). Target.
+        Exact SNOMED CT equivalent. Exact-equivalent tier.
+        """
+}
+mapping "L603D.1" source="L603D" target="87065009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603D SNOMED CT 87065009 = nail atrophy (Swedish extension under L60.3). No dedicated SNOMED CT
+        concept exists in the mirror. Target (nail dystrophy), the Athena ICD10 crosswalk target for
+        L60.3. Nail atrophy is a form of nail dystrophy; the target subsumes the source. High tier:
+        one-level broader, crosswalk-verified parent L60.3.
+        """
+}
+mapping "L603E.1" source="L603E" target="724849003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603E SNOMED CT 724849003 = nail brittleness (Swedish extension under L60.3). Target.
+        Clinical synonym (brittle nails = nail fragility). The SNOMED CT concept covers brittle/fragile
+        nails. High tier: exact concept match, treating nagelskörhet as the SNOMED CT finding; mapping_type
+        broader only because 724849003 is a finding rather than a disorder morphology. Confidence high
+        on the concept identity.
+        """
+}
+mapping "L603F.1" source="L603F" target="724849003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603F SNOMED CT 724849003 = onychoschisis (splitting of nail plate into layers, Swedish
+        extension under L60.3). No dedicated onychoschisis SNOMED CT concept in the mirror. Target
+        (onychoschisis is a fragility presentation). Moderate tier: partial overlap, target is broader
+        finding, no dedicated concept.
+        """
+}
+mapping "L603G.1" source="L603G" target="87065009" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603G SNOMED CT 87065009 = onychorrhexis (longitudinal ridging of nail, Swedish extension
+        under L60.3). No dedicated onychorrhexis SNOMED CT concept in mirror. Target = Dystrophia unguium,
+        the Athena crosswalk target for L60.3. Onychorrhexis is a nail dystrophy variant; target
+        subsumes source. High tier: one-level broader, crosswalk-verified parent.
+        """
+}
+mapping "L603H.1" source="L603H" target="247487009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603H SNOMED CT 247487009 = overcurvature of nails (Swedish extension under L60.3, English
+        term used). Target. Exact SNOMED CT equivalent. Exact-equivalent tier.
+        """
+}
+mapping "L603J.1" source="L603J" target="69192004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603J SNOMED CT 69192004 = trachyonychia (rough nails, Swedish extension under L60.3).
+        Target. Exact SNOMED CT equivalent. Exact-equivalent tier.
+        """
+}
+mapping "L603W.1" source="L603W" target="87065009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L603W SNOMED CT 87065009 = other and unspecified nail dystrophy (Swedish extension of
+        L60.3). Target = Dystrophia unguium, the Athena ICD10 crosswalk target for L60.3. Clinical
+        equivalence: same concept of nail dystrophy. Exact-equivalent tier: crosswalk-verified, same
+        level.
+        """
+}
+mapping "L608A.1" source="L608A" target="50458000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608B.1" source="L608B" target="89077005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608B SNOMED CT 89077005 = nail discoloration (Swedish extension under L60.8). Target. Exact
+        SNOMED CT equivalent. Exact-equivalent tier.
+        """
+}
+mapping "L608C.1" source="L608C" target="74102009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "L608D.1" source="L608D" target="22743000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608D SNOMED CT 22743000 = onychomadesis (nail shedding from proximal separation, Swedish
+        extension under L60.8). Target. Exact SNOMED CT equivalent. Exact-equivalent tier.
+        """
+}
+mapping "L608E.1" source="L608E" target="247492006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608E SNOMED CT 247492006 = onychoptosis (nail shedding/loss, Swedish extension under
+        L60.8). Target. Clinical equivalence: onychoptosis is the clinical term for nail shedding.
+        Exact-equivalent tier.
+        """
+}
+mapping "L608F.1" source="L608F" target="77489003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608G.1" source="L608G" target="77489003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "L608H.1" source="L608H" target="247492006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608H SNOMED CT 247492006 = nail shedding (Swedish extension under L60.8). Target. Exact
+        SNOMED CT equivalent (term identity). Exact-equivalent tier.
+        """
+}
+mapping "L608J.1" source="L608J" target="269219004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608J SNOMED CT 269219004 = subungual bleeding/hemorrhage. Target (Athena 4149692) =,
+        standard Concept (S, valid). Exact 1:1 clinical equivalence: subungual bleeding and subungual
+        hematoma denote the same entity. exact-equivalent.
+        """
+}
+mapping "L608W.1" source="L608W" target="17790008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L608W SNOMED CT 17790008 = other specified nail diseases (Swedish residual under L60).
+        Target (Athena 132706) =, standard (S). Base WHO ICD-10 L60 (Nail disorders) has an Athena edge
+        to 132706. The Swedish residual subcode inherits the parent target. Broader: target subsumes the
+        heterogeneous residual bucket. high: verified crosswalk on the parent, one-level broader.
+        """
+}
+mapping "L668A.1" source="L668A" target="400088006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L668A SNOMED CT 400088006 = Dreuw's atrophic circumscribed patchy alopecia, a
+        scarring/cicatricial alopecia variant. The exact SNOMED CT concept (238729005, Athena 4032771)
+        exists but is non-standard (U, retired 2003). Target (Athena 4266794) =, standard (S). Base WHO
+        ICD-10 L66 maps to 4266794 via Athena crosswalk. Broader: the target fully subsumes Dreuw's
+        variant as a scarring alopecia. high: verified crosswalk on L66, one-level broader,
+        exact-specific SNOMED CT concept is non-standard so the standard parent is the best defensible
+        target.
+        """
+}
+mapping "L668B.1" source="L668B" target="67488005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L668B SNOMED CT 67488005 = traumatic alopecia. Target (Athena 4285863) =, standard (S).
+        Exact semantic equivalence. exact-equivalent.
+        """
+}
+mapping "L668C.1" source="L668C" target="238733003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L668C SNOMED CT 238733003 = erosive pustular dermatosis of the scalp. Target (Athena
+        4081085) =, standard (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L668W.1" source="L668W" target="400088006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L668W SNOMED CT 400088006 = other scarring hair loss (Swedish residual under L66). Target
+        (Athena 4266794) =, standard (S). Base WHO ICD-10 L66 maps to 4266794 via Athena crosswalk.
+        Broader: target subsumes the heterogeneous residual bucket. high: verified crosswalk on the
+        parent, one-level broader.
+        """
+}
+mapping "L671A.1" source="L671A" target="387833009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L671A SNOMED CT 387833009 = premature graying/canities. Target (Athena 4307593) =, standard
+        (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L671B.1" source="L671B" target="12496007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L671B SNOMED CT 12496007 = hair heterochromia. Target (Athena 4053339) =, standard (S).
+        Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L671C.1" source="L671C" target="50305006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L671C SNOMED CT 50305006 = acquired circumscribed poliosis. Target (Athena 4173741) =,
+        standard (S). Exact 1:1 equivalence on acquisition and circumscription. exact-equivalent.
+        """
+}
+mapping "L671D.1" source="L671D" target="14240001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L671D SNOMED CT 14240001 = poliosis, unspecified. Target (Athena 4031341) =, standard (S).
+        Exact 1:1 equivalence; the unspecified Swedish source matches the unqualified SNOMED CT concept.
+        exact-equivalent.
+        """
+}
+mapping "L671W.1" source="L671W" target="12168009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L671W SNOMED CT 12168009 = other variations in hair color (Swedish residual under L67.1).
+        Target (Athena 135895) =, standard (S). The unqualified parent concept fully subsumes the
+        residual bucket. Broader: target subsumes the heterogeneous source. high: one-level broader,
+        defensible as the standard parent of the L67.1 family.
+        """
+}
+mapping "L678A.1" source="L678A" target="279425004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678A SNOMED CT 279425004 = fragile hair (split/distal trichorrhexis-like shaft change). The
+        exact SNOMED CT concept (201169006, Athena 40397309) exists but is non-standard (U, retired 2002).
+        Target (Athena 133278) =, standard (S); base WHO ICD-10 L67 maps to 133278 via Athena crosswalk.
+        Broader: target subsumes the source as a hair disorder, but specificity is lost (no standard
+        sub-category for fragile-hair shaft disorders exists). low: the exact-specific SNOMED CT is
+        non-standard, forcing a deep climb to the hair-disorder root; the (267811000) is a closer parent
+        but the L67 crosswalk anchors 133278, hence real doubt remains.
+        """
+}
+mapping "L678B.1" source="L678B" target="77039003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678B SNOMED CT 77039003 = acquired progressive kinking. Target (Athena 4296766) =, standard
+        (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L678C.1" source="L678C" target="267811000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678C SNOMED CT 267811000 = bayonet hairs (Pinkus), a hair-sh shaft morphological variant.
+        No SNOMED CT concept for exists in the mirror (the unrelated SNOMED CT 267811000 254703005 is a
+        different entity). Target (Athena 4146242) =, standard (S). Broader: target fully subsumes the
+        source as a hair-shaft disorder, but all clinical specificity is lost. weak: a defensible
+        ancestor lead only; reviewer should confirm whether a more specific standard concept exists
+        outside this mirror.
+        """
+}
+mapping "L678D.1" source="L678D" target="247540000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678D SNOMED CT 247540000 = hair casts (cylindrical keratinous sheaths encircling hair
+        shafts). Target (Athena 4090588) =, standard (S, Clinical Finding/Observation domain). Exact
+        semantic equivalence; the only mismatch is the OMOP domain (Observation vs the source's
+        Condition framing), which does not change clinical meaning. high: exact concept match with a
+        minor domain-class difference not independently re-verified.
+        """
+}
+mapping "L678E.1" source="L678E" target="238735005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678E SNOMED CT 238735005 = loose anagen hair syndrome. Target (Athena 4081087) =, standard
+        (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L678F.1" source="L678F" target="254230001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678F SNOMED CT 254230001 = pili trianguli et canaliculi (triangular cross-section hair
+        shafts with longitudinal grooves). Target (Athena 4110262) =, standard (S); and are listed
+        synonyms of this SNOMED CT concept. Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L678G.1" source="L678G" target="238756007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678G SNOMED CT 238756007 = pseudochromhidrosis (apparent coloured sweat without true
+        chromhidrosis). Target (Athena 4032882) =, standard (S). Exact 1:1 equivalence.
+        exact-equivalent.
+        """
+}
+mapping "L678H.1" source="L678H" target="238737002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678H SNOMED CT 238737002 = trichomalacia (softening of the hair shaft, often
+        hair-pulling-associated). Target (Athena 4033339) =, standard (S). Exact 1:1 equivalence.
+        exact-equivalent.
+        """
+}
+mapping "L678J.1" source="L678J" target="47582003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678J SNOMED CT 47582003 = trichonodosis (knotting of hair shafts). Target (Athena 4168458)
+        =, standard (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L678K.1" source="L678K" target="267811000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678K SNOMED CT 267811000 = spiral hair (coiled/spiral-appearing hair shafts). No SNOMED CT
+        concept for exists in the mirror (the only matches are unrelated anatomical spirals). Target
+        (Athena 4146242) =, standard (S). Broader: target fully subsumes the source as a hair-shaft
+        disorder, but all clinical specificity is lost. weak: a defensible ancestor lead only; reviewer
+        should confirm whether a more specific standard concept exists outside this mirror.
+        """
+}
+mapping "L678W.1" source="L678W" target="267811000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L678W SNOMED CT 267811000 = other specified hair-color and hair-shaft abnormalities (Swedish
+        residual under L67.8). Target (Athena 4146242) =, standard (S). The source is a heterogeneous
+        residual spanning both hair-color and hair-shaft axes; no single standard concept fully captures
+        both. Broader on the shaft axis: the target subsumes the shaft-abnormality portion. low:
+        heterogeneous residual bucket, partial axis coverage, real doubt remains.
+        """
+}
+mapping "L700A.1" source="L700A" target="238744006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L700A SNOMED CT 238744006 = comedonal acne vulgaris. Target (Athena 4032880) =, standard
+        (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L700B.1" source="L700B" target="403348008" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L700B SNOMED CT 403348008 = papulopustular acne vulgaris. Target (Athena 4300923) =,
+        standard (S). No SNOMED CT concept specifically for exists; the closest standard concept is the
+        superficial-inflammatory subform. Narrower: the target is more specific (superficial
+        inflammatory) than the papulopustular framing, which can also include deeper inflammatory
+        lesions. low: forced downward to a specific subform that does not perfectly align with the
+        papulopustular morphology; reviewer should confirm. Alternate broader 88616000 (Acne vulgaris)
+        was considered but rejected as it loses the morphological sub-classification the source asserts.
+        """
+}
+mapping "L700C.1" source="L700C" target="238745007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L700C SNOMED CT 238745007 = nodulocystic acne vulgaris. Target (Athena 4032881) =, standard
+        (S). Exact 1:1 equivalence. exact-equivalent.
+        """
+}
+mapping "L700W.1" source="L700W" target="88616000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L700W SNOMED CT 88616000 = Swedish 5-char extension under L70.0 listing other specified
+        subtypes of acne vulgaris. Target SNOMED CT 4227594 (Acne vulgaris, standard_concept=S) is the
+        parent disorder; the unspecified subset is fully subsumed by it. Broader with high confidence
+        per Athena crosswalk (L70.0 maps to 4227594) and SNOMED CT hierarchy.
+        """
+}
+mapping "L700X.1" source="L700X" target="88616000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L700X SNOMED CT 88616000 = acne vulgaris, unspecified; Swedish extension of L70.0. Target
+        SNOMED CT 4227594 (standard_concept=S), the exact disease concept. Crosswalk-verified via Athena
+        ICD10 L70.0 ->.
+        """
+}
+mapping "L701A.1" source="L701A" target="4659007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L701A SNOMED CT 4659007 = acne fulminans, Swedish extension under L70.1. Target SNOMED CT
+        4263196 (Acne fulminans, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L701X.1" source="L701X" target="42228007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L701X SNOMED CT 42228007 is the Swedish extension of L70.1 (Acne conglobata) carrying the
+        same disease label; the qualifier does not change the clinical concept since L70.1 itself has no
+        further sub-codes. Target SNOMED CT 4172185 (Acne conglobata, standard_concept=S) is the exact
+        equivalent, confirmed by the Athena L70.1 -> 4172185 crosswalk.
+        """
+}
+mapping "L708A.1" source="L708A" target="17332000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L708A SNOMED CT 17332000 = acne caused by cosmetic agents. Target SNOMED CT 4066164 (Acne
+        cosmetica, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L708B.1" source="L708B" target="22920003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L708B SNOMED CT 22920003 = acne caused by external chemical agents (chloracne, petroleum,
+        etc.). The legacy SNOMED CT concept 4173157 (Acne venenata) is retired (U) and is mapped via Athena
+        to 4042209 (standard_concept=S), which is clinically equivalent. High (not) because the
+        replacement target name is broader in wording though the clinical scope matches.
+        """
+}
+mapping "L708C.1" source="L708C" target="201222006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L708C SNOMED CT 201222006 = steroid-induced acne. Target SNOMED CT 4065350 (Steroid acne,
+        standard_concept=S) is an exact match.
+        """
+}
+mapping "L708W.1" source="L708W" target="11381005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L708W SNOMED CT 11381005 = other specified acne (Swedish residual under L70.8). No further
+        specification is given, so the only defensible standard target is SNOMED CT 141095 (Acne,
+        standard_concept=S) — the parent disorder that fully subsumes any acne subtype. Broader,
+        moderate confidence: residual bucket, no specific subtype asserted by the source.
+        """
+}
+mapping "L718A.1" source="L718A" target="238752009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L718A SNOMED CT 238752009 = lupus miliaris disseminatus faciei, also known as acne agminata.
+        Target SNOMED CT 4033342 (Acne agminata, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L718B.1" source="L718B" target="397845003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L718B SNOMED CT 397845003 = granulomatous rosacea. Target SNOMED CT 4265603 (Granulomatous
+        rosacea, standard_concept=S) is an exact name and clinical match; the older SNOMED CT 40625190 is
+        retired (U) and Athena redirects it to 4265603.
+        """
+}
+mapping "L718C.1" source="L718C" target="29909004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L718C SNOMED CT 29909004 = rosacea fulminans / pyoderma faciale. Target SNOMED CT 4107072
+        (Pyoderma faciale, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L718W.1" source="L718W" target="398909004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L718W SNOMED CT 398909004 = other specified rosacea (residual Swedish extension under
+        L71.8). Target SNOMED CT 136773 (Rosacea, standard_concept=S) is the parent disorder; the
+        unspecified subtype is fully subsumed by it. Moderate confidence: residual bucket, no specific
+        rosacea subtype asserted.
+        """
+}
+mapping "L720A.1" source="L720A" target="254679001" relationship=equivalent effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L720A SNOMED CT 254679001 = milium (single). Target SNOMED CT 4110715 (Milia,
+        standard_concept=S) is the standard disorder concept covering milium/milia; SNOMED CT does not
+        distinguish singular vs plural as a separate concept. Exact match.
+        """
+}
+mapping "L720B.1" source="L720B" target="238749001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L720B SNOMED CT 238749001 = multiple eruptive milia. Target SNOMED CT 4033859 (Multiple
+        eruptive milia, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L720X.1" source="L720X" target="419893006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L720X SNOMED CT 419893006 = epidermal cyst, unspecified (Swedish extension). Target SNOMED CT
+        4170770 (Epidermoid cyst, standard_concept=S) is the standard concept for epidermoid/epidermal
+        cyst; the source is the unspecified level which the parent covers. Broader with high confidence;
+        Athena L72.0 maps to 4170770.
+        """
+}
+mapping "L738A.1" source="L738A" target="156410002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738B.1" source="L738B" target="21707009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L738B SNOMED CT 21707009 = lupoid sycosis (a form of chronic sycosis barbae). Target SNOMED CT
+        4069777 (Lupoid sycosis, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L738C.1" source="L738C" target="398909004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738D.1" source="L738D" target="50563003" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L738D SNOMED CT 50563003 = seborrheic folliculitis. SNOMED CT has no concept literally named;
+        clinically the term denotes follicular involvement of seborrheic dermatitis (a synonym used in
+        Scandinavian/German dermatology). Best defensible target is SNOMED CT 137053 (Seborrheic
+        dermatitis, standard_concept=S). Related (not broader) because the source frames the entity as a
+        folliculitis while the target frames it as a dermatitis; the association is well-established but
+        the kind is not strict subsumption. Moderate confidence.
+        """
+}
+mapping "L738E.1" source="L738E" target="95333004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "L738W.1" source="L738W" target="238741003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L738W SNOMED CT 238741003 = other follicular disorders (residual Swedish extension under
+        L73.8). Target SNOMED CT 4032878 (Hair follicle disorder, standard_concept=S) is the parent concept
+        that fully subsumes any specified follicular disorder. Moderate confidence: residual bucket.
+        """
+}
+mapping "L748A.1" source="L748A" target="22818000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L748A SNOMED CT 22818000 = granulosis rubra nasi, a rare sweat-gland disorder of childhood.
+        Target SNOMED CT 4038533 (Granulosis rubra nasi, standard_concept=S) is an exact name and clinical
+        match.
+        """
+}
+mapping "L748B.1" source="L748B" target="238757003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L748B SNOMED CT 238757003 = hematohidrosis (blood in sweat). Target SNOMED CT 4033343
+        (Hematohidrosis, standard_concept=S) is an exact name and clinical match.
+        """
+}
+mapping "L748C.1" source="L748C" target="88232005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L748C SNOMED CT 88232005 = sweat-gland abscess. SNOMED CT has no concept literally named; the
+        general gland-abscess concepts are anatomically specific (Bartholin, salivary). Best defensible
+        standard target is SNOMED CT 441655 (Disorder of sweat gland, standard_concept=S), which fully
+        subsumes any sweat-gland pathology including abscess. Broader, low confidence: covers the
+        disorder class but loses the abscess specificity.
+        """
+}
+mapping "L748W.1" source="L748W" target="402647004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source L748W SNOMED CT 402647004 = other specified eccrine sweat-gland disorders (residual Swedish
+        extension under L74.8). Target SNOMED CT 4291291 (Disorder of eccrine sweat glands,
+        standard_concept=S) is the parent that fully subsumes any specified eccrine disorder. Moderate
+        confidence: residual bucket; Athena L74.9 -> 4291291.
+        """
+}

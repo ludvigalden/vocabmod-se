@@ -1,0 +1,387 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes T9-UA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "T918A.1" source="T918A" target="285235009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T918A (Swedish extension of T91.8) = Late effects of whiplash injury. Parent ICD-10 T91.8
+        (Sequelae of other specified injuries of neck and trunk) has Athena SNOMED 285235009 crosswalk
+        to SNOMED CT 4110914 (Sequelae of injuries of neck and trunk, concept_code 285235009). Swedish
+        A-code specifies whiplash as the underlying injury; SNOMED CT target covers sequelae of neck/trunk
+        injuries broadly. Target subsumes source. broader.
+        """
+}
+mapping "T918W.1" source="T918W" target="285235009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T918W (Swedish extension of T91.8) = Late effects of other specified injuries of neck and
+        trunk. Functionally identical to ICD-10 T91.8 (Sequelae of other specified injuries of neck and
+        trunk), which has Athena SNOMED 285235009 crosswalk to SNOMED CT 4110914 (Sequelae of injuries of
+        neck and trunk, concept_code 285235009). Same clinical concept = exact_match.
+        """
+}
+mapping "T969.1" source="T969" target="363304009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T969 = ICD-10 T96 (Sequelae of poisoning by drugs, medicaments and biological
+        substances). Athena SNOMED 363304009 crosswalk to SNOMED CT 4180771 (Disorder due to and following
+        poisoning, concept_code 363304009). The SNOMED CT target is the canonical equivalent for sequelae
+        of poisoning. Crosswalk-verified exact match =.
+        """
+}
+mapping "T979.1" source="T979" target="363304009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source T979 = ICD-10 T97 (Sequelae of toxic effects of substances chiefly nonmedicinal as to
+        source). Athena SNOMED 363304009 crosswalk to SNOMED CT 4180771 (Disorder due to and following
+        poisoning, concept_code 363304009). The same target also maps T96 (sequelae of medicinal
+        poisoning), so 4180771 subsumes both medicinal and nonmedicinal poisoning sequelae — broader
+        than T97 alone. broader.
+        """
+}
+mapping "U859.1" source="U859" target="720580006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source U859 = ICD-10 U85 (Resistance to antineoplastic drugs). Athena SNOMED 720580006 crosswalk
+        to SNOMED CT 36715097 (Resistance to antineoplastic drug, concept_code 720580006).
+        Crosswalk-verified exact semantic equivalence = exact_match.
+        """
+}
+mapping "U889.1" source="U889" target="822401000000100" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "U981.1" source="U981" target="22298006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "U982.1" source="U982" target="22298006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "U983.1" source="U983" target="22298006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "U984A.1" source="U984A" target="22298006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "U984B.1" source="U984B" target="22298006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "U985.1" source="U985" target="22298006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "U999.1" source="U999" target="1287211007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+assessment "U999.omop" source="U999" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3290.1" source="UA3290" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3290.omop" source="UA3290" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3291.1" source="UA3291" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3291.omop" source="UA3291" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3292.1" source="UA3292" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3292.omop" source="UA3292" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3293.1" source="UA3293" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3293.omop" source="UA3293" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3294.1" source="UA3294" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3294.omop" source="UA3294" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3298.1" source="UA3298" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3298.omop" source="UA3298" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3299.1" source="UA3299" target="288731000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3299.omop" source="UA3299" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3490.1" source="UA3490" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3490.omop" source="UA3490" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3491.1" source="UA3491" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+assessment "UA3491.omop" source="UA3491" outcome=no_match target-system="OMOP_EXT"
+mapping "UA3492.1" source="UA3492" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA3493.1" source="UA3493" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA3494.1" source="UA3494" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA3498.1" source="UA3498" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA3499.1" source="UA3499" target="286367001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A0.1" source="UA41A0" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A1.1" source="UA41A1" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A2.1" source="UA41A2" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A3.1" source="UA41A3" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A4.1" source="UA41A4" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A8.1" source="UA41A8" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41A9.1" source="UA41A9" target="282924002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D0.1" source="UA41D0" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D1.1" source="UA41D1" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D2.1" source="UA41D2" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D3.1" source="UA41D3" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D4.1" source="UA41D4" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D8.1" source="UA41D8" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA41D9.1" source="UA41D9" target="282858006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4400.1" source="UA4400" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4401.1" source="UA4401" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4402.1" source="UA4402" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4403.1" source="UA4403" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4404.1" source="UA4404" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4408.1" source="UA4408" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4409.1" source="UA4409" target="284179005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A0.1" source="UA45A0" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A1.1" source="UA45A1" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A2.1" source="UA45A2" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A3.1" source="UA45A3" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A4.1" source="UA45A4" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A8.1" source="UA45A8" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA45A9.1" source="UA45A9" target="282148005" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4650.1" source="UA4650" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4651.1" source="UA4651" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4652.1" source="UA4652" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4653.1" source="UA4653" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4654.1" source="UA4654" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4658.1" source="UA4658" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA4659.1" source="UA4659" target="301569004" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5100.1" source="UA5100" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5101.1" source="UA5101" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5102.1" source="UA5102" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5103.1" source="UA5103" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5104.1" source="UA5104" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5108.1" source="UA5108" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5109.1" source="UA5109" target="284785009" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5200.1" source="UA5200" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5201.1" source="UA5201" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5202.1" source="UA5202" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5203.1" source="UA5203" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5204.1" source="UA5204" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5208.1" source="UA5208" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5209.1" source="UA5209" target="284773001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A0.1" source="UA53A0" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A1.1" source="UA53A1" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A2.1" source="UA53A2" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A3.1" source="UA53A3" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A4.1" source="UA53A4" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A8.1" source="UA53A8" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53A9.1" source="UA53A9" target="249278006" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B0.1" source="UA53B0" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B1.1" source="UA53B1" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B2.1" source="UA53B2" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B3.1" source="UA53B3" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B4.1" source="UA53B4" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B8.1" source="UA53B8" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA53B9.1" source="UA53B9" target="300374002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5400.1" source="UA5400" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5401.1" source="UA5401" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5402.1" source="UA5402" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5403.1" source="UA5403" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5404.1" source="UA5404" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5408.1" source="UA5408" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5409.1" source="UA5409" target="165235000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5500.1" source="UA5500" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5501.1" source="UA5501" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5502.1" source="UA5502" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5503.1" source="UA5503" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5504.1" source="UA5504" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5508.1" source="UA5508" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5509.1" source="UA5509" target="288883002" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5600.1" source="UA5600" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5601.1" source="UA5601" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5602.1" source="UA5602" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5603.1" source="UA5603" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5604.1" source="UA5604" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5608.1" source="UA5608" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "UA5609.1" source="UA5609" target="288852001" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

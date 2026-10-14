@@ -1,0 +1,495 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes W19-W195
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "W190.1" source="W190" target="1912002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W190 SNOMED CT 1912002 = Swedish 5-char extension of W19 (Unspecified fall) for. Target
+        SNOMED CT 436583 = (1912002), verified Athena for W19. Accident concept matches exactly; place
+        qualifier is contextual metadata.
+        """
+}
+mapping "W1900.1" source="W1900" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1900 is a Swedish national extension of W19 (Unspecified fall) scoped to SNOMED CT 1912002
+        (home/residential area, sport/exercise). Target SNOMED CT 436583 = (1912002), verified Athena for
+        W19. Subdivision has no individual SNOMED CT target; parent W19 subsumes it. One-level broader.
+        """
+}
+mapping "W1901.1" source="W1901" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1901 = SNOMED CT 220547006. The source is a Swedish national extension that bundles two
+        axes: location (home) AND activity (leisure/free-time). SNOMED CT 40420309 (concept_code 220547006)
+        covers only the location axis; the activity axis has no SNOMED CT representation. Per the boundary
+        rule (combination/with/and source to single target = partial). low tier: real partial semantic
+        overlap, target is recorded to preserve the location lead, not asserted as equivalence. Parent
+        W19 already maps to SNOMED CT 436583 (Fall).
+        """
+}
+mapping "W1902.1" source="W1902" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1902 = SNOMED CT 220547006. Bundles location (home) + activity (paid work). SNOMED CT 40420309
+        (concept_code 220547006) covers only the location axis. Partial: activity axis uncovered. low
+        tier.
+        """
+}
+mapping "W1903.1" source="W1903" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1903 = SNOMED CT 220547006. Bundles location (home) + activity (other). SNOMED CT 40420309
+        (concept_code 220547006) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1904.1" source="W1904" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1904 = SNOMED CT 220547006. Bundles location (home) + activity (vital). SNOMED CT 40420309
+        (concept_code 220547006) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1908.1" source="W1908" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1908 = SNOMED CT 220547006. Residual bucket bundling location (home) + unspecified-other
+        activity. SNOMED CT 40420309 (concept_code 220547006) covers only the location axis; activity axis
+        is doubly unspecified. Weak partial. weak tier.
+        """
+}
+mapping "W1909.1" source="W1909" target="220547006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1909 = SNOMED CT 220547006. Bundles location (home) + activity (unspecified). SNOMED CT
+        40420309 (concept_code 220547006) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W191.1" source="W191" target="220548001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W191 = SNOMED CT 220548001. SNOMED CT 40420310 (concept_code 220548001) denotes the same
+        clinical concept: unspecified fall occurring in a residential institution. Location axis exact;
+        no activity axis on either side. moderate tier: equivalent concept but the SNOMED CT [X] row is a
+        crosswalk-derivative not independently re-verified, and the source is a Swedish extension.
+        """
+}
+mapping "W1910.1" source="W1910" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1910 = SNOMED CT 220548001. Bundles location (residential institution) + activity (sport).
+        SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1911.1" source="W1911" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1911 = SNOMED CT 220548001. Bundles location (residential institution) + activity
+        (leisure). SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial. low
+        tier.
+        """
+}
+mapping "W1912.1" source="W1912" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1912 = SNOMED CT 220548001. Bundles location (residential institution) + activity (paid
+        work). SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial. low
+        tier.
+        """
+}
+mapping "W1913.1" source="W1913" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1913 = SNOMED CT 220548001. Bundles location (residential institution) + activity (other).
+        SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1914.1" source="W1914" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1914 = SNOMED CT 220548001. Bundles location (residential institution) + activity (vital).
+        SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1918.1" source="W1918" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1918 = SNOMED CT 220548001. Residual bucket. SNOMED CT 40420310 (concept_code 220548001)
+        covers only the location axis; activity axis doubly unspecified. Weak partial. weak tier.
+        """
+}
+mapping "W1919.1" source="W1919" target="220548001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1919 = SNOMED CT 220548001. Bundles location (residential institution) + activity
+        (unspecified). SNOMED CT 40420310 (concept_code 220548001) covers only the location axis. Partial.
+        low tier.
+        """
+}
+mapping "W192.1" source="W192" target="220549009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W192 = SNOMED CT 220549009. SNOMED CT 40420311 (concept_code 220549009) denotes the same
+        clinical concept. Location axis exact; no activity axis on either side. moderate tier:
+        equivalent concept but the SNOMED CT [X] row is a crosswalk-derivative not independently
+        re-verified, and the source is a Swedish extension.
+        """
+}
+mapping "W1920.1" source="W1920" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1920 = SNOMED CT 220549009. Bundles location (school/public) + activity (sport). SNOMED CT
+        40420311 (concept_code 220549009) covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1921.1" source="W1921" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1921 = SNOMED CT 220549009. Bundles location (school/public) + activity (leisure). SNOMED CT
+        40420311 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1922.1" source="W1922" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1922 = SNOMED CT 220549009. Bundles location (school/public) + activity (paid work). SNOMED CT
+        40420311 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1923.1" source="W1923" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1923 = SNOMED CT 220549009. Bundles location (school/public) + activity (other). SNOMED CT
+        40420311 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1924.1" source="W1924" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1924 = SNOMED CT 220549009. Bundles location (school/public) + activity (vital). SNOMED CT
+        40420311 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1928.1" source="W1928" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1928 = SNOMED CT 220549009. Residual bucket. SNOMED CT 40420311 covers only the location axis;
+        activity axis doubly unspecified. Weak partial. weak tier.
+        """
+}
+mapping "W1929.1" source="W1929" target="220549009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1929 = SNOMED CT 220549009. Bundles location (school/public) + activity (unspecified).
+        SNOMED CT 40420311 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W193.1" source="W193" target="220550009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W193 = SNOMED CT 220550009. SNOMED CT 40420312 (concept_code 220550009) denotes the same
+        clinical concept. Location axis exact. moderate tier: equivalent concept but the SNOMED CT [X] row
+        is a crosswalk-derivative not independently re-verified, and the source is a Swedish extension.
+        """
+}
+mapping "W1930.1" source="W1930" target="220550009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1930 = SNOMED CT 220550009. Bundles location (sports facility) + activity (sport). SNOMED CT
+        40420312 (concept_code 220550009) covers only the location axis (the activity is implied but not
+        separately coded). Partial by the boundary rule. low tier.
+        """
+}
+mapping "W1931.1" source="W1931" target="220550009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source W1931 = SNOMED CT 220550009. Bundles location (sports facility) + activity (leisure). SNOMED CT
+        40420312 covers only the location axis. Partial. low tier.
+        """
+}
+mapping "W1932.1" source="W1932" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1933.1" source="W1933" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1934.1" source="W1934" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1938.1" source="W1938" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1939.1" source="W1939" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W194.1" source="W194" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W194.2" source="W194" target="1912002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "W1940.1" source="W1940" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1941.1" source="W1941" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1942.1" source="W1942" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1943.1" source="W1943" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1944.1" source="W1944" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1948.1" source="W1948" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1949.1" source="W1949" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W195.1" source="W195" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1950.1" source="W1950" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1951.1" source="W1951" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1952.1" source="W1952" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1953.1" source="W1953" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1954.1" source="W1954" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1958.1" source="W1958" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}
+mapping "W1959.1" source="W1959" target="1912002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source is a Swedish ICD-10-SE extension of W19 SNOMED CT 1912002 (Unspecified fall), adding
+        place/activity detail (e.g. sports facility, street/road, shop/service area,
+        industrial/construction site, plus an activity qualifier). The base W19 (ICD10 concept_id
+        45756257) has a verified Athena crosswalk to SNOMED CT 436583 (Fall, concept_code 1912002). Target
+        436583 fully subsumes the fall event; the SE place/activity qualifier is additional context the
+        standard vocabulary does not model as a separate disorder. broader: target is the legitimate
+        ancestor; no clinical meaning of the source falls outside it. Confidence (high): one-level
+        broader, crosswalk verified on the parent W19, source is an SE national extension.
+        """
+}

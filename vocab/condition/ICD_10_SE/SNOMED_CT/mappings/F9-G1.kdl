@@ -1,0 +1,404 @@
+// ICD-10-SE extension codes to SNOMED CT mappings, codes F9-G1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icd-10-se-snomed-ct" version="2026.1"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "F900A.1" source="F900A" target="389990003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F900A SNOMED CT 389990003 = Dysfunction of Attention, Motor Control and Perception. Target
+        SNOMED CT 40565491 (389990003); identical concept, SNOMED CT's direct encoding of DAMP.
+        """
+}
+mapping "F900B.1" source="F900B" target="406506008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F900B SNOMED CT 406506008. Target SNOMED CT 438409 (406506008), the F90 Maps-to target via
+        Athena concept 45581476. Same clinical concept.
+        """
+}
+mapping "F900C.1" source="F900C" target="23148009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F900C SNOMED CT 23148009. Target SNOMED CT 4049391 (23148009); the standard SNOMED CT concept for
+        ADD without hyperactivity. High tier: tight term match; no independent Athena crosswalk for this
+        Swedish extension code.
+        """
+}
+mapping "F900X.1" source="F900X" target="406506008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F900X SNOMED CT 406506008 = activity and attention disorder, unspecified; the Swedish
+        extension code for F90.0 (Disturbance of activity and attention). Target SNOMED CT 438409
+        (406506008), the F90.0 Maps-to target via Athena concept 45542870. High tier: unspecified-source
+        breadth ambiguity keeps it below.
+        """
+}
+mapping "F980A.1" source="F980A" target="8137003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F980A SNOMED CT 8137003 = non-organic primary enuresis; Swedish extension of F98.0. Target
+        SNOMED CT 4216056 (8137003); identical clinical concept.
+        """
+}
+mapping "F980B.1" source="F980B" target="75499007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F980B SNOMED CT 75499007 = non-organic secondary enuresis; Swedish extension of F98.0.
+        Target SNOMED CT 4294549 (75499007); identical clinical concept.
+        """
+}
+mapping "F980C.1" source="F980C" target="42112009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F980C SNOMED CT 42112009 (Enuresis, psychogenic) is a Swedish extension code subclass of
+        ICD-10 F98.0 Nonorganic enuresis. Target SNOMED CT 4172646 = (concept_code 42112009, standard,
+        Clinical Finding). F98.0 crosswalks to this target via Athena. The target is broader than the
+        source's psychogenic qualifier (it covers all non-organic enuresis subtypes). Moderate tier:
+        parent crosswalk applied to a more specific child code; not independently re-verified.
+        """
+}
+mapping "F980W.1" source="F980W" target="42112009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F980W SNOMED CT 42112009 (Other specified non-organic enuresis) is a Swedish residual
+        extension code under F98.0. Target SNOMED CT 4172646 = (standard). F98.0 crosswalks to this target.
+        Source is a heterogeneous residual; the target subsumes it but the specificity mismatch is real.
+        Low tier: residual bucket, parent crosswalk only.
+        """
+}
+mapping "F981A.1" source="F981A" target="302752001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F981A SNOMED CT 302752001 (Encopresis, functional, non-organic) is a Swedish extension code
+        under F98.1 Nonorganic encopresis. Target SNOMED CT 4118980 = (concept_code 302752001, standard,
+        Clinical Finding). F98.1 crosswalks to 4118980 via Athena. The source's clinical definition
+        aligns directly with. High tier: close semantic equivalence via parent crosswalk, minor
+        Swedish-specific labelling.
+        """
+}
+mapping "F981B.1" source="F981B" target="302752001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F981B SNOMED CT 302752001 (Encopresis, psychogenic) is a Swedish extension code under F98.1
+        Nonorganic encopresis. Target SNOMED CT 4118980 = (standard). F98.1 crosswalks to 4118980. The
+        target is broader: subsumes but psychogenic is a specific subtype. Moderate tier: parent
+        crosswalk, target subsumes the source's narrower psychogenic framing.
+        """
+}
+mapping "F981W.1" source="F981W" target="302752001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F981W SNOMED CT 302752001 (Other specified non-organic encopresis) is a Swedish residual
+        extension code under F98.1. Target SNOMED CT 4118980 = (standard). F98.1 crosswalks to 4118980.
+        Source is a heterogeneous residual; target subsumes it but real specificity mismatch. Low tier:
+        residual bucket, parent crosswalk only.
+        """
+}
+mapping "F985A.1" source="F985A" target="442584007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "F985W.1" source="F985W" target="39423001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F985W SNOMED CT 39423001 (Other specified disorder of stuttering type) is a Swedish residual
+        extension code under F98.5 Stuttering [stammering]. Target SNOMED CT 436667 = (concept_code
+        39423001, standard, Observation/Clinical Finding). F98.5 crosswalks to 436667 via Athena. Source
+        is a heterogeneous residual; target subsumes it. Low tier: residual bucket, parent crosswalk
+        only.
+        """
+}
+mapping "F985X.1" source="F985X" target="39423001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F985X SNOMED CT 39423001 (Unspecified disorder of stuttering type) is a Swedish extension
+        code under F98.5. Target SNOMED CT 436667 = (standard). F98.5 crosswalks to 436667. The target is
+        the general stuttering concept; the source is its unspecified variant. Moderate tier:
+        unspecified source, parent crosswalk.
+        """
+}
+mapping "F986A.1" source="F986A" target="37732008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F986A SNOMED CT 37732008 (Cluttering) is a Swedish extension code equivalent to F98.6
+        Cluttering. Target SNOMED CT 4294887 = (concept_code 37732008, standard, Clinical Finding). F98.6
+        crosswalks to 4294887 via Athena. Exact semantic equivalence.
+        """
+}
+mapping "F986W.1" source="F986W" target="37732008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F986W SNOMED CT 37732008 (Other specified disorder of cluttering type) is a Swedish residual
+        extension code under F98.6. Target SNOMED CT 4294887 = (standard). F98.6 crosswalks to 4294887.
+        Source is a heterogeneous residual; target subsumes it. Low tier: residual bucket, parent
+        crosswalk only.
+        """
+}
+mapping "F999.1" source="F999" target="74732009" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source F999 SNOMED CT 74732009 (Mental disorder, not otherwise specified) is the Swedish-extension
+        equivalent of ICD-10 F99 Mental disorder, not otherwise specified. Target SNOMED CT 432586 =
+        (concept_code 74732009, standard, Disorder). F99 crosswalks to 432586 via Athena. Exact semantic
+        match at the unspecified level. Moderate tier (not) because the source is an unspecified/NOS
+        code and the target is the general concept; the crosswalk is the only verification.
+        """
+}
+mapping "G008A.1" source="G008A" target="192655005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G008A SNOMED CT 192655005 (Bacterial meningitis due to Escherichia coli) is a Swedish
+        extension code specifying the causative organism, subclass of G00.8 Other bacterial meningitis.
+        Target SNOMED CT 4100103 = (concept_code 192655005, standard, Disorder). The target names the same
+        organism-specific meningitis. High tier: exact organism-specific match, but no independent
+        Athena crosswalk from this Swedish subcode (only the parent G00.8 crosswalk to 436091).
+        """
+}
+mapping "G008B.1" source="G008B" target="95883001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G008B SNOMED CT 95883001 (Bacterial meningitis due to Klebsiella) is a Swedish extension
+        code specifying Klebsiella as the causative organism, subclass of G00.8. The closest SNOMED CT
+        concept 40389660 is invalid (U, deprecated 2004). 4221366 (standard) only covers K. aerogenes, a
+        single species, not all Klebsiella. The defensible broader target is SNOMED CT 436091 =
+        (concept_code 95883001, standard), which G00.8 crosswalks to. Moderate tier: target subsumes
+        source but loses the organism specificity; no exact standard target exists.
+        """
+}
+mapping "G008W.1" source="G008W" target="95883001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G008W SNOMED CT 95883001 (Other specified bacterial meningitis) is a Swedish residual
+        extension code under G00.8. Target SNOMED CT 436091 = (standard). G00.8 crosswalks to 436091.
+        Source is a heterogeneous residual; target subsumes it. Moderate tier: parent crosswalk,
+        residual source.
+        """
+}
+mapping "G019.1" source="G019" target="95883001" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G019 SNOMED CT 95883001 (Meningitis in bacterial diseases classified elsewhere) is the
+        Swedish-extension equivalent of ICD-10 G01. Target SNOMED CT 436091 = (standard). G01 crosswalks to
+        436091 via Athena. The target captures the bacterial meningitis concept the source denotes.
+        Moderate tier: the source is an framing and the target is the general bacterial meningitis
+        concept; crosswalk-verified.
+        """
+}
+mapping "G042A.1" source="G042A" target="445359003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G042A SNOMED CT 445359003 (Bacterial meningoencephalitis, not elsewhere classified) is a
+        Swedish extension code specifying the bacterial aetiology, subclass of G04.2. Target SNOMED CT
+        40483321 = (concept_code 445359003, standard, Disorder). The parent G04.2 crosswalks to 436091
+        (Bacterial meningitis) but the specific 40483321 is a closer match. High tier: exact
+        aetiology+anatomy match; no independent crosswalk from the Swedish subcode.
+        """
+}
+mapping "G042B.1" source="G042B" target="444957003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G042B SNOMED CT 444957003 (Bacterial meningomyelitis, not elsewhere classified) is a Swedish
+        extension code specifying bacterial aetiology, subclass of G04.2. Target SNOMED CT 40481574 =
+        (concept_code 444957003, standard, Disorder). The parent G04.2 crosswalks to 436091 (Bacterial
+        meningitis) but the specific 40481574 is a closer match. High tier: exact aetiology+anatomy
+        match; no independent crosswalk from the Swedish subcode.
+        """
+}
+mapping "G048A.1" source="G048A" target="192727001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G048A SNOMED CT 192727001 (Post-infectious encephalitis) is a Swedish extension code under
+        G04.8 Other encephalitis, myelitis and encephalomyelitis. Target SNOMED CT 372615 = (concept_code
+        192727001, standard, Disorder). The target names the same clinical concept. High tier: exact
+        match; the parent G04.8 crosswalks to 4190307 (Inflammatory disease of CNS) but 372615 is the
+        precise target.
+        """
+}
+mapping "G048B.1" source="G048B" target="426266003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G048B SNOMED CT 426266003 (Post-infectious myelitis) is a Swedish extension code under
+        G04.8. Target SNOMED CT 443536 = (concept_code 426266003, standard, Disorder). The target names the
+        same clinical concept. High tier: exact match; no independent crosswalk from the Swedish
+        subcode.
+        """
+}
+mapping "G048C.1" source="G048C" target="8528005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G048C SNOMED CT 8528005 (Acute ascending myelitis) is a Swedish extension code under G04.8.
+        Target SNOMED CT 4310824 = (concept_code 8528005, standard, Disorder). The target names the same
+        clinical concept. High tier: exact match; no independent crosswalk from the Swedish subcode.
+        """
+}
+mapping "G048W.1" source="G048W" target="39367000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G048W SNOMED CT 39367000 (Other specified encephalitis and myelitis) is a Swedish residual
+        extension code under G04.8. Target SNOMED CT 4190307 = (concept_code 39367000, standard, Disorder).
+        G04.8 crosswalks to 4190307 via Athena. Source is a heterogeneous residual; target is broad (CNS
+        inflammatory disease). Moderate tier: residual bucket, broad parent crosswalk.
+        """
+}
+mapping "G049A.1" source="G049A" target="267576008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G049A SNOMED CT 267576008 (Encephalitis, unspecified) is a Swedish extension code under
+        G04.9 Encephalitis, myelitis and encephalomyelitis, unspecified. Target SNOMED CT 4147498 =
+        (concept_code 267576008, standard, Disorder). G04.9 crosswalks to 4147498 via Athena. Target is
+        broader than the source's encephalitis-only framing (it also covers myelitis and
+        encephalomyelitis). Moderate tier: unspecified source, parent crosswalk to a combined concept.
+        """
+}
+mapping "G049B.1" source="G049B" target="267576008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G049B SNOMED CT 267576008 (Myelitis, unspecified) is a Swedish extension code under G04.9.
+        Target SNOMED CT 4147498 = (standard). G04.9 crosswalks to 4147498 via Athena. Target is broader
+        than the source's myelitis-only framing. Moderate tier: unspecified source, parent crosswalk to
+        a combined concept.
+        """
+}
+mapping "G061A.1" source="G061A" target="192737006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G061A SNOMED CT 192737006 (Intraspinal abscess in cervical spine) is a Swedish extension
+        code specifying cervical localisation, subclass of G06.1 Intraspinal abscess and granuloma. The
+        closest exact concept 378734 is invalid (U, deprecated 2019). Target SNOMED CT 374335 =
+        (concept_code 192737006, standard, Disorder) is the nearest standard ancestor covering
+        intraspinal abscess. Moderate tier: standard but broader target; the source's cervical
+        localisation is not preserved. G06.1 crosswalks to 4181187 which is even looser, so 374335 is
+        preferred.
+        """
+}
+mapping "G061J.1" source="G061J" target="192737006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G061J SNOMED CT 192737006 (Intraspinal abscess in thoracic spine) is a Swedish extension
+        code specifying thoracic localisation, subclass of G06.1. Same rationale as G061A: closest exact
+        378734 is invalid; target SNOMED CT 374335 = (standard) is the nearest standard ancestor. Moderate
+        tier: standard but broader; localisation not preserved.
+        """
+}
+mapping "G061K.1" source="G061K" target="192737006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G061K SNOMED CT 192737006 (Intraspinal abscess in lumbar spine) is a Swedish extension code
+        specifying lumbar localisation, subclass of G06.1. Same rationale as G061A/G061J: closest exact
+        378734 is invalid; target SNOMED CT 374335 = (standard) is the nearest standard ancestor. Moderate
+        tier: standard but broader; localisation not preserved.
+        """
+}
+mapping "G061X.1" source="G061X" target="192751006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G061X = SNOMED CT 192751006 (Swedish extension of ICD-10 G06.1, unspecified location).
+        ICD-10 base G06.1 Athena crosswalk targets 4181187 which is clinically wrong (extra-axial). Best
+        available standard target is SNOMED CT 4104691 (192751006), which legitimately subsumes the
+        unspecified-location intraspinal source. Broader because source is a specific intraspinal
+        category and target is the NOS superset; moderate tier because the unspecified location forces a
+        loose fit.
+        """
+}
+mapping "G079.1" source="G079" target="64572001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G089.1" source="G089" target="61599003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G099.1" source="G099" target="363300000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "G109.1" source="G109" target="58756001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G109 = Huntingtons sjukdom = ICD-10 G10 Huntington disease. SNOMED CT 374341 (58756001) is
+        the exact equivalent; Athena crosswalk-verified for base G10.
+        """
+}
+mapping "G121A.1" source="G121A" target="128212001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G121A = Hereditär spinal muskelatrofi, seninfantil typ II = SMA type II. SNOMED CT 4027536
+        (128212001) is the exact clinical equivalent.
+        """
+}
+mapping "G121B.1" source="G121B" target="54280009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G121B = Hereditär spinal muskelatrofi, juvenil typ III = SMA type III
+        (Kugelberg-Welander). SNOMED CT 374634 (54280009) is the exact clinical equivalent for juvenile SMA
+        type III.
+        """
+}
+mapping "G121W.1" source="G121W" target="5262007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G121W = Annan hereditär spinal muskelatrofi (other inherited SMA), Swedish residual of
+        ICD-10 G12.1. SNOMED CT 372605 (5262007) is the parent concept (Athena crosswalk target for
+        G12.1/G12.8/G12.9). Target subsumes the heterogeneous residual source; high tier (one-level
+        broader, crosswalk-verified).
+        """
+}
+mapping "G1229.1" source="G1229" target="37340000" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        5th-char subtype extension of G12.2 (Other motor neuron disease); base concept SNOMED CT 37340000
+        via truncation is subtype.9 preserved as custom [GPS] [IPS] [GPFP]
+        """
+}
+mapping "G1229.4" source="G1229" target="37340000" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "G122A.1" source="G122A" target="86044005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G122A = Amyotrofisk lateralskleros (ALS). SNOMED CT 373182 (86044005) is the exact
+        equivalent.
+        """
+}
+mapping "G122B.1" source="G122B" target="81211007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G122B = Primär lateralskleros (PLS). SNOMED CT 381003 (81211007) is the exact equivalent.
+        """
+}
+mapping "G122C.1" source="G122C" target="192886002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G122C = Spinobulbär muskelatrofi (SBMA), also known as Kennedy's disease. SNOMED CT 40390557
+        (192886002) is the SNOMED CT concept for Kennedy's disease/X-linked bulbospinal muscular atrophy;
+        exact clinical equivalent.
+        """
+}
+mapping "G122W.1" source="G122W" target="37340000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G122W = Annan specificerad motorneuronsjukdom (other specified MND), residual of ICD-10
+        G12.2. SNOMED CT 374631 (37340000) is the parent (Athena crosswalk target for G12.2). Target
+        subsumes the heterogeneous residual source; high tier (one-level broader, crosswalk-verified).
+        """
+}
+mapping "G122X.1" source="G122X" target="37340000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G122X = Motorneuronsjukdom, ospecificerad (MND, unspecified) = ICD-10 G12.2 Motor neuron
+        disease. SNOMED CT 374631 (37340000) is the Athena crosswalk target and exact equivalent at this
+        level.
+        """
+}
+mapping "G149.1" source="G149" target="31097004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source G149 = Postpoliosyndrom = ICD-10 G14 Postpolio syndrome. SNOMED CT 4150511 (31097004) is the
+        Athena crosswalk target and exact equivalent.
+        """
+}
