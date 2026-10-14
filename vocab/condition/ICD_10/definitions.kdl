@@ -1,0 +1,75 @@
+// WHO ICD-10, the base codes. The header names the edition (WHO ICD-10 2016). The committed
+// corpus carries codes and hierarchy only: no WHO designation text, and no designation text from
+// any other source, is present.
+system "ICD_10" kind=classification distribution=published publisher="int.who" default-locale="sv" {
+    name "en" "International Statistical Classification of Diseases, 10th revision"
+}
+release "2016" system="ICD_10" label-source=header
+context {
+    system "ICD_10" release="2016"
+}
+category "category" {
+    name "en" "Three-character category"
+}
+category "subcategory" {
+    name "en" "Four-character subcategory"
+}
+collection "icd-10-meddra" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10 to MedDRA"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="MEDDRA"
+    defaults {
+        mappings {
+            claim-scope "icd-10-meddra@2026.1"
+        }
+    }
+    import "external/icd-10-meddra/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+collection "icd-10-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10 to OMOP concepts"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="OMOP_EXT"
+    import "external/icd-10-omop-ext/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+// Standard targets: the OMOP ids resolve to SNOMED CT
+// Condition concepts (standard in the OMOP CDM by domain knowledge;
+// the source itself carries no standard flag).
+collection "icd-10-omop-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10 to OMOP SNOMED CT concepts"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="OMOP_SNOMED_CT"
+    import "external/icd-10-omop-snomed-ct/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+collection "icd-10-orphanet" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10 to Orphanet"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="ORPHANET"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "external/icd-10-orphanet/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+collection "icd-10-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10 to SNOMED CT"
+    authors "ludvig-alden"
+    source system="ICD_10" release="2016"
+    target system="SNOMED_CT" release="20251130"
+    import "external/icd-10-snomed-ct/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
+import "concepts/**/*.kdl" kind=fragment
