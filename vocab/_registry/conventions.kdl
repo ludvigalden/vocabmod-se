@@ -1,0 +1,201 @@
+// How the import normalizes source conventions.
+//
+// Mapping loss and quality. Every mapping
+// carries at most one derived `effect` (common.kdl Effect: what the
+// mapping does to the source's meaning beyond the relationship's
+// direction) and one derived `quality` (0-100). Both are computed by
+// the rubric below from the claim's published comment, so a comment
+// that states a loss yields the loss in both fields; a mapping with no
+// rubric input carries neither, so absent = not assessed. Equivalents
+// with no loss stay plain `equivalent` with no effect.
+//
+// Rubric `mapping-quality@1` (deterministic; same comment -> same
+// number). Inputs: the claim's relationship kind, its comment text,
+// and — for lab-se -> npu claims — the NPU-part preservation fraction
+// f (how many of the four NPU name parts — system, component,
+// kind-of-property, specimen — the target spelling preserves). The
+// NPU input is declared but yields no assignments while the legacy
+// numeric target ids carry no derivable NPU full name. Where a
+// comment class matches, the first hit by this priority wins — the
+// loss classes rank first, so a comment that states a loss yields the
+// loss in both fields and a verified basis never outranks a loss
+// class:
+//
+//   1. hierarchy step  (the target called loose/broad/general/
+//                       coarse within a short window of parent/
+//                       target/concept)  effect=omitted quality=60
+//   2. approximation   ("only parent", "no closer", "broad parent",
+//                       "closest available", "closest match",
+//                       "closest is", "not exact", "approxim*",
+//                       "imprecise")     effect=omitted quality=40
+//   3. lost facet      ("loss", "loses", "lost", "drops", "dropped",
+//                       "omits", "omitted", "not preserved",
+//                       "does not distinguish", "cannot distinguish",
+//                       "does not separate", "cannot separate",
+//                       "less specific")  effect=omitted quality=40
+//                       — fires beside a verified basis (the
+//                       loss-under-verified class: a stated loss never
+//                       sits under a 100 stamp); a loss statement
+//                       without a basis stays unassessed
+//   4. verified        ("crosswalk-verified", "exact match",
+//                       "dict-resident")             quality=100
+//                       — reached only in the absence of a loss
+//                       class. Loss language outside these classes
+//                       falls to the residual rule 5.
+//   5. residual loss   a verified basis standing beside loss
+//                       language outside the classes above: a
+//                       `granularity` hit ranks as a hierarchy step
+//                       (effect=omitted, quality=60); any other hit
+//                       (the loss-statement family) ranks as a lost
+//                       facet (effect=omitted, quality=40)
+//
+// `effect=changed` and `effect=unknown` are never assigned
+// mechanically: changed is curation-only, unknown marks unassessed
+// claims if a consumer needs the explicit spelling.
+// Relationship accuracy (mapping-consistency@1, deterministic; same
+// inputs -> same kinds). After the source table above, a consistency
+// pass reads each claim's published comment and its structured context
+// (source and target system, endpoint id) and corrects confident
+// mislabels; evidence without a confident act is left unchanged for
+// human triage. Where a rule applies, the first hit by this priority
+// wins:
+//
+//   1. direction contradiction: the comment's directional language
+//      names the source or the target as the broader side; a kind
+//      contradicting the described direction is rewritten (a declared
+//      equivalent included; related_to never — it asserts no
+//      direction, and its comments use direction words to argue for
+//      relatedness). Conflicting subjects queue; subjectless direction
+//      words on a single-claim equivalent queue; a standing verified
+//      basis ("crosswalk-verified", "exact match", "dict-resident")
+//      outranks an unattributable direction word.
+//   2. site-vs-disease: the tree's ICD-O-3 codes are topography codes
+//      (anatomical sites), so an equivalent to a disease-like SNOMED CT
+//      target (disorder/finding/event/situation class, by the private
+//      RF2 mirror's FSN tag or IS-A ancestry) is partial_overlap —
+//      the concepts genuinely overlap but neither subsumes the other.
+//      Targets the mirror cannot classify keep their kind and queue.
+//   3. approximation: an equivalent whose published comment states an
+//      approximation (closest/approximate/imprecise/not-exact family)
+//      without a standing verified basis is partial_overlap.
+//   4. namespace spell: a SNOMED CT target id in the Swedish-extension
+//      partition (<digits>100005210<check>) names a SNOMED CT Swedish extension
+//      concept, and the endpoint spells that namespace.
+//   5. loss-under-verified: a verified basis standing beside loss
+//      language the quality rubric's residual rule grades
+//      (granularity 60, other loss statements 40) — relationships
+//      stay untouched by that grading; the classified loss language
+//      is already re-derived by the quality rubric.
+//
+score-scheme "vocabmod-se-confidence" version="1" kind=confidence direction=higher-is-better minimum=0 maximum=1 {
+    description "en" "Derived mapping confidence, tier H/M/L, fitted on a 588-case training batch of blinded assessments under the documented assessment rubric and reported on a held-out 291-case sample. The score is the tier's Wilson 95% lower bound of exact agreement with the concept the blinded assessment accepts (training batch): 0.87 H, 0.71 M, 0.03 L. Signals: the target resolves in the local Athena release to an OMOP-standard concept, directly or through one valid Maps to, and BioLORD-2023-M (frozen dictionary) ranks that concept among the top-100 candidates for the source designation. H: rank 1 and top-1 score >= 0.85. M: rank 1 below that score, or rank 2-3. L: rank 4 or worse, including absent from the top 100 — the assessment presents only the top 10, so L's near-zero measured rate reflects that no independent signal corroborates the target, not that the target is wrong. The ICD-10-SE truncation path (icd10se-icd10cm-trunc) is capped at M. A score is a population rate over the tier, never a per-mapping probability, and the reference standard is blinded assessment under the documented rubric (first- and second-pass blind agreement about 81%), not expert clinical review."
+}
+score-scheme "vocabmod-se-confidence-unassessable" version="1" kind=confidence direction=unordered minimum=1 maximum=5 {
+    description "en" "Explicit no-assessment marker for mappings that carry no confidence under vocabmod-se-confidence@1. The score is the reason: 1 target-not-standard (the target resolves in the local Athena release but is neither OMOP-standard nor one Maps to away from a standard concept), 2 target-outside-athena (the target system is not among the release's OMOP vocabularies), 3 target-unresolved (the target code is absent from the release), 4 source-designation-less (the source code has no designation text to retrieve with), 5 source-outside-population (the source is not one of the corpus's Swedish systems). Unassessable is a property of the evidence, never a verdict on the mapping."
+}
+score-scheme "mapping-quality" version="1" kind=quality direction=higher-is-better minimum=0 maximum=100 {
+    description "en" "Derived mapping quality under rubric mapping-quality@1: 100 where the claim's comment states a verified or exact basis (crosswalk-verified, exact match, dict-resident) and states no loss class; 60 where the comment states a hierarchy step (the target called loose, broad, general or coarse near parent/target/concept) or, beside a verified basis, concedes a granularity loss; 40 where the comment states an approximation (only parent, no closer, broad parent, closest available/match/is, not exact, approximations, imprecision), a lost facet beside a verified basis (a named facet the target does not carry: the loss/loses/lost, drops/dropped, omits/omitted, not preserved, does not distinguish, does not separate, less specific family), or any other loss statement beside a verified basis — a stated loss never sits under a 100 stamp; absent where no class matches (not assessed). Each of the 60- and 40-band mappings pairs quality with effect=omitted."
+}
+translation-table "mapping-kind" version="1" source-column="maps_to_mapping_type" target-field="relationship" {
+    description "en" "The source names the target's extent relative to the source."
+    entry "exact_match" "equivalent"
+    entry "broader" "source_is_narrower_than_target" note="the target is broader"
+    entry "narrower" "source_is_broader_than_target" note="the target is narrower"
+    entry "related" "related_to"
+    entry "partial" "partial_overlap"
+    entry "no_match" drop=#true note="Imported as a no-match assessment for the target system"
+}
+// SNOMED CT targets retired after a mapping was authored stay in place: a
+// mapping records the standard concept that carried the source's
+// meaning at authorship time, and a later retirement (invalid_reason
+// D/U in a newer release) is a vocabulary life-cycle event, not
+// evidence the mapping was wrong. Successors were looked up in Athena:
+// where OHDSI publishes an unambiguous Maps-to replacement to an
+// active standard SNOMED CT concept, the mapping retargets to that
+// successor (applied for 10 of the 24 retired targets); the remaining
+// 14 — 13 with no Athena successor, 1 ambiguous — stay in place as
+// historical targets. The same successor bar applies to the
+// 18 equivalent claims whose OMOP target ids turned invalid in the
+// 2026-10-30 Athena download (12 unique ids, disjoint from the keep-set
+// above): 10 targets (16 claims) retarget to the verified standard
+// Maps-to successor — the D76.0 family's dead ICD10CM target upgrades
+// to standard SNOMED CT 4278365, moving those claims to this collection's
+// OMOP SNOMED CT concepts counterpart — 1 keeps its retired target demoted to
+// quality 40 with effect omitted (M0529: poss_eq-only successor
+// evidence, below the equivalence bar), and 1 is dropped to a no_match
+// assessment because the invalid target contradicts the source term
+// (S065, traumatic vs nontraumatic subdural hemorrhage).
+translation-table "invalid-reason" version="1" source-column="invalid_reason" target-field="status|assessment|flag" {
+    description "en" "Source invalid_reason values split by what they describe."
+    entry "D" "status:inactive"
+    entry "U" "status:retired"
+    entry "manual_review_needed" "flag:needs-review"
+    entry "false_positive" "flag:reported-false-positive"
+    entry "no_valid_concept" "assessment:no_match"
+    entry "icf_swedish_extension_no_target" "assessment:no_match"
+    entry "no_ucum_equivalent" "assessment:no_match"
+}
+translation-table "source-provenance" version="1" source-column="mapping_provenance" target-field="imported" {
+    description "en" "The source's mapping_provenance, kept as the imported label of each claim it produced."
+    entry "athena" "athena" note="Athena Maps-to crosswalk, inherited"
+    entry "automated" "automated"
+    entry "curated" "curated"
+    entry "manual" "manual"
+    entry "rf2" drop=#true note="SNOMED CT-authored rows are not imported"
+    entry "rf2-se" drop=#true note="SNOMED CT-authored rows are not imported"
+}
+// Fixes source target keys that name the wrong system, and maps raw
+// source keys to their declared systems. The key is the source column
+// (a bare key applies to every source); the value the system the
+// target code really belongs to.
+translation-table "target-key" version="1" source-column="maps_to key" target-field="target system" {
+    description "en" "Source map-cell keys, per source vocabulary, translated to the system the target code belongs to. A bare key (no source prefix) applies to every source."
+    entry "TLV_FBA/ICD-10" "ATC Y-codes" note="Y90 codes are ATC Y-codes, not ICD-10"
+    entry "UNIT_SE/UCUM" "OMOP concepts" note="The values are official OMOP unit concept ids, not UCUM codes"
+    entry "RX_NORM" "RxNorm" note="Declared code-only in drug/RXNORM/definitions.kdl"
+    entry "MedDRA" "MedDRA" note="Declared code-only in _registry/external.kdl"
+    entry "Orphanet" "Orphanet" note="Declared code-only in _registry/external.kdl"
+    entry "ICD_10_SE/ICD-10-CM" "OMOP ICD-10-CM concepts" note="The cell values are OMOP concept ids for ICD-10-CM concepts, not ICD-10-CM codes"
+    entry "ICD-10-CM" "ICD-10-CM" note="Declared code-only in _registry/external.kdl"
+}
+// OMOP custom concept ids: the reserved bands live beside the
+// OMOP custom concepts system declaration in _registry/external.kdl (edges
+// derived from the observed data). The stale
+// omop-drug block that stood here covered 2100200000-2100299999, a
+// range no binding in the tree ever fell inside.
+
+// Census scheme `census@1` (deterministic; same tree -> same numbers).
+// The importer emits _registry/census.kdl on every run under this
+// scheme and nothing in it is authored by hand; the counts describe
+// what the same run emitted. Counting rules:
+//
+//   - concepts: `concept` nodes declared in a system's concept files
+//     (the data files whose context binds the system release).
+//     `variant` and `code-alias` nodes are not concepts. Denominator
+//     for the status and designation rows.
+//   - inactive / retired: concepts whose effective status — their own
+//     `status` or the file's `concepts.status` default — is
+//     `inactive` / `retired`; every other concept is active.
+//   - named / sv / en: concepts carrying at least one `name`
+//     designation / one with locale `sv` / one with `en`. Synonyms and
+//     variants do not count as designations.
+//   - mappings: `mapping` nodes declared in a collection's mapping
+//     files (the data files whose context binds the collection
+//     version). Denominator for the kind rows and the assessed share.
+//   - bindings: `omop-binding` nodes in the same files — an
+//     identifier binding to an OMOP concept id, a different assertion
+//     from a semantic mapping, counted apart and never given a kind.
+//   - kind: a mapping's effective relationship — its own
+//     `relationship` where spelled, else the uniform kind the
+//     collection projects through its nested import.
+//   - assessed: mappings carrying a derived `quality` or `effect`
+//     property under rubric `mapping-quality@1`; every other mapping
+//     is unassessed (not assessed is a statement about evidence, not
+//     about correctness).
+//   - tier: a mapping's confidence tier from its bound confidence
+//     (census-tier rows, one per tier present): under scheme
+//     `vocabmod-se-confidence@1` the calibrated tier scores map
+//     0.87 -> H, 0.71 -> M, any lower score -> L; under scheme
+//     `vocabmod-se-confidence-unassessable@1` every reason code is U.
+//     A mapping carrying no confidence enters no tier, so the tier
+//     rows sum to at most the collection's mappings.
