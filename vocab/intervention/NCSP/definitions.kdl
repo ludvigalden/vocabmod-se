@@ -1,0 +1,19 @@
+// NCSP: the Nordic NOMESCO Classification of Surgical Procedures, version 1.16 (2011), the parent
+// classification the Swedish KVÅ surgical codes (KVÅ surgical procedures) extend. Every procedure code and category
+// heading carries its code and English designation; the source's includes/excludes notes and its
+// internal is_a/see_also relationships stay out of scope, and the hierarchy is the code structure
+// itself (each leaf's category column names its two- or three-letter parent heading; the chapter
+// letter leads every code), carried the way KVÅ surgical procedures carries its hierarchy: by layout, not parent
+// links.
+system "NCSP" kind=classification distribution=published publisher="nordic.nomesco" default-locale="en" {
+    name "en" "NOMESCO Classification of Surgical Procedures"
+    name "sv" "Nordisk klassifikation av kirurgiska ingrepp"
+}
+release "1.16" system="NCSP" label-source=registry
+context {
+    system "NCSP" release="1.16"
+}
+category "procedure" {
+    name "en" "NCSP procedure"
+}
+import "concepts/**/*.kdl" kind=fragment
