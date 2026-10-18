@@ -65,6 +65,23 @@ collection "icd-10-se-omop-snomed-ct" version="2026.1" kind=mapping publisher="l
         project "defaults"
     }
 }
+collection "icd-10-se-orphanet" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to Orphanet"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="ORPHANET"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "ORPHANET/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+    import "ORPHANET/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "ICD-10-SE to SNOMED CT"
     authors "ludvig-alden"
