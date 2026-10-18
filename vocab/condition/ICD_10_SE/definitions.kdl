@@ -96,4 +96,24 @@ collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
+// Derived, weak: ICD-10-SE codes with no OMOP-standard target of their
+// own, truncated to 4 then 3 characters, land on an ICD-10-CM concept
+// with a valid Athena Maps to. The Swedish code is narrower than the
+// truncated one; the collection is preference=alternative throughout
+// and its confidence never exceeds medium. Codes the source already
+// assessed as no_match toward OMOP ICD-10-CM concepts are left out.
+collection "icd-10-se-omop-icd-10-cm-truncation" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to OMOP ICD-10-CM concepts by truncation"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_ICD_10_CM"
+    defaults {
+        mappings {
+            claim-scope "icd-10-se-omop-icd-10-cm-truncation@2026.1"
+        }
+    }
+    import "OMOP_ICD_10_CM/truncation/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
