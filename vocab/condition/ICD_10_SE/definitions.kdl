@@ -12,6 +12,21 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
+collection "icd-10-se-meddra" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to MedDRA"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="MEDDRA"
+    defaults {
+        mappings {
+            claim-scope "icd-10-se-meddra@2026.1"
+            relationship "equivalent"
+        }
+    }
+    import "MEDDRA/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "icd-10-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "ICD-10-SE to OMOP concepts"
     authors "ludvig-alden"
