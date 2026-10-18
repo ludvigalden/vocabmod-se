@@ -12,6 +12,15 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
+collection "icd-10-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to OMOP concepts"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="OMOP_EXT"
+    import "OMOP_EXT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 // Fallback tier: the source grades every row icd10cm_base_fallback
 // (non-standard ICD-10-CM billing concepts), so the collection is
 // preference=alternative throughout.
