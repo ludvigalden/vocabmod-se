@@ -1,0 +1,274 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes SQ-VA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "SQ120.1" source="SQ120" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: puncture of brachial artery. No SNOMED CT equivalent"
+}
+mapping "SQ130.1" source="SQ130" target="42311007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture of a. radialis maps exactly to radial artery puncture for laboratory test"
+}
+mapping "SQ171.1" source="SQ171" target="1217436006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Insertion of catheter into a. dorsalis pedis (a peripheral artery) maps exactly to Insertion of
+        arterial catheter into peripheral artery; exact match
+        """
+}
+mapping "SQ980.1" source="SQ980" target="57931004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Punktion av annan artär = puncture of other artery; the clinical procedure is arterial puncture,
+        SNOMED CT 2100112066 57931004 is a residual modifier.
+        """
+}
+mapping "SQ996.1" source="SQ996" target="57931004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture of artery unspecified = Puncture of artery (exact match)"
+}
+mapping "SQ999.1" source="SQ999" target="58983009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SQ999 SNOMED CT 58983009 = insertion/placement of arterial catheter/cannula, unspecified.
+        Target. Direct concept equivalence at the un-qualified level.
+        """
+}
+mapping "SR100.1" source="SR100" target="112988006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "SR215.1" source="SR215" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anesthesiology work for acute patient at hospital; broader operative general anesthesia concept
+        """
+}
+mapping "SR310.1" source="SR310" target="710223006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Patient-controlled analgesia (PCA) = initiation of PCA. Exact SNOMED CT equivalent."
+}
+flag "SR311.unmapped" kind=unmapped concept="SR311" target-system="SNOMED_CT"
+mapping "SR320.1" source="SR320" target="431182000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vård av patient i bukläge = Placing subject in prone position; exact match for care/positioning
+        of patient in prone position
+        """
+}
+mapping "SS101.1" source="SS101" target="427064004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cirkulatorisk monitorering med SpO2 = circulatory monitoring with SpO2; the defining measurement
+        modality is pulse oximetry (SpO2); continuous pulse oximetry is
+        """
+}
+mapping "SS105.1" source="SS105" target="70549008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Circulatory monitoring of central venous pressure; SNOMED CT has CVP catheter insertion"
+}
+mapping "SS109.1" source="SS109" target="431779002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: Doppler circulation monitoring; weak to Doppler-guided procedure"
+}
+mapping "SS110.1" source="SS110" target="710839006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Impedance-based circulation monitoring; broader cardiac status monitoring"
+}
+mapping "SS111.1" source="SS111" target="710839006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Respiratory-based circulation monitoring; broader cardiac status monitoring"
+}
+mapping "SS112.1" source="SS112" target="182806001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 182806001 2100112097 = plethysmography-based circulation monitoring; SNOMED CT 182806001
+        is the exact
+        """
+}
+mapping "SS199.1" source="SS199" target="48428001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS199 SNOMED CT 48428001 = circulatory (cardiovascular) monitoring, unspecified. Target. =
+        circulatory/cardiovascular; exact concept equivalence at the un-qualified level. High: exact
+        term match without independent crosswalk.
+        """
+}
+mapping "SS201.1" source="SS201" target="847411000000102" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "SS202.1" source="SS202" target="428803005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closest lead-count match; KVÅ is 5-lead ECG monitoring"
+}
+mapping "SS299.1" source="SS299" target="23852006" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS299 SNOMED CT 23852006 = cardiological monitoring, unspecified (a broad circulatory-organ
+        monitoring category). Target. The target (cardiac monitoring) is one specific aspect of the
+        broader cardiological-monitoring source; forced downward because no equally-broad procedure
+        concept exists. Narrower: target is more specific than the source. Confidence capped at (high)
+        per the narrower-adds-specificity rule, with UNS source.
+        """
+}
+mapping "SS313.1" source="SS313" target="133879001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Central bladder temperature measurement; broader match to patient temperature monitoring"
+}
+mapping "SS399.1" source="SS399" target="56342008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS399 SNOMED CT 56342008 = central (core) body temperature measurement, unspecified. No
+        SNOMED CT procedure concept for exists; 276885007 is an observable, not a procedure. Target, the
+        parent procedure that subsumes core temperature measurement. Broader: every central temperature
+        measurement is a temperature-taking, but the target loses the specificity. Low confidence :
+        aspect (core/central) is lost and the target is a generic procedure; no independent crosswalk
+        verified.
+        """
+}
+mapping "SS401.1" source="SS401" target="284031001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: endtidal gas monitoring; weak to continuous invasive blood gas monitoring"
+}
+mapping "SS499.1" source="SS499" target="248230004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS499 SNOMED CT 248230004 = monitoring of anesthesia depth, unspecified. Target
+        (procedure-domain concept, id 40451975). Best-available direct concept match for
+        anesthesia-depth monitoring; note 470044008 is a device, not a procedure. Moderate: term match
+        is good but the procedure-domain SNOMED CT concept is a generic rather than an explicit procedure,
+        and no independent crosswalk was verified.
+        """
+}
+mapping "SS501.1" source="SS501" target="284029005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "End-tidal CO2 monitoring maps to respired carbon dioxide monitoring"
+}
+mapping "SS502.1" source="SS502" target="767906009" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Spirometric monitoring; SNOMED CT has spirometry concepts. Post bronchodilator spirometry is
+        related but not exact.
+        """
+}
+mapping "SS503.1" source="SS503" target="284031001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kontinuerlig invasiv blodgasanalys = continuous invasive blood gas analysis; SNOMED CT 2100112118
+        284031001 and are clinically equivalent in this context. Exact match.
+        """
+}
+mapping "SS596.1" source="SS596" target="118669005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other respiratory monitoring; procedure on respiratory system is broader parent"
+}
+mapping "SS599.1" source="SS599" target="182799008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS599 SNOMED CT 182799008 = respiratory monitoring, unspecified. Target (procedure, id
+        40378908). Direct term and concept equivalence at the un-qualified level. High: exact term match
+        without independent crosswalk.
+        """
+}
+mapping "SS697.1" source="SS697" target="398003001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Monitorering med train-of-four (TOF) = monitoring with train-of-four; exact clinical match."
+}
+mapping "SS699.1" source="SS699" target="284016005" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS699 SNOMED CT 284016005 = neuromuscular monitoring, unspecified (broad: includes
+        train-of-four and any NM monitoring). Target. The target is more specific (monitoring of
+        neuromuscular blockade) than the broad neuromuscular-monitoring source; forced downward because
+        no un-qualified procedure concept exists in the mirror. Narrower: target adds the specificity.
+        Confidence (high) per the narrower rule, with UNS source.
+        """
+}
+mapping "SS702.1" source="SS702" target="870425000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "EEG in ICU with automated analysis. Quantitative EEG is closest but lacks ICU context."
+}
+mapping "SS704.1" source="SS704" target="64487008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100112128 64487008 = neurological monitoring with evoked potentials; exact match to
+        SNOMED CT concept
+        """
+}
+mapping "SS799.1" source="SS799" target="151119005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS799 SNOMED CT 151119005 = neurological monitoring, unspecified. Target (procedure, id
+        40313207). Direct term and concept equivalence at the un-qualified level. High: exact term match
+        without independent crosswalk.
+        """
+}
+mapping "SS801.1" source="SS801" target="56027003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ coagulation monitoring with thrombelastography; SNOMED CT 2100112132 56027003 is exact
+        equivalent
+        """
+}
+mapping "SS802.1" source="SS802" target="1303991000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Coagulation monitoring with viscoelastometer maps to viscoelastic coagulation technique"
+}
+mapping "SS896.1" source="SS896" target="199761000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other coagulation monitoring. SNOMED CT has anticoagulation monitoring"
+}
+mapping "SS899.1" source="SS899" target="142974000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SS899 SNOMED CT 142974000 = coagulation monitoring, unspecified (perioperative monitoring of
+        blood coagulation, e.g. ACT/viscoelastic tests). No SNOMED CT procedure concept exists in the
+        mirror; anticoagulation-monitoring concepts are UK primary-care admin services, not
+        perioperative monitoring procedures. Target (procedure, id 40301845). Related: the source is a
+        monitoring regime, the target is the underlying lab test that the monitoring is built on;
+        clinically associated but not equivalent/broader/narrower/component. Low confidence : tight
+        association but a category mismatch (monitoring vs test) that a reviewer should confirm.
+        """
+}
+mapping "SS901.1" source="SS901" target="395060000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Hourly urine output monitoring; SNOMED CT has 24-hour urine output measurement"
+}
+flag "VA905.unmapped" kind=unmapped concept="VA905" target-system="SNOMED_CT"
+mapping "VA910.1" source="VA910" target="15886004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SVF head-neck cancer well-founded suspicion decision; screening for cancer is very broad but
+        captures the oncology pathway intent
+        """
+}
+flag "VA915.unmapped" kind=unmapped concept="VA915" target-system="SNOMED_CT"
+flag "VA920.unmapped" kind=unmapped concept="VA920" target-system="SNOMED_CT"
+flag "VA922.unmapped" kind=unmapped concept="VA922" target-system="SNOMED_CT"
+flag "VA925.unmapped" kind=unmapped concept="VA925" target-system="SNOMED_CT"
+mapping "VA935.1" source="VA935" target="790171000000106" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF H&N cancer MDT conference; closest SNOMED CT is MDT case conference"
+}
+mapping "VA940.1" source="VA940" target="1239511000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sweden-specific cancer pathway code; no equivalent SNOMED CT concept"
+}
+flag "VA943.unmapped" kind=unmapped concept="VA943" target-system="SNOMED_CT"
+flag "VA944.unmapped" kind=unmapped concept="VA944" target-system="SNOMED_CT"
+mapping "VA960.1" source="VA960" target="373818007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF head/neck cancer decision on expectant management; SNOMED CT has watchful waiting"
+}
+flag "VA973.unmapped" kind=unmapped concept="VA973" target-system="SNOMED_CT"
+flag "VA990.unmapped" kind=unmapped concept="VA990" target-system="SNOMED_CT"
+flag "VA991.unmapped" kind=unmapped concept="VA991" target-system="SNOMED_CT"

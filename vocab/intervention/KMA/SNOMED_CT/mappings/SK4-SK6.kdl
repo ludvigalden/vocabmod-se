@@ -1,0 +1,266 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes SK4-SK6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "SK411.1" source="SK411" target="231129009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: subacromial block with catheter; weak to upper limb nerve block"
+}
+mapping "SK412.1" source="SK412" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Subacromial block with tunneled catheter; regional anesthesia parent"
+}
+mapping "SK420.1" source="SK420" target="231195007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interkostalblockad utan kateter = intercostal block without catheter. SNOMED CT 2100111849
+        231195007 is the exact clinical equivalent; the 'without
+        """ suspect=quoted-text
+}
+mapping "SK421.1" source="SK421" target="231195007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intercostal block with catheter maps to local anesthetic intercostal nerve block (catheter is a
+        technique modifier not present in SNOMED CT)
+        """
+}
+mapping "SK422.1" source="SK422" target="231195007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intercostal block with tunneled catheter maps to intercostal nerve block"
+}
+mapping "SK429.1" source="SK429" target="231195007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SK429 = intercostal block (unspecified). SNOMED CT 231195007. Exact match; both are
+        general/unspecific as to approa
+        """
+}
+mapping "SK430.1" source="SK430" target="231194006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Same as SK431 but without catheter. The SNOMED CT concept covers the procedure regardless of
+        catheter use
+        """
+}
+mapping "SK431.1" source="SK431" target="231194006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match for intrapleural block. Catheter detail is a technique modifier not in SNOMED CT"
+}
+mapping "SK432.1" source="SK432" target="231194006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intrapleural block with tunneled catheter. SNOMED CT 2100111855 231194006 is the base procedure
+        without the catheter qualifier. The catheter/tunneling el
+        """
+}
+mapping "SK439.1" source="SK439" target="231194006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intrapleural block UNS = local anesthetic intrapleural block. Exact match. Verified SNOMED CT S.
+        """
+}
+mapping "SK440.1" source="SK440" target="55195009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Paravertebralblockad utan kateter (paravertebral block without catheter) maps exactly to
+        Paravertebral anesthesia. Verified SNOMED CT S concept.
+        """
+}
+mapping "SK441.1" source="SK441" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Paravertebral block with catheter; SNOMED CT cervical block is different region but same procedure
+        class
+        """
+}
+mapping "SK442.1" source="SK442" target="231129009" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Paravertebral block with tunneled catheter. Nerve block is a rough regional approximation;
+        different region.
+        """
+}
+mapping "SK449.1" source="SK449" target="55195009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Paravertebralblockad UNS = paravertebral block unspecified; exact SNOMED CT match."
+}
+mapping "SK451.1" source="SK451" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Continuous lumbar plexus block with catheter vs epidural anesthesia; both regional with catheter
+        """
+}
+mapping "SK452.1" source="SK452" target="231129009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Root block with tunneled catheter; SNOMED CT nerve block is parent"
+}
+mapping "SK459.1" source="SK459" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nerve root block (including diagnostic); epidural anesthesia is a broader proxy for regional
+        anesthesia.
+        """
+}
+mapping "SK462.1" source="SK462" target="231210007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Facettledsblockad med tunnelerad kateter = Local anesthetic facet joint nerve block; exact
+        match; the tunneled catheter is an approach detail
+        """
+}
+mapping "SK469.1" source="SK469" target="231210007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "SK470.1" source="SK470" target="180893006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Celiac plexus block without catheter maps exactly to celiac plexus block"
+}
+mapping "SK471.1" source="SK471" target="764381000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Celiac plexus block with catheter; SNOMED CT has CT-guided neurolytic celiac plexus block"
+}
+mapping "SK479.1" source="SK479" target="180893006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Celiakusblockad = celiac plexus block; exact SNOMED CT match."
+}
+mapping "SK480.1" source="SK480" target="231269000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: splanchnic nerve block. KVAA specifies SNOMED CT 2100111873 231269000 (single
+        injection), which is the default for nerve blocks. Verified SNOMED CT standard
+        """
+}
+mapping "SK482.1" source="SK482" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Splanchnic block; to regional anesthesia"
+}
+mapping "SK496.1" source="SK496" target="231145006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other regional block of trunk. SNOMED CT lacks this specific concept"
+}
+mapping "SK499.1" source="SK499" target="303508000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SK499 SNOMED CT 303508000 = regional nerve block of trunk/torso, unspecified. Target. Exact
+        region (trunk/bål) and modality match; UNS aligns with the un-qualified concept. High: exact
+        term/hierarchy match without independent crosswalk.
+        """
+}
+mapping "SK510.1" source="SK510" target="231197004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies without catheter; very close match to ilioinguinal block"
+}
+mapping "SK511.1" source="SK511" target="231197004" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ilioinguinalisblockad med kateter = ilioinguinal nerve block with catheter; local anesthetic
+        block of ilioinguinal nerve is closest match (catheter not specifie
+        """
+}
+mapping "SK512.1" source="SK512" target="231197004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100111882 231197004 = ilioinguinal nerve block with tunnelled catheter; maps to (tunne
+        """
+}
+mapping "SK519.1" source="SK519" target="231197004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100111883 231197004 = ilioinguinal nerve block, unspecified; exact match to SNOMED CT
+        Local anesthetic block of ilioinguinal nerve
+        """
+}
+mapping "SK521.1" source="SK521" target="14224004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "SK529.1" source="SK529" target="14224004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "SK530.1" source="SK530" target="708870005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Piriformis block without catheter; close match to piriformis injection"
+}
+mapping "SK540.1" source="SK540" target="68248001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact match: KVA pudendal block without catheter = SNOMED CT injection of anesthetic into
+        pudendal nerve
+        """
+}
+mapping "SK542.1" source="SK542" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pudendal block with tunnelled catheter; SNOMED CT cervical block is different region but same nerve
+        block class
+        """
+}
+mapping "SK549.1" source="SK549" target="68248001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pudendusblockad UNS = pudendal nerve block (unspecified). The SNOMED CT concept Injection of
+        anesthetic agent into pudendal nerve is the exact clinical equivalent
+        """
+}
+mapping "SK550.1" source="SK550" target="231201004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Penisbasblockad utan kateter = penis base block without catheter; SNOMED CT 2100111896 231201004 is
+        the exact SNOMED CT equivalent (without catheter = single-inje
+        """
+}
+mapping "SK551.1" source="SK551" target="231201004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Penisbasblockad med kateter = penis base block with catheter. SNOMED CT 2100111897 231201004 is the
+        closest equivalent. The qualifier has no SN
+        """
+}
+mapping "SK561.1" source="SK561" target="231198009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hypogastric nerve block with catheter = Local anesthetic block of iliohypogastric nerve (exact
+        match; hypogastric block = iliohypogastric block)
+        """
+}
+mapping "SK562.1" source="SK562" target="180885006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hypogastric nerve block with catheter; SNOMED CT lumbar epidural block is a related regional
+        anesthesia technique.
+        """
+}
+mapping "SK579.1" source="SK579" target="430433001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sacroiliac block; SNOMED CT has CT-guided SI joint injection as closest procedure match"
+}
+mapping "SK580.1" source="SK580" target="231268008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sympathetic block (lumbar) without catheter maps exactly to SNOMED CT 4337762 SNOMED CT 2100111908
+        231268008
+        """
+}
+mapping "SK582.1" source="SK582" target="231268008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lumbar sympathetic block with tunneled catheter. SNOMED CT 231268008 SNOMED CT 2100111910 231268008
+        captures the core procedure; the catheter qualifier is a technical
+        """
+}
+mapping "SK589.1" source="SK589" target="231264005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Sympatikusblockad UNS = sympathetic block unspecified. Exact match: (231264005). The
+        unspecified qualifier matches well. Verified S
+        """
+}
+flag "SK620.unmapped" kind=unmapped concept="SK620" target-system="SNOMED_CT"

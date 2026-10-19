@@ -1,0 +1,237 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes AH-AM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AH008.1" source="AH008" target="80865008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mammografisk preparatundersokning = mammographic examination of a specimen; SNOMED CT 2100100425
+        80865008 is the exact SNOMED CT equivalent.
+        """
+}
+mapping "AJ002.1" source="AJ002" target="42826002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "AJ002 tryckmätning GI-kanalen; weak to pressure monitoring"
+}
+mapping "AJ014.1" source="AJ014" target="414301000119107" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Defekografi = defecography. SNOMED CT 2100100440 414301000119107 is the standard technique; exact
+        clinical equivalent. Verified in CONCEPT.csv: SNOMED CT, S.
+        """
+}
+mapping "AJ016.1" source="AJ016" target="847031000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Esophageal manometry with provocation test; esophageal manometry catheter insertion is close
+        match
+        """
+}
+mapping "AJ017.1" source="AJ017" target="418249008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Herniography: (418249008), confirmed SNOMED CT standard"
+}
+mapping "AJ036.1" source="AJ036" target="1351773003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan kolangiografi = percutaneous cholangiography; percutaneous fluoroscopic cholangiography
+        is exact match, verified as SNOMED CT standard
+        """
+}
+mapping "AJ072.1" source="AJ072" target="252641007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transit measurement in Swedish clinical practice almost always refers to GI transit. Verified
+        SNOMED CT standard concept S.
+        """
+}
+mapping "AJ073.1" source="AJ073" target="166610007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transcutaneous bilirubin measurement; weak to serum bilirubin (different method same analyte)
+        """
+}
+mapping "AJ075.1" source="AJ075" target="252632002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Low-resolution small bowel manometry; SNOMED CT GI manometry is a reasonable parent match"
+}
+mapping "AJ085.1" source="AJ085" target="252669004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: Urea-utandningstest"
+}
+mapping "AJ086.1" source="AJ086" target="252233000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vatgasanalys av utandningsluft = hydrogen gas analysis of exhaled air; exact SNOMED CT match for
+        hydrogen breath test.
+        """
+}
+mapping "AJ088.1" source="AJ088" target="167202006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match: KVA is general nutrient absorption; SNOMED CT has xylose absorption test as one
+        specific absorption test
+        """
+}
+mapping "AJ089.1" source="AJ089" target="3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Oral fat loading test; no close SNOMED CT match"
+}
+mapping "AJ095.1" source="AJ095" target="442079009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100100520 442079009 = esophageal impedance measurement; exact match to SNOMED CT"
+}
+flag "AJ096.unmapped" kind=unmapped concept="AJ096" target-system="SNOMED_CT"
+flag "AJ097.unmapped" kind=unmapped concept="AJ097" target-system="SNOMED_CT"
+flag "AJ100.unmapped" kind=unmapped concept="AJ100" target-system="SNOMED_CT"
+flag "AJ105.unmapped" kind=unmapped concept="AJ105" target-system="SNOMED_CT"
+flag "AJ106.unmapped" kind=unmapped concept="AJ106" target-system="SNOMED_CT"
+mapping "AK001.1" source="AK001" target="168860009" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AK007.1" source="AK007" target="168858007" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Colpo-uretrocystography; closest SNOMED CT is retrograde cystography"
+}
+mapping "AK043.1" source="AK043" target="169251004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AK055.1" source="AK055" target="405251001" relationship=equivalent preference=alternative {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Urography with peristalsis/pressure studies vs retrograde urography; related parent"
+}
+mapping "AK058.1" source="AK058" target="241210005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AK059.1" source="AK059" target="241188001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100100580 241188001 = cavernosography; note KVÅ says cavernosography (imaging) but
+        the actual clinical procedure during cavernosography always includes caverno
+        """
+}
+mapping "AK060.1" source="AK060" target="10106002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is renal pelvis puncture biopsy; SNOMED CT is kidney core needle biopsy nearby structure"
+}
+mapping "AK061.1" source="AK061" target="1293269004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 1293269004 2100100582 = puncture biopsy of renal pelvis in transplanted
+        kidney. SNOMED CT has 'Biopsy of transplanted
+        """ suspect=quoted-text
+}
+mapping "AK062.1" source="AK062" target="275155009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous needle biopsy of kidney closely matches needle biopsy of kidney"
+}
+mapping "AK063.1" source="AK063" target="1293269004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Puncture biopsy of transplanted kidney maps exactly to SNOMED CT 1244937 SNOMED CT 1293269004
+        2100100584
+        """
+}
+mapping "AK064.1" source="AK064" target="252897007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bladder filling test with leakage provocation; SNOMED CT pressure flow cystometry is related
+        urodynamic test
+        """
+}
+mapping "AK101.1" source="AK101" target="29651008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Undersökning av fullständig spermaanalys = examination of complete semen analysis; exact match.
+        """
+}
+mapping "AK103.1" source="AK103" target="870572003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cryopreservation of sperm: (870572003), confirmed SNOMED CT standard"
+}
+mapping "AK108.1" source="AK108" target="252920004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kvalitativ utvardering av nattliga erektioner = qualitative assessment of nocturnal erections
+        (NPTR/Rigiscan); exact SNOMED CT match.
+        """
+}
+flag "AK110.unmapped" kind=unmapped concept="AK110" target-system="SNOMED_CT"
+flag "AK111.unmapped" kind=unmapped concept="AK111" target-system="SNOMED_CT"
+flag "AK112.unmapped" kind=unmapped concept="AK112" target-system="SNOMED_CT"
+flag "AK113.unmapped" kind=unmapped concept="AK113" target-system="SNOMED_CT"
+flag "AK114.unmapped" kind=unmapped concept="AK114" target-system="SNOMED_CT"
+flag "AK115.unmapped" kind=unmapped concept="AK115" target-system="SNOMED_CT"
+mapping "AK116.1" source="AK116" target="241460001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transperineal ultrasound pelvic floor; no good match."
+}
+mapping "AK117.1" source="AK117" target="22034001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "AK140.unmapped" kind=unmapped concept="AK140" target-system="SNOMED_CT"
+mapping "AL006.1" source="AL006" target="241367004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AL013.1" source="AL013" target="252939009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ultrasound of follicles: (252939009), confirmed SNOMED CT standard"
+}
+flag "AL020.unmapped" kind=unmapped concept="AL020" target-system="SNOMED_CT"
+mapping "AM005.1" source="AM005" target="228471000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Routine second-trimester OB ultrasound maps to routine obstetric scan; trimester specificity
+        lost
+        """
+}
+mapping "AM013.1" source="AM013" target="40792007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100100635 40792007 (external pressure during delivery) is clinically known
+        as the Kristeller maneuver (fundal pressure).
+        """
+}
+mapping "AM014.1" source="AM014" target="698564009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is fetal position assessment via OB ultrasound; SNOMED CT is broader OB ultrasound referral"
+}
+mapping "AM015.1" source="AM015" target="427623005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: Swedish obstetric Doppler of umbilical artery maps precisely to SNOMED CT Obstetric
+        umbilical artery Doppler
+        """
+}
+mapping "AM017.1" source="AM017" target="426295007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Obstetriskt ultraljud med dopplerundersökning av a. uterina maps exactly to SNOMED CT 2100100639
+        426295007. Verified: SNOMED CT S
+        """
+}
+mapping "AM021.1" source="AM021" target="241494004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Obstetriskt ultraljud for bedömning av fostervattenmangd = obstetric ultrasound for amniotic
+        fluid volume assessment. Exact match.
+        """
+}
+mapping "AM041.1" source="AM041" target="276369006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: examination due to decreased fetal movements. SNOMED CT Reduced fetal movement is the KVÅ code
+        is a procedure (examination), the SNOMED CT is the finding that triggers it - broader but
+        clinically linked.
+        """
+}
+flag "AM042.unmapped" kind=unmapped concept="AM042" target-system="SNOMED_CT"

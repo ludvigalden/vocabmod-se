@@ -1,0 +1,202 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes VB-VE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VB005.unmapped" kind=unmapped concept="VB005" target-system="SNOMED_CT"
+flag "VB010.unmapped" kind=unmapped concept="VB010" target-system="SNOMED_CT"
+flag "VB015.unmapped" kind=unmapped concept="VB015" target-system="SNOMED_CT"
+mapping "VB020.1" source="VB020" target="199251000000107" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF esophageal/gastric cancer referral assessed; reasonable parent for cancer pathway"
+}
+flag "VB022.unmapped" kind=unmapped concept="VB022" target-system="SNOMED_CT"
+flag "VB025.unmapped" kind=unmapped concept="VB025" target-system="SNOMED_CT"
+flag "VB035.unmapped" kind=unmapped concept="VB035" target-system="SNOMED_CT"
+flag "VB040.unmapped" kind=unmapped concept="VB040" target-system="SNOMED_CT"
+flag "VB043.unmapped" kind=unmapped concept="VB043" target-system="SNOMED_CT"
+mapping "VB044.1" source="VB044" target="225292002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SVF cancer pathway milestone for esophageal/gastric cancer treatment decision; SNOMED CT is generic
+        treatment planning
+        """
+}
+mapping "VB060.1" source="VB060" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF esophageal cancer expectant; cancer conference"
+}
+flag "VB073.unmapped" kind=unmapped concept="VB073" target-system="SNOMED_CT"
+flag "VB090.unmapped" kind=unmapped concept="VB090" target-system="SNOMED_CT"
+flag "VB091.unmapped" kind=unmapped concept="VB091" target-system="SNOMED_CT"
+flag "VB205.unmapped" kind=unmapped concept="VB205" target-system="SNOMED_CT"
+flag "VB210.unmapped" kind=unmapped concept="VB210" target-system="SNOMED_CT"
+flag "VB215.unmapped" kind=unmapped concept="VB215" target-system="SNOMED_CT"
+flag "VB220.unmapped" kind=unmapped concept="VB220" target-system="SNOMED_CT"
+flag "VB222.unmapped" kind=unmapped concept="VB222" target-system="SNOMED_CT"
+mapping "VB225.1" source="VB225" target="305422004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA SVF first visit colorectal cancer = SNOMED CT admission to colorectal surgery"
+}
+mapping "VB235.1" source="VB235" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: SVF colorectal cancer MDT conference. SNOMED CT has multidisciplinary cancer conference"
+}
+flag "VB240.unmapped" kind=unmapped concept="VB240" target-system="SNOMED_CT"
+flag "VB243.unmapped" kind=unmapped concept="VB243" target-system="SNOMED_CT"
+flag "VB244.unmapped" kind=unmapped concept="VB244" target-system="SNOMED_CT"
+flag "VB260.unmapped" kind=unmapped concept="VB260" target-system="SNOMED_CT"
+flag "VB273.unmapped" kind=unmapped concept="VB273" target-system="SNOMED_CT"
+flag "VB290.unmapped" kind=unmapped concept="VB290" target-system="SNOMED_CT"
+flag "VB291.unmapped" kind=unmapped concept="VB291" target-system="SNOMED_CT"
+flag "VB305.unmapped" kind=unmapped concept="VB305" target-system="SNOMED_CT"
+flag "VB310.unmapped" kind=unmapped concept="VB310" target-system="SNOMED_CT"
+flag "VB315.unmapped" kind=unmapped concept="VB315" target-system="SNOMED_CT"
+flag "VB320.unmapped" kind=unmapped concept="VB320" target-system="SNOMED_CT"
+flag "VB322.unmapped" kind=unmapped concept="VB322" target-system="SNOMED_CT"
+flag "VB325.unmapped" kind=unmapped concept="VB325" target-system="SNOMED_CT"
+flag "VB335.unmapped" kind=unmapped concept="VB335" target-system="SNOMED_CT"
+flag "VB340.unmapped" kind=unmapped concept="VB340" target-system="SNOMED_CT"
+mapping "VB343.1" source="VB343" target="60631000210103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF anal cancer treatment decision; Swedish care pathway administrative code"
+}
+flag "VB344.unmapped" kind=unmapped concept="VB344" target-system="SNOMED_CT"
+mapping "VB360.1" source="VB360" target="373818007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is Sweden-specific SVF pathway decision; SNOMED CT watchful waiting captures clinical intent
+        """
+}
+flag "VB373.unmapped" kind=unmapped concept="VB373" target-system="SNOMED_CT"
+flag "VB390.unmapped" kind=unmapped concept="VB390" target-system="SNOMED_CT"
+flag "VB391.unmapped" kind=unmapped concept="VB391" target-system="SNOMED_CT"
+mapping "VB405.1" source="VB405" target="199251000000107" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF liver cancer - referral decision; closest is fast track cancer referral"
+}
+flag "VB410.unmapped" kind=unmapped concept="VB410" target-system="SNOMED_CT"
+flag "VB415.unmapped" kind=unmapped concept="VB415" target-system="SNOMED_CT"
+flag "VB420.unmapped" kind=unmapped concept="VB420" target-system="SNOMED_CT"
+mapping "VB422.1" source="VB422" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: SVF liver cancer surgical diagnostic. Sweden-specific cancer pathway"
+}
+flag "VB425.unmapped" kind=unmapped concept="VB425" target-system="SNOMED_CT"
+mapping "VB435.1" source="VB435" target="708004003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SVF levercancer - multidisciplinär konferens = Standardised cancer pathway for liver cancer -
+        multidisciplinary conference. SNOMED CT 2100112240 708004003 is the SN
+        """
+}
+mapping "VB440.1" source="VB440" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: SVF liver cancer diagnosis information. Sweden-specific cancer pathway"
+}
+flag "VB443.unmapped" kind=unmapped concept="VB443" target-system="SNOMED_CT"
+flag "VB444.unmapped" kind=unmapped concept="VB444" target-system="SNOMED_CT"
+mapping "VB460.1" source="VB460" target="438758006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF liver cancer -- decision on expectant management maps to expectant management"
+}
+flag "VB473.unmapped" kind=unmapped concept="VB473" target-system="SNOMED_CT"
+flag "VB490.unmapped" kind=unmapped concept="VB490" target-system="SNOMED_CT"
+flag "VB491.unmapped" kind=unmapped concept="VB491" target-system="SNOMED_CT"
+flag "VB505.unmapped" kind=unmapped concept="VB505" target-system="SNOMED_CT"
+mapping "VB510.1" source="VB510" target="306237005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF cancer care pathway - Swedish administrative cancer pathway code; no SNOMED CT equivalent"
+}
+flag "VB515.unmapped" kind=unmapped concept="VB515" target-system="SNOMED_CT"
+mapping "VB520.1" source="VB520" target="199251000000107" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF gallbladder/bile duct cancer referral assessed; reasonable parent"
+}
+flag "VB522.unmapped" kind=unmapped concept="VB522" target-system="SNOMED_CT"
+flag "VB525.unmapped" kind=unmapped concept="VB525" target-system="SNOMED_CT"
+mapping "VB535.1" source="VB535" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF gallbladder/bile duct cancer MDT conference; SNOMED CT has cancer MDT conference"
+}
+flag "VB540.unmapped" kind=unmapped concept="VB540" target-system="SNOMED_CT"
+mapping "VB543.1" source="VB543" target="225292002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SVF cancer pathway milestone for biliary cancer treatment decision; SNOMED CT is generic treatment
+        planning
+        """
+}
+flag "VB544.unmapped" kind=unmapped concept="VB544" target-system="SNOMED_CT"
+flag "VB560.unmapped" kind=unmapped concept="VB560" target-system="SNOMED_CT"
+flag "VB573.unmapped" kind=unmapped concept="VB573" target-system="SNOMED_CT"
+flag "VB590.unmapped" kind=unmapped concept="VB590" target-system="SNOMED_CT"
+flag "VB591.unmapped" kind=unmapped concept="VB591" target-system="SNOMED_CT"
+flag "VB605.unmapped" kind=unmapped concept="VB605" target-system="SNOMED_CT"
+flag "VB610.unmapped" kind=unmapped concept="VB610" target-system="SNOMED_CT"
+flag "VB615.unmapped" kind=unmapped concept="VB615" target-system="SNOMED_CT"
+flag "VB620.unmapped" kind=unmapped concept="VB620" target-system="SNOMED_CT"
+flag "VB622.unmapped" kind=unmapped concept="VB622" target-system="SNOMED_CT"
+flag "VB625.unmapped" kind=unmapped concept="VB625" target-system="SNOMED_CT"
+mapping "VB635.1" source="VB635" target="1236923003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is pancreatic cancer MDT conference; SNOMED CT has generic multidisciplinary ward round"
+}
+flag "VB640.unmapped" kind=unmapped concept="VB640" target-system="SNOMED_CT"
+flag "VB643.unmapped" kind=unmapped concept="VB643" target-system="SNOMED_CT"
+flag "VB644.unmapped" kind=unmapped concept="VB644" target-system="SNOMED_CT"
+flag "VB660.unmapped" kind=unmapped concept="VB660" target-system="SNOMED_CT"
+mapping "VB673.1" source="VB673" target="373818007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both describe no further cancer treatment action"
+}
+flag "VB690.unmapped" kind=unmapped concept="VB690" target-system="SNOMED_CT"
+flag "VB691.unmapped" kind=unmapped concept="VB691" target-system="SNOMED_CT"
+flag "VC005.unmapped" kind=unmapped concept="VC005" target-system="SNOMED_CT"
+flag "VC010.unmapped" kind=unmapped concept="VC010" target-system="SNOMED_CT"
+flag "VC015.unmapped" kind=unmapped concept="VC015" target-system="SNOMED_CT"
+flag "VC020.unmapped" kind=unmapped concept="VC020" target-system="SNOMED_CT"
+flag "VC022.unmapped" kind=unmapped concept="VC022" target-system="SNOMED_CT"
+mapping "VC025.1" source="VC025" target="199251000000107" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF lung cancer first specialized visit vs fast track cancer referral; reasonable parent"
+}
+mapping "VC035.1" source="VC035" target="708004003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF lung cancer multidisciplinary conference maps to; close clinical equivalent"
+}
+flag "VC040.unmapped" kind=unmapped concept="VC040" target-system="SNOMED_CT"
+flag "VC043.unmapped" kind=unmapped concept="VC043" target-system="SNOMED_CT"
+flag "VC044.unmapped" kind=unmapped concept="VC044" target-system="SNOMED_CT"
+flag "VC060.unmapped" kind=unmapped concept="VC060" target-system="SNOMED_CT"
+flag "VC073.unmapped" kind=unmapped concept="VC073" target-system="SNOMED_CT"
+flag "VC090.unmapped" kind=unmapped concept="VC090" target-system="SNOMED_CT"
+flag "VC091.unmapped" kind=unmapped concept="VC091" target-system="SNOMED_CT"
+mapping "VE005.1" source="VE005" target="60631000210103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SVF melanoma referral decision; Swedish care pathway administrative code"
+}
+flag "VE010.unmapped" kind=unmapped concept="VE010" target-system="SNOMED_CT"
+flag "VE015.unmapped" kind=unmapped concept="VE015" target-system="SNOMED_CT"
+flag "VE020.unmapped" kind=unmapped concept="VE020" target-system="SNOMED_CT"
+flag "VE022.unmapped" kind=unmapped concept="VE022" target-system="SNOMED_CT"
+flag "VE025.unmapped" kind=unmapped concept="VE025" target-system="SNOMED_CT"
+mapping "VE035.1" source="VE035" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are multidisciplinary cancer conferences; very close match"
+}
+flag "VE040.unmapped" kind=unmapped concept="VE040" target-system="SNOMED_CT"
+flag "VE043.unmapped" kind=unmapped concept="VE043" target-system="SNOMED_CT"
+flag "VE044.unmapped" kind=unmapped concept="VE044" target-system="SNOMED_CT"
+flag "VE060.unmapped" kind=unmapped concept="VE060" target-system="SNOMED_CT"
+flag "VE073.unmapped" kind=unmapped concept="VE073" target-system="SNOMED_CT"
+flag "VE090.unmapped" kind=unmapped concept="VE090" target-system="SNOMED_CT"
+flag "VE091.unmapped" kind=unmapped concept="VE091" target-system="SNOMED_CT"

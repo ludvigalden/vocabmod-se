@@ -1,0 +1,256 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes DU1-GA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "DU100.1" source="DU100" target="19997007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "DU110.unmapped" kind=unmapped concept="DU110" target-system="SNOMED_CT"
+flag "DU111.unmapped" kind=unmapped concept="DU111" target-system="SNOMED_CT"
+mapping "DU119.1" source="DU119" target="405782001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Relapse prevention for addiction (ÅFP). SNOMED CT 2100101409 405782001 in SNOMED CT is the direct
+        clinical equivalent. The Swedish specification (for addictio
+        """
+}
+flag "DU120.unmapped" kind=unmapped concept="DU120" target-system="SNOMED_CT"
+mapping "DV004.1" source="DV004" target="61480009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Avgiftning vid overkonsumtion = drug detoxification; exact match to SNOMED CT Drug detoxification
+        concept, verified in Athena
+        """
+}
+mapping "DV005.1" source="DV005" target="241031001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DV007.1" source="DV007" target="228720004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Shielding of radiotherapy field with block is the same as making of shielding block for
+        radiotherapy; exact equivalent.
+        """
+}
+mapping "DV010.1" source="DV010" target="36430006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: general biofeedback to EMG biofeedback as one common subtype"
+}
+mapping "DV011.1" source="DV011" target="10226009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Removal of radioactive source after brachytherapy; disposal of radioactive source is related but
+        not identical procedure
+        """
+}
+mapping "DV028.1" source="DV028" target="18678000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hyperbaric oxygen treatment (HBO) is an exact match for SNOMED CT 18678000 2100101438. Confirmed
+        SNOMED CT S, concept_id 4087611.
+        """
+}
+mapping "DV030.1" source="DV030" target="310027007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General health talk vs mental health counseling - partial overlap only; KVÅ is broader"
+}
+mapping "DV032.1" source="DV032" target="386474009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA active temperature regulation; SNOMED CT intraoperative temperature regulation is closest
+        concept
+        """
+}
+mapping "DV035.1" source="DV035" target="58866001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Insertion of drug pump; SNOMED CT implantable IV infusion pump is a reasonable match. Same clinical
+        act.
+        """
+}
+mapping "DV040.1" source="DV040" target="46798003" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Radiation field verification is a radiotherapy QA step; SNOMED CT radionuclide imaging is a loose
+        parent
+        """
+}
+mapping "DV061.1" source="DV061" target="171014001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DV066.1" source="DV066" target="408911006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Probe measurement (in newborns); enteral feeding assessment is a reasonable match."
+}
+flag "DV077.unmapped" kind=unmapped concept="DV077" target-system="SNOMED_CT"
+mapping "DV081.1" source="DV081" target="261570006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DV085.1" source="DV085" target="410289001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "DV085 boendetraning; housing training; weak to education/counseling"
+}
+mapping "DV091.1" source="DV091" target="1230228006" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Smittisolering (infection isolation) is infection-control barrier nursing; SNOMED CT
+        Maintenance of isolation room is the closest standard match for barrier isolation procedures.
+        """
+}
+mapping "DV095.1" source="DV095" target="232685002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Custom tracheal cannula fabrication; tracheostomy tube insertion is related but not equivalent
+        """
+}
+mapping "DV097.1" source="DV097" target="193121000000109" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA palliative care is a billing/administrative code; SNOMED CT concept captures hospital
+        palliative care provision
+        """
+}
+mapping "DV099.1" source="DV099" target="170975000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DV099 SNOMED CT 170975000 = psychosocial skills training of social interactions (a
+        structured rehab/therapy intervention, Swedish psychosocial rehab category). No SNOMED CT concept
+        for as a procedure exists in the mirror; closest related concepts are social interaction
+        findings/observable entities (405074005 is an observable, not a procedure). Target. Related: the
+        source is about a structured therapeutic interaction, but counseling is a looser clinical
+        association, not an equivalent, broader, narrower, or component. Weak/related: recorded as a
+        lead for reviewers; cap.
+        """
+}
+flag "DV100.unmapped" kind=unmapped concept="DV100" target-system="SNOMED_CT"
+mapping "DV101.1" source="DV101" target="786453001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Behandling med venovenos ECMO; exact match to SNOMED CT 786453001, verified in Athena"
+}
+mapping "DV102.1" source="DV102" target="786452006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100101495 786452006 = venoarterial extracorporeal membrane
+        oxygenation
+        """
+}
+mapping "DV103.1" source="DV103" target="232965003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ECPR is different from VAD implantation; very loose association through ECLS"
+}
+mapping "DV104.1" source="DV104" target="232965003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "VP ECMO vs VAD implantation; both extracorporeal support but different mechanisms"
+}
+flag "DV106.unmapped" kind=unmapped concept="DV106" target-system="SNOMED_CT"
+mapping "DV111.1" source="DV111" target="1084381000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: Swedish tobacco brief advice maps to signposting/referral to cessation service"
+}
+mapping "DV112.1" source="DV112" target="449861000124107" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tobacco counseling; tobacco cessation referral is closest standard SNOMED CT"
+}
+mapping "DV121.1" source="DV121" target="413473000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Simple advice on alcohol habits maps exactly to alcohol consumption counseling"
+}
+mapping "DV123.1" source="DV123" target="24165007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kvalificerat rådgivande samtal om alkoholvanor = qualified counseling about alcohol habits;
+        matches SNOMED CT 24165007, verified in Athena
+        """
+}
+mapping "DV131.1" source="DV131" target="435551000124105" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Simple physical activity advice; SNOMED CT counseling concept is a good functional match"
+}
+mapping "DV134.1" source="DV134" target="1156961008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: CAR-T cell therapy. Verified SNOMED CT standard concept S."
+}
+mapping "DV143.1" source="DV143" target="18949003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Qualified dietary counseling; no close SNOMED CT match found"
+}
+mapping "DV144.1" source="DV144" target="10611004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "DV145.unmapped" kind=unmapped concept="DV145" target-system="SNOMED_CT"
+mapping "DV151.1" source="DV151" target="449107008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exchange subcut port; to CVC care"
+}
+flag "DV205.unmapped" kind=unmapped concept="DV205" target-system="SNOMED_CT"
+flag "DV206.unmapped" kind=unmapped concept="DV206" target-system="SNOMED_CT"
+mapping "GA001.1" source="GA001" target="442289003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: anal plug fitting/trial. SNOMED CT has anal fistula plug closure"
+}
+mapping "GA003.1" source="GA003" target="439307003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cochlear implant activation/switch-on; SNOMED CT diagnostic analysis with programming covers
+        activation
+        """
+}
+mapping "GA007.1" source="GA007" target="69406003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Fitting and adjustment of other specified prosthesis maps to; the SNOMED CT 2100110006 69406003
+        qualifier is a minor granularity difference
+        """
+}
+mapping "GA009.1" source="GA009" target="18178001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Prosthesis fitting is loosely related to evaluation/fitting procedures; hearing aid eval is but
+        wrong body part
+        """
+}
+mapping "GA011.1" source="GA011" target="266735006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Fitting/maintenance of other specified artificial opening in GI tract; stoma care is related
+        broader concept
+        """
+}
+mapping "GA014.1" source="GA014" target="173765009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fitting/maintenance of gastrostomy; attention to gastrostomy tube is close match."
+}
+mapping "GA015.1" source="GA015" target="1070381000000101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT ileostomy concepts are observations about management status not the fitting/maintenance
+        procedure
+        """
+}
+mapping "GA016.1" source="GA016" target="859101000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fitting/maintenance of colostomy; colostomy care assessment is a reasonable match."
+}
+mapping "GA020.1" source="GA020" target="448642000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Tillpassning och kontroll av kontaktlins = fitting and check of contact lens; exact SNOMED CT
+        match.
+        """
+}
+mapping "GA026.1" source="GA026" target="15822000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "GA027.unmapped" kind=unmapped concept="GA027" target-system="SNOMED_CT"
+flag "GA028.unmapped" kind=unmapped concept="GA028" target-system="SNOMED_CT"
+flag "GA029.unmapped" kind=unmapped concept="GA029" target-system="SNOMED_CT"
+flag "GA031.unmapped" kind=unmapped concept="GA031" target-system="SNOMED_CT"

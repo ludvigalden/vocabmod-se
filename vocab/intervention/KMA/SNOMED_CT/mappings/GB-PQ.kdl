@@ -1,0 +1,210 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes GB-PQ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "GB002.1" source="GB002" target="225967005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader SNOMED CT match; KVÅ captures all types of information/education"
+}
+mapping "GB007.1" source="GB007" target="408577006" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sign language instruction; SNOMED CT has sign language usage concepts. Teaching is implied but not
+        exact.
+        """
+}
+mapping "GB009.1" source="GB009" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish code broader than self-care specific; patient education/instruction has partial overlap.
+        """
+}
+mapping "GB010.1" source="GB010" target="410268005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: caregiver education is a subset of health education"
+}
+flag "GB015.unmapped" kind=unmapped concept="GB015" target-system="SNOMED_CT"
+mapping "GB019.1" source="GB019" target="183069001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Person-centered patient/relative education; SNOMED CT self-care patient education is related"
+}
+flag "GB020.unmapped" kind=unmapped concept="GB020" target-system="SNOMED_CT"
+flag "GB021.unmapped" kind=unmapped concept="GB021" target-system="SNOMED_CT"
+flag "GB023.unmapped" kind=unmapped concept="GB023" target-system="SNOMED_CT"
+mapping "GB024.1" source="GB024" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA circumcision info per law; SNOMED CT self-care education is broad"
+}
+flag "GB025.unmapped" kind=unmapped concept="GB025" target-system="SNOMED_CT"
+flag "GC001.unmapped" kind=unmapped concept="GC001" target-system="SNOMED_CT"
+flag "GC002.unmapped" kind=unmapped concept="GC002" target-system="SNOMED_CT"
+mapping "GD004.1" source="GD004" target="158950001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other notifications/reports; purely administrative Swedish code"
+}
+mapping "GD006.1" source="GD006" target="3531000000107" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Confirmation of death; closest SNOMED CT is death certification form"
+}
+mapping "GD009.1" source="GD009" target="1236923003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Registration in quality register; Swedish administrative code"
+}
+mapping "GD010.1" source="GD010" target="410268005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Issuance of legal certificate; no good SNOMED CT match."
+}
+flag "GD011.unmapped" kind=unmapped concept="GD011" target-system="SNOMED_CT"
+mapping "GD015.1" source="GD015" target="432646007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is examination in anticipation of death; SNOMED CT is care of deceased (related end-of-life
+        care)
+        """
+}
+flag "GD017.unmapped" kind=unmapped concept="GD017" target-system="SNOMED_CT"
+flag "GD018.unmapped" kind=unmapped concept="GD018" target-system="SNOMED_CT"
+flag "GD020.unmapped" kind=unmapped concept="GD020" target-system="SNOMED_CT"
+mapping "PA000.1" source="PA000" target="391281002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA PA000 = assessment of psychological functions. SNOMED CT 391281002. Close clinical equivalent;
+        both refer to psychological/mental f
+        """
+}
+mapping "PA003.1" source="PA003" target="273617000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intellectual assessment; MMSE related cognitive tool"
+}
+mapping "PA004.1" source="PA004" target="371585000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bedömning av övergripande psykosociala funktioner = assessment of overall psychosocial
+        functions. SNOMED CT 2100110068 371585000 is the exact clinical equivalent. Ve
+        """
+}
+mapping "PA008.1" source="PA008" target="301979008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment of attention functions; very limited SNOMED CT match"
+}
+mapping "PA015.1" source="PA015" target="306173009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Assessment of psychological language functions is related to speech-language therapy; only
+        referral concept
+        """
+}
+mapping "PB007.1" source="PB007" target="405181001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Good match: proprioceptive function assessment maps well to proprioception sensory status"
+}
+flag "PB010.unmapped" kind=unmapped concept="PB010" target-system="SNOMED_CT"
+mapping "PD001.1" source="PD001" target="304494000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pulse measurement; SNOMED CT groups with temperature and respiratory monitoring"
+}
+mapping "PD008.1" source="PD008" target="370791009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PD008 bedömning hostfunktion; cough assessment; weak to cough exercises"
+}
+mapping "PD010.1" source="PD010" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: assessment of sensations related to CV/respiratory function. Swedish nursing assessment
+        """
+}
+mapping "PE002.1" source="PE002" target="440363007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Assessment of swallowing function = evaluation of oral and pharyngeal swallowing function, exact
+        clinical equivalent for dysphagia assessment
+        """
+}
+flag "PE012.unmapped" kind=unmapped concept="PE012" target-system="SNOMED_CT"
+flag "PF006.unmapped" kind=unmapped concept="PF006" target-system="SNOMED_CT"
+flag "PF007.unmapped" kind=unmapped concept="PF007" target-system="SNOMED_CT"
+mapping "PF008.1" source="PF008" target="6480006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment of risk for bladder dysfunction; bladder study is parent"
+}
+mapping "PG000.1" source="PG000" target="440362002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Neuromusculoskeletal function assessment vs OT functional assessment; broader parent"
+}
+mapping "PG007.1" source="PG007" target="429551000124105" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Gait pattern assessment; SNOMED CT has gait/balance assessment referral"
+}
+mapping "PG008.1" source="PG008" target="440362002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sensory assessment muscles/movement vs OT functional assessment; broader parent"
+}
+mapping "PH001.1" source="PH001" target="225397006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "PH002.1" source="PH002" target="225392000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "PH004.unmapped" kind=unmapped concept="PH004" target-system="SNOMED_CT"
+mapping "PK002.1" source="PK002" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: assessment of performing multiple tasks. Swedish cognitive assessment; no SNOMED CT
+        equivalent
+        """
+}
+mapping "PK003.1" source="PK003" target="385880002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment of daily routine ability; matches IADL assessment"
+}
+mapping "PM000.1" source="PM000" target="273526008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mobility assessment; no direct SNOMED CT equivalent; human interaction assessment is very loose
+        proxy
+        """
+}
+mapping "PM001.1" source="PM001" target="711026003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment to change body position; SNOMED CT positioning concept is distant but functional"
+}
+mapping "PM003.1" source="PM003" target="440362002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transfer mobility assessment vs OT functional assessment; broader parent"
+}
+mapping "PM017.1" source="PM017" target="370866001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Assessment of ability to move in different ways; Mobility deficit assessment is the closest
+        SNOMED CT equivalent for functional mobility assessment, verified in At
+        """
+}
+flag "PM018.unmapped" kind=unmapped concept="PM018" target-system="SNOMED_CT"
+mapping "PN005.1" source="PN005" target="408911006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment of eating and drinking; enteral feeding assessment is a reasonable match."
+}
+flag "PN009.unmapped" kind=unmapped concept="PN009" target-system="SNOMED_CT"
+mapping "PQ000.1" source="PQ000" target="273526008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Investigation of interpersonal interactions and relationships; maps well to human interaction
+        assessment
+        """
+}
+mapping "PQ001.1" source="PQ001" target="107641000202104" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bedömning av mellanmnskliga interaktioner = assessment of interpersonal interactions. Exact
+        match to SNOMED CT Assessment of social interaction.
+        """
+}

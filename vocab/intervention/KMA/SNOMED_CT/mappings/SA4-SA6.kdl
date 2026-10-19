@@ -1,0 +1,242 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes SA4-SA6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "SA400.1" source="SA400" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia subtype. Parent SNOMED CT general anesthesia concept."
+}
+mapping "SA401.1" source="SA401" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia subtype. Parent SNOMED CT general anesthesia concept."
+}
+mapping "SA402.1" source="SA402" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ granular anesthesia code; SNOMED CT operative general anesthesia is broad parent"
+}
+mapping "SA403.1" source="SA403" target="314271007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        General anesthesia IV induction oral intubation no maintenance IV+inhalation; conscious sedation
+        is broad parent
+        """
+}
+mapping "SA404.1" source="SA404" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ: granular anesthesia combination. SNOMED CT parent only."
+}
+mapping "SA411.1" source="SA411" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ anesthesiology codes are ultra-specific Swedish taxonomy; SNOMED CT only has broad general
+        anesthesia
+        """
+}
+mapping "SA412.1" source="SA412" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anesthesia technique; to regional anesthesia"
+}
+mapping "SA413.1" source="SA413" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ anesthesiology codes are ultra-specific Swedish taxonomy; SNOMED CT only has broad general
+        anesthesia
+        """
+}
+mapping "SA420.1" source="SA420" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique; parent GA covers the clinical act."
+}
+mapping "SA421.1" source="SA421" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia IV induction with oral intubation; specific technique combo"
+}
+mapping "SA424.1" source="SA424" target="241695009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique combo; weak to general anesthesia"
+}
+mapping "SA430.1" source="SA430" target="274507007" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        General anesthesia IV induction + oral intubation + inhalation maintenance; closest SNOMED CT is
+        operative general anesthesia
+        """
+}
+mapping "SA431.1" source="SA431" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish anesthesia coding system encodes specific technique combinations; SNOMED CT has only
+        general operative anesthesia as parent
+        """
+}
+mapping "SA433.1" source="SA433" target="241695009" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA specific anesthesia combo; SNOMED CT general anesthesia maintenance is broad parent"
+}
+mapping "SA441.1" source="SA441" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ: granular anesthesia combination. SNOMED CT parent only."
+}
+mapping "SA442.1" source="SA442" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique combination; SNOMED CT has only general operative GA"
+}
+mapping "SA443.1" source="SA443" target="241687005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complex GA specification; induction of GA is broader parent"
+}
+mapping "SA444.1" source="SA444" target="241695009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA specific anesthesia combo; SNOMED CT general anesthesia maintenance"
+}
+mapping "SA502.1" source="SA502" target="241687005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique; general anesthesia induction is broader parent"
+}
+mapping "SA503.1" source="SA503" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "IV induction + nasal intubation general anesthesia mapped to parent."
+}
+mapping "SA504.1" source="SA504" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish ultra-specific anesthesia combination code; weak match to operative general anesthesia
+        """
+}
+mapping "SA512.1" source="SA512" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish anesthesia technique combination code; maps to parent SNOMED CT general anesthesia"
+}
+mapping "SA513.1" source="SA513" target="274507007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies IV induction without relaxation + nasal intubation; SNOMED CT is broader"
+}
+mapping "SA514.1" source="SA514" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader: KVA is specific anesthesia technique combo; SNOMED CT has generic operative general
+        anesthesia
+        """
+}
+mapping "SA521.1" source="SA521" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ anesthesia technique code; SNOMED CT is generic operative general anesthesia"
+}
+mapping "SA522.1" source="SA522" target="274507007" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Composite anesthesia technique; closest SNOMED CT parent concept"
+}
+mapping "SA523.1" source="SA523" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ anesthesiology codes are ultra-specific Swedish taxonomy; SNOMED CT only has broad general
+        anesthesia
+        """
+}
+mapping "SA530.1" source="SA530" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia IV induction without relaxation + Supraglottisk luftväg"
+}
+mapping "SA533.1" source="SA533" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique; parent GA covers the clinical act."
+}
+mapping "SA534.1" source="SA534" target="241688000" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia; closest is IV induction"
+}
+mapping "SA540.1" source="SA540" target="241687005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish anesthesia combination code"
+}
+mapping "SA543.1" source="SA543" target="241687005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complex GA specification; induction of GA is broader parent"
+}
+mapping "SA544.1" source="SA544" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anesthesia composite; SNOMED CT IV induction is component"
+}
+mapping "SA600.1" source="SA600" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia; one specific technique combination"
+}
+mapping "SA601.1" source="SA601" target="241688000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Same rationale as SA240: IV induction is the only component mappable; the full anesthesia
+        specification has no SNOMED CT equivalent.
+        """
+}
+mapping "SA602.1" source="SA602" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: specific anesthesia technique combo; general anesthesia as parent"
+}
+mapping "SA603.1" source="SA603" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak to operative general anesthesia"
+}
+mapping "SA610.1" source="SA610" target="241688000" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish anesthesia technique code; IV induction is closest SNOMED CT component"
+}
+mapping "SA612.1" source="SA612" target="241687005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia technique code. Parent SNOMED CT GA concept."
+}
+mapping "SA613.1" source="SA613" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: specific anesthesia technique; weak to general anesthesia"
+}
+mapping "SA614.1" source="SA614" target="241687005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complex GA specification; induction of GA is broader parent"
+}
+mapping "SA620.1" source="SA620" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish GA technique code maps to generic operative GA"
+}
+mapping "SA623.1" source="SA623" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique combination; SNOMED CT has only general operative GA"
+}
+mapping "SA631.1" source="SA631" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anesthesia technique; to regional anesthesia"
+}
+mapping "SA632.1" source="SA632" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SA632 IV induction+bronchial dbl lumen+inhalation maint+inhalation analgesia; weak to operative
+        general anesthesia
+        """
+}
+mapping "SA634.1" source="SA634" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia subtype. Parent SNOMED CT general anesthesia concept."
+}
+mapping "SA640.1" source="SA640" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ granular anesthesia code; SNOMED CT operative general anesthesia is broad parent"
+}
+mapping "SA641.1" source="SA641" target="314271007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia IV induction bronchial double-lumen; conscious sedation is broad parent"
+}
+mapping "SA642.1" source="SA642" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ: granular anesthesia combination. SNOMED CT parent only."
+}
+mapping "SA644.1" source="SA644" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique; parent GA covers the clinical act."
+}

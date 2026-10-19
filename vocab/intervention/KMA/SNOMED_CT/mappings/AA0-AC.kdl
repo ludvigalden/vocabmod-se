@@ -1,0 +1,254 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes AA0-AC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AA001.1" source="AA001" target="424444005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Adenosine test in Swedish cardiology context is the adenosine stress test for myocardial
+        perfusion evaluation; maps to cardiovascular stress test using adenosin
+        """
+}
+mapping "AA010.1" source="AA010" target="322721000000103" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Angiography with question of impaired intracerebral circulation; cerebral angiography is parent
+        """
+}
+mapping "AA020.1" source="AA020" target="51006009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Echoencephalography (A-mode) maps to; A-mode is a technique variant subsumed under the general
+        concept. Prefer concept.
+        """
+}
+mapping "AA021.1" source="AA021" target="54061003" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        EEG with reaction time testing; SNOMED CT portable EEG is closest available EEG procedure concept
+        """
+}
+mapping "AA026.1" source="AA026" target="42803009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        EMG during botulinum toxin treatment is still electromyography as a procedure. The concept. The
+        botulinum toxin context is a clinical indic
+        """
+}
+mapping "AA029.1" source="AA029" target="252752005" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ bundles EMG + NCV; SNOMED CT has them as separate concepts; closest is EMG alone"
+}
+mapping "AA030.1" source="AA030" target="252754006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Elektromyografi med ytelektroder (Yt-EMG) = electromyography with surface electrodes; exact
+        match to Surface EMG
+        """
+}
+mapping "AA034.1" source="AA034" target="22458007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Epidurografi is the Swedish spelling of epidurography, which maps exactly to Epidural
+        venography; exact match
+        """
+}
+mapping "AA043.1" source="AA043" target="252206004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "L-Dopa test = L-dopa stimulation test. Close match"
+}
+mapping "AA052.1" source="AA052" target="273617000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cognitive function screening; MMSE is common screening tool"
+}
+mapping "AA060.1" source="AA060" target="307808008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100100057 307808008 = neuropsychological investigation/examination; exact match to
+        SNOMED CT Neuropsychological testing
+        """
+}
+mapping "AA087.1" source="AA087" target="713832003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Vibrometri = vibrometry/vibration testing. The SNOMED CT (713832003) describes the clinical
+        procedure
+        """
+}
+mapping "AA089.1" source="AA089" target="252738008" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Video-intensive EEG monitoring with only extracranial electrodes; SNOMED CT 2100100083 252738008 is
+        the closest SNOMED CT concept -- the KVÅ adds specificity about extracranial-only
+        """
+}
+mapping "AA090.1" source="AA090" target="252736007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "AA090 video-EEG intrakraniella elektroder; weak to continuous EEG monitoring"
+}
+mapping "AA092.1" source="AA092" target="251600000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AA093.1" source="AA093" target="252731002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AA095.1" source="AA095" target="252736007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Functional stimulation during video-EEG monitoring with intracranial electrodes; continuous
+        processed EEG is partial.
+        """
+}
+mapping "AA096.1" source="AA096" target="243764001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kateterisering av sinus petrosus med selektiv blodprovstagning = catheterization of petrosal
+        sinus with selective blood sampling; exact SNOMED CT match for petrosa
+        """
+}
+mapping "AA098.1" source="AA098" target="46798003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Receptor scintigraphy (DaTscan); broader radionuclide imaging parent; DaTSCAN concept exists but
+        non-standard
+        """
+}
+mapping "AA104.1" source="AA104" target="252585004" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ASSR objective auditory measurement; closest is behavioral observation audiometry"
+}
+mapping "AA110.1" source="AA110" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: gamma camera for brain death exam. No SNOMED CT equivalent"
+}
+mapping "AA230.1" source="AA230" target="423184003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Structured pain history maps to adult pain assessment; similar clinical intent"
+}
+mapping "AB040.1" source="AB040" target="440404000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sensor-based continuous glucose monitoring maps exactly to Ambulatory continuous glucose
+        monitoring with sensor placement.
+        """
+}
+mapping "AB053.1" source="AB053" target="252153005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT gut hormone profile is one specific hormone panel; KVA covers any specified hormone
+        profile
+        """
+}
+mapping "AB055.1" source="AB055" target="268364005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: radioiodine uptake measurement. No SNOMED CT equivalent found for radioiodine uptake
+        specifically
+        """
+}
+mapping "AC002.1" source="AC002" target="251692002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Axellangdsmatning ögonglob = ocular axial length measurement; exact match to SNOMED CT 251692002,
+        verified in Athena
+        """
+}
+mapping "AC008.1" source="AC008" target="301979008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Color vision assessment; SNOMED CT has finding/observation rather than procedure"
+}
+mapping "AC010.1" source="AC010" target="20521004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: Hertelmätning"
+}
+mapping "AC011.1" source="AC011" target="252828005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Keratometri = keratometry; exact SNOMED CT measurement match."
+}
+mapping "AC015.1" source="AC015" target="278804003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Lees skarm = Lees screen; a specific binocular vision test; exact SNOMED CT equivalent."
+}
+mapping "AC017.1" source="AC017" target="410456003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Mätning av hornhinnetjocklek = corneal pachymetry; exact clinical equivalent"
+}
+mapping "AC022.1" source="AC022" target="700070005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mätning av näthinnetjocklek = retinal thickness measurement; OCT of retina is the standard
+        clinical method for measuring retinal thickness (e.g. in macular edem
+        """
+}
+mapping "AC023.1" source="AC023" target="20521004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are audiologic tests but glare testing vs pure tone audiometry are different assessments
+        """
+}
+mapping "AC024.1" source="AC024" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: comprehensive contrast sensitivity test. SNOMED CT lacks specific contrast vision test"
+}
+mapping "AC025.1" source="AC025" target="252851005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Prismautjamning = prism adaptation test; exact equivalent SNOMED CT procedure."
+}
+mapping "AC026.1" source="AC026" target="424986007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100100183 424986007 = instillation of mydriatic drops to
+        dilate pupils; SNOMED CT concept matches precisely.
+        """
+}
+mapping "AC028.1" source="AC028" target="15043000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: strabismus status examination; weak to strabismus procedure"
+}
+mapping "AC032.1" source="AC032" target="16830007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Synskarpeundersokning = visual acuity testing; exact clinical match"
+}
+mapping "AC037.1" source="AC037" target="698349008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "ROP examination closely matches ROP screening"
+}
+mapping "AC039.1" source="AC039" target="60133000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Utvidgat fargsinnestest med anomaloskop = extended color vision test with anomaloscope; SNOMED CT
+        SNOMED CT 2100100196 60133000 corresponds to an extended/s
+        """
+}
+mapping "AC044.1" source="AC044" target="397521009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100100201 397521009 = ultrasound biomicroscopy; exact SNOMED CT match"
+}
+mapping "AC045.1" source="AC045" target="16306001" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Scheimpflug photography for corneal imaging; closest SNOMED CT is slit lamp photography"
+}
+mapping "AC047.1" source="AC047" target="397524001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Skiaskopi = retinoscopy (objective refraction test); exact match to 397524001"
+}
+mapping "AC048.1" source="AC048" target="63312004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Autorefraktometri = Refractometer measurement; exact clinical equivalent"
+}
+mapping "AC051.1" source="AC051" target="252823001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ICG angiography of fundus - exact match with SNOMED CT concept for angiography using indocyanine
+        green
+        """
+}

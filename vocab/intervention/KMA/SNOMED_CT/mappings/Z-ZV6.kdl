@@ -1,0 +1,249 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes Z-ZV6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "ZL008.unmapped" kind=unmapped concept="ZL008" target-system="SNOMED_CT"
+mapping "ZV017.1" source="ZV017" target="3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Analysis of known gene sequence; no close SNOMED CT match"
+}
+mapping "ZV019.1" source="ZV019" target="925031000000104" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Partial match: KVA covers up to 4 gene sequences OR MSI; SNOMED CT has MSI test specifically"
+}
+mapping "ZV020.1" source="ZV020" target="1254706008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ code specifies professional interpreter use; SNOMED CT covers language interpretation referral
+        """
+}
+mapping "ZV023.1" source="ZV023" target="158950001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: school/childcare visit; Swedish administrative code"
+}
+mapping "ZV024.1" source="ZV024" target="228653003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: family visit (clinical home visit to patient's family). SNOMED CT has Joint home visit and
+        various home visit observations; OT home visit is closest procedural match. Very loose.
+        """
+}
+mapping "ZV025.1" source="ZV025" target="225929007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ home visit is a general clinical home visit; SNOMED CT has home visit concepts"
+}
+mapping "ZV031.1" source="ZV031" target="1287742003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 1287742003 2100130110 = curative radiotherapy; is an intent modifier, the procedure
+        itself is radiotherapy; SNOMED CT 1287742003 is the generic proce
+        """
+}
+mapping "ZV035.1" source="ZV035" target="449012007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Radio-phosphorus (P-32); strontium-89 injection is related radionuclide therapy."
+}
+mapping "ZV039.1" source="ZV039" target="46798003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Radiostrontium (radionuclide therapy); broader radionuclide imaging parent"
+}
+mapping "ZV042.1" source="ZV042" target="427035008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sedation with nitrous oxide (lustgas) = nitrous oxide and oxygen gas analgesia, exact clinical
+        equivalent
+        """
+}
+flag "ZV048.unmapped" kind=unmapped concept="ZV048" target-system="SNOMED_CT"
+flag "ZV049.unmapped" kind=unmapped concept="ZV049" target-system="SNOMED_CT"
+flag "ZV050.unmapped" kind=unmapped concept="ZV050" target-system="SNOMED_CT"
+mapping "ZV051.1" source="ZV051" target="700355004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Telemedicine; consent for telemedicine is only loosely related administrative observation"
+}
+mapping "ZV053.1" source="ZV053" target="1078331000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intermediate care; weak to emergency admission to intermediate care (care level match)"
+}
+flag "ZV055.unmapped" kind=unmapped concept="ZV055" target-system="SNOMED_CT"
+flag "ZV059.unmapped" kind=unmapped concept="ZV059" target-system="SNOMED_CT"
+mapping "ZV060.1" source="ZV060" target="183489008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Voluntary inpatient psychiatric care. Non-urgent psychiatric admission captures the essence."
+}
+mapping "ZV070.1" source="ZV070" target="1179620008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: magnetic tracer sentinel lymph node localization"
+}
+mapping "ZV071.1" source="ZV071" target="1179621007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Use of dye for marking at lymph node biopsy maps exactly to Localization of sentinel lymph node
+        using diagnostic dye; exact match
+        """
+}
+flag "ZV075.unmapped" kind=unmapped concept="ZV075" target-system="SNOMED_CT"
+flag "ZV100.unmapped" kind=unmapped concept="ZV100" target-system="SNOMED_CT"
+mapping "ZV350.1" source="ZV350" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: violence exposure related procedure. Sweden-specific administrative code"
+}
+mapping "ZV402.1" source="ZV402" target="133858001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZV405.1" source="ZV405" target="313047003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "First-time prescription of assistive device maps to; direct equivalent."
+}
+mapping "ZV509.1" source="ZV509" target="408288004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Social services representative participation; weak to multidisciplinary team concept"
+}
+mapping "ZV514.1" source="ZV514" target="371585000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA housing representative participation is Sweden-specific; SNOMED CT psychosocial assessment
+        captures the social evaluation dimension
+        """
+}
+flag "ZV516.unmapped" kind=unmapped concept="ZV516" target-system="SNOMED_CT"
+flag "ZV517.unmapped" kind=unmapped concept="ZV517" target-system="SNOMED_CT"
+flag "ZV521.unmapped" kind=unmapped concept="ZV521" target-system="SNOMED_CT"
+flag "ZV540.unmapped" kind=unmapped concept="ZV540" target-system="SNOMED_CT"
+flag "ZV541.unmapped" kind=unmapped concept="ZV541" target-system="SNOMED_CT"
+flag "ZV550.unmapped" kind=unmapped concept="ZV550" target-system="SNOMED_CT"
+mapping "ZV555.1" source="ZV555" target="118721000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZV560.1" source="ZV560" target="118702008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZV565.1" source="ZV565" target="118710009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "ZV600.unmapped" kind=unmapped concept="ZV600" target-system="SNOMED_CT"
+flag "ZV601.unmapped" kind=unmapped concept="ZV601" target-system="SNOMED_CT"
+flag "ZV602.unmapped" kind=unmapped concept="ZV602" target-system="SNOMED_CT"
+flag "ZV603.unmapped" kind=unmapped concept="ZV603" target-system="SNOMED_CT"
+mapping "ZV604.1" source="ZV604" target="439307003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        National highly specialized care - cochlear implant in children; SNOMED CT cochlear implant
+        programming is parent
+        """
+}
+mapping "ZV605.1" source="ZV605" target="88039007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nationell högspecialiserad vård - Lungtransplantation = National highly specialized care - Lung
+        transplantation. \"Transplant of lung\" is the generic SNOMED CT equi
+        """
+}
+mapping "ZV606.1" source="ZV606" target="232973007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nationell högspecialiserad vård (NHV) - Hjärttransplantation = national highly specialized care
+        - heart transplantation. Exact match to SNOMED CT Allotransplant of
+        """
+}
+mapping "ZV607.1" source="ZV607" target="426356008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        National highly specialized care - liver transplantation; SNOMED CT has orthotopic liver transplant
+        """
+}
+flag "ZV608.unmapped" kind=unmapped concept="ZV608" target-system="SNOMED_CT"
+flag "ZV609.unmapped" kind=unmapped concept="ZV609" target-system="SNOMED_CT"
+flag "ZV610.unmapped" kind=unmapped concept="ZV610" target-system="SNOMED_CT"
+flag "ZV611.unmapped" kind=unmapped concept="ZV611" target-system="SNOMED_CT"
+flag "ZV612.unmapped" kind=unmapped concept="ZV612" target-system="SNOMED_CT"
+flag "ZV613.unmapped" kind=unmapped concept="ZV613" target-system="SNOMED_CT"
+mapping "ZV614.1" source="ZV614" target="713174005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        National highly specialized care - endometriosis surgery; SNOMED CT laparoscopic excision of pelvic
+        endometriosis is related procedure
+        """
+}
+flag "ZV616.unmapped" kind=unmapped concept="ZV616" target-system="SNOMED_CT"
+flag "ZV617.unmapped" kind=unmapped concept="ZV617" target-system="SNOMED_CT"
+flag "ZV618.unmapped" kind=unmapped concept="ZV618" target-system="SNOMED_CT"
+flag "ZV619.unmapped" kind=unmapped concept="ZV619" target-system="SNOMED_CT"
+flag "ZV620.unmapped" kind=unmapped concept="ZV620" target-system="SNOMED_CT"
+mapping "ZV621.1" source="ZV621" target="231181000000100" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        National highly specialized care spinal cord injuries; closest SNOMED CT is spinal cord injury
+        rehabilitation
+        """
+}
+flag "ZV622.unmapped" kind=unmapped concept="ZV622" target-system="SNOMED_CT"
+flag "ZV623.unmapped" kind=unmapped concept="ZV623" target-system="SNOMED_CT"
+flag "ZV624.unmapped" kind=unmapped concept="ZV624" target-system="SNOMED_CT"
+mapping "ZV625.1" source="ZV625" target="233445008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nationell högspecialiserad vård -- TIPS (national highly specialized care -- TIPS). Maps exactly
+        to SNOMED CT 2100130214 233445008. Verified: S
+        """
+}
+flag "ZV626.unmapped" kind=unmapped concept="ZV626" target-system="SNOMED_CT"
+flag "ZV627.unmapped" kind=unmapped concept="ZV627" target-system="SNOMED_CT"
+flag "ZV628.unmapped" kind=unmapped concept="ZV628" target-system="SNOMED_CT"
+flag "ZV629.unmapped" kind=unmapped concept="ZV629" target-system="SNOMED_CT"
+mapping "ZV630.1" source="ZV630" target="60631000210103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        National highly specialized care for chronic lung diseases in children; Swedish administrative
+        code no SNOMED CT match
+        """
+}
+flag "ZV631.unmapped" kind=unmapped concept="ZV631" target-system="SNOMED_CT"
+flag "ZV632.unmapped" kind=unmapped concept="ZV632" target-system="SNOMED_CT"
+flag "ZV633.unmapped" kind=unmapped concept="ZV633" target-system="SNOMED_CT"
+flag "ZV634.unmapped" kind=unmapped concept="ZV634" target-system="SNOMED_CT"
+flag "ZV635.unmapped" kind=unmapped concept="ZV635" target-system="SNOMED_CT"
+flag "ZV636.unmapped" kind=unmapped concept="ZV636" target-system="SNOMED_CT"
+flag "ZV637.unmapped" kind=unmapped concept="ZV637" target-system="SNOMED_CT"
+flag "ZV638.unmapped" kind=unmapped concept="ZV638" target-system="SNOMED_CT"
+flag "ZV639.unmapped" kind=unmapped concept="ZV639" target-system="SNOMED_CT"
+flag "ZV640.unmapped" kind=unmapped concept="ZV640" target-system="SNOMED_CT"
+mapping "ZV641.1" source="ZV641" target="175140001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NHV pacemaker extraction; maps to complete removal of implanted cardiac pacemaker system"
+}
+flag "ZV642.unmapped" kind=unmapped concept="ZV642" target-system="SNOMED_CT"
+flag "ZV644.unmapped" kind=unmapped concept="ZV644" target-system="SNOMED_CT"
+flag "ZV645.unmapped" kind=unmapped concept="ZV645" target-system="SNOMED_CT"
+flag "ZV646.unmapped" kind=unmapped concept="ZV646" target-system="SNOMED_CT"
+mapping "ZV647.1" source="ZV647" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: national highly specialized care for post-polio. Sweden-specific NHV code"
+}
+flag "ZV648.unmapped" kind=unmapped concept="ZV648" target-system="SNOMED_CT"
+flag "ZV649.unmapped" kind=unmapped concept="ZV649" target-system="SNOMED_CT"
+flag "ZV650.unmapped" kind=unmapped concept="ZV650" target-system="SNOMED_CT"
+flag "ZV651.unmapped" kind=unmapped concept="ZV651" target-system="SNOMED_CT"
+flag "ZV652.unmapped" kind=unmapped concept="ZV652" target-system="SNOMED_CT"
+flag "ZV653.unmapped" kind=unmapped concept="ZV653" target-system="SNOMED_CT"
+flag "ZV654.unmapped" kind=unmapped concept="ZV654" target-system="SNOMED_CT"
+flag "ZV655.unmapped" kind=unmapped concept="ZV655" target-system="SNOMED_CT"
+flag "ZV656.unmapped" kind=unmapped concept="ZV656" target-system="SNOMED_CT"
+flag "ZV657.unmapped" kind=unmapped concept="ZV657" target-system="SNOMED_CT"
+flag "ZV658.unmapped" kind=unmapped concept="ZV658" target-system="SNOMED_CT"
+flag "ZV659.unmapped" kind=unmapped concept="ZV659" target-system="SNOMED_CT"
+flag "ZV661.unmapped" kind=unmapped concept="ZV661" target-system="SNOMED_CT"
+flag "ZV662.unmapped" kind=unmapped concept="ZV662" target-system="SNOMED_CT"
+flag "ZV663.unmapped" kind=unmapped concept="ZV663" target-system="SNOMED_CT"
+flag "ZV664.unmapped" kind=unmapped concept="ZV664" target-system="SNOMED_CT"
+flag "ZV665.unmapped" kind=unmapped concept="ZV665" target-system="SNOMED_CT"
+flag "ZV666.unmapped" kind=unmapped concept="ZV666" target-system="SNOMED_CT"

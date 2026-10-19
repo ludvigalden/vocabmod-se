@@ -1,0 +1,297 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes DN-DU0
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "DN002.1" source="DN002" target="239461001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ledspolning = joint lavage; SNOMED CT 2100101228 239461001 is the exact SNOMED CT equivalent of joint
+        lavage/washout.
+        """
+}
+mapping "DN004.1" source="DN004" target="1336013006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DN005.1" source="DN005" target="231409004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Radiofrequency ablation of innervation to facet joint = radiofrequency denervation of spinal
+        facet joint of vertebra; exact clinical equivalent (generic spinal
+        """
+}
+flag "DN015.unmapped" kind=unmapped concept="DN015" target-system="SNOMED_CT"
+mapping "DP005.1" source="DP005" target="229567009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "DP017.1" source="DP017" target="761171000000102" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Umbilical artery catheter (in newborns) maps exactly to Insertion of umbilical arterial
+        catheter; umbilical artery catheterization is inherently a neonatal proc
+        """
+}
+mapping "DP018.1" source="DP018" target="761171000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Note: KVÅ code specifies venous catheter; SNOMED CT match is arterial. Same anatomical site but
+        different vessel type
+        """
+}
+mapping "DP019.1" source="DP019" target="229567009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Edema treatment with compression pump is clinically identical to Intermittent compression
+        therapy; exact match
+        """
+}
+mapping "DQ004.1" source="DQ004" target="257891001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100101247 257891001 = photodynamic therapy; exact generic SNOMED CT match verified as
+        standard concept S
+        """
+}
+mapping "DQ005.1" source="DQ005" target="41447009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Hudincision UNS = skin incision unspecified. Exact match to SNOMED CT Incision of skin."
+}
+mapping "DQ006.1" source="DQ006" target="3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cosmetic treatment and counseling; no close SNOMED CT match"
+}
+mapping "DQ020.1" source="DQ020" target="257883005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DQ023.1" source="DQ023" target="1217560008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 1217560008 2100101264 = vacuum treatment of wound; exact match to SNOMED CT Application of
+        negative pressure wound dressing
+        """
+}
+mapping "DR009.1" source="DR009" target="14766002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR012.1" source="DR012" target="717738008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "CAPD control/check maps to peritoneal dialysis care assessment; close clinical equivalent"
+}
+mapping "DR013.1" source="DR013" target="225231007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100101277 225231007 = start of continuous ambulatory peritoneal dialysis.
+        SNOMED CT refers to the percutaneous puncture techniqu
+        """
+}
+mapping "DR014.1" source="DR014" target="233586004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DR014 SNOMED CT 233586004 = the renal-replacement procedure combining hemodialysis and
+        hemofiltration. Target. Exact term and concept equivalence (Swedish HDF = SNOMED CT
+        Hemodiafiltration), same single clinical concept.
+        """
+}
+mapping "DR017.1" source="DR017" target="233581009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR018.1" source="DR018" target="233591003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR020.1" source="DR020" target="233589006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR025.1" source="DR025" target="233567007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR026.1" source="DR026" target="243202001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Rh immunization prophylaxis = suppression of Rhesus isoimmunization; exact clinical equivalent
+        """
+}
+mapping "DR027.1" source="DR027" target="225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: stem cell collection maps loosely to bone marrow aspiration (related procedure)"
+}
+mapping "DR051.1" source="DR051" target="1284973003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DR052.1" source="DR052" target="710770006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bleeding risk card (blödningsriskkort) is a Swedish clinical risk assessment document for
+        bleeding risk; maps to
+        """
+}
+mapping "DR053.1" source="DR053" target="3320000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100101305 3320000 = perioperative autologous blood recovery; exact match to SNOMED CT
+        Autotransfusion
+        """
+}
+mapping "DR055.1" source="DR055" target="302497006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DR055 SNOMED CT 302497006 = hemodialysis using citrate-based regional anticoagulation (a
+        technique variant of dialysis, not a distinct disorder/procedure concept). No SNOMED CT concept
+        exists in the mirror (only citrate anticoagulation solution 467650001 and citrate intoxication).
+        Target, the parent procedure that subsumes the citrate-anticoagulation variant. Broader: every
+        citrate dialysis is a hemodialysis, but not vice versa. Low confidence: the
+        citrate-anticoagulation aspect is lost and this is the best-available parent, not a verified
+        crosswalk.
+        """
+}
+mapping "DR056.1" source="DR056" target="302497006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DR056 SNOMED CT 302497006 = heparin-free hemodialysis (a dialysis session performed without
+        heparin anticoagulation, typically using saline/zero-balance techniques; a technique variant,
+        not a distinct procedure concept). No SNOMED CT concept exists. Target, the parent that subsumes
+        the heparin-free variant. Broader: every heparin-free dialysis is a hemodialysis. Low
+        confidence: the heparin-free aspect is lost; best-available parent, not a verified crosswalk.
+        """
+}
+flag "DR060.unmapped" kind=unmapped concept="DR060" target-system="SNOMED_CT"
+mapping "DR061.1" source="DR061" target="233575001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ = start of hemodialysis; SNOMED CT has the procedure but not the start aspect"
+}
+mapping "DT004.1" source="DT004" target="91480001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "DT027.1" source="DT027" target="177136006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Induction of labor with prostaglandin/prostaglandin analog maps exactly to Prostaglandin
+        induction of labor; KVAA specifies prostaglandin analogs too.
+        """
+}
+mapping "DT029.1" source="DT029" target="243192002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Rapid desensitization is a form of drug desensitization therapy; reasonable weak match"
+}
+mapping "DT030.1" source="DT030" target="22989000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DT031.1" source="DT031" target="16087131000119103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: post-administration monitoring maps loosely to medication monitoring"
+}
+mapping "DT037.1" source="DT037" target="816966004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: oxytocin administration for labor augmentation. Verified SNOMED CT S."
+}
+mapping "DT108.1" source="DT108" target="363688001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cytostikatillforsel UNS = cytostatic administration unspecified; cytostatics are antineoplastic
+        agents, exact clinical match.
+        """
+}
+mapping "DU005.1" source="DU005" target="395184006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Psychological processing after miscarriage; close match to post miscarriage counseling"
+}
+mapping "DU010.1" source="DU010" target="183383008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Kognitiv psykoterapi = Cognitive psychotherapy; SNOMED CT 183383008
+        2100101362 is a precise match.
+        """
+}
+mapping "DU013.1" source="DU013" target="1111681000000103" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mentaliseringsbaserad terapi (MBT) = mentalization-based therapy; exact match to SNOMED CT
+        1111681000000103, verified in Athena
+        """
+}
+mapping "DU015.1" source="DU015" target="345261000000106" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ERGT is specific evidence-based group therapy; psychotherapeutic play therapy is wrong
+        domain/type
+        """
+}
+mapping "DU016.1" source="DU016" target="166001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DU017.1" source="DU017" target="1363681000000106" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DU021.1" source="DU021" target="405780009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dialektisk beteendeterapi (DBT) = dialectical behavior therapy; exact match."
+}
+mapping "DU025.1" source="DU025" target="51484002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA DU025 = child-oriented family therapy (BOF). SNOMED CT 51484002 is the general parent. The
+        child-oriented variant is a specific psychotherape
+        """
+}
+mapping "DU026.1" source="DU026" target="702471009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Family therapy with milieu therapy elements; broader match to functional family therapy"
+}
+mapping "DU027.1" source="DU027" target="273526008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Parent-child interaction therapy; human interaction assessment is very loose proxy for
+        interaction-based therapy
+        """
+}
+mapping "DU028.1" source="DU028" target="882381000000106" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: manualized parent training. SNOMED CT has behavioural parent training"
+}
+mapping "DU033.1" source="DU033" target="21065008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DU041.1" source="DU041" target="305840008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Psychotherapeutic art therapy; weak to seen by art therapy service (broader but same modality)
+        """
+}
+mapping "DU045.1" source="DU045" target="711078000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Uppfoljningssamtal efter tvangsagard (follow-up visit after compulsory measure/restraint) maps
+        exactly to Debriefing of patient after restraint
+        """
+}
+mapping "DU050.1" source="DU050" target="264603002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100101387 264603002 = repetitive transcranial magnetic stimulation; exact match to
+        SNOMED CT concept (repetitive is the standar
+        """
+}
+mapping "DU071.1" source="DU071" target="50160009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Solution-focused family therapy; SNOMED CT extended family therapy is closest modality"
+}
+mapping "DU077.1" source="DU077" target="1363691000000108" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "EFFT is a specific modality; behavioural family therapy is broader parent"
+}
+flag "DU078.unmapped" kind=unmapped concept="DU078" target-system="SNOMED_CT"
+mapping "DU079.1" source="DU079" target="710914003" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified family therapy; referral to family therapy is closest standard match"
+}
+mapping "DU085.1" source="DU085" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: follow-up consultation with donor. No SNOMED CT equivalent"
+}

@@ -1,0 +1,206 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes PS-QG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "PS000.1" source="PS000" target="1067261000000105" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA social/civic life investigation maps reasonably to SNOMED CT biopsychosocial assessment"
+}
+mapping "PS002.1" source="PS002" target="217755003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Recreation/leisure assessment; no direct SNOMED CT match; sport/recreation observation is very
+        loose.
+        """
+}
+mapping "PS003.1" source="PS003" target="711017001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bedömning av engagemang i religiösa och andliga fragor = assessment of engagement in religious
+        and spiritual matters. Exact match to SNOMED CT Assessment of spirit
+        """
+}
+mapping "PT000.1" source="PT000" target="225342001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Utredning av omgivningsfaktorer = environmental assessment; exact match to SNOMED CT concept,
+        verified in Athena
+        """
+}
+mapping "PT002.1" source="PT002" target="37030005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Assessment of assistive device needs; orthotic device fitting is close match"
+}
+mapping "PT012.1" source="PT012" target="395094003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA attitude assessment; SNOMED CT psychosocial support somewhat related"
+}
+flag "PT017.unmapped" kind=unmapped concept="PT017" target-system="SNOMED_CT"
+flag "PT018.unmapped" kind=unmapped concept="PT018" target-system="SNOMED_CT"
+flag "PV001.unmapped" kind=unmapped concept="PV001" target-system="SNOMED_CT"
+mapping "QA003.1" source="QA003" target="60631000210103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Training of energy/drive functions; Swedish rehab terminology no SNOMED CT match"
+}
+mapping "QA006.1" source="QA006" target="228550005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Attention training = Attention training (SNOMED CT 228550005); exact clinical match for cognitive
+        rehabilitation attention training
+        """
+}
+mapping "QA008.1" source="QA008" target="127779003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Psychomotor function training; physiotherapy is a loose proxy for movement training."
+}
+mapping "QA009.1" source="QA009" target="225977007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Clinical support for anxiety; SNOMED CT concept captures the therapeutic intervention of anxiety
+        relief.
+        """
+}
+mapping "QA011.1" source="QA011" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA cognitive training; SNOMED CT self-care education is very broad"
+}
+mapping "QA014.1" source="QA014" target="127779003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Body awareness training; physiotherapy is broader parent"
+}
+mapping "QA015.1" source="QA015" target="225421002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Good match: KVA body image training = SNOMED CT body image counseling"
+}
+mapping "QB001.1" source="QB001" target="386293009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "QB002.1" source="QB002" target="23399008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100110233 23399008 = vertigo/dizziness training; clinically equivalent to vestibular
+        rehabilitation; SNOMED CT 23399008 is exact equivalent; verified SNOMED CT standa
+        """
+}
+mapping "QB005.1" source="QB005" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA sensory training; SNOMED CT self-care education is very broad"
+}
+mapping "QB007.1" source="QB007" target="149213005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "QB007.fp" kind=reported-false-positive concept="QB007"
+flag "QB009.unmapped" kind=unmapped concept="QB009" target-system="SNOMED_CT"
+flag "QB010.unmapped" kind=unmapped concept="QB010" target-system="SNOMED_CT"
+mapping "QD004.1" source="QD004" target="226005007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "QD006.1" source="QD006" target="47700006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: lymphedema treatment (comprehensive decongestive therapy). SNOMED CT Correction of lymphedema
+        is the closest parent procedure concept.
+        """
+}
+mapping "QD008.1" source="QD008" target="410188000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Oevervakning av vitala tecken = monitoring of vital signs; taking patient vital signs assessment
+        is an exact equivalent (preferred
+        """
+}
+mapping "QD010.1" source="QD010" target="60170009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: basal metabolism monitoring; weak to blood gas analysis"
+}
+mapping "QD013.1" source="QD013" target="409088002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100110255 409088002 = tracheostomy tube/tracheal cannula care; exact match to SNOMED CT
+        concept
+        """
+}
+mapping "QD015.1" source="QD015" target="370791009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cough training maps closely to deep breathing and coughing exercises"
+}
+mapping "QD016.1" source="QD016" target="183301007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Training of physical performance capacity = Physical exercises (exact match)"
+}
+flag "QD017.unmapped" kind=unmapped concept="QD017" target-system="SNOMED_CT"
+flag "QD018.unmapped" kind=unmapped concept="QD018" target-system="SNOMED_CT"
+mapping "QE005.1" source="QE005" target="183286003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Underlattande av svaljning = facilitation of swallowing; exact match to SNOMED CT 183286003,
+        verified in Athena
+        """
+}
+mapping "QE009.1" source="QE009" target="408289007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ weight loss support; SNOMED CT weight management referral is close"
+}
+mapping "QE015.1" source="QE015" target="698472009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100110270 698472009 = monitoring of blood sugar level; exact match to SNOMED CT
+        concept
+        """
+}
+mapping "QE019.1" source="QE019" target="431917004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Central cooling (central nerkylning) maps to active core cooling; both describe intentional
+        cooling of the body core
+        """
+}
+flag "QE021.unmapped" kind=unmapped concept="QE021" target-system="SNOMED_CT"
+flag "QE025.unmapped" kind=unmapped concept="QE025" target-system="SNOMED_CT"
+flag "QF000.unmapped" kind=unmapped concept="QF000" target-system="SNOMED_CT"
+mapping "QF001.1" source="QF001" target="183306002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pelvic floor training maps exactly to pelvic floor exercises"
+}
+mapping "QF003.1" source="QF003" target="281044007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incontinence care; SNOMED CT incontinence assessment"
+}
+mapping "QF009.1" source="QF009" target="243174005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: obstetric labor surveillance. No SNOMED CT equivalent"
+}
+flag "QF015.unmapped" kind=unmapped concept="QF015" target-system="SNOMED_CT"
+mapping "QG000.1" source="QG000" target="18831004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: treatment related to movement functions; no close SNOMED CT match"
+}
+mapping "QG003.1" source="QG003" target="768478000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Muscle function/strength training is a form of supervised exercise therapy"
+}
+mapping "QG005.1" source="QG005" target="83439001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "QG008.1" source="QG008" target="386294003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Active or passive training of muscle and joint mobility: (386294003), confirmed SNOMED CT standard
+        """
+}
+mapping "QG009.1" source="QG009" target="229315006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Manuell muskel- och ledbehandling = manual muscle and joint treatment; (229315006) is the exact
+        equivalent
+        """
+}

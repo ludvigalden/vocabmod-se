@@ -1,0 +1,236 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes DE-DM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "DE001.1" source="DE001" target="230040009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DF016.1" source="DF016" target="233185009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kontroll och omprogrammering av pacemaker eller defibrillator = check and reprogramming of
+        pacemaker/defibrillator; reprogramming of cardiac pacemaker is exact
+        """
+}
+mapping "DF017.1" source="DF017" target="429283006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: mechanical (non-manual) chest compression is synonymous with mechanically assisted
+        chest compression.
+        """
+}
+mapping "DF022.1" source="DF022" target="233180004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ transesofageal terapeutisk stimulering = transesophageal therapeutic stimulation/pacing;
+        exact clinical match
+        """
+}
+mapping "DF024.1" source="DF024" target="233044001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Balloon septostomy = balloon atrial septostomy (Rashkind procedure). The pull-back technique is
+        the standard approach. Close clinical equivalent.
+        """
+}
+mapping "DF028.1" source="DF028" target="89666000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HLR (CPR) with assisted ventilation. Assisted ventilation is inherent in CPR; SNOMED CT 89666000
+        captures the complete procedure.
+        """
+}
+mapping "DF032.1" source="DF032" target="427175002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100101123 427175002 = removal of ECG loop recorder; exact SNOMED CT match"
+}
+mapping "DF033.1" source="DF033" target="232965003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Check and adjustment of intracorporeal/paracorporeal VAD; distant match to VAD implantation"
+}
+mapping "DF035.1" source="DF035" target="89666000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100101125 89666000 = CPR without assisted ventilation; SNOMED CT is the generic parent
+        conce
+        """
+}
+mapping "DG001.1" source="DG001" target="47545007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Inledande av akutbehandling med luftvagsmottryck CPAP eller BilevelPAP = initiation of
+        CPAP/BiPAP treatment; exact match to CPAP ventilation treatment.
+        """
+}
+mapping "DG002.1" source="DG002" target="859311000000101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA initiating ventilator = SNOMED CT provision of mechanical ventilator"
+}
+mapping "DG003.1" source="DG003" target="241031001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG004.1" source="DG004" target="232705007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bronkialtoalett = bronchial toilet (clearing bronchial secretions via suction). SNOMED CT
+        2100101129 232705007 is the exact clinical equivalent. Verified in CONCEPT.csv: S
+        """
+}
+mapping "DG005.1" source="DG005" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: pneumothorax exsufflation/needle aspiration. No SNOMED CT equivalent found"
+}
+mapping "DG007.1" source="DG007" target="1322251000000101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA custom target; weak: captures CPAP observation but not BilevelPAP and not the monitoring
+        aspect.
+        """
+}
+mapping "DG012.1" source="DG012" target="230040009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG015.1" source="DG015" target="57485005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100101140 57485005 = oxygen therapy during spontaneous breathing at
+        atmospheric pressure = Oxygen therapy.
+        """
+}
+mapping "DG016.1" source="DG016" target="232613003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG017.1" source="DG017" target="232674004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG019.1" source="DG019" target="113153002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG024.1" source="DG024" target="2267008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DG026.1" source="DG026" target="1258985005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: ventilator treatment >96h. SNOMED CT has invasive mechanical ventilation but not
+        duration-qualified
+        """
+}
+mapping "DG027.1" source="DG027" target="47545007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA covers initiation of long-term CPAP or BiPAP; SNOMED CT 2100101152 47545007 matches the
+        primary clinical action (CPAP); BiPAP component is not captur
+        """
+}
+mapping "DG028.1" source="DG028" target="870533002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Oxygen therapy with high-flow nasal cannula. SNOMED CT 870533002 SNOMED CT 2100101153 870533002 is the
+        exact clinical equivalent (high-flow nasal
+        """
+}
+flag "DG030.unmapped" kind=unmapped concept="DG030" target-system="SNOMED_CT"
+mapping "DJ005.1" source="DJ005" target="174426002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 174426002 2100101157 = homologous auxiliary liver transplantation; auxiliary liver
+        transplant places donor liver alongside native liver
+        """
+}
+mapping "DJ006.1" source="DJ006" target="241484009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Liver transplant; to transplant procedure"
+}
+mapping "DJ011.1" source="DJ011" target="710078009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bowel stoma care; maps to stoma care management"
+}
+mapping "DJ012.1" source="DJ012" target="112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "DJ012 terapeutisk endoskopi UNS; unspecified therapeutic endoscopy"
+}
+flag "DJ027.unmapped" kind=unmapped concept="DJ027" target-system="SNOMED_CT"
+flag "DJ030.unmapped" kind=unmapped concept="DJ030" target-system="SNOMED_CT"
+flag "DJ031.unmapped" kind=unmapped concept="DJ031" target-system="SNOMED_CT"
+mapping "DK002.1" source="DK002" target="71550003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: the KVÅ covers closure of cystostomy OR cystoenterostomi. SNOMED CT has SNOMED CT
+        2100101175 71550003 which matches the primary component. The cystoent
+        """
+}
+mapping "DK004.1" source="DK004" target="79165006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100101176 79165006 is an exact match to SNOMED CT"
+}
+mapping "DK019.1" source="DK019" target="408977001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Urinary incontinence investigation and treatment maps exactly to urinary incontinence care
+        assessment
+        """
+}
+mapping "DK026.1" source="DK026" target="23214004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "DK027.unmapped" kind=unmapped concept="DK027" target-system="SNOMED_CT"
+mapping "DK032.1" source="DK032" target="386483004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA DK032 = care and control of urostomy. SNOMED CT 386483004 = Tube care: urinary covers urinary
+        tube/ostomy management. Close clinical equivalent.
+        """
+}
+mapping "DL001.1" source="DL001" target="236894009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Embryo transfer post-ICSI; SNOMED CT has frozen embryo transfer as parent concept"
+}
+mapping "DL002.1" source="DL002" target="75456002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Embryo transfer with frozen-thawed embryos: SNOMED CT (75456002) is the standard concept;
+        (236894009) is also available but
+        """
+}
+mapping "DL003.1" source="DL003" target="75456002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Standard IVF embryo transfer maps exactly to embryo transfer"
+}
+mapping "DL005.1" source="DL005" target="176833006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are miscarriage management but with different approaches; very weak match"
+}
+mapping "DL007.1" source="DL007" target="425901007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intracytoplasmic sperm injection (ICSI) maps exactly to in vitro fertilization with
+        intracytoplasmic spermatozoa injection
+        """
+}
+mapping "DM007.1" source="DM007" target="236958009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "DM010.unmapped" kind=unmapped concept="DM010" target-system="SNOMED_CT"
+mapping "DM011.1" source="DM011" target="1300202008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Magnesium sulfate infusion as eclampsia prophylaxis: (1300202008), confirmed SNOMED CT standard"
+}
+flag "DM028.unmapped" kind=unmapped concept="DM028" target-system="SNOMED_CT"
+mapping "DM030.1" source="DM030" target="236960006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: SNOMED CT 2100101223 236960006 = membrane sweep / sweeping of membranes; standard
+        obstetric procedure. Precise SNOMED CT match.
+        """
+}
+flag "DM032.unmapped" kind=unmapped concept="DM032" target-system="SNOMED_CT"

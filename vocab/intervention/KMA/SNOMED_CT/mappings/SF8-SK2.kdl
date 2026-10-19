@@ -1,0 +1,314 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes SF8-SK2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "SF800.1" source="SF800" target="241691000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia rectal induction + \"Rapid Sequence\" intubation"
+}
+mapping "SF802.1" source="SF802" target="241691000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia rectal induction; available as standard SNOMED CT concept"
+}
+mapping "SF803.1" source="SF803" target="241687005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish anesthesia combination code"
+}
+mapping "SF811.1" source="SF811" target="241691000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anesthesia composite; SNOMED CT has rectal induction as component"
+}
+mapping "SF812.1" source="SF812" target="241688000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia; one specific technique combination"
+}
+mapping "SF813.1" source="SF813" target="274507007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: specific anesthesia technique combo; general anesthesia as parent"
+}
+mapping "SF814.1" source="SF814" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak to operative general anesthesia"
+}
+mapping "SF821.1" source="SF821" target="241691000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish anesthesia technique code; rectal induction maps to rectal induction of general
+        anesthesia
+        """
+}
+mapping "SF823.1" source="SF823" target="241687005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "General anesthesia technique code. Parent SNOMED CT GA concept."
+}
+mapping "SF824.1" source="SF824" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: rectal induction RSI regional; weak to general anesthesia"
+}
+mapping "SF830.1" source="SF830" target="241687005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complex GA specification; induction of GA is broader parent"
+}
+mapping "SF831.1" source="SF831" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish GA technique code maps to generic operative GA"
+}
+mapping "SF834.1" source="SF834" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific anesthesia technique combination with RSI; SNOMED CT has only general operative GA"
+}
+mapping "SF842.1" source="SF842" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anesthesia technique; to regional anesthesia"
+}
+mapping "SF843.1" source="SF843" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SF843 rectal induction+RSI+inhalation maint+combined analgesia; weak to operative general
+        anesthesia
+        """
+}
+mapping "SG999.1" source="SG999" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: other general anesthesia UNS; weak to general anesthesia"
+}
+mapping "SI110.1" source="SI110" target="231345002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: Swedish SNOMED CT 2100111795 231345002 = anesthesia of mucous membrane"
+}
+mapping "SI412.1" source="SI412" target="44596000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100111798 44596000 = infiltration anesthesia with tunneled catheter; (4196525)
+        captures the
+        """
+}
+mapping "SJ210.1" source="SJ210" target="303355006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        IV regional anesthesia in upper extremity = Local anesthetic intravenous regional block (exact
+        match; Bier block equivalent)
+        """
+}
+mapping "SK110.1" source="SK110" target="43066008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trigeminusblockad utan kateter = trigeminal nerve block without catheter; injection of
+        anesthetic agent into trigeminal nerve is exact match, verified as SNOMED CT
+        """
+}
+mapping "SK119.1" source="SK119" target="43066008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trigeminusblockad = trigeminal nerve block. SNOMED CT 2100111804 43066008 is the exact SNOMED CT
+        equivalent.
+        """
+}
+mapping "SK140.1" source="SK140" target="21879001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100111805 21879001 = stellate ganglion block without catheter (single injection);
+        SNOMED CT 21879001 describes the injection procedure; 'injection
+        """ suspect=quoted-text
+}
+mapping "SK141.1" source="SK141" target="21879001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Stellate block with catheter; SNOMED CT stellate ganglion injection captures core procedure"
+}
+mapping "SK199.1" source="SK199" target="303507005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SK199 SNOMED CT 303507005 = regional (nerve) block of head and neck, unspecified. Target.
+        Exact regional and modality match; (unspecified) aligns with the un-qualified SNOMED CT concept.
+        High (not): no independent Athena crosswalk verified for this KVÅ medical procedures code, but term and hierarchy
+        match exactly at the same specificity.
+        """
+}
+mapping "SK210.1" source="SK210" target="231130004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interskalenär plexusblockad utan kateter = interscalene brachial plexus block without catheter;
+        exact match to Brachial plexus block by interscalene approach (w
+        """
+}
+mapping "SK211.1" source="SK211" target="231130004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interscalene brachial plexus block with catheter. SNOMED CT concept is the same approach but does
+        not specify catheter. The catheter qualifier is a technique detai
+        """
+}
+mapping "SK212.1" source="SK212" target="18946005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interscalene block; to regional anesthesia"
+}
+mapping "SK219.1" source="SK219" target="231130004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interskalenär plexusblockad UNS = interscalene brachial plexus block unspecified; exact match to
+        Brachial plexus block by interscalene approach
+        """
+}
+mapping "SK220.1" source="SK220" target="231131000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: supraclavicular brachial plexus block without catheter. SNOMED CT 231131000 exactly
+        describes this procedure. The SNOMED CT 2100111815 231131000 qualifier is defa
+        """
+}
+mapping "SK221.1" source="SK221" target="231131000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: supraclavicular brachial plexus block with catheter. Catheter detail is a technique
+        modifier not captured but the block approach and target are ide
+        """
+}
+mapping "SK222.1" source="SK222" target="231131000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Supraklavikulär plexusblockad med tunnelerad kateter = supraclavicular brachial plexus block
+        with tunneled catheter. The SNOMED CT concept matches the approach exa
+        """
+}
+mapping "SK229.1" source="SK229" target="231131000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Supraclavicular plexus block UNS maps exactly to brachial plexus block by supraclavicular
+        approach
+        """
+}
+mapping "SK230.1" source="SK230" target="231132007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Infraklavikulär plexusblockad utan kateter = infraclavicular brachial plexus block without
+        catheter; exact match to Brachial plexus block by infraclavicular app
+        """
+}
+mapping "SK231.1" source="SK231" target="231132007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100111820 231132007 = infraclavicular brachial plexus block
+        with catheter; SNOMED CT concept matches the approach
+        """
+}
+mapping "SK232.1" source="SK232" target="231132007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Infraklavikular plexusblockad med tunnelerad kateter = infraclavicular plexus block with
+        tunneled catheter. SNOMED CT matches the infraclavicular approach. The cat
+        """
+}
+mapping "SK239.1" source="SK239" target="231132007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100111822 231132007 = infraclavicular brachial plexus block, unspecified; exact match to
+        SNOMED CT concept
+        """
+}
+mapping "SK240.1" source="SK240" target="231133002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100111823 231133002 = axillary brachial plexus block without catheter; exact SNOMED CT
+        match verified as standard concept S; the 'without cat
+        """ suspect=quoted-text
+}
+mapping "SK241.1" source="SK241" target="231133002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Axillär plexusblockad med kateter = axillary brachial plexus block with catheter. The SNOMED CT
+        concept matches the approach (axillary) exactly; the catheter compo
+        """
+}
+mapping "SK242.1" source="SK242" target="231133002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Axillary plexus block with tunneled catheter; SNOMED CT has brachial plexus block by axillary
+        approach. The tunneled catheter detail is not captured but the core p
+        """
+}
+mapping "SK249.1" source="SK249" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Axillary plexus block unspecified; SNOMED CT cervical nerve block is different region but same
+        procedure class
+        """
+}
+mapping "SK250.1" source="SK250" target="231138006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100111827 231138006 = ulnar nerve block without catheter; exact SNOMED CT match"
+}
+mapping "SK251.1" source="SK251" target="231138006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies with catheter; SNOMED CT concept is general ulnar nerve block"
+}
+mapping "SK252.1" source="SK252" target="231138006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ulnar nerve block with tunneled catheter; SNOMED CT has basic ulnar nerve block"
+}
+mapping "SK259.1" source="SK259" target="231138006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ulnarisblockad UNS = Local anesthetic ulnar nerve block; exact match; UNS (unspecified) aligns
+        with the generic ulnar nerve block concept
+        """
+}
+mapping "SK260.1" source="SK260" target="231145006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Medianusblockad utan kateter = median nerve block without catheter; exact match to Local
+        anesthetic median nerve block
+        """
+}
+mapping "SK262.1" source="SK262" target="231145006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: median nerve block with tunneled catheter. SNOMED CT has median nerve block"
+}
+mapping "SK269.1" source="SK269" target="231145006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Median nerve block (medianusblockad) = local anesthetic median nerve block; exact clinical
+        equivalent
+        """
+}
+mapping "SK270.1" source="SK270" target="231141002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Radialisblockad utan kateter = radial nerve block without catheter. SNOMED CT Local anesthetic
+        radial nerve block is the exact clinical equivalent (without cathete
+        """
+}
+mapping "SK271.1" source="SK271" target="231141002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies radial block with catheter; SNOMED CT lacks catheter detail"
+}
+mapping "SK279.1" source="SK279" target="231141002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100111838 231141002 = radial nerve block, unspecified; exact match to SNOMED CT Local
+        anesthetic radial nerve block
+        """
+}
+mapping "SK289.1" source="SK289" target="231129009" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Triple block of all three nerve trunks of upper extremity; SNOMED CT local anesthetic nerve block
+        upper limb is broad parent
+        """
+}
+mapping "SK299.1" source="SK299" target="231129009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SK299 SNOMED CT 231129009 = regional nerve block of upper extremity, unspecified. Target.
+        Exact region (upper limb) and modality (nerve block) match; UNS aligns with the un-qualified
+        concept. High: exact term/hierarchy match without independent crosswalk.
+        """
+}

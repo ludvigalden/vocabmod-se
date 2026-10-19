@@ -1,0 +1,274 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes SK7-SP
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "SK710.1" source="SK710" target="231169005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Femoral nerve block without catheter maps exactly to Local anesthetic femoral nerve block; the
+        SNOMED CT 2100111914 231169005 is the default single-shot technique.
+        """
+}
+mapping "SK711.1" source="SK711" target="231169005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Femoral block with catheter = local anesthetic femoral nerve block. The catheter is a technique
+        detail. Exact equivalent for the nerve block itself.
+        """
+}
+mapping "SK712.1" source="SK712" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Femoral block with tunnelled catheter; SNOMED CT cervical block is different region but same nerve
+        block class
+        """
+}
+mapping "SK719.1" source="SK719" target="231169005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Femoralisblockad UNS = femoral nerve block unspecified; exact match to Local anesthetic femoral
+        nerve block
+        """
+}
+mapping "SK720.1" source="SK720" target="231162001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plexus lumbalisblockad utan kateter = lumbar plexus block without catheter. Exact match to
+        SNOMED CT Lumbar plexus block.
+        """
+}
+mapping "SK722.1" source="SK722" target="231162001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plexus lumbalisblockad med tunnelerad kateter = lumbar plexus block with tunneled catheter.
+        SNOMED CT Lumbar plexus block matches the procedure. KVÅ specifies tunn
+        """
+}
+mapping "SK739.1" source="SK739" target="231167007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: sciatic nerve block - proximal unspecified. SNOMED CT sciatic nerve block concepts specify
+        approach; posterior approach is the most common proximal approach. Reasonable loose match.
+        """
+}
+mapping "SK750.1" source="SK750" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sciatic-femoral nerve block without catheter; SNOMED CT cervical block is different region but same
+        procedure type
+        """
+}
+mapping "SK759.1" source="SK759" target="231169005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ischiadic-femoral block includes femoral nerve block as a component; partial match"
+}
+mapping "SK760.1" source="SK760" target="231175001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100111934 231175001 = ankle block without catheter; exact match to SNOMED CT Local
+        anesthetic ankle block
+        """
+}
+mapping "SK799.1" source="SK799" target="231161008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SK799 SNOMED CT 231161008 = regional nerve block of lower extremity, unspecified. Target.
+        Exact region (lower limb) and modality match; UNS aligns with the un-qualified concept. High:
+        exact term/hierarchy match without independent crosswalk.
+        """
+}
+mapping "SK910.1" source="SK910" target="1217321007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 1217321007 2100111941 = trigger point block; exact SNOMED CT match verified as standard
+        concept S
+        """
+}
+mapping "SK999.1" source="SK999" target="26402001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SK999 SNOMED CT 26402001 = conduction (nerve block) anesthesia, unspecified. Target. is the
+        Swedish term for conduction/nerve-block anesthesia; exact concept equivalence at the
+        un-qualified level. High: exact term match without independent crosswalk.
+        """
+}
+mapping "SL100.1" source="SL100" target="406188003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intrathecal block without catheter; broader match to intrathecal medication admin"
+}
+flag "SL103.unmapped" kind=unmapped concept="SL103" target-system="SNOMED_CT"
+mapping "SL199.1" source="SL199" target="61478003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SL199 SNOMED CT 61478003 = spinal anesthesia, unspecified. Target. Direct Swedish-to-English
+        term equivalence at the un-qualified concept level.
+        """
+}
+mapping "SN110.1" source="SN110" target="302336001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cervical epidural block without catheter = local anesthetic cervical epidural block; the SNOMED CT
+        2100111948 302336001 detail is a common default not captured in SNOMED CT bu
+        """
+}
+mapping "SN112.1" source="SN112" target="18946005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cervical epidural block with tunneled catheter; epidural anesthesia is a good broader match"
+}
+mapping "SN210.1" source="SN210" target="302335002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100111951 302335002 = thoracic epidural block without catheter; SNOMED CT is the exact
+        equivalent
+        """
+}
+mapping "SN211.1" source="SN211" target="302335002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracic epidural block with catheter maps exactly to Local anesthetic thoracic epidural block;
+        catheter is standard for thoracic epidurals.
+        """
+}
+mapping "SN221.1" source="SN221" target="231261002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: thoracic epidural + intrathecal maps closely to combined spinal/epidural block"
+}
+mapping "SN222.1" source="SN222" target="302335002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ combines thoracic epidural with tunneled catheter plus intrathecal; SNOMED CT has thoracic
+        epidural block - partial match
+        """
+}
+mapping "SN310.1" source="SN310" target="180885006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lumbar epidural block without catheter = local anesthetic lumbar epidural block. The SNOMED CT
+        180885006 2100111956 qualifier means single-shot, which is the standard epidu
+        """
+}
+mapping "SN311.1" source="SN311" target="180885006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact clinical equivalent. The KVAA specifies SNOMED CT 180885006 2100111957 but the epidural block
+        procedure is the same regardless; catheter is a technique detail.
+        """
+}
+mapping "SN312.1" source="SN312" target="180885006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lumbar epidural block with tunneled catheter; SNOMED CT matches the core procedure but lacks
+        catheter detail.
+        """
+}
+mapping "SN490.1" source="SN490" target="180886007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sacral block without catheter maps to SNOMED CT 4111151 SNOMED CT 180886007 2100111961"
+}
+mapping "SN491.1" source="SN491" target="180886007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 180886007 2100111962 = sacral block with catheter; (4111151) matches the core
+        technique. Verified standard
+        """
+}
+mapping "SN499.1" source="SN499" target="18946005" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SN499 SNOMED CT 18946005 = sacral/caudal block, unspecified (caudal epidural anesthesia). No
+        generic concept exists in the mirror; the caudal-specific concepts present are subtypes with
+        qualifiers (e.g. 56659009, 67716003 therapeutic caudal epidural) that are narrower than the
+        un-qualified source. Target, the parent that subsumes caudal/sacral epidural blocks. Broader:
+        every sacral/caudal block is an epidural anesthesia. Moderate: legitimate ancestor but loses the
+        caudal specificity (one level up); UNS source not independently crosswalk-verified.
+        """
+}
+mapping "SN800.1" source="SN800" target="447366001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Epidural blood patch: injection of autologous blood into spinal epidural space. Preferred over
+        the lumbar-specific concept since KVÅ does not specify spinal lev
+        """
+}
+flag "SN995.unmapped" kind=unmapped concept="SN995" target-system="SNOMED_CT"
+mapping "SN999.1" source="SN999" target="18946005" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Exact match: KVÅ SN999 (epidural anesthesia, no specific qualifier) maps to SNOMED CT Epidural
+        anesthesia. No desc field but code is well-known. Verified in Athena
+        """
+}
+mapping "SP010.1" source="SP010" target="28520004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: peripheral venipuncture for blood sampling = SNOMED CT 2100111968 28520004."
+}
+mapping "SP105.1" source="SP105" target="425196008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Inläggning av PICC = insertion of peripherally inserted central catheter. Exact match, and"
+}
+flag "SP502.unmapped" kind=unmapped concept="SP502" target-system="SNOMED_CT"
+flag "SP505.unmapped" kind=unmapped concept="SP505" target-system="SNOMED_CT"
+mapping "SP732.1" source="SP732" target="80402001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100112030 80402001 = implantation of vascular injection port via subclavian vein; exact
+        match to SNOMED CT Insertion of i
+        """
+}
+mapping "SP742.1" source="SP742" target="80402001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Implantation of vascular injection port via brachiocephalic vein; SNOMED CT implantable port
+        insertion is close match.
+        """
+}
+mapping "SP789.1" source="SP789" target="18305008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 18305008 2100112034 = removal of vascular injection port (port-a-cath); exact
+        equivalent
+        """
+}
+mapping "SP799.1" source="SP799" target="80402001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source SP799 SNOMED CT 80402001 = implantation of vascular access injection port
+        (Port-a-Cath-type), unspecified. Target. Direct term and concept equivalence.
+        """
+}
+mapping "SP811.1" source="SP811" target="428419009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100112036 428419009 = thrombolysis treatment of placed central venous catheter;
+        exact equivalent
+        """
+}
+mapping "SP812.1" source="SP812" target="240929001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: thrombolysis treatment of vascular injection port. SNOMED CT Percutaneous thrombolysis is a
+        broader parent that captures the procedure type.
+        """
+}
+mapping "SP813.1" source="SP813" target="431313005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: CVC correction; weak to CVC repositioning"
+}
+mapping "SP815.1" source="SP815" target="782684008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Correction of PICC = repair of PICC. Exact match. Verified SNOMED CT S."
+}
+flag "SP816.unmapped" kind=unmapped concept="SP816" target-system="SNOMED_CT"
+flag "SP821.unmapped" kind=unmapped concept="SP821" target-system="SNOMED_CT"
+flag "SP822.unmapped" kind=unmapped concept="SP822" target-system="SNOMED_CT"
+flag "SP823.unmapped" kind=unmapped concept="SP823" target-system="SNOMED_CT"
+flag "SP824.unmapped" kind=unmapped concept="SP824" target-system="SNOMED_CT"

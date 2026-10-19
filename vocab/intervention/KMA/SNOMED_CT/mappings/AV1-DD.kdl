@@ -1,0 +1,231 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes AV1-DD
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AV100.1" source="AV100" target="103750000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AV101.1" source="AV101" target="103750000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AV105.1" source="AV105" target="273467001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Communication examination; functional communication assessment is a reasonable broader match"
+}
+mapping "AV107.1" source="AV107" target="252572002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Undersökning av röst vid videostroboskopi = voice examination by videostroboscopy; laryngeal
+        stroboscopy is the standard procedure for voice examination, exact
+        """
+}
+mapping "AV109.1" source="AV109" target="311834001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100100980 311834001 = fiberoptic endoscopic evaluation of swallowing; exact match
+        confirmed
+        """
+}
+mapping "AV110.1" source="AV110" target="241150003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100100981 241150003 = examination of swallowing and speech via videoradiography;
+        exact match to SNOMED CT videoswallow con
+        """
+}
+mapping "AV112.1" source="AV112" target="1049741000000103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weight measurement observation; exact clinical meaning but different domain (Observation vs
+        Procedure)
+        """
+}
+mapping "AV114.1" source="AV114" target="713131007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Yrselutredning (dizziness assessment) maps exactly to SNOMED CT 2100100985 713131007. Verified:
+        SNOMED CT S
+        """
+}
+mapping "AV115.1" source="AV115" target="15151000202109" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bedoemning av levnadsomstaendigheter = assessment of living circumstances, exact match to SNOMED CT
+        concept 1243836, verified as SNOMED CT standard
+        """
+}
+mapping "AV119.1" source="AV119" target="268563000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Rutinmässig hälsoundersökning av barn (routine child health examination) maps exactly to Child
+        health medical examination. Verified SNOMED CT S concept.
+        """
+}
+mapping "AV120.1" source="AV120" target="252743001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: vibration measurement; weak to nerve conduction studies"
+}
+mapping "AV127.1" source="AV127" target="385797002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Systematic investigation of adverse drug reaction maps exactly to adverse drug reaction
+        prevention
+        """
+}
+mapping "AV130.1" source="AV130" target="284367004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Good match: KVA body function assessment = SNOMED CT examination of body function"
+}
+flag "AV131.unmapped" kind=unmapped concept="AV131" target-system="SNOMED_CT"
+flag "AV134.unmapped" kind=unmapped concept="AV134" target-system="SNOMED_CT"
+flag "AV139.unmapped" kind=unmapped concept="AV139" target-system="SNOMED_CT"
+flag "AV140.unmapped" kind=unmapped concept="AV140" target-system="SNOMED_CT"
+flag "AV142.unmapped" kind=unmapped concept="AV142" target-system="SNOMED_CT"
+flag "AV143.unmapped" kind=unmapped concept="AV143" target-system="SNOMED_CT"
+flag "AV144.unmapped" kind=unmapped concept="AV144" target-system="SNOMED_CT"
+flag "AV145.unmapped" kind=unmapped concept="AV145" target-system="SNOMED_CT"
+flag "AW001.unmapped" kind=unmapped concept="AW001" target-system="SNOMED_CT"
+flag "AW005.unmapped" kind=unmapped concept="AW005" target-system="SNOMED_CT"
+flag "AW007.unmapped" kind=unmapped concept="AW007" target-system="SNOMED_CT"
+flag "AW010.unmapped" kind=unmapped concept="AW010" target-system="SNOMED_CT"
+flag "AW015.unmapped" kind=unmapped concept="AW015" target-system="SNOMED_CT"
+flag "AW016.unmapped" kind=unmapped concept="AW016" target-system="SNOMED_CT"
+mapping "AW019.1" source="AW019" target="268388007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "AW020.unmapped" kind=unmapped concept="AW020" target-system="SNOMED_CT"
+flag "AW021.unmapped" kind=unmapped concept="AW021" target-system="SNOMED_CT"
+flag "AW026.unmapped" kind=unmapped concept="AW026" target-system="SNOMED_CT"
+flag "AW027.unmapped" kind=unmapped concept="AW027" target-system="SNOMED_CT"
+flag "AW028.unmapped" kind=unmapped concept="AW028" target-system="SNOMED_CT"
+flag "AW029.unmapped" kind=unmapped concept="AW029" target-system="SNOMED_CT"
+flag "AW030.unmapped" kind=unmapped concept="AW030" target-system="SNOMED_CT"
+flag "AW031.unmapped" kind=unmapped concept="AW031" target-system="SNOMED_CT"
+flag "AW032.unmapped" kind=unmapped concept="AW032" target-system="SNOMED_CT"
+flag "AW033.unmapped" kind=unmapped concept="AW033" target-system="SNOMED_CT"
+flag "AW035.unmapped" kind=unmapped concept="AW035" target-system="SNOMED_CT"
+flag "AW036.unmapped" kind=unmapped concept="AW036" target-system="SNOMED_CT"
+mapping "AW037.1" source="AW037" target="305735009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closing sick-leave and rehabilitation plan for return to work; cardiac rehab is very loose."
+}
+flag "AW040.unmapped" kind=unmapped concept="AW040" target-system="SNOMED_CT"
+flag "AW041.unmapped" kind=unmapped concept="AW041" target-system="SNOMED_CT"
+mapping "AW042.1" source="AW042" target="1084381000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: KVA tobacco follow-up = broader cessation service involvement"
+}
+flag "AW043.unmapped" kind=unmapped concept="AW043" target-system="SNOMED_CT"
+mapping "AW999.1" source="AW999" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: residual catch-all for anesthesia/intensive care investigations"
+}
+mapping "DA010.1" source="DA010" target="708910001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Inläggning av intratekalkateter (spinalkateter) maps exactly to SNOMED CT 2100101044 708910001.
+        Verified: SNOMED CT S
+        """
+}
+mapping "DA012.1" source="DA012" target="708910001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Insertion of intrathecal cervical or intracisternal catheter maps exactly to Insertion of
+        temporary intrathecal catheter; exact match
+        """
+}
+mapping "DA015.1" source="DA015" target="18949003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vagus nerve stimulator adjustment; no close SNOMED CT match"
+}
+mapping "DA017.1" source="DA017" target="224571000000107" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Spinal cord stimulator programming; SNOMED CT reprogramming of neurostimulator adjacent to spinal
+        cord is good match
+        """
+}
+mapping "DA030.1" source="DA030" target="231129009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Nerve block with nerve stimulator or ultrasound guidance; SNOMED CT nerve block is parent"
+}
+mapping "DA031.1" source="DA031" target="231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: fluoroscopy-guided nerve block; cervical is a subset"
+}
+mapping "DA035.1" source="DA035" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: tumör treating fields (TTF) therapy. No SNOMED CT equivalent"
+}
+mapping "DB004.1" source="DB004" target="581141000124103" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "New-onset diabetes management vs referral for diabetic care; administrative context"
+}
+flag "DB006.unmapped" kind=unmapped concept="DB006" target-system="SNOMED_CT"
+flag "DB007.unmapped" kind=unmapped concept="DB007" target-system="SNOMED_CT"
+mapping "DB010.1" source="DB010" target="1464561000000107" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA replacement of adhesive glucose sensor = SNOMED CT provision of CGM system; reasonable broader
+        match
+        """
+}
+mapping "DD002.1" source="DD002" target="172631009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: SNOMED CT 172631009 2100101075 = manual removal of ear wax excluding irrigation;
+        matches SNOMED CT manual removal concept precisely.
+        """
+}
+mapping "DD005.1" source="DD005" target="307826006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pharmacological destruction of labyrinth (typically gentamicin injection) is clinically
+        identical to chemical labyrinthectomy; exact equivalent.
+        """
+}
+mapping "DD008.1" source="DD008" target="302483003" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Manipulation for vertigo vs general surgical spinal manipulation; broader parent"
+}
+flag "DD009.unmapped" kind=unmapped concept="DD009" target-system="SNOMED_CT"
+mapping "DD012.1" source="DD012" target="410163008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100101084 410163008 = voice therapy; exact match to SNOMED CT Speech therapy management
+        (voice therapy is a form of speech therapy and SNOMED CT classifies it as such)
+        """
+}
+mapping "DD013.1" source="DD013" target="311602008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Language treatment = language promotion therapy. Close match"
+}
+mapping "DD018.1" source="DD018" target="265316002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA custom target; weak: cochlear prosthesis follow-up is broader than specific follow-up but
+        captures the clinical act.
+        """
+}
+mapping "DD021.1" source="DD021" target="438544006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Upgrade of sound processor for cochlear implant; cochlear implant processor adjustment is close
+        match
+        """
+}
+flag "DD022.unmapped" kind=unmapped concept="DD022" target-system="SNOMED_CT"
+flag "DD023.unmapped" kind=unmapped concept="DD023" target-system="SNOMED_CT"
+mapping "DD026.1" source="DD026" target="18178001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fitting and upgrading of bone-anchored hearing aid; SNOMED CT hearing aid evaluation is"
+}

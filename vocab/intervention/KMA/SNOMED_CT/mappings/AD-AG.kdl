@@ -1,0 +1,262 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes AD-AG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AD003.1" source="AD003" target="32921008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Audiogram with both air and bone conduction = standard audiogram procedure (SNOMED CT 32921008)"
+}
+mapping "AD004.1" source="AD004" target="18178001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "AD004 barnaudiologiska test; weak to hearing evaluation"
+}
+mapping "AD009.1" source="AD009" target="311834001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        FUS = fiberoptic endoscopic swallowing evaluation; exact match to FEES SNOMED CT concept, verified
+        in Athena
+        """
+}
+mapping "AD012.1" source="AD012" target="164755005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Impedansmätning inom audiologin = Oto-admittance tests; exact match for impedance measurement in
+        audiology (tympanometry/impedance audiometry)
+        """
+}
+mapping "AD015.1" source="AD015" target="1220545007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AD017.1" source="AD017" target="847031000000100" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Smell and taste investigation; SNOMED CT has no direct equivalent; esophageal manometry is distant
+        parent
+        """
+}
+mapping "AD021.1" source="AD021" target="312882009" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nasalt borstprov = nasal brush specimen. Taking nasal swab is the closest SNOMED CT concept. A
+        nasal brush is a type of nasal specimen collection; no specific 'nas
+        """ suspect=quoted-text
+}
+mapping "AD023.1" source="AD023" target="446077009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ registrering av otoakustiska emissioner = otoacoustic emissions recording; exact match to
+        automated otoacoustic emission test
+        """
+}
+mapping "AD025.1" source="AD025" target="252553002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AD026.1" source="AD026" target="252553002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AD036.1" source="AD036" target="252572002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ stroboskopisk undersökning av stämbanden = laryngeal stroboscopy of vocal cords; exact
+        clinical match
+        """
+}
+mapping "AD037.1" source="AD037" target="252592009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: speech audiometry = talaudiometriska test"
+}
+mapping "AD039.1" source="AD039" target="18178001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader hearing evaluation tinnitus investigation is audiological workup subtype"
+}
+mapping "AD042.1" source="AD042" target="709641006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ultraljud sinus (ultrasound of sinuses) maps exactly to SNOMED CT 46271508 SNOMED CT 2100100252
+        709641006
+        """
+}
+mapping "AD046.1" source="AD046" target="830021000000102" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Videofluoroskopi av velofarynxfunktion under tal = videofluoroscopy of velopharyngeal function
+        during speech; matches SNOMED CT 830021000000102, verified in Athena
+        """
+}
+mapping "AD052.1" source="AD052" target="306173009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Phoniatric diagnostics maps loosely to speech-language therapy; referral concept is closest"
+}
+mapping "AD053.1" source="AD053" target="20521004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA sound field measurement is an audiologic test; SNOMED CT pure tone audiometry is closest
+        audiologic concept
+        """
+}
+mapping "AD054.1" source="AD054" target="290037006" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: ear impression taking for hearing aid molding"
+}
+mapping "AE021.1" source="AE021" target="241149003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Videofluoroskopi av orofaryngeal svaljning maps to SNOMED CT 2100100285 241149003. The
+        oropharyngeal qualifier is standard for videofluoroscopic swallowing studies.
+        """
+}
+mapping "AF006.1" source="AF006" target="252427007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Selektiv angiografi av coronary bypass inklusive a. mammaria interna; a. mammaria interna IS a
+        coronary bypass graft; SNOMED CT 2100100291 252427007 is a technique modifier not ca
+        """
+}
+mapping "AF008.1" source="AF008" target="268400002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other specified ECG; loose match to 12-lead ECG as common ECG procedure"
+}
+mapping "AF027.1" source="AF027" target="75444003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Foster-elektrokardiografi (EKG) = fetal electrocardiogram. Exact match to SNOMED CT Fetal
+        electrocardiogram.
+        """
+}
+mapping "AF050.1" source="AF050" target="42826002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "AF050 intrarteriellt blodtryck; weak to arterial pressure monitoring"
+}
+mapping "AF051.1" source="AF051" target="710839006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Non-invasive cardiac electrophysiology; broader cardiac monitoring concept"
+}
+mapping "AF054.1" source="AF054" target="432155006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Skintigrafi med farmakologisk stress = scintigraphy with pharmacological stress; (432155006) is
+        the exact equi
+        """
+}
+mapping "AF063.1" source="AF063" target="422952004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ cardiac telemetry monitoring; SNOMED CT equivalent is Observation 422952004"
+}
+mapping "AF064.1" source="AF064" target="105376000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AF070.1" source="AF070" target="73605004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: vector-EKG = ECG with vectorcardiogram"
+}
+mapping "AF071.1" source="AF071" target="359991009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Left and right ventricular angiocardiography; exact match to SNOMED CT 2100100352 359991009.
+        Confirmed SNOMED CT S.
+        """
+}
+mapping "AF074.1" source="AF074" target="425058005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AF075.1" source="AF075" target="14769009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AG004.1" source="AG004" target="128967005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: SNOMED CT 128967005 2100100359 = exercise provocation/challenge test; SNOMED CT
+        matches precisely.
+        """
+}
+mapping "AG005.1" source="AG005" target="82808001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Apnea monitoring maps weakly to sleep apnea monitoring with alarm"
+}
+mapping "AG006.1" source="AG006" target="15435001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bronchial reactivity test is inhalation bronchial challenge testing; near-equivalent"
+}
+mapping "AG016.1" source="AG016" target="251950005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mätning av kolmonoxid(CO)-diffusion = measurement of carbon monoxide diffusion capacity (DLCO).
+        Exact match to SNOMED CT Carbon monoxide transfer factor.
+        """
+}
+mapping "AG017.1" source="AG017" target="252485001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Nitrogen test (N2 test) maps directly to single breath nitrogen washout test"
+}
+mapping "AG018.1" source="AG018" target="444642008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Measurement of nitric oxide in exhaled air = Measurement of expired nitric oxide (exact match)
+        """
+}
+mapping "AG019.1" source="AG019" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: lung elasticity/compliance measurement. No SNOMED CT equivalent"
+}
+mapping "AG020.1" source="AG020" target="28275007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: lung volume determination with body plethysmograph maps to"
+}
+mapping "AG021.1" source="AG021" target="251915002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lung volume measurement via dilution technique = static lung volume measurement; method-specific
+        but conceptually equivalent
+        """
+}
+mapping "AG022.1" source="AG022" target="76777009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100100377 76777009 = magnetic phrenic nerve stimulation; (4296607) captures phrenic
+        nerve stimulation for respira
+        """
+}
+mapping "AG027.1" source="AG027" target="252486000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lung mechanics measurement with superposition method; respiratory muscle function test is
+        broader functional assessment
+        """
+}
+mapping "AG029.1" source="AG029" target="29893006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2100100384 29893006 = peak expiratory flow measurement; exact match to SNOMED CT concept"
+}
+mapping "AG031.1" source="AG031" target="279068008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan oximetri = percutaneous (invasive) oximetry; exact match to 279068008 SNOMED CT 2100100386
+        279068008
+        """
+}
+mapping "AG035.1" source="AG035" target="1255398006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Airway resistance measurement; weak to oscillometry-based airway resistance (method differs same
+        measurand)
+        """
+}
+mapping "AG054.1" source="AG054" target="252489007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mätning av transdiafragmala tryck = measurement of transdiaphragmatic pressure. Exact match to
+        SNOMED CT Transdiaphragmatic pressure measurement.
+        """
+}
+mapping "AG055.1" source="AG055" target="103741002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}

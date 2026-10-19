@@ -1,0 +1,218 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes QH-QV
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "QH006.1" source="QH006" target="228535001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Handvaard = hand care; skin care management is the closest SNOMED CT match (hand care is a subset
+        of skin care)
+        """
+}
+mapping "QH008.1" source="QH008" target="21510004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "QH011.1" source="QH011" target="736701009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pruritus treatment maps to administration of antipruritic"
+}
+mapping "QJ001.1" source="QJ001" target="228543006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: training of goal-directed sensory experiences; SNOMED CT 2100110301
+        228543006 captures the core concept. The qualifier is a metho
+        """
+}
+mapping "QJ002.1" source="QJ002" target="127779003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Support/training of basic learning; physiotherapy is distant"
+}
+mapping "QJ004.1" source="QJ004" target="401162000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Support and/or training in problem solving; exact match to SNOMED CT Problem solving therapy,
+        verified in Athena
+        """
+}
+mapping "QK003.1" source="QK003" target="160747005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is support/training for daily living activities; no exact SNOMED CT match"
+}
+mapping "QK005.1" source="QK005" target="226060000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "QK007.1" source="QK007" target="765059005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Crisis management maps weakly to crisis intervention assessment"
+}
+mapping "QK008.1" source="QK008" target="305440000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ grief support; SNOMED CT bereavement counselor care is close match"
+}
+mapping "QL000.1" source="QL000" target="767575003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Communication support and training maps to functional communication training"
+}
+mapping "QM007.1" source="QM007" target="127779003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Training in maintaining body position and transfer; physiotherapy parent"
+}
+mapping "QM013.1" source="QM013" target="284179005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fine motor training. SNOMED CT has fine motor ability observation but not training procedure."
+}
+mapping "QM015.1" source="QM015" target="308931006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "QM018.unmapped" kind=unmapped concept="QM018" target-system="SNOMED_CT"
+mapping "QN001.1" source="QN001" target="14490000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA personal care support is ADL support; SNOMED CT orthotic fitting is the closest assistive care
+        concept found
+        """
+}
+mapping "QN002.1" source="QN002" target="105389006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "QN004.1" source="QN004" target="127779003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Training in washing self; occupational therapy; physiotherapy is distant parent"
+}
+mapping "QN009.1" source="QN009" target="410268005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complete body care (nursing activity); nursing care is loose but reasonable."
+}
+mapping "QN011.1" source="QN011" target="225963009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "QN013.1" source="QN013" target="408437000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Training in managing toileting needs; SNOMED CT toilet training is closest"
+}
+mapping "QN018.1" source="QN018" target="445326001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dressing and undressing of individual; exact match to SNOMED CT Assisting with undressing, verified
+        in Athena
+        """
+}
+mapping "QN020.1" source="QN020" target="386421004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: assistance with feeding"
+}
+mapping "QN025.1" source="QN025" target="725051000000100" relationship=equivalent preference=alternative {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Self-care health training vs self-care observation; different domain but captures intent"
+}
+mapping "QN027.1" source="QN027" target="427625003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Assistance in managing own health; respiratory self-management education is related but very
+        narrow
+        """
+}
+flag "QN028.unmapped" kind=unmapped concept="QN028" target-system="SNOMED_CT"
+flag "QN030.unmapped" kind=unmapped concept="QN030" target-system="SNOMED_CT"
+mapping "QP005.1" source="QP005" target="410289001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "QP005 träning hushallsgöromal; weak to education/counseling"
+}
+mapping "QP007.1" source="QP007" target="410340009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Utföra hushallsgoremal = performing household chores. The KVAA code describes occupational
+        therapy assessment of homemaking ability. SNOMED CT Homemaking case mana
+        """
+}
+mapping "QR010.1" source="QR010" target="395094003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA psychosocial support for work/studies; SNOMED CT psychosocial support related"
+}
+mapping "QS000.1" source="QS000" target="395094003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Social support and training; SNOMED CT has psychosocial support/education as closest"
+}
+mapping "QT004.1" source="QT004" target="37030005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trial and/or manufacture of orthosis maps directly to Fitting of orthotic device; exact match
+        """
+}
+mapping "QT008.1" source="QT008" target="1046061000000106" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Adaptation of general environment; distant match to housing adaptation review"
+}
+mapping "QT009.1" source="QT009" target="1047941000000107" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Adaptation of housing/home environment; SNOMED CT has housing adaptation assessment"
+}
+mapping "QT011.1" source="QT011" target="18949003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Support for family caregivers; no close SNOMED CT match"
+}
+mapping "QT014.1" source="QT014" target="386287001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact conceptual match; modifying environment to prevent violence"
+}
+mapping "QT016.1" source="QT016" target="105402000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Counseling relatives; limited SNOMED CT match"
+}
+mapping "QT018.1" source="QT018" target="979381000000104" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Training in use of products and technology (excluding prescribed aids); assistive technology is
+        related.
+        """
+}
+flag "QT019.unmapped" kind=unmapped concept="QT019" target-system="SNOMED_CT"
+flag "QT020.unmapped" kind=unmapped concept="QT020" target-system="SNOMED_CT"
+mapping "QV002.1" source="QV002" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Health information/teaching; patient education is a good match."
+}
+mapping "QV003.1" source="QV003" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Self-care program education maps well"
+}
+mapping "QV004.1" source="QV004" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dual: KVA info about investigations/treatments = SNOMED CT self-care education; broader but related
+        """
+}
+mapping "QV005.1" source="QV005" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA nutrition education; SNOMED CT self-care education is closest"
+}
+mapping "QV006.1" source="QV006" target="410268005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: medication education is a subtype of health education/counseling"
+}
+mapping "QV007.1" source="QV007" target="225967005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA pain education; SNOMED CT self-care education is closest"
+}
+mapping "QV008.1" source="QV008" target="386467004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sexuality information/education; weak to safe sex education (related patient education)"
+}
+mapping "QV009.1" source="QV009" target="410289001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "QV009 information/undervisning familjeplanering; weak to education/counseling"
+}
+mapping "QV013.1" source="QV013" target="410289001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "QV013 foraldrautbildning; weak to education/counseling"
+}
+flag "QV015.unmapped" kind=unmapped concept="QV015" target-system="SNOMED_CT"

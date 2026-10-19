@@ -1,0 +1,205 @@
+// KVÅ medical procedures to SNOMED CT mappings, codes XS1-X
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kma-snomed-ct" version="2026.1"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "XS100.1" source="XS100" target="10378005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Unplanned inpatient admission; weak to emergency admission observation"
+}
+flag "XS155.unmapped" kind=unmapped concept="XS155" target-system="SNOMED_CT"
+mapping "XS900.1" source="XS900" target="40274000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "XS900 Enskilt besök = outpatient visit; exact match to general outpatient clinic admission"
+}
+mapping "XS903.1" source="XS903" target="41838008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Group visit/patient group session"
+}
+mapping "XS910.1" source="XS910" target="305853006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ code = occupational therapist (person); SNOMED CT = observation of service contact"
+}
+mapping "XS912.1" source="XS912" target="185284002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ dietitian consultation; SNOMED CT concept closely matches"
+}
+mapping "XS913.1" source="XS913" target="158950001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: Swedish kurator (medical social worker/counselor) maps reasonably to medical social worker
+        observation
+        """
+}
+mapping "XS916.1" source="XS916" target="252847008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: orthoptic assessment by orthoptist. Verified SNOMED CT standard concept S."
+}
+mapping "XS918.1" source="XS918" target="266739000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sjukgymnast/fysioterapeut = physiotherapist visit. Exact equivalent to SNOMED CT
+        Physiotherapy/remedial therapy.
+        """
+}
+mapping "XS919.1" source="XS919" target="281099003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ nurse contact role; SNOMED CT referral to nurse is broader but captures clinical nurse
+        encounter
+        """
+}
+mapping "XS920.1" source="XS920" target="1256111004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ codes a staff role - nursing assistant; SNOMED CT has caregiver coordination"
+}
+mapping "XS925.1" source="XS925" target="185282003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Midwife; SNOMED CT Seen by midwife close match"
+}
+flag "XS926.unmapped" kind=unmapped concept="XS926" target-system="SNOMED_CT"
+mapping "XS927.1" source="XS927" target="305559001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: kontaktsjuksköterska (contact nurse) maps reasonably to contact tracing nurse observation
+        """
+}
+flag "XS928.unmapped" kind=unmapped concept="XS928" target-system="SNOMED_CT"
+flag "XS929.unmapped" kind=unmapped concept="XS929" target-system="SNOMED_CT"
+flag "XS930.unmapped" kind=unmapped concept="XS930" target-system="SNOMED_CT"
+mapping "XT003.1" source="XT003" target="410268005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Referral to dental care; no good match; nursing care is very loose."
+}
+mapping "XU000.1" source="XU000" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are physical restraint procedures; same concept domain"
+}
+mapping "XU003.1" source="XU003" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Physical restraint 4-72h per Swedish law; matches legal physical restraint procedure in SNOMED CT
+        """
+}
+flag "XU007.unmapped" kind=unmapped concept="XU007" target-system="SNOMED_CT"
+mapping "XU008.1" source="XU008" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Loose: KVA is duration-specific physical restraint of minors; SNOMED CT has general legal physical
+        restraint
+        """
+}
+flag "XU010.unmapped" kind=unmapped concept="XU010" target-system="SNOMED_CT"
+mapping "XU012.1" source="XU012" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Seclusion 8-72 hours; captures compulsory isolation"
+}
+mapping "XU014.1" source="XU014" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Seclusion 72h-15 days"
+}
+flag "XU015.unmapped" kind=unmapped concept="XU015" target-system="SNOMED_CT"
+flag "XU016.unmapped" kind=unmapped concept="XU016" target-system="SNOMED_CT"
+flag "XU017.unmapped" kind=unmapped concept="XU017" target-system="SNOMED_CT"
+flag "XU018.unmapped" kind=unmapped concept="XU018" target-system="SNOMED_CT"
+flag "XU023.unmapped" kind=unmapped concept="XU023" target-system="SNOMED_CT"
+mapping "XU024.1" source="XU024" target="385810009" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tube insertion with restraint; SNOMED CT tube insertion assessment is loose parent"
+}
+mapping "XU027.1" source="XU027" target="23835007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100112973 23835007 = ECT with physical restraint support; the core procedure is
+        ECT; restraint detail has
+        """
+}
+flag "XU031.unmapped" kind=unmapped concept="XU031" target-system="SNOMED_CT"
+flag "XU032.unmapped" kind=unmapped concept="XU032" target-system="SNOMED_CT"
+mapping "XU033.1" source="XU033" target="274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: medication administration under restraint. No SNOMED CT equivalent"
+}
+flag "XU034.unmapped" kind=unmapped concept="XU034" target-system="SNOMED_CT"
+mapping "XU037.1" source="XU037" target="23835007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Elektrokonvulsiv terapi (ECT) utförd under fastspänning = electroconvulsive therapy performed
+        under restraint; (23835007) is the exa
+        """
+}
+mapping "XU044.1" source="XU044" target="76464004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transfer from forensic psychiatric care to compulsory psychiatric care; observation is a loose
+        proxy.
+        """
+}
+mapping "XU060.1" source="XU060" target="405688008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Body search per legal decision; legal physical restraint is related but body search is a
+        different procedure
+        """
+}
+flag "XU061.unmapped" kind=unmapped concept="XU061" target-system="SNOMED_CT"
+mapping "XV001.1" source="XV001" target="229197007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XV004.1" source="XV004" target="519701000000105" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Journal documentation UNS = unspecific documentation; weak to clinical documentation assessment
+        """
+}
+mapping "XV005.1" source="XV005" target="312854002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: assessment of referral/lab results without patient present. Sweden-specific admin workflow
+        """
+}
+mapping "XV014.1" source="XV014" target="76464004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Constant sitter >8h (extravak); hospital observation is a loose proxy for constant monitoring.
+        """
+}
+mapping "XV018.1" source="XV018" target="273526008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Breakpoint conversation is Swedish psychosocial intervention; human interaction assessment
+        captures relational assessment aspect
+        """
+}
+mapping "XV019.1" source="XV019" target="399414003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cancer care plan establishment is related to multidisciplinary cancer care planning conference
+        """
+}
+mapping "XV020.1" source="XV020" target="711069006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Revidering av SNOMED CT 2100113007 711069006 inom cancervaarden = revision of within cancer care;
+        coordination of care plan is closest equivalent, verified as S
+        """
+}
+mapping "XV021.1" source="XV021" target="1239511000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA gathering information before medication review = SNOMED CT structured medication review; good
+        match
+        """
+}
+flag "XV023.unmapped" kind=unmapped concept="XV023" target-system="SNOMED_CT"
+flag "XV027.unmapped" kind=unmapped concept="XV027" target-system="SNOMED_CT"
+flag "XV028.unmapped" kind=unmapped concept="XV028" target-system="SNOMED_CT"
+flag "XV030.unmapped" kind=unmapped concept="XV030" target-system="SNOMED_CT"
