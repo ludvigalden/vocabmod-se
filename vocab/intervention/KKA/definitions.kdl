@@ -10,6 +10,20 @@ context {
 category "procedure" {
     name "en" "KVÅ surgical procedure"
 }
+collection "kka-omop-custom" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KVÅ surgical procedures (KKÅ) to OMOP custom concepts"
+    authors "ludvig-alden"
+    source system="KKA" release="2026"
+    target system="OMOP_CUSTOM"
+    defaults {
+        mappings {
+            claim-scope "kka-omop-custom@2026.1"
+        }
+    }
+    import "OMOP_CUSTOM/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "kka-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "KVÅ surgical procedures (KKÅ) to SNOMED CT"
     authors "ludvig-alden"
