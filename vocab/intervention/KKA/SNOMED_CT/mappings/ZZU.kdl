@@ -1,0 +1,16 @@
+// KVÅ surgical procedures to SNOMED CT mappings, code ZZU10
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ZZU10.1" source="ZZU10" target="SNOMED_CT:34489002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fritt transplantat av bindehinna = free graft of conjunctiva. Exact SNOMED CT equivalent."
+}

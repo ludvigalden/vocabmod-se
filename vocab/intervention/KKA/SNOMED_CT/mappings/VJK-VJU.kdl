@@ -1,0 +1,200 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VJK-VJU
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VJK00.unmapped" kind=unmapped concept="VJK00" target-system="SNOMED_CT"
+flag "VJK18.unmapped" kind=unmapped concept="VJK18" target-system="SNOMED_CT"
+flag "VJK28.unmapped" kind=unmapped concept="VJK28" target-system="SNOMED_CT"
+flag "VJK38.unmapped" kind=unmapped concept="VJK38" target-system="SNOMED_CT"
+flag "VJK44.unmapped" kind=unmapped concept="VJK44" target-system="SNOMED_CT"
+flag "VJK45.unmapped" kind=unmapped concept="VJK45" target-system="SNOMED_CT"
+mapping "VJK55.1" source="VJK55" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+flag "VJL00.unmapped" kind=unmapped concept="VJL00" target-system="SNOMED_CT"
+flag "VJL09.unmapped" kind=unmapped concept="VJL09" target-system="SNOMED_CT"
+flag "VJL18.unmapped" kind=unmapped concept="VJL18" target-system="SNOMED_CT"
+flag "VJL28.unmapped" kind=unmapped concept="VJL28" target-system="SNOMED_CT"
+flag "VJL38.unmapped" kind=unmapped concept="VJL38" target-system="SNOMED_CT"
+flag "VJL44.unmapped" kind=unmapped concept="VJL44" target-system="SNOMED_CT"
+flag "VJL55.unmapped" kind=unmapped concept="VJL55" target-system="SNOMED_CT"
+flag "VJN11.unmapped" kind=unmapped concept="VJN11" target-system="SNOMED_CT"
+flag "VJN12.unmapped" kind=unmapped concept="VJN12" target-system="SNOMED_CT"
+flag "VJN18.unmapped" kind=unmapped concept="VJN18" target-system="SNOMED_CT"
+flag "VJN22.unmapped" kind=unmapped concept="VJN22" target-system="SNOMED_CT"
+flag "VJN28.unmapped" kind=unmapped concept="VJN28" target-system="SNOMED_CT"
+mapping "VJN33.1" source="VJN33" target="SNOMED_CT:431658009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: PTA/SAP of SFA; weak to fluoroscopy guided PTA of SFA"
+}
+mapping "VJN38.1" source="VJN38" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA/SAP in AV graft/fistel from superficial femoral artery; vascular procedure parent"
+}
+flag "VJN44.unmapped" kind=unmapped concept="VJN44" target-system="SNOMED_CT"
+flag "VJN45.unmapped" kind=unmapped concept="VJN45" target-system="SNOMED_CT"
+flag "VJN55.unmapped" kind=unmapped concept="VJN55" target-system="SNOMED_CT"
+flag "VJP12.unmapped" kind=unmapped concept="VJP12" target-system="SNOMED_CT"
+flag "VJP18.unmapped" kind=unmapped concept="VJP18" target-system="SNOMED_CT"
+flag "VJP28.unmapped" kind=unmapped concept="VJP28" target-system="SNOMED_CT"
+flag "VJP38.unmapped" kind=unmapped concept="VJP38" target-system="SNOMED_CT"
+flag "VJP44.unmapped" kind=unmapped concept="VJP44" target-system="SNOMED_CT"
+flag "VJP45.unmapped" kind=unmapped concept="VJP45" target-system="SNOMED_CT"
+mapping "VJP55.1" source="VJP55" target="SNOMED_CT:233411001" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovascular stent insertion in below-knee popliteal artery. Direct match."
+}
+flag "VJQ18.unmapped" kind=unmapped concept="VJQ18" target-system="SNOMED_CT"
+mapping "VJQ28.1" source="VJQ28" target="SNOMED_CT:441598001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular stent graft in AV-graft/fistula from deep femoral artery = endovascular insertion
+        of stent graft. Broader (not site-specific). Verified SNOMED CT S.
+        """
+}
+flag "VJQ38.unmapped" kind=unmapped concept="VJQ38" target-system="SNOMED_CT"
+mapping "VJQ45.1" source="VJQ45" target="SNOMED_CT:434365006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: endovascular stent graft insertion from above-knee popliteal to below-knee popliteal.
+        SNOMED CT Fluoroscopic angiography of popliteal artery with stent graft insertion captures the
+        procedure.
+        """
+}
+mapping "VJR11.1" source="VJR11" target="SNOMED_CT:233338007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis of common femoral artery maps exactly to percutaneous thrombolysis of common
+        femoral artery
+        """
+}
+mapping "VJR12.1" source="VJR12" target="SNOMED_CT:233340002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis femoral communis to profunda femoris; SNOMED CT covers the profunda femoris
+        component.
+        """
+}
+flag "VJR18.unmapped" kind=unmapped concept="VJR18" target-system="SNOMED_CT"
+mapping "VJR22.1" source="VJR22" target="SNOMED_CT:233340002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: local thrombolysis in profunda femoris. SNOMED CT 2100126166 233340002 (approach)
+        and (delivery method) are clinically equivalent for thrombolysis. Ve
+        """
+}
+mapping "VJR28.1" source="VJR28" target="SNOMED_CT:276998004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis of AV-graft/fistula from profunda femoris; SNOMED CT percutaneous thrombolysis
+        of AV fistula matches
+        """
+}
+mapping "VJR33.1" source="VJR33" target="SNOMED_CT:233339004" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in superficial femoral artery; exact match with SNOMED CT"
+}
+mapping "VJR38.1" source="VJR38" target="SNOMED_CT:233339004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100126169 233339004; maps to SNOMED CT whic"
+}
+mapping "VJR44.1" source="VJR44" target="SNOMED_CT:233341003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lokal trombolys i a. poplitea ovanfoer kneleden = local thrombolysis in popliteal artery above
+        knee; percutaneous thrombolysis of popliteal artery is exact matc
+        """
+}
+flag "VJR45.unmapped" kind=unmapped concept="VJR45" target-system="SNOMED_CT"
+mapping "VJR55.1" source="VJR55" target="SNOMED_CT:233341003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "VJS11.unmapped" kind=unmapped concept="VJS11" target-system="SNOMED_CT"
+flag "VJS12.unmapped" kind=unmapped concept="VJS12" target-system="SNOMED_CT"
+flag "VJS18.unmapped" kind=unmapped concept="VJS18" target-system="SNOMED_CT"
+flag "VJS22.unmapped" kind=unmapped concept="VJS22" target-system="SNOMED_CT"
+flag "VJS28.unmapped" kind=unmapped concept="VJS28" target-system="SNOMED_CT"
+mapping "VJS33.1" source="VJS33" target="SNOMED_CT:312689003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous mechanical thrombectomy/embolectomy in superficial femoral artery = Superficial
+        femoral embolectomy (exact match)
+        """
+}
+mapping "VJS38.1" source="VJS38" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous mechanical thrombectomy in AV graft from superficial femoral artery; percutaneous
+        thrombectomy is loose.
+        """
+}
+mapping "VJS44.1" source="VJS44" target="SNOMED_CT:175718001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ perkutan mekanisk trombektomi/embolektomi i a. poplitea ovanför knäleden = percutaneous
+        embolectomy of popliteal artery; exact match
+        """
+}
+mapping "VJS45.1" source="VJS45" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are percutaneous thrombectomies; different vessel type - arterial popliteal vs venous"
+}
+mapping "VJS55.1" source="VJS55" target="SNOMED_CT:175718001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan mekanisk trombektomi eller embolektomi i a. poplitea nedanför knäleden (percutaneous
+        mechanical thrombectomy/embolectomy in popliteal artery below knee
+        """
+}
+flag "VJT08.unmapped" kind=unmapped concept="VJT08" target-system="SNOMED_CT"
+flag "VJT11.unmapped" kind=unmapped concept="VJT11" target-system="SNOMED_CT"
+flag "VJT12.unmapped" kind=unmapped concept="VJT12" target-system="SNOMED_CT"
+flag "VJT18.unmapped" kind=unmapped concept="VJT18" target-system="SNOMED_CT"
+flag "VJT22.unmapped" kind=unmapped concept="VJT22" target-system="SNOMED_CT"
+mapping "VJT28.1" source="VJT28" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+mapping "VJT33.1" source="VJT33" target="SNOMED_CT:429381005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular insertion of occluding material in a. femoralis superficialis maps to endovascular
+        insertion of stent
+        """
+}
+flag "VJT38.unmapped" kind=unmapped concept="VJT38" target-system="SNOMED_CT"
+flag "VJT44.unmapped" kind=unmapped concept="VJT44" target-system="SNOMED_CT"
+flag "VJT45.unmapped" kind=unmapped concept="VJT45" target-system="SNOMED_CT"
+flag "VJT55.unmapped" kind=unmapped concept="VJT55" target-system="SNOMED_CT"
+flag "VJU11.unmapped" kind=unmapped concept="VJU11" target-system="SNOMED_CT"
+flag "VJU12.unmapped" kind=unmapped concept="VJU12" target-system="SNOMED_CT"
+mapping "VJU18.1" source="VJU18" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: endovascular foreign body removal from femoral AV graft. No SNOMED CT match"
+}
+flag "VJU22.unmapped" kind=unmapped concept="VJU22" target-system="SNOMED_CT"
+flag "VJU28.unmapped" kind=unmapped concept="VJU28" target-system="SNOMED_CT"
+flag "VJU33.unmapped" kind=unmapped concept="VJU33" target-system="SNOMED_CT"
+flag "VJU38.unmapped" kind=unmapped concept="VJU38" target-system="SNOMED_CT"
+flag "VJU44.unmapped" kind=unmapped concept="VJU44" target-system="SNOMED_CT"
+mapping "VJU45.1" source="VJU45" target="SNOMED_CT:277989007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: foreign body removal from popliteal artery; weak to vein foreign body removal"
+}
+mapping "VJU55.1" source="VJU55" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular extraction of foreign material from popliteal artery below knee; vascular procedure
+        parent
+        """
+}

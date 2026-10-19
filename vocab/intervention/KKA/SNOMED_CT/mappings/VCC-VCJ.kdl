@@ -1,0 +1,204 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VCC-VCJ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VCC00.unmapped" kind=unmapped concept="VCC00" target-system="SNOMED_CT"
+flag "VCC08.unmapped" kind=unmapped concept="VCC08" target-system="SNOMED_CT"
+flag "VCC10.unmapped" kind=unmapped concept="VCC10" target-system="SNOMED_CT"
+mapping "VCC11.1" source="VCC11" target="SNOMED_CT:1280009009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VCC22.1" source="VCC22" target="SNOMED_CT:53412000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligation or division of common carotid artery: (53412000), confirmed SNOMED CT standard; the KVAA
+        adds 'or divisio
+        """ suspect=quoted-text
+}
+mapping "VCC33.1" source="VCC33" target="SNOMED_CT:22928005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligatur eller delning av a. carotis interna = ligation or division of internal carotid artery;
+        (22928005) is the exact equ
+        """
+}
+mapping "VCC44.1" source="VCC44" target="SNOMED_CT:59109003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125497 59109003 = ligation or division of external carotid artery; exact match
+        to SNOMED CT 'Ligation of external carotid artery
+        """ suspect=quoted-text
+}
+flag "VCC55.unmapped" kind=unmapped concept="VCC55" target-system="SNOMED_CT"
+mapping "VCC99.1" source="VCC99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCC99 SNOMED CT 175378009 = Ligation or division of other artery in extracranial carotid
+        territory (KVÅ residual). Target. Source is arterial ligation/division; target covers open
+        carotid operations broadly. Broader. Low tier: no crosswalk.
+        """
+}
+mapping "VCE00.1" source="VCE00" target="SNOMED_CT:175729002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies carotid and prior reconstruction context; SNOMED CT is parent concept for arterial
+        reconstruction revision
+        """
+}
+mapping "VCE10.1" source="VCE10" target="SNOMED_CT:55377001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match: thrombectomy/embolectomy in previous reconstruction of brachiocephalic trunk;
+        SNOMED CT 'Embolectomy with catheter of innominate artery by arm incis
+        """ suspect=quoted-text
+}
+flag "VCE11.unmapped" kind=unmapped concept="VCE11" target-system="SNOMED_CT"
+mapping "VCE22.1" source="VCE22" target="SNOMED_CT:302053004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Trombektomi eller embolektomi i a. carotis communis = thrombectomy or embolectomy of common
+        carotid artery. Best match: Embolectomy of carotid artery (3020
+        """
+}
+flag "VCE33.unmapped" kind=unmapped concept="VCE33" target-system="SNOMED_CT"
+mapping "VCE44.1" source="VCE44" target="SNOMED_CT:302053004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi eller embolektomi i a. carotis externa = thrombectomy or embolectomy of external
+        carotid artery. SNOMED CT 2100125505 302053004 is the closest equi
+        """
+}
+mapping "VCE99.1" source="VCE99" target="SNOMED_CT:175750006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCE99 SNOMED CT 175750006 = Thrombectomy or embolectomy of other artery in extracranial
+        carotid territory (KVÅ residual). Target. Source covers thrombectomy/embolectomy in carotid
+        territory; target covers open arterial embolectomy generally. Broader. Low tier: no crosswalk,
+        carotid territory specificity partially lost.
+        """
+}
+mapping "VCF22.1" source="VCF22" target="SNOMED_CT:233298008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VCF33.1" source="VCF33" target="SNOMED_CT:233296007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VCF44.1" source="VCF44" target="SNOMED_CT:233297003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VCF99.1" source="VCF99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCF99 SNOMED CT 175378009 = Endarterectomy of other artery in extracranial carotid territory
+        (KVÅ residual). Target. Source is endarterectomy; target covers open carotid operations broadly.
+        Broader. Low tier: no crosswalk, target loses endarterectomy specificity.
+        """
+}
+flag "VCG00.unmapped" kind=unmapped concept="VCG00" target-system="SNOMED_CT"
+flag "VCG10.unmapped" kind=unmapped concept="VCG10" target-system="SNOMED_CT"
+flag "VCG11.unmapped" kind=unmapped concept="VCG11" target-system="SNOMED_CT"
+mapping "VCG22.1" source="VCG22" target="SNOMED_CT:15023006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open plasty of common carotid artery; SNOMED CT carotid endarterectomy with graft is related"
+}
+mapping "VCG23.1" source="VCG23" target="SNOMED_CT:15023006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open carotis communis to interna patch; SNOMED CT carotid endarterectomy with graft is close
+        vascular procedure match
+        """
+}
+mapping "VCG33.1" source="VCG33" target="SNOMED_CT:15023006" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: open plasty on internal carotid artery. SNOMED CT Thromboendarterectomy with graft of carotid
+        artery by neck incision is the closest match (open carotid procedure). KVÅ is broader (plasty vs
+        endarterectomy specifically).
+        """
+}
+flag "VCG44.unmapped" kind=unmapped concept="VCG44" target-system="SNOMED_CT"
+mapping "VCG99.1" source="VCG99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCG99 SNOMED CT 175378009 = Open plasty/repair of other artery in extracranial carotid
+        territory (KVÅ residual). Target. Source is open arterial repair/plasty; target covers open
+        carotid operations broadly. Broader. Low tier: no crosswalk.
+        """
+}
+flag "VCH22.unmapped" kind=unmapped concept="VCH22" target-system="SNOMED_CT"
+flag "VCH33.unmapped" kind=unmapped concept="VCH33" target-system="SNOMED_CT"
+flag "VCH34.unmapped" kind=unmapped concept="VCH34" target-system="SNOMED_CT"
+flag "VCH44.unmapped" kind=unmapped concept="VCH44" target-system="SNOMED_CT"
+mapping "VCH92.1" source="VCH92" target="SNOMED_CT:28067008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transposition eller reimplantation av annan artär till a. carotis communis = transposition or
+        reimplantation of another artery to common carotid. 'Reimplantatio
+        """
+}
+mapping "VCH99.1" source="VCH99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCH99 SNOMED CT 175378009 = Transposition or reimplantation of other artery in extracranial
+        carotid territory (KVÅ residual). Target. Source is arterial transposition/reimplantation;
+        target covers open carotid operations broadly. Broader. Low tier: no crosswalk.
+        """
+}
+flag "VCJ00.unmapped" kind=unmapped concept="VCJ00" target-system="SNOMED_CT"
+flag "VCJ10.unmapped" kind=unmapped concept="VCJ10" target-system="SNOMED_CT"
+mapping "VCJ11.1" source="VCJ11" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interposition graft in truncus brachiocephalicus maps to interposition arterial graft"
+}
+mapping "VCJ17.1" source="VCJ17" target="SNOMED_CT:112823003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dual: KVA brachiocephalic bypass; SNOMED CT aorta-carotid-brachial bypass related vascular
+        procedure
+        """
+}
+flag "VCJ19.unmapped" kind=unmapped concept="VCJ19" target-system="SNOMED_CT"
+flag "VCJ22.unmapped" kind=unmapped concept="VCJ22" target-system="SNOMED_CT"
+flag "VCJ23.unmapped" kind=unmapped concept="VCJ23" target-system="SNOMED_CT"
+flag "VCJ26.unmapped" kind=unmapped concept="VCJ26" target-system="SNOMED_CT"
+mapping "VCJ27.1" source="VCJ27" target="SNOMED_CT:25328006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Carotid bypass to contralateral artery; SNOMED CT has general arterial bypass"
+}
+mapping "VCJ29.1" source="VCJ29" target="SNOMED_CT:80102005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or extra-anatomic revascularization from common carotid to other artery; carotid bypass
+        is related.
+        """
+}
+mapping "VCJ33.1" source="VCJ33" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interposition graft in internal carotid artery. SNOMED CT 2100125537 233385001 is the parent
+        concept; the carotid specificity is not captured but the pro
+        """
+}
+mapping "VCJ39.1" source="VCJ39" target="SNOMED_CT:15023006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are carotid artery procedures with graft; different operations - bypass vs endarterectomy
+        """
+}
+flag "VCJ44.unmapped" kind=unmapped concept="VCJ44" target-system="SNOMED_CT"
+mapping "VCJ59.1" source="VCJ59" target="SNOMED_CT:427486009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125540 427486009 = bypass from temporal artery to middle cerebral artery; SNOMED CT
+        concept is exact equivalent (STA-MCA bypas
+        """
+}

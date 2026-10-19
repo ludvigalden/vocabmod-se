@@ -1,0 +1,206 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes KDH-KFC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "KDH62.1" source="KDH62" target="SNOMED_CT:277762005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoluminal urethral stricture recanalization; no close SNOMED CT match - lumbar puncture is
+        distant but resident
+        """
+}
+mapping "KDH70.1" source="KDH70" target="SNOMED_CT:236273003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plastikoperation vid uretrastriktur = plastic surgery for urethral stricture; urethroplasty for
+        stricture is exact match
+        """
+}
+mapping "KDH96.1" source="KDH96" target="SNOMED_CT:236281002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other urethral reconstruction; parent is one-stage urethral reconstruction"
+}
+mapping "KDH98.1" source="KDH98" target="SNOMED_CT:176341004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other endoscopic urethral reconstruction; weak to pedicle flap urethroplasty (related urethral
+        procedure)
+        """
+}
+mapping "KDJ10.1" source="KDJ10" target="SNOMED_CT:228806004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: revision of urethrostomy; precise SNOMED CT match."
+}
+mapping "KDK30.1" source="KDK30" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "KDK31.unmapped" kind=unmapped concept="KDK31" target-system="SNOMED_CT"
+mapping "KDK40.1" source="KDK40" target="SNOMED_CT:89329002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open approach and generic sphincter; SNOMED CT is urinary-specific and omits approach
+        — reasonable site-specific match
+        """
+}
+mapping "KDV12.1" source="KDV12" target="SNOMED_CT:288016004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100122782 288016004 = transurethral urethrotomy; exact match to SNOMED CT Internal
+        urethrotomy (the standard term for transurethral urethrotomy)
+        """
+}
+mapping "KDV14.1" source="KDV14" target="SNOMED_CT:288016004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Antegrade transcystourethral urethrotomy"
+}
+flag "KDV18.unmapped" kind=unmapped concept="KDV18" target-system="SNOMED_CT"
+mapping "KDV21.1" source="KDV21" target="SNOMED_CT:449355001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is approach-agnostic paraurethral injection; SNOMED CT adds transurethral approach qualifier
+        """
+}
+mapping "KDV22.1" source="KDV22" target="SNOMED_CT:265587004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ transluminal endoscopic submucosal urethral injection; SNOMED CT 265587004 is closest
+        (endoscopic suburethral injection in male)
+        """
+}
+mapping "KDW96.1" source="KDW96" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on urethra; no good match."
+}
+mapping "KEA00.1" source="KEA00" target="SNOMED_CT:51715005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exploration of prostate/seminal vesicles maps to prostate exploration"
+}
+mapping "KEA32.1" source="KEA32" target="SNOMED_CT:386745004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transuretral vesikuloskopi = transurethral vesiculoscopy (examination of seminal vesicles via
+        cystoscope). SNOMED CT 2100122792 386745004 is the parent procedure; v
+        """
+}
+mapping "KEB00.1" source="KEB00" target="SNOMED_CT:176268002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent verified via Athena"
+}
+mapping "KEC01.1" source="KEC01" target="SNOMED_CT:26294005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies percutaneous endoscopic approach; SNOMED CT concept is approach-agnostic radical
+        prostatectomy — high confidence exact clinical equivalence
+        """
+}
+mapping "KED00.1" source="KED00" target="SNOMED_CT:118163007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "KED02.1" source="KED02" target="SNOMED_CT:116244007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "KED22.1" source="KED22" target="SNOMED_CT:90199006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KED42.1" source="KED42" target="SNOMED_CT:87030009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        TUVP (electrovaporization) and fulguration are sibling endoscopic transurethral energy-ablation
+        techniques; (176310000) but is non-standard (U)
+        """
+}
+mapping "KED62.1" source="KED62" target="SNOMED_CT:427661008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transurethral needle ablation = transurethral radiofrequency needle ablation of prostate; needle
+        ablation is predominantly a prostate procedure and this is the
+        """
+}
+mapping "KED72.1" source="KED72" target="SNOMED_CT:310816009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transurethral microwave therapy: (310816009), confirmed SNOMED CT standard"
+}
+mapping "KED80.1" source="KED80" target="SNOMED_CT:176319004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Very close; percutaneous prostate cryotherapy in clinical practice = perineal probe approach"
+}
+flag "KED81.unmapped" kind=unmapped concept="KED81" target-system="SNOMED_CT"
+mapping "KED96.1" source="KED96" target="SNOMED_CT:68986004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are prostate resections; different approach - open vs transurethral"
+}
+flag "KED97.unmapped" kind=unmapped concept="KED97" target-system="SNOMED_CT"
+mapping "KED98.1" source="KED98" target="SNOMED_CT:314202001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other transurethral resection or destruction of prostate; residual code. SNOMED CT endoscopic
+        prostate resection is parent.
+        """
+}
+mapping "KEE02.1" source="KEE02" target="SNOMED_CT:176305004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transurethral removal of stones in prostate or seminal vesicles = Transurethral removal of
+        prostatic calculus (exact match for prostatic stones; seminal vesicle
+        """
+}
+mapping "KEE12.1" source="KEE12" target="SNOMED_CT:386752002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KEV02.1" source="KEV02" target="SNOMED_CT:87030009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Fulguration = coagulation via electrocautery; SNOMED CT matches the procedure precisely (bleeding
+        indication not encoded in SNOMED CT)
+        """
+}
+mapping "KEV15.1" source="KEV15" target="SNOMED_CT:1193607007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transurethral resection of ejaculatory ducts; exact match to SNOMED CT Transurethral excision of
+        ejaculatory duct, verified in Athena
+        """
+}
+flag "KEV25.unmapped" kind=unmapped concept="KEV25" target-system="SNOMED_CT"
+flag "KEV35.unmapped" kind=unmapped concept="KEV35" target-system="SNOMED_CT"
+mapping "KEV50.1" source="KEV50" target="SNOMED_CT:33030009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ open excision of seminal vesicle = seminal vesiculectomy"
+}
+flag "KEW97.unmapped" kind=unmapped concept="KEW97" target-system="SNOMED_CT"
+mapping "KEW98.1" source="KEW98" target="SNOMED_CT:236252003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other transurethral operation on prostate; revision TURP is different type of transurethral
+        prostate procedure
+        """
+}
+mapping "KFA96.1" source="KFA96" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other exploration/incision of scrotum; no good match."
+}
+mapping "KFB00.1" source="KFB00" target="SNOMED_CT:118958009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of testis = Biopsy of testis (exact match)"
+}
+flag "KFB96.unmapped" kind=unmapped concept="KFB96" target-system="SNOMED_CT"
+mapping "KFC00.1" source="KFC00" target="SNOMED_CT:236334001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KFC10.1" source="KFC10" target="SNOMED_CT:236334001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "KFC96.1" source="KFC96" target="SNOMED_CT:236334001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other excision of testis; SNOMED CT total orchidectomy is closest"
+}
+flag "KFC97.unmapped" kind=unmapped concept="KFC97" target-system="SNOMED_CT"

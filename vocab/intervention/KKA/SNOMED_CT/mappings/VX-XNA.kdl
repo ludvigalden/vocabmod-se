@@ -1,0 +1,216 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VX-XNA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VXA10.1" source="VXA10" target="SNOMED_CT:396487001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration of cervical lymph nodes with possible biopsy; SNOMED CT SLNB is related but different
+        """
+}
+flag "VXA20.unmapped" kind=unmapped concept="VXA20" target-system="SNOMED_CT"
+flag "VXA30.unmapped" kind=unmapped concept="VXA30" target-system="SNOMED_CT"
+mapping "VXA40.1" source="VXA40" target="SNOMED_CT:310666000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exploration of iliac lymph nodes with possible biopsy; SNOMED CT has pelvic lymph node biopsy"
+}
+flag "VXA50.unmapped" kind=unmapped concept="VXA50" target-system="SNOMED_CT"
+mapping "VXA60.1" source="VXA60" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: exploration of other lymph nodes with possible biopsy. No specific SNOMED CT match"
+}
+mapping "VXH72.1" source="VXH72" target="SNOMED_CT:234300000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VXK11.1" source="VXK11" target="SNOMED_CT:53103008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation av cervikala lymfknutor (extirpation of cervical lymph nodes) maps to SNOMED CT
+        2100126651 53103008. Verified: SNOMED CT S
+        """
+}
+mapping "VXK21.1" source="VXK21" target="SNOMED_CT:408484000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extirpation of axillary lymph nodes maps to. KVAA does not specify level; Level 1 is standard
+        axillary clearance. Verified SNOMED CT S.
+        """
+}
+flag "VXK31.unmapped" kind=unmapped concept="VXK31" target-system="SNOMED_CT"
+flag "VXK37.unmapped" kind=unmapped concept="VXK37" target-system="SNOMED_CT"
+flag "VXK41.unmapped" kind=unmapped concept="VXK41" target-system="SNOMED_CT"
+flag "VXK47.unmapped" kind=unmapped concept="VXK47" target-system="SNOMED_CT"
+mapping "VXK51.1" source="VXK51" target="SNOMED_CT:21486002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA VXK51 = excision of inguinal lymph nodes. SNOMED CT 21486002. Exact match."
+}
+mapping "VXK61.1" source="VXK61" target="SNOMED_CT:27842006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of other lymph nodes; SNOMED CT radical excision of lymph nodes is a reasonable parent
+        match.
+        """
+}
+mapping "VXK66.1" source="VXK66" target="SNOMED_CT:234248001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VXL00.1" source="VXL00" target="SNOMED_CT:27842006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: other open lymph node operation; weak to radical lymph node excision"
+}
+mapping "VXL90.1" source="VXL90" target="SNOMED_CT:118813004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other open operation on lymphatic vessel: (118813004), confirmed SNOMED CT standard"
+}
+mapping "VXT90.1" source="VXT90" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular insertion of occluding material in other lymphatic vessel; vascular procedure
+        parent
+        """
+}
+flag "VXW70.unmapped" kind=unmapped concept="VXW70" target-system="SNOMED_CT"
+flag "VXW90.unmapped" kind=unmapped concept="VXW90" target-system="SNOMED_CT"
+mapping "XAB10.1" source="XAB10" target="SNOMED_CT:11285004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Diagnostic root block (diagnostic nerve block for spinal root) maps to SNOMED CT 4012940 SNOMED CT
+        11285004 2100126673
+        """
+}
+mapping "XAW99.1" source="XAW99" target="SNOMED_CT:14772002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAW99 SNOMED CT 14772002 = Other diagnostic procedure in neurosurgery (KVÅ residual).
+        Target. Source covers diagnostic procedures across all of neurosurgery (brain, spine, peripheral
+        nerves); target covers only diagnostic procedures on the brain. Weak tier: target loses the
+        spine/peripheral nerve scope.
+        """
+}
+mapping "XCC00.1" source="XCC00" target="SNOMED_CT:252825008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XCD10.1" source="XCD10" target="SNOMED_CT:6615001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Electrophysiological eye examination is broader (includes VEP"
+}
+mapping "XCK10.1" source="XCK10" target="SNOMED_CT:20067007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "XFN96.1" source="XFN96" target="SNOMED_CT:28903008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other intraoperative angioscopic examination; SNOMED CT percutaneous angioscopy is parent"
+}
+mapping "XGX02.1" source="XGX02" target="SNOMED_CT:105376000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ code is non-cardiac transesophageal ultrasound; SNOMED CT TEE is cardiac-specific — same
+        route/modality but different organ scope
+        """
+}
+mapping "XGX10.1" source="XGX10" target="SNOMED_CT:16310003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XJA00.1" source="XJA00" target="SNOMED_CT:16310003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XJC00.1" source="XJC00" target="SNOMED_CT:20816008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ esofagusmanometri = esophageal manometry; exact clinical and terminological match"
+}
+mapping "XJC10.1" source="XJC10" target="SNOMED_CT:446460000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        pH measurement in esophagus corresponds clinically to esophageal pH monitoring. The most
+        specific SNOMED CT match is SNOMED CT 2100126704 446460000, which represent
+        """
+}
+mapping "XJC20.1" source="XJC20" target="SNOMED_CT:57338000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100126705 57338000 - the description says but in clinical context this likely
+        refers to esophageal ECG (re
+        """
+}
+mapping "XJF00.1" source="XJF00" target="SNOMED_CT:16310003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XJH00.1" source="XJH00" target="SNOMED_CT:16310003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XJH10.1" source="XJH10" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: anorectal manovolumetry. No SNOMED CT equivalent found"
+}
+mapping "XJH20.1" source="XJH20" target="SNOMED_CT:252758009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Electromyography of anal sphincter. Direct exact match. Verified standard SNOMED CT concept."
+}
+mapping "XKA00.1" source="XKA00" target="SNOMED_CT:252901001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Whitaker test is the standard upper tract urodynamics procedure; SNOMED CT concept is near-exact
+        match but in Measurement domain
+        """
+}
+mapping "XKA10.1" source="XKA10" target="SNOMED_CT:418462009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraoperativ antegrad pyelografi eller pyelouretärografi = intraoperative antegrade pyelography
+        or pyeloureterography. SNOMED CT 2100126719 418462009 is
+        """
+}
+flag "XKB00.unmapped" kind=unmapped concept="XKB00" target-system="SNOMED_CT"
+mapping "XKC03.1" source="XKC03" target="SNOMED_CT:46612006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cystometri = cystometry. SNOMED CT 2100126721 46612006 is the standard measurement term for bladder
+        pressure studies. Exact clinical equivalent. Verified in CONCEPT.csv: SNO
+        """
+}
+mapping "XKD00.1" source="XKD00" target="SNOMED_CT:44856007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ urinflödesmätning/miktografi = SNOMED CT Uroflowmetry"
+}
+mapping "XKD03.1" source="XKD03" target="SNOMED_CT:32399007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "XKD04.1" source="XKD04" target="SNOMED_CT:49376005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Elektromyografi av uretrasfinkter = electromyography of urethral sphincter; exact clinical
+        match.
+        """
+}
+mapping "XKD06.1" source="XKD06" target="SNOMED_CT:252895004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        kka_note confirms pressure and flow study = urodynamics; Measurement domain appropriate for
+        diagnostic investigation
+        """
+}
+mapping "XKD10.1" source="XKD10" target="SNOMED_CT:241488007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "XKW96.unmapped" kind=unmapped concept="XKW96" target-system="SNOMED_CT"
+flag "XKW97.unmapped" kind=unmapped concept="XKW97" target-system="SNOMED_CT"
+flag "XKW98.unmapped" kind=unmapped concept="XKW98" target-system="SNOMED_CT"
+mapping "XLW99.1" source="XLW99" target="SNOMED_CT:128312004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XNA10.1" source="XNA10" target="SNOMED_CT:231210007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "XNA20.1" source="XNA20" target="SNOMED_CT:400922006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: Bruckner test (red reflex screening in infants). Verified SNOMED CT S."
+}

@@ -1,0 +1,250 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes TJD-TNA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "TJD00.1" source="TJD00" target="SNOMED_CT:87750000" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Nasogastric/nasogastroduodenal tube = NG tube insertion; near-exact match"
+}
+mapping "TJD10.1" source="TJD10" target="SNOMED_CT:173765009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other tube in stomach or duodenum; attention to gastrostomy tube is loose."
+}
+mapping "TJF10.1" source="TJF10" target="SNOMED_CT:47441000087101" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Jejunum tube via gastrostomy = gastrojejunostomy tube feeding. Exact match. Verified SNOMED CT S.
+        """
+}
+mapping "TJF20.1" source="TJF20" target="SNOMED_CT:119286000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Peroral small bowel biopsy maps exactly to biopsy of small intestine"
+}
+mapping "TJF30.1" source="TJF30" target="SNOMED_CT:433158000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100125019 433158000 = reduction of intussusception under radiographic/fluoroscopic
+        guidance; exact match to SNOMED CT concept
+        """
+}
+mapping "TJJ00.1" source="TJJ00" target="SNOMED_CT:86259008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous needle biopsy of liver = Biopsy of liver (SNOMED CT 86259008)"
+}
+mapping "TJK00.1" source="TJK00" target="SNOMED_CT:16456981000119100" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Very close match; SNOMED CT specifies fluoroscopic with contrast whereas KVÅ code covers any
+        peroperative cholangiography method.
+        """
+}
+mapping "TJL00.1" source="TJL00" target="SNOMED_CT:426070001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous puncture biopsy of pancreas maps exactly to Percutaneous biopsy of lesion of
+        pancreas.
+        """
+}
+mapping "TJL10.1" source="TJL10" target="SNOMED_CT:314612002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA is percutaneous drainage of pancreatic abscess or pseudocyst; SNOMED CT 2100125027
+        314612002 matches the abscess portion exactly but does not incl
+        """
+}
+mapping "TKA00.1" source="TKA00" target="SNOMED_CT:265556001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Needle biopsy of kidney or renal pelvis: (265556001), confirmed SNOMED CT standard"
+}
+mapping "TKA05.1" source="TKA05" target="SNOMED_CT:48426002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125031 48426002 = aspiration cytology of kidney; SNOMED CT is the closest clinical
+        equivalent (aspiration cytolog
+        """
+}
+mapping "TKA10.1" source="TKA10" target="SNOMED_CT:313270001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ perkutan nefropyelostomi = percutaneous nephrostomy tube insertion"
+}
+flag "TKA12.unmapped" kind=unmapped concept="TKA12" target-system="SNOMED_CT"
+flag "TKA14.unmapped" kind=unmapped concept="TKA14" target-system="SNOMED_CT"
+flag "TKA30.unmapped" kind=unmapped concept="TKA30" target-system="SNOMED_CT"
+flag "TKB00.unmapped" kind=unmapped concept="TKB00" target-system="SNOMED_CT"
+mapping "TKB10.1" source="TKB10" target="SNOMED_CT:178728009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 178728009 2100125039 = extraction of internal ureteral stent using special
+        instrument; SNOMED CT 'Removal of urete
+        """ suspect=quoted-text
+}
+mapping "TKC10.1" source="TKC10" target="SNOMED_CT:447944000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ percutaneous bladder puncture covers both aspiration and drainage; SNOMED CT concept
+        specifically denotes aspiration
+        """
+}
+mapping "TKC20.1" source="TKC20" target="SNOMED_CT:410021007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: KKÅ catheterization of bladder via urethra = SNOMED CT urethral catheterization
+        """
+}
+mapping "TKC21.1" source="TKC21" target="SNOMED_CT:447379005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125042 447379005 = replacement of catheter inserted into bladder via urethra;
+        SNOMED CT 447379005 is the exact clinical e
+        """
+}
+flag "TKC22.unmapped" kind=unmapped concept="TKC22" target-system="SNOMED_CT"
+mapping "TKC25.1" source="TKC25" target="SNOMED_CT:18011004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; SNOMED CT concept denotes same procedure"
+}
+flag "TKC28.unmapped" kind=unmapped concept="TKC28" target-system="SNOMED_CT"
+flag "TKC30.unmapped" kind=unmapped concept="TKC30" target-system="SNOMED_CT"
+mapping "TKD10.1" source="TKD10" target="SNOMED_CT:1290836007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture of periurethral abscess = drainage of periurethral abscess. Exact match"
+}
+mapping "TKE05.1" source="TKE05" target="SNOMED_CT:81068001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Aspiration cytology of prostate maps exactly to fine needle aspiration biopsy of prostate"
+}
+mapping "TKE40.1" source="TKE40" target="SNOMED_CT:14750004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TKF00.1" source="TKF00" target="SNOMED_CT:118958009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture biopsy of testis maps exactly to biopsy of testis"
+}
+mapping "TKF05.1" source="TKF05" target="SNOMED_CT:708618006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA TKF05 = aspiration cytology of testis. SNOMED CT 708618006. Exact clinical equivalent;
+        aspiration cytology is a type of aspiration.
+        """
+}
+mapping "TKF10.1" source="TKF10" target="SNOMED_CT:14766002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "TKF20.unmapped" kind=unmapped concept="TKF20" target-system="SNOMED_CT"
+mapping "TKF30.1" source="TKF30" target="SNOMED_CT:303131009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ perkutan punktion av epididymis = percutaneous puncture/aspiration of epididymis; exact
+        clinical match
+        """
+}
+mapping "TKF40.1" source="TKF40" target="SNOMED_CT:303131009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: percutaneous aspiration of sperm from epididymis (PESA). Verified SNOMED CT
+        standard concept S.
+        """
+}
+mapping "TKF60.1" source="TKF60" target="SNOMED_CT:277762005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Scrotal puncture/aspiration; lumbar puncture is different body site but same procedure type"
+}
+flag "TKG10.unmapped" kind=unmapped concept="TKG10" target-system="SNOMED_CT"
+mapping "TKK05.1" source="TKK05" target="SNOMED_CT:86328009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is FNA cytology, SNOMED CT is core needle biopsy of retroperitoneal mass; similar body site and
+        approach
+        """
+}
+mapping "TKW99.1" source="TKW99" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other minor procedure on urinary tract or male genital; no good SNOMED CT match."
+}
+mapping "TLA00.1" source="TLA00" target="SNOMED_CT:67497009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: puncture biopsy ovary; weak to fine needle biopsy of ovary"
+}
+mapping "TLC00.1" source="TLC00" target="SNOMED_CT:65200003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125073 65200003 = insertion of IUD; exact SNOMED CT match verified as standard
+        concept S in CONCEPT.csv
+        """
+}
+mapping "TLC10.1" source="TLC10" target="SNOMED_CT:1263415006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 1263415006 2100125074 is exactly"
+}
+mapping "TLE10.1" source="TLE10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TLF00.1" source="TLF00" target="SNOMED_CT:442290007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Defibulering = defibulation (surgical opening of type III female genital mutilation);
+        (442290007) is the exact equivalent
+        """
+}
+mapping "TMA00.1" source="TMA00" target="SNOMED_CT:396450009" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Perineotomy during delivery; SNOMED CT Vaginoperineotomy is exact match for perineotomi"
+}
+mapping "TMA20.1" source="TMA20" target="SNOMED_CT:5556001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: manual delivery assistance at normal spontaneous delivery"
+}
+mapping "TNA00.1" source="TNA00" target="SNOMED_CT:430103002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ soft tissue puncture/biopsy of spine and neck; SNOMED CT FNA biopsy of soft tissue is parent
+        concept
+        """
+}
+mapping "TNA11.1" source="TNA11" target="SNOMED_CT:119603003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injection of diagnostic or therapeutic substance in joint of vertebral column/cervical spine
+        maps to
+        """
+}
+mapping "TNA20.1" source="TNA20" target="SNOMED_CT:9157005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Aspiration av benmärg - kotpelare och nacke = bone marrow aspiration - vertebral column and
+        neck; SNOMED CT 2100125087 9157005 in SNOMED CT includes all vertebral regions including cer
+        """
+}
+mapping "TNA31.1" source="TNA31" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: prefabricated orthosis for spine and neck. SNOMED CT lacks specific spine orthosis concept
+        """
+}
+mapping "TNA32.1" source="TNA32" target="SNOMED_CT:182555002" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: mouldable splint/spinal orthosis for spinal column and neck. SNOMED CT Application of bandage
+        is broad parent for external immobilization.
+        """
+}
+mapping "TNA39.1" source="TNA39" target="SNOMED_CT:182555002" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: other orthopedic bandaging of spinal column and neck. SNOMED CT Application of bandage is
+        broad parent. Specific spinal orthosis concepts not found.
+        """
+}
+mapping "TNA40.1" source="TNA40" target="SNOMED_CT:178789004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "TNA40 externt sträck kotpelare/nacke; weak to spinal traction"
+}

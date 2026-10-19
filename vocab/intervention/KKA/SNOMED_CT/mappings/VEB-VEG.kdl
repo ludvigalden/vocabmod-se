@@ -1,0 +1,221 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VEB-VEG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VEB00.unmapped" kind=unmapped concept="VEB00" target-system="SNOMED_CT"
+mapping "VEB11.1" source="VEB11" target="SNOMED_CT:310620005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: subclavian artery suture; weak to subclavian artery patch repair"
+}
+mapping "VEB18.1" source="VEB18" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture on AV graft/fistel from subclavian artery; vascular repair is parent"
+}
+mapping "VEB22.1" source="VEB22" target="SNOMED_CT:67727001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of vertebral artery maps well to repair of artery with suture"
+}
+flag "VEB33.unmapped" kind=unmapped concept="VEB33" target-system="SNOMED_CT"
+flag "VEB38.unmapped" kind=unmapped concept="VEB38" target-system="SNOMED_CT"
+mapping "VEB44.1" source="VEB44" target="SNOMED_CT:67727001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture on brachial artery; SNOMED CT has repair of artery with suture"
+}
+mapping "VEB48.1" source="VEB48" target="SNOMED_CT:233494008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur på AV-graft eller AV-fistel från a. brachialis = suture on AV graft or AV fistula from
+        brachial artery. SNOMED CT 2100125632 233494008 matches t
+        """
+}
+flag "VEB55.unmapped" kind=unmapped concept="VEB55" target-system="SNOMED_CT"
+mapping "VEB58.1" source="VEB58" target="SNOMED_CT:233494008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur på AV-graft eller AV-fistel från a. radialis = suture on AV graft or AV fistula from
+        radial artery. SNOMED CT Simple suture of arteriovenous fistula matches
+        """
+}
+flag "VEB65.unmapped" kind=unmapped concept="VEB65" target-system="SNOMED_CT"
+flag "VEB68.unmapped" kind=unmapped concept="VEB68" target-system="SNOMED_CT"
+flag "VEB98.unmapped" kind=unmapped concept="VEB98" target-system="SNOMED_CT"
+mapping "VEB99.1" source="VEB99" target="SNOMED_CT:175452004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEB99 SNOMED CT 175452004 = Suture of other artery in subclavian territory (KVÅ residual).
+        Target. Source is arterial suture; target covers open subclavian operations broadly. Broader.
+        Low tier: no crosswalk.
+        """
+}
+flag "VEC00.unmapped" kind=unmapped concept="VEC00" target-system="SNOMED_CT"
+flag "VEC11.unmapped" kind=unmapped concept="VEC11" target-system="SNOMED_CT"
+mapping "VEC18.1" source="VEC18" target="SNOMED_CT:175788008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligation/division of AV graft/fistula from subclavian artery; SNOMED CT ligation of acquired AV
+        fistula is parent
+        """
+}
+mapping "VEC22.1" source="VEC22" target="SNOMED_CT:175439009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligation or division of vertebral artery = ligation of vertebral artery; exact clinical
+        equivalent
+        """
+}
+mapping "VEC33.1" source="VEC33" target="SNOMED_CT:175445001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligation or division of axillary artery; exact match to SNOMED CT 175445001 2100125643. Confirmed
+        SNOMED CT S.
+        """
+}
+flag "VEC38.unmapped" kind=unmapped concept="VEC38" target-system="SNOMED_CT"
+mapping "VEC44.1" source="VEC44" target="SNOMED_CT:175438001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 175438001 2100125645 = ligation or division of brachial artery; SNOMED CT is an exact
+        match
+        """
+}
+flag "VEC48.unmapped" kind=unmapped concept="VEC48" target-system="SNOMED_CT"
+flag "VEC55.unmapped" kind=unmapped concept="VEC55" target-system="SNOMED_CT"
+flag "VEC58.unmapped" kind=unmapped concept="VEC58" target-system="SNOMED_CT"
+flag "VEC65.unmapped" kind=unmapped concept="VEC65" target-system="SNOMED_CT"
+mapping "VEC68.1" source="VEC68" target="SNOMED_CT:6399001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125650 6399001 = ligation or division of AV graft/fistula from ulnar artery;
+        SNOMED CT concept for divisi
+        """
+}
+flag "VEC98.unmapped" kind=unmapped concept="VEC98" target-system="SNOMED_CT"
+mapping "VEC99.1" source="VEC99" target="SNOMED_CT:175452004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEC99 SNOMED CT 175452004 = Ligation or division of other artery in subclavian territory
+        (KVÅ residual). Target. Source is ligation/division; target covers open subclavian operations
+        broadly. Broader. Low tier: no crosswalk.
+        """
+}
+flag "VED18.unmapped" kind=unmapped concept="VED18" target-system="SNOMED_CT"
+flag "VED38.unmapped" kind=unmapped concept="VED38" target-system="SNOMED_CT"
+flag "VED48.unmapped" kind=unmapped concept="VED48" target-system="SNOMED_CT"
+flag "VED58.unmapped" kind=unmapped concept="VED58" target-system="SNOMED_CT"
+flag "VED68.unmapped" kind=unmapped concept="VED68" target-system="SNOMED_CT"
+flag "VED98.unmapped" kind=unmapped concept="VED98" target-system="SNOMED_CT"
+mapping "VEE00.1" source="VEE00" target="SNOMED_CT:301080008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy/embolectomy in previous reconstruction of subclavian artery maps exactly to
+        embolectomy of subclavian artery (the SNOMED CT 2100125659 301080008 detail
+        """
+}
+flag "VEE18.unmapped" kind=unmapped concept="VEE18" target-system="SNOMED_CT"
+mapping "VEE22.1" source="VEE22" target="SNOMED_CT:301081007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: KVAA says SNOMED CT 2100125662 301081007 (thrombectomy or embolectomy); SNOMED CT concept
+        covers embolectomy. Clinically, arterial thrombectomy and e
+        """
+}
+flag "VEE33.unmapped" kind=unmapped concept="VEE33" target-system="SNOMED_CT"
+flag "VEE38.unmapped" kind=unmapped concept="VEE38" target-system="SNOMED_CT"
+mapping "VEE44.1" source="VEE44" target="SNOMED_CT:233313002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi eller embolektomi i a. brachialis = thrombectomy or embolectomy of brachial artery;
+        (233313002) is the exact equiva
+        """
+}
+mapping "VEE48.1" source="VEE48" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy/embolectomy in AV graft/fistula from brachial artery; percutaneous venous
+        thrombectomy is loose.
+        """
+}
+mapping "VEE55.1" source="VEE55" target="SNOMED_CT:175844007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are upper limb thrombectomies; KVÅ is artery, SNOMED CT is vein - different vessel type but
+        same region
+        """
+}
+flag "VEE58.unmapped" kind=unmapped concept="VEE58" target-system="SNOMED_CT"
+flag "VEE65.unmapped" kind=unmapped concept="VEE65" target-system="SNOMED_CT"
+flag "VEE68.unmapped" kind=unmapped concept="VEE68" target-system="SNOMED_CT"
+flag "VEE98.unmapped" kind=unmapped concept="VEE98" target-system="SNOMED_CT"
+mapping "VEE99.1" source="VEE99" target="SNOMED_CT:175750006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VEE99 SNOMED CT 175750006 = Thrombectomy or embolectomy in other artery in subclavian
+        territory (KVÅ residual). Target. Source covers thrombectomy/embolectomy in subclavian
+        territory; target covers open arterial embolectomy generally. Broader. Low tier: no crosswalk,
+        subclavian specificity lost.
+        """
+}
+mapping "VEF11.1" source="VEF11" target="SNOMED_CT:240923000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VEF44.1" source="VEF44" target="SNOMED_CT:233299000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VEF99.1" source="VEF99" target="SNOMED_CT:175452004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEF99 SNOMED CT 175452004 = Endarterectomy in other artery in subclavian territory (KVÅ
+        residual). Target. Source is endarterectomy; target covers open subclavian operations broadly.
+        Broader. Low tier: no crosswalk.
+        """
+}
+flag "VEG00.unmapped" kind=unmapped concept="VEG00" target-system="SNOMED_CT"
+flag "VEG11.unmapped" kind=unmapped concept="VEG11" target-system="SNOMED_CT"
+mapping "VEG18.1" source="VEG18" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+mapping "VEG22.1" source="VEG22" target="SNOMED_CT:450705005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open plastik pa a. vertebralis = open repair of vertebral artery; exact clinical match."
+}
+mapping "VEG33.1" source="VEG33" target="SNOMED_CT:450701001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open plastic on axillary artery = Repair of axillary artery (exact match; Swedish SNOMED CT
+        2100125684 450701001 = repair/plasty)
+        """
+}
+flag "VEG38.unmapped" kind=unmapped concept="VEG38" target-system="SNOMED_CT"
+mapping "VEG44.1" source="VEG44" target="SNOMED_CT:233350001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ öppen plastik på a. brachialis = open plasty/reconstruction of brachial artery; exact match
+        """
+}
+mapping "VEG48.1" source="VEG48" target="SNOMED_CT:1332220006" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open repair AV graft/fistel brachial; closest is repair of acquired AV fistula of limb"
+}
+flag "VEG55.unmapped" kind=unmapped concept="VEG55" target-system="SNOMED_CT"
+flag "VEG58.unmapped" kind=unmapped concept="VEG58" target-system="SNOMED_CT"
+flag "VEG65.unmapped" kind=unmapped concept="VEG65" target-system="SNOMED_CT"
+flag "VEG68.unmapped" kind=unmapped concept="VEG68" target-system="SNOMED_CT"
+flag "VEG98.unmapped" kind=unmapped concept="VEG98" target-system="SNOMED_CT"
+mapping "VEG99.1" source="VEG99" target="SNOMED_CT:175452004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEG99 SNOMED CT 175452004 = Open plasty/repair of other artery in subclavian territory (KVÅ
+        residual). Target. Source is open repair/plasty; target covers open subclavian operations
+        broadly. Broader. Low tier: no crosswalk.
+        """
+}

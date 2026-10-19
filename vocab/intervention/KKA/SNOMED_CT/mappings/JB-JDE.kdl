@@ -1,0 +1,254 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JB-JDE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JBA01.1" source="JBA01" target="SNOMED_CT:28658009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic diaphragm rupture suture vs diaphragm plication for hernia; related parent"
+}
+mapping "JBA10.1" source="JBA10" target="SNOMED_CT:238328000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy/excision of diaphragm lesion; thoracotomy is reasonable parent"
+}
+mapping "JBA20.1" source="JBA20" target="SNOMED_CT:108184008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JBB10.1" source="JBB10" target="SNOMED_CT:1292979002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JBB96.1" source="JBB96" target="SNOMED_CT:112977000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JBC00.1" source="JBC00" target="SNOMED_CT:265357009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100121963 265357009 is exactly an antireflux operation; SNOMED CT concept covers all
+        antireflux procedures
+        """
+}
+mapping "JBC01.1" source="JBC01" target="SNOMED_CT:78656005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk operation for gastroesofageal reflux = laparoscopic antireflux surgery; (78656005)
+        is the standard SNOMED CT equivalent
+        """
+}
+mapping "JBW97.1" source="JBW97" target="SNOMED_CT:88187000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: laparoscopic diaphragm/GERD surgery maps loosely to Nissen fundoplication (related)"
+}
+mapping "JCA01.1" source="JCA01" target="SNOMED_CT:173635005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic or thoracoscopic extirpation of lesion in esophagus maps to fiberoptic endoscopic
+        extirpation of lesion of esophagus (the laparoscopic/thoracoscopi
+        """
+}
+mapping "JCA05.1" source="JCA05" target="SNOMED_CT:235181002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JCA32.1" source="JCA32" target="SNOMED_CT:173621008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is any endoscopic esophageal injection; SNOMED CT is varice-specific sclerotherapy"
+}
+mapping "JCA45.1" source="JCA45" target="SNOMED_CT:426105008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ESD of esophagus; KKÅ covers mucosal+submucosal but submucosal (ESD) is dominant clinical
+        variant
+        """
+}
+mapping "JCA52.1" source="JCA52" target="SNOMED_CT:18243008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies endoscopic diathermy/thermal on esophagus; SNOMED CT is broader parent (any method
+        any approach)
+        """
+}
+mapping "JCB01.1" source="JCB01" target="SNOMED_CT:235179004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic/thoracoscopic esophagostomy; esophagostomy creation is close match"
+}
+mapping "JCC00.1" source="JCC00" target="SNOMED_CT:3980006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transhiatal resection of esophagus without interposition is a subtype of subtotal esophageal
+        resection. Verified SNOMED CT S.
+        """
+}
+mapping "JCC10.1" source="JCC10" target="SNOMED_CT:3980006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transtorakal resektion av esofagus utan interposition = transthoracic esophageal resection
+        without interposition. SNOMED CT 2100121989 3980006 is the exact
+        """
+}
+mapping "JCC11.1" source="JCC11" target="SNOMED_CT:14072009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "MIE (minimally invasive esophagectomy); total esophagectomy is parent concept"
+}
+mapping "JCC20.1" source="JCC20" target="SNOMED_CT:235162005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transhiatal esophageal resection with bowel interposition; trans-hiatal esophagectomy is the
+        main procedure (bowel interposition is detail)
+        """
+}
+mapping "JCC30.1" source="JCC30" target="SNOMED_CT:307330001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100121992 307330001 = transthoracic esophageal resection with intestinal
+        interposition; SNOMED CT concept covers e
+        """
+}
+mapping "JCC97.1" source="JCC97" target="SNOMED_CT:14072009" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other laparoscopic esophageal resection; closest SNOMED CT is total esophagectomy"
+}
+mapping "JCD10.1" source="JCD10" target="SNOMED_CT:32918006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intratorakal anastomosering av esofagus utan interposition = intrathoracic anastomosis of
+        esophagus without interposition. 'Anastomosis of esophagus by intratho
+        """
+}
+mapping "JCD13.1" source="JCD13" target="SNOMED_CT:60581003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: intrathoracic anastomosis of esophagus with bowel interposition maps to"
+}
+mapping "JCD97.1" source="JCD97" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other thoracoscopic/laparoscopic esophageal anastomosis; no close SNOMED CT match"
+}
+mapping "JCE20.1" source="JCE20" target="SNOMED_CT:265347008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JCE30.1" source="JCE30" target="SNOMED_CT:22997007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction for esophageal atresia or esophagotracheal fistula maps to repair of esophagus
+        (the reconstruction for atresia is a form of esophageal repair)
+        """
+}
+mapping "JCE33.1" source="JCE33" target="SNOMED_CT:232627008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Slutning av förvärvad esofagotrakeal eller esofagobronkial fistel = closure of acquired
+        esophagotracheal or esophagobronchial fistula. The SNOMED CT concept covers
+        """
+}
+mapping "JCE40.1" source="JCE40" target="SNOMED_CT:22997007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JCE96.1" source="JCE96" target="SNOMED_CT:22997007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDA05.1" source="JDA05" target="SNOMED_CT:7797006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100122020 7797006 = endoscopic polypectomy of stomach including pylorus =
+        Gastric polypectomy.
+        """
+}
+mapping "JDA22.1" source="JDA22" target="SNOMED_CT:426841006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fundal varice ligation; SNOMED CT rubber band GI varices"
+}
+mapping "JDA35.1" source="JDA35" target="SNOMED_CT:771624003" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic coagulation in stomach including pylorus; closest is upper GI coagulation"
+}
+mapping "JDA42.1" source="JDA42" target="SNOMED_CT:771624003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ is stomach-specific (incl. pylorus); SNOMED CT covers broader upper GI tract"
+}
+mapping "JDA45.1" source="JDA45" target="SNOMED_CT:425494001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic mucosal/submucosal resection of stomach including pylorus. Direct match."
+}
+mapping "JDA48.1" source="JDA48" target="SNOMED_CT:822911000000108" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopisk submukosal dissektion i ventrikel = endoscopic submucosal dissection (ESD) in
+        stomach. Exact match.
+        """
+}
+mapping "JDA52.1" source="JDA52" target="SNOMED_CT:698322008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers endoscopic diathermy for destruction of lesions and incision of stenosis in stomach;
+        SNOMED CT is bleeding-specific thermocoagulation — partial overlap
+        """
+}
+mapping "JDA63.1" source="JDA63" target="SNOMED_CT:173725005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open extirpation of lesion of stomach is the exact match. SNOMED CT 173725005 2100122034 is implied
+        as part of the stomach
+        """
+}
+mapping "JDB10.1" source="JDB10" target="SNOMED_CT:235159007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "JDB10 perkutan gastrostomi = PEG; exact match to SNOMED CT PEG concept"
+}
+mapping "JDC10.1" source="JDC10" target="SNOMED_CT:173747005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Gastric resection with gastrojejunostomy; SNOMED CT Roux-en-Y is the typical reconstruction"
+}
+mapping "JDC11.1" source="JDC11" target="SNOMED_CT:1260402001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match; KVÅ is gastric resection + gastrojejunostomy; SNOMED CT has lap distal gastrectomy
+        """
+}
+mapping "JDC20.1" source="JDC20" target="SNOMED_CT:173747005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ventricular resection with Roux-en-Y; SNOMED CT has the Roux-en-Y component"
+}
+mapping "JDC30.1" source="JDC30" target="SNOMED_CT:235171001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ventrikelresektion med jejunuminterposition = ventricular resection with jejunal interposition.
+        Likely refers to gastric ventricle (stomach) resection with jeju
+        """
+}
+mapping "JDC96.1" source="JDC96" target="SNOMED_CT:112860004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are gastric resections; KVÅ specifies other reconstruction, SNOMED CT is hemigastrectomy"
+}
+mapping "JDC97.1" source="JDC97" target="SNOMED_CT:425494001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic gastric resection. SNOMED CT ESD of stomach is related gastric tissue removal but
+        different approach.
+        """
+}
+mapping "JDD01.1" source="JDD01" target="SNOMED_CT:173747005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic gastrectomy with Roux-en-Y esophagojejunostomy -- maps to (the definitive
+        anastomosis component)
+        """
+}
+mapping "JDE00.1" source="JDE00" target="SNOMED_CT:18692006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDE10.1" source="JDE10" target="SNOMED_CT:443906008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Conversion to Roux-en-Y; SNOMED CT has Roux-en-Y gastroenterostomy bypass"
+}
+mapping "JDE30.1" source="JDE30" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDE31.1" source="JDE31" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,260 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes CBC-CEE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "CBC00.1" source="CBC00" target="SNOMED_CT:12762001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBC99.1" source="CBC99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBC99 SNOMED CT 172274000 = Other operation for eyelid injury (KVÅ residual). Target. Source
+        is specifically trauma-related; target is the general eyelid operations parent. Broader. Low
+        tier: no crosswalk, trauma indication lost.
+        """
+}
+mapping "CBD99.1" source="CBD99" target="SNOMED_CT:2242005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBG00.1" source="CBG00" target="SNOMED_CT:48957009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Electrolysis epilation of eyelashes: (48957009), confirmed SNOMED CT standard"
+}
+mapping "CBG10.1" source="CBG10" target="SNOMED_CT:33474001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBG99.1" source="CBG99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBG99 SNOMED CT 172274000 = Other operation for trichiasis (KVÅ residual). No SNOMED CT
+        procedure for trichiasis surgery at this level in mirror. Target. Weak tier: target loses the
+        trichiasis indication entirely.
+        """
+}
+mapping "CBH40.1" source="CBH40" target="SNOMED_CT:25212003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBH50.1" source="CBH50" target="SNOMED_CT:88904009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reconstructive surgery for epicanthus: (88904009), confirmed SNOMED CT standard"
+}
+mapping "CBH99.1" source="CBH99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBH99 SNOMED CT 172274000 = Other operation on canthus or eyelid margin (KVÅ residual). No
+        SNOMED CT procedure for canthus operations at this level in mirror. Target. Weak tier: target loses
+        the canthus/margin specificity.
+        """
+}
+mapping "CBJ10.1" source="CBJ10" target="SNOMED_CT:265279001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact; SNOMED CT specifies fascia sling vs KKÅ unspecified sling material"
+}
+mapping "CBJ20.1" source="CBJ20" target="SNOMED_CT:83828007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100120387 83828007 = tarsomyectomy of eyelid = ciliectomy of
+        eyelid margin
+        """
+}
+mapping "CBJ30.1" source="CBJ30" target="SNOMED_CT:359637008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBJ40.1" source="CBJ40" target="SNOMED_CT:204401001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "CBJ40 levator resection eyelid; specific eyelid surgery; weak to extraocular muscle repair"
+}
+mapping "CBJ45.1" source="CBJ45" target="SNOMED_CT:50238004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: upper tarsal muscle tightening; weak to tarsal plate operation"
+}
+mapping "CBJ50.1" source="CBJ50" target="SNOMED_CT:1144422000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is ptosis repair (functional); SNOMED CT Eyebrow lift is cosmetic brow elevation — same
+        anatomic site
+        """
+}
+mapping "CBJ50.2" source="CBJ50" target="SNOMED_CT:1237081007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBJ99.1" source="CBJ99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBJ99 SNOMED CT 172274000 = Other operation for ptosis (KVÅ residual). No SNOMED CT procedure
+        for ptosis surgery at this level in mirror. Target. Weak tier: target loses the ptosis
+        indication entirely.
+        """
+}
+mapping "CBK10.1" source="CBK10" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Surgery for lagophthalmos; no close SNOMED CT match"
+}
+mapping "CBK99.1" source="CBK99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBK99 SNOMED CT 172274000 = Other operation for lagophthalmos or eyelid retraction (KVÅ
+        residual). No SNOMED CT procedure for lagophthalmos/retraction surgery at this level in mirror.
+        Target. Weak tier: target loses the lagophthalmos/retraction indication.
+        """
+}
+mapping "CBL99.1" source="CBL99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBL99 SNOMED CT 172274000 = Other operation for blepharospasm (KVÅ residual). No SNOMED CT
+        procedure for blepharospasm surgery at this level in mirror. Target. Weak tier: target loses the
+        blepharospasm indication.
+        """
+}
+mapping "CBN00.1" source="CBN00" target="SNOMED_CT:12762001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies eversion suture technique for entropion correction; SNOMED CT is the general
+        suture-of-eyelid parent
+        """
+}
+mapping "CBN10.1" source="CBN10" target="SNOMED_CT:89898009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good match for tightening aspect; KKÅ also includes relocation (flyttning) not captured in
+        SNOMED CT
+        """
+}
+mapping "CBN20.1" source="CBN20" target="SNOMED_CT:17314000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Tightening of eyelid retractors; palpebral fissure narrowing is anatomically related but loose.
+        """
+}
+mapping "CBN30.1" source="CBN30" target="SNOMED_CT:231592004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Canthal ligament shortening is a subset of lateral canthoplasty; SNOMED CT concept is broader"
+}
+mapping "CBN40.1" source="CBN40" target="SNOMED_CT:73039004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; CBN = eyelid operations in NOMESCO NCSP"
+}
+mapping "CBN50.1" source="CBN50" target="SNOMED_CT:172217003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ excises tarsus and skin; SNOMED CT total eyelid excision is one approach that achieves this"
+}
+mapping "CBN60.1" source="CBN60" target="SNOMED_CT:2242005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120404 2242005 = excision of eyelid scar and plastic reconstruction; (4330850)
+        covers the rec
+        """
+}
+mapping "CBN99.1" source="CBN99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source CBN99 = KVÅ residual SNOMED CT 118912008 172274000 eyelid malposition operation per legacy
+        comment. SNOMED CT has specific ptosis/entropion/ectropion codes but no parent for at this level.
+        Target SNOMED CT 172274000. Weak tier: target loses the malposition specificity.
+        """
+}
+mapping "CBN99.2" source="CBN99" target="SNOMED_CT:118912008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "CCA10.1" source="CCA10" target="SNOMED_CT:197922007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CCB99.1" source="CCB99" target="SNOMED_CT:172290000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CCB99 SNOMED CT 172290000 = Other operation on lacrimal gland (KVÅ residual). Target. Both
+        denote operations on the lacrimal gland at the same level. Exact match at low tier: no
+        crosswalk, but NOS semantics align.
+        """
+}
+mapping "CCC50.1" source="CCC50" target="SNOMED_CT:1348341007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CCC99.1" source="CCC99" target="SNOMED_CT:172302004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CCC99 SNOMED CT 172302004 = Other operation on lacrimal duct/tear duct (KVÅ residual).
+        Target (incl. instrumentation). Both denote operations on the lacrimal duct. Exact match at low
+        tier: no crosswalk, but semantics align.
+        """
+}
+mapping "CCD00.1" source="CCD00" target="SNOMED_CT:53662004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision and closure of lacrimal fistula; maps closely to closure of lacrimal fistula"
+}
+mapping "CCD40.1" source="CCD40" target="SNOMED_CT:231629008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CCD50.1" source="CCD50" target="SNOMED_CT:231631004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CCD60.1" source="CCD60" target="SNOMED_CT:231630003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CCD99.1" source="CCD99" target="SNOMED_CT:231635008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CCD99 SNOMED CT 231635008 = Other reconstructive operation on lacrimal passages (KVÅ
+        residual). Target. Source covers reconstruction of the entire lacrimal passage system; target
+        covers only canaliculus/punctum. Broader. Low tier: no crosswalk, scope narrower than source.
+        """
+}
+mapping "CDB00.1" source="CDB00" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CDB99.1" source="CDB99" target="SNOMED_CT:172516008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CDB99 SNOMED CT 172516008 = Other operation for intraocular foreign body (KVÅ residual).
+        Target. Source is specifically about intraocular foreign body removal; target is a general
+        anterior chamber operations parent. Weak tier: target loses the foreign-body indication; broader
+        scope mismatch.
+        """
+}
+mapping "CDC00.1" source="CDC00" target="SNOMED_CT:205336009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CDC30.1" source="CDC30" target="SNOMED_CT:14509009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CDC40.1" source="CDC40" target="SNOMED_CT:206175003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Evisceration of eye with prosthesis implantation; exact SNOMED CT match verified"
+}
+mapping "CDC50.1" source="CDC50" target="SNOMED_CT:206175003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Eye evisceration with tissue implant; SNOMED CT insertion of orbital implant with synchronous
+        evisceration matches closely
+        """
+}
+mapping "CEC70.1" source="CEC70" target="SNOMED_CT:82524009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Movement of eye muscle due to nystagmus: (82524009), confirmed SNOMED CT standard; the KVAA is an
+        eye muscle advancement p
+        """
+}
+mapping "CED00.1" source="CED00" target="SNOMED_CT:231700004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CEE00.1" source="CEE00" target="SNOMED_CT:36811004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bakre fixationssutur i ögonmuskel = posterior fixation suture of eye muscle. This is a specific
+        strabismus surgery technique (Faden operation/posterior fixation
+        """
+}
+mapping "CEE10.1" source="CEE10" target="SNOMED_CT:15043000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: eye muscle anchor suture; weak to strabismus adjustable suture"
+}

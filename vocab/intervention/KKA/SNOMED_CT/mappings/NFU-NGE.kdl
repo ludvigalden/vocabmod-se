@@ -1,0 +1,320 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NFU-NGE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NFU39.1" source="NFU39" target="SNOMED_CT:1332407006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal of external fixation material from femur; no good SNOMED CT match."
+}
+mapping "NFU49.1" source="NFU49" target="SNOMED_CT:34025002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: removal of internal fixation device from femur. Verified SNOMED CT standard
+        concept S.
+        """
+}
+mapping "NFU99.1" source="NFU99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFU99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFW49.1" source="NFW49" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of wound rupture in hip or thigh; surgical repair is broader parent"
+}
+mapping "NFW89.1" source="NFW89" target="SNOMED_CT:274508002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for deep bleeding in hip/thigh; SNOMED CT is the parent for postoperative hemorrhage
+        control at any site.
+        """
+}
+mapping "NFW99.1" source="NFW99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFW99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NGA10.1" source="NGA10" target="SNOMED_CT:26504003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closed/percutaneous knee joint exploration. SNOMED CT has open arthrotomy exploration."
+}
+mapping "NGA11.1" source="NGA11" target="SNOMED_CT:309431009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av knäled artroskopisk/endoskopisk = knee arthroscopy exploration. The most specific
+        SNOMED CT match is Arthroscopy of knee.
+        """
+}
+mapping "NGA12.1" source="NGA12" target="SNOMED_CT:26504003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open exploration of knee joint is exactly SNOMED CT 2100124202 26504003. Confirmed SNOMED CT S,
+        concept_id 4097090.
+        """
+}
+mapping "NGA21.1" source="NGA21" target="SNOMED_CT:430108006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of soft tissue/joint in knee/lower leg arthroscopic; SNOMED CT has joint biopsy parents"
+}
+mapping "NGA30.1" source="NGA30" target="SNOMED_CT:447965006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124206 447965006 = bone biopsy of knee or lower leg, percutaneous or closed;
+        (40487502) co
+        """
+}
+mapping "NGA31.1" source="NGA31" target="SNOMED_CT:13861005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies knee/lower leg site with arthroscopic/endoscopic approach; SNOMED CT concept is site-
+        and method-general bone biopsy
+        """
+}
+mapping "NGA32.1" source="NGA32" target="SNOMED_CT:1331954001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA open bone biopsy knee/lower leg; SNOMED CT bone biopsy same type different site"
+}
+mapping "NGB09.1" source="NGB09" target="SNOMED_CT:179408002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB09 SNOMED CT 179408002 = primary uncemented knee hemi-/partial (unicompartmental)
+        prosthesis. Target (Athena-local). Target covers the unicompartmental variant; source also
+        includes hemi/partial. Broader; confidence high (clearly correct, partial/hemi scope mismatch).
+        """
+}
+mapping "NGB19.1" source="NGB19" target="SNOMED_CT:179403006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB19 SNOMED CT 179403006 = primary cemented knee hemi-/partial (unicompartmental)
+        prosthesis. Target (Athena-local). Target covers the unicompartmental variant; source also
+        includes hemi/partial. Broader; confidence high.
+        """
+}
+mapping "NGB29.1" source="NGB29" target="SNOMED_CT:179351002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB29 SNOMED CT 179351002 = primary uncemented total knee prosthesis. Target (Athena-local).
+        Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NGB39.1" source="NGB39" target="SNOMED_CT:450818008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB39 SNOMED CT 450818008 = primary hybrid total knee prosthesis. Target (Athena-local).
+        Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NGB49.1" source="NGB49" target="SNOMED_CT:179344006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB49 SNOMED CT 179344006 = primary cemented total knee prosthesis. Target (Athena-local).
+        Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NGB53.1" source="NGB53" target="SNOMED_CT:150150004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB53 SNOMED CT 150150004 = primary patellofemoral prosthesis. No specific patellofemoral
+        arthroplasty standard exists in SNOMED CT Athena-local; target (Athena-local). Broader; confidence
+        low (specific source, generic ancestor).
+        """
+}
+mapping "NGB59.1" source="NGB59" target="SNOMED_CT:150150004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB59 SNOMED CT 150150004 = supplementary primary patella prosthesis. No specific
+        patella-component standard exists; target (Athena-local). Broader; confidence low (specific
+        source, generic ancestor).
+        """
+}
+mapping "NGB99.1" source="NGB99" target="SNOMED_CT:150150004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGB99 SNOMED CT 150150004 = KVÅ residual. Target (Athena-local). Target subsumes the
+        residual source. Broader; confidence low (residual bucket).
+        """
+}
+mapping "NGC09.1" source="NGC09" target="SNOMED_CT:179361009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NGC09 SNOMED CT 179361009 = secondary uncemented knee hemi-/partial prosthesis. Target
+        (Athena-local). Target covers secondary/revision knee replacement; source specifies hemi/partial
+        uncemented. Broader; confidence moderate.
+        """
+}
+mapping "NGC19.1" source="NGC19" target="SNOMED_CT:179361009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NGC19 SNOMED CT 179361009 = secondary cemented knee hemi-/partial prosthesis. Target
+        (Athena-local). Broader; confidence moderate.
+        """
+}
+mapping "NGC29.1" source="NGC29" target="SNOMED_CT:309511007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGC29 SNOMED CT 309511007 = secondary uncemented total knee prosthesis. Target
+        (Athena-local). Target covers secondary TKA; source specifies uncemented. Broader; confidence
+        high.
+        """
+}
+mapping "NGC39.1" source="NGC39" target="SNOMED_CT:309511007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGC39 SNOMED CT 309511007 = secondary hybrid total knee prosthesis. Target (Athena-local).
+        Target covers secondary hybrid TKA. Broader; confidence high.
+        """
+}
+mapping "NGC49.1" source="NGC49" target="SNOMED_CT:179361009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NGC49 SNOMED CT 179361009 = secondary cemented total knee prosthesis. Target (Athena-local).
+        Target covers secondary TKA; source specifies cemented. Broader; confidence high.
+        """
+}
+mapping "NGC53.1" source="NGC53" target="SNOMED_CT:150150004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGC53 SNOMED CT 150150004 = secondary patellofemoral prosthesis. No specific patellofemoral
+        arthroplasty standard exists; target (Athena-local). Broader; confidence low (specific source,
+        generic ancestor).
+        """
+}
+mapping "NGC59.1" source="NGC59" target="SNOMED_CT:150150004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGC59 SNOMED CT 150150004 = secondary patella prosthesis. No specific patella-component
+        standard exists; target (Athena-local). Broader; confidence low (specific source, generic
+        ancestor).
+        """
+}
+mapping "NGC99.1" source="NGC99" target="SNOMED_CT:179361009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NGC99 SNOMED CT 179361009 = KVÅ residual. Target (Athena-local). Target subsumes the
+        residual source. Broader; confidence low (residual source).
+        """
+}
+mapping "NGD02.1" source="NGD02" target="SNOMED_CT:373659003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total excision av menisk i knäled - öppen = total excision of meniscus in knee, open; exact
+        match to Open total meniscectomy of knee (doesn't specify medial/lat
+        """
+}
+mapping "NGD10.1" source="NGD10" target="SNOMED_CT:303875006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of meniscus in knee joint -- percutaneous or closed is arthroscopic partial
+        meniscectomy
+        """
+}
+mapping "NGD12.1" source="NGD12" target="SNOMED_CT:303875006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open partial meniscectomy of knee. Site-agnostic SNOMED CT partial meniscectomy is good match."
+}
+mapping "NGD20.1" source="NGD20" target="SNOMED_CT:239419007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA meniscus replantation; SNOMED CT repair of meniscus is related"
+}
+mapping "NGD22.1" source="NGD22" target="SNOMED_CT:84877006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open meniscus replantation; SNOMED CT meniscus repair is arthroscopic only"
+}
+mapping "NGD91.1" source="NGD91" target="SNOMED_CT:239417009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good parent match: KVA specifies arthroscopic other meniscus procedure; SNOMED CT has the parent
+        operation on meniscus
+        """
+}
+mapping "NGD92.1" source="NGD92" target="SNOMED_CT:271417003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation på menisk i knäled - öppen = other operation on meniscus in knee joint, open.
+        Residual category but SNOMED CT Open operation on knee meniscus cover
+        """
+}
+mapping "NGE01.1" source="NGE01" target="SNOMED_CT:127598004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision or suture of joint capsule in knee (arthroscopic or endoscopic) maps exactly to Repair
+        of joint capsule of knee
+        """
+}
+mapping "NGE10.1" source="NGE10" target="SNOMED_CT:31951004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NGE10 transcision/excision ligament kne; weak to knee procedure"
+}
+mapping "NGE12.1" source="NGE12" target="SNOMED_CT:1332407006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transcision/excision of ligament in knee open; ligament repair is broader but related."
+}
+mapping "NGE20.1" source="NGE20" target="SNOMED_CT:239425006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture of knee ligament = repair of ligament of knee joint. Percutaneous/closed technique is not
+        specified in SNOMED CT
+        """
+}
+mapping "NGE21.1" source="NGE21" target="SNOMED_CT:46485008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124228 46485008 = suture or replantation of ligament in knee joint,
+        arthroscopic/endoscopic; SNOMED CT 'Suture of ligament of
+        """ suspect=quoted-text
+}
+mapping "NGE22.1" source="NGE22" target="SNOMED_CT:239425006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture or replantation of ligament in knee joint - open = repair of ligament of knee joint,
+        exact clinical equivalent
+        """
+}
+mapping "NGE41.1" source="NGE41" target="SNOMED_CT:84877006" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthroscopic knee ligament reconstruction without foreign material; closest SNOMED CT is
+        arthroscopic meniscus repair
+        """
+}
+mapping "NGE49.1" source="NGE49" target="SNOMED_CT:31951004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        NGE49 reconstruktion ligament kne utan material; knee ligament reconstruction; weak to knee
+        procedure
+        """
+}
+mapping "NGE91.1" source="NGE91" target="SNOMED_CT:179870001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is other knee capsule/ligament arthroscopic surgery; SNOMED CT is arthroscopic fracture
+        reduction - different procedure but same approach and joint
+        """
+}
+mapping "NGE92.1" source="NGE92" target="SNOMED_CT:127598004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other operation on joint capsule or ligament in knee joint - open; SNOMED CT 127598004 2100124240
+        is the closest SNOMED CT match for joint capsule work in the k
+        """
+}
+mapping "NGE99.1" source="NGE99" target="SNOMED_CT:118750007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGE99 SNOMED CT 118750007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}

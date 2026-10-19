@@ -1,0 +1,195 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VP-VQQ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VPA00.unmapped" kind=unmapped concept="VPA00" target-system="SNOMED_CT"
+flag "VPA10.unmapped" kind=unmapped concept="VPA10" target-system="SNOMED_CT"
+flag "VPA90.unmapped" kind=unmapped concept="VPA90" target-system="SNOMED_CT"
+mapping "VPB00.1" source="VPB00" target="SNOMED_CT:64616004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100126399 64616004 = suture on previous reconstruction of visceral vein; matches
+        SNOMED CT
+        """
+}
+flag "VPB10.unmapped" kind=unmapped concept="VPB10" target-system="SNOMED_CT"
+flag "VPB20.unmapped" kind=unmapped concept="VPB20" target-system="SNOMED_CT"
+flag "VPB90.unmapped" kind=unmapped concept="VPB90" target-system="SNOMED_CT"
+flag "VPC01.unmapped" kind=unmapped concept="VPC01" target-system="SNOMED_CT"
+flag "VPC11.unmapped" kind=unmapped concept="VPC11" target-system="SNOMED_CT"
+mapping "VPC91.1" source="VPC91" target="SNOMED_CT:57523002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligature or division of another visceral vein. SNOMED CT 2100126406 57523002 is the direct SNOMED CT
+        equivalent of ligature + division of a vein. The visceral s
+        """
+}
+mapping "VPE00.1" source="VPE00" target="SNOMED_CT:397028007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi i tidigare rekonstruktion på visceral ven = thrombectomy in previous reconstruction
+        on visceral vein. SNOMED CT 2100126407 397028007 is the generic procedur
+        """
+}
+flag "VPG01.unmapped" kind=unmapped concept="VPG01" target-system="SNOMED_CT"
+flag "VPG11.unmapped" kind=unmapped concept="VPG11" target-system="SNOMED_CT"
+flag "VPG21.unmapped" kind=unmapped concept="VPG21" target-system="SNOMED_CT"
+flag "VPG91.unmapped" kind=unmapped concept="VPG91" target-system="SNOMED_CT"
+mapping "VPH13.1" source="VPH13" target="SNOMED_CT:233444007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "VPJ01.unmapped" kind=unmapped concept="VPJ01" target-system="SNOMED_CT"
+flag "VPJ11.unmapped" kind=unmapped concept="VPJ11" target-system="SNOMED_CT"
+flag "VPJ21.unmapped" kind=unmapped concept="VPJ21" target-system="SNOMED_CT"
+flag "VPJ91.unmapped" kind=unmapped concept="VPJ91" target-system="SNOMED_CT"
+flag "VPK11.unmapped" kind=unmapped concept="VPK11" target-system="SNOMED_CT"
+flag "VPK12.unmapped" kind=unmapped concept="VPK12" target-system="SNOMED_CT"
+mapping "VPK21.1" source="VPK21" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open removal of graft/foreign body from renal vein. No SNOMED CT match"
+}
+flag "VPK91.unmapped" kind=unmapped concept="VPK91" target-system="SNOMED_CT"
+mapping "VPK92.1" source="VPK92" target="SNOMED_CT:60941001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resektion av annan visceral ven = resection of other visceral vein. SNOMED CT 2100126424
+        60941001 is the general concept. The visceral vein specificity is additiona
+        """
+}
+flag "VPL00.unmapped" kind=unmapped concept="VPL00" target-system="SNOMED_CT"
+flag "VPL10.unmapped" kind=unmapped concept="VPL10" target-system="SNOMED_CT"
+flag "VPL20.unmapped" kind=unmapped concept="VPL20" target-system="SNOMED_CT"
+flag "VPL90.unmapped" kind=unmapped concept="VPL90" target-system="SNOMED_CT"
+flag "VPN00.unmapped" kind=unmapped concept="VPN00" target-system="SNOMED_CT"
+mapping "VPN10.1" source="VPN10" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA in portal vein and branches; vascular procedure parent"
+}
+flag "VPN90.unmapped" kind=unmapped concept="VPN90" target-system="SNOMED_CT"
+mapping "VPR00.1" source="VPR00" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in previous visceral vein reconstruction vs percutaneous thrombolysis"
+}
+flag "VPR10.unmapped" kind=unmapped concept="VPR10" target-system="SNOMED_CT"
+mapping "VPR20.1" source="VPR20" target="SNOMED_CT:233428003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis in renal vein. SNOMED CT 2100126444 233428003 is the parent concept; the
+        renal vein specificity is not captured but the procedure type is exac
+        """
+}
+flag "VPR90.unmapped" kind=unmapped concept="VPR90" target-system="SNOMED_CT"
+flag "VPT01.unmapped" kind=unmapped concept="VPT01" target-system="SNOMED_CT"
+flag "VPT11.unmapped" kind=unmapped concept="VPT11" target-system="SNOMED_CT"
+flag "VPT21.unmapped" kind=unmapped concept="VPT21" target-system="SNOMED_CT"
+flag "VPT91.unmapped" kind=unmapped concept="VPT91" target-system="SNOMED_CT"
+flag "VPU00.unmapped" kind=unmapped concept="VPU00" target-system="SNOMED_CT"
+flag "VPU10.unmapped" kind=unmapped concept="VPU10" target-system="SNOMED_CT"
+flag "VPU20.unmapped" kind=unmapped concept="VPU20" target-system="SNOMED_CT"
+flag "VPU90.unmapped" kind=unmapped concept="VPU90" target-system="SNOMED_CT"
+flag "VPW00.unmapped" kind=unmapped concept="VPW00" target-system="SNOMED_CT"
+flag "VPW10.unmapped" kind=unmapped concept="VPW10" target-system="SNOMED_CT"
+flag "VPW20.unmapped" kind=unmapped concept="VPW20" target-system="SNOMED_CT"
+flag "VPW90.unmapped" kind=unmapped concept="VPW90" target-system="SNOMED_CT"
+mapping "VQA00.1" source="VQA00" target="SNOMED_CT:232995006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open exploration of previous reconstruction on inferior vena cava or pelvic vein maps exactly to
+        repair of inferior vena cava (exploration is a necessary part o
+        """
+}
+flag "VQA90.unmapped" kind=unmapped concept="VQA90" target-system="SNOMED_CT"
+flag "VQB00.unmapped" kind=unmapped concept="VQB00" target-system="SNOMED_CT"
+flag "VQB10.unmapped" kind=unmapped concept="VQB10" target-system="SNOMED_CT"
+mapping "VQB20.1" source="VQB20" target="SNOMED_CT:64616004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA custom target; weak: matches vein suture repair; lacks specific iliac vein site."
+}
+flag "VQB50.unmapped" kind=unmapped concept="VQB50" target-system="SNOMED_CT"
+flag "VQB90.unmapped" kind=unmapped concept="VQB90" target-system="SNOMED_CT"
+flag "VQC01.unmapped" kind=unmapped concept="VQC01" target-system="SNOMED_CT"
+mapping "VQC11.1" source="VQC11" target="SNOMED_CT:232998008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "VQC21.unmapped" kind=unmapped concept="VQC21" target-system="SNOMED_CT"
+flag "VQC51.unmapped" kind=unmapped concept="VQC51" target-system="SNOMED_CT"
+flag "VQC91.unmapped" kind=unmapped concept="VQC91" target-system="SNOMED_CT"
+mapping "VQE00.1" source="VQE00" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy in previous reconstruction on IVC or pelvic vein; percutaneous venous thrombectomy
+        is reasonable.
+        """
+}
+mapping "VQE10.1" source="VQE10" target="SNOMED_CT:164781009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VQE90.1" source="VQE90" target="SNOMED_CT:175845008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are venous thrombectomies; KVÅ specifies pelvic vein"
+}
+mapping "VQF10.1" source="VQF10" target="SNOMED_CT:164781009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "VQF20.unmapped" kind=unmapped concept="VQF20" target-system="SNOMED_CT"
+flag "VQF90.unmapped" kind=unmapped concept="VQF90" target-system="SNOMED_CT"
+flag "VQG01.unmapped" kind=unmapped concept="VQG01" target-system="SNOMED_CT"
+flag "VQG11.unmapped" kind=unmapped concept="VQG11" target-system="SNOMED_CT"
+flag "VQG21.unmapped" kind=unmapped concept="VQG21" target-system="SNOMED_CT"
+flag "VQG91.unmapped" kind=unmapped concept="VQG91" target-system="SNOMED_CT"
+flag "VQJ11.unmapped" kind=unmapped concept="VQJ11" target-system="SNOMED_CT"
+flag "VQJ13.unmapped" kind=unmapped concept="VQJ13" target-system="SNOMED_CT"
+flag "VQJ21.unmapped" kind=unmapped concept="VQJ21" target-system="SNOMED_CT"
+flag "VQJ91.unmapped" kind=unmapped concept="VQJ91" target-system="SNOMED_CT"
+mapping "VQK11.1" source="VQK11" target="SNOMED_CT:233439000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open removal of graft or foreign material from vena cava inferior; SNOMED CT 2100126488 233439000
+        is the closest SNOMED CT equivalent for foreign material
+        """
+}
+mapping "VQK12.1" source="VQK12" target="SNOMED_CT:232994005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "VQK21.unmapped" kind=unmapped concept="VQK21" target-system="SNOMED_CT"
+mapping "VQK52.1" source="VQK52" target="SNOMED_CT:60941001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resektion av vena spermatica/ovarica = resection of spermatic/ovarian vein. Exact match to
+        SNOMED CT Excision of vein, with the specific vein named in the KVAA cod
+        """
+}
+flag "VQK91.unmapped" kind=unmapped concept="VQK91" target-system="SNOMED_CT"
+flag "VQL00.unmapped" kind=unmapped concept="VQL00" target-system="SNOMED_CT"
+mapping "VQL10.1" source="VQL10" target="SNOMED_CT:232994005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation on inferior vena cava; SNOMED CT has generic SNOMED CT 2100126497 232994005. The
+        Swedish code is an residual but the SNOMED CT concept
+        """
+}
+mapping "VQL20.1" source="VQL20" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other open operation on iliac vein. No SNOMED CT match"
+}
+flag "VQL90.unmapped" kind=unmapped concept="VQL90" target-system="SNOMED_CT"
+flag "VQN00.unmapped" kind=unmapped concept="VQN00" target-system="SNOMED_CT"
+flag "VQN10.unmapped" kind=unmapped concept="VQN10" target-system="SNOMED_CT"
+flag "VQN90.unmapped" kind=unmapped concept="VQN90" target-system="SNOMED_CT"
+flag "VQP01.unmapped" kind=unmapped concept="VQP01" target-system="SNOMED_CT"
+mapping "VQQ01.1" source="VQQ01" target="SNOMED_CT:441598001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular stent graft insertion in previous reconstruction on IVC or pelvic vein. SNOMED CT
+        SNOMED CT 2100126509 441598001 is the parent concept; the I
+        """
+}

@@ -1,0 +1,204 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes ULC-VBH
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ULC02.1" source="ULC02" target="SNOMED_CT:233545006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ULC12.1" source="ULC12" target="SNOMED_CT:236942006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ULC15.1" source="ULC15" target="SNOMED_CT:236942006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "VAA00.unmapped" kind=unmapped concept="VAA00" target-system="SNOMED_CT"
+flag "VAB00.unmapped" kind=unmapped concept="VAB00" target-system="SNOMED_CT"
+flag "VAB11.unmapped" kind=unmapped concept="VAB11" target-system="SNOMED_CT"
+mapping "VAB22.1" source="VAB22" target="SNOMED_CT:1155885007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "VAB33.unmapped" kind=unmapped concept="VAB33" target-system="SNOMED_CT"
+flag "VAG00.unmapped" kind=unmapped concept="VAG00" target-system="SNOMED_CT"
+flag "VAG11.unmapped" kind=unmapped concept="VAG11" target-system="SNOMED_CT"
+flag "VAG33.unmapped" kind=unmapped concept="VAG33" target-system="SNOMED_CT"
+flag "VAH26.unmapped" kind=unmapped concept="VAH26" target-system="SNOMED_CT"
+flag "VAH37.unmapped" kind=unmapped concept="VAH37" target-system="SNOMED_CT"
+flag "VAI11.unmapped" kind=unmapped concept="VAI11" target-system="SNOMED_CT"
+flag "VAI33.unmapped" kind=unmapped concept="VAI33" target-system="SNOMED_CT"
+flag "VAJ00.unmapped" kind=unmapped concept="VAJ00" target-system="SNOMED_CT"
+flag "VAJ12.unmapped" kind=unmapped concept="VAJ12" target-system="SNOMED_CT"
+flag "VAJ13.unmapped" kind=unmapped concept="VAJ13" target-system="SNOMED_CT"
+flag "VAJ14.unmapped" kind=unmapped concept="VAJ14" target-system="SNOMED_CT"
+flag "VAJ16.unmapped" kind=unmapped concept="VAJ16" target-system="SNOMED_CT"
+mapping "VAJ22.1" source="VAJ22" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA VAJ22 = interposition graft in aortic arch. SNOMED CT 233385001 (general). SNOMED CT does not
+        specify aortic arch location. Closes
+        """
+}
+flag "VAJ23.unmapped" kind=unmapped concept="VAJ23" target-system="SNOMED_CT"
+flag "VAJ24.unmapped" kind=unmapped concept="VAJ24" target-system="SNOMED_CT"
+mapping "VAJ29.1" source="VAJ29" target="SNOMED_CT:25328006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bypass from aortic arch to other artery; SNOMED CT has general arterial bypass"
+}
+mapping "VAJ34.1" source="VAJ34" target="SNOMED_CT:80102005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or interposition graft descending aorta to abdominal aorta; carotid bypass is related
+        bypass procedure.
+        """
+}
+mapping "VAJ35.1" source="VAJ35" target="SNOMED_CT:13532002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both involve thoracic aorta with graft; different purpose - bypass vs lesion excision"
+}
+flag "VAJ37.unmapped" kind=unmapped concept="VAJ37" target-system="SNOMED_CT"
+flag "VAJ39.unmapped" kind=unmapped concept="VAJ39" target-system="SNOMED_CT"
+flag "VAK10.unmapped" kind=unmapped concept="VAK10" target-system="SNOMED_CT"
+flag "VAK20.unmapped" kind=unmapped concept="VAK20" target-system="SNOMED_CT"
+flag "VAK30.unmapped" kind=unmapped concept="VAK30" target-system="SNOMED_CT"
+flag "VAL00.unmapped" kind=unmapped concept="VAL00" target-system="SNOMED_CT"
+flag "VAL11.unmapped" kind=unmapped concept="VAL11" target-system="SNOMED_CT"
+mapping "VAL33.1" source="VAL33" target="SNOMED_CT:112818003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open descending aorta operation; weak to division of descending aorta (related aortic
+        procedure)
+        """
+}
+flag "VAL34.unmapped" kind=unmapped concept="VAL34" target-system="SNOMED_CT"
+mapping "VAL48.1" source="VAL48" target="SNOMED_CT:265859004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other open operation on ductus arteriosus; SNOMED CT repair of PDA is closest"
+}
+flag "VAN00.unmapped" kind=unmapped concept="VAN00" target-system="SNOMED_CT"
+mapping "VAN33.1" source="VAN33" target="SNOMED_CT:1344813006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Close match; KVÅ specifies descending aorta, SNOMED CT is general aorta"
+}
+mapping "VAP00.1" source="VAP00" target="SNOMED_CT:233406003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular stent in prior thoracic aorta reconstruction; SNOMED CT has thoracic aorta stent
+        insertion
+        """
+}
+mapping "VAQ26.1" source="VAQ26" target="SNOMED_CT:233497001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovascular revascularization aortic arch branches; broader limb revascularization"
+}
+mapping "VAQ37.1" source="VAQ37" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: endovascular revascularization to spinal artery. No SNOMED CT equivalent"
+}
+mapping "VAT33.1" source="VAT33" target="SNOMED_CT:448342009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular closure of dissection entry in descending aorta maps to; both describe endovascular
+        management of ao
+        """
+}
+mapping "VAT48.1" source="VAT48" target="SNOMED_CT:175218000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VAU11.1" source="VAU11" target="SNOMED_CT:708810002" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular removal of foreign material from ascending aorta; SNOMED CT 2100125382 708810002 is
+        the closest SNOMED CT equivalent, though it d
+        """
+}
+mapping "VAU22.1" source="VAU22" target="SNOMED_CT:708810002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovaskulärt uttagande av främmande material från aortabågen = endovascular retrieval of
+        foreign body from aortic arch. 'Endovascular retrieval of foreign body
+        """
+}
+flag "VAU33.unmapped" kind=unmapped concept="VAU33" target-system="SNOMED_CT"
+flag "VAW00.unmapped" kind=unmapped concept="VAW00" target-system="SNOMED_CT"
+flag "VAW11.unmapped" kind=unmapped concept="VAW11" target-system="SNOMED_CT"
+flag "VAW22.unmapped" kind=unmapped concept="VAW22" target-system="SNOMED_CT"
+flag "VAW33.unmapped" kind=unmapped concept="VAW33" target-system="SNOMED_CT"
+mapping "VAW34.1" source="VAW34" target="SNOMED_CT:1231787007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other endovascular operation from descending aorta to abdominal aorta; TEVAR is parent"
+}
+mapping "VAW48.1" source="VAW48" target="SNOMED_CT:175211006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovascular ductus arteriosus procedure is very different from open correction"
+}
+flag "VBA00.unmapped" kind=unmapped concept="VBA00" target-system="SNOMED_CT"
+flag "VBA11.unmapped" kind=unmapped concept="VBA11" target-system="SNOMED_CT"
+flag "VBA22.unmapped" kind=unmapped concept="VBA22" target-system="SNOMED_CT"
+flag "VBA33.unmapped" kind=unmapped concept="VBA33" target-system="SNOMED_CT"
+mapping "VBA44.1" source="VBA44" target="SNOMED_CT:392143003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Öppen exploration av aortabifurkationen (open exploration of aortic bifurcation) maps to; the
+        bifurcation is a subset and no more specific
+        """
+}
+flag "VBB00.unmapped" kind=unmapped concept="VBB00" target-system="SNOMED_CT"
+flag "VBB11.unmapped" kind=unmapped concept="VBB11" target-system="SNOMED_CT"
+flag "VBB22.unmapped" kind=unmapped concept="VBB22" target-system="SNOMED_CT"
+flag "VBB33.unmapped" kind=unmapped concept="VBB33" target-system="SNOMED_CT"
+flag "VBB44.unmapped" kind=unmapped concept="VBB44" target-system="SNOMED_CT"
+flag "VBC09.unmapped" kind=unmapped concept="VBC09" target-system="SNOMED_CT"
+mapping "VBE00.1" source="VBE00" target="SNOMED_CT:38764003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy or embolectomy in previous reconstruction of/from abdominal aorta; embolectomy of
+        aorta is the closest SNOMED CT match. The SNOMED CT 2100125404 38764003
+        """
+}
+mapping "VBE11.1" source="VBE11" target="SNOMED_CT:38764003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125405 38764003; (4301337) captures the core procedure. The KVAA specifies
+        suprarenal abdomin
+        """
+}
+flag "VBE22.unmapped" kind=unmapped concept="VBE22" target-system="SNOMED_CT"
+mapping "VBE33.1" source="VBE33" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: thrombectomy/embolectomy of infrarenal abdominal aorta. No SNOMED CT equivalent"
+}
+mapping "VBF11.1" source="VBF11" target="SNOMED_CT:233300008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "VBF33.1" source="VBF33" target="SNOMED_CT:233300008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "VBG00.unmapped" kind=unmapped concept="VBG00" target-system="SNOMED_CT"
+flag "VBG33.unmapped" kind=unmapped concept="VBG33" target-system="SNOMED_CT"
+flag "VBG44.unmapped" kind=unmapped concept="VBG44" target-system="SNOMED_CT"
+flag "VBH16.unmapped" kind=unmapped concept="VBH16" target-system="SNOMED_CT"
+mapping "VBH26.1" source="VBH26" target="SNOMED_CT:233497001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open orthotopic revascularization to renal artery; specific vascular surgery. SNOMED CT limb
+        revascularization is distant.
+        """
+}
+mapping "VBH37.1" source="VBH37" target="SNOMED_CT:312693009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: open revascularization aorta-to-IMA; weak to aorta-IMA bypass"
+}
+mapping "VBH56.1" source="VBH56" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open orthotopic revascularization to all visceral arteries; vascular repair is distant parent
+        """
+}

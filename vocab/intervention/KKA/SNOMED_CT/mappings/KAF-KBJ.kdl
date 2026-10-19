@@ -1,0 +1,303 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes KAF-KBJ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "KAF10.1" source="KAF10" target="SNOMED_CT:85195000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open extirpation of foreign body from kidney or renal pelvis maps exactly to removal of foreign
+        body of renal pelvis by incision
+        """
+}
+mapping "KAH21.1" source="KAH21" target="SNOMED_CT:236155006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous dilation of pelviureteric junction maps exactly to Percutaneous endoluminal balloon
+        rupture of stenosis of pelviureteric junction.
+        """
+}
+mapping "KAH31.1" source="KAH31" target="SNOMED_CT:432396001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous endoscopic pyeloplasty; very close SNOMED CT match"
+}
+mapping "KAH40.1" source="KAH40" target="SNOMED_CT:8902002" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA specifies pyeloplasty with pelviureteral junction splitting; SNOMED CT simple pyeloplasty is
+        closest standard concept
+        """
+}
+mapping "KAH41.1" source="KAH41" target="SNOMED_CT:439826004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous endoscopic pyeloplasty with division of pelviureteric junction. SNOMED CT
+        2100122557 439826004 is the closest standard concept; the KVAA specifi
+        """
+}
+mapping "KAH55.1" source="KAH55" target="SNOMED_CT:35157006" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is retrograde ureteronephroscopic incision/dilation of calyx neck; SNOMED CT is general
+        incision of kidney; very distant broader parent; no closer calyx-specific concept exists
+        """
+}
+mapping "KAH61.1" source="KAH61" target="SNOMED_CT:265554003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAH70.1" source="KAH70" target="SNOMED_CT:236155006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Release of fixed pelviureteric junction maps to SNOMED CT 4341368 SNOMED CT 2100122563 236155006"
+}
+mapping "KAH80.1" source="KAH80" target="SNOMED_CT:15067008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAH96.1" source="KAH96" target="SNOMED_CT:236142005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAH98.1" source="KAH98" target="SNOMED_CT:236142005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAJ11.1" source="KAJ11" target="SNOMED_CT:225785008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies percutaneous endoscopic pyelostomy; SNOMED CT has percutaneous nephrostomy and open
+        pyelostomy but not the specific combination
+        """
+}
+mapping "KAJ20.1" source="KAJ20" target="SNOMED_CT:20101008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraanatomical bypass between renal pelvis and bladder = Anastomosis of renal pelvis (exact
+        match; the bypass is functionally a renal pelvis anastomosis)
+        """
+}
+mapping "KAJ96.1" source="KAJ96" target="SNOMED_CT:21904006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is residual other open urinary diversion on kidney/pelvis including catheter exchange;
+        nephrostomy is the most common procedure in this category
+        """
+}
+mapping "KAS00.1" source="KAS00" target="SNOMED_CT:175899003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open autologous kidney transplantation; exact match to SNOMED CT Autotransplantation of kidney,
+        verified in Athena
+        """
+}
+flag "KAS01.unmapped" kind=unmapped concept="KAS01" target-system="SNOMED_CT"
+mapping "KAS10.1" source="KAS10" target="SNOMED_CT:711411006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers deceased donor (any type); SNOMED CT splits by beating/non-beating heart -- loose
+        sibling
+        """
+}
+mapping "KAS11.1" source="KAS11" target="SNOMED_CT:175902000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ perkutan endoskopisk transplantation av njure från avliden donator = kidney transplant from
+        deceased donor; percutaneous endoscopic is approach, cadaveric r
+        """
+}
+mapping "KAS40.1" source="KAS40" target="SNOMED_CT:265550007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open excision of transplanted kidney; SNOMED CT concept omits open approach but procedure is
+        identical
+        """
+}
+mapping "KAS50.1" source="KAS50" target="SNOMED_CT:236148009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open pyelocystostomy on transplanted kidney: pyelocystostomy is a variant of pyelostomy; exact
+        match for the core procedure though SNOMED CT doesn't specify transp
+        """
+}
+mapping "KAS60.1" source="KAS60" target="SNOMED_CT:440183002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: open lymphocele operation after renal transplant maps to lymphocele drainage (different
+        approach same target)
+        """
+}
+mapping "KAS61.1" source="KAS61" target="SNOMED_CT:440183002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA percutaneous endoscopic lymphocele operation; SNOMED CT laparoscopic lymphocele drainage is
+        closest (approach differs)
+        """
+}
+mapping "KAS96.1" source="KAS96" target="SNOMED_CT:241484009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation in connection with kidney transplant; US of transplant kidney is a loose
+        proxy.
+        """
+}
+mapping "KAT00.1" source="KAT00" target="SNOMED_CT:24376003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAW96.1" source="KAW96" target="SNOMED_CT:236144006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBA01.1" source="KBA01" target="SNOMED_CT:236170007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous endoscopic ureter exploration. Antegrade ureteroscopy is closest endoscopic ureter
+        procedure.
+        """
+}
+mapping "KBA31.1" source="KBA31" target="SNOMED_CT:236170007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan antegrad pyelouretäroskopi (percutaneous antegrade pyeloureteroscopy) maps to. Verified
+        SNOMED CT S concept.
+        """
+}
+mapping "KBB00.1" source="KBB00" target="SNOMED_CT:176044002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 176044002 2100122595 = open biopsy of ureter; SNOMED CT is the
+        standard term
+        """
+}
+mapping "KBB01.1" source="KBB01" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous endoscopic biopsy of ureter maps to SNOMED CT 4055881 SNOMED CT 196539005 2100122596"
+}
+flag "KBB31.unmapped" kind=unmapped concept="KBB31" target-system="SNOMED_CT"
+mapping "KBC00.1" source="KBC00" target="SNOMED_CT:108028005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open approach ureterectomy; SNOMED CT concept covers ureterectomy regardless of
+        approach — broader parent
+        """
+}
+mapping "KBC00.2" source="KBC00" target="SNOMED_CT:108028005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBE11.1" source="KBE11" target="SNOMED_CT:175954005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: percutaneous nephropyeloureterolithotomy; weak to PCNL"
+}
+mapping "KBF00.1" source="KBF00" target="SNOMED_CT:67396001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal of foreign body from ureter. Removal by incision is closest approach."
+}
+mapping "KBH01.1" source="KBH01" target="SNOMED_CT:432396001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous endoscopic ureteral suturing; pyeloplasty is distant parent"
+}
+mapping "KBH20.1" source="KBH20" target="SNOMED_CT:387701008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ ureterocystostomy is ureter-to-bladder; SNOMED CT reimplantation of ureter is generic parent
+        without target-site specification
+        """
+}
+flag "KBH21.unmapped" kind=unmapped concept="KBH21" target-system="SNOMED_CT"
+mapping "KBH30.1" source="KBH30" target="SNOMED_CT:18995005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sibling relationship; both involve bowel-ureter connection but KBH30 is creation while SNOMED CT
+        concept is revision context
+        """
+}
+mapping "KBH41.1" source="KBH41" target="SNOMED_CT:176031007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan endoskopisk ureterplastik = percutaneous endoscopic ureteroplasty. SNOMED CT
+        176031007 2100122621 is the general concept. The KVAA specifies percutaneous en
+        """
+}
+mapping "KBH45.1" source="KBH45" target="SNOMED_CT:10255001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 10255001 2100122622 = endoluminal ureterotomy (ureter incision from inside); SNOMED CT
+        captures the core procedure; approach differe
+        """
+}
+mapping "KBH50.1" source="KBH50" target="SNOMED_CT:15761001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 15761001 2100122623 = freeing of fixed ureter (ureterolysis); exact match to SNOMED CT
+        concept
+        """
+}
+mapping "KBH51.1" source="KBH51" target="SNOMED_CT:446863005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan endoskopisk lösning av fixerad uretär = percutaneous endoscopic release of fixed
+        ureter. KVÅ says percutaneous endoscopic, SNOMED CT says laparoscopic. Ap
+        """
+}
+mapping "KBH96.1" source="KBH96" target="SNOMED_CT:119988007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBH98.1" source="KBH98" target="SNOMED_CT:119988007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBJ00.1" source="KBJ00" target="SNOMED_CT:51146001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100122630 51146001 = ureterocutaneostomy = formation of
+        cutaneous ureterostomy
+        """
+}
+flag "KBJ01.unmapped" kind=unmapped concept="KBJ01" target-system="SNOMED_CT"
+mapping "KBJ10.1" source="KBJ10" target="SNOMED_CT:1163003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ open urethroenterocutaneostomy = ureteroenterostomy with cutaneous stoma; SNOMED CT captures
+        enteric conduit anastomosis but omits cutaneous stoma component
+        """
+}
+flag "KBJ11.unmapped" kind=unmapped concept="KBJ11" target-system="SNOMED_CT"
+mapping "KBJ20.1" source="KBJ20" target="SNOMED_CT:236203002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies ureteroenterocutaneous approach with reservoir; SNOMED CT concept captures continent
+        reservoir construction but is approach-general
+        """
+}
+flag "KBJ21.unmapped" kind=unmapped concept="KBJ21" target-system="SNOMED_CT"
+mapping "KBJ40.1" source="KBJ40" target="SNOMED_CT:1163003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact term match"
+}
+mapping "KBJ61.1" source="KBJ61" target="SNOMED_CT:8093000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous endoscopic ureteroenteroureterostomy; transureteroureterostomy is related broader
+        concept
+        """
+}
+flag "KBJ81.unmapped" kind=unmapped concept="KBJ81" target-system="SNOMED_CT"
+flag "KBJ82.unmapped" kind=unmapped concept="KBJ82" target-system="SNOMED_CT"
+mapping "KBJ83.1" source="KBJ83" target="SNOMED_CT:176027001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open revision of ureteroenteroanastomosis or ureteroneocystoanastomosis = revision of ureteric
+        anastomosis; exact clinical equivalent for the ureteric component
+        """
+}
+flag "KBJ84.unmapped" kind=unmapped concept="KBJ84" target-system="SNOMED_CT"
+flag "KBJ86.unmapped" kind=unmapped concept="KBJ86" target-system="SNOMED_CT"
+flag "KBJ87.unmapped" kind=unmapped concept="KBJ87" target-system="SNOMED_CT"
+mapping "KBJ96.1" source="KBJ96" target="SNOMED_CT:699570007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other urinary diversion operation on ureter. Laparoscopic ureteroileostomy is related urinary
+        diversion.
+        """
+}

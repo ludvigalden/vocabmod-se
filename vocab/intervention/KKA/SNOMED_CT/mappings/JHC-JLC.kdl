@@ -1,0 +1,249 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JHC-JLC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JHC10.1" source="JHC10" target="SNOMED_CT:235381007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JHC20.1" source="JHC20" target="SNOMED_CT:235381007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JHC40.1" source="JHC40" target="SNOMED_CT:174287005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: anal cerclage = encircling suture around anal sphincter"
+}
+mapping "JHC50.1" source="JHC50" target="SNOMED_CT:119902006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JHC60.1" source="JHC60" target="SNOMED_CT:612161000124101" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact: KKÅ also covers intersphincteric route but submucosal bulking agent injection is the
+        core procedure
+        """
+}
+mapping "JHD20.1" source="JHD20" target="SNOMED_CT:235392008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: klyvning = laying open/fistulotomy of anal fistula. SNOMED CT concept 235392008
+        verified standard S in Athena.
+        """
+}
+mapping "JHD30.1" source="JHD30" target="SNOMED_CT:235392008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies incomplete fistulotomy; weak to general laying open of anal fistula"
+}
+mapping "JHD33.1" source="JHD33" target="SNOMED_CT:79567008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Complementary incision or excision of anal fistula maps exactly to incision of anal fistula"
+}
+mapping "JHD50.1" source="JHD50" target="SNOMED_CT:86888002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies excision of anal fistula with mucosal advancement flap technique; SNOMED CT covers
+        fistulectomy without specifying the advancement flap repair technique
+        """
+}
+mapping "JHD60.1" source="JHD60" target="SNOMED_CT:442289003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ specifies collagen plug; SNOMED CT plug is material-agnostic — high equivalence"
+}
+mapping "JHD65.1" source="JHD65" target="SNOMED_CT:442289003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ocklusion av analfistel med fettvävnad = Closure of anal fistula using plug; exact match -- the
+        Swedish code specifies fat tissue plug which is a type of anal f
+        """
+}
+mapping "JHD97.1" source="JHD97" target="SNOMED_CT:79567008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other incision or excision of anal fistula maps exactly to incision of anal fistula"
+}
+mapping "JHE10.1" source="JHE10" target="SNOMED_CT:840601000000100" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact match; KVÅ does not specify transabdominal approach"
+}
+mapping "JHE20.1" source="JHE20" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JHE96.1" source="JHE96" target="SNOMED_CT:840601000000100" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other operation related to artificial anal sphincter insertion; implantation is the core
+        procedure
+        """
+}
+mapping "JJA00.1" source="JJA00" target="SNOMED_CT:265437009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JJA24.1" source="JJA24" target="SNOMED_CT:15050001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Puncture biopsy of liver during laparoscopy maps exactly to Laparoscopic biopsy of liver; exact
+        match
+        """
+}
+mapping "JJA41.1" source="JJA41" target="SNOMED_CT:854011000000100" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Direct match: laparoscopic excision of liver lesion."
+}
+mapping "JJA43.1" source="JJA43" target="SNOMED_CT:5415002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: destruction of lesion in liver. Verified SNOMED CT standard concept S."
+}
+mapping "JJB10.1" source="JJB10" target="SNOMED_CT:71273005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100122367 71273005 = atypical liver resection (non-anatomical). SNOMED CT has
+        which encompasses atypical resections. Not a
+        """
+}
+flag "JJB11.unmapped" kind=unmapped concept="JJB11" target-system="SNOMED_CT"
+mapping "JJB96.1" source="JJB96" target="SNOMED_CT:107963000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "JJB97.unmapped" kind=unmapped concept="JJB97" target-system="SNOMED_CT"
+mapping "JJC10.1" source="JJC10" target="SNOMED_CT:426356008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: partial liver transplant; weak to whole liver transplant"
+}
+mapping "JKA97.1" source="JKA97" target="SNOMED_CT:45595009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other laparoscopic operation on gallbladder; lap cholecystectomy is most common laparoscopic
+        gallbladder procedure
+        """
+}
+mapping "JKB40.1" source="JKB40" target="SNOMED_CT:235534005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JKB96.1" source="JKB96" target="SNOMED_CT:450499007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Very loose: other bile duct local operation; cholecystectomy is related but not equivalent"
+}
+mapping "JKC00.1" source="JKC00" target="SNOMED_CT:174549003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of local lesion in bile duct maps exactly to extirpation of lesion of bile duct"
+}
+mapping "JKC40.1" source="JKC40" target="SNOMED_CT:301704008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: hepatic duct excision + hepaticoenterostomy; weak to hepaticojejunostomy"
+}
+mapping "JKC50.1" source="JKC50" target="SNOMED_CT:14687003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extirpation of papilla Vateri with cholangioenterostomy maps exactly to choledochoenterostomy
+        (the cholangioenterostomy is the definitive biliary reconstruction
+        """
+}
+mapping "JKD20.1" source="JKD20" target="SNOMED_CT:71827004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cholangiojejunostomy is a Swedish synonym for choledochojejunostomy (anastomosis of common bile
+        duct to jejunum); exact match
+        """
+}
+mapping "JKD30.1" source="JKD30" target="SNOMED_CT:301704008" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA extrahepatic hepatikojejunostomy = SNOMED CT Roux-en-Y hepaticojejunostomy; near-exact match
+        """
+}
+mapping "JKE00.1" source="JKE00" target="SNOMED_CT:1645004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transduodenal papillotomi = transduodenal papillotomy. SNOMED CT Transduodenal sphincterotomy is
+        the exact clinical equivalent (papillotomy = sphincterotomy of the
+        """
+}
+mapping "JKE02.1" source="JKE02" target="SNOMED_CT:37403009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopisk papillotomi eller sfinkterotomi = endoscopic sphincterotomy/papillotomy; this is the
+        standard ERCP sphincterotomy of Oddi. Exact clinical equivalent
+        """
+}
+mapping "JKE06.1" source="JKE06" target="SNOMED_CT:1645004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JKE22.1" source="JKE22" target="SNOMED_CT:22778000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Foreign body extraction from bile duct; no SNOMED CT equivalent found - venipuncture is very
+        distant but resident
+        """
+}
+mapping "JKE98.1" source="JKE98" target="SNOMED_CT:386718000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other transduodenal endoscopic biliary/ampulla procedure vs ERCP; reasonable parent"
+}
+mapping "JKF00.1" source="JKF00" target="SNOMED_CT:63322005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122438 63322005 = excision of cystic duct stump; = cystic duct remnant/stump;
+        SNOMED CT 63322005 is exact equivalen
+        """
+}
+mapping "JKF10.1" source="JKF10" target="SNOMED_CT:65313007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous extraction of common duct stones. SNOMED CT 2100122439 65313007 qualifier is a
+        contextual modifier not in SNOMED CT
+        """
+}
+mapping "JKW97.1" source="JKW97" target="SNOMED_CT:235159007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other laparoscopic operation on biliary tract; no good match."
+}
+mapping "JLA00.1" source="JLA00" target="SNOMED_CT:265464005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JLA20.1" source="JLA20" target="SNOMED_CT:392157001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122449 392157001 = puncture biopsy of pancreas; in pancreatic context, puncture
+        biopsy = fine needle aspiration; exact clinical equivalent
+        """
+}
+mapping "JLB12.1" source="JLB12" target="SNOMED_CT:850301000000105" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122453 850301000000105 = endoscopic incision of pancreatic ostium; this is
+        precisely pancreatic sphincterotomy performed during ERCP, exa
+        """
+}
+mapping "JLB35.1" source="JLB35" target="SNOMED_CT:173813000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic foreign body removal from pancreatic duct; broader upper GI foreign body removal"
+}
+mapping "JLC10.1" source="JLC10" target="SNOMED_CT:235469009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader parent; KVÅ is general distal pancreatectomy, SNOMED CT is 30-50% specific"
+}
+mapping "JLC11.1" source="JLC11" target="SNOMED_CT:841091000000105" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact SNOMED CT equivalent"
+}
+mapping "JLC30.1" source="JLC30" target="SNOMED_CT:33149006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pankreasresektion = pancreatic resection; SNOMED CT 2100122466 33149006 is the SNOMED CT equivalent of
+        generic pancreatic resection; the KVÅ does not specify partial/total/dist
+        """
+}
+mapping "JLC40.1" source="JLC40" target="SNOMED_CT:116241004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JLC50.1" source="JLC50" target="SNOMED_CT:51684008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Atypical pancreatic resection; closest broader is radical subtotal pancreatectomy"
+}

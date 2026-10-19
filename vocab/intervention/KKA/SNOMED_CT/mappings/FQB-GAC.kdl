@@ -1,0 +1,259 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes FQB-GAC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "FQB30.1" source="FQB30" target="SNOMED_CT:174802006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: heart-lung transplant with bronchial revascularization. SNOMED CT has heart-lung transplant
+        """
+}
+mapping "FWA00.1" source="FWA00" target="SNOMED_CT:715761006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies wound rupture after cardiac/intrathoracic vessel procedure; SNOMED CT captures
+        anatomic site and reoperation but not wound dehiscence indication
+        """
+}
+mapping "FWD00.1" source="FWD00" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reoperation for superficial bleeding after cardiac/thoracic procedure; no close SNOMED CT match"
+}
+mapping "FWF00.1" source="FWF00" target="SNOMED_CT:86881008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies reoperation for anastomotic/suture insufficiency after cardiac/thoracic vascular
+        surgery; SNOMED CT is generic cardiac revision parent
+        """
+}
+mapping "FWG00.1" source="FWG00" target="SNOMED_CT:38764003" relationship=source_is_broader_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå covers reoperation for thrombosis OR embolus in heart/major thoracic vessel surgery
+        (site-general); SNOMED CT concept is aorta-specific embolectomy — cardiac and other thoracic
+        vessels and thrombosis (vs embolus) not captured
+        """
+}
+mapping "FWW96.1" source="FWW96" target="SNOMED_CT:36936009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other reoperation on heart or great intrathoracic vessels; thoracotomy is parent"
+}
+mapping "FXA00.1" source="FXA00" target="SNOMED_CT:705952007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FXA00 SNOMED CT 705952007 = Total cardiopulmonary bypass in normothermia/moderate
+        hypothermia (KVÅ specific perfusion technique). Target (a device, not a procedure). No SNOMED CT
+        procedure for CPB technique exists in mirror. Weak tier: target is a device, not a procedure.
+        Related as a lead.
+        """
+}
+mapping "FXA10.1" source="FXA10" target="SNOMED_CT:233569005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Total CPB in deep hypothermia vs single period CPB; broader but captures core"
+}
+mapping "FXA13.1" source="FXA13" target="SNOMED_CT:63697000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total CPB with deep hypothermia and cerebral perfusion during concurrent surgery. SNOMED CT
+        2100121508 63697000 is the parent concept; the deep hypo
+        """
+}
+mapping "FXA20.1" source="FXA20" target="SNOMED_CT:705952007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FXA20 SNOMED CT 705952007 = Total cardiopulmonary bypass in deep hypothermia and cardiac
+        arrest (KVÅ specific perfusion technique). Target (a device, not a procedure). No SNOMED CT
+        procedure for CPB with deep hypothermia exists in mirror. Weak tier: target is a device. Related
+        as a lead.
+        """
+}
+mapping "FXA96.1" source="FXA96" target="SNOMED_CT:63697000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cardiopulmonary bypass operation. SNOMED CT 2100121509 63697000 qualifier is residual category but
+        the procedure itself is exact
+        """
+}
+mapping "FXB00.1" source="FXB00" target="SNOMED_CT:233569005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraoperativ partiell kardiopulmonal bypass (intraoperative partial cardiopulmonary bypass)
+        maps to
+        """
+}
+mapping "FXC00.1" source="FXC00" target="SNOMED_CT:233569005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA partial CPB without oxygenator = SNOMED CT CPB broader parent"
+}
+mapping "FXD00.1" source="FXD00" target="SNOMED_CT:233573008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121512 233573008 = use of ECMO/ECLS without concurrent surgery; exact match to SNOMED CT
+        Extracorporeal membrane oxygenatio
+        """
+}
+mapping "FXE00.1" source="FXE00" target="SNOMED_CT:233573008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is a supplementary code for ECMO used in connection with surgery; SNOMED CT concept is the ECMO
+        procedure itself without surgical context
+        """
+}
+mapping "FXF00.1" source="FXF00" target="SNOMED_CT:233553003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is ECMO/ECLS-specific decannulation; SNOMED CT concept is generic vascular cannula removal —
+        broader parent
+        """
+}
+mapping "FXF05.1" source="FXF05" target="SNOMED_CT:232969009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Peripheral ECMO cannulation maps to cardiac ECMO support; related but less specific"
+}
+mapping "FXF10.1" source="FXF10" target="SNOMED_CT:243781005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both ECMO-related but cannulation vs blood sampling; very weak"
+}
+flag "FXF20.unmapped" kind=unmapped concept="FXF20" target-system="SNOMED_CT"
+flag "FXF30.unmapped" kind=unmapped concept="FXF30" target-system="SNOMED_CT"
+flag "FXF40.unmapped" kind=unmapped concept="FXF40" target-system="SNOMED_CT"
+mapping "FXG00.1" source="FXG00" target="SNOMED_CT:469988006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FXG00 SNOMED CT 469988006 = Use of intra-aortic balloon pump (KVÅ specific). Target (a
+        device, not a procedure). No SNOMED CT procedure concept for IABP insertion/use exists in mirror.
+        Weak tier: target is a device. Related as a lead.
+        """
+}
+mapping "FXH00.1" source="FXH00" target="SNOMED_CT:469988006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FXH00 SNOMED CT 469988006 = Removal of intra-aortic balloon pump (KVÅ specific). Target (a
+        device, not a procedure). No SNOMED CT procedure for IABP removal exists in mirror. Weak tier:
+        target is a device. Related as a lead.
+        """
+}
+mapping "FXL40.1" source="FXL40" target="SNOMED_CT:426568003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Paracorporeal VAD insertion maps to open implantation of cardiac VAD"
+}
+mapping "FXL50.1" source="FXL50" target="SNOMED_CT:232965003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extracorporeal VAD insertion vs VAD implantation; good match"
+}
+mapping "FXL60.1" source="FXL60" target="SNOMED_CT:232965003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Insertion of intracorporeal VAD; good SNOMED CT match"
+}
+mapping "FXM30.1" source="FXM30" target="SNOMED_CT:426410001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader parent; SNOMED CT concept does not distinguish extracorporeal from implantable VAD removal
+        """
+}
+mapping "GAA15.1" source="GAA15" target="SNOMED_CT:281584007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Insertion of chest drain with rib resection; SNOMED CT chest drain insertion is parent"
+}
+mapping "GAA31.1" source="GAA31" target="SNOMED_CT:14671001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GAA96.1" source="GAA96" target="SNOMED_CT:31198006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pleural drainage procedure; weak to tube thoracostomy (drainage approach differs)"
+}
+mapping "GAA97.1" source="GAA97" target="SNOMED_CT:278296000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annat torakoskopiskt dränageingrepp i pleurahåla = other thoracoscopic drainage procedure of
+        pleural cavity. SNOMED CT 2100121535 278296000 is the core procedure
+        """
+}
+mapping "GAB00.1" source="GAB00" target="SNOMED_CT:26337002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Emergency thoracotomy is closely related to exploratory thoracotomy"
+}
+mapping "GAC00.1" source="GAC00" target="SNOMED_CT:116025006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of pleura maps exactly to SNOMED CT Biopsy of pleura; exact match"
+}
+mapping "GAC01.1" source="GAC01" target="SNOMED_CT:116024005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; procedure and approach match precisely"
+}
+mapping "GAC10.1" source="GAC10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GAC20.1" source="GAC20" target="SNOMED_CT:177783000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision/destruction of pleural lesion; weak to open pleurectomy (overlapping procedure)"
+}
+mapping "GAC21.1" source="GAC21" target="SNOMED_CT:177808003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers both excision AND destruction via thoracoscopic approach; SNOMED CT endoscopic
+        pleurectomy captures only excision
+        """
+}
+mapping "GAC41.1" source="GAC41" target="SNOMED_CT:38506001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is thoracoscopic pleurodesis WITH pleurectomy; SNOMED CT concept is pleurodesis only — loose
+        parent missing pleurectomy component
+        """
+}
+mapping "GAC43.1" source="GAC43" target="SNOMED_CT:23979009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GAC44.1" source="GAC44" target="SNOMED_CT:177808003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies thoracoscopic total pleurectomy; SNOMED CT endoscopic pleurectomy matches approach
+        but omits total vs partial distinction
+        """
+}
+mapping "GAC47.1" source="GAC47" target="SNOMED_CT:86371000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå specifies thoracoscopic approach; SNOMED CT concept is approach-agnostic — captures partial
+        resection but not endoscopic technique
+        """
+}
+mapping "GAC53.1" source="GAC53" target="SNOMED_CT:1115001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GAC54.1" source="GAC54" target="SNOMED_CT:194255002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracoscopic pleural decortication. Total decortication of lung is broader but captures
+        decortication.
+        """
+}
+mapping "GAC56.1" source="GAC56" target="SNOMED_CT:194255002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pleural decortication with empyem evacuation; SNOMED CT total decortication of lung is related"
+}
+mapping "GAC57.1" source="GAC57" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Thoracoscopic pleural decortication empyem evacuation; no close SNOMED CT match"
+}
+mapping "GAC96.1" source="GAC96" target="SNOMED_CT:177783000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other pleura operation residual category; weak to open pleurectomy"
+}
+mapping "GAC97.1" source="GAC97" target="SNOMED_CT:38506001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match: SNOMED CT 2100121564 38506001 is an residual code. The only specific thoracoscopic
+        pleura procedure in SNOMED CT is 'Thoracoscop
+        """ suspect=quoted-text
+}

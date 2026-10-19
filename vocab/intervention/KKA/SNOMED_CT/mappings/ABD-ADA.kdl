@@ -1,0 +1,318 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes ABD-ADA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ABD10.1" source="ABD10" target="SNOMED_CT:20516002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open cordotomy maps exactly to spinal cordotomy"
+}
+mapping "ABD20.1" source="ABD20" target="SNOMED_CT:20516002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "ABD50.1" source="ABD50" target="SNOMED_CT:386768008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120167 386768008 = transection of spinal nerve root due to pain or functional
+        disturbance; SNOMED CT tr
+        """
+}
+mapping "ABD60.1" source="ABD60" target="SNOMED_CT:231039001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Implantation av spinal nervelektrod PNE 1 = implantation of spinal nerve electrode PNE 1. SNOMED CT
+        2100120168 231039001 is
+        """
+}
+mapping "ABD65.1" source="ABD65" target="SNOMED_CT:1297066004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies PNE second session (peripheral nerve evaluation staged trial); SNOMED CT temporary
+        electrode captures the trial nature but not the staged protocol specificity
+        """
+}
+mapping "ABD99.1" source="ABD99" target="SNOMED_CT:171782002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ABD99 SNOMED CT 171782002 = Other operation on spinal cord/nerve roots due to pain and
+        functional disturbance (KVÅ residual). Target. Source is specifically about pain/functional
+        disturbance operations; target is a general nerve root operation concept. Weak tier: target
+        loses the pain/functional indication, broad semantic overlap only.
+        """
+}
+mapping "ABE20.1" source="ABE20" target="SNOMED_CT:440211003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Release of tethered spinal cord or diastematomyelia -- SNOMED CT 2100120172 440211003 maps to
+        laminectomy with release of tethered lumbar spinal cord; diastemato
+        """
+}
+mapping "ABE30.1" source="ABE30" target="SNOMED_CT:74409009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT has endodermal sinus tumör - a disease, not the procedure; no useful SNOMED CT procedure
+        match
+        """
+}
+mapping "ABE50.1" source="ABE50" target="SNOMED_CT:438371007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Occipitocervical decompression to suboccipital craniectomy with cervical laminectomy (closest
+        anatomic SNOMED CT match).
+        """
+}
+mapping "ABE99.1" source="ABE99" target="SNOMED_CT:171743004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ABE99 SNOMED CT 171743004 = Other operation due to spinal malformation (KVÅ residual).
+        Target. No SNOMED CT concept for exists. Target broadly subsumes the source. Weak tier: target
+        loses the malformation indication.
+        """
+}
+mapping "ACA17.1" source="ACA17" target="SNOMED_CT:77811003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av perifer nerv - plexus lumbalis = exploration of peripheral nerve - lumbar plexus.
+        SNOMED CT 2100120184 77811003 is the generic equivalent; lu
+        """
+}
+mapping "ACA19.1" source="ACA19" target="SNOMED_CT:77811003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration of peripheral nerve, other or unspecified: exact match to SNOMED CT 2100120186 77811003
+        (SNOMED CT 77811003)
+        """
+}
+mapping "ACA21.1" source="ACA21" target="SNOMED_CT:231069008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av perifer nerv - medianus = biopsy of peripheral nerve - median nerve. SNOMED CT
+        2100120187 231069008 is the general concept. The medianus specific
+        """
+}
+mapping "ACA22.1" source="ACA22" target="SNOMED_CT:231069008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av perifer nerv - radialis = biopsy of peripheral nerve, radial nerve. SNOMED CT Biopsy of
+        peripheral nerve is the general concept; no radial nerve-specific
+        """
+}
+mapping "ACA23.1" source="ACA23" target="SNOMED_CT:231069008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsy of peripheral nerve, ulnar -- maps to biopsy of peripheral nerve (the ulnar specification
+        is a nerve site qualifier not present in this SNOMED CT concept)
+        """
+}
+mapping "ACA24.1" source="ACA24" target="SNOMED_CT:231069008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120190 231069008 = biopsy of peripheral nerve - peroneal; SNOMED CT is the generic
+        parent (no peroneal-specific
+        """
+}
+mapping "ACA26.1" source="ACA26" target="SNOMED_CT:231069008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av perifer nerv - ischiadicus = biopsy of peripheral nerve - sciatic nerve; SNOMED CT has
+        general biopsy of peripheral nerve. The sciatic specificity is not
+        """
+}
+mapping "ACA27.1" source="ACA27" target="SNOMED_CT:231069008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120193 231069008; (4332716) is the generic biopsy concept; the KVAA specifies
+        lumbar plexus but no s
+        """
+}
+mapping "ACA29.1" source="ACA29" target="SNOMED_CT:231069008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av perifer nerv - annan eller ospecificerad nerv = biopsy of peripheral nerve - other or
+        unspecified. Exact SNOMED CT equivalent.
+        """
+}
+mapping "ACA99.1" source="ACA99" target="SNOMED_CT:66735008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ACA99 SNOMED CT 66735008 = Other diagnostic operation on peripheral nerve, other or
+        unspecified nerve (KVÅ residual). Target. Both denote diagnostic procedures on unspecified
+        peripheral nerves. Exact match at low tier: no crosswalk, but semantics align.
+        """
+}
+mapping "ACB19.1" source="ACB19" target="SNOMED_CT:59866006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ exstirpation av patologisk förändring från perifer nerv = excision of lesion of peripheral
+        nerve; exact match
+        """
+}
+mapping "ACB22.1" source="ACB22" target="SNOMED_CT:171814002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Site-specific radial nerve suture; parent peripheral nerve repair"
+}
+mapping "ACB24.1" source="ACB24" target="SNOMED_CT:87130007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Nerve suture of peroneal nerve; SNOMED CT has only facial nerve repair as verified nerve repair"
+}
+mapping "ACB26.1" source="ACB26" target="SNOMED_CT:3666002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of peripheral nerve (sciatic) = peripheral neurorrhaphy. Exact match"
+}
+mapping "ACB27.1" source="ACB27" target="SNOMED_CT:22648000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: suture of peripheral nerve (lumbar plexus) maps directly to SNOMED CT 2100120220
+        22648000.
+        """
+}
+mapping "ACB28.1" source="ACB28" target="SNOMED_CT:77664001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: suture of peripheral nerve (brachial plexus) maps directly to SNOMED CT 2100120221
+        77664001.
+        """
+}
+mapping "ACB29.1" source="ACB29" target="SNOMED_CT:361240004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suturing of peripheral nerve, other or unspecified nerve. SNOMED CT 2100120222 361240004 is the
+        exact SNOMED CT equivalent of this generic peripheral ne
+        """
+}
+mapping "ACB98.1" source="ACB98" target="SNOMED_CT:171814002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation brachial plexus pathology; parent peripheral nerve repair"
+}
+mapping "ACB99.1" source="ACB99" target="SNOMED_CT:171830005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ACB99 SNOMED CT 171830005 = Other operation due to pathological change or injury to
+        peripheral nerve (KVÅ residual). Target. Source covers operations for both disease and injury of
+        peripheral nerves; target covers repair specifically. Broader. Low tier: no crosswalk, residual
+        source.
+        """
+}
+mapping "ACC11.1" source="ACC11" target="SNOMED_CT:386768008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transection of peripheral nerve -- median nerve maps exactly to the general transection of
+        peripheral nerve concept (specific nerve is a site modifier, same pro
+        """
+}
+mapping "ACC12.1" source="ACC12" target="SNOMED_CT:386768008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120233 386768008 = transection of peripheral nerve - radial nerve; SNOMED CT
+        386768008 covers the generic procedure; the radial nerve
+        """
+}
+mapping "ACC14.1" source="ACC14" target="SNOMED_CT:386768008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transection of peripheral nerve. Peroneal nerve is a specific peripheral nerve; the general
+        concept covers the procedure
+        """
+}
+mapping "ACC15.1" source="ACC15" target="SNOMED_CT:386768008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Genomskärning av perifer nerv - tibialis = transection (cutting through) of peripheral nerve -
+        tibial nerve. The SNOMED CT concept is the generic transection; the
+        """
+}
+mapping "ACC17.1" source="ACC17" target="SNOMED_CT:386768008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Genomskärning av perifer nerv plexus lumbalis = Transection of peripheral nerve; exact match;
+        lumbar plexus is an approach/site detail
+        """
+}
+mapping "ACC18.1" source="ACC18" target="SNOMED_CT:386768008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transection of peripheral nerve -- brachial plexus maps exactly to the general transection of
+        peripheral nerve concept (brachial plexus is a specific nerve site
+        """
+}
+mapping "ACC19.1" source="ACC19" target="SNOMED_CT:386768008" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transection of peripheral nerve, unspecified nerve, maps exactly to the general transection of
+        peripheral nerve concept
+        """
+}
+mapping "ACC26.1" source="ACC26" target="SNOMED_CT:87130007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Nerve reconstruction sciatic; weak to facial nerve repair (different nerve same procedure class)
+        """
+}
+mapping "ACC28.1" source="ACC28" target="SNOMED_CT:171814002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Peripheral nerve reconstruction of brachial plexus; SNOMED CT microsurgical nerve repair is parent
+        """
+}
+mapping "ACC49.1" source="ACC49" target="SNOMED_CT:446801005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120258 446801005 = transposition of peripheral nerve, other or unspecified; exact
+        match to SNOMED CT concept
+        """
+}
+mapping "ACC59.1" source="ACC59" target="SNOMED_CT:38663004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dekompression av perifer nerv - annan eller ospecificerad nerv = decompression of peripheral
+        nerve - other or unspecified nerve; the generic SNOMED CT concept enco
+        """
+}
+mapping "ACC91.1" source="ACC91" target="SNOMED_CT:230971002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on peripheral nerve for functional disturbance median nerve; no good match."
+}
+mapping "ACC95.1" source="ACC95" target="SNOMED_CT:231173008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Peripheral nerve operation tibialis; broader peroneal nerve block is closest nerve procedure"
+}
+mapping "ACC96.1" source="ACC96" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other sciatic nerve operation for functional disturbance. No SNOMED CT match"
+}
+mapping "ACC99.1" source="ACC99" target="SNOMED_CT:112944004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ACC99 SNOMED CT 112944004 = Other operation on peripheral nerve due to functional
+        disturbance (KVÅ residual). Target. Source is specifically about functional disturbance
+        operations; target is a general operative nerve procedure. Weak tier: target loses the
+        functional disturbance indication entirely.
+        """
+}
+mapping "ADA21.1" source="ADA21" target="SNOMED_CT:307170004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Thoracoscopic sympathectomy; close to endoscopic thoracic sympathectomy"
+}
+mapping "ADA40.1" source="ADA40" target="SNOMED_CT:459341000124100" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal ablation av sympatiska njurnerver = percutaneous transluminal ablation of
+        sympathetic renal nerves; endovascular renal denervation is exac
+        """
+}
+mapping "ADA99.1" source="ADA99" target="SNOMED_CT:148758007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ADA99 SNOMED CT 148758007 = Other operation on sympathetic nervous system (KVÅ residual).
+        Target (incl. sympathectomy). Both denote operations on the sympathetic nervous system at the
+        same level. Exact match at low tier: no crosswalk, but semantics align well.
+        """
+}

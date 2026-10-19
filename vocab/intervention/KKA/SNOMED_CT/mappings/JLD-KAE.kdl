@@ -1,0 +1,299 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JLD-KAE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JLD00.1" source="JLD00" target="SNOMED_CT:235477008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JLD10.1" source="JLD10" target="SNOMED_CT:401240008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anastomosis of pancreatic pseudocyst to stomach or duodenum = internal drainage of pancreatic
+        pseudocyst (cystogastrostomy or cystoduodenostomy). SNOMED CT 4012400
+        """
+}
+mapping "JLD20.1" source="JLD20" target="SNOMED_CT:16156002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anastomosis of pancreatic pseudocyst to small intestine = Drainage of pseudocyst of pancreas by
+        anastomosis (SNOMED CT 16156002)
+        """
+}
+mapping "JLD22.1" source="JLD22" target="SNOMED_CT:401240008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic drainage of pancreatic pseudocyst to small intestine; SNOMED CT Drainage of pancreatic
+        pseudocyst covers all drainage approaches, verified in Athena
+        """
+}
+mapping "JLE00.1" source="JLE00" target="SNOMED_CT:235159007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Homolog pancreas transplant with pancreatic cystostomy; no good match; PEG is unrelated."
+}
+mapping "JLE16.1" source="JLE16" target="SNOMED_CT:71947008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100122478 71947008 = homologous transplantation of pancreatic segment from living donor;
+        maps to 'Homotransplant
+        """ suspect=quoted-text
+}
+mapping "JLE20.1" source="JLE20" target="SNOMED_CT:241484009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Islet cell transplant; to transplant procedure"
+}
+mapping "JLE30.1" source="JLE30" target="SNOMED_CT:438611007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: SNOMED CT 2100122480 438611007 = heterologous transplantation of islet cells; the
+        Swedish term likely refers to islet cell
+        """
+}
+mapping "JMA00.1" source="JMA00" target="SNOMED_CT:234319005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mjältresektion = splenic resection/splenectomy. SNOMED CT 2100122489 234319005 is the standard
+        clinical equivalent; mjältresektion in Swedish surgical practice implies (partial
+        """
+}
+mapping "JMA10.1" source="JMA10" target="SNOMED_CT:234319005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JMB01.1" source="JMB01" target="SNOMED_CT:314118002" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk provexcison av mjälte = laparoscopic excision biopsy of spleen. SNOMED CT 2100122494
+        314118002 is the closest match. The KVÅ specifies 'provexci
+        """ suspect=quoted-text
+}
+mapping "JWA00.1" source="JWA00" target="SNOMED_CT:29629000" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies GI/abdominal context; SNOMED CT concept is site-general wound dehiscence resuture --
+        loose parent
+        """
+}
+mapping "JWB00.1" source="JWB00" target="SNOMED_CT:448941005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT captures re-exploration but not infection-specific component; KKÅ specifies superficial
+        infection after GI procedure
+        """
+}
+mapping "JWC00.1" source="JWC00" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "JWC00 reoperation djup infektion mag-tarm; weak to revision procedure"
+}
+mapping "JWC01.1" source="JWC01" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: percutaneous endoscopic reoperation for post-GI deep infection. No SNOMED CT match"
+}
+mapping "JWD00.1" source="JWD00" target="SNOMED_CT:177956008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies reoperation for superficial bleeding after GI tract procedure; SNOMED CT specifies
+        abdominal reopening for postop bleeding arrest — reasonable overlap, GI vs intra-abdominal
+        """
+}
+mapping "JWE00.1" source="JWE00" target="SNOMED_CT:177956008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ code covers GI tract broadly and may include endoscopic approach; SNOMED CT concept is
+        specifically surgical reopening for intra-abdominal postop bleeding
+        """
+}
+mapping "JWE01.1" source="JWE01" target="SNOMED_CT:177956008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Same clinical intent but KKÅ specifies percutaneous endoscopic approach; SNOMED CT specifies open
+        approach via abdomen reopening
+        """
+}
+mapping "JWE02.1" source="JWE02" target="SNOMED_CT:36526005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT is a broader parent for endoscopic hemorrhage control; KKÅ specifically denotes
+        reoperation for post-GI-procedure deep bleeding — context not captured
+        """
+}
+mapping "JWF00.1" source="JWF00" target="SNOMED_CT:238256008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures reoperation for anastomosis/suture insufficiency is more specific than general abdominal
+        re-exploration; broader parent
+        """
+}
+mapping "JWF01.1" source="JWF01" target="SNOMED_CT:122460008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies percutaneous endoscopic reoperation for GI anastomotic/suture leak; SNOMED CT concept
+        is generic reexploration without approach or site specificity
+        """
+}
+mapping "JWW96.1" source="JWW96" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JXA00.1" source="JXA00" target="SNOMED_CT:38615002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is intralesional excision of extensive abdominal wall tumör; SNOMED CT is excision of
+        subfascial abdominal wall tumör — good structural match
+        """
+}
+mapping "JXA03.1" source="JXA03" target="SNOMED_CT:38615002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100122512 38615002 = marginal excision of extensive tumör of abdominal wall; exact match
+        to SNOMED CT Excision of subfascial abdom
+        """
+}
+mapping "JXA06.1" source="JXA06" target="SNOMED_CT:450591007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies extended excision of extensive tumör; SNOMED CT covers lesion excision generally —
+        loose parent
+        """
+}
+mapping "JXA10.1" source="JXA10" target="SNOMED_CT:708729004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ intralesionell excision av omfattande tumör i bukhålan = extensive debulking of neoplasm of
+        abdominal cavity; exact match
+        """
+}
+mapping "JXA13.1" source="JXA13" target="SNOMED_CT:708729004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ marginell excision av omfattande tumör i bukhålan = extensive debulking; KKÅ qualifier \"utan
+        definierat ursprung\" is site-level detail not in SNOMED CT concept name
+        """
+}
+mapping "JXA16.1" source="JXA16" target="SNOMED_CT:708729004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Utvidgad excision av omfattande tumör i bukhålan (extended excision of extensive tumör in
+        abdominal cavity) maps to 'Extensive debulking of neoplasm of abdomina
+        """
+}
+mapping "KAA00.1" source="KAA00" target="SNOMED_CT:387663003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open exploration = surgical exploration of kidney; renal pelvis inclusion is adjunct"
+}
+mapping "KAA31.1" source="KAA31" target="SNOMED_CT:275218004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous nephropyeloscopy maps exactly to pyeloscopy"
+}
+mapping "KAB00.1" source="KAB00" target="SNOMED_CT:40134000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SV synonym SNOMED CT 40134000 7246002 matches; SNOMED CT (KVA also covers renal pelvis)"
+}
+mapping "KAB00.2" source="KAB00" target="SNOMED_CT:7246002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "KAC00.1" source="KAC00" target="SNOMED_CT:175905003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT concept lacks open approach specification; KKÅ is open nephrectomy"
+}
+mapping "KAD00.1" source="KAD00" target="SNOMED_CT:49780003" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=open partial nephrectomy (NOMESCO); SNOMED CT heminephrectomy is closest standard; no open
+        partial nephrectomy concept exists
+        """
+}
+mapping "KAD01.1" source="KAD01" target="SNOMED_CT:81516001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is percutaneous endoscopic kidney resection (partial nephrectomy subtype); SNOMED CT is
+        approach-general partial nephrectomy; broader parent
+        """
+}
+mapping "KAD10.1" source="KAD10" target="SNOMED_CT:49780003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT lacks open approach qualifier; procedure is equivalent"
+}
+flag "KAD11.unmapped" kind=unmapped concept="KAD11" target-system="SNOMED_CT"
+mapping "KAD51.1" source="KAD51" target="SNOMED_CT:236154005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100122533 236154005 = percutaneous endoscopic resection or destruction of
+        renal pelvis tumör. The
+        """
+}
+mapping "KAD52.1" source="KAD52" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoluminal renal pelvis tumör resection; no close SNOMED CT match"
+}
+mapping "KAD56.1" source="KAD56" target="SNOMED_CT:175924000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact structural match; KKÅ supplementary code ZXC covers technique specification (RF/microwave)
+        separately
+        """
+}
+mapping "KAD60.1" source="KAD60" target="SNOMED_CT:736616001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan destruktion av lokal förändring i njurparenkym (percutaneous destruction of local
+        change in renal parenchyma) maps to 'Local destruction of lesion of k
+        """
+}
+mapping "KAD96.1" source="KAD96" target="SNOMED_CT:81516001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is open residual resection of kidney or renal pelvis; SNOMED CT partial nephrectomy is
+        approach-agnostic and does not include renal pelvis
+        """
+}
+mapping "KAD97.1" source="KAD97" target="SNOMED_CT:236154005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers both kidney parenchyma and renal pelvis; SNOMED CT concept is renal-pelvis-specific and
+        lesion-specific. Captures the endoscopic approach correctly.
+        """
+}
+mapping "KAD98.1" source="KAD98" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other endoluminal kidney/renal pelvis resection. No SNOMED CT match"
+}
+mapping "KAE10.1" source="KAE10" target="SNOMED_CT:236147004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open nephropyelolithectomy maps exactly to open nephrostomy (the standard SNOMED CT concept for
+        open renal surgery approach to remove calculi)
+        """
+}
+mapping "KAE11.1" source="KAE11" target="SNOMED_CT:175954005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 175954005 2100122541 is percutaneous endoscopic removal of kidney/renal pelvis
+        stones, matching SNOMED CT 'Percutaneous nephrolithotomy
+        """ suspect=quoted-text
+}
+mapping "KAE12.1" source="KAE12" target="SNOMED_CT:175954005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: endoluminal nephropyelolithotomy; weak to PCNL"
+}
+flag "KAE22.unmapped" kind=unmapped concept="KAE22" target-system="SNOMED_CT"
+mapping "KAE96.1" source="KAE96" target="SNOMED_CT:175942005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ residual code for non-standard open stone extraction; SNOMED CT standard nephrolithotomy is
+        close parent
+        """
+}
+mapping "KAE98.1" source="KAE98" target="SNOMED_CT:450516001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other endoluminal extraction of kidney stone = Endoscopic extraction of calculus of kidney
+        (exact match; endoluminal = endoscopic)
+        """
+}

@@ -1,0 +1,261 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes ZP-ZZR
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ZPA00.1" source="ZPA00" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraoperative thrombolytic use is related to thrombolysis; percutaneous is different route but
+        same drug class
+        """
+}
+mapping "ZPA20.1" source="ZPA20" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: intraoperative use of occluding material. No SNOMED CT equivalent"
+}
+mapping "ZQW01.1" source="ZQW01" target="SNOMED_CT:31064000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Width of procedure in skin and subcutaneous tissue up to 1 cm; Swedish dimension code for wound
+        excision size. SNOMED CT debridement of skin and subcutaneous tissu
+        """
+}
+mapping "ZQX00.1" source="ZQX00" target="SNOMED_CT:44166002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Serial/repeat excision technique for skin lesions"
+}
+mapping "ZSL00.1" source="ZSL00" target="SNOMED_CT:235182009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation related to previous gynecological surgery; very limited SNOMED CT match"
+}
+mapping "ZSY00.1" source="ZSY00" target="SNOMED_CT:271298009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Operation relaterad till tidigare operation klassificerad i kapitel Y - uttagningar av organ
+        till transplantation = operation related to previous operation clas
+        """
+}
+mapping "ZUJ00.1" source="ZUJ00" target="SNOMED_CT:1348354000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Double balloon technique for GI endoscopy = Double balloon enteroscopy (exact match)"
+}
+mapping "ZXB10.1" source="ZXB10" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: positional modifier code only; not a procedure. Kept for completeness"
+}
+mapping "ZXB20.1" source="ZXB20" target="SNOMED_CT:231606000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ectropion correction - lateral and medial; exact match to SNOMED CT 2100130319 231606000. Confirmed
+        SNOMED CT S.
+        """
+}
+mapping "ZXC12.1" source="ZXC12" target="SNOMED_CT:457571000124109" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA ZXC12 = use of irreversible electroporation (IRE). SNOMED CT 457571000124109. Exact clinical
+        equivalent.
+        """
+}
+mapping "ZXC45.1" source="ZXC45" target="SNOMED_CT:241460001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Use of 3D ultrasound; no good match."
+}
+mapping "ZXC50.1" source="ZXC50" target="SNOMED_CT:26782000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100130331 26782000 (Use of cryotherapy) maps exactly to SNOMED CT Cryotherapy; verified
+        as standard SNOMED CT Procedure concept with
+        """
+}
+mapping "ZXC60.1" source="ZXC60" target="SNOMED_CT:8087008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Application of heat; SNOMED CT match is chiropractic-specific"
+}
+mapping "ZXC71.1" source="ZXC71" target="SNOMED_CT:229304001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: use of steam (vattenånga = water steam). Verified SNOMED CT standard concept S.
+        """
+}
+flag "ZXC75.unmapped" kind=unmapped concept="ZXC75" target-system="SNOMED_CT"
+flag "ZXC76.unmapped" kind=unmapped concept="ZXC76" target-system="SNOMED_CT"
+mapping "ZXC77.1" source="ZXC77" target="SNOMED_CT:787126003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100130339 787126003 = use of morcellation device; exact match to SNOMED CT"
+}
+mapping "ZXC96.1" source="ZXC96" target="SNOMED_CT:711364006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZXD00.1" source="ZXD00" target="SNOMED_CT:241695009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ catch-all for acute surgery; weak to general anesthesia procedure"
+}
+mapping "ZXG40.1" source="ZXG40" target="SNOMED_CT:38340002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100130359 38340002 = insertion of transvenous pacemaker; SNOMED CT 38340002 is the
+        exact clinical equivalent; verified SNOMED CT standard
+        """
+}
+mapping "ZXH00.1" source="ZXH00" target="SNOMED_CT:274506003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ytanestesi = topical/surface anesthesia; close to operative local anesthesia"
+}
+mapping "ZXH40.1" source="ZXH40" target="SNOMED_CT:231249005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZXH50.1" source="ZXH50" target="SNOMED_CT:18946005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZXH60.1" source="ZXH60" target="SNOMED_CT:50697003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Generell anestesi = general anesthesia. SNOMED CT 2100130367 50697003 is an exact clinical
+        equivalent. Verified in CONCEPT.csv: SNOMED CT, S.
+        """
+}
+mapping "ZXK00.1" source="ZXK00" target="SNOMED_CT:51111000087102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Conversion from percutaneous/endoscopic to open surgery; SNOMED CT concept captures conversion"
+}
+mapping "ZXK01.1" source="ZXK01" target="SNOMED_CT:51111000087102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Conversion endoluminal to open surgery"
+}
+mapping "ZXL00.1" source="ZXL00" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Use of absorbable mesh; SNOMED CT has surgical mesh repair concepts"
+}
+mapping "ZXL10.1" source="ZXL10" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA covers any non-absorbable mesh use; SNOMED CT covers mesh hernia repair specifically"
+}
+mapping "ZXM00.1" source="ZXM00" target="SNOMED_CT:736741000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: KKÅ användande av ultraljud under operation = intraoperative ultrasonography
+        """
+}
+mapping "ZXM10.1" source="ZXM10" target="SNOMED_CT:11760007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: KKÅ conventional X-ray during operation = SNOMED CT fluoroscopy during operation
+        """
+}
+mapping "ZXM30.1" source="ZXM30" target="SNOMED_CT:258177008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is use of MRI technique during any operation; SNOMED CT is MRI guidance — related but not
+        equivalent (guidance implies navigational use, KKÅ is broader intraoperative MRI use)
+        """
+}
+flag "ZZA45.unmapped" kind=unmapped concept="ZZA45" target-system="SNOMED_CT"
+mapping "ZZC10.1" source="ZZC10" target="SNOMED_CT:91157001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZZE10.1" source="ZZE10" target="SNOMED_CT:71081000" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Free skeletal muscle transplant with preserved nerve; SNOMED CT has SNOMED CT 2100130399 71081000 as
+        the closest match. The and details are not captured
+        """
+}
+mapping "ZZG10.1" source="ZZG10" target="SNOMED_CT:711189009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Meniscus transplantation; close match to SNOMED CT allotransplantation of meniscus"
+}
+mapping "ZZK10.1" source="ZZK10" target="SNOMED_CT:1091751000000106" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biosynthetic nerve allograft = Peripheral nerve allograft (exact match; biosynthetic nerve
+        allograft is a type of peripheral nerve allograft)
+        """
+}
+mapping "ZZN10.1" source="ZZN10" target="SNOMED_CT:34735003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Free artery homograft; SNOMED CT artery repair with tissue patch graft is closest"
+}
+mapping "ZZP00.1" source="ZZP00" target="SNOMED_CT:53088000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Free autotransplant of vein = autogenous transplantation using vein graft. SNOMED CT 53088000
+        SNOMED CT 2100130415 53088000 is the generic equivalent. The venous sp
+        """
+}
+mapping "ZZQ00.1" source="ZZQ00" target="SNOMED_CT:1197481000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Free microvascular skin graft closely matches free skin flap with microvascular anastomosis"
+}
+mapping "ZZQ10.1" source="ZZQ10" target="SNOMED_CT:1208452001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA free microvascular skin+muscle flap; SNOMED CT free muscle flap with microvascular anastomosis
+        captures essential technique
+        """
+}
+mapping "ZZQ30.1" source="ZZQ30" target="SNOMED_CT:178220001" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Free microvascular muscle transplant"
+}
+mapping "ZZQ40.1" source="ZZQ40" target="SNOMED_CT:1204100003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Free microvascular bone graft; very close to SNOMED CT vascularized bone graft with microsurgery
+        """
+}
+mapping "ZZQ60.1" source="ZZQ60" target="SNOMED_CT:307253003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Free microvascular nerve transplant maps exactly to SNOMED CT 4143878 SNOMED CT 2100130423 307253003
+        """
+}
+mapping "ZZQ80.1" source="ZZQ80" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: free microvascular intestinal transplant. No SNOMED CT equivalent"
+}
+mapping "ZZR05.1" source="ZZR05" target="SNOMED_CT:265667009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fasciekutan lambå = fasciocutaneous flap; exact SNOMED CT match."
+}
+mapping "ZZR10.1" source="ZZR10" target="SNOMED_CT:265666000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100130428 265666000 = musculocutaneous flap; exact match to SNOMED CT Local
+        myocutaneous flap
+        """
+}
+mapping "ZZR20.1" source="ZZR20" target="SNOMED_CT:304108004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hud-muskel-benlambå (skin-muscle-bone flap) is an osteomyocutaneous flap, mapping exactly to
+        Reconstruction using distant osteomyocutaneous flap. Verified SNOME
+        """
+}
+mapping "ZZR45.1" source="ZZR45" target="SNOMED_CT:1204035003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Muscle-mucosal flap; SNOMED CT 1204035003 2100130432 is the closest SNOMED CT equivalent -- the KVÅ
+        specifies muscle-mucosal combination but SNOMED CT has mucosal
+        """
+}
+mapping "ZZR60.1" source="ZZR60" target="SNOMED_CT:177962003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Omental flap maps exactly to SNOMED CT 4071118 SNOMED CT 177962003 2100130434"
+}
+mapping "ZZR70.1" source="ZZR70" target="SNOMED_CT:1251560004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies mammary gland tissue flap (oncoplastic volume displacement); SNOMED CT uses
+        fasciocutaneous flap which is skin-based not glandular
+        """
+}

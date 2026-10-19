@@ -1,0 +1,259 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes XNB-ZM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "XNB00.1" source="XNB00" target="SNOMED_CT:335761000000104" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Subacromial block; closest SNOMED CT is subacromial injection/decompression, not the same"
+}
+mapping "XPX10.1" source="XPX10" target="SNOMED_CT:103723005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "XPX30.1" source="XPX30" target="SNOMED_CT:241466007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100126744 241466007 = endovascular ultrasound; exact match to SNOMED CT Intravascular
+        ultrasound angiography of blood vessel
+        """
+}
+mapping "XPX40.1" source="XPX40" target="SNOMED_CT:241465006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "XPX99.1" source="XPX99" target="SNOMED_CT:83422003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XPX99 SNOMED CT 83422003 = Other diagnostic procedure on peripheral vessel (KVÅ residual).
+        Target. Both denote diagnostic procedures on blood vessels. Exact match at low tier: no
+        crosswalk, but semantics align. Source is peripheral-specific; target is broader.
+        """
+}
+mapping "YCA00.1" source="YCA00" target="SNOMED_CT:1279670007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "YFA50.1" source="YFA50" target="SNOMED_CT:232975000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal of heart for homograft = removal of heart from donor, exact clinical equivalent"
+}
+mapping "YFA99.1" source="YFA99" target="SNOMED_CT:105467008" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YFA99 SNOMED CT 105467008 = Other operation for heart or heart-lung donor procurement (KVÅ
+        residual). Target. Source covers other procurement-related operations; target is the SNOMED CT
+        donor concept for heart-lung transplant. Broader. Low tier: no crosswalk, source is operation,
+        target is donor status concept.
+        """
+}
+mapping "YGA00.1" source="YGA00" target="SNOMED_CT:713162006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100126754 713162006 = removal of lungs from deceased/cadaver
+        donor
+        """
+}
+mapping "YGA99.1" source="YGA99" target="SNOMED_CT:105466004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YGA99 SNOMED CT 105466004 = Other operation for lung donor procurement (KVÅ residual).
+        Target. Source covers other procurement-related operations; target is the SNOMED CT donor concept
+        for lung transplant. Broader. Low tier: no crosswalk, source is operation, target is donor
+        status concept.
+        """
+}
+mapping "YJD30.1" source="YJD30" target="SNOMED_CT:30438009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pancreas harvest from cadaveric donor for transplant; bone marrow aspiration for transplant is
+        very distant
+        """
+}
+mapping "YKA01.1" source="YKA01" target="SNOMED_CT:708908003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "YKA02.1" source="YKA02" target="SNOMED_CT:429496005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "YKA02 uttagning båda njurar nekrodonator; weak to donor kidney procedure"
+}
+mapping "YNA00.1" source="YNA00" target="SNOMED_CT:256648003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cancellous bone harvest from ilium maps weakly to corticocancellous bone graft"
+}
+mapping "YNA01.1" source="YNA01" target="SNOMED_CT:180833009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Uttagning av kortiko-spongjost ben från bäcken = extraction of corticocancellous bone from
+        pelvis (iliac crest). Exact match to SNOMED CT Harvest of bone graft fro
+        """
+}
+mapping "YNA03.1" source="YNA03" target="SNOMED_CT:256648003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Uttagning av kortiko-spongiöst ben från annan lokalisation = harvest of corticocancellous bone
+        from another location. The SNOMED CT concept matches the tissue type
+        """
+}
+mapping "YNA05.1" source="YNA05" target="SNOMED_CT:1204100003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good match: KVA harvest of vascularized bone graft = SNOMED CT vascularized bone graft with
+        microsurgery
+        """
+}
+mapping "YNA06.1" source="YNA06" target="SNOMED_CT:180851005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 180851005 2100126775 = harvest of bone-cartilage transplant; SNOMED CT captures the
+        cartilage component; note KVAA also
+        """
+}
+mapping "YNA09.1" source="YNA09" target="SNOMED_CT:67954006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extraction of other type of bone graft maps exactly to harvesting of bone"
+}
+mapping "YNA45.1" source="YNA45" target="SNOMED_CT:44945006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ uttagning av vaskulariserad muskel till transplantation = harvesting of muscle for
+        transplantation; exact match
+        """
+}
+mapping "YNA99.1" source="YNA99" target="SNOMED_CT:67954006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SE-mirror sctid
+        67954006 = SNOMED CT 1202033006 67954006 and sctid 1202033006 =, BOTH ACTIVE in RF2 20260701
+        (valid_end 2099-12-31, invalid_reason empty, rf2). Crosswalk-confirmed (67954006->4194777,
+        1202033006->37162976). Defensible
+        active standard targets exist (the source is covered by decomposing it into the
+        two component harvests), so the mapping carries no invalid_reason. Target definitions: 67954006 = procurement of bone graft/tissue for
+        transplant; 1202033006 = procurement of a soft-tissue (skin/muscle/fascia) flap for transplant.
+        Why partial / : residual source (= other) + partial decomposition + neither target alone covers
+        the combined harvest. The generic SNOMED CT 1202033006 67954006 1202033006 is broad; more specific
+        flap concepts (180718007 skin+fascia, 180758009 skin+muscle trunk, 309069005 muscle flap) were
+        considered but the source does not specify flap composition, so the parent 1202033006 is the
+        defensible choice. Confidence per the residual+partial rubric. | Mirror-only lookup, citation
+        empty.
+        """
+}
+mapping "YNA99.2" source="YNA99" target="SNOMED_CT:1202033006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "YNB00.1" source="YNB00" target="SNOMED_CT:30438009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Uttagning av benmärg till transplantation = harvesting of bone marrow for transplantation.
+        SNOMED CT 2100126784 30438009 is the exact cl
+        """
+}
+mapping "YQA20.1" source="YQA20" target="SNOMED_CT:60709001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision av hud till heterotransplantation från nekrodonator (excision of skin for
+        heterotransplantation from necrodonor) maps to. Ve
+        """
+}
+mapping "YQA99.1" source="YQA99" target="SNOMED_CT:180713003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YQA99 SNOMED CT 180713003 = Other operation in connection with excision of skin for
+        transplantation (KVÅ residual). Target. Source covers other/ancillary operations during skin
+        excision for transplant; target covers skin harvest specifically. Broader. Low tier: no
+        crosswalk, target covers the main scope of source.
+        """
+}
+mapping "YWD00.1" source="YWD00" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reoperation for bleeding after organ harvest for transplant; no close SNOMED CT match"
+}
+mapping "ZCG50.1" source="ZCG50" target="SNOMED_CT:397554006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Användning av autotransplantat med limbala stamceller = use of autotransplant with limbal stem
+        cells. The SNOMED CT 2100130002 397554006 is the exact
+        """
+}
+mapping "ZCG51.1" source="ZCG51" target="SNOMED_CT:854921000000107" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ use of allograft with limbal stem cells; SNOMED CT 2100130003 854921000000107 is exact
+        clinical equivalent
+        """
+}
+mapping "ZFN00.1" source="ZFN00" target="SNOMED_CT:431667009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous transluminal coronary brachytherapy = intracoronary brachytherapy using
+        fluoroscopic guidance with contrast; fluoroscopy/contrast are standard prac
+        """
+}
+mapping "ZFX00.1" source="ZFX00" target="SNOMED_CT:175882004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is supplementary code for balloon dilatation during cardiovascular surgery; SNOMED CT is
+        standalone intraoperative PTA
+        """
+}
+mapping "ZFX01.1" source="ZFX01" target="SNOMED_CT:257766009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ZFX02.1" source="ZFX02" target="SNOMED_CT:432947000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        AngioJet is a brand of percutaneous mechanical thrombectomy device; SNOMED CT concept captures
+        modality but not device-specificity
+        """
+}
+mapping "ZFX03.1" source="ZFX03" target="SNOMED_CT:6832004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ Z-code=use of atherectomy instrument in cardiovascular surgery (supplementary technique
+        code); SNOMED CT 6832004=atherectomy procedure — captures the technique but not the
+        supplementary/instrument-use frame
+        """
+}
+flag "ZFX04.unmapped" kind=unmapped concept="ZFX04" target-system="SNOMED_CT"
+flag "ZKB00.unmapped" kind=unmapped concept="ZKB00" target-system="SNOMED_CT"
+flag "ZKC00.unmapped" kind=unmapped concept="ZKC00" target-system="SNOMED_CT"
+flag "ZKD00.unmapped" kind=unmapped concept="ZKD00" target-system="SNOMED_CT"
+flag "ZKX00.unmapped" kind=unmapped concept="ZKX00" target-system="SNOMED_CT"
+mapping "ZKX01.1" source="ZKX01" target="SNOMED_CT:236170007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Combined percutaneous endoscopic and endoluminal urological procedure; limited SNOMED CT match"
+}
+flag "ZKX02.unmapped" kind=unmapped concept="ZKX02" target-system="SNOMED_CT"
+mapping "ZKX04.1" source="ZKX04" target="SNOMED_CT:428645009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both relate to transplanted kidney; KVÅ is generic procedure, SNOMED CT is post-transplant exam"
+}
+flag "ZMC00.unmapped" kind=unmapped concept="ZMC00" target-system="SNOMED_CT"
+mapping "ZMC01.1" source="ZMC01" target="SNOMED_CT:236985002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Cesarean after premature rupture without labor"
+}
+flag "ZMX00.unmapped" kind=unmapped concept="ZMX00" target-system="SNOMED_CT"
+flag "ZMX01.unmapped" kind=unmapped concept="ZMX01" target-system="SNOMED_CT"
+flag "ZMX02.unmapped" kind=unmapped concept="ZMX02" target-system="SNOMED_CT"
+mapping "ZMX06.1" source="ZMX06" target="SNOMED_CT:1141750000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ingrepp utfoert i efterboerdsskede (innaan placentaavgaaang) = procedure performed in third
+        stage of labour (before placental delivery); physiological delivery
+        """
+}
+flag "ZMX07.unmapped" kind=unmapped concept="ZMX07" target-system="SNOMED_CT"
+mapping "ZMX08.1" source="ZMX08" target="SNOMED_CT:409019001" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Approximate: procedure performed 2-24 hours postpartum; SNOMED CT 2100130039 409019001
+        captures the general postpartum context. The specific 2-24 hour time
+        """
+}
+flag "ZMX09.unmapped" kind=unmapped concept="ZMX09" target-system="SNOMED_CT"

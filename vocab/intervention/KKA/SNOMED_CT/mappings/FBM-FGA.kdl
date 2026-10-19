@@ -1,0 +1,278 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes FBM-FGA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "FBM20.1" source="FBM20" target="SNOMED_CT:233239002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Slutning av distal aortopulmonal shunt = closure of distal aortopulmonary shunt. SNOMED CT
+        2100121140 233239002 is the exact clinical equivalen
+        """
+}
+mapping "FBM30.1" source="FBM30" target="SNOMED_CT:61192001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of aortopulmonary process shunt maps to; process shunt is a type of fenestration/fistula
+        between aor
+        """
+}
+mapping "FBN10.1" source="FBN10" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closure of AV fistula from pulmonary artery; vascular repair is distant parent"
+}
+mapping "FBN96.1" source="FBN96" target="SNOMED_CT:61192001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is fistula from pulmonary artery (any destination); SNOMED CT specifically aorticopulmonary
+        fistula closure — distant sibling
+        """
+}
+mapping "FBW96.1" source="FBW96" target="SNOMED_CT:175266007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on pulmonary artery branches. Transluminal PA operations is partial match."
+}
+mapping "FCA60.1" source="FCA60" target="SNOMED_CT:259381000000100" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FCA60 SNOMED CT 259381000000100 = Resection of aortic root and ascending aorta with
+        reimplantation of coronary arteries using valved conduit prosthesis (Bentall-type procedure).
+        Target. Source describes a specific extended Bentall procedure; target is the SNOMED CT parent for
+        aortic root replacement. Broader. Moderate tier: target covers the core procedure but loses the
+        valved-conduit and ascending-aorta detail.
+        """
+}
+mapping "FCA70.1" source="FCA70" target="SNOMED_CT:428179006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Aortic root resection with coronary reimplantation biological valve and graft; replacement of
+        aortic root is a good parent.
+        """
+}
+mapping "FCA80.1" source="FCA80" target="SNOMED_CT:428501002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Related: KVA David procedure (valve-sparing root replacement) vs SNOMED CT Ross procedure; both are
+        aortic root operations with valve preservation but different techniques
+        """
+}
+mapping "FCE00.1" source="FCE00" target="SNOMED_CT:386815009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of ruptured sinus Valsalva aneurysm = repair of aneurysm of sinus of Valsalva. Exact
+        match. Verified SNOMED CT S.
+        """
+}
+mapping "FCE20.1" source="FCE20" target="SNOMED_CT:61192001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ slutning av förvärvad aortopulmonal fistel = closure of acquired aortopulmonary fistula;
+        exact match to SNOMED CT concept
+        """
+}
+mapping "FCE96.1" source="FCE96" target="SNOMED_CT:287318006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are thoracic fistula closures; different vessel type"
+}
+mapping "FDA10.1" source="FDA10" target="SNOMED_CT:232850000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Aortaplasty and ventriculopulmonary shunt for HLHS maps to; the HLHS context is the indication,
+        the procedure itself is aortoventriculopla
+        """
+}
+mapping "FDB03.1" source="FDB03" target="SNOMED_CT:174826008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial switch for TGA (transposition of great arteries) = arterial switch operation (Jatene
+        procedure), exact clinical equivalent
+        """
+}
+mapping "FDC00.1" source="FDC00" target="SNOMED_CT:233196001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reparation av truncus arteriosus communis med protes utan klaff från höger kammare till a.
+        pulmonalis = repair of truncus arteriosus communis with valveless pro
+        """
+}
+mapping "FDC10.1" source="FDC10" target="SNOMED_CT:397153008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Repair of truncus arteriosus with valve-bearing prosthesis maps to repair of truncus arteriosus
+        (the valve-bearing prosthesis is a technique modifier)
+        """
+}
+mapping "FDD00.1" source="FDD00" target="SNOMED_CT:233223009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "FDF00.1" source="FDF00" target="SNOMED_CT:223501000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of aortopulmonary collaterals. Percutaneous embolisation of systemic-to-pulmonary
+        collateral.
+        """
+}
+mapping "FDF05.1" source="FDF05" target="SNOMED_CT:609235005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous transluminal closure of aortopulmonary collaterals: exact match to Percutaneous
+        transluminal closure of systemic to pulmonary collateral artery (60
+        """
+}
+mapping "FDH30.1" source="FDH30" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Aortic arch reconstruction with vascular prosthesis; no close SNOMED CT match"
+}
+mapping "FDJ00.1" source="FDJ00" target="SNOMED_CT:25736000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        End-to-end reconstruction at aortic coarctation = excision with end-to-end anastomosis, which is
+        the standard surgical technique. Exact equivalent verified.
+        """
+}
+mapping "FDJ10.1" source="FDJ10" target="SNOMED_CT:76987002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Aortoplasty with subclavian or carotid artery (subclavian flap aortoplasty). SNOMED CT
+        2100121181 76987002 is the parent concept; the subclavian flap technique has no de
+        """
+}
+mapping "FDJ42.1" source="FDJ42" target="SNOMED_CT:698643003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal angioplastik vid aortakoarktation = percutaneous transluminal angioplasty
+        of aortic coarctation. 'Balloon dilation of coarctation of aorta
+        """
+}
+mapping "FDM10.1" source="FDM10" target="SNOMED_CT:175341006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 175341006 2100121187 = division of other vascular ring anomaly at aortic
+        arch. and are clinical
+        """
+}
+mapping "FDM11.1" source="FDM11" target="SNOMED_CT:175341006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracoscopic division of aortic vascular ring anomaly; SNOMED CT matches the procedure but does
+        not specify thoracoscopic approach.
+        """
+}
+mapping "FDW96.1" source="FDW96" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation thoracic aorta anomaly/defect; no close SNOMED CT match"
+}
+mapping "FEA00.1" source="FEA00" target="SNOMED_CT:265487002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FEC00.1" source="FEC00" target="SNOMED_CT:58380004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perikardio-pleurostomi = pericardiopleurostomy. No SNOMED CT concept exactly matches
+        pericardiopleurostomy, but SNOMED CT 2100121197 58380004 is the closest equivalent. The pl
+        """
+}
+mapping "FED03.1" source="FED03" target="SNOMED_CT:119824005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FEE10.1" source="FEE10" target="SNOMED_CT:439435003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: excision of pathological change in pericardium. SNOMED CT Thoracoscopy with excision of
+        pericardial lesion is a good match; KVÅ doesn't specify thoracoscopic vs open approach.
+        """
+}
+mapping "FEE96.1" source="FEE96" target="SNOMED_CT:80989002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan biopsi eller excision av patologisk förändring i perikardiet (other biopsy or excision of
+        pathological lesion in pericardium) maps to
+        """
+}
+mapping "FEF20.1" source="FEF20" target="SNOMED_CT:439409004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pericardiectomy with decortication. Thoracoscopic pericardiectomy captures core procedure;
+        different approach.
+        """
+}
+mapping "FEF96.1" source="FEF96" target="SNOMED_CT:118802002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other pericardium resection maps broadly to procedure on pericardium"
+}
+mapping "FFA10.1" source="FFA10" target="SNOMED_CT:19979004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of pathological change in atrium maps to. Verified SNOMED CT S."
+}
+mapping "FFA20.1" source="FFA20" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Atrial thrombectomy vs percutaneous thrombolysis; different technique but same thrombus intent
+        """
+}
+mapping "FFA30.1" source="FFA30" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FFG10.1" source="FFG10" target="SNOMED_CT:174900004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Repair of cardiac TAPVD (total anomalous pulmonary venous drainage) maps exactly to repair of
+        partial anomalous pulmonary venous connection (SNOMED CT uses 'partia
+        """ suspect=quoted-text
+}
+mapping "FFG20.1" source="FFG20" target="SNOMED_CT:174833008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA FFG20 = repair of infracardiac TAPVD. SNOMED CT 174833008. Exact clinical e"
+}
+mapping "FFG30.1" source="FFG30" target="SNOMED_CT:443166007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100121246 443166007 = repair of mixed TAPVD (total anomalous pulmonary
+        venous drainage). = mixed type.
+        """
+}
+mapping "FFJ10.1" source="FFJ10" target="SNOMED_CT:310443006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are intraatrial procedures with patch"
+}
+mapping "FFL10.1" source="FFL10" target="SNOMED_CT:789561000000101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resection of membrane and ASD closure closely matches primary closure of ASD"
+}
+mapping "FFM02.1" source="FFM02" target="SNOMED_CT:638842411000119100" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal förslutning av vänster hjärtöra (LAAO) = percutaneous transluminal closure
+        of left atrial appendage. 'Percutaneous ligation of left atrial
+        """
+}
+mapping "FFM10.1" source="FFM10" target="SNOMED_CT:233030007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open closure of left atrial appendage with suture maps exactly to Suture of left atrium; direct
+        clinical equivalent.
+        """
+}
+flag "FFM20.unmapped" kind=unmapped concept="FFM20" target-system="SNOMED_CT"
+mapping "FFW96.1" source="FFW96" target="SNOMED_CT:233009003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FGA10.1" source="FGA10" target="SNOMED_CT:29222003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Commissurotomy for acquired stenosis; SNOMED CT has posterior mitral commissurotomy"
+}
+mapping "FGA32.1" source="FGA32" target="SNOMED_CT:174989000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ perkutan transluminal vidgning av trikuspidalstenos = percutaneous transluminal balloon
+        valvuloplasty of tricuspid stenosis; exact match
+        """
+}

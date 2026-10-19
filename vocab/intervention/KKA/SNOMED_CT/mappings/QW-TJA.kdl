@@ -1,0 +1,283 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes QW-TJA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "QWA00.1" source="QWA00" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "QWB00.1" source="QWB00" target="SNOMED_CT:19780006" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is reoperation for superficial wound infection after prior skin procedure; SNOMED CT captures
+        debridement of skin infection without the reoperation context — loose parent
+        """
+}
+mapping "QWD00.1" source="QWD00" target="SNOMED_CT:372034000" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is reoperation for post-skin-procedure superficial hemorrhage; SNOMED CT concept is a very
+        broad hemostasis parent — loose parent
+        """
+}
+mapping "QWF00.1" source="QWF00" target="SNOMED_CT:47353000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are reoperations; KVÅ is skin-specific anastomosis failure - very loose match"
+}
+mapping "TAD00.1" source="TAD00" target="SNOMED_CT:231264005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sympathicus blockad (sympathetic block) without specified level maps to; the generic concept
+        covers unspecified sympathetic blocks.
+        """
+}
+mapping "TBC00.1" source="TBC00" target="SNOMED_CT:36552004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Punktionsbiopsi av binjure = puncture biopsy of adrenal gland; punktionsbiopsi corresponds to
+        fine needle biopsy, exact clinical match.
+        """
+}
+mapping "TBC10.1" source="TBC10" target="SNOMED_CT:36552004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100124924 36552004 = aspiration cytology of adrenal gland; clinically equivalent to
+        fine needle biopsy of adrenal gland
+        """
+}
+mapping "TCA15.1" source="TCA15" target="SNOMED_CT:86323000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is drug-agnostic retrobulbar injection; SNOMED CT has no exact match — specific retrobulbar
+        concepts (anesthetic/steroid/alcohol) are too narrow; Injection of orbit is broader parent
+        """
+}
+mapping "TCA20.1" source="TCA20" target="SNOMED_CT:231329004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: peribulbar injektion av läkemedel i orbita = peribulbar infiltration
+        (injection of medication into orbit)
+        """
+}
+mapping "TCB00.1" source="TCB00" target="SNOMED_CT:195487005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Punktionsbiopsi av ögonlock = puncture biopsy of eyelid; closest SNOMED CT match is excisional
+        biopsy of eyelid. Puncture biopsy (fine needle) and excisional biops
+        """
+}
+mapping "TCB10.1" source="TCB10" target="SNOMED_CT:71580008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100124931 71580008 = epilation of eyelashes for trichiasis; exact match to SNOMED CT
+        Correction of trichiasis by epilation with forceps
+        """
+}
+mapping "TCB20.1" source="TCB20" target="SNOMED_CT:120103005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ drug-type annotation is ATC-layer metadata not part of the procedure
+        definition
+        """
+}
+mapping "TCC10.1" source="TCC10" target="SNOMED_CT:231635008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TCE00.1" source="TCE00" target="SNOMED_CT:231701000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is medication-generic (any drug via ATC suffix); SNOMED CT concept is botulinum-specific
+        narrower child
+        """
+}
+mapping "TCH10.1" source="TCH10" target="SNOMED_CT:40395007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good match: anterior chamber aspiration vs paracentesis of anterior chamber with diagnostic
+        aspiration
+        """
+}
+mapping "TCH30.1" source="TCH30" target="SNOMED_CT:67228005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124945 67228005 = punch biopsy of Achilles tendon; (4281983) is the generic
+        tendon biopsy concept. The KVAA s
+        """
+}
+mapping "TCK20.1" source="TCK20" target="SNOMED_CT:231754002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100124947 231754002 = puncture biopsy of vitreous body =
+        biopsy of vitreous
+        """
+}
+mapping "TCW99.1" source="TCW99" target="SNOMED_CT:371587008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ residual catch-all for minor eye procedures; SNOMED CT is a very broad parent -- minimal
+        specificity
+        """
+}
+mapping "TDN00.1" source="TDN00" target="SNOMED_CT:287544005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone biopsy of tibia/shin; SNOMED CT has general bone biopsy"
+}
+mapping "TDP10.1" source="TDP10" target="SNOMED_CT:82421004" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Puncture biopsy of sella turcica; closest SNOMED CT is excisional biopsy of pituitary by
+        transsphenoidal approach (same anatomic region)
+        """
+}
+mapping "TDQ00.1" source="TDQ00" target="SNOMED_CT:12552005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: puncture biopsy of larynx = fine needle biopsy of larynx; SNOMED CT
+        12552005 2100124962 is the standard equivalent.
+        """
+}
+mapping "TEA00.1" source="TEA00" target="SNOMED_CT:274341000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ note includes minor salivary gland biopsy of lip covered by same concept
+        """
+}
+mapping "TEA10.1" source="TEA10" target="SNOMED_CT:431052009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ puncture biopsy of lip (incl. salivary gland); SNOMED CT FNAB of lip is closest specific match;
+        KKÅ term may also cover core needle biopsy
+        """
+}
+mapping "TEB00.1" source="TEB00" target="SNOMED_CT:26782000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Kronterapi (Swedish term for cryotherapy) = cryotherapy; exact clinical equivalent"
+}
+mapping "TEB10.1" source="TEB10" target="SNOMED_CT:234736000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Tandfyllning med plastiskt material = tooth filling with plastic (composite) material; matches
+        SNOMED CT 234736000, verified in Athena
+        """
+}
+mapping "TEC00.1" source="TEC00" target="SNOMED_CT:173345004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 173345004 2100124971 = punch biopsy of gingiva; (4071015) matches the site (gingiva)
+        and procedure (biopsy) exactly.
+        """
+}
+mapping "TED10.1" source="TED10" target="SNOMED_CT:178497007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Needle biopsy of lower jaw = Biopsy of lesion of mandible (SNOMED CT 178497007)"
+}
+mapping "TEG00.1" source="TEG00" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Needle biopsy of TMJ; no good match."
+}
+mapping "TEG10.1" source="TEG10" target="SNOMED_CT:44500001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: injection of diagnostic or therapeutic substance into TMJ; SNOMED CT
+        2100124976 44500001 captures this regardless of substance
+        """
+}
+mapping "TEH00.1" source="TEH00" target="SNOMED_CT:18155007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of palate is the exact match for puncture biopsy of the palate (gom)"
+}
+mapping "TEJ00.1" source="TEJ00" target="SNOMED_CT:63820007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Puncture biopsy of tongue and floor of mouth includes floor of mouth biopsy. Exact match for the
+        floor of mouth component. Verified SNOMED CT S.
+        """
+}
+mapping "TEN00.1" source="TEN00" target="SNOMED_CT:274347001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: puncture biopsy of pharynx and adjacent soft tissue. SNOMED CT has surgical pharynx biopsy
+        """
+}
+mapping "TEN10.1" source="TEN10" target="SNOMED_CT:119708000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers velopharynx + nasopharynx + eustachian tube orifices; SNOMED CT covers only nasopharynx
+        injection -- partial scope match
+        """
+}
+mapping "TFP00.1" source="TFP00" target="SNOMED_CT:309471004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100124988 309471004 covers both transvenous and epicardial temporary
+        pacemaker. The SNOMED CT concept cove
+        """
+}
+mapping "TGA10.1" source="TGA10" target="SNOMED_CT:430860000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100124991 430860000 = puncture biopsy of pleura, which clinically is fine needle
+        aspiration of pleural membrane; exact equivalent
+        """
+}
+mapping "TGA20.1" source="TGA20" target="SNOMED_CT:302453007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture biopsy of diaphragm = biopsy of diaphragm; exact clinical equivalent"
+}
+mapping "TGA35.1" source="TGA35" target="SNOMED_CT:31198006" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous chest drain insertion; SNOMED CT tube thoracostomy is the closest standard match"
+}
+mapping "THA00.1" source="THA00" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: puncture biopsy of nipple. SNOMED CT lacks this specific concept"
+}
+mapping "THA10.1" source="THA10" target="SNOMED_CT:387736007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Punktionsbiopsi av bröstkörtel = fine needle aspiration (puncture) biopsy of breast. Exact
+        clinical equivalent.
+        """
+}
+mapping "TJA00.1" source="TJA00" target="SNOMED_CT:430104008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture biopsy of peritoneum maps well to FNA biopsy of peritoneum"
+}
+mapping "TJA10.1" source="TJA10" target="SNOMED_CT:89305009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125005 89305009 is Swedish for abdominal paracentesis, an exact match to SNOMED CT
+        """
+}
+mapping "TJA20.1" source="TJA20" target="SNOMED_CT:387715005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan peritoneallavage = percutaneous peritoneal lavage. Exact match to SNOMED CT Peritoneal
+        lavage.
+        """
+}
+mapping "TJA35.1" source="TJA35" target="SNOMED_CT:10848006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "TJA40.1" source="TJA40" target="SNOMED_CT:238286001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies percutaneous approach; SNOMED CT concept is approach-agnostic insertion of peritoneal
+        drain
+        """
+}
+mapping "TJA55.1" source="TJA55" target="SNOMED_CT:18305008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Avlägsnande av intraperitoneal injektionsport = removal of intraperitoneal injection port. The
+        SNOMED CT 18305008 2100125011 matches; the '
+        """ suspect=quoted-text
+}

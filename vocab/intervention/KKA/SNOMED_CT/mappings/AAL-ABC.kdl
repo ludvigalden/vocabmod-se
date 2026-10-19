@@ -1,0 +1,275 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes AAL-ABC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AAL00.1" source="AAL00" target="SNOMED_CT:230916003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovaskulär ocklusion p.g.a. intrakranellt aneurysm = endovascular occlusion due to
+        intracranial aneurysm; exact SNOMED CT match.
+        """
+}
+mapping "AAL15.1" source="AAL15" target="SNOMED_CT:439541007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=intracranial endovascular thrombectomy; SNOMED CT 439541007=percutaneous thrombectomy of
+        cerebral artery with fluoroscopy — fluoroscopic guidance inherent to endovascular approach;
+        near-equivalent
+        """
+}
+mapping "AAL20.1" source="AAL20" target="SNOMED_CT:230917007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120089 230917007 = endovascular occlusion due to intracranial AVM; SNOMED CT concept
+        is exact equivalent
+        """
+}
+mapping "AAL50.1" source="AAL50" target="SNOMED_CT:830042005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent"
+}
+mapping "AAL99.1" source="AAL99" target="SNOMED_CT:230896003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAM10.1" source="AAM10" target="SNOMED_CT:178383000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 178383000 2100120095 = extirpation of intracranial abscess; SNOMED CT is the closest
+        exact equivalent (ab
+        """
+}
+mapping "AAM99.1" source="AAM99" target="SNOMED_CT:171441001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAM99 SNOMED CT 171441001 = Other operation for intracranial infection (KVÅ residual).
+        Target. No SNOMED CT parent for exists. Target broadly subsumes the source. Weak tier: target loses
+        the infection indication.
+        """
+}
+mapping "AAN00.1" source="AAN00" target="SNOMED_CT:230835002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision and repair of encephalocele; SNOMED CT repair of encephalocele closely matches. KVÅ is
+        broader.
+        """
+}
+mapping "AAN99.1" source="AAN99" target="SNOMED_CT:171441001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAN99 SNOMED CT 171441001 = Other operation for intracranial congenital malformation (KVÅ
+        residual). Target. No SNOMED CT parent for exists. Target broadly subsumes the source. Weak tier:
+        target loses the congenital malformation indication.
+        """
+}
+mapping "AAP10.1" source="AAP10" target="SNOMED_CT:171814002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cross-facial nerve transplantation for facial palsy; SNOMED CT peripheral nerve repair is parent
+        """
+}
+mapping "AAP20.1" source="AAP20" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: microvascular muscle transfer for facial palsy. No SNOMED CT equivalent"
+}
+mapping "AAP99.1" source="AAP99" target="SNOMED_CT:456321000124101" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAP99 SNOMED CT 456321000124101 = Other reconstructive operation for facial palsy (KVÅ
+        residual). Target. Both denote reconstructive surgery for facial nerve palsy. Exact match at :
+        strong semantic match, no crosswalk. The SNOMED CT concept is an extension concept.
+        """
+}
+mapping "AAW01.1" source="AAW01" target="SNOMED_CT:974401000000103" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAW99.1" source="AAW99" target="SNOMED_CT:178394001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAW99 SNOMED CT 178394001 = Other operation on cranium or intracranial structure (KVÅ
+        residual). Target. Both denote unspecified cranial/intracranial operations. Exact match at low
+        tier: no crosswalk, residual codes at similar level.
+        """
+}
+mapping "ABA00.1" source="ABA00" target="SNOMED_CT:178774008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exploratory laminectomy; SNOMED CT has site-specific exploratory laminectomy concepts"
+}
+mapping "ABA99.1" source="ABA99" target="SNOMED_CT:15426008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ABA99 SNOMED CT 15426008 = Other diagnostic operation on spinal cord or nerve roots (KVÅ
+        residual). Target. Source covers diagnostic procedures on both spinal cord AND nerve roots;
+        target covers only spinal cord. Broader for the cord subset. Low tier: no crosswalk, nerve root
+        scope not in target.
+        """
+}
+mapping "ABB04.1" source="ABB04" target="SNOMED_CT:231036008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruktion av foeraendring i nervrot = destruction of lesion in nerve root; destruction of
+        spinal nerve root is exact match, verified as SNOMED CT standard
+        """
+}
+mapping "ABB06.1" source="ABB06" target="SNOMED_CT:231036008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120116 231036008 = percutaneous destruction of lesion in nerve root; exact match to
+        SNOMED CT concept
+        """
+}
+mapping "ABB40.1" source="ABB40" target="SNOMED_CT:230992002" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match: SNOMED CT 2100120120 230992002 = evacuation of spontaneous hematoma in spinal canal;
+        closest SNOMED CT match is 'Evacuation of spin
+        """ suspect=quoted-text
+}
+mapping "ABB99.1" source="ABB99" target="SNOMED_CT:171743004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ABB99 SNOMED CT 171743004 = Other operation for pathological change in spinal cord or nerve
+        roots (KVÅ residual). Target. Both denote residual/unspecified operations on spinal cord. Exact
+        match at low tier: no crosswalk, but NOS semantics align. Nerve root scope partially uncovered.
+        """
+}
+mapping "ABC10.1" source="ABC10" target="SNOMED_CT:178526006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 178526006 2100120123 = microsurgical discectomy in cervical spine; SNOMED CT i"
+}
+mapping "ABC13.1" source="ABC13" target="SNOMED_CT:178618008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: thoracic microdiscectomy; weak to lumbar discectomy (same type different level)"
+}
+mapping "ABC21.1" source="ABC21" target="SNOMED_CT:178584007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anterior decompression of cervical spine with anterior fixation implant. Fusion is the standard
+        result of fixation implant placement. Exact clinical match.
+        """
+}
+mapping "ABC23.1" source="ABC23" target="SNOMED_CT:439275009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open discectomy in thoracic spine; SNOMED CT has osteotomy and discectomy of thoracic spine by
+        anterior approach, which is the clinical equivalent of open thoracic
+        """
+}
+mapping "ABC26.1" source="ABC26" target="SNOMED_CT:178618008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open discectomy in lumbar spine. SNOMED CT 178618008 2100120129 represents the standard open
+        approach; percutaneous variants are explicitly named as such in
+        """
+}
+mapping "ABC28.1" source="ABC28" target="SNOMED_CT:428441009" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Expanding implant between spinal processes = interspinous process spacer; SNOMED CT is near-exact
+        match
+        """
+}
+mapping "ABC40.1" source="ABC40" target="SNOMED_CT:438898004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA decompression of cauda equina in sacrum; SNOMED CT sacral corpectomy with cauda equina
+        decompression - broader but same target
+        """
+}
+mapping "ABC50.1" source="ABC50" target="SNOMED_CT:10836008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Decompression of spinal cord and nerve roots in cervical spine maps to; SNOMED CT (4201720)"
+}
+mapping "ABC53.1" source="ABC53" target="SNOMED_CT:1335753008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dekompression av ryggmärgen och nervrötter i bröstryggraden = decompression of spinal cord and
+        nerve roots in thoracic spine; exact match to SNOMED CT 1335753008
+        """
+}
+mapping "ABC56.1" source="ABC56" target="SNOMED_CT:265712003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lumbar spinal cord and nerve root decompression; SNOMED CT concept is posterior decompression
+        lumbar spine - close match
+        """
+}
+mapping "ABC60.1" source="ABC60" target="SNOMED_CT:10836008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ABC63.1" source="ABC63" target="SNOMED_CT:1335753008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ABC66.1" source="ABC66" target="SNOMED_CT:10836008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ABC71.1" source="ABC71" target="SNOMED_CT:178526006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Anterior endoscopic cervical discectomy; SNOMED CT has primary microdiscectomy of cervical disc"
+}
+mapping "ABC72.1" source="ABC72" target="SNOMED_CT:840571000000107" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Posterior endoscopic cervical discectomy; percutaneous endoscopic laser cervical discectomy is
+        related (different approach)
+        """
+}
+mapping "ABC73.1" source="ABC73" target="SNOMED_CT:840571000000107" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ foraminal endoscopic cervical discectomy; SNOMED CT 840571000000107 is percutaneous endoscopic
+        laser cervical discectomy (different technique but same site+approach)
+        """
+}
+flag "ABC74.unmapped" kind=unmapped concept="ABC74" target-system="SNOMED_CT"
+flag "ABC80.unmapped" kind=unmapped concept="ABC80" target-system="SNOMED_CT"
+flag "ABC81.unmapped" kind=unmapped concept="ABC81" target-system="SNOMED_CT"
+mapping "ABC82.1" source="ABC82" target="SNOMED_CT:178584007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Cervical endoscopic biportal laminectomy. SNOMED CT has anterior cervical decompression but
+        approach differs.
+        """
+}
+mapping "ABC83.1" source="ABC83" target="SNOMED_CT:1167391000000103" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracic endoscopic uniportal laminectomy for bilateral decompression; SNOMED CT posterior
+        decompression laminectomy thoracic spine is related
+        """
+}
+mapping "ABC84.1" source="ABC84" target="SNOMED_CT:265712003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracic endoscopic biportal laminectomy bilateral decompression; SNOMED CT lumbar decompression is
+        different level but same procedure type
+        """
+}
+flag "ABC85.unmapped" kind=unmapped concept="ABC85" target-system="SNOMED_CT"
+flag "ABC86.unmapped" kind=unmapped concept="ABC86" target-system="SNOMED_CT"
+flag "ABC87.unmapped" kind=unmapped concept="ABC87" target-system="SNOMED_CT"
+flag "ABC88.unmapped" kind=unmapped concept="ABC88" target-system="SNOMED_CT"
+flag "ABC89.unmapped" kind=unmapped concept="ABC89" target-system="SNOMED_CT"
+mapping "ABC90.1" source="ABC90" target="SNOMED_CT:265712003" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lumbar endoscopic bilateral laminotomy for decompression; closest SNOMED CT is posterior
+        decompression lumbar spine
+        """
+}
+mapping "ABC99.1" source="ABC99" target="SNOMED_CT:178826003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ABC99 SNOMED CT 178826003 = Other decompressive operation of spinal cord or nerve roots (KVÅ
+        residual). Target. Source covers decompression of both cord and nerve roots; target covers only
+        cord decompression. Broader. Low tier: no crosswalk, nerve root decompression not in target.
+        """
+}

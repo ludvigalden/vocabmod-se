@@ -1,0 +1,262 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JAG-JA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JAG10.1" source="JAG10" target="SNOMED_CT:719726009" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies other abdominal wall hernia types with suture plasty (non-mesh); SNOMED CT ventral
+        herniorrhaphy is technique-unspecified and may include mesh — loose parent
+        """
+}
+mapping "JAG11.1" source="JAG11" target="SNOMED_CT:703945007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers other hernias/defects with suture plastik; SNOMED CT covers anterior abdominal wall
+        hernia (mesh implied) — loose parent
+        """
+}
+mapping "JAG20.1" source="JAG20" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open onlay repair of abdominal wall hernia with implant; SNOMED CT is site- and
+        technique-agnostic mesh hernia repair
+        """
+}
+mapping "JAG30.1" source="JAG30" target="SNOMED_CT:771773003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers other abdominal wall hernias with interstitial mesh; SNOMED CT is incisional-specific
+        """
+}
+mapping "JAG40.1" source="JAG40" target="SNOMED_CT:238186008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open operation of other abdominal wall hernias with sublay implant; hernia repair is parent"
+}
+mapping "JAG41.1" source="JAG41" target="SNOMED_CT:704407008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good match; KKÅ specifies sublay technique (behind muscle in front of peritoneum) not in SNOMED CT
+        """
+}
+mapping "JAG50.1" source="JAG50" target="SNOMED_CT:771773003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies IPOM (intraperitoneal onlay mesh) for other abdominal wall hernias; SNOMED CT covers
+        open incisional hernia mesh repair without specifying mesh placement approach
+        """
+}
+mapping "JAG51.1" source="JAG51" target="SNOMED_CT:788301000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers any abdominal wall hernia/defect with IPOM; SNOMED CT concept is for recurrent ventral
+        hernia with prosthesis — subset match
+        """
+}
+mapping "JAG60.1" source="JAG60" target="SNOMED_CT:238192002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: open abdominal hernia repair with inlay implant maps to generic abdominal wall hernia
+        repair
+        """
+}
+mapping "JAG61.1" source="JAG61" target="SNOMED_CT:703945007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk operation av andra bukväggsbråck och defekter med implantat i bråckporten (inlay)
+        = laparoscopic repair of other abdominal wall hernias with impla
+        """
+}
+mapping "JAG70.1" source="JAG70" target="SNOMED_CT:737068000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers other abdominal wall hernias/defects with multi-layer implant; SNOMED CT ventral hernia
+        with prosthesis is a subset; not all abdominal wall hernias are ventral
+        """
+}
+mapping "JAG80.1" source="JAG80" target="SNOMED_CT:177866001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation of other abdominal wall hernias/defects; SNOMED CT hernia repair exists but
+        not this specific.
+        """
+}
+mapping "JAG81.1" source="JAG81" target="SNOMED_CT:703945007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå says SNOMED CT 703945007; SNOMED CT concept says repair of anterior abdominal wall hernia — covers
+        primary pattern but KKå is broader
+        """
+}
+mapping "JAH20.1" source="JAH20" target="SNOMED_CT:12324002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparotomy with biopsies for staging of malignant tumors = Exploratory laparotomy with biopsy
+        (exact procedural match)
+        """
+}
+mapping "JAH21.1" source="JAH21" target="SNOMED_CT:63185002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopy with biopsies for staging of malignant tumors = Laparoscopy with biopsy (exact
+        procedural match; staging indication not coded in SNOMED CT)
+        """
+}
+mapping "JAH30.1" source="JAH30" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open abdomen (laparostomy). SNOMED CT lacks this specific concept"
+}
+mapping "JAH33.1" source="JAH33" target="SNOMED_CT:177853001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is laparostomy revision (specific open-abdomen temporary closure management); SNOMED CT is
+        generic abdominal wall procedure — very loose parent
+        """
+}
+mapping "JAH40.1" source="JAH40" target="SNOMED_CT:26337002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAK01.1" source="JAK01" target="SNOMED_CT:442837002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic abdominal drainage vs debridement; very loose"
+}
+mapping "JAK03.1" source="JAK03" target="SNOMED_CT:450435004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: laparotomy + lavage; weak to laparoscopic lavage (same clinical intent)"
+}
+mapping "JAK04.1" source="JAK04" target="SNOMED_CT:450435004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoskopi och peritonealt lavage = laparoscopy and peritoneal lavage; exact match"
+}
+mapping "JAL00.1" source="JAL00" target="SNOMED_CT:29481005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100121909 29481005 exactly matches SNOMED CT"
+}
+mapping "JAL10.1" source="JAL10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAL20.1" source="JAL20" target="SNOMED_CT:177940003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extirpation or destruction of peritoneal lesion maps exactly to Open extirpation of lesion of
+        peritoneum
+        """
+}
+mapping "JAL23.1" source="JAL23" target="SNOMED_CT:12703009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 12703009 2100121915 = extirpation of local change in pelvic wall; SNOMED CT is exact
+        equivalent
+        """
+}
+mapping "JAL50.1" source="JAL50" target="SNOMED_CT:5648005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intraabdominal revision of brain ventricular shunt; broader shunt revision concept"
+}
+mapping "JAL51.1" source="JAL51" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAL96.1" source="JAL96" target="SNOMED_CT:118846005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is a residual code for other local operation on peritoneum/abdominal cavity; SNOMED CT is a
+        broad parent
+        """
+}
+mapping "JAM00.1" source="JAM00" target="SNOMED_CT:238307009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAM10.1" source="JAM10" target="SNOMED_CT:235296009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: operation for malrotation = correction of malrotation of intestine (typically
+        Ladd's procedure). SNOMED CT 235296008 verified standard S in Athena.
+        """
+}
+mapping "JAN10.1" source="JAN10" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAQ00.1" source="JAQ00" target="SNOMED_CT:177940003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Omfattande exstirpation av peritoneum = extensive extirpation of peritoneum. SNOMED CT 177940003
+        2100121929 is the closest SNOMED CT equivalent. The KV
+        """
+}
+mapping "JAQ10.1" source="JAQ10" target="SNOMED_CT:819971000000103" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAR10.1" source="JAR10" target="SNOMED_CT:238202001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ adds open approach and suture plastik specifics; SNOMED CT concept is general parastomal hernia
+        repair
+        """
+}
+mapping "JAR20.1" source="JAR20" target="SNOMED_CT:764923006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: open operation of stomal hernia with implant onlay maps to"
+}
+mapping "JAR30.1" source="JAR30" target="SNOMED_CT:238202001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open stoma hernia repair with implant matches repair of parastomal hernia"
+}
+mapping "JAR40.1" source="JAR40" target="SNOMED_CT:1260468004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open parastomal hernia repair with sublay mesh; SNOMED CT has only open lumbar hernia repair"
+}
+mapping "JAR50.1" source="JAR50" target="SNOMED_CT:238202001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "core procedure exact"
+}
+mapping "JAR51.1" source="JAR51" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic IPOM stoma hernia maps loosely to mesh hernia repair"
+}
+mapping "JAR60.1" source="JAR60" target="SNOMED_CT:238202001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open repair of parastomal hernia with implant (inlay) = Repair of parastomal hernia (exact
+        match; implant inlay is standard technique and does not change the pr
+        """
+}
+mapping "JAR61.1" source="JAR61" target="SNOMED_CT:1260480007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Stomal hernia inlay; to lap paraumbilical repair"
+}
+mapping "JAR80.1" source="JAR80" target="SNOMED_CT:238202001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan öppen operation av stomibråck = other open operation of stoma hernia. Residual category
+        but SNOMED CT Repair of parastomal hernia is the clinical equivalent.
+        """
+}
+mapping "JAS10.1" source="JAS10" target="SNOMED_CT:238188009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraabdominellt bråck = incisional hernia; suturplastik = suture repair; verified via Athena
+        """
+}
+mapping "JAS11.1" source="JAS11" target="SNOMED_CT:39376007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Same anatomy (intraabdominal = internal hernia) but different approach: KKÅ is laparoscopic with
+        suture; SNOMED CT is manual reduction — approach mismatch
+        """
+}
+mapping "JAS80.1" source="JAS80" target="SNOMED_CT:764919003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation for intra-abdominal hernia maps to; ventral hernia is the standard term for
+        intra-abdominal wall hernias.
+        """
+}

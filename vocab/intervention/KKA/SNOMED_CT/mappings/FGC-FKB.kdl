@@ -1,0 +1,280 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes FGC-FKB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "FGC96.1" source="FGC96" target="SNOMED_CT:265480000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: other annuloplasty for tricuspid insufficiency maps to"
+}
+mapping "FGD30.1" source="FGD30" target="SNOMED_CT:34044009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: reconstruction with suture of papillary muscle or chordae maps to"
+}
+mapping "FGD96.1" source="FGD96" target="SNOMED_CT:265474008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other reconstruction for tricuspid insufficiency. SNOMED CT has tricuspid plastic repair"
+}
+mapping "FGE00.1" source="FGE00" target="SNOMED_CT:174937005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FHA00.1" source="FHA00" target="SNOMED_CT:52930005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of VSD after injury. SNOMED CT 2100121287 52930005 captures the procedure; the
+        context is clinical indication, not a diff
+        """
+}
+mapping "FHA10.1" source="FHA10" target="SNOMED_CT:12445005" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA closure of VSD post-anteroseptal infarct; SNOMED CT VSD repair with tissue graft is closest
+        standard concept
+        """
+}
+mapping "FHB10.1" source="FHB10" target="SNOMED_CT:233099005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transventrikulär direktsutur av VSD = transventricular direct suture of ventricular septal
+        defect. The SNOMED CT concept matches the procedure (VSD closure by dire
+        """
+}
+mapping "FHB20.1" source="FHB20" target="SNOMED_CT:233099005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transpulmonal direktsutur av VSD = transpulmonary direct suture of VSD. Same procedure as FHB10
+        (VSD closure by direct suture); the transpulmonary approach is a
+        """
+}
+mapping "FHB30.1" source="FHB30" target="SNOMED_CT:233099005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: transaortic direct suture of VSD; SNOMED CT 2100121294 233099005 captures
+        the core procedure. The transaortic
+        """
+}
+mapping "FHB40.1" source="FHB40" target="SNOMED_CT:428818006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraoperativ transluminal slutning av ventrikelseptumdefekt = intraoperative transluminal
+        closure of VSD. Exact match.
+        """
+}
+mapping "FHB50.1" source="FHB50" target="SNOMED_CT:80733000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of VSD with patch. Transatrial approach is a technique detail not in SNOMED CT but the
+        procedure itself is exact
+        """
+}
+mapping "FHB60.1" source="FHB60" target="SNOMED_CT:12445005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies transventricular patch closure; SNOMED CT is VSD repair with tissue graft (patch)"
+}
+mapping "FHB80.1" source="FHB80" target="SNOMED_CT:80733000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transaortal closure of VSD with patch maps exactly to closure of ventricular septal defect with
+        patch
+        """
+}
+mapping "FHC10.1" source="FHC10" target="SNOMED_CT:12445005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA closure of multiple VSDs via right ventriculotomy; SNOMED CT VSD repair is parent concept"
+}
+mapping "FHC20.1" source="FHC20" target="SNOMED_CT:428759006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closure of multiple VSDs via left ventriculotomy; SNOMED CT closure of multiple VSDs is good match.
+        """
+}
+mapping "FHC30.1" source="FHC30" target="SNOMED_CT:233100002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: multiple VSD closure combined approach; weak to VSD closure"
+}
+mapping "FHD03.1" source="FHD03" target="SNOMED_CT:233048003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Repair of complete AVSD with atrial septal patch and VSD suture; AVSD repair is close parent"
+}
+mapping "FHD10.1" source="FHD10" target="SNOMED_CT:174837009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Repair of total AVSD with two-patch technique; exact match to SNOMED CT 174837009 2100121309.
+        Confirmed SNOMED CT S.
+        """
+}
+mapping "FHD30.1" source="FHD30" target="SNOMED_CT:233048003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Repair of total AVSD with simultaneous resection of pulmonary stenosis. SNOMED CT 2100121310
+        233048003 captures the AVSD component exactly bu
+        """
+}
+mapping "FHE20.1" source="FHE20" target="SNOMED_CT:75409000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100121314 75409000 = transventricular correction of ToF with outflow patch; SNOMED CT
+        concept describes the outf
+        """
+}
+mapping "FHE40.1" source="FHE40" target="SNOMED_CT:174818000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Correction of TOF with VPA conduit maps loosely to revision TOF; different procedure"
+}
+mapping "FHF00.1" source="FHF00" target="SNOMED_CT:83698002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100121318 83698002 = correction of pulmonary atresia with transannular patch; SNOMED CT
+        'Complete repair of tetralogy of Fa
+        """ suspect=quoted-text
+}
+mapping "FHG00.1" source="FHG00" target="SNOMED_CT:233128008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "DOLV = Double Outlet Left Ventricle. Repair of DOLV is the exact match"
+}
+mapping "FHG10.1" source="FHG10" target="SNOMED_CT:233126007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Korrektion av DORV (correction of Double Outlet Right Ventricle) maps exactly. Verified: SNOMED CT
+        S
+        """
+}
+mapping "FHG20.1" source="FHG20" target="SNOMED_CT:426902005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraventricular switch with extraventricular conduit is a variant of the double switch (atrial
+        + arterial switch). Closest SNOMED CT match. Verified SNOMED CT S.
+        """
+}
+mapping "FHJ96.1" source="FHJ96" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation single ventricle heart; no close SNOMED CT match"
+}
+mapping "FJA00.1" source="FJA00" target="SNOMED_CT:233052003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "FJA12.1" source="FJA12" target="SNOMED_CT:429380006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FJA12 SNOMED CT 429380006 = Percutaneous transluminal biopsy of right ventricle (KVÅ
+        specific). Target. Source and target denote the same specific procedure. Exact match at high
+        tier: strong semantic match, both percutaneous transluminal RV biopsy. (no independent crosswalk
+        but unambiguous term match). Target replaces retired SNOMED CT 259611000000100 (Athena Maps-to
+        successor).
+        """
+}
+mapping "FJA96.1" source="FJA96" target="SNOMED_CT:233052003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FJB00.1" source="FJB00" target="SNOMED_CT:439331008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is suture of right ventricle for injury without CPB requirement; SNOMED CT is heart wound
+        repair with CPB
+        """
+}
+mapping "FJC10.1" source="FJC10" target="SNOMED_CT:233055001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FJC12.1" source="FJC12" target="SNOMED_CT:233055001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FJD10.1" source="FJD10" target="SNOMED_CT:233069001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is right ventricle enlargement with patch; only SNOMED CT match is patching of LEFT ventricle —
+        wrong laterality but same mechanism
+        """
+}
+mapping "FJD10.2" source="FJD10" target="SNOMED_CT:310615005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FJD20.1" source="FJD20" target="SNOMED_CT:448787005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ bypass of pulmonary artery with prosthesis/homograft (RVOT conduit); SNOMED CT has no
+        conduit-specific concept -- very loose parent
+        """
+}
+mapping "FJD96.1" source="FJD96" target="SNOMED_CT:233064006" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies \"other\" operation on RVOT; SNOMED CT is the general parent for all RVOT operations —
+        loose parent
+        """
+}
+mapping "FJE10.1" source="FJE10" target="SNOMED_CT:232868002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Valvotomy for pulmonary stenosis: (232868002), confirmed SNOMED CT standard"
+}
+mapping "FJE20.1" source="FJE20" target="SNOMED_CT:232861008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of pulmonary valve with patch annulus enlargement; SNOMED CT repair of pulmonary valve
+        cusp is related
+        """
+}
+mapping "FJE30.1" source="FJE30" target="SNOMED_CT:83698002" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Approximate: transannular patch with monocusp is a variant/technique detail of transannular
+        patch repair; SNOMED CT 'Complete repair of tetralogy of Fallot with tr
+        """ suspect=quoted-text
+}
+mapping "FJF12.1" source="FJF12" target="SNOMED_CT:787162002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Perkutan transluminal implantation av biologisk pulmonalklaffprotes = percutaneous
+        transluminal implantation of biological pulmonary valve prosthesis. Best
+        """
+}
+mapping "FJW96.1" source="FJW96" target="SNOMED_CT:232854009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation pa högre kammare och pulmonalklaffen = other operation on right ventricle and
+        pulmonary valve. The pulmonary valve component maps exactly.
+        """
+}
+mapping "FKA00.1" source="FKA00" target="SNOMED_CT:29222003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100121359 29222003 = commissurotomy for mitral stenosis. SNOMED CT is the
+        standard surgical technique
+        """
+}
+mapping "FKA20.1" source="FKA20" target="SNOMED_CT:29222003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kommissurotomi och separering av chordae tendinae vid mitralstenos = commissurotomy and
+        separation of chordae tendinae for mitral stenosis. 'Posterior mitral co
+        """
+}
+mapping "FKB00.1" source="FKB00" target="SNOMED_CT:265472007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies suture anuloplasty for mitral insufficiency; SNOMED CT is broader mitral valve repair
+        """
+}
+mapping "FKB10.1" source="FKB10" target="SNOMED_CT:63355000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FKB10 SNOMED CT 63355000 = Annuloplasty with ring for mitral insufficiency (KVÅ specific).
+        Target. Source is specifically ring annuloplasty; target is the broader mitral repair parent.
+        Broader. Moderate tier: target covers the source but loses the annuloplasty/ring detail.
+        """
+}
+mapping "FKB96.1" source="FKB96" target="SNOMED_CT:58204008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other annuloplasty for mitral insufficiency maps to; the parent concept covers unspecified
+        mitral annuloplasty techniques. Confidence reduced becau
+        """
+}

@@ -1,0 +1,261 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes GDG-JAA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "GDG13.1" source="GDG13" target="SNOMED_CT:232659001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100121694 232659001 = lung transplant en bloc with bronchial artery
+        revascularization; SNOMED CT 'Double l
+        """ suspect=quoted-text
+}
+mapping "GDW98.1" source="GDW98" target="SNOMED_CT:243411004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other bronchoscopic lung operation; related bronchoscopic lung procedure"
+}
+mapping "GEA00.1" source="GEA00" target="SNOMED_CT:261479009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GEA20.1" source="GEA20" target="SNOMED_CT:262457001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader parent; KVÅ adds excision of local lesion"
+}
+mapping "GEB10.1" source="GEB10" target="SNOMED_CT:18936008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GEB20.1" source="GEB20" target="SNOMED_CT:261047008" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Mediastinotomy with foreign body removal; closest SNOMED CT is anterior mediastinotomy"
+}
+mapping "GEB40.1" source="GEB40" target="SNOMED_CT:261047008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Mediastinotomy with extended excision; parent mediastinotomy"
+}
+mapping "GEB96.1" source="GEB96" target="SNOMED_CT:261047008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation via mediastinotomy; anterior mediastinotomy is the underlying approach"
+}
+mapping "GEC00.1" source="GEC00" target="SNOMED_CT:66300009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100121709 66300009 = biopsy of thymus; exact SNOMED CT match"
+}
+mapping "GEC10.1" source="GEC10" target="SNOMED_CT:172012004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transcervical resection of thymus; exact match to SNOMED CT Transcervical thymectomy, verified in
+        Athena
+        """
+}
+mapping "GEC13.1" source="GEC13" target="SNOMED_CT:172011006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transsternal resektion av tymus = transsternal resection of thymus. Exact match to SNOMED CT
+        Transsternal thymectomy.
+        """
+}
+mapping "GEC14.1" source="GEC14" target="SNOMED_CT:237490000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Thoracoscopic thymus resection; SNOMED CT mediastinoscopic thymectomy is closest approach match"
+}
+mapping "GEC24.1" source="GEC24" target="SNOMED_CT:237490000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GEC26.1" source="GEC26" target="SNOMED_CT:237490000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GEC93.1" source="GEC93" target="SNOMED_CT:71394005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other endoscopic operation on thymus maps to generic Endoscopic procedure on thymus. Verified
+        SNOMED CT S.
+        """
+}
+mapping "HAA00.1" source="HAA00" target="SNOMED_CT:237399003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "HAB20.1" source="HAB20" target="SNOMED_CT:307796007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resection or extirpation of mammary duct maps exactly to Excision of mammary duct"
+}
+mapping "HAB30.1" source="HAB30" target="SNOMED_CT:237393002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of areola or nipple maps exactly to SNOMED CT 4129196 SNOMED CT 2100121741 237393002"
+}
+mapping "HAB40.1" source="HAB40" target="SNOMED_CT:64368001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HAB40 = resection of mammary gland without axillary clearance; SNOMED CT partial mastectomy is
+        exact equivalent
+        """
+}
+mapping "HAB99.1" source="HAB99" target="SNOMED_CT:172126006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source HAB99 SNOMED CT 172126006 = Other resection of breast (KVÅ residual). Target. Both denote
+        residual breast operations. Exact match at low tier: no crosswalk, but NOS semantics align.
+        """
+}
+mapping "HAC30.1" source="HAC30" target="SNOMED_CT:237369007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of aberrant breast tissue or nipple maps exactly to excision of accessory breast"
+}
+mapping "HAC99.1" source="HAC99" target="SNOMED_CT:150307002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source HAC99 SNOMED CT 150307002 = Other mastectomy (KVÅ residual). Target. Both denote
+        residual/unspecified mastectomy. Exact match at low tier: no crosswalk, but NOS semantics align
+        directly.
+        """
+}
+mapping "HAD10.1" source="HAD10" target="SNOMED_CT:45467006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Breast augmentation; SNOMED CT uses graft while KVÅ specifies prosthesis implant - different
+        material but same clinical intent.
+        """
+}
+mapping "HAD20.1" source="HAD20" target="SNOMED_CT:302441008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fettsugning i bröst (liposuction of breast) maps to are UK Clinical Terms extensions not"
+}
+mapping "HAD55.1" source="HAD55" target="SNOMED_CT:172120000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 172120000 2100121759 = capsular splitting/cutting in breast; SNOMED CT is the exact
+        clinical equivalent (open division of brea
+        """
+}
+mapping "HAD57.1" source="HAD57" target="SNOMED_CT:90991008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: exstirpation av fibrös kapsel kring bröstimplantat = periprosthetic breast
+        capsulectomy
+        """
+}
+mapping "HAD99.1" source="HAD99" target="SNOMED_CT:172083003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source HAD99 SNOMED CT 172083003 = Other corrective operation on breast (KVÅ residual). Target.
+        Both denote residual corrective/plastic breast operations. Exact match at low tier: no
+        crosswalk, but NOS semantics align.
+        """
+}
+mapping "HAE00.1" source="HAE00" target="SNOMED_CT:1344889001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "HAE20.1" source="HAE20" target="SNOMED_CT:387629000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction of areola and nipple with transplant or flap maps exactly to Nipple and areola
+        reconstruction; covers all reconstructive techniques.
+        """
+}
+mapping "HAE99.1" source="HAE99" target="SNOMED_CT:119856003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "HAF00.1" source="HAF00" target="SNOMED_CT:307616002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is generic local excision of cancer recurrence/metastasis; SNOMED CT is liver-specific"
+}
+mapping "HAF10.1" source="HAF10" target="SNOMED_CT:303445008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Rekonstruktion efter excision av bröstcancerrecidiv med transplantat eller lambå =
+        reconstruction after excision of breast cancer recurrence with graft or flap.
+        """
+}
+mapping "HAF99.1" source="HAF99" target="SNOMED_CT:172126006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source HAF99 SNOMED CT 172126006 = Other operation for local recurrence of breast cancer (KVÅ
+        residual). Target. No SNOMED CT concept for surgery for breast cancer recurrence at this level.
+        Target broadly subsumes the source. Weak tier: target loses the recurrence indication.
+        """
+}
+mapping "HWA00.1" source="HWA00" target="SNOMED_CT:29629000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies breast wound rupture reoperation; SNOMED CT concept is site-generic — breast-specific
+        dehiscence repair not found
+        """
+}
+mapping "HWB00.1" source="HWB00" target="SNOMED_CT:237374004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is reoperation for superficial infection post-breast procedure; debridement is the primary
+        surgical action — no direct reoperation-for-infection concept exists in SNOMED CT
+        """
+}
+mapping "HWC00.1" source="HWC00" target="SNOMED_CT:28512001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is reoperation for deep infection post-breast procedure; SNOMED CT is general breast
+        reconstruction revision — different indication
+        """
+}
+mapping "HWD00.1" source="HWD00" target="SNOMED_CT:172117008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=reoperation for superficial bleeding after breast procedure; SNOMED CT captures breast
+        exploration but not bleeding indication or reoperation context
+        """
+}
+mapping "HWE00.1" source="HWE00" target="SNOMED_CT:275236004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ code broader: any reoperation for deep bleeding; SNOMED CT captures common manifestation
+        (hematoma evacuation) but misses vessel ligation/re-exploration without drainage
+        """
+}
+mapping "HWF00.1" source="HWF00" target="SNOMED_CT:28512001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifically targets reoperation for anastomosis/suture insufficiency complication; SNOMED CT
+        is the general breast revision parent
+        """
+}
+mapping "JAA00.1" source="JAA00" target="SNOMED_CT:112978005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAA13.1" source="JAA13" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: extended excision for extensive necrotizing abdominal wall condition. No SNOMED CT match"
+}
+mapping "JAA20.1" source="JAA20" target="SNOMED_CT:608797008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open exploration of inguinal canal maps to open repair of inguinal hernia (exploration is
+        integral to the repair). Verified SNOMED CT S.
+        """
+}
+mapping "JAA21.1" source="JAA21" target="SNOMED_CT:446805001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ laparoscopic exploration of inguinal canal; SNOMED CT concept is site-generic laparoscopic
+        exploration — no inguinal-canal-specific concept exists
+        """
+}
+mapping "JAA23.1" source="JAA23" target="SNOMED_CT:1144784002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ adds mesh removal/fixation component; SNOMED CT covers exploration only — no combined
+        exploration-with-mesh-removal concept exists
+        """
+}
+mapping "JAA24.1" source="JAA24" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA laparoscopic groin exploration with mesh removal; SNOMED CT mesh hernia repair is different
+        approach but related
+        """
+}
+flag "JAA60.unmapped" kind=unmapped concept="JAA60" target-system="SNOMED_CT"

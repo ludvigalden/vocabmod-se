@@ -1,0 +1,339 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes FNE-FQA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "FNE00.1" source="FNE00" target="SNOMED_CT:868231004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Coronary bypass with free arterial graft using internal thoracic artery = CABG using free left
+        internal thoracic artery graft; exact clinical equivalent
+        """
+}
+mapping "FNE10.1" source="FNE10" target="SNOMED_CT:868228000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Koronar bypass med fritt artärtransplantat med a. gastroepiploica = coronary bypass with free
+        arterial graft using gastroepiploic artery. Exact match to SNOMED CT
+        """
+}
+mapping "FNE20.1" source="FNE20" target="SNOMED_CT:868227005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: coronary bypass with free arterial graft using radial artery."
+}
+mapping "FNE96.1" source="FNE96" target="SNOMED_CT:309814006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNE96 SNOMED CT 309814006 = Coronary bypass with other free arterial graft (KVÅ specific,
+        residual). Target. Source is specifically a free arterial graft bypass; target is the broad
+        aortocoronary bypass parent. Broader. Low tier: target loses the arterial-graft specificity.
+        """
+}
+mapping "FNG00.1" source="FNG00" target="SNOMED_CT:175075004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNG00 SNOMED CT 175075004 = Dilatation of coronary artery(s) (KVÅ specific). Target. Both
+        denote coronary dilatation procedures. Broader at low tier: target covers transluminal coronary
+        operations broadly.
+        """
+}
+mapping "FNG02.1" source="FNG02" target="SNOMED_CT:175075004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNG02 SNOMED CT 175075004 = Percutaneous transluminal coronary angioplasty (PTCA) (KVÅ
+        specific). Target. Both denote PTCA procedures. Exact match at moderate tier: source is PTCA,
+        target is the SNOMED CT therapeutic transluminal coronary operation parent.
+        """
+}
+mapping "FNG05.1" source="FNG05" target="SNOMED_CT:259791000000102" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FNG05 SNOMED CT 259791000000102 = PTCA with stent insertion (KVÅ specific). Target. Both
+        denote PTCA with coronary stenting. Exact match at high tier: strong semantic match, both
+        specify stent.
+        """
+}
+mapping "FNG20.1" source="FNG20" target="SNOMED_CT:232739006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FNG96.1" source="FNG96" target="SNOMED_CT:429809004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other recanalization of coronary artery maps closely to PTCA of coronary artery"
+}
+mapping "FNH00.1" source="FNH00" target="SNOMED_CT:232738003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FNH96.1" source="FNH96" target="SNOMED_CT:119773008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "FNJ96.1" source="FNJ96" target="SNOMED_CT:232735000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation vid koronarfistel = other operation for coronary fistula. SNOMED CT 2100121452
+        232735000 is the exact SNOMED CT equivalent.
+        """
+}
+mapping "FNW98.1" source="FNW98" target="SNOMED_CT:429809004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other PTCA coronary artery"
+}
+mapping "FPB10.1" source="FPB10" target="SNOMED_CT:705732002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPB10 SNOMED CT 705732002 = Cryoablation of ectopic heart focus (KVÅ specific). Target (a
+        device, not a procedure). No SNOMED CT procedure concept for cryoablation of ectopic focus exists
+        in mirror. Weak tier: target is a device, not a procedure. Recorded as best-available lead.
+        """
+}
+mapping "FPB12.1" source="FPB12" target="SNOMED_CT:233161001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies transvenous approach for ectopic cardiac focus; SNOMED CT matches cryoablation for
+        arrhythmia but omits transvenous approach
+        """
+}
+mapping "FPB20.1" source="FPB20" target="SNOMED_CT:211381000000107" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPB20 SNOMED CT 211381000000107 = Radiofrequency ablation of aberrant heart focus (KVÅ
+        specific). Target. Source is RF ablation of an ectopic focus; target is the parent for
+        transluminal RF cardiac conducting system ablation. Broader. Moderate tier: target covers the
+        source but loses the ectopic-focus specificity.
+        """
+}
+mapping "FPB22.1" source="FPB22" target="SNOMED_CT:175126002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPB22 SNOMED CT 175126002 = Transvenous RF ablation of aberrant accessory pathway or
+        arrhythmia focus (KVÅ specific). Target. Both denote transvenous/transluminal ablation of
+        cardiac conducting system for arrhythmia. Exact match at moderate tier.
+        """
+}
+mapping "FPB32.1" source="FPB32" target="SNOMED_CT:259581000000106" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPB32 SNOMED CT 259581000000106 = Transvenous RF ablation of pulmonary vein focus or pathway
+        (KVÅ specific). Target. Source is specifically pulmonary vein ostial ablation; target covers
+        atrial wall ablation broadly. Broader. Moderate tier: target covers the source but loses the
+        pulmonary-vein specificity.
+        """
+}
+mapping "FPB96.1" source="FPB96" target="SNOMED_CT:233163003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ablation of aberrant cardiac focus"
+}
+mapping "FPC00.1" source="FPC00" target="SNOMED_CT:233163003" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endocardial resection for ventricular arrhythmia; closest SNOMED CT is RF ablation (different
+        technique)
+        """
+}
+mapping "FPD00.1" source="FPD00" target="SNOMED_CT:1332525002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Labyrinth operation for atrial fibrillation = maze/ablation procedure for AF. Exact match.
+        Verified SNOMED CT S.
+        """
+}
+mapping "FPD96.1" source="FPD96" target="SNOMED_CT:429211003" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SE-mirror sctid
+        429211003 = SNOMED CT 429211003, ACTIVE in RF2 20260701 (valid_end 2099-12-31, invalid_reason
+        empty, rf2). Crosswalk-confirmed via sctid_to_athena_id.tdl (429211003->4181800). The procedure
+        concept 429211003 is active, not only the
+        history-of situation 429218009. A
+        defensible active standard target exists, so the mapping carries no invalid_reason. Target definition: 429211003 = surgical creation
+        of atrial lesion lines (cut-and-sew or ablation energy) to interrupt AF re-entry circuits. Why
+        narrower / : the source is a residual that captures MORE than just the Maze procedure (also
+        surgical PVI, concomitant AF ablation during other cardiac surgery, etc.); the Maze procedure is
+        one specific operation within that residual bucket, so the target is more specific than the
+        source = narrower. Confidence per the residual+narrower rubric (narrower maps silently add
+        specificity the source did not assert; residual source = real doubt). | Mirror-only lookup,
+        citation empty.
+        """
+}
+flag "FPD96.1.label-check" kind=label-contradicts-comment assertion="kka-snomed-ct@2026.1/FPD96.1"
+mapping "FPE00.1" source="FPE00" target="SNOMED_CT:259641000000104" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPE00 SNOMED CT 259641000000104 = Insertion of transvenous pacemaker with ventricular
+        electrode (KVÅ specific, single chamber ventricular). Target. Both denote single-chamber
+        transvenous ventricular pacemaker. Exact match at high tier.
+        """
+}
+mapping "FPE10.1" source="FPE10" target="SNOMED_CT:236721000000106" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPE10 SNOMED CT 236721000000106 = Insertion of transvenous pacemaker with atrial electrode
+        (KVÅ specific). Target. Source is single-chamber atrial; target is dual-chamber. Broader: target
+        covers a dual-chamber system that includes an atrial electrode. Moderate tier: target
+        overspecifies (dual vs single). Target replaces retired SNOMED CT 259651000000101 (Athena Maps-to
+        successor).
+        """
+}
+mapping "FPE20.1" source="FPE20" target="SNOMED_CT:236721000000106" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPE20 SNOMED CT 236721000000106 = Insertion of transvenous pacemaker with atrial and
+        ventricular electrodes (KVÅ specific, dual chamber). Target. Both denote dual-chamber
+        transvenous pacemaker. Exact match at high tier. Target replaces retired SNOMED CT 259651000000101
+        (Athena Maps-to successor).
+        """
+}
+mapping "FPE26.1" source="FPE26" target="SNOMED_CT:259661000000103" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPE26 SNOMED CT 259661000000103 = Insertion of transvenous pacemaker with biventricular
+        electrodes (KVÅ specific, CRT-P). Target. Both denote biventricular transvenous pacemaker
+        (CRT-P). Exact match at high tier.
+        """
+}
+mapping "FPE30.1" source="FPE30" target="SNOMED_CT:232981000000109" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPE30 SNOMED CT 232981000000109 = Replacement of pulse generator for permanent transvenous
+        pacemaker (KVÅ specific). Target. Source is specifically pulse generator exchange; target covers
+        initial implantation. Weak tier: target loses the exchange-vs-implant distinction. Target
+        replaces retired SNOMED CT 259671000000105 (Athena Maps-to successor).
+        """
+}
+mapping "FPE40.1" source="FPE40" target="SNOMED_CT:232981000000109" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPE40 SNOMED CT 232981000000109 = Replacement of electrode for permanent transvenous
+        pacemaker (KVÅ specific). Target. Source is specifically electrode exchange; target covers
+        initial implantation. Weak tier: target loses the exchange-vs-implant distinction. Target
+        replaces retired SNOMED CT 259671000000105 (Athena Maps-to successor).
+        """
+}
+mapping "FPE96.1" source="FPE96" target="SNOMED_CT:488641000000103" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPE96 SNOMED CT 488641000000103 = Other insertion or replacement of transvenous pacemaker
+        (KVÅ residual). Target. Both denote residual/NEC transvenous pacemaker procedures. Exact match
+        at low tier: no crosswalk, but NEC semantics align.
+        """
+}
+mapping "FPF20.1" source="FPF20" target="SNOMED_CT:233183002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Insertion of epicardial pacemaker with atrial and ventricular electrode maps exactly to
+        insertion of permanent epicardial cardiac pacemaker system (the dual-ele
+        """
+}
+mapping "FPF40.1" source="FPF40" target="SNOMED_CT:70589002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replacement of electrode at epicardial pacemaker = removal of epicardial electrodes with
+        replacement of epicardial lead, exact clinical equivalent
+        """
+}
+mapping "FPG10.1" source="FPG10" target="SNOMED_CT:1236930009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open epicardial ICD mapped to subcutaneous ICD implantation (closest ICD concept; different
+        approach).
+        """
+}
+mapping "FPG20.1" source="FPG20" target="SNOMED_CT:395218007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies epicardial approach during concomitant cardiac surgery; SNOMED CT concept does not
+        distinguish epicardial vs transvenous
+        """
+}
+mapping "FPG30.1" source="FPG30" target="SNOMED_CT:259721000000100" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPG30 SNOMED CT 259721000000100 = Insertion of transvenous ICD with ventricular electrode
+        (KVÅ specific, single lead). Target. Both denote single-lead transvenous ICD. Exact match at
+        high tier.
+        """
+}
+mapping "FPG33.1" source="FPG33" target="SNOMED_CT:259731000000103" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPG33 SNOMED CT 259731000000103 = Insertion of transvenous ICD with atrial and ventricular
+        electrodes (KVÅ specific, dual lead). Target. Both denote dual-lead transvenous ICD. Exact match
+        at high tier.
+        """
+}
+mapping "FPG36.1" source="FPG36" target="SNOMED_CT:442249009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FPG36 SNOMED CT 442249009 = Insertion of transvenous ICD with biventricular electrodes (KVÅ
+        specific, CRT-D). Target. Both denote triple-lead transvenous CRT-D. Exact match at high tier.
+        Target replaces retired SNOMED CT 488651000000100 (Athena Maps-to successor).
+        """
+}
+mapping "FPG40.1" source="FPG40" target="SNOMED_CT:259721000000100" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FPG40 SNOMED CT 259721000000100 = Replacement of pulse generator in transvenous ICD system
+        (KVÅ specific). Target. Source is specifically pulse generator exchange; target covers initial
+        implantation. Weak tier: target loses the exchange-vs-implant distinction.
+        """
+}
+mapping "FPG43.1" source="FPG43" target="SNOMED_CT:229577006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121480 229577006 = replacement of electrode in transvenous ICD system; exact match to
+        SNOMED CT Replacement of per
+        """
+}
+mapping "FPG50.1" source="FPG50" target="SNOMED_CT:1236930009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 1236930009 2100121481 = implantation of subcutaneous implantable cardiac
+        defibrillator; exact SNOMED CT match
+        """
+}
+mapping "FPG96.1" source="FPG96" target="SNOMED_CT:34955007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other insertion of permanent ICD; loose match to ICD revision concept"
+}
+mapping "FPH00.1" source="FPH00" target="SNOMED_CT:141171000146104" relationship=source_is_broader_than_target effect=omitted quality=40 {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        SE-mirror sctid
+        141171000146104 = SNOMED CT 141171000146104, ACTIVE in RF2 20260701 (valid_end 2099-12-31,
+        invalid_reason empty, provenance rf2). A defensible active standard target
+        exists, so the mapping carries no invalid_reason. Target definition: - percutaneous/transvenous
+        lead extraction using a powered sheath. Why narrower / not exact: the source says which in
+        Swedish cardiac-surgery usage covers BOTH pacemaker AND ICD lead systems; the target FSN
+        specifies only and does not explicitly name ICD leads. The target is therefore slightly more
+        specific than the source (does not assert ICD-scope), so mapping_type=narrower rather than
+        exact_match, and confidence (high-ish but not because of the residual ICD-scope ambiguity and no
+        independent crosswalk - sctid 141171000146104 is NOT in sctid_to_athena_id.tdl, so no Athena
+        crosswalk confirms it). Alternate/related target considered: 73371000146109 - also ACTIVE in SE
+        mirror, but FSN implies complexity grading not asserted by source, so 141171000146104 remains
+        the primary. | No web research used; mirror-only lookup, citation empty.
+        """
+}
+mapping "FPJ00.1" source="FPJ00" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FPK00.1" source="FPK00" target="SNOMED_CT:134367001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: loop recorder insertion"
+}
+mapping "FPW96.1" source="FPW96" target="SNOMED_CT:233155004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation for arrhythmia; SNOMED CT has various specific arrhythmia operations"
+}
+mapping "FQA00.1" source="FQA00" target="SNOMED_CT:232974001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "FQA96.1" source="FQA96" target="SNOMED_CT:232973007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

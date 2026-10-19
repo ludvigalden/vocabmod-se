@@ -1,0 +1,244 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes TP-ULB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "TPH00.1" source="TPH00" target="SNOMED_CT:127606004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TPH15.1" source="TPH15" target="SNOMED_CT:736919006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        CVK insertion via jugular is a central venous catheter procedure; hemodialysis catheter
+        insertion is the closest procedure concept
+        """
+}
+mapping "TPH20.1" source="TPH20" target="SNOMED_CT:233527006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        The general concept covers the procedure. KVÅ specifies subclavian/brachiocephalic approach;
+        (4052415) but is
+        """
+}
+mapping "TPJ05.1" source="TPJ05" target="SNOMED_CT:178302008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies puncture (needle) biopsy only; SNOMED CT covers all excision/biopsy methods — loose
+        parent
+        """
+}
+mapping "TPJ10.1" source="TPJ10" target="SNOMED_CT:234279002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Aspiration cytology of lymph node = Fine needle aspiration of lymph node (exact match;
+        aspiration cytology = FNA)
+        """
+}
+mapping "TPJ20.1" source="TPJ20" target="SNOMED_CT:287549000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SV synonym SNOMED CT 178302008 287549000 aligns; SNOMED CT"
+}
+mapping "TPJ20.2" source="TPJ20" target="SNOMED_CT:178302008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "TPJ30.unmapped" kind=unmapped concept="TPJ30" target-system="SNOMED_CT"
+mapping "TPW99.1" source="TPW99" target="SNOMED_CT:735414004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ residual category for minor peripheral vessel procedures; described activity is insertion of
+        large-bore catheter into peripheral vessel (e.g. femoral vein); SNOMED CT concept is site-general
+        but captures the core action and is
+        """
+}
+mapping "TPX00.1" source="TPX00" target="SNOMED_CT:34633002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ biopsi av artär ELLER ven = SNOMED CT biopsy of blood vessel (parent covers both artery and
+        vein); exact equivalent
+        """
+}
+mapping "TPX20.1" source="TPX20" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: baroreflex activation therapy device implantation. No SNOMED CT equivalent"
+}
+mapping "TQX00.1" source="TQX00" target="SNOMED_CT:240977001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "TQX05.1" source="TQX05" target="SNOMED_CT:430107001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Puncture of skin closely matches FNA of skin"
+}
+mapping "TQX20.1" source="TQX20" target="SNOMED_CT:169553002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Inläggning av subkutant läkemedelsimplantat maps exactly to Implantation of subcutaneous
+        contraceptive. Verified SNOMED CT S concept.
+        """
+}
+mapping "TQX30.1" source="TQX30" target="SNOMED_CT:858541000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Subcutaneous drug implant removal; US-guided subset matches well"
+}
+mapping "TQX50.1" source="TQX50" target="SNOMED_CT:854571000000100" relationship=source_is_broader_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is site-general tissue expander volume adjustment; SNOMED CT concept is breast-specific — loose
+        narrower match
+        """
+}
+mapping "UDM02.1" source="UDM02" target="SNOMED_CT:25570002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UDM05.1" source="UDM05" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UDQ12.1" source="UDQ12" target="SNOMED_CT:49077009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UDQ25.1" source="UDQ25" target="SNOMED_CT:1204345008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UEL02.1" source="UEL02" target="SNOMED_CT:42587004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ sialoskopi = endoscopy of salivary gland/duct"
+}
+mapping "UEL05.1" source="UEL05" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UGA02.1" source="UGA02" target="SNOMED_CT:472818003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopi genom pleurokutant fönster (endoscopy through pleurocutaneous window) maps to.
+        Verified SNOM
+        """
+}
+mapping "UGC02.1" source="UGC02" target="SNOMED_CT:10847001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UGC05.1" source="UGC05" target="SNOMED_CT:1220608006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bronchoscopy with biopsy from bronchus or trachea; very close to SNOMED CT rigid bronchoscopy and
+        biopsy of lung
+        """
+}
+mapping "UGC15.1" source="UGC15" target="SNOMED_CT:173161005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ flexible bronchoscopy with biopsy from bronchus or trachea exactly matches SNOMED CT
+        173161005 2100125255; bronchoscopy inherently accesses bot
+        """
+}
+mapping "UGC32.1" source="UGC32" target="SNOMED_CT:1081101000112106" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJC12.1" source="UJC12" target="SNOMED_CT:1208535002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJC15.1" source="UJC15" target="SNOMED_CT:173652009" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: flexible esophagoscopy with biopsy"
+}
+mapping "UJD02.1" source="UJD02" target="SNOMED_CT:76009000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source UJD02 SNOMED CT 76009000 = Gastroscopy (KVÅ code). Target (OMOP id 4294382). Both denote
+        upper GI endoscopy/gastroscopy. Exact match at high tier: well-established equivalence, clear
+        semantic alignment. No Athena crosswalk for KVÅ surgical procedures but the clinical equivalence is unambiguous.
+        """
+}
+mapping "UJD05.1" source="UJD05" target="SNOMED_CT:445982009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source UJD05 SNOMED CT 445982009 = Gastroscopy with biopsy (KVÅ code). Target (OMOP id 40485932).
+        Both denote upper GI endoscopy with biopsy. Exact match at high tier: well-established clinical
+        equivalence.
+        """
+}
+mapping "UJF02.1" source="UJF02" target="SNOMED_CT:235147008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF05.1" source="UJF05" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF15.1" source="UJF15" target="SNOMED_CT:39686002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same procedure but KKÅ specifies via-stoma access route not captured in SNOMED CT"
+}
+mapping "UJF22.1" source="UJF22" target="SNOMED_CT:274382000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF32.1" source="UJF32" target="SNOMED_CT:73761001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source UJF32 SNOMED CT 73761001 = Colonoscopy (KVÅ code). Target (OMOP id 4249893). Both denote
+        colonoscopy. Exact match at high tier: well-established clinical equivalence, same procedure at
+        the same level.
+        """
+}
+mapping "UJF35.1" source="UJF35" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF42.1" source="UJF42" target="SNOMED_CT:24420007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF82.1" source="UJF82" target="SNOMED_CT:235147008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ peranal enteroscopy = transanal approach; push enteroscopy in SNOMED CT is typically peroral,
+        different access route but same target organ (small bowel)
+        """
+}
+mapping "UJF82.2" source="UJF82" target="SNOMED_CT:235148003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJF85.1" source="UJF85" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJG05.1" source="UJG05" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJK02.1" source="UJK02" target="SNOMED_CT:1060671000000101" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UJX08.1" source="UJX08" target="SNOMED_CT:199001000000103" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "UKA02.1" source="UKA02" target="SNOMED_CT:275218004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "UKA05.1" source="UKA05" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UKB05.1" source="UKB05" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UKB15.1" source="UKB15" target="SNOMED_CT:236170007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Retrograde endoscopy of cutaneous ureteroenterostomy with biopsy; ureteroscopy is parent"
+}
+mapping "UKC02.1" source="UKC02" target="SNOMED_CT:142505009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "UKC05.1" source="UKC05" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "UKC32.unmapped" kind=unmapped concept="UKC32" target-system="SNOMED_CT"
+flag "UKC35.unmapped" kind=unmapped concept="UKC35" target-system="SNOMED_CT"
+mapping "UKD05.1" source="UKD05" target="SNOMED_CT:196539005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ULB02.1" source="ULB02" target="SNOMED_CT:120058006" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ULB05.1" source="ULB05" target="SNOMED_CT:11343000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

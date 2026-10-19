@@ -1,0 +1,274 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes EAB-EF
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "EAB10.1" source="EAB10" target="SNOMED_CT:45205003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision and plastic of lip frenulum; excision of labial frenulum is close match."
+}
+mapping "EAB20.1" source="EAB20" target="SNOMED_CT:119863003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Lapprekonstruktion eller -plastik = lip reconstruction or plasty; exact SNOMED CT match."
+}
+mapping "EAB30.1" source="EAB30" target="SNOMED_CT:86000007" relationship=source_is_broader_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Specific technique variant; KVÅ is more general cleft lip reconstruction"
+}
+mapping "EAB99.1" source="EAB99" target="SNOMED_CT:119863003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EAW99.1" source="EAW99" target="SNOMED_CT:225148005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on lip; wound debridement is broader parent"
+}
+mapping "EBA20.1" source="EBA20" target="SNOMED_CT:23580000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EBA40.1" source="EBA40" target="SNOMED_CT:234693003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EBA99.1" source="EBA99" target="SNOMED_CT:149000006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EBA99 SNOMED CT 149000006 = Other extraction or resection of tooth (KVÅ residual). Target.
+        Source covers both extraction AND resection; target covers only simple extraction. Broader. Low
+        tier: no crosswalk, resection scope not in target.
+        """
+}
+mapping "EBB10.1" source="EBB10" target="SNOMED_CT:1340199001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "EBB99.1" source="EBB99" target="SNOMED_CT:173336000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EBB99 SNOMED CT 173336000 = Other reconstruction of tooth (KVÅ residual). Target. Both
+        denote residual dental operations. Exact match at low tier: no crosswalk, but NOS semantics
+        align.
+        """
+}
+mapping "ECA20.1" source="ECA20" target="SNOMED_CT:173345004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of gingiva = Biopsy of lesion of gingiva (SNOMED CT 173345004)"
+}
+mapping "ECA30.1" source="ECA30" target="SNOMED_CT:173344000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resektion av gingivaförändring = Excision of lesion of gingiva; exact clinical and anatomical
+        match
+        """
+}
+mapping "ECA40.1" source="ECA40" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: treatment of periodontal abscess. No direct SNOMED CT equivalent"
+}
+mapping "ECA50.1" source="ECA50" target="SNOMED_CT:234677007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ECA60.1" source="ECA60" target="SNOMED_CT:1287510007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation av främmande föremål i gingiva eller alveolarutskott = removal of foreign body from
+        gingiva or alveolar process. The SNOMED CT concept covers both gin
+        """
+}
+mapping "ECB05.1" source="ECB05" target="SNOMED_CT:234688001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Slemhinneplastik på gingiva = mucosal plasty on gingiva. Clinically equivalent to SNOMED CT
+        Mucogingival graft (gingival mucous membrane grafting procedure). The S
+        """
+}
+mapping "ECB15.1" source="ECB15" target="SNOMED_CT:69962007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120874 69962007 = plastic operation of oronasal or oroantral fistula; (4289153)
+        is the c
+        """
+}
+mapping "ECB20.1" source="ECB20" target="SNOMED_CT:1172397006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: SNOMED CT 1172397006 2100120875 is an alveolar ridge augmentation/preservation
+        procedure. SNOMED CT is the standard equiv
+        """
+}
+mapping "ECB30.1" source="ECB30" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Alveolar ridge augmentation with graft vs wound debridement; very loose"
+}
+mapping "ECB50.1" source="ECB50" target="SNOMED_CT:25325009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alveolar ridge augmentation with bone graft; weak to dental alveoplasty (procedure type overlap)
+        """
+}
+mapping "ECB99.1" source="ECB99" target="SNOMED_CT:173349005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ECB99 SNOMED CT 173349005 = Other reconstruction of gingiva or alveolar process (KVÅ
+        residual). Target. Both denote operations on gingiva/alveolus. Exact match at low tier: no
+        crosswalk, but NOS semantics align.
+        """
+}
+mapping "EDB10.1" source="EDB10" target="SNOMED_CT:367477001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100120886 367477001 = excision of mandible; exact match to SNOMED CT"
+}
+mapping "EDB99.1" source="EDB99" target="SNOMED_CT:178431006" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EDB99 SNOMED CT 178431006 = Other resection of mandible (KVÅ residual). Target. Source
+        covers mandibular resections broadly; target is one specific mandibulectomy type. Broader. Weak
+        tier: target is one specific type, not the broad parent.
+        """
+}
+mapping "EDC00.1" source="EDC00" target="SNOMED_CT:38772001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; condylotomy = osteotomy near mandibular condyle for TMJ disorders"
+}
+mapping "EDC15.1" source="EDC15" target="SNOMED_CT:21516005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EDC25.1" source="EDC25" target="SNOMED_CT:27290008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Korpusosteotomi eller -ektomi av underkäke = corpus osteotomy or -ectomy of mandible. SNOMED CT
+        2100120895 27290008 is the exact clinical equivalent for the o
+        """
+}
+mapping "EDC32.1" source="EDC32" target="SNOMED_CT:178722005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: closed reduction mandibular fracture maps loosely to fracture reduction"
+}
+mapping "EDC36.1" source="EDC36" target="SNOMED_CT:608778008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: the KVAA specifies condyle/caput fractures of mandible, which are a subset of
+        mandible fractures. The SNOMED CT concept covers all mandible fractures
+        """
+}
+mapping "EDC38.1" source="EDC38" target="SNOMED_CT:608777003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Öppen reposition och fixation av korpusfraktur på underkäke = open reduction and fixation of
+        body fracture of mandible. SNOMED CT 'Open reduction of fracture of ma
+        """ suspect=quoted-text
+}
+mapping "EDC99.1" source="EDC99" target="SNOMED_CT:178490009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EDC99 SNOMED CT 178490009 = Other reconstructive procedure on mandible (KVÅ residual).
+        Target. Source is specifically mandibular reconstruction; target covers jaw reconstruction
+        broadly. Broader. Low tier: no crosswalk, but semantics align.
+        """
+}
+mapping "EDW99.1" source="EDW99" target="SNOMED_CT:14375003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EEB20.1" source="EEB20" target="SNOMED_CT:239338004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EEB99.1" source="EEB99" target="SNOMED_CT:239336000" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EEB99 SNOMED CT 239336000 = Other resection of maxilla (KVÅ residual). Target. Source covers
+        maxillary resections broadly; target is one specific type (partial maxillectomy). Broader. Weak
+        tier: target is one specific type, not the broad parent.
+        """
+}
+mapping "EEC05.1" source="EEC05" target="SNOMED_CT:239299006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Le Fort I-osteotomi = Le Fort I osteotomy; exact match."
+}
+mapping "EEC10.1" source="EEC10" target="SNOMED_CT:239300003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: Le Fort II osteotomy. Verified SNOMED CT standard concept S."
+}
+mapping "EEC15.1" source="EEC15" target="SNOMED_CT:178477002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Le Fort III osteotomy = Le Fort III osteotomy (exact match; well-known craniofacial procedure)
+        """
+}
+mapping "EEC30.1" source="EEC30" target="SNOMED_CT:257904000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "EEC35.1" source="EEC35" target="SNOMED_CT:287963002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ORIF of zygomatico-maxillary fracture. SNOMED CT has closed reduction but lacks internal fixation
+        component.
+        """
+}
+mapping "EEC99.1" source="EEC99" target="SNOMED_CT:178490009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EEC99 SNOMED CT 178490009 = Other reconstructive procedure on maxilla (KVÅ residual).
+        Target. Source is specifically maxillary reconstruction; target covers jaw reconstruction
+        broadly. Weak tier: target loses the maxillary specificity.
+        """
+}
+mapping "EEU00.1" source="EEU00" target="SNOMED_CT:239390008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EFA10.1" source="EFA10" target="SNOMED_CT:118489002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Jaw tumör excision; no close SNOMED CT match"
+}
+mapping "EFA99.1" source="EFA99" target="SNOMED_CT:178431006" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EFA99 SNOMED CT 178431006 = Other resection of jaw (KVÅ residual). Target. Source covers jaw
+        resections broadly; target is one specific mandibulectomy type. Broader. Weak tier: target is
+        one specific type, not the broad parent.
+        """
+}
+mapping "EFB10.1" source="EFB10" target="SNOMED_CT:617002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120931 617002 = bone graft/plasty on jaw; (4264901) is an exact match. Verified
+        standard concept S.
+        """
+}
+mapping "EFB20.1" source="EFB20" target="SNOMED_CT:288047005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: treatment of multiple facial fractures. SNOMED CT Facial bone - bone graft is but is grafting
+        not fracture treatment. Very loose; no better match for combined facial fracture treatment
+        found.
+        """
+}
+mapping "EFB30.1" source="EFB30" target="SNOMED_CT:178470000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extern fixation vid behandling av ansiktsfraktur = external fixation for treatment of facial
+        fracture; exact clinical match.
+        """
+}
+mapping "EFB50.1" source="EFB50" target="SNOMED_CT:1258951009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EFB60.1" source="EFB60" target="SNOMED_CT:288047005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plastic surgery of jaw bone or facial bone with bone graft or alloplastic material = facial bone
+        bone graft; exact clinical equivalent for the bone graft compon
+        """
+}
+mapping "EFB99.1" source="EFB99" target="SNOMED_CT:178490009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EFB99 SNOMED CT 178490009 = Other reconstruction of jaw (KVÅ residual). Target. Both denote
+        jaw reconstruction at the same level. Exact match at low tier: no crosswalk, but NOS semantics
+        align directly.
+        """
+}

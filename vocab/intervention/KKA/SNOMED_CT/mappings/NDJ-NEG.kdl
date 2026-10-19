@@ -1,0 +1,291 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NDJ-NEG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NDJ39.1" source="NDJ39" target="SNOMED_CT:179083004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Osteosynthesis of wrist/hand fracture with bioimplant; broader ORIF with screws concept"
+}
+mapping "NDJ69.1" source="NDJ69" target="SNOMED_CT:112752007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies plate+screw osteosynthesis for wrist/hand fractures; SNOMED CT has wrist arthroscopy
+        with internal fixation for fracture - method differs
+        """
+}
+mapping "NDJ79.1" source="NDJ79" target="SNOMED_CT:1332407006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Osteosynthesis of wrist/hand fracture with screws only; no good match."
+}
+mapping "NDJ89.1" source="NDJ89" target="SNOMED_CT:112745005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NDJ89 osteosyntes handled/hand annan metod; weak to wrist/hand internal fixation"
+}
+mapping "NDJ99.1" source="NDJ99" target="SNOMED_CT:52051006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDJ99 SNOMED CT 52051006 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual source).
+        """
+}
+mapping "NDK49.1" source="NDK49" target="SNOMED_CT:239322005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Epiphysiodesis of wrist/hand; SNOMED CT has general epiphysiodesis (Phemister)"
+}
+mapping "NDK79.1" source="NDK79" target="SNOMED_CT:178996008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bentransportoperation i handled eller hand (bone transport operation in wrist or hand) maps to.
+        Verified SNOMED CT S
+        """
+}
+mapping "NDK99.1" source="NDK99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDK99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Target covers the hand
+        axis; wrist axis is partially covered. Broader; confidence low (residual source).
+        """
+}
+mapping "NDL39.1" source="NDL39" target="SNOMED_CT:66728000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ myotomi eller tenotomi vid handled eller i hand = myotenotomy of hand; SNOMED CT concept covers
+        both myotomy and tenotomy of hand
+        """
+}
+mapping "NDL49.1" source="NDL49" target="SNOMED_CT:26731003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Covers suture of hand tendons; KVÅ additionally includes reinsertion and specifies wrist/hand
+        """
+}
+mapping "NDL79.1" source="NDL79" target="SNOMED_CT:284023006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Different procedure (excision vs repair) but same anatomical region"
+}
+mapping "NDL99.1" source="NDL99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDL99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDM09.1" source="NDM09" target="SNOMED_CT:53259005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123919 53259005 = fasciotomy of wrist or hand; SNOMED CT covers the hand component;
+        wrist fasciotomy (5215
+        """
+}
+mapping "NDM29.1" source="NDM29" target="SNOMED_CT:85201008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av fascia eller senskida i handled eller hand = suture of fascia or tendon sheath in
+        wrist/hand. The dominant component is tendon sheath suture. Exact mat
+        """
+}
+mapping "NDN19.1" source="NDN19" target="SNOMED_CT:30438009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone homograft to wrist/hand; bone marrow aspiration for transplant is related but different
+        procedure
+        """
+}
+mapping "NDN99.1" source="NDN99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDN99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDQ12.1" source="NDQ12" target="SNOMED_CT:387684008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2100123939 387684008 = amputation in metacarpal region; exact match to SNOMED CT concept"
+}
+mapping "NDQ29.1" source="NDQ29" target="SNOMED_CT:1306657008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 1306657008 2100123944 = revision of amputation/exarticulation stump in wrist or hand;
+        generic 'Revision
+        """ suspect=quoted-text
+}
+mapping "NDQ99.1" source="NDQ99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDQ99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDR69.1" source="NDR69" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NDR69 excision ben/brosktumör handled/hand; bone tumör excision; weak to revision"
+}
+mapping "NDR99.1" source="NDR99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDR99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDS09.1" source="NDS09" target="SNOMED_CT:425765007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: incision and debridement for soft tissue infection of wrist/hand. SNOMED CT Open debridement
+        and irrigation of joint is broader (joint vs soft tissue) but captures the surgical debridement
+        aspect.
+        """
+}
+mapping "NDS19.1" source="NDS19" target="SNOMED_CT:425765007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: incision and debridement for septic arthritis of wrist/hand. SNOMED CT Open debridement and
+        irrigation of joint captures the joint debridement procedure well; septic vs non-septic
+        indication differs but procedure is same.
+        """
+}
+mapping "NDS29.1" source="NDS29" target="SNOMED_CT:119646000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision and debridement of osteitis in hand is an incisional procedure of the hand; maps to
+        (the debridement/osteit
+        """
+}
+mapping "NDS39.1" source="NDS39" target="SNOMED_CT:709409008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ combines I&D with local antibiotic implantation (wrist/hand); SNOMED CT captures I&D
+        site-specific but misses drug implantation
+        """
+}
+mapping "NDS49.1" source="NDS49" target="SNOMED_CT:708867006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers incision/debridement for septic arthritis of wrist/hand with drug implantation;
+        SNOMED CT captures only arthrotomy with drainage of wrist joint — partial match missing drug
+        implantation
+        """
+}
+mapping "NDS59.1" source="NDS59" target="SNOMED_CT:46211007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ code is specific (hand"
+}
+mapping "NDS99.1" source="NDS99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDS99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDT19.1" source="NDT19" target="SNOMED_CT:229351004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NDT69.1" source="NDT69" target="SNOMED_CT:25232002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NDT99.1" source="NDT99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDT99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual bucket).
+        """
+}
+mapping "NDU19.1" source="NDU19" target="SNOMED_CT:361187000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Removal of total prosthesis from wrist; exact SNOMED CT match for wrist prosthesis removal via
+        arthrotomy
+        """
+}
+mapping "NDU29.1" source="NDU29" target="SNOMED_CT:13211006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of prosthesis from other joint in hand = removal of prosthesis of joint structures of
+        hand; exact clinical equivalent
+        """
+}
+mapping "NDU49.1" source="NDU49" target="SNOMED_CT:37208002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dual: KVA wrist/hand fixation removal = SNOMED CT removal from radius+ulna; same anatomical region
+        """
+}
+mapping "NDU69.1" source="NDU69" target="SNOMED_CT:13211006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of ligament prosthesis from wrist or hand maps to; covers prosthesis removal from
+        hand/wrist joints
+        """
+}
+mapping "NDU99.1" source="NDU99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDU99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDW79.1" source="NDW79" target="SNOMED_CT:274508002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for ytlig blödning i handled eller hand = reoperation for superficial bleeding in
+        wrist or hand; the clinical procedure is postoperative hemorrhage
+        """
+}
+mapping "NDW89.1" source="NDW89" target="SNOMED_CT:274508002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for djup blödning i handled eller hand = reoperation for deep bleeding in wrist or
+        hand; same clinical procedure as NDW79, site is modifier.
+        """
+}
+mapping "NDW99.1" source="NDW99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDW99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NEA02.1" source="NEA02" target="SNOMED_CT:9104009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av mjukdelar i bäckenet - öppen = exploration of soft tissue in pelvis - open.
+        SNOMED CT 2100123984 9104009 is the generic equivalent; pelvis is the
+        """
+}
+mapping "NEA12.1" source="NEA12" target="SNOMED_CT:40801000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123986 40801000 = exploration of pelvic joint, open; SNOMED CT is the closest
+        equivalent for open pelv
+        """
+}
+mapping "NEA30.1" source="NEA30" target="SNOMED_CT:447724004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av bakenben perkutan eller sluten = biopsy of pelvic bone percutaneous or closed; the
+        clinical procedure is identical, approach modifier does not change
+        """
+}
+mapping "NEA31.1" source="NEA31" target="SNOMED_CT:179266002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is arthroscopic pelvic bone biopsy; SNOMED CT is percutaneous bone biopsy"
+}
+mapping "NEA32.1" source="NEA32" target="SNOMED_CT:447724004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsi av bakenben open = open biopsy of pelvic bone; exact SNOMED CT match."
+}
+mapping "NEG49.1" source="NEG49" target="SNOMED_CT:736651009" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of sacroiliac joint. SI joint fusion is rough approximation; different technique and
+        approach.
+        """
+}

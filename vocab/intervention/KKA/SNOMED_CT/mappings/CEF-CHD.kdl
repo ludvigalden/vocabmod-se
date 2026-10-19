@@ -1,0 +1,272 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes CEF-CHD
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "CEF10.1" source="CEF10" target="SNOMED_CT:36811004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120458 36811004 = suture of injured eye muscle; maps to as the exact clinical
+        equivalent
+        """
+}
+mapping "CFA00.1" source="CFA00" target="SNOMED_CT:72713004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incision i bindehinna (incision of conjunctiva) maps exactly. Verified: SNOMED CT S"
+}
+mapping "CFA20.1" source="CFA20" target="SNOMED_CT:172399001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of conjunctiva maps exactly to biopsy of lesion of conjunctiva"
+}
+mapping "CFB00.1" source="CFB00" target="SNOMED_CT:82643002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120463 82643002 (suture of wound in conjunctiva) is the standard clinical
+        meaning of SNOMED CT
+        """
+}
+mapping "CFB10.1" source="CFB10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CFC15.1" source="CFC15" target="SNOMED_CT:39346000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruktion av förändring i bindehinna = destruction of lesion in conjunctiva. SNOMED CT 2100120466
+        39346000 is the closest equivalent; the KVÅ says 'dest
+        """ suspect=quoted-text
+}
+mapping "CFC30.1" source="CFC30" target="SNOMED_CT:11912002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 11912002 2100120467 = extirpation of trachoma follicles; exact match to SNOMED CT concept
+        """
+}
+mapping "CFD10.1" source="CFD10" target="SNOMED_CT:112960000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Narrower sibling (cul-de-sac specific); no site-general conjunctiva reconstruction with graft in
+        SNOMED CT
+        """
+}
+mapping "CGA10.1" source="CGA10" target="SNOMED_CT:172468003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: biopsy of sclera; SNOMED CT 172468003 2100120472 adds qualifier not
+        present in KVÅ, but biopsy implies a lesion/target is being
+        """
+}
+mapping "CGB10.1" source="CGB10" target="SNOMED_CT:203644001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGC30.1" source="CGC30" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGC40.1" source="CGC40" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGD00.1" source="CGD00" target="SNOMED_CT:51683002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Keratotomi foer refraktionsanomali = keratotomy for refractive anomaly; radial keratotomy is the
+        primary refractive keratotomy procedure and is the exact SNOMED CT
+        """
+}
+mapping "CGD10.1" source="CGD10" target="SNOMED_CT:58076004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laserbehandling för refraktionsanomali = laser treatment for refractive error; exact match to
+        Refractive keratoplasty by laser surgery
+        """
+}
+mapping "CGD20.1" source="CGD20" target="SNOMED_CT:231710008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGD99.1" source="CGD99" target="SNOMED_CT:420708009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CGD99 SNOMED CT 420708009 = Other operation for refractive error (KVÅ residual). Target.
+        Both denote surgery for refractive errors at the same level. Exact match at low tier: no
+        crosswalk, but semantics align well.
+        """
+}
+mapping "CGE05.1" source="CGE05" target="SNOMED_CT:25316003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Destruction of lesion in cornea maps exactly to Destruction of lesion of cornea; exact match"
+}
+mapping "CGE10.1" source="CGE10" target="SNOMED_CT:108143005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGE45.1" source="CGE45" target="SNOMED_CT:397554006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120489 397554006 = corneal covering with limbal stem cell transplant; SNOMED CT is e
+        """
+}
+mapping "CGE55.1" source="CGE55" target="SNOMED_CT:24670001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact: SNOMED CT concept describes same conjunctival transplant for pterygium"
+}
+mapping "CGE99.1" source="CGE99" target="SNOMED_CT:172434009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CGE99 SNOMED CT 172434009 = Other operation for tissue changes in cornea or sclera (KVÅ
+        residual). Target. Both denote residual operations on cornea/sclera. Exact match at low tier: no
+        crosswalk, but residual semantics align. Sclera scope partially uncovered.
+        """
+}
+mapping "CGF20.1" source="CGF20" target="SNOMED_CT:346742000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100120495 346742000 = suture of corneal wound with conjunctival covering; SNOMED CT"
+}
+mapping "CGF25.1" source="CGF25" target="SNOMED_CT:172421008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Corneal wound suture with uveal prolapse removal; SNOMED CT has only corneal suture adjustment"
+}
+mapping "CGF35.1" source="CGF35" target="SNOMED_CT:83694000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Täckning av hornhinna med transplantat = covering of cornea with graft; (83694000) is the
+        standard corneal graft procedure, verified in At
+        """
+}
+mapping "CGF45.1" source="CGF45" target="SNOMED_CT:172469006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sar i sklera = suture of wound in sclera; exact match to SNOMED CT 172469006, verified in
+        Athena
+        """
+}
+mapping "CGF50.1" source="CGF50" target="SNOMED_CT:88044000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sår i sklera med rekonstruktion av bindehinna = suture of scleral wound with
+        conjunctival reconstruction. 'Repair of perforating laceration of sclera n
+        """
+}
+mapping "CGF55.1" source="CGF55" target="SNOMED_CT:172469006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sår i sklera med avlägsnande av prolaberad uveavävnad = suture of scleral wound with
+        removal of prolapsed uveal tissue. SNOMED CT 172469006 2100120502 captures the
+        """
+}
+mapping "CGF99.1" source="CGF99" target="SNOMED_CT:172434009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CGF99 SNOMED CT 172434009 = Other operation for penetrating wounds of cornea or sclera (KVÅ
+        residual). Target. Source is specifically about penetrating trauma repair; target is a general
+        cornea operations parent. Weak tier: target loses the trauma/perforation indication.
+        """
+}
+mapping "CGG00.1" source="CGG00" target="SNOMED_CT:20975004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGG10.1" source="CGG10" target="SNOMED_CT:414583009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Keratoconus correction by thermocautery; SNOMED CT has laser thermokeratoplasty - same intent
+        different modality
+        """
+}
+mapping "CGG30.1" source="CGG30" target="SNOMED_CT:771988004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anterior lamellar corneal transplantation = deep anterior lamellar keratoplasty (DALK), which is
+        the standard surgical technique for anterior lamellar corneal t
+        """
+}
+mapping "CGG31.1" source="CGG31" target="SNOMED_CT:419191005" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Posterior lamellar keratoplasty maps closely to DLEK; same surgical family"
+}
+mapping "CGG40.1" source="CGG40" target="SNOMED_CT:38948000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Penetrating corneal transplant with autograft vs lamellar keratoplasty with autograft; good
+        match
+        """
+}
+mapping "CGG45.1" source="CGG45" target="SNOMED_CT:1413003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: penetrating keratoplasty with homograft"
+}
+mapping "CGG50.1" source="CGG50" target="SNOMED_CT:27668001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Implantation av keratoprotes = implantation of keratoprosthesis. Exact match: (27668001).
+        Verified SNOMED CT standard concept.
+        """
+}
+mapping "CGG60.1" source="CGG60" target="SNOMED_CT:10807008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CGG99.1" source="CGG99" target="SNOMED_CT:172434009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CGG99 SNOMED CT 172434009 = Other reconstructive operation on cornea or sclera (KVÅ
+        residual). Target. No specific parent in mirror. Target broadly subsumes the source. Weak tier:
+        target loses the reconstructive indication.
+        """
+}
+mapping "CHA10.1" source="CHA10" target="SNOMED_CT:25302008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsi av iris = biopsy of iris; exact clinical match."
+}
+mapping "CHB20.1" source="CHB20" target="SNOMED_CT:265293008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CHB30.1" source="CHB30" target="SNOMED_CT:265292003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CHB55.1" source="CHB55" target="SNOMED_CT:82736000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trabecular bypass (glaucoma surgery creating alternative drainage pathway through Schlemm's
+        canal). SNOMED CT 2100120525 82736000 is the closest SNOMED CT concept as both involv
+        """
+}
+mapping "CHB99.1" source="CHB99" target="SNOMED_CT:172516008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CHB99 SNOMED CT 172516008 = Other operation in anterior chamber or chamber angle (KVÅ
+        residual). Target. Both denote residual anterior chamber operations. Exact match at low tier: no
+        crosswalk, but residual semantics align. Chamber angle partially uncovered.
+        """
+}
+mapping "CHD28.1" source="CHD28" target="SNOMED_CT:13303004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bakre sklerotomi = posterior sclerotomy. Exact clinical equivalent. Verified in CONCEPT.csv:
+        SNOMED CT, S.
+        """
+}
+mapping "CHD50.1" source="CHD50" target="SNOMED_CT:265291005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Glaucoma tube-shunt implantation; exact equivalent"
+}
+flag "CHD55.unmapped" kind=unmapped concept="CHD55" target-system="SNOMED_CT"
+mapping "CHD70.1" source="CHD70" target="SNOMED_CT:236891000000101" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Needling after previous pressure-reducing surgery (glaucoma) = Needling of bleb following
+        glaucoma surgery (exact match)
+        """
+}
+flag "CHD75.unmapped" kind=unmapped concept="CHD75" target-system="SNOMED_CT"
+mapping "CHD99.1" source="CHD99" target="SNOMED_CT:172475002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CHD99 SNOMED CT 172475002 = Other filtration operation (KVÅ ophthalmology, residual;
+        typically glaucoma filtering surgery). Target. Both denote filtering/filtration procedures.
+        Exact match at low tier: no crosswalk, residual codes. The SNOMED CT target is iris-scoped but that
+        is the dominant parent for filtering operations.
+        """
+}

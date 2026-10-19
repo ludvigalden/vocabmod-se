@@ -1,0 +1,256 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes GAD-GDD
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "GAD00.1" source="GAD00" target="SNOMED_CT:238332006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Thoracoplasty without plombing"
+}
+mapping "GAD03.1" source="GAD03" target="SNOMED_CT:238332006" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracoplasty with plombage (extrapleural packing to collapse lung). SNOMED CT 2100121567 238332006
+        is an approximate match; plombage is a specific thoracoplasty variant
+        """
+}
+mapping "GAE00.1" source="GAE00" target="SNOMED_CT:238328000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incision in chest wall; limited thoracotomy is close parent"
+}
+mapping "GAE06.1" source="GAE06" target="SNOMED_CT:177754003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: extirpation of local change in chest wall maps to"
+}
+mapping "GAE16.1" source="GAE16" target="SNOMED_CT:177751006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Chest wall resection maps closely to partial excision of chest wall"
+}
+mapping "GAE20.1" source="GAE20" target="SNOMED_CT:120153004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection of chest wall and reconstruction with muscle or skin flap maps to; the specific flap
+        type is a technique detail subsumed.
+        """
+}
+mapping "GAE23.1" source="GAE23" target="SNOMED_CT:1144496008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: chest wall resection with implant/prosthesis reconstruction"
+}
+mapping "GAE26.1" source="GAE26" target="SNOMED_CT:782391003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Chest wall stabilization vs spinal decompression; very weak cross-domain match"
+}
+mapping "GAE40.1" source="GAE40" target="SNOMED_CT:230887003" relationship=source_is_broader_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ code is general \"operation for TOS\"; SNOMED CT concept is technique-specific (scalene myotomy)
+        — narrower child
+        """
+}
+flag "GAE56.unmapped" kind=unmapped concept="GAE56" target-system="SNOMED_CT"
+mapping "GAF00.1" source="GAF00" target="SNOMED_CT:30735008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Korrektion av pectus carinatum = correction of pectus carinatum. Exact match to SNOMED CT
+        Reconstructive repair of pectus carinatum.
+        """
+}
+mapping "GAG00.1" source="GAG00" target="SNOMED_CT:302453007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transthoracic biopsy of diaphragm maps to; transthoracic is the standard approach for diaphragm
+        biopsy.
+        """
+}
+mapping "GAG10.1" source="GAG10" target="SNOMED_CT:177846005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 177846005 2100121590; (4071093) matches the core procedure. T"
+}
+mapping "GAG33.1" source="GAG33" target="SNOMED_CT:108184008" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transtorakal resektion av diafragma = transthoracic resection of diaphragm; diaphragm excision
+        is the closest SNOMED CT match (transthoracic approach not specified
+        """
+}
+mapping "GAG36.1" source="GAG36" target="SNOMED_CT:1345111001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GAG40.1" source="GAG40" target="SNOMED_CT:90297001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transthoracic closure of thoracoabdominal fistula = Repair of thoracointestinal fistula (exact
+        match; thoracoabdominal = thoracointestinal)
+        """
+}
+mapping "GAG97.1" source="GAG97" target="SNOMED_CT:118740006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other thoracoscopic diaphragm operation; SNOMED CT is the parent for all diaphragm procedures
+        regardless of approach.
+        """
+}
+mapping "GBA10.1" source="GBA10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GBA12.1" source="GBA12" target="SNOMED_CT:91571003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: endoscopic (bronchoscopic) extraction of foreign body from trachea. SNOMED CT 91571003
+        is identical in meaning. Verified standard S in Athena.
+        """
+}
+mapping "GBA22.1" source="GBA22" target="SNOMED_CT:173142006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic excision of local lesion in trachea; SNOMED CT has foreign body removal (different
+        indication but same approach/organ)
+        """
+}
+mapping "GBA28.1" source="GBA28" target="SNOMED_CT:173139000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 173139000 2100121609 = endoscopic laser treatment of local change in trachea; exact
+        SNOMED CT match
+        """
+}
+mapping "GBA50.1" source="GBA50" target="SNOMED_CT:119739003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "GBA53.1" source="GBA53" target="SNOMED_CT:119739003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GBA98.1" source="GBA98" target="SNOMED_CT:173139000" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other endoscopic operation on trachea for lesion; closest SNOMED CT is laser destruction of
+        tracheal lesion
+        """
+}
+mapping "GBB00.1" source="GBB00" target="SNOMED_CT:274969000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GBB13.1" source="GBB13" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GBC00.1" source="GBC00" target="SNOMED_CT:116164007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT is laryngotracheal resection; KVÅ is tracheal resection and suture only"
+}
+mapping "GBC96.1" source="GBC96" target="SNOMED_CT:119739003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GCA06.1" source="GCA06" target="SNOMED_CT:107820002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of local bronchial lesion; weak to tracheobronchial excision (parent airway procedure)
+        """
+}
+mapping "GCA10.1" source="GCA10" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GCA12.1" source="GCA12" target="SNOMED_CT:58205009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endobronchial extraction of foreign body = Removal of intraluminal foreign body from bronchus by
+        bronchoscopy (exact match)
+        """
+}
+mapping "GCA32.1" source="GCA32" target="SNOMED_CT:232602001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "GCA42.1" source="GCA42" target="SNOMED_CT:232603006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "GCA60.1" source="GCA60" target="SNOMED_CT:447975009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection of bronchus with end-to-end anastomosis maps exactly to Sleeve resection of bronchus
+        and anastomosis; exact match
+        """
+}
+mapping "GCA98.1" source="GCA98" target="SNOMED_CT:87387006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader parent; KVÅ is other bronchial endoscopic operation, SNOMED CT is specific bronchoscopy
+        with biopsy
+        """
+}
+mapping "GDA11.1" source="GDA11" target="SNOMED_CT:66258007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thoracoscopic lung biopsy is an exact clinical equivalent. Direct match verified as standard
+        SNOMED CT concept.
+        """
+}
+mapping "GDA20.1" source="GDA20" target="SNOMED_CT:173176002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of local lesion in lung maps exactly to open extirpation of lesion of lung"
+}
+mapping "GDA30.1" source="GDA30" target="SNOMED_CT:427800005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Lungincision och extraktion av främmande kropp = lung incision and extraction of foreign
+        body. Exact match: Removal of foreign body of lung by incision (42
+        """
+}
+mapping "GDA40.1" source="GDA40" target="SNOMED_CT:82651004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: revision and suture of lung injury maps to"
+}
+mapping "GDA41.1" source="GDA41" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: thoracoscopic revision and suture of lung injury. No specific SNOMED CT match"
+}
+mapping "GDB00.1" source="GDB00" target="SNOMED_CT:232651003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100121664 232651003 = resection of bullae (in lung); exact match to SNOMED CT"
+}
+mapping "GDB01.1" source="GDB01" target="SNOMED_CT:1366210005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 1366210005 SNOMED CT 119000 1366210005 is exact for thoracoscopic (VATS) bullectomy"
+}
+mapping "GDB01.2" source="GDB01" target="SNOMED_CT:119000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "GDC96.1" source="GDC96" target="SNOMED_CT:173171007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other lobectomy operation on lung. SNOMED CT 173171007 2100121680 is the parent concept; the
+        qualifier indicates non-standard approaches but the procedure i
+        """
+}
+mapping "GDD10.1" source="GDD10" target="SNOMED_CT:232645008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Pleuropneumonectomy is an exact match. Direct clinical equivalent verified as standard SNOMED CT
+        concept.
+        """
+}
+mapping "GDD23.1" source="GDD23" target="SNOMED_CT:119256007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 119256007 2100121687 = pneumonectomy and resection of carina; SNOMED CT represents the
+        carina resection componen
+        """
+}
+mapping "GDD96.1" source="GDD96" target="SNOMED_CT:359623004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other pneumonectomy; total lobectomy of lung is related pulmonary resection procedure"
+}
+mapping "GDD97.1" source="GDD97" target="SNOMED_CT:25321000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100121690 25321000 = other thoracoscopic pneumonectomy; despite, the core procedure
+        is thoracoscopic pneumonectomy; SNOMED CT 25321000 is
+        """
+}

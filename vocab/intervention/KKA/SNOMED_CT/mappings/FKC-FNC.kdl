@@ -1,0 +1,294 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes FKC-FNC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "FKC10.1" source="FKC10" target="SNOMED_CT:310396003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121367 310396003 = suture of cleft mitral valve; exact match to SNOMED CT Suturing of
+        mitral valve
+        """
+}
+mapping "FKC20.1" source="FKC20" target="SNOMED_CT:63355000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FKC20 SNOMED CT 63355000 = Valve leaflet plasty for mitral insufficiency (KVÅ specific).
+        Target. Source is specifically leaflet repair; target is the broader mitral repair parent.
+        Broader. Moderate tier: target covers the source but loses the leaflet-plasty detail.
+        """
+}
+mapping "FKC40.1" source="FKC40" target="SNOMED_CT:459691000124101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Chordae/papillary muscle suture for mitral insufficiency; no exact SNOMED CT match"
+}
+mapping "FKC60.1" source="FKC60" target="SNOMED_CT:63355000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FKC60 SNOMED CT 63355000 = Resection of mitral valve leaflet with reconstruction (KVÅ
+        specific). Target. Source is specifically leaflet resection with repair; target is the broader
+        mitral repair parent. Broader. Moderate tier: target covers the source but loses the
+        leaflet-resection detail.
+        """
+}
+mapping "FKC96.1" source="FKC96" target="SNOMED_CT:384641003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other valve reconstruction for mitral insufficiency; Repair of mitral valve is the parent
+        concept covering all mitral valve reconstruction techniques, exact mat
+        """
+}
+mapping "FKD00.1" source="FKD00" target="SNOMED_CT:174920003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FKD00 SNOMED CT 174920003 = Implantation of mechanical mitral valve prosthesis (KVÅ
+        specific). Target (incl. Bjork Shiley, Carpentier Edwards). Source is specifically a mechanical
+        prosthesis; target covers prosthetic mitral valve replacement broadly. Broader. Moderate tier:
+        target covers the source but loses the mechanical-prosthesis specificity.
+        """
+}
+mapping "FKD10.1" source="FKD10" target="SNOMED_CT:1287654009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLA00.1" source="FLA00" target="SNOMED_CT:233077002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLA96.1" source="FLA96" target="SNOMED_CT:233077002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLB00.1" source="FLB00" target="SNOMED_CT:233079004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100121379 233079004 = excision of pathological tissue in left ventricle; exact
+        match to SNOMED CT 'Excision of left ventricular
+        """ suspect=quoted-text
+}
+mapping "FLB10.1" source="FLB10" target="SNOMED_CT:233082009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLB12.1" source="FLB12" target="SNOMED_CT:233082009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLC00.1" source="FLC00" target="SNOMED_CT:233083004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLC10.1" source="FLC10" target="SNOMED_CT:310615005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "LV wall reconstruction with patch = patching of left ventricle; exact equivalent"
+}
+mapping "FLC96.1" source="FLC96" target="SNOMED_CT:31484008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is catch-all for LV reconstruction (Dor etc.); SNOMED CT concept is LV resection — related but
+        broader cardiac surgery concept
+        """
+}
+mapping "FLD00.1" source="FLD00" target="SNOMED_CT:233088008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLD10.1" source="FLD10" target="SNOMED_CT:233089000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FLD20.1" source="FLD20" target="SNOMED_CT:233089000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection and reconstruction with patch of left ventricular aneurysm includes excision of the
+        aneurysm; maps to
+        """
+}
+mapping "FLE00.1" source="FLE00" target="SNOMED_CT:233094000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is excision of LV subvalvular membrane; subaortic fibromuscular shelf is the common clinical
+        manifestation — closely related
+        """
+}
+mapping "FLE10.1" source="FLE10" target="SNOMED_CT:428553005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ myotomy/myectomy for HOCM; SNOMED CT LVOT myectomy is the standard surgical equivalent"
+}
+mapping "FLE20.1" source="FLE20" target="SNOMED_CT:428553005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Myotomy or myectomy with patch enlargement of ventricular septum for LVOT obstruction; LVOT
+        myectomy is the core procedure described, SNOMED CT matches the myectom
+        """
+}
+mapping "FLE32.1" source="FLE32" target="SNOMED_CT:437746009" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Perkutan transkoronar destruktion av myokardiet (percutaneous transcoronary myocardial
+        destruction) maps to
+        """
+}
+mapping "FLE96.1" source="FLE96" target="SNOMED_CT:223341000000109" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ code is residual/catch-all for other LVOT obstruction operations; SNOMED CT concept is the
+        general relief procedure
+        """
+}
+mapping "FLF00.1" source="FLF00" target="SNOMED_CT:15256002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ transmyokardiell laserrevaskularisering av vänster kammare = transmyocardial laser
+        revascularization of left ventricle; exact match
+        """
+}
+mapping "FLW96.1" source="FLW96" target="SNOMED_CT:233076006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ other operation on left ventricle maps to SNOMED CT left ventricular
+        operation
+        """
+}
+mapping "FMA10.1" source="FMA10" target="SNOMED_CT:27428006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kommissurotomi på aortaklaffen = commissurotomy on aortic valve. SNOMED CT 2100121400 27428006 is
+        the standard SNOMED CT concept; the C
+        """
+}
+mapping "FMA32.1" source="FMA32" target="SNOMED_CT:174988008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ perkutan transluminal dilatation av aortastenos = percutaneous transluminal balloon
+        valvuloplasty of aortic stenosis; exact match
+        """
+}
+mapping "FMB00.1" source="FMB00" target="SNOMED_CT:448840005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Supravalvular widening of aorta with patch maps exactly to SNOMED CT 2100121404 448840005.
+        Verified: SNOMED CT S
+        """
+}
+mapping "FMB10.1" source="FMB10" target="SNOMED_CT:232821007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transannular dilation of aortic orifice = patch enlargement of aortic valve annulus
+        (transannular patch in congenital cardiac surgery). Exact SNOMED CT match.
+        """
+}
+mapping "FMC00.1" source="FMC00" target="SNOMED_CT:232820008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FMC10.1" source="FMC10" target="SNOMED_CT:232827006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121409 232827006 = reduction of aortic valve cusp; exact match to SNOMED CT Repair of
+        aortic valve cusp
+        """
+}
+mapping "FMD00.1" source="FMD00" target="SNOMED_CT:174930007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FMD00 SNOMED CT 174930007 = Implantation of mechanical aortic valve prosthesis (KVÅ
+        specific). Target. Source is specifically a mechanical prosthesis; target covers aortic valve
+        replacement broadly. Broader. Moderate tier: target covers the source but loses the
+        mechanical-prosthesis specificity.
+        """
+}
+mapping "FMD10.1" source="FMD10" target="SNOMED_CT:174930007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FMD10 SNOMED CT 174930007 = Implantation of biological aortic valve prosthesis (KVÅ
+        specific). Target. Source is specifically a biological prosthesis; target covers aortic valve
+        replacement broadly. Broader. Moderate tier: target covers the source but loses the
+        biological-prosthesis specificity.
+        """
+}
+mapping "FMD12.1" source="FMD12" target="SNOMED_CT:1217005008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: KKÅ perkutan transluminal implantation av biologisk aortaklaff = bioprosthetic
+        TAVI
+        """
+}
+mapping "FMD13.1" source="FMD13" target="SNOMED_CT:1217005008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies transapical approach for biological aortic valve; SNOMED CT is approach-agnostic
+        bioprosthetic TAVI
+        """
+}
+mapping "FMD33.1" source="FMD33" target="SNOMED_CT:449146005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Implantation of aortic root heterograft with coronary reimplantation; exact match to
+        'Replacement of root of aorta with reimplantation of coronary arteries usin
+        """
+}
+mapping "FNA00.1" source="FNA00" target="SNOMED_CT:34147004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNA00 SNOMED CT 34147004 = Anastomosis between internal thoracic artery and coronary artery
+        (KVÅ specific, single). Target. Both denote single-vessel LIMA/RIMA-to-coronary anastomosis.
+        Exact match at high tier: strong semantic match, both specify single vessel.
+        """
+}
+mapping "FNA10.1" source="FNA10" target="SNOMED_CT:175046005" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source FNA10 SNOMED CT 175046005 = Sequential anastomoses between internal thoracic artery and
+        coronary arteries (KVÅ specific). Target. Both denote sequential LIMA/RIMA-to-coronary
+        anastomoses. Exact match at high tier: strong semantic match.
+        """
+}
+mapping "FNA20.1" source="FNA20" target="SNOMED_CT:39724006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anastomoser mellan bagge a. thoracica interna och koronararterer = anastomoses between both
+        internal thoracic arteries and coronary arteries; 'internal mammary
+        """
+}
+mapping "FNA96.1" source="FNA96" target="SNOMED_CT:119565001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "FNB00.1" source="FNB00" target="SNOMED_CT:868228000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FNB96.1" source="FNB96" target="SNOMED_CT:414088005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Gastroepiploic-coronary artery bypass; SNOMED CT has CABG"
+}
+mapping "FNC10.1" source="FNC10" target="SNOMED_CT:149171006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNC10 SNOMED CT 149171006 = Aortocoronary bypass with single vein graft (KVÅ specific).
+        Target. Both denote single-vein CABG. Broader at high tier: target covers single-vein
+        aortocoronary bypass, but source doesn't specify saphenous.
+        """
+}
+mapping "FNC20.1" source="FNC20" target="SNOMED_CT:175008003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNC20 SNOMED CT 175008003 = Aortocoronary bypass with two vein grafts (KVÅ specific).
+        Target. Both denote double-vein CABG. Exact match at high tier: strong semantic match.
+        """
+}
+mapping "FNC30.1" source="FNC30" target="SNOMED_CT:175009006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNC30 SNOMED CT 175009006 = Aortocoronary bypass with three vein grafts (KVÅ specific).
+        Target. Both denote triple-vein CABG. Exact match at high tier: strong semantic match.
+        """
+}
+mapping "FNC40.1" source="FNC40" target="SNOMED_CT:175011002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source FNC40 SNOMED CT 175011002 = Aortocoronary bypass with four vein grafts (KVÅ specific).
+        Target. Both denote quadruple+ vein CABG. Exact match at high tier: strong semantic match.
+        """
+}
+mapping "FNC96.1" source="FNC96" target="SNOMED_CT:17073005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}

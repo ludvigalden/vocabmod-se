@@ -1,0 +1,274 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes AAA-AAK
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AAA30.1" source="AAA30" target="SNOMED_CT:231017003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Inläggande av epidurala elektroder = insertion of epidural electrodes; exact SNOMED CT match for
+        epidural insertion of neurostimulator electrode.
+        """
+}
+mapping "AAA40.1" source="AAA40" target="SNOMED_CT:441597006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100120007 441597006 = insertion of intracerebral electrodes. SNOMED CT concept
+        specifies for EEG, which is the standard indicati
+        """
+}
+mapping "AAA99.1" source="AAA99" target="SNOMED_CT:14772002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAA99 SNOMED CT 14772002 = Other diagnostic intracranial operation (KVÅ residual). Target.
+        Source is a Swedish residual code for diagnostic intracranial procedures; target is the SNOMED CT
+        parent for diagnostic brain procedures. Broader: target subsumes the source category. Low tier:
+        no Athena crosswalk for KVÅ surgical procedures, residual source name, semantic match only.
+        """
+}
+mapping "AAB00.1" source="AAB00" target="SNOMED_CT:9888007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation av intrakraniell förändring = excision of intracranial lesion; exact clinical
+        match.
+        """
+}
+mapping "AAB10.1" source="AAB10" target="SNOMED_CT:9888007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120011 9888007 = excision of intracranial change/lesion; SNOMED CT 9888007 is exact
+        equivalent; verified SNOMED CT standard
+        """
+}
+mapping "AAB99.1" source="AAB99" target="SNOMED_CT:171441001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAB99 SNOMED CT 171441001 = Other operation on intracranial lesion/pathology (KVÅ residual).
+        Target. Source covers operations on intracranial pathological changes; target is the SNOMED CT
+        parent for brain operations. Broader. Low tier: no crosswalk, residual code.
+        """
+}
+mapping "AAC05.1" source="AAC05" target="SNOMED_CT:230899005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAC10.1" source="AAC10" target="SNOMED_CT:230901001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAC15.1" source="AAC15" target="SNOMED_CT:230900000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAC30.1" source="AAC30" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Occlusion of intracranial fistula; surgical repair is broader parent"
+}
+mapping "AAC40.1" source="AAC40" target="SNOMED_CT:230905005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAC99.1" source="AAC99" target="SNOMED_CT:175362007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source AAC99 SNOMED CT 175362007 = Other intracranial vascular operation (KVÅ residual). Target.
+        Source covers intracranial vascular surgery; target is the SNOMED CT parent for cerebral vascular
+        operations. Broader. Low tier: no crosswalk, residual code.
+        """
+}
+mapping "AAD15.1" source="AAD15" target="SNOMED_CT:10458001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAD30.1" source="AAD30" target="SNOMED_CT:79093007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120027 79093007 = revision of penetrating or perforating skull injury; SNOMED CT
+        'Craniotomy with treatment of penetra
+        """ suspect=quoted-text
+}
+mapping "AAD40.1" source="AAD40" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAD99.1" source="AAD99" target="SNOMED_CT:171441001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAD99 SNOMED CT 171441001 = Other operation due to cranial/intracranial traumatic change
+        (KVÅ residual). Target. The source is specifically about trauma-related cranial/intracranial
+        operations, but no SNOMED CT concept for exists at this level. Target broadly subsumes the source.
+        Weak tier: the target loses the trauma indication entirely.
+        """
+}
+mapping "AAE00.1" source="AAE00" target="SNOMED_CT:23676000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transsphenoidal exploration; SNOMED CT transsphenoidal pituitary procedure is closest"
+}
+mapping "AAE50.1" source="AAE50" target="SNOMED_CT:112929000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Zygotemporal craniectomy for intracranial lesion; SNOMED CT has craniotomy"
+}
+mapping "AAE99.1" source="AAE99" target="SNOMED_CT:1303758000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAE99 SNOMED CT 1303758000 = Other skull base operation (KVÅ residual). Target. Source and
+        target denote the same clinical scope at the same level of specificity. Moderate-low tier: no
+        crosswalk, but strong semantic match. Exact match at.
+        """
+}
+mapping "AAF20.1" source="AAF20" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAF25.1" source="AAF25" target="SNOMED_CT:230878007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ ventrikelshunt covers all ventricular shunt types; VP shunt is the dominant variant"
+}
+mapping "AAF30.1" source="AAF30" target="SNOMED_CT:4213001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA intraventricular injection port = SNOMED CT Ommaya reservoir implantation; near-exact match"
+}
+mapping "AAF35.1" source="AAF35" target="SNOMED_CT:4213001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Intraventricular treatment reservoir = Ommaya reservoir implantation. The general concept for
+        ventricular reservoir insertion
+        """
+}
+mapping "AAF40.1" source="AAF40" target="SNOMED_CT:699796007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Creation of shunt between intracranial cyst and peritoneum = creation of cystoperitoneal shunt;
+        exact clinical equivalent
+        """
+}
+mapping "AAF45.1" source="AAF45" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "AAF45 fenestrering intrakraniell cysta; neurosurgical cyst fenestration; no closer match"
+}
+mapping "AAF99.1" source="AAF99" target="SNOMED_CT:258593008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAF99 SNOMED CT 258593008 = Other shunt operation on brain ventricle or intracranial cyst
+        (KVÅ residual). Target. Source covers both ventricular and intracranial cyst shunts; target
+        covers only the ventricular shunt aspect. Broader for the ventricular subset. Low tier: no
+        crosswalk, partial coverage of source scope (cyst shunts not represented).
+        """
+}
+mapping "AAG00.1" source="AAG00" target="SNOMED_CT:77337009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Stereotactic intracranial biopsy maps exactly to stereotactic biopsy by aspiration of
+        intracranial lesion
+        """
+}
+mapping "AAG10.1" source="AAG10" target="SNOMED_CT:171636002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Stereotactic intracranial destruction; SNOMED CT has related stereotactic procedures"
+}
+mapping "AAG20.1" source="AAG20" target="SNOMED_CT:446815007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AAG30.1" source="AAG30" target="SNOMED_CT:169361008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Stereotactic intracranial radiation source implantation is precisely interstitial brain
+        brachytherapy with seeds
+        """
+}
+mapping "AAG50.1" source="AAG50" target="SNOMED_CT:115959002" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ stereotactic intracranial radiotherapy (fractionated SRS/SRT); SNOMED CT concept is
+        radiosurgery (single-session) — close clinical sibling, not exact equivalence
+        """
+}
+mapping "AAG60.1" source="AAG60" target="SNOMED_CT:64134004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Stereotaktisk intrakraniell strålknivsbehandling (gammakniv) = Stereotactic focused gamma
+        radiosurgery of cerebrum; exact clinical equivalent -- gamma knife is
+        """
+}
+mapping "AAG99.1" source="AAG99" target="SNOMED_CT:148766003" relationship=source_is_broader_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAG99 SNOMED CT 148766003 = Other stereotactic intracranial operation (KVÅ residual).
+        Target. Source covers all stereotactic intracranial procedures; target is one specific type
+        (ablation). Broader: target is narrower than source but is the closest standard parent for
+        stereotactic brain procedures. Low tier: no crosswalk, residual source.
+        """
+}
+mapping "AAH10.1" source="AAH10" target="SNOMED_CT:64844000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Rizotomi av kranialnerv = rhizotomy of cranial nerve. Rhizotomy = transection of nerve root.
+        SNOMED CT Transection of cranial nerve is the clinical equivalent. Not
+        """
+}
+mapping "AAH99.1" source="AAH99" target="SNOMED_CT:171691009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAH99 SNOMED CT 171691009 = Other operation on cranial nerve (KVÅ residual). Target. Both
+        denote the same residual/unspecified category for cranial nerve operations. Exact match at low
+        tier: no crosswalk, but the NOS/residual semantics align.
+        """
+}
+mapping "AAJ10.1" source="AAJ10" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: lobectomy for epilepsy. No SNOMED CT equivalent for epilepsy lobectomy"
+}
+mapping "AAJ15.1" source="AAJ15" target="SNOMED_CT:862161000000101" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120068 862161000000101 = hippocampectomy for epilepsy; SNOMED CT
+        amygdalohippocampectomy is the standard epilepsy surgery concept that includes hippoc
+        """
+}
+mapping "AAJ20.1" source="AAJ20" target="SNOMED_CT:455271000124102" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resection of epileptic focus; SNOMED CT has total brain tumör resection as very loose parent"
+}
+mapping "AAJ30.1" source="AAJ30" target="SNOMED_CT:304848009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: callosotomy for epilepsy. Verified SNOMED CT standard concept S."
+}
+mapping "AAJ35.1" source="AAJ35" target="SNOMED_CT:14247003" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact match: KVA hemidecortication = SNOMED CT cerebral hemispherectomy"
+}
+mapping "AAJ99.1" source="AAJ99" target="SNOMED_CT:171441001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAJ99 SNOMED CT 171441001 = Other operation for epilepsy (KVÅ residual). Target. No SNOMED CT
+        concept for as a parent category exists in the mirror. Target broadly subsumes epilepsy surgery.
+        Weak tier: target loses the epilepsy indication entirely; recorded as a lead.
+        """
+}
+mapping "AAK50.1" source="AAK50" target="SNOMED_CT:38071001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition and osteosynthesis of skull fracture includes reduction; SNOMED CT has no combined
+        reduction+osteosynthesis of skull concept, so Reduction of fracture o
+        """
+}
+mapping "AAK80.1" source="AAK80" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: partial calvariectomy. SNOMED CT lacks skull vault partial excision concept"
+}
+mapping "AAK85.1" source="AAK85" target="SNOMED_CT:28645008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: replantation of previously removed skull bone flap = replacement of bone flap
+        of skull
+        """
+}
+mapping "AAK99.1" source="AAK99" target="SNOMED_CT:178394001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source AAK99 SNOMED CT 178394001 = Other operation on cranium or dura (KVÅ residual). Target.
+        Source covers both cranium and dura operations; target covers only the cranium aspect. Broader.
+        Low tier: no crosswalk, dura operations not represented in target.
+        """
+}

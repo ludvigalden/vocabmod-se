@@ -1,0 +1,188 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VBJ-VCB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VBJ00.1" source="VBJ00" target="SNOMED_CT:40298007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bypass/interposition graft in previous aortic reconstruction maps loosely"
+}
+flag "VBJ12.unmapped" kind=unmapped concept="VBJ12" target-system="SNOMED_CT"
+mapping "VBJ13.1" source="VBJ13" target="SNOMED_CT:62665005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass/interposition graft suprarenal to infrarenal aorta; SNOMED CT aortic bypass graft is parent
+        """
+}
+mapping "VBJ14.1" source="VBJ14" target="SNOMED_CT:175290008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bypass from suprarenal aorta to bifurcation; SNOMED CT has aortic bifurcation bypass"
+}
+mapping "VBJ15.1" source="VBJ15" target="SNOMED_CT:62665005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suprarenal aorta to iliac/femoral bypass. The closest SNOMED CT concept is abdominal aorta-iliac
+        Dacron bypass. Suprarenal origin is a refinement. Partial match
+        """
+}
+flag "VBJ23.unmapped" kind=unmapped concept="VBJ23" target-system="SNOMED_CT"
+mapping "VBJ24.1" source="VBJ24" target="SNOMED_CT:233373009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or interposition graft from juxtarenal aorta to aortic bifurcation = aortic bifurcation
+        bypass graft. Verified SNOMED CT S.
+        """
+}
+flag "VBJ25.unmapped" kind=unmapped concept="VBJ25" target-system="SNOMED_CT"
+mapping "VBJ34.1" source="VBJ34" target="SNOMED_CT:233373009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100125428 233373009 = bypass from infrarenal aorta to aortic
+        bifurcation
+        """
+}
+flag "VBJ35.unmapped" kind=unmapped concept="VBJ35" target-system="SNOMED_CT"
+flag "VBK10.unmapped" kind=unmapped concept="VBK10" target-system="SNOMED_CT"
+flag "VBK20.unmapped" kind=unmapped concept="VBK20" target-system="SNOMED_CT"
+flag "VBK30.unmapped" kind=unmapped concept="VBK30" target-system="SNOMED_CT"
+flag "VBK40.unmapped" kind=unmapped concept="VBK40" target-system="SNOMED_CT"
+flag "VBL00.unmapped" kind=unmapped concept="VBL00" target-system="SNOMED_CT"
+flag "VBL11.unmapped" kind=unmapped concept="VBL11" target-system="SNOMED_CT"
+flag "VBL22.unmapped" kind=unmapped concept="VBL22" target-system="SNOMED_CT"
+flag "VBL33.unmapped" kind=unmapped concept="VBL33" target-system="SNOMED_CT"
+flag "VBL44.unmapped" kind=unmapped concept="VBL44" target-system="SNOMED_CT"
+mapping "VBN00.1" source="VBN00" target="SNOMED_CT:175354004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA/SAP of previous aortic reconstruction; SNOMED CT PTA of aorta is related"
+}
+mapping "VBN33.1" source="VBN33" target="SNOMED_CT:175354004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA/SAP of infrarenal abdominal aorta; close match to SNOMED CT aorta angioplasty"
+}
+flag "VBP00.unmapped" kind=unmapped concept="VBP00" target-system="SNOMED_CT"
+mapping "VBQ15.1" source="VBQ15" target="SNOMED_CT:281261000000105" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA custom target; weak: captures aortic stent graft concept; KVA specifies
+        suprarenal-to-iliac/femoral range not in SNOMED CT.
+        """
+}
+mapping "VBQ16.1" source="VBQ16" target="SNOMED_CT:240938004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA endovascular visceral artery revascularization; SNOMED CT endovascular device broader"
+}
+mapping "VBQ25.1" source="VBQ25" target="SNOMED_CT:441598001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular stent graft insertion from juxtarenal aorta to iliac/femoral artery maps to.
+        Confidence reduced because the s
+        """
+}
+flag "VBQ26.unmapped" kind=unmapped concept="VBQ26" target-system="SNOMED_CT"
+flag "VBQ35.unmapped" kind=unmapped concept="VBQ35" target-system="SNOMED_CT"
+flag "VBQ36.unmapped" kind=unmapped concept="VBQ36" target-system="SNOMED_CT"
+flag "VBR00.unmapped" kind=unmapped concept="VBR00" target-system="SNOMED_CT"
+mapping "VBR11.1" source="VBR11" target="SNOMED_CT:405347000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100125461 405347000 = local thrombolysis in suprarenal abdominal aorta.
+        SNOMED CT is the parent concept
+        """
+}
+mapping "VBR22.1" source="VBR22" target="SNOMED_CT:405347000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lokal trombolys i juxtarenala bukaorta (local thrombolysis in juxtarenal abdominal aorta) maps
+        to. The juxtarenal specification is a site
+        """
+}
+mapping "VBR33.1" source="VBR33" target="SNOMED_CT:405347000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis in infrarenal abdominal aorta maps exactly to SNOMED CT 4234813 SNOMED CT
+        2100125463 405347000
+        """
+}
+mapping "VBR44.1" source="VBR44" target="SNOMED_CT:405347000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis in aortic bifurcation maps to; the bifurcation detail is a site-specific
+        modifier of the same procedure
+        """
+}
+flag "VBT00.unmapped" kind=unmapped concept="VBT00" target-system="SNOMED_CT"
+flag "VBT38.unmapped" kind=unmapped concept="VBT38" target-system="SNOMED_CT"
+mapping "VBU00.1" source="VBU00" target="SNOMED_CT:240946003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are endovascular foreign body removal; KVÅ specifies abdominal aorta - close match"
+}
+flag "VBU11.unmapped" kind=unmapped concept="VBU11" target-system="SNOMED_CT"
+flag "VBU22.unmapped" kind=unmapped concept="VBU22" target-system="SNOMED_CT"
+mapping "VBU33.1" source="VBU33" target="SNOMED_CT:708810002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular extraction of foreign material from infrarenal abdominal aorta maps to endovascular
+        retrieval of foreign body from aorta
+        """
+}
+mapping "VBU44.1" source="VBU44" target="SNOMED_CT:708810002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular removal of foreign material from aortic bifurcation; SNOMED CT has endovascular
+        retrieval of foreign body from aorta. The bifurcation specificity is n
+        """
+}
+flag "VBW00.unmapped" kind=unmapped concept="VBW00" target-system="SNOMED_CT"
+flag "VBW11.unmapped" kind=unmapped concept="VBW11" target-system="SNOMED_CT"
+flag "VBW22.unmapped" kind=unmapped concept="VBW22" target-system="SNOMED_CT"
+flag "VBW33.unmapped" kind=unmapped concept="VBW33" target-system="SNOMED_CT"
+flag "VCA00.unmapped" kind=unmapped concept="VCA00" target-system="SNOMED_CT"
+mapping "VCA10.1" source="VCA10" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open exploration of previous brachiocephalic reconstruction. No SNOMED CT match"
+}
+flag "VCA22.unmapped" kind=unmapped concept="VCA22" target-system="SNOMED_CT"
+flag "VCA33.unmapped" kind=unmapped concept="VCA33" target-system="SNOMED_CT"
+flag "VCA44.unmapped" kind=unmapped concept="VCA44" target-system="SNOMED_CT"
+mapping "VCA99.1" source="VCA99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCA99 SNOMED CT 175378009 = Open exploration of other artery in extracranial carotid
+        territory (KVÅ residual). Target. Source is specifically about exploration; target covers open
+        carotid operations broadly. Broader. Low tier: no crosswalk, exploration is subset of open
+        operation.
+        """
+}
+mapping "VCB00.1" source="VCB00" target="SNOMED_CT:67727001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture on previous carotid artery reconstruction = repair of artery with suture. Broader (not
+        carotid-specific) but conceptually exact. Verified SNOMED CT S.
+        """
+}
+flag "VCB10.unmapped" kind=unmapped concept="VCB10" target-system="SNOMED_CT"
+flag "VCB22.unmapped" kind=unmapped concept="VCB22" target-system="SNOMED_CT"
+mapping "VCB33.1" source="VCB33" target="SNOMED_CT:276949008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: ICA suture; weak to ICA endarterectomy (different procedure same vessel)"
+}
+mapping "VCB44.1" source="VCB44" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture on external carotid artery; microsurgical artery repair is parent"
+}
+mapping "VCB99.1" source="VCB99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCB99 SNOMED CT 175378009 = Suture of other artery in extracranial carotid territory (KVÅ
+        residual). Target. Source is arterial suture; target covers open carotid operations broadly.
+        Broader. Low tier: no crosswalk, suture is one operation type.
+        """
+}

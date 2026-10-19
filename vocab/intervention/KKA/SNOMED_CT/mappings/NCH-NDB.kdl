@@ -1,0 +1,304 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NCH-NDB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NCH30.1" source="NCH30" target="SNOMED_CT:53101005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lösning av ledadherenser i armbågsled perkutan/stängd = Lysis of adhesions of joint; exact match
+        for joint adhesion release; elbow specificity is approach detai
+        """
+}
+mapping "NCH32.1" source="NCH32" target="SNOMED_CT:53101005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lösning av ledadherenser i armbågsled - öppen = lysis of joint adhesions in elbow joint, open.
+        SNOMED CT Lysis of adhesions of joint is a general concept (no elbow
+        """
+}
+mapping "NCH41.1" source="NCH41" target="SNOMED_CT:91675004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Extraktion av främmande eller fri kropp i armbågsled - artroskopisk eller endoskopisk =
+        removal of foreign or loose body in elbow joint - arthroscopic/endo
+        """
+}
+mapping "NCH42.1" source="NCH42" target="SNOMED_CT:179855002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open removal of foreign body from elbow; good broader SNOMED CT match (not site-specific)"
+}
+mapping "NCH72.1" source="NCH72" target="SNOMED_CT:19477009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 19477009 2100123671 = open operation for recurrent elbow dislocation; SNOMED CT 'Open
+        reduction of closed elbow disloc
+        """ suspect=quoted-text
+}
+mapping "NCH92.1" source="NCH92" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on elbow joint open; arthrotomy is a loose proxy."
+}
+mapping "NCJ39.1" source="NCJ39" target="SNOMED_CT:37053006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: osteosynthesis of elbow/forearm fracture with bioimplant. SNOMED CT ORIF of humerus is
+        elbow/forearm ORIF Match is broader (humerus vs forearm, standard hardware vs bioimplant) but
+        captures internal fixation concept.
+        """
+}
+mapping "NCJ69.1" source="NCJ69" target="SNOMED_CT:133863002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Site-specific elbow/forearm plate+screw ORIF; parent ORIF concept"
+}
+mapping "NCJ79.1" source="NCJ79" target="SNOMED_CT:1287776007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Internal fixation of elbow/forearm fracture with screws. Related internal fixation but wrong
+        body site.
+        """
+}
+mapping "NCJ99.1" source="NCJ99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCJ99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Target covers the elbow
+        axis; forearm axis is not separately covered. Broader; confidence low (residual source).
+        """
+}
+mapping "NCK09.1" source="NCK09" target="SNOMED_CT:387720005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of bone fragment from elbow or forearm maps to generic Excision of fragment of bone.
+        Slightly broader but no forearm-specific fragment excision exists.
+        """
+}
+mapping "NCK49.1" source="NCK49" target="SNOMED_CT:178761002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Epiphysiodesis of elbow/forearm mapped to spinal epiphysiodesis (only spine-specific
+        epiphysiodesis in SNOMED CT; concept differs).
+        """
+}
+mapping "NCK89.1" source="NCK89" target="SNOMED_CT:178996008" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Epiphysis distraction elbow/forearm; closest SNOMED CT is bone transport"
+}
+mapping "NCK99.1" source="NCK99" target="SNOMED_CT:8363004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCK99 SNOMED CT 8363004 = KVÅ residual. Target (Athena-local). Target covers the forearm
+        axis; elbow-bone axis is partially covered. Broader; confidence low (residual source).
+        """
+}
+mapping "NCL39.1" source="NCL39" target="SNOMED_CT:118456002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tenotomy concept exists but not for elbow/forearm specifically"
+}
+mapping "NCL79.1" source="NCL79" target="SNOMED_CT:41396000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT covers only tendon sheath of forearm; KKÅ includes muscle AND tendon at elbow OR forearm
+        """
+}
+mapping "NCL99.1" source="NCL99" target="SNOMED_CT:8363004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCL99 SNOMED CT 8363004 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCM19.1" source="NCM19" target="SNOMED_CT:9328000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial or total excision of fascia in forearm. SNOMED CT 2100123706 9328000 is the closest SNOMED CT
+        equivalent, though it is generic (no body site). The forear
+        """
+}
+mapping "NCM29.1" source="NCM29" target="SNOMED_CT:67820006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of fascia or tendon sheath in forearm; SNOMED CT fascia repair by suture is good match"
+}
+mapping "NCM79.1" source="NCM79" target="SNOMED_CT:9161004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision av bursa i armbåge = excision of bursa in elbow; olecranon bursa is the bursa of the
+        elbow. Exact SNOMED CT match.
+        """
+}
+mapping "NCN09.1" source="NCN09" target="SNOMED_CT:1204100003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone autograft to elbow/forearm; closest broader is vascularized bone graft"
+}
+mapping "NCN19.1" source="NCN19" target="SNOMED_CT:1204100003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone allograft to elbow/forearm; closest broader is vascularized bone graft"
+}
+mapping "NCN39.1" source="NCN39" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tendon transplant to elbow/forearm; no close SNOMED CT match"
+}
+mapping "NCN99.1" source="NCN99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCN99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCQ29.1" source="NCQ29" target="SNOMED_CT:609213002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Revision av exartikulations- eller amputationsstump i armbåge eller underarm = revision of
+        amputation stump in elbow or forearm. 'Revision of amputation stump o
+        """
+}
+mapping "NCQ99.1" source="NCQ99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCQ99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCR99.1" source="NCR99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCR99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCS09.1" source="NCS09" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same procedure; broader anatomic site"
+}
+mapping "NCS19.1" source="NCS19" target="SNOMED_CT:300028009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision and debridement for septic arthritis of elbow; drainage of septic arthritis is good
+        match.
+        """
+}
+mapping "NCS39.1" source="NCS39" target="SNOMED_CT:473218004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Soft tissue infection debridement forearm with drug; broader match to wound debridement"
+}
+mapping "NCS49.1" source="NCS49" target="SNOMED_CT:300028009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå combines incision/debridement for septic arthritis of elbow with local antibiotic bead
+        implantation; SNOMED CT covers drainage component — joint site is general (not elbow-specific) and
+        drug implantation is unmatched
+        """
+}
+mapping "NCS59.1" source="NCS59" target="SNOMED_CT:225148005" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is site-specific osteitis debridement with drug implantation; SNOMED CT concept is generic
+        wound debridement — very loose parent
+        """
+}
+mapping "NCS99.1" source="NCS99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCS99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCT19.1" source="NCT19" target="SNOMED_CT:229342007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NCT99.1" source="NCT99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCT99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual bucket).
+        """
+}
+mapping "NCU39.1" source="NCU39" target="SNOMED_CT:281951001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ extraction of external fixation material from elbow/forearm is a specific case of SNOMED CT
+        SNOMED CT 2100123746 281951001; exact match for the procedure type
+        """
+}
+mapping "NCU49.1" source="NCU49" target="SNOMED_CT:72010008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal internal fixation elbow/forearm; SNOMED CT site-independent concept"
+}
+mapping "NCU99.1" source="NCU99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCU99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NCW49.1" source="NCW49" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av saruptur av armbåge eller underarm = suture of wound rupture of elbow or forearm;
+        matches SNOMED CT 29629000, verified in Athena; site specificity (elbow/
+        """
+}
+mapping "NCW99.1" source="NCW99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCW99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDA10.1" source="NDA10" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exploration of wrist/hand percutaneous or closed; arthrotomy is a very loose proxy."
+}
+mapping "NDA11.1" source="NDA11" target="SNOMED_CT:258754001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration of wrist/hand - arthroscopic or endoscopic; (258754001) is an exact match for the
+        arthroscopic approach. The KVÅ description
+        """
+}
+mapping "NDA31.1" source="NDA31" target="SNOMED_CT:1331954001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dual: KVA hand bone biopsy arthroscopic/endoscopic; SNOMED CT bone biopsy same type different site
+        """
+}
+mapping "NDA32.1" source="NDA32" target="SNOMED_CT:287544005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open bone biopsy of hand; SNOMED CT has non-surgical bone biopsy (different approach)"
+}
+mapping "NDB19.1" source="NDB19" target="SNOMED_CT:1264536004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: primary half or partial prosthesis in wrist with cement. SNOMED CT Prosthetic arthroplasty of
+        wrist (left side) captures the procedure well; KVÅ adds cement and partial vs total distinction.
+        """
+}
+mapping "NDB29.1" source="NDB29" target="SNOMED_CT:127593008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary total prosthesis in wrist without cement maps to; non-cemented is the standard approach
+        for wrist
+        """
+}
+mapping "NDB89.1" source="NDB89" target="SNOMED_CT:87647009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary total prosthesis in finger joint. SNOMED CT 2100123775 87647009 represents total joint
+        replacement of a finger. The KVÅ speci
+        """
+}
+mapping "NDB99.1" source="NDB99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDB99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). No specific hand-joint
+        arthroplasty standard exists; target subsumes the residual source. Broader; confidence low
+        (residual source).
+        """
+}

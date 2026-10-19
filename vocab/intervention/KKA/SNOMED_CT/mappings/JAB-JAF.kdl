@@ -1,0 +1,280 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JAB-JAF
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JAB00.1" source="JAB00" target="SNOMED_CT:608797008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAB01.1" source="JAB01" target="SNOMED_CT:15018006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT covers all laparoscopic inguinal hernia repairs; KKÅ specifies excision of hernia sac —
+        technique detail lost in broader parent
+        """
+}
+mapping "JAB20.1" source="JAB20" target="SNOMED_CT:238169002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open inguinal hernia with mesh onlay; weak to inguinal herniorrhaphy using synthetic patch"
+}
+mapping "JAB30.1" source="JAB30" target="SNOMED_CT:275240008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA open inguinal hernia repair with interstitial implant (Lichtenstein etc.) is exactly the
+        Lichtenstein technique described by this SNOMED CT concept
+        """
+}
+mapping "JAB40.1" source="JAB40" target="SNOMED_CT:177862004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open sublay mesh placement behind muscle/pre-peritoneal; SNOMED CT does not capture
+        sublay technique
+        """
+}
+mapping "JAB41.1" source="JAB41" target="SNOMED_CT:773225002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100121799 773225002 is laparoscopic inguinal hernia repair with m"
+}
+mapping "JAB44.1" source="JAB44" target="SNOMED_CT:773159005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: TEP = totally extraperitoneal, ljumskbråck = inguinal hernia, implantat = synthetic
+        mesh
+        """
+}
+mapping "JAB50.1" source="JAB50" target="SNOMED_CT:771714004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies IPOM (intraperitoneal onlay mesh) technique; SNOMED CT concept is open mesh repair
+        without specifying placement approach
+        """
+}
+mapping "JAB51.1" source="JAB51" target="SNOMED_CT:773225002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic inguinal hernia repair with implant (IPOM) maps exactly to laparoscopic repair of
+        inguinal hernia using surgical mesh; IPOM is a mesh technique var
+        """
+}
+mapping "JAB60.1" source="JAB60" target="SNOMED_CT:771714004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KVÅ surgical procedures open inguinal hernia with implant in hernia orifice = mesh repair"
+}
+mapping "JAB70.1" source="JAB70" target="SNOMED_CT:177862004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies multilayer implant; SNOMED CT concept is synthetic patch repair — close but not
+        identical technique
+        """
+}
+mapping "JAC20.1" source="JAC20" target="SNOMED_CT:771628000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: open femoral hernia onlay mesh; weak to open femoral hernia with mesh"
+}
+mapping "JAC30.1" source="JAC30" target="SNOMED_CT:771628000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open femoral hernia repair with synthetic mesh = exact procedure match. Lichtenstein technique
+        detail is not in SNOMED CT but the procedure itself matches
+        """
+}
+mapping "JAC40.1" source="JAC40" target="SNOMED_CT:15018006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open femoral hernia repair with mesh preperitoneal; laparoscopic hernia repair is different
+        approach but same target pathology
+        """
+}
+mapping "JAC41.1" source="JAC41" target="SNOMED_CT:608814005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2100121816 608814005 = laparoscopic femoral hernia repair with prosthesi"
+}
+mapping "JAC44.1" source="JAC44" target="SNOMED_CT:177865002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is TEP femoral hernia repair with implant; SNOMED CT is endoscopic inguinal hernia repair;
+        different hernia type but same technique family
+        """
+}
+mapping "JAC50.1" source="JAC50" target="SNOMED_CT:238186008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open femoral hernia repair with IPOM; hernia repair is parent"
+}
+mapping "JAC51.1" source="JAC51" target="SNOMED_CT:608814005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121819 608814005 = laparoscopic femoral hernia repair with prosthesis intraperitonea
+        """
+}
+mapping "JAC60.1" source="JAC60" target="SNOMED_CT:177877007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open inlay technique; SNOMED CT concept is open repair with synthetic patch — nearly
+        equivalent
+        """
+}
+mapping "JAD20.1" source="JAD20" target="SNOMED_CT:18949003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open incisional hernia mesh onlay repair; no close SNOMED CT match - dressing is distant but
+        resident
+        """
+}
+mapping "JAD23.1" source="JAD23" target="SNOMED_CT:771773003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Onlay mesh placement with relaxing incision is a technique of open incisional hernia repair with
+        synthetic mesh. Technique details not in SNOMED CT
+        """
+}
+mapping "JAD30.1" source="JAD30" target="SNOMED_CT:238190005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open mesh (interstitial) repair of abdominal wall hernia; SNOMED CT concept covers open incisional
+        hernia with synthetic patch but does not specify interstitial mesh placement technique
+        """
+}
+mapping "JAD33.1" source="JAD33" target="SNOMED_CT:1173011006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA incisional hernia repair with mesh; SNOMED CT repair of hernia using mesh is broader but
+        captures the essential procedure
+        """
+}
+mapping "JAD40.1" source="JAD40" target="SNOMED_CT:238169002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is open sublay mesh hernia repair of anterior abdominal wall; SNOMED CT concept is
+        inguinal-specific with synthetic patch — site-shifted sibling
+        """
+}
+mapping "JAD41.1" source="JAD41" target="SNOMED_CT:772100005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100121835 772100005 specifies sublay mesh technique; 'Laparoscopic repair" suspect=quoted-text
+}
+mapping "JAD43.1" source="JAD43" target="SNOMED_CT:771773003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT covers open mesh incisional hernia repair broadly; KKÅ specifies sublay mesh placement +
+        component separation technique — narrower variant of SNOMED CT concept
+        """
+}
+mapping "JAD47.1" source="JAD47" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: laparoscopic incisional hernia sublay mesh repair. No specific SNOMED CT match"
+}
+mapping "JAD50.1" source="JAD50" target="SNOMED_CT:771773003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        IPOM is one technique for mesh placement; the overall procedure is open incisional hernia repair
+        with synthetic mesh. IPOM detail not in SNOMED CT
+        """
+}
+mapping "JAD51.1" source="JAD51" target="SNOMED_CT:704039009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100121839 704039009 = laparoscopic incisional hernia repair with intraperitoneal
+        mesh
+        """
+}
+mapping "JAD60.1" source="JAD60" target="SNOMED_CT:737068000" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open incisional hernia repair with mesh; SNOMED CT Repair of ventral hernia using prosthesis is
+        exact match
+        """
+}
+mapping "JAD63.1" source="JAD63" target="SNOMED_CT:1173011006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open incisional hernia with inlay mesh maps to mesh hernia repair"
+}
+mapping "JAD67.1" source="JAD67" target="SNOMED_CT:9292007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic incisional hernia repair vs hiatus hernia repair; different anatomy"
+}
+mapping "JAD70.1" source="JAD70" target="SNOMED_CT:238190005" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies multi-layer implant technique; SNOMED CT covers incisional hernia with synthetic
+        patch but not multi-layer
+        """
+}
+mapping "JAD80.1" source="JAD80" target="SNOMED_CT:238187004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open approach and residual category; SNOMED CT concept is general incisional hernia
+        repair — loose parent
+        """
+}
+mapping "JAD80.2" source="JAD80" target="SNOMED_CT:238187004" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAE20.1" source="JAE20" target="SNOMED_CT:771718001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAE30.1" source="JAE30" target="SNOMED_CT:771718001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is epigastric hernia with interstitial implant; SNOMED CT matches open mesh epigastric hernia
+        repair
+        """
+}
+mapping "JAE40.1" source="JAE40" target="SNOMED_CT:771718001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open epigastric hernia repair with implant behind abdominal wall muscle (sublay) = mesh repair.
+        SNOMED CT has exact match for open repair with synthetic mesh; subl
+        """
+}
+mapping "JAE41.1" source="JAE41" target="SNOMED_CT:771726009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Laparoscopic operation of epigastric hernia with implant behind abdominal wall muscle in
+        front of peritoneum (sublay). Best match: Laparoscopic repair of e
+        """
+}
+mapping "JAE50.1" source="JAE50" target="SNOMED_CT:238186008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open epigastric hernia repair with IPOM; hernia repair is parent"
+}
+mapping "JAE60.1" source="JAE60" target="SNOMED_CT:771718001" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open epigastric hernia repair with mesh implant; good SNOMED CT match"
+}
+mapping "JAE80.1" source="JAE80" target="SNOMED_CT:238184006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JAF20.1" source="JAF20" target="SNOMED_CT:771669009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open umbilical hernia onlay implant; close match to open mesh repair"
+}
+mapping "JAF30.1" source="JAF30" target="SNOMED_CT:771669009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open umbilical hernia repair with implant between muscle layers (interstitial) is an open mesh
+        repair of umbilical hernia; exact match
+        """
+}
+mapping "JAF41.1" source="JAF41" target="SNOMED_CT:1260480007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Lap umbilical hernia sublay; SNOMED CT paraumbilical"
+}
+mapping "JAF51.1" source="JAF51" target="SNOMED_CT:771708006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100121873 771708006 specifies IPOM technique; 'Laparoscopic repair of umbilical
+        hern
+        """ suspect=quoted-text
+}
+mapping "JAF60.1" source="JAF60" target="SNOMED_CT:429378000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open umbilical hernia inlay; SNOMED CT with prosthetic material"
+}

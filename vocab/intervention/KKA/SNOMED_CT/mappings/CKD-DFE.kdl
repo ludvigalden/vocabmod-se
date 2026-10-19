@@ -1,0 +1,234 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes CKD-DFE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "CKD05.1" source="CKD05" target="SNOMED_CT:231755001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD10.1" source="CKD10" target="SNOMED_CT:231778007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD20.1" source="CKD20" target="SNOMED_CT:427979009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vitreous substitute removal is clinically synonymous with removal of an internal tamponade agent
+        (oil/gas) from the vitreous body.
+        """
+}
+mapping "CKD25.1" source="CKD25" target="SNOMED_CT:231765007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD30.1" source="CKD30" target="SNOMED_CT:231765007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD40.1" source="CKD40" target="SNOMED_CT:231762005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD50.1" source="CKD50" target="SNOMED_CT:231759007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD65.1" source="CKD65" target="SNOMED_CT:87021001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vitrectomy via pars plana = Mechanical vitrectomy by pars plana approach (exact match)"
+}
+mapping "CKD75.1" source="CKD75" target="SNOMED_CT:231774009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKD80.1" source="CKD80" target="SNOMED_CT:231775005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKE10.1" source="CKE10" target="SNOMED_CT:64943007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Transpupillary photocoagulation of choroidal tumör; exact SNOMED CT match"
+}
+mapping "CKE40.1" source="CKE40" target="SNOMED_CT:310662003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=transpupillary photocoagulation of retinal tumör; SNOMED CT captures laser destruction of
+        retinal lesion but not transpupillary approach or tumör specificity
+        """
+}
+mapping "CKE50.1" source="CKE50" target="SNOMED_CT:231760002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKE99.1" source="CKE99" target="SNOMED_CT:172570005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CKE99 SNOMED CT 172570005 = Other operation for tissue changes in choroid or retina (KVÅ
+        residual). Target. Source covers both choroid and retina; target covers only retina. Weak tier:
+        target loses the choroid scope.
+        """
+}
+mapping "CWA00.1" source="CWA00" target="SNOMED_CT:29629000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT concept is site-general wound dehiscence resuture; KKÅ specifically eye region"
+}
+mapping "CWD00.1" source="CWD00" target="SNOMED_CT:274508002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies reoperation for superficial bleeding in eye region; SNOMED CT concept is site- and
+        approach-general postop hemorrhage control
+        """
+}
+mapping "CWE00.1" source="CWE00" target="SNOMED_CT:12868007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is bleeding-specific reoperation for any eye region; SNOMED CT is general revision of anterior
+        segment only
+        """
+}
+mapping "CWF00.1" source="CWF00" target="SNOMED_CT:12868007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is reoperation for anastomotic/suture insufficiency in eye region; SNOMED CT captures eye wound
+        revision but not insufficiency indication
+        """
+}
+mapping "CWW99.1" source="CWW99" target="SNOMED_CT:583431000000106" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is eye-region-specific reoperation; SNOMED CT is a generic catch-all secondary operation — very
+        loose
+        """
+}
+mapping "DAA00.1" source="DAA00" target="SNOMED_CT:16316009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DAD20.1" source="DAD20" target="SNOMED_CT:762442002" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Benfixering av oearonprotes = bone fixation of ear prosthesis; adjustment of artificial eye is
+        the closest SNOMED CT match though KVAA specifically refers to bone-
+        """
+}
+mapping "DBB10.1" source="DBB10" target="SNOMED_CT:405268002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT SNOMED CT 405268002 — resection = total excision of the canal"
+}
+mapping "DBD00.1" source="DBD00" target="SNOMED_CT:232151004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DBD10.1" source="DBD10" target="SNOMED_CT:265303002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DBD20.1" source="DBD20" target="SNOMED_CT:232151004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DCA00.1" source="DCA00" target="SNOMED_CT:209055006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsy of tympanic membrane or middle ear; exact match to SNOMED CT Biopsy of middle ear, verified
+        in Athena
+        """
+}
+mapping "DCD00.1" source="DCD00" target="SNOMED_CT:396490007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: konventionell myringoplastik = conventional myringoplasty"
+}
+mapping "DCD05.1" source="DCD05" target="SNOMED_CT:172667002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Plugging of tympanic membrane perforation; exact SNOMED CT match for plug myringoplasty."
+}
+mapping "DDC00.1" source="DDC00" target="SNOMED_CT:32745000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies ossicular (hearing bone) prosthesis; SNOMED CT concept covers all middle ear implants
+        (broader). Captures correct anatomical region and removal action.
+        """
+}
+mapping "DDD00.1" source="DDD00" target="SNOMED_CT:26097007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DDD05.1" source="DDD05" target="SNOMED_CT:397891006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120702 397891006 literally = hearing bone reconstruction = ossiculoplasty; SNOMED CT
+        397891006 is the exact clinical equiv
+        """
+}
+mapping "DDD10.1" source="DDD10" target="SNOMED_CT:398006009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120703 398006009 = interposition between malleus and stapes; exact match to SNOMED CT
+        Malleus stapes assembly (the ossicular reconstructio
+        """
+}
+mapping "DDD20.1" source="DDD20" target="SNOMED_CT:1578004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ stapes interposition maps weakly to ossicle reconstruction with stapedectomy"
+}
+mapping "DDE00.1" source="DDE00" target="SNOMED_CT:225861000000101" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        BAHA fixture fixation in temporal bone; SNOMED CT Stage 1 captures fixture placement but is
+        stage-specific
+        """
+}
+mapping "DEA00.1" source="DEA00" target="SNOMED_CT:172659005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Biopsi av processus mastoideus eller os temporale = biopsy of mastoid process or temporal
+        bone. Best match: (172659005). The KVÅ also inc
+        """
+}
+mapping "DEA10.1" source="DEA10" target="SNOMED_CT:73499009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endaural attico-antrotomi. The SNOMED CT 2100120710 73499009 matches the attico component of
+        the procedure. The antrotomy extension has no separate SNOMED CT concept
+        """
+}
+mapping "DEB00.1" source="DEB00" target="SNOMED_CT:265306005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DEB20.1" source="DEB20" target="SNOMED_CT:232188001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Attico-antro-mastoidectomy and tympanotomy is a combined mastoidectomy with middle ear surgery,
+        closely matching Tympanoplasty with mastoidectomy.
+        """
+}
+mapping "DEB25.1" source="DEB25" target="SNOMED_CT:232188001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: attico-antro-mastoidectomy is a specific type of mastoidectomy. The combined
+        procedure (tympanoplasty + mastoidectomy) is exactly what the SNOMED CT c
+        """
+}
+mapping "DEB50.1" source="DEB50" target="SNOMED_CT:87299002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resection of os temporale (temporal bone) maps to; exact match"
+}
+mapping "DED00.1" source="DED00" target="SNOMED_CT:232513006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Obliteration av radikalhåla = obliteration of frontal sinus (radikalhåla is Swedish ENT term for
+        frontal sinus). Exact clinical equivalent. Verified in CONCEPT.
+        """
+}
+mapping "DEE00.1" source="DEE00" target="SNOMED_CT:232183005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fitting of bone-anchored hearing aid fixture; SNOMED CT has subcutaneous BAHA anchor insertion"
+}
+mapping "DEE10.1" source="DEE10" target="SNOMED_CT:232183005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Attachment of transcutaneous bone-anchored hearing implant; exact match to SNOMED CT 2100120721
+        232183005. Confirmed SNO
+        """
+}
+mapping "DFA00.1" source="DFA00" target="SNOMED_CT:232205006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DFE00.1" source="DFE00" target="SNOMED_CT:17084003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

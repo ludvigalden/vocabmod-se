@@ -1,0 +1,296 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NEH-NFF
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NEH99.1" source="NEH99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEH99 SNOMED CT 28181007 = KVÅ residual (sacroiliac or symphysis). Target (Athena-local). No
+        specific pelvic-joint operation standard exists; hip joint is the nearest anatomical neighbor.
+        Broader; confidence low (residual source, indirect match).
+        """
+}
+mapping "NEJ29.1" source="NEJ29" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NEJ69.1" source="NEJ69" target="SNOMED_CT:608808003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100124004 608808003 = internal fixation of pelvic fracture with plate and screws; exact
+        match to SNOMED CT Open reduction of frac
+        """
+}
+mapping "NEJ99.1" source="NEJ99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEJ99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual source, fracture axis uncovered).
+        """
+}
+mapping "NEK99.1" source="NEK99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEK99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual bucket).
+        """
+}
+mapping "NEL09.1" source="NEL09" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: pelvic muscle release. No SNOMED CT equivalent"
+}
+mapping "NEL19.1" source="NEL19" target="SNOMED_CT:61392008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture or reconstruction of pelvic muscle = pelvic floor reconstruction. SNOMED CT 61392008 SNOMED CT
+        2100124015 61392008 is the closest equivalent, though it i
+        """
+}
+mapping "NEL29.1" source="NEL29" target="SNOMED_CT:178221002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pelvic muscle transposition; weak to local muscle transposition flap"
+}
+mapping "NEL79.1" source="NEL79" target="SNOMED_CT:239273004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies pelvic location; SNOMED CT concept is site-unspecified muscle excision — broader
+        parent
+        """
+}
+mapping "NEL99.1" source="NEL99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEL99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NEN99.1" source="NEN99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEN99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NEP29.1" source="NEP29" target="SNOMED_CT:29119006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replantation of extremity at pelvic level = reattachment of extremity. Pelvic level detail is
+        not in SNOMED CT
+        """
+}
+mapping "NEQ19.1" source="NEQ19" target="SNOMED_CT:5317006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NEQ19 transpelvin amputation; pelvic amputation; weak to radical pelvic amputation"
+}
+mapping "NEQ99.1" source="NEQ99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEQ99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NER49.1" source="NER49" target="SNOMED_CT:116014002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is pelvic bone/cartilage tumör excision; SNOMED CT is generic bone excisional biopsy"
+}
+mapping "NER59.1" source="NER59" target="SNOMED_CT:27842006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: marginal bone/cartilage tumör excision pelvis; weak to radical excision"
+}
+mapping "NER99.1" source="NER99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NER99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NES29.1" source="NES29" target="SNOMED_CT:240994004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incision and debridement for pelvic osteitis; debridement is parent"
+}
+mapping "NES59.1" source="NES59" target="SNOMED_CT:46211007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Compound KKÅ code: incision + debridement + pelvic osteitis + drug implantation. SNOMED CT captures
+        bone debridement only; site, osteitis indication, and drug implantation unmatched.
+        """
+}
+mapping "NES99.1" source="NES99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NES99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NET99.1" source="NET99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NET99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual bucket).
+        """
+}
+mapping "NEU49.1" source="NEU49" target="SNOMED_CT:26166006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: extraction of internal fixation material from pelvis."
+}
+mapping "NEU99.1" source="NEU99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEU99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NEW59.1" source="NEW59" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NEW59 reoperation ytlig infektion bekkenet; weak to revision procedure"
+}
+mapping "NEW99.1" source="NEW99" target="SNOMED_CT:12745006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NEW99 SNOMED CT 12745006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFA00.1" source="NFA00" target="SNOMED_CT:387832004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exploration soft tissue hip/thigh; closest exploration concept is scrotum (wrong anatomy)"
+}
+mapping "NFA11.1" source="NFA11" target="SNOMED_CT:69650005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: arthroscopic/endoscopic exploration of hip joint = Arthroscopy of hip. SNOMED CT
+        69650005 verified standard S in Athena, and is
+        """
+}
+mapping "NFA22.1" source="NFA22" target="SNOMED_CT:430103002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open biopsy of soft tissue in hip/thigh; SNOMED CT soft tissue biopsy is parent"
+}
+mapping "NFA30.1" source="NFA30" target="SNOMED_CT:269612002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av femur perkutan eller sluten = biopsy of femur percutaneous or closed; exact SNOMED CT
+        match for biopsy of femur (encompasses percutaneous and closed appr
+        """
+}
+mapping "NFA31.1" source="NFA31" target="SNOMED_CT:179266002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is arthroscopic femur biopsy; SNOMED CT is percutaneous bone biopsy (different approach)"
+}
+mapping "NFA32.1" source="NFA32" target="SNOMED_CT:287544005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open biopsy of femur; SNOMED CT bone biopsy is parent concept"
+}
+mapping "NFB09.1" source="NFB09" target="SNOMED_CT:179326003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB09 SNOMED CT 179326003 = primary uncemented hip hemi-/partial prosthesis. Target
+        (Athena-local). Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NFB19.1" source="NFB19" target="SNOMED_CT:179319003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB19 SNOMED CT 179319003 = primary cemented hip hemi-/partial prosthesis. Target
+        (Athena-local). Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NFB29.1" source="NFB29" target="SNOMED_CT:179304004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB29 SNOMED CT 179304004 = primary uncemented total hip arthroplasty. Target
+        (Athena-local). Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NFB39.1" source="NFB39" target="SNOMED_CT:314489006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB39 SNOMED CT 314489006 = primary hybrid total hip arthroplasty. Target (Athena-local).
+        Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NFB49.1" source="NFB49" target="SNOMED_CT:265158005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB49 SNOMED CT 265158005 = primary cemented total hip arthroplasty. Target (Athena-local).
+        Exact semantic match. Exact match; confidence.
+        """
+}
+mapping "NFB62.1" source="NFB62" target="SNOMED_CT:713522003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB62 SNOMED CT 713522003 = primary total hip arthroplasty with surface replacement
+        prosthesis. Target (Athena-local). Exact semantic match. Exact match; confidence high (one-level
+        terminology difference: Swedish maps directly to resurfacing).
+        """
+}
+mapping "NFB99.1" source="NFB99" target="SNOMED_CT:150146006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFB99 SNOMED CT 150146006 = KVÅ residual. Target (Athena-local). Target subsumes the
+        residual source. Broader; confidence low (residual source).
+        """
+}
+mapping "NFC09.1" source="NFC09" target="SNOMED_CT:179336006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NFC09 SNOMED CT 179336006 = secondary uncemented hip hemi-/partial prosthesis. Target
+        (Athena-local). Target subsumes secondary hemi procedures; source specifies uncemented. Broader;
+        confidence moderate.
+        """
+}
+mapping "NFC19.1" source="NFC19" target="SNOMED_CT:179336006" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NFC19 SNOMED CT 179336006 = secondary cemented hip hemi-/partial prosthesis. Target
+        (Athena-local). Broader; confidence moderate.
+        """
+}
+mapping "NFC59.1" source="NFC59" target="SNOMED_CT:179314008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFC59 SNOMED CT 179314008 = secondary interposition prosthesis of hip. No specific hip
+        interposition-prosthesis standard exists; target (Athena-local) is the nearest ancestor.
+        Broader; confidence low (indirect match).
+        """
+}
+mapping "NFC99.1" source="NFC99" target="SNOMED_CT:738066004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFC99 SNOMED CT 738066004 = KVÅ residual. Target (Athena-local). Target subsumes the
+        residual source. Broader; confidence low (residual source).
+        """
+}
+mapping "NFF20.1" source="NFF20" target="SNOMED_CT:239294001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fixation of articular fragment in hip - percutaneous/closed; fracture fixation is parent"
+}
+mapping "NFF22.1" source="NFF22" target="SNOMED_CT:57470004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open fixation of articular fragment in hip maps loosely to ORIF femur"
+}
+mapping "NFF31.1" source="NFF31" target="SNOMED_CT:450568008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124079 450568008 = partial excision of articular cartilage in hip joint,
+        arthroscopic/endoscopic
+        """
+}
+mapping "NFF32.1" source="NFF32" target="SNOMED_CT:179723008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Partial excision articular cartilage hip"
+}
+mapping "NFF92.1" source="NFF92" target="SNOMED_CT:280460009" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other operation on synovial membrane/surface hip - open; closest is revision hip arthroplasty
+        """
+}

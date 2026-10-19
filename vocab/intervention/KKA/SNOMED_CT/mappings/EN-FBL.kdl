@@ -1,0 +1,302 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes EN-FBL
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ENA00.1" source="ENA00" target="SNOMED_CT:78819004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers pharynx incision AND adjacent soft tissue/peritonsillar incision; SNOMED CT captures
+        peritonsillar component only — pharynx-only incisions not covered
+        """
+}
+mapping "ENA30.1" source="ENA30" target="SNOMED_CT:13685004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ENB00.1" source="ENB00" target="SNOMED_CT:3786007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Excision eller exploration av lokal förändring i farynx = excision or exploration of local
+        lesion in pharynx. Best match: Excision of lesion of pharynx (37
+        """
+}
+mapping "ENB40.1" source="ENB40" target="SNOMED_CT:178347009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of lateral neck cyst/fistel; SNOMED CT Excision of branchial cyst is very close (lateral
+        neck = branchial)
+        """
+}
+mapping "ENB50.1" source="ENB50" target="SNOMED_CT:274995003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of thyroglossal duct is the Sistrunk procedure. Exact match. Verified SNOMED CT S."
+}
+mapping "ENB60.1" source="ENB60" target="SNOMED_CT:232523002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exstirpation av processus styloideus (extirpation of styloid process) maps to"
+}
+mapping "ENB99.1" source="ENB99" target="SNOMED_CT:172979000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ENB99 SNOMED CT 172979000 = Other resection of pharynx or adjacent soft tissues (KVÅ
+        residual). Target. Both denote residual pharyngeal operations. Exact match at low tier: no
+        crosswalk, but NOS semantics align. Adjacent soft tissue scope partially uncovered.
+        """
+}
+mapping "ENC00.1" source="ENC00" target="SNOMED_CT:48527009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100121042 48527009 = suture of pharynx or adjacent soft tissues. SNOMED CT
+        covers the pharyngeal compon
+        """
+}
+mapping "ENC10.1" source="ENC10" target="SNOMED_CT:18994009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ENC20.1" source="ENC20" target="SNOMED_CT:83019005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Myotomy of m. cricopharyngeus = cricopharyngeal myotomy, exact clinical equivalent"
+}
+mapping "ENC40.1" source="ENC40" target="SNOMED_CT:252612003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "ENC45.1" source="ENC45" target="SNOMED_CT:307922009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reducerande palato-faryngoplastik med elektromagnetisk eller akustisk energi (reducing
+        palatopharyngoplasty with electromagnetic or acoustic energy) maps to
+        """
+}
+mapping "ENC99.1" source="ENC99" target="SNOMED_CT:172944002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ENC99 SNOMED CT 172944002 = Other reconstruction of pharynx or adjacent soft tissues (KVÅ
+        residual). Target (incl. repair nasopharynx). Both denote pharyngeal reconstruction. Exact match
+        at low tier: no crosswalk, but semantics align.
+        """
+}
+mapping "ENW99.1" source="ENW99" target="SNOMED_CT:698853000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on pharynx"
+}
+mapping "FAA.1" source="FAA" target="SNOMED_CT:438781008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suturer och rekonstruktioner av intratorakala vena cava = sutures and reconstructions of
+        intrathoracic vena cava; the core clinical procedure is vena cava recon
+        """
+}
+mapping "FAA10.1" source="FAA10" target="SNOMED_CT:438781008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100121061 438781008 = suture or reconstruction of intrathoracic vena cava
+        with implant. SNOMED CT 'R
+        """ suspect=quoted-text
+}
+mapping "FAB30.1" source="FAB30" target="SNOMED_CT:427092009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ exstirpation av patologisk förändring i intratorakala vena cava = excision of lesion of
+        intrathoracic (superior) vena cava; reasonable match
+        """
+}
+mapping "FAB96.1" source="FAB96" target="SNOMED_CT:427092009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100121068 427092009 = other incision or excision of intrathoracic vena
+        cava. SNOMED CT 'Excision of lesion of
+        """ suspect=quoted-text
+}
+mapping "FAC10.1" source="FAC10" target="SNOMED_CT:438781008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection and reconstruction of intrathoracic vena cava with autologous vein graft maps to
+        SNOMED CT 4229990 SNOMED CT 2100121070 438781008
+        """
+}
+mapping "FAC20.1" source="FAC20" target="SNOMED_CT:438781008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection and reconstruction of intrathoracic vena cava with prosthesis maps to; the prosthesis
+        detail is a technique modifier
+        """
+}
+mapping "FAE00.1" source="FAE00" target="SNOMED_CT:442278005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anastomos mellan vena cava superior och a. pulmonalis = anastomosis between SVC and pulmonary
+        artery. Exact match to SNOMED CT Anastomosis of superior vena cava to
+        """
+}
+mapping "FAE10.1" source="FAE10" target="SNOMED_CT:444034006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bidirectional SVC-to-PA shunt = bidirectional Glenn shunt. Direct clinical match."
+}
+mapping "FAE30.1" source="FAE30" target="SNOMED_CT:233136004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total cavopulmonary connection with fenestrated patch maps exactly to total cavopulmonary
+        connection (the fenestration detail is a technique variant inherent to
+        """
+}
+mapping "FAE40.1" source="FAE40" target="SNOMED_CT:224111000000108" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total cavopulmonal extrakardiell förbindelse = total cavopulmonary extracardiac connection.
+        Exact match to SNOMED CT Total cavopulmonary connection with extracardi
+        """
+}
+mapping "FAW96.1" source="FAW96" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other intrathoracic vein operation. No specific SNOMED CT match"
+}
+mapping "FBA10.1" source="FBA10" target="SNOMED_CT:175254001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 175254001 2100121092 = reconstruction of pulmonary artery with implant/prosthesis;
+        exact match to SNOMED CT 'Repair of pulmonary ar
+        """ suspect=quoted-text
+}
+mapping "FBB20.1" source="FBB20" target="SNOMED_CT:426900002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombendartärektomi i a. pulmonalis vid kronisk obstruktion = thromboendarterectomy of pulmonary
+        artery for chronic obstruction. The SNOMED CT concept matches the
+        """
+}
+mapping "FBB50.1" source="FBB50" target="SNOMED_CT:240947007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "FBC00.1" source="FBC00" target="SNOMED_CT:15648005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Banding of pulmonary artery. Direct exact match. Verified standard SNOMED CT concept."
+}
+mapping "FBC10.1" source="FBC10" target="SNOMED_CT:15648005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 15648005 2100121101 = banding of pulmonary artery together with other procedure for
+        congenital he
+        """
+}
+mapping "FBD00.1" source="FBD00" target="SNOMED_CT:175261002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 175261002 2100121103 = removal of band from pulmonary artery; SNOMED CT concept is exact
+        equivalent
+        """
+}
+mapping "FBD12.1" source="FBD12" target="SNOMED_CT:46897002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA of pulmonary artery; related procedure"
+}
+mapping "FBE00.1" source="FBE00" target="SNOMED_CT:174990009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is dilation of pulmonary artery; SNOMED CT concept is percutaneous pulmonary valvotomy — same
+        clinical intent different granularity
+        """
+}
+mapping "FBE10.1" source="FBE10" target="SNOMED_CT:233224003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pulmonary artery reconstruction is related to aortopulmonary surgery but different procedure"
+}
+mapping "FBE20.1" source="FBE20" target="SNOMED_CT:175254001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction of pulmonary artery with tubular prosthesis maps exactly to repair of pulmonary
+        artery using prosthesis
+        """
+}
+mapping "FBE32.1" source="FBE32" target="SNOMED_CT:233214006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA of pulmonary artery; SNOMED CT includes inherent fluoroscopy/contrast guidance not specified in
+        KKÅ
+        """
+}
+mapping "FBE35.1" source="FBE35" target="SNOMED_CT:429122009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact: KKÅ PTA of pulmonary artery with stent; SNOMED CT adds fluoroscopy guidance and
+        contrast detail
+        """
+}
+mapping "FBE96.1" source="FBE96" target="SNOMED_CT:175253007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers dilation or reconstruction of pulmonary artery; SNOMED CT repair is a broader parent
+        term
+        """
+}
+mapping "FBF00.1" source="FBF00" target="SNOMED_CT:277182002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resektion av a. pulmonalis maps exactly. Verified: SNOMED CT S"
+}
+mapping "FBJ00.1" source="FBJ00" target="SNOMED_CT:233226001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: subclavian-pulmonary shunt (Blalock-Taussig type). Verified SNOMED CT standard
+        concept S.
+        """
+}
+mapping "FBJ10.1" source="FBJ10" target="SNOMED_CT:233226001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Subklaviopulmonal shunt med kärlprotes (subclavian-pulmonary shunt with vascular prosthesis)
+        maps to. Verified SN
+        """
+}
+mapping "FBJ96.1" source="FBJ96" target="SNOMED_CT:233226001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other subclaviopulmonary shunt operation: SNOMED CT (233226001), confirmed SNOMED CT standard; the
+        KVAA SNOMED CT 2100121127 233226001 qua
+        """
+}
+mapping "FBK03.1" source="FBK03" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: closure of subclavian-pulmonary shunt. No SNOMED CT equivalent"
+}
+mapping "FBK96.1" source="FBK96" target="SNOMED_CT:85089003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation foer slutning av subklaviopulmonal shunt = other operation for closure of
+        subclavian-pulmonary shunt; surgical closure of shunt is exact match
+        """
+}
+mapping "FBL00.1" source="FBL00" target="SNOMED_CT:447786004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100121131 447786004 = anastomosis between ascending aorta and main pulmonary artery;
+        exact match to SNOMED CT concept
+        """
+}
+mapping "FBL40.1" source="FBL40" target="SNOMED_CT:233224003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good match: aortopulmonary shunt for univentricular heart disease maps to central aortopulmonary
+        shunt operation
+        """
+}
+mapping "FBL50.1" source="FBL50" target="SNOMED_CT:449550007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Aortopulmonal anastomos med delning av a. pulmonalis = aortopulmonary anastomosis with
+        division of pulmonary artery. Best match: Central aortopulmonary ana
+        """
+}
+mapping "FBL96.1" source="FBL96" target="SNOMED_CT:175221003" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA other aortopulmonary anastomosis/shunt; SNOMED CT central aortopulmonary shunt is closest
+        standard concept
+        """
+}

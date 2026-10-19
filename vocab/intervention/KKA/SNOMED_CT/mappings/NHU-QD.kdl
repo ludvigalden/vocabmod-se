@@ -1,0 +1,303 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NHU-QD
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NHU19.1" source="NHU19" target="SNOMED_CT:1290165004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 1290165004 2100124762 = extraction of total prosthesis from ankle joint; exact match to
+        SNOMED CT concept (revision of total prosthetic replaceme
+        """
+}
+mapping "NHU29.1" source="NHU29" target="SNOMED_CT:67230007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ extraction of prosthesis from other joint in foot; SNOMED CT concept covers prosthesis removal
+        from foot joints; good match
+        """
+}
+mapping "NHU39.1" source="NHU39" target="SNOMED_CT:281951001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraktion av externt fixationsmaterial från fotled eller fot = removal of external fixation
+        material from ankle or foot. SNOMED CT 2100124764 281951001 is the
+        """
+}
+mapping "NHU49.1" source="NHU49" target="SNOMED_CT:1303646007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA describes removal of internal fixation from ankle/foot; SNOMED CT concept covers ankle joint
+        region exactly, verified in Athena
+        """
+}
+mapping "NHU69.1" source="NHU69" target="SNOMED_CT:118489002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal of ligament prosthesis from foot/ankle; no close SNOMED CT match"
+}
+mapping "NHU99.1" source="NHU99" target="SNOMED_CT:150092007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHU99 SNOMED CT 150092007 = extraction of other implant from ankle/foot (KVÅ residual).
+        Target. The target covers removal of orthopedic implants broadly. Broader: ankle/foot implant
+        extractions fall under removal of internal fixation. Confidence : reasonable parent.
+        """
+}
+mapping "NHW99.1" source="NHW99" target="SNOMED_CT:280475001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHW99 SNOMED CT 280475001 = other reoperation on ankle/foot (KVÅ residual). Target. The
+        target covers joint reoperation broadly. Broader: ankle/foot joint reoperations are subsumed.
+        Confidence : reasonable parent for joint reoperation, non-joint scope not covered.
+        """
+}
+mapping "NXW99.1" source="NXW99" target="SNOMED_CT:112697007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NXW99 SNOMED CT 112697007 = other reoperation on other specified region of musculoskeletal
+        system (KVÅ residual). Target. The target is a very broad parent. Broader (loose): all MSK
+        reoperations are MSK operations. Confidence : weak match, reoperation context lost, extremely
+        broad target.
+        """
+}
+mapping "QAA10.1" source="QAA10" target="SNOMED_CT:278726007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision i huvud-halsregion = incision in head-neck region; exact match to SNOMED CT 278726007,
+        verified in Athena
+        """
+}
+mapping "QAA20.1" source="QAA20" target="SNOMED_CT:7818006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dermabrasion of head-neck region; SNOMED CT Complete dermabrasion is broader"
+}
+mapping "QAA25.1" source="QAA25" target="SNOMED_CT:265656008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader SNOMED CT match - skin lesion destruction; KVÅ specifies head-neck region"
+}
+mapping "QAB00.1" source="QAB00" target="SNOMED_CT:265681006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hudsutur i huvud-halsregion = suture of skin of head or neck; exact anatomical and procedural
+        match.
+        """
+}
+mapping "QAB05.1" source="QAB05" target="SNOMED_CT:404916008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Wound revision in head-neck; only debridement concept available but wrong method"
+}
+mapping "QAB10.1" source="QAB10" target="SNOMED_CT:1217561007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dressing change in head-neck region; weak to wound dressing removal (anatomically broader)"
+}
+mapping "QAB99.1" source="QAB99" target="SNOMED_CT:118950002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source QAB99 SNOMED CT 118950002 = other wound treatment in head-neck region (KVÅ residual).
+        Target. The target is a broad parent that does not specifically capture wound treatment. Broader
+        (loose): wound treatments in head/neck are head/neck procedures. Confidence : weak match,
+        wound-treatment focus lost.
+        """
+}
+mapping "QAE00.1" source="QAE00" target="SNOMED_CT:25757008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Hudexcision i huvud-halsregion = skin excision in head-neck region; exact match to Excision of
+        skin of head and neck
+        """
+}
+mapping "QAE10.1" source="QAE10" target="SNOMED_CT:312967000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKå note confirms excisional biopsy is included; SNOMED CT concept is exact equivalent"
+}
+mapping "QAE35.1" source="QAE35" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Skin defect reconstruction head-neck vs wound debridement; captures wound management aspect"
+}
+mapping "QAE99.1" source="QAE99" target="SNOMED_CT:118950002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source QAE99 SNOMED CT 118950002 = other excision or reconstruction in head-neck region (KVÅ
+        residual). Target. The target is a broad parent that does not specifically capture
+        excision/reconstruction. Broader (loose): excision/reconstruction in head/neck are head/neck
+        procedures. Confidence : weak match, excision/reconstruction focus lost.
+        """
+}
+mapping "QAF99.1" source="QAF99" target="SNOMED_CT:72086007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QAF99 SNOMED CT 72086007 = Other operation on hair-bearing skin of scalp or eyebrow (KVÅ
+        residual). Target. Source covers scalp/eyebrow skin operations; target is the SNOMED CT parent for
+        skin of head operations. Broader. Low tier: no crosswalk, residual source.
+        """
+}
+mapping "QAG30.1" source="QAG30" target="SNOMED_CT:177551009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary suture in head-neck region = secondary suture of skin of head or neck, exact clinical
+        equivalent
+        """
+}
+mapping "QAG99.1" source="QAG99" target="SNOMED_CT:72086007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QAG99 SNOMED CT 72086007 = Other operation for chronic wound or fistula in head-neck region
+        (KVÅ residual). Target. Source is specifically about chronic wound/fistula surgery in head-neck;
+        target is a general skin-of-head operation parent. Weak tier: target loses the wound/fistula
+        indication and the neck scope.
+        """
+}
+mapping "QAJ25.1" source="QAJ25" target="SNOMED_CT:77726006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA QAJ25 = facelift using videoendoscope. SNOMED CT 77726006 is the general procedure; no
+        endoscopic variant exists in SNOMED CT. Endoscopic
+        """
+}
+mapping "QAJ99.1" source="QAJ99" target="SNOMED_CT:72086007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QAJ99 SNOMED CT 72086007 = Other aesthetic/cosmetic operation in head-neck region (KVÅ
+        residual). Target. Source is specifically about aesthetic surgery; target is a general
+        skin-of-head operation parent. Weak tier: target loses the aesthetic indication and the neck
+        scope.
+        """
+}
+mapping "QBA10.1" source="QBA10" target="SNOMED_CT:119580007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "QBA20.1" source="QBA20" target="SNOMED_CT:39301001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Trunk dermabrasion = partial dermabrasion; site-specific but procedure equivalent"
+}
+mapping "QBA25.1" source="QBA25" target="SNOMED_CT:302394000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is generic destruction of skin lesion on trunk; SNOMED CT is laser-specific but same clinical
+        intent
+        """
+}
+mapping "QBB99.1" source="QBB99" target="SNOMED_CT:50262009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QBB99 SNOMED CT 50262009 = Other wound treatment on trunk (KVÅ residual). Target. Source
+        covers wound care on trunk; target is the SNOMED CT parent for skin of trunk operations. Broader.
+        Low tier: no crosswalk, residual source.
+        """
+}
+mapping "QBC00.1" source="QBC00" target="SNOMED_CT:20875000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "QBD20.1" source="QBD20" target="SNOMED_CT:40872008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision and coverage of burn on trunk. The excisional component maps to SNOMED CT 2100124825
+        40872008. The coverage aspect and trunk body site are not captu
+        """
+}
+mapping "QBE00.1" source="QBE00" target="SNOMED_CT:119583009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "QBE10.1" source="QBE10" target="SNOMED_CT:312968005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is trunk-specific (bål); SNOMED CT concept is site-general; also KKÅ includes excisional biopsy
+        which the SNOMED CT term captures
+        """
+}
+mapping "QBE20.1" source="QBE20" target="SNOMED_CT:18949003" relationship=equivalent preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "QBE20 excision annan arr pa bal; scar excision on trunk; no closer SNOMED CT match found"
+}
+mapping "QBE30.1" source="QBE30" target="SNOMED_CT:446295000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision av operationsärr på bål = Excision of scar; exact match for surgical scar excision on
+        trunk
+        """
+}
+mapping "QBE40.1" source="QBE40" target="SNOMED_CT:119844004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Rekonstruktion vid missbildning eller hudsjukdom pa bal = reconstruction for deformity or skin
+        disease of trunk. Exact match to SNOMED CT Skin of trunk reconstruct
+        """
+}
+mapping "QBE99.1" source="QBE99" target="SNOMED_CT:50262009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QBE99 SNOMED CT 50262009 = Other excision or reconstruction on trunk (KVÅ residual). Target.
+        Source covers excision/reconstruction on trunk; target is the parent. Broader. Low tier: no
+        crosswalk, residual source.
+        """
+}
+mapping "QBG00.1" source="QBG00" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies pressure ulcer revision on trunk; weak to general wound debridement"
+}
+mapping "QBG10.1" source="QBG10" target="SNOMED_CT:404916008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pressure sore excision and reconstruction; only debridement concept available"
+}
+mapping "QBG30.1" source="QBG30" target="SNOMED_CT:302412004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sekundarsutur pa bal = secondary suture of trunk. SNOMED CT (302412004) is the generic skin
+        secondary suture. The KVAA specifies trunk l
+        """
+}
+mapping "QBG99.1" source="QBG99" target="SNOMED_CT:50262009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QBG99 SNOMED CT 50262009 = Other operation for chronic wound or fistula on trunk (KVÅ
+        residual). Target. Source is specifically about chronic wound/fistula surgery; target is a
+        general trunk skin operation parent. Weak tier: target loses the wound/fistula indication.
+        """
+}
+mapping "QBJ00.1" source="QBJ00" target="SNOMED_CT:15039004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "QBJ30.1" source="QBJ30" target="SNOMED_CT:177250006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 177250006 2100124841 (correction of pendulous abdomen) is clinically equivalent to
+        abdominoplasty; exact match
+        """
+}
+mapping "QBJ99.1" source="QBJ99" target="SNOMED_CT:50262009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source QBJ99 SNOMED CT 50262009 = Other aesthetic operation on trunk (KVÅ residual). Target. Source
+        is specifically about aesthetic surgery; target is a general trunk skin operation parent. Weak
+        tier: target loses the aesthetic indication.
+        """
+}
+mapping "QCH40.1" source="QCH40" target="SNOMED_CT:229836004" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies fingernail trephination; SNOMED CT is nail drilling without site specification —
+        loose parent
+        """
+}
+mapping "QDH00.1" source="QDH00" target="SNOMED_CT:275090004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "QDH20.1" source="QDH20" target="SNOMED_CT:443804005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Correction of deformed toenail maps exactly to SNOMED CT 40483270 SNOMED CT 2100124900 443804005"
+}
+mapping "QDH40.1" source="QDH40" target="SNOMED_CT:229836004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trepanering = drilling; tånagel is a type of nail; SNOMED CT generic drilling of nail covers
+        toenail; exact clinical equivalent
+        """
+}

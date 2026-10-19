@@ -1,0 +1,234 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NAT-NBC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NAT09.1" source="NAT09" target="SNOMED_CT:56223007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers tissue in vertebral column or neck (broader); SNOMED CT spinal canal is narrower but
+        captures the spinal column component; neck component not covered
+        """
+}
+mapping "NAT19.1" source="NAT19" target="SNOMED_CT:22793001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100123368 22793001 = spinal correction with anterior instrumentation; exact match
+        to SNOMED CT 'Anterior spinal instrumentat
+        """ suspect=quoted-text
+}
+mapping "NAT29.1" source="NAT29" target="SNOMED_CT:311482001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100123369 311482001 = spinal correction with posterior corrective
+        instrumentation = Posterior spinal instrumentatio
+        """
+}
+mapping "NAT99.1" source="NAT99" target="SNOMED_CT:32433005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAT99 SNOMED CT 32433005 = Other operation in spinal column (KVÅ residual). Target =
+        Procedure on spine, NOS. Both denote residual/unspecified spinal procedures. Exact match at low
+        tier: no crosswalk, but NOS semantics align.
+        """
+}
+mapping "NAU39.1" source="NAU39" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "External fixator removal from spine/neck; weak to internal fixation revision"
+}
+mapping "NAU49.1" source="NAU49" target="SNOMED_CT:760471000000101" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of internal fixation material from vertebral column/neck maps exactly to removal of
+        fracture fixation device from spine
+        """
+}
+mapping "NAU99.1" source="NAU99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAU99 SNOMED CT 32433005 = Extraction of other implant from spinal column or neck (KVÅ
+        residual). Target = Procedure on spine, NOS. No SNOMED CT concept for implant removal from spine
+        exists. Target broadly subsumes the source. Weak tier: target loses the implant-removal
+        indication.
+        """
+}
+mapping "NAV01.1" source="NAV01" target="SNOMED_CT:178584007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anterior endoscopic cervical fusion. SNOMED CT has anterior cervical decompression/fusion but not
+        endoscopic.
+        """
+}
+mapping "NAV02.1" source="NAV02" target="SNOMED_CT:178584007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anterior endoscopic-assisted cervical fusion; SNOMED CT primary anterior decompression cervical
+        spinal cord and fusion is related
+        """
+}
+mapping "NAV03.1" source="NAV03" target="SNOMED_CT:50172003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Anterior endoscopic thoracic fusion; lumbar spinal fusion is different level but same procedure
+        type
+        """
+}
+flag "NAV04.unmapped" kind=unmapped concept="NAV04" target-system="SNOMED_CT"
+flag "NAV05.unmapped" kind=unmapped concept="NAV05" target-system="SNOMED_CT"
+flag "NAV06.unmapped" kind=unmapped concept="NAV06" target-system="SNOMED_CT"
+flag "NAV11.unmapped" kind=unmapped concept="NAV11" target-system="SNOMED_CT"
+flag "NAV12.unmapped" kind=unmapped concept="NAV12" target-system="SNOMED_CT"
+flag "NAV13.unmapped" kind=unmapped concept="NAV13" target-system="SNOMED_CT"
+flag "NAV14.unmapped" kind=unmapped concept="NAV14" target-system="SNOMED_CT"
+flag "NAV15.unmapped" kind=unmapped concept="NAV15" target-system="SNOMED_CT"
+flag "NAV16.unmapped" kind=unmapped concept="NAV16" target-system="SNOMED_CT"
+flag "NAV21.unmapped" kind=unmapped concept="NAV21" target-system="SNOMED_CT"
+flag "NAV22.unmapped" kind=unmapped concept="NAV22" target-system="SNOMED_CT"
+flag "NAV23.unmapped" kind=unmapped concept="NAV23" target-system="SNOMED_CT"
+flag "NAV24.unmapped" kind=unmapped concept="NAV24" target-system="SNOMED_CT"
+flag "NAV25.unmapped" kind=unmapped concept="NAV25" target-system="SNOMED_CT"
+mapping "NAV26.1" source="NAV26" target="SNOMED_CT:40695002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Posterior endoscopic assisted lumbar fusion; dorsolumbar fusion is a reasonable parent match.
+        """
+}
+flag "NAV35.unmapped" kind=unmapped concept="NAV35" target-system="SNOMED_CT"
+flag "NAV36.unmapped" kind=unmapped concept="NAV36" target-system="SNOMED_CT"
+mapping "NAW49.1" source="NAW49" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sartruptur i kotpelare eller nacke = suture of wound rupture in spine or neck;
+        (29629000) is the exact equivalent
+        """
+}
+mapping "NAW69.1" source="NAW69" target="SNOMED_CT:40695002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reoperation for deep infection in spinal column or neck; dorsolumbar fusion is very loose."
+}
+mapping "NAW99.1" source="NAW99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAW99 SNOMED CT 32433005 = Other reoperation in spinal column or neck (KVÅ residual). Target
+        = Procedure on spine, NOS. No SNOMED CT concept for spinal reoperation exists. Target broadly
+        subsumes the source. Weak tier: target loses the reoperation indication.
+        """
+}
+mapping "NBA11.1" source="NBA11" target="SNOMED_CT:281812007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av axelled = exploration of shoulder joint via arthroscopy/endoscopy; exact SNOMED CT
+        match for arthroscopy of shoulder. Exploration is encompassed by
+        """
+}
+mapping "NBA12.1" source="NBA12" target="SNOMED_CT:112929000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Joint exploration; SNOMED CT has exploration procedures for other regions"
+}
+mapping "NBA30.1" source="NBA30" target="SNOMED_CT:179266002" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone biopsy in shoulder or upper arm - percutaneous or closed; SNOMED CT 179266002 2100123409 is
+        the closest SNOMED CT equivalent, though it does n
+        """
+}
+mapping "NBA32.1" source="NBA32" target="SNOMED_CT:179255009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone biopsy in shoulder or upper arm - open; SNOMED CT 179255009 2100123411 is the closest SNOMED CT
+        equivalent, though it does not specify shoulder/upper arm --
+        """
+}
+mapping "NBB09.1" source="NBB09" target="SNOMED_CT:265184004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Analogous: cemented vs uncemented hemiarthroplasty; different fixation method but same procedure
+        type
+        """
+}
+mapping "NBB19.1" source="NBB19" target="SNOMED_CT:265184004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123413 265184004 = primary hemi/partial prosthesis in glenohumeral joint with
+        cement; =
+        """
+}
+mapping "NBB29.1" source="NBB29" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Primary total prosthesis glenohumeral joint without cement; no good match."
+}
+mapping "NBB39.1" source="NBB39" target="SNOMED_CT:179452005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary total prosthesis in glenohumeral joint with hybrid technique. Direct exact match with
+        SNOMED CT prosthetic hybrid total shoulder replacement. Verified stan
+        """
+}
+mapping "NBB49.1" source="NBB49" target="SNOMED_CT:280464000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader: primary cemented total shoulder arthroplasty to shoulder arthroplasty parent (only
+        revision found in SNOMED CT).
+        """
+}
+mapping "NBB59.1" source="NBB59" target="SNOMED_CT:785850002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100123417 785850002 = primary reverse total prosthesis in glenohumeral
+        joint without cement. SNOMED CT 'Revers
+        """ suspect=quoted-text
+}
+flag "NBB69.unmapped" kind=unmapped concept="NBB69" target-system="SNOMED_CT"
+mapping "NBB99.1" source="NBB99" target="SNOMED_CT:179443001" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBB99 SNOMED CT 179443001 = Other primary joint prosthesis operation in shoulder joint (KVÅ
+        residual). Target. Source covers all primary shoulder prostheses; target covers one specific
+        type. Broader. Low tier: target is one specific type, not the broad parent.
+        """
+}
+mapping "NBC09.1" source="NBC09" target="SNOMED_CT:265185003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: secondary hemi- or partial prosthesis in glenohumeral joint without cement;
+        SNOMED CT 2100123420 265185003
+        """
+}
+mapping "NBC19.1" source="NBC19" target="SNOMED_CT:265184004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sekundär halv- eller delprotes i humeroskapularled med cement = secondary hemi- or partial
+        prosthesis in glenohumeral joint with cement; exact SNOMED CT match for
+        """
+}
+mapping "NBC59.1" source="NBC59" target="SNOMED_CT:785850002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary reverse total prosthesis in glenohumeral joint without cement maps to SNOMED CT 37206209
+        SNOMED CT 2100123425 785850002
+        """
+}
+mapping "NBC69.1" source="NBC69" target="SNOMED_CT:1287441006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ is secondary reverse shoulder prosthesis with hybrid technique; SNOMED CT matches reverse
+        shoulder arthroplasty
+        """
+}
+mapping "NBC99.1" source="NBC99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBC99 SNOMED CT 179458009 = Other secondary (revision) joint prosthesis operation in
+        shoulder (KVÅ residual). Target. Source is specifically revision shoulder arthroplasty; target
+        is the general shoulder operations parent. Broader. Low tier: target loses the revision
+        arthroplasty indication.
+        """
+}

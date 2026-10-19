@@ -1,0 +1,286 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NBE-NBT
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NBE01.1" source="NBE01" target="SNOMED_CT:38188006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision or suture of shoulder joint capsule via arthroscopy/endoscopy; division of joint
+        capsule is the closest SNOMED CT match for capsular incision (capsulotomy
+        """
+}
+mapping "NBE02.1" source="NBE02" target="SNOMED_CT:38188006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial match: KVÅ covers incision OR suture of shoulder joint capsule; SNOMED CT 2100123430
+        38188006 covers the incision component but not the
+        """
+}
+mapping "NBE32.1" source="NBE32" target="SNOMED_CT:1332407006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligament transposition in shoulder open; repair of ligament with graft is broader but related.
+        """
+}
+mapping "NBE41.1" source="NBE41" target="SNOMED_CT:37422000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Arthroscopic ligament reconstruction; SNOMED CT has ACL but not shoulder ligament specifically"
+}
+mapping "NBE92.1" source="NBE92" target="SNOMED_CT:265184004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other open shoulder capsule/ligament operation. No direct SNOMED CT match"
+}
+mapping "NBF02.1" source="NBF02" target="SNOMED_CT:122507007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total synovektomi i humeroskapularled - open = total synovectomy of glenohumeral joint, open.
+        SNOMED CT 122507007 2100123445 is the closest equivalent.
+        """
+}
+mapping "NBF10.1" source="NBF10" target="SNOMED_CT:265204005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial synovectomy of joint is the general concept. Site (glenohumeral) and approach
+        (percutaneous/closed) are refinements not in SNOMED CT
+        """
+}
+mapping "NBF22.1" source="NBF22" target="SNOMED_CT:239294001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fixation of articular fragment in glenohumeral joint - open; fracture fixation is parent"
+}
+mapping "NBF31.1" source="NBF31" target="SNOMED_CT:450568008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of articular cartilage in glenohumeral joint - arthroscopic/endoscopic maps to
+        SNOMED CT 42872577 SNOMED CT 2100123452 450568008
+        """
+}
+mapping "NBF32.1" source="NBF32" target="SNOMED_CT:179723008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of articular cartilage in humeroscapular joint - open; SNOMED CT 179723008
+        2100123453 is the closest SNOMED CT equivalent, though
+        """
+}
+mapping "NBF91.1" source="NBF91" target="SNOMED_CT:408458006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on joint lining/surfaces in shoulder arthroscopic; no good SNOMED CT parent"
+}
+mapping "NBG29.1" source="NBG29" target="SNOMED_CT:308681004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other shoulder arthroplasty without prosthesis. SNOMED CT has shoulder arthroplasty"
+}
+mapping "NBG49.1" source="NBG49" target="SNOMED_CT:71919009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NBH00.1" source="NBH00" target="SNOMED_CT:85624009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closed/percutaneous reduction of glenohumeral joint = closed reduction of shoulder dislocation.
+        """
+}
+mapping "NBH02.1" source="NBH02" target="SNOMED_CT:81506009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100123466 81506009 = open reduction of glenohumeral (shoulder) joint
+        dislocation.
+        """
+}
+mapping "NBH20.1" source="NBH20" target="SNOMED_CT:112728000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: closed reduction dislocated shoulder prosthesis; weak to joint revision"
+}
+mapping "NBH22.1" source="NBH22" target="SNOMED_CT:281823006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open reposition of dislocated prosthesis in shoulder joint: (281823006), confirmed SNOMED CT
+        standard; the
+        """
+}
+mapping "NBH31.1" source="NBH31" target="SNOMED_CT:412723006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Release of joint adhesions in shoulder - arthroscopic or endoscopic. SNOMED CT 2100123474
+        412723006 is the exact clinical equivalent
+        """
+}
+mapping "NBH40.1" source="NBH40" target="SNOMED_CT:287233001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of foreign/loose body in glenohumeral joint; foreign body removal is distant parent
+        """
+}
+mapping "NBH42.1" source="NBH42" target="SNOMED_CT:179855002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open foreign body removal from glenohumeral joint; weak to open foreign body removal from joint
+        """
+}
+mapping "NBH51.1" source="NBH51" target="SNOMED_CT:179718008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Arthroscopic excision of shoulder osteophyte. SNOMED CT has open but not arthroscopic approach."
+}
+mapping "NBH91.1" source="NBH91" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on shoulder joint arthroscopic; no good match."
+}
+mapping "NBJ29.1" source="NBJ29" target="SNOMED_CT:239294001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extern fixation av fraktur i axel eller överarm = external fixation of fracture in shoulder or
+        upper arm. Generic external fixator concept is the closest availa
+        """
+}
+mapping "NBJ69.1" source="NBJ69" target="SNOMED_CT:239294001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of shoulder/upper arm fracture with plate and screws; broader fracture fixation
+        parent
+        """
+}
+mapping "NBJ99.1" source="NBJ99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBJ99 SNOMED CT 179458009 = Other operation for fracture of shoulder or upper arm (KVÅ
+        residual). Target. Source is specifically fracture surgery of shoulder/upper arm; target covers
+        shoulder operations broadly. Weak tier: target loses the fracture indication.
+        """
+}
+mapping "NBK79.1" source="NBK79" target="SNOMED_CT:178996008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is bone transport in shoulder/upper arm; SNOMED CT matches bone transport procedure"
+}
+mapping "NBK99.1" source="NBK99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBK99 SNOMED CT 179458009 = Other operation on bone in shoulder or upper arm (KVÅ residual).
+        Target. Source covers bone operations in shoulder/upper arm; target covers shoulder joint
+        operations. Weak tier: target loses the bone-specific scope (humerus/clavicle/scapula).
+        """
+}
+mapping "NBL19.1" source="NBL19" target="SNOMED_CT:240994004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture/reconstruction of muscle shoulder/upper arm; wound debridement is broader parent"
+}
+mapping "NBL39.1" source="NBL39" target="SNOMED_CT:231124004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: myotomy/tenotomy of shoulder; weak to cervical nerve block"
+}
+mapping "NBL79.1" source="NBL79" target="SNOMED_CT:1208534003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers excision of muscle/tendon in shoulder OR upper arm; SNOMED CT is wide excision of soft
+        tissue of shoulder only, narrower approach, broader tissue type
+        """
+}
+mapping "NBL89.1" source="NBL89" target="SNOMED_CT:239238001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tendon transposition shoulder/upper arm; broader tendon transfer is closest"
+}
+mapping "NBL99.1" source="NBL99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBL99 SNOMED CT 179458009 = Other operation on muscle or tendon in shoulder or upper arm
+        (KVÅ residual). Target. Source covers muscle/tendon operations; target covers shoulder joint
+        operations. Weak tier: target loses the muscle/tendon specificity.
+        """
+}
+mapping "NBM39.1" source="NBM39" target="SNOMED_CT:70163005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123520 70163005 = excision of ganglion in shoulder or upper arm; SNOMED CT is a
+        parent concept (body si
+        """
+}
+mapping "NBM59.1" source="NBM59" target="SNOMED_CT:1651009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of tendon sheath in shoulder or upper arm maps to excision of tendon sheath
+        (the shoulder/upper arm is a site qualifier not in SNOMED CT)
+        """
+}
+mapping "NBN19.1" source="NBN19" target="SNOMED_CT:116372002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Good parent match: KVA specifies allogeneic bone graft to shoulder; SNOMED CT has allogeneic bone
+        graft (broader site)
+        """
+}
+mapping "NBN99.1" source="NBN99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBN99 SNOMED CT 179458009 = Other transplantation to shoulder or upper arm (KVÅ residual).
+        Target. Source covers transplantation to shoulder/upper arm; target covers shoulder joint
+        operations. Weak tier: target loses the transplantation indication entirely.
+        """
+}
+mapping "NBQ99.1" source="NBQ99" target="SNOMED_CT:399930003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBQ99 SNOMED CT 399930003 = Other amputation or related operation in shoulder or upper arm
+        (KVÅ residual). Target. Both denote upper limb amputation. Broader at weak tier: target covers
+        upper limb amputation broadly; source is specifically shoulder/upper arm.
+        """
+}
+mapping "NBR99.1" source="NBR99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBR99 SNOMED CT 179458009 = Other operation for tumör in shoulder or upper arm (KVÅ
+        residual). Target. Source is specifically tumör surgery of shoulder/upper arm; target covers
+        shoulder joint operations broadly. Weak tier: target loses the tumör indication.
+        """
+}
+mapping "NBS09.1" source="NBS09" target="SNOMED_CT:473218004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision and debridement for soft tissue infection shoulder/upper arm; broader debridement
+        concept
+        """
+}
+mapping "NBS19.1" source="NBS19" target="SNOMED_CT:300028009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "I&D for septic arthritis of shoulder; SNOMED CT Drainage of septic arthritis is same procedure"
+}
+mapping "NBS39.1" source="NBS39" target="SNOMED_CT:450671005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ combines I&D with local antibiotic implantation (shoulder/upper arm); SNOMED CT captures
+        debridement only -- partial overlap
+        """
+}
+mapping "NBS49.1" source="NBS49" target="SNOMED_CT:18856005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is open arthrotomy with debridement for septic arthritis plus local antibiotic implant;
+        SNOMED CT is arthroscopic debridement without infection/drug context — loose sibling
+        """
+}
+mapping "NBS59.1" source="NBS59" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Debridement match; KVÅ adds osteitis site + drug implantation specifics"
+}
+mapping "NBS99.1" source="NBS99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBS99 SNOMED CT 179458009 = Other operation for infection in shoulder or upper arm (KVÅ
+        residual). Target. Source is specifically infection surgery of shoulder/upper arm; target covers
+        shoulder joint operations broadly. Weak tier: target loses the infection indication.
+        """
+}
+mapping "NBT99.1" source="NBT99" target="SNOMED_CT:179458009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBT99 SNOMED CT 179458009 = Other operation in shoulder or upper arm (KVÅ residual). Target.
+        Both denote residual shoulder operations. Exact match at low tier: no crosswalk, but NOS
+        semantics align. Upper arm scope partially uncovered.
+        """
+}

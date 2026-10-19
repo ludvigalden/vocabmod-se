@@ -1,0 +1,454 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NHH-NHJ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NHH02.1" source="NHH02" target="SNOMED_CT:274457001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHH10.1" source="NHH10" target="SNOMED_CT:29193008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ reposition av luxerad led i fot perkutan/sluten = closed reduction of dislocation of foot;
+        exact clinical match
+        """
+}
+mapping "NHH11.1" source="NHH11" target="SNOMED_CT:29193008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition of other dislocated joint in foot - arthroscopic or endoscopic; SNOMED CT 2100124504
+        29193008 is the closest SNOMED CT equivalent, though th
+        """
+}
+mapping "NHH12.1" source="NHH12" target="SNOMED_CT:49489003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open reduction of dislocated foot joint. SNOMED CT 2100124505 49489003 qualifier in KVÅ just
+        excludes already-coded specific joints
+        """
+}
+mapping "NHH20.1" source="NHH20" target="SNOMED_CT:32026000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reposition of dislocated foot/ankle prosthesis relates to prosthesis removal"
+}
+mapping "NHH32.1" source="NHH32" target="SNOMED_CT:118489002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open adhesiolysis of foot joints; no close SNOMED CT match"
+}
+mapping "NHH41.1" source="NHH41" target="SNOMED_CT:10849003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Foreign body removal ankle/foot; SNOMED CT general"
+}
+mapping "NHH42.1" source="NHH42" target="SNOMED_CT:405709007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraktion av främmande eller fri kropp i fotled eller fot - öppen = extraction of foreign or
+        loose body in ankle or foot, open. SNOMED CT Removal of foreign body
+        """
+}
+mapping "NHH91.1" source="NHH91" target="SNOMED_CT:66339000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation på fotled eller fot - artroskopisk eller endoskopisk = other operation on ankle
+        or foot - arthroscopic. SNOMED CT 2100124520 66339000 is the closest ma
+        """
+}
+mapping "NHJ00.1" source="NHJ00" target="SNOMED_CT:178722005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: closed reduction ankle fracture lateral malleolus maps loosely to fracture reduction"
+}
+mapping "NHJ01.1" source="NHJ01" target="SNOMED_CT:440437003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: closed reduction of fracture of medial malleolus. SNOMED CT 440437003 is identical in
+        meaning. Verified standard S in Athena.
+        """
+}
+mapping "NHJ02.1" source="NHJ02" target="SNOMED_CT:69004008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ båda malleolerna = SNOMED CT bimalleolar; sluten reposition = manual reduction; exact match"
+}
+mapping "NHJ03.1" source="NHJ03" target="SNOMED_CT:63756002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        båda malleolerna och bakre tibiakanten = bimalleolar + posterior tibial margin = trimalleolar;
+        exact equivalent
+        """
+}
+mapping "NHJ04.1" source="NHJ04" target="SNOMED_CT:19573006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: Sluten reposition av fraktur i fotled eller fot - talus"
+}
+mapping "NHJ05.1" source="NHJ05" target="SNOMED_CT:4542005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ specifies calcaneus; SNOMED CT is broader foot-level parent"
+}
+mapping "NHJ06.1" source="NHJ06" target="SNOMED_CT:6585004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closed reduction of fracture in ankle or foot - other tarsal bone; exact SNOMED CT match for closed
+        reduction of tarsal or metatarsal fracture.
+        """
+}
+mapping "NHJ07.1" source="NHJ07" target="SNOMED_CT:4542005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ covers ankle AND foot/metatarsal; SNOMED CT concept covers foot only"
+}
+mapping "NHJ08.1" source="NHJ08" target="SNOMED_CT:70060006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sluten reposition av fraktur i fotled eller fot - ta (closed reduction of fracture in ankle or
+        foot - toe). Maps to 'Closed reduction of fracture of phalanx of
+        """
+}
+mapping "NHJ10.1" source="NHJ10" target="SNOMED_CT:11490001000004104" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open reduction of fracture of lateral malleolus with internal fixation: exact match to SNOMED CT
+        11490001000004104
+        """
+}
+mapping "NHJ11.1" source="NHJ11" target="SNOMED_CT:178722005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open reduction ankle fracture medial malleolus maps loosely to open fracture reduction"
+}
+mapping "NHJ12.1" source="NHJ12" target="SNOMED_CT:439756000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both malleoli = bimalleolar. The SNOMED CT concept includes internal fixation which is not
+        explicitly stated in KVÅ but is standard practice
+        """
+}
+mapping "NHJ13.1" source="NHJ13" target="SNOMED_CT:441229002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Very close; SNOMED CT adds internal fixation not explicit in KKÅ reposition; both malleoli +
+        posterior tibial margin = trimalleolar equivalent
+        """
+}
+mapping "NHJ14.1" source="NHJ14" target="SNOMED_CT:608803007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124535 608803007 = open reduction of talus fracture; exact match to SNOMED CT 'Open
+        reduction of fracture of talus with
+        """ suspect=quoted-text
+}
+mapping "NHJ15.1" source="NHJ15" target="SNOMED_CT:699169000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies open reduction of calcaneus without fixation status; SNOMED CT splits on fixation
+        (with/without IF); calcaneus site match is exact but fixation qualifier makes this a loose match
+        """
+}
+mapping "NHJ16.1" source="NHJ16" target="SNOMED_CT:21570007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open reposition of fracture in ankle or foot - other tarsal bone; (21570007) is the exact
+        equivalent
+        """
+}
+mapping "NHJ17.1" source="NHJ17" target="SNOMED_CT:448873003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is open reduction ankle/foot/metatarsal without fixation; SNOMED CT adds extramedullary
+        fixation and is ankle-specific — partial overlap
+        """
+}
+mapping "NHJ18.1" source="NHJ18" target="SNOMED_CT:5521000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Good match; KKÅ toe fractures are phalangeal fractures of the foot"
+}
+mapping "NHJ20.1" source="NHJ20" target="SNOMED_CT:448244008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        External fixation of fracture of ankle/foot - lateral malleolus: lateral malleolus is the distal
+        fibula; external fixation of fibula is exact anatomical equival
+        """
+}
+mapping "NHJ21.1" source="NHJ21" target="SNOMED_CT:179141007" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Approximate: external fixation of ankle/foot fracture - medial malleolus; SNOMED CT
+        179141007 2100124541 is generic (any bone). No ankle/malleol
+        """
+}
+mapping "NHJ22.1" source="NHJ22" target="SNOMED_CT:179141007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ external fixation of ankle/foot fracture with both malleoli; SNOMED CT concept is site-generic
+        — no ankle-specific external fixation concept exists
+        """
+}
+mapping "NHJ23.1" source="NHJ23" target="SNOMED_CT:179141007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies ankle/foot/bimalleolar/posterior tibial border site; SNOMED CT concept is
+        site-general fracture external fixation
+        """
+}
+mapping "NHJ24.1" source="NHJ24" target="SNOMED_CT:179141007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies external fixation of talus fracture at ankle/foot; SNOMED CT concept is broader
+        parent covering any primary external fixation of fracture
+        """
+}
+mapping "NHJ25.1" source="NHJ25" target="SNOMED_CT:133862007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        External fixation of foot fracture calcaneus; SNOMED CT has external fixation but not site-specific
+        """
+}
+mapping "NHJ26.1" source="NHJ26" target="SNOMED_CT:133862007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is external fixation of fracture on ankle/foot tarsal bones; SNOMED CT is site-general open
+        reduction with external fixation — loose parent
+        """
+}
+mapping "NHJ28.1" source="NHJ28" target="SNOMED_CT:448853008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        External fixation of fracture of ankle/foot, toe = External fixation of phalanx of toe (SNOMED CT
+        448853008); close clinical match for toe fracture external fixati
+        """
+}
+mapping "NHJ30.1" source="NHJ30" target="SNOMED_CT:11490001000004104" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact site match (lateral malleolus); SNOMED CT does not specify bioimplant material type — covers
+        all internal fixation methods
+        """
+}
+mapping "NHJ31.1" source="NHJ31" target="SNOMED_CT:1303645006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 1303645006 2100124550 = osteosynthesis of ankle/foot fracture with bioimplant,
+        medial malleolus
+        """
+}
+mapping "NHJ32.1" source="NHJ32" target="SNOMED_CT:439756000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå specifies bioimplant (bioresorbable) material; SNOMED CT concept matches the bimalleolar
+        fracture and internal fixation exactly but does not specify bioresorbable vs metallic implant
+        """
+}
+mapping "NHJ50.1" source="NHJ50" target="SNOMED_CT:1303499007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies intramedullary nail of lateral malleolus fracture; SNOMED CT is broader foot bone
+        internal fixation without hardware or site detail
+        """
+}
+mapping "NHJ51.1" source="NHJ51" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: intramedullary nail fixation of medial malleolus fracture. No SNOMED CT match"
+}
+mapping "NHJ52.1" source="NHJ52" target="SNOMED_CT:133863002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Osteosynthesis ankle with intramedullary nail both malleoli; weak to ORIF"
+}
+mapping "NHJ58.1" source="NHJ58" target="SNOMED_CT:710797004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Osteosynthesis of toe with intramedullary nail; SNOMED CT has general intramedullary nailing"
+}
+mapping "NHJ60.1" source="NHJ60" target="SNOMED_CT:1303645006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies plate+screw and lateral malleolus; SNOMED CT is site-general ankle ORIF without
+        implant/hardware detail
+        """
+}
+mapping "NHJ61.1" source="NHJ61" target="SNOMED_CT:440418007" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact match; KKÅ specifies plate+screws hardware while SNOMED CT says internal fixation
+        generically
+        """
+}
+mapping "NHJ62.1" source="NHJ62" target="SNOMED_CT:133863002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies plate+screw both malleoli ankle; weak to ORIF parent"
+}
+mapping "NHJ63.1" source="NHJ63" target="SNOMED_CT:1303637001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosyntes av fraktur i fotled med platta och skruvar - båda malleolerna. The available concept
+        'Internal fixation of fracture of ankle joint region using scre
+        """
+}
+mapping "NHJ64.1" source="NHJ64" target="SNOMED_CT:1303637001" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of fracture in ankle or foot with plate and screws - talus. SNOMED CT 1303637001
+        2100124580 is an approximate m
+        """
+}
+mapping "NHJ65.1" source="NHJ65" target="SNOMED_CT:608788009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: KKÅ osteosyntes av fraktur med platta/skruvar kalkaneus = ORIF of calcaneus
+        """
+}
+mapping "NHJ66.1" source="NHJ66" target="SNOMED_CT:13170001000004103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are internal fixation of foot/ankle fractures with plate and screws"
+}
+mapping "NHJ67.1" source="NHJ67" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Internal fixation metatarsal fracture; no close SNOMED CT match"
+}
+mapping "NHJ68.1" source="NHJ68" target="SNOMED_CT:27454003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies osteosynthesis of toe fracture with plate and screws; SNOMED CT is for
+        tarsal/metatarsal bones (broader foot region, not toe phalanges) and technique-unspecified
+        """
+}
+mapping "NHJ70.1" source="NHJ70" target="SNOMED_CT:1303637001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosyntes av fraktur i fotled med skruvar enbart - laterala malleolen = screw-only fixation of
+        lateral malleolus fracture. Exact match to the SNOMED CT concept.
+        """
+}
+mapping "NHJ71.1" source="NHJ71" target="SNOMED_CT:1303637001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of ankle/foot fracture with screws only, medial malleolus. Medial malleolus is
+        within ankle joint region; screw-only matches exactly.
+        """
+}
+mapping "NHJ72.1" source="NHJ72" target="SNOMED_CT:439756000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies screws-only bimalleolar osteosynthesis; SNOMED CT captures bimalleolar ORIF but does
+        not restrict to screws
+        """
+}
+mapping "NHJ73.1" source="NHJ73" target="SNOMED_CT:13170001000004103" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies screws only and both malleoli; SNOMED CT is broader ankle fracture fixation"
+}
+mapping "NHJ74.1" source="NHJ74" target="SNOMED_CT:1303637001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of fracture in ankle/foot with screws only - talus; SNOMED CT 1303637001 2100124589
+        in SNOMED CT includes talus. Close match. Confirmed SNOMED CT S.
+        """
+}
+mapping "NHJ75.1" source="NHJ75" target="SNOMED_CT:608788009" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHJ76.1" source="NHJ76" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: screw osteosynthesis of other tarsal bone fracture. No specific SNOMED CT match"
+}
+mapping "NHJ77.1" source="NHJ77" target="SNOMED_CT:57470004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: screw-only osteosynthesis of metatarsal fracture. SNOMED CT ORIF of femur is but is wrong bone
+        and doesn't match screw-only fixation. Very loose, different body site.
+        """
+}
+mapping "NHJ78.1" source="NHJ78" target="SNOMED_CT:70771000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader parent — KKÅ specifies toe fracture with screws only; SNOMED CT covers foot/toes with any
+        fixation device
+        """
+}
+mapping "NHJ80.1" source="NHJ80" target="SNOMED_CT:11490001000004104" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies other/combined method osteosynthesis of lateral malleolus; SNOMED CT is ORIF-specific
+        which is the most common method subset
+        """
+}
+mapping "NHJ81.1" source="NHJ81" target="SNOMED_CT:1303645006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of fracture in ankle/foot with other/combined method -- medial malleolus; maps to
+        internal fixation of fracture of ankle joint region
+        """
+}
+mapping "NHJ82.1" source="NHJ82" target="SNOMED_CT:439756000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå says SNOMED CT 439756000 and; SNOMED CT specifies open reduction of bimalleolar — close anatomical
+        match but method granularity differs
+        """
+}
+mapping "NHJ83.1" source="NHJ83" target="SNOMED_CT:441229002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: both malleoli + posterior tibial edge = trimalleolar fracture with posterior
+        tibia fixation; KVÅ surgical procedures method qualifier covers ORIF
+        """
+}
+mapping "NHJ84.1" source="NHJ84" target="SNOMED_CT:239294001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Osteosynthesis of ankle/foot fracture - talus; fracture fixation is parent"
+}
+mapping "NHJ86.1" source="NHJ86" target="SNOMED_CT:608802002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå says SNOMED CT 608802002 for metatarsal fracture osteosynthesis; SNOMED CT concept specifies open
+        reduction with internal fixation — method granularity differs
+        """
+}
+mapping "NHJ87.1" source="NHJ87" target="SNOMED_CT:27454003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ osteosynthesis with \"\"other/combined method\"\"; SNOMED CT is a broader parent for internal
+        fixation of metatarsal without specifying fixation technique
+        """
+}
+mapping "NHJ88.1" source="NHJ88" target="SNOMED_CT:62348008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KVÅ surgical procedures toe osteosynthesis with other/combined method = ORIF of foot phalanges"
+}
+mapping "NHJ90.1" source="NHJ90" target="SNOMED_CT:1303645006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ residual other operations for lateral malleolus fracture; SNOMED CT is generic ankle fixation
+        parent
+        """
+}
+mapping "NHJ91.1" source="NHJ91" target="SNOMED_CT:440418007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is residual catch-all for other medial malleolus fracture operations; SNOMED CT is specific
+        ORIF technique -- sibling not parent
+        """
+}
+mapping "NHJ93.1" source="NHJ93" target="SNOMED_CT:440707008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ SNOMED CT 440707008 for non-standard technique; fracture pattern (bimalleolar + posterior
+        tibial margin = trimalleolar) matches — loose parent
+        """
+}
+mapping "NHJ97.1" source="NHJ97" target="SNOMED_CT:27454003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Residual \"\"other\"\" operation for metatarsal fracture; SNOMED CT internal fixation is a narrower
+        child (fixation only vs any operation)
+        """
+}
+mapping "NHJ98.1" source="NHJ98" target="SNOMED_CT:21570007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is a residual catch-all for toe fracture operations; SNOMED CT concept is broader parent
+        covering open reduction of foot fractures
+        """
+}

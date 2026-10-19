@@ -1,0 +1,237 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes LCD-LE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "LCD00.1" source="LCD00" target="SNOMED_CT:116143008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ LCD00=open hysterectomy covers both total and subtotal; SNOMED CT concept is total only — loose
+        match but clinically predominant variant
+        """
+}
+mapping "LCD01.1" source="LCD01" target="SNOMED_CT:236888001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD04.1" source="LCD04" target="SNOMED_CT:236887006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD10.1" source="LCD10" target="SNOMED_CT:265056007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD11.1" source="LCD11" target="SNOMED_CT:75835007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: LAVH"
+}
+mapping "LCD12.1" source="LCD12" target="SNOMED_CT:1304071003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA LCD12 = vaginal hysterectomy with vNOTES (vaginal natural orifice transluminal endoscopic
+        surgery). SNOMED CT 1304071003
+        """
+}
+mapping "LCD30.1" source="LCD30" target="SNOMED_CT:116142003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD31.1" source="LCD31" target="SNOMED_CT:236891001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD96.1" source="LCD96" target="SNOMED_CT:236886002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCD97.1" source="LCD97" target="SNOMED_CT:236887006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCE10.1" source="LCE10" target="SNOMED_CT:180056004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: posterior pelvic exenteration in female; SNOMED CT 180056004 2100123076
+        matches precisely. Female sex is inherent to the procedure.
+        """
+}
+mapping "LCE20.1" source="LCE20" target="SNOMED_CT:72261007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Total pelvic exenteration in women; related exenteration procedure"
+}
+mapping "LCE96.1" source="LCE96" target="SNOMED_CT:72261007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA other pelvic exenteration female; SNOMED CT rectal exenteration is related"
+}
+mapping "LCF10.1" source="LCF10" target="SNOMED_CT:36439007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: the KVAA specifies female patient but the surgical procedure (varicocele excision)
+        is the same. Varicocele in females is rare but the technique is
+        """
+}
+mapping "LCG10.1" source="LCG10" target="SNOMED_CT:49522006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of uterus = suture of uterus; exact clinical equivalent"
+}
+mapping "LCG97.1" source="LCG97" target="SNOMED_CT:238192002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: laparoscopic uterine reconstruction; no close SNOMED CT match"
+}
+mapping "LCG98.1" source="LCG98" target="SNOMED_CT:238192002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: transluminal endoscopic uterine reconstruction; no close SNOMED CT match"
+}
+mapping "LCH00.1" source="LCH00" target="SNOMED_CT:8095007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vacuum aspiration for primary surgical abortion; aspiration curettage is close equivalent."
+}
+mapping "LCH03.1" source="LCH03" target="SNOMED_CT:302375005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Curettage at primary surgical abortion maps to SNOMED CT 4119975 SNOMED CT 2100123098 302375005"
+}
+mapping "LCH13.1" source="LCH13" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: vacuum aspiration/curettage for incomplete abortion. SNOMED CT lacks this specific concept
+        """
+}
+mapping "LCW96.1" source="LCW96" target="SNOMED_CT:763781000000102" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other operation on uterus or its supporting apparatus; SNOMED CT plastic operation on uterus is
+        parent
+        """
+}
+mapping "LCW98.1" source="LCW98" target="SNOMED_CT:236942006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA other hysteroscopic uterine procedure; SNOMED CT microhysteroscopy related"
+}
+mapping "LDA00.1" source="LDA00" target="SNOMED_CT:236963008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LDA20.1" source="LDA20" target="SNOMED_CT:274366001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of portio (ectocervix) maps exactly to surgical biopsy of uterine cervix"
+}
+mapping "LDA96.1" source="LDA96" target="SNOMED_CT:10977006" relationship=partial_overlap preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other biopsy of portio/cervix; SNOMED CT endocervical biopsy is closest standard match"
+}
+mapping "LDB00.1" source="LDB00" target="SNOMED_CT:36384005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of lesion of portio or cervix uteri is exactly SNOMED CT 2100123110 36384005; portio is
+        the vaginal part of the cervix
+        """
+}
+mapping "LDB10.1" source="LDB10" target="SNOMED_CT:78203001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kryoterapi av portio eller cervix uteri = cryotherapy of portio/cervix; exact match to SNOMED CT
+        78203001, verified in Athena; portio is Swedish clinical synonym f
+        """
+}
+mapping "LDB20.1" source="LDB20" target="SNOMED_CT:68999001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        No direct SNOMED CT match for cervix electrocoagulation/laser evaporation; retinal
+        electrocoagulation is wrong domain
+        """
+}
+mapping "LDC00.1" source="LDC00" target="SNOMED_CT:392018007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Konisation med kniv = cold knife conization; exact match to SNOMED CT 392018007, verified in Athena
+        """
+}
+mapping "LDC03.1" source="LDC03" target="SNOMED_CT:176776004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Konisation med diatermi eller laser = cone biopsy of cervix; SNOMED CT has exact match for laser
+        cone biopsy of cervix uteri (cold knife variant exists separately
+        """
+}
+mapping "LDC10.1" source="LDC10" target="SNOMED_CT:647000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ cervical resection; SNOMED CT electroconization is a specific method variant"
+}
+mapping "LDD20.1" source="LDD20" target="SNOMED_CT:149899004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LEB00.1" source="LEB00" target="SNOMED_CT:12125008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: SNOMED CT 12125008 2100123123 = Vaginal biopsy."
+}
+mapping "LEB30.1" source="LEB30" target="SNOMED_CT:19613007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 19613007 2100123126 = destruction of mucosal lesion in vagina; exact match to SNOMED CT
+        concept
+        """
+}
+mapping "LEE00.1" source="LEE00" target="SNOMED_CT:265628003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LEE20.1" source="LEE20" target="SNOMED_CT:2971000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vaginal closure of urovaginal fistula with graft or flap -- SNOMED CT concept does not specify
+        approach/technique but represents the same procedure. Verified SNOME
+        """
+}
+mapping "LEE40.1" source="LEE40" target="SNOMED_CT:25676003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Construction of vagina for gender affirmation surgery = Construction of artificial vagina
+        (SNOMED CT 25676003)
+        """
+}
+mapping "LEF13.1" source="LEF13" target="SNOMED_CT:116140006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA custom target; weak: SNOMED CT has no combined prolapsoplasty+hysterectomy concept; total
+        hysterectomy captures the hysterectomy component only.
+        """
+}
+mapping "LEF20.1" source="LEF20" target="SNOMED_CT:236850003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "LEF23.1" source="LEF23" target="SNOMED_CT:236850003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LEF50.1" source="LEF50" target="SNOMED_CT:1051681000000104" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vaginal vault prolapse surgery; SNOMED CT has removal of prosthetic material for vault prolapse"
+}
+mapping "LEF51.1" source="LEF51" target="SNOMED_CT:450824002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: SNOMED CT 2100123145 450824002 = laparoscopic operation for vaginal vault prolapse.
+        Sacrocolpopexy is the standard laparoscopic
+        """
+}
+mapping "LEF53.1" source="LEF53" target="SNOMED_CT:236859002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ LEF53 is a broad category covering any vaginal approach to vaginal vault prolapse; SNOMED CT
+        captures sacrospinous fixation which is one specific vaginal technique — loose child
+        """
+}
+mapping "LEF96.1" source="LEF96" target="SNOMED_CT:265411006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA other prolapse operation; SNOMED CT rectal prolapse surgery is closest"
+}
+mapping "LEG13.1" source="LEG13" target="SNOMED_CT:378421000000106" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vaginal transobturator urethropexy corresponds closely to SNOMED CT female transobturator tape
+        insertion
+        """
+}
+mapping "LEG20.1" source="LEG20" target="SNOMED_CT:762625001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Pelvic floor repair in woman with full levator division; pelvic floor repair is parent"
+}

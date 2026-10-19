@@ -1,0 +1,231 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NBU-NCG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NBU19.1" source="NBU19" target="SNOMED_CT_SE_EXT:70031000052103" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "SV synonym SNOMED CT 438859009 70031000052103 matches; SNOMED CT"
+}
+mapping "NBU19.2" source="NBU19" target="SNOMED_CT:438859009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NBU39.1" source="NBU39" target="SNOMED_CT:175140001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: removal of external fixation shoulder/upper arm; no close SNOMED CT match"
+}
+mapping "NBU49.1" source="NBU49" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Site-specific shoulder/upper arm hardware removal; parent IF revision"
+}
+mapping "NBU99.1" source="NBU99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBU99 SNOMED CT 179458009 = Extraction of other implant from shoulder or upper arm (KVÅ
+        residual). Target. No SNOMED CT concept for implant removal from shoulder exists. Target broadly
+        subsumes the source. Weak tier: target loses the implant-removal indication.
+        """
+}
+mapping "NBW49.1" source="NBW49" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sårruptur i axel eller överarm (suture of wound rupture in shoulder/upper arm) maps to
+        """
+}
+mapping "NBW79.1" source="NBW79" target="SNOMED_CT:274508002" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Approximate: reoperation for superficial bleeding in shoulder/upper arm; SNOMED CT
+        2100123572 274508002 is generic (any site). The KVÅ adds anatomica
+        """
+}
+mapping "NBW99.1" source="NBW99" target="SNOMED_CT:179458009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NBW99 SNOMED CT 179458009 = Other reoperation in shoulder or upper arm (KVÅ residual).
+        Target. No SNOMED CT concept for shoulder reoperation exists. Target broadly subsumes the source.
+        Weak tier: target loses the reoperation indication.
+        """
+}
+mapping "NCA20.1" source="NCA20" target="SNOMED_CT:430103002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: biopsy of soft tissue or joint in elbow/forearm, percutaneous/closed. SNOMED CT FNA biopsy of
+        soft tissue is broader (doesn't specify location, and is FNA specifically not core needle
+        biopsy). Reasonable loose match for percutaneous soft tissue biopsy.
+        """
+}
+mapping "NCA30.1" source="NCA30" target="SNOMED_CT:62225001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100123583 62225001; (4269620) covers biopsy at the e"
+}
+mapping "NCB03.1" source="NCB03" target="SNOMED_CT:280469005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Radial head partial prosthesis elbow; broader elbow arthroplasty"
+}
+mapping "NCB13.1" source="NCB13" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: cemented partial radial head prosthesis. No SNOMED CT equivalent"
+}
+mapping "NCB19.1" source="NCB19" target="SNOMED_CT:37030005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary half/partial elbow prosthesis with cement; no elbow replacement in SNOMED CT; orthotic
+        fitting is distant
+        """
+}
+flag "NCB23.unmapped" kind=unmapped concept="NCB23" target-system="SNOMED_CT"
+flag "NCB25.unmapped" kind=unmapped concept="NCB25" target-system="SNOMED_CT"
+flag "NCB33.unmapped" kind=unmapped concept="NCB33" target-system="SNOMED_CT"
+flag "NCB35.unmapped" kind=unmapped concept="NCB35" target-system="SNOMED_CT"
+flag "NCB43.unmapped" kind=unmapped concept="NCB43" target-system="SNOMED_CT"
+flag "NCB45.unmapped" kind=unmapped concept="NCB45" target-system="SNOMED_CT"
+mapping "NCB99.1" source="NCB99" target="SNOMED_CT:87366001" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCB99 SNOMED CT 87366001 = Other primary joint prosthesis operation in elbow joint (KVÅ
+        residual). Target. Source covers all primary elbow prostheses; target covers total elbow
+        replacement. Broader. Low tier: target is one specific type, not the broad parent.
+        """
+}
+mapping "NCC03.1" source="NCC03" target="SNOMED_CT:37030005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary partial prosthesis caput radii in elbow without cement; no elbow prosthesis SNOMED CT;
+        orthotic fitting is distant
+        """
+}
+mapping "NCC09.1" source="NCC09" target="SNOMED_CT:280469005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Secondary partial elbow prosthesis maps to revision of elbow arthroplasty"
+}
+mapping "NCC13.1" source="NCC13" target="SNOMED_CT:280469005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Secondary radial head prosthesis maps to revision of elbow arthroplasty"
+}
+flag "NCC23.unmapped" kind=unmapped concept="NCC23" target-system="SNOMED_CT"
+flag "NCC25.unmapped" kind=unmapped concept="NCC25" target-system="SNOMED_CT"
+mapping "NCC33.1" source="NCC33" target="SNOMED_CT:179951007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary total prosthesis ulna+radial head in elbow with hybrid technique; conversion to total
+        elbow replacement is related
+        """
+}
+flag "NCC35.unmapped" kind=unmapped concept="NCC35" target-system="SNOMED_CT"
+mapping "NCC43.1" source="NCC43" target="SNOMED_CT:179952000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary total prosthesis of ulna and radial head in elbow joint with cement maps exactly to
+        revision of cemented total prosthetic replacement of elbow joint
+        """
+}
+flag "NCC45.unmapped" kind=unmapped concept="NCC45" target-system="SNOMED_CT"
+mapping "NCC49.1" source="NCC49" target="SNOMED_CT:609175005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary total prosthesis in elbow joint with cement = revision of total prosthetic replacement
+        of elbow joint. Verified SNOMED CT S.
+        """
+}
+mapping "NCC99.1" source="NCC99" target="SNOMED_CT:280469005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCC99 SNOMED CT 280469005 = KVÅ residual. Target (Athena-local). Target subsumes the
+        residual source. Broader; confidence low (residual source).
+        """
+}
+mapping "NCE21.1" source="NCE21" target="SNOMED_CT:37422000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture/replantation of elbow ligament arthroscopic; SNOMED CT ligament reconstruction is distant
+        parent
+        """
+}
+mapping "NCE29.1" source="NCE29" target="SNOMED_CT:447677003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur eller replantation av ligament i armbågsled = suture or replantation of ligament in elbow
+        joint. SNOMED CT 2100123624 447677003 covers the suture compone
+        """
+}
+mapping "NCE42.1" source="NCE42" target="SNOMED_CT:1332407006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligament reconstruction in elbow open without foreign material; repair of ligament is
+        reasonable.
+        """
+}
+mapping "NCE49.1" source="NCE49" target="SNOMED_CT:438835004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction of ligament in elbow without foreign material (unspecified) = Reconstruction of
+        lateral collateral ligament of elbow using tendon graft (closest
+        """
+}
+mapping "NCE52.1" source="NCE52" target="SNOMED_CT:438835004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction of elbow ligament with foreign material (open) maps exactly to Reconstruction of
+        lateral collateral ligament of elbow using tendon graft; foreign
+        """
+}
+mapping "NCE59.1" source="NCE59" target="SNOMED_CT:37422000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ligament reconstruction with foreign material; SNOMED CT has ACL reconstruction"
+}
+mapping "NCE99.1" source="NCE99" target="SNOMED_CT:45009000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NCE99 SNOMED CT 45009000 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual source, capsule/ligament axis uncovered).
+        """
+}
+mapping "NCF02.1" source="NCF02" target="SNOMED_CT:122508002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "NCF12.1" source="NCF12" target="SNOMED_CT:122508002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "NCF21.1" source="NCF21" target="SNOMED_CT:239294001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Fixation of articular fragment in elbow - arthroscopic/endoscopic; fracture fixation is parent
+        """
+}
+mapping "NCF31.1" source="NCF31" target="SNOMED_CT:450568008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ partial excision of articular cartilage in elbow arthroscopically; SNOMED CT concept is generic
+        not elbow-specific, but the core procedure (endoscopic articula
+        """
+}
+mapping "NCF32.1" source="NCF32" target="SNOMED_CT:83911005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partiell excision av ledbrosk i armbågsled - öppen = partial excision of articular cartilage in
+        elbow joint - open. SNOMED CT 2100123645 83911005 is the c
+        """
+}
+mapping "NCF90.1" source="NCF90" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other closed procedure on elbow joint synovium; no close SNOMED CT match"
+}
+mapping "NCF92.1" source="NCF92" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open procedure on elbow joint synovium/surface; no close SNOMED CT match"
+}
+mapping "NCG49.1" source="NCG49" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NCG59.1" source="NCG59" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

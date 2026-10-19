@@ -1,0 +1,306 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NDC-NDH
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NDC29.1" source="NDC29" target="SNOMED_CT:1259024003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary total prosthesis in wrist without cement = revision of total prosthetic replacement of
+        wrist joint. Exact match. Verified SNOMED CT S.
+        """
+}
+mapping "NDC59.1" source="NDC59" target="SNOMED_CT:239491006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sekunderar ledprotes i metakarpofalangealled = secondary joint prosthesis in metacarpophalangeal
+        joint; 'Prosthetic arthroplasty of metacarpophalangeal joint of
+        """
+}
+mapping "NDC89.1" source="NDC89" target="SNOMED_CT:13371003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NDC89 sekunder ledprotes fingerled; weak to finger prosthesis implantation"
+}
+mapping "NDC99.1" source="NDC99" target="SNOMED_CT:112746006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NDC99 SNOMED CT 112746006 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NDE00.1" source="NDE00" target="SNOMED_CT:42960008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision or suture of joint capsule in hand/finger joint, percutaneous or closed; the suture
+        component maps to SNOMED CT Suture of joint capsule, though the KVAA a
+        """
+}
+mapping "NDE02.1" source="NDE02" target="SNOMED_CT:42960008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision or suture of joint capsule in hand/finger joint -- the suture component maps exactly to
+        SNOMED CT Suture of joint capsule
+        """
+}
+mapping "NDE11.1" source="NDE11" target="SNOMED_CT:1332407006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transcision/excision of ligament in hand joints arthroscopic; ligament repair is a loose match.
+        """
+}
+mapping "NDE12.1" source="NDE12" target="SNOMED_CT:433016000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transcision or excision of ligament in hand joints -- open. SNOMED CT 2100123790 433016000 is
+        broader (no hand/elbow qualifier). The hand joint specification is not cap
+        """
+}
+mapping "NDE22.1" source="NDE22" target="SNOMED_CT:1332407006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture or reinsertion of ligament in hand joints open; ligament repair is reasonable match."
+}
+mapping "NDE51.1" source="NDE51" target="SNOMED_CT:37422000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligament reconstruction with foreign material hand; broader ligament reconstruction is closest
+        """
+}
+mapping "NDF02.1" source="NDF02" target="SNOMED_CT:179709006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total synovectomy of hand/finger joint open. SNOMED CT 179709006 is broader (any joint) but
+        captures the procedure essence.
+        """
+}
+mapping "NDF11.1" source="NDF11" target="SNOMED_CT:265204005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Partial synovectomy of hand/finger joint arthroscopic; SNOMED CT partial synovectomy is parent"
+}
+mapping "NDF12.1" source="NDF12" target="SNOMED_CT:46896006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partiell synovektomi i hand- eller fingerled oopen = partial synovectomy of hand/finger joint
+        open; synovectomy of hand joint is closest equivalent, though KVAA
+        """
+}
+mapping "NDF20.1" source="NDF20" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: percutaneous/closed fixation of joint surface fragment in hand/finger. No SNOMED CT match"
+}
+mapping "NDF21.1" source="NDF21" target="SNOMED_CT:133863002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Arthroscopic fixation of hand/finger articular fragment; weak to ORIF parent"
+}
+mapping "NDF31.1" source="NDF31" target="SNOMED_CT:450568008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100123809 450568008 = partial excision of articular cartilage in hand/finger joint,
+        ar
+        """
+}
+mapping "NDF32.1" source="NDF32" target="SNOMED_CT:179723008" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of articular cartilage in hand/finger joint - open; SNOMED CT has open excision of
+        articular cartilage of joint which is the closest match. The 'p
+        """ suspect=quoted-text
+}
+mapping "NDG00.1" source="NDG00" target="SNOMED_CT:301762005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision arthroplasty in hand or finger joint, radiocarpal joint -- maps exactly to excision
+        arthroplasty of joint of hand
+        """
+}
+mapping "NDG01.1" source="NDG01" target="SNOMED_CT:301762005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Excisionsartroplastik i hand- eller fingerled - interkarpalled = excision arthroplasty in
+        hand/finger joint - intercarpal joint. Best match: Excision arthr
+        """
+}
+mapping "NDG02.1" source="NDG02" target="SNOMED_CT:239480004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision arthroplasty in hand or finger joint - first carpometacarpal joint = excision
+        arthroplasty of carpometacarpal joint of thumb, exact clinical equivalent
+        """
+}
+mapping "NDG07.1" source="NDG07" target="SNOMED_CT:301762005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100123821 301762005 = excision arthroplasty of another joint in hand; 'Excision
+        arthroplasty of joint of han
+        """ suspect=quoted-text
+}
+mapping "NDG09.1" source="NDG09" target="SNOMED_CT:301762005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ excision arthroplasty of unspecified joint in hand; SNOMED CT 2100123822 301762005 is
+        also generic for hand joints; good match
+        """
+}
+mapping "NDG12.1" source="NDG12" target="SNOMED_CT:239481000" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA NDG12 = interposition arthroplasty of first CMC joint. First CMC = thumb CMC. SNOMED CT
+        239481000 specifies exactly this joint. Exact match.
+        """
+}
+mapping "NDG13.1" source="NDG13" target="SNOMED_CT:59677003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interpositionsartroplastik i hand- eller fingerled -- annan karpometakarpalled (interposition
+        arthroplasty in hand/finger joint -- other CMC joint). Maps to 'In
+        """
+}
+mapping "NDG21.1" source="NDG21" target="SNOMED_CT:72848004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other arthroplasty of hand/finger joint without prosthesis - intercarpal joint. SNOMED CT 72848004
+        exactly matches interposition arthroplasty of intercarpal joints
+        """
+}
+mapping "NDG22.1" source="NDG22" target="SNOMED_CT:239478005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other CMC arthroplasty without prosthesis; SNOMED CT has CMC arthroplasty concepts"
+}
+mapping "NDG26.1" source="NDG26" target="SNOMED_CT:239496001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are interphalangeal arthroplasties without prosthesis; close match"
+}
+mapping "NDG42.1" source="NDG42" target="SNOMED_CT:63644006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100123843 63644006 in Swedish anatomy = thumb carpometacarpal joint. The
+        KVAA specifies hand/finger joint with internal fixation of the first CMC, w
+        """
+}
+mapping "NDG44.1" source="NDG44" target="SNOMED_CT:11883000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of hand/finger joint with internal fixation -- first MCP joint maps exactly to
+        arthrodesis of MCP joint with internal fixation
+        """
+}
+mapping "NDG45.1" source="NDG45" target="SNOMED_CT:11883000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of hand/finger joint with internal fixation -- other MCP joint maps exactly to
+        arthrodesis of metacarpophalangeal joint with internal fixation (same
+        """
+}
+mapping "NDG46.1" source="NDG46" target="SNOMED_CT:56331004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Artrodes av interfalangealled med intern fixation = Arthrodesis of interphalangeal joint of
+        finger with internal fixation; exact clinical and anatomical match
+        """
+}
+mapping "NDG47.1" source="NDG47" target="SNOMED_CT:56331004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Artrodes av hand- eller fingerled med intern fixation = arthrodesis of hand or finger joint with
+        internal fixation. SNOMED CT has 'Arthrodesis of interphalangeal j
+        """ suspect=quoted-text
+}
+mapping "NDG49.1" source="NDG49" target="SNOMED_CT:56331004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA describes arthrodesis of unspecified hand/finger joint with internal fixation; SNOMED CT
+        concept for IP finger joint arthrodesis with internal fixation is the
+        """
+}
+mapping "NDG50.1" source="NDG50" target="SNOMED_CT:359895004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of hand or finger joint with external fixation - radiocarpal joint; SNOMED CT
+        2100123850 359895004 is the exact clinical equivalent for radiocarpal joint arth
+        """
+}
+mapping "NDG53.1" source="NDG53" target="SNOMED_CT:1306928007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Artrodes av hand- eller fingerled med extern fixation - annan karpometakarpalled = arthrodesis
+        of hand or finger joint with external fixation, other carpometaca
+        """
+}
+mapping "NDH00.1" source="NDH00" target="SNOMED_CT:179173001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition av handled = closed reduction of wrist. The SNOMED CT concept matches closed reduction
+        of fracture of wrist. The KVAA code says SNOMED CT 179173001 2100123868
+        """
+}
+mapping "NDH01.1" source="NDH01" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Reduction of wrist arthroscopic; arthrotomy is a very loose proxy."
+}
+mapping "NDH02.1" source="NDH02" target="SNOMED_CT:45885009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open reposition of wrist -- open maps exactly to open reduction of dislocation of wrist"
+}
+mapping "NDH10.1" source="NDH10" target="SNOMED_CT:179168007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Closed reduction of finger joint (percutaneous or closed) maps exactly to SNOMED CT 4079111 SNOMED CT
+        179168007 2100123871
+        """
+}
+mapping "NDH11.1" source="NDH11" target="SNOMED_CT:274451000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthroscopic/endoscopic finger joint reposition; weak to finger reduction (similar intent
+        different approach)
+        """
+}
+mapping "NDH30.1" source="NDH30" target="SNOMED_CT:29211002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ adhesion release in hand/finger joint percutaneous/closed; SNOMED CT 2100123877 29211002
+        captures the core procedure; approach difference is minor; in
+        """
+}
+mapping "NDH31.1" source="NDH31" target="SNOMED_CT:29211002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100123878 29211002 = adhesiolysis of hand/finger joint, arthroscopic/endoscopic;
+        exact clinical mat
+        """
+}
+mapping "NDH32.1" source="NDH32" target="SNOMED_CT:29211002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Adherenslösning i hand- eller fingerled = lysis of adhesions in hand or finger joint; exact
+        match to SNOMED CT 29211002, verified in Athena
+        """
+}
+mapping "NDH40.1" source="NDH40" target="SNOMED_CT:301038009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of foreign body from hand/finger joint. Arthroscopic removal from joint is close
+        match.
+        """
+}
+mapping "NDH51.1" source="NDH51" target="SNOMED_CT:179718008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are intra-articular osteophyte excisions; KVÅ specifies arthroscopic, SNOMED CT is open
+        approach
+        """
+}
+mapping "NDH72.1" source="NDH72" target="SNOMED_CT:53105001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100123886 53105001 = open operation for recurrent dislocation of hand or finger joint;
+        exact match to SNOME
+        """
+}

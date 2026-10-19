@@ -1,0 +1,267 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes ADB-CBB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ADB00.1" source="ADB00" target="SNOMED_CT:171666009" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vagus nerve is cranial nerve X; SNOMED CT concept is cranial-nerve-general — loose parent"
+}
+mapping "AEA00.1" source="AEA00" target="SNOMED_CT:1287098008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replacement of pulse generator in nervous system stimulation equipment. SNOMED CT 1287098008
+        2100120287 is the closest equivalent. The KVAA s
+        """
+}
+mapping "AEA20.1" source="AEA20" target="SNOMED_CT:73109006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Avlägsnande av impulsgenerator i stimuleringsutrustning i nervsystemet = removal of pulse
+        generator in stimulation equipment in nervous system. 'Removal of neur
+        """
+}
+mapping "AEA23.1" source="AEA23" target="SNOMED_CT:171496007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers any intracranial electrode; SNOMED CT narrower (neurostimulator only, brain tissue
+        specific)
+        """
+}
+mapping "AEA24.1" source="AEA24" target="SNOMED_CT:41208005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; reposition = adjustment"
+}
+mapping "AEA25.1" source="AEA25" target="SNOMED_CT:233188006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "AEA27.1" source="AEA27" target="SNOMED_CT:17286005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replacement of spinal stimulation electrode = revision of spinal neurostimulator electrodes;
+        SNOMED CT revision encompasses replacement in this context
+        """
+}
+mapping "AEA40.1" source="AEA40" target="SNOMED_CT:711303002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Removal of implanted nervous system pump maps closely to removal of implanted intrathecal pump
+        """
+}
+mapping "AEA43.1" source="AEA43" target="SNOMED_CT:80925005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ intracranial injection equipment = Ommaya/Rickham reservoir systems"
+}
+mapping "AEA44.1" source="AEA44" target="SNOMED_CT:1240451005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Direct match; removal of catheter from spinal injection equipment = removal of intrathecal
+        catheter
+        """
+}
+mapping "AWA00.1" source="AWA00" target="SNOMED_CT:29629000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AWD00.1" source="AWD00" target="SNOMED_CT:178376007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers entire nervous system (brain+spine) and superficial bleeding; SNOMED CT is
+        cranium-specific with general postop bleeding
+        """
+}
+mapping "AWE00.1" source="AWE00" target="SNOMED_CT:621531000000109" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ surgical procedures specifies nervous system; SNOMED CT NOC concept is organ-agnostic — loose parent"
+}
+mapping "BAA00.1" source="BAA00" target="SNOMED_CT:14864008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "BAA25.1" source="BAA25" target="SNOMED_CT:1354748002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "BAA60.1" source="BAA60" target="SNOMED_CT:13619001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "BAA99.1" source="BAA99" target="SNOMED_CT:148788003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source BAA99 SNOMED CT 148788003 = Other operation on thyroid gland (KVÅ residual). Target. Both
+        denote residual/unspecified thyroid operations at the same level. Exact match at low tier: no
+        crosswalk, but NOS semantics align directly.
+        """
+}
+mapping "BBA30.1" source="BBA30" target="SNOMED_CT:53304009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ exstirpation av bisköldkörtel = parathyroidectomy"
+}
+mapping "BBA50.1" source="BBA50" target="SNOMED_CT:12330002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "BBA99.1" source="BBA99" target="SNOMED_CT:148794006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source BBA99 SNOMED CT 148794006 = Other operation on parathyroid gland (KVÅ residual). Target.
+        Both denote residual/unspecified parathyroid operations at the same level. Exact match at low
+        tier: no crosswalk, but NOS semantics align directly.
+        """
+}
+mapping "BCA10.1" source="BCA10" target="SNOMED_CT:274371008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsi av binjure = biopsy of adrenal gland; exact clinical match."
+}
+mapping "BCA99.1" source="BCA99" target="SNOMED_CT:148802005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source BCA99 SNOMED CT 148802005 = Other operation on adrenal gland (KVÅ residual). Target. Both
+        denote residual/unspecified adrenal operations at the same level. Exact match at low tier: no
+        crosswalk, but NOS semantics align directly.
+        """
+}
+mapping "BWA00.1" source="BWA00" target="SNOMED_CT:29629000" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is reoperation for wound dehiscence specifically after endocrine organ procedures; SNOMED CT is
+        site-general resuture of wound dehiscence — loose parent
+        """
+}
+mapping "BWB00.1" source="BWB00" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ reoperation for superficial infection after endocrine procedure; SNOMED CT is general
+        debridement without endocrine-site or reoperation context
+        """
+}
+mapping "BWC00.1" source="BWC00" target="SNOMED_CT:473218004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader parent; SNOMED CT lacks endocrine site specificity; KKÅ is a reoperation code for deep
+        post-surgical infection
+        """
+}
+mapping "BWD00.1" source="BWD00" target="SNOMED_CT:621531000000109" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ reoperation for superficial bleeding after endocrine organ procedure; SNOMED CT NOC catch-all
+        used — no endocrine-specific reoperation concept exists
+        """
+}
+mapping "BWE00.1" source="BWE00" target="SNOMED_CT:274508002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for deep bleeding after endocrine procedure = postoperative hemorrhage control.
+        Slightly broader anatomically but conceptually exact. Verified SNOME
+        """
+}
+mapping "CAA00.1" source="CAA00" target="SNOMED_CT:708608001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: puncture of orbital abscess maps loosely to soft tissue FNA biopsy"
+}
+mapping "CAA10.1" source="CAA10" target="SNOMED_CT:231552001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CAA30.1" source="CAA30" target="SNOMED_CT:446684002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of orbit = Biopsy of orbit proper (SNOMED CT 446684002)"
+}
+mapping "CAB10.1" source="CAB10" target="SNOMED_CT:46082001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lateral orbitotomy with excision. SNOMED CT 46082001 SNOMED CT 2100120341 46082001 captures the
+        primary approach; the excision component is implied as the purpose of the or
+        """
+}
+mapping "CAB40.1" source="CAB40" target="SNOMED_CT:178383000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation via transkraniell orbitotomi = Extirpation of lesion of cranium; the transcranial
+        orbitotomy approach is a surgical approach detail; extirpation of
+        """
+}
+mapping "CAB50.1" source="CAB50" target="SNOMED_CT:10849003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CAC00.1" source="CAC00" target="SNOMED_CT:172161000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reconstruction of orbital bony wall maps exactly to Reconstruction of orbital cavity with bone
+        graft.
+        """
+}
+mapping "CAC20.1" source="CAC20" target="SNOMED_CT:46082001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA decompressive lateral orbitotomy = SNOMED CT lateral orbitotomy; near-exact match"
+}
+mapping "CAC30.1" source="CAC30" target="SNOMED_CT:83639008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dekompressiv orbitotomi till bihålor = decompressive orbitotomy to paranasal sinuses. The SNOMED CT
+        SNOMED CT 2100120347 83639008 matches the core procedure; the approa
+        """
+}
+mapping "CAC40.1" source="CAC40" target="SNOMED_CT:412721008" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are orbital decompression procedures; different approach"
+}
+mapping "CAC42.1" source="CAC42" target="SNOMED_CT:83639008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Decompression of orbit via coronal approach maps exactly to decompression of orbit (approach is
+        a technique detail not coded in SNOMED CT)
+        """
+}
+mapping "CAE20.1" source="CAE20" target="SNOMED_CT:290015004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Revision av konjunktivalhalan med transplantat = revision of conjunctival fornix with graft.
+        Exact match to SNOMED CT Conjunctival graft procedure.
+        """
+}
+mapping "CAW99.1" source="CAW99" target="SNOMED_CT:231686003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan annan operation på orbita = other other operation on orbit. Double residual category but
+        the target anatomy (orbita/orbit) is specific. SNOMED CT Surgical pr
+        """
+}
+mapping "CBB00.1" source="CBB00" target="SNOMED_CT:238514005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120359 238514005 = excision or curettage of chalazion; SNOMED CT 238514005 is the
+        generic term covering both excisio
+        """
+}
+mapping "CBB15.1" source="CBB15" target="SNOMED_CT:118912008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broad SNOMED CT parent for eyelid procedures; no specific eyelid fat prolapse resection concept"
+}
+mapping "CBB20.1" source="CBB20" target="SNOMED_CT:1058921000000103" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "CBB30.1" source="CBB30" target="SNOMED_CT:172212009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 172212009 2100120363 = extirpation of tumör or local change in eyelid; SNOMED CT is
+        exact c
+        """
+}
+mapping "CBB32.1" source="CBB32" target="SNOMED_CT:36239005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Destruction of local lesion in eyelid maps exactly to destruction of lesion of eyelid"
+}
+mapping "CBB99.1" source="CBB99" target="SNOMED_CT:172274000" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CBB99 SNOMED CT 172274000 = Other removal of tumör or local change in eyelid (KVÅ residual).
+        Target. Source is specifically about tumör/lesion removal on the eyelid; target is the SNOMED CT
+        parent for eyelid operations. Exact match at low tier: no crosswalk, residual codes at similar
+        level.
+        """
+}

@@ -1,0 +1,253 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes LF-MBA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "LFA00.1" source="LFA00" target="SNOMED_CT:77356004" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ combines incision of vulva OR perineum; SNOMED CT covers vulva only — partial anatomical
+        coverage
+        """
+}
+mapping "LFA10.1" source="LFA10" target="SNOMED_CT:50638005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Incision av hymenrest eller hymen imperforatus = incision of hymen remnant or imperforate hymen.
+        SNOMED CT 2100123157 50638005 is the exact clinical equivalent. Verified
+        """
+}
+mapping "LFB00.1" source="LFB00" target="SNOMED_CT:118858005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy vulva/perineum; SNOMED CT has broader Procedure on vulva"
+}
+mapping "LFB10.1" source="LFB10" target="SNOMED_CT:405239003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123159 405239003 = excision of local change in vulva or perineum; SNOMED CT is exact
+        e
+        """
+}
+mapping "LFB20.1" source="LFB20" target="SNOMED_CT:84940002" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruction of vulvar/perineal lesion. SNOMED CT lacks perineum but vulvar destruction is good
+        match.
+        """
+}
+mapping "LFC00.1" source="LFC00" target="SNOMED_CT:236828004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vulva excision maps well to wide local excision of vulva"
+}
+mapping "LFC96.1" source="LFC96" target="SNOMED_CT:225148005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other resection of vulva or perineum; debridement is broader parent"
+}
+mapping "LFE10.1" source="LFE10" target="SNOMED_CT:120033001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "LFE96.1" source="LFE96" target="SNOMED_CT:120033001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "LFF10.1" source="LFF10" target="SNOMED_CT:176589007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of Bartholin's gland: exact match to SNOMED CT 176589007"
+}
+mapping "LFF96.1" source="LFF96" target="SNOMED_CT:22394005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan operation på glandula Bartholin = other operation on Bartholin's gland. SNOMED CT 2100123171
+        22394005 is the exact generic match for this residual cate
+        """
+}
+mapping "LGA00.1" source="LGA00" target="SNOMED_CT:287664005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Tubal ligation for sterilization = ligation of bilateral fallopian tubes; exact clinical
+        equivalent
+        """
+}
+mapping "LGA11.1" source="LGA11" target="SNOMED_CT:16226000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic coagulation or division of tubes for sterilization is exactly laparoscopic
+        sterilization; the method detail (coagulation/division) is inherent to t
+        """
+}
+mapping "LGA22.1" source="LGA22" target="SNOMED_CT:16226000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LGA97.1" source="LGA97" target="SNOMED_CT:16226000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LWA00.1" source="LWA00" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for wound rupture after female genital procedure; surgical repair is distant parent
+        """
+}
+mapping "LWB00.1" source="LWB00" target="SNOMED_CT:473218004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for superficial infection after gynecological procedure vs debridement for infection
+        """
+}
+mapping "LWC00.1" source="LWC00" target="SNOMED_CT:47353000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are reoperations; KVÅ specifies female genital organs deep infection"
+}
+mapping "LWC01.1" source="LWC01" target="SNOMED_CT:473218004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Highly compound KVÅ surgical procedures: percutaneous + endoscopic + reoperation + deep infection + female genital;
+        SNOMED CT captures only infection debridement — multiple components unmatched
+        """
+}
+mapping "LWD00.1" source="LWD00" target="SNOMED_CT:274508002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies reoperation for superficial bleeding on female genital organs; SNOMED CT concept is
+        broader parent covering any postop hemorrhage control
+        """
+}
+mapping "LWE00.1" source="LWE00" target="SNOMED_CT:621531000000109" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for deep bleeding after female genital procedure; broader match to re-exploration
+        for bleeding NOC
+        """
+}
+mapping "LWE01.1" source="LWE01" target="SNOMED_CT:274508002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies percutaneous endoscopic reoperation for deep bleeding after female genital
+        surgery; SNOMED CT is generic hemorrhage control
+        """
+}
+mapping "LWF00.1" source="LWF00" target="SNOMED_CT:47353000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are reoperations for anastomosis/suture failure"
+}
+mapping "LWW96.1" source="LWW96" target="SNOMED_CT:12658000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAA03.1" source="MAA03" target="SNOMED_CT:236956008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAA54.1" source="MAA54" target="SNOMED_CT:1029002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAB00.1" source="MAB00" target="SNOMED_CT:265636007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100123207 265636007 = placement of cervical cerclage during
+        pregnancy
+        """
+}
+mapping "MAB10.1" source="MAB10" target="SNOMED_CT:177122001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: external cephalic version of breech presentation. Verified SNOMED CT S."
+}
+mapping "MAB20.1" source="MAB20" target="SNOMED_CT:240278000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100123210 240278000 = external cephalic version; exact match to SNOMED CT"
+}
+mapping "MAC00.1" source="MAC00" target="SNOMED_CT:408818004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAC10.1" source="MAC10" target="SNOMED_CT:315308008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish SNOMED CT 2100123212 315308008 is an exact semantic match for. Confirmed SNOMED CT S,
+        concept_id 42025
+        """
+}
+mapping "MAC20.1" source="MAC20" target="SNOMED_CT:61586001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vacuum traction (not extraction) for delivery: the SNOMED CT (61586001) is the clinical equivalent;
+        the KVAA specifies tracti
+        """
+}
+mapping "MAC96.1" source="MAC96" target="SNOMED_CT:177129005" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Residual category; KKÅ captures other induction methods; SNOMED CT surgical induction is closest
+        available parent
+        """
+}
+mapping "MAD00.1" source="MAD00" target="SNOMED_CT:236992007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: cervicotomy during delivery. SNOMED CT has episiotomy but not cervicotomy"
+}
+mapping "MAF00.1" source="MAF00" target="SNOMED_CT:236976002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAG03.1" source="MAG03" target="SNOMED_CT:19390001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "MAG10.1" source="MAG10" target="SNOMED_CT:72492007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Breech extraction by the foot. Footling breech delivery is the closest obstetric equivalent."
+}
+mapping "MAH10.1" source="MAH10" target="SNOMED_CT:177229002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Umbilical cord repositioning during delivery; exact match to SNOMED CT Repositioning of umbilical
+        cord, verified in Athena
+        """
+}
+mapping "MAJ00.1" source="MAJ00" target="SNOMED_CT:240284002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reduktion av multipel graviditet med ett foster = reduction of multiple pregnancy by one fetus;
+        exact SNOMED CT match for multifetal pregnancy reduction.
+        """
+}
+mapping "MAJ10.1" source="MAJ10" target="SNOMED_CT:240284002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reduction of multiple pregnancy with more than one fetus; exact match to SNOMED CT 2100123237
+        240284002. Confirmed SNOMED CT S.
+        """
+}
+mapping "MBA00.1" source="MBA00" target="SNOMED_CT:248273008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Evacuation by vacuum aspiration for miscarriage or after delivery maps exactly to aspiration
+        curettage of uterus after delivery
+        """
+}
+mapping "MBA03.1" source="MBA03" target="SNOMED_CT:274972007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exeres med curettage vid missfall eller efter förlossning = evacuation by curettage after
+        miscarriage or delivery, exact match to SNOMED CT concept for D&C of reta
+        """
+}
+mapping "MBA10.1" source="MBA10" target="SNOMED_CT:49149002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100123242 49149002 = manual exploration of uterus after miscarriage or
+        delivery = Manual postpart
+        """
+}
+mapping "MBA20.1" source="MBA20" target="SNOMED_CT:177204008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Expression of placenta (manual removal after delivery) = manual removal of placenta from
+        delivered uterus; exact clinical equivalent
+        """
+}
+mapping "MBA96.1" source="MBA96" target="SNOMED_CT:28233006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Near-exact; KVÅ is residual category but refers to same procedure"
+}

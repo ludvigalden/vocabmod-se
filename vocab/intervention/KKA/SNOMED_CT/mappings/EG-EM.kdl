@@ -1,0 +1,261 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes EG-EM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "EGB00.1" source="EGB00" target="SNOMED_CT:239533009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EGB20.1" source="EGB20" target="SNOMED_CT:239533009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EGB99.1" source="EGB99" target="SNOMED_CT:150052005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EGB99 SNOMED CT 150052005 = Other resection of temporomandibular joint (KVÅ residual).
+        Target (incl. arthroplasty). Both denote TMJ operations. Exact match at low tier: no crosswalk,
+        but semantics align.
+        """
+}
+mapping "EGC99.1" source="EGC99" target="SNOMED_CT:302479003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EGC99 SNOMED CT 302479003 = Other reconstruction of temporomandibular joint (KVÅ residual).
+        Target. Both denote TMJ reconstruction. Exact match at low tier: no crosswalk, but semantics
+        align well.
+        """
+}
+mapping "EHA00.1" source="EHA00" target="SNOMED_CT:30683004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incision av gom = incision of palate; exact match to SNOMED CT 30683004, verified in Athena"
+}
+mapping "EHA10.1" source="EHA10" target="SNOMED_CT:18155007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsi av gom = biopsy of palate; exact match to 18155007"
+}
+mapping "EHB99.1" source="EHB99" target="SNOMED_CT:173398001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EHB99 SNOMED CT 173398001 = Other resection of palate (KVÅ residual). Target (other or
+        plastic). Source covers palate resections; target covers palate repair. Weak tier: target loses
+        the resection-vs-repair distinction.
+        """
+}
+mapping "EHC30.1" source="EHC30" target="SNOMED_CT:234890003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plastikoperation vid gomspalt = plastic surgery for cleft palate; matches SNOMED CT 234890003
+        repair of cleft palate, verified in Athena
+        """
+}
+mapping "EHC40.1" source="EHC40" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Plastic surgery submucous cleft palate; no close SNOMED CT match"
+}
+mapping "EHC50.1" source="EHC50" target="SNOMED_CT:251736005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EHC60.1" source="EHC60" target="SNOMED_CT:234890003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: reconstruction for combined cleft lip and palate. SNOMED CT Repair of cleft palate captures
+        the palatal component; the combined lip+palate variant is more specific than SNOMED CT's separate
+        codes.
+        """
+}
+mapping "EHC99.1" source="EHC99" target="SNOMED_CT:173398001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EHC99 SNOMED CT 173398001 = Other reconstruction of palate (KVÅ residual). Target (other or
+        plastic). Both denote palate reconstruction/repair. Broader at low tier: no crosswalk, but
+        semantics align.
+        """
+}
+mapping "EJA10.1" source="EJA10" target="SNOMED_CT:1220649006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: biopsy of tongue/floor of mouth maps loosely to partial excision of tongue"
+}
+mapping "EJA20.1" source="EJA20" target="SNOMED_CT:234929009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "EJB20.1" source="EJB20" target="SNOMED_CT:173358003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation av tungbastumoeer = extirpation of tongue tumör; excision of lesion of tongue is
+        exact match, verified as SNOMED CT standard
+        """
+}
+mapping "EJB99.1" source="EJB99" target="SNOMED_CT:149029008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EJB99 SNOMED CT 149029008 = Other resection of tongue or mouth floor (KVÅ residual). Target
+        (incl. glossectomy). Source covers resection of tongue AND mouth floor; target covers tongue
+        operations broadly. Weak tier: target loses the mouth floor scope.
+        """
+}
+mapping "EJC00.1" source="EJC00" target="SNOMED_CT:302410007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: suture of tongue or floor of mouth. No direct SNOMED CT match for oral suture"
+}
+mapping "EJC20.1" source="EJC20" target="SNOMED_CT:7001008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=tongue frenuloplasty (includes clipping); SNOMED CT 7001008=incision of lingual frenum — same
+        anatomy but incision is narrower than frenuloplasty (repair)
+        """
+}
+mapping "EJC40.1" source="EJC40" target="SNOMED_CT:112854004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "EJC99.1" source="EJC99" target="SNOMED_CT:149029008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EJC99 SNOMED CT 149029008 = Other reconstruction of tongue or mouth floor (KVÅ residual).
+        Target (incl. glossectomy). Source covers reconstruction of tongue AND mouth floor; target
+        covers tongue operations broadly. Weak tier: target loses the mouth floor scope and
+        reconstruction indication.
+        """
+}
+mapping "EKA10.1" source="EKA10" target="SNOMED_CT:284065000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsi av kind = biopsy of cheek; exact clinical match."
+}
+mapping "EKB00.1" source="EKB00" target="SNOMED_CT:234901006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120990 234901006 = extirpation of local lesion in cheek; exact match to SNOMED CT
+        concept
+        """
+}
+mapping "EKB99.1" source="EKB99" target="SNOMED_CT:173554002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EKB99 SNOMED CT 173554002 = Other resection of cheek (KVÅ residual). Target. Both denote
+        cheek operations. Exact match at low tier: no crosswalk, but semantics align.
+        """
+}
+mapping "EKC00.1" source="EKC00" target="SNOMED_CT:234920008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EKC10.1" source="EKC10" target="SNOMED_CT:234928001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EKC99.1" source="EKC99" target="SNOMED_CT:173554002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EKC99 SNOMED CT 173554002 = Other reconstructive procedure on cheek (KVÅ residual). Target.
+        Both denote cheek operations. Exact match at low tier: no crosswalk, but semantics align.
+        """
+}
+mapping "ELA10.1" source="ELA10" target="SNOMED_CT:322100002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sialodochotomy = incision of salivary duct; KKÅ note adds plastic repair component beyond simple
+        incision
+        """
+}
+mapping "ELB10.1" source="ELB10" target="SNOMED_CT:58968004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of minor salivary gland to partial excision of salivary gland parent"
+}
+mapping "ELB20.1" source="ELB20" target="SNOMED_CT:112881004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 112881004 2100121004 = extirpation of sublingual gland; exact match to SNOMED CT concept"
+}
+mapping "ELB30.1" source="ELB30" target="SNOMED_CT:47227006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100121005 47227006 = excision of submandibular gland; exact SNOMED CT match"
+}
+mapping "ELB40.1" source="ELB40" target="SNOMED_CT:13358001" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Parotid gland resection; closest SNOMED CT is complete parotidectomy"
+}
+mapping "ELB50.1" source="ELB50" target="SNOMED_CT:13358001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ELB99.1" source="ELB99" target="SNOMED_CT:173501000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ELB99 SNOMED CT 173501000 = Other resection or excision of salivary gland (KVÅ residual).
+        Target. Both denote residual operations on salivary gland. Exact match at low tier: no
+        crosswalk, but NOS semantics align.
+        """
+}
+mapping "ELC00.1" source="ELC00" target="SNOMED_CT:11995001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ELC40.1" source="ELC40" target="SNOMED_CT:119910007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ELC60.1" source="ELC60" target="SNOMED_CT:112879001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "ELC99.1" source="ELC99" target="SNOMED_CT:119910007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "ELW99.1" source="ELW99" target="SNOMED_CT:112879001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EMA.1" source="EMA" target="SNOMED_CT:287472000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tonsil incision and biopsy; SNOMED CT covers tonsil biopsy but not incision component."
+}
+mapping "EMA10.1" source="EMA10" target="SNOMED_CT:90750001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of tonsil maps exactly to biopsy of tonsil"
+}
+mapping "EMA20.1" source="EMA20" target="SNOMED_CT:119953007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EMB15.1" source="EMB15" target="SNOMED_CT:1255664006" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ intracapsular tonsil destruction; SNOMED CT 1255664006 is intracapsular partial tonsil excision
+        (closest match)
+        """
+}
+mapping "EMB30.1" source="EMB30" target="SNOMED_CT:119954001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "EMB99.1" source="EMB99" target="SNOMED_CT:173436004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EMB99 SNOMED CT 173436004 = Other resection or excision of tonsil or adenoid (KVÅ residual).
+        Target (incl. peritonsillar). Both denote residual operations on tonsil/adenoid. Exact match at
+        low tier: no crosswalk, but NOS semantics align. Adenoid scope partially uncovered.
+        """
+}
+mapping "EMC00.1" source="EMC00" target="SNOMED_CT:5243009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ sutur av tonsill eller adenoid; SNOMED CT has suture of adenoid fossa which matches the adenoid
+        component exactly
+        """
+}
+mapping "EMC99.1" source="EMC99" target="SNOMED_CT:119959006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SE-mirror sctid
+        119959006 = SNOMED CT 119959006 119960001 and sctid 119960001 =, BOTH ACTIVE in RF2 20260701
+        (valid_end 2099-12-31, invalid_reason empty, rf2). Crosswalk-confirmed via
+        sctid_to_athena_id.tdl (119959006->4002208, 119960001->4002209). Defensible active standard
+        targets exist, so the mapping carries no invalid_reason. Target definitions:
+        119959006 = surgical reconstruction of the adenoid; 119960001 = surgical reconstruction of the
+        tonsil. Why partial / : residual source (= other) + partial decomposition (no single concept
+        covers both) + the residual may also capture reconstructive techniques not identical to plain
+        (e.g. repair, flaps). 119962009 was considered as a third target but is clinically close to
+        119960001 and would over-split; left out to avoid redundancy. Confidence capped at per the
+        residual+narrower/partial rubric. | Mirror-only lookup, citation empty.
+        """
+}
+mapping "EMC99.2" source="EMC99" target="SNOMED_CT:119960001" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}

@@ -1,0 +1,203 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VGB-VGN
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VGB00.unmapped" kind=unmapped concept="VGB00" target-system="SNOMED_CT"
+flag "VGB23.unmapped" kind=unmapped concept="VGB23" target-system="SNOMED_CT"
+flag "VGB34.unmapped" kind=unmapped concept="VGB34" target-system="SNOMED_CT"
+flag "VGB45.unmapped" kind=unmapped concept="VGB45" target-system="SNOMED_CT"
+mapping "VGB99.1" source="VGB99" target="SNOMED_CT:175540008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGB99 SNOMED CT 175540008 = Suture of other visceral artery (KVÅ residual). Target. Source
+        is arterial suture; target covers open visceral branch operations broadly. Broader. Low tier: no
+        crosswalk.
+        """
+}
+flag "VGC00.unmapped" kind=unmapped concept="VGC00" target-system="SNOMED_CT"
+mapping "VGC23.1" source="VGC23" target="SNOMED_CT:52395009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: ligation of a. lienalis (splenic artery) maps to"
+}
+mapping "VGC45.1" source="VGC45" target="SNOMED_CT:175483000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: ligation of renal artery. SNOMED CT 175483000 is identical in meaning. Verified
+        standard S in Athena.
+        """
+}
+flag "VGC56.unmapped" kind=unmapped concept="VGC56" target-system="SNOMED_CT"
+mapping "VGC99.1" source="VGC99" target="SNOMED_CT:175540008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGC99 SNOMED CT 175540008 = Ligation of other visceral artery (KVÅ residual). Target. Source
+        is arterial ligation; target covers open visceral branch operations broadly. Broader. Low tier:
+        no crosswalk.
+        """
+}
+mapping "VGE00.1" source="VGE00" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are thrombectomies of reconstructed vessels; different vessel type"
+}
+flag "VGE23.unmapped" kind=unmapped concept="VGE23" target-system="SNOMED_CT"
+mapping "VGE34.1" source="VGE34" target="SNOMED_CT:450647003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi eller embolektomi i a. mesenterica superior = thrombectomy or embolectomy of
+        superior mesenteric artery. Exact match to SNOMED CT Open embolectomy of s
+        """
+}
+flag "VGE45.unmapped" kind=unmapped concept="VGE45" target-system="SNOMED_CT"
+mapping "VGE99.1" source="VGE99" target="SNOMED_CT:175750006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGE99 SNOMED CT 175750006 = Thrombectomy or embolectomy in other visceral artery (KVÅ
+        residual). Target. Source covers visceral thrombectomy/embolectomy; target covers open arterial
+        embolectomy generally. Broader. Low tier: no crosswalk, visceral specificity lost.
+        """
+}
+mapping "VGF11.1" source="VGF11" target="SNOMED_CT:233302000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VGF34.1" source="VGF34" target="SNOMED_CT:233303005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VGF99.1" source="VGF99" target="SNOMED_CT:175540008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGF99 SNOMED CT 175540008 = Endarterectomy in other visceral artery (KVÅ residual). Target.
+        Source is endarterectomy; target covers open visceral branch operations broadly. Broader. Low
+        tier: no crosswalk.
+        """
+}
+flag "VGG00.unmapped" kind=unmapped concept="VGG00" target-system="SNOMED_CT"
+flag "VGG11.unmapped" kind=unmapped concept="VGG11" target-system="SNOMED_CT"
+flag "VGG23.unmapped" kind=unmapped concept="VGG23" target-system="SNOMED_CT"
+flag "VGG34.unmapped" kind=unmapped concept="VGG34" target-system="SNOMED_CT"
+mapping "VGG45.1" source="VGG45" target="SNOMED_CT:175474005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        175474005; Swedish synonym SNOMED CT 175474005 175890004 — denotes open surgical
+        repair/reconstruction of the renal artery, matching 175474005 semantically.
+        """
+}
+mapping "VGG45.2" source="VGG45" target="SNOMED_CT:175890004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VGG99.1" source="VGG99" target="SNOMED_CT:175540008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGG99 SNOMED CT 175540008 = Open plasty/repair of other visceral artery (KVÅ residual).
+        Target. Source is open arterial repair; target covers open visceral branch operations broadly.
+        Broader. Low tier: no crosswalk.
+        """
+}
+flag "VGH39.unmapped" kind=unmapped concept="VGH39" target-system="SNOMED_CT"
+flag "VGH49.unmapped" kind=unmapped concept="VGH49" target-system="SNOMED_CT"
+mapping "VGH99.1" source="VGH99" target="SNOMED_CT:175540008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGH99 SNOMED CT 175540008 = Transposition of other visceral artery (KVÅ residual). Target.
+        Source is arterial transposition; target covers open visceral branch operations broadly.
+        Broader. Low tier: no crosswalk.
+        """
+}
+mapping "VGJ00.1" source="VGJ00" target="SNOMED_CT:76580007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass in previous visceral artery reconstruction; SNOMED CT peripheral arterial bypass is broader
+        parent
+        """
+}
+flag "VGJ11.unmapped" kind=unmapped concept="VGJ11" target-system="SNOMED_CT"
+flag "VGJ23.unmapped" kind=unmapped concept="VGJ23" target-system="SNOMED_CT"
+flag "VGJ29.unmapped" kind=unmapped concept="VGJ29" target-system="SNOMED_CT"
+mapping "VGJ34.1" source="VGJ34" target="SNOMED_CT:57365007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interposition graft superior mesenteric artery; broader aortic interposition graft"
+}
+mapping "VGJ39.1" source="VGJ39" target="SNOMED_CT:50447009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: bypass from superior mesenteric artery. SNOMED CT has aorto-mesenteric bypass"
+}
+mapping "VGJ45.1" source="VGJ45" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125891 233385001 = interposition graft in renal artery; SNOMED CT interposition
+        arterial graft captures the procedure type; specific vessel
+        """
+}
+mapping "VGJ49.1" source="VGJ49" target="SNOMED_CT:88821004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100125892 88821004 = bypass from renal artery; exact match to SNOMED CT Vascular bypass of
+        renal artery
+        """
+}
+mapping "VGJ99.1" source="VGJ99" target="SNOMED_CT:289961005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGJ99 SNOMED CT 289961005 = Interposition graft or bypass from other visceral artery (KVÅ
+        residual). Target. Source covers both bypass and interposition graft; target covers bypass
+        specifically. Broader. Low tier: no crosswalk, interposition graft scope not fully in target.
+        """
+}
+flag "VGK10.unmapped" kind=unmapped concept="VGK10" target-system="SNOMED_CT"
+flag "VGK20.unmapped" kind=unmapped concept="VGK20" target-system="SNOMED_CT"
+flag "VGK30.unmapped" kind=unmapped concept="VGK30" target-system="SNOMED_CT"
+flag "VGK40.unmapped" kind=unmapped concept="VGK40" target-system="SNOMED_CT"
+flag "VGK60.unmapped" kind=unmapped concept="VGK60" target-system="SNOMED_CT"
+flag "VGK90.unmapped" kind=unmapped concept="VGK90" target-system="SNOMED_CT"
+mapping "VGL00.1" source="VGL00" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other open operation on previous visceral artery reconstruction; vascular repair is parent"
+}
+flag "VGL11.unmapped" kind=unmapped concept="VGL11" target-system="SNOMED_CT"
+flag "VGL23.unmapped" kind=unmapped concept="VGL23" target-system="SNOMED_CT"
+flag "VGL34.unmapped" kind=unmapped concept="VGL34" target-system="SNOMED_CT"
+flag "VGL45.unmapped" kind=unmapped concept="VGL45" target-system="SNOMED_CT"
+mapping "VGL99.1" source="VGL99" target="SNOMED_CT:175540008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGL99 SNOMED CT 175540008 = Other open operation on other visceral artery (KVÅ residual).
+        Target. Both denote residual on visceral arteries. Exact match at low tier: no crosswalk, but
+        NOS semantics align.
+        """
+}
+flag "VGN00.unmapped" kind=unmapped concept="VGN00" target-system="SNOMED_CT"
+mapping "VGN11.1" source="VGN11" target="SNOMED_CT:233270005" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100125907 233270005 = PTA/SAP of celiac trunk; exact match to SNOME"
+}
+mapping "VGN23.1" source="VGN23" target="SNOMED_CT:431931004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal angioplastik (PTA) eller perkutan subintimal angioplastik (SAP) i a.
+        lienalis = PTA or SAP of splenic artery; fluoroscopy guided PTA of sp
+        """
+}
+mapping "VGN34.1" source="VGN34" target="SNOMED_CT:233272002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100125909 233272002 = PTA of superior mesenteric artery; exact match to SNOMED CT concept
+        """
+}
+flag "VGN45.unmapped" kind=unmapped concept="VGN45" target-system="SNOMED_CT"
+flag "VGN67.unmapped" kind=unmapped concept="VGN67" target-system="SNOMED_CT"
+mapping "VGN99.1" source="VGN99" target="SNOMED_CT:175541007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VGN99 SNOMED CT 175541007 = PTA or SAP in other visceral artery (KVÅ residual). Target. Both
+        denote percutaneous transluminal angioplasty on visceral arteries. Exact match at low tier: no
+        crosswalk, but semantics align.
+        """
+}

@@ -1,0 +1,183 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VLK-VM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VLK01.unmapped" kind=unmapped concept="VLK01" target-system="SNOMED_CT"
+flag "VLK91.unmapped" kind=unmapped concept="VLK91" target-system="SNOMED_CT"
+flag "VLL01.unmapped" kind=unmapped concept="VLL01" target-system="SNOMED_CT"
+flag "VLL91.unmapped" kind=unmapped concept="VLL91" target-system="SNOMED_CT"
+mapping "VLN00.1" source="VLN00" target="SNOMED_CT:419218008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: PTA/SAP in previous reconstruction from femoral/popliteal to infrapopliteal artery. SNOMED CT
+        Fluoroscopy guided angioplasty of infrapopliteal artery captures the target vessel and procedure
+        type.
+        """
+}
+flag "VLN63.unmapped" kind=unmapped concept="VLN63" target-system="SNOMED_CT"
+mapping "VLN72.1" source="VLN72" target="SNOMED_CT:312643005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA/SAP of anterior tibial artery = fluoroscopy guided PTA of anterior tibial artery with
+        contrast; PTA is the standard component; fluoroscopy/contrast is stand
+        """
+}
+mapping "VLN74.1" source="VLN74" target="SNOMED_CT:312644004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA or SAP in posterior tibial artery; exact match to SNOMED CT 2100126305 312644004. The K"
+}
+mapping "VLN75.1" source="VLN75" target="SNOMED_CT:713547001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA or SAP of fibular/peroneal artery. SNOMED CT 2100126306 713547001 is an exact match.
+        Peroneal = fibular artery.
+        """
+}
+flag "VLN86.unmapped" kind=unmapped concept="VLN86" target-system="SNOMED_CT"
+flag "VLN87.unmapped" kind=unmapped concept="VLN87" target-system="SNOMED_CT"
+mapping "VLN98.1" source="VLN98" target="SNOMED_CT:1303933004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Infrapopliteal endovascular venous arterialization; SNOMED CT combined venous arterialization of
+        lower limb is related
+        """
+}
+flag "VLP00.unmapped" kind=unmapped concept="VLP00" target-system="SNOMED_CT"
+flag "VLP87.unmapped" kind=unmapped concept="VLP87" target-system="SNOMED_CT"
+flag "VLP98.unmapped" kind=unmapped concept="VLP98" target-system="SNOMED_CT"
+mapping "VLQ00.1" source="VLQ00" target="SNOMED_CT:240938004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA endovascular stent graft femoropopliteal; SNOMED CT endovascular device broader"
+}
+flag "VLQ98.unmapped" kind=unmapped concept="VLQ98" target-system="SNOMED_CT"
+flag "VLR00.unmapped" kind=unmapped concept="VLR00" target-system="SNOMED_CT"
+flag "VLR63.unmapped" kind=unmapped concept="VLR63" target-system="SNOMED_CT"
+flag "VLR72.unmapped" kind=unmapped concept="VLR72" target-system="SNOMED_CT"
+mapping "VLR74.1" source="VLR74" target="SNOMED_CT:175071008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in posterior tibial artery; SNOMED CT has thrombolysis concepts"
+}
+mapping "VLR75.1" source="VLR75" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in fibular artery; percutaneous thrombectomy is a loose proxy."
+}
+mapping "VLR86.1" source="VLR86" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are local thrombus removal procedures; thrombolysis vs thrombectomy - different technique
+        """
+}
+flag "VLR87.unmapped" kind=unmapped concept="VLR87" target-system="SNOMED_CT"
+flag "VLS00.unmapped" kind=unmapped concept="VLS00" target-system="SNOMED_CT"
+flag "VLS63.unmapped" kind=unmapped concept="VLS63" target-system="SNOMED_CT"
+mapping "VLS72.1" source="VLS72" target="SNOMED_CT:405382004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous mechanical thrombectomy or embolectomy in anterior tibial artery: (405382004),
+        confirmed SNOME
+        """
+}
+flag "VLS74.unmapped" kind=unmapped concept="VLS74" target-system="SNOMED_CT"
+flag "VLS75.unmapped" kind=unmapped concept="VLS75" target-system="SNOMED_CT"
+mapping "VLS86.1" source="VLS86" target="SNOMED_CT:240926008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan mekanisk trombektomi eller embolektomi i a. dorsalis pedis = percutaneous mechanical
+        thrombectomy/embolectomy of dorsalis pedis artery; percutaneous em
+        """
+}
+mapping "VLS87.1" source="VLS87" target="SNOMED_CT:405381006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100126339 405381006 = percutaneous mechanical thrombectomy/embolectomy of posterior
+        tibial a
+        """
+}
+flag "VLT00.unmapped" kind=unmapped concept="VLT00" target-system="SNOMED_CT"
+mapping "VLT08.1" source="VLT08" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+flag "VLT63.unmapped" kind=unmapped concept="VLT63" target-system="SNOMED_CT"
+flag "VLT72.unmapped" kind=unmapped concept="VLT72" target-system="SNOMED_CT"
+flag "VLT74.unmapped" kind=unmapped concept="VLT74" target-system="SNOMED_CT"
+flag "VLT75.unmapped" kind=unmapped concept="VLT75" target-system="SNOMED_CT"
+flag "VLT86.unmapped" kind=unmapped concept="VLT86" target-system="SNOMED_CT"
+flag "VLT87.unmapped" kind=unmapped concept="VLT87" target-system="SNOMED_CT"
+flag "VLU01.unmapped" kind=unmapped concept="VLU01" target-system="SNOMED_CT"
+mapping "VLU63.1" source="VLU63" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: endovascular foreign body removal from tibiofibular trunk. No SNOMED CT match"
+}
+flag "VLU72.unmapped" kind=unmapped concept="VLU72" target-system="SNOMED_CT"
+flag "VLU74.unmapped" kind=unmapped concept="VLU74" target-system="SNOMED_CT"
+flag "VLU75.unmapped" kind=unmapped concept="VLU75" target-system="SNOMED_CT"
+flag "VLU86.unmapped" kind=unmapped concept="VLU86" target-system="SNOMED_CT"
+flag "VLU87.unmapped" kind=unmapped concept="VLU87" target-system="SNOMED_CT"
+flag "VLW01.unmapped" kind=unmapped concept="VLW01" target-system="SNOMED_CT"
+mapping "VLW63.1" source="VLW63" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other endovascular operation in tibiofibular trunk; vascular procedure parent"
+}
+flag "VLW72.unmapped" kind=unmapped concept="VLW72" target-system="SNOMED_CT"
+flag "VLW74.unmapped" kind=unmapped concept="VLW74" target-system="SNOMED_CT"
+flag "VLW75.unmapped" kind=unmapped concept="VLW75" target-system="SNOMED_CT"
+flag "VLW86.unmapped" kind=unmapped concept="VLW86" target-system="SNOMED_CT"
+flag "VLW87.unmapped" kind=unmapped concept="VLW87" target-system="SNOMED_CT"
+flag "VLW91.unmapped" kind=unmapped concept="VLW91" target-system="SNOMED_CT"
+flag "VMA30.unmapped" kind=unmapped concept="VMA30" target-system="SNOMED_CT"
+flag "VMA40.unmapped" kind=unmapped concept="VMA40" target-system="SNOMED_CT"
+mapping "VMB30.1" source="VMB30" target="SNOMED_CT:447648004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2100126365 447648004 = suture of neck vein; exact match to SNOMED CT concept"
+}
+flag "VMB40.unmapped" kind=unmapped concept="VMB40" target-system="SNOMED_CT"
+flag "VMC31.unmapped" kind=unmapped concept="VMC31" target-system="SNOMED_CT"
+flag "VMC41.unmapped" kind=unmapped concept="VMC41" target-system="SNOMED_CT"
+flag "VMG31.unmapped" kind=unmapped concept="VMG31" target-system="SNOMED_CT"
+flag "VMG41.unmapped" kind=unmapped concept="VMG41" target-system="SNOMED_CT"
+flag "VMJ31.unmapped" kind=unmapped concept="VMJ31" target-system="SNOMED_CT"
+flag "VMJ41.unmapped" kind=unmapped concept="VMJ41" target-system="SNOMED_CT"
+flag "VMJ42.unmapped" kind=unmapped concept="VMJ42" target-system="SNOMED_CT"
+flag "VML30.unmapped" kind=unmapped concept="VML30" target-system="SNOMED_CT"
+flag "VML40.unmapped" kind=unmapped concept="VML40" target-system="SNOMED_CT"
+mapping "VMN30.1" source="VMN30" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: PTA of neck vein. No SNOMED CT match"
+}
+flag "VMN40.unmapped" kind=unmapped concept="VMN40" target-system="SNOMED_CT"
+flag "VMR30.unmapped" kind=unmapped concept="VMR30" target-system="SNOMED_CT"
+mapping "VMR40.1" source="VMR40" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Local thrombolysis in arm vein maps to percutaneous thrombolysis; same mechanism different
+        vessel
+        """
+}
+mapping "VMT41.1" source="VMT41" target="SNOMED_CT:830040002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular insertion of occluding material or closure in arm vein. SNOMED CT 830040002 SNOMED CT
+        2100126386 830040002 covers stent-bas
+        """
+}
+flag "VMU30.unmapped" kind=unmapped concept="VMU30" target-system="SNOMED_CT"
+flag "VMU40.unmapped" kind=unmapped concept="VMU40" target-system="SNOMED_CT"
+flag "VMV31.unmapped" kind=unmapped concept="VMV31" target-system="SNOMED_CT"
+mapping "VMV32.1" source="VMV32" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Injection treatment in neck vein; vascular procedure parent"
+}
+flag "VMV41.unmapped" kind=unmapped concept="VMV41" target-system="SNOMED_CT"
+flag "VMV42.unmapped" kind=unmapped concept="VMV42" target-system="SNOMED_CT"
+flag "VMW30.unmapped" kind=unmapped concept="VMW30" target-system="SNOMED_CT"
+flag "VMW40.unmapped" kind=unmapped concept="VMW40" target-system="SNOMED_CT"

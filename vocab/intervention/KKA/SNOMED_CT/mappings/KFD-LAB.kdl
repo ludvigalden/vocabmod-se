@@ -1,0 +1,228 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes KFD-LAB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "KFD20.1" source="KFD20" target="SNOMED_CT:274038002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "High confidence: KVA hydrocele operation = SNOMED CT repair of hydrocele; exact match"
+}
+mapping "KFD63.1" source="KFD63" target="SNOMED_CT:120014006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Resektion av skrotum = scrotum excision; exact NOMESCO-to-SNOMED CT equivalent"
+}
+flag "KFD66.unmapped" kind=unmapped concept="KFD66" target-system="SNOMED_CT"
+mapping "KFD70.1" source="KFD70" target="SNOMED_CT:118872001" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Very broad parent; SNOMED CT has no excision-of-lesion-of-scrotum concept, only
+        destruction/cauterization siblings
+        """
+}
+mapping "KFD73.1" source="KFD73" target="SNOMED_CT:77682003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruction of local lesion in skin of scrotum. SNOMED CT 77682003 SNOMED CT 2100122848 77682003 is a
+        close match; the KVAA specifies skin but the SNOMED CT conc
+        """
+}
+flag "KFD80.unmapped" kind=unmapped concept="KFD80" target-system="SNOMED_CT"
+mapping "KFH00.1" source="KFH00" target="SNOMED_CT:387668007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies radical open operation (may include orchiectomy); SNOMED CT orchidopexy is the
+        conservative approach for undescended testis.
+        """
+}
+mapping "KFH01.1" source="KFH01" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: laparoscopic radical orchiopexy. No SNOMED CT equivalent"
+}
+mapping "KFH10.1" source="KFH10" target="SNOMED_CT:85419002" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Simple orchiopexy maps exactly to the general orchidopexy concept"
+}
+mapping "KFH66.1" source="KFH66" target="SNOMED_CT:72062005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av testikel eller bitestikel = suture of testis or epididymis. SNOMED CT 2100122859
+        72062005 covers testis suture. The epididymis component is a
+        """
+}
+mapping "KFH73.1" source="KFH73" target="SNOMED_CT:120024003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KFH96.1" source="KFH96" target="SNOMED_CT:120024003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Close equivalent: SNOMED CT 120024003 2100122862; SNOMED CT captures the essence, though the KVÅ"
+}
+mapping "KFW96.1" source="KFW96" target="SNOMED_CT:25041004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other scrotal surgery; no close SNOMED CT match"
+}
+mapping "KGB00.1" source="KGB00" target="SNOMED_CT:176557003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA KGB00 = biopsy of penis. SNOMED CT 176557003. Exact match."
+}
+mapping "KGD00.1" source="KGD00" target="SNOMED_CT:44511009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: resection of local change on penis maps to"
+}
+mapping "KGD10.1" source="KGD10" target="SNOMED_CT:81865002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruktion av lokal förändring på penis = destruction of local lesion on penis. Exact match to
+        SNOMED CT Destruction of lesion of penis.
+        """
+}
+mapping "KGD20.1" source="KGD20" target="SNOMED_CT:81865002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruction of local skin lesion on penis = destruction of lesion of penis; exact clinical
+        equivalent
+        """
+}
+flag "KGD30.unmapped" kind=unmapped concept="KGD30" target-system="SNOMED_CT"
+flag "KGD40.unmapped" kind=unmapped concept="KGD40" target-system="SNOMED_CT"
+mapping "KGD96.1" source="KGD96" target="SNOMED_CT:44511009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ code covers SNOMED CT 2100122874 44511009. SNOMED CT 44511009 captures the excision component. The
+        KVÅ
+        """
+}
+mapping "KGH05.1" source="KGH05" target="SNOMED_CT:112908009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KGH20.1" source="KGH20" target="SNOMED_CT:271413004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ plastic operation for Peyronie/penile deviation; SNOMED CT concept is broader (any penile
+        plastic op) but procedure type matches exactly — indication is separate in OMOP
+        """
+}
+mapping "KGH40.1" source="KGH40" target="SNOMED_CT:175803006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: surgery for priapism. SNOMED CT has bypass operation for priapism"
+}
+mapping "KGH60.1" source="KGH60" target="SNOMED_CT:1208764008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Plastic surgery for hypospadias; SNOMED CT 1208764008 2100122884 is the exact clinical equivalent
+        (hypospadias is a male condition)
+        """
+}
+mapping "KGH70.1" source="KGH70" target="SNOMED_CT:274941008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "KGH86.1" source="KGH86" target="SNOMED_CT:22055004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KGH96.1" source="KGH96" target="SNOMED_CT:32559005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: other reconstructive operation on penis maps to SNOMED CT Reconstruction of penis"
+}
+mapping "KGV00.1" source="KGV00" target="SNOMED_CT:176550001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ Reposition av förhud is procedurally identical to paraphimosis reduction; minor semantic gap
+        (KKÅ generic vs SNOMED CT diagnostic)
+        """
+}
+mapping "KGV10.1" source="KGV10" target="SNOMED_CT:176547004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Prepuceplasty is a reshaping procedure that includes adhesiolysis of the prepuce; clinically
+        related but not identical to isolated adhesion release
+        """
+}
+mapping "KGV13.1" source="KGV13" target="SNOMED_CT:15759005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "KGV20.1" source="KGV20" target="SNOMED_CT:72310004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ cirkumcision = circumcision; exact match"
+}
+mapping "KGV30.1" source="KGV30" target="SNOMED_CT:47411002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: implantation of erection prosthesis = implantation of penile prosthesis."
+}
+mapping "KGV40.1" source="KGV40" target="SNOMED_CT:236357007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Revision of erectile prosthesis; SNOMED CT revision of penile prosthesis is close match"
+}
+mapping "KKA00.1" source="KKA00" target="SNOMED_CT:43642001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122900 43642001 is the clinical equivalent of incision and exploration of
+        retroperitoneum; open surgical exploration inherently
+        """
+}
+mapping "KKA10.1" source="KKA10" target="SNOMED_CT:86328009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open biopsy of retroperitoneal lesion; good SNOMED CT match"
+}
+flag "KKA11.unmapped" kind=unmapped concept="KKA11" target-system="SNOMED_CT"
+mapping "KKA31.1" source="KKA31" target="SNOMED_CT:708614008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122904 708614008; (46270663) captures laparoscopic adhesiolysis. The KVAA specif
+        """
+}
+mapping "KKB10.1" source="KKB10" target="SNOMED_CT:8951004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of retroperitoneal lesion. SNOMED CT 2100122905 8951004 = excision. Close match"
+}
+mapping "KKB11.1" source="KKB11" target="SNOMED_CT:1017218006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both retroperitoneal but lesion excision vs nephrectomy"
+}
+mapping "KKF00.1" source="KKF00" target="SNOMED_CT:8131002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Oopen exstirpation av fraemmande kropp fraan retroperitoneala rummet = open removal of foreign
+        body from retroperitoneal space; removal of foreign body from ret
+        """
+}
+flag "KKF01.unmapped" kind=unmapped concept="KKF01" target-system="SNOMED_CT"
+mapping "LAA11.1" source="LAA11" target="SNOMED_CT:265082003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk uthamning av agg = laparoscopic egg/oocyte retrieval; SNOMED CT 2100122937 265082003
+        is the exact SNOMED CT equivalent.
+        """
+}
+mapping "LAA96.1" source="LAA96" target="SNOMED_CT:274389009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other ovary puncture. Diagnostic aspiration of ovary is closest equivalent."
+}
+mapping "LAB10.1" source="LAB10" target="SNOMED_CT:4849008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 2100122944 4849008 = biopsy of ovary; exact match to SNOMED CT concept"
+}
+mapping "LAB11.1" source="LAB11" target="SNOMED_CT:708747005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic biopsy of ovary maps exactly to laparoscopic biopsy of ovary"
+}
+mapping "LAB21.1" source="LAB21" target="SNOMED_CT:708747005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic needle biopsy of ovary. Exact match with SNOMED CT 2100122946 708747005.
+        Verified standard concept.
+        """
+}
+mapping "LAB97.1" source="LAB97" target="SNOMED_CT:708747005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan laparoskopisk incision eller biopsi av ovarium = other laparoscopic incision or biopsy of
+        ovary. SNOMED CT 2100122948 708747005 is the exact clinical equi
+        """
+}

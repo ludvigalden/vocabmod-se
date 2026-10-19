@@ -1,0 +1,274 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JFF-JHB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "JFF23.1" source="JFF23" target="SNOMED_CT:14403007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFF50.1" source="JFF50" target="SNOMED_CT:398801000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122212 398801000 = exteriorization of colon loop without primary opening; SNOMED CT
+        is exact equiva
+        """
+}
+mapping "JFG00.1" source="JFG00" target="SNOMED_CT:71309007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Slutning av loopenterostomi utan tarmresektion = closure of loop enterostomy without bowel
+        resection. SNOMED CT 2100122217 71309007 is the closest parent; the 'witho
+        """ suspect=quoted-text
+}
+mapping "JFG10.1" source="JFG10" target="SNOMED_CT:307665007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122218 307665007 = closure of loop colostomy without bowel resection; loop
+        colostomies are defunctioning by nature, and closu
+        """
+}
+mapping "JFG40.1" source="JFG40" target="SNOMED_CT:46070005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: revision of enterostomy/colostomy without laparotomy maps to. Verified SNOMED CT S.
+        """
+}
+mapping "JFG50.1" source="JFG50" target="SNOMED_CT:46070005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparotomi med revision av entero- eller kolostomi = laparotomy with revision of enterostomy or
+        colostomy. SNOMED CT 2100122227 46070005 matches the colostomy compone
+        """
+}
+mapping "JFG53.1" source="JFG53" target="SNOMED_CT:236951000000104" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: revision of ileal pelvic reservoir = revision of ileoanal pouch (IPAA). Same
+        clinical entity. Verified SNOMED CT standard concept S.
+        """
+}
+mapping "JFJ96.1" source="JFJ96" target="SNOMED_CT:404916008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other intestinal fixation to abdominal wall; only debridement available as loose match"
+}
+mapping "JFK20.1" source="JFK20" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFK96.1" source="JFK96" target="SNOMED_CT:5789003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122256 5789003 = other division of adhesions for bowel obstruction; SNOMED CT is the
+        clos
+        """
+}
+mapping "JFL00.1" source="JFL00" target="SNOMED_CT:713046002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA JFL00 = laparotomy and reduction of intussusception (desinvagination). SNOMED CT 713046002.
+        SNOMED CT 2100122258 713046002 implies la
+        """
+}
+mapping "JFL11.1" source="JFL11" target="SNOMED_CT:87594008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies laparoscopic approach and obstructed intestine; SNOMED CT is approach-unspecified and
+        indication-unspecified parent
+        """
+}
+mapping "JGA02.1" source="JGA02" target="SNOMED_CT:287785003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic foreign body removal from rectum maps well to general rectum FB removal"
+}
+mapping "JGA22.1" source="JGA22" target="SNOMED_CT:236170007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic injection treatment in rectum; ureteroscopy is distant parent"
+}
+mapping "JGA28.1" source="JGA28" target="SNOMED_CT:447977001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopisk koagulation i rektum = endoscopic coagulation in rectum. Colonoscopic APC of lesion
+        of rectum is the exact clinical equivalent.
+        """
+}
+mapping "JGA32.1" source="JGA32" target="SNOMED_CT:609196003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic laser therapy in rectum maps exactly to SNOMED CT 43531479 SNOMED CT 2100122272 609196003
+        """
+}
+mapping "JGA35.1" source="JGA35" target="SNOMED_CT:241674004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies hemostatic endoscopic rectal procedure; SNOMED CT is broader parent (operative
+        endoscopy without hemostasis specificity)
+        """
+}
+mapping "JGA48.1" source="JGA48" target="SNOMED_CT:713154003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopisk submukosal dissektion i rektum = ESD of rectum; exact match to SNOMED CT 713154003,
+        verified in Athena
+        """
+}
+mapping "JGA52.1" source="JGA52" target="SNOMED_CT:52838002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies endoscopic diathermy/heat of rectum; SNOMED CT captures destruction of rectal lesion
+        without method specificity
+        """
+}
+mapping "JGA70.1" source="JGA70" target="SNOMED_CT:22094003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Proctotomy with excision of rectal lesion; linear proctotomy is a related broader concept"
+}
+mapping "JGA76.1" source="JGA76" target="SNOMED_CT:440715006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Stapled transanal rectal resection (STARR procedure); exact SNOMED CT match."
+}
+mapping "JGA96.1" source="JGA96" target="SNOMED_CT:22094003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other proctotomy/rectal procedure; weak to linear proctotomy (related procedure type)"
+}
+mapping "JGB00.1" source="JGB00" target="SNOMED_CT:395136002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent — open rectal resection with TME"
+}
+mapping "JGB01.1" source="JGB01" target="SNOMED_CT:1258871004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is laparoscopic TME; SNOMED CT concept is transanal TME — different approach to same procedure
+        — loose match
+        """
+}
+mapping "JGB03.1" source="JGB03" target="SNOMED_CT:315328007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Loose parent; anterior resection is clinical equivalent of partial proctectomy; KKÅ specifies
+        partial mesorectal excision and concurrent stoma option not in SNOMED CT
+        """
+}
+mapping "JGB04.1" source="JGB04" target="SNOMED_CT:90527009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic resection of rectum with partial mesorectal excision. Partial mesorectal excision
+        is inherent to anterior resection (as opposed to TME). Exact clin
+        """
+}
+mapping "JGB10.1" source="JGB10" target="SNOMED_CT:16564004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection of rectum with sigmoidostomy and closure of rectal stump is precisely a Hartmann
+        operation; exact match
+        """
+}
+mapping "JGB30.1" source="JGB30" target="SNOMED_CT:265414003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JGB31.1" source="JGB31" target="SNOMED_CT:46569000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic+perineal rectal amputation maps closely to lap-assisted APR"
+}
+mapping "JGB33.1" source="JGB33" target="SNOMED_CT:265414003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Abdominoperineal rectum amputation with intersphincteric dissection. Intersphincteric dissection
+        is a technique detail; the procedure is fundamentally an abdomi
+        """
+}
+mapping "JGB34.1" source="JGB34" target="SNOMED_CT:46569000" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intersphincteric detail not in SNOMED CT; maps to lap-assisted APR"
+}
+mapping "JGB36.1" source="JGB36" target="SNOMED_CT:235364003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ extended excision with/without musculocutaneous transplant is broader than standard total
+        proctectomy; SNOMED CT is closest parent
+        """
+}
+mapping "JGB40.1" source="JGB40" target="SNOMED_CT:235364003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is completion proctectomy+ileostomy after prior colectomy; SNOMED CT captures proctectomy but
+        not staged ileostomy context; captures main component
+        """
+}
+mapping "JGB50.1" source="JGB50" target="SNOMED_CT:80294005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mucosectomy and ileoanal anastomosis = Total abdominal colectomy with rectal mucosectomy and
+        ileoanal anastomosis (SNOMED CT 80294005)
+        """
+}
+mapping "JGB60.1" source="JGB60" target="SNOMED_CT:235364003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Rectum excision maps to total proctectomy; ileoanal anastomos is variant"
+}
+mapping "JGB96.1" source="JGB96" target="SNOMED_CT:265415002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan resektion eller exstirpation av rektum (other resection or extirpation of rectum) maps to
+        SNOMED CT 2100122302 265415002. Verified: SNOMED CT S, conc
+        """
+}
+mapping "JGB97.1" source="JGB97" target="SNOMED_CT:708920006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "JGB97 laparoskopisk resektion rektum; weak to laparoscopic rectal resection"
+}
+mapping "JGC00.1" source="JGC00" target="SNOMED_CT:10259007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JGC10.1" source="JGC10" target="SNOMED_CT:10259007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JGC20.1" source="JGC20" target="SNOMED_CT:75108001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transanal suture = suture of rectum; transanal approach implies rectal suturing, exact clinical
+        equivalent
+        """
+}
+mapping "JGC30.1" source="JGC30" target="SNOMED_CT:290017007" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision och sutur av rektal mukosa = excision and suture of rectal mucosa; excision of anterior
+        mucosal prolapse of rectum is the closest match though KVAA is
+        """
+}
+mapping "JHA00.1" source="JHA00" target="SNOMED_CT:191234000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers anal canal + perianal tissue; SNOMED CT 191234000 covers perianal tissue only — partial
+        coverage of the compound site
+        """
+}
+mapping "JHA10.1" source="JHA10" target="SNOMED_CT:50623009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Biopsi av analkanalen = biopsy of anal canal. Best match: (50623009). Closest SNOMED CT
+        equivalent; biopsy of perian
+        """
+}
+mapping "JHA20.1" source="JHA20" target="SNOMED_CT:372262002" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT local excision of anus is the closest standard concept for anal/perianal lesion excision
+        """
+}
+mapping "JHB00.1" source="JHB00" target="SNOMED_CT:24496007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JHB20.1" source="JHB20" target="SNOMED_CT:8422009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish hemorrhoid injection treatment = sclerotherapy of hemorrhoids; exact SNOMED CT equivalent.
+        """
+}

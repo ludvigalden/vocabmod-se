@@ -1,0 +1,301 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes MBC-NAS
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "MBC00.1" source="MBC00" target="SNOMED_CT:1287984003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 1287984003 SNOMED CT 1287984003 302410007 is exact for suture of cervix after childbirth
+        injury
+        """
+}
+mapping "MBC00.2" source="MBC00" target="SNOMED_CT:302410007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "MBC10.1" source="MBC10" target="SNOMED_CT:112926007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: suturing of vaginal laceration during childbirth (förlossningsskada = delivery
+        injury/laceration). SNOMED CT concept 112926007 is verified standard S
+        """
+}
+mapping "MBC30.1" source="MBC30" target="SNOMED_CT:177219009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT concept covers perineal repair with sphincter (grade 3-4); KVA is grade 1-2 only but same
+        clinical domain
+        """
+}
+mapping "MBC33.1" source="MBC33" target="SNOMED_CT:177219009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perineal tear 3rd/4th degree repair. SNOMED CT includes sphincter involvement appropriate for grade
+        3-4.
+        """
+}
+mapping "MBC96.1" source="MBC96" target="SNOMED_CT:177219009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other suture or revision of birth injury; SNOMED CT concept covers perineal obstetric laceration
+        repair.
+        """
+}
+mapping "MBW96.1" source="MBW96" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other procedure after delivery or abortion; no close SNOMED CT match"
+}
+mapping "MCA96.1" source="MCA96" target="SNOMED_CT:11466000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "MCW96.1" source="MCW96" target="SNOMED_CT:40801000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are laparotomy in obstetric context"
+}
+mapping "MWA00.1" source="MWA00" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ reoperation for wound rupture maps to SNOMED CT resuture of wound dehiscence
+        """
+}
+mapping "MWB00.1" source="MWB00" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå is a reoperation-specific code for superficial wound infection (obstetric context); SNOMED CT
+        covers generic surgical wound debridement — reoperation and obstetric specificity lost
+        """
+}
+mapping "MWC00.1" source="MWC00" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: reoperation for deep infection after obstetric procedure. No specific SNOMED CT match"
+}
+mapping "MWD00.1" source="MWD00" target="SNOMED_CT:274508002" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ specifies reoperation for superficial bleeding; SNOMED CT covers postoperative hemorrhage
+        generally — loose parent
+        """
+}
+mapping "MWE00.1" source="MWE00" target="SNOMED_CT:621531000000109" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ reoperation for deep bleeding in soft tissue; SNOMED CT NOC concept omits deep/soft-tissue site
+        specificity
+        """
+}
+mapping "NAA00.1" source="NAA00" target="SNOMED_CT:9104009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av mjukdelar i rygg eller nacke - perkutan eller sluten = exploration of soft tissue
+        in back or neck - percutaneous or closed. 'Exploration of soft
+        """
+}
+mapping "NAA01.1" source="NAA01" target="SNOMED_CT:9104009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av mjukdelar i rygg eller nacke - artroskopisk eller endoskopisk = exploration of
+        soft tissue in back or neck - arthroscopic or endoscopic. Generic
+        """
+}
+mapping "NAA02.1" source="NAA02" target="SNOMED_CT:9104009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration av mjukdelar i rygg eller nacke - öppen = exploration of soft tissue in back or
+        neck, open. SNOMED CT Exploration of soft tissue is a general concept w
+        """
+}
+mapping "NAA12.1" source="NAA12" target="SNOMED_CT:178771000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration of joint in spine or neck - open. SNOMED CT 178771000 2100123283 is the closest
+        equivalent; joints of spine are encompassed in spinal exploration.
+        """
+}
+mapping "NAA30.1" source="NAA30" target="SNOMED_CT:239553008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Biopsi av kota - perkutan eller sluten = biopsy of vertebra - percutaneous or closed;
+        (239553008) is the exact generic equivalent
+        """
+}
+mapping "NAB90.1" source="NAB90" target="SNOMED_CT:178761002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Primary cervical spine arthroplasty; limited SNOMED CT match"
+}
+mapping "NAB94.1" source="NAB94" target="SNOMED_CT:78217005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Very different procedure (prosthesis vs fusion with rod); loose anatomical match"
+}
+mapping "NAB95.1" source="NAB95" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: primary disc prosthesis cervico-thoraco-lumbar spine. No SNOMED CT equivalent"
+}
+mapping "NAB96.1" source="NAB96" target="SNOMED_CT:278659001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary joint/disk prosthesis lumbosacral; weak to lumbar spinal fusion (different procedure
+        type same region)
+        """
+}
+mapping "NAC94.1" source="NAC94" target="SNOMED_CT:438790001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary joint and disc prosthesis in spine - lumbar. SNOMED CT 2100123301 438790001
+        captures the revision disc ar
+        """
+}
+mapping "NAC96.1" source="NAC96" target="SNOMED_CT:178618008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: secondary spine prosthesis; weak to lumbar discectomy (different procedure)"
+}
+mapping "NAG69.1" source="NAG69" target="SNOMED_CT:265718004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: posterior fusion without fixation. SNOMED CT has revision posterior fusion but not without
+        fixation
+        """
+}
+mapping "NAG79.1" source="NAG79" target="SNOMED_CT:447900003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Posterior spinal fusion with fixation; SNOMED CT match is thoracic-specific but same technique"
+}
+mapping "NAG89.1" source="NAG89" target="SNOMED_CT:442208009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Unilateral posterior fusion; SNOMED CT posterior fusion concepts exist but are site-specific (spine
+        only)
+        """
+}
+mapping "NAH00.1" source="NAH00" target="SNOMED_CT:179631005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closed reduction of spinal joint dislocation matches SNOMED CT 179631005 2100123314"
+}
+mapping "NAJ29.1" source="NAJ29" target="SNOMED_CT:179141007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "External fixation of vertebral arch fracture"
+}
+mapping "NAJ49.1" source="NAJ49" target="SNOMED_CT:257948005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of vertebral fracture with cerclage or strut maps to SNOMED CT 4122850 SNOMED CT
+        2100123324 257948005
+        """
+}
+mapping "NAJ79.1" source="NAJ79" target="SNOMED_CT:1259133003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 1259133003 2100123326 = osteosynthesis of vertebral fracture with screws
+        only = Fixation of fracture of spine usi
+        """
+}
+mapping "NAJ99.1" source="NAJ99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAJ99 SNOMED CT 32433005 = Other fracture surgery in spinal column (KVÅ residual). Target =
+        Procedure on spine, NOS. Source is specifically spinal fracture surgery; target broadly subsumes
+        all spinal procedures. Weak tier: target loses the fracture indication entirely.
+        """
+}
+mapping "NAK09.1" source="NAK09" target="SNOMED_CT:179041009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vertebral fragment excision; bone fragment excision is broader"
+}
+mapping "NAK29.1" source="NAK29" target="SNOMED_CT:446067007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fenestration of vertebra = Fenestration of lamina of vertebra (SNOMED CT 446067007)"
+}
+mapping "NAK99.1" source="NAK99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAK99 SNOMED CT 32433005 = Other operation on vertebra (KVÅ residual). Target = Procedure on
+        spine, NOS. Source covers vertebral operations; target covers all spinal procedures broadly.
+        Weak tier: target loses the vertebral specificity.
+        """
+}
+mapping "NAL79.1" source="NAL79" target="SNOMED_CT:240994004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of muscle or tendon in spinal column or neck; debridement is broader parent"
+}
+mapping "NAL99.1" source="NAL99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAL99 SNOMED CT 32433005 = Other operation on muscle or tendon in spinal column or neck (KVÅ
+        residual). Target = Procedure on spine, NOS. Source covers muscle/tendon operations in the
+        spine/neck; target broadly subsumes all spinal procedures. Weak tier: target loses the
+        muscle/tendon specificity.
+        """
+}
+mapping "NAM29.1" source="NAM29" target="SNOMED_CT:67820006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fascia suture in spine/nape maps to general repair of fascia by suture"
+}
+mapping "NAM99.1" source="NAM99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAM99 SNOMED CT 32433005 = Other operation on fascia or bursa in spinal column or neck (KVÅ
+        residual). Target = Procedure on spine, NOS. Source covers fascia/bursa operations; target
+        broadly subsumes all spinal procedures. Weak tier: target loses the fascia/bursa specificity.
+        """
+}
+mapping "NAN19.1" source="NAN19" target="SNOMED_CT:35713003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Homotransplantation av ben till kotpelare = bone homograft to spine; (35713003) is the exact
+        equivalent
+        """
+}
+mapping "NAN29.1" source="NAN29" target="SNOMED_CT:1332451002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Heterotransplantation of bone to spinal column; bone graft is parent"
+}
+mapping "NAN99.1" source="NAN99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAN99 SNOMED CT 32433005 = Other transplantation in spinal column (KVÅ residual). Target =
+        Procedure on spine, NOS. No SNOMED CT concept for spinal transplantation at this level. Target
+        broadly subsumes the source. Weak tier: target loses the transplantation indication entirely.
+        """
+}
+mapping "NAR99.1" source="NAR99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAR99 SNOMED CT 32433005 = Other operation for tumör in spinal column (KVÅ residual). Target
+        = Procedure on spine, NOS. No SNOMED CT concept for spinal tumör surgery at this level. Target
+        broadly subsumes the source. Weak tier: target loses the tumör indication.
+        """
+}
+mapping "NAS19.1" source="NAS19" target="SNOMED_CT:240994004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Incision and debridement for septic spondylarthritis; debridement is parent"
+}
+mapping "NAS49.1" source="NAS49" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NAS49 septisk spondylartrit debridement; spine infection procedure; weak to revision"
+}
+mapping "NAS59.1" source="NAS59" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NAS59 incision debridement kotpelare osteit; spine infection surgery; weak to revision"
+}
+mapping "NAS69.1" source="NAS69" target="SNOMED_CT:239545000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100123365 239545000 = incision and debridement of intervertebral disc; SNOMED CT
+        captures the core proce
+        """
+}
+mapping "NAS99.1" source="NAS99" target="SNOMED_CT:32433005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NAS99 SNOMED CT 32433005 = Other operation for infection in spinal column (KVÅ residual).
+        Target = Procedure on spine, NOS. No SNOMED CT concept for spinal infection surgery at this level.
+        Target broadly subsumes the source. Weak tier: target loses the infection indication.
+        """
+}

@@ -1,0 +1,281 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NHK-NHT
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NHK00.1" source="NHK00" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of bone fragment ankle/foot lateral malleolus; no good match."
+}
+mapping "NHK01.1" source="NHK01" target="SNOMED_CT:387720005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision av benfragment av fotled eller fot - mediala malleolen = excision of bone fragment of
+        ankle or foot - medial malleolus; SNOMED CT 2100124614 387720005
+        """
+}
+mapping "NHK04.1" source="NHK04" target="SNOMED_CT:179041009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: bone fragment excision; talus-specific detail lost"
+}
+mapping "NHK06.1" source="NHK06" target="SNOMED_CT:387720005" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision of bone fragment covers the procedure. Site specificity (tarsal bone) is a refinement
+        not captured by the general concept, but the procedure is the sam
+        """
+}
+mapping "NHK07.1" source="NHK07" target="SNOMED_CT:387720005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ excision of bone fragment of ankle/foot - metatarsal; SNOMED CT 2100124620 387720005 is
+        generic but captures the exact procedure type; KVÅ adds site
+        """
+}
+mapping "NHK14.1" source="NHK14" target="SNOMED_CT:38015003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial or total excision of talus bone in ankle/foot. SNOMED CT (38015003) for the partial
+        component. KVÅ also covers total excisi
+        """
+}
+mapping "NHK15.1" source="NHK15" target="SNOMED_CT:4707009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partiell eller total excision av ben i fotled eller fot - kalkaneus = partial/total excision of
+        bone in ankle/foot - calcaneus; partial excision of calcaneus is
+        """
+}
+mapping "NHK16.1" source="NHK16" target="SNOMED_CT:448101002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of part of another tarsal bone -- exact match. Verified SNOMED CT S."
+}
+mapping "NHK40.1" source="NHK40" target="SNOMED_CT:26974006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        26974006; Swedish synonym SNOMED CT 178761002 26974006 — laterala malleolen = distal fibula, so
+        NHK40 maps closely.
+        """
+}
+mapping "NHK40.2" source="NHK40" target="SNOMED_CT:178761002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHK42.1" source="NHK42" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: epiphysiodesis of both malleoli. No SNOMED CT equivalent"
+}
+mapping "NHK47.1" source="NHK47" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: epiphysiodesis of foot/metatarsal. SNOMED CT lacks this specific concept"
+}
+mapping "NHK48.1" source="NHK48" target="SNOMED_CT:178761002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Epiphysiodesis of foot/toe; SNOMED CT only has spinal epiphysiodesis"
+}
+mapping "NHK61.1" source="NHK61" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Shortening/lengthening osteotomy medial malleolus; no close SNOMED CT match"
+}
+mapping "NHK62.1" source="NHK62" target="SNOMED_CT:180150008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same region (foot/ankle osteotomy) but very different type and bones"
+}
+mapping "NHK63.1" source="NHK63" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Shortening/lengthening osteotomy foot both malleoli; no close SNOMED CT match"
+}
+mapping "NHK67.1" source="NHK67" target="SNOMED_CT:37317004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: metatarsal osteotomy; weak to wedge osteotomy of metatarsal"
+}
+mapping "NHK68.1" source="NHK68" target="SNOMED_CT:112742008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Shortening/lengthening osteotomy of ankle/foot-toe; SNOMED CT has osteotomy parents but not
+        site-specific
+        """
+}
+mapping "NHK74.1" source="NHK74" target="SNOMED_CT:178996008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: bone transport talus; weak to bone transport procedure"
+}
+mapping "NHK76.1" source="NHK76" target="SNOMED_CT:178996008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone transport operation ankle/foot other tarsal bone; reasonable match to SNOMED CT bone transport
+        """
+}
+mapping "NHK86.1" source="NHK86" target="SNOMED_CT:178761002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Epiphyseal distraction on foot/ankle; SNOMED CT has spinal epiphysiodesis"
+}
+mapping "NHK91.1" source="NHK91" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on bone ankle/foot medial malleolus; no good match."
+}
+mapping "NHK97.1" source="NHK97" target="SNOMED_CT:307384003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other operation on bone in ankle/foot, metatarsal bone; SNOMED CT Metatarsal bone operations is the
+        exact match for metatarsal bone procedures, verified in Athena
+        """
+}
+mapping "NHL39.1" source="NHL39" target="SNOMED_CT:33253004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Parent concept covering foot tenotomy; KVÅ code is broader (myotomy + tenotomy at foot/ankle).
+        """
+}
+mapping "NHL49.1" source="NHL49" target="SNOMED_CT:1287746000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture or reinsertion of tendon in ankle or foot -- SNOMED CT 1287746000 2100124707 is the closest
+        SNOMED CT equivalent; covers the tendon repair/reinsertion concept
+        """
+}
+mapping "NHL79.1" source="NHL79" target="SNOMED_CT:42581003" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ excision of tendon in ankle or foot; SNOMED CT covers foot only and requires lesion indication;
+        loose match
+        """
+}
+mapping "NHL89.1" source="NHL89" target="SNOMED_CT:1287746000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHL99.1" source="NHL99" target="SNOMED_CT:61661004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHL99 SNOMED CT 61661004 = other operation on muscle/tendon of ankle/foot (KVÅ residual).
+        Target. The target loses the muscle/tendon focus and ankle component. Broader (loose): all such
+        operations on the foot are foot operations. Confidence : weak match, muscle/tendon detail lost.
+        """
+}
+mapping "NHN29.1" source="NHN29" target="SNOMED_CT:179737004" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone heterotransplantation to ankle/foot; closest SNOMED CT allograft concept is for ligament
+        replacement
+        """
+}
+mapping "NHN39.1" source="NHN39" target="SNOMED_CT:1287746000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 1287746000 2100124724 = tendon transfer to ankle or foot; SNOMED CT is exact clinical
+        equivalent
+        """
+}
+mapping "NHN99.1" source="NHN99" target="SNOMED_CT:119697008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHN99 SNOMED CT 119697008 = other transplantation to ankle/foot (KVÅ residual). Target. The
+        target covers the foot transplantation component. Broader: foot tissue transplants are subsumed.
+        Confidence : reasonable parent, ankle component partially covered.
+        """
+}
+mapping "NHP09.1" source="NHP09" target="SNOMED_CT:2409007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHP99.1" source="NHP99" target="SNOMED_CT:150290007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHP99 SNOMED CT 150290007 = other replantation at ankle/foot (KVÅ residual). Target. The
+        target covers foot replantation. Broader: foot replantation procedures are subsumed. Confidence
+        : reasonable parent, ankle component partially covered.
+        """
+}
+mapping "NHQ09.1" source="NHQ09" target="SNOMED_CT:397218006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exarticulation in talocrural joint = Amputation of ankle (SNOMED CT 397218006); exarticulation =
+        disarticulation at the ankle joint, clinically equivalent to ankle
+        """
+}
+mapping "NHQ11.1" source="NHQ11" target="SNOMED_CT:397218006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Talocrural amputation = amputation through the ankle joint; SNOMED CT Amputation of ankle is the
+        exact equivalent, verified in Athena
+        """
+}
+mapping "NHQ14.1" source="NHQ14" target="SNOMED_CT:265739006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHQ29.1" source="NHQ29" target="SNOMED_CT:1306657008" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Revision of amputation or exarticulation stump on ankle or foot maps to; exact match"
+}
+mapping "NHQ99.1" source="NHQ99" target="SNOMED_CT:150269004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHQ99 SNOMED CT 150269004 = other amputation or related operation on ankle/foot (KVÅ
+        residual). Target. The target subsumes ankle/foot amputation as a parent. Broader: all
+        ankle/foot amputations are lower limb amputations. Confidence : reasonable parent.
+        """
+}
+mapping "NHR49.1" source="NHR49" target="SNOMED_CT:5147001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100124744 5147001 = intralesional excision of bone/cartilage tumör in ankle/foot; maps
+        to 'Excision of lesio
+        """ suspect=quoted-text
+}
+mapping "NHR99.1" source="NHR99" target="SNOMED_CT:61661004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHR99 SNOMED CT 61661004 = other operation for tumör in ankle/foot (KVÅ residual). Target.
+        The target loses the tumör indication entirely and covers only the foot. Broader (loose): tumör
+        operations on the foot are foot operations. Confidence : weak match, tumör context lost, ankle
+        uncovered.
+        """
+}
+mapping "NHS39.1" source="NHS39" target="SNOMED_CT:450671005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=incision+debridement for ankle/foot soft-tissue infection with drug implant (e.g. gentamicin
+        beads); SNOMED CT 450671005 covers debridement component only — misses incision site specificity
+        and drug implantation
+        """
+}
+mapping "NHS49.1" source="NHS49" target="SNOMED_CT:300028009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ adds debridement + drug implantation (gentamicin beads) specific to ankle/foot; SNOMED CT
+        concept is general septic arthritis drainage without drug delivery or site specificity
+        """
+}
+mapping "NHS59.1" source="NHS59" target="SNOMED_CT:300039007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKå combines debridement with local antibiotic bead implantation (gentamicin pearls); SNOMED CT
+        covers only the drainage/debridement component — drug implantation aspect is unmatched
+        """
+}
+mapping "NHS99.1" source="NHS99" target="SNOMED_CT:61661004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHS99 SNOMED CT 61661004 = other operation for infection in ankle/foot (KVÅ residual).
+        Target. The target loses the infection indication entirely and covers only the foot. Broader
+        (loose): infection operations on the foot are foot operations. Confidence : weak match,
+        infection context lost, ankle uncovered.
+        """
+}
+mapping "NHT19.1" source="NHT19" target="SNOMED_CT:229390000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHT99.1" source="NHT99" target="SNOMED_CT:107793001" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source NHT99 SNOMED CT 107793001 = other operation on ankle/foot (KVÅ residual). Target. The target
+        directly covers the source scope. Broader: all ankle/foot operations are subsumed. Confidence :
+        reasonable parent, direct scope match.
+        """
+}

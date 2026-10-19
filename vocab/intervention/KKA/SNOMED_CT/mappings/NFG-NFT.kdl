@@ -1,0 +1,263 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NFG-NFT
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NFG09.1" source="NFG09" target="SNOMED_CT:239499008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFG19.1" source="NFG19" target="SNOMED_CT:239500004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFG39.1" source="NFG39" target="SNOMED_CT:9730000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of hip joint without fixation material = arthrodesis of hip. SNOMED CT concept does not
+        specify fixation method. Verified SNOMED CT S.
+        """
+}
+mapping "NFG49.1" source="NFG49" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFG59.1" source="NFG59" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFH00.1" source="NFH00" target="SNOMED_CT:432304006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition av höftled = reduction of hip joint. The KVAA code says percutaneous or closed.
+        (432304006) is the general term. Th
+        """
+}
+mapping "NFH21.1" source="NFH21" target="SNOMED_CT:429891009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124094 429891009 = arthroscopic/endoscopic reposition of dislocated hip
+        prosthesis; SNOMED CT 'Closed m
+        """ suspect=quoted-text
+}
+mapping "NFH40.1" source="NFH40" target="SNOMED_CT:179855002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous foreign body removal from hip; parent open removal from joint"
+}
+mapping "NFH42.1" source="NFH42" target="SNOMED_CT:10849003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Foreign body removal hip open; SNOMED CT general"
+}
+mapping "NFH70.1" source="NFH70" target="SNOMED_CT:82506007" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Operation for recurrent hip dislocation (closed); SNOMED CT reduction of atraumatic hip dislocation
+        is related
+        """
+}
+mapping "NFJ09.1" source="NFJ09" target="SNOMED_CT:112777008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFJ59.1" source="NFJ59" target="SNOMED_CT:89344001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Osteosynthesis of femur fracture with intramedullary nail (margspip) = intramedullary nailing of
+        femur, exact clinical equivalent
+        """
+}
+mapping "NFJ69.1" source="NFJ69" target="SNOMED_CT:57470004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NFJ69 osteosyntes femurfraktur platta/skruvar; weak to ORIF femur"
+}
+mapping "NFJ89.1" source="NFJ89" target="SNOMED_CT:86975004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100124118 86975004 maps to the generic which covers all fixation methods"
+}
+mapping "NFJ99.1" source="NFJ99" target="SNOMED_CT:24464004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFJ99 SNOMED CT 24464004 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual source, fracture axis uncovered).
+        """
+}
+mapping "NFK49.1" source="NFK49" target="SNOMED_CT:447763006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: epiphysiodesis of femur. Verified SNOMED CT S."
+}
+mapping "NFK69.1" source="NFK69" target="SNOMED_CT:448496009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Shortening/lengthening osteotomy of femur maps to wedge osteotomy as subset"
+}
+mapping "NFK99.1" source="NFK99" target="SNOMED_CT:24464004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFK99 SNOMED CT 24464004 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual bucket).
+        """
+}
+mapping "NFL29.1" source="NFL29" target="SNOMED_CT:178221002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Parent match: KVA specifies hip/thigh muscle transposition; SNOMED CT has local muscle
+        transposition flap
+        """
+}
+mapping "NFL39.1" source="NFL39" target="SNOMED_CT:118456002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Myotomy or tenotomy of hip/thigh; subcutaneous tenotomy captures only the tenotomy component"
+}
+mapping "NFL49.1" source="NFL49" target="SNOMED_CT:31612007" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: tendon suture without site; maps general concept well"
+}
+mapping "NFL79.1" source="NFL79" target="SNOMED_CT:178230005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ=excision of muscle OR tendon in hip or thigh; SNOMED CT 178230005=wide excision of muscle
+        tissue — covers muscle but not tendon and is site-nonspecific
+        """
+}
+mapping "NFL89.1" source="NFL89" target="SNOMED_CT:243234005" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tendon transposition hip/thigh; closest SNOMED CT is hand tendon transfer -- different anatomy"
+}
+mapping "NFL99.1" source="NFL99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFL99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). No specific hip-muscle
+        procedure standard exists; target is nearest ancestor. Broader; confidence low (residual
+        source).
+        """
+}
+mapping "NFM19.1" source="NFM19" target="SNOMED_CT:9328000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partiell eller total excision av fascia i hoeft eller laar = partial/total excision of fascia in
+        hip or thigh; excision of lesion of fascia is the closest SNOME
+        """
+}
+mapping "NFM59.1" source="NFM59" target="SNOMED_CT:1651009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial excision of tendon sheath in hip or thigh: (1651009), confirmed SNOMED CT standard; the
+        KVAA specifies hip/thigh b
+        """
+}
+mapping "NFM79.1" source="NFM79" target="SNOMED_CT:264982007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NFM79 excision bursa höft/lar; weak to total excision of bursa"
+}
+mapping "NFM99.1" source="NFM99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFM99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFN09.1" source="NFN09" target="SNOMED_CT:1204097008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: autotransplantation of bone to femur maps to vascularized bone graft to femur (different
+        technique
+        """
+}
+mapping "NFN29.1" source="NFN29" target="SNOMED_CT:51431001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100124152 51431001 = bone graft to femur (heterotransplantation = bone from another
+        site/patient); maps to as the c
+        """
+}
+mapping "NFN39.1" source="NFN39" target="SNOMED_CT:239238001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tendon transplantation hip/thigh; broader tendon transfer is closest"
+}
+mapping "NFN99.1" source="NFN99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFN99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFP29.1" source="NFP29" target="SNOMED_CT:34877007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replantation av extremitet i höft- eller lårnivå = replantation of extremity at hip or thigh
+        level; (34877007) is the exact
+        """
+}
+mapping "NFQ29.1" source="NFQ29" target="SNOMED_CT:118489002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Revision of hip/thigh amputation stump; no close SNOMED CT match - dressing removal is very distant
+        but resident
+        """
+}
+mapping "NFQ39.1" source="NFQ39" target="SNOMED_CT:232183005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124160 232183005; exact SNOMED CT match for bone-anchored hearing aid implantation.
+        Verified standard concept
+        """
+}
+mapping "NFQ99.1" source="NFQ99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFQ99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFR49.1" source="NFR49" target="SNOMED_CT:287310004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are tumör excisions; different site - hip/femur vs lung but same procedure type"
+}
+mapping "NFR99.1" source="NFR99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFR99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFS29.1" source="NFS29" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: incision and debridement for femur osteitis. No specific SNOMED CT match"
+}
+mapping "NFS39.1" source="NFS39" target="SNOMED_CT:473218004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Soft tissue infection debridement with drug implant vs excisional debridement for infection"
+}
+mapping "NFS49.1" source="NFS49" target="SNOMED_CT:439526007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT captures I&D of hip only; KKÅ also specifies debridement and drug implantation (e.g.
+        gentamicin beads) — significant component loss
+        """
+}
+mapping "NFS59.1" source="NFS59" target="SNOMED_CT:373195007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broader parent; misses femur site specificity and local antibiotic implantation (e.g. Gentamycin
+        beads)
+        """
+}
+mapping "NFS99.1" source="NFS99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFS99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Broader; confidence low
+        (residual source).
+        """
+}
+mapping "NFT19.1" source="NFT19" target="SNOMED_CT:229374000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NFT99.1" source="NFT99" target="SNOMED_CT:28181007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NFT99 SNOMED CT 28181007 = KVÅ residual. Target (Athena-local). Target subsumes the residual
+        source. Broader; confidence low (residual bucket).
+        """
+}

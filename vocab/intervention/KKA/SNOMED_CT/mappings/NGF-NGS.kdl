@@ -1,0 +1,300 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NGF-NGS
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NGF10.1" source="NGF10" target="SNOMED_CT:179394007" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ partial synovectomy knee percutaneous/closed; SNOMED CT 179394007 is arthroscopic synovectomy
+        knee (closest match)
+        """
+}
+mapping "NGF21.1" source="NGF21" target="SNOMED_CT:57470004" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: fixation of articular surface fragment in knee, arthroscopic. SNOMED CT match is for femur not
+        knee and is open not arthroscopic - very loose parent for internal fixation concept.
+        """
+}
+mapping "NGF22.1" source="NGF22" target="SNOMED_CT:133863002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open fixation of articular fragment in knee; weak to ORIF"
+}
+mapping "NGG39.1" source="NGG39" target="SNOMED_CT:274056002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of knee without fixation material maps to; the SNOMED CT 2100124258 274056002 detail is
+        not captured in SNOMED CT but the core procedu
+        """
+}
+mapping "NGG49.1" source="NGG49" target="SNOMED_CT:274056002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of knee with internal fixation. SNOMED CT 2100124259 274056002 is the exact
+        clinical equivalent; the internal fixation method is a technique detail wi
+        """
+}
+mapping "NGH00.1" source="NGH00" target="SNOMED_CT:31315002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition av kneledsluxation perkutan eller sluten = reduction of knee dislocation percutaneous
+        or closed; reduction of closed knee dislocation is exact match
+        """
+}
+mapping "NGH01.1" source="NGH01" target="SNOMED_CT:31951004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NGH01 reposition knaledsluxation artroskopisk; close to open reduction of knee dislocation"
+}
+mapping "NGH02.1" source="NGH02" target="SNOMED_CT:31951004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reposition av kneledsluxation -- open (reduction of knee joint dislocation -- open) maps
+        exactly. Verified: SNOMED CT S
+        """
+}
+mapping "NGH21.1" source="NGH21" target="SNOMED_CT:31951004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NGH21 reposition knaledsprotes artroskopisk; weak to knee dislocation reduction"
+}
+mapping "NGH32.1" source="NGH32" target="SNOMED_CT:19540004" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ open knee adhesiolysis; SNOMED CT arthroscopic knee lysis with manipulation differs in approach
+        """
+}
+mapping "NGH40.1" source="NGH40" target="SNOMED_CT:179391004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of foreign or loose body in knee joint, percutaneous or closed maps exactly to
+        arthroscopic removal of loose body from knee joint
+        """
+}
+mapping "NGH42.1" source="NGH42" target="SNOMED_CT:179393001" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open removal of foreign body from knee; SNOMED CT has arthroscopic variant as closest match
+        (different approach)
+        """
+}
+mapping "NGH51.1" source="NGH51" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthroscopic exostosis/osteophyte excision knee; no close SNOMED CT match - dressing is distant
+        resident
+        """
+}
+mapping "NGH71.1" source="NGH71" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation for recurrent dislocation in knee arthroscopic; arthrotomy is a very loose proxy."
+}
+mapping "NGH92.1" source="NGH92" target="SNOMED_CT:58809006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on knee joint open; arthrotomy is a loose proxy."
+}
+mapping "NGJ19.1" source="NGJ19" target="SNOMED_CT:179058004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader anatomic coverage but same procedure type"
+}
+mapping "NGJ29.1" source="NGJ29" target="SNOMED_CT:239294001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extern fixation av fraktur i knä eller underben = external fixation of fracture in knee or lower
+        leg. The generic concept covers the procedure; no exact knee/lo
+        """
+}
+mapping "NGJ59.1" source="NGJ59" target="SNOMED_CT:710797004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intramedullary nailing of knee/lower leg fracture; SNOMED CT has fluoroscopy-guided equivalent"
+}
+mapping "NGJ99.1" source="NGJ99" target="SNOMED_CT:545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGJ99 SNOMED CT 545001 = KVÅ residual. Target (Athena-local). Target covers the lower-leg
+        axis; knee axis is partially covered. Broader; confidence low (residual source).
+        """
+}
+mapping "NGK09.1" source="NGK09" target="SNOMED_CT:387720005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision av benfragment av kne eller underben = excision of bone fragment of knee or lower leg;
+        (387720005) is the exact generic
+        """
+}
+mapping "NGK29.1" source="NGK29" target="SNOMED_CT:239294001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Fenestration of bone in knee or lower leg; fracture fixation is broader parent"
+}
+mapping "NGK48.1" source="NGK48" target="SNOMED_CT:239322005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial separation of epiphyseal plate in lower leg. Phemister epiphysiodesis is related growth
+        plate procedure.
+        """
+}
+mapping "NGK49.1" source="NGK49" target="SNOMED_CT:239322005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Epiphysiodesis of knee/lower leg. Phemister technique is one specific method; the KVA code is
+        broader.
+        """
+}
+mapping "NGK69.1" source="NGK69" target="SNOMED_CT:288057006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Shortening or lengthening osteotomy of knee or lower leg; SNOMED CT has SNOMED CT 2100124302 288057006
+        which covers the lengthening component. The shortening component is not
+        """
+}
+mapping "NGK99.1" source="NGK99" target="SNOMED_CT:129191009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGK99 SNOMED CT 129191009 = other operation on bones of knee/lower leg (KVÅ residual).
+        Target. The target subsumes knee/lower leg bone operations as a parent. Broader: all knee/lower
+        leg bone operations are lower extremity bone operations. Confidence : reasonable parent.
+        """
+}
+mapping "NGL19.1" source="NGL19" target="SNOMED_CT:41866000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies knee/lower leg; SNOMED CT is generic muscle repair"
+}
+mapping "NGL29.1" source="NGL29" target="SNOMED_CT:179826005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Muscle transposition in knee/lower leg. Stabilizing transposition of muscle is good parent."
+}
+mapping "NGL39.1" source="NGL39" target="SNOMED_CT:118456002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ myotomy or tenotomy of knee/lower leg; SNOMED CT subcutaneous tenotomy is parent concept"
+}
+mapping "NGL59.1" source="NGL59" target="SNOMED_CT:178186003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Tenolysis or tenosynovectomy in knee or lower leg; tenolysis is partial match."
+}
+mapping "NGL89.1" source="NGL89" target="SNOMED_CT:288078009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transposition of tendon in knee or lower leg is a site-specific instance of Tendon
+        transposition; the parent concept is the best available match since no knee/l
+        """
+}
+mapping "NGL99.1" source="NGL99" target="SNOMED_CT:6240004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGL99 SNOMED CT 6240004 = other operation on muscle/tendon of knee/lower leg (KVÅ residual).
+        Target. The target loses the muscle/tendon focus and covers only the knee component. Broader
+        (loose): all such operations on the knee are knee operations. Confidence : weak match,
+        muscle/tendon detail lost, lower leg component uncovered.
+        """
+}
+mapping "NGM09.1" source="NGM09" target="SNOMED_CT:410772005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124316 410772005 = fasciotomy of knee or lower leg; SNOMED CT is an exact match for
+        the lower leg component (knee
+        """
+}
+mapping "NGM29.1" source="NGM29" target="SNOMED_CT:67820006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Suture of fascia in knee/lower leg; exact SNOMED CT match for fascia repair by suture"
+}
+mapping "NGM79.1" source="NGM79" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bursa excision in knee/lower leg; no close SNOMED CT match found - dressing application is very
+        distant but resident
+        """
+}
+mapping "NGM99.1" source="NGM99" target="SNOMED_CT:17045008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGM99 SNOMED CT 17045008 = other operation on fascia/bursa of knee/lower leg (KVÅ residual).
+        Target. The target covers the fascia component broadly but loses the bursa component and body
+        site. Broader (loose). Confidence : weak match, bursa component and knee/lower leg site not
+        captured.
+        """
+}
+mapping "NGN09.1" source="NGN09" target="SNOMED_CT:1222567002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone autograft to knee/lower leg; partially matches knee bone autograft concept."
+}
+mapping "NGN39.1" source="NGN39" target="SNOMED_CT:51973004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100124325 51973004 = tendon transplantation to knee or lower leg; (4200076)"
+}
+mapping "NGN99.1" source="NGN99" target="SNOMED_CT:449659001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGN99 SNOMED CT 449659001 = other transplantation to knee/lower leg (KVÅ residual). Target.
+        The target covers the lower leg transplantation component. Broader: lower leg tissue transplants
+        are subsumed. Confidence : reasonable parent, knee component partially covered.
+        """
+}
+mapping "NGP29.1" source="NGP29" target="SNOMED_CT:29119006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Replantation av extremitet i knä- eller underbensnivå = replantation of extremity at knee or
+        lower leg level. SNOMED CT 2100124328 29119006 is the exact clinical
+        """
+}
+mapping "NGQ29.1" source="NGQ29" target="SNOMED_CT:609217001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ revision of exarticulation/amputation stump in knee or lower leg closely maps to SNOMED CT
+        2100124331 609217001; KVÅ effectiv
+        """
+}
+mapping "NGQ99.1" source="NGQ99" target="SNOMED_CT:150269004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGQ99 SNOMED CT 150269004 = other amputation or related operation on knee/lower leg (KVÅ
+        residual). Target. The target subsumes knee/lower leg amputation as a parent. Broader: all
+        knee/lower leg amputations are lower limb amputations. Confidence : reasonable parent.
+        """
+}
+mapping "NGR79.1" source="NGR79" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Compartmental excision bone/cartilage tumör knee; no close SNOMED CT match"
+}
+mapping "NGR99.1" source="NGR99" target="SNOMED_CT:6240004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGR99 SNOMED CT 6240004 = other operation for tumör in knee/lower leg (KVÅ residual).
+        Target. The target loses the tumör indication entirely and covers only the knee. Broader
+        (loose): tumör operations on the knee are knee operations. Confidence : weak match, tumör
+        context lost, lower leg uncovered.
+        """
+}
+mapping "NGS09.1" source="NGS09" target="SNOMED_CT:225148005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same procedure; broader anatomic site"
+}
+mapping "NGS49.1" source="NGS49" target="SNOMED_CT:300028009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is arthrotomy + debridement for septic arthritis of knee with drug implantation; SNOMED CT
+        covers drainage only no site or drug specificity
+        """
+}
+mapping "NGS59.1" source="NGS59" target="SNOMED_CT:473218004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Debridement for osteitis of knee/lower leg with drug implantation; broader debridement concept
+        """
+}
+mapping "NGS99.1" source="NGS99" target="SNOMED_CT:6240004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGS99 SNOMED CT 6240004 = other operation for infection in knee/lower leg (KVÅ residual).
+        Target. The target loses the infection indication entirely and covers only the knee. Broader
+        (loose): infection operations on the knee are knee operations. Confidence : weak match,
+        infection context lost, lower leg uncovered.
+        """
+}

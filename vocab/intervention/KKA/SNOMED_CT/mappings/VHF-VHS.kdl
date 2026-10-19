@@ -1,0 +1,202 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VHF-VHS
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VHF11.1" source="VHF11" target="SNOMED_CT:233304004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VHF21.1" source="VHF21" target="SNOMED_CT:233306002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VHF31.1" source="VHF31" target="SNOMED_CT:233305003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "VHF99.1" source="VHF99" target="SNOMED_CT:175610002" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VHF99 SNOMED CT 175610002 = Endarterectomy in other pelvic artery (KVÅ residual). Target.
+        Source is endarterectomy; target covers open iliac operations broadly. Broader. Low tier: no
+        crosswalk.
+        """
+}
+mapping "VHG00.1" source="VHG00" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are procedures on previously reconstructed vessels; very loose match - different procedure
+        type and vessel
+        """
+}
+flag "VHG11.unmapped" kind=unmapped concept="VHG11" target-system="SNOMED_CT"
+flag "VHG21.unmapped" kind=unmapped concept="VHG21" target-system="SNOMED_CT"
+flag "VHG31.unmapped" kind=unmapped concept="VHG31" target-system="SNOMED_CT"
+mapping "VHG99.1" source="VHG99" target="SNOMED_CT:175610002" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VHG99 SNOMED CT 175610002 = Open plasty/repair of other pelvic artery (KVÅ residual).
+        Target. Source is open arterial repair; target covers open iliac operations broadly. Broader.
+        Low tier: no crosswalk.
+        """
+}
+mapping "VHJ00.1" source="VHJ00" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125983 233385001 = bypass or interposition graft from previous reconstruction on
+        pelvic art
+        """
+}
+flag "VHJ11.unmapped" kind=unmapped concept="VHJ11" target-system="SNOMED_CT"
+flag "VHJ12.unmapped" kind=unmapped concept="VHJ12" target-system="SNOMED_CT"
+flag "VHJ13.unmapped" kind=unmapped concept="VHJ13" target-system="SNOMED_CT"
+mapping "VHJ14.1" source="VHJ14" target="SNOMED_CT:405473006" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from common iliac to contralateral femoral -- ilio-profunda artery bypass is the closest
+        SNOMED CT concept. Not perfectly matching vessel combination. Verif
+        """
+}
+mapping "VHJ15.1" source="VHJ15" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+flag "VHJ16.unmapped" kind=unmapped concept="VHJ16" target-system="SNOMED_CT"
+flag "VHJ21.unmapped" kind=unmapped concept="VHJ21" target-system="SNOMED_CT"
+mapping "VHJ22.1" source="VHJ22" target="SNOMED_CT:76580007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from external iliac to femoral; SNOMED CT peripheral arterial bypass is reasonable parent
+        """
+}
+flag "VHJ24.unmapped" kind=unmapped concept="VHJ24" target-system="SNOMED_CT"
+flag "VHJ31.unmapped" kind=unmapped concept="VHJ31" target-system="SNOMED_CT"
+mapping "VHJ99.1" source="VHJ99" target="SNOMED_CT:175610002" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VHJ99 SNOMED CT 175610002 = Bypass or interposition graft from pelvic artery to other artery
+        (KVÅ residual). Target. Source is specifically bypass/graft; target covers open iliac operations
+        broadly. Weak tier: target loses bypass/graft indication.
+        """
+}
+flag "VHK10.unmapped" kind=unmapped concept="VHK10" target-system="SNOMED_CT"
+flag "VHK20.unmapped" kind=unmapped concept="VHK20" target-system="SNOMED_CT"
+mapping "VHK30.1" source="VHK30" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open removal of graft/foreign material from internal iliac artery. No SNOMED CT match"
+}
+flag "VHK90.unmapped" kind=unmapped concept="VHK90" target-system="SNOMED_CT"
+flag "VHL00.unmapped" kind=unmapped concept="VHL00" target-system="SNOMED_CT"
+flag "VHL11.unmapped" kind=unmapped concept="VHL11" target-system="SNOMED_CT"
+flag "VHL21.unmapped" kind=unmapped concept="VHL21" target-system="SNOMED_CT"
+flag "VHL31.unmapped" kind=unmapped concept="VHL31" target-system="SNOMED_CT"
+mapping "VHL99.1" source="VHL99" target="SNOMED_CT:175610002" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VHL99 SNOMED CT 175610002 = Other open operation on other pelvic artery (KVÅ residual).
+        Target. Both denote residual on pelvic/iliac arteries. Exact match at low tier: no crosswalk,
+        but NOS semantics align.
+        """
+}
+flag "VHN00.unmapped" kind=unmapped concept="VHN00" target-system="SNOMED_CT"
+mapping "VHN11.1" source="VHN11" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA/SAP in common iliac artery; vascular procedure parent"
+}
+mapping "VHN21.1" source="VHN21" target="SNOMED_CT:233279006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal angioplastik (PTA) i a. iliaca externa = percutaneous transluminal
+        angioplasty of external iliac artery. 'Fluoroscopy guided percutaneous
+        """
+}
+mapping "VHN31.1" source="VHN31" target="SNOMED_CT:233278003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        233278003; Swedish synonym SNOMED CT 20500004 233278003 covers PTA of a. iliaca interna. SAP is a
+        variant technique under the same concept.
+        """
+}
+mapping "VHN31.2" source="VHN31" target="SNOMED_CT:20500004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VHN99.1" source="VHN99" target="SNOMED_CT:175618009" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VHN99 SNOMED CT 175618009 = PTA or SAP in other pelvic artery (KVÅ residual). Target. Both
+        denote percutaneous transluminal angioplasty on pelvic/iliac arteries. Exact match at low tier:
+        no crosswalk, but NOS semantics align.
+        """
+}
+flag "VHP00.unmapped" kind=unmapped concept="VHP00" target-system="SNOMED_CT"
+mapping "VHP99.1" source="VHP99" target="SNOMED_CT:175617004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VHP99 SNOMED CT 175617004 = Endovascular stent insertion in other pelvic artery (KVÅ
+        residual). Target. Source is stent insertion; target covers transluminal iliac operations
+        broadly. Broader. Low tier: no crosswalk.
+        """
+}
+flag "VHQ00.unmapped" kind=unmapped concept="VHQ00" target-system="SNOMED_CT"
+mapping "VHQ99.1" source="VHQ99" target="SNOMED_CT:175617004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VHQ99 SNOMED CT 175617004 = Endovascular stent-graft insertion in pelvic artery (KVÅ
+        residual). Target. Source is specifically stent-graft insertion; target covers transluminal
+        iliac operations broadly. Weak tier: target loses stent-graft specificity.
+        """
+}
+flag "VHR00.unmapped" kind=unmapped concept="VHR00" target-system="SNOMED_CT"
+mapping "VHR11.1" source="VHR11" target="SNOMED_CT:233336006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ lokal trombolys i a. iliaca communis = percutaneous thrombolysis of common iliac artery;
+        exact match
+        """
+}
+mapping "VHR21.1" source="VHR21" target="SNOMED_CT:233337002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100126021 233337002 = local thrombolysis in external iliac artery =
+        Percutaneous thrombolysis of external iliac artery.
+        """
+}
+mapping "VHR31.1" source="VHR31" target="SNOMED_CT:240936000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lokal trombolys i a. iliaca interna (local thrombolysis in internal iliac artery) maps exactly
+        to Percutaneous thrombolysis of internal iliac artery. Verified S
+        """
+}
+mapping "VHR99.1" source="VHR99" target="SNOMED_CT:175617004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VHR99 SNOMED CT 175617004 = Local thrombolysis in other pelvic artery (KVÅ residual).
+        Target. Source is specifically thrombolysis; target covers transluminal iliac operations
+        broadly. Weak tier: target loses thrombolysis indication.
+        """
+}
+flag "VHS00.unmapped" kind=unmapped concept="VHS00" target-system="SNOMED_CT"
+flag "VHS11.unmapped" kind=unmapped concept="VHS11" target-system="SNOMED_CT"
+flag "VHS21.unmapped" kind=unmapped concept="VHS21" target-system="SNOMED_CT"
+mapping "VHS31.1" source="VHS31" target="SNOMED_CT:175613000" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Percutaneous mechanical thrombectomy or embolectomy in internal iliac artery; SNOMED CT 175613000
+        2100126027 is the closest SNOMED CT equi
+        """
+}
+mapping "VHS99.1" source="VHS99" target="SNOMED_CT:175617004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VHS99 SNOMED CT 175617004 = Percutaneous mechanical thrombectomy/embolectomy in pelvic
+        artery (KVÅ residual). Target. Source is specifically mechanical thrombectomy; target covers
+        transluminal iliac operations broadly. Weak tier: target loses thrombectomy specificity.
+        """
+}

@@ -1,0 +1,238 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VCK-VEA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VCK10.unmapped" kind=unmapped concept="VCK10" target-system="SNOMED_CT"
+flag "VCK20.unmapped" kind=unmapped concept="VCK20" target-system="SNOMED_CT"
+flag "VCK30.unmapped" kind=unmapped concept="VCK30" target-system="SNOMED_CT"
+flag "VCK33.unmapped" kind=unmapped concept="VCK33" target-system="SNOMED_CT"
+mapping "VCK55.1" source="VCK55" target="SNOMED_CT:72821000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Temporal artery biopsy is exactly what this describes (resection of temporal artery for biopsy
+        purposes)
+        """
+}
+flag "VCK90.unmapped" kind=unmapped concept="VCK90" target-system="SNOMED_CT"
+mapping "VCK99.1" source="VCK99" target="SNOMED_CT:175378009" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCK99 SNOMED CT 175378009 = Resection of other artery in extracranial carotid territory (KVÅ
+        residual). Target. Source is arterial resection; target covers open carotid operations broadly.
+        Broader. Low tier: no crosswalk.
+        """
+}
+flag "VCL00.unmapped" kind=unmapped concept="VCL00" target-system="SNOMED_CT"
+flag "VCL10.unmapped" kind=unmapped concept="VCL10" target-system="SNOMED_CT"
+flag "VCL11.unmapped" kind=unmapped concept="VCL11" target-system="SNOMED_CT"
+flag "VCL22.unmapped" kind=unmapped concept="VCL22" target-system="SNOMED_CT"
+flag "VCL33.unmapped" kind=unmapped concept="VCL33" target-system="SNOMED_CT"
+flag "VCL44.unmapped" kind=unmapped concept="VCL44" target-system="SNOMED_CT"
+mapping "VCL99.1" source="VCL99" target="SNOMED_CT:175378009" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VCL99 SNOMED CT 175378009 = Other open operation on other artery in extracranial carotid
+        territory (KVÅ residual). Target. Both denote residual on carotid territory arteries. Exact
+        match at low tier: no crosswalk, but NOS semantics align directly.
+        """
+}
+mapping "VCN00.1" source="VCN00" target="SNOMED_CT:175380003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA of prior carotid reconstruction; SNOMED CT has carotid PTA"
+}
+flag "VCN10.unmapped" kind=unmapped concept="VCN10" target-system="SNOMED_CT"
+mapping "VCN11.1" source="VCN11" target="SNOMED_CT:432683007" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA or subintimal angioplasty of truncus brachiocephalicus: exact match to Percutaneous
+        transluminal angioplasty of brachiocephalic artery using fluoroscopic gu
+        """
+}
+mapping "VCN22.1" source="VCN22" target="SNOMED_CT:431659001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: PTA/SAP of common carotid artery. SNOMED CT has carotid PTA"
+}
+flag "VCN23.unmapped" kind=unmapped concept="VCN23" target-system="SNOMED_CT"
+mapping "VCN33.1" source="VCN33" target="SNOMED_CT:432039002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perkutan transluminal angioplastik (PTA) eller perkutan subintimal angioplastik (SAP) i a.
+        carotis interna = PTA or subintimal angioplasty of internal carotid a
+        """
+}
+flag "VCN44.unmapped" kind=unmapped concept="VCN44" target-system="SNOMED_CT"
+mapping "VCN99.1" source="VCN99" target="SNOMED_CT:175383001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCN99 SNOMED CT 175383001 = PTA or SAP of other artery in extracranial carotid territory
+        (KVÅ residual). Target. Both denote percutaneous transluminal angioplasty on carotid territory
+        arteries. Exact match at low tier: no crosswalk, but NOS semantics align.
+        """
+}
+flag "VCP00.unmapped" kind=unmapped concept="VCP00" target-system="SNOMED_CT"
+flag "VCP10.unmapped" kind=unmapped concept="VCP10" target-system="SNOMED_CT"
+mapping "VCP99.1" source="VCP99" target="SNOMED_CT:175382006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCP99 SNOMED CT 175382006 = Endovascular stent insertion in other artery in extracranial
+        carotid territory (KVÅ residual). Target. Source is specifically stent insertion; target covers
+        transluminal operations broadly. Broader. Low tier: no crosswalk.
+        """
+}
+flag "VCQ00.unmapped" kind=unmapped concept="VCQ00" target-system="SNOMED_CT"
+mapping "VCQ10.1" source="VCQ10" target="SNOMED_CT:175615007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: stentgraft in brachiocephalic reconstruction; weak to generic stent insertion"
+}
+mapping "VCQ99.1" source="VCQ99" target="SNOMED_CT:175382006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCQ99 SNOMED CT 175382006 = Endovascular stent-graft insertion in other artery in
+        extracranial carotid territory (KVÅ residual). Target. Source is specifically stent-graft
+        insertion; target covers transluminal operations broadly. Weak tier: target loses the
+        stent-graft specificity.
+        """
+}
+mapping "VCR00.1" source="VCR00" target="SNOMED_CT:175071008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in previous carotid artery reconstruction; thrombolysis is parent"
+}
+mapping "VCR10.1" source="VCR10" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in brachiocephalic reconstruction maps to percutaneous thrombolysis"
+}
+mapping "VCR11.1" source="VCR11" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in brachiocephalic trunk vs percutaneous thrombolysis; reasonable parent"
+}
+mapping "VCR22.1" source="VCR22" target="SNOMED_CT:240929001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in common carotid artery; SNOMED CT percutaneous thrombolysis is parent"
+}
+flag "VCR33.unmapped" kind=unmapped concept="VCR33" target-system="SNOMED_CT"
+mapping "VCR44.1" source="VCR44" target="SNOMED_CT:240929001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies external carotid local thrombolysis; SNOMED CT is parent percutaneous thrombolysis
+        concept
+        """
+}
+mapping "VCR99.1" source="VCR99" target="SNOMED_CT:175382006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCR99 SNOMED CT 175382006 = Local thrombolysis in other artery in extracranial carotid
+        territory (KVÅ residual). Target. Source is specifically local thrombolysis; target covers
+        transluminal operations broadly. Weak tier: target loses the thrombolysis indication.
+        """
+}
+flag "VCT08.unmapped" kind=unmapped concept="VCT08" target-system="SNOMED_CT"
+mapping "VCT09.1" source="VCT09" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovascular occluding material extracranial carotid; no close SNOMED CT match"
+}
+flag "VCU00.unmapped" kind=unmapped concept="VCU00" target-system="SNOMED_CT"
+flag "VCU10.unmapped" kind=unmapped concept="VCU10" target-system="SNOMED_CT"
+mapping "VCU11.1" source="VCU11" target="SNOMED_CT:708810002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovascular extraction of foreign material from truncus brachiocephalicus maps to endovascular
+        retrieval of foreign body from aorta (brachiocephalic trunk is a
+        """
+}
+flag "VCU22.unmapped" kind=unmapped concept="VCU22" target-system="SNOMED_CT"
+flag "VCU23.unmapped" kind=unmapped concept="VCU23" target-system="SNOMED_CT"
+flag "VCU33.unmapped" kind=unmapped concept="VCU33" target-system="SNOMED_CT"
+flag "VCU44.unmapped" kind=unmapped concept="VCU44" target-system="SNOMED_CT"
+mapping "VCU99.1" source="VCU99" target="SNOMED_CT:175382006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCU99 SNOMED CT 175382006 = Endovascular removal of foreign material from other artery in
+        extracranial carotid territory (KVÅ residual). Target. Source is specifically foreign body
+        removal; target covers transluminal operations broadly. Weak tier: target loses the
+        foreign-body-removal indication.
+        """
+}
+flag "VCW00.unmapped" kind=unmapped concept="VCW00" target-system="SNOMED_CT"
+flag "VCW10.unmapped" kind=unmapped concept="VCW10" target-system="SNOMED_CT"
+mapping "VCW11.1" source="VCW11" target="SNOMED_CT:240938004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA other endovascular brachiocephalic trunk; SNOMED CT endovascular device broader"
+}
+flag "VCW22.unmapped" kind=unmapped concept="VCW22" target-system="SNOMED_CT"
+flag "VCW23.unmapped" kind=unmapped concept="VCW23" target-system="SNOMED_CT"
+flag "VCW33.unmapped" kind=unmapped concept="VCW33" target-system="SNOMED_CT"
+flag "VCW44.unmapped" kind=unmapped concept="VCW44" target-system="SNOMED_CT"
+mapping "VCW99.1" source="VCW99" target="SNOMED_CT:175382006" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VCW99 SNOMED CT 175382006 = Other endovascular operation in other artery in extracranial
+        carotid territory (KVÅ residual). Target. Both denote residual endovascular/transluminal
+        operations on carotid territory arteries. Exact match at low tier: no crosswalk, but residual
+        semantics align.
+        """
+}
+flag "VEA00.unmapped" kind=unmapped concept="VEA00" target-system="SNOMED_CT"
+mapping "VEA11.1" source="VEA11" target="SNOMED_CT:307628005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125612 307628005 = open exploration of subclavian artery; exact match to SNOMED CT
+        """
+}
+flag "VEA18.unmapped" kind=unmapped concept="VEA18" target-system="SNOMED_CT"
+mapping "VEA22.1" source="VEA22" target="SNOMED_CT:175755001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 175755001 2100125614 = open exploration of vertebral artery; maps to as the exact
+        clinical equivalent
+        """
+}
+mapping "VEA33.1" source="VEA33" target="SNOMED_CT:307629002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: open exploration of axillary artery; SNOMED CT 2100125615 307629002
+        matches precisely. The qualifier in KVÅ is implicit in the
+        """
+}
+mapping "VEA38.1" source="VEA38" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: open exploration of AV graft/fistel from axillary artery. No SNOMED CT match"
+}
+mapping "VEA44.1" source="VEA44" target="SNOMED_CT:307630007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Open exploration of a. brachialis = open exploration of brachial artery. Exact match:
+        (307630007). Verified SNOMED CT standard
+        """
+}
+flag "VEA48.unmapped" kind=unmapped concept="VEA48" target-system="SNOMED_CT"
+mapping "VEA55.1" source="VEA55" target="SNOMED_CT:312639006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Öppen exploration av a. radialis = open exploration of radial artery. SNOMED CT 2100125619
+        312639006 is the exact clinical equivalent. Verified in CONCEPT.csv:
+        """
+}
+flag "VEA58.unmapped" kind=unmapped concept="VEA58" target-system="SNOMED_CT"
+mapping "VEA65.1" source="VEA65" target="SNOMED_CT:312640008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open exploration av a. ulnaris = open exploration of ulnar artery; exact clinical match."
+}
+flag "VEA68.unmapped" kind=unmapped concept="VEA68" target-system="SNOMED_CT"
+flag "VEA98.unmapped" kind=unmapped concept="VEA98" target-system="SNOMED_CT"
+mapping "VEA99.1" source="VEA99" target="SNOMED_CT:175452004" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEA99 SNOMED CT 175452004 = Open exploration of other artery in subclavian territory (KVÅ
+        residual). Target. Source is exploration; target covers open subclavian operations broadly.
+        Broader. Low tier: no crosswalk, exploration is subset.
+        """
+}

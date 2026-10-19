@@ -1,0 +1,309 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes TNB-TN
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "TNB20.1" source="TNB20" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone marrow aspiration shoulder/upper arm; SNOMED CT has bone marrow aspiration but not
+        site-specific
+        """
+}
+mapping "TNB25.1" source="TNB25" target="SNOMED_CT:56241004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bore biopsy of bone marrow from shoulder/upper arm maps to. Confidence reduced because bore
+        biopsy implies trephine while S
+        """
+}
+mapping "TNB30.1" source="TNB30" target="SNOMED_CT:180289009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA soft bandage shoulder/arm; SNOMED CT plaster cast is closest immobilization concept"
+}
+mapping "TNB32.1" source="TNB32" target="SNOMED_CT:37030005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Mouldable splint - shoulder/upper arm; orthotic device fitting is reasonable parent"
+}
+mapping "TNC00.1" source="TNC00" target="SNOMED_CT:708608001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: needle biopsy soft tissue elbow/forearm maps to soft tissue FNA biopsy (broader)"
+}
+mapping "TNC05.1" source="TNC05" target="SNOMED_CT:10971007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 10971007 2100125112 = simple incision of soft tissue, elbow and forearm; SNOMED CT is
+        the parent conc
+        """
+}
+mapping "TNC10.1" source="TNC10" target="SNOMED_CT:281808001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100125113 281808001 = arthrocentesis of elbow and forearm = Aspiration of
+        elbow joint.
+        """
+}
+mapping "TNC20.1" source="TNC20" target="SNOMED_CT:225279000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bone marrow aspiration from elbow/forearm; SNOMED CT is broader parent for bone marrow aspiration.
+        """
+}
+mapping "TNC25.1" source="TNC25" target="SNOMED_CT:287550000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same procedure; KVÅ specifies site (elbow/forearm)"
+}
+mapping "TNC30.1" source="TNC30" target="SNOMED_CT:85046002" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mjukt bandage armbåge/underarm = Strapping of elbow; exact match for soft bandage applied to
+        elbow and forearm region
+        """
+}
+mapping "TNC32.1" source="TNC32" target="SNOMED_CT:229547000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Modellerbar skena armbåge/underarm = moldable splint for elbow/forearm. Serial splinting is the
+        closest SNOMED CT concept; modellbar implies serial/adjustable. Not
+        """
+}
+mapping "TNC33.1" source="TNC33" target="SNOMED_CT:182555002" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT general bandage application is the broader parent for KVA site-specific circular bandage
+        """
+}
+mapping "TND03.1" source="TND03" target="SNOMED_CT:397737001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125126 397737001 = percutaneous fasciotomy of wrist and hand; SNOMED CT is the
+        closest exact equivalent
+        """
+}
+mapping "TND10.1" source="TND10" target="SNOMED_CT:90131007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrocentesis of wrist/hand. No SNOMED CT concept specifies wrist/hand arthrocentesis; generic
+        SNOMED CT 2100125128 90131007 is the available standard concept.
+        """
+}
+mapping "TND11.1" source="TND11" target="SNOMED_CT:1146891000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Site-specific therapeutic joint injection wrist/hand; SNOMED CT has imaging-guided joint injections
+        """
+}
+mapping "TND20.1" source="TND20" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are bone marrow aspiration; KVÅ specifies wrist/hand site"
+}
+mapping "TND25.1" source="TND25" target="SNOMED_CT:287550000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies drill biopsy of wrist/hand; SNOMED CT is generic bone marrow biopsy"
+}
+mapping "TND31.1" source="TND31" target="SNOMED_CT:228595003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader parent: prefabricated wrist/hand orthosis to general orthosis provision"
+}
+mapping "TND33.1" source="TND33" target="SNOMED_CT:182555002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: circular mouldable bandage on wrist/hand. SNOMED CT Application of bandage is a broader
+        parent. The specific circular/mouldable variant has no exact match.
+        """
+}
+mapping "TNE11.1" source="TNE11" target="SNOMED_CT:429809004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: intra-articular injection pelvis; same category as TNX11"
+}
+mapping "TNE20.1" source="TNE20" target="SNOMED_CT:225279000" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Broad parent: bone marrow aspiration of pelvis mapped to multiple bone marrow aspiration (SNOMED CT
+        lacks pelvis-specific BMA).
+        """
+}
+mapping "TNE25.1" source="TNE25" target="SNOMED_CT:234328006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125145 234328006 = bone marrow drill/trephine biopsy from pelvis; literally =
+        drill biopsy = trephine biopsy; SNOMED CT 234328006 i
+        """
+}
+mapping "TNF10.1" source="TNF10" target="SNOMED_CT:90131007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrocentesis of hip/thigh. No site-specific hip arthrocentesis in SNOMED CT; generic SNOMED CT
+        2100125156 90131007 is the available standard concept.
+        """
+}
+mapping "TNF11.1" source="TNF11" target="SNOMED_CT:429876007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Intra-articular hip injection; CT-guided is a subset of all joint injections"
+}
+mapping "TNF20.1" source="TNF20" target="SNOMED_CT:42622002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "SNOMED CT 42622002 SNOMED CT 225279000 42622002 is the canonical hip-region aspiration site, exact"
+}
+mapping "TNF20.2" source="TNF20" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TNF25.1" source="TNF25" target="SNOMED_CT:234328006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bore biopsy of bone marrow - hip and thigh; SNOMED CT 2100125159 234328006 is the closest SNOMED CT
+        equivalent, though it does not specify hip/thigh location
+        """
+}
+mapping "TNF30.1" source="TNF30" target="SNOMED_CT:7468009" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mjukt bandage hoeftled och laar = soft bandage hip and thigh; strapping of hip is the closest
+        SNOMED CT match for the hip component
+        """
+}
+mapping "TNF39.1" source="TNF39" target="SNOMED_CT:7468009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan ortopedisk bandagering - höftled och lår = other orthopedic bandaging - hip joint and
+        thigh. SNOMED CT 2100125165 7468009 is the exact SNOMED CT equivalent.
+        """
+}
+mapping "TNF40.1" source="TNF40" target="SNOMED_CT:112732006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA custom target; weak: broader concept of hip traction; KVA is external traction for hip/thigh
+        not specifically for congenital dislocation reduction.
+        """
+}
+mapping "TNG00.1" source="TNG00" target="SNOMED_CT:430103002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Site-specific knee/lower leg soft tissue FNA; parent FNA soft tissue"
+}
+mapping "TNG10.1" source="TNG10" target="SNOMED_CT:879795002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrocentesis of knee and lower leg = Arthrocentesis of joint of knee (exact match for knee
+        component; lower leg aspiration not separately coded)
+        """
+}
+mapping "TNG25.1" source="TNG25" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone marrow biopsy knee/lower leg; SNOMED CT Multiple bone marrow aspiration is closest"
+}
+mapping "TNG39.1" source="TNG39" target="SNOMED_CT:21288003" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100125179 21288003 = other orthopedic bandaging of knee and lower leg; exact match to
+        SNOMED CT Strapping of knee (closest specif
+        """
+}
+mapping "TNH05.1" source="TNH05" target="SNOMED_CT:10971007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Simple incision of soft tissue in ankle/foot. SNOMED CT 10971007 SNOMED CT 10971007 2100125183 is the
+        exact generic equivalent; the ankle/foot site is implied by the p
+        """
+}
+mapping "TNH10.1" source="TNH10" target="SNOMED_CT:866210005" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Arthrocentesis of ankle/foot; SNOMED CT has arthrocentesis of toe joint. Related but not exact."
+}
+mapping "TNH11.1" source="TNH11" target="SNOMED_CT:384714001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injection of diagnostic/therapeutic substance into foot/ankle joint maps exactly to injection of
+        joint of foot
+        """
+}
+mapping "TNH20.1" source="TNH20" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are bone marrow aspiration; different site but same procedure"
+}
+mapping "TNH25.1" source="TNH25" target="SNOMED_CT:225279000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bone marrow biopsy foot/ankle; SNOMED CT Multiple bone marrow aspiration is closest"
+}
+mapping "TNH30.1" source="TNH30" target="SNOMED_CT:81666003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mjukt bandage - fotled och fot (soft bandage ankle and foot) is clinically equivalent to
+        strapping of ankle
+        """
+}
+mapping "TNH34.1" source="TNH34" target="SNOMED_CT:180289009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA moldable bandage ankle/foot; SNOMED CT plaster cast closest"
+}
+mapping "TNH39.1" source="TNH39" target="SNOMED_CT:81666003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other orthopedic bandaging of ankle and foot. SNOMED CT 81666003 SNOMED CT 2100125193 81666003 is a
+        reasonable exact equivalent for ankle/foot bandaging. The KVå says 'othe
+        """ suspect=quoted-text
+}
+mapping "TNH40.1" source="TNH40" target="SNOMED_CT:33536007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "External traction - ankle and foot; tilt table is a very loose proxy."
+}
+mapping "TNX05.1" source="TNX05" target="SNOMED_CT:10971007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 10971007 2100125197 = simple incision in soft tissues of unspecified region; SNOMED CT
+        10971007 is exact equivalent; verified S
+        """
+}
+mapping "TNX10.1" source="TNX10" target="SNOMED_CT:90131007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA TNX10 = arthrocentesis of unspecified region. SNOMED CT 90131007 (general) is an exact match;
+        both are unspecific as to joint.
+        """
+}
+mapping "TNX11.1" source="TNX11" target="SNOMED_CT:429809004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: intra-articular injection unspecified region; no exact SNOMED CT match"
+}
+mapping "TNX20.1" source="TNX20" target="SNOMED_CT:225279000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TNX25.1" source="TNX25" target="SNOMED_CT:56241004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Borrbiopsi av benmärg (trephine/needle biopsy of bone marrow) maps exactly to SNOMED CT 4209298
+        SNOMED CT 2100125201 56241004
+        """
+}
+mapping "TNX30.1" source="TNX30" target="SNOMED_CT:85694002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Mjukt bandage ospecificerad region (soft bandage unspecified region) maps to SNOMED CT 2100125202
+        85694002. Verified: SNOMED CT S
+        """
+}
+mapping "TNX31.1" source="TNX31" target="SNOMED_CT:437951006" relationship=partial_overlap preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Prefabricated orthosis unspecified; closest SNOMED CT is foot-specific orthosis"
+}
+mapping "TNX34.1" source="TNX34" target="SNOMED_CT:7241007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100125206 7241007 = major moldable bandage, unspecified region; SNOMED CT is the
+        closest eq
+        """
+}
+mapping "TNX40.1" source="TNX40" target="SNOMED_CT:179212005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ external traction unspecified region; SNOMED CT primary skeletal traction of fracture is
+        closest
+        """
+}

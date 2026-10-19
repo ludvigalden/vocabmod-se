@@ -1,0 +1,406 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes NGT-NHG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "NGT19.1" source="NGT19" target="SNOMED_CT:229377007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "NGT99.1" source="NGT99" target="SNOMED_CT:6240004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGT99 SNOMED CT 6240004 = other operation on knee/lower leg (KVÅ residual). Target. The
+        target covers the knee component. Broader: knee operations are subsumed. Confidence : reasonable
+        parent for knee component, lower leg component partially covered.
+        """
+}
+mapping "NGU19.1" source="NGU19" target="SNOMED_CT:13743007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraktion av totalprotes från knäled = extraction of total prosthesis from knee joint; clinical
+        equivalent is arthrotomy for removal of knee prosthesis.
+        """
+}
+mapping "NGU39.1" source="NGU39" target="SNOMED_CT:760471000000101" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Removal of external fixation material from knee/lower leg; fixation device removal is parent"
+}
+mapping "NGU49.1" source="NGU49" target="SNOMED_CT_SE_EXT:69881000052109" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "SNOMED CT 69881000052109 (rf2-se) SNOMED CT 179080001 69881000052109 is exact"
+}
+mapping "NGU49.2" source="NGU49" target="SNOMED_CT:179080001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NGU99.1" source="NGU99" target="SNOMED_CT:150092007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGU99 SNOMED CT 150092007 = extraction of other implant from knee/lower leg (KVÅ residual).
+        Target. The target covers removal of orthopedic implants broadly. Broader: knee/lower leg
+        implant extractions fall under removal of internal fixation. Confidence : reasonable parent.
+        """
+}
+mapping "NGW49.1" source="NGW49" target="SNOMED_CT:29629000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sutur av sårruptur i kna eller underben = suture of wound rupture in knee or lower leg; the
+        clinical procedure is resuturing wound dehiscence, site is a modifie
+        """
+}
+mapping "NGW59.1" source="NGW59" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NGW59 reoperation ytlig infektion kna; weak to revision of internal fixation"
+}
+mapping "NGW79.1" source="NGW79" target="SNOMED_CT:274508002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reoperation for superficial bleeding in knee or lower leg; SNOMED CT 2100124365 274508002 is the
+        closest general equivalent -- SNOMED CT does not have a concep
+        """
+}
+mapping "NGW99.1" source="NGW99" target="SNOMED_CT:280475001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NGW99 SNOMED CT 280475001 = other reoperation on knee/lower leg (KVÅ residual). Target. The
+        target covers joint reoperation broadly. Broader: knee joint reoperations are subsumed.
+        Confidence : reasonable parent for joint reoperation, non-joint lower leg scope not covered.
+        """
+}
+mapping "NHA11.1" source="NHA11" target="SNOMED_CT:66339000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exploration of ankle or foot arthroscopic/endoscopic = arthroscopy of ankle; exact clinical
+        equivalent
+        """
+}
+mapping "NHA20.1" source="NHA20" target="SNOMED_CT:430103002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous/closed biopsy of soft tissue/joint in foot; SNOMED CT soft tissue biopsy is parent"
+}
+mapping "NHA22.1" source="NHA22" target="SNOMED_CT:430103002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open biopsy of soft tissue/joint in foot; SNOMED CT soft tissue biopsy is parent"
+}
+mapping "NHA30.1" source="NHA30" target="SNOMED_CT:287544005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is foot bone biopsy percutaneous/closed; SNOMED CT matches non-surgical bone biopsy"
+}
+mapping "NHB09.1" source="NHB09" target="SNOMED_CT:179971003" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary half/partial ankle prosthesis without cement. SNOMED CT has uncemented total ankle
+        arthroplasty.
+        """
+}
+mapping "NHB40.1" source="NHB40" target="SNOMED_CT:179966005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Primary total prosthesis in ankle with cement = Cemented prosthetic total ankle replacement
+        (exact match)
+        """
+}
+mapping "NHB99.1" source="NHB99" target="SNOMED_CT:239504008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHB99 SNOMED CT 239504008 = other primary ankle/foot joint prosthesis operation (KVÅ
+        residual). Target. The target covers ankle arthroplasty. Broader: primary ankle prosthesis
+        operations fall under ankle arthroplasty. Confidence : reasonable parent for ankle component,
+        foot prosthesis partially covered.
+        """
+}
+mapping "NHC49.1" source="NHC49" target="SNOMED_CT:179969003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Secondary total prosthesis in ankle joint with cement maps exactly to SNOMED CT 4078420 SNOMED CT
+        179969003 2100124393
+        """
+}
+mapping "NHC79.1" source="NHC79" target="SNOMED_CT:280470006" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Secondary prosthesis in other MTP joint; closest is revision arthroplasty"
+}
+mapping "NHC99.1" source="NHC99" target="SNOMED_CT:239504008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source NHC99 SNOMED CT 239504008 = other secondary (revision) ankle/foot joint prosthesis operation
+        (KVÅ residual). Target. The target does not distinguish primary vs revision. Broader (loose):
+        revision arthroplasty is still ankle arthroplasty. Confidence : weak match, revision context and
+        foot scope not captured.
+        """
+}
+mapping "NHE00.1" source="NHE00" target="SNOMED_CT:42960008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures covers incision OR suture of ankle/foot joint capsule percutaneous/closed; SNOMED CT covers
+        suture of any joint capsule — partial overlap
+        """
+}
+mapping "NHE01.1" source="NHE01" target="SNOMED_CT:2915002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers incision or suture of ankle/foot capsule arthroscopically; SNOMED CT is suture-only
+        ankle-only — partial overlap
+        """
+}
+mapping "NHE02.1" source="NHE02" target="SNOMED_CT:16656003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHE20.1" source="NHE20" target="SNOMED_CT:13387000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture of ligament in ankle or foot (percutaneous/closed) = Suture of ligament of ankle (exact
+        match for ankle component; approach qualifier not in SNOMED CT conce
+        """
+}
+mapping "NHE22.1" source="NHE22" target="SNOMED_CT:13387000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suture eller replantation av ligament i fotled eller fot = suture/replantation of ligament in
+        ankle or foot; exact match to SNOMED CT 13387000 for ankle, verified
+        """
+}
+mapping "NHE31.1" source="NHE31" target="SNOMED_CT:1287746000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transposition of ligament in ankle/foot, arthroscopic/endoscopic; Transfer of tendon of ankle is
+        the closest SNOMED CT equivalent for ligament/tendon transfer at a
+        """
+}
+mapping "NHE32.1" source="NHE32" target="SNOMED_CT:441730008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: open transposition of ligament in ankle/foot for stabilization; SNOMED CT
+        2100124407 441730008 captures the cor
+        """
+}
+mapping "NHE40.1" source="NHE40" target="SNOMED_CT:37030005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligament reconstruction ankle/foot without foreign material - percutaneous/closed; orthotic
+        fitting is distant parent
+        """
+}
+mapping "NHE50.1" source="NHE50" target="SNOMED_CT:1290105002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA ligament reconstruction with foreign material; SNOMED CT suture of ankle ligament rupture is
+        open approach but same joint/ligament domain
+        """
+}
+mapping "NHE52.1" source="NHE52" target="SNOMED_CT:373195007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Open ligament reconstruction foot with foreign material vs musculoskeletal debridement; very
+        loose
+        """
+}
+mapping "NHE90.1" source="NHE90" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closed procedure on foot joint capsule/ligament; no close SNOMED CT match"
+}
+mapping "NHE91.1" source="NHE91" target="SNOMED_CT:179870001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are arthroscopic joint procedures; different joints - loose match"
+}
+mapping "NHF01.1" source="NHF01" target="SNOMED_CT:50738000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Total synovectomy of ankle/foot, arthroscopic/endoscopic. Excision of synovium is synonymous
+        with synovectomy. Approach detail not captured in SNOMED CT.
+        """
+}
+mapping "NHF10.1" source="NHF10" target="SNOMED_CT:265204005" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is partial synovectomy in foot; SNOMED CT is generic partial synovectomy"
+}
+mapping "NHF30.1" source="NHF30" target="SNOMED_CT:450568008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partial articular cartilage excision at ankle/foot. Endoscopic excision of articular cartilage
+        is closest.
+        """
+}
+mapping "NHF32.1" source="NHF32" target="SNOMED_CT:179723008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Partiell excision av ledbrosk i fotled eller fot - open = partial open excision of articular
+        cartilage in ankle/foot. SNOMED CT 'Open excision of articular cartila
+        """ suspect=quoted-text
+}
+mapping "NHG00.1" source="NHG00" target="SNOMED_CT:301763000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Excision arthroplasty in ankle/foot - talocrural joint; SNOMED CT 2100124430 301763000
+        covers foot joints including talocrural. Confirmed SNOME
+        """
+}
+mapping "NHG06.1" source="NHG06" target="SNOMED_CT:239511007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ excision arthroplasty of first metatarsophalangeal joint; SNOMED CT 2100124436 239511007 = MTP
+        of hallux; exact match
+        """
+}
+mapping "NHG09.1" source="NHG09" target="SNOMED_CT:301763000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100124439 301763000 = excision arthroplasty of ankle or foot, other/unspecified
+        joint; SNOMED CT 'Excisi
+        """ suspect=quoted-text
+}
+mapping "NHG11.1" source="NHG11" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interposition arthroplasty subtalar joint; no close SNOMED CT match"
+}
+mapping "NHG20.1" source="NHG20" target="SNOMED_CT:280470006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "NHG20 annan artroplastik fotled; weak to ankle arthroplasty"
+}
+mapping "NHG22.1" source="NHG22" target="SNOMED_CT:265120006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other arthroplasty in ankle/foot without prosthesis -- triple fusion; clinically triple fusion
+        is triple arthrodesis of hindfoot despite the KVÅ chapter's arthr
+        """
+}
+mapping "NHG28.1" source="NHG28" target="SNOMED_CT:239496001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are interphalangeal arthroplasties without prosthesis; SNOMED CT is for finger, KVÅ for toe
+        """
+}
+mapping "NHG30.1" source="NHG30" target="SNOMED_CT:386682000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joint without fixation material, talocrural joint -- maps to arthrodesis of
+        foot (tibiotalar is a foot joint)
+        """
+}
+mapping "NHG31.1" source="NHG31" target="SNOMED_CT:9579005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints without fixation material - subtalar joint; SNOMED CT 2100124461 9579005
+        is the exact clinical equivalent
+        """
+}
+mapping "NHG32.1" source="NHG32" target="SNOMED_CT:360341006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints without fixation material, triple fusion = Triple arthrodesis of
+        ankle (SNOMED CT 360341006); triple fusion is the standard clinical ter
+        """
+}
+mapping "NHG34.1" source="NHG34" target="SNOMED_CT:239422009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA NHG34 = arthrodesis of foot joint without fixation material, first tarsometatarsal joint.
+        SNOMED CT 239422009. SN
+        """
+}
+mapping "NHG35.1" source="NHG35" target="SNOMED_CT:40742006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are tarsometatarsal arthrodeses; related technique"
+}
+mapping "NHG37.1" source="NHG37" target="SNOMED_CT:265120006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Different joint (MTP vs hindfoot); same general foot arthrodesis category"
+}
+mapping "NHG38.1" source="NHG38" target="SNOMED_CT:764009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124468 764009 = arthrodesis of foot joint without fixation - interphalangeal
+        joint; 'Arthrodesis of
+        """ suspect=quoted-text
+}
+mapping "NHG39.1" source="NHG39" target="SNOMED_CT:265120006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is foot joint arthrodesis unspecified; SNOMED CT is triple hindfoot arthrodesis same region"
+}
+mapping "NHG40.1" source="NHG40" target="SNOMED_CT:63513005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints with internal fixation - talocrural joint; SNOMED CT 2100124470 63513005
+        is the exact equivalent for talocrural joint fusion; the KVÅ adds '
+        """ suspect=quoted-text
+}
+mapping "NHG41.1" source="NHG41" target="SNOMED_CT:9579005" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Artrodes av fotens leder med intern fixation - subtalarled = subtalar arthrodesis with
+        internal fixation. Exact match: (9579005). The
+        """
+}
+mapping "NHG42.1" source="NHG42" target="SNOMED_CT:265120006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints with internal fixation - triple fusion = Triple arthrodesis of
+        hindfoot (exact match)
+        """
+}
+mapping "NHG43.1" source="NHG43" target="SNOMED_CT:386682000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints with internal fixation - tarsal joint. SNOMED CT 2100124473
+        386682000 is a parent concept but is the best available; the tarsal-specifi
+        """
+}
+mapping "NHG45.1" source="NHG45" target="SNOMED_CT:46590008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100124475 46590008 = arthrodesis of another tarsometatarsal joint with internal
+        fixation; matches SN
+        """
+}
+mapping "NHG46.1" source="NHG46" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHG48.1" source="NHG48" target="SNOMED_CT:239423004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100124478 239423004 = arthrodesis of foot interphalangeal joint with internal fixation;
+        exact match to SNOMED CT Art
+        """
+}
+mapping "NHG49.1" source="NHG49" target="SNOMED_CT:37030005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joint with internal fixation; very specific; broader parent is orthotic
+        fitting
+        """
+}
+mapping "NHG51.1" source="NHG51" target="SNOMED_CT:9579005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints with external fixation - subtalar joint. SNOMED CT 2100124481
+        9579005 captures the joint-specific procedure exactly; external fixati
+        """
+}
+mapping "NHG52.1" source="NHG52" target="SNOMED_CT:265120006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "External fixation triple fusion; good match with triple hindfoot arthrodesis"
+}
+mapping "NHG55.1" source="NHG55" target="SNOMED_CT:46590008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arthrodesis of foot joints with external fixation - other tarsometatarsal joint; SNOMED CT has
+        tarsometatarsal arthrodesis, multiple. The Swedish specifies externa
+        """
+}
+mapping "NHG56.1" source="NHG56" target="SNOMED_CT:1431002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "NHG57.1" source="NHG57" target="SNOMED_CT:265120006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Foot arthrodesis with external fixation; related foot fusion"
+}
+mapping "NHG59.1" source="NHG59" target="SNOMED_CT:112786003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

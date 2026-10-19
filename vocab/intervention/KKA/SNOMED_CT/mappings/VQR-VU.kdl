@@ -1,0 +1,240 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VQR-VU
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VQR00.1" source="VQR00" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Dual: local thrombolysis in IVC/pelvic vein reconstruction; weak to percutaneous thrombolysis
+        """
+}
+mapping "VQR10.1" source="VQR10" target="SNOMED_CT:175071008" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in inferior vena cava; thrombolysis is parent"
+}
+mapping "VQR20.1" source="VQR20" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in iliac vein maps to general percutaneous thrombolysis"
+}
+mapping "VQR90.1" source="VQR90" target="SNOMED_CT:240929001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Local thrombolysis in other pelvic vein vs percutaneous thrombolysis"
+}
+flag "VQT00.unmapped" kind=unmapped concept="VQT00" target-system="SNOMED_CT"
+flag "VQT50.unmapped" kind=unmapped concept="VQT50" target-system="SNOMED_CT"
+flag "VQT90.unmapped" kind=unmapped concept="VQT90" target-system="SNOMED_CT"
+flag "VQU00.unmapped" kind=unmapped concept="VQU00" target-system="SNOMED_CT"
+flag "VQU10.unmapped" kind=unmapped concept="VQU10" target-system="SNOMED_CT"
+flag "VQU20.unmapped" kind=unmapped concept="VQU20" target-system="SNOMED_CT"
+flag "VQU90.unmapped" kind=unmapped concept="VQU90" target-system="SNOMED_CT"
+mapping "VQV61.1" source="VQV61" target="SNOMED_CT:1636000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "VQW00.unmapped" kind=unmapped concept="VQW00" target-system="SNOMED_CT"
+mapping "VQW10.1" source="VQW10" target="SNOMED_CT:232994005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+flag "VQW20.unmapped" kind=unmapped concept="VQW20" target-system="SNOMED_CT"
+flag "VQW90.unmapped" kind=unmapped concept="VQW90" target-system="SNOMED_CT"
+flag "VSA00.unmapped" kind=unmapped concept="VSA00" target-system="SNOMED_CT"
+flag "VSA90.unmapped" kind=unmapped concept="VSA90" target-system="SNOMED_CT"
+flag "VSB00.unmapped" kind=unmapped concept="VSB00" target-system="SNOMED_CT"
+flag "VSB10.unmapped" kind=unmapped concept="VSB10" target-system="SNOMED_CT"
+mapping "VSB20.1" source="VSB20" target="SNOMED_CT:64616004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA custom target; weak: matches vein suture repair; lacks specific popliteal vein site."
+}
+flag "VSB90.unmapped" kind=unmapped concept="VSB90" target-system="SNOMED_CT"
+flag "VSC01.unmapped" kind=unmapped concept="VSC01" target-system="SNOMED_CT"
+flag "VSC11.unmapped" kind=unmapped concept="VSC11" target-system="SNOMED_CT"
+mapping "VSC21.1" source="VSC21" target="SNOMED_CT:57523002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ligatur eller delning av vena poplitea = ligation or division of popliteal vein. SNOMED CT
+        2100126544 57523002 captures both ligation and division components
+        """
+}
+mapping "VSC91.1" source="VSC91" target="SNOMED_CT:57523002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ligation or division of other deep vein in leg maps to; exact clinical equivalent."
+}
+flag "VSE00.unmapped" kind=unmapped concept="VSE00" target-system="SNOMED_CT"
+mapping "VSE90.1" source="VSE90" target="SNOMED_CT:397028007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy in other deep vein of leg = Thrombectomy of vein (exact match; SNOMED CT 2100126549
+        397028007 is the residual category for deep leg veins not specificall
+        """
+}
+flag "VSF10.unmapped" kind=unmapped concept="VSF10" target-system="SNOMED_CT"
+flag "VSF20.unmapped" kind=unmapped concept="VSF20" target-system="SNOMED_CT"
+mapping "VSF90.1" source="VSF90" target="SNOMED_CT:725937006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovenectomy in other deep vein of leg; endovenous ablation is loose but related."
+}
+mapping "VSG01.1" source="VSG01" target="SNOMED_CT:175845008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Both are procedures on deep venous system of leg; repair vs thrombectomy - related but different
+        """
+}
+flag "VSG11.unmapped" kind=unmapped concept="VSG11" target-system="SNOMED_CT"
+mapping "VSG12.1" source="VSG12" target="SNOMED_CT:86289001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: open valve plasty on vena femoralis maps to"
+}
+flag "VSG21.unmapped" kind=unmapped concept="VSG21" target-system="SNOMED_CT"
+flag "VSG91.unmapped" kind=unmapped concept="VSG91" target-system="SNOMED_CT"
+flag "VSH12.unmapped" kind=unmapped concept="VSH12" target-system="SNOMED_CT"
+flag "VSH92.unmapped" kind=unmapped concept="VSH92" target-system="SNOMED_CT"
+flag "VSJ11.unmapped" kind=unmapped concept="VSJ11" target-system="SNOMED_CT"
+flag "VSJ12.unmapped" kind=unmapped concept="VSJ12" target-system="SNOMED_CT"
+mapping "VSJ13.1" source="VSJ13" target="SNOMED_CT:69404000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Perfusion of isolated leg from femoral vein to femoral artery; SNOMED CT has perfusion of lower
+        limb. The isolated limb perfusion via femoral vessels is a specific
+        """
+}
+flag "VSJ21.unmapped" kind=unmapped concept="VSJ21" target-system="SNOMED_CT"
+flag "VSL00.unmapped" kind=unmapped concept="VSL00" target-system="SNOMED_CT"
+flag "VSL10.unmapped" kind=unmapped concept="VSL10" target-system="SNOMED_CT"
+flag "VSL20.unmapped" kind=unmapped concept="VSL20" target-system="SNOMED_CT"
+flag "VSL90.unmapped" kind=unmapped concept="VSL90" target-system="SNOMED_CT"
+flag "VSP01.unmapped" kind=unmapped concept="VSP01" target-system="SNOMED_CT"
+flag "VSR00.unmapped" kind=unmapped concept="VSR00" target-system="SNOMED_CT"
+mapping "VSR10.1" source="VSR10" target="SNOMED_CT:442000009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: local thrombolysis of femoral vein. SNOMED CT has femoral vein thrombolysis"
+}
+flag "VSR20.unmapped" kind=unmapped concept="VSR20" target-system="SNOMED_CT"
+flag "VSR90.unmapped" kind=unmapped concept="VSR90" target-system="SNOMED_CT"
+flag "VST01.unmapped" kind=unmapped concept="VST01" target-system="SNOMED_CT"
+flag "VST91.unmapped" kind=unmapped concept="VST91" target-system="SNOMED_CT"
+flag "VSU00.unmapped" kind=unmapped concept="VSU00" target-system="SNOMED_CT"
+mapping "VSU10.1" source="VSU10" target="SNOMED_CT:277989007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: foreign body removal from femoral vein; weak to percutaneous vein foreign body removal"
+}
+mapping "VSU20.1" source="VSU20" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endovascular extraction of foreign material from popliteal vein; vascular procedure parent"
+}
+flag "VSU90.unmapped" kind=unmapped concept="VSU90" target-system="SNOMED_CT"
+flag "VSW00.unmapped" kind=unmapped concept="VSW00" target-system="SNOMED_CT"
+flag "VSW10.unmapped" kind=unmapped concept="VSW10" target-system="SNOMED_CT"
+flag "VSW20.unmapped" kind=unmapped concept="VSW20" target-system="SNOMED_CT"
+flag "VSW90.unmapped" kind=unmapped concept="VSW90" target-system="SNOMED_CT"
+mapping "VUC11.1" source="VUC11" target="SNOMED_CT:265542003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "VUC31.unmapped" kind=unmapped concept="VUC31" target-system="SNOMED_CT"
+mapping "VUC41.1" source="VUC41" target="SNOMED_CT:265541005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA VUC41 = ligation or division of perforator veins in leg. SNOMED CT 265541005. Exact clinical
+        equivalent; perf
+        """
+}
+mapping "VUC42.1" source="VUC42" target="SNOMED_CT:448700009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SEPS (subfascial endoscopic perforator surgery) = endoscopic ligation of subfascial
+        perforating veins.
+        """
+}
+mapping "VUC51.1" source="VUC51" target="SNOMED_CT:12074006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ligation/division varices; SNOMED CT ligation gastric varices"
+}
+mapping "VUC91.1" source="VUC91" target="SNOMED_CT:57523002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Ligation or division of other superficial vein in leg: (57523002), confirmed SNOMED CT standard"
+}
+flag "VUH12.unmapped" kind=unmapped concept="VUH12" target-system="SNOMED_CT"
+mapping "VUK14.1" source="VUK14" target="SNOMED_CT:2677003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VUK24.1" source="VUK24" target="SNOMED_CT:2677003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "VUK34.1" source="VUK34" target="SNOMED_CT:449320003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Stripping of anterior accessory saphenous vein; broader match to varicose vein stripping"
+}
+flag "VUK42.unmapped" kind=unmapped concept="VUK42" target-system="SNOMED_CT"
+flag "VUK55.unmapped" kind=unmapped concept="VUK55" target-system="SNOMED_CT"
+flag "VUK92.unmapped" kind=unmapped concept="VUK92" target-system="SNOMED_CT"
+flag "VUL10.unmapped" kind=unmapped concept="VUL10" target-system="SNOMED_CT"
+flag "VUL20.unmapped" kind=unmapped concept="VUL20" target-system="SNOMED_CT"
+flag "VUL30.unmapped" kind=unmapped concept="VUL30" target-system="SNOMED_CT"
+flag "VUL40.unmapped" kind=unmapped concept="VUL40" target-system="SNOMED_CT"
+mapping "VUL50.1" source="VUL50" target="SNOMED_CT:274023003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation on varicose veins in leg maps to; covers unspecified varicose vein
+        procedures on legs.
+        """
+}
+flag "VUL90.unmapped" kind=unmapped concept="VUL90" target-system="SNOMED_CT"
+flag "VUT31.unmapped" kind=unmapped concept="VUT31" target-system="SNOMED_CT"
+flag "VUT91.unmapped" kind=unmapped concept="VUT91" target-system="SNOMED_CT"
+flag "VUV11.unmapped" kind=unmapped concept="VUV11" target-system="SNOMED_CT"
+flag "VUV12.unmapped" kind=unmapped concept="VUV12" target-system="SNOMED_CT"
+flag "VUV21.unmapped" kind=unmapped concept="VUV21" target-system="SNOMED_CT"
+mapping "VUV22.1" source="VUV22" target="SNOMED_CT:449708009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injection treatment of vena saphena parva (short saphenous vein) maps to SNOMED CT 42709836 SNOMED CT
+        2100126623 449708009
+        """
+}
+flag "VUV31.unmapped" kind=unmapped concept="VUV31" target-system="SNOMED_CT"
+mapping "VUV32.1" source="VUV32" target="SNOMED_CT:310546000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sclerotherapy injection of anterior accessory saphenous vein; microsclerotherapy is a broader
+        category for leg vein injections
+        """
+}
+flag "VUV41.unmapped" kind=unmapped concept="VUV41" target-system="SNOMED_CT"
+mapping "VUV42.1" source="VUV42" target="SNOMED_CT:173621008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injection treatment of leg perforator veins; SNOMED CT has injection sclerotherapy but for
+        esophageal varices
+        """
+}
+mapping "VUV51.1" source="VUV51" target="SNOMED_CT:725937006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovenös operation i varicer i ben = endovenous procedure for varicose veins in leg. The
+        US-guided mechanochemical ablation is the standard endovenous techniqu
+        """
+}
+mapping "VUV52.1" source="VUV52" target="SNOMED_CT:449709001" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injektionsbehandling av varicer i ben = injection treatment of varicose veins in leg. Exact
+        match to SNOMED CT Injection sclerotherapy of varicose vein of lower le
+        """
+}
+mapping "VUV91.1" source="VUV91" target="SNOMED_CT:725937006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endovenous operation in other superficial vein of leg; endovenous ablation is loose but related.
+        """
+}
+mapping "VUV92.1" source="VUV92" target="SNOMED_CT:449708009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are injection treatments of superficial leg veins; close match"
+}

@@ -1,0 +1,313 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes CHE-CKC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "CHE05.1" source="CHE05" target="SNOMED_CT:371345007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120551 371345007 = opening of pupil with laser; laser iridotomy is the standard
+        procedure for creating a pupillary opening with laser; SNOMED CT 3
+        """
+}
+mapping "CHE10.1" source="CHE10" target="SNOMED_CT:47487006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: excision of tumör or change in iris = excision of lesion of iris; precise
+        match.
+        """
+}
+mapping "CHE20.1" source="CHE20" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laser treatment iris tumör; no close SNOMED CT match"
+}
+mapping "CHE30.1" source="CHE30" target="SNOMED_CT:118900009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ suture of iris (iridorrhaphy); no exact SNOMED CT iridorrhaphy concept exists; SNOMED CT procedure
+        on iris is the broadest available parent
+        """
+}
+mapping "CHE99.1" source="CHE99" target="SNOMED_CT:172472004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CHE99 SNOMED CT 172472004 = Other operation for tumör or local change in iris (KVÅ
+        residual). Target (surgical or NEC). Source covers iris tumör/lesion operations; target covers
+        iris excision. Broader: source would typically involve iridectomy but covers more. Low tier: no
+        crosswalk, residual source.
+        """
+}
+mapping "CHF00.1" source="CHF00" target="SNOMED_CT:88812000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extirpation of tumör in ciliary body maps to; tumör is a lesion type, exact match"
+}
+mapping "CHF99.1" source="CHF99" target="SNOMED_CT:148869004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CHF99 SNOMED CT 148869004 = Other operation on ciliary body (KVÅ residual). Target. Both
+        denote operations on ciliary body at the parent level. Exact match at low tier: no crosswalk,
+        but semantics align.
+        """
+}
+mapping "CJB00.1" source="CJB00" target="SNOMED_CT:9137006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Discission av sekundär katarakt eller membran = discission of secondary cataract or membrane.
+        Exact match to SNOMED CT Discission of membranous cataract, secondary
+        """
+}
+mapping "CJB10.1" source="CJB10" target="SNOMED_CT:231748003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laser discission of secondary cataract/membrane is the clinical equivalent of laser capsulotomy
+        of lens capsule (YAG laser posterior capsulotomy). Exact match.
+        """
+}
+mapping "CJB20.1" source="CJB20" target="SNOMED_CT:12163000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Needling of secondary cataract is the standard SNOMED CT equivalent for evacuation/polishing of
+        secondary cataract (after-cataract). Same clinical procedure
+        """
+}
+mapping "CJB40.1" source="CJB40" target="SNOMED_CT:404629006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ laser anterior capsulotomy for capsule contraction after cataract = SNOMED CT
+        YAG laser anterior capsulotomy
+        """
+}
+mapping "CJB99.1" source="CJB99" target="SNOMED_CT:148879002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CJB99 SNOMED CT 148879002 = Other operation for secondary cataract (KVÅ residual). Target
+        (incl. cataract extraction). Source is specifically about secondary cataract; target broadly
+        subsumes all lens operations. Broader. Low tier: no crosswalk, secondary cataract specificity
+        lost.
+        """
+}
+mapping "CJC10.1" source="CJC10" target="SNOMED_CT:308695001" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA ICCE+IOL anterior chamber = SNOMED CT ICCE+IOL; KVA specifies chamber"
+}
+mapping "CJC20.1" source="CJC20" target="SNOMED_CT:385468004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ specifies intracapsular extraction with posterior chamber IOL; SNOMED CT matches well"
+}
+mapping "CJC99.1" source="CJC99" target="SNOMED_CT:257824002" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source CJC99 SNOMED CT 257824002 = Other intracapsular cataract operation (KVÅ residual). Target.
+        Both denote intracapsular cataract extraction. Exact match at low tier: no crosswalk, but
+        semantics align.
+        """
+}
+mapping "CJD10.1" source="CJD10" target="SNOMED_CT:308694002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120583 308694002 = extracapsular cataract extraction with anterior chamber IOL;
+        SNOMED CT 'E
+        """ suspect=quoted-text
+}
+mapping "CJD15.1" source="CJD15" target="SNOMED_CT:308694002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extracapsular cataract extraction with iridectomy and anterior chamber IOL; SNOMED CT ECCE+IOL is
+        close parent
+        """
+}
+mapping "CJD20.1" source="CJD20" target="SNOMED_CT:308694002" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA ECCE+IOL posterior chamber = SNOMED CT ECCE+IOL; nearly exact"
+}
+mapping "CJD30.1" source="CJD30" target="SNOMED_CT:410702009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: cataract/lens extraction via pars plana is synonymous with pars plana lensectomy of
+        cataract.
+        """
+}
+mapping "CJD99.1" source="CJD99" target="SNOMED_CT:148879002" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CJD99 SNOMED CT 148879002 = Other extracapsular cataract operation (KVÅ residual). Target
+        (incl. cataract extraction). Source is extracapsular cataract extraction; target is the parent
+        for lens operations including ECCE. Exact match at low tier: no crosswalk, but the parent
+        concept covers ECCE.
+        """
+}
+mapping "CJE05.1" source="CJE05" target="SNOMED_CT:313999004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Weak: phacoemulsification with iridectomy maps closely to phacoemulsification (missing
+        iridectomy detail)
+        """
+}
+mapping "CJE10.1" source="CJE10" target="SNOMED_CT:415089008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120591 415089008 = phacoemulsification with anterior chamber IOL implantation;
+        'Phacoemulsification of
+        """ suspect=quoted-text
+}
+mapping "CJE20.1" source="CJE20" target="SNOMED_CT:415089008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: phacoemulsification with posterior chamber IOL implantation. Verified SNOMED CT
+        standard concept S.
+        """
+}
+mapping "CJE25.1" source="CJE25" target="SNOMED_CT:84149000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Phacoemulsification with iridectomy and posterior chamber IOL. Phacoemulsification concept
+        captures core procedure.
+        """
+}
+mapping "CJE99.1" source="CJE99" target="SNOMED_CT:415089008" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CJE99 SNOMED CT 415089008 = Other extracapsular cataract operation with phacoemulsification
+        (KVÅ residual). Target. Both denote phacoemulsification cataract surgery. Exact match at low
+        tier: no crosswalk, but semantics align well.
+        """
+}
+mapping "CJF00.1" source="CJF00" target="SNOMED_CT:225703004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120596 225703004 = secondary implantation of lens prosthesis in anterior chamber;
+        exact match to SNOMED CT concept
+        """
+}
+mapping "CJF10.1" source="CJF10" target="SNOMED_CT:225703004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sekundaer implantation av linsprotes i bakre kammare = secondary lens implant in posterior
+        chamber; secondary lens implant is exact match, verified as SNOMED CT st
+        """
+}
+mapping "CJF20.1" source="CJF20" target="SNOMED_CT:172542008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Extraction of IOL (lens prosthesis); revision of IOL is very close match."
+}
+mapping "CJF50.1" source="CJF50" target="SNOMED_CT:231751005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Utbyte av linsprotes i bakre kammare (exchange of lens prosthesis in posterior chamber) maps to
+        SNOMED CT 2100120602 231751005. The posterior chamber specificat
+        """
+}
+mapping "CJF99.1" source="CJF99" target="SNOMED_CT:148879002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CJF99 SNOMED CT 148879002 = Other operation with lens prosthesis (KVÅ residual). Target
+        (incl. cataract extraction). Source is specifically about IOL/lens prosthesis operations; target
+        broadly subsumes all lens operations. Weak tier: target loses the prosthesis/IOL indication.
+        """
+}
+mapping "CJG05.1" source="CJG05" target="SNOMED_CT:89978003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Extraktion av luxerad lins med iridektomi eller iridotomi = extraction of dislocated lens
+        with iridectomy or iridotomy. Exact match: Intracapsular extracti
+        """
+}
+mapping "CJG10.1" source="CJG10" target="SNOMED_CT:373416003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: Swedish SNOMED CT 2100120607 373416003 = extraction of dislocated lens with
+        anterior chamber IOL
+        """
+}
+mapping "CJG15.1" source="CJG15" target="SNOMED_CT:206175003" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of dislocated lens with iridectomy + IOL implantation; very specific ophthalmic
+        procedure; distant parent
+        """
+}
+mapping "CJG20.1" source="CJG20" target="SNOMED_CT:308694002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: KVA luxated lens extraction+IOL; SNOMED CT cataract extraction+IOL related"
+}
+mapping "CJG25.1" source="CJG25" target="SNOMED_CT:385468004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extraction of luxated lens with iridectomy and IOL; SNOMED CT has only cataract extraction with IOL
+        """
+}
+mapping "CJG99.1" source="CJG99" target="SNOMED_CT:148879002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CJG99 SNOMED CT 148879002 = Other operation for luxated lens (KVÅ residual). Target (incl.
+        cataract extraction). Source is specifically about luxated lens surgery; target broadly subsumes
+        all lens operations. Weak tier: target loses the luxation indication.
+        """
+}
+mapping "CKB00.1" source="CKB00" target="SNOMED_CT:231788008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120616 231788008 = puncture and drainage of suprachoroidal fluid; exact match to
+        SNOMED CT concept
+        """
+}
+mapping "CKB99.1" source="CKB99" target="SNOMED_CT:172570005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source CKB99 SNOMED CT 172570005 = Other operation for choroidal detachment (KVÅ residual). Target.
+        Source is specifically about choroidal detachment surgery; target broadly subsumes
+        retinal/choroidal operations. Weak tier: target loses the choroidal detachment indication.
+        """
+}
+mapping "CKC00.1" source="CKC00" target="SNOMED_CT:58889009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Fotoruptur i glaskropp (laser treatment of retinal break in vitreous) maps exactly to Laser
+        retinopexy, which treats retinal breaks/tears using laser photocoagu
+        """
+}
+mapping "CKC12.1" source="CKC12" target="SNOMED_CT:231762005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "CKC20.1" source="CKC20" target="SNOMED_CT:231760002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ kryopexi på tilliggande näthinna = retinal cryopexy; exact clinical match to cryotherapy to
+        retina
+        """
+}
+mapping "CKC30.1" source="CKC30" target="SNOMED_CT:231760002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Kryopexi på avlöst näthinna = cryopexy (cryotherapy) on detached retina. Exact SNOMED CT
+        equivalent.
+        """
+}
+mapping "CKC60.1" source="CKC60" target="SNOMED_CT:26786002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120625 26786002 = placement of episcleral buckle/plomb; SNOMED CT is the closest
+        equivalent though it may not perfectly di
+        """
+}
+mapping "CKC70.1" source="CKC70" target="SNOMED_CT:47470009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Application of episcleral cerclage (buckle); scleral shortening for retinal detachment repair is
+        related.
+        """
+}
+mapping "CKC75.1" source="CKC75" target="SNOMED_CT:371394007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Episkleralt cerclage = scleral buckle; SNOMED CT concept is exact equivalent verified via Athena
+        """
+}

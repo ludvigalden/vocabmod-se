@@ -1,0 +1,246 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes JDF-JFD
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "JDF50.unmapped" kind=unmapped concept="JDF50" target-system="SNOMED_CT"
+mapping "JDF60.1" source="JDF60" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDF61.1" source="JDF61" target="SNOMED_CT:118635009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDG00.1" source="JDG00" target="SNOMED_CT:15213007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JDH15.1" source="JDH15" target="SNOMED_CT:314627002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122081 314627002 = endoscopic injection treatment in duodenum; SNOMED CT concept
+        for endoscopic injection hemostasis of duodenal
+        """
+}
+mapping "JDH18.1" source="JDH18" target="SNOMED_CT:771624003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same procedure but broader GI site; KVÅ is duodenum-specific"
+}
+mapping "JDH22.1" source="JDH22" target="SNOMED_CT:609194000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic laser therapy in duodenum maps exactly to Endoscopic laser surgery on duodenum; laser
+        therapy = laser surgery in SNOMED CT terminology.
+        """
+}
+mapping "JDH25.1" source="JDH25" target="SNOMED_CT:12415007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other endoscopic hemostatic procedure on duodenum maps to endoscopic destruction of lesion of
+        duodenum; hemostasis via destruction is the clinical equivalent
+        """
+}
+mapping "JDH28.1" source="JDH28" target="SNOMED_CT:12415007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ covers diathermy/heat for destruction + incision of stenosis; SNOMED CT only covers destruction
+        component
+        """
+}
+mapping "JDH50.1" source="JDH50" target="SNOMED_CT:265376006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extirpation of local lesion in duodenal bulb; SNOMED CT 2100122090 265376006 is the closest SNOMED CT
+        equivalent, the KVÅ specifies bulb but SNOMED CT
+        """
+}
+mapping "JDH52.1" source="JDH52" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic mucosal/submucosal resection duodenum; no close SNOMED CT match"
+}
+flag "JDW10.unmapped" kind=unmapped concept="JDW10" target-system="SNOMED_CT"
+flag "JDW11.unmapped" kind=unmapped concept="JDW11" target-system="SNOMED_CT"
+mapping "JEW96.1" source="JEW96" target="SNOMED_CT:235313004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other operation on appendix; SNOMED CT has appendectomy concepts. Reasonable parent."
+}
+mapping "JEW97.1" source="JEW97" target="SNOMED_CT:235313004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other laparoscopic operation on appendix; residual code. SNOMED CT appendectomy is related parent.
+        """
+}
+mapping "JFA05.1" source="JFA05" target="SNOMED_CT:235298005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFA22.1" source="JFA22" target="SNOMED_CT:609288004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopisk injektionsbehandling i tunntarm = endoscopic injection treatment in small intestine.
+        The SNOMED CT concept specifies SNOMED CT 2100122115 609288004. The K
+        """
+}
+mapping "JFA25.1" source="JFA25" target="SNOMED_CT:1332046003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFA28.1" source="JFA28" target="SNOMED_CT:274382000" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Endoscopic laser therapy small intestine; closest is operative enteroscopy"
+}
+mapping "JFA32.1" source="JFA32" target="SNOMED_CT:609200008" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is SNOMED CT 609200008 endoscopic hemostasis; SNOMED CT parent covers all methods including
+        clipping injection coagulation
+        """
+}
+mapping "JFA52.1" source="JFA52" target="SNOMED_CT:698409004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact semantic equivalent; KKÅ specifies colon and endoscopic hemostasis; SNOMED CT colonoscopic
+        control of bleeding is the same procedure
+        """
+}
+mapping "JFA55.1" source="JFA55" target="SNOMED_CT:301699000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic local colon procedure with diathermy/heat; SNOMED CT lacks exact diathermy concept but
+        snare resection is closest.
+        """
+}
+mapping "JFA68.1" source="JFA68" target="SNOMED_CT:1260482004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFA71.1" source="JFA71" target="SNOMED_CT:1303995009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ is laparoscopic intestinal suture; SNOMED CT combines endoscopy with suture repair"
+}
+mapping "JFA73.1" source="JFA73" target="SNOMED_CT:287559004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Excision of local lesion in small intestine maps to surgical biopsy"
+}
+mapping "JFA74.1" source="JFA74" target="SNOMED_CT:112706000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "JFA74 laparoskopisk exstirpation tunntarm; small bowel excision; weak to reoperation"
+}
+mapping "JFA80.1" source="JFA80" target="SNOMED_CT:13910004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 13910004 2100122136 is Swedish for colporrhaphy (vaginal wall repair); SNOMED CT is the
+        standard equivalent for this procedure
+        """
+}
+mapping "JFA85.1" source="JFA85" target="SNOMED_CT:425851003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122141 425851003 = endoscopic mucosal or submucosal resection of colon; SNOMED CT
+        'Fiberoptic endoscopic submucosal resec
+        """ suspect=quoted-text
+}
+flag "JFA88.unmapped" kind=unmapped concept="JFA88" target-system="SNOMED_CT"
+mapping "JFA98.1" source="JFA98" target="SNOMED_CT:274382000" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other transluminal endoscopic local operation small intestine/colon; closest is operative
+        enteroscopy
+        """
+}
+mapping "JFB20.1" source="JFB20" target="SNOMED_CT:276190007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Ileocecal resection is the same as ileocolic resection (removal of terminal ileum and cecum).
+        Verified SNOMED CT S.
+        """
+}
+mapping "JFB34.1" source="JFB34" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other laparoscopic resection of small+large bowel. No specific SNOMED CT match"
+}
+mapping "JFB46.1" source="JFB46" target="SNOMED_CT:826981000000100" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ approach-neutral sigmoid resection; SNOMED CT has open/lap variants but no approach-agnostic
+        concept — loose match to open variant
+        """
+}
+mapping "JFB47.1" source="JFB47" target="SNOMED_CT:1303413007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFB50.1" source="JFB50" target="SNOMED_CT:43075005" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other colon resection = partial resection of colon. Good parent match."
+}
+mapping "JFB51.1" source="JFB51" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other laparoscopic colon resection. No specific SNOMED CT match"
+}
+mapping "JFB53.1" source="JFB53" target="SNOMED_CT:826981000000100" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Sigmoid colectomy with concurrent partial rectal resection; SNOMED CT open sigmoid colectomy is
+        close
+        """
+}
+mapping "JFB54.1" source="JFB54" target="SNOMED_CT:1303413007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ includes simultaneous rectal resection; SNOMED CT covers sigmoid colectomy only"
+}
+mapping "JFB54.2" source="JFB54" target="SNOMED_CT:1303413007" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFC00.1" source="JFC00" target="SNOMED_CT:235407009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFC01.1" source="JFC01" target="SNOMED_CT:395140006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ specifies laparoscopic enteroanastomosis; SNOMED CT is broader intestinal anastomosis parent.
+        """
+}
+mapping "JFC10.1" source="JFC10" target="SNOMED_CT:14403007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "JFC21.1" source="JFC21" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: other laparoscopic enterocolostomy. No specific SNOMED CT match"
+}
+flag "JFC60.unmapped" kind=unmapped concept="JFC60" target-system="SNOMED_CT"
+flag "JFC61.unmapped" kind=unmapped concept="JFC61" target-system="SNOMED_CT"
+mapping "JFD00.1" source="JFD00" target="SNOMED_CT:11682008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Jejunoileal shunt maps to; both describe a surgical connection between jejunum and ileum.
+        Confidence reduced because SNOMED CT 11682008 2100122187 may have broader co
+        """
+}
+mapping "JFD03.1" source="JFD03" target="SNOMED_CT:1340181009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is biliopancreatic diversion with duodenal switch (open+lap); SNOMED CT is laparoscopic
+        approach only — sibling
+        """
+}
+mapping "JFD04.1" source="JFD04" target="SNOMED_CT:1340181009" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 1340181009 2100122189 = laparoscopic duodenal switch, which by definition
+        includes biliopancreatic diversion
+        """
+}
+mapping "JFD10.1" source="JFD10" target="SNOMED_CT:10088002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KKÅ jejunoileal shunt = historical jejunoileal bypass; revision maps directly"
+}
+mapping "JFD20.1" source="JFD20" target="SNOMED_CT:61600000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Återställning efter jejunoileal shunt (restoration/take-down after jejunoileal shunt) maps
+        exactly to Take-down of jejunoileal bypass, as SNOMED CT 2100122192 61600000 and a
+        """
+}

@@ -1,0 +1,187 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VEH-VEN
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VEH11.1" source="VEH11" target="SNOMED_CT:1287904000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Reimplantation av a. subclavia = reimplantation of subclavian artery. SNOMED CT 1287904000
+        2100125694 is the closest SNOMED CT concept; no specific 'reimplantatio
+        """ suspect=quoted-text
+}
+mapping "VEH16.1" source="VEH16" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: subclavian to common carotid transposition. No specific SNOMED CT match"
+}
+flag "VEH22.unmapped" kind=unmapped concept="VEH22" target-system="SNOMED_CT"
+flag "VEH38.unmapped" kind=unmapped concept="VEH38" target-system="SNOMED_CT"
+flag "VEH48.unmapped" kind=unmapped concept="VEH48" target-system="SNOMED_CT"
+flag "VEH58.unmapped" kind=unmapped concept="VEH58" target-system="SNOMED_CT"
+flag "VEH68.unmapped" kind=unmapped concept="VEH68" target-system="SNOMED_CT"
+flag "VEH98.unmapped" kind=unmapped concept="VEH98" target-system="SNOMED_CT"
+mapping "VEJ00.1" source="VEJ00" target="SNOMED_CT:175745000" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass/interposition graft from previous subclavian artery reconstruction; vascular repair is
+        parent
+        """
+}
+mapping "VEJ11.1" source="VEJ11" target="SNOMED_CT:40298007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interposition graft in subclavian maps to interposition graft replacement"
+}
+mapping "VEJ13.1" source="VEJ13" target="SNOMED_CT:10220003" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or interposition graft from subclavian artery to ipsilateral axillary artery; exact match
+        to SNOMED CT 10220003 2100125704. Confirm
+        """
+}
+mapping "VEJ14.1" source="VEJ14" target="SNOMED_CT:439019000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or interposition graft from subclavian to ipsilateral brachial artery. SNOMED CT concept is
+        exact: subclavian-to-brachial bypass with vein graft, which is t
+        """
+}
+mapping "VEJ15.1" source="VEJ15" target="SNOMED_CT:18623006" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Subclavian to forearm artery bypass vs subclavian-axillary bypass; related parent"
+}
+flag "VEJ16.unmapped" kind=unmapped concept="VEJ16" target-system="SNOMED_CT"
+flag "VEJ17.unmapped" kind=unmapped concept="VEJ17" target-system="SNOMED_CT"
+flag "VEJ18.unmapped" kind=unmapped concept="VEJ18" target-system="SNOMED_CT"
+flag "VEJ19.unmapped" kind=unmapped concept="VEJ19" target-system="SNOMED_CT"
+mapping "VEJ33.1" source="VEJ33" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100125711 233385001 = interposition graft in axillary artery; SNOMED CT interposition
+        arterial graft captures the procedure type; specific ve
+        """
+}
+flag "VEJ34.unmapped" kind=unmapped concept="VEJ34" target-system="SNOMED_CT"
+flag "VEJ35.unmapped" kind=unmapped concept="VEJ35" target-system="SNOMED_CT"
+mapping "VEJ36.1" source="VEJ36" target="SNOMED_CT:1231785004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass or extra-anatomic revascularization from axillary artery to carotid or contralateral
+        artery. Maps to SNOMED CT 1231785004 2100125714. Verified
+        """
+}
+mapping "VEJ37.1" source="VEJ37" target="SNOMED_CT:388997005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from axillary to iliac or femoral artery = axillary-femoral arterial bypass. Verified
+        SNOMED CT S.
+        """
+}
+flag "VEJ38.unmapped" kind=unmapped concept="VEJ38" target-system="SNOMED_CT"
+flag "VEJ44.unmapped" kind=unmapped concept="VEJ44" target-system="SNOMED_CT"
+mapping "VEJ45.1" source="VEJ45" target="SNOMED_CT:1297175004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from brachial artery to ipsilateral forearm artery; SNOMED CT upper limb arterial bypass is
+        parent
+        """
+}
+flag "VEJ48.unmapped" kind=unmapped concept="VEJ48" target-system="SNOMED_CT"
+flag "VEJ58.unmapped" kind=unmapped concept="VEJ58" target-system="SNOMED_CT"
+flag "VEJ68.unmapped" kind=unmapped concept="VEJ68" target-system="SNOMED_CT"
+flag "VEJ98.unmapped" kind=unmapped concept="VEJ98" target-system="SNOMED_CT"
+flag "VEK10.unmapped" kind=unmapped concept="VEK10" target-system="SNOMED_CT"
+flag "VEK18.unmapped" kind=unmapped concept="VEK18" target-system="SNOMED_CT"
+flag "VEK20.unmapped" kind=unmapped concept="VEK20" target-system="SNOMED_CT"
+flag "VEK30.unmapped" kind=unmapped concept="VEK30" target-system="SNOMED_CT"
+flag "VEK38.unmapped" kind=unmapped concept="VEK38" target-system="SNOMED_CT"
+flag "VEK40.unmapped" kind=unmapped concept="VEK40" target-system="SNOMED_CT"
+flag "VEK48.unmapped" kind=unmapped concept="VEK48" target-system="SNOMED_CT"
+flag "VEK50.unmapped" kind=unmapped concept="VEK50" target-system="SNOMED_CT"
+flag "VEK58.unmapped" kind=unmapped concept="VEK58" target-system="SNOMED_CT"
+flag "VEK60.unmapped" kind=unmapped concept="VEK60" target-system="SNOMED_CT"
+mapping "VEK68.1" source="VEK68" target="SNOMED_CT:13345002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open removal of AV graft from ulnar artery; SNOMED CT has arterial bypass take-down"
+}
+flag "VEK90.unmapped" kind=unmapped concept="VEK90" target-system="SNOMED_CT"
+flag "VEK98.unmapped" kind=unmapped concept="VEK98" target-system="SNOMED_CT"
+mapping "VEL00.1" source="VEL00" target="SNOMED_CT:265503003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Other open operation on previous reconstruction in or from subclavian artery distribution;
+        Reconstruction of subclavian artery is the parent concept, verified i
+        """
+}
+flag "VEL11.unmapped" kind=unmapped concept="VEL11" target-system="SNOMED_CT"
+flag "VEL18.unmapped" kind=unmapped concept="VEL18" target-system="SNOMED_CT"
+flag "VEL22.unmapped" kind=unmapped concept="VEL22" target-system="SNOMED_CT"
+flag "VEL33.unmapped" kind=unmapped concept="VEL33" target-system="SNOMED_CT"
+flag "VEL38.unmapped" kind=unmapped concept="VEL38" target-system="SNOMED_CT"
+flag "VEL44.unmapped" kind=unmapped concept="VEL44" target-system="SNOMED_CT"
+mapping "VEL48.1" source="VEL48" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+flag "VEL55.unmapped" kind=unmapped concept="VEL55" target-system="SNOMED_CT"
+mapping "VEL58.1" source="VEL58" target="SNOMED_CT:1332220006" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other open AV graft/fistel radial; closest is repair of acquired AV fistula of limb"
+}
+flag "VEL65.unmapped" kind=unmapped concept="VEL65" target-system="SNOMED_CT"
+flag "VEL68.unmapped" kind=unmapped concept="VEL68" target-system="SNOMED_CT"
+flag "VEL98.unmapped" kind=unmapped concept="VEL98" target-system="SNOMED_CT"
+mapping "VEL99.1" source="VEL99" target="SNOMED_CT:175452004" relationship=equivalent quality=100 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source VEL99 SNOMED CT 175452004 = Other open operation on other artery in subclavian territory
+        (KVÅ residual). Target. Both denote residual on subclavian territory arteries. Exact match at
+        low tier: no crosswalk, but NOS semantics align.
+        """
+}
+flag "VEN00.unmapped" kind=unmapped concept="VEN00" target-system="SNOMED_CT"
+flag "VEN11.unmapped" kind=unmapped concept="VEN11" target-system="SNOMED_CT"
+mapping "VEN18.1" source="VEN18" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: PTA/SAP of AV graft/fistula from subclavian artery. No SNOMED CT match"
+}
+flag "VEN22.unmapped" kind=unmapped concept="VEN22" target-system="SNOMED_CT"
+mapping "VEN33.1" source="VEN33" target="SNOMED_CT:175464007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA/SAP of axillary artery = fluoroscopy guided PTA of axillary artery with contrast; PTA is the
+        standard component; fluoroscopy/contrast is standard practice a
+        """
+}
+flag "VEN38.unmapped" kind=unmapped concept="VEN38" target-system="SNOMED_CT"
+mapping "VEN44.1" source="VEN44" target="SNOMED_CT:175455002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PTA or SAP of brachial artery. SNOMED CT 175455002 2100125758 captures the angioplasty
+        procedure exactly; fluoroscopic
+        """
+}
+flag "VEN48.unmapped" kind=unmapped concept="VEN48" target-system="SNOMED_CT"
+flag "VEN55.unmapped" kind=unmapped concept="VEN55" target-system="SNOMED_CT"
+flag "VEN58.unmapped" kind=unmapped concept="VEN58" target-system="SNOMED_CT"
+flag "VEN65.unmapped" kind=unmapped concept="VEN65" target-system="SNOMED_CT"
+mapping "VEN68.1" source="VEN68" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PTA/SAP in AV graft/fistel from ulnar artery; vascular procedure parent"
+}
+flag "VEN98.unmapped" kind=unmapped concept="VEN98" target-system="SNOMED_CT"
+mapping "VEN99.1" source="VEN99" target="SNOMED_CT:175469002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VEN99 SNOMED CT 175469002 = PTA or SAP in other artery in subclavian territory (KVÅ
+        residual). Target. Both denote percutaneous transluminal angioplasty on subclavian territory
+        arteries. Exact match at low tier: no crosswalk, but NOS semantics align.
+        """
+}

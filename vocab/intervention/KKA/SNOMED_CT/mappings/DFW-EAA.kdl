@@ -1,0 +1,238 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes DFW-EAA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "DFW99.1" source="DFW99" target="SNOMED_CT:112975008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan annan operation på inneröra = other other operation on inner ear. Double residual category
+        but specific anatomy (inner ear). SNOMED CT Operation on the inner
+        """
+}
+mapping "DGB00.1" source="DGB00" target="SNOMED_CT:119271006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DGW99.1" source="DGW99" target="SNOMED_CT:172730001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DGW99 SNOMED CT 172730001 = Other operation on Eustachian tube (KVÅ residual). Target. Both
+        denote operations on the Eustachian tube at the same level. Exact match at low tier: no
+        crosswalk, but NOS semantics align directly.
+        """
+}
+mapping "DHA00.1" source="DHA00" target="SNOMED_CT:1854003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHA10.1" source="DHA10" target="SNOMED_CT:80250004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHB00.1" source="DHB00" target="SNOMED_CT:80250004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Broader: external nose excision has no exact SNOMED CT match; intranasal biopsy is nearest"
+}
+mapping "DHB20.1" source="DHB20" target="SNOMED_CT:10489002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHB40.1" source="DHB40" target="SNOMED_CT:13490005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHB45.1" source="DHB45" target="SNOMED_CT:232482008" relationship=equivalent preference=alternative {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "DHC10.1" source="DHC10" target="SNOMED_CT:10777003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHD10.1" source="DHD10" target="SNOMED_CT:25060006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DHD30.1" source="DHD30" target="SNOMED_CT:36460001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVA osteosynthesis of nasal fracture = SNOMED CT open reduction of nasal fracture; near-exact match
+        """
+}
+mapping "DJA20.1" source="DJA20" target="SNOMED_CT:112790001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Sphenoid sinus transseptal; SNOMED CT nasal sinus endoscopy"
+}
+mapping "DJB30.1" source="DJB30" target="SNOMED_CT:1303715004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DJD10.1" source="DJD10" target="SNOMED_CT:63145008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 2100120760 63145008 = closure of nasal septal perforation; exact match to SNOMED CT concept
+        """
+}
+mapping "DKW00.1" source="DKW00" target="SNOMED_CT:55810002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: (55810002) confirmed as SNOMED CT standard, Procedure domain"
+}
+mapping "DKW10.1" source="DKW10" target="SNOMED_CT:430531002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: Swedish SNOMED CT 2100120766 430531002 = anterior nasal packing with tampon"
+}
+mapping "DLD10.1" source="DLD10" target="SNOMED_CT:13529000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Correction of nasal cartilage/bone skeleton = septoplasty; very close match"
+}
+mapping "DLD20.1" source="DLD20" target="SNOMED_CT:232463004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ yttre näsplastik = external rhinoplasty; exact terminological match"
+}
+mapping "DLD25.1" source="DLD25" target="SNOMED_CT:1236983001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Corrective plastic surgery of choanal atresia; SNOMED CT Repair of choanal atresia is the generic
+        approach-independent concept (specific approaches exist but KVAA
+        """
+}
+mapping "DLD30.1" source="DLD30" target="SNOMED_CT:232470004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DMA00.1" source="DMA00" target="SNOMED_CT:67949002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120777 67949002 = biopsy of maxillary sinus; SNOMED CT represents the same clinical
+        procedure (biopsy of m
+        """
+}
+mapping "DMA10.1" source="DMA10" target="SNOMED_CT:1208458002" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ maxillary sinus exploration; SNOMED CT sinoscopy of maxillary sinus is closest match"
+}
+mapping "DMB20.1" source="DMB20" target="SNOMED_CT:126063004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoscopic opening of maxillary sinus maps exactly to maxillary sinus endoscopy (endoscopic
+        antrostomy)
+        """
+}
+mapping "DMB30.1" source="DMB30" target="SNOMED_CT:42316002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: KKÅ transmaxillär exstirpation = Caldwell-Luc approach to maxillary sinus"
+}
+mapping "DMW00.1" source="DMW00" target="SNOMED_CT:265025004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Placement of drainage in sinus maxillaris = drainage of maxillary antrum, exact clinical
+        equivalent
+        """
+}
+mapping "DMW99.1" source="DMW99" target="SNOMED_CT:148987002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DMW99 SNOMED CT 148987002 = Other operation on maxillary sinus and maxilla (KVÅ residual).
+        Target (incl. antrostomy, frontal, maxillary). Both denote operations on the maxillary sinus.
+        Exact match at low tier: no crosswalk, but semantics align. Maxilla scope partially uncovered by
+        target.
+        """
+}
+mapping "DNB30.1" source="DNB30" target="SNOMED_CT:44424007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100120791 44424007 = extirpation of local change/lesion in ethmoid sinus; SNOMED CT
+        44424007 is the exact equivalent; verifi
+        """
+}
+mapping "DNW99.1" source="DNW99" target="SNOMED_CT:1332521006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Annan annan operation på sinus ethmoidale = other other operation on ethmoid sinus. SNOMED CT
+        1332521006 2100120793 matches this residual category. Verifi
+        """
+}
+mapping "DPA00.1" source="DPA00" target="SNOMED_CT:232512001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Biopsy of frontal sinus is an exact match. Confirmed SNOMED CT S, concept_id 4048636."
+}
+mapping "DPA10.1" source="DPA10" target="SNOMED_CT:232514000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA DPA10 = biopsy of sphenoid sinus. SNOMED CT 232514000. Exact match."
+}
+mapping "DPA20.1" source="DPA20" target="SNOMED_CT:90240003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100120796 90240003 = trepanation of frontal sinus, which is equivalent to frontal
+        sinusotomy with trephine approach; exact match to SNOMED CT 'F
+        """ suspect=quoted-text
+}
+mapping "DPB00.1" source="DPB00" target="SNOMED_CT:30184009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resektion av förändring i sinus frontalis = resection of lesion in frontal sinus; SNOMED CT
+        2100120797 30184009 =, =, = 'fronta
+        """ suspect=quoted-text
+}
+mapping "DPB20.1" source="DPB20" target="SNOMED_CT:4671001" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Resection of sphenoid sinus lesion; SNOMED CT Excision of lesion from sphenoid sinus is exact match
+        """
+}
+mapping "DPB31.1" source="DPB31" target="SNOMED_CT:447328004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Endoskopiskt öppnande av sfenoidalsinusostiet (endoscopic opening of sphenoid sinus ostium) maps
+        exactly to Endoscopic sphenoidotomy. Verified SNOMED CT S concept.
+        """
+}
+mapping "DPB32.1" source="DPB32" target="SNOMED_CT:1220582003" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are endoscopic sinus surgeries; KVÅ specifies sphenoid sinus"
+}
+mapping "DPW99.1" source="DPW99" target="SNOMED_CT:148987002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source DPW99 SNOMED CT 148987002 = Other operation on frontal or sphenoidal sinus (KVÅ residual).
+        Target. Weak tier: target loses the specific sinus (frontal/sphenoidal) indication.
+        """
+}
+mapping "DQB10.1" source="DQB10" target="SNOMED_CT:173027006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; KKÅ exstirpation = SNOMED CT resection"
+}
+mapping "DQB60.1" source="DQB60" target="SNOMED_CT:232553009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DQB80.1" source="DQB80" target="SNOMED_CT:13529000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation for vocal cord stricture; septoplasty is distant laryngeal surgery parent"
+}
+mapping "DQD10.1" source="DQD10" target="SNOMED_CT:24611008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "DQD30.1" source="DQD30" target="SNOMED_CT:1231420006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "DQE10.1" source="DQE10" target="SNOMED_CT:185173003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Injection or implantation of foreign material in vocal cords. In clinical context, SNOMED CT
+        185173003 2100120829 is inert material used for vocal cord augmentation. Cove
+        """
+}
+mapping "EAA10.1" source="EAA10" target="SNOMED_CT:29828005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Extirpation of local change on lip = excision of lesion of lip. Direct clinical equivalent.
+        Verified SNOMED CT standard concept.
+        """
+}
+mapping "EAA99.1" source="EAA99" target="SNOMED_CT:173273004" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source EAA99 SNOMED CT 173273004 = Other incision or resection of lip (KVÅ residual). Target. Both
+        denote residual operations on the lip. Exact match at low tier: no crosswalk, but NOS semantics
+        align.
+        """
+}

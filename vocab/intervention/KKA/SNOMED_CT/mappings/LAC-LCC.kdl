@@ -1,0 +1,248 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes LAC-LCC
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "LAC02.unmapped" kind=unmapped concept="LAC02" target-system="SNOMED_CT"
+mapping "LAC20.1" source="LAC20" target="SNOMED_CT:177018009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Destruktion av förändring i ovarium = destruction of lesion in ovary; exact SNOMED CT match for
+        open destruction of ovarian lesion.
+        """
+}
+mapping "LAC30.1" source="LAC30" target="SNOMED_CT:59766003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exstirpation av parovarialcysta = excision of paraovarian cyst; exact match to Excision of
+        paraovarian cyst
+        """
+}
+mapping "LAC97.1" source="LAC97" target="SNOMED_CT:446598002" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic ovarian lesion destruction vs laparoscopic salpingo-oophorectomy; broader parent
+        """
+}
+mapping "LAE12.1" source="LAE12" target="SNOMED_CT:441820006" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vaginal unilateral oophorectomy vNOTES; broader laparoscopic-assisted vaginal procedure with
+        oophorectomy
+        """
+}
+flag "LAE22.unmapped" kind=unmapped concept="LAE22" target-system="SNOMED_CT"
+mapping "LAF00.1" source="LAF00" target="SNOMED_CT:116028008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+flag "LAF02.unmapped" kind=unmapped concept="LAF02" target-system="SNOMED_CT"
+mapping "LAF10.1" source="LAF10" target="SNOMED_CT:116028008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "LAF12.unmapped" kind=unmapped concept="LAF12" target-system="SNOMED_CT"
+mapping "LAF20.1" source="LAF20" target="SNOMED_CT:116028008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures specifies unilateral transvaginal approach; SNOMED CT concept is approach-agnostic and
+        lateral-agnostic — loose parent
+        """
+}
+mapping "LAF20.2" source="LAF20" target="SNOMED_CT:116028008" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LAF30.1" source="LAF30" target="SNOMED_CT:116028008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LAG00.1" source="LAG00" target="SNOMED_CT:21228001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LAG01.1" source="LAG01" target="SNOMED_CT:447077004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk ovariolys = laparoscopic ovariolysis (lysis of adhesions of ovary); (447077004) is
+        t
+        """
+}
+mapping "LAG20.1" source="LAG20" target="SNOMED_CT:61473007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: Swedish SNOMED CT 2100122980 61473007 = detorsion of ovary"
+}
+mapping "LBB11.1" source="LBB11" target="SNOMED_CT:177000006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic puncture biopsy of fallopian tube maps exactly to SNOMED CT 4074562 SNOMED CT 177000006
+        2100122993
+        """
+}
+mapping "LBC00.1" source="LBC00" target="SNOMED_CT:22778000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous drug injection for ectopic pregnancy; no close SNOMED CT match"
+}
+mapping "LBC03.1" source="LBC03" target="SNOMED_CT:236931002" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact match: KVA transvaginal injection for ectopic pregnancy = SNOMED CT methotrexate
+        injection into tubal pregnancy
+        """
+}
+mapping "LBC07.1" source="LBC07" target="SNOMED_CT:236931002" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic injection of drug for tubal pregnancy treatment; Methotrexate injection is the
+        standard drug and approach, exact match, verified in Athena
+        """
+}
+mapping "LBC10.1" source="LBC10" target="SNOMED_CT:82688001" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        KVÅ SNOMED CT 2100122999 82688001 = evacuation of tubal pregnancy; SNOMED CT is the clinical
+        equivalent (evacuation of tubal pregnancy
+        """
+}
+mapping "LBC11.1" source="LBC11" target="SNOMED_CT:450562009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic evacuation of tubal pregnancy; exact match to SNOMED CT 2100123000 450562009.
+        Confirmed SNOMED CT S.
+        """
+}
+mapping "LBC20.1" source="LBC20" target="SNOMED_CT:236925000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Salpingotomy for ectopic pregnancy evacuation; SNOMED CT Linear salpingotomy is the same procedure
+        """
+}
+mapping "LBC21.1" source="LBC21" target="SNOMED_CT:315066001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic tubotomy with evacuation of tubal pregnancy is clinically synonymous with
+        laparoscopic salpingotomy; the gold standard treatment for tubal pregnanc
+        """
+}
+mapping "LBC98.1" source="LBC98" target="SNOMED_CT:387615001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Tubal-sparing endoscopic treatment of tubal pregnancy. SNOMED CT has ectopic pregnancy removal from
+        tube.
+        """
+}
+mapping "LBD01.1" source="LBD01" target="SNOMED_CT:315059002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoskopisk tubarresektion = Laparoscopic salpingectomy; partial/total tubal resection via
+        laparoscopy matches laparoscopic salpingectomy (removal of all or p
+        """
+}
+mapping "LBE02.1" source="LBE02" target="SNOMED_CT:300897007" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Vaginal salpingectomy via vNOTES; SNOMED CT total salpingectomy is parent without approach
+        specification
+        """
+}
+mapping "LBF31.1" source="LBF31" target="SNOMED_CT:1258938004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LBF51.1" source="LBF51" target="SNOMED_CT:1258938004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LBF61.1" source="LBF61" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Laparoscopic tubal resection with anastomosis; no close SNOMED CT match"
+}
+mapping "LCA00.1" source="LCA00" target="SNOMED_CT:119285001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 119285001 2100123033; (4001054) covers the uterine component; no
+        parametrium-specific biopsy exists in SNOMED CT. The KVAA
+        """
+}
+mapping "LCA01.1" source="LCA01" target="SNOMED_CT:55542002" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Laparoscopic biopsy of uterus = Laparoscopic biopsy of uterus (exact match; parametrium
+        component not separately coded)
+        """
+}
+mapping "LCA06.1" source="LCA06" target="SNOMED_CT:386802000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent."
+}
+mapping "LCA10.1" source="LCA10" target="SNOMED_CT:11401008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Abrasio of corpus uteri is dilation and curettage of uterine body; maps exactly to D&C of uterus
+        """
+}
+mapping "LCA13.1" source="LCA13" target="SNOMED_CT:11401008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCA16.1" source="LCA16" target="SNOMED_CT:265060005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent: destruction of endometrium = endometrial ablation. Verified SNOMED CT standard
+        concept S
+        """
+}
+mapping "LCA30.1" source="LCA30" target="SNOMED_CT:75456002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transfer av agg eller embryo till uterus = transfer of egg or embryo to uterus. Embryo transfer
+        is the exact clinical equivalent. KVAA specifies egg OR embryo b
+        """
+}
+mapping "LCB01.1" source="LCB01" target="SNOMED_CT:236887006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCB11.1" source="LCB11" target="SNOMED_CT:450559006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100123047 450559006 = laparoscopic myomectomy; exact SNOMED CT match"
+}
+mapping "LCB25.1" source="LCB25" target="SNOMED_CT_SE_EXT:66811000052105" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        66811000052105; has Swedish synonym SNOMED CT 274974008 66811000052105 — near-exact lexical and
+        semantic match for LCB25.
+        """
+}
+mapping "LCB25.2" source="LCB25" target="SNOMED_CT:274974008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "LCB96.1" source="LCB96" target="SNOMED_CT:8095007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other excision/destruction of uterus lesion; aspiration curettage is very loose."
+}
+mapping "LCB98.1" source="LCB98" target="SNOMED_CT:235159007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Transluminal endoscopic excision of uterus lesion; no good match; PEG is unrelated but
+        available.
+        """
+}
+mapping "LCC05.1" source="LCC05" target="SNOMED_CT:54130005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ hysteroskopisk resektion av septum i uterus = exact match to SNOMED CT concept"
+}
+mapping "LCC10.1" source="LCC10" target="SNOMED_CT:176795006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Supravaginal uterusamputation = supracervical/subtotal hysterectomy (removing uterus body,
+        leaving cervix). Exact match: Subtotal abdominal hysterectomy (1
+        """
+}
+mapping "LCC20.1" source="LCC20" target="SNOMED_CT:1187630003" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVA custom target; weak: near-exact match. Supravaginal = subtotal/cervix-sparing."
+}
+mapping "LCC97.1" source="LCC97" target="SNOMED_CT:116140006" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other laparoscopic uterine resection; SNOMED CT total hysterectomy is parent concept"
+}

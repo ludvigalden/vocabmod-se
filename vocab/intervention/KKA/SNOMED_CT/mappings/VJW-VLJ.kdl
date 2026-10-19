@@ -1,0 +1,268 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes VJW-VLJ
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+flag "VJW11.unmapped" kind=unmapped concept="VJW11" target-system="SNOMED_CT"
+flag "VJW12.unmapped" kind=unmapped concept="VJW12" target-system="SNOMED_CT"
+flag "VJW18.unmapped" kind=unmapped concept="VJW18" target-system="SNOMED_CT"
+flag "VJW22.unmapped" kind=unmapped concept="VJW22" target-system="SNOMED_CT"
+flag "VJW28.unmapped" kind=unmapped concept="VJW28" target-system="SNOMED_CT"
+flag "VJW33.unmapped" kind=unmapped concept="VJW33" target-system="SNOMED_CT"
+flag "VJW38.unmapped" kind=unmapped concept="VJW38" target-system="SNOMED_CT"
+flag "VJW44.unmapped" kind=unmapped concept="VJW44" target-system="SNOMED_CT"
+flag "VJW45.unmapped" kind=unmapped concept="VJW45" target-system="SNOMED_CT"
+flag "VJW55.unmapped" kind=unmapped concept="VJW55" target-system="SNOMED_CT"
+flag "VLA00.unmapped" kind=unmapped concept="VLA00" target-system="SNOMED_CT"
+mapping "VLA63.1" source="VLA63" target="SNOMED_CT:175755001" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open exploration of tibiofibular trunk; SNOMED CT open exploration of artery is parent concept"
+}
+mapping "VLA72.1" source="VLA72" target="SNOMED_CT:312641007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100126220 312641007 = open exploration of anterior tibial artery; exact match to
+        SNOMED CT
+        """
+}
+mapping "VLA75.1" source="VLA75" target="SNOMED_CT:405384003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Oopen exploration av a. fibularis = open exploration of fibular (peroneal) artery; exploration
+        of peroneal artery is exact match (fibularis = peroneal), verifie
+        """
+}
+mapping "VLA86.1" source="VLA86" target="SNOMED_CT:175755001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 175755001 2100126223 = open exploration of dorsalis pedis artery; maps to as the clinical
+        equivalent
+        """
+}
+mapping "VLA87.1" source="VLA87" target="SNOMED_CT:312642000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: open exploration of posterior tibial artery at ankle level; SNOMED CT
+        2100126224 312642000 captures the vessel. The ankle-lev
+        """
+}
+flag "VLB00.unmapped" kind=unmapped concept="VLB00" target-system="SNOMED_CT"
+flag "VLB63.unmapped" kind=unmapped concept="VLB63" target-system="SNOMED_CT"
+flag "VLB72.unmapped" kind=unmapped concept="VLB72" target-system="SNOMED_CT"
+flag "VLB74.unmapped" kind=unmapped concept="VLB74" target-system="SNOMED_CT"
+flag "VLB75.unmapped" kind=unmapped concept="VLB75" target-system="SNOMED_CT"
+flag "VLB86.unmapped" kind=unmapped concept="VLB86" target-system="SNOMED_CT"
+flag "VLB87.unmapped" kind=unmapped concept="VLB87" target-system="SNOMED_CT"
+flag "VLC00.unmapped" kind=unmapped concept="VLC00" target-system="SNOMED_CT"
+flag "VLC63.unmapped" kind=unmapped concept="VLC63" target-system="SNOMED_CT"
+flag "VLC72.unmapped" kind=unmapped concept="VLC72" target-system="SNOMED_CT"
+flag "VLC74.unmapped" kind=unmapped concept="VLC74" target-system="SNOMED_CT"
+flag "VLC75.unmapped" kind=unmapped concept="VLC75" target-system="SNOMED_CT"
+flag "VLC86.unmapped" kind=unmapped concept="VLC86" target-system="SNOMED_CT"
+flag "VLC87.unmapped" kind=unmapped concept="VLC87" target-system="SNOMED_CT"
+flag "VLE00.unmapped" kind=unmapped concept="VLE00" target-system="SNOMED_CT"
+mapping "VLE11.1" source="VLE11" target="SNOMED_CT:8409001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy or embolectomy from common femoral artery to infrapopliteal artery. SNOMED CT
+        2100126240 8409001 matches the procedure; the extended anatomic ra
+        """
+}
+mapping "VLE63.1" source="VLE63" target="SNOMED_CT:276977004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Thrombectomy from tibiofibular trunk; percutaneous thrombectomy is a loose proxy."
+}
+mapping "VLE72.1" source="VLE72" target="SNOMED_CT:405382004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi eller embolektomi från a. tibialis anterior = thrombectomy or embolectomy from
+        anterior tibial artery. Exact match to SNOMED CT Embolectomy of anterior
+        """
+}
+mapping "VLE74.1" source="VLE74" target="SNOMED_CT:405381006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Thrombectomy or embolectomy from a. tibialis posterior maps exactly to embolectomy of posterior
+        tibial artery
+        """
+}
+mapping "VLE75.1" source="VLE75" target="SNOMED_CT:175845008" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are lower limb thrombectomies; KVÅ is artery, SNOMED CT is vein"
+}
+flag "VLE86.unmapped" kind=unmapped concept="VLE86" target-system="SNOMED_CT"
+mapping "VLE87.1" source="VLE87" target="SNOMED_CT:405381006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trombektomi eller embolektomi från a. tibialis posterior i fotledsnivå =
+        thrombectomy/embolectomy from posterior tibial artery at ankle level; exact match to Em
+        """
+}
+flag "VLF87.unmapped" kind=unmapped concept="VLF87" target-system="SNOMED_CT"
+flag "VLG00.unmapped" kind=unmapped concept="VLG00" target-system="SNOMED_CT"
+flag "VLG63.unmapped" kind=unmapped concept="VLG63" target-system="SNOMED_CT"
+flag "VLG72.unmapped" kind=unmapped concept="VLG72" target-system="SNOMED_CT"
+flag "VLG74.unmapped" kind=unmapped concept="VLG74" target-system="SNOMED_CT"
+mapping "VLG75.1" source="VLG75" target="SNOMED_CT:175890004" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Operation on vascular graft is broader but captures the vascular intervention type"
+}
+flag "VLG86.unmapped" kind=unmapped concept="VLG86" target-system="SNOMED_CT"
+flag "VLG87.unmapped" kind=unmapped concept="VLG87" target-system="SNOMED_CT"
+mapping "VLH98.1" source="VLH98" target="SNOMED_CT:22600001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Creation of AV fistula from infrapopliteal artery; SNOMED CT AV fistula creation is reasonable
+        parent
+        """
+}
+flag "VLJ00.unmapped" kind=unmapped concept="VLJ00" target-system="SNOMED_CT"
+mapping "VLJ12.1" source="VLJ12" target="SNOMED_CT:312687001" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100126262 312687001 = bypass from common femoral artery to anterior tibial artery;
+        exact match to SNOMED CT concept
+        """
+}
+flag "VLJ13.unmapped" kind=unmapped concept="VLJ13" target-system="SNOMED_CT"
+mapping "VLJ14.1" source="VLJ14" target="SNOMED_CT:405457000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: femoral to posterior tibial artery bypass"
+}
+flag "VLJ15.unmapped" kind=unmapped concept="VLJ15" target-system="SNOMED_CT"
+flag "VLJ16.unmapped" kind=unmapped concept="VLJ16" target-system="SNOMED_CT"
+mapping "VLJ17.1" source="VLJ17" target="SNOMED_CT:405457000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from common femoral to posterior tibial at ankle level; exact match to SNOMED CT 405457000,
+        verified in Athena
+        """
+}
+mapping "VLJ22.1" source="VLJ22" target="SNOMED_CT:274507007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Weak: profunda femoris to tibialis anterior bypass. No SNOMED CT match"
+}
+flag "VLJ23.unmapped" kind=unmapped concept="VLJ23" target-system="SNOMED_CT"
+flag "VLJ24.unmapped" kind=unmapped concept="VLJ24" target-system="SNOMED_CT"
+flag "VLJ25.unmapped" kind=unmapped concept="VLJ25" target-system="SNOMED_CT"
+flag "VLJ26.unmapped" kind=unmapped concept="VLJ26" target-system="SNOMED_CT"
+flag "VLJ27.unmapped" kind=unmapped concept="VLJ27" target-system="SNOMED_CT"
+mapping "VLJ32.1" source="VLJ32" target="SNOMED_CT:312687001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from superficial femoral artery to anterior tibial artery: (312687001), confirmed SNOMED CT
+        standard
+        """
+}
+flag "VLJ33.unmapped" kind=unmapped concept="VLJ33" target-system="SNOMED_CT"
+mapping "VLJ34.1" source="VLJ34" target="SNOMED_CT:405457000" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVAA SNOMED CT 2100126276 405457000; exact match to SNOMED CT"
+}
+mapping "VLJ35.1" source="VLJ35" target="SNOMED_CT:405459002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass fraan a. femoralis superficialis till a. fibularis = bypass from superficial femoral
+        artery to peroneal artery; femoro-tibio-peroneal artery bypass is cl
+        """
+}
+mapping "VLJ36.1" source="VLJ36" target="SNOMED_CT:175745000" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bypass from superficial femoral to dorsalis pedis artery; vascular procedure parent"
+}
+mapping "VLJ37.1" source="VLJ37" target="SNOMED_CT:405457000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close equivalent: bypass from superficial femoral to posterior tibial at ankle level; SNOMED CT
+        SNOMED CT 2100126279 405457000 captures the core bypass ro
+        """
+}
+mapping "VLJ42.1" source="VLJ42" target="SNOMED_CT:112828007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Popliteal-to-tibial anterior bypass maps loosely to femoropopliteal bypass"
+}
+mapping "VLJ43.1" source="VLJ43" target="SNOMED_CT:74239001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ: Bypass from popliteal artery above knee to tibiofibular trunk. Best match: (74239001). The
+        KVÅ specifies p
+        """
+}
+mapping "VLJ44.1" source="VLJ44" target="SNOMED_CT:21484004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from popliteal artery above knee to posterior tibial artery. SNOMED CT 2100126282 21484004
+        is the clinical equivalent; the KVÅ does no
+        """
+}
+mapping "VLJ45.1" source="VLJ45" target="SNOMED_CT:74239001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass från a. poplitea ovanför knäleden till a. fibularis = bypass from popliteal artery above
+        knee to fibular artery. 'Popliteal-peroneal artery bypass graft
+        """
+}
+flag "VLJ46.unmapped" kind=unmapped concept="VLJ46" target-system="SNOMED_CT"
+mapping "VLJ47.1" source="VLJ47" target="SNOMED_CT:21484004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass från a. poplitea ovanför knäleden till a. tibialis posterior i fotledsnivå =
+        popliteal-to-posterior tibial artery bypass; exact clinical match for poplit
+        """
+}
+mapping "VLJ52.1" source="VLJ52" target="SNOMED_CT:21484004" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from popliteal artery below knee to anterior tibial artery = Popliteal-tibial artery
+        bypass graft with vein (exact match; below-knee popliteal to anterio
+        """
+}
+flag "VLJ53.unmapped" kind=unmapped concept="VLJ53" target-system="SNOMED_CT"
+flag "VLJ54.unmapped" kind=unmapped concept="VLJ54" target-system="SNOMED_CT"
+mapping "VLJ55.1" source="VLJ55" target="SNOMED_CT:74239001" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: SNOMED CT 2100126289 74239001 = bypass from popliteal artery below knee to fibular
+        (peroneal) artery = Popliteal-pe
+        """
+}
+flag "VLJ56.unmapped" kind=unmapped concept="VLJ56" target-system="SNOMED_CT"
+mapping "VLJ57.1" source="VLJ57" target="SNOMED_CT:21484004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bypass from popliteal artery below knee to posterior tibial artery at ankle level maps exactly
+        to SNOMED CT 4066805 'Popliteal-tibial artery bypass graft with vein
+        """ suspect=quoted-text
+}
+mapping "VLJ63.1" source="VLJ63" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interposition graft in tibiofibular trunk maps to; the tibiofibular trunk is a specific vessel
+        but the procedure type is the same
+        """
+}
+flag "VLJ72.unmapped" kind=unmapped concept="VLJ72" target-system="SNOMED_CT"
+mapping "VLJ74.1" source="VLJ74" target="SNOMED_CT:233385001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interposition graft in tibialis posterior artery; SNOMED CT 2100126294 233385001 is the closest
+        SNOMED CT equivalent, though it does not specify the tibialis poste
+        """
+}
+mapping "VLJ75.1" source="VLJ75" target="SNOMED_CT:233385001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Interpositionsgraft i a. fibularis = interposition graft in fibular artery. SNOMED CT 2100126295
+        233385001 is the SNOMED CT equivalent; the fibular artery specific
+        """
+}
+flag "VLJ86.unmapped" kind=unmapped concept="VLJ86" target-system="SNOMED_CT"
+flag "VLJ87.unmapped" kind=unmapped concept="VLJ87" target-system="SNOMED_CT"

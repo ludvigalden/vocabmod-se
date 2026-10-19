@@ -1,0 +1,209 @@
+// KVÅ surgical procedures to SNOMED CT mappings, codes KBT-KDG
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "kka-snomed-ct" version="2026.1"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "KBT00.1" source="KBT00" target="SNOMED_CT:20042009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBV05.1" source="KBV05" target="SNOMED_CT:236194007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; reposition = adjustment of stent"
+}
+mapping "KBV14.1" source="KBV14" target="SNOMED_CT:236176001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBV15.1" source="KBV15" target="SNOMED_CT:236195008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KBV51.1" source="KBV51" target="SNOMED_CT:3895009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Percutaneous endoscopic ureteral division/ligation; no close SNOMED CT match"
+}
+mapping "KBV52.1" source="KBV52" target="SNOMED_CT:236199002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; transurethral subureteric injection IS the standard endoscopic VUR treatment
+        (endoluminal injection of bulking agent at ureteric orifice)
+        """
+}
+mapping "KCC10.1" source="KCC10" target="SNOMED_CT:81232004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Close match: oepen cystoprostatovesiculectomy = radical cystoprostatectomy, which by definition
+        includes seminal vesicle removal. SNOMED CT 2100122678 81232004 qualifier not in SNOME
+        """
+}
+flag "KCC11.unmapped" kind=unmapped concept="KCC11" target-system="SNOMED_CT"
+mapping "KCC20.1" source="KCC20" target="SNOMED_CT:176106009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Öppen cystoprostatovesikulouretrektomi = open cystoprostatovesicouretrectomy. The vesicular
+        (seminal vesicle) component is clinically implicit in radical cystop
+        """
+}
+flag "KCC21.unmapped" kind=unmapped concept="KCC21" target-system="SNOMED_CT"
+mapping "KCC30.1" source="KCC30" target="SNOMED_CT:176107000" relationship=equivalent preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ open cystourethrectomy + exstirpation of female internal genitalia; SNOMED CT radical
+        cystourethrectomy captures cystourethrectomy but genital exstirpation extent varies
+        """
+}
+flag "KCC31.unmapped" kind=unmapped concept="KCC31" target-system="SNOMED_CT"
+mapping "KCC96.1" source="KCC96" target="SNOMED_CT:176108005" relationship=partial_overlap preference=alternative effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVÅ surgical procedures is residual other open cystectomy; SNOMED CT simple cystectomy is closest standard equivalent;
+        approximate match
+        """
+}
+mapping "KCD02.1" source="KCD02" target="SNOMED_CT:386793005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        TURB; SNOMED CT specifies lesion resection while KKÅ also covers destruction -- clinically
+        equivalent dominant use
+        """
+}
+flag "KCD11.unmapped" kind=unmapped concept="KCD11" target-system="SNOMED_CT"
+flag "KCD13.unmapped" kind=unmapped concept="KCD13" target-system="SNOMED_CT"
+flag "KCD14.unmapped" kind=unmapped concept="KCD14" target-system="SNOMED_CT"
+mapping "KCD20.1" source="KCD20" target="SNOMED_CT:287728004" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact match: open excision of bladder diverticulum. SNOMED CT 287728004 is identical in meaning.
+        Verified standard S in Athena.
+        """
+}
+flag "KCD21.unmapped" kind=unmapped concept="KCD21" target-system="SNOMED_CT"
+mapping "KCD40.1" source="KCD40" target="SNOMED_CT:177923007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent; open surgical excision of urachus"
+}
+flag "KCD97.unmapped" kind=unmapped concept="KCD97" target-system="SNOMED_CT"
+flag "KCH01.unmapped" kind=unmapped concept="KCH01" target-system="SNOMED_CT"
+mapping "KCH50.1" source="KCH50" target="SNOMED_CT:1052235001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Bladder neck plasty; SNOMED CT has cystourethroplasty concepts. Partially related urologic
+        procedure.
+        """
+}
+mapping "KCJ20.1" source="KCJ20" target="SNOMED_CT:58090001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Continent cutaneous cystoenterostomy; weak to pancreaticocystoenterostomy (related anastomosis
+        type)
+        """
+}
+mapping "KCJ30.1" source="KCJ30" target="SNOMED_CT:387706003" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Revision av cystostomi eller cystoenterostomi = Revision of stoma of urinary bladder; exact
+        match for revision of cystostomy (urinary bladder stoma)
+        """
+}
+flag "KCJ32.unmapped" kind=unmapped concept="KCJ32" target-system="SNOMED_CT"
+mapping "KCJ96.1" source="KCJ96" target="SNOMED_CT:129250002" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Both are urinary diversion procedures; different techniques but same organ system"
+}
+mapping "KCT00.1" source="KCT00" target="SNOMED_CT:24376003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "KCV02.1" source="KCV02" target="SNOMED_CT:14329006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "KCV22.1" source="KCV22" target="SNOMED_CT:389043002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KVAA SNOMED CT 2100122728 389043002 = transurethral bladder evacuation for bleeding; exact SNOMED CT
+        match verified as standard concept S
+        """
+}
+mapping "KCV31.1" source="KCV31" target="SNOMED_CT:225089006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Exact equivalent; KKÅ specifies incontinence indication but SNOMED CT concept covers the identical
+        procedure
+        """
+}
+mapping "KCW97.1" source="KCW97" target="SNOMED_CT:236170007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Other percutaneous endoscopic bladder operation; limited SNOMED CT match"
+}
+mapping "KDA00.1" source="KDA00" target="SNOMED_CT:17923005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Near-exact equivalent; NOMESCO exploration implies surgical access and SNOMED CT concept combines
+        incision+exploration which is standard approach
+        """
+}
+flag "KDA12.unmapped" kind=unmapped concept="KDA12" target-system="SNOMED_CT"
+mapping "KDB00.1" source="KDB00" target="SNOMED_CT:176347000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent: open biopsy of urethra"
+}
+mapping "KDC00.1" source="KDC00" target="SNOMED_CT:108028005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact equivalent"
+}
+mapping "KDD00.1" source="KDD00" target="SNOMED_CT:289185001" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Open urethral resection; broader transurethral resection is closest urethral procedure"
+}
+mapping "KDD10.1" source="KDD10" target="SNOMED_CT:30331002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "KVÅ SNOMED CT 2100122738 30331002 = extirpation of urethral diverticulum; exact SNOMED CT match"
+}
+flag "KDD30.unmapped" kind=unmapped concept="KDD30" target-system="SNOMED_CT"
+mapping "KDD32.1" source="KDD32" target="SNOMED_CT:425779004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Dual: TURD of urethral lesion; weak to related ureteric/endoscopic procedure"
+}
+mapping "KDE20.1" source="KDE20" target="SNOMED_CT:176354006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Öppen exstirpation av främmande kropp från uretra = Urethroscopic removal of foreign body from
+        urethra; clinical equivalent is removal of foreign body from uret
+        """
+}
+mapping "KDG10.1" source="KDG10" target="SNOMED_CT:913231000000102" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Abdominovaginal bladder neck suspension; SNOMED CT open colposuspension is the closest equivalent
+        procedure for urinary incontinence.
+        """
+}
+mapping "KDG30.1" source="KDG30" target="SNOMED_CT:33295008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Suprapubic urethrocystopexy with sling. SNOMED CT 2100122752 33295008 is the exact clinical
+        equivalent - suprapubic approach with sling is the stan
+        """
+}
+flag "KDG80.unmapped" kind=unmapped concept="KDG80" target-system="SNOMED_CT"
+flag "KDG81.unmapped" kind=unmapped concept="KDG81" target-system="SNOMED_CT"
+mapping "KDG96.1" source="KDG96" target="SNOMED_CT:236241009" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ catch-all for other urethra/bladder neck incontinence ops in women; SNOMED CT covers only
+        bladder neck stress incontinence subset
+        """
+}
+mapping "KDG97.1" source="KDG97" target="SNOMED_CT:236241009" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KKÅ is residual SNOMED CT 236241009 percutaneous endoscopic operation on urethra/bladder neck for
+        female incontinence; SNOMED CT concept is a specific bladder neck procedure, broader than the
+        residual but site-appropriate
+        """
+}
