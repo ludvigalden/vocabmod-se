@@ -10,6 +10,15 @@ context {
 category "procedure" {
     name "en" "KVÅ medical procedure"
 }
+collection "kma-omop-custom" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KVÅ medical procedures (KMÅ) to OMOP custom concepts"
+    authors "ludvig-alden"
+    source system="KMA" release="2026"
+    target system="OMOP_CUSTOM"
+    import "OMOP_CUSTOM/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "kma-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "KVÅ medical procedures (KMÅ) to SNOMED CT"
     authors "ludvig-alden"
