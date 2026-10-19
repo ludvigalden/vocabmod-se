@@ -1,0 +1,425 @@
+// NPU laboratory tests, prefix NPU10, codes NPU100-NPU101
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "NPU10000" {
+    name "sv" "Transferrin(Plasma)—Kolhydratfattigt transferrin;substansfraktion"
+    synonym "sv" "Transf(P)—CDT, fraktion"
+    status "inactive"
+}
+measurement-definition "NPU10000" result-type=quantity specimen="Transferrin(Plasma)" component="Kolhydratfattigt transferrin" property-kind="substansfraktion"
+concept "NPU10001" {
+    name "sv" "Patient(Urin)—Vanillinmandelat/Kreatinin;substansflödeskvot(procedur)"
+    synonym "sv" "tU—VMA/Krea"
+}
+measurement-definition "NPU10001" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Vanillinmandelat/Kreatinin" property-kind="substansflödeskvot" specification="procedur" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU10002" {
+    name "sv" "Patient(Urin)—Metanefrin/Kreatinin;substansflödeskvot(procedur)"
+    synonym "sv" "tU—MA/Krea"
+}
+measurement-definition "NPU10002" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Metanefrin/Kreatinin" property-kind="substansflödeskvot" specification="procedur" {
+    unit "x10^-6" namespace="npu"
+}
+concept "NPU10003" {
+    name "sv" "Patient(Urin)—Normetanefrin/Kreatinin;substansflödeskvot(procedur)"
+    synonym "sv" "tU—MNA/Krea"
+}
+measurement-definition "NPU10003" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Normetanefrin/Kreatinin" property-kind="substansflödeskvot" specification="procedur" {
+    unit "x10^-6" namespace="npu"
+}
+concept "NPU10004" {
+    name "sv" "Patient(Urin)—Metoxityramin/Kreatinin;substansflödeskvot(procedur)"
+    synonym "sv" "tU—Metoxityramin/Krea"
+}
+measurement-definition "NPU10004" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Metoxityramin/Kreatinin" property-kind="substansflödeskvot" specification="procedur" {
+    unit "x10^-6" namespace="npu"
+}
+concept "NPU10005" {
+    name "sv" "Plasma—Kolhydratfattigt transferrin;arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—CDT"
+    status "inactive"
+}
+measurement-definition "NPU10005" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kolhydratfattigt transferrin" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU10006" {
+    name "sv" "Urin—Tricykliska antidepressiva läkemedel;arbiträr koncentration(procedur)"
+    synonym "sv" "U—TCA (screen)"
+}
+measurement-definition "NPU10006" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Tricykliska antidepressiva läkemedel" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU10007" {
+    name "sv" "Plasma—Antitrombin;arbiträr substanskoncentration(enzymatisk;IS 93/768;procedur)"
+    synonym "sv" "P—Antitrombin (enz)"
+}
+measurement-definition "NPU10007" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Antitrombin" property-kind="arbiträr substanskoncentration" specification="enzymatisk;IS 93/768;procedur" {
+    unit "kIE/L" namespace="npu"
+}
+concept "NPU10008" {
+    name "sv" "Plasma—Actinomyces-antikropp;arbiträr koncentration(procedur)"
+    synonym "sv" "P—Actinomyces-ak"
+}
+measurement-definition "NPU10008" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Actinomyces-antikropp" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU10009" {
+    name "sv" "Plasma—Actinomyces-antikropp;arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—Actinomyces-ak"
+}
+measurement-definition "NPU10009" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Actinomyces-antikropp" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU10010" {
+    name "sv" "Sekret(Bronk;specifikation)—Actinomyces;taxon(procedur)"
+    synonym "sv" "Bronk—Actinomyces, odling"
+}
+measurement-definition "NPU10010" result-type=quantity procedure-defined-unit=#true specimen="Sekret(Bronk;specifikation)" component="Actinomyces" property-kind="taxon" specification="procedur"
+concept "NPU10011" {
+    name "sv" "Sekret(specifikation)—Actinomyces;taxon(procedur)"
+    synonym "sv" "Sekr—Actinomyces, odling"
+}
+measurement-definition "NPU10011" result-type=quantity procedure-defined-unit=#true specimen="Sekret(specifikation)" component="Actinomyces" property-kind="taxon" specification="procedur"
+concept "NPU10016" {
+    name "sv" "Plasma(navelsträngsblod)—Vätejon;pH(37°C)"
+    synonym "sv" "P(nsB)—pH (37°C)"
+}
+measurement-definition "NPU10016" result-type=quantity specimen="Plasma(navelsträngsblod)" component="Vätejon" property-kind="pH" specification="37°C"
+concept "NPU10026" {
+    name "sv" "Dialysvätska(specifikation)—Urea;substanskoncentration"
+    synonym "sv" "Dv—Urea"
+}
+measurement-definition "NPU10026" result-type=quantity specimen="Dialysvätska(specifikation)" component="Urea" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10027" {
+    name "sv" "System(specifikation)—Urea;substanskoncentration"
+    synonym "sv" "Syst—Urea"
+}
+measurement-definition "NPU10027" result-type=quantity specimen="System(specifikation)" component="Urea" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10029" {
+    name "sv" "Plasma(venöst Blod)—Koldioxid;gastension(37°C)"
+    synonym "sv" "P(vB)—pCO2 (37°C)"
+}
+measurement-definition "NPU10029" result-type=quantity specimen="Plasma(venöst Blod)" component="Koldioxid" property-kind="gastension" specification="37°C" {
+    unit "kPa" namespace="npu"
+}
+concept "NPU10033" {
+    name "sv" "System(specifikation)—Kolesterol;substanskoncentration"
+    synonym "sv" "Syst—Kolesterol"
+}
+measurement-definition "NPU10033" result-type=quantity specimen="System(specifikation)" component="Kolesterol" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10043" {
+    name "sv" "Dialysvätska(specifikation)—Kreatinin;substanskoncentration"
+    synonym "sv" "Dv—Kreatinin"
+}
+measurement-definition "NPU10043" result-type=quantity specimen="Dialysvätska(specifikation)" component="Kreatinin" property-kind="substanskoncentration" {
+    unit "µmol/L" namespace="npu"
+}
+concept "NPU10044" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(180 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (180 min)"
+}
+measurement-definition "NPU10044" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="180 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10045" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(60 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (60 min)"
+}
+measurement-definition "NPU10045" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="60 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10047" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(0 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (0 min)"
+}
+measurement-definition "NPU10047" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="0 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10048" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(30 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (30 min)"
+}
+measurement-definition "NPU10048" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="30 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10050" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(90 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (90 min)"
+}
+measurement-definition "NPU10050" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="90 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10051" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(120 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (120 min)"
+}
+measurement-definition "NPU10051" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="120 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10052" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(150 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (150 min)"
+}
+measurement-definition "NPU10052" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="150 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10053" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(210 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (210 min)"
+}
+measurement-definition "NPU10053" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="210 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10054" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(240 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (240 min)"
+}
+measurement-definition "NPU10054" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="240 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10059" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(15 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (15 min)"
+}
+measurement-definition "NPU10059" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="15 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10060" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(45 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (45 min)"
+}
+measurement-definition "NPU10060" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="45 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10061" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(75 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Glukos (75 min)"
+}
+measurement-definition "NPU10061" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="75 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10112" {
+    name "sv" "Dialysvätska(specifikation)—Glukos;substanskoncentration"
+    synonym "sv" "Dv—Glukos"
+}
+measurement-definition "NPU10112" result-type=quantity specimen="Dialysvätska(specifikation)" component="Glukos" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10113" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration"
+    synonym "sv" "B(kB)—Glukos"
+}
+measurement-definition "NPU10113" result-type=quantity specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10114" {
+    name "sv" "Blod(kapillärt Blod)—Glukos;substanskoncentration(procedur)"
+    synonym "sv" "B(kB)—Glukos"
+    status "inactive"
+}
+measurement-definition "NPU10114" result-type=quantity procedure-defined-unit=#true specimen="Blod(kapillärt Blod)" component="Glukos" property-kind="substanskoncentration" specification="procedur" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10115" {
+    name "sv" "Pleuravätska(specifikation)—Glukos;substanskoncentration"
+    synonym "sv" "Plv—Glukos"
+}
+measurement-definition "NPU10115" result-type=quantity specimen="Pleuravätska(specifikation)" component="Glukos" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10122" {
+    name "sv" "System(specifikation)—Klorid;substanskoncentration"
+    synonym "sv" "Syst—Klorid"
+}
+measurement-definition "NPU10122" result-type=quantity specimen="System(specifikation)" component="Klorid" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10125" {
+    name "sv" "System(specifikation)—Fosfat(P, oorganiskt);substanskoncentration"
+    synonym "sv" "Syst—Fosfat"
+}
+measurement-definition "NPU10125" result-type=quantity specimen="System(specifikation)" component="Fosfat(P, oorganiskt)" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10126" {
+    name "sv" "System(specifikation)—Vätejon;pH"
+    synonym "sv" "Syst—pH"
+}
+measurement-definition "NPU10126" result-type=quantity specimen="System(specifikation)" component="Vätejon" property-kind="pH"
+concept "NPU10127" {
+    name "sv" "System(specifikation)—Glukos;substanskoncentration"
+    synonym "sv" "Syst—Glukos"
+}
+measurement-definition "NPU10127" result-type=quantity specimen="System(specifikation)" component="Glukos" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10128" {
+    name "sv" "System(specifikation)—Bilirubiner;substanskoncentration"
+    synonym "sv" "Syst—Bilirubin"
+}
+measurement-definition "NPU10128" result-type=quantity specimen="System(specifikation)" component="Bilirubiner" property-kind="substanskoncentration" {
+    unit "µmol/L" namespace="npu"
+}
+concept "NPU10132" {
+    name "sv" "System(specifikation)—Urat;substanskoncentration"
+    synonym "sv" "Syst—Urat"
+}
+measurement-definition "NPU10132" result-type=quantity specimen="System(specifikation)" component="Urat" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10134" {
+    name "sv" "Patient(Urin)—Etiokolanolon;substansflöde"
+    synonym "sv" "tU—Etiokolanolon"
+}
+measurement-definition "NPU10134" result-type=quantity specimen="Patient(Urin)" component="Etiokolanolon" property-kind="substansflöde" {
+    unit "µmol/d" namespace="npu"
+}
+concept "NPU10141" {
+    name "sv" "Plasma—Endotelin;substanskoncentration"
+    synonym "sv" "P—Endotelin"
+}
+measurement-definition "NPU10141" result-type=quantity specimen="Plasma" component="Endotelin" property-kind="substanskoncentration" {
+    unit "pmol/L" namespace="npu"
+}
+concept "NPU10143" {
+    name "sv" "Leukocyter(Blod)—Erytroblaster;antalsfraktion"
+    synonym "sv" "Lkc(B)—Erytroblaster"
+}
+measurement-definition "NPU10143" result-type=quantity specimen="Leukocyter(Blod)" component="Erytroblaster" property-kind="antalsfraktion"
+concept "NPU10145" {
+    name "sv" "Pleuravätska(specifikation)—Erytrocyter;antalskoncentration"
+    synonym "sv" "Plv—Erytrocyter"
+}
+measurement-definition "NPU10145" result-type=quantity specimen="Pleuravätska(specifikation)" component="Erytrocyter" property-kind="antalskoncentration" {
+    unit "x10^6/L" namespace="npu"
+}
+concept "NPU10148" {
+    name "sv" "Plasma—Felbamat;substanskoncentration"
+    synonym "sv" "P—Felbamat"
+}
+measurement-definition "NPU10148" result-type=quantity specimen="Plasma" component="Felbamat" property-kind="substanskoncentration" {
+    unit "µmol/L" namespace="npu"
+}
+concept "NPU10153" {
+    name "sv" "Plasma(fastande Patient)—Järn;substanskoncentration"
+    synonym "sv" "P(fPt)—Järn"
+}
+measurement-definition "NPU10153" result-type=quantity specimen="Plasma(fastande Patient)" component="Järn" property-kind="substanskoncentration" {
+    unit "µmol/L" namespace="npu"
+}
+concept "NPU10155" {
+    name "sv" "Plasma—Gabapentin;substanskoncentration"
+    synonym "sv" "P—Gabapentin"
+}
+measurement-definition "NPU10155" result-type=quantity specimen="Plasma" component="Gabapentin" property-kind="substanskoncentration" {
+    unit "µmol/L" namespace="npu"
+}
+concept "NPU10157" {
+    name "sv" "Plasma(fastande Patient)—Kolesterol, i HDL;substanskoncentration"
+    synonym "sv" "P(fPt)—HDL-kolesterol"
+}
+measurement-definition "NPU10157" result-type=quantity specimen="Plasma(fastande Patient)" component="Kolesterol, i HDL" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10158" {
+    name "sv" "Hemoglobin(Fe;Blod)—Hemoglobin S(Fe);substansfraktion"
+    synonym "sv" "Hb(B)—Hemoglobin S"
+}
+measurement-definition "NPU10158" result-type=quantity specimen="Hemoglobin(Fe;Blod)" component="Hemoglobin S(Fe)" property-kind="substansfraktion"
+concept "NPU10164" {
+    name "sv" "Urin—Homovanillat/Kreatinin;substanskvot"
+    synonym "sv" "U—HVA/Krea"
+}
+measurement-definition "NPU10164" result-type=quantity specimen="Urin" component="Homovanillat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU10165" {
+    name "sv" "Dialysvätska(specifikation)—Vätekarbonat;substanskoncentration(aktuell)"
+    synonym "sv" "Dv—HCO3, aktuellt"
+}
+measurement-definition "NPU10165" result-type=quantity specimen="Dialysvätska(specifikation)" component="Vätekarbonat" property-kind="substanskoncentration" specification="aktuell" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10167" {
+    name "sv" "Patient—Oxygen(administrerat);volymflöde"
+    synonym "sv" "Pt—Oxygen (adm)"
+}
+measurement-definition "NPU10167" result-type=quantity specimen="Patient" component="Oxygen(administrerat)" property-kind="volymflöde" {
+    unit "L/min" namespace="npu"
+}
+concept "NPU10168" {
+    name "sv" "Dialysvätska(specifikation)—Kaliumjon;substanskoncentration"
+    synonym "sv" "Dv—Kalium"
+}
+measurement-definition "NPU10168" result-type=quantity specimen="Dialysvätska(specifikation)" component="Kaliumjon" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10171" {
+    name "sv" "Plasma(fastande Patient)—Kolesterol, i LDL;substanskoncentration"
+    synonym "sv" "P(fPt)—LDL-kolesterol"
+}
+measurement-definition "NPU10171" result-type=quantity specimen="Plasma(fastande Patient)" component="Kolesterol, i LDL" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10172" {
+    name "sv" "Plasma(fastande Patient)—Kolesterol, i LDL/Kolesterol, i HDL;substanskvot"
+    synonym "sv" "P(fPt)—LDL/HDL-kolesterol"
+}
+measurement-definition "NPU10172" result-type=quantity specimen="Plasma(fastande Patient)" component="Kolesterol, i LDL/Kolesterol, i HDL" property-kind="substanskvot"
+concept "NPU10173" {
+    name "sv" "Leukocyter(Ledvätska;specifikation)—Leukocyter(mononukleära);antalsfraktion"
+    synonym "sv" "Lkc(Ledv)—Leukocyter,mono"
+}
+measurement-definition "NPU10173" result-type=quantity specimen="Leukocyter(Ledvätska;specifikation)" component="Leukocyter(mononukleära)" property-kind="antalsfraktion"
+concept "NPU10174" {
+    name "sv" "Leukocyter(Ledvätska;specifikation)—Leukocyter(polynukleära);antalsfraktion"
+    synonym "sv" "Lkc(Ledv)—Leukocyter,poly"
+}
+measurement-definition "NPU10174" result-type=quantity specimen="Leukocyter(Ledvätska;specifikation)" component="Leukocyter(polynukleära)" property-kind="antalsfraktion"
+concept "NPU10175" {
+    name "sv" "Leukocyter(Pleuravätska;specifikation)—Leukocyter(mononukleära);antalsfraktion"
+    synonym "sv" "Lkc(Plv)—Leukocyter, mono"
+}
+measurement-definition "NPU10175" result-type=quantity specimen="Leukocyter(Pleuravätska;specifikation)" component="Leukocyter(mononukleära)" property-kind="antalsfraktion"
+concept "NPU10176" {
+    name "sv" "Leukocyter(Ascitesvätska)—Leukocyter(mononukleära);antalsfraktion"
+    synonym "sv" "Lkc(Asc)—Leukocyter, mono"
+}
+measurement-definition "NPU10176" result-type=quantity specimen="Leukocyter(Ascitesvätska)" component="Leukocyter(mononukleära)" property-kind="antalsfraktion"
+concept "NPU10177" {
+    name "sv" "Leukocyter(Pleuravätska;specifikation)—Leukocyter(polynukleära);antalsfraktion"
+    synonym "sv" "Lkc(Plv)—Leukocyter, poly"
+}
+measurement-definition "NPU10177" result-type=quantity specimen="Leukocyter(Pleuravätska;specifikation)" component="Leukocyter(polynukleära)" property-kind="antalsfraktion"
+concept "NPU10178" {
+    name "sv" "Leukocyter(Ascitesvätska)—Leukocyter(polynukleära);antalsfraktion"
+    synonym "sv" "Lkc(Asc)—Leukocyter, poly"
+}
+measurement-definition "NPU10178" result-type=quantity specimen="Leukocyter(Ascitesvätska)" component="Leukocyter(polynukleära)" property-kind="antalsfraktion"
+concept "NPU10192" {
+    name "sv" "Dialysvätska(specifikation)—Natriumjon;substanskoncentration"
+    synonym "sv" "Dv—Natrium"
+}
+measurement-definition "NPU10192" result-type=quantity specimen="Dialysvätska(specifikation)" component="Natriumjon" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU10197" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;kapillärt Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(kB)—Oxygenmättnad"
+}
+measurement-definition "NPU10197" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;kapillärt Blod)" component="Oxygen(O2)" property-kind="mättnad"
+concept "NPU10199" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;venöst Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(vB)—Oxygenmättnad"
+}
+measurement-definition "NPU10199" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;venöst Blod)" component="Oxygen(O2)" property-kind="mättnad"

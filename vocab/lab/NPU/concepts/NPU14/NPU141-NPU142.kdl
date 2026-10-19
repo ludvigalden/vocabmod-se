@@ -1,0 +1,418 @@
+// NPU laboratory tests, prefix NPU14, codes NPU141-NPU142
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "NPU14104" {
+    name "sv" "Plasma(arteriellt Blod)—Oxygen(O2);gastension(patient kroppstemperatur)"
+    synonym "sv" "P(aB)—pO2 (Pt temp)"
+}
+measurement-definition "NPU14104" result-type=quantity specimen="Plasma(arteriellt Blod)" component="Oxygen(O2)" property-kind="gastension" specification="patient kroppstemperatur" {
+    unit "kPa" namespace="npu"
+}
+concept "NPU14105" {
+    name "sv" "Plasma—Fibrinmonomer;arbiträr koncentration(procedur)"
+    synonym "sv" "P—Fibrinmonomer"
+}
+measurement-definition "NPU14105" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Fibrinmonomer" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14106" {
+    name "sv" "Plasma—Fibrinmonomer;substanskoncentration"
+    synonym "sv" "P—Fibrinmonomer"
+}
+measurement-definition "NPU14106" result-type=quantity specimen="Plasma" component="Fibrinmonomer" property-kind="substanskoncentration" {
+    unit "nmol/L" namespace="npu"
+}
+concept "NPU14108" {
+    name "sv" "Plasma—Kryofibrinogen;arbiträr koncentration(procedur)"
+    synonym "sv" "P—Kryofibrinogen"
+}
+measurement-definition "NPU14108" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kryofibrinogen" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14111" {
+    name "sv" "Erytrocyter(Blod)—Erytrocyter(hypokroma);antalsfraktion"
+    synonym "sv" "Erc(B)—Erc, hypokroma(fr)"
+}
+measurement-definition "NPU14111" result-type=quantity specimen="Erytrocyter(Blod)" component="Erytrocyter(hypokroma)" property-kind="antalsfraktion"
+concept "NPU14119" {
+    name "sv" "System(specifikation)—Magnesium(II);substanskoncentration"
+    synonym "sv" "Syst—Magnesium"
+}
+measurement-definition "NPU14119" result-type=quantity specimen="System(specifikation)" component="Magnesium(II)" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14122" {
+    name "sv" "Plasma—Mitokondrie-antikropp(Immunglobulin G);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Mitokondrie-ak (IgG)"
+}
+measurement-definition "NPU14122" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Mitokondrie-antikropp(Immunglobulin G)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14125" {
+    name "sv" "Plasma—Nukleol-antikropp;arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—Nukleol-ak"
+}
+measurement-definition "NPU14125" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Nukleol-antikropp" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU14126" {
+    name "sv" "Plasma—Kärn-antikropp;arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—Kärn-ak"
+    status "inactive"
+}
+measurement-definition "NPU14126" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kärn-antikropp" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU14127" {
+    name "sv" "Plasma—Kärn-antikropp(Immunglobulin G);arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—Kärn-ak (IgG)"
+    status "inactive"
+}
+measurement-definition "NPU14127" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kärn-antikropp(Immunglobulin G)" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU14128" {
+    name "sv" "Blod(kapillärt Blod)—Galaktos;substanskoncentration(0 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Galaktos (0 min)"
+}
+measurement-definition "NPU14128" result-type=quantity specimen="Blod(kapillärt Blod)" component="Galaktos" property-kind="substanskoncentration" specification="0 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14131" {
+    name "sv" "Blod(kapillärt Blod)—Galaktos;substanskoncentration(30 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Galaktos (30 min)"
+}
+measurement-definition "NPU14131" result-type=quantity specimen="Blod(kapillärt Blod)" component="Galaktos" property-kind="substanskoncentration" specification="30 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14134" {
+    name "sv" "Blod(kapillärt Blod)—Galaktos;substanskoncentration(60 minuter efter stimulering)"
+    synonym "sv" "B(kB)—Galaktos (60 min)"
+}
+measurement-definition "NPU14134" result-type=quantity specimen="Blod(kapillärt Blod)" component="Galaktos" property-kind="substanskoncentration" specification="60 minuter efter stimulering" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14137" {
+    name "sv" "Plasma—Cytomegalovirus-antikropp(Immunglobulin G);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Cytomegalovirus (CMV)-ak (IgG)"
+}
+measurement-definition "NPU14137" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Cytomegalovirus-antikropp(Immunglobulin G)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14138" {
+    name "sv" "Plasma—Cytomegalovirus-antikropp(Immunglobulin M);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Cytomegalovirus (CMV)-ak (IgM)"
+}
+measurement-definition "NPU14138" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Cytomegalovirus-antikropp(Immunglobulin M)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14170" {
+    name "sv" "Plasma—Toxoplasma gondii-antikropp(Immunglobulin A);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Toxoplasma gondii-ak (IgA)"
+}
+measurement-definition "NPU14170" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Toxoplasma gondii-antikropp(Immunglobulin A)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14171" {
+    name "sv" "Plasma—Toxoplasma gondii-antikropp(Immunglobulin G);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Toxoplasma gondii-ak (IgG)"
+}
+measurement-definition "NPU14171" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Toxoplasma gondii-antikropp(Immunglobulin G)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14172" {
+    name "sv" "Plasma—Toxoplasma gondii-antikropp(Immunglobulin M);arbiträr koncentration(procedur)"
+    synonym "sv" "P—Toxoplasma gondii-ak (IgM)"
+}
+measurement-definition "NPU14172" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Toxoplasma gondii-antikropp(Immunglobulin M)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14174" {
+    name "sv" "Urin—Dopamin;substanskoncentration"
+    synonym "sv" "U—Dopamin"
+}
+measurement-definition "NPU14174" result-type=quantity specimen="Urin" component="Dopamin" property-kind="substanskoncentration" {
+    unit "nmol/L" namespace="npu"
+}
+concept "NPU14175" {
+    name "sv" "Patient(Urin)—Dopamin;substansflöde"
+    synonym "sv" "tU—Dopamin"
+}
+measurement-definition "NPU14175" result-type=quantity specimen="Patient(Urin)" component="Dopamin" property-kind="substansflöde" {
+    unit "nmol/d" namespace="npu"
+}
+concept "NPU14177" {
+    name "sv" "Plasma—Tricykliska antidepressiva läkemedel;arbiträr koncentration(procedur)"
+    synonym "sv" "P—TCA"
+}
+measurement-definition "NPU14177" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Tricykliska antidepressiva läkemedel" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14178" {
+    name "sv" "Urin—Aminosyror/Kreatinin;substanskvot(lista;procedur)"
+    synonym "sv" "U—Aminosyror/Krea (lista)"
+}
+measurement-definition "NPU14178" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Aminosyror/Kreatinin" property-kind="substanskvot" specification="lista;procedur"
+concept "NPU14186" {
+    name "sv" "Urin—Alanin/Kreatinin;substanskvot"
+    synonym "sv" "U—Alanin/Kreatinin"
+}
+measurement-definition "NPU14186" result-type=quantity specimen="Urin" component="Alanin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14191" {
+    name "sv" "Urin—alfa-Aminobutyrat/Kreatinin;substanskvot"
+    synonym "sv" "U—alfa-Aminobutyrat/Krea"
+}
+measurement-definition "NPU14191" result-type=quantity specimen="Urin" component="alfa-Aminobutyrat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14193" {
+    name "sv" "Urin—beta-Aminoisobutyrat/Kreatinin;substanskvot"
+    synonym "sv" "U—beta-Aminoisobuty/Krea"
+}
+measurement-definition "NPU14193" result-type=quantity specimen="Urin" component="beta-Aminoisobutyrat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14196" {
+    name "sv" "Urin—Arginin/Kreatinin;substanskvot"
+    synonym "sv" "U—Arginin/Kreatinin"
+}
+measurement-definition "NPU14196" result-type=quantity specimen="Urin" component="Arginin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14198" {
+    name "sv" "Urin—Asparagin/Kreatinin;substanskvot"
+    synonym "sv" "U—Asparagin/Kreatinin"
+}
+measurement-definition "NPU14198" result-type=quantity specimen="Urin" component="Asparagin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14199" {
+    name "sv" "Urin—Aspartat/Kreatinin;substanskvot"
+    synonym "sv" "U—Aspartat/Kreatinin"
+}
+measurement-definition "NPU14199" result-type=quantity specimen="Urin" component="Aspartat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14202" {
+    name "sv" "Urin—Karnitin/Kreatinin;substanskvot"
+    synonym "sv" "U—Karnitin/Kreatinin"
+}
+measurement-definition "NPU14202" result-type=quantity specimen="Urin" component="Karnitin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14204" {
+    name "sv" "Urin—Citrullin/Kreatinin;substanskvot"
+    synonym "sv" "U—Citrullin/Kreatinin"
+}
+measurement-definition "NPU14204" result-type=quantity specimen="Urin" component="Citrullin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14205" {
+    name "sv" "Urin—Cystationin/Kreatinin;substanskvot"
+    synonym "sv" "U—Cystationin/Kreatinin"
+}
+measurement-definition "NPU14205" result-type=quantity specimen="Urin" component="Cystationin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14207" {
+    name "sv" "Urin—Cystin/Kreatinin;substanskvot"
+    synonym "sv" "U—Cystin/Kreatinin"
+}
+measurement-definition "NPU14207" result-type=quantity specimen="Urin" component="Cystin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14209" {
+    name "sv" "Urin—Glutamat/Kreatinin;substanskvot"
+    synonym "sv" "U—Glutamat/Kreatinin"
+}
+measurement-definition "NPU14209" result-type=quantity specimen="Urin" component="Glutamat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14210" {
+    name "sv" "Urin—Glutamin/Kreatinin;substanskvot"
+    synonym "sv" "U—Glutamin/Kreatinin"
+}
+measurement-definition "NPU14210" result-type=quantity specimen="Urin" component="Glutamin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14211" {
+    name "sv" "Urin—Glycin/Kreatinin;substanskvot"
+    synonym "sv" "U—Glycin/Kreatinin"
+}
+measurement-definition "NPU14211" result-type=quantity specimen="Urin" component="Glycin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14213" {
+    name "sv" "Urin—Histidin/Kreatinin;substanskvot"
+    synonym "sv" "U—Histidin/Kreatinin"
+}
+measurement-definition "NPU14213" result-type=quantity specimen="Urin" component="Histidin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14216" {
+    name "sv" "Urin—Homocitrullin/Kreatinin;substanskvot"
+    synonym "sv" "U—Homocitrullin/Kreatinin"
+}
+measurement-definition "NPU14216" result-type=quantity specimen="Urin" component="Homocitrullin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14217" {
+    name "sv" "Urin—Homocystin/Kreatinin;substanskvot"
+    synonym "sv" "U—Homocystin/Kreatinin"
+}
+measurement-definition "NPU14217" result-type=quantity specimen="Urin" component="Homocystin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14229" {
+    name "sv" "Urin—Isoleucin/Kreatinin;substanskvot"
+    synonym "sv" "U—Isoleucin/Kreatinin"
+}
+measurement-definition "NPU14229" result-type=quantity specimen="Urin" component="Isoleucin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14231" {
+    name "sv" "Urin—Leucin/Kreatinin;substanskvot"
+    synonym "sv" "U—Leucin/Kreatinin"
+}
+measurement-definition "NPU14231" result-type=quantity specimen="Urin" component="Leucin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14233" {
+    name "sv" "Urin—Lysin/Kreatinin;substanskvot"
+    synonym "sv" "U—Lysin/Kreatinin"
+}
+measurement-definition "NPU14233" result-type=quantity specimen="Urin" component="Lysin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14235" {
+    name "sv" "Urin—Metionin/Kreatinin;substanskvot"
+    synonym "sv" "U—Metionin/Kreatinin"
+}
+measurement-definition "NPU14235" result-type=quantity specimen="Urin" component="Metionin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14237" {
+    name "sv" "Urin—2-Metylcitrat/Kreatinin;substanskvot"
+    synonym "sv" "U—2-Metylcitrat/Kreatinin"
+}
+measurement-definition "NPU14237" result-type=quantity specimen="Urin" component="2-Metylcitrat/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14238" {
+    name "sv" "Urin—1-Metylhistidin/Kreatinin;substanskvot"
+    synonym "sv" "U—1-Metylhistidin/Krea"
+}
+measurement-definition "NPU14238" result-type=quantity specimen="Urin" component="1-Metylhistidin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14239" {
+    name "sv" "Urin—3-Metylhistidin/Kreatinin;substanskvot"
+    synonym "sv" "U—3-Metylhistidin/Krea"
+}
+measurement-definition "NPU14239" result-type=quantity specimen="Urin" component="3-Metylhistidin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14240" {
+    name "sv" "Urin—Ornitin/Kreatinin;substanskvot"
+    synonym "sv" "U—Ornitin/Kreatinin"
+}
+measurement-definition "NPU14240" result-type=quantity specimen="Urin" component="Ornitin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14241" {
+    name "sv" "Urin—Fenylalanin/Kreatinin;substanskvot"
+    synonym "sv" "U—Fenylalanin/Kreatinin"
+}
+measurement-definition "NPU14241" result-type=quantity specimen="Urin" component="Fenylalanin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14242" {
+    name "sv" "Urin—Fosfoetanolamin/Kreatinin;substanskvot"
+    synonym "sv" "U—Fosfoetanolamin/Krea"
+}
+measurement-definition "NPU14242" result-type=quantity specimen="Urin" component="Fosfoetanolamin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14245" {
+    name "sv" "Urin—Prolin/Kreatinin;substanskvot"
+    synonym "sv" "U—Prolin/Kreatinin"
+}
+measurement-definition "NPU14245" result-type=quantity specimen="Urin" component="Prolin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14249" {
+    name "sv" "Urin—Serin/Kreatinin;substanskvot"
+    synonym "sv" "U—Serin/Kreatinin"
+}
+measurement-definition "NPU14249" result-type=quantity specimen="Urin" component="Serin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14251" {
+    name "sv" "Urin—Taurin/Kreatinin;substanskvot"
+    synonym "sv" "U—Taurin/Kreatinin"
+}
+measurement-definition "NPU14251" result-type=quantity specimen="Urin" component="Taurin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14252" {
+    name "sv" "Urin—Treonin/Kreatinin;substanskvot"
+    synonym "sv" "U—Treonin/Kreatinin"
+}
+measurement-definition "NPU14252" result-type=quantity specimen="Urin" component="Treonin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14253" {
+    name "sv" "Urin—Tryptofan/Kreatinin;substanskvot"
+    synonym "sv" "U—Tryptofan/Kreatinin"
+}
+measurement-definition "NPU14253" result-type=quantity specimen="Urin" component="Tryptofan/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14256" {
+    name "sv" "Urin—Tyrosin/Kreatinin;substanskvot"
+    synonym "sv" "U—Tyrosin/Kreatinin"
+}
+measurement-definition "NPU14256" result-type=quantity specimen="Urin" component="Tyrosin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14257" {
+    name "sv" "Urin—Valin/Kreatinin;substanskvot"
+    synonym "sv" "U—Valin/Kreatinin"
+}
+measurement-definition "NPU14257" result-type=quantity specimen="Urin" component="Valin/Kreatinin" property-kind="substanskvot" {
+    unit "x10^-3" namespace="npu"
+}
+concept "NPU14259" {
+    name "sv" "Blod—Erytrocyter(Anisocytos);arbiträr koncentration(procedur)"
+    synonym "sv" "B—Erc, anisocytos"
+}
+measurement-definition "NPU14259" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Erytrocyter(Anisocytos)" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14263" {
+    name "sv" "Patient(Urin)—Citrat;substansflöde(procedur)"
+    synonym "sv" "tU—Citrat"
+}
+measurement-definition "NPU14263" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Citrat" property-kind="substansflöde" specification="procedur" {
+    unit "mmol/d" namespace="npu"
+}
+concept "NPU14264" {
+    name "sv" "Plasma(kapillärt Blod)—Vätekarbonat;substanskoncentration(aktuell;37°C)"
+    synonym "sv" "P(kB)—HCO3, akt (37°C)"
+}
+measurement-definition "NPU14264" result-type=quantity specimen="Plasma(kapillärt Blod)" component="Vätekarbonat" property-kind="substanskoncentration" specification="aktuell;37°C" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14266" {
+    name "sv" "Plasma(venöst Blod)—Vätekarbonat;substanskoncentration(aktuell;37°C)"
+    synonym "sv" "P(vB)—HCO3, akt (37°C)"
+}
+measurement-definition "NPU14266" result-type=quantity specimen="Plasma(venöst Blod)" component="Vätekarbonat" property-kind="substanskoncentration" specification="aktuell;37°C" {
+    unit "mmol/L" namespace="npu"
+}
+concept "NPU14267" {
+    name "sv" "Blod—Stora ofärgade celler;antalskoncentration"
+    synonym "sv" "B—Stora ofärgade celler"
+}
+measurement-definition "NPU14267" result-type=quantity specimen="Blod" component="Stora ofärgade celler" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "NPU14274" {
+    name "sv" "Blod—Poikilocyter;arbiträr koncentration(procedur)"
+    synonym "sv" "B—Poikilocyter"
+}
+measurement-definition "NPU14274" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Poikilocyter" property-kind="arbiträr koncentration" specification="procedur"
+concept "NPU14275" {
+    name "sv" "Blod—Erytrocyter(polykromatiska);arbiträr koncentration(procedur)"
+    synonym "sv" "B—Erc, polykromatiska"
+}
+measurement-definition "NPU14275" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Erytrocyter(polykromatiska)" property-kind="arbiträr koncentration" specification="procedur"

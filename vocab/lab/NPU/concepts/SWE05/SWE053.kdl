@@ -1,0 +1,371 @@
+// NPU laboratory tests, prefix SWE05, codes SWE053
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "SWE05300" {
+    name "sv" "Plasma—Transferrin;masskoncentration"
+    synonym "sv" "P—Transferrin"
+    status "inactive"
+}
+measurement-definition "SWE05300" result-type=quantity specimen="Plasma" component="Transferrin" property-kind="masskoncentration" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05301" {
+    name "sv" "Patient(Urin)—Myoglobin;massflöde"
+    synonym "sv" "Pt(U)—Myoglob-uts"
+    status "inactive"
+}
+measurement-definition "SWE05301" result-type=quantity specimen="Patient(Urin)" component="Myoglobin" property-kind="massflöde" {
+    unit "µg/d" namespace="npu"
+}
+concept "SWE05302" {
+    name "sv" "Plasma—Proteintyp;koncentration(lista;procedur)"
+    synonym "sv" "P—Proteinprof(li)"
+    status "inactive"
+}
+measurement-definition "SWE05302" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Proteintyp" property-kind="koncentration" specification="lista;procedur"
+concept "SWE05303" {
+    name "sv" "Plasma—Prolaktin;masskoncentration(15 minuter efter stimulering)"
+    synonym "sv" "P—Prolakt(15 min)"
+    status "inactive"
+}
+measurement-definition "SWE05303" result-type=quantity specimen="Plasma" component="Prolaktin" property-kind="masskoncentration" specification="15 minuter efter stimulering" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05304" {
+    name "sv" "Plasma—Prolaktin;masskoncentration(45 minuter efter stimulering)"
+    synonym "sv" "P—Prolakt(45 min)"
+    status "inactive"
+}
+measurement-definition "SWE05304" result-type=quantity specimen="Plasma" component="Prolaktin" property-kind="masskoncentration" specification="45 minuter efter stimulering" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05305" {
+    name "sv" "Plasma—Prolaktin;masskoncentration(90 minuter efter stimulering)"
+    synonym "sv" "P—Prolaktin(90 min)"
+    status "inactive"
+}
+measurement-definition "SWE05305" result-type=quantity specimen="Plasma" component="Prolaktin" property-kind="masskoncentration" specification="90 minuter efter stimulering" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05307" {
+    name "sv" "Urin—Proteintyp;egenskapsslag(lista;procedur)"
+    synonym "sv" "U—Proteinprofil (lista)"
+}
+measurement-definition "SWE05307" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Proteintyp" property-kind="egenskapsslag" specification="lista;procedur"
+concept "SWE05310" {
+    name "sv" "Urin—Albumin/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—Albumin/Kreatinin index"
+    status "inactive"
+}
+measurement-definition "SWE05310" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Albumin/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "g/mol" namespace="npu"
+}
+concept "SWE05314" {
+    name "sv" "Blod—Erytroblaster;egenskapsslag(procedur)"
+    synonym "sv" "B—Erytroblaster(/100 Lkc)"
+}
+measurement-definition "SWE05314" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Erytroblaster" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05316" {
+    name "sv" "Erytrocyter(Blod)—Retikulocyter;antalsfraktion"
+    synonym "sv" "Erc(B)—Retikulocyter"
+}
+measurement-definition "SWE05316" result-type=quantity specimen="Erytrocyter(Blod)" component="Retikulocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05317" {
+    name "sv" "Prostataspecifikt antigen(Plasma)—Prostataspecifikt antigen(fritt);massfraktion"
+    synonym "sv" "P—PSA fritt/tot kvot"
+    status "inactive"
+}
+measurement-definition "SWE05317" result-type=quantity specimen="Prostataspecifikt antigen(Plasma)" component="Prostataspecifikt antigen(fritt)" property-kind="massfraktion"
+concept "SWE05319" {
+    name "sv" "Urin—Kappakedja(Ig)/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—Kappa(Ig)/Krea index"
+    status "inactive"
+}
+measurement-definition "SWE05319" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Kappakedja(Ig)/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "g/mol" namespace="npu"
+}
+concept "SWE05320" {
+    name "sv" "Urin—Lambdakedja(Ig)/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—Lambda(Ig)/Krea index"
+    status "inactive"
+}
+measurement-definition "SWE05320" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Lambdakedja(Ig)/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "g/mol" namespace="npu"
+}
+concept "SWE05321" {
+    name "sv" "Urin—Immunglobulin G/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—IgG/Kreatinin index"
+    status "inactive"
+}
+measurement-definition "SWE05321" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Immunglobulin G/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "g/mol" namespace="npu"
+}
+concept "SWE05322" {
+    name "sv" "Urin—alfa-1-Mikroglobulin/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—Protein HC/Krea index"
+    status "inactive"
+}
+measurement-definition "SWE05322" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="alfa-1-Mikroglobulin/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "g/mol" namespace="npu"
+}
+concept "SWE05324" {
+    name "sv" "Urin—Kappakedja(Ig);masskoncentration"
+    synonym "sv" "U—Kappakedja(Ig)"
+    status "inactive"
+}
+measurement-definition "SWE05324" result-type=quantity specimen="Urin" component="Kappakedja(Ig)" property-kind="masskoncentration" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05325" {
+    name "sv" "Urin—Lambdakedja(Ig);masskoncentration"
+    synonym "sv" "U—Lambdakedja(Ig)"
+    status "inactive"
+}
+measurement-definition "SWE05325" result-type=quantity specimen="Urin" component="Lambdakedja(Ig)" property-kind="masskoncentration" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05327" {
+    name "sv" "Njure—Iohexol-clearance;volymflöde(procedur)"
+    synonym "sv" "Pt—Iohexol-clearance, abs"
+    status "inactive"
+}
+measurement-definition "SWE05327" result-type=quantity procedure-defined-unit=#true specimen="Njure" component="Iohexol-clearance" property-kind="volymflöde" specification="procedur" {
+    unit "mL/min" namespace="npu"
+}
+concept "SWE05328" {
+    name "sv" "Njure—Iohexol-clearance;volymflöde(yta=1,73 kvadratmeter)"
+    synonym "sv" "Pt—Iohexol-clearance, rel"
+    status "inactive"
+}
+measurement-definition "SWE05328" result-type=quantity specimen="Njure" component="Iohexol-clearance" property-kind="volymflöde" specification="yta=1,73 kvadratmeter" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05329" {
+    name "sv" "Blod—Megakaryocyter;egenskapsslag(procedur)"
+    synonym "sv" "B—Megakaryocyter(/100Lkc)"
+}
+measurement-definition "SWE05329" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Megakaryocyter" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05333" {
+    name "sv" "Urin—Amfetamin;masskoncentration"
+    synonym "sv" "U—Amfetamin"
+    status "inactive"
+}
+measurement-definition "SWE05333" result-type=quantity specimen="Urin" component="Amfetamin" property-kind="masskoncentration" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05350" {
+    name "sv" "Feces—Hemoglobin;arbiträrt innehåll(immunologisk;procedur)"
+    synonym "sv" "F—Hemoglobin (imm)"
+    status "inactive"
+}
+measurement-definition "SWE05350" result-type=quantity procedure-defined-unit=#true specimen="Feces" component="Hemoglobin" property-kind="arbiträrt innehåll" specification="immunologisk;procedur"
+concept "SWE05351" {
+    name "sv" "Blod—Basöverskott;substanskoncentration(aktuell-normal)"
+    synonym "sv" "B—Basöverskott"
+}
+measurement-definition "SWE05351" result-type=quantity specimen="Blod" component="Basöverskott" property-kind="substanskoncentration" specification="aktuell-normal" {
+    unit "mmol/L" namespace="npu"
+}
+concept "SWE05353" {
+    name "sv" "Svett(specifikation)—Svett;arbiträr konduktivitet"
+    synonym "sv" "Svett—Svettkonduktivitet"
+}
+measurement-definition "SWE05353" result-type=quantity specimen="Svett(specifikation)" component="Svett" property-kind="arbiträr konduktivitet" {
+    unit "mmol/L" namespace="npu"
+}
+concept "SWE05371" {
+    name "sv" "Urin—Tetrahydrokannabinol/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—THC/Kreatinin index"
+    status "inactive"
+}
+measurement-definition "SWE05371" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Tetrahydrokannabinol/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "mg/mol" namespace="npu"
+}
+concept "SWE05373" {
+    name "sv" "Urin—Humant herpesvirus 6(DNA);arbiträr logaritmisk antalskoncentration(procedur)"
+    synonym "sv" "U—HHV 6 DNA"
+    status "inactive"
+}
+measurement-definition "SWE05373" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Humant herpesvirus 6(DNA)" property-kind="arbiträr logaritmisk antalskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05374" {
+    name "sv" "Cerebrospinalvätska—Immunglobulin G(produktionstal);masskoncentration"
+    synonym "sv" "Csv—IgG produktionstal"
+}
+measurement-definition "SWE05374" result-type=quantity specimen="Cerebrospinalvätska" component="Immunglobulin G(produktionstal)" property-kind="masskoncentration" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05375" {
+    name "sv" "Blod—T-lymfocyter(CD3+,CD4+,CD45R0+);antalskoncentration"
+    synonym "sv" "B—T-lymfocyter CD4 minnes"
+}
+measurement-definition "SWE05375" result-type=quantity specimen="Blod" component="T-lymfocyter(CD3+,CD4+,CD45R0+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05376" {
+    name "sv" "Lymfocyter(Blod)—T-lymfocyter(CD3+,CD4+,CD45R0+);antalsfraktion"
+    synonym "sv" "Lyc(B)—T-lymf CD4 minnes"
+}
+measurement-definition "SWE05376" result-type=quantity specimen="Lymfocyter(Blod)" component="T-lymfocyter(CD3+,CD4+,CD45R0+)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05377" {
+    name "sv" "Blod—T-lymfocyter(CD3+,CD4+,CD45RA+);antalskoncentration"
+    synonym "sv" "B—T-lymfocyter CD4 naiva"
+}
+measurement-definition "SWE05377" result-type=quantity specimen="Blod" component="T-lymfocyter(CD3+,CD4+,CD45RA+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05378" {
+    name "sv" "Lymfocyter(Blod)—T-lymfocyter(CD3+,CD4+,CD45RA+);antalsfraktion"
+    synonym "sv" "Lyc(B)—T-lymf CD4 naiva"
+}
+measurement-definition "SWE05378" result-type=quantity specimen="Lymfocyter(Blod)" component="T-lymfocyter(CD3+,CD4+,CD45RA+)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05379" {
+    name "sv" "Blod—T-lymfocyter(CD3+,CD8+,CD45R0+);antalskoncentration"
+    synonym "sv" "B—T-lymfocyter CD8 minnes"
+}
+measurement-definition "SWE05379" result-type=quantity specimen="Blod" component="T-lymfocyter(CD3+,CD8+,CD45R0+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05380" {
+    name "sv" "Lymfocyter(Blod)—T-lymfocyter(CD3+,CD8+,CD45R0+);antalsfraktion"
+    synonym "sv" "Lyc(B)—T-lymf CD8 minnes"
+}
+measurement-definition "SWE05380" result-type=quantity specimen="Lymfocyter(Blod)" component="T-lymfocyter(CD3+,CD8+,CD45R0+)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05381" {
+    name "sv" "Blod—T-lymfocyter(CD3+,CD8+,CD45RA+);antalskoncentration"
+    synonym "sv" "B—T-lymfocyter CD8 naiva"
+}
+measurement-definition "SWE05381" result-type=quantity specimen="Blod" component="T-lymfocyter(CD3+,CD8+,CD45RA+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05382" {
+    name "sv" "Lymfocyter(Blod)—T-lymfocyter(CD3+,CD8+,CD45RA+);antalsfraktion"
+    synonym "sv" "Lyc(B)—T-lymf CD8 naiva"
+}
+measurement-definition "SWE05382" result-type=quantity specimen="Lymfocyter(Blod)" component="T-lymfocyter(CD3+,CD8+,CD45RA+)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05383" {
+    name "sv" "Blod—Natural Killer-celler(CD3-,CD16-,CD56+);antalskoncentration"
+    synonym "sv" "B—NK-celler ej klassisk"
+}
+measurement-definition "SWE05383" result-type=quantity specimen="Blod" component="Natural Killer-celler(CD3-,CD16-,CD56+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05384" {
+    name "sv" "Urin—Kannabinoid/Kreatinin;egenskapsslag(procedur)"
+    synonym "sv" "U—Kannabinoid/Krea index"
+    status "inactive"
+}
+measurement-definition "SWE05384" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Kannabinoid/Kreatinin" property-kind="egenskapsslag" specification="procedur" {
+    unit "mg/mol" namespace="npu"
+}
+concept "SWE05385" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Kreatinin;Lund-Malmö)"
+    synonym "sv" "Pt—eGFR(Krea)relativ"
+}
+measurement-definition "SWE05385" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Kreatinin;Lund-Malmö" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05386" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Kreatinin;MDRD 2005)"
+    synonym "sv" "Pt—eGFR(Krea)relativ"
+}
+measurement-definition "SWE05386" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Kreatinin;MDRD 2005" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05387" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(Kreatinin;Cockroft-Gault)"
+    synonym "sv" "Pt—eGFR(Krea)absolut"
+}
+measurement-definition "SWE05387" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="Kreatinin;Cockroft-Gault" {
+    unit "mL/min" namespace="npu"
+}
+concept "SWE05388" {
+    name "sv" "Blod—Leukocyttyp;egenskapsslag(procedur)"
+    synonym "sv" "B—Diff, bedömning"
+}
+measurement-definition "SWE05388" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Leukocyttyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05389" {
+    name "sv" "Cerebrospinalvätska—Proteintyp;egenskapsslag(procedur)"
+    synonym "sv" "Csv—Proteinprofil, bedömn"
+}
+measurement-definition "SWE05389" result-type=quantity procedure-defined-unit=#true specimen="Cerebrospinalvätska" component="Proteintyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05390" {
+    name "sv" "Plasma—Proteintyp;egenskapsslag(procedur)"
+    synonym "sv" "P—Proteinprofil, bedömn"
+}
+measurement-definition "SWE05390" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Proteintyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05391" {
+    name "sv" "Urin—Proteintyp;egenskapsslag(procedur)"
+    synonym "sv" "U—Proteinprofil, bedömn"
+}
+measurement-definition "SWE05391" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Proteintyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05392" {
+    name "sv" "Urin—Partikeltyp;egenskapsslag(procedur)"
+    synonym "sv" "U—Sediment, bedömning"
+}
+measurement-definition "SWE05392" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Partikeltyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05393" {
+    name "sv" "Patient—Cerebrospinalvätska;egenskapsslag(procedur)"
+    synonym "sv" "Pt—Csv, bedömning"
+}
+measurement-definition "SWE05393" result-type=quantity procedure-defined-unit=#true specimen="Patient" component="Cerebrospinalvätska" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05394" {
+    name "sv" "Transferrin(Plasma)—Disialotransferrin;substansfraktion"
+    synonym "sv" "P—CDT, disialo"
+}
+measurement-definition "SWE05394" result-type=quantity specimen="Transferrin(Plasma)" component="Disialotransferrin" property-kind="substansfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05395" {
+    name "sv" "Hemoglobin(Fe;Blod)—Kolmonoxidhemoglobin(Fe);substansfraktion"
+    synonym "sv" "Hb(B)—COHb"
+}
+measurement-definition "SWE05395" result-type=quantity specimen="Hemoglobin(Fe;Blod)" component="Kolmonoxidhemoglobin(Fe)" property-kind="substansfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05396" {
+    name "sv" "Hemoglobin(Fe;Blod)—Methemoglobin(Fe);substansfraktion"
+    synonym "sv" "Hb(B)—Methemoglobin"
+}
+measurement-definition "SWE05396" result-type=quantity specimen="Hemoglobin(Fe;Blod)" component="Methemoglobin(Fe)" property-kind="substansfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05397" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;arteriellt Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(aB)—Oxygenmättnad"
+}
+measurement-definition "SWE05397" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;arteriellt Blod)" component="Oxygen(O2)" property-kind="mättnad" {
+    unit "%" namespace="npu"
+}
+concept "SWE05398" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;arteriellt Blod)—Oxygen(O2);mättnad(pulsoximetri)"
+    synonym "sv" "Hb(aB)—Oxygenmättn (puls)"
+}
+measurement-definition "SWE05398" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;arteriellt Blod)" component="Oxygen(O2)" property-kind="mättnad" specification="pulsoximetri" {
+    unit "%" namespace="npu"
+}
+concept "SWE05399" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;kapillärt Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(kB)—Oxygenmättnad"
+}
+measurement-definition "SWE05399" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;kapillärt Blod)" component="Oxygen(O2)" property-kind="mättnad" {
+    unit "%" namespace="npu"
+}

@@ -1,0 +1,334 @@
+// NPU laboratory tests, prefix SWE05, codes SWE054
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "SWE05400" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;venöst Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(vB)—Oxygenmättnad"
+}
+measurement-definition "SWE05400" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;venöst Blod)" component="Oxygen(O2)" property-kind="mättnad" {
+    unit "%" namespace="npu"
+}
+concept "SWE05401" {
+    name "sv" "Hemoglobin(Fe;O2-bindande;centralvenöst Blod)—Oxygen(O2);mättnad"
+    synonym "sv" "Hb(cvB)—Oxygenmättnad"
+}
+measurement-definition "SWE05401" result-type=quantity specimen="Hemoglobin(Fe;O2-bindande;centralvenöst Blod)" component="Oxygen(O2)" property-kind="mättnad" {
+    unit "%" namespace="npu"
+}
+concept "SWE05402" {
+    name "sv" "Plasma—Immunglobulin G-subklasser;egenskapsslag(procedur)"
+    synonym "sv" "P—IgG subklasser, bedömn"
+}
+measurement-definition "SWE05402" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Immunglobulin G-subklasser" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05403" {
+    name "sv" "Patient—Proteintyp;egenskapsslag(procedur)"
+    synonym "sv" "Pt—Proteinprofil, bedömn"
+}
+measurement-definition "SWE05403" result-type=quantity procedure-defined-unit=#true specimen="Patient" component="Proteintyp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05404" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Kreatinin;CKD-EPI)"
+    synonym "sv" "Pt—eGFR(Krea)relativ"
+}
+measurement-definition "SWE05404" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Kreatinin;CKD-EPI" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05405" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Cystatin C;CAPA 2014)"
+    synonym "sv" "Pt—eGFR(CysC)relativ"
+}
+measurement-definition "SWE05405" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Cystatin C;CAPA 2014" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05406" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Kreatinin;Lund-Malmö reviderad 2011)"
+    synonym "sv" "Pt—eGFR(Krea)relativ"
+}
+measurement-definition "SWE05406" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Kreatinin;Lund-Malmö reviderad 2011" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05407" {
+    name "sv" "Erytrocyter(Blod)—Schistocyter;antalsfraktion"
+    synonym "sv" "Erc(B)—Schistocyter"
+}
+measurement-definition "SWE05407" result-type=quantity specimen="Erytrocyter(Blod)" component="Schistocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05408" {
+    name "sv" "Plasma—Kolesterol, i LDL;substanskoncentration"
+    synonym "sv" "P—LDL-kolesterol, direkt"
+}
+measurement-definition "SWE05408" result-type=quantity specimen="Plasma" component="Kolesterol, i LDL" property-kind="substanskoncentration" {
+    unit "mmol/L" namespace="npu"
+}
+concept "SWE05409" {
+    name "sv" "Blod—Blodstatus;egenskapsslag(lista;procedur)"
+    synonym "sv" "B—Blodstatus (lista)"
+}
+measurement-definition "SWE05409" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Blodstatus" property-kind="egenskapsslag" specification="lista;procedur"
+concept "SWE05410" {
+    name "sv" "Plasma—Neuronala-antikroppar(Immunglobulin G);arbiträr koncentration(lista;procedur)"
+    synonym "sv" "P—Neuronala-ak(IgG,lista)"
+}
+measurement-definition "SWE05410" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Neuronala-antikroppar(Immunglobulin G)" property-kind="arbiträr koncentration" specification="lista;procedur"
+concept "SWE05411" {
+    name "sv" "Plasma—Kortisol;substanskoncentration(funktionstest;procedur)"
+    synonym "sv" "P—Kortisol, funktionstest"
+}
+measurement-definition "SWE05411" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kortisol" property-kind="substanskoncentration" specification="funktionstest;procedur" {
+    unit "nmol/L" namespace="npu"
+}
+concept "SWE05416" {
+    name "sv" "Plasma—Prostataspecifikt antigen;egenskapsslag(lista;procedur)"
+    synonym "sv" "P—PSA fritt/tot (lista)"
+}
+measurement-definition "SWE05416" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Prostataspecifikt antigen" property-kind="egenskapsslag" specification="lista;procedur"
+concept "SWE05417" {
+    name "sv" "Blod—Leukocyter;antalskoncentration(lista)"
+    synonym "sv" "B—Lkc o Neutrofila(lista)"
+}
+measurement-definition "SWE05417" result-type=quantity specimen="Blod" component="Leukocyter" property-kind="antalskoncentration" specification="lista" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05418" {
+    name "sv" "Blod—Trombocyter(Anisocytos);arbiträr koncentration(procedur)"
+    synonym "sv" "B—Trc, anisocytos"
+}
+measurement-definition "SWE05418" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Trombocyter(Anisocytos)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05419" {
+    name "sv" "Urin—Metylfenidat;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Metylfenidat (verif)"
+}
+measurement-definition "SWE05419" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Metylfenidat" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05420" {
+    name "sv" "Urin—Zopiklon;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Zopiklon (verif)"
+}
+measurement-definition "SWE05420" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Zopiklon" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05432" {
+    name "sv" "Urin—Zolpidem;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Zolpidem (verif)"
+}
+measurement-definition "SWE05432" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Zolpidem" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05433" {
+    name "sv" "Urin—Etanol;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Etanol (verif)"
+}
+measurement-definition "SWE05433" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Etanol" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05434" {
+    name "sv" "Urin—Läkemedel;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Läkemedel (verif)"
+}
+measurement-definition "SWE05434" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Läkemedel" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05435" {
+    name "sv" "Saliv—Tetrahydrokannabinol;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—THC (verif)"
+}
+measurement-definition "SWE05435" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Tetrahydrokannabinol" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05436" {
+    name "sv" "Saliv—Kokain;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Kokain (verif)"
+}
+measurement-definition "SWE05436" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Kokain" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05437" {
+    name "sv" "Urin—3,4-Metylendioxipyrovaleron;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—3,4-MDPV (verif)"
+}
+measurement-definition "SWE05437" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="3,4-Metylendioxipyrovaleron" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05438" {
+    name "sv" "Urin—4-Fluoramfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—4-FA (verif)"
+}
+measurement-definition "SWE05438" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="4-Fluoramfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05439" {
+    name "sv" "Urin—Katinon;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Katinon (verif)"
+}
+measurement-definition "SWE05439" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Katinon" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05442" {
+    name "sv" "Urin—Mefedron;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—Mefedron (verif)"
+}
+measurement-definition "SWE05442" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Mefedron" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05443" {
+    name "sv" "Lymfocyter(Blod)—Natural Killer-celler(CD3-,CD16-,CD56+);antalsfraktion"
+    synonym "sv" "Lyc(B)—NK-celler ej klass"
+}
+measurement-definition "SWE05443" result-type=quantity specimen="Lymfocyter(Blod)" component="Natural Killer-celler(CD3-,CD16-,CD56+)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05444" {
+    name "sv" "JAK2-gen(DNA;System)—JAK2-gen(LRG_612: g.93526G>T);substansfraktion"
+    synonym "sv" "JAK2(DNA)—JAK2 (p.V617F)"
+}
+measurement-definition "SWE05444" result-type=quantity specimen="JAK2-gen(DNA;System)" component="JAK2-gen(LRG_612: g.93526G>T)" property-kind="substansfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05445" {
+    name "sv" "Saliv—3,4-Metylendioxiamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—MDA (verif)"
+}
+measurement-definition "SWE05445" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="3,4-Metylendioxiamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05446" {
+    name "sv" "Saliv—3,4-Metylendioxietylamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—MDEA (verif)"
+}
+measurement-definition "SWE05446" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="3,4-Metylendioxietylamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05447" {
+    name "sv" "Saliv—3,4-Metylendioximetamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—MDMA (verif)"
+}
+measurement-definition "SWE05447" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="3,4-Metylendioximetamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05448" {
+    name "sv" "Saliv—6-Monoacetylmorfin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—6-MAM (verif)"
+}
+measurement-definition "SWE05448" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="6-Monoacetylmorfin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05450" {
+    name "sv" "Saliv—Amfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Amfetamin (verif)"
+}
+measurement-definition "SWE05450" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Amfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05451" {
+    name "sv" "Saliv—Bensodiazepiner;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Bensodiazep (verif)"
+}
+measurement-definition "SWE05451" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Bensodiazepiner" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05452" {
+    name "sv" "Saliv—Etylmorfin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Etylmorfin (verif)"
+}
+measurement-definition "SWE05452" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Etylmorfin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05453" {
+    name "sv" "Saliv—Fencyklidin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Fencyklidin (verif)"
+}
+measurement-definition "SWE05453" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Fencyklidin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05454" {
+    name "sv" "Saliv—Kodein;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Kodein (verif)"
+}
+measurement-definition "SWE05454" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Kodein" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05455" {
+    name "sv" "Saliv—Metamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Metamfetamin(verif)"
+}
+measurement-definition "SWE05455" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Metamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05456" {
+    name "sv" "Saliv—Morfin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Morfin (verif)"
+}
+measurement-definition "SWE05456" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Morfin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05457" {
+    name "sv" "Saliv—Morfin+analog;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Opiater (verif)"
+}
+measurement-definition "SWE05457" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Morfin+analog" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05460" {
+    name "sv" "Saliv—Amfetamin+analog;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "Saliv—Amfetaminer+an(ver)"
+}
+measurement-definition "SWE05460" result-type=quantity procedure-defined-unit=#true specimen="Saliv" component="Amfetamin+analog" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05474" {
+    name "sv" "System(specifikation)—Celler(CD34+);antalskoncentration(procedur)"
+    synonym "sv" "Syst—Celler(CD34+)"
+}
+measurement-definition "SWE05474" result-type=quantity procedure-defined-unit=#true specimen="System(specifikation)" component="Celler(CD34+)" property-kind="antalskoncentration" specification="procedur" {
+    unit "x10^6/L" namespace="npu"
+}
+concept "SWE05475" {
+    name "sv" "Blod—Trombocyter(CD41,CD42b);arbiträr koncentration(procedur)"
+    synonym "sv" "B—Trombocyter(CD41,CD42b)"
+}
+measurement-definition "SWE05475" result-type=quantity procedure-defined-unit=#true specimen="Blod" component="Trombocyter(CD41,CD42b)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05476" {
+    name "sv" "Blod—B-lymfocyter(CD3-,CD19+,CD20+,CD24hi,CD27-,CD38hi,IGHD+,IGHM+);antalskoncentration"
+    synonym "sv" "B—Transitionella B-lymf"
+}
+measurement-definition "SWE05476" result-type=quantity specimen="Blod" component="B-lymfocyter(CD3-,CD19+,CD20+,CD24hi,CD27-,CD38hi,IGHD+,IGHM+)" property-kind="antalskoncentration" {
+    unit "x10^9/L" namespace="npu"
+}
+concept "SWE05477" {
+    name "sv" "Urin—3,4-Metylendioxiamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—MDA (verif)"
+}
+measurement-definition "SWE05477" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="3,4-Metylendioxiamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05478" {
+    name "sv" "Urin—3,4-Metylendioxietylamfetamin;arbiträr koncentration(verifiering;procedur)"
+    synonym "sv" "U—MDEA (verif)"
+}
+measurement-definition "SWE05478" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="3,4-Metylendioxietylamfetamin" property-kind="arbiträr koncentration" specification="verifiering;procedur"
+concept "SWE05479" {
+    name "sv" "Plasma—Prostataspecifikt antigen(fritt);masskoncentration"
+    synonym "sv" "P—PSA, fritt"
+    status "inactive"
+}
+measurement-definition "SWE05479" result-type=quantity specimen="Plasma" component="Prostataspecifikt antigen(fritt)" property-kind="masskoncentration" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05480" {
+    name "sv" "System(specifikation)—Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Övr—Papillomvirus (HPV)-DNA, högrisk ej 16, 18"
+}
+measurement-definition "SWE05480" result-type=quantity procedure-defined-unit=#true specimen="System(specifikation)" component="Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05481" {
+    name "sv" "Sekret(Cervix uteri)—Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Cx—Papillomvirus (HPV)-DNA, högrisk ej 16, 18"
+}
+measurement-definition "SWE05481" result-type=quantity procedure-defined-unit=#true specimen="Sekret(Cervix uteri)" component="Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05482" {
+    name "sv" "Vaginalvätska—Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Vag—Papillomvirus (HPV)-DNA, högrisk ej 16, 18"
+}
+measurement-definition "SWE05482" result-type=quantity procedure-defined-unit=#true specimen="Vaginalvätska" component="Humant papillomavirus typ högrisk exklusive 16, 18(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05483" {
+    name "sv" "System(specifikation)—Humant papillomavirus typ högrisk(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Övr—Papillomvirus (HPV)-DNA, högrisk"
+}
+measurement-definition "SWE05483" result-type=quantity procedure-defined-unit=#true specimen="System(specifikation)" component="Humant papillomavirus typ högrisk(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05484" {
+    name "sv" "Sekret(Cervix uteri)—Humant papillomavirus typ högrisk(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Cx—Papillomvirus (HPV)-DNA, högrisk"
+}
+measurement-definition "SWE05484" result-type=quantity procedure-defined-unit=#true specimen="Sekret(Cervix uteri)" component="Humant papillomavirus typ högrisk(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05485" {
+    name "sv" "Vaginalvätska—Humant papillomavirus typ högrisk(DNA;specifikation);arbiträr koncentration(procedur)"
+    synonym "sv" "Vag—Papillomvirus (HPV)-DNA, högrisk"
+}
+measurement-definition "SWE05485" result-type=quantity procedure-defined-unit=#true specimen="Vaginalvätska" component="Humant papillomavirus typ högrisk(DNA;specifikation)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05486" {
+    name "sv" "Njure—Glomerulär filtration;volymflödeskvot(Cystatin C/Kreatinin)"
+    synonym "sv" "Pt—eGFR CysC/eGFR Krea"
+}
+measurement-definition "SWE05486" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflödeskvot" specification="Cystatin C/Kreatinin"
+concept "SWE05488" {
+    name "sv" "Plasma—Lever-antikropp;egenskapsslag(procedur)"
+    synonym "sv" "P—Lever-ak, bedömning"
+}
+measurement-definition "SWE05488" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Lever-antikropp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05489" {
+    name "sv" "Plasma—Myosit-antikropp;egenskapsslag(procedur)"
+    synonym "sv" "P—Myosit-ak, bedömning"
+}
+measurement-definition "SWE05489" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Myosit-antikropp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05490" {
+    name "sv" "Plasma—Systemisk skleros-antikropp;egenskapsslag(procedur)"
+    synonym "sv" "P—Syst.skleros-ak, bedömn"
+}
+measurement-definition "SWE05490" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Systemisk skleros-antikropp" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05491" {
+    name "sv" "Plasma—Neuronala-antikroppar;egenskapsslag(procedur)"
+    synonym "sv" "P—Neuronala-ak, bedömning"
+}
+measurement-definition "SWE05491" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Neuronala-antikroppar" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05492" {
+    name "sv" "Plasma—Nukleärt antigen-antikropp(Immunglobulin G);egenskapsslag(procedur)"
+    synonym "sv" "P—ANA (IgG), bedömning"
+}
+measurement-definition "SWE05492" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Nukleärt antigen-antikropp(Immunglobulin G)" property-kind="egenskapsslag" specification="procedur"

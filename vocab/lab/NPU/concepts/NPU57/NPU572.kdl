@@ -1,0 +1,484 @@
+// NPU laboratory tests, prefix NPU57, codes NPU572
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "NPU57202" {
+    name "sv" "System(specifikation)—Bakterie(specifikation);känslighet(Gentamicin;tröskelmasskoncentration;procedur)"
+    synonym "sv" "Gentamicin (MIC)"
+}
+measurement-definition "NPU57202" result-type=quantity procedure-defined-unit=#true specimen="System(specifikation)" component="Bakterie(specifikation)" property-kind="känslighet" specification="Gentamicin;tröskelmasskoncentration;procedur" {
+    unit "mg/L" namespace="npu"
+}
+concept "NPU57212" {
+    name "sv" "T-lymfocyter(CD4+;Blod)—Interferon gamma frisättning(Mycobacterium tuberculosis-relaterad);arbiträrt substansflöde(procedur)"
+    synonym "sv" "B—Tuberkulos-ag 1, IFNg"
+}
+measurement-definition "NPU57212" result-type=quantity procedure-defined-unit=#true specimen="T-lymfocyter(CD4+;Blod)" component="Interferon gamma frisättning(Mycobacterium tuberculosis-relaterad)" property-kind="arbiträrt substansflöde" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57213" {
+    name "sv" "T-lymfocyter(CD8+;Blod)—Interferon gamma frisättning(Mycobacterium tuberculosis-relaterad);arbiträrt substansflöde(procedur)"
+    synonym "sv" "B—Tuberkulos-ag 2, IFNg"
+}
+measurement-definition "NPU57213" result-type=quantity procedure-defined-unit=#true specimen="T-lymfocyter(CD8+;Blod)" component="Interferon gamma frisättning(Mycobacterium tuberculosis-relaterad)" property-kind="arbiträrt substansflöde" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57215" {
+    name "sv" "Sädesvätska—Spermier;antal(procedur)"
+    synonym "sv" "Sem—Spermier"
+}
+measurement-definition "NPU57215" result-type=quantity procedure-defined-unit=#true specimen="Sädesvätska" component="Spermier" property-kind="antal" specification="procedur" {
+    unit "x10^9" namespace="npu"
+}
+concept "NPU57216" {
+    name "sv" "Spermier—Spermier(progressivt rörliga+ej progressivt rörliga);antalsfraktion(procedur)"
+    synonym "sv" "Sperm—Sperm,tot rörlighet"
+}
+measurement-definition "NPU57216" result-type=quantity procedure-defined-unit=#true specimen="Spermier" component="Spermier(progressivt rörliga+ej progressivt rörliga)" property-kind="antalsfraktion" specification="procedur"
+concept "NPU57219" {
+    name "sv" "Urin—N-Acetylneuraminat(fritt)/Kreatinin;substanskvot"
+    synonym "sv" "U—Sialinsyra, fritt/Krea"
+}
+measurement-definition "NPU57219" result-type=quantity specimen="Urin" component="N-Acetylneuraminat(fritt)/Kreatinin" property-kind="substanskvot" {
+    unit "mmol/mol" namespace="npu"
+}
+concept "NPU57231" {
+    name "sv" "Sädesvätska—Spermier;antalskoncentration"
+    synonym "sv" "Sem—Spermier"
+}
+measurement-definition "NPU57231" result-type=quantity specimen="Sädesvätska" component="Spermier" property-kind="antalskoncentration" {
+    unit "x10^6/L" namespace="npu"
+}
+concept "NPU57234" {
+    name "sv" "Plasma—Bambuskott-antikropp(Immunglobulin E);arbiträr substanskoncentration(f51;procedur)"
+    synonym "sv" "P—Bambuskott-ak"
+}
+measurement-definition "NPU57234" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Bambuskott-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f51;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57236" {
+    name "sv" "Plasma—Kryddpeppar-antikropp(Immunglobulin E);arbiträr substanskoncentration(f339;procedur)"
+    synonym "sv" "P—Kryddpeppar-ak"
+}
+measurement-definition "NPU57236" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kryddpeppar-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f339;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57237" {
+    name "sv" "Plasma—Cedar alm-antikropp(Immunglobulin E);arbiträr substanskoncentration(t45;procedur)"
+    synonym "sv" "P—Alm, U.crassifolia-ak"
+}
+measurement-definition "NPU57237" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Cedar alm-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t45;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57238" {
+    name "sv" "Plasma—Sträv ambrosia-antikropp(Immunglobulin E);arbiträr substanskoncentration(w2;procedur)"
+    synonym "sv" "P—Sträv ambrosia-ak"
+}
+measurement-definition "NPU57238" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Sträv ambrosia-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="w2;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57239" {
+    name "sv" "Plasma—Ampicillin-antikropp(Immunglobulin E);arbiträr substanskoncentration(c203;procedur)"
+    synonym "sv" "P—Ampicillin-ak"
+}
+measurement-definition "NPU57239" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Ampicillin-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="c203;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57240" {
+    name "sv" "Plasma—Anisakis-antikropp(Immunglobulin E);arbiträr substanskoncentration(p4;procedur)"
+    synonym "sv" "P—Anisakis-ak"
+}
+measurement-definition "NPU57240" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Anisakis-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="p4;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57241" {
+    name "sv" "Plasma—Ansjovis-antikropp(Immunglobulin E);arbiträr substanskoncentration(f313;procedur)"
+    synonym "sv" "P—Ansjovis-ak"
+}
+measurement-definition "NPU57241" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Ansjovis-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f313;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57242" {
+    name "sv" "Plasma—Ask, europeisk-antikropp(Immunglobulin E);arbiträr substanskoncentration(t25;procedur)"
+    synonym "sv" "P—Ask, europeisk-ak"
+}
+measurement-definition "NPU57242" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Ask, europeisk-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t25;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57243" {
+    name "sv" "Plasma—Blomia tropicalis-antikropp(Immunglobulin E);arbiträr substanskoncentration(d201;procedur)"
+    synonym "sv" "P—B.tropicalis-ak"
+}
+measurement-definition "NPU57243" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Blomia tropicalis-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="d201;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57244" {
+    name "sv" "Plasma—Blyerts-en-antikropp(Immunglobulin E);arbiträr substanskoncentration(t57;procedur)"
+    synonym "sv" "P—Blyerts-en-ak"
+}
+measurement-definition "NPU57244" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Blyerts-en-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t57;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57245" {
+    name "sv" "Plasma—Plattvial-antikropp(Immunglobulin E);arbiträr substanskoncentration(f310;procedur)"
+    synonym "sv" "P—Plattvial-ak"
+}
+measurement-definition "NPU57245" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Plattvial-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f310;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57246" {
+    name "sv" "Plasma—Jujubär-antikropp(Immunglobulin E);arbiträr substanskoncentration(f336;procedur)"
+    synonym "sv" "P—Jujubär-ak"
+}
+measurement-definition "NPU57246" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Jujubär-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f336;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57247" {
+    name "sv" "Plasma—Korn-antikropp(Immunglobulin E);arbiträr substanskoncentration(g201;procedur)"
+    synonym "sv" "P—Kornpollen-ak"
+}
+measurement-definition "NPU57247" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Korn-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="g201;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57248" {
+    name "sv" "Plasma—Chaetomium globosum-antikropp(Immunglobulin E);arbiträr substanskoncentration(m208;procedur)"
+    synonym "sv" "P—C.globosum-ak"
+}
+measurement-definition "NPU57248" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Chaetomium globosum-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="m208;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57249" {
+    name "sv" "Plasma—Spansk makrill-antikropp(Immunglobulin E);arbiträr substanskoncentration(f50;procedur)"
+    synonym "sv" "P—Spansk makrill-ak"
+}
+measurement-definition "NPU57249" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Spansk makrill-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f50;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57250" {
+    name "sv" "Plasma—Quercus virginiana-antikropp(Immunglobulin E);arbiträr substanskoncentration(t218;procedur)"
+    synonym "sv" "P—Quercus virginiana-ak"
+}
+measurement-definition "NPU57250" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Quercus virginiana-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t218;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57251" {
+    name "sv" "Plasma—Älgkött-antikropp(Immunglobulin E);arbiträr substanskoncentration(f285;procedur)"
+    synonym "sv" "P—Älgkött-ak"
+}
+measurement-definition "NPU57251" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Älgkött-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f285;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57252" {
+    name "sv" "Plasma—Montereytall-antikropp(Immunglobulin E);arbiträr substanskoncentration(t213;procedur)"
+    synonym "sv" "P—Tall, P.radiata-ak"
+}
+measurement-definition "NPU57252" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Montereytall-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t213;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57253" {
+    name "sv" "Plasma—Glasvar-antikropp(Immunglobulin E);arbiträr substanskoncentration(f311;procedur)"
+    synonym "sv" "P—Glasvar-ak"
+}
+measurement-definition "NPU57253" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Glasvar-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f311;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57254" {
+    name "sv" "Plasma—Guavafrukt-antikropp(Immunglobulin E);arbiträr substanskoncentration(f292;procedur)"
+    synonym "sv" "P—Guavafrukt-ak"
+}
+measurement-definition "NPU57254" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Guavafrukt-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f292;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57255" {
+    name "sv" "Plasma—Bäralm-antikropp(Immunglobulin E);arbiträr substanskoncentration(t44;procedur)"
+    synonym "sv" "P—Bäralm-ak"
+}
+measurement-definition "NPU57255" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Bäralm-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t44;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57256" {
+    name "sv" "Plasma—Hexahydroftalanhydrid-antikropp(Immunglobulin E);arbiträr substanskoncentration(k209;procedur)"
+    synonym "sv" "P—Hexahydroftalanhydr-ak"
+}
+measurement-definition "NPU57256" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Hexahydroftalanhydrid-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="k209;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57257" {
+    name "sv" "Plasma—Hönshirs-antikropp(Immunglobulin E);arbiträr substanskoncentration(f57;procedur)"
+    synonym "sv" "P—Hönshirs-ak"
+}
+measurement-definition "NPU57257" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Hönshirs-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f57;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57258" {
+    name "sv" "Plasma—Kackerlacka, orientalisk-antikropp(Immunglobulin E);arbiträr substanskoncentration(i207;procedur)"
+    synonym "sv" "P—Kackerlacka, orienta-ak"
+}
+measurement-definition "NPU57258" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kackerlacka, orientalisk-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="i207;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57259" {
+    name "sv" "Plasma—Hälleflundra-antikropp(Immunglobulin E);arbiträr substanskoncentration(f303;procedur)"
+    synonym "sv" "P—Hälleflundra-ak"
+}
+measurement-definition "NPU57259" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Hälleflundra-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f303;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57260" {
+    name "sv" "Plasma—Langust-antikropp(Immunglobulin E);arbiträr substanskoncentration(f304;procedur)"
+    synonym "sv" "P—Langust-ak"
+}
+measurement-definition "NPU57260" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Langust-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f304;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57261" {
+    name "sv" "Plasma—Lagerblad-antikropp(Immunglobulin E);arbiträr substanskoncentration(f278;procedur)"
+    synonym "sv" "P—Lagerblad-ak"
+}
+measurement-definition "NPU57261" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Lagerblad-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f278;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57262" {
+    name "sv" "Plasma—Litchi-antikropp(Immunglobulin E);arbiträr substanskoncentration(f348;procedur)"
+    synonym "sv" "P—Litchi-ak"
+}
+measurement-definition "NPU57262" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Litchi-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f348;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57263" {
+    name "sv" "Plasma—Metyltetrahydroftalanhydrid-antikropp(Immunglobulin E);arbiträr substanskoncentration(k211;procedur)"
+    synonym "sv" "P—Metyltetrahydroftala-ak"
+}
+measurement-definition "NPU57263" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Metyltetrahydroftalanhydrid-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="k211;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57264" {
+    name "sv" "Plasma—Cladotanytarsus lewisi-antikropp(Immunglobulin E);arbiträr substanskoncentration(i72;procedur)"
+    synonym "sv" "P—C.lewisi-ak"
+}
+measurement-definition "NPU57264" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Cladotanytarsus lewisi-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="i72;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57265" {
+    name "sv" "Plasma—Mynta-antikropp(Immunglobulin E);arbiträr substanskoncentration(f332;procedur)"
+    synonym "sv" "P—Mynta-ak"
+}
+measurement-definition "NPU57265" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Mynta-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f332;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57266" {
+    name "sv" "Plasma—Oljepalm-antikropp(Immunglobulin E);arbiträr substanskoncentration(t223;procedur)"
+    synonym "sv" "P—Oljepalm-ak"
+}
+measurement-definition "NPU57266" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Oljepalm-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t223;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57267" {
+    name "sv" "Plasma—Papaya-antikropp(Immunglobulin E);arbiträr substanskoncentration(f293;procedur)"
+    synonym "sv" "P—Papaya-ak"
+}
+measurement-definition "NPU57267" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Papaya-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f293;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57268" {
+    name "sv" "Plasma—Parakitfjäder-antikropp(Immunglobulin E);arbiträr substanskoncentration(e196;procedur)"
+    synonym "sv" "P—Parakitfjäder-ak"
+}
+measurement-definition "NPU57268" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Parakitfjäder-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="e196;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57269" {
+    name "sv" "Plasma—Parakitfeces-antikropp(Immunglobulin E);arbiträr substanskoncentration(e197;procedur)"
+    synonym "sv" "P—Parakitfeces-ak (IgE)"
+}
+measurement-definition "NPU57269" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Parakitfeces-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="e197;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57270" {
+    name "sv" "Plasma—Penicillium glabrum-antikropp(Immunglobulin E);arbiträr substanskoncentration(m209;procedur)"
+    synonym "sv" "P—Penicillium glabrum-ak"
+}
+measurement-definition "NPU57270" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Penicillium glabrum-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="m209;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57271" {
+    name "sv" "Plasma—Pepsin (Sus s Pepsin)-antikropp(Immunglobulin E);arbiträr substanskoncentration(k213;procedur)"
+    synonym "sv" "P—Pepsin(Sus s Pepsin)-ak"
+}
+measurement-definition "NPU57271" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Pepsin (Sus s Pepsin)-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="k213;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57272" {
+    name "sv" "Plasma—Röd snapper-antikropp(Immunglobulin E);arbiträr substanskoncentration(f381;procedur)"
+    synonym "sv" "P—Röd snapper-ak"
+}
+measurement-definition "NPU57272" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Röd snapper-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f381;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57274" {
+    name "sv" "Plasma—Cedertuja-antikropp(Immunglobulin E);arbiträr substanskoncentration(t212;procedur)"
+    synonym "sv" "P—Cedertuja-ak"
+}
+measurement-definition "NPU57274" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Cedertuja-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t212;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57275" {
+    name "sv" "Plasma—Salvia-antikropp(Immunglobulin E);arbiträr substanskoncentration(f344;procedur)"
+    synonym "sv" "P—Salvia-ak"
+}
+measurement-definition "NPU57275" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Salvia-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f344;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57276" {
+    name "sv" "Plasma—Sardinops melanostictus-antikropp(Immunglobulin E);arbiträr substanskoncentration(f61;procedur)"
+    synonym "sv" "P—Sardin-ak"
+}
+measurement-definition "NPU57276" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Sardinops melanostictus-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f61;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57277" {
+    name "sv" "Plasma—Fårmjölkvassla-antikropp(Immunglobulin E);arbiträr substanskoncentration(f326;procedur)"
+    synonym "sv" "P—Fårmjölkvassla-ak"
+}
+measurement-definition "NPU57277" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Fårmjölkvassla-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f326;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57278" {
+    name "sv" "Plasma—Savinas, Proteas 1-antikropp(Immunglobulin E);arbiträr substanskoncentration(k206;procedur)"
+    synonym "sv" "P—Savinas, Proteas 1-ak"
+}
+measurement-definition "NPU57278" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Savinas, Proteas 1-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="k206;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57279" {
+    name "sv" "Plasma—Choklad-antikropp(Immunglobulin E);arbiträr substanskoncentration(f105;procedur)"
+    synonym "sv" "P—Choklad-ak"
+}
+measurement-definition "NPU57279" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Choklad-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f105;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57280" {
+    name "sv" "Plasma—Sjötunga-antikropp(Immunglobulin E);arbiträr substanskoncentration(f337;procedur)"
+    synonym "sv" "P—Sjötunga-ak"
+}
+measurement-definition "NPU57280" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Sjötunga-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f337;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57281" {
+    name "sv" "Plasma—Kolvhirs-antikropp(Immunglobulin E);arbiträr substanskoncentration(f56;procedur)"
+    synonym "sv" "P—Kolvhirs-ak"
+}
+measurement-definition "NPU57281" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kolvhirs-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f56;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57282" {
+    name "sv" "Plasma—Svärdfisk-antikropp(Immunglobulin E);arbiträr substanskoncentration(f312;procedur)"
+    synonym "sv" "P—Svärdfisk-ak"
+}
+measurement-definition "NPU57282" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Svärdfisk-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f312;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57283" {
+    name "sv" "Plasma—Svinurinprotein-antikropp(Immunglobulin E);arbiträr substanskoncentration(e212;procedur)"
+    synonym "sv" "P—Svinurin-ak"
+}
+measurement-definition "NPU57283" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Svinurinprotein-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="e212;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57284" {
+    name "sv" "Plasma—Svinserumalbumin-antikropp(Immunglobulin E);arbiträr substanskoncentration(e222;procedur)"
+    synonym "sv" "P—Svinserumalbumin-ak"
+}
+measurement-definition "NPU57284" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Svinserumalbumin-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="e222;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57285" {
+    name "sv" "Plasma—Arizonacypress-antikropp(Immunglobulin E);arbiträr substanskoncentration(t222;procedur)"
+    synonym "sv" "P—Arizonacypress-ak"
+}
+measurement-definition "NPU57285" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Arizonacypress-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t222;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57286" {
+    name "sv" "Plasma—Trachurus japonicus-antikropp(Immunglobulin E);arbiträr substanskoncentration(f60;procedur)"
+    synonym "sv" "P—Trachurus japonicus-ak"
+}
+measurement-definition "NPU57286" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Trachurus japonicus-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f60;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57287" {
+    name "sv" "Plasma—Tetanustoxoid (Clo t Toxoid)-antikropp(Immunglobulin E);arbiträr substanskoncentration(c208;procedur)"
+    synonym "sv" "P—Clo t Toxoid-ak"
+}
+measurement-definition "NPU57287" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Tetanustoxoid (Clo t Toxoid)-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="c208;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57288" {
+    name "sv" "Plasma—Tilapia-antikropp(Immunglobulin E);arbiträr substanskoncentration(f414;procedur)"
+    synonym "sv" "P—Tilapia-ak"
+}
+measurement-definition "NPU57288" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Tilapia-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f414;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57290" {
+    name "sv" "Plasma—Kastanj-antikropp(Immunglobulin E);arbiträr substanskoncentration(t206;procedur)"
+    synonym "sv" "P—Kastanjpollen-ak"
+}
+measurement-definition "NPU57290" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Kastanj-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="t206;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57291" {
+    name "sv" "Plasma—Stafylokock enterotoxin TSST-antikropp(Immunglobulin E);arbiträr substanskoncentration(m226;procedur)"
+    synonym "sv" "P—Staf enterotox TSST-ak"
+}
+measurement-definition "NPU57291" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Stafylokock enterotoxin TSST-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="m226;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57292" {
+    name "sv" "Plasma—Sötpotatis-antikropp(Immunglobulin E);arbiträr substanskoncentration(f54;procedur)"
+    synonym "sv" "P—Sötpotatis-ak"
+}
+measurement-definition "NPU57292" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Sötpotatis-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f54;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57293" {
+    name "sv" "Plasma—Fel d 4-antikropp(Immunglobulin E);arbiträr substanskoncentration(procedur)"
+    synonym "sv" "P—Fel d 4-ak"
+}
+measurement-definition "NPU57293" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Fel d 4-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57294" {
+    name "sv" "Plasma—Mal d 1-antikropp(Immunglobulin E);arbiträr substanskoncentration(a464;procedur)"
+    synonym "sv" "P—Mal d 1-ak (äpple)"
+}
+measurement-definition "NPU57294" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Mal d 1-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="a464;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57295" {
+    name "sv" "Plasma—Mal d 3-antikropp(Immunglobulin E);arbiträr substanskoncentration(f435;procedur)"
+    synonym "sv" "P—Mal d 3-ak (äpple)"
+}
+measurement-definition "NPU57295" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Mal d 3-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f435;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57296" {
+    name "sv" "Plasma—Bos d laktoferrin-antikropp(Immunglobulin E);arbiträr substanskoncentration(f334;procedur)"
+    synonym "sv" "P—Bos d laktoferrin-ak"
+}
+measurement-definition "NPU57296" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Bos d laktoferrin-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="f334;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "NPU57298" {
+    name "sv" "Plasma—Der p 1-antikropp(Immunglobulin E);arbiträr substanskoncentration(d202;procedur)"
+    synonym "sv" "P—Der p 1-ak(husd.kvalst)"
+}
+measurement-definition "NPU57298" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Der p 1-antikropp(Immunglobulin E)" property-kind="arbiträr substanskoncentration" specification="d202;procedur" {
+    unit "(pde)" namespace="npu"
+}

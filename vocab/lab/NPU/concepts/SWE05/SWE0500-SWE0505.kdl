@@ -1,0 +1,392 @@
+// NPU laboratory tests, prefix SWE05, codes SWE0500-SWE0505
+context {
+    system "NPU" release="2025"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "SWE05001" {
+    name "sv" "Plasma—Albumin;masskoncentration(procedur)"
+    synonym "sv" "P—Albumin"
+    status "inactive"
+}
+measurement-definition "SWE05001" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Albumin" property-kind="masskoncentration" specification="procedur" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05002" {
+    name "sv" "Urin—Albumin;masskoncentration(procedur)"
+    synonym "sv" "U—Albumin"
+    status "inactive"
+}
+measurement-definition "SWE05002" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Albumin" property-kind="masskoncentration" specification="procedur" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05006" {
+    name "sv" "Urin—Albumin;masskoncentration(procedur)"
+    synonym "sv" "U—Albumin"
+    status "inactive"
+}
+measurement-definition "SWE05006" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Albumin" property-kind="masskoncentration" specification="procedur" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05008" {
+    name "sv" "Patient(Urin)—Albumin;massflöde(procedur)"
+    synonym "sv" "Pt(U)—Albumin-uts"
+    status "inactive"
+}
+measurement-definition "SWE05008" result-type=quantity procedure-defined-unit=#true specimen="Patient(Urin)" component="Albumin" property-kind="massflöde" specification="procedur" {
+    unit "g/d" namespace="npu"
+}
+concept "SWE05009" {
+    name "sv" "Plasma—alfa-1-Antitrypsin;masskoncentration"
+    synonym "sv" "P—alfa-1-Antitryp"
+    status "inactive"
+}
+measurement-definition "SWE05009" result-type=quantity specimen="Plasma" component="alfa-1-Antitrypsin" property-kind="masskoncentration" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05010" {
+    name "sv" "Plasma—alfa-1-Fetoprotein;masskoncentration"
+    synonym "sv" "P—alfa-1-Fetoprot"
+    status "inactive"
+}
+measurement-definition "SWE05010" result-type=quantity specimen="Plasma" component="alfa-1-Fetoprotein" property-kind="masskoncentration" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05011" {
+    name "sv" "Hemoglobin(Fe;total;arteriellt Blod)—Oxihemoglobin(Fe);substansfraktion"
+    synonym "sv" "Hb(aB)—Oxihemoglobin"
+}
+measurement-definition "SWE05011" result-type=quantity specimen="Hemoglobin(Fe;total;arteriellt Blod)" component="Oxihemoglobin(Fe)" property-kind="substansfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05012" {
+    name "sv" "Plasma—Ferritin;masskoncentration"
+    synonym "sv" "P—Ferritin"
+    status "inactive"
+}
+measurement-definition "SWE05012" result-type=quantity specimen="Plasma" component="Ferritin" property-kind="masskoncentration" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05013" {
+    name "sv" "Patient—Cerebrospinalvätska;egenskapsslag(absorbans;procedur)"
+    synonym "sv" "Pt—Csv, abs bedömning"
+}
+measurement-definition "SWE05013" result-type=quantity procedure-defined-unit=#true specimen="Patient" component="Cerebrospinalvätska" property-kind="egenskapsslag" specification="absorbans;procedur"
+concept "SWE05014" {
+    name "sv" "Leukocyter(System;specifikation)—Leukocyter(mononukleära);antalsfraktion"
+    synonym "sv" "Lkc(Syst)—Lkc, mono"
+}
+measurement-definition "SWE05014" result-type=quantity specimen="Leukocyter(System;specifikation)" component="Leukocyter(mononukleära)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05015" {
+    name "sv" "Leukocyter(System;specifikation)—Leukocyter(polynukleära);antalsfraktion"
+    synonym "sv" "Lkc(Syst)—Lkc, poly"
+}
+measurement-definition "SWE05015" result-type=quantity specimen="Leukocyter(System;specifikation)" component="Leukocyter(polynukleära)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05016" {
+    name "sv" "Leukocyter(Pleuravätska;specifikation)—Eosinofila granulocyter;antalsfraktion"
+    synonym "sv" "Lkc(Plv)—Lkc, eosinofila"
+}
+measurement-definition "SWE05016" result-type=quantity specimen="Leukocyter(Pleuravätska;specifikation)" component="Eosinofila granulocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05017" {
+    name "sv" "Leukocyter(Pleuravätska;specifikation)—Leukocyter(mononukleära);antalsfraktion"
+    synonym "sv" "Lkc(Plv)—Lkc, mono"
+}
+measurement-definition "SWE05017" result-type=quantity specimen="Leukocyter(Pleuravätska;specifikation)" component="Leukocyter(mononukleära)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05018" {
+    name "sv" "Leukocyter(Pleuravätska;specifikation)—Neutrofila granulocyter;antalsfraktion"
+    synonym "sv" "Lkc(Plv)—Lkc, neutrofila"
+}
+measurement-definition "SWE05018" result-type=quantity specimen="Leukocyter(Pleuravätska;specifikation)" component="Neutrofila granulocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05019" {
+    name "sv" "Plasma—Haptoglobin;masskoncentration"
+    synonym "sv" "P—Haptoglobin"
+    status "inactive"
+}
+measurement-definition "SWE05019" result-type=quantity specimen="Plasma" component="Haptoglobin" property-kind="masskoncentration" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05020" {
+    name "sv" "Erytrocyter—Erytrocyter(Hemoglobin F);antalsfraktion"
+    synonym "sv" "Erc—Erc, Hemoglobin F"
+}
+measurement-definition "SWE05020" result-type=quantity specimen="Erytrocyter" component="Erytrocyter(Hemoglobin F)" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05021" {
+    name "sv" "Leukocyter(Benmärg)—Metamyelocyter;antalsfraktion"
+    synonym "sv" "Lkc(Benm)—Metamyelocyter"
+}
+measurement-definition "SWE05021" result-type=quantity specimen="Leukocyter(Benmärg)" component="Metamyelocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05022" {
+    name "sv" "Erytroblaster(Benmärg)—Hemosiderin;arbiträrt innehåll(procedur)"
+    synonym "sv" "Erytroblast(Benm)—Hemosid"
+}
+measurement-definition "SWE05022" result-type=quantity procedure-defined-unit=#true specimen="Erytroblaster(Benmärg)" component="Hemosiderin" property-kind="arbiträrt innehåll" specification="procedur"
+concept "SWE05023" {
+    name "sv" "Erytroblaster(Benmärg)—Sideroblaster;antalsfraktion"
+    synonym "sv" "Erytroblast(Benm)—Siderob"
+}
+measurement-definition "SWE05023" result-type=quantity specimen="Erytroblaster(Benmärg)" component="Sideroblaster" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05024" {
+    name "sv" "Leukocyter(Benmärg)—Myeloblaster;antalsfraktion"
+    synonym "sv" "Lkc(Benm)—Myeloblaster"
+}
+measurement-definition "SWE05024" result-type=quantity specimen="Leukocyter(Benmärg)" component="Myeloblaster" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05025" {
+    name "sv" "Celler(Benmärg)—Atypiska celler;antalsfraktion"
+    synonym "sv" "Benm—Atypiska celler"
+}
+measurement-definition "SWE05025" result-type=quantity specimen="Celler(Benmärg)" component="Atypiska celler" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05026" {
+    name "sv" "Celler(Benmärg)—Proerytroblaster;antalsfraktion"
+    synonym "sv" "Benm—Proerytroblaster"
+}
+measurement-definition "SWE05026" result-type=quantity specimen="Celler(Benmärg)" component="Proerytroblaster" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05027" {
+    name "sv" "Plasma—C-reaktivt protein;masskoncentration"
+    synonym "sv" "P—CRP"
+    status "inactive"
+}
+measurement-definition "SWE05027" result-type=quantity specimen="Plasma" component="C-reaktivt protein" property-kind="masskoncentration" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05028" {
+    name "sv" "Celler(Sputum)—Skivepitelceller;antalsfraktion"
+    synonym "sv" "Sputum—Skivepitelceller"
+}
+measurement-definition "SWE05028" result-type=quantity specimen="Celler(Sputum)" component="Skivepitelceller" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05029" {
+    name "sv" "Celler(Sputum)—Eosinofila granulocyter;antalsfraktion"
+    synonym "sv" "Sputum—Eosinofila gran"
+}
+measurement-definition "SWE05029" result-type=quantity specimen="Celler(Sputum)" component="Eosinofila granulocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05031" {
+    name "sv" "Celler(Sputum)—Neutrofila granulocyter;antalsfraktion"
+    synonym "sv" "Sputum—Neutrofila gran"
+}
+measurement-definition "SWE05031" result-type=quantity specimen="Celler(Sputum)" component="Neutrofila granulocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05032" {
+    name "sv" "Celler(Sputum)—Makrofager;antalsfraktion"
+    synonym "sv" "Sputum—Makrofager"
+}
+measurement-definition "SWE05032" result-type=quantity specimen="Celler(Sputum)" component="Makrofager" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05033" {
+    name "sv" "Celler(Sputum)—Lymfocyter;antalsfraktion"
+    synonym "sv" "Sputum—Lymfocyter"
+}
+measurement-definition "SWE05033" result-type=quantity specimen="Celler(Sputum)" component="Lymfocyter" property-kind="antalsfraktion" {
+    unit "%" namespace="npu"
+}
+concept "SWE05034" {
+    name "sv" "Plasma—beta-2-Mikroglobulin;masskoncentration"
+    synonym "sv" "P—beta-2-Mikroglo"
+    status "inactive"
+}
+measurement-definition "SWE05034" result-type=quantity specimen="Plasma" component="beta-2-Mikroglobulin" property-kind="masskoncentration" {
+    unit "mg/L" namespace="npu"
+}
+concept "SWE05035" {
+    name "sv" "Benmärg—Celler;egenskapsslag(procedur)"
+    synonym "sv" "Benm—Celler, bedömning"
+}
+measurement-definition "SWE05035" result-type=quantity procedure-defined-unit=#true specimen="Benmärg" component="Celler" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05036" {
+    name "sv" "Celler(specifikation)—Celler(CD;specifikation);egenskapsslag(procedur)"
+    synonym "sv" "Celler—Immunofeno, bedömn"
+}
+measurement-definition "SWE05036" result-type=quantity procedure-defined-unit=#true specimen="Celler(specifikation)" component="Celler(CD;specifikation)" property-kind="egenskapsslag" specification="procedur"
+concept "SWE05037" {
+    name "sv" "Basofila granulocyter(Blod)—Penicillium expansum-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—P expansum (BAT)"
+}
+measurement-definition "SWE05037" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Penicillium expansum-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05038" {
+    name "sv" "Basofila granulocyter(Blod)—Pivmecillinam-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Pivmecillina(BAT)"
+}
+measurement-definition "SWE05038" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Pivmecillinam-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05039" {
+    name "sv" "Plasma—Karcinoembryonalt antigen;masskoncentration"
+    synonym "sv" "P—CEA"
+    status "inactive"
+}
+measurement-definition "SWE05039" result-type=quantity specimen="Plasma" component="Karcinoembryonalt antigen" property-kind="masskoncentration" {
+    unit "µg/L" namespace="npu"
+}
+concept "SWE05040" {
+    name "sv" "Basofila granulocyter(Blod)—Piperacillin/Tazobactam-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Pip/Taz (BAT)"
+}
+measurement-definition "SWE05040" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Piperacillin/Tazobactam-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05041" {
+    name "sv" "Basofila granulocyter(Blod)—Ketoprofen-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Ketoprofen (BAT)"
+}
+measurement-definition "SWE05041" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Ketoprofen-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05042" {
+    name "sv" "Basofila granulocyter(Blod)—Mesalazin-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Mesalazin (BAT)"
+}
+measurement-definition "SWE05042" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Mesalazin-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05043" {
+    name "sv" "Basofila granulocyter(Blod)—Atrakurium-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Atrakurium (BAT)"
+}
+measurement-definition "SWE05043" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Atrakurium-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05044" {
+    name "sv" "Basofila granulocyter(Blod)—Mivakurium-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Mivakurium (BAT)"
+}
+measurement-definition "SWE05044" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Mivakurium-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05045" {
+    name "sv" "Basofila granulocyter(Blod)—Fentanyl-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Fentanyl (BAT)"
+}
+measurement-definition "SWE05045" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Fentanyl-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05046" {
+    name "sv" "Basofila granulocyter(Blod)—Propofol-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Propofol (BAT)"
+}
+measurement-definition "SWE05046" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Propofol-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05047" {
+    name "sv" "Basofila granulocyter(Blod)—Infliximab-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Infliximab (BAT)"
+}
+measurement-definition "SWE05047" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Infliximab-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05048" {
+    name "sv" "Basofila granulocyter(Blod)—Trimetoprim/Sulfametoxazol-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Trimet/Sulfa(BAT)"
+}
+measurement-definition "SWE05048" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Trimetoprim/Sulfametoxazol-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05049" {
+    name "sv" "Basofila granulocyter(Blod)—Paracetamol-aktiverad basofil granulocyt;arbiträr inverterad tröskelmasskoncentration(procedur)"
+    synonym "sv" "Basf(B)—Paracetamol (BAT)"
+}
+measurement-definition "SWE05049" result-type=quantity procedure-defined-unit=#true specimen="Basofila granulocyter(Blod)" component="Paracetamol-aktiverad basofil granulocyt" property-kind="arbiträr inverterad tröskelmasskoncentration" specification="procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05050" {
+    name "sv" "Blod—Koagel hållfasthet;arbiträr dragspänning(Koagulation, ytinducerad;kaolin;TEG)"
+    synonym "sv" "B—MA (Kaolin TEG)"
+}
+measurement-definition "SWE05050" result-type=quantity specimen="Blod" component="Koagel hållfasthet" property-kind="arbiträr dragspänning" specification="Koagulation, ytinducerad;kaolin;TEG" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05051" {
+    name "sv" "Blod—Koagel hållfasthet(heparinoberoende);arbiträr dragspänning(Koagulation, ytinducerad;kaolin;TEG)"
+    synonym "sv" "B—MA(Kaolin/heparinasTEG)"
+}
+measurement-definition "SWE05051" result-type=quantity specimen="Blod" component="Koagel hållfasthet(heparinoberoende)" property-kind="arbiträr dragspänning" specification="Koagulation, ytinducerad;kaolin;TEG" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05052" {
+    name "sv" "Vaginalvätska+Urin—Neisseria gonorrhoeae+Chlamydia trachomatis(DNA);arbiträr koncentration(procedur)"
+    synonym "sv" "Vag+U—N. gonorrhoeae+Chlamydia trachomatis-DNA"
+}
+measurement-definition "SWE05052" result-type=quantity procedure-defined-unit=#true specimen="Vaginalvätska+Urin" component="Neisseria gonorrhoeae+Chlamydia trachomatis(DNA)" property-kind="arbiträr koncentration" specification="procedur"
+concept "SWE05053" {
+    name "sv" "Plasma—Peptidyldipeptidas A;arbiträr katalytisk aktivitet(37°C;procedur)"
+    synonym "sv" "P—ACE"
+    status "inactive"
+}
+measurement-definition "SWE05053" result-type=quantity procedure-defined-unit=#true specimen="Plasma" component="Peptidyldipeptidas A" property-kind="arbiträr katalytisk aktivitet" specification="37°C;procedur" {
+    unit "(pde)" namespace="npu"
+}
+concept "SWE05054" {
+    name "sv" "Njure—Glomerulär filtration;volymflöde(yta=1,73 kvadratmeter;Cystatin C+Kreatinin;genomsnittligt)"
+    synonym "sv" "Pt—eGFRmedel,relativ"
+}
+measurement-definition "SWE05054" result-type=quantity specimen="Njure" component="Glomerulär filtration" property-kind="volymflöde" specification="yta=1,73 kvadratmeter;Cystatin C+Kreatinin;genomsnittligt" {
+    unit "mL/min/1,73m2" namespace="npu"
+}
+concept "SWE05055" {
+    name "sv" "Urin—Anabol steroid;kategori(verifiering;procedur)"
+    synonym "sv" "U—Anabol steroid (verif)"
+}
+measurement-definition "SWE05055" result-type=quantity procedure-defined-unit=#true specimen="Urin" component="Anabol steroid" property-kind="kategori" specification="verifiering;procedur"
+concept "SWE05056" {
+    name "sv" "Cerebrospinalvätska—Albumin;masskoncentration(procedur)"
+    synonym "sv" "Csv—Albumin"
+    status "inactive"
+}
+measurement-definition "SWE05056" result-type=quantity procedure-defined-unit=#true specimen="Cerebrospinalvätska" component="Albumin" property-kind="masskoncentration" specification="procedur" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05057" {
+    name "sv" "Plasma—Komplement C3;masskoncentration"
+    synonym "sv" "P—C3"
+    status "inactive"
+}
+measurement-definition "SWE05057" result-type=quantity specimen="Plasma" component="Komplement C3" property-kind="masskoncentration" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05058" {
+    name "sv" "Plasma—Komplement C4;masskoncentration"
+    synonym "sv" "P—C4"
+    status "inactive"
+}
+measurement-definition "SWE05058" result-type=quantity specimen="Plasma" component="Komplement C4" property-kind="masskoncentration" {
+    unit "g/L" namespace="npu"
+}
+concept "SWE05059" {
+    name "sv" "Plasma—Kortikotropin;masskoncentration"
+    synonym "sv" "P—ACTH"
+    status "inactive"
+}
+measurement-definition "SWE05059" result-type=quantity specimen="Plasma" component="Kortikotropin" property-kind="masskoncentration" {
+    unit "ng/L" namespace="npu"
+}
