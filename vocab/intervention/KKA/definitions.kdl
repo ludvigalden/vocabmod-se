@@ -1,0 +1,13 @@
+// KVÅ kirurgiska åtgärder: the Swedish surgical procedure classification, the inventory the
+// source dataset carries.
+system "KKA" kind=classification distribution=published publisher="se.ehalsomyndigheten" default-locale="sv" {
+    name "sv" "Klassifikation av kirurgiska åtgärder (KVÅ kirurgiska)"
+}
+release "2026" system="KKA" label-source=registry
+context {
+    system "KKA" release="2026"
+}
+category "procedure" {
+    name "en" "KVÅ surgical procedure"
+}
+import "concepts/**/*.kdl" kind=fragment
