@@ -1,0 +1,13 @@
+// KVÅ medicinska åtgärder: the Swedish medical procedure classification, the inventory the
+// source dataset carries.
+system "KMA" kind=classification distribution=published publisher="se.ehalsomyndigheten" default-locale="sv" {
+    name "sv" "Klassifikation av medicinska åtgärder (KVÅ medicinska)"
+}
+release "2026" system="KMA" label-source=registry
+context {
+    system "KMA" release="2026"
+}
+category "procedure" {
+    name "en" "KVÅ medical procedure"
+}
+import "concepts/**/*.kdl" kind=fragment
