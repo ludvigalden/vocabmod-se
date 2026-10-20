@@ -11,4 +11,18 @@ context {
 category "unit" {
     name "en" "Unit"
 }
+collection "unit-se-ucum" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Swedish laboratory units to UCUM"
+    authors "ludvig-alden"
+    source system="UNIT_SE" release="2017"
+    target system="UCUM" release="2.2"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "UCUM/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment

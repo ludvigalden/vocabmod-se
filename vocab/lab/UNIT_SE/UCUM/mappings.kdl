@@ -1,0 +1,71 @@
+// Swedish laboratory units to UCUM mappings, misc: codes with no filename-safe letter range, -N parts numbered in file order
+// UCUM is referenced by code only; the tree carries no UCUM display names.
+context {
+    collection "unit-se-ucum" version="2026.1"
+    source system="UNIT_SE" release="2017"
+    target system="UCUM" release="2.2"
+}
+defaults {
+    mappings {
+        relationship "equivalent"
+    }
+}
+mapping "%.ucum" source="%" target="%" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish percent spelling is the UCUM percent code itself."
+}
+mapping "E.ucum" source="E" target="[arb'U]" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish enhet (unit) denotes the UCUM arbitrary unit."
+}
+mapping "E/ml.ucum" source="E/ml" target="[arb'U]/mL" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish enhet per milliliter denotes the UCUM arbitrary unit per milliliter."
+}
+mapping "ELISA U/ml.ucum" source="ELISA U/ml" target="[ELU]/mL" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish ELISA unit per milliliter denotes the UCUM ELISA unit per milliliter."
+}
+mapping "IE.ucum" source="IE" target="[iU]" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish IE (internationell enhet) denotes the UCUM international unit."
+}
+mapping "IE/ml.ucum" source="IE/ml" target="[iU]/mL" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish IE per milliliter denotes the UCUM international unit per milliliter."
+}
+mapping "anti-Xa IE.ucum" source="anti-Xa IE" target="[iU]" relationship=related_to {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The anti-Xa spelling is an international unit of anti-factor Xa activity; the target is UCUM's generic international unit."
+}
+mapping "anti-Xa IE/ml.ucum" source="anti-Xa IE/ml" target="[iU]/mL" relationship=related_to {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The anti-Xa spelling is an international unit of anti-factor Xa activity per milliliter; the target is UCUM's generic international-unit-per-milliliter."
+}
+mapping "enheter.ucum" source="enheter" target="[arb'U]" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish plural enheter denotes the same arbitrary unit the singular E denotes."
+}
+mapping "enheter/ml.ucum" source="enheter/ml" target="[arb'U]/mL" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish plural enheter per milliliter denotes the same arbitrary-unit-per-milliliter as the singular E/ml."
+}
+mapping "mg/24 timmar.ucum" source="mg/24 timmar" target="mg/(24.h)" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish milligram-per-24-hours spelling denotes the UCUM unit; the parentheses group the 24-hour divisor as UCUM requires."
+}
+mapping "mikrog/24 timmar.ucum" source="mikrog/24 timmar" target="ug/(24.h)" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish microgram-per-24-hours spelling denotes the UCUM unit; the parentheses group the 24-hour divisor as UCUM requires."
+}
+mapping "mikrog/dos.ucum" source="mikrog/dos" target="ug/{dose}" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish dos (dose) is carried by the UCUM dose annotation."
+}
+mapping "mikrog/ml.ucum" source="mikrog/ml" target="ug/mL" {
+    confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The Swedish mikrog (microgram) per milliliter denotes the UCUM microgram per milliliter."
+}
+// The source dataset recorded no UCUM target for the unspecified unit; the
+// negative claim is an assessment, not a mapping.
+assessment "Ospecificerad.ucum" source="Ospecificerad" outcome=no_match
