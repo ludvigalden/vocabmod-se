@@ -27,4 +27,13 @@ collection "lab-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden"
         project "defaults"
     }
 }
+collection "lab-se-npu" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Swedish hospital laboratory catalogues to NPU"
+    authors "ludvig-alden"
+    source system="LAB_SE" release="2026"
+    target system="NPU"
+    import "NPU/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
