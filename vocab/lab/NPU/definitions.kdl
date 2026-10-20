@@ -13,4 +13,18 @@ context {
 category "lab-test" {
     name "en" "Laboratory test"
 }
+collection "npu-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "NPU to LOINC"
+    authors "ludvig-alden"
+    source system="NPU" release="2025"
+    target system="LOINC"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "LOINC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
