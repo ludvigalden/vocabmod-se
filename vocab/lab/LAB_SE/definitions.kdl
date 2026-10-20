@@ -1,0 +1,21 @@
+// Swedish hospital laboratory catalogues: the family of Swedish hospital local laboratory test catalogues (Lab A, Lab B,
+// Lab C, Lab D, Lab E, Lab F), as they appear in the source dataset (defined in
+// _registry/external.kdl): the originating project's evaluation of the laboratory data it had
+// access to, and its attempt to map that data to OMOP. They are published here by Ludvig Aldén.
+// Codes are each laboratory's own test names; where hospitals spell the same measurement
+// differently (formulation or abbreviation only), one canonical concept carries the measurement and
+// the other spellings ride as its variants, and every claim files on the canonical version. Concept
+// provenance and the code readings live in the concepts' comments; the mapping files carry the
+// LOINC/NPU mapping basis. The source dataset's numeric tier/confidence columns are not published
+// (each mapping's comment states its basis and the shared rubric derives effect/quality).
+system "LAB_SE" kind=classification distribution=published publisher="ludvig-alden" default-locale="sv" {
+    name "sv" "Lokala laboratoriekataloger (svenska sjukhus)"
+}
+release "2026" system="LAB_SE" label-source=registry
+context {
+    system "LAB_SE" release="2026"
+}
+category "lab-test" {
+    name "en" "Laboratory test"
+}
+import "concepts/**/*.kdl" kind=fragment

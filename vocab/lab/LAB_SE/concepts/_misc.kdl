@@ -1,0 +1,40 @@
+// Swedish hospital local laboratory test codes, misc: codes with no filename-safe letter range; -N names number the parts in file order
+context {
+    system "LAB_SE" release="2026"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "%-CSV-GD1A" {
+    comment "en" """
+        Swedish: % GD1a antibody in CSF (Csv = cerebrospinal fluid). The source reports a percentage.
+        """
+}
+concept "%-CSV-GD1B" {
+    comment "en" """
+        Csv- = CSF; %-GD1b = percentage of GD1b ganglioside antibody (neurology panel for
+        Guillain-Barre/CIDP). No percentage variant exists.
+        """
+}
+concept "%-CSV-GT1B" {
+    comment "en" "Anti-GT1b IgG antibody  Csv-prefix likely CSF but %-CSV may be serological."
+}
+concept "1,25 DIHYDROX-VIT.D" {
+    comment "en" "1,25 Dihydrox-vit.D = calcitriol/1,25-dihydroxyvitamin D in serum."
+}
+concept "1,25-DIHYDROXI-VIT.D" {
+    comment "en" "1,25-dihydroxyvitamin D = calcitriol."
+}
+concept "25-HYDROXI-VITAMIN D" {
+    comment "en" "Clinical total 25-OH vitamin D measures D3+D2 combined. D3-only is a reasonable fallback."
+}
+concept "25-HYDROXYVITAMIN D"
+concept "9-OH-RISP/RISP" {
+    comment "en" """
+        9-OH-Risp/Risp = 9-hydroxyrisperidone/risperidone ratio, TDM for risperidone. The combined
+        moles/volume as strict.
+        """
+}

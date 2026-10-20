@@ -1,0 +1,245 @@
+// Swedish hospital local laboratory test codes, codes V
+context {
+    system "LAB_SE" release="2026"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "VB-AKT.BIKARBONAT" {
+    comment "en" "Akt.bikarbonat=active/actual bicarbonate in venous blood."
+}
+concept "VB-ANJGAP ABL/PNA" {
+    name "sv" "vB-AnjGap"
+    comment "en" """
+        vB-AnjGap = anion gap in venous blood. Best match is Blood (not specimen-specific). Anion gap in
+        Venous blood by Calculated.4Ions. Anion gap in Venous blood by Calculated.4Ions. Swedish
+        abbreviation AnjGap = anjongap (anion gap).
+        """
+}
+concept "VB-BASÖVERSKOTT(PNA)" {
+    comment "en" "vB- = venous blood. Basöverskott = base excess."
+}
+concept "VB-BASÖVERSKOTT/ECV" {
+    comment "en" """
+        vB- = venous blood gas; Basöverskott/ECV = base excess referenced to extracellular volume.
+        general blood BE is closest.
+        """
+}
+concept "VB-BASÖVERSKOTT/RÖR" {
+    comment "en" """
+        vB- = venous blood (gas). Basöverskott = base excess. rör = tube. Best match is venous blood BE.
+        only has arterial variant.
+        """
+}
+concept "VB-BE(ST) ABL/PNA" {
+    name "sv" "vB-BE(st)"
+    variant "VB-BASÖVERSKOTT /ECV" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. vB- = venous blood. BE(st) =
+        standard base excess. Base excess in Venous blood by calculation. Base excess in Venous blood by
+        calculation. Venous specimen (vB- prefix). Swedish term BE(st) = basoverskott (standard). Blood
+        gas - Base excess in Venous blood (extracellular fluid). Specimen type: venous blood based on
+        vB- prefix. ECV (extracellular volume) variant. Base excess in Venous blood by calculation.
+        Swedish term BE(st) = basoverskott (standard).
+        """
+}
+concept "VB-COHB" {
+    comment "en" "vB- = venous blood; COHb = carboxyhemoglobin."
+}
+concept "VB-COHB (PNA)" {
+    comment "en" "vB- = venous blood. COHb = carboxyhemoglobin. PNA = point-of-care blood gas."
+}
+concept "VB-COHB /PNA"
+concept "VB-COHB ABL/PNA" {
+    comment "en" """
+        vB-COHb ABL/PNA = carboxyhemoglobin/hemoglobin ratio on point-of-care arterial blood gas.
+        Carboxyhemoglobin in Venous blood. Alias of aB-COHb ABL/PNA. Carboxyhemoglobin in Venous blood.
+        """
+}
+concept "VB-EVF, BERÄKN (PNA)" {
+    name "sv" "VB-EVF, BERÄKN"
+    comment "en" """
+        vB = venous blood; EVF = erythrocyte volume fraction (hematocrit). beräkn = calculated. PNA =
+        POC  Calculated Hct.
+        """
+}
+concept "VB-GLUKOS (PNA)" {
+    name "sv" "VB-GLUKOS"
+    variant "P(VB)-GLUKOS /PNA" kind=raw
+    variant "VB-GLUKOS ABL/PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. vB- prefix = venous blood.
+        Expanded Swedish name with parenthetical PNA suffix. Venous glucose measurement. /PNA = POC. vB-
+        = venous blood.
+        """
+}
+concept "VB-HEMOGLOBIN" {
+    comment "en" "vB-Hemoglobin = hemoglobin in venous blood."
+}
+concept "VB-HEMOGLOBIN (PNA)" {
+    variant "VB-HB ABL/PNA" kind=raw
+    variant "VB-THB /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. Expanded Swedish name form.
+        Venous hemoglobin measurement. vB = venous blood. the general hemoglobin-in-blood
+        entry preferred over more specific venous-blood entries.
+        """
+}
+concept "VB-KALIUM ABL/PNA" {
+    name "sv" "vB-Kalium"
+    variant "P(VB)-KALIUM /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. P(VB)- prefix = plasma from
+        venous blood via PNA point-of-care.
+        """
+}
+concept "VB-KLORID ABL/PNA" {
+    name "sv" "VB-KLORID"
+    comment "en" "Chloride in Venous blood."
+}
+concept "VB-KREA ABL/PNA" {
+    name "sv" "VB-KREA"
+    comment "en" """
+        No creatinine in blood found. moles/volume matches lab convention. Creatinine in Venous blood.
+        Note: units are Moles/volume (umol/L). Creatinine in Venous blood. Note: units are Moles/volume
+        (umol/L), not Mass/volume.
+        """
+}
+concept "VB-LAKTAT ABL/PNA" {
+    name "sv" "vB-Laktat"
+    variant "P(VB)-LAKTAT /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. P- = plasma. /PNA = venous blood
+        gas  Serum or Plasma covers both.
+        """
+}
+concept "VB-METHB" {
+    comment "en" "vB-MetHb = venous blood methemoglobin. Standard methemoglobin in blood."
+}
+concept "VB-METHB (PNA)" {
+    comment "en" """
+        vB = venous blood. MetHb = methemoglobin. PNA = POC. Neither is ideal for venous blood MetHb
+        mass concentration.
+        """
+}
+concept "VB-METHB ABL/PNA" {
+    comment "en" """
+        MetHb fraction from venous blood gas POC. Methemoglobin in Venous blood. Alias of aB-MetHb
+        ABL/PNA. Methemoglobin in Venous blood.
+        """
+}
+concept "VB-NATRIUM ABL/PNA" {
+    name "sv" "vB-Natrium"
+    variant "P(VB)-NATRIUM /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. vB = venous blood gas. P(VB)- =
+        point-of-care blood-gas plasma from venous blood. Na+ is specimen-independent.
+        """
+}
+concept "VB-PCO2" {
+    comment "en" "vB-pCO2 = carbon dioxide partial pressure in venous blood gas."
+}
+concept "VB-PCO2 ABL/PNA" {
+    name "sv" "vB-pCO2 ABL/PNA"
+    variant "VB-PCO2 /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. Carbon dioxide partial pressure
+        in Venous blood. Carbon dioxide partial pressure in Venous blood. Venous specimen (vB- prefix).
+        Blood gas - Carbon dioxide partial pressure in Venous blood. Pre-hospital context (PNA):
+        measured during ambulance transport. Specimen type: venous blood based on vB- prefix. venous
+        blood.
+        """
+}
+concept "VB-PCO2(PNA)" {
+    comment "en" "vB- = venous blood  PNA = POC."
+}
+concept "VB-PCO2/RÖR" {
+    comment "en" "vB=venous blood  pCO2 from blood gas tube (rör)."
+}
+concept "VB-PH" {
+    comment "en" "vB-pH = venous blood gas pH."
+}
+concept "VB-PH ABL/PNA" {
+    name "sv" "vB-pH ABL/PNA"
+    variant "VB-PH /PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab C, Lab D. vB = venous blood gas.
+        2026-04-23. pH of Venous blood. pH of Venous blood. Venous specimen (vB- prefix). Blood gas - pH
+        of Venous blood. Pre-hospital context (PNA): measured during ambulance transport. Specimen type:
+        venous blood based on vB- prefix. vB- = venous blood. 2026-04-23.
+        """
+}
+concept "VB-PH(PNA)"
+concept "VB-PH/RÖR" {
+    comment "en" "vB- = venous blood gas. pH of blood adjusted to patient temp is and more specific for BGA."
+}
+concept "VB-PO2" {
+    comment "en" "vB-pO2 = partial pressure of oxygen in venous blood."
+}
+concept "VB-PO2 (PNA)" {
+    comment "en" "19258-3 is temp-adjusted venous pO2."
+}
+concept "VB-ST.BIK ABL/PNA" {
+    name "sv" "vB-St.bik"
+    comment "en" """
+        Standard bicarbonate from venous blood gas POC; non-standard bicarb as strict. Bicarbonate
+        standard in Venous blood. Standard bicarbonate in Venous blood. Bicarbonate standard in Venous
+        blood. Swedish abbreviation St.bik = standardbikarbonat.
+        """
+}
+concept "VB-ST.BIKARBONAT"
+concept "VB-ST.BIKARBONAT/PNA" {
+    comment "en" "Standard bicarbonate in venous blood (blood gas)."
+}
+concept "VB-ST.BIKARBONAT/RÖR" {
+    comment "en" """
+        vB-St.Bikarbonat/rör = venous blood gas standard bicarbonate. Bicarbonate in Blood is best
+        match.
+        """
+}
+concept "VB-STAND.BIKARBONAT (PNA)" {
+    name "sv" "VB-STAND.BIKARBONAT"
+}
+concept "VB-SYRGASMÄTTN.(PNA)" {
+    name "sv" "VB-SYRGASMÄTTN"
+    comment "en" """
+        vB- = venous blood (gas). Syrgasmättn = oxygen saturation. Both 2711-0 is more commonly used.
+        """
+}
+concept "VB-SYRGASMÄTTNAD" {
+    comment "en" "vB- = venous blood  Syrgasmättnad = oxygen saturation."
+}
+concept "VB-THB"
+concept "VB-THB (PNA)" {
+    comment "en" "vB- = venous blood. tHb = total hemoglobin. POC."
+}
+concept "VB-THB/RÖR" {
+    comment "en" "vB = venous blood; tHb = total hemoglobin."
+}
+concept "VENLAFAXIN+DESMETYLV" {
+    comment "en" """
+        Venlafaxin+Desmetylv = venlafaxine + O-desmethylvenlafaxine (active metabolite) TDM in serum.
+        """
+}
+concept "VIKT"
+concept "VIKT I GRAM" {
+    comment "en" "Vikt = weight. Body weight measured in grams."
+}
+concept "VWF:AC/VWF:AG" {
+    comment "en" "VWF activity/antigen ratio for von Willebrand disease typing."
+}
+concept "VWF:AKT/VWF:AG" {
+    comment "en" "VWF:akt/VWF:Ag = vWF activity-to-antigen ratio."
+}
+concept "VWF:RCO/VWF:AG" {
+    comment "en" "vWF activity:antigen ratio."
+}
+concept "VÄTSKEINTAG ENL.MOD.NORTON" {
+    comment "en" """
+        Vätskeintag enl.mod.Norton = fluid intake recorded per Norton care model. nursing observation
+        not a lab test.
+        """
+}

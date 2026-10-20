@@ -1,0 +1,385 @@
+// Swedish hospital local laboratory test codes, codes A
+context {
+    system "LAB_SE" release="2026"
+}
+defaults {
+    concepts {
+        status "active"
+        class "lab-test"
+    }
+}
+concept "A-GALAKTOSIDAS(P)" {
+    comment "en" "a-Galaktosidas(P) = alpha-galactosidase in plasma."
+}
+concept "A-GALAKTOSIDASINH"
+concept "AB - BE.B AVD/MOTT" {
+    name "sv" "AB-BE.B"
+    comment "en" "BE.B = base excess."
+}
+concept "AB - HCO3 AVD/MOTT" {
+    name "sv" "AB-HCO3"
+    comment "en" "aB-HCO3 = arterial blood bicarbonate from ward/ER."
+}
+concept "AB - PH AVD/MOTT" {
+    comment "en" "aB = arterial blood. pH from department/emergency (avd/mott)."
+}
+concept "AB - PO2 AVD/MOTT" {
+    comment "en" "Blood gas pO2  arterial blood implied by avd/mott context."
+}
+concept "AB - SO2 AVD/MOTT" {
+    name "sv" "AB-SO2"
+    comment "en" "aB-sO2 = arterial blood oxygen saturation (from ABG)."
+}
+concept "AB - TCO2 AVD/MOTT" {
+    name "sv" "AB-TCO2"
+    comment "en" "TCO2 = total carbon dioxide. aB- = arterial blood  avd/mott = ward/ED."
+}
+concept "AB-AKT.BIKARB.(PNA)" {
+    name "sv" "AB-AKT.BIKARB"
+    comment "en" """
+        aB-Akt.bikarb = arterial blood actual bicarbonate. PNA = POC blood gas. Bicarbonate in Blood is
+        appropriate.
+        """
+}
+concept "AB-AKT.BIKARBONAT" {
+    comment "en" """
+        aB-Akt.bikarbonat = actual bicarbonate in arterial blood gas. General Blood covers arterial  no
+        arterial-specific bicarbonate.
+        """
+}
+concept "AB-ANION GAP K+(PNA)" {
+    name "sv" "AB-ANION GAP K+"
+    comment "en" "aB-Anion gap K+ = anion gap (potassium included) in arterial blood."
+}
+concept "AB-ANJGAP ABL/PNA" {
+    name "sv" "aB-AnjGap"
+    comment "en" """
+        aB = arterial blood gas. Anion gap in Arterial blood by Calculated.4Ions. Anion gap in Arterial
+        blood by Calculated.4Ions. Swedish abbreviation AnjGap = anjongap.
+        """
+}
+concept "AB-BASÖVERSKOTT(PNA)" {
+    comment "en" "aB = arterial blood. basöverskott = base excess."
+}
+concept "AB-BASÖVERSKOTT/ECV"
+concept "AB-BE" {
+    comment "en" "Base excess arterial blood gas  exact analyte+specimen match."
+}
+concept "AB-BE(ST) ABL/PNA" {
+    name "sv" "aB-BE(st)"
+    comment "en" """
+        BE(st) = base excess standard. Base excess in Arterial blood by calculation. Base excess in
+        Arterial blood by calculation. Arterial specimen (aB- prefix). Base excess in Arterial blood by
+        calculation. Arterial specimen (aB- prefix). Swedish term BE(st) = basoverskott (standard).
+        """
+}
+concept "AB-COHB" {
+    comment "en" "Same analyte as AB-COHB ABL/PNA."
+}
+concept "AB-COHB (PNA)" {
+    comment "en" """
+        aB- = arterial blood gas. COHb = carboxyhemoglobin  mass/volume preferred over ratio variant
+        (also.
+        """
+}
+concept "AB-COHB /PNA" {
+    comment "en" "aB-CoHb = arterial blood carboxyhemoglobin from POC. Fraction form is standard for ABG."
+}
+concept "AB-COHB ABL/PNA" {
+    name "sv" "aB-COHb ABL/PNA"
+    comment "en" """
+        aB- = arterial blood gas. Carboxyhemoglobin/Hemoglobin.total in Arterial blood.
+        Carboxyhemoglobin/Hemoglobin.total in Arterial blood. Arterial specimen (aB- prefix). No
+        Lab C equivalent mapped. Used for carbon monoxide poisoning assessment in ED.
+        Carboxyhemoglobin/Hemoglobin.total in Arterial blood. Used for carbon monoxide poisoning
+        assessment in ED.
+        """
+}
+concept "AB-EVF, BERÄKN (PNA)" {
+    name "sv" "AB-EVF, BERÄKN"
+    comment "en" "aB- = arterial blood; EVF = hematocrit. beräkn = calculated."
+}
+concept "AB-GLUKOS (PNA)" {
+    name "sv" "aB-Glukos"
+    variant "AB-GLUKOS ABL/PNA" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab D. aB- = arterial blood. Glucose measured on ABG
+        = glucose in whole blood. Glucose in Serum or Plasma. Expanded Swedish name with parenthetical
+        PNA suffix. Arterial glucose measurement. Blood specimen is correct for arterial gas.
+        """
+}
+concept "AB-HEMOGLOBIN (PNA)" {
+    name "sv" "AB-HEMOGLOBIN"
+    variant "AB-HB ABL/PNA" kind=raw
+    variant "AB-HEMOGLOBIN" kind=raw
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab D. aB- = arterial blood gas. Hb in blood is
+        general match  Hb arterial by oximetry is more specimen-specific but. Expanded Swedish name
+        form. Same arterial hemoglobin measurement. Same arterial hemoglobin measurement without ABL/PNA
+        suffix. aB-Hemoglobin = hemoglobin from arterial blood gas.
+        """
+}
+concept "AB-KALIUM ABL/PNA" {
+    name "sv" "aB-Kalium"
+    comment "en" "aB- = arterial blood. Potassium in whole blood. Potassium in Serum or Plasma."
+}
+concept "AB-KLORID ABL/PNA" {
+    name "sv" "aB-Klorid"
+    comment "en" """
+        Chloride in Arterial blood. Chloride in Arterial blood. No Lab C equivalent mapped.
+        Chloride in Arterial blood. No Ser/Plas equivalent for blood gas chloride.
+        """
+}
+concept "AB-KREATININ (PNA)" {
+    name "sv" "AB-KREATININ"
+    variant "AB-KREA ABL/PNA" kind=abbrev
+    comment "en" """
+        Catalogued at: Lab A, Lab B, Lab D. Creatinine in Blood. Synonym of aB-Krea
+        ABL/PNA. Swedish full spelling Kreatinin vs abbreviated Krea. Creatinine in Blood. generic Blood
+        code used. Mass/volume in Blood is moles variant is not. Both valid.
+        """
+}
+concept "AB-LAKTAT ABL/PNA" {
+    name "sv" "aB-Laktat"
+    comment "en" "2026-04-23. Lactate in Arterial blood."
+}
+concept "AB-METHB" {
+    comment "en" "same analyte."
+}
+concept "AB-METHB (PNA)" {
+    comment "en" "both aB- arterial blood gas."
+}
+concept "AB-METHB ABL/PNA" {
+    name "sv" "aB-MetHb ABL/PNA"
+    comment "en" """
+        aB- = arterial blood gas. MetHb fraction of total Hgb. Methemoglobin/Hemoglobin.total in
+        Arterial blood. Methemoglobin/Hemoglobin.total in Arterial blood. No Lab C equivalent
+        mapped. Used for methemoglobinemia assessment in ED. Methemoglobin/Hemoglobin.total in Arterial
+        blood. Used for methemoglobinemia assessment in ED.
+        """
+}
+concept "AB-NATRIUM ABL/PNA" {
+    name "sv" "aB-Natrium"
+    comment "en" "Sodium in Serum or Plasma."
+}
+concept "AB-PCO2" {
+    comment "en" "aB- = arterial blood gas."
+}
+concept "AB-PCO2 /PNA" {
+    comment "en" "AB- = arterial blood gas; PNA = point-of-care."
+}
+concept "AB-PCO2 ABL/PNA" {
+    name "sv" "aB-pCO2 ABL/PNA"
+    comment "en" """
+        aB- = arterial blood. Carbon dioxide partial pressure in Arterial blood. Carbon dioxide partial
+        pressure in Arterial blood. Critical ED blood gas parameter for respiratory assessment. Carbon
+        dioxide partial pressure in Arterial blood. Arterial specimen (aB- prefix). Critical ED blood
+        gas parameter for respiratory assessment.
+        """
+}
+concept "AB-PCO2 PT TEMP(PNA)" {
+    name "sv" "AB-PCO2 PT TEMP"
+    comment "en" """
+        aB-pCO2 Pt Temp = arterial blood pCO2 at patient temperature. PNA = POC. Temp-adjusted is
+        precise match.
+        """
+}
+concept "AB-PCO2(PNA)"
+concept "AB-PH" {
+    comment "en" "aB-pH = arterial blood pH from blood gas analysis."
+}
+concept "AB-PH /PNA" {
+    comment "en" "pH of Arterial blood as strict."
+}
+concept "AB-PH ABL/PNA" {
+    name "sv" "aB-pH ABL/PNA"
+    comment "en" """
+        aB-pH = arterial blood pH. pH of Arterial blood. pH of Arterial blood. Critical ED blood gas
+        parameter for acid-base assessment. pH of Arterial blood. Arterial specimen (aB- prefix).
+        Critical ED blood gas parameter for acid-base assessment.
+        """
+}
+concept "AB-PH PT TEMP (PNA)" {
+    name "sv" "AB-PH PT TEMP"
+}
+concept "AB-PH(PNA)" {
+    comment "en" "aB = arterial blood gas. pH adjusted to actual temp."
+}
+concept "AB-PO2"
+concept "AB-PO2 (PNA)" {
+    comment "en" "aB = arterial blood."
+}
+concept "AB-PO2 /PNA" {
+    comment "en" "aB-pO2 = arterial blood oxygen partial pressure. Standard ABG pO2."
+}
+concept "AB-PO2 PT TEMP(PNA)" {
+    name "sv" "AB-PO2 PT TEMP"
+    comment "en" """
+        aB-pO2 Pt Temp = arterial blood pO2 adjusted to patient temperature. (PNA) = POC blood gas.
+        match for temp-adjusted pO2 in blood.
+        """
+}
+concept "AB-PO2/FIO2 KVOT/PNA" {
+    name "sv" "AB-PO2/FIO2 KVOT"
+    comment "en" "aB-pO2/FIO2 kvot = P/F ratio = Horowitz index. Arterial blood gas POC measurement."
+}
+concept "AB-ST.BIK ABL/PNA" {
+    name "sv" "aB-St.bik"
+    comment "en" """
+        aB- = arterial blood. St.bik = standard bicarbonate. Standard bicarbonate in Arterial blood.
+        Standard bicarbonate in Arterial blood. Swedish abbreviation St.bik = standardbikarbonat. No
+        direct Lab C equivalent mapped. Standard bicarbonate in Arterial blood. Swedish
+        abbreviation St.bik = standardbikarbonat.
+        """
+}
+concept "AB-ST.BIKARBONAT" {
+    comment "en" "aB-St.bikarbonat = arterial blood standard bicarbonate."
+}
+concept "AB-ST.BIKARBONAT/PNA" {
+    comment "en" "aB-St.bikarbonat = standard bicarbonate on arterial blood gas PNA."
+}
+concept "AB-STAND.BIKARBONAT" {
+    comment "en" "aB-Stand.Bikarbonat = standard bicarbonate in arterial blood (calculated)."
+}
+concept "AB-STAND.BIKARBONAT (PNA)"
+concept "AB-SYRGASMÄTTN.(PNA)" {
+    name "sv" "AB-SYRGASMÄTTN"
+    comment "en" """
+        aB-Syrgasmättn = arterial blood oxygen saturation. (PNA) = POC blood gas. arterial-specific
+        match.
+        """
+}
+concept "AB-SYRGASMÄTTNAD" {
+    comment "en" """
+        aB-Syrgasmättnad = O2 saturation in arterial blood gas. Calculated-from-pO2 variant is generic
+        variant not.
+        """
+}
+concept "AB-SYRGASMÄTTNAD/PNA" {
+    comment "en" """
+        aB-Syrgasmättnad = O2 saturation in arterial blood. calculated variant. Both not ideal POC
+        match.
+        """
+}
+concept "AB-THB"
+concept "AB-THB (PNA)" {
+    comment "en" "aB- = arterial blood gas. tHb = total Hb (same analyte as Hb in BGA context)."
+}
+concept "AB-THB /PNA" {
+    comment "en" "tHb = total Hb."
+}
+concept "ABL1 RNA" {
+    comment "en" "ABL1 RNA = qualitative BCR-ABL1 transcript detection."
+}
+concept "ABS1 (KOPROPORF)" {
+    comment "en" """
+        abs1 = absorbance at specific wavelength; koproporf = coproporphyrin. analytical signal for
+        porphyrin screening  specimen type inferred from coproporphyrin clinical context (urine is
+        standard).
+        """
+}
+concept "ABS1 (PROTOPORF)" {
+    comment "en" """
+        abs1 (protoporf) = absorption spectroscopy at 1 wavelength for protoporphyrin. Most commonly
+        zinc protoporphyrin.
+        """
+}
+concept "ABS2 (KOPROPORF)"
+concept "ABS2 (PROTOPORF)" {
+    comment "en" "Zinc protoporphyrin by absorbance spectroscopy (abs2) for lead screening/iron deficiency."
+}
+concept "ABS3 (KOPROPORF)" {
+    comment "en" """
+        abs3 = absorbance 380nm for coproporphyrin III fraction; spectrophotometric step in porphyrin
+        panel. specimen unspecified  neither.
+        """
+}
+concept "ABS3 (PROTOPORF)" {
+    comment "en" "abs3 (protoporf) = protoporphyrin via absorbance at 3 wavelengths."
+}
+concept "ACTH" {
+    comment "en" "ACTH = adrenocorticotropic hormone (corticotropin)."
+}
+concept "ADH" {
+    comment "en" """
+        ADH = antidiuretic hormone = vasopressin. Specimen unclear (no prefix in code). Plasma is most
+        common for vasopressin TDM.
+        """
+}
+concept "AK MOT B2-GLYKOPROT." {
+    name "sv" "AK MOT B2-GLYKOPROT"
+}
+concept "AK MOT KARDIOLIPIN" {
+    comment "en" "Ak mot = antibody against. Antiphospholipid syndrome screening. Both panels."
+}
+concept "ALBUMINKVOT" {
+    comment "en" "Albuminkvot = albumin quotient (UACR)."
+}
+concept "ALK (2P23)" {
+    comment "en" "ALK (2p23) = ALK gene rearrangement at 2p23; FISH detection assumed."
+}
+concept "AMITRIPT+NORTRIPT" {
+    comment "en" """
+        Combined tricyclic antidepressant panel. Specimen unclear (no prefix). could be serum, plasma or
+        urine.
+        """
+}
+concept "AMMONIUM" {
+    comment "en" "Ammonium = ammonia in clinical chemistry. No specimen prefix but blood is standard specimen."
+}
+concept "AMN-AFP (STUDIE)" {
+    name "sv" "AMN-AFP"
+    comment "en" "Amn-=amniotic fluid. AFP=alpha-1-fetoprotein  Studie=study (research protocol)."
+}
+concept "AMYLAS I LÄCKAGE" {
+    comment "en" "Amylas = amylase."
+}
+concept "ANDNINGSFREKVENS" {
+    name "sv" "Andningsfrekvens"
+    comment "en" "Standard vital sign concept.. 2026-04-23."
+}
+concept "ANDNINGSFREKVENS (PNA)"
+concept "ANTAL KULOR (CD34)" {
+    comment "en" """
+        Antal kulor = cell count  CD34+ stem/progenitor cell count in blood (hematopoietic stem cells).
+        """
+}
+concept "ANTI XA (FRAGMIN)" {
+    comment "en" "Anti-Xa for Fragmin (dalteparin) monitoring; specimen unclear (likely plasma)."
+}
+concept "ANTI-IFNBETA" {
+    comment "en" "anti-IFNbeta = anti-interferon beta antibodies (NAb/ADA)."
+}
+concept "APOE GENOTYP"
+concept "ARSA GENOTYP" {
+    comment "en" "ARSA genotyp = arylsulfatase A gene genotype (metachromatic leukodystrophy)."
+}
+concept "ARYLSULFATAS A(LKC)" {
+    comment "en" "Arylsulfatas A = arylsulfatase A enzyme. LKC = leukocytes (the specimen)."
+}
+concept "ASC-ALBUMIN"
+concept "ASC-AMYLAS" {
+    comment "en" "Asc- = ascites (peritoneal) fluid."
+}
+concept "ASC-HEMOGLOBIN"
+concept "ASC-LEUKOCYTER" {
+    comment "en" """
+        Asc- = ascites/peritoneal fluid. leukocyter = leukocytes. Alt = lymphocytes differential (also
+        peritoneal).
+        """
+}
+concept "ASC-NEUTROFILA" {
+    comment "en" "Neutrophils in ascites (peritoneal fluid)  count not method-specified."
+}
+concept "ASC-PROTEIN" {
+    comment "en" "Swedish Asc- prefix = ascites (ascitic/peritoneal fluid)."
+}
+concept "ASCITES-PROTEIN" {
+    comment "en" "Ascites = peritoneal/ascitic fluid. Protein = total protein."
+}
+concept "AT180" {
+    comment "en" "exact AT180 epitope not coded."
+}
+concept "ATM (11Q22.3)" {
+    comment "en" "ATM gene at 11q22.3."
+}
