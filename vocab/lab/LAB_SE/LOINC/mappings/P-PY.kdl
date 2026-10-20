@@ -1,0 +1,199 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes P-PY
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "P.O.GLUKOSBELASTNING.1" source="P.O.GLUKOSBELASTNING" target="72171-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P.O.GLUKOSBELASTNING.2" source="P.O.GLUKOSBELASTNING" target="21004-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P/S-CRP (NÄRLAB).1" source="P/S-CRP (NÄRLAB)" target="1988-5" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "P/S-CRP = CRP in plasma or serum at near-patient lab  exact match with Serum/Plasma CRP."
+}
+mapping "P/S-TROPONIN I (CTN).1" source="P/S-TROPONIN I (CTN)" target="10839-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PAPP-A.1" source="PAPP-A" target="32123-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PAPP-A.2" source="PAPP-A" target="48407-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PEEP (PNA).1" source="PEEP (PNA)" target="20075-8" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "PEEP (PNA) = PEEP measured at point-of-care blood gas analyzer  ventilator parameter."
+}
+mapping "PERICARD-LPK.1" source="PERICARD-LPK" target="30403-0" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Pericard-LPK = leukocytes in pericardial fluid  exact match."
+}
+mapping "PERICARD-NEUTROFILA.1" source="PERICARD-NEUTROFILA" target="67826-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PERICARD-PROTEIN.1" source="PERICARD-PROTEIN" target="33407-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Pericardial fluid total protein  Exact LOINC match but not."
+}
+mapping "PLEU-BASOFILA.1" source="PLEU-BASOFILA" target="33785-7" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        No exact pleural fluid basophil LOINC. closest is immature basophils in Blood by Manual count.
+        """
+}
+mapping "PLEU-EOSINOFILA.1" source="PLEU-EOSINOFILA" target="35062-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-HB.1" source="PLEU-HB" target="722-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-LIPOPROTEIN FR.1" source="PLEU-LIPOPROTEIN FR" target="9620-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-LPK.1" source="PLEU-LPK" target="26467-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-LYMFOCYTER.1" source="PLEU-LYMFOCYTER" target="35098-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-MONOCYTER.1" source="PLEU-MONOCYTER" target="742-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "no pleural fluid monocytes  weak alternative is blood monocytes (different specimen)."
+}
+mapping "PLEU-MONOCYTER.2" source="PLEU-MONOCYTER" target="35028-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-ODIFF.CELLER.1" source="PLEU-ODIFF.CELLER" target="34561-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-PLASMACELLER.1" source="PLEU-PLASMACELLER" target="17803-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        plasmaceller=plasma cells  body fluid is the closest LOINC (no pleural-specific plasma cell
+        concept).
+        """
+}
+mapping "PLEU-SEGMENTERADE.1" source="PLEU-SEGMENTERADE" target="30452-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Precise is pleural-specific ratio (not Weak fallback is body fluid absolute count Different
+        property (ratio vs count).
+        """
+}
+mapping "PLEU-SEGMENTERADE.2" source="PLEU-SEGMENTERADE" target="33385-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEU-STAVKÄRNIGA.1" source="PLEU-STAVKÄRNIGA" target="26507-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "No pleural-specific LOINC. body fluid alternative  Blood is primary."
+}
+mapping "PLEU-STAVKÄRNIGA.2" source="PLEU-STAVKÄRNIGA" target="13354-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEURA-ADA.1" source="PLEURA-ADA" target="35704-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "PLEURA-ERYTROCYTER.1" source="PLEURA-ERYTROCYTER" target="26456-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEURA-GLUKOS.1" source="PLEURA-GLUKOS" target="14745-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "No specific pleural fluid LOINC."
+}
+mapping "PLEURA-KOLESTEROL.1" source="PLEURA-KOLESTEROL" target="9618-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEURA-LEUKOCYTER.1" source="PLEURA-LEUKOCYTER" target="26467-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEURA-PROTEIN.1" source="PLEURA-PROTEIN" target="2882-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Pleura-Protein = protein in pleural fluid  Exact LOINC match."
+}
+mapping "PLEURA-TRIGLYCERIDER.1" source="PLEURA-TRIGLYCERIDER" target="12228-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PLEURAVÄTSKA-PH (PNA).1" source="PLEURAVÄTSKA-PH (PNA)" target="2748-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "POC pleural fluid pH via blood gas analyzer."
+}
+mapping "PLEURAVÄTSKA-PH (PNA).2" source="PLEURAVÄTSKA-PH (PNA)" target="50895-2" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "PML-RARA/GUSB.1" source="PML-RARA/GUSB" target="21551-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PORFOBILINOGENSYNTAS.1" source="PORFOBILINOGENSYNTAS" target="2813-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "POSTFILTER-CA PNA.1" source="POSTFILTER-CA PNA" target="1994-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA = POC blood gas analyzer  ionized Ca in blood is weak=ISE method."
+}
+mapping "POSTFILTER-CA PNA.2" source="POSTFILTER-CA PNA" target="47596-2" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PROLAKTIN LÅGMOLEKYL.1" source="PROLAKTIN LÅGMOLEKYL" target="42607-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-BLÖDNINGSTID.1" source="PT-BLÖDNINGSTID" target="11067-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-BLÖDNINGSTID.2" source="PT-BLÖDNINGSTID" target="3179-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-GLUKOSBELASTNING.1" source="PT-GLUKOSBELASTNING" target="50667-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Order/procedure code mapped to interpretation panel."
+}
+mapping "PT-KREATININCLEARANCE.1" source="PT-KREATININCLEARANCE" target="2164-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-LÄNGD.1" source="PT-LÄNGD" target="8302-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "clinical observation  exact LOINC match."
+}
+mapping "PT-SVETTMÄNGD.1" source="PT-SVETTMÄNGD" target="33247-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-SVETTSEKRETION.1" source="PT-SVETTSEKRETION" target="33514-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PT-VIKT.1" source="PT-VIKT" target="29463-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PULSFREKVENS.1" source="PULSFREKVENS" target="8867-4" relationship=equivalent quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match: Swedish pulsfrekvens = heart rate."
+}
+mapping "PULSFREKVENS.2" source="PULSFREKVENS" target="8867-4" relationship=equivalent method="manual" quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Heart rate - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "PULSFREKVENS.3" source="PULSFREKVENS" target="8867-4" relationship=equivalent method="manual" quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Heart rate - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "PULSFREKVENS.4" source="PULSFREKVENS" target="8867-4" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "PULSFREKVENS OREGELBUNDEN.1" source="PULSFREKVENS OREGELBUNDEN" target="8867-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "mapped to generic Heart rate as best match. heart rate rhythm as weak alt  Neither."
+}
+mapping "PULSFREKVENS OREGELBUNDEN.2" source="PULSFREKVENS OREGELBUNDEN" target="8884-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "PYRUVATKINAS SCREEN.1" source="PYRUVATKINAS SCREEN" target="2912-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

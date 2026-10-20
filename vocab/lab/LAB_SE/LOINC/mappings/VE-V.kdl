@@ -1,0 +1,41 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes VE-V
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "VENLAFAXIN+DESMETYLV.1" source="VENLAFAXIN+DESMETYLV" target="62849-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "VIKT.1" source="VIKT" target="29463-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match  vital sign measurement."
+}
+mapping "VIKT I GRAM.1" source="VIKT I GRAM" target="3141-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "VWF:AC/VWF:AG.1" source="VWF:AC/VWF:AG" target="4680-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "ristocetin cofactor = activity  weak = VWF:Ac alone."
+}
+mapping "VWF:AC/VWF:AG.2" source="VWF:AC/VWF:AG" target="81643-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "VWF:AKT/VWF:AG.1" source="VWF:AKT/VWF:AG" target="81643-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "used for vWD type 2 differentiation  ratio panel LOINC exists but."
+}
+mapping "VWF:RCO/VWF:AG.1" source="VWF:RCO/VWF:AG" target="81643-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "VÄTSKEINTAG ENL.MOD.NORTON.1" source="VÄTSKEINTAG ENL.MOD.NORTON" target="8984-7" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Approximate match."
+}

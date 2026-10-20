@@ -1,0 +1,28 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes Q-R
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "QFRAKT.1" source="QFRAKT" target="10634-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "REF-TROMBINTID.1" source="REF-TROMBINTID" target="3243-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Generic thrombin time is the correct LOINC for a reference/control measurement."
+}
+mapping "RET(B)-MCH.1" source="RET(B)-MCH" target="785-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "RET(B)-MCH.2" source="RET(B)-MCH" target="28539-5" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "RISP + 9-OH-RISP.1" source="RISP + 9-OH-RISP" target="39800-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match for combined measurement."
+}

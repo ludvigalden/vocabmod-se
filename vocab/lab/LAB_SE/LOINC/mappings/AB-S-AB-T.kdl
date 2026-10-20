@@ -1,0 +1,94 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes AB-S-AB-T
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "AB-ST.BIK ABL/PNA.1" source="AB-ST.BIK ABL/PNA" target="19230-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ABL/PNA = arterial blood gas analyzer."
+}
+mapping "AB-ST.BIK ABL/PNA.2" source="AB-ST.BIK ABL/PNA" target="19230-2" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 19230-2. Lab B precedent (concept_id 3014218). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~39,434 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-ST.BIK ABL/PNA.3" source="AB-ST.BIK ABL/PNA" target="19230-2" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. ABL/PNA suffix indicates blood gas analyzer measurement. Closest
+        available LOINC target; not exact.
+        """
+}
+mapping "AB-ST.BIK ABL/PNA.4" source="AB-ST.BIK ABL/PNA" target="19230-2" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab B precedent (LOINC 19230-2, concept_id 3014218). Arterial-specific LOINC code. ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-ST.BIK ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-ST.BIK ABL/PNA" scope="specimen-assumption"
+mapping "AB-ST.BIKARBONAT.1" source="AB-ST.BIKARBONAT" target="1959-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-ST.BIKARBONAT/PNA.1" source="AB-ST.BIKARBONAT/PNA" target="19230-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Calculated standard primary. actual bicarbonate as weak  Neither."
+}
+mapping "AB-ST.BIKARBONAT/PNA.2" source="AB-ST.BIKARBONAT/PNA" target="1960-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-STAND.BIKARBONAT.1" source="AB-STAND.BIKARBONAT" target="1959-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact arterial match generic Blood variant is weak."
+}
+mapping "AB-STAND.BIKARBONAT.2" source="AB-STAND.BIKARBONAT" target="19230-2" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-STAND.BIKARBONAT (PNA).1" source="AB-STAND.BIKARBONAT (PNA)" target="1959-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "aB-Stand.Bikarbonat = standard bicarbonate in arterial blood  Blood LOINC covers ABG."
+}
+mapping "AB-SYRGASMÄTTN.(PNA).1" source="AB-SYRGASMÄTTN.(PNA)" target="51733-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-SYRGASMÄTTNAD.1" source="AB-SYRGASMÄTTNAD" target="51733-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Dual map."
+}
+mapping "AB-SYRGASMÄTTNAD.2" source="AB-SYRGASMÄTTNAD" target="2708-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-SYRGASMÄTTNAD/PNA.1" source="AB-SYRGASMÄTTNAD/PNA" target="51733-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "weak target is direct measurement."
+}
+mapping "AB-SYRGASMÄTTNAD/PNA.2" source="AB-SYRGASMÄTTNAD/PNA" target="2708-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-THB.1" source="AB-THB" target="30313-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        aB-tHb = total hemoglobin in arterial blood gas analysis  medium confidence since gas-analysis
+        Hb vs routine Hb may differ slightly.
+        """
+}
+mapping "AB-THB (PNA).1" source="AB-THB (PNA)" target="718-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Hb blood as target."
+}
+mapping "AB-THB (PNA).2" source="AB-THB (PNA)" target="14775-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-THB /PNA.1" source="AB-THB /PNA" target="718-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Total hemoglobin from arterial blood gas analyzer (/PNA)."
+}

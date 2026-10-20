@@ -1,0 +1,62 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes ABL-ABS
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "ABL1 RNA.1" source="ABL1 RNA" target="21823-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Minor breakpoint presence as target cellular ratio as weak alt. Low confidence due to ambiguous
+        minor vs major breakpoint.
+        """
+}
+mapping "ABL1 RNA.2" source="ABL1 RNA" target="21795-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS1 (KOPROPORF).1" source="ABS1 (KOPROPORF)" target="11212-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS1 (PROTOPORF).1" source="ABS1 (PROTOPORF)" target="2895-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "mapped to zinc protoporphyrin RBC Free protoporphyrin in blood as weak."
+}
+mapping "ABS1 (PROTOPORF).2" source="ABS1 (PROTOPORF)" target="2892-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS2 (KOPROPORF).1" source="ABS2 (KOPROPORF)" target="14156-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        abs2=avföring (feces) koproporf: coproporphyrin in stool for porphyria diagnostics  stool
+        mass/mass as primary.
+        """
+}
+mapping "ABS2 (KOPROPORF).2" source="ABS2 (KOPROPORF)" target="6878-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS2 (PROTOPORF).1" source="ABS2 (PROTOPORF)" target="33007-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "ZPP in blood as strict  ZPP in RBC as weak."
+}
+mapping "ABS2 (PROTOPORF).2" source="ABS2 (PROTOPORF)" target="2895-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS3 (KOPROPORF).1" source="ABS3 (KOPROPORF)" target="6878-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS3 (KOPROPORF).2" source="ABS3 (KOPROPORF)" target="11212-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ABS3 (PROTOPORF).1" source="ABS3 (PROTOPORF)" target="2895-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Zinc protoporphyrin free protoporphyrin as weak alternative (different analyte)."
+}
+mapping "ABS3 (PROTOPORF).2" source="ABS3 (PROTOPORF)" target="2892-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

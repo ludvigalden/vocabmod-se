@@ -1,0 +1,319 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes S-L-S-P
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "S-LAUROYLKARNITIN.1" source="S-LAUROYLKARNITIN" target="30331-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD, TOTAL.1" source="S-LD, TOTAL" target="2532-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER.1" source="S-LD-ISOENZYMER" target="14804-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        LD isoenzymes (LD1-LD5 pattern)  LDH lactate-to-pyruvate as primary isoenzyme interpretation as
+        weak S-LD-isoenzymer is the qualitative isoenzyme pattern interpretation.
+        """
+}
+mapping "S-LD-ISOENZYMER.2" source="S-LD-ISOENZYMER" target="5910-5" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER 1.1" source="S-LD-ISOENZYMER 1" target="2537-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER 2.1" source="S-LD-ISOENZYMER 2" target="2540-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER 3.1" source="S-LD-ISOENZYMER 3" target="2543-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER 4.1" source="S-LD-ISOENZYMER 4" target="5910-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LD-ISOENZYMER 5.1" source="S-LD-ISOENZYMER 5" target="5910-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        interpretation result rather than specific isoenzyme quantitation  specific LD5 enzymatic
+        activity LOINC (2549-4) not in database.
+        """
+}
+mapping "S-LD1.1" source="S-LD1" target="2537-9" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match."
+}
+mapping "S-LDL-KOL (WLAB).1" source="S-LDL-KOL (WLAB)" target="2089-1" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "S-LDL-Kol = LDL cholesterol in serum  exact match."
+}
+mapping "S-LDL-KOL LAB G.1" source="S-LDL-KOL LAB G" target="13457-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC has by-calculation variant. Confirmed: LOINC, S, Measurement."
+}
+mapping "S-LEPTIN.1" source="S-LEPTIN" target="21365-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LEPTIN (STUDIER).1" source="S-LEPTIN (STUDIER)" target="21365-2" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "(Studier) = research context  exact match."
+}
+mapping "S-LH (LUTROPIN).1" source="S-LH (LUTROPIN)" target="10501-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LIPOPROTEIN FRAKT..1" source="S-LIPOPROTEIN FRAKT." target="20510-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Interpretation by electrophoresis is the closest LOINC match."
+}
+mapping "S-LITIUM.1" source="S-LITIUM" target="14334-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-LPA(LIPOPROTEIN A).1" source="S-LPA(LIPOPROTEIN A)" target="10835-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match."
+}
+mapping "S-LYSOZYM.1" source="S-LYSOZYM" target="2589-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-M-KOMPONENT.1" source="S-M-KOMPONENT" target="90991-1" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        S-M-komponent = monoclonal protein (M-komponent) detected in serum protein electrophoresis 
+        Panel code is closest match.
+        """
+}
+mapping "S-M-KOMPONENT IGA.1" source="S-M-KOMPONENT IGA" target="90991-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Generic monoclonal band LOINC as strict. M-protein isotype panel as weak."
+}
+mapping "S-M-KOMPONENT IGA.2" source="S-M-KOMPONENT IGA" target="13348-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-M-KOMPONENT IGG.1" source="S-M-KOMPONENT IGG" target="90991-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-M-KOMPONENTTYPNING.1" source="S-M-KOMPONENTTYPNING" target="90991-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-M-KOMPONENTTYPNING.2" source="S-M-KOMPONENTTYPNING" target="24351-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-MAGNESIUM.1" source="S-MAGNESIUM" target="19123-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-MAKROPROLAKTIN.1" source="S-MAKROPROLAKTIN" target="38926-2" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S-Makroprolaktin = macroprolactin in serum  Exact match."
+}
+mapping "S-METADON.1" source="S-METADON" target="3772-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-METANOL.1" source="S-METANOL" target="14835-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-METOTREXAT.1" source="S-METOTREXAT" target="14836-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-METYLMALONAT.1" source="S-METYLMALONAT" target="13964-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC match."
+}
+mapping "S-MG LAB G.1" source="S-MG LAB G" target="19123-9" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S-MIANSERIN.1" source="S-MIANSERIN" target="2635-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Mianserin antidepressant TDM in serum  Exact LOINC match but."
+}
+mapping "S-MIRTAZAPIN.1" source="S-MIRTAZAPIN" target="17283-3" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S-Mirtazapin = mirtazapine in serum  exact match."
+}
+mapping "S-MONONUKLEOS.1" source="S-MONONUKLEOS" target="12221-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        heterophile antibody test is standard mononucleosis screening  medium confidence as term may
+        refer to specific antibody or molecular test rather than heterophile screen.
+        """
+}
+mapping "S-MYOGLOBIN.1" source="S-MYOGLOBIN" target="2639-3" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Myoglobin as cardiac/muscle marker  Exact match."
+}
+mapping "S-MYRISTOYLKARNITIN.1" source="S-MYRISTOYLKARNITIN" target="30565-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-NA LAB G.1" source="S-NA LAB G" target="2951-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S-NORKLOZAPIN.1" source="S-NORKLOZAPIN" target="10992-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-NORMIANSERIN.1" source="S-NORMIANSERIN" target="34414-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "S-NORTRIPTYLIN.1" source="S-NORTRIPTYLIN" target="3872-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "S-NSE.1" source="S-NSE" target="15060-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "S-NSE, IFMA.1" source="S-NSE, IFMA" target="15060-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-NT-PROBNP.1" source="S-NT-PROBNP" target="33762-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-O,P´-DDD.1" source="S-O,P´-DDD" target="13626-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "S-OKTANOYLKARNITIN.1" source="S-OKTANOYLKARNITIN" target="30540-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-OLANZAPIN.1" source="S-OLANZAPIN" target="12389-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-OROSOMUCOID.1" source="S-OROSOMUCOID" target="2685-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-OSMOLALITET.1" source="S-OSMOLALITET" target="2692-2" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Osmolality of serum or plasma  exact match."
+}
+mapping "S-OSTEOCALCIN.1" source="S-OSTEOCALCIN" target="2697-1" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S- = serum  exact match."
+}
+mapping "S-OSTEOCALCIN, TOTAL.1" source="S-OSTEOCALCIN, TOTAL" target="2697-1" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "exact match."
+}
+mapping "S-PALMITOYLKARNITIN.1" source="S-PALMITOYLKARNITIN" target="30356-0" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "palmitoylkarnitin = palmitoylcarnitine C16  exact match."
+}
+mapping "S-PARACETAMOL.1" source="S-PARACETAMOL" target="3298-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match  serum acetaminophen."
+}
+mapping "S-PARATHORMON.1" source="S-PARATHORMON" target="2731-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PARATHORMON (7-84).1" source="S-PARATHORMON (7-84)" target="2731-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Biointact PTH is the precise match but intact PTH is the more common assay as weak."
+}
+mapping "S-PARATHORMON (7-84).2" source="S-PARATHORMON (7-84)" target="47093-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PEPSINOGEN I.1" source="S-PEPSINOGEN I" target="2736-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S- = serum  Pepsinogen I exact match."
+}
+mapping "S-PERFENAZIN.1" source="S-PERFENAZIN" target="3927-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PINP (STUDIER).1" source="S-PINP (STUDIER)" target="47255-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S-PLAP.1" source="S-PLAP" target="32352-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PREALBUMIN.1" source="S-PREALBUMIN" target="14338-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PRIMIDON.1" source="S-PRIMIDON" target="14887-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PROCALCITONIN.1" source="S-PROCALCITONIN" target="33959-8" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "exact match."
+}
+mapping "S-PROGESTERON.1" source="S-PROGESTERON" target="2839-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PROKOLLAGEN-I-CP.1" source="S-PROKOLLAGEN-I-CP" target="47255-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PROKOLLAGEN-III-P.1" source="S-PROKOLLAGEN-III-P" target="71792-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact analyte match, specimen uncertain (S- = serum vs LOINC Serum)."
+}
+mapping "S-PROLAKTIN.1" source="S-PROLAKTIN" target="12231-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PROLAKTIN FÄLLD.1" source="S-PROLAKTIN FÄLLD" target="12231-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Baseline prolactin is closest LOINC."
+}
+mapping "S-PROPIONYLKARNITIN.1" source="S-PROPIONYLKARNITIN" target="30551-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S-Propionylkarnitin = propionylcarnitine (C3 acylcarnitine) in serum  Exact match."
+}
+mapping "S-PROTEIN.1" source="S-PROTEIN" target="2885-2" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S-Protein = total protein in serum  Exact match."
+}
+mapping "S-PROTEIN LAB G.1" source="S-PROTEIN LAB G" target="4671-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        S-Protein Lab G = Protein C by Lab G method (immunological assay for protein C).
+        Swedish lab uses Lab G name for the method  exact protein C analyte LOINC.
+        """
+}
+mapping "S-PSA %.1" source="S-PSA %" target="2857-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        No specific PSA ratio/percent LOINC exists as standard_concept=S. Low confidence due to ratio vs
+        total mismatch.
+        """
+}
+mapping "S-PSA LAB G.1" source="S-PSA LAB G" target="2857-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PSA LAB G F.1" source="S-PSA LAB G F" target="10886-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PSA FRITT.1" source="S-PSA FRITT" target="10886-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PSA KVOT.1" source="S-PSA KVOT" target="12841-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PSA TOTAL.1" source="S-PSA TOTAL" target="2857-1" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "S-PSA total = total prostate specific antigen in serum  exact match."
+}
+mapping "S-PSAF% LAB G.1" source="S-PSAF% LAB G" target="12841-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab G = internal qualifier  strict = free/total ratio weak = pure mass fraction variant.
+        """
+}
+mapping "S-PSAF% LAB G.2" source="S-PSAF% LAB G" target="72576-2" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S-PTH.1" source="S-PTH" target="15087-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PTHrP as weak alternative."
+}
+mapping "S-PTH.2" source="S-PTH" target="14866-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PTH BIO-INTAKT.1" source="S-PTH BIO-INTAKT" target="2731-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S-PTH INTAKT.1" source="S-PTH INTAKT" target="2731-8" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Intact PTH in serum  exact match for intact parathyroid hormone."
+}

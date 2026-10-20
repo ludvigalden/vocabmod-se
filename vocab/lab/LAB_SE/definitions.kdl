@@ -18,4 +18,13 @@ context {
 category "lab-test" {
     name "en" "Laboratory test"
 }
+collection "lab-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Swedish hospital laboratory catalogues to LOINC"
+    authors "ludvig-alden"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+    import "LOINC/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment

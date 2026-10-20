@@ -1,0 +1,20 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes A
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "A-GALAKTOSIDAS(P).1" source="A-GALAKTOSIDAS(P)" target="1813-5" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Fabry disease enzyme  exact match."
+}
+mapping "A-GALAKTOSIDASINH.1" source="A-GALAKTOSIDASINH" target="1813-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "a-Galaktosidasinh = alpha-galactosidase inhibition assay in serum  Fabry disease screening."
+}

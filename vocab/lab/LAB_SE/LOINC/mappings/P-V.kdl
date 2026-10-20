@@ -1,0 +1,58 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes P-V
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "P-VEGF(A).1" source="P-VEGF(A)" target="34694-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-VEGF(A) = VEGF-A in plasma  generic VEGF is VEGF-A specific as weak alternative."
+}
+mapping "P-VEGF(A).2" source="P-VEGF(A)" target="75628-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-VIP.1" source="P-VIP" target="3125-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "VIP in plasma  exact LOINC match."
+}
+mapping "P-VWF ANTIGEN.1" source="P-VWF ANTIGEN" target="6012-9" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match."
+}
+mapping "P-VWF-AKTIVITET.1" source="P-VWF-AKTIVITET" target="73978-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-VWF-aktivitet = vWF activity in plasma  vWF activity by immunoassay in PPP."
+}
+mapping "P-VWF:AKT (GP1BA).1" source="P-VWF:AKT (GP1BA)" target="4680-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish: vWF activity using GP1bA (glycoprotein 1b alpha) binding assay. LOINC 4680-5 is vWF
+        ristocetin cofactor which measures platelet-binding activity. GP1bA assay is functionally
+        similar but methodologically distinct.
+        """
+}
+mapping "P-VWF:ANTIGEN.1" source="P-VWF:ANTIGEN" target="48593-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "vWF antigen specific LOINC not found. weak: vWF activity immunoassay  both."
+}
+mapping "P-VWF:ANTIGEN.2" source="P-VWF:ANTIGEN" target="73978-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-VWF:CB.1" source="P-VWF:CB" target="50377-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-VWF:CB = von Willebrand factor collagen binding assay in plasma."
+}
+mapping "P-VWF:RCO.1" source="P-VWF:RCO" target="4680-5" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-VWF:RCo = vWF ristocetin cofactor activity in plasma  exact match."
+}
+mapping "P-VWF:RCOF.1" source="P-VWF:RCOF" target="4680-5" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "exact match  RCoF is the standard functional vWF assay."
+}

@@ -1,0 +1,51 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, misc: codes with no filename-safe letter range, -N parts numbered in file order
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "%-CSV-GD1A.1" source="%-CSV-GD1A" target="23997-0" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        LOINC offers titer and units/volume but no percentage. IgG titer is the closest isotype match.
+        """
+}
+mapping "%-CSV-GD1B.1" source="%-CSV-GD1B" target="31401-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "units/volume is closest LOINC. Low confidence on unit mismatch."
+}
+mapping "%-CSV-GT1B.1" source="%-CSV-GT1B" target="58962-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "1,25 DIHYDROX-VIT.D.1" source="1,25 DIHYDROX-VIT.D" target="62290-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "1,25-DIHYDROXI-VIT.D.1" source="1,25-DIHYDROXI-VIT.D" target="1649-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "25-HYDROXI-VITAMIN D.1" source="25-HYDROXI-VITAMIN D" target="62292-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "25-HYDROXI-VITAMIN D.2" source="25-HYDROXI-VITAMIN D" target="1989-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "25-HYDROXYVITAMIN D.1" source="25-HYDROXYVITAMIN D" target="1989-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Unspecified total 25-OH-D mapped to D3 weak=D2."
+}
+mapping "25-HYDROXYVITAMIN D.2" source="25-HYDROXYVITAMIN D" target="49054-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "9-OH-RISP/RISP.1" source="9-OH-RISP/RISP" target="39800-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "9-OH alone as weak. No exact ratio concept in LOINC."
+}
+mapping "9-OH-RISP/RISP.2" source="9-OH-RISP/RISP" target="9383-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

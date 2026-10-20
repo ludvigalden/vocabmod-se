@@ -1,0 +1,35 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes AB
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "AB - BE.B AVD/MOTT.1" source="AB - BE.B AVD/MOTT" target="1925-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "same analyte as AB-BE(ST) but unspecified (standard vs actual)  3003396 is."
+}
+mapping "AB - BE.B AVD/MOTT.2" source="AB - BE.B AVD/MOTT" target="19235-1" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB - HCO3 AVD/MOTT.1" source="AB - HCO3 AVD/MOTT" target="1959-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same as 1959-6."
+}
+mapping "AB - PH AVD/MOTT.1" source="AB - PH AVD/MOTT" target="49701-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Temperature-adjusted pH LOINC."
+}
+mapping "AB - PO2 AVD/MOTT.1" source="AB - PO2 AVD/MOTT" target="11556-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB - SO2 AVD/MOTT.1" source="AB - SO2 AVD/MOTT" target="2713-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB - TCO2 AVD/MOTT.1" source="AB - TCO2 AVD/MOTT" target="2026-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

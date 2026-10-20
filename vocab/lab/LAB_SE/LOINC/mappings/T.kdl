@@ -1,0 +1,252 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes T
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "TAU GENOTYP.1" source="TAU GENOTYP" target="40478-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "MAPT gene genotype for frontotemporal dementia/tauopathy risk  Exact LOINC match but."
+}
+mapping "TBC-AGGREGATION.1" source="TBC-AGGREGATION" target="4680-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        TBC-Aggregation = thrombocyte (platelet) aggregation test  best LOINC match is vWF ristocetin
+        cofactor as related platelet function assay.
+        """
+}
+mapping "TILLVÄXTHORMON (GH).1" source="TILLVÄXTHORMON (GH)" target="2963-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TNT.1" source="TNT" target="40769783" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TNT.2" source="TNT" target="2100510033" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TNT.3" source="TNT" target="67151-1" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 67151-1 (Troponin T.cardiac [Mass/volume] in Serum or Plasma by High sensitivity method).
+        Exact match.
+        """
+}
+mapping "TOT. ANTAL KOLONIER.1" source="TOT. ANTAL KOLONIER" target="19090-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TOT. ANTAL KOLONIER.2" source="TOT. ANTAL KOLONIER" target="49223-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TP53 (17P13.1).1" source="TP53 (17P13.1)" target="21739-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC covers mutations found in blood/tissue."
+}
+mapping "TP53 MUTATION.1" source="TP53 MUTATION" target="21739-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TP53 MUTATION.2" source="TP53 MUTATION" target="103680-5" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TPMT GENOTYP.1" source="TPMT GENOTYP" target="36922-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "TPMT genotyp = thiopurine methyltransferase genotype  gene mutation analysis LOINC."
+}
+mapping "TPO-ANTIKROPPAR.1" source="TPO-ANTIKROPPAR" target="8099-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TRC-ADP(MULTIPLATE).1" source="TRC-ADP(MULTIPLATE)" target="49010-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Trc-ADP(Multiplate) = platelet aggregation to ADP by Multiplate impedance aggregometry  LOINC
+        platelet aggregation ADP exists but is optical method.
+        """
+}
+mapping "TRC-ASPI(MULTIPLATE).1" source="TRC-ASPI(MULTIPLATE)" target="24381-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closest LOINC is arachidonate platelet aggregation."
+}
+mapping "TRC-COL(MULTIPLATE).1" source="TRC-COL(MULTIPLATE)" target="24379-0" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        No LOINC for whole blood impedance  best approximation is collagen-induced PRP aggregation
+        (different specimen/method).
+        """
+}
+mapping "TRC-RIST(MULTIPLATE).1" source="TRC-RIST(MULTIPLATE)" target="24380-8" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Presence-based LOINC."
+}
+mapping "TRC-TRAP(MULTIPLATE).1" source="TRC-TRAP(MULTIPLATE)" target="78687-1" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TROPONIN I.1" source="TROPONIN I" target="3025232" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TROPONIN I.2" source="TROPONIN I" target="2100520045" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TROPONIN I.3" source="TROPONIN I" target="10839-9" relationship=partial_overlap method="manual" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Analysis-method distinction lost (HIGH clinical impact): High-sensitivity vs conventional assay
+        distinction; manufacturer-specific 99th percentile cutoffs; point-of-care vs central laboratory
+        platform; validated rule-out algorithm protocol (0/1h vs 0/3h vs serial sampling) The single
+        LOINC target is imprecise across these assay variants.
+        """
+}
+mapping "TROPONIN I (PNA).1" source="TROPONIN I (PNA)" target="10839-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        PNA = point-of-care blood gas analyzer  cardiac troponin I in S/P is correct analyte+specimen.
+        """
+}
+mapping "TROPONIN I (STRATUS).1" source="TROPONIN I (STRATUS)" target="10839-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TROPONIN T(P).1" source="TROPONIN T(P)" target="3019800" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "TROPONIN T(P).2" source="TROPONIN T(P)" target="2100540018" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TROPONIN T(P).3" source="TROPONIN T(P)" target="6598-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "TU-5-HIAA.1" source="TU-5-HIAA" target="31203-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-ADRENALIN.1" source="TU-ADRENALIN" target="16111-7" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "No standalone epinephrine LOINC found. closest is combined Epi+NE."
+}
+mapping "TU-ALBUMIN.1" source="TU-ALBUMIN" target="9318-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-ALBUMIN.2" source="TU-ALBUMIN" target="32294-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-ALDOSTERON.1" source="TU-ALDOSTERON" target="15010-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-AMYLAS.1" source="TU-AMYLAS" target="1799-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "amylas = amylase  exact match for urine amylase."
+}
+mapping "TU-CALCIUM.1" source="TU-CALCIUM" target="18488-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "calcium  24h urine calcium exact match."
+}
+mapping "TU-CL.1" source="TU-CL" target="2078-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "The t- prefix suggests timed collection but no timed LOINC available."
+}
+mapping "TU-CU.1" source="TU-CU" target="21219-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-CU.2" source="TU-CU" target="5632-5" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-FOSFAT.1" source="TU-FOSFAT" target="21458-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-GLUKOS.1" source="TU-GLUKOS" target="2350-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Glukos = glucose  exact match for glucose mass/volume in urine."
+}
+mapping "TU-HYDROXYPROLIN.1" source="TU-HYDROXYPROLIN" target="20647-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-HYDROXYPROLIN.2" source="TU-HYDROXYPROLIN" target="12720-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-KALIUM.1" source="TU-KALIUM" target="2828-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Weak: 24h version."
+}
+mapping "TU-KALIUM.2" source="TU-KALIUM" target="21476-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-KAPPA.1" source="TU-KAPPA" target="27365-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-KORTISOL.1" source="TU-KORTISOL" target="14158-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-KORTISOL.2" source="TU-KORTISOL" target="2147-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-LAMBDA.1" source="TU-LAMBDA" target="27394-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-MAGNESIUM.1" source="TU-MAGNESIUM" target="19124-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "spot urine Mg is weak=24h collection  tU unspecified timing."
+}
+mapping "TU-MAGNESIUM.2" source="TU-MAGNESIUM" target="32024-2" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-METOXIKATEKOLAMIN.1" source="TU-METOXIKATEKOLAMIN" target="19050-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        mapped to Metanephrines in 24hr Urine  medium confidence as Swedish term broader than
+        metanephrines alone.
+        """
+}
+mapping "TU-NATRIUM.1" source="TU-NATRIUM" target="2955-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-NORADRENALIN.1" source="TU-NORADRENALIN" target="2667-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-OXALAT.1" source="TU-OXALAT" target="27222-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "general urine as weak."
+}
+mapping "TU-OXALAT.2" source="TU-OXALAT" target="2700-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-PORFYRINER.1" source="TU-PORFYRINER" target="10885-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-PORFYRINER, KVAL.1" source="TU-PORFYRINER, KVAL" target="44014-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-PORFYRINER, KVAL.2" source="TU-PORFYRINER, KVAL" target="10885-2" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-PREGNANTRIOL.1" source="TU-PREGNANTRIOL" target="9445-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Only found 11-Oxopregnanetriol and 11-Ketopregnanetriol in LOINC, not plain pregnanetriol. Low
+        confidence. true pregnantriol LOINC may not exist in our Athena.
+        """
+}
+mapping "TU-PROTEIN.1" source="TU-PROTEIN" target="35663-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-URAT.1" source="TU-URAT" target="21587-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-URAT.2" source="TU-URAT" target="14934-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-UREA.1" source="TU-UREA" target="3095-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TU-VMA.1" source="TU-VMA" target="9624-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "strict = 24h mass/time  weak = mass/vol random."
+}
+mapping "TU-VMA.2" source="TU-VMA" target="3122-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "TVÄTTADE TPMT PROVER.1" source="TVÄTTADE TPMT PROVER" target="36922-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

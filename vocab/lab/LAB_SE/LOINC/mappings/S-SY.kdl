@@ -1,0 +1,77 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes S-SY
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "S/P-IGF-1 (TOTAL).1" source="S/P-IGF-1 (TOTAL)" target="2486-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "IGF-1 total = insulin-like growth factor 1 total  LOINC uses Somatomedins as synonym class."
+}
+mapping "S/P-INSULIN.1" source="S/P-INSULIN" target="14796-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S/P-INSULIN, FRITT.1" source="S/P-INSULIN, FRITT" target="20448-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "no dedicated free-insulin LOINC exists  general insulin LOINC is best proxy."
+}
+mapping "S/P-PROCALCITONIN.1" source="S/P-PROCALCITONIN" target="33959-8" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Procalcitonin in serum/plasma  exact match."
+}
+mapping "SATURATION.1" source="SATURATION" target="51733-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        High-volume vital sign  calculated from pO2 is standard LOINC for POC saturation measurements.
+        """
+}
+mapping "SATURATION.2" source="SATURATION" target="2708-6" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Oxygen saturation - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "SATURATION.3" source="SATURATION" target="2708-6" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Oxygen saturation - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "SATURATION MED SYRGAS.1" source="SATURATION MED SYRGAS" target="2711-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Target arterial  weak venous."
+}
+mapping "SATURATION MED SYRGAS.2" source="SATURATION MED SYRGAS" target="2708-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "SS18 (SYT)(18Q11.2).1" source="SS18 (SYT)(18Q11.2)" target="21825-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "SS18 (SYT)(18Q11.2).2" source="SS18 (SYT)(18Q11.2)" target="21826-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "STUDIE SALIV-KORTISOL.1" source="STUDIE SALIV-KORTISOL" target="2142-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Salivary cortisol study  exact LOINC match."
+}
+mapping "SVETT KLORID BERÄKN..1" source="SVETT KLORID BERÄKN." target="2077-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "SVETT KLORID ELEKTR..1" source="SVETT KLORID ELEKTR." target="2077-6" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Svett klorid elektr.=sweat chloride by electrophoresis/iontophoresis (cystic fibrosis diagnostic
+        test)  exact match.
+        """
+}
+mapping "SVETT KLORID TITR..1" source="SVETT KLORID TITR." target="2077-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "SVETT NATRIUM.1" source="SVETT NATRIUM" target="2954-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "SYRGAS, NEWS.1" source="SYRGAS, NEWS" target="3150-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

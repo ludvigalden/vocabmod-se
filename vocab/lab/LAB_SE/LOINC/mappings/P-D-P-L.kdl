@@ -1,0 +1,415 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes P-D-P-L
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "P-D-DIMER (ELISA).1" source="P-D-DIMER (ELISA)" target="48058-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "DDU units assumed  weak: FEU variant is alternative."
+}
+mapping "P-D-DIMER (ELISA).2" source="P-D-DIMER (ELISA)" target="48065-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-D-DIMER KVANT*.1" source="P-D-DIMER KVANT*" target="48066-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "both Dual mapping due to unit ambiguity."
+}
+mapping "P-D-DIMER KVANT*.2" source="P-D-DIMER KVANT*" target="48065-7" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-DRVV CONFIRM KVOT.1" source="P-DRVV CONFIRM KVOT" target="50410-0" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "lupus anticoagulant testing  exact match."
+}
+mapping "P-DRVVT CONFIRM KVOT.1" source="P-DRVVT CONFIRM KVOT" target="50410-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-DRVVT CONFIRM PAT.1" source="P-DRVVT CONFIRM PAT" target="75515-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-DRVVT CONFIRM REF.1" source="P-DRVVT CONFIRM REF" target="50410-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-DRVVT MIXNING KVOT.1" source="P-DRVVT MIXNING KVOT" target="5904-8" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "no specific mixing-ratio LOINC exists  closest is base dRVVT."
+}
+mapping "P-DRVVT MIXNING PAT.1" source="P-DRVVT MIXNING PAT" target="75513-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-DRVVT MIXNING REF.1" source="P-DRVVT MIXNING REF" target="5904-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Low confidence."
+}
+mapping "P-DRVVT SCREEN KVOT.1" source="P-DRVVT SCREEN KVOT" target="5904-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Closest LOINC is RVT in PPP."
+}
+mapping "P-DRVVT SCREEN PAT.1" source="P-DRVVT SCREEN PAT" target="6303-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match."
+}
+mapping "P-DRVVT SCREEN REF.1" source="P-DRVVT SCREEN REF" target="75515-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-DRVVT TOTAL KVOT.1" source="P-DRVVT TOTAL KVOT" target="15359-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match for normalized screen."
+}
+mapping "P-ERYTROPOIETIN(EPO).1" source="P-ERYTROPOIETIN(EPO)" target="15061-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P- prefix = plasma but LOINC covers serum or plasma."
+}
+mapping "P-ETANOLGELTEST.1" source="P-ETANOLGELTEST" target="20470-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FAKTOR IX:C.1" source="P-FAKTOR IX:C" target="3187-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Chromogenic method is weak alternative."
+}
+mapping "P-FAKTOR IX:C.2" source="P-FAKTOR IX:C" target="3188-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FAKTOR V.1" source="P-FAKTOR V" target="3193-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FAKTOR VII:C.1" source="P-FAKTOR VII:C" target="3198-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FAKTOR VIII SUBSTR.1" source="P-FAKTOR VIII SUBSTR" target="3212-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "faktor VIII substr = Factor VIII substrate (chromogenic assay using Xa activator)."
+}
+mapping "P-FAKTOR XI.1" source="P-FAKTOR XI" target="3226-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-Faktor XI = coagulation factor XI in plasma  weak alt = chromogenic method variant."
+}
+mapping "P-FAKTOR XI.2" source="P-FAKTOR XI" target="3227-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FAKTOR XII.1" source="P-FAKTOR XII" target="3232-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Activity assay is default interpretation when method not specified."
+}
+mapping "P-FAKTOR XIII.1" source="P-FAKTOR XIII" target="3237-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FETTSYROR FRIA.1" source="P-FETTSYROR FRIA" target="15066-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FETTSYROR FRIA.2" source="P-FETTSYROR FRIA" target="1769-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FIBRIN, LÖSLIGT.1" source="P-FIBRIN, LÖSLIGT" target="40702-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FIBRIN-D-DIMER.1" source="P-FIBRIN-D-DIMER" target="48066-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "DDU used as default  FEU as weak alternative."
+}
+mapping "P-FIBRIN-D-DIMER.2" source="P-FIBRIN-D-DIMER" target="48065-7" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-FIBRIN-D-DIMER.3" source="P-FIBRIN-D-DIMER" target="55398-2" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Automated mapping: Fibrin D-Dimer - Automated mapping: Fibrin D-Dimer in Ser/Plas. Exact match.
+        """
+}
+mapping "P-FIBRIN-D-DIMER.4" source="P-FIBRIN-D-DIMER" target="55398-2" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Automated mapping: Fibrin D-Dimer - Automated mapping: Fibrin D-Dimer in Ser/Plas. Exact match.
+        """
+}
+mapping "P-FIBRIN-D-DIMER.5" source="P-FIBRIN-D-DIMER" target="55398-2" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-FIBRIN-D-DIMER.6" source="P-FIBRIN-D-DIMER" target="48065-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "FEU single-analyte as target  prior panel candidate as weak."
+}
+mapping "P-FIBRIN-D-DIMER.7" source="P-FIBRIN-D-DIMER" target="55398-2" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-FIBRIND-DIMER(PNA).1" source="P-FIBRIND-DIMER(PNA)" target="48065-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-FIBRIND-DIMER(PNA).2" source="P-FIBRIND-DIMER(PNA)" target="48066-5" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-FIBRIND-DIMER(PNA).3" source="P-FIBRIND-DIMER(PNA)" target="48065-7" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 48065-7. Note: distinct from P-Fibrin-D-Dimer (LOINC 55398-2) which maps to a different
+        LOINC panel code. recovers ~538 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "P-FIBRINOGEN.1" source="P-FIBRINOGEN" target="3255-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Fibrinogen by Clauss coagulation assay is standard. preferred target. derived variant as weak
+        alt.
+        """
+}
+mapping "P-FIBRINOGEN.2" source="P-FIBRINOGEN" target="48664-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-FIBRINOGEN*.1" source="P-FIBRINOGEN*" target="3255-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "fibrinogen by Clauss method (coagulation assay). Exact LOINC match."
+}
+mapping "P-GLUKOS.1" source="P-GLUKOS" target="3004501" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-GLUKOS.2" source="P-GLUKOS" target="2100510025" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-GLUKOS.3" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Exact match."
+}
+mapping "P-GLUKOS.4" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Exact match."
+}
+mapping "P-GLUKOS.5" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-GLUKOS.6" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Exact match."
+}
+mapping "P-GLUKOS.7" source="P-GLUKOS" target="2345-7" relationship=partial_overlap method="manual" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Common ED test - fasting plasma glucose  mapped to generic glucose LOINC. Analysis-method
+        distinction lost (LOW-MEDIUM clinical impact): Hexokinase vs glucose oxidase method distinction
+        The single LOINC target is imprecise across these assay variants.
+        """
+}
+mapping "P-GLUKOS.8" source="P-GLUKOS" target="2345-7" relationship=partial_overlap method="manual" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Analysis-method distinction
+        lost (LOW-MEDIUM clinical impact): Hexokinase vs glucose oxidase method distinction The single
+        LOINC target is imprecise across these assay variants.
+        """
+}
+mapping "P-GLUKOS.9" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Exact match."
+}
+mapping "P-GLUKOS.10" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in Ser/Plas. Exact match."
+}
+mapping "P-GLUKOS.11" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-GLUKOS.12" source="P-GLUKOS" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-GLUKOS.13" source="P-GLUKOS" target="3004501" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-GLUKOS.14" source="P-GLUKOS" target="2100520009" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-GLUKOS.15" source="P-GLUKOS" target="3004501" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-GLUKOS.16" source="P-GLUKOS" target="2100540007" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-GLUKOS.17" source="P-GLUKOS" target="2345-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "(PNA) = point-of-care blood gas analyzer."
+}
+mapping "P-GLUKOS LOK, FASTEV.1" source="P-GLUKOS LOK, FASTEV" target="1557-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Venous blood LOINC is closest."
+}
+mapping "P-GLUKOS LOKALT-KAP.1" source="P-GLUKOS LOKALT-KAP" target="14743-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Plasma glucose from capillary blood at local lab (lokalt-kap=capillary)  mapped to Glucose in
+        Capillary by Glucometer (closest note: source says P-(plasma) but specimen is capillary.
+        """
+}
+mapping "P-GLUKOS LOKALT-VEN.1" source="P-GLUKOS LOKALT-VEN" target="14749-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-GLUKOS, FASTEVÄRDE.1" source="P-GLUKOS, FASTEVÄRDE" target="1558-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match  fasting plasma glucose."
+}
+mapping "P-HB.1" source="P-HB" target="721-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-HEMOGLOBIN, PLASMA.1" source="P-HEMOGLOBIN, PLASMA" target="721-1" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Plasma hemoglobin=free (unbound) hemoglobin in plasma (hemolysis marker)  exact match."
+}
+mapping "P-HISTAMIN.1" source="P-HISTAMIN" target="2416-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-Histamin = histamine in plasma  exact match in S/P."
+}
+mapping "P-HIT-TROMBOCYTAGG..1" source="P-HIT-TROMBOCYTAGG." target="73819-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "P- = plasma  Presence (73819-5) is quantitative alternative 73818-7."
+}
+mapping "P-HIT-TROMBOCYTAGG..2" source="P-HIT-TROMBOCYTAGG." target="73818-7" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-HOMOCYSTEIN.1" source="P-HOMOCYSTEIN" target="13965-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Confirmed: LOINC, S, Measurement."
+}
+mapping "P-KALIUM.1" source="P-KALIUM" target="2823-3" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "exact match  prior candidate correct."
+}
+mapping "P-KALIUM.2" source="P-KALIUM" target="3023103" relationship=equivalent preference=alternative quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-KALIUM.3" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Potassium - Automated mapping: Potassium in Ser/Plas. Exact match."
+}
+mapping "P-KALIUM.4" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KALIUM.5" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Potassium - Automated mapping: Potassium in Ser. Exact match."
+}
+mapping "P-KALIUM.6" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Potassium - Automated mapping: Potassium in Ser/Plas. Exact match."
+}
+mapping "P-KALIUM.7" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KALIUM.8" source="P-KALIUM" target="2823-3" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KALIUM.9" source="P-KALIUM" target="3023103" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-KALIUM.10" source="P-KALIUM" target="2100540009" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-KALIUM.11" source="P-KALIUM" target="2823-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-KREATININ.1" source="P-KREATININ" target="2160-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "exact LOINC match."
+}
+mapping "P-KREATININ.2" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Creatinine - Automated mapping: Creatinine in Ser/Plas. Exact match."
+}
+mapping "P-KREATININ.3" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KREATININ.4" source="P-KREATININ" target="2160-0" relationship=partial_overlap method="manual" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Automated mapping: Creatinine - Automated mapping: Creatinine in Ser. Analysis-method
+        distinction lost (MEDIUM-HIGH clinical impact): Enzymatic vs Jaffe method distinction;
+        IDMS-traceability status; non-specific chromogen interference risk; eGFR equation compatibility
+        The single LOINC target is imprecise across these assay variants.
+        """
+}
+mapping "P-KREATININ.5" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Creatinine - Automated mapping: Creatinine in Ser/Plas. Exact match."
+}
+mapping "P-KREATININ.6" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KREATININ.7" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "P-KREATININ.8" source="P-KREATININ" target="2160-0" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Automated mapping: Creatinine - No specimen prefix - assuming standard LOINC code. Exact match.
+        """
+}
+mapping "P-KREATININ.9" source="P-KREATININ" target="3016723" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-KREATININ.10" source="P-KREATININ" target="2100540010" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-KREATININ.11" source="P-KREATININ" target="2160-0" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "exact match  prior_candidate correct."
+}
+mapping "P-KREATININ.12" source="P-KREATININ" target="2160-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P-KROMOGRANIN A.1" source="P-KROMOGRANIN A" target="9811-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-KROMOGRANIN-A IEMA.1" source="P-KROMOGRANIN-A IEMA" target="25587-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "moles/volume preferred  mass/volume as weak alternative."
+}
+mapping "P-KROMOGRANIN-A IEMA.2" source="P-KROMOGRANIN-A IEMA" target="9811-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-LAKTAT.1" source="P-LAKTAT" target="2524-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P- = plasma  general Serum or Plasma lactate is weak=plasma venous specific."
+}
+mapping "P-LAKTAT.2" source="P-LAKTAT" target="25555-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P-LAMOTRIGIN.1" source="P-LAMOTRIGIN" target="6948-4" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P-Lamotrigin = lamotrigine TDM in plasma  Exact match."
+}
+mapping "P-LD.1" source="P-LD" target="2532-0" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "P- prefix = plasma  LD in Serum or Plasma is exact match."
+}
+mapping "P-LD.2" source="P-LD" target="2532-0" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Closest available LOINC target; not exact."
+}
+mapping "P-LD.3" source="P-LD" target="2532-0" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC code 2532-0 from Lab B precedent (concept_id 3016436). Closest available LOINC
+        target; not exact.
+        """
+}
+flag "P-LD.specimen-review" kind=needs-clinical-review concept="P-LD" scope="specimen-assumption"
+mapping "P-LEVO-DOPA.1" source="P-LEVO-DOPA" target="9385-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match."
+}
+mapping "P-LUPUS ANTIKOAG..1" source="P-LUPUS ANTIKOAG." target="75515-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

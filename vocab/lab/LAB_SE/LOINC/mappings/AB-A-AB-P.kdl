@@ -1,0 +1,578 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes AB-A-AB-P
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "AB-AKT.BIKARB.(PNA).1" source="AB-AKT.BIKARB.(PNA)" target="1959-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-AKT.BIKARBONAT.1" source="AB-AKT.BIKARBONAT" target="1959-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-ANION GAP K+(PNA).1" source="AB-ANION GAP K+(PNA)" target="41276-7" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-ANJGAP ABL/PNA.1" source="AB-ANJGAP ABL/PNA" target="73581-1" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        AnjGap = Anion gap calculated  matches LOINC Anion gap by Calculated.4Ions in Arterial blood.
+        """
+}
+mapping "AB-ANJGAP ABL/PNA.2" source="AB-ANJGAP ABL/PNA" target="73581-1" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 73581-1. Lab D precedent (concept_id 43533606). ABL/PNA suffix indicates blood gas analyzer
+        measurement. recovers ~25,405 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-ANJGAP ABL/PNA.3" source="AB-ANJGAP ABL/PNA" target="73581-1" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 73581-1. Lab D/Lab A precedent (concept_id 43533606). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~37,076 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-ANJGAP ABL/PNA.4" source="AB-ANJGAP ABL/PNA" target="73581-1" relationship=partial_overlap method="athena-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code 73581-1 selected (parallels venous vB-AnjGap LOINC 73578-7). No
+        Lab B or Lab C precedent for arterial anion gap. ABL/PNA suffix indicates blood gas
+        analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-ANJGAP ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-ANJGAP ABL/PNA" scope="specimen-assumption"
+mapping "AB-BASÖVERSKOTT(PNA).1" source="AB-BASÖVERSKOTT(PNA)" target="11555-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA = POC blood gas analyzer."
+}
+mapping "AB-BASÖVERSKOTT/ECV.1" source="AB-BASÖVERSKOTT/ECV" target="11555-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "aB-basöverskott = base excess in arterial blood  Blood LOINC is appropriate for ABG."
+}
+mapping "AB-BE.1" source="AB-BE" target="1925-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-BE(ST) ABL/PNA.1" source="AB-BE(ST) ABL/PNA" target="1925-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        precise match is 3021421 3003396 is non-standard BE  dual mapping specimen uncertainty minimal.
+        """
+}
+mapping "AB-BE(ST) ABL/PNA.2" source="AB-BE(ST) ABL/PNA" target="19235-1" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-BE(ST) ABL/PNA.3" source="AB-BE(ST) ABL/PNA" target="1925-7" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 1925-7. Lab B precedent (concept_id 3003396). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~5,480 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-BE(ST) ABL/PNA.4" source="AB-BE(ST) ABL/PNA" target="1925-7" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab C equivalent: vB-Basoverskott /ecv (LOINC 1927-3, venous). ABL/PNA suffix indicates
+        blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-BE(ST) ABL/PNA.5" source="AB-BE(ST) ABL/PNA" target="1925-7" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab B precedent (LOINC 1925-7, concept_id 3003396). ABL/PNA suffix indicates blood gas
+        analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-BE(ST) ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-BE(ST) ABL/PNA" scope="specimen-assumption"
+mapping "AB-COHB.1" source="AB-COHB" target="2030-5" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Lab C shorthand  exact match."
+}
+mapping "AB-COHB (PNA).1" source="AB-COHB (PNA)" target="31157-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA = point-of-care blood gas analyzer."
+}
+mapping "AB-COHB (PNA).2" source="AB-COHB (PNA)" target="20563-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-COHB /PNA.1" source="AB-COHB /PNA" target="20563-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-COHB ABL/PNA.1" source="AB-COHB ABL/PNA" target="2030-5" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ABL/PNA = point-of-care blood gas analyzer  exact match."
+}
+mapping "AB-COHB ABL/PNA.2" source="AB-COHB ABL/PNA" target="2030-5" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2030-5. Lab B precedent (concept_id 3028653). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~37,619 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-COHB ABL/PNA.3" source="AB-COHB ABL/PNA" target="2030-5" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ABL/PNA suffix indicates blood gas analyzer measurement. Closest available LOINC target; not
+        exact.
+        """
+}
+mapping "AB-COHB ABL/PNA.4" source="AB-COHB ABL/PNA" target="2030-5" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab B precedent (LOINC 2030-5, concept_id 3028653). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-COHB ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-COHB ABL/PNA" scope="specimen-assumption"
+mapping "AB-EVF, BERÄKN (PNA).1" source="AB-EVF, BERÄKN (PNA)" target="20570-8" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        PNA = blood gas analyzer. No exact arterial-blood-gas hematocrit LOINC. blood hematocrit as best
+        target.
+        """
+}
+mapping "AB-EVF, BERÄKN (PNA).2" source="AB-EVF, BERÄKN (PNA)" target="11153-4" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-GLUKOS (PNA).1" source="AB-GLUKOS (PNA)" target="2339-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "/PNA = point-of-care blood gas analyzer."
+}
+mapping "AB-GLUKOS (PNA).2" source="AB-GLUKOS (PNA)" target="2345-7" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2345-7. Lab B precedent (concept_id 3004501). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~40,323 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-GLUKOS (PNA).3" source="AB-GLUKOS (PNA)" target="2345-7" relationship=partial_overlap method="code-alias" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alias of aB-Glukos ABL/PNA (LOINC 2345-7). recovers ~6,039 rows. Closest available LOINC target;
+        not exact.
+        """
+}
+mapping "AB-GLUKOS (PNA).4" source="AB-GLUKOS (PNA)" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in BldA. Exact match."
+}
+mapping "AB-GLUKOS (PNA).5" source="AB-GLUKOS (PNA)" target="2345-7" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency with existing vB-Glukos
+        ABL/PNA mapping. Lab C equivalent: P(vB)-Glukos /PNA (same LOINC 2345-7). ABL/PNA suffix
+        indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-GLUKOS (PNA).6" source="AB-GLUKOS (PNA)" target="2345-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Glucose - Automated mapping: Glucose in BldA. Exact match."
+}
+mapping "AB-GLUKOS (PNA).7" source="AB-GLUKOS (PNA)" target="2345-7" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency. Lab B precedent
+        (LOINC 2345-7, concept_id 3004501). ABL/PNA suffix indicates blood gas analyzer measurement.
+        Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-GLUKOS (PNA).8" source="AB-GLUKOS (PNA)" target="2339-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish: glucose in arterial blood gas (ABL/PNA = blood gas analyzer). prior 3004501 is
+        Serum/Plasma (less specific). hit: 2339-0.
+        """
+}
+mapping "AB-GLUKOS (PNA).9" source="AB-GLUKOS (PNA)" target="2345-7" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "AB-GLUKOS (PNA).specimen-review" kind=needs-clinical-review concept="AB-GLUKOS (PNA)" scope="specimen-assumption"
+mapping "AB-HEMOGLOBIN (PNA).1" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-HEMOGLOBIN (PNA).2" source="AB-HEMOGLOBIN (PNA)" target="14775-1" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-HEMOGLOBIN (PNA).3" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Hemoglobin - Automated mapping: Hemoglobin in BldA. Exact match."
+}
+mapping "AB-HEMOGLOBIN (PNA).4" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=partial_overlap method="code-alias" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alias of aB-Hb ABL/PNA (LOINC 718-7). recovers ~5,601 rows. Closest available LOINC target; not
+        exact.
+        """
+}
+mapping "AB-HEMOGLOBIN (PNA).5" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Hemoglobin - Automated mapping: Hemoglobin in BldA. Exact match."
+}
+mapping "AB-HEMOGLOBIN (PNA).6" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=partial_overlap method="code-alias" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alias of aB-Hb ABL/PNA (LOINC 718-7, concept_id 3000963). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~112,892 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-HEMOGLOBIN (PNA).7" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Automated mapping: Hemoglobin - Automated mapping: Hemoglobin in BldA. Exact match."
+}
+mapping "AB-HEMOGLOBIN (PNA).8" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=partial_overlap method="code-alias" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alias of aB-Hb ABL/PNA (LOINC 718-7, concept_id 3000963). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~52,847 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-HEMOGLOBIN (PNA).9" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=partial_overlap method="code-alias" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Alias of aB-Hb ABL/PNA (LOINC 718-7). recovers ~2,037 rows. Closest available LOINC target; not
+        exact.
+        """
+}
+mapping "AB-HEMOGLOBIN (PNA).10" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Arterial blood hemoglobin from ABL/PNA blood gas analyzer  prior candidate correct."
+}
+mapping "AB-HEMOGLOBIN (PNA).11" source="AB-HEMOGLOBIN (PNA)" target="718-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same as whole blood Hb measurement."
+}
+mapping "AB-KALIUM ABL/PNA.1" source="AB-KALIUM ABL/PNA" target="6298-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ABL/PNA = POC blood gas analyzer."
+}
+mapping "AB-KALIUM ABL/PNA.2" source="AB-KALIUM ABL/PNA" target="2823-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2823-3. Lab B precedent (concept_id 3023103). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~40,549 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-KALIUM ABL/PNA.3" source="AB-KALIUM ABL/PNA" target="2823-3" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency with existing vB-Kalium
+        ABL/PNA mapping. Lab C equivalent: P(vB)-Kalium /PNA (same LOINC 2823-3). ABL/PNA suffix
+        indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-KALIUM ABL/PNA.4" source="AB-KALIUM ABL/PNA" target="2823-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency. Lab B precedent
+        (LOINC 2823-3, concept_id 3023103). ABL/PNA suffix indicates blood gas analyzer measurement.
+        Closest available LOINC target; not exact.
+        """
+}
+flag "AB-KALIUM ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-KALIUM ABL/PNA" scope="specimen-assumption"
+mapping "AB-KLORID ABL/PNA.1" source="AB-KLORID ABL/PNA" target="41650-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-KLORID ABL/PNA.2" source="AB-KLORID ABL/PNA" target="41650-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 41650-3. Lab B precedent (concept_id 3031248). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~37,138 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-KLORID ABL/PNA.3" source="AB-KLORID ABL/PNA" target="41650-3" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code used (no Ser/Plas equivalent for blood gas chloride). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-KLORID ABL/PNA.4" source="AB-KLORID ABL/PNA" target="41650-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab B precedent (LOINC 41650-3, concept_id 3031248). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-KLORID ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-KLORID ABL/PNA" scope="specimen-assumption"
+mapping "AB-KREATININ (PNA).1" source="AB-KREATININ (PNA)" target="2160-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        aB-Kreatinin (PNA) = creatinine from arterial blood gas POC analyzer  Serum/Plasma is closest
+        specimen.
+        """
+}
+mapping "AB-KREATININ (PNA).2" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 59826-8. Arterial specimen (aB- prefix) measured by blood gas analyzer. No
+        arterial-specific creatinine LOINC exists. recovers ~3,825 rows. Closest available LOINC target;
+        not exact.
+        """
+}
+mapping "AB-KREATININ (PNA).3" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="code-synonym" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same LOINC 59826-8. recovers ~116 rows. Closest available LOINC target; not exact."
+}
+mapping "AB-KREATININ (PNA).4" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 59826-8 (Creatinine [Mass/volume] in Blood); Arterial specimen (aB- prefix) measured by
+        blood gas analyzer. No arterial-specific creatinine LOINC exists. recovers ~10,032 rows. Closest
+        available LOINC target; not exact.
+        """
+}
+mapping "AB-KREATININ (PNA).5" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="code-synonym" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Same LOINC 59826-8 (Creatinine in Blood). recovers ~6,400 rows. Closest available LOINC target;
+        not exact.
+        """
+}
+mapping "AB-KREATININ (PNA).6" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 59826-8. Arterial specimen (aB- prefix) measured by blood gas analyzer. No
+        arterial-specific creatinine LOINC exists. recovers ~3,825 rows. Closest available LOINC target;
+        not exact.
+        """
+}
+mapping "AB-KREATININ (PNA).7" source="AB-KREATININ (PNA)" target="59826-8" relationship=partial_overlap method="code-synonym" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Same LOINC 59826-8. recovers ~706 rows. Closest available LOINC target; not exact."
+}
+mapping "AB-KREATININ (PNA).8" source="AB-KREATININ (PNA)" target="38483-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "aB- = arterial blood, POC analyzer."
+}
+mapping "AB-KREATININ (PNA).9" source="AB-KREATININ (PNA)" target="59826-8" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+flag "AB-KREATININ (PNA).specimen-review" kind=needs-clinical-review concept="AB-KREATININ (PNA)" scope="specimen-assumption"
+mapping "AB-LAKTAT ABL/PNA.1" source="AB-LAKTAT ABL/PNA" target="30242-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        aB- = arterial blood, PNA = POC analyzer; Both mass and moles variants are Mass/volume as
+        primary (Swedish convention).. aB-Laktat ABL/PNA = LOINC 2518-9 Lactate [Moles/vol] in Arterial
+        blood. Same as Lab B.
+        """
+}
+mapping "AB-LAKTAT ABL/PNA.2" source="AB-LAKTAT ABL/PNA" target="2518-9" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-LAKTAT ABL/PNA.3" source="AB-LAKTAT ABL/PNA" target="2518-9" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2518-9. Lab B precedent (concept_id 3018405). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~39,973 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-LAKTAT ABL/PNA.4" source="AB-LAKTAT ABL/PNA" target="2518-9" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code used for specimen accuracy. Lab C equivalent: P(vB)-Laktat
+        /PNA (LOINC 2524-7, venous). ABL/PNA suffix indicates blood gas analyzer measurement. Closest
+        available LOINC target; not exact.
+        """
+}
+mapping "AB-LAKTAT ABL/PNA.5" source="AB-LAKTAT ABL/PNA" target="2518-9" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab B precedent (LOINC 2518-9, concept_id 3018405). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-LAKTAT ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-LAKTAT ABL/PNA" scope="specimen-assumption"
+mapping "AB-METHB.1" source="AB-METHB" target="2615-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Same mapping as AB-METHB ABL/PNA."
+}
+mapping "AB-METHB (PNA).1" source="AB-METHB (PNA)" target="2615-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Same mapping as AB-METHB ABL/PNA."
+}
+mapping "AB-METHB ABL/PNA.1" source="AB-METHB ABL/PNA" target="2615-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ABL/PNA = blood gas analyzer."
+}
+mapping "AB-METHB ABL/PNA.2" source="AB-METHB ABL/PNA" target="2615-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2615-3. Lab B precedent (concept_id 3006217). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~37,621 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-METHB ABL/PNA.3" source="AB-METHB ABL/PNA" target="2615-3" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. ABL/PNA suffix indicates blood gas analyzer measurement. Closest
+        available LOINC target; not exact.
+        """
+}
+mapping "AB-METHB ABL/PNA.4" source="AB-METHB ABL/PNA" target="2615-3" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab B precedent (LOINC 2615-3, concept_id 3006217). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-METHB ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-METHB ABL/PNA" scope="specimen-assumption"
+mapping "AB-NATRIUM ABL/PNA.1" source="AB-NATRIUM ABL/PNA" target="2947-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        aB-=arterial blood from ABL/PNA blood gas analyzer. sodium in blood is closest LOINC (no
+        arterial-specific sodium)  prior candidate was serum/plasma which is close.
+        """
+}
+mapping "AB-NATRIUM ABL/PNA.2" source="AB-NATRIUM ABL/PNA" target="2951-2" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2951-2. Lab B precedent (concept_id 3019550). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~40,433 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-NATRIUM ABL/PNA.3" source="AB-NATRIUM ABL/PNA" target="2951-2" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency with existing vB-Natrium
+        ABL/PNA mapping. Lab C equivalent: P(vB)-Natrium /PNA (same LOINC 2951-2). ABL/PNA suffix
+        indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-NATRIUM ABL/PNA.4" source="AB-NATRIUM ABL/PNA" target="2951-2" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial specimen (aB- prefix) mapped to Ser/Plas LOINC for consistency. Lab B precedent
+        (LOINC 2951-2, concept_id 3019550). ABL/PNA suffix indicates blood gas analyzer measurement.
+        Closest available LOINC target; not exact.
+        """
+}
+flag "AB-NATRIUM ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-NATRIUM ABL/PNA" scope="specimen-assumption"
+mapping "AB-PCO2.1" source="AB-PCO2" target="2019-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "strict = arterial  weak = generic blood pCO2 either)."
+}
+mapping "AB-PCO2.2" source="AB-PCO2" target="11557-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-PCO2 /PNA.1" source="AB-PCO2 /PNA" target="34705-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "CO2 [PP] in Blood is best specimen match  has adjusted variant 34705-4 as weak target."
+}
+mapping "AB-PCO2 /PNA.2" source="AB-PCO2 /PNA" target="11557-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-PCO2 ABL/PNA.1" source="AB-PCO2 ABL/PNA" target="2019-8" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match. PNA = POC  no pCO2 exists (only TCO2 3009609 is but different analyte)."
+}
+mapping "AB-PCO2 ABL/PNA.2" source="AB-PCO2 ABL/PNA" target="2019-8" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2019-8. Lab B precedent (concept_id 3027946). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~40,914 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-PCO2 ABL/PNA.3" source="AB-PCO2 ABL/PNA" target="2019-8" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab C equivalent: vB-pCO2 /PNA (LOINC 2021-4, venous).
+        ABL/PNA suffix indicates blood gas analyzer measurement. Closest available LOINC target; not
+        exact.
+        """
+}
+mapping "AB-PCO2 ABL/PNA.4" source="AB-PCO2 ABL/PNA" target="2019-8" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab B precedent (LOINC 2019-8, concept_id 3027946). ABL/PNA suffix indicates blood gas
+        analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-PCO2 ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-PCO2 ABL/PNA" scope="specimen-assumption"
+mapping "AB-PCO2 PT TEMP(PNA).1" source="AB-PCO2 PT TEMP(PNA)" target="34705-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Unadjusted CO2 pP as weak alternative. Both dict-hits."
+}
+mapping "AB-PCO2 PT TEMP(PNA).2" source="AB-PCO2 PT TEMP(PNA)" target="11557-6" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-PCO2(PNA).1" source="AB-PCO2(PNA)" target="2019-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "aB=arterial blood gas  PNA=POC blood gas analyzer."
+}
+mapping "AB-PH.1" source="AB-PH" target="49701-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-PH /PNA.1" source="AB-PH /PNA" target="2744-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        aB-pH /PNA = pH from arterial blood gas on point-of-care analyzer (PNA). pH of Blood adjusted to
+        temp as weak (PNA analyzers often report temp-adjusted).
+        """
+}
+mapping "AB-PH /PNA.2" source="AB-PH /PNA" target="49701-6" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-PH ABL/PNA.1" source="AB-PH ABL/PNA" target="2744-1" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "ABL/PNA = blood gas analyzer type (Radiometer ABL or point-of-care). Exact match."
+}
+mapping "AB-PH ABL/PNA.2" source="AB-PH ABL/PNA" target="2744-1" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 2744-1. Lab B precedent (concept_id 3019977). ABL/PNA suffix indicates blood gas
+        analyzer measurement. recovers ~40,126 rows. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-PH ABL/PNA.3" source="AB-PH ABL/PNA" target="2744-1" relationship=partial_overlap method="loinc-lookup" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Arterial-specific LOINC code. Lab C equivalent: vB-pH /PNA (LOINC 2746-6, venous). ABL/PNA
+        suffix indicates blood gas analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+mapping "AB-PH ABL/PNA.4" source="AB-PH ABL/PNA" target="2744-1" relationship=partial_overlap method="catalogue-precedent" effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Lab B precedent (LOINC 2744-1, concept_id 3019977). ABL/PNA suffix indicates blood gas
+        analyzer measurement. Closest available LOINC target; not exact.
+        """
+}
+flag "AB-PH ABL/PNA.specimen-review" kind=needs-clinical-review concept="AB-PH ABL/PNA" scope="specimen-assumption"
+mapping "AB-PH PT TEMP (PNA).1" source="AB-PH PT TEMP (PNA)" target="49701-6" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Swedish: arterial blood pH adjusted to patient temperature from POC analyzer. 49701-6 is
+        temp-adjusted blood pH 2744-1 is generic arterial pH POC analyzers typically report
+        temp-adjusted values.
+        """
+}
+mapping "AB-PH PT TEMP (PNA).2" source="AB-PH PT TEMP (PNA)" target="2744-1" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-PH(PNA).1" source="AB-PH(PNA)" target="49701-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AB-PO2.1" source="AB-PO2" target="2703-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "pO2 arterial blood gas from Lab C  exact match."
+}
+mapping "AB-PO2 (PNA).1" source="AB-PO2 (PNA)" target="2703-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "pO2 = partial pressure oxygen  exact match."
+}
+mapping "AB-PO2 /PNA.1" source="AB-PO2 /PNA" target="2703-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "/PNA = point-of-care blood gas analyzer."
+}
+mapping "AB-PO2 PT TEMP(PNA).1" source="AB-PO2 PT TEMP(PNA)" target="19254-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AB-PO2/FIO2 KVOT/PNA.1" source="AB-PO2/FIO2 KVOT/PNA" target="50984-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

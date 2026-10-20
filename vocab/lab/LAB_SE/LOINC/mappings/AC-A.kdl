@@ -1,0 +1,157 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes AC-A
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "ACTH.1" source="ACTH" target="2141-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Measured in plasma (not serum)  Exact LOINC match."
+}
+mapping "ADH.1" source="ADH" target="14949-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Urine as weak."
+}
+mapping "ADH.2" source="ADH" target="13903-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AK MOT B2-GLYKOPROT..1" source="AK MOT B2-GLYKOPROT." target="16135-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "IgG-specific beta-2-GPI antibody  IgM as alternative."
+}
+mapping "AK MOT B2-GLYKOPROT..2" source="AK MOT B2-GLYKOPROT." target="16136-4" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AK MOT KARDIOLIPIN.1" source="AK MOT KARDIOLIPIN" target="24319-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AK MOT KARDIOLIPIN.2" source="AK MOT KARDIOLIPIN" target="45057-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ALBUMINKVOT.1" source="ALBUMINKVOT" target="14959-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC Microalbumin/Creatinine Mass Ratio best match."
+}
+mapping "ALBUMINKVOT.2" source="ALBUMINKVOT" target="30000-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ALK (2P23).1" source="ALK (2P23)" target="78205-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "weak: specific t(2  5) fusion transcript by molecular method."
+}
+mapping "ALK (2P23).2" source="ALK (2P23)" target="21813-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AMITRIPT+NORTRIPT.1" source="AMITRIPT+NORTRIPT" target="14595-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Presence variant is primary  Neither."
+}
+mapping "AMITRIPT+NORTRIPT.2" source="AMITRIPT+NORTRIPT" target="14598-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AMMONIUM.1" source="AMMONIUM" target="1839-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "AMN-AFP (STUDIE).1" source="AMN-AFP (STUDIE)" target="1832-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "AMYLAS I LÄCKAGE.1" source="AMYLAS I LÄCKAGE" target="1795-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "läckage = drainage/leakage fluid  body fluid is closest LOINC specimen."
+}
+mapping "ANDNINGSFREKVENS.1" source="ANDNINGSFREKVENS" target="9279-1" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Andningsfrekvens = LOINC 9279-1 Respiratory rate. Same as Lab A."
+}
+mapping "ANDNINGSFREKVENS.2" source="ANDNINGSFREKVENS" target="9279-1" relationship=equivalent method="manual" quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Respiratory rate - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "ANDNINGSFREKVENS.3" source="ANDNINGSFREKVENS" target="9279-1" relationship=equivalent method="manual" quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Vital sign: Respiratory rate - Vital sign - standard LOINC codes available. Exact match."
+}
+mapping "ANDNINGSFREKVENS (PNA).1" source="ANDNINGSFREKVENS (PNA)" target="11291-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "POC respiratory rate  best available LOINC has First encounter qualifier."
+}
+mapping "ANTAL KULOR (CD34).1" source="ANTAL KULOR (CD34)" target="14136-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ANTI XA (FRAGMIN).1" source="ANTI XA (FRAGMIN)" target="31159-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "nonbiological fluid is imperfect  LMWH-specific anti-Xa lacks dedicated LOINC."
+}
+mapping "ANTI-IFNBETA.1" source="ANTI-IFNBETA" target="27871-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        IgG Ab units/volume best match  medium confidence as neutralizing vs binding Ab not specified.
+        """
+}
+mapping "ANTI-IFNBETA.2" source="ANTI-IFNBETA" target="35139-5" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "APOE GENOTYP.1" source="APOE GENOTYP" target="42315-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "APOE genotype for Alzheimer risk stratification  Exact LOINC match but."
+}
+mapping "ARSA GENOTYP.1" source="ARSA GENOTYP" target="49706-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ARYLSULFATAS A(LKC).1" source="ARYLSULFATAS A(LKC)" target="1901-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        LOINC has arylsulfatase only in serum/plasma or DBS, not in leukocytes. Low confidence due to
+        specimen mismatch.
+        """
+}
+mapping "ASC-ALBUMIN.1" source="ASC-ALBUMIN" target="1749-1" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match  ascites albumin."
+}
+mapping "ASC-AMYLAS.1" source="ASC-AMYLAS" target="1795-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC maps to body fluid."
+}
+mapping "ASC-HEMOGLOBIN.1" source="ASC-HEMOGLOBIN" target="33509-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Asc-Hemoglobin = hemoglobin in ascites fluid  Body fluid is closest LOINC specimen."
+}
+mapping "ASC-LEUKOCYTER.1" source="ASC-LEUKOCYTER" target="26468-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Mapped to peritoneal fluid (ascites is clinically equivalent). Medium confidence due to specimen
+        terminology.
+        """
+}
+mapping "ASC-LEUKOCYTER.2" source="ASC-LEUKOCYTER" target="26482-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ASC-NEUTROFILA.1" source="ASC-NEUTROFILA" target="26502-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "ASC-PROTEIN.1" source="ASC-PROTEIN" target="1749-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Ascites fluid total protein maps to albumin in peritoneal fluid."
+}
+mapping "ASCITES-PROTEIN.1" source="ASCITES-PROTEIN" target="12843-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Closest LOINC is peritoneal dialysis fluid protein (same specimen type)."
+}
+mapping "AT180.1" source="AT180" target="101752-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        AT180 = phospho-tau antibody assay (pThr231 epitope, used in CSF Alzheimer biomarker panel).
+        Tau/p-tau181 ratio LOINC is closest.
+        """
+}
+mapping "ATM (11Q22.3).1" source="ATM (11Q22.3)" target="21624-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC match for targeted mutation analysis."
+}

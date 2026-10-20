@@ -1,0 +1,36 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes S
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "S ALP, BENSPECIFIKT.1" source="S ALP, BENSPECIFIKT" target="17838-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "S BIL. LAB G.1" source="S BIL. LAB G" target="1975-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Confirmed: LOINC, S, Measurement."
+}
+mapping "S FT4 LAB G.1" source="S FT4 LAB G" target="14920-3" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match  free T4 in serum."
+}
+mapping "S TROPONIN I HÖGKÄNSLIG (STUDIER).1" source="S TROPONIN I HÖGKÄNSLIG (STUDIER)" target="89579-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "generic TnI as weak."
+}
+mapping "S TROPONIN I HÖGKÄNSLIG (STUDIER).2" source="S TROPONIN I HÖGKÄNSLIG (STUDIER)" target="10839-9" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "S TSH LAB G.1" source="S TSH LAB G" target="11579-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "No plain routine TSH LOINC in OMOP standard."
+}
+mapping "S TSH LAB G.2" source="S TSH LAB G" target="11580-8" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

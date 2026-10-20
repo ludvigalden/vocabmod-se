@@ -1,0 +1,227 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes P
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "P(AB)-BILIRUBIN(PNA).1" source="P(AB)-BILIRUBIN(PNA)" target="42719-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Total bilirubin from arterial blood gas analyzer (PNA)  Blood specimen closest."
+}
+mapping "P(AB)-CA JON PH 7,4.1" source="P(AB)-CA JON PH 7,4" target="1994-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "pH-adjusted as target unadjusted blood calcium as weak alt."
+}
+mapping "P(AB)-CA JON PH 7,4.2" source="P(AB)-CA JON PH 7,4" target="53138-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(AB)-CAJON OKOR/PNA.1" source="P(AB)-CAJON OKOR/PNA" target="12180-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(AB)-CAJON OKORR..1" source="P(AB)-CAJON OKORR." target="59470-5" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "mass/vol as strict  pH-adjusted mol/vol as weak."
+}
+mapping "P(AB)-CAJON OKORR..2" source="P(AB)-CAJON OKORR." target="53138-4" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(AB)-GLUKOS.1" source="P(AB)-GLUKOS" target="41651-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(aB)-Glukos = plasma/arterial blood glucose from POC blood gas analyzer."
+}
+mapping "P(AB)-GLUKOS (PNA).1" source="P(AB)-GLUKOS (PNA)" target="2339-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        P(aB)-Glukos (PNA) = point-of-care blood-gas analyzer glucose from arterial blood. POC-specific
+        alternative is automated test strip.
+        """
+}
+mapping "P(AB)-GLUKOS (PNA).2" source="P(AB)-GLUKOS (PNA)" target="2340-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(AB)-GLUKOS /PNA.1" source="P(AB)-GLUKOS /PNA" target="2339-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Blood LOINC is appropriate."
+}
+mapping "P(AB)-KALIUM.1" source="P(AB)-KALIUM" target="75940-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        P(aB)-Kalium = potassium in plasma from arterial blood gas  blood specimen covers point-of-care
+        gas analyzers.
+        """
+}
+mapping "P(AB)-KALIUM (PNA).1" source="P(AB)-KALIUM (PNA)" target="6298-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(aB)- = plasma from arterial blood gas analyzer. weak=mass/vol variant  both."
+}
+mapping "P(AB)-KALIUM (PNA).2" source="P(AB)-KALIUM (PNA)" target="75940-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(AB)-KALIUM /PNA.1" source="P(AB)-KALIUM /PNA" target="6298-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(AB)-KLORID (PNA).1" source="P(AB)-KLORID (PNA)" target="2069-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Chloride from arterial blood gas analyzer (PNA)."
+}
+mapping "P(AB)-KREATININ /PNA.1" source="P(AB)-KREATININ /PNA" target="2160-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Creatinine from arterial blood gas analyzer POC."
+}
+mapping "P(AB)-LAKTAT.1" source="P(AB)-LAKTAT" target="32693-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC has no arterial-plasma-specific lactate concept."
+}
+mapping "P(AB)-LAKTAT (PNA).1" source="P(AB)-LAKTAT (PNA)" target="14118-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA = point-of-care analyzer. Standard lactate LOINC covers serum/plasma."
+}
+mapping "P(AB)-LAKTAT /PNA.1" source="P(AB)-LAKTAT /PNA" target="2518-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "POC arterial blood lactate via blood gas analyzer."
+}
+mapping "P(AB)-NATRIUM.1" source="P(AB)-NATRIUM" target="2947-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(aB)-Natrium = sodium in arterial blood gas (POC)  Blood is the closest LOINC specimen."
+}
+mapping "P(AB)-NATRIUM (PNA).1" source="P(AB)-NATRIUM (PNA)" target="32717-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(AB)-NATRIUM /PNA.1" source="P(AB)-NATRIUM /PNA" target="2951-2" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact match."
+}
+mapping "P(AB)CAJON OKORR PNA.1" source="P(AB)CAJON OKORR PNA" target="59470-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC matches arterial blood ionized Ca but doesn't capture POC method."
+}
+mapping "P(KB)-CA JON OKORR..1" source="P(KB)-CA JON OKORR." target="19072-8" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "KB = capillary blood  Target: pH-adjusted weak: unadjusted ISE."
+}
+mapping "P(KB)-CA JON OKORR..2" source="P(KB)-CA JON OKORR." target="12180-6" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(KB)-CA JON PH 7,4.1" source="P(KB)-CA JON PH 7,4" target="19072-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-GLUKOS.1" source="P(KB)-GLUKOS" target="2339-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Mapped to general glucose in blood test strip as weak alt for capillary context."
+}
+mapping "P(KB)-GLUKOS.2" source="P(KB)-GLUKOS" target="2340-8" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-KALIUM.1" source="P(KB)-KALIUM" target="2823-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(kB) = plasma capillary blood  same as P(VB)-Kalium."
+}
+mapping "P(KB)-KALIUM (PNA).1" source="P(KB)-KALIUM (PNA)" target="6298-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-KETON, 3-HB (PNA).1" source="P(KB)-KETON, 3-HB (PNA)" target="2513-0" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        General ketones presence is imprecise for specific 3-HB analyte. no 3-HB-specific LOINC in
+        Athena.
+        """
+}
+mapping "P(KB)-KLORID (PNA).1" source="P(KB)-KLORID (PNA)" target="2069-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "LOINC Blood chloride is close. no specific capillary plasma chloride LOINC exists."
+}
+mapping "P(KB)-LAKTAT.1" source="P(KB)-LAKTAT" target="2524-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-LAKTAT (PNA).1" source="P(KB)-LAKTAT (PNA)" target="14118-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-LAKTAT (PNA).2" source="P(KB)-LAKTAT (PNA)" target="32133-1" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-NATRIUM.1" source="P(KB)-NATRIUM" target="2951-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(KB)-NATRIUM (PNA).1" source="P(KB)-NATRIUM (PNA)" target="2951-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Plasma sodium from capillary blood (PNA blood gas analyzer)  standard Serum or Plasma LOINC is
+        clinically equivalent.
+        """
+}
+mapping "P(VB)-BILIRUBIN(PNA).1" source="P(VB)-BILIRUBIN(PNA)" target="1975-2" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Bilirubin from point-of-care blood gas analyzer (PNA)."
+}
+mapping "P(VB)-CAJON OKOR/PNA.1" source="P(VB)-CAJON OKOR/PNA" target="12180-6" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "P(vB)=venous blood gas analyzer."
+}
+mapping "P(VB)-CAJON OKORR..1" source="P(VB)-CAJON OKORR." target="1995-0" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(VB)-CAJONOK/RÖR.1" source="P(VB)-CAJONOK/RÖR" target="1994-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(VB)-GLUKOS.1" source="P(VB)-GLUKOS" target="2345-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Plasma glucose from venous blood  Serum or Plasma is the standard clinical LOINC."
+}
+mapping "P(VB)-GLUKOS (PNA).1" source="P(VB)-GLUKOS (PNA)" target="2345-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "glucose from PNA blood gas analyzer  serum/plasma is standard LOINC for glucose."
+}
+mapping "P(VB)-GLUKOS/RÖR.1" source="P(VB)-GLUKOS/RÖR" target="2339-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Swedish: glucose in POC blood gas analyzer from plasma/venous blood. Blood-level glucose LOINC
+        is the correct specimen for blood gas measurements.
+        """
+}
+mapping "P(VB)-KALIUM.1" source="P(VB)-KALIUM" target="2823-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(VB)-KALIUM (PNA).1" source="P(VB)-KALIUM (PNA)" target="6298-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(VB)- = plasma from venous blood, PNA = POC analyzer."
+}
+mapping "P(VB)-KALIUM/RÖR.1" source="P(VB)-KALIUM/RÖR" target="2823-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(VB)-KLORID (PNA).1" source="P(VB)-KLORID (PNA)" target="2069-3" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "P(VB)-KREATININ/PNA.1" source="P(VB)-KREATININ/PNA" target="38483-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        closest LOINC is Creatinine in Blood. plasma creatinine clinically equivalent  LOINC lacks
+        Plasma-from-venous specimen variant.
+        """
+}
+mapping "P(VB)-LAKTAT.1" source="P(VB)-LAKTAT" target="59032-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(VB)-LAKTAT (PNA).1" source="P(VB)-LAKTAT (PNA)" target="32693-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA = POC blood gas analyzer."
+}
+mapping "P(VB)-LAKTAT/RÖR.1" source="P(VB)-LAKTAT/RÖR" target="32693-4" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "P(VB)-NATRIUM (PNA).1" source="P(VB)-NATRIUM (PNA)" target="39791-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "PNA=POC analyzer  sodium."
+}
+mapping "P(VB)-NATRIUM/RÖR.1" source="P(VB)-NATRIUM/RÖR" target="2947-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "P(VB)- = plasma from venous blood, POC blood gas analyzer  Sodium in Blood is appropriate."
+}
+mapping "P(VB)CAJON OKORR PNA.1" source="P(VB)CAJON OKORR PNA" target="19072-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}

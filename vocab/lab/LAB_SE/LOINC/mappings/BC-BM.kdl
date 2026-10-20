@@ -1,0 +1,164 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes BC-BM
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "BCR-ABL1 MUTATION.1" source="BCR-ABL1 MUTATION" target="55135-8" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "BCR-ABL1 mutation analysis  kinase domain mutation panel is closest match."
+}
+mapping "BCR-ABL1 T(9;22).1" source="BCR-ABL1 T(9;22)" target="46434-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        22) Philadelphia chromosome  cells/total as primary, fusion transcript ratio as weak
+        alternative.
+        """
+}
+mapping "BCR-ABL1 T(9;22).2" source="BCR-ABL1 T(9;22)" target="21795-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BCR/ABL MRNA P190.1" source="BCR/ABL MRNA P190" target="49496-3" relationship=partial_overlap effect=omitted quality=40 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC e1a1 is closest available."
+}
+mapping "BCRABL1 RNA.1" source="BCRABL1 RNA" target="46434-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        BCR-ABL1 RNA quantification  ratio concept selected as it represents the quantitative RNA assay.
+        """
+}
+mapping "BCRABL1/ABL1 P190.1" source="BCRABL1/ABL1 P190" target="49496-3" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "e1a1 is the LOINC name for the minor (p190) BCR-ABL fusion."
+}
+mapping "BCRABL1/ABL1 P210.1" source="BCRABL1/ABL1 P210" target="46434-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BCRABL1/ABL1 P210 IS.1" source="BCRABL1/ABL1 P210 IS" target="46434-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BENM-HEMOSIDERIN.1" source="BENM-HEMOSIDERIN" target="101225-1" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BENM-LKC-ALP.1" source="BENM-LKC-ALP" target="15013-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "No exact bone-marrow LAP LOINC exists. Moderate confidence."
+}
+mapping "BENMÄRG CD34.1" source="BENMÄRG CD34" target="51164-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BENMÄRG, DIFFERENTIALRÄKNING.1" source="BENMÄRG, DIFFERENTIALRÄKNING" target="47286-0" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Exact LOINC panel match."
+}
+mapping "BENMÄRGSSKÖRD CD34.1" source="BENMÄRGSSKÖRD CD34" target="14136-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        CD34 stem cell count in bone marrow harvest  BM-specific LOINC as strict (not blood CD34 as
+        weak.
+        """
+}
+mapping "BENMÄRGSSKÖRD CD34.2" source="BENMÄRGSSKÖRD CD34" target="57400-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BETA-ENDORFIN.1" source="BETA-ENDORFIN" target="1937-2" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BFU-E, CFU-GM.1" source="BFU-E, CFU-GM" target="106909-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Only CFU-GM has a LOINC concept. Low confidence as only partial match."
+}
+mapping "BIOINTAKT PTH SNABB.1" source="BIOINTAKT PTH SNABB" target="2731-8" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        BioIntakt PTH snabb = bio-intact PTH rapid assay. intact PTH mass/volume) as weak alternative
+        since uses the intact variant.
+        """
+}
+mapping "BIOINTAKT PTH SNABB.2" source="BIOINTAKT PTH SNABB" target="47093-0" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BIOPSI IMMUNOFENOTYP.1" source="BIOPSI IMMUNOFENOTYP" target="55230-7" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC Immunophenotyping study is a general match."
+}
+mapping "BLOD CD34.1" source="BLOD CD34" target="14136-6" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Blod CD34 = CD34 stem cell count in blood  exact match."
+}
+mapping "BLODGRUPPERING.1" source="BLODGRUPPERING" target="883-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "confirmatory method as weak."
+}
+mapping "BLODGRUPPERING.2" source="BLODGRUPPERING" target="57743-7" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BLODTRYCK DIASTOLISKT - NEDRE.1" source="BLODTRYCK DIASTOLISKT - NEDRE" target="8462-4" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Swedish = diastolic BP  exact LOINC match but."
+}
+mapping "BLODTRYCK DIASTOLISKT - NEDRE.2" source="BLODTRYCK DIASTOLISKT - NEDRE" target="8462-4" relationship=equivalent method="manual" quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "BLODTRYCK DIASTOLISKT - NEDRE.3" source="BLODTRYCK DIASTOLISKT - NEDRE" target="8462-4" relationship=equivalent method="manual" quality=100 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "BLODTRYCK DIASTOLISKT - NEDRE.4" source="BLODTRYCK DIASTOLISKT - NEDRE" target="8462-4" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "general BP concept preferred  no weak=noninvasive variant."
+}
+mapping "BLODTRYCK DIASTOLISKT - NEDRE.5" source="BLODTRYCK DIASTOLISKT - NEDRE" target="76535-4" relationship=source_is_narrower_than_target preference=alternative effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "BLODTRYCK SYSTOLISKT - OVRE.1" source="BLODTRYCK SYSTOLISKT - OVRE" target="3004249" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+}
+mapping "BLODTRYCK SYSTOLISKT - ÖVRE.1" source="BLODTRYCK SYSTOLISKT - ÖVRE" target="55284-4" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        LOINC 55284-4 is BP systolic+diastolic combined panel. no standalone systolic-only LOINC in OMOP
+        standard subset.
+        """
+}
+mapping "BLODTRYCK SYSTOLISKT - ÖVRE.2" source="BLODTRYCK SYSTOLISKT - ÖVRE" target="8480-6" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "BLODTRYCK SYSTOLISKT - ÖVRE.3" source="BLODTRYCK SYSTOLISKT - ÖVRE" target="8480-6" relationship=equivalent method="manual" quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" "Exact match."
+}
+mapping "BLODTRYCK SYSTOLISKT - ÖVRE.4" source="BLODTRYCK SYSTOLISKT - ÖVRE" target="11378-7" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Only at-First-encounter LOINC found. Blodtryck systoliskt = LOINC 8480-6 Systolic blood
+        pressure.
+        """
+}
+mapping "BLODVOLYM.1" source="BLODVOLYM" target="30899-9" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "LOINC only has scintigraphy method. Low confidence due to method mismatch."
+}
+mapping "BLÖDN.TID LAB G.1" source="BLÖDN.TID LAB G" target="11067-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Generic is Ivy method as weak."
+}
+mapping "BLÖDN.TID LAB G.2" source="BLÖDN.TID LAB G" target="3179-9" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BMI.1" source="BMI" target="39156-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "BMI ENL MNA.1" source="BMI ENL MNA" target="39156-5" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "generic BMI LOINC is appropriate."
+}

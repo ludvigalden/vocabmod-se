@@ -1,0 +1,30 @@
+// Swedish hospital local laboratory test codes to LOINC mappings, codes VB-T
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lab-se-loinc" version="2026.1"
+    source system="LAB_SE" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+    }
+}
+mapping "VB-THB.1" source="VB-THB" target="20509-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        tHb = total hemoglobin from venous blood gas  target 3004119 is precise specimen match but weak
+        3027484 is but by calculation in unspecified blood.
+        """
+}
+mapping "VB-THB.2" source="VB-THB" target="30350-3" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+}
+mapping "VB-THB (PNA).1" source="VB-THB (PNA)" target="20509-6" relationship=equivalent {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Blood by calculation is standard gas analyzer method."
+}
+mapping "VB-THB/RÖR.1" source="VB-THB/RÖR" target="718-7" relationship=equivalent quality=100 {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "rör = tube/POC  exact match."
+}
