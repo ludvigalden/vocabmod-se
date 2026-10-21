@@ -11,6 +11,20 @@ context {
 category "unit" {
     name "en" "Unit"
 }
+collection "unit-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Swedish laboratory units to OMOP concepts"
+    authors "ludvig-alden"
+    source system="UNIT_SE" release="2017"
+    target system="OMOP_EXT"
+    defaults {
+        mappings {
+            claim-scope "unit-se-omop-ext@2026.1"
+        }
+    }
+    import "OMOP_EXT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "unit-se-ucum" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "Swedish laboratory units to UCUM"
     authors "ludvig-alden"
