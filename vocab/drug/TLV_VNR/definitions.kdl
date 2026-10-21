@@ -28,4 +28,18 @@ collection "tlv-vnr-atc" version="2026.1" kind=mapping publisher="ludvig-alden" 
         project "defaults"
     }
 }
+collection "tlv-vnr-npl" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV product numbers to NPL"
+    authors "ludvig-alden"
+    source system="TLV_VNR" release="2026"
+    target system="NPL"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "NPL/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
