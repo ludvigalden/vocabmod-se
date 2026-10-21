@@ -1,0 +1,25 @@
+// RxNorm product codes to ATC mappings, ATC codes C05CA-C05CX, RxNorm ids 198836-259931
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "rxnorm-atc" version="2026.1"
+    source system="RXNORM"
+    target system="ATC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "importer-assigned-granularity"
+    }
+}
+mapping "198836.1" source="198836" target="C05CA" {
+    confidence 5 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "rutin 50 MG Oral Tablet"
+}
+mapping "198837.1" source="198837" target="C05CA" {
+    confidence 5 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "rutin 500 MG Oral Tablet"
+}
+mapping "259931.1" source="259931" target="C05CX" {
+    confidence 5 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "horse chestnut seed 300 MG Oral Capsule"
+}

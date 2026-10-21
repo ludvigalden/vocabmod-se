@@ -7,3 +7,25 @@
 system "RXNORM" kind=vocabulary distribution=external publisher="us.nlm" {
     name "en" "RxNorm"
 }
+collection "rxnorm-atc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "RxNorm to ATC"
+    authors "ludvig-alden"
+    source system="RXNORM"
+    target system="ATC"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "ATC/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+    // Expected external refinement: ATC level-5 targets. The
+    // source dataset carries ATC level-4 only; level-5 pairs need
+    // OMOP CONCEPT_RELATIONSHIP via Athena, which would be imported
+    // under atc/athena/. Resolving to no document today keeps the
+    // granularity ceiling machine-visible.
+    import "ATC/athena/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}

@@ -1,0 +1,21 @@
+// RxNorm product codes to ATC mappings, ATC codes D03BA-D03BA, RxNorm ids 309509-1149617
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "rxnorm-atc" version="2026.1"
+    source system="RXNORM"
+    target system="ATC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "importer-assigned-granularity"
+    }
+}
+mapping "309509.1" source="309509" target="D03BA" {
+    confidence 5 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "collagenase 0.25 UNT/MG Topical Ointment"
+}
+mapping "1149617.1" source="1149617" target="D03BA" {
+    confidence 5 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "collagenase 0.25 UNT/MG Topical Ointment [Santyl]"
+}
