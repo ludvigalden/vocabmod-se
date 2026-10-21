@@ -1,0 +1,17 @@
+// Varunummer: TLV's package numbers for reimbursed medicinal products. The source header names the
+// release (TLV läkemedel 2026); the source registry's own version string is kept as provenance.
+// The tlv-vnr-atc collection is a uniform registry crosswalk: each mapping binds a package number
+// to the ATC code of its product as recorded in the TLV pharmaceutical registry, one derivation
+// applied across the whole collection with no per-mapping review beyond it, so its mappings carry
+// no per-mapping basis and the shared rubric derives no effect or quality for them.
+system "TLV_VNR" kind=classification distribution=published publisher="se.tlv" default-locale="sv" {
+    name "sv" "Varunummer"
+}
+release "2026" system="TLV_VNR" label-source=header imported-version="2017"
+context {
+    system "TLV_VNR" release="2026"
+}
+category "package" {
+    name "en" "Medicinal product package"
+}
+import "concepts/**/*.kdl" kind=fragment
