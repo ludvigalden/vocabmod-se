@@ -42,4 +42,18 @@ collection "tlv-vnr-npl" version="2026.1" kind=mapping publisher="ludvig-alden" 
         project "defaults"
     }
 }
+collection "tlv-vnr-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV product numbers to RxNorm"
+    authors "ludvig-alden"
+    source system="TLV_VNR" release="2026"
+    target system="RXNORM"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "RXNORM/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
