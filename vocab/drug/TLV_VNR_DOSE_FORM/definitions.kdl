@@ -10,6 +10,20 @@ context {
 category "dose-form" {
     name "en" "Dose form"
 }
+collection "tlv-vnr-dose-form-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV dose forms to RxNorm"
+    authors "ludvig-alden"
+    source system="TLV_VNR_DOSE_FORM" release="2026"
+    target system="RXNORM"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "RXNORM/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "tlv-vnr-dose-form-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "TLV dose forms to SNOMED CT"
     authors "ludvig-alden"
