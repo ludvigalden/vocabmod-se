@@ -1,0 +1,13 @@
+// VNR dose-form abbreviations as the source dataset carries them; the SNOMED CT-keyed rows are
+// dose-form code lists and are imported as cross-system claims only.
+system "TLV_VNR_DOSE_FORM" kind=classification distribution=published publisher="se.tlv" default-locale="sv" {
+    name "en" "Varunummer dose form codes"
+}
+release "2026" system="TLV_VNR_DOSE_FORM" label-source=registry
+context {
+    system "TLV_VNR_DOSE_FORM" release="2026"
+}
+category "dose-form" {
+    name "en" "Dose form"
+}
+import "concepts.kdl" kind=fragment
