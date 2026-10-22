@@ -38,4 +38,20 @@ collection "tlv-vnr-dose-form-snomed-ct" version="2026.1" kind=mapping publisher
         project "defaults"
     }
 }
+// Targets are EDQM Standard Terms dose-form codes, referenced by code
+// only (standardterms.edqm.eu); no EDQM Standard Terms term text is carried.
+collection "tlv-vnr-dose-form-edqm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV dose forms to EDQM Standard Terms"
+    authors "ludvig-alden"
+    source system="TLV_VNR_DOSE_FORM" release="2026"
+    target system="EDQM"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "EDQM/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment
