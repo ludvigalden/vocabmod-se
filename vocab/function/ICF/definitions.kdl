@@ -1,0 +1,12 @@
+// ICF: the Swedish ICF inventory, maintained by E-hälsomyndigheten since June 2026; the subset the source dataset carries.
+system "ICF" kind=classification distribution=published publisher="se.ehalsomyndigheten" default-locale="sv" {
+    name "sv" "Internationell klassifikation av funktionstillstånd, funktionshinder och hälsa"
+}
+release "2026" system="ICF" label-source=registry
+context {
+    system "ICF" release="2026"
+}
+category "code" {
+    name "en" "ICF code"
+}
+import "concepts/**/*.kdl" kind=fragment
