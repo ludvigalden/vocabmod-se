@@ -34,4 +34,18 @@ collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping publisher="ludvig-a
         project "defaults"
     }
 }
+collection "tlv-fba-tlv-vgr" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV consumables to TLV product groups"
+    authors "ludvig-alden"
+    source system="TLV_FBA" release="2026"
+    target system="TLV_VGR"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "TLV_VGR/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
