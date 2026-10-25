@@ -20,4 +20,18 @@ category "stomi" {
 category "tillfora-kroppen-lakemedel" {
     name "sv" "Tillföra kroppen läkemedel"
 }
+collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV consumables to ATC Y-codes"
+    authors "ludvig-alden"
+    source system="TLV_FBA" release="2026"
+    target system="ATC_YCODE" release="2026"
+    defaults {
+        mappings {
+            relationship "source_is_narrower_than_target"
+        }
+    }
+    import "ATC_YCODE/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
