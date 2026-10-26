@@ -1,0 +1,462 @@
+// KSI social-service codes to SNOMED CT mappings, codes XAA-YAB
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "ksi-snomed-ct" version="2026.1"
+    source system="KSI" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "XAA.1" source="XAA" target="SNOMED_CT:410606002" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA SNOMED CT 410606002 = initiating a case and making a preliminary assessment, the KSI
+        parent for intake/pre-screening of social-service matters. Target (Procedure, standard) is the
+        general SNOMED CT concept for social-service procedural activity. The source bundles Swedish
+        intake/pre-screening acts that are associated with but not identical to a clinical
+        social-service procedure, so related, weak. 410606002 verified present in
+        source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.04.00.1" source="XAA.04.00" target="SNOMED_CT:410619003" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.04.00 SNOMED CT 410619003 = initiating a case through an application (a client applies
+        to trigger a social-service matter). Target (Procedure, standard) is the SNOMED CT concept for an
+        application procedure. The source is a Swedish-administrative application-for-service act
+        associated with but not identical to the SNOMED CT Application procedure (which is broader and not
+        social-service-specific), so related, weak. 410619003 verified present in
+        source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.04.05.1" source="XAA.04.05" target="SNOMED_CT:312040009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KSI = initiate via application for intervention under the Swedish Social Services Act (SoL).
+        SNOMED CT 312040009 (@sv: ansökan om finansiering med hjälp av socialtjänsten) is the direct
+        Swedish-extension equivalent for an application to social services for support/financial
+        intervention under SoL. High tier exact; not because is slightly broader than but the
+        application-to-social-services axis is identical.
+        """
+}
+mapping "XAA.04.15.1" source="XAA.04.15" target="SNOMED_CT:410619003" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.04.15 SNOMED CT 410619003 = initiating a case through an application for an intervention
+        under LSS (Swedish Act concerning Support and Service for Persons with Certain Functional
+        Impairments). Target (Procedure, standard). The source is a Swedish-law-specific (LSS)
+        application-for-service act; the SNOMED CT Application procedure is the closest standard concept
+        but is jurisdiction-neutral and not LSS-specific, so related, weak. 410619003 verified in
+        source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.15.ZZ.1" source="XAA.15.ZZ" target="SNOMED_CT:306206005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.15.ZZ SNOMED CT 306206005 = initiating a case through a request from another authority
+        (inter-agency referral into social services). Target (Procedure, standard) is the SNOMED CT concept
+        for a referral to a service. The source is an inter-authority case-initiation act associated
+        with but not identical to the SNOMED CT referral-to-service procedure (different direction and
+        actor), so related, weak. 306206005 verified present in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.30.ZZ.1" source="XAA.30.ZZ" target="SNOMED_CT:306206005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.30.ZZ SNOMED CT 306206005 = receiving a referred-back/reassigned case (a case returned
+        or reassigned to this social-service unit). Target (Procedure, standard) is the SNOMED CT concept
+        for a referral to a service. The source is a case-receipt/reassignment act associated with but
+        not identical to the SNOMED CT referral-to-service procedure, so related, weak. 306206005 verified
+        in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.35.ZZ.1" source="XAA.35.ZZ" target="SNOMED_CT:323751000000100" relationship=related_to effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.35.ZZ SNOMED CT 323751000000100 = making a preliminary assessment (initial pre-screening
+        of a matter to decide whether to investigate). Target (Procedure; UK SNOMED CT extension) is the
+        SNOMED CT concept for assessing a social-services client. The source is a preliminary pre-screening
+        act associated with but more limited than a full client assessment (it is the triage step before
+        an investigation), so related, weak (not exact/broader because förhandsbedömning is narrower
+        triage, not the full assessment). 323751000000100 verified in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAA.50.ZZ.1" source="XAA.50.ZZ" target="SNOMED_CT:323751000000100" relationship=related_to effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAA.50.ZZ SNOMED CT 323751000000100 = making an immediate protection/safety assessment
+        (urgent assessment of whether protective action is needed, e.g. for a child at risk). Target
+        (Procedure; UK SNOMED CT extension) is the SNOMED CT concept for assessing a social-services client.
+        The source is an urgent safety-assessment act associated with but more specific than a general
+        client assessment, so related, weak (not exact because skyddsbedömning is a focused
+        urgent-safety assessment, not a full client assessment). 323751000000100 verified in
+        source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "XAH.99.ZZ.1" source="XAH.99.ZZ" target="SNOMED_CT:129267009" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XAH.99.ZZ SNOMED CT 129267009 = a residual Swedish social-service code for administrative
+        activity spanning multiple process steps (other specified and unspecified) — a catch-all
+        administrative/case-handling category. Target (sv synonym) is the generic administrative-action
+        concept. Why this target: exact Swedish-synonym match and the only standard concept carrying
+        generic semantics. Why related (not broader/exact): the SNOMED CT concept is a generic
+        international healthcare-administration term, whereas the source is a Swedish social-services
+        multi-step case-handling residual; the association is real (both denote non-clinical
+        administrative activity) but the source's social-services/statute frame and residual-bucket
+        nature make only a loose link defensible — per §related, capped at. Athena-local (synonyms.tdl);
+        no web.
+        """
+}
+mapping "YAA.1" source="YAA" target="SNOMED_CT:183425000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA SNOMED CT 183425000 = the top-level category for social-services interventions for
+        elderly persons and persons with disability under the Swedish Social Services Act (SoL) — a
+        two-population parent category spanning all SoL support measures. Target (regime/therapy, sv) is
+        the OMOP standard concept for social-care regimes broadly. Why this target: closest standard
+        concept for the social-care-intervention axis; no SoL-anchored standard concept exists. Why
+        broader: substantial breadth mismatch — SNOMED CT social care covers all social-care regimes (all
+        ages, all statutes, all populations) whereas the source is the elder/disabled SoL category; per
+        §1 low tier. Consistent with peer YAC/YAB.05 parent-category handling. Athena-local; no web.
+        """
+}
+mapping "YAA.05.00.1" source="YAA.05.00" target="SNOMED_CT:271391000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.05.00 SNOMED CT 271391000 = home help/home care service under SoL (the overarching
+        Swedish home-support service delivering practical help and personal care to people in their own
+        homes). Target (procedure, sv synonym) is the standard home-help-provision concept. Why this
+        target: direct Swedish-synonym correspondence (= home help) and the standard functional
+        equivalent. Why broader (not exact): the SNOMED CT concept is the generic provision of home help
+        across all contexts, whereas the source is the SoL-statute Swedish service category; one-level
+        broader with verified concept and exact-synonym support — per §1 high tier. Athena-local
+        (synonyms.tdl); no web.
+        """
+}
+mapping "YAA.05.15.1" source="YAA.05.15" target="SNOMED_CT:271391000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.05.15 SNOMED CT 271391000 = the personal-care component of home help (assistance with
+        ADLs — washing, dressing, medication — delivered in the home under SoL). Target (sv). Why this
+        target: the personal-care subtype is delivered as part of home help; the standard concept
+        subsumes the personal-care axis. Why broader: one-level broader (target is the whole home-help
+        service; source is its personal-care subcomponent) with verified concept and Swedish-synonym
+        support. Athena-local; no web.
+        """
+}
+mapping "YAA.05.25.1" source="YAA.05.25" target="SNOMED_CT:271391000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.05.25 SNOMED CT 271391000 = the practical-service component of home help (cleaning,
+        laundry, shopping, errands — household/practical tasks rather than personal care) under SoL.
+        Target. Why this target: closest standard concept; -type household tasks are one delivery mode
+        of home help. Why broader (one tier below the personal-care line): the SNOMED CT concept skews
+        toward personal care/assistance, and the purely household/practical axis is only partly
+        captured; moderate tier per §1 — verified concept but looser fit for the practical-service
+        subtype. Athena-local; no web.
+        """
+}
+mapping "YAA.20.ZZ.1" source="YAA.20.ZZ" target="SNOMED_CT:105386004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.20.ZZ SNOMED CT 105386004 = in-home relief/respite of the family carer (a support worker
+        steps into the caring role in the home to give the informal carer a break) under SoL. Target
+        (regime/therapy, sv synonym). Why this target: the Swedish synonym is a near-direct translation
+        of the source (= respite/relief); respite care is exactly what the intervention delivers. Why
+        broader: the SNOMED CT concept subsumes all respite-care regimes (hospice, paediatric, disability,
+        in-home, residential), of which SoL in-home carer relief is one statutory instance; one-level
+        broader with verified concept and exact-synonym support. Consistent with peer YAB.25
+        avlösarservice. Athena-local; no web.
+        """
+}
+mapping "YAA.25.ZZ.1" source="YAA.25.ZZ" target="SNOMED_CT:715930009" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.25.ZZ SNOMED CT 715930009 = companion/escort service under SoL (a support person
+        accompanies an elder/disabled person for errands, appointments, walks, leisure —
+        community-participation support). Target (procedure, sv). Why this target: closest standard
+        concept for an escort-provision service; SNOMED CT 62071000 is the *person*, weaker still. Why
+        related: the SoL ledsagning and the clinical patient-escort procedure overlap in function but
+        differ in framework (social-services community participation vs clinical patient
+        transport/escort); per §related the association is real but not identity. Consistent with peer
+        YAB.15 ledsagarservice. Athena-local; no web.
+        """
+}
+mapping "YAA.35.ZZ.1" source="YAA.35.ZZ" target="SNOMED_CT:443131005" relationship=related_to effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.35.ZZ SNOMED CT 443131005 = personal safety/alarm service under SoL (a wearable alarm
+        button linked to a response centre so an elder/disabled person can summon help — social
+        telecare). Target (procedure, sv synonym). Why this target: direct functional and
+        Swedish-synonym correspondence — the standard concept exactly describes the trygghetslarm
+        service. Why related (not exact/broader): the SE concept is a SoL social-services alarm service
+        for community-dwelling elders (social telecare), whereas the SNOMED CT concept is framed around
+        clinical personal-alarm provision; the framework differs (social vs clinical) even though the
+        device/service is functionally identical, so per §related the link is real and tight but not
+        identity — moderate tier. SE concept 710972007 (alarm maintenance) is a weaker, narrower
+        alternative. Athena-local; no web.
+        """
+}
+mapping "YAA.40.ZZ.1" source="YAA.40.ZZ" target="SNOMED_CT:370878002" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.40.ZZ SNOMED CT 370878002 = day-activity/day-care centre service under SoL (structured
+        daytime activity and social gathering for elderly/disabled people at a municipal day centre —
+        the central SoL day-activity measure). Target (procedure, sv synonym). Why this target: direct
+        functional and Swedish-synonym correspondence — the standard concept describes exactly an adult
+        day-centre provision. Why broader (not exact): the SNOMED CT concept spans all adult day-centre
+        contexts (including clinical/psychogeriatric day care), whereas the source is the SoL
+        social-services day-activity measure; one-level broader with verified concept and
+        Swedish-synonym support — per §1 high tier. Athena-local; no web.
+        """
+}
+mapping "YAA.45.ZZ.1" source="YAA.45.ZZ" target="SNOMED_CT:472161000124106" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.45.ZZ SNOMED CT 472161000124106 = housing support under SoL (a support worker
+        visits/assists a person in their own home to maintain an independent tenancy — help with daily
+        structure, finances, contact with authorities, to prevent homelessness). Target (procedure, US
+        extension). Why this target: the only standard concept carrying semantics; no SE/international
+        concept for ongoing in-home housing support. Why related: the SNOMED CT concept is a US
+        referral-to-program act, whereas the source is the ongoing Swedish SoL in-home housing-support
+        service — same domain but different kind (referral vs ongoing service) and different
+        jurisdiction; per §related only a loose association is defensible. Athena-local; no web.
+        """
+}
+mapping "YAA.50.ZZ.1" source="YAA.50.ZZ" target="SNOMED_CT:70862002" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        SNOMED CT 70862002, SE synonym, is the direct lexical and semantic equivalent of KSI; the SoL legal
+        framing is lost but the person-role concept is identical. High rather than because SoL-statutory
+        role is a Swedish-specific qualification of the contact-person role.
+        """
+}
+mapping "YAA.65.ZZ.1" source="YAA.65.ZZ" target="SNOMED_CT_SE_EXT:403751000052101" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAA.65.ZZ SNOMED CT 403751000052101 = short-stay place under SoL (a time-limited residential
+        short-stay for an elder/disabled person — for rehabilitation, carer relief, or waiting for
+        permanent placement — the SoL counterpart of LSS korttidsvistelse). Target / (finding, SE
+        extension rf2-se). Why this target: purpose-built SE concept whose Swedish synonym exactly
+        denotes short-term-stay placement. Why broader: the SE finding spans all Swedish social-care-act
+        short-term-stay contexts, of which the SoL korttidsplats is one statutory form; one-level
+        broader with exact-synonym support and SE provenance. Consistent with peer YAB.30
+        korttidsvistelse. Athena-local; no web.
+        """
+}
+mapping "YAA.75.ZZ.1" source="YAA.75.ZZ" target="SNOMED_CT_SE_EXT:60771000052108" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAA.75.ZZ SNOMED CT 60771000052108 = special housing for elderly under SoL (the overarching
+        Swedish eldercare residential-housing category — service housing, nursing homes, group dwellings
+        for elders who cannot live at home). Target (environment/setting, SE extension, sv synonym). Why
+        this target: purpose-built SE concept with an exact Swedish-synonym match to the source. Why
+        broader (not exact): the SE concept is an age- and statute-agnostic
+        residential-setting/environment concept spanning multiple Swedish eldercare forms, whereas the
+        source is the SoL eldercare service category; one-level broader with exact-synonym support and
+        SE provenance — per §1 high tier. SE finding 403781000052109 is the resident-state alternative.
+        Athena-local; no web.
+        """
+}
+mapping "YAA.76.ZZ.1" source="YAA.76.ZZ" target="SNOMED_CT:160729004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAA.76.ZZ SNOMED CT 160729004 = needs-tested (a specific Swedish elder housing form:
+        congregate/senior housing with shared common spaces and light support, allocated on a
+        needs-tested basis as a SoL intervention). Target (finding, sv synonym). Why this target:
+        sheltered housing is the closest international concept (congregate housing with support for
+        elders); the SE mirror has no concept for trygghetsboende specifically. Why related:
+        trygghetsboende and sheltered housing overlap (both are supported congregate elder housing) but
+        are not the same statutory/functional concept — trygghetsboende is a SE-specific needs-tested
+        senior-housing intervention with a distinct legal definition, and the SNOMED CT finding denotes a
+        UK sheltered-housing tenancy; per §related the association is real but not identity, capped low.
+        Athena-local; no web.
+        """
+}
+mapping "YAB.1" source="YAB" target="SNOMED_CT:183425000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAB SNOMED CT 183425000 = the top-level category for interventions under the Swedish LSS Act
+        (Act on Support and Service for Certain Disabled Persons) — the parent category spanning all LSS
+        measures (personal assistance, contact person, respite, housing, daily activity, etc.). Target
+        (regime/therapy, sv) is the OMOP standard concept for social-care regimes broadly. Why this
+        target: closest standard concept for the social-care-intervention axis; no LSS-anchored standard
+        concept exists. Why broader: substantial breadth mismatch — SNOMED CT social care covers all
+        social-care regimes (all ages, all statutes) whereas the source is the LSS disability-statute
+        parent category; per §1 low tier. Consistent with peer YAA/YAC parent-category handling.
+        Athena-local; no web.
+        """
+}
+mapping "YAB.05.ZZ.1" source="YAB.05.ZZ" target="SNOMED_CT:183425000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAB.05.ZZ SNOMED CT 183425000 = advice and support, a generic advisory/support intervention
+        granted under the Swedish LSS disability statute. Target (sv, regime/therapy) is the OMOP
+        standard concept for social-care regimes broadly; it legitimately subsumes this LSS advisory
+        service as one instance of social care, but is far broader (covers all social-care regimes, all
+        statutes, all populations). Why this target: closest standard concept for an undifferentiated
+        social-support intervention; no LSS-specific SNOMED CT concept exists. Why broader: low tier —
+        substantial breadth mismatch (LSS-specific disability support vs all social care), no
+        LSS-anchored standard concept, mechanical fit not independently crosswalked. Athena-local; no
+        web.
+        """
+}
+mapping "YAB.10.ZZ.1" source="YAB.10.ZZ" target="SNOMED_CT:158881006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAB.10.ZZ SNOMED CT 158881006 = the LSS personal-assistance service (state-funded personal
+        assistant for a person with severe disability, enabling daily life). Target (occupation, sv)
+        denotes the *occupation/role* of personal assistant, not the LSS service entitlement. The two
+        are clinically associated (the service is delivered by people in that occupation) but the SNOMED CT
+        concept is not equivalent to, broader than, or a component of the statutory service — it is the
+        job role. Why this target: the only SNOMED CT concept carrying the semantics; the LSS service has
+        no standard concept. Why related: service-vs-occupation association is defensible but not
+        identity; capped at (tight association, standard concept). Athena-local; no web.
+        """
+}
+mapping "YAB.15.ZZ.1" source="YAB.15.ZZ" target="SNOMED_CT:715930009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 715930009 (sv) is the direct standard procedure for providing an escort/companion
+        service, matching LSS ledsagarservice. Moderate-high exact : same axis and target name aligns
+        with source; not only because SNOMED CT frames it as a healthcare patient-escort procedure whereas
+        LSS ledsagarservice is a broader social-service escort.
+        """
+}
+mapping "YAB.20.ZZ.1" source="YAB.20.ZZ" target="SNOMED_CT:70862002" relationship=related_to effect=omitted quality=40 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.20.ZZ SNOMED CT 70862002 = contact-person service under LSS (an assigned support person
+        who builds a relationship with the disabled individual for guidance and social contact). Target
+        (person, sv) is the *person/role* concept — the KSI code denotes the *service* of providing such
+        a person, not the person themselves. Why this target: exact Swedish term match and the SNOMED CT
+        concept directly names the role the service deploys; no LSS-service-level standard concept
+        exists. Why related (not exact): the term match is exact but the *kind* differs (service vs
+        person/role); per §related this service-vs-role association is defensible but not identity.
+        Athena-local; no web.
+        """
+}
+mapping "YAB.25.ZZ.1" source="YAB.25.ZZ" target="SNOMED_CT:105386004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAB.25.ZZ SNOMED CT 105386004 = respite/relief service under LSS (a support worker
+        temporarily takes over the family's caring role to relieve informal carers). Target
+        (regime/therapy, sv) is the standard respite-care concept. Why this target: the Swedish synonym
+        is a near-direct translation (= respite/relief); respite care is exactly what avlösarservice
+        delivers. Why broader: the SNOMED CT concept subsumes all respite-care regimes (hospice,
+        palliative, pediatric, disability), of which LSS avlösarservice is one statutory instance; a
+        one-level broader map with verified concept and exact-synonym support — high tier. Mapping type
+        broader because the target legitimately contains the source as a child. Athena-local; no web.
+        """
+}
+mapping "YAB.30.ZZ.1" source="YAB.30.ZZ" target="SNOMED_CT_SE_EXT:403751000052101" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.30.ZZ SNOMED CT 403751000052101 = short-stay respite accommodation under LSS (the
+        disabled person stays briefly in a special setting, partly to relieve carers, partly for
+        development). Target (finding, sv, SE extension rf2-se) — the Swedish synonym directly denotes
+        short-term-stay placement. Why this target: purpose-built SE-extension concept for Swedish
+        social-care short-term stays; the Swedish synonym is a direct match. Why broader: the SE concept
+        is a *finding* (the state of staying short-term) spanning all Swedish social-care-act contexts,
+        of which LSS korttidsvistelse is one statutory form; one-level broader with exact-synonym
+        support and SE-specific provenance. Athena-local; no web.
+        """
+}
+mapping "YAB.40.00.1" source="YAB.40.00" target="SNOMED_CT_SE_EXT:393781000052104" relationship=source_is_broader_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.40.00 SNOMED CT 393781000052104 = the LSS housing/accommodation measure *category* for
+        children and adolescents (the parent code for LSS housing services to under-18s, spanning
+        familjehem, special-service housing, etc.). Target (finding, sv, SE extension rf2-se) —
+        purpose-built SE concept for Swedish special-service housing. Why this target: closest SE
+        standard concept for LSS housing; the source is the category node, the target is one specific
+        housing finding. Why broader: the target subsumes the special-service-housing axis but the
+        source category also includes familjehem-style placements outside; per §1 moderate tier —
+        mechanical SE-concept fit, age-group mismatch (target is age-agnostic), not independently
+        re-verified. Athena-local; no web.
+        """
+}
+mapping "YAB.40.15.1" source="YAB.40.15" target="SNOMED_CT_SE_EXT:393791000052102" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.40.15 SNOMED CT 393791000052102 = LSS foster/family home for children and adolescents (a
+        private household that takes in a child/youth under LSS). Target (finding, sv, SE extension
+        rf2-se) — the Swedish synonym is a direct match. Why this target: purpose-built SE concept whose
+        Swedish synonym exactly denotes family-home living; the SNOMED CT concept also spans SoL/LVU
+        family-home placements (broader). Why broader: one-level broader (target covers all
+        Swedish-statute family-home living, source is the LSS-statute child/youth instance) with
+        exact-synonym support and SE provenance. Athena-local; no web.
+        """
+}
+mapping "YAB.40.25.1" source="YAB.40.25" target="SNOMED_CT_SE_EXT:393781000052104" relationship=source_is_narrower_than_target quality=100 {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.40.25 SNOMED CT 393781000052104 = housing with special services for children and
+        adolescents under LSS (purpose-adapted or service-equipped residential housing for disabled
+        under-18s). Target (finding, sv, SE extension rf2-se) — the Swedish synonym is a near-exact
+        match. Why this target: the SE concept was created precisely for this Swedish social-care
+        housing modality; the source is the child/youth-statute instance. Why broader: one-level broader
+        (target is age- and statute-agnostic; source is the LSS child/youth instance) with exact-synonym
+        support and SE provenance — per §1 high tier. Athena-local; no web.
+        """
+}
+mapping "YAB.45.00.1" source="YAB.45.00" target="SNOMED_CT_SE_EXT:393781000052104" relationship=source_is_broader_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.45.00 SNOMED CT 393781000052104 = the LSS housing/accommodation measure *category* for
+        adults (parent code spanning special-service housing and other specially-adapted housing for
+        adults with disabilities). Target (finding, sv, SE extension) — purpose-built SE concept for
+        Swedish special-service housing. Why this target: closest SE standard concept for adult LSS
+        housing; the source is the category node. Why broader: the target covers the
+        special-service-housing axis but the source category also includes (YAB.45.25) not captured by;
+        moderate tier per §1 — category-level source, mechanical fit, not independently re-verified.
+        Athena-local; no web.
+        """
+}
+mapping "YAB.45.15.1" source="YAB.45.15" target="SNOMED_CT_SE_EXT:393781000052104" relationship=source_is_narrower_than_target quality=100 {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.45.15 SNOMED CT 393781000052104 = housing with special services for adults under LSS
+        (service-equipped residential housing — group homes, service housing — for adults with
+        disabilities). Target (finding, sv, SE extension rf2-se) — Swedish synonym is a near-exact
+        match. Why this target: the SE concept was created precisely for this Swedish social-care
+        housing modality; source is the adult-statute instance. Why broader: one-level broader (target
+        is age- and statute-agnostic; source is the LSS adult instance) with exact-synonym support and
+        SE provenance. Athena-local; no web.
+        """
+}
+mapping "YAB.45.25.1" source="YAB.45.25" target="SNOMED_CT:25711000087100" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAB.45.25 SNOMED CT 25711000087100 = other specially-adapted housing for adults under LSS
+        (an individually-adapted regular dwelling with support, distinct from group/service housing —
+        the LSS residual category for adapted independent living). Target / (environment, sv) —
+        semantically adjacent (semi-independent supported living) but denotes a *facility/environment*
+        type, not an individually-adapted dwelling, and the SE concept 403771000052107 overlaps but is a
+        finding of supported-housing residence. Why this target: closest standard concept for
+        adapted/supported independent living; no exact match for the LSS residual category. Why related:
+        the association (adapted dwelling ↔ assisted-living facility) is real but loose — facility vs
+        individual dwelling, and residual-bucket source; per §1 low tier / §related. Athena-local; no
+        web.
+        """
+}
+mapping "YAB.50.ZZ.1" source="YAB.50.ZZ" target="SNOMED_CT:224366004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAB.50.ZZ SNOMED CT 224366004 = daily activity/occupation service under LSS (structured
+        daytime occupational/activity service for working-age adults with disabilities who are outside
+        the labour market — the central LSS day-activity measure). Target / (finding, sv) denotes the
+        state of being in sheltered/supported employment. Why this target: the closest standard concept
+        for structured disability day-activity/occupation; 35581008 (regime/therapy, sv) is the related
+        regime but frames the activity as *employment*, whereas LSS daglig verksamhet is explicitly
+        *not* an employment relation (it is a non-wage activity service). Why broader: the
+        sheltered-work finding legitimately captures the day-activity/occupation axis but is framed
+        around employment, which LSS daglig verksamhet deliberately is not; one-level conceptual breadth
+        mismatch with verified concept — per §1 moderate tier. Athena-local; no web.
+        """
+}

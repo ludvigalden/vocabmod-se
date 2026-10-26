@@ -1,0 +1,453 @@
+// KSI social-service codes to SNOMED CT mappings, codes VAC-XA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "ksi-snomed-ct" version="2026.1"
+    source system="KSI" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VAC.1" source="VAC" target="SNOMED_CT:410316001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC SNOMED CT 410316001 = the KSI parent/domain concept for behaviors and habits regarding
+        narcotics (the topic itself, no intervention method). Target (Procedure) is the broadest
+        standard substance-use procedure concept and the closest defensible target for the narcotics-use
+        behavior domain (narcotics use = substance use). Source is a behavior DOMAIN, not a procedure or
+        disorder; the target is a counseling-about-that-domain procedure, so related (the target is
+        about the source domain), weak. 410316001 verified in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "VAC.AA.ZZ.1" source="VAC.AA.ZZ" target="SNOMED_CT:370854007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AA.ZZ SNOMED CT 370854007 = assessment of narcotics behavior (social-service activity).
+        Target (Procedure) is the standard substance-use screening/assessment procedure; narcotics-use
+        assessment is a substance-abuse screening. Source is an assessment activity associated with (not
+        identical to) the clinical screening procedure (social-service vs clinical framing); related,
+        weak. 370854007 verified in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "VAC.AC.ZZ.1" source="VAC.AC.ZZ" target="SNOMED_CT:370854007" relationship=related_to effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AC.ZZ SNOMED CT 370854007 = a manual-based test or conversation about narcotics behavior
+        (social-service activity, e.g. ASIST/CRAFFT-style structured screening). Target (Procedure) is
+        the standard structured substance-use screening procedure, the closest match to a manual-based
+        test. Source is a structured-test activity associated with (not identical to) the clinical
+        screening procedure; related, weak. 370854007 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.AS.ZZ.1" source="VAC.AS.ZZ" target="SNOMED_CT:408427005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AS.ZZ SNOMED CT 408427005 = an investigative/assessment conversation about narcotics
+        behavior (social-service activity). Target (Procedure) is the closest standard drug-misuse
+        advisory interaction. Source is an assessment-conversation activity associated with (not
+        identical to) the clinical advisory procedure (social-service vs clinical framing); related,
+        weak. 408427005 verified in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "VAC.AT.ZZ.1" source="VAC.AT.ZZ" target="SNOMED_CT:408427005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AT.ZZ SNOMED CT 408427005 = gathering information from a professional about narcotics
+        behavior (social-service intake/information activity). Target (Procedure) is the closest
+        standard drug-misuse advisory interaction. Source is an information-gathering activity
+        associated with (not identical to) the clinical procedure; related, weak. 408427005 verified in
+        SNOMED CT mirror.
+        """
+}
+mapping "VAC.AU.ZZ.1" source="VAC.AU.ZZ" target="SNOMED_CT:408427005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AU.ZZ SNOMED CT 408427005 = gathering information from another person about narcotics
+        behavior (social-service information activity). Target (Procedure) is the closest standard
+        drug-misuse advisory interaction. Source is an information-gathering activity associated with
+        (not identical to) the clinical procedure; related, weak. 408427005 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.AV.ZZ.1" source="VAC.AV.ZZ" target="SNOMED_CT:408427005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.AV.ZZ SNOMED CT 408427005 = a follow-up conversation about narcotics behavior
+        (social-service activity). Target (Procedure) is the closest standard drug-misuse advisory
+        interaction. Source is a follow-up activity associated with (not identical to) the clinical
+        procedure; related, weak. 408427005 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.PM.ZZ.1" source="VAC.PM.ZZ" target="SNOMED_CT:171047005" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 171047005 (sv) is the direct SNOMED CT patient-education concept for narcotic/drug-use
+        education; KSI source is education about behaviors and habits regarding narcotics. High-moderate
+        exact : same axis (drug-use education) and target concept is education specifically about
+        addictive drugs; not only because SNOMED CT frames it as addiction-drugs-specific whereas the KSI
+        source is broader narcotics-behaviors-and-habits.
+        """
+}
+mapping "VAC.PN.ZZ.1" source="VAC.PN.ZZ" target="SNOMED_CT:408427005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.PN.ZZ SNOMED CT 408427005 = advice or information about narcotics behavior
+        (social-service activity). Target (Procedure) is the closest standard drug-misuse advice
+        procedure. Source is an advice activity associated with (not identical to) the clinical
+        procedure; related, weak. 408427005 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.PU.ZZ.1" source="VAC.PU.ZZ" target="SNOMED_CT:410316001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.PU.ZZ SNOMED CT 410316001 = a supportive conversation about narcotics behavior
+        (social-service activity). Target (Procedure) is the standard substance-use counseling/support
+        procedure. Source is a supportive-counseling activity associated with (not identical to) the
+        clinical counseling procedure; related, weak. 410316001 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.PV.ZZ.1" source="VAC.PV.ZZ" target="SNOMED_CT:424407005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.PV.ZZ SNOMED CT 424407005 = a treatment-oriented conversation about narcotics behavior
+        (social-service activity). Target (Procedure) is the standard cessation-oriented substance-use
+        counseling procedure. Source is a treatment-conversation activity associated with (not identical
+        to) the clinical cessation-counseling procedure; related, weak. 424407005 verified in
+        source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "VAC.RC.ZZ.1" source="VAC.RC.ZZ" target="SNOMED_CT:410316001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.RC.ZZ SNOMED CT 410316001 = emotional support regarding narcotics behavior
+        (social-service activity). Target (Procedure) is the standard substance-use guidance/counseling
+        procedure, the closest defensible target for supportive counseling about a substance use. Source
+        is an emotional-support activity associated with (not identical to) the clinical counseling
+        procedure; related, weak. 410316001 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAC.SZ.ZZ.1" source="VAC.SZ.ZZ" target="SNOMED_CT:410316001" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAC.SZ.ZZ SNOMED CT 410316001 = support regarding narcotics behavior (social-service
+        activity, general). Target (Procedure) is the standard general substance-use guidance/counseling
+        procedure, the closest defensible target for non-specific support about a substance use. Source
+        is a support activity associated with (not identical to) the clinical counseling procedure;
+        related, weak. 410316001 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAE.1" source="VAE" target="SNOMED_CT:2386561000000109" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE SNOMED CT 2386561000000109 = the KSI parent/domain concept for behaviors and habits
+        regarding gambling (the topic itself, no intervention method). Target (Procedure) is the closest
+        standard concept for an informational interaction about gambling; it is the broadest
+        gambling-directed procedure concept in the mirror. Source is a behavior DOMAIN, not a procedure
+        or disorder; the target is an information-about-that-domain procedure, so related (the target is
+        about the source domain), weak. 2386561000000109 verified in source/athena/SNOMED/concepts.tdl.
+        """
+}
+mapping "VAE.AA.ZZ.1" source="VAE.AA.ZZ" target="SNOMED_CT:2386561000000109" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.AA.ZZ SNOMED CT 2386561000000109 = assessment of gambling behavior (social-service
+        activity). Target (Procedure) is the closest standard gambling-directed interaction concept in
+        the mirror (the dedicated PGSI screening concepts are UK-extension observation/score rows, less
+        defensible as a procedure match than the harm-information procedure). Source is an assessment
+        activity associated with (not identical to) the clinical procedure; related, weak.
+        2386561000000109 verified in SNOMED CT mirror.
+        """
+}
+mapping "VAE.AS.ZZ.1" source="VAE.AS.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.AS.ZZ = SNOMED CT 409063005 — an investigative/intake conversation (a counseling
+        procedure) about gambling behaviors. Target SNOMED CT 4254477 (409063005), standard Procedure. Why
+        this target: the source's primary semantic is the *counseling activity modality*; SNOMED CT has no
+        gambling-specific investigative-conversation procedure, so the generic Counseling procedure is
+        the nearest covering standard concept (the gambling topic is carried by context, not by a
+        co-equal concept here). Why broader: Counseling subsumes investigative conversations — every
+        utredande samtal is a counseling-type encounter. Why (weak): modality match only; the
+        gambling-specific content of the source is outside the target, and no topic-specific procedure
+        exists, so this is a low-specificity cover. Athena-local lookup; no web citation.
+        """
+}
+mapping "VAE.AT.ZZ.1" source="VAE.AT.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.AT.ZZ = SNOMED CT 84100007 — gathering information from a professional about gambling
+        behaviors (collateral history taking). Target SNOMED CT 4221994 (84100007), standard Procedure. Why
+        this target: gathering collateral information is an instance of history taking; no
+        gambling-specific collateral-history procedure exists. Why broader: History taking subsumes
+        information-gathering encounters. Why (weak): generic procedural cover that drops the gambling
+        topic and the qualifier; recordable lead, not an equivalence. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.AU.ZZ.1" source="VAE.AU.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.AU.ZZ = SNOMED CT 84100007 — gathering information from another (non-professional) party
+        about gambling behaviors (collateral history). Target SNOMED CT 4221994 (84100007), standard
+        Procedure. Same reasoning as VAE.AT.ZZ: collateral information-gathering is subsumed by History
+        taking; broader (target subsumes the activity), because the topic and qualifier are lost.
+        Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.AV.ZZ.1" source="VAE.AV.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.AV.ZZ = SNOMED CT 409063005 — a follow-up counseling conversation about gambling
+        behaviors. Target SNOMED CT 4254477 (409063005), standard Procedure. Follow-up conversations are a
+        subset of counseling encounters; no gambling-specific follow-up procedure exists in SNOMED CT.
+        Broader (Counseling subsumes follow-up conversations), (weak) for modality-only match dropping
+        the topic. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.PN.ZZ.1" source="VAE.PN.ZZ" target="SNOMED_CT:2386561000000109" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.PN.ZZ = SNOMED CT 2386561000000109 — advice or information about gambling behaviors.
+        Target SNOMED CT 1450374 (2386561000000109), standard Procedure (UK extension, active 2025). Why
+        this target: it is the topic-specific information-provision procedure for gambling — the closest
+        standard concept that shares *both* the modality (information/advice) and the topic (gambling).
+        Why broader: is a specific information-provision context; the source's general gambling advice
+        subsumes it but is also broader than harms-only — they are not co-extensive, but 1450374 is the
+        best available standard target covering the gambling+information intersection. Why (low):
+        genuine topic+modality overlap but the source covers advice beyond specifically, and 1450374 is
+        a UK extension concept; defensible but not tight. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.PU.ZZ.1" source="VAE.PU.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.PU.ZZ = SNOMED CT 409063005 — a supportive counseling conversation about gambling
+        behaviors. Target SNOMED CT 4254477 (409063005), standard Procedure. Supportive conversations are a
+        subset of counseling; no gambling-specific supportive-conversation procedure exists. Broader
+        (Counseling subsumes supportive conversations), (weak) for modality-only match dropping the
+        topic. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.PV.ZZ.1" source="VAE.PV.ZZ" target="SNOMED_CT:75516001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.PV.ZZ = SNOMED CT 75516001 — a treatment/therapeutic conversation about gambling
+        behaviors. Target SNOMED CT 4327941 (75516001), standard Procedure. Why this target: a treatment
+        conversation (behandlande samtal) is a psychotherapeutic/therapeutic encounter; Psychotherapy is
+        the standard covering procedure. No gambling-specific therapeutic-conversation procedure exists.
+        Why broader: Psychotherapy subsumes treatment conversations (which are a form of it). Why
+        (weak): generic procedure cover dropping the topic and the precise Swedish social-service
+        framing of. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.RC.ZZ.1" source="VAE.RC.ZZ" target="SNOMED_CT:133921002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.RC.ZZ = SNOMED CT 133921002 — emotional support concerning gambling behaviors. Target
+        SNOMED CT 4046556 (133921002), standard Procedure. Why exact_match (modality): the source's primary
+        semantic IS the emotional-support procedure; the gambling qualifier is the *subject* of the
+        support, not a different activity. SNOMED CT's Emotional support procedure is the direct equivalent
+        of the activity named by the source. Why (high) not : exact on the procedure but the source adds
+        a topic qualifier the bare target does not encode, and no topic-specific emotional-support
+        concept exists — a small, well-understood breadth mismatch. Athena-local lookup; no citation.
+        """
+}
+mapping "VAE.SZ.ZZ.1" source="VAE.SZ.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAE.SZ.ZZ = SNOMED CT 409063005 — general support concerning gambling behaviors. Target
+        SNOMED CT 4254477 (409063005), standard Procedure. Why this target: (support) in the KSI V-section
+        denotes a support encounter/intervention, the closest standard procedure cover is Counseling; no
+        gambling-specific general-support procedure exists. Why broader: Counseling subsumes supportive
+        encounters. Why (weak): the source is a generic support notion and the target is a more specific
+        procedural framing; loose, topic-dropping cover. Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.1" source="VAG" target="SNOMED_CT:824001000000103" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG = SNOMED CT 824001000000103 — behaviors and habits concerning doping
+        (performance-enhancing drug use). Target SNOMED CT 44807040 (824001000000103), standard Clinical
+        Finding. Why this target: in Swedish social-services context denotes use of doping agents,
+        dominated by anabolic-androgenic steroids; the closest standard clinical concept representing
+        the underlying behavior is Misuses anabolic steroids. Why broader: the source covers all doping
+        behaviors (which may include other performance-enhancing substances), while the target names the
+        steroid-specific subtype — the target is a child of the source's intent, but as a *clinical
+        finding* it is the best available standard anchor; relationship is broader (target's parent
+        class — doping behaviors — subsumes steroid misuse, and conversely steroid misuse is the
+        dominant instance). Scored (low): real clinical overlap but the source is broader than steroid
+        misuse alone and no generic /performance-enhancing-substance-use standard concept exists.
+        Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.AA.ZZ.1" source="VAG.AA.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.AA.ZZ = SNOMED CT 84100007 — assessment of doping-related behaviors. Target SNOMED CT
+        4221994 (84100007), standard Procedure. Why this target: a (assessment) in the KSI V-section is
+        a clinical assessment encounter; the standard procedure covering
+        assessment/information-gathering is History taking. No doping-specific assessment procedure
+        exists. Why broader: History taking subsumes assessment encounters. Why (weak): generic
+        procedural cover dropping both the assessment-specificity and the doping topic. Athena-local
+        lookup; no citation.
+        """
+}
+mapping "VAG.AS.ZZ.1" source="VAG.AS.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.AS.ZZ = SNOMED CT 409063005 — investigative counseling conversation about doping
+        behaviors. Target SNOMED CT 4254477 (409063005), standard Procedure. Same modality pattern as
+        VAE.AS.ZZ: investigative conversation subsumed by Counseling; broader; (weak) for modality-only
+        match dropping the doping topic. No doping-specific investigative-conversation procedure exists.
+        Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.AT.ZZ.1" source="VAG.AT.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.AT.ZZ = SNOMED CT 84100007 — collateral information-gathering from a professional about
+        doping behaviors. Target SNOMED CT 4221994 (84100007), standard Procedure. Broader (History taking
+        subsumes information-gathering), (weak): topic and qualifier dropped. Athena-local lookup; no
+        citation.
+        """
+}
+mapping "VAG.AU.ZZ.1" source="VAG.AU.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.AU.ZZ = SNOMED CT 84100007 — collateral information-gathering from another party about
+        doping behaviors. Target SNOMED CT 4221994 (84100007), standard Procedure. Broader (History taking
+        subsumes the activity), (weak): topic and qualifier dropped. Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.AV.ZZ.1" source="VAG.AV.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.AV.ZZ = SNOMED CT 409063005 — follow-up counseling conversation about doping behaviors.
+        Target SNOMED CT 4254477 (409063005), standard Procedure. Broader (Counseling subsumes follow-up
+        conversations), (weak): modality-only match dropping the topic. Athena-local lookup; no
+        citation.
+        """
+}
+mapping "VAG.PN.ZZ.1" source="VAG.PN.ZZ" target="SNOMED_CT:311401005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.PN.ZZ = SNOMED CT 311401005 — advice or information about doping behaviors. Target
+        SNOMED CT 4151485 (311401005), standard Procedure. Why this target: advice/information provision
+        maps to the patient-education procedure family; no doping-specific information-provision
+        procedure exists in SNOMED CT (the gambling-specific 1450374 has no doping analogue). Why broader:
+        Patient education subsumes advice/information encounters. Why (weak): generic procedural cover
+        dropping the doping topic. (Considered Lifestyle education 4196581 but it implies a structured
+        education programme broader than.) Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.PU.ZZ.1" source="VAG.PU.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.PU.ZZ = SNOMED CT 409063005 — supportive counseling conversation about doping behaviors.
+        Target SNOMED CT 4254477 (409063005), standard Procedure. Broader (Counseling subsumes supportive
+        conversations), (weak): modality-only match dropping the topic. Athena-local lookup; no
+        citation.
+        """
+}
+mapping "VAG.PV.ZZ.1" source="VAG.PV.ZZ" target="SNOMED_CT:75516001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.PV.ZZ = SNOMED CT 75516001 — treatment/therapeutic conversation about doping behaviors.
+        Target SNOMED CT 4327941 (75516001), standard Procedure. Same modality pattern as VAE.PV.ZZ:
+        behandlande samtal subsumed by Psychotherapy; broader; (weak). No doping-specific
+        therapeutic-conversation procedure exists. Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.RC.ZZ.1" source="VAG.RC.ZZ" target="SNOMED_CT:133921002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.RC.ZZ = SNOMED CT 133921002 — emotional support concerning doping behaviors. Target
+        SNOMED CT 4046556 (133921002), standard Procedure. Exact on the procedure (the source's primary
+        semantic IS the emotional-support procedure; the doping qualifier is the subject). (high) not :
+        exact on procedure but source adds a topic qualifier the bare target does not encode; small
+        well-understood breadth mismatch, no topic-specific emotional-support concept exists.
+        Athena-local lookup; no citation.
+        """
+}
+mapping "VAG.SZ.ZZ.1" source="VAG.SZ.ZZ" target="SNOMED_CT:409063005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VAG.SZ.ZZ = SNOMED CT 409063005 — general support concerning doping behaviors. Target SNOMED CT
+        4254477 (409063005), standard Procedure. Broader (Counseling subsumes support encounters),
+        (weak): generic procedural cover of a generic support notion, dropping the topic. Athena-local
+        lookup; no citation.
+        """
+}
+mapping "VE2.AA.ZZ.1" source="VE2.AA.ZZ" target="SNOMED_CT:84100007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source VE2.AA.ZZ = SNOMED CT 84100007 — assessment of other (residual) behaviors. Target SNOMED CT
+        4221994 (84100007), standard Procedure. Why this target: a is an
+        assessment/information-gathering encounter; History taking is the standard covering procedure.
+        Why broader: History taking subsumes assessment encounters. Why (weak): doubly generic — both
+        the modality (assessment via history taking) and the topic (residual) are non-specific, so the
+        cover is loose. Athena-local lookup; no citation.
+        """
+}
+mapping "VEB.PN.ZZ.1" source="VEB.PN.ZZ" target="SNOMED_CT_SE_EXT:433781000052100" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        KSI = advice/information about physical-activity behaviours and habits. SNOMED CT 433781000052100
+        (@sv: rådgivning om fysisk aktivitet, SE extension procedure) is the direct Swedish-extension
+        equivalent for counselling/advice about physical activity. High tier exact on the
+        advice/counsel-about-physical-activity axis; not because KSI is slightly broader (includes
+        non-counselling information).
+        """
+}
+mapping "VEC.1" source="VEC" target="SNOMED_CT:404950004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source = sleep behaviors/habits. SNOMED CT 404950004 (observable, en synonym), active. Exact :
+        direct concept-name match for sleep behavior/habits. (ICF b134 sleep functions is a related
+        alternative but SNOMED CT is preferred as standard target.)
+        """
+}
+mapping "VED.PN.ZZ.1" source="VED.PN.ZZ" target="SNOMED_CT:423996006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 423996006 (sv) is the direct lexical and semantic match for the source's. High-tier exact
+        : the SNOMED CT concept explicitly covers hygiene-related education/guidance/counseling, which is
+        precisely what the KSI source denotes.
+        """
+}
+mapping "VEO.AA.ZZ.1" source="VEO.AA.ZZ" target="SNOMED_CT:406549009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KSI = assessment of risk-taking behaviours. SNOMED CT 406549009 (@sv: bedömning av riskbeteende) is
+        the direct term-and-scope equivalent — both denote the assessment activity targeting risk-taking
+        behaviours. High tier exact; not because KSI plural is slightly broader than the SNOMED CT singular
+        but the assessment axis is identical.
+        """
+}
+mapping "WZZ.PH.ZZ.1" source="WZZ.PH.ZZ" target="SNOMED_CT:278445004" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SNOMED CT 278445004 (sv) is a direct lexical and semantic equivalent of the source's; the KSI
+        source is the unspecified-orientation variant so the general SNOMED CT concept matches exactly.
+        High-tier exact at (not only because SNOMED CT frames it as a clinical procedure where KSI frames
+        it as a social intervention).
+        """
+}
+mapping "WZZ.RC.ZZ.1" source="WZZ.RC.ZZ" target="SNOMED_CT:133921002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" "Direct sv match: 133921002 SNOMED CT 133921002 has @sv — exact term-and-scope match."
+}
+mapping "XA.1" source="XA" target="SNOMED_CT:410606002" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source XA SNOMED CT 410606002 = legal/administrative activities, the KSI parent group for
+        case-handling and legal-administrative social-service acts (KSI source confirmed in
+        source/social/KSI/concepts.tdl). Target (Procedure, standard) is the general SNOMED CT concept for
+        social-service procedural activity. The source bundles Swedish legal-administrative
+        case-handling (applications, decisions, referrals) which is associated with but not identical to
+        a clinical social-service procedure, so related, weak per the about/association pattern. No
+        exact SNOMED CT equivalent for the legal-administrative framing; 410606002 verified present in
+        source/athena/SNOMED/concepts.tdl (Procedure, S, active).
+        """
+}

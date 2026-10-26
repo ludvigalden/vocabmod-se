@@ -1,0 +1,461 @@
+// KSI social-service codes to SNOMED CT mappings, codes YAC-YAE
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "ksi-snomed-ct" version="2026.1"
+    source system="KSI" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "YAC.1" source="YAC" target="SNOMED_CT:408997006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC SNOMED CT 408997006 = the top-level category for interventions/measures for children and
+        young people under the Swedish Social Services Act (SoL) and the Care of Young Persons Act
+        (LVU). Target (regime/therapy, sv) is the standard concept for care-of-youth regimes. Why this
+        target: closest standard concept for the care-of-young-persons axis; the source is a two-statute
+        (SoL+LVU) parent category spanning voluntary and compulsory measures. Why broader: substantial
+        breadth mismatch — SNOMED CT adolescent care is a clinical/health regime concept whereas the source
+        is a social-services multi-statute category including compulsory care; no SoL/LVU-anchored
+        standard concept exists; per §1 low tier. Athena-local; no web.
+        """
+}
+mapping "YAC.05.ZZ.1" source="YAC.05.ZZ" target="SNOMED_CT:183425000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC.05.ZZ SNOMED CT 183425000 = voluntary (consensual) social care of a person under 21
+        under the Swedish Social Services Act (SoL) — non-institutional or institutional care provided
+        with the youth's/guardian's consent. Target (regime/therapy, sv) is the standard social-care
+        regime concept. Why this target: closest standard concept for a social-care regime; SNOMED CT
+        408997006 is the age-banded alternative but more clinical. Why broader: large breadth mismatch —
+        SNOMED CT social care covers all social-care regimes (adults, elders, disability, all statutes)
+        whereas the source is voluntary SoL care of under-21s; no SoL-anchored standard concept; per §1
+        low tier. Athena-local; no web.
+        """
+}
+mapping "YAC.25.ZZ.1" source="YAC.25.ZZ" target="SNOMED_CT_SE_EXT:393791000052102" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAC.25.ZZ SNOMED CT 393791000052102 = family home / foster home placement (a child/young
+        person placed in a private family household under SoL or LVU — the cross-statute familjehem
+        placement category). Target (finding, sv, SE extension rf2-se) — the Swedish synonym is a direct
+        match. Why this target: purpose-built SE concept whose Swedish synonym exactly denotes
+        family-home living; the SE concept spans all Swedish-statute family-home placements (broader).
+        Why broader: one-level broader (target covers all family-home living including adult foster-home
+        contexts; source is the child/youth SoL/LVU placement) with exact-synonym support and SE
+        provenance. Athena-local; no web.
+        """
+}
+mapping "YAC.30.ZZ.1" source="YAC.30.ZZ" target="SNOMED_CT_SE_EXT:393821000052109" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAC.30.ZZ SNOMED CT 393821000052109 = emergency/on-call home (a child/young person placed
+        urgently in a registered jourhem household for immediate short-term care, typically pending
+        investigation or longer placement, under SoL/LVU). Target (finding, sv, SE extension rf2-se) —
+        the Swedish synonym is a *direct exact* match. Why this target: purpose-built SE concept whose
+        Swedish synonym exactly denotes jourhem placement. Why broader (not exact): the SE finding spans
+        all emergency-foster-home contexts (including adult situations), of which the source is the
+        child/youth SoL/LVU jourhem placement — a one-level broader relation with exact-synonym support
+        and SE provenance per §1 high tier. Athena-local; no web.
+        """
+}
+mapping "YAC.40.ZZ.1" source="YAC.40.ZZ" target="SNOMED_CT:25881000087103" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAC.40.ZZ SNOMED CT 25881000087103 = Swedish social-service supervised/supportive living
+        placement, typically for young adults or adults transitioning toward independent housing (a
+        placement SETTING delivered by social services, not a clinical finding). Target SNOMED CT 3656379
+        (concept_code 25881000087103) =, the closest standard concept in the social-context/findings
+        branch covering supervised housing. Broader: the target subsumes the source (supportive housing
+        is the general category; stödboende is one SE-specific form). Weak : the SE concept is a
+        social-services placement category with legal/social-services framing (SoL/LVU context), whereas
+        the SNOMED CT concept is a patient-circumstance finding; only an aspect-level / loose overlap is
+        defensible.
+        """
+}
+mapping "YAC.45.ZZ.1" source="YAC.45.ZZ" target="SNOMED_CT:228122001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC.45.ZZ SNOMED CT 228122001 = publicly-run HVB home, a Swedish residential care/treatment
+        home for children/youth (a placement SETTING with a public operator). Target SNOMED CT 4332046
+        (concept_code 228122001) =, a patient-circumstance finding denoting a child being cared for in a
+        residential setting. Related (not broader/narrower): the source is a placement-type/setting
+        category with a Swedish administrative/legal scope, the target is a patient-circumstance
+        finding; they are clinically associated (an HVB placement implies residential care) but are not
+        the same kind of concept and the SNOMED CT term carries no public/private operator distinction.
+        Weak : loose association only, recorded as a lead.
+        """
+}
+mapping "YAC.50.ZZ.1" source="YAC.50.ZZ" target="SNOMED_CT:228122001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC.50.ZZ SNOMED CT 228122001 = privately-run HVB home, the private-operator counterpart of
+        YAC.45. Target SNOMED CT 4332046 (concept_code 228122001) =. Same reasoning as YAC.45.ZZ: related,
+        weak. The SNOMED CT target has no public/private operator dimension, so the only defensible link is
+        the loose residential-care association.
+        """
+}
+mapping "YAC.60.ZZ.1" source="YAC.60.ZZ" target="SNOMED_CT:160943002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        KSI SNOMED CT 160943002 (own home as a residence/housing category) matches (@sv: bor i egen bostad)
+        — same concept of owning/occupying one's own home; KSI is the setting, SNOMED CT is the
+        living-status finding, near-identical scope. High tier exact on the home-ownership/residence
+        axis; not because KSI is a location/setting and SNOMED CT is the residence status finding.
+        """
+}
+mapping "YAC.70.ZZ.1" source="YAC.70.ZZ" target="SNOMED_CT:201731000000106" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC.70.ZZ SNOMED CT 201731000000106 = a structured ambulatory/open-care programme for
+        treatment, occupation, or social-skills training (a social-service outpatient intervention
+        delivered to children/youth). Target SNOMED CT 44788936 (concept_code 201731000000106) =, the
+        closest standard concept for structured non-residential day attendance. Related (not broader):
+        the source is a structured multi-component SE social-service programme, the target is a generic
+        day-centre attendance circumstance; the target captures one aspect (day-programme attendance) of
+        a broader SE intervention. Weak : loose aspect-level overlap.
+        """
+}
+mapping "YAC.75.ZZ.1" source="YAC.75.ZZ" target="SNOMED_CT:108327007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAC.75.ZZ SNOMED CT 108327007 = personal support, an individualised social-service support
+        intervention (often in the client's home). Target SNOMED CT 40278843 (concept_code 108327007) =,
+        the closest standard concept spanning social-service personal support. Broader: the target is
+        the general social-service/home-care category that subsumes personal support. Weak : the SE
+        concept is a specific social-service intervention line-item, the SNOMED CT concept is a broad
+        social-service/context finding; the subsumption is real but the categories (intervention vs
+        circumstance) differ, so only a loose overlap is defensible.
+        """
+}
+mapping "YAC.90.ZZ.1" source="YAC.90.ZZ" target="SNOMED_CT:224106008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAC.90.ZZ SNOMED CT 224106008 = a SE social-service contact-FAMILY intervention for
+        children/youth: a support/respite family that a child visits regularly to give the birth family
+        relief (NOT a foster placement — the child is not removed into the kontaktfamilj's care). Target
+        SNOMED CT 4072487 (concept_code 224106008) =. Related (not broader/narrower): both concern a
+        child's regular involvement with a non-birth family, but a kontaktfamilj is a support/respite
+        arrangement while a foster family is a care-placement; the SNOMED CT target does not denote the
+        same legal/functional status. Weak : a loose clinical/social association recorded as a lead;
+        reviewers should note the kontaktfamilj-vs-foster distinction.
+        """
+}
+mapping "YAD.15.ZZ.1" source="YAD.15.ZZ" target="SNOMED_CT:108327007" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.15.ZZ SNOMED CT 108327007 = individually needs-tested open/ambulatory interventions
+        (non-residential social-service interventions for adult substance abusers, granted
+        case-by-case). Target SNOMED CT 40278843 (concept_code 108327007) =. Broader: the target is the
+        general social-service/open-care category that subsumes these individualised open interventions.
+        Weak : the SE concept is a needs-tested intervention line-item bundle, the SNOMED CT concept is a
+        broad social-service/context finding; loose overlap only.
+        """
+}
+mapping "YAD.20.00.1" source="YAD.20.00" target="SNOMED_CT:25881000087103" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.20.00 SNOMED CT 25881000087103 = a housing-related intervention (the parent node for
+        housing interventions for adult substance abusers). Target SNOMED CT 3656379 (concept_code
+        25881000087103) =. Broader: the target is the general supported-housing category spanning the
+        source. Weak : the source is a SE social-service housing-intervention grouping with Swedish
+        legal framing, the SNOMED CT concept is a housing-circumstance finding; loose overlap.
+        """
+}
+mapping "YAD.20.15.1" source="YAD.20.15" target="SNOMED_CT:224680000" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.20.15 SNOMED CT 224680000 = a housing intervention providing acute/temporary housing for
+        adult substance abusers (short-stay emergency/temporary accommodation). Target SNOMED CT 4075529
+        (concept_code 224680000) =. Related (not broader): a halfway house denotes
+        transitional/reintegration residential placement, which is a distinct purpose from acute
+        temporary housing; the SNOMED CT term captures the residential-transitional aspect but does not
+        subsume acute/emergency short-stay housing. Weak : loose association recorded as a lead.
+        """
+}
+mapping "YAD.20.25.1" source="YAD.20.25" target="SNOMED_CT:224680000" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.20.25 SNOMED CT 224680000 = a transitional/interim housing intervention while awaiting a
+        more permanent housing solution. Target SNOMED CT 4075529 (concept_code 224680000) =, which denotes
+        precisely a transitional residential placement bridging toward independent/permanent living.
+        Broader: halfway-house is the general transitional-residential category that subsumes the SE
+        övergångsboende concept. Low : strong semantic overlap on the transitional-housing axis, but the
+        SE concept is a social-service intervention and the SNOMED CT concept is a setting/circumstance —
+        close enough to defend but residual category mismatch prevents higher.
+        """
+}
+mapping "YAD.20.35.1" source="YAD.20.35" target="SNOMED_CT:25881000087103" relationship=source_is_narrower_than_target {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.20.35 SNOMED CT 25881000087103 = a long-term housing intervention for adult substance
+        abusers. Target SNOMED CT 3656379 (concept_code 25881000087103) =, the standard concept for
+        long-term supported accommodation. Broader: the target subsumes the source (long-term supported
+        housing is the general category). Low : strong overlap on the long-term-supported-housing axis,
+        but SE social-services intervention framing vs SNOMED CT circumstance finding keeps it at rather
+        than higher.
+        """
+}
+mapping "YAD.30.00.1" source="YAD.30.00" target="SNOMED_CT:29461000119100" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.30.00 SNOMED CT 29461000119100 = family-home care: placement of an adult (here, under
+        YAD: adults with substance abuse, or other adults under SoL) in a family-home setting for care.
+        Target SNOMED CT 37109260 (concept_code 29461000119100) =, the standard concept for an adult living
+        in a foster/family-home setting. Broader: the target is the general adult-family-home-living
+        category that subsumes the SE familjehemsvård intervention. Low : good age-appropriate (adult)
+        and setting match; the SE concept is a care intervention while the SNOMED CT concept is a living
+        circumstance, so rather than higher. Note: (160871009) was rejected because YAD is the adult
+        axis.
+        """
+}
+mapping "YAD.30.15.1" source="YAD.30.15" target="SNOMED_CT:29461000119100" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.30.15 SNOMED CT 29461000119100 = voluntary family-home care under the Social Services
+        Act (SoL): placement in a family home on a voluntary basis. Target SNOMED CT 37109260 (concept_code
+        29461000119100) =. Broader: same as parent YAD.30.00, plus the SNOMED CT concept carries no
+        voluntary/compulsory dimension so the voluntary qualifier is dropped (no narrower target
+        exists). Low : age-appropriate adult family-home match; intervention-vs-circumstance category
+        mismatch caps the tier.
+        """
+}
+mapping "YAD.40.00.1" source="YAD.40.00" target="SNOMED_CT:313104000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.40.00 SNOMED CT 313104000 = institutional care (inpatient/residential institutional
+        treatment for adult substance abusers). Target SNOMED CT 4197323 (concept_code 313104000) =, the
+        closest standard concept for institutional/residential addiction treatment. Broader: the SE is a
+        general institutional-care category that includes drug-rehab centers among other institutions;
+        the target names one specific institutional setting within that range. (Note the direction:
+        target more specific than source would normally be, but here the target is a finding about WHERE
+        the patient was seen, whereas the source is a care-intervention category — they are different
+        categories, so the subsumption is loose.) Weak : cross-category overlap only.
+        """
+}
+mapping "YAD.40.10.1" source="YAD.40.10" target="SNOMED_CT:313104000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.40.10 SNOMED CT 313104000 = voluntary institutional care (residential addiction
+        treatment on a voluntary basis). Target SNOMED CT 4197323 (concept_code 313104000) =.
+        Broader/loose: same reasoning as parent YAD.40.00 — the SNOMED CT target names one institutional
+        setting within the broader SE voluntary-institutionsvård category, and it carries no
+        voluntary/compulsory dimension. Weak : cross-category overlap (intervention vs care-location
+        finding).
+        """
+}
+mapping "YAD.40.11.1" source="YAD.40.11" target="SNOMED_CT:393141008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.40.11 SNOMED CT 393141008 = voluntary inpatient/institutional care provided by a PUBLIC
+        social-services operator — a Swedish social-services placement/setting category (placement of a
+        client in residential care on a voluntary basis under social-services legislation), split by
+        operator type. Target SNOMED CT 40563547 (concept_code 393141008) =, a care-environment/setting
+        finding denoting inpatient care. Related (not broader/narrower): the source is a Swedish
+        administrative placement type with a public-operator dimension and a social-services (not
+        healthcare) legal frame, whereas the SNOMED CT target is a generic healthcare inpatient-care
+        setting with no voluntary/involuntary or public/private operator distinction; they are
+        clinically associated (a voluntary institutional placement implies inpatient/residential care)
+        but are not the same kind of concept. Weak : loose association only, recorded as a lead.
+        """
+}
+mapping "YAD.40.12.1" source="YAD.40.12" target="SNOMED_CT:393141008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.40.12 SNOMED CT 393141008 = voluntary inpatient/institutional care provided by a PRIVATE
+        operator — the private-operator counterpart of YAD.40.11. Target SNOMED CT 40563547 (concept_code
+        393141008) =. Same reasoning as YAD.40.11: the SNOMED CT target has no public/private operator or
+        voluntary/involuntary dimension, so only the loose inpatient-care association is defensible.
+        Related, weak.
+        """
+}
+mapping "YAD.40.13.1" source="YAD.40.13" target="SNOMED_CT:393141008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAD.40.13 SNOMED CT 393141008 = voluntary inpatient/institutional care with a MIXED
+        private/public operator — the mixed-operator variant of YAD.40.11/.12. Target SNOMED CT 40563547
+        (concept_code 393141008) =. Same reasoning: the SNOMED CT target carries no operator-sharing or
+        voluntary dimension, so only the loose inpatient-care association holds. Related, weak.
+        """
+}
+mapping "YAD.40.25.1" source="YAD.40.25" target="SNOMED_CT:20078004" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source YAD.40.25 SNOMED CT 20078004 = care under Sweden's LVM (Lag om vård av missbrukare i vissa
+        fall / Care of Abusers (Special Provisions) Act) — COMPULSORY institutional care for adult
+        substance abusers ordered by administrative court, distinct from voluntary care. Target SNOMED CT
+        4061738 (concept_code 20078004) =, an environment-of-care concept for substance-abuse treatment
+        facilities. Related (not broader/narrower): the source is a Swedish compulsory-care legal
+        category (an administrative placement/order with a legal-compulsion dimension), the target is a
+        facility-type concept with no compulsory/voluntary or legal-order dimension; they are clinically
+        associated (LVM care is delivered in a substance-abuse treatment setting) but are not the same
+        kind of concept. Considered (concept_code 367073009) but rejected: that concept is
+        mental-health-sectioning framed, not substance-abuse compulsory care, and equally loose. Weak :
+        loose association only.
+        """
+}
+mapping "YAE.1" source="YAE" target="SNOMED_CT:229062007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE SNOMED CT 229062007 = measures/interventions under financial assistance per the Social
+        Services Act (SoL) — the top-level Swedish social-services category for means-tested cash
+        assistance (income support/subsistence grants) to households. Target SNOMED CT 4045288
+        (concept_code 229062007) =, a patient-circumstance finding denoting receipt of income-support
+        benefit. Broader (target subsumes source): income support is the general concept; SoL economic
+        assistance is one Swedish statutory form of it. Weak : the source is an administrative/legal
+        assistance-program category (a service type delivered by social services), the target is a
+        patient-circumstance benefit-receipt finding; only a loose overlap is defensible and the SNOMED CT
+        term carries no SoL/statutory dimension.
+        """
+}
+mapping "YAE.05.ZZ.1" source="YAE.05.ZZ" target="SNOMED_CT:229062007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.05.ZZ SNOMED CT 229062007 = general/maintenance financial assistance per SoL chapter 12
+        §1 (the broad means-tested subsistence grant), reported at household level. Target SNOMED CT
+        4045288 (concept_code 229062007) =. Same reasoning as YAE: the target subsumes the source
+        (income support is the general concept; SoL §1 maintenance assistance is one statutory form),
+        but only a loose patient-circumstance overlap is defensible. Broader, weak.
+        """
+}
+mapping "YAE.10.00.1" source="YAE.10.00" target="SNOMED_CT:229062007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.10.00 SNOMED CT 229062007 = livelihood/subsistence support per SoL chapter 12 §7 — the
+        standard Swedish means-tested subsistence benefit (the core income-support grant), household
+        level. Target SNOMED CT 4045288 (concept_code 229062007) =. Broader (target subsumes source):
+        försörjningsstöd is the closest SE statutory analogue of the income-support concept, so the
+        target fully contains the source's meaning; however the source is a specific statutory
+        program/grant and the SNOMED CT term is a generic benefit-receipt finding with no SoL dimension, so
+        confidence is capped at (loose overlap).
+        """
+}
+mapping "YAE.10.15.1" source="YAE.10.15" target="SNOMED_CT:229062007" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.10.15 SNOMED CT 229062007 = the portion of subsistence support earmarked for TEMPORARY
+        HOUSING/lodging costs, household level. Target SNOMED CT 4045288 (concept_code 229062007) =.
+        Related (not broader): the source is a sub-component of försörjningsstöd specifically tied to
+        temporary-housing cost; income support is the general benefit and does not capture the
+        housing-cost earmark, so the link is a loose association rather than subsumption. Considered /
+        (concept_codes 138119006 / 138087002) but rejected: those denote the housing circumstance
+        itself, not a cash-assistance grant for it. Weak : loose association only.
+        """
+}
+mapping "YAE.15.00.1" source="YAE.15.00" target="SNOMED_CT:229062007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.00 SNOMED CT 229062007 = financial assistance for OTHER living costs (the
+        residual/discretionary cost category of SoL assistance beyond subsistence and specific
+        earmarks), household level. Target SNOMED CT 4045288 (concept_code 229062007) =. Broader (target
+        subsumes source): income support is the general cash-assistance concept; the residual assistance
+        is one statutory form of it. Weak : the source is a heterogeneous residual cost-category (an
+        administrative grant), the target is a patient-circumstance benefit-receipt finding with no
+        SoL/cost-category dimension; loose overlap only.
+        """
+}
+mapping "YAE.15.15.1" source="YAE.15.15" target="SNOMED_CT:229062007" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.15 SNOMED CT 229062007 = SoL financial assistance earmarked for HEALTH/MEDICAL care
+        costs, household level. Target SNOMED CT 4045288 (concept_code 229062007) =. Related (not broader):
+        the source is a cash-assistance grant specifically earmarked for medical-care costs; income
+        support is the general benefit and does not capture the medical-cost earmark, so the link is a
+        loose association. No standard SNOMED CT concept exists for. Weak : loose association only.
+        """
+}
+mapping "YAE.15.25.1" source="YAE.15.25" target="SNOMED_CT:229062007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.25 SNOMED CT 229062007 = SoL financial assistance earmarked for DENTAL care costs,
+        household level. Target SNOMED CT 4045288 (concept_code 229062007) =. Related (not broader): same
+        reasoning as YAE.15.15 — the source is a cash grant earmarked for dental-care costs; income
+        support is the general benefit and does not capture the dental-cost earmark. No standard SNOMED CT
+        concept exists for. Weak : loose association only.
+        """
+}
+mapping "YAE.15.35.1" source="YAE.15.35" target="SNOMED_CT:160933000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.35 SNOMED CT 160933000 = SoL financial assistance to cover ELECTRICITY (power)
+        DEBT/arrears, household level. Target SNOMED CT 4053232 (concept_code 160933000) =, a
+        patient-circumstance finding denoting the person is in debt. Related (not broader): the source
+        is a cash-assistance grant disbursed to settle a specific utility-debt category; the SNOMED CT
+        target denotes the underlying debtor circumstance they are associated with, not the grant
+        itself, and carries no utility/electricity dimension. No standard SNOMED CT concept exists for
+        utility-debt assistance. Weak : loose association only.
+        """
+}
+mapping "YAE.15.45.1" source="YAE.15.45" target="SNOMED_CT:160933000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.45 SNOMED CT 160933000 = SoL financial assistance to cover RENT arrears/debt,
+        household level. Target SNOMED CT 4053232 (concept_code 160933000) =. Related (not broader): same
+        reasoning as YAE.15.35 — the source is a cash grant to settle rent debt; the target denotes the
+        underlying debtor circumstance, not the grant, with no rent dimension. No standard SNOMED CT
+        concept exists for rent-debt assistance. Weak : loose association only.
+        """
+}
+mapping "YAE.15.55.1" source="YAE.15.55" target="SNOMED_CT:160933000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.15.55 SNOMED CT 160933000 = SoL financial assistance to cover OTHER (miscellaneous)
+        DEBT, household level. Target SNOMED CT 4053232 (concept_code 160933000) =. Related (not broader):
+        same reasoning as YAE.15.35/.45 — the source is a cash grant to settle debt; the target denotes
+        the debtor circumstance, not the grant. Weak : loose association only.
+        """
+}
+mapping "YAE.20.00.1" source="YAE.20.00" target="SNOMED_CT:365389004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.20.00 SNOMED CT 365389004 = municipal labor-market measures — the top-level Swedish
+        social-services category for locally-delivered employment/labour-market activation activities
+        (job-prep, work practice, job-search, courses, guidance) for recipients outside the public
+        employment service. Target SNOMED CT 4266466 (concept_code 365389004) =, a patient-circumstance
+        finding in the occupation/employment branch. Broader (target subsumes source): the SNOMED CT
+        employment-activities branch is the general category under which municipal labor-market measures
+        fall. Weak : the source is an administrative activation-program/service category delivered by a
+        municipality, the target is a patient-circumstance occupation finding with no program/municipal
+        dimension; loose overlap only.
+        """
+}
+mapping "YAE.20.15.1" source="YAE.20.15" target="SNOMED_CT:276070000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.20.15 SNOMED CT 276070000 = job-preparatory measures (assessment and training) — a
+        municipal activation activity that maps/assesses and trains the participant toward work. Target
+        SNOMED CT 4171626 (concept_code 276070000) =, a patient-circumstance finding denoting the person
+        needs job training. Related (not broader): the source is an activation intervention/service
+        (training delivered), the target is a patient-need finding (training needed); they are
+        associated but are different kinds of concept and the SNOMED CT term carries no
+        assessment/training-program dimension. Weak : loose association only.
+        """
+}
+mapping "YAE.20.25.1" source="YAE.20.25" target="SNOMED_CT:18781004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.20.25 SNOMED CT 18781004 = work practice / work-placement (a municipal activation
+        activity placing the participant in a workplace to gain practical work experience). Target
+        SNOMED CT 4077585 (concept_code 18781004) =, a referral/procedure concept. Related (not broader):
+        the source is a work-experience placement activity delivered by a municipality, the target is a
+        vocational-rehab referral; they are clinically associated (both are work-directed measures) but
+        neither subsumes the other and the SNOMED CT term carries no work-placement/practice dimension.
+        Considered (concept_code 228651001) but it equally lacks the placement/practice sense. Weak :
+        loose association only.
+        """
+}
+mapping "YAE.20.35.1" source="YAE.20.35" target="SNOMED_CT:73438004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source YAE.20.35 SNOMED CT 73438004 = job-search activity (a municipal activation activity where
+        the participant actively seeks work, e.g. applications, interviews). Target SNOMED CT 4251171
+        (concept_code 73438004) =, a patient-circumstance finding denoting the person is unemployed.
+        Related (not broader): the source is a job-search intervention/activity, the target is the
+        unemployment circumstance it is associated with; they are different kinds of concept and the
+        SNOMED CT term carries no job-search-activity dimension. Weak : loose association only.
+        """
+}

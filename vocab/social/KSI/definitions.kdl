@@ -29,4 +29,13 @@ collection "ksi-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
         project "defaults"
     }
 }
+collection "ksi-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KSI to SNOMED CT"
+    authors "ludvig-alden"
+    source system="KSI" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
