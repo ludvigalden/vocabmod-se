@@ -1,0 +1,12 @@
+// Swedish geographic area codes (SCB), as the source dataset carries them.
+system "GEO_SE" kind=classification distribution=published publisher="se.scb" default-locale="sv" {
+    name "en" "Swedish geographic area codes (county/municipality)"
+}
+release "2024" system="GEO_SE" label-source=registry
+context {
+    system "GEO_SE" release="2024"
+}
+category "code" {
+    name "en" "Geographic area code"
+}
+import "concepts/**/*.kdl" kind=fragment
