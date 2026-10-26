@@ -9,4 +9,22 @@ context {
 category "code" {
     name "en" "Geographic area code"
 }
+// Identity bindings: every county or municipality code is the OMOP concept id of an
+// Athena OSM concept (standard, Geography domain), checked against the
+// local Athena release with the area names compared. Ids only: OSM
+// content is not copied.
+collection "geo-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Swedish county and municipality codes to OMOP concepts"
+    authors "ludvig-alden"
+    source system="GEO_SE" release="2024"
+    target system="OMOP_EXT"
+    defaults {
+        mappings {
+            claim-scope "geo-se-omop-ext@2026.1"
+        }
+    }
+    import "OMOP_EXT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
