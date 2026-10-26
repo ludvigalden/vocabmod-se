@@ -38,4 +38,23 @@ collection "ksi-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden
         project "defaults"
     }
 }
+// Derived: KSI codes with no OMOP-standard target of their own reach one
+// by composing ksi-icf with icf-snomed. Relationships compose
+// conservatively (equivalent keeps the other leg's kind; opposite
+// directions or any related/partial leg give related_to or partial_overlap).
+collection "ksi-snomed-ct-via-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KSI to SNOMED CT via ICF"
+    authors "ludvig-alden"
+    derived-from "ksi-icf@2026.1" "icf-snomed-ct@2026.1"
+    source system="KSI" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            claim-scope "ksi-snomed-ct-via-icf@2026.1"
+        }
+    }
+    import "SNOMED_CT/via-ICF/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
