@@ -1,0 +1,473 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b5-b52
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "b5.omop" source="b5" outcome=no_match target-system="OMOP_EXT"
+mapping "b510.1" source="b510" target="SNOMED_CT:111984006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b510 SNOMED CT 111984006 = ICF b510: the body functions of INGESTION — the functions
+        involved in taking in food/nutrients through the mouth and processing them orally for
+        swallowing, per WHO ICF definition, with children b5100 sucking, b5101 biting, b5102 chewing,
+        b5103 manipulating food in the mouth, b5104 salivary secretion, b5105 swallowing, b5106
+        regurgitation/vomiting. Target =, active RF2 production 20260701, the direct SNOMED CT observable
+        that names ingestion (the taking in of substance). This is the closest standard equivalent;
+        226320007 is the nutrient-specific correlate. Broader rather than exact: ICF b510 is a
+        multi-child function block (b5100-b5106) bundling sucking, biting, chewing, oral manipulation,
+        salivation, swallowing AND regurgitation/vomiting, where is a single observable for the
+        ingestion act itself; the target names the central act but does not subsume the
+        salivation/swallowing/regurgitation sub-functions, so it stands broader as the single best
+        umbrella for the block, one level away in model framing (observable of the act vs ICF function
+        block). High tier : direct term-and-scope match (ingestion = ingestion functions) verified
+        active in the mirror, no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b510-b539.omop" source="b510-b539" outcome=no_match target-system="OMOP_EXT"
+mapping "b5100.1" source="b5100" target="SNOMED_CT:90485000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5100 SNOMED CT 90485000 = ICF b5100: the specific body function of SUCKING — the function
+        of drawing liquid/nutrient into the mouth by creating a vacuum with the lips and tongue, per WHO
+        ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that
+        names sucking. This is the closest standard equivalent; 45596005 is the reflex framing and
+        55644006 is the non-nutritive behavior finding. Broader rather than exact: SNOMED CT models sucking
+        as an OBSERVABLE (the measurable act) where ICF b5100 frames it as a FUNCTION (the physiological
+        sucking mechanism), and the observable fully contains the source domain but is one level away in
+        model framing. High tier : direct term-and-scope match (sucking = sucking function) verified
+        active in the mirror, one-level-broader in model framing, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b5101.1" source="b5101" target="SNOMED_CT:1202003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5101 SNOMED CT 1202003 = ICF b5101: the specific body function of BITING — the function of
+        closing the teeth/mandible to cut, grip, or break food (the incising/gripping component of oral
+        food processing), per WHO ICF definition. No dedicated SNOMED CT or exists in the mirror: every
+        biting hit (37298006 nail biting, 59901004 cheek biting, 69547003 aggressive biting,
+        248069002/248072009 self-biting, 1303480003 unable to bite with denture) is a
+        self-harm/behavior/problem finding, not the physiological ingestion-biting function. Target =,
+        active RF2 production 20260701, the SNOMED CT observable that names mastication (chewing) — the
+        parent oral-food-processing concept that subsumes biting as one of its components. Broader
+        rather than exact/partial: biting is a sub-act of mastication (incising food prior to chewing),
+        so mastication fully contains the source as an ancestor concept, but the target also subsumes
+        chewing (b5102) the source does not name; the target is the legitimate parent. Low tier : the
+        closest defensible target (mastication is the ingestion-food-processing parent), term-verified
+        active, but a real semantic gap between the ICF framing and the SNOMED CT observable (no dedicated
+        biting observable exists), and no independent crosswalk; recorded as the best available lead
+        rather than a strong map.
+        """
+}
+mapping "b5102.1" source="b5102" target="SNOMED_CT:1202003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5102 SNOMED CT 1202003 = ICF b5102: the specific body function of CHEWING (MASTICATION) —
+        the function of masticating food with the teeth and tongue to prepare it for swallowing, per WHO
+        ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that
+        names mastication (chewing). This is the closest standard equivalent — chewing and mastication
+        are co-extensive clinical terms. Broader rather than exact: SNOMED CT models mastication as an
+        OBSERVABLE (the measurable act) where ICF b5102 frames it as a FUNCTION (the physiological
+        chewing mechanism), and the observable fully contains the source domain but is one level away in
+        model framing; there is no separate dedicated observable distinct from the mastication
+        observable. High tier : direct term-and-scope match (mastication = chewing function) verified
+        active in the mirror, one-level-broader in model framing, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b5103.1" source="b5103" target="SNOMED_CT:285233002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5103 SNOMED CT 285233002 = ICF b5103: the specific body function of MANIPULATING/HANDLING
+        FOOD IN THE MOUTH — the function of moving and manipulating food/bolus within the oral cavity in
+        preparation for chewing and swallowing (oral phase preparation), per WHO ICF definition. No
+        dedicated or observable exists in the mirror. Target =, active RF2 production 20260701, the
+        SNOMED CT observable that names the oral motor functions (the coordinated oral movements including
+        bolus manipulation). This is the closest defensible standard concept; the valued correlates
+        285217000, 285436008, 285437004, 285440004 sit beneath as findings. Broader rather than exact:
+        is a broader umbrella (all oral motor functions, including articulation and oral hygiene
+        movements) where ICF b5103 is the food-manipulation subset; the target fully contains the source
+        but adds non-food oral motor content, so it is the legitimate ancestor. Low tier : the closest
+        defensible target, term-verified active, but a real semantic gap between the ICF framing
+        (food-specific) and the SNOMED CT observable (broader), and no dedicated oral-food-manipulation
+        observable exists; recorded as the best available lead rather than a strong map.
+        """
+}
+mapping "b5104.1" source="b5104" target="SNOMED_CT:34178000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5104 SNOMED CT 34178000 = ICF b5104: the specific body function of SALIVARY SECRETION — the
+        function of producing and secreting saliva by the salivary glands, per WHO ICF definition.
+        Target =, active RF2 production 20260701, the direct SNOMED CT function-observable that names
+        salivary secretion AS A FUNCTION. This is the closest standard equivalent — the
+        function-oriented framing matches the ICF function framing directly; 106085001 is the
+        gland-level parent, 71472003 is the lubrication-specific child, 21663000 is the reflex framing,
+        and 59140005 is the pathological inverse. Broader rather than exact: SNOMED CT models salivary
+        secretion as an OBSERVABLE (a measurable function) where ICF b5104 frames it as a FUNCTION, and
+        although the scope matches there is no independent Athena crosswalk re-verified; the gland-level
+        parent and stage-specific children confirm this is the canonical concept for the salivation
+        function. High tier : direct term-and-scope match (salivary secretion function = salivary
+        secretion function) verified active in the mirror, one-level-broader in model framing
+        (observable vs function).
+        """
+}
+mapping "b5105.1" source="b5105" target="SNOMED_CT:54731003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5105 SNOMED CT 54731003 = ICF b5105: the body functions of SWALLOWING (DEGLUTITION) — the
+        functions involved in swallowing food and liquid through the oral, pharyngeal, and esophageal
+        phases, per WHO ICF definition, with children b51050 oral, b51051 pharyngeal, b51052 esophageal.
+        Target =, active RF2 production 20260701, the direct SNOMED CT observable that names deglutition
+        (swallowing). This is the closest standard equivalent; 23211007 is the reflex framing, 73821007
+        is the laryngeal-protective framing, and the phase-specific children 66471008/54721005/84056009
+        are the b51050-b51052 correlates. Broader rather than exact: ICF b5105 is a multi-child function
+        block (b51050-b51052) bundling the oral, pharyngeal AND esophageal phases, where is the umbrella
+        observable for the whole deglutition act; the target sits above the phase children as the
+        umbrella concept and one level away in model framing (observable of the act vs ICF function
+        block). High tier : direct term-and-scope match (deglutition = swallowing functions) verified
+        active in the mirror, one-level-broader in model granularity, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b51050.1" source="b51050" target="SNOMED_CT:66471008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b51050 SNOMED CT 66471008 = ICF b51050: the specific body function of the ORAL PHASE OF
+        SWALLOWING — the function of moving the bolus through the oral cavity to the pharynx
+        (oral/voluntary phase of deglutition), per WHO ICF definition. Target =, active RF2 production
+        20260701, the direct SNOMED CT observable that names the oral stage of deglutition. This is the
+        closest standard equivalent — the phase, scope, and term all match directly; sibling phases
+        54721005 (pharyngeal) and 84056009 (esophageal) are the b51051/b51052 correlates. Broader rather
+        than exact: SNOMED CT models the oral stage as an OBSERVABLE (the measurable phase) where ICF
+        b51050 frames it as a FUNCTION (the physiological oral-phase mechanism), and the observable
+        fully contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (oral stage of deglutition = oral swallowing function) verified active in
+        the mirror, one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b51051.1" source="b51051" target="SNOMED_CT:54721005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b51051 SNOMED CT 54721005 = ICF b51051: the specific body function of the PHARYNGEAL PHASE
+        OF SWALLOWING — the function of moving the bolus through the pharynx (pharyngeal/involuntary
+        phase of deglutition), per WHO ICF definition. Target =, active RF2 production 20260701, the
+        direct SNOMED CT observable that names the pharyngeal stage of deglutition. This is the closest
+        standard equivalent — the phase, scope, and term all match directly; sibling phases 66471008
+        (oral) and 84056009 (esophageal) are the b51050/b51052 correlates. Broader rather than exact:
+        SNOMED CT models the pharyngeal stage as an OBSERVABLE (the measurable phase) where ICF b51051
+        frames it as a FUNCTION (the physiological pharyngeal-phase mechanism), and the observable fully
+        contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (pharyngeal stage of deglutition = pharyngeal swallowing function) verified
+        active in the mirror, one-level-broader in model framing, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b51052.1" source="b51052" target="SNOMED_CT:84056009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b51052 SNOMED CT 84056009 = ICF b51052: the specific body function of the ESOPHAGEAL PHASE
+        OF SWALLOWING — the function of moving the bolus through the esophagus to the stomach
+        (esophageal/peristaltic phase of deglutition), per WHO ICF definition. Target =, active RF2
+        production 20260701, the direct SNOMED CT observable that names the esophageal stage of
+        deglutition. This is the closest standard equivalent — the phase, scope, and term all match
+        directly; sibling phases 66471008 (oral) and 54721005 (pharyngeal) are the b51050/b51051
+        correlates. Broader rather than exact: SNOMED CT models the esophageal stage as an OBSERVABLE (the
+        measurable phase) where ICF b51052 frames it as a FUNCTION (the physiological esophageal-phase
+        mechanism), and the observable fully contains the source domain but is one level away in model
+        framing. High tier : direct term-and-scope match (esophageal stage of deglutition = esophageal
+        swallowing function) verified active in the mirror, one-level-broader in model framing, no
+        independent Athena crosswalk re-verified.
+        """
+}
+assessment "b51058.omop" source="b51058" outcome=no_match target-system="OMOP_EXT"
+assessment "b51059.omop" source="b51059" outcome=no_match target-system="OMOP_EXT"
+mapping "b5106.1" source="b5106" target="SNOMED_CT:422400008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5106 SNOMED CT 422400008 = ICF b5106: the body functions of REGURGITATION OR VOMITING — the
+        functions involved in the upward expulsion of stomach/esophageal/pharyngeal contents, per WHO
+        ICF definition, with children b51060 vomiting and b51061 regurgitation. No SNOMED CT observable
+        exists: SNOMED CT models vomiting as a DISORDER (422400008; the prior 15387003 disorder and
+        139337005 finding were inactivated) and regurgitation as a FINDING (102622004; 78104003); the
+        closest function observables (37811006; 80185009) name only a single-region mechanism, not the
+        source's combined regurgitation+vomiting scope. Target =, active RF2 production 20260701, the
+        active SNOMED CT concept that names vomiting. Partial rather than broader: the source bundles TWO
+        distinct acts (regurgitation AND vomiting), and 422400008 covers only the vomiting axis — the
+        regurgitation axis (b51061) is left uncovered, so a single target captures only one component of
+        the multi-part source (the companion regurgitation target is the b51061 child map). Weak tier :
+        the closest active concept, term-verified, but a real framing gap between the ICF framing and
+        the SNOMED CT (a pathology, not a function), plus the partial coverage (one of two bundled acts);
+        recorded to preserve a lead, not asserted as a mapping. mapping_type=partial.
+        """
+}
+mapping "b51060.1" source="b51060" target="SNOMED_CT:422400008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b51060 SNOMED CT 422400008 = ICF b51060: the specific body function of VOMITING (EMESIS) —
+        the function involved in the forceful expulsion of stomach contents through the mouth, per WHO
+        ICF definition (child of b5106 regurgitation/vomiting). No SNOMED CT observable exists: SNOMED CT
+        models vomiting as a DISORDER (422400008; the prior 15387003 disorder and 139337005 finding were
+        inactivated) and the related observables (167826004; 167839000) are vomit-characteristics, not
+        the vomiting act. Target =, active RF2 production 20260701, the active SNOMED CT concept that names
+        vomiting. Broader rather than exact: SNOMED CT models vomiting as a DISORDER (a pathological
+        clinical finding) where ICF b51060 frames it as a FUNCTION (the physiological expulsion
+        mechanism the body performs), and the disorder concept fully contains the source domain (the
+        vomiting act) but is one level away in model framing (pathology vs physiological function). Weak
+        tier : the only active SNOMED CT concept that names vomiting, term-verified, but a real framing gap
+        between the ICF framing and the SNOMED CT (asserting a disease the ICF function does not), and no
+        independent crosswalk; recorded as a low-confidence lead rather than a strong map.
+        mapping_type=broader.
+        """
+}
+mapping "b51061.1" source="b51061" target="SNOMED_CT:102622004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b51061 SNOMED CT 102622004 = ICF b51061: the specific body function of REGURGITATION — the
+        function involved in the effortless backflow of food/contents from the stomach or esophagus into
+        the mouth/pharynx without the forceful contractions of vomiting, per WHO ICF definition (child
+        of b5106 regurgitation/vomiting). No SNOMED CT observable exists: SNOMED CT models regurgitation as a
+        FINDING (102622004; 78104003; 85023004; 84642008; 55331005). Target =, active RF2 production
+        20260701, the SNOMED CT finding that names regurgitation of food (the closest scope-match for the
+        ICF digestive regurgitation function). Broader rather than exact: SNOMED CT models regurgitation as
+        a FINDING (a clinical observation) where ICF b51061 frames it as a FUNCTION (the physiological
+        backflow mechanism), and the finding fully contains the source domain but is one level away in
+        model framing; 78104003 (gastric content) is the broader-content alternative. Weak tier : the
+        closest active SNOMED CT concept that names regurgitation, term-verified, but a real framing gap
+        between the ICF framing and the SNOMED CT (a clinical observation, not a function), and no
+        independent crosswalk; recorded as a low-confidence lead rather than a strong map.
+        mapping_type=broader.
+        """
+}
+assessment "b5108.omop" source="b5108" outcome=no_match target-system="OMOP_EXT"
+assessment "b5109.omop" source="b5109" outcome=no_match target-system="OMOP_EXT"
+mapping "b515.1" source="b515" target="SNOMED_CT:106079008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b515 SNOMED CT 106079008 = ICF b515: the body functions of DIGESTION — the functions of the
+        digestive tract that break down food into simpler substances and transport them through the
+        system, per WHO ICF definition, with children b5150 transport of food through stomach and
+        intestines, b5151 breakdown of food, b5152 absorption of nutrients, b5153 food tolerance. No
+        single SNOMED CT observable exists (the stage-specific 10241009/10806004/31294001 are
+        digestion-AND-absorption stage functions, and 106079008 is the umbrella). Target =, active RF2
+        production 20260701, the direct SNOMED CT function-observable that names digestive system function
+        (the active successor; 17987008 was inactivated 2006-07-31). This is the closest standard
+        equivalent and the function-oriented framing matches the ICF function framing directly. Broader
+        rather than exact: ICF b515 is a multi-child function block (b5150-b5153) bundling transport,
+        breakdown, absorption AND food tolerance, where is the single umbrella observable for
+        digestive-system function; the target sits above the children as the umbrella concept, one level
+        away in model framing, and there is no independent Athena crosswalk re-verified. High tier :
+        direct term-and-scope match (digestive system function = digestive functions) verified active in
+        the mirror.
+        """
+}
+mapping "b5150.1" source="b5150" target="SNOMED_CT:83909001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5150 SNOMED CT 83909001 = ICF b5150: the specific body function of TRANSPORT OF FOOD
+        THROUGH STOMACH AND INTESTINES — the function of propelling/moving food (chyme) through the
+        stomach and along the intestinal tract, per WHO ICF definition. Target =, active RF2 production
+        20260701, the direct SNOMED CT function-observable that names gastrointestinal transit (the
+        movement of contents through the GI tract). This is the closest standard equivalent and the
+        function-oriented framing matches directly; 27100007 is the time-measurement correlate, 36735000
+        and 76629003 are the per-region motility children, 40117008 is the stomach-exit-specific child,
+        and 37557000 is the peristaltic-mechanism correlate. Broader rather than exact: is the umbrella
+        for transit through the whole GI tract where ICF b5150 names the stomach-and-intestine transport
+        specifically; the target fully contains the source domain but one level away in model framing
+        (function observable umbrella vs ICF function), and there is no dedicated observable distinct
+        from the GI-transit observable. High tier : direct term-and-scope match (gastrointestinal
+        transit = transport of food through stomach and intestines) verified active in the mirror,
+        one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5151.1" source="b5151" target="SNOMED_CT:10241009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5151 SNOMED CT 10241009 = ICF b5151: the specific body function of BREAKDOWN OF FOOD — the
+        function of mechanically and chemically breaking down food into simpler substances (digestion
+        proper), per WHO ICF definition. No dedicated SNOMED CT or observable exists: the candidates are
+        stage-specific digestion-AND-absorption functions (10241009 intestinal stage; 10806004
+        intraluminal stage; 31294001 lymphatic transport stage), 18741006 (enzyme secretion, not
+        breakdown itself), 30568003/77312004 enterocyte digestion (intracellular), and 40091007 (general
+        breakdown, broader than digestive). Target =, active RF2 production 20260701, the SNOMED CT
+        function-observable for the intestinal stage of digestion and absorption (where the bulk of food
+        breakdown/absorption occurs). This is the closest defensible standard concept that names a
+        digestive-breakdown function. Broader rather than exact: 10241009 is a stage-specific
+        digestion-AND-absorption function (intestinal stage) where ICF b5151 is the general
+        food-breakdown function (mechanical + chemical, all stages); the target is one stage of the
+        broader source domain, so the target sits inside the source's scope — but as the best-available
+        standard concept naming a digestive function it is recorded broader (the standard concept
+        covering the core of the source's breakdown axis). Low tier : the closest defensible target,
+        term-verified active, but a real semantic gap between the ICF (general) and the SNOMED CT
+        (stage-specific and bundled with absorption), and no dedicated food-breakdown observable exists;
+        recorded as the best available lead rather than a strong map.
+        """
+}
+mapping "b5152.1" source="b5152" target="SNOMED_CT:38597004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5152 SNOMED CT 38597004 = ICF b5152: the specific body function of ABSORPTION OF NUTRIENTS
+        — the function of absorbing nutrients (and water, vitamins, minerals) across the intestinal
+        mucosa into the body, per WHO ICF definition. Target =, active RF2 production 20260701, the
+        direct SNOMED CT function-observable that names intestinal absorption AS A FUNCTION. This is the
+        closest standard equivalent and the function-oriented framing matches directly; the stage
+        correlates 10241009/10806004/31294001 are its digestion-and-absorption stage parents, and
+        15281004/26127003/51841009/64193007 are the protein/carbohydrate/fat/short-chain-fatty-acid
+        absorption children. Broader rather than exact: SNOMED CT models intestinal absorption as an
+        OBSERVABLE (a measurable function) where ICF b5152 frames it as a FUNCTION (the physiological
+        absorption mechanism), and 38597004 is the canonical concept for the
+        intestinal-nutrient-absorption function — the target fully contains the source domain but is one
+        level away in model framing (observable vs function), and there is no independent Athena
+        crosswalk re-verified. High tier : direct term-and-scope match (intestinal absorption function =
+        absorption of nutrients function) verified active in the mirror, one-level-broader in model
+        framing.
+        """
+}
+mapping "b5153.1" source="b5153" target="SNOMED_CT:235719002" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5153 SNOMED CT 235719002 = ICF b5153: the specific body functions of FOOD TOLERANCE — the
+        physiological functions that determine tolerance (vs intolerance) to ingested foods/nutrients,
+        per WHO ICF definition. No SNOMED CT observable exists: every food-tolerance/intolerance hit is a
+        FINDING or DISORDER of intolerance (the pathological inverse) — 235719002, 213018006 (inactive,
+        replaced), 157804002 (inactive), 102611003 (inactive) — none names the physiological tolerance
+        function the ICF source denotes. Target =, active RF2 production 20260701, the SNOMED CT finding
+        that names food intolerance (the pathological inverse of the source's tolerance function).
+        Related rather than broader/narrower/partial: the source is the physiological FUNCTION of
+        tolerating food where 235719002 is the pathological FINDING of failing to tolerate food — they
+        are clinical inverses (presence of the function = absence of the finding), associated but not in
+        a subsumption/equivalence/component relationship. Weak tier : the closest active SNOMED CT concept
+        in the food-tolerance domain, term-verified, but only a loose inverse-association link between
+        the ICF and the SNOMED CT (no dedicated food-tolerance-function observable exists), and no
+        independent crosswalk; recorded to preserve a lead, not asserted as a mapping.
+        mapping_type=related.
+        """
+}
+assessment "b5158.omop" source="b5158" outcome=no_match target-system="OMOP_EXT"
+assessment "b5159.omop" source="b5159" outcome=no_match target-system="OMOP_EXT"
+mapping "b520.1" source="b520" target="SNOMED_CT:38597004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b520 SNOMED CT 38597004 = ICF b520: the body functions of ASSIMILATION (nutrient absorption)
+        — the digestive system's uptake of nutrients and their passage across the intestinal mucosa into
+        the body, per WHO ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT
+        function-observable that names intestinal absorption AS A FUNCTION. This is the closest standard
+        equivalent; sibling observables 10241009 and 10806004 are its stage-specific children, and
+        15281004/26127003 are protein/carbohydrate-specific absorption functions beneath it. Broader
+        rather than exact: ICF b520 frames nutrient assimilation as a body function (covering absorption
+        of water, vitamins, minerals AND macronutrients) where 38597004 denotes the
+        intestinal-absorption function observable; the target fully contains the core absorption axis
+        but the ICF scope is marginally broader (assimilation includes post-absorptive utilization), and
+        there is no independent Athena crosswalk re-verified. High tier : direct term-and-scope match
+        (intestinal absorption function = nutrient-assimilation function) verified active in the mirror,
+        one-level-broader in model framing.
+        """
+}
+mapping "b525.1" source="b525" target="SNOMED_CT:111989001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b525 SNOMED CT 111989001 = ICF b525: the body functions of DEFECATION — the functions
+        involved in the elimination of feces from the rectum, per WHO ICF definition, with children
+        b5250 elimination of feces, b5251 feces consistency, b5252 feces frequency, b5253 fecal
+        continence, b5254 flatus handling. Target =, active RF2 production 20260701, the direct SNOMED CT
+        observable that names the act/process of defecation. This is the closest standard equivalent;
+        the sibling 364171004 is a near-synonym and 300373008 is the finding framing. Broader rather
+        than exact: ICF b525 is a multi-child function block (b5250-b5254) bundling elimination,
+        consistency, frequency, continence AND flatus handling, where is a single observable for the
+        defecation act itself; the target names the central act but does not subsume the
+        continence/flatus/consistency sub-functions, so it stands broader as the single best umbrella
+        for the block. High tier : direct term-and-scope match (defecation = defecation functions)
+        verified active in the mirror, one-level-broader in model granularity, no independent Athena
+        crosswalk re-verified.
+        """
+}
+mapping "b5250.1" source="b5250" target="SNOMED_CT:111989001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5250 SNOMED CT 111989001 = ICF b5250: the specific body function of ELIMINATION OF FECES —
+        the passage and expulsion of feces from the rectum (the core defecation act), per WHO ICF
+        definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that names
+        defecation. This is the closest standard equivalent to the feces-elimination function; 300373008
+        is the finding framing. Broader rather than exact: SNOMED CT models defecation as an OBSERVABLE
+        (the measurable act) where ICF b5250 frames it as a FUNCTION (the physiological expulsion
+        mechanism), and the observable fully contains the source domain but is one level away in model
+        framing; there is no dedicated observable distinct from the defecation observable. High tier :
+        direct term-and-scope match (defecation = elimination of feces) verified active in the mirror,
+        one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5251.1" source="b5251" target="SNOMED_CT:249618009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5251 SNOMED CT 249618009 = ICF b5251: the specific body function of FECES CONSISTENCY — the
+        physiological function governing the form/consistency of feces (solid/formed/liquid), per WHO
+        ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that
+        names stool consistency. This is the closest standard equivalent; the valued correlates
+        167614006 normal, 167615007 soft, 167617004 fluid, 167618009 hard sit beneath as findings.
+        Broader rather than exact: SNOMED CT models stool consistency as an OBSERVABLE (the assessed
+        characteristic) where ICF b5251 frames it as a FUNCTION (the physiological mechanism producing
+        stool form), and the observable fully contains the source domain but is one level away in model
+        framing. High tier : direct term-and-scope match (consistency of stool = feces-consistency
+        function) verified active in the mirror, one-level-broader in model framing, no independent
+        Athena crosswalk re-verified.
+        """
+}
+mapping "b5252.1" source="b5252" target="SNOMED_CT:162098000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5252 SNOMED CT 162098000 = ICF b5252: the specific body function of FECES FREQUENCY — the
+        physiological function governing the frequency of defecation / bowel movements, per WHO ICF
+        definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that names
+        defecation frequency. This is the closest standard equivalent; the valued correlates 15510009
+        increased, 44316003 decreased, 425064003 abnormal sit beneath as findings. Broader rather than
+        exact: SNOMED CT models defecation frequency as an OBSERVABLE (the assessed rate) where ICF b5252
+        frames it as a FUNCTION (the physiological mechanism governing bowel-movement frequency), and
+        the observable fully contains the source domain but is one level away in model framing. High
+        tier : direct term-and-scope match (frequency of defecation = feces-frequency function) verified
+        active in the mirror, one-level-broader in model framing, no independent Athena crosswalk
+        re-verified. (Inactive near-synonym 249521002 was rejected in favour of the active observable.)
+        """
+}
+mapping "b5253.1" source="b5253" target="SNOMED_CT:405000000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5253 SNOMED CT 405000000 = ICF b5253: the specific body function of FECAL CONTINENCE — the
+        functions involved in voluntarily controlling the elimination of feces, per WHO ICF definition.
+        Target =, active RF2 production 20260701, the direct SNOMED CT observable that names the ability to
+        maintain bowel (fecal) continence. This is the closest standard equivalent and the
+        function-oriented framing (an ability, not a status); sibling 406217005 is the state framing,
+        and 72042002 is the pathological inverse. Broader rather than exact: SNOMED CT models fecal
+        continence as an OBSERVABLE of ability where ICF b5253 frames it as a FUNCTION (the
+        physiological continence mechanism), and the observable fully contains the source domain but is
+        one level away in model framing; there is no dedicated observable distinct from the ability
+        observable. High tier : direct term-and-scope match (ability to maintain bowel continence =
+        fecal-continence function) verified active in the mirror, one-level-broader in model framing, no
+        independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5254.1" source="b5254" target="SNOMED_CT:249504006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5254 SNOMED CT 249504006 = ICF b5254: the specific body functions of HANDLING GAS/FLATUS in
+        the intestines — the functions of expelling intestinal gas (flatus) from the lower
+        gastrointestinal tract, per WHO ICF definition. Target =, active RF2 production 20260701, the
+        direct SNOMED CT concept that names the act of passing flatus. This is the closest standard
+        equivalent; 6352008 (excessive gas) and 271835004 are the related excessive/pathological
+        correlates. Broader rather than exact/partial: ICF b5254 frames flatus handling as a FUNCTION
+        (the physiological control and expulsion of intestinal gas) where 249504006 is the FINDING of
+        passing flatus; the finding fully contains the expulsion axis but is one level away in model
+        framing and does not name the continence/control axis of gas handling. Low tier : the closest
+        defensible flatus-handling concept, term-verified active, but real semantic gap between the ICF
+        framing and the SNOMED CT finding, and no independent crosswalk; no dedicated
+        flatus-handling-function observable exists in the mirror.
+        """
+}
+assessment "b5258.omop" source="b5258" outcome=no_match target-system="OMOP_EXT"
+assessment "b5259.omop" source="b5259" outcome=no_match target-system="OMOP_EXT"

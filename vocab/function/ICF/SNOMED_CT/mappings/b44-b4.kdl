@@ -1,0 +1,335 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b44-b4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b440.1" source="b440" target="SNOMED_CT:78064003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b440 SNOMED CT 78064003 (Respiration functions) = ICF b440: the body functions of
+        respiration/breathing, including b4400 respiratory rate, b4401 respiratory rhythm, b4402
+        respiratory depth. Target =, active RF2 production. This is the direct SNOMED CT observable that
+        captures respiration-as-a-function and is the closest standard equivalent of ICF b440; its
+        parent is 3709003 is 246464006 grouping, and its siblings/valued correlates include 45804006,
+        86290005 (b4400), 48064009 (b4401). Broader rather than exact only because ICF b440 is a
+        multi-child function block (b4400-b4402) where the SNOMED CT concept is a single flat observable,
+        and ICF uses (Andningsfunktioner) vs SNOMED CT. High tier : direct term-and-scope match
+        (respiratory function = respiration functions) verified active in the mirror, but
+        one-level-broader in model granularity with no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b440-b449.1" source="b440-b449" target="SNOMED_CT:78064003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b440-b449 SNOMED CT 78064003 = ICF block b440-b449 Respiration functions: the block-level
+        grouping of respiration functions (b440) AND respiratory muscle functions (b445). Target =,
+        active. No single SNOMED CT block observable exists; the nearest standard ancestor that contains
+        the respiration-function core of this block is 78064003. Broader (moderate): a block-level
+        respiration+respiratory-muscle grouping mapped up to the respiratory-function observable is a
+        deeper climb than the b440 map, and the target covers the b440 respiration axis fully but the
+        b445 respiratory-muscle axis only partially (SNOMED CT has no dedicated respiratory-muscle-function
+        observable, only 73898009 32058005), so 78064003 is the nearest defensible ancestor and the
+        dominant axis. Per the rubric, the moderate tier applies for this best-available but looser
+        block-level map.
+        """
+}
+mapping "b4400.1" source="b4400" target="SNOMED_CT:86290005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4400 SNOMED CT 86290005 (Funktioner för andningsfrekvens) = ICF b4400 Respiration rate
+        functions: the respiration sub-function of the rate (breaths per unit time) of breathing. Target
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (respiratory rate as
+        a respiration function), confirmed by literal term match; ICF (respiration rate) = SNOMED CT. The
+        SNOMED CT concept is the direct functional observable whose parent is 250810003 271625008 364063000
+        is inactive/D. exact_match: same concept, term-verified active.
+        """
+}
+mapping "b4401.1" source="b4401" target="SNOMED_CT:48064009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4401 SNOMED CT 48064009 (Funktioner för andningsrytm) = ICF b4401 Respiration rhythm
+        functions: the respiration sub-function of the rhythmic pattern of breathing (regularity and
+        timing of the breathing cycle). Target =, active RF2 production. This is the direct SNOMED CT
+        function observable that names respiratory rhythm as a function; it is the functional observable
+        where 5467003 is its valued correlate, and 248582003 is the sibling assessment-axis observable.
+        Broader rather than exact: ICF b4401 (respiration rhythm) and are denotationally the same
+        clinical concept, but the SNOMED CT concept is modelled as a single flat function observable
+        against ICF's multi-aspect rhythm function (regularity, pattern, timing), so one-level-broader
+        in model granularity. High tier : direct term-and-scope match (respiratory rhythm =
+        andningsrytm) verified active in the mirror, but one-level-broader with no independent
+        crosswalk. (248582003; 48064009 chosen as it is the explicit function observable, matching the
+        ICF function framing.)
+        """
+}
+mapping "b4402.1" source="b4402" target="SNOMED_CT:271626009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4402 SNOMED CT 271626009 (Funktioner för andningsdjup) = ICF b4402 Respiration depth
+        functions: the respiration sub-function of the depth (tidal volume / amplitude) of breathing.
+        Target =, active RF2 production. This is the only active SNOMED CT observable that names the
+        depth-of-respiration axis; the legacy 7808001 is inactive/D (valid_end 2006-07-31). Broader
+        (moderate): 271626009 is the depth-of-respiration assessment observable (the best available
+        active standard concept), but it is not modelled as an explicit observable (the function-framed
+        concept was retired), so the target captures the same clinical axis but as a generic observable
+        rather than a function. Per the rubric, the moderate tier applies for this best-available but
+        looser (function-retired) map.
+        """
+}
+assessment "b4408.omop" source="b4408" outcome=no_match target-system="OMOP_EXT"
+assessment "b4409.omop" source="b4409" outcome=no_match target-system="OMOP_EXT"
+mapping "b445.1" source="b445" target="SNOMED_CT:3709003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b445 SNOMED CT 3709003 = ICF b445 Respiratory muscle functions: the body functions of the
+        muscles used for breathing, including b4450 thoracic respiratory muscles, b4451 diaphragm, b4452
+        accessory respiratory muscles. Target =, active RF2 production. This is the direct SNOMED CT
+        function observable that captures breathing-movement-as-a-function and is the closest standard
+        equivalent of ICF b445; it is the parent observable of 78064003 are 271620003, 1119516004. No
+        dedicated observable exists in SNOMED CT (252486000 is a *procedure*, 32058005 is the reflex not
+        the function). Broader rather than exact: 3709003 denotes respiratory *movement* as a function,
+        which is the breathing-movement product of the respiratory muscles (the b445 function), but it
+        models the movement not the muscles-as-such, so one-level-broader in scope. High tier : the
+        closest defensible respiratory-muscle function observable, term-verified active, but
+        one-level-broader with no independent crosswalk.
+        """
+}
+mapping "b4450.1" source="b4450" target="SNOMED_CT:264825005" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4450 SNOMED CT 264825005 = ICF b4450 Functions of thoracic respiratory muscles: the
+        respiratory-muscle sub-function of the thoracic cage muscles (intercostals, etc.) used in
+        breathing. Target =, active RF2 production. No dedicated observable exists in SNOMED CT: the
+        candidate 252486000 is a procedure, and the function hierarchy has no thoracic-muscle-specific
+        function observable. 264825005 is the only SNOMED CT observable that names the chest/thoracic
+        respiratory-movement axis directly. Related rather than exact/broader: 264825005 is the
+        observable of chest respiratory *movements* (the movement product), not the physiological
+        *function* of the thoracic respiratory muscles — the SNOMED CT function hierarchy does not model
+        thoracic-respiratory-muscle function separately. Low tier : the closest defensible
+        thoracic-respiratory observable, term-verified active, but a movement-vs-function model mismatch
+        and no independent crosswalk.
+        """
+}
+mapping "b4451.1" source="b4451" target="SNOMED_CT:111969002" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4451 SNOMED CT 111969002 = ICF b4451 Functions of the diaphragm: the respiratory-muscle
+        sub-function of the diaphragm (the primary breathing muscle). Target =, active RF2 production,
+        whose parent is 8690003. No dedicated observable exists in SNOMED CT: the candidate 413983009 /
+        413984003 are device observables; 111969002 is the only active SNOMED CT observable that names the
+        diaphragm-as-breathing axis. Related rather than exact/broader: 111969002 is the observable of
+        diaphragmatic *movement* (the movement product of diaphragm contraction), not the physiological
+        *function* of the diaphragm — the SNOMED CT function hierarchy does not model diaphragm function
+        separately. Low tier : the closest defensible diaphragm observable, term-verified active, but a
+        movement-vs-function model mismatch and no independent crosswalk.
+        """
+}
+mapping "b4452.1" source="b4452" target="SNOMED_CT:73898009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4452 SNOMED CT 73898009 = ICF b4452 Functions of accessory respiratory muscles: the
+        respiratory-muscle sub-function of the accessory breathing muscles (sternocleidomastoid,
+        scalenes, pectoralis) recruited in laboured breathing. Target =, active RF2 production. This is
+        the direct SNOMED CT function observable that names accessory-muscle respiratory movement as a
+        function; its valued correlate is 271620003. Broader (moderate): 73898009 captures the
+        accessory-muscle respiratory-movement axis (the clinical core of ICF b4452) and is the closest
+        standard equivalent, but it models the *movement* product rather than the muscles-as-a-function
+        explicitly; one-level-broader than an exact function-framed match. Per the rubric, the moderate
+        tier applies for this best-available but looser map. (162895003 considered and rejected:
+        inactive/D, and a finding not a function.)
+        """
+}
+assessment "b4458.omop" source="b4458" outcome=no_match target-system="OMOP_EXT"
+assessment "b4459.omop" source="b4459" outcome=no_match target-system="OMOP_EXT"
+assessment "b449.omop" source="b449" outcome=no_match target-system="OMOP_EXT"
+mapping "b450.1" source="b450" target="SNOMED_CT:78064003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b450 SNOMED CT 78064003 = ICF b450: the ICF block of (b4500-b4509), grouping the subsidiary
+        respiratory-function children: mouth breathing (b4500), cough (b4501), sneeze (b4502), yawn
+        (b4503), functions related to respiratory mucus (b4504). Target =, active RF2 production, the
+        direct SNOMED CT observable capturing respiratory-system functions overall. This is the closest
+        standard equivalent of the ICF b450 grouping; it sits above the b4500-b4504 children in the
+        observable hierarchy. Broader rather than exact only because ICF b450 is a multi-child function
+        block (b4500-b4509) where is a single flat observable, and the ICF block bundles several
+        sub-functions (cough/sneeze/yawn/mucus) that SNOMED CT models as separate findings/observables
+        rather than under one concept. High tier : direct term-and-scope match (respiratory function =
+        additional respiratory functions) verified active in the mirror, but one-level-broader in model
+        granularity with no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b450-b469.omop" source="b450-b469" outcome=no_match target-system="OMOP_EXT"
+mapping "b4500.1" source="b4500" target="SNOMED_CT:77329001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4500 SNOMED CT 77329001 = ICF b4500: the body function of breathing through the mouth (the
+        respiratory sub-function of mouth breathing, distinct from nasal breathing). Target =, active
+        RF2 production. This is the direct SNOMED CT concept that names mouth breathing; sibling concepts
+        (110289004, 110290008 due to nasal obstruction, 110291007 chronic) are its qualified variants.
+        Broader rather than exact: SNOMED CT models mouth breathing as a FINDING (a clinical observation)
+        whereas ICF b4500 frames it as a FUNCTION (the physiological act); the finding concept fully
+        contains the source domain but is modelled one level away as an observation rather than as the
+        function itself, and there is no SNOMED CT observable. High tier : direct term-and-scope match
+        (mouth breathing = function of breathing through the mouth) verified active in the mirror, no
+        independent Athena crosswalk re-verified, one-level-broader in model framing.
+        """
+}
+mapping "b4501.1" source="b4501" target="SNOMED_CT:49727002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4501 SNOMED CT 49727002 = ICF b4501: the body function of coughing (the respiratory
+        protective/reflex sub-function of producing a cough). Target =, active RF2 production, the
+        canonical SNOMED CT concept naming cough (valued correlates 11833005 dry, 28743005 productive,
+        43025008 paroxysmal sit beneath). This is the closest standard equivalent; SNOMED CT also has
+        34606001 (the function framing), but 49727002 is the dominant, clinically used concept for cough
+        as a function/act. Broader rather than exact: SNOMED CT models cough as a FINDING (clinical
+        observation) where ICF b4501 frames it as a FUNCTION (the physiological reflex/action); the
+        finding concept fully contains the source domain but is one level away in model framing. High
+        tier : direct term-and-scope match (cough = function of coughing) verified active in the mirror,
+        no independent Athena crosswalk re-verified, one-level-broader in model framing. (34606001; the
+        finding is preferred as the primary clinical concept.)
+        """
+}
+mapping "b4502.1" source="b4502" target="SNOMED_CT:76067001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4502 SNOMED CT 76067001 = ICF b4502: the body function of sneezing (the respiratory
+        protective/reflex sub-function of producing a sneeze). Target =, active RF2 production, the
+        canonical SNOMED CT concept naming sneezing. This is the closest standard equivalent; no dedicated
+        observable exists in the mirror (unlike cough, which has 34606001). Broader rather than exact:
+        SNOMED CT models sneezing as a FINDING (clinical observation) where ICF b4502 frames it as a
+        FUNCTION (the physiological reflex/action); the finding concept fully contains the source domain
+        but is one level away in model framing. High tier : direct term-and-scope match (sneezing =
+        function of sneezing) verified active in the mirror, no independent Athena crosswalk
+        re-verified, one-level-broader in model framing.
+        """
+}
+mapping "b4503.1" source="b4503" target="SNOMED_CT:37993006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4503 SNOMED CT 37993006 = ICF b4503: the body function of yawning (the respiratory/reflex
+        sub-function of producing a yawn). Target =, active RF2 production. This is the direct SNOMED CT
+        OBSERVABLE that names yawning AS A FUNCTION — the closest framing to ICF's function perspective;
+        sibling findings (248626009, 301250005, 191957001) are observation/valued concepts. Broader
+        rather than exact: ICF b4503 is the yawning function generally where 37993006 denotes the
+        function observable; one-level-broader in model granularity and there is no independent Athena
+        crosswalk re-verified. High tier : direct term-and-scope match (yawning function = function of
+        yawning) verified active in the mirror, the function-oriented observable (preferred over the
+        finding per the b310 voice-function precedent).
+        """
+}
+mapping "b4504.1" source="b4504" target="SNOMED_CT:3371003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4504 SNOMED CT 3371003 = ICF b4504: the body functions related to respiratory mucus
+        (production AND transport of airway secretions, with sub-children b45040 production, b45041
+        transport, b45048 other, b45049 unspecified). Target =, active RF2 production. This is the only
+        SNOMED CT function-observable in the mirror that names the mucociliary transport mechanism (the
+        ciliary action that transports mucus); no SNOMED CT or observable exists (sputum appears only as a
+        substance 45710003 or as cough-up findings). Broader rather than exact: 3371003 denotes ONLY the
+        ciliary-action/transport axis of mucus handling and does not name the production axis that b4504
+        also covers — it is one axis of a two-axis source, which would normally be, but as the SINGLE
+        best target it stands broader for the transport component (production has no defensible standard
+        target and is left implicit). Low tier : the closest defensible mucus-related function
+        observable, term-verified active, but the target covers only the transport/ciliary sub-axis of
+        the broader b4504 mucus-function block, and there is no independent crosswalk. A single
+        partial-with-no-companion target usually caps at, but the transport-axis containment is
+        defensible and 3371003 is the unambiguous standard observable for the dominant mucus-transport
+        function, so a low-tier broader map is justified over a weak/partial or no_match.
+        """
+}
+assessment "b45040.omop" source="b45040" outcome=no_match target-system="OMOP_EXT"
+mapping "b45041.1" source="b45041" target="SNOMED_CT:3371003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b45041 SNOMED CT 3371003 = ICF b45041: the specific body function of TRANSPORT of
+        respiratory mucus (mucociliary clearance — the ciliary action and mucus escalator that moves
+        airway secretions up and out). Target =, active RF2 production. This is the direct SNOMED CT
+        function-observable that names the ciliary-action mechanism responsible for mucus transport, and
+        is the closest standard equivalent of the ICF mucus-transport function. Broader rather than
+        exact: ICF b45041 frames mucus transport as a function (covering ciliary action PLUS the
+        mucus-rheology/cough-assisted components of clearance) where 3371003 denotes specifically the
+        ciliary-action axis; the target fully contains the ciliary-transport core of the source but the
+        ICF concept is slightly broader than ciliary action alone. Moderate tier : direct term-and-scope
+        match on the ciliary-transport mechanism, term-verified active, but one-level-broader in scope
+        and no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b45048.omop" source="b45048" outcome=no_match target-system="OMOP_EXT"
+assessment "b45049.omop" source="b45049" outcome=no_match target-system="OMOP_EXT"
+assessment "b4508.omop" source="b4508" outcome=no_match target-system="OMOP_EXT"
+assessment "b4509.omop" source="b4509" outcome=no_match target-system="OMOP_EXT"
+mapping "b455.1" source="b455" target="SNOMED_CT:248243004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b455 SNOMED CT 248243004 = ICF b455: the body functions of EXERCISE TOLERANCE —
+        cardiovascular and respiratory capacity as required for enduring physical exertion (per WHO
+        definition), with children b4550 general physical endurance, b4551 aerobic capacity, b4552
+        fatiguability. Target =, active RF2 production, the direct SNOMED CT observable that names exercise
+        tolerance. This is the closest standard equivalent; sibling findings (267044007, 365386006) are
+        its valued correlates. Broader rather than exact only because ICF b455 is a multi-child function
+        block (b4550-b4552) where is a single flat observable, and there is no independent Athena
+        crosswalk re-verified (web research confirms no official WHO/SNOMED CT-International 1:1 crossmap
+        exists for b455; citation below). High tier : direct term-and-scope match (exercise tolerance =
+        tolerance for physical work) verified active in the mirror.
+        """
+}
+mapping "b4550.1" source="b4550" target="SNOMED_CT:248243004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4550 SNOMED CT 248243004 = ICF b4550: the specific body function of GENERAL physical
+        endurance (overall stamina for sustained physical exertion). Target =, active RF2 production,
+        the SNOMED CT observable that names exercise tolerance. This is the closest standard equivalent;
+        the SNOMED CT 248243004 359755007 was also considered (stamina = endurance) but 248243004 is the
+        more specific exercise-tolerance framing and matches the b455 parent hierarchy. Broader rather
+        than narrower/exact: ICF b4550 is slightly broader than SNOMED CT (endurance includes everyday
+        sustained activity, exercise tolerance is the exertion-tolerance assessment), but as the single
+        best target it stands broader for the endurance domain. Moderate tier : direct term-and-scope
+        match, term-verified active, but the source vs target framing has a real breadth mismatch
+        (one-level), and no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b4551.1" source="b4551" target="SNOMED_CT:7928001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4551 SNOMED CT 7928001 = ICF b4551: the specific body function of AEROBIC CAPACITY — the
+        ability to transport/utilize oxygen (the maximal oxygen-uptake / cardiorespiratory
+        aerobic-capacity function). Target =, active RF2 production, the only SNOMED CT observable in the
+        mirror that names whole-body oxygen consumption (the VO2 / aerobic-capacity correlate). This is
+        the closest standard equivalent; 16206004 is a related circulatory-delivery observable but
+        7928001 captures the aerobic-utilization axis that defines aerobic capacity. Broader rather than
+        exact: ICF b4551 frames aerobic capacity as a function/ability where 7928001 denotes the
+        oxygen-consumption observable (the measurable correlate), and is slightly broader than (it
+        includes resting consumption). Low tier : the closest defensible aerobic-capacity observable,
+        term-verified active, but real semantic gap between the ICF framing and the SNOMED CT observable,
+        and no independent crosswalk.
+        """
+}
+mapping "b4552.1" source="b4552" target="SNOMED_CT:79915001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4552 SNOMED CT 79915001 = ICF b4552: the specific body function of FATIGABILITY —
+        susceptibility to fatigue, the ease with which a person becomes fatigued on exertion. Target =,
+        active RF2 production, the direct SNOMED CT concept that names fatigability (distinct from 84229001
+        general Fatigue). This is the closest standard equivalent; the (84229001) was considered and
+        rejected in favour of the specific fatigability concept that matches the source term exactly.
+        Broader rather than exact: SNOMED CT models fatigability as a FINDING (clinical observation) where
+        ICF b4552 frames it as a FUNCTION (the physiological susceptibility), and the finding concept
+        fully contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (fatigability = function of fatigability), term-verified active, no
+        independent Athena crosswalk re-verified.
+        """
+}
+assessment "b4558.omop" source="b4558" outcome=no_match target-system="OMOP_EXT"
+assessment "b4559.omop" source="b4559" outcome=no_match target-system="OMOP_EXT"
+assessment "b460.omop" source="b460" outcome=no_match target-system="OMOP_EXT"
+assessment "b469.omop" source="b469" outcome=no_match target-system="OMOP_EXT"
+assessment "b498.omop" source="b498" outcome=no_match target-system="OMOP_EXT"
+assessment "b499.omop" source="b499" outcome=no_match target-system="OMOP_EXT"

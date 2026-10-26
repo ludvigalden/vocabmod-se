@@ -1,0 +1,14 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b19-b1
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "b198.omop" source="b198" outcome=no_match target-system="OMOP_EXT"
+assessment "b199.omop" source="b199" outcome=no_match target-system="OMOP_EXT"

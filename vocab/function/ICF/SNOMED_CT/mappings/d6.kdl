@@ -1,0 +1,378 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "d6.omop" source="d6" outcome=no_match target-system="OMOP_EXT"
+assessment "d610.omop" source="d610" outcome=no_match target-system="OMOP_EXT"
+assessment "d610-d629.omop" source="d610-d629" outcome=no_match target-system="OMOP_EXT"
+assessment "d6100.omop" source="d6100" outcome=no_match target-system="OMOP_EXT"
+assessment "d6101.omop" source="d6101" outcome=no_match target-system="OMOP_EXT"
+assessment "d6102.omop" source="d6102" outcome=no_match target-system="OMOP_EXT"
+assessment "d6108.omop" source="d6108" outcome=no_match target-system="OMOP_EXT"
+assessment "d6109.omop" source="d6109" outcome=no_match target-system="OMOP_EXT"
+mapping "d620.1" source="d620" target="SNOMED_CT:300718007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d620 SNOMED CT 300718007 = the d620 3-level chapter code for acquiring goods and
+        services (shopping, gathering daily necessities). Target, SE synonym. SNOMED CT frames it as the
+        ability-assessment on the same topic axis (acquiring goods/services); it subsumes the ICF
+        activity, so the target is broader (subsumes the topic), not a 1:1 exact equivalent — the d620
+        parent also spans gathering services, which the shopping concept covers only partially, but
+        shopping is the dominant, best-covered axis. High tier per §1 (one-level broader, same verified
+        SNOMED CT functional observable hierarchy).
+        """
+}
+mapping "d6200.1" source="d6200" target="SNOMED_CT:300718007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6200 SNOMED CT 300718007 = the d620 shopping sub-activity of making purchases. Target,
+        SE synonym — the exact Swedish-term match (=). SNOMED CT frames it as the ability-assessment on the
+        same shopping axis; it subsumes the ICF activity, so broader (target subsumes the topic), not a
+        1:1 exact equivalent. High tier per §1.
+        """
+}
+mapping "d6201.1" source="d6201" target="SNOMED_CT:300718007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6201 SNOMED CT 300718007 = the d620 sub-activity of gathering daily necessities (a
+        shopping/goods-acquisition sub-task). Target, SE. Gathering daily necessities is a subset of
+        shopping activity, so the target subsumes the source's topic axis (broader); SNOMED CT frames it as
+        the ability-assessment, not the activity itself. High tier per §1.
+        """
+}
+assessment "d6208.omop" source="d6208" outcome=no_match target-system="OMOP_EXT"
+mapping "d6209.1" source="d6209" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6209 SNOMED CT 285809000 = the d620 goods/services-acquisition residual. No
+        unspecified-level SNOMED CT target exists for the d620 axis; the shopping observable 300718007
+        covers the named sub-tasks (d6200/d6201) but the unspecified residual is deliberately
+        non-specific, so the closest defensible standard concept is the chapter-top, SE. Broader (target
+        subsumes the d6 chapter); unspecified source frames it loosely → moderate tier per §1,
+        consistent with the d6409/d649 unspecified-residual precedent.
+        """
+}
+mapping "d629.1" source="d629" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d629 SNOMED CT 285809000 = the d630-d649 block-level residual (other specified and
+        unspecified acquisition of goods/services, the d620-d629 sub-tree residual). No single SNOMED CT
+        concept expresses an other-and-unspecified goods-acquisition residual; the closest standard
+        concept is, SE — the top of the ICF-aligned domestic-life observable branch. Broader (target
+        subsumes the block), other-specified/unspecified source frames it loosely → moderate tier per
+        §1, consistent with the d649 block-residual precedent.
+        """
+}
+mapping "d630.1" source="d630" target="SNOMED_CT:286488009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d630 SNOMED CT 286488009 = the d630 3-level chapter code for preparing meals. Target, SE
+        synonyms / — the exact Swedish-term match (=). SNOMED CT frames it as the ability-assessment on the
+        same meal-preparation axis; it subsumes the ICF activity, so broader (target subsumes the
+        topic), not a 1:1 exact equivalent. High tier per §1.
+        """
+}
+mapping "d630-d649.1" source="d630-d649" target="SNOMED_CT:286032005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d630-d649 SNOMED CT 286032005 = the ICF block code spanning the household-tasks
+        sub-chapter (d630 preparing meals through d649 household-tasks residual). Target, SE — the
+        ICF-aligned housekeeping observable that covers the same d630-d649 block scope. SNOMED CT frames it
+        as the ability-assessment; it subsumes the block's activity axis (broader). A multi-axis block
+        code mapped to a single standard concept is necessarily looser → moderate tier per §1,
+        consistent with the d649 block-residual precedent.
+        """
+}
+mapping "d6300.1" source="d6300" target="SNOMED_CT:286452004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6300 SNOMED CT 286452004 = the d630 sub-activity of preparing simple meals (minimal
+        cooking). Target, SE — the simple food-preparation observable, distinct from 286513008 cooking.
+        SNOMED CT frames it as the ability-assessment on the same simple-preparation axis; it subsumes the
+        ICF activity, so broader (target subsumes the topic). High tier per §1.
+        """
+}
+mapping "d6301.1" source="d6301" target="SNOMED_CT:286513008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6301 SNOMED CT 286513008 = the d630 sub-activity of preparing complex meals (full
+        cooking, multiple ingredients/steps). Target, SE — the cooking observable, distinct from
+        286452004 simple food-preparation. SNOMED CT frames it as the ability-assessment on the same
+        cooking axis; it subsumes the ICF activity, so broader (target subsumes the topic). High tier
+        per §1.
+        """
+}
+assessment "d6308.omop" source="d6308" outcome=no_match target-system="OMOP_EXT"
+mapping "d6309.1" source="d6309" target="SNOMED_CT:286488009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6309 SNOMED CT 286488009 = the d630 meal-preparation residual. No unspecified-level
+        SNOMED CT target exists; the closest defensible standard concept is the d630 topic observable, SE.
+        Broader (target subsumes the meal-prep topic); unspecified source frames it loosely → moderate
+        tier per §1 (one level looser than the d630 high-tier map), consistent with the d6409
+        unspecified-residual precedent.
+        """
+}
+mapping "d640.1" source="d640" target="SNOMED_CT:129014002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d640 SNOMED CT 129014002 = the d640 3-level chapter code for doing housework. Target —
+        the SNOMED CT observable that denotes the same housework topic; no observable exists at this level
+        (the closest ability-framed concepts are 286032005 housekeeping and 286171005 light housework).
+        129014002 sits in the ICF-aligned functional-disability observable hierarchy on the same topic
+        axis; SNOMED CT frames it as the activity-as-observable (the doing-of-housework), which subsumes
+        the ICF performance framing, so broader (target subsumes the topic). High tier per §1.
+        """
+}
+mapping "d6400.1" source="d6400" target="SNOMED_CT:286040004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6400 SNOMED CT 286040004 = the d640 sub-activity of washing and drying
+        clothes/textiles. Target, SE synonym. SNOMED CT frames it as the ability-assessment on the same
+        laundry axis; it subsumes the ICF activity (washing+drying), so broader (target subsumes the
+        topic). High tier per §1, consistent with the d6408A laundry precedent.
+        """
+}
+mapping "d6401.1" source="d6401" target="SNOMED_CT:286128001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6401 SNOMED CT 286128001 = the d640 sub-activity of cleaning the kitchen space and
+        kitchen utensils. Target, SE synonym — the kitchen/cooking-space cleaning observable. SNOMED CT
+        frames it as the ability-assessment on the same kitchen-cleaning axis; it subsumes the dominant
+        kitchen-space axis of the source (broader). The köksredskap (utensils) sub-axis has no separate
+        defensible SNOMED CT concept; the kitchen-cleaning observable is the closest standard concept and
+        legitimately broader on the kitchen-cleaning topic. High tier per §1.
+        """
+}
+mapping "d6402.1" source="d6402" target="SNOMED_CT:286184001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6402 SNOMED CT 286184001 = the d640 sub-activity of cleaning the dwelling/home. Target,
+        SE synonym — the exact Swedish-term match (=). SNOMED CT frames it as the ability-assessment on the
+        same dwelling-cleaning axis; it subsumes the ICF activity, so broader (target subsumes the
+        topic). High tier per §1.
+        """
+}
+mapping "d6403.1" source="d6403" target="SNOMED_CT:285970003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6403 SNOMED CT 285970003 = the d640 sub-activity of using household appliances. Target,
+        SE synonym — the exact Swedish-term match (=). SNOMED CT frames it as the ability-assessment on the
+        same domestic-appliance axis; it subsumes the ICF activity, so broader (target subsumes the
+        topic). High tier per §1.
+        """
+}
+mapping "d6404.1" source="d6404" target="SNOMED_CT:286537008" relationship=partial_overlap effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6404 SNOMED CT 286537008 = the d640 sub-activity of storing the household's daily-life
+        provisions (food, cleaning products, toiletries). SNOMED CT has no general concept; the storing
+        observables are domain-specific — 286537008 (SE), 286077007 store laundry, 422413002 store
+        medications. Food storage is the dominant single slice of, so 286537008 captures one
+        aspect/component of the multi-part source (food), leaving the non-food provisions uncovered —
+        partial per the boundary rule, not broader (target does not fully contain the source).
+        Weak/aspect-level tier per §1 (partial).
+        """
+}
+mapping "d6405.1" source="d6405" target="SNOMED_CT:286091001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6405 SNOMED CT 286091001 = the d640 sub-activity of removing/disposing of household
+        waste. Target, SE synonym — the exact Swedish-term match (=). SNOMED CT frames it as the
+        ability-assessment on the same waste-disposal axis; it subsumes the ICF activity, so broader
+        (target subsumes the topic). High tier per §1.
+        """
+}
+mapping "d6407.1" source="d6407" target="SNOMED_CT:286172003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6407 SNOMED CT 286172003 = the d640 sub-activity of making/preparing sleeping places
+        (making the bed). Target, SE synonym — the bed-making observable on the same axis. SNOMED CT frames
+        it as the ability-assessment on the same bed-making axis; it subsumes the ICF activity, so
+        broader (target subsumes the topic). High tier per §1.
+        """
+}
+assessment "d6408.omop" source="d6408" outcome=no_match target-system="OMOP_EXT"
+mapping "d6408A.1" source="d6408A" target="SNOMED_CT:286040004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6408A SNOMED CT 286040004 = performing laundry (washing/drying clothes and textiles
+        using household appliances), an ICF d640 domestic-life sub-activity. Target, SE synonym. The
+        SNOMED CT concept sits in the ICF-aligned functional-disability observable hierarchy and denotes
+        the exact same topic axis (laundry). SNOMED CT frames it as the ability-assessment rather than the
+        activity itself, so the target is broader (subsumes the topic), not a 1:1 exact equivalent —
+        high tier per §1.
+        """
+}
+mapping "d6409.1" source="d6409" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6409 SNOMED CT 285809000 = performing household tasks, unspecified (the catch-all
+        residual under ICF d640 Doing housework). No unspecified-level SNOMED CT target exists for the d640
+        activity axis; closest standard concept is, SE — the top of the ICF-aligned domestic-life
+        observable branch. Broader (target subsumes the topic) plus an unspecified source frames it
+        loosely; moderate tier per §1.
+        """
+}
+mapping "d649.1" source="d649" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d649 SNOMED CT 285809000 = the d6 chapter-level residual (other specified and
+        unspecified household tasks). is the closest standard concept for the domestic-life chapter as a
+        whole; no closer analogue exists for the chapter residual. Broader (target subsumes the
+        chapter), unspecified/other-specified source → moderate tier.
+        """
+}
+mapping "d650.1" source="d650" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d650 SNOMED CT 285809000 = caring for household objects (the d650 block header:
+        making/repairing clothes, maintaining dwelling/appliances/vehicles/assistive devices, caring for
+        plants/animals, etc.). No single SNOMED CT concept covers the full block; the closest standard
+        concept is, which subsumes the domestic-life topic. Broader at the chapter level; moderate tier
+        for the topic-axis match without block-specific granularity.
+        """
+}
+mapping "d650-d669.1" source="d650-d669" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d650-d669 SNOMED CT 285809000 is the d65-d66 chapter range header (caring for household
+        objects + assisting others). Closest standard concept is. The axis (d660 family) is not captured
+        by 285809000, so this is a partial-topic match; recorded as broader on the dominant
+        caring-for-household-objects axis, moderate tier.
+        """
+}
+mapping "d6500.1" source="d6500" target="SNOMED_CT:286033000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6500 SNOMED CT 286033000 = making and repairing (mending) garments. Target, SE — covers
+        the clothes-care axis that includes making/mending. Broader (the target subsumes garment
+        making/repairing within general clothing care); high tier for the topic match.
+        """
+}
+mapping "d6501.1" source="d6501" target="SNOMED_CT:67175002" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6501 SNOMED CT 67175002 = maintaining the dwelling and its furnishings. SNOMED CT's
+        ICF-aligned family frames this as the NANDA-derived concept cluster; 67175002, SE / is the
+        closest standard concept on this exact axis. The target is the impaired-ability finding (not the
+        activity itself), so the link is related rather than identity; high-ish tier for a tight,
+        standard, same-axis association.
+        """
+}
+assessment "d6502.omop" source="d6502" outcome=no_match target-system="OMOP_EXT"
+assessment "d6503.omop" source="d6503" outcome=no_match target-system="OMOP_EXT"
+assessment "d6504.omop" source="d6504" outcome=no_match target-system="OMOP_EXT"
+assessment "d6505.omop" source="d6505" outcome=no_match target-system="OMOP_EXT"
+assessment "d6506.omop" source="d6506" outcome=no_match target-system="OMOP_EXT"
+assessment "d6507.omop" source="d6507" outcome=no_match target-system="OMOP_EXT"
+mapping "d6508.1" source="d6508" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6508 SNOMED CT 285809000 = caring for household objects, other specified (the residual
+        under d650). Closest standard concept is, broader at the chapter level. Low tier: the source is
+        a heterogeneous residual bucket and the target is a broad chapter-level observable.
+        """
+}
+mapping "d6509.1" source="d6509" target="SNOMED_CT:285809000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6509 SNOMED CT 285809000 = caring for household objects, unspecified (residual under
+        d650). Closest standard concept is, broader at the chapter level. Low tier: unspecified residual
+        source plus broad chapter-level target.
+        """
+}
+mapping "d660.1" source="d660" target="SNOMED_CT:710204004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d660 SNOMED CT 710204004 = assisting others (the d660 block header: helping others with
+        personal care, mobility, communication, interpersonal relations, nutrition, health maintenance,
+        etc.). Target, SE — the closest standard concept for the assisting-others axis; subsumes the
+        personal-care/self-care portion of d660. Broader (target covers the self-care axis, not the full
+        breadth of d660); moderate tier for a topic-match that omits
+        communication/interpersonal/nutrition/health sub-axes.
+        """
+}
+mapping "d6600.1" source="d6600" target="SNOMED_CT:225964003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6600 SNOMED CT 225964003 = assisting others with personal care. Target, SE. SNOMED CT
+        frames this as a hygiene procedure where ICF uses the broader (omvårdnad) term; the target
+        covers the hygiene subset of personal care. Broader on the personal-care axis; high tier for a
+        tight, standard same-axis match.
+        """
+}
+mapping "d6601.1" source="d6601" target="SNOMED_CT:710803000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6601 SNOMED CT 710803000 = assisting others with movement/mobility. Target, SE. The
+        SNOMED CT procedure covers the mobility-assistance axis denoted by the ICF source. Broader (SNOMED CT
+        procedure framing vs ICF activity framing); high tier for a tight same-axis match.
+        """
+}
+mapping "d6602.1" source="d6602" target="SNOMED_CT:737350008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6602 SNOMED CT 737350008 = assisting others with communication. SNOMED CT has no procedure
+        for directly; the closest standard concept is 737350008, which is on the same
+        communication-disability axis but framed as a needs-finding from the recipient perspective, not
+        an assisting-other procedure. Related link (associated, not identity); low tier for the framing
+        mismatch.
+        """
+}
+assessment "d6603.omop" source="d6603" outcome=no_match target-system="OMOP_EXT"
+mapping "d6604.1" source="d6604" target="SNOMED_CT:226010006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6604 SNOMED CT 226010006 = assisting others with nutrition intake (feeding). Target,
+        SE. The SNOMED CT procedure covers the feeding/nutrition-assistance axis denoted by the ICF source.
+        Broader (procedure framing vs activity framing, and eating/drinking is the practical expression
+        of nutrition assistance); high tier for a tight same-axis match.
+        """
+}
+mapping "d6605.1" source="d6605" target="SNOMED_CT:710204004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6605 SNOMED CT 710204004 = assisting others with their health maintenance (helping with
+        medications, treatments, health routines). SNOMED CT has no single procedure; the closest standard
+        concept is 710204004, SE, which broadly covers health-related self-care assistance. Broader
+        (target subsumes health-maintenance assistance within self-care); low tier for the loose breadth
+        match.
+        """
+}
+mapping "d6607.1" source="d6607" target="SNOMED_CT:69840006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF d6607 SNOMED CT 69840006 = breastfeeding infants and children (a specific d660
+        sub-activity). SNOMED CT has no standard concept for the breastfeeding-as-an-assisting-others
+        activity, but 69840006 /, SE /, is the standard concept on the exact same breastfeeding axis.
+        Related link (the target is the breastfeeding-status finding, not the activity of
+        breastfeeding-as-assistance); high-ish tier for a tight, standard, same-axis association.
+        """
+}
+assessment "d6608.omop" source="d6608" outcome=no_match target-system="OMOP_EXT"
+assessment "d6608A.omop" source="d6608A" outcome=no_match target-system="OMOP_EXT"
+mapping "d6608B.1" source="d6608B" target="SNOMED_CT:302767002" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d6608B SNOMED CT 302767002 = ICF activity of assisting/supporting next-of-kin (caring for a
+        relative). SNOMED CT has no functioning/activity concept for the act of assisting relatives; the
+        nearest concept, 302767002, records the caregiver role/state on the disability/context axis, not
+        the activity of assisting. Source is the activity; target is a state-finding about the same
+        domain — a loose related link (axis-different), recorded as a lead, not an identity. Confidence
+        per rubric (related/aspect-level).
+        """
+}
+assessment "d6609.omop" source="d6609" outcome=no_match target-system="OMOP_EXT"
+assessment "d669.omop" source="d669" outcome=no_match target-system="OMOP_EXT"
+assessment "d698.omop" source="d698" outcome=no_match target-system="OMOP_EXT"
+assessment "d699.omop" source="d699" outcome=no_match target-system="OMOP_EXT"

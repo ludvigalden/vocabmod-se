@@ -1,0 +1,336 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b25-b29
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b250.1" source="b250" target="SNOMED_CT:397627001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b250 SNOMED CT 397627001 = ICF b250 Taste functions. Target SNOMED CT 4265873 (sctid 397627001)
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (taste as a sensory
+        function), literal FSN term match. exact_match.
+        """
+}
+mapping "b250-b279.1" source="b250-b279" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b250-b279 SNOMED CT 106148006 = ICF block b250-b279 Additional sensory functions: the
+        block-level grouping of the remaining (non-vision, non-hearing/vestibular) sensory functions —
+        taste b250, smell b255, proprioception b260, touch b265, temperature-and-other-stimuli b270.
+        Target SNOMED CT 4024711 (sctid 106148006) =, active standard, the direct SNOMED CT observable for
+        sensory function. Broader (multi-level): every b250-b279 sub-function is a sensory function, and
+        the SNOMED CT concept fully subsumes the entire block, but it sits many levels above (a block-level
+        ICF grouping mapped up to the chapter-equivalent SNOMED CT observable). Low tier : defensible
+        block-level ancestor lead — is the closest standard concept to the block title and the
+        enumerated children each get their own tighter function-level proposals (b250 Taste, b255 Smell,
+        etc.) — but loose because a block anchor is classification scaffolding and the climb is deep.
+        Recorded as broader rather than no_match because is a direct, defensible term-and-scope match
+        for the block.
+        """
+}
+mapping "b255.1" source="b255" target="SNOMED_CT:397686008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b255 SNOMED CT 397686008 = ICF b255 Smell functions. Target SNOMED CT 4262169 (sctid 397686008)
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (smell as a sensory
+        function), literal FSN term match. exact_match.
+        """
+}
+mapping "b260.1" source="b260" target="SNOMED_CT:397641005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b260 SNOMED CT 397641005 = ICF b260 Proprioceptive function: the sensory function sensing
+        the relative position of body parts and movement (position-and-movement sense). Target SNOMED CT
+        4265876 (sctid 397641005) =, active RF2 production. This is the direct SNOMED CT function-level
+        concept for proprioception (position-and-movement sense); it captures exactly what ICF b260
+        denotes. Assessed exact_match at high tier rather than : the SNOMED CT FSN spells out where ICF
+        uses the single term, a minor terminology nuance; term-and-scope verified active in both
+        mirrors, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b265.1" source="b265" target="SNOMED_CT:397624008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b265 SNOMED CT 397624008 = ICF b265 Touch functions. Target SNOMED CT 4265871 (sctid 397624008)
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (touch as a sensory
+        function), literal FSN term match. exact_match.
+        """
+}
+mapping "b270.1" source="b270" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b270 SNOMED CT 106148006 = ICF b270 Sensory functions related to temperature and other
+        stimuli: a mid-level grouping spanning temperature sensation (b2700), vibration (b2701),
+        pressure, tickle, and other-cutaneous-stimuli senses. No single SNOMED CT standard concept denotes
+        this exact sensory grouping. Target SNOMED CT 4024711 (sctid 106148006) =, active standard. Broader
+        (multi-level): every b270 sub-function is a sensory function and the target fully subsumes the
+        grouping, but it sits well above and covers all sensory functions, not just the
+        temperature/other-stimuli axis. Low tier : defensible ancestor lead — the closest standard
+        concept to the b270 grouping title — and the enumerated children (b2700 Thermal sensation, b2701
+        Vibratory sense) each get their own tighter function-level proposals. Recorded as broader rather
+        than no_match because is a defensible term-and-scope match for this sensory sub-grouping.
+        """
+}
+mapping "b2700.1" source="b2700" target="SNOMED_CT:397638001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2700 SNOMED CT 397638001 = ICF b2700 Sensory function of temperature (thermal sensation).
+        Target SNOMED CT 4265875 (sctid 397638001) =, active RF2 production (the active successor of
+        deprecated 69704001). Exact 1:1 equivalence: identical clinical concept (temperature/thermal
+        sensation as a sensory function), literal FSN term match. exact_match.
+        """
+}
+mapping "b2701.1" source="b2701" target="SNOMED_CT:397656001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2701 SNOMED CT 397656001 = ICF b2701 Sensory function of vibration (vibratory sense).
+        Target SNOMED CT 4262161 (sctid 397656001) =, active RF2 production. Exact 1:1 equivalence:
+        identical clinical concept (vibration sense as a sensory function), literal FSN term match.
+        exact_match.
+        """
+}
+mapping "b2702.1" source="b2702" target="SNOMED_CT:397624008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2702 SNOMED CT 397624008 = ICF pressure-sensation subfunction under b270 Sensory functions
+        related to temperature and other stimuli (the somatic afferent sense of mechanical pressure on
+        skin/deep tissue). Target SNOMED CT 4265871 (sctid 397624008) =, active RF2 production. Broader:
+        ICF groups pressure under the tactile/touch modality (light-touch and firm/pressure-touch are
+        its sub-types in SNOMED CT: 247311004 light touch and 247313001 firm pressure touch are children of
+        touch sensation). No SNOMED CT exists; touch sensation is the nearest standard function that fully
+        subsumes pressure as a sub-modality. (high): one-level broader map to a verified-active function
+        concept, well-understood breadth mismatch.
+        """
+}
+assessment "b2703.omop" source="b2703" outcome=no_match target-system="OMOP_EXT"
+mapping "b2708.1" source="b2708" target="SNOMED_CT:397725003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2708 = ICF residual SNOMED CT 397725003 under b270 — a heterogeneous residual bucket for
+        somatic afferent functions (temperature, touch, pressure, vibration, proprioception) not
+        elsewhere classified. Target SNOMED CT 4287782 (sctid 397725003) =, active, the parent
+        somatic-sensation function that covers all these sub-modalities. Broader: the target subsumes
+        the residual bucket's domain (all are somatic sensations). Low tier: residual source with no
+        concrete clinical content; the map climbs to the chapter parent and loses any specific meaning.
+        """
+}
+mapping "b2709.1" source="b2709" target="SNOMED_CT:397725003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2709 = ICF SNOMED CT 397725003 under b270 — deliberately non-specific residual for the b270
+        somatic-sensation domain. Target SNOMED CT 4287782 (sctid 397725003) =, active. Broader: the parent
+        somatic-sensation function subsumes the unspecified source's whole domain (touch, temperature,
+        pressure, vibration, proprioception). Low tier: unspecified source forced up to the chapter
+        parent; no specific clinical content to preserve. A defensible parent exists, so
+        broader-at-low-confidence rather than no_match.
+        """
+}
+mapping "b279.1" source="b279" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b279 = ICF chapter-2 SNOMED CT 106148006 block-end residual — the catch-all for sensory
+        functions (b210-b279: visual, hearing, vestibular, olfactory, gustatory, proprioceptive,
+        tactile, temperature, pain) not elsewhere classified. Target SNOMED CT 4024711 (sctid 106148006) =,
+        active, the top-level sensory-function parent. Broader: the target subsumes the residual's
+        domain (all are sensory functions). Low tier: heterogeneous block-end residual with no concrete
+        content; the map climbs to the top sensory-function parent and loses all specificity.
+        """
+}
+mapping "b280.1" source="b280" target="SNOMED_CT:397704003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b280 SNOMED CT 397704003 = ICF Sensation of pain (b280), the body function of perceiving
+        pain as a sensory modality. Target SNOMED CT 4265889 (sctid 397704003) =, active RF2 production
+        (valid 2026-07-01), the active successor of the retired 42647000 (same FSN, invalid_reason=D,
+        valid_end 2003). Exact 1:1 equivalence: identical clinical concept — the sensory-function of
+        pain perception — confirmed by literal FSN term match. Distinct from the symptom concept
+        22253000, which is the symptom rather than the function; b280 codes the function. exact_match:
+        same concept, FSN-verified, active.
+        """
+}
+mapping "b280-b289.1" source="b280-b289" target="SNOMED_CT:397704003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b280-b289 SNOMED CT 397704003 = the ICF b280-b289 Pain block range-label (the full
+        pain-sensation sub-chapter, b280 Sensation of pain through its site/quality sub-codes). Target
+        SNOMED CT 4265889 (sctid 397704003) =, active. Exact-equivalent: the block label denotes precisely
+        the pain-sensation function and its sub-codes, which the function concept represents at the
+        parent level. exact_match: same concept, FSN-verified.
+        """
+}
+mapping "b2800.1" source="b2800" target="SNOMED_CT:22253000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2800 SNOMED CT 22253000 = ICF sensation of generalized pain (pain perceived as
+        widespread/non-localized across the body). Target SNOMED CT 4329041 (sctid 22253000) =, active
+        OMOP-standard, the canonical general-pain finding. Best available standard concept: SNOMED CT has
+        no dedicated active finding distinct from the Pain root (762590006 is chronic-primary
+        generalized pain — a narrower disorder, not the function/symptom); 22253000 is the general-pain
+        parent that the qualifier narrows toward. Mapped as exact_match at : the source's is the general
+        Pain finding qualified by extent; no independent crosswalk, exact term-match at the general-pain
+        level. (High tier: small breadth nuance, not independently crosswalk-verified.)
+        """
+}
+mapping "b2801.1" source="b2801" target="SNOMED_CT:279001004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2801 SNOMED CT 279001004 = ICF sensation of pain in a body part (the parent of all
+        site-specific pain sub-codes b28010-b28019). Target SNOMED CT 4132926 (sctid 279001004) =, active
+        OMOP-standard, the parent concept for pain localized to a body site. Exact-equivalent at the
+        parent level: both denote pain localized to a body part without specifying which. (high): exact
+        term-and-scope match, no independent crosswalk.
+        """
+}
+mapping "b28010.1" source="b28010" target="SNOMED_CT:301365009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28010 SNOMED CT 301365009 = ICF pain in head and neck. Target SNOMED CT 4116810 (sctid
+        301365009) =, active OMOP-standard. Exact 1:1 equivalence: identical clinical concept (pain of
+        the head-and-neck region), confirmed by literal FSN term match. (25064002) which is head pain
+        only; b28010 explicitly spans head AND neck. exact_match: same concept, FSN-verified.
+        """
+}
+mapping "b28011.1" source="b28011" target="SNOMED_CT:139228007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28011 SNOMED CT 139228007 = ICF pain in the chest. Target SNOMED CT 40303888 (sctid 139228007)
+        =, OMOP-standard concept present in the Athena mirror. Exact 1:1 equivalence: identical clinical
+        concept (chest pain), confirmed by literal name match. exact_match: same concept, name-verified.
+        """
+}
+mapping "b28012.1" source="b28012" target="SNOMED_CT:21522001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28012 SNOMED CT 21522001 = ICF pain in stomach or abdomen. Target SNOMED CT 200219 (sctid
+        21522001) =, active RF2 production. Exact 1:1 equivalence: identical clinical concept
+        (abdominal/stomach pain), confirmed by literal FSN term match; SNOMED CT's abdominal-pain concept
+        covers both stomach and abdominal-region pain. exact_match: same concept, FSN-verified, active.
+        """
+}
+mapping "b28013.1" source="b28013" target="SNOMED_CT:139146005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28013 SNOMED CT 139146005 = ICF pain in the back. Target SNOMED CT 40303797 (sctid 139146005)
+        =, OMOP-standard concept present in the Athena mirror. Exact 1:1 equivalence: identical clinical
+        concept (back pain), confirmed by literal name match. exact_match: same concept, name-verified.
+        """
+}
+mapping "b28014.1" source="b28014" target="SNOMED_CT:298752006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28014 SNOMED CT 298752006 = ICF pain in an upper limb. Target SNOMED CT 40501989 (sctid
+        298752006) =, OMOP-standard concept present in the Athena mirror. Exact 1:1 equivalence:
+        identical clinical concept (upper-limb pain), confirmed by literal name match. exact_match: same
+        concept, name-verified.
+        """
+}
+mapping "b28015.1" source="b28015" target="SNOMED_CT:10601006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28015 SNOMED CT 10601006 = ICF pain in a lower limb. Target SNOMED CT 4024561 (sctid 10601006)
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (lower-limb pain),
+        confirmed by literal FSN term match. exact_match: same concept, FSN-verified, active.
+        """
+}
+mapping "b28016.1" source="b28016" target="SNOMED_CT:268065004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28016 SNOMED CT 268065004 = ICF pain in a joint/joints. Target SNOMED CT 40353907 (sctid
+        268065004) =, OMOP-standard concept present in the Athena mirror, the canonical
+        joint-pain/arthralgia finding. Exact 1:1 equivalence: identical clinical concept (joint pain /
+        arthralgia), confirmed by literal name match. exact_match: same concept, name-verified.
+        """
+}
+mapping "b28018.1" source="b28018" target="SNOMED_CT:279001004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28018 SNOMED CT 279001004 = ICF residual under b2801 — a residual bucket for site-specific
+        pain not covered by b28010-b28016. Target SNOMED CT 4132926 (sctid 279001004) =, active
+        OMOP-standard, the parent site-pain concept. Broader: the parent subsumes the residual bucket
+        (all are site-localized pain). Low tier: residual source with no concrete site asserted; the map
+        climbs to the site-pain parent and loses the specific site.
+        """
+}
+mapping "b28019.1" source="b28019" target="SNOMED_CT:279001004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b28019 SNOMED CT 279001004 = ICF under b2801 — deliberately non-specific residual for
+        site-localized pain. Target SNOMED CT 4132926 (sctid 279001004) =, active OMOP-standard. Broader:
+        the parent site-pain concept subsumes the unspecified source. Low tier: unspecified source
+        forced up to the site-pain parent; no specific clinical content to preserve. A defensible parent
+        exists, so broader-at-low-confidence rather than no_match.
+        """
+}
+mapping "b2802.1" source="b2802" target="SNOMED_CT:22253000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2802 SNOMED CT 22253000 = ICF sensation of pain in multiple body parts. Target SNOMED CT
+        4329041 (sctid 22253000) =, active OMOP-standard, the general-pain root. Broader: the general
+        Pain finding subsumes multi-site pain (which is pain quantified by extent), but loses the
+        specificity; no dedicated active SNOMED CT finding exists (762590006 is a narrower chronic-disorder
+        concept, not the multi-site pain symptom). Low tier: best-available parent loses the cardinal
+        qualifier; real doubt over specificity loss.
+        """
+}
+mapping "b2803.1" source="b2803" target="SNOMED_CT:279001004" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2803 SNOMED CT 279001004 = ICF pain radiating within a single dermatome (a
+        spinal-nerve-root distribution). Target SNOMED CT 4132926 (sctid 279001004) =, active OMOP-standard
+        — the parent site-localized pain finding. Narrower-in-source: no dedicated SNOMED CT finding exists
+        as an exact equivalent; is the more general parent, but mapped downward as the best available
+        site-localizer since b2803 is itself site-specific (a dermatome IS a site). Moderate :
+        best-available standard concept, looser equivalence (no dermatome-specific SNOMED CT target; the
+        source's dermatome specificity is only partially captured).
+        """
+}
+flag "b2803.1.label-check" kind=label-contradicts-comment assertion="icf-snomed-ct@2026.1/b2803.1"
+mapping "b2804.1" source="b2804" target="SNOMED_CT:9972008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2804 SNOMED CT 9972008 = ICF radiating pain in a segment or region (pain that travels along
+        a nerve distribution). Target SNOMED CT 4322871 (sctid 9972008) =, active RF2 production. Exact 1:1
+        equivalence: identical clinical concept (radiating pain), confirmed by literal FSN term match;
+        denotes the same nerve-distribution spread the ICF source describes. (high): exact term match,
+        no independent crosswalk; small breadth nuance (does not pin the segment, but neither does the
+        source beyond).
+        """
+}
+mapping "b289.1" source="b289" target="SNOMED_CT:22253000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b289 SNOMED CT 22253000 = ICF b280-block end residual — combined pain-sensation catch-all.
+        Target SNOMED CT 4329041 (sctid 22253000) =, active OMOP-standard, the general-pain root (the
+        finding equivalent of the b280 pain-sensation function). Broader: the general Pain finding
+        subsumes the residual's whole domain. Low tier: heterogeneous block-end residual with no
+        concrete content; the map climbs to the general-pain parent and loses all specificity.
+        """
+}
+mapping "b298.1" source="b298" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b298 SNOMED CT 106148006 = ICF chapter-2 block-end residual — the catch-all for any
+        sensory-function-or-pain not elsewhere classified. Target SNOMED CT 4024711 (sctid 106148006) =,
+        active, the top-level sensory-function parent (pain-sensation is a child of it via 397704003).
+        Broader: the top sensory-function parent subsumes the residual's domain. Low tier: heterogeneous
+        block-end residual; the map climbs to the top parent and loses all specificity.
+        """
+}
+mapping "b299.1" source="b299" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b299 SNOMED CT 106148006 = ICF chapter-2 block-end residual — deliberately non-specific
+        catch-all. Target SNOMED CT 4024711 (sctid 106148006) =, active, the top-level sensory-function
+        parent. Broader: the parent subsumes the unspecified source's whole domain. Low tier:
+        unspecified source forced up to the top sensory-function parent; no specific clinical content to
+        preserve.
+        """
+}

@@ -1,0 +1,376 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d3-d34
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d3.1" source="d3" target="SNOMED_CT:288574004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3 SNOMED CT 288574004 = ICF d3 Communication: the Activities&Participation chapter root for
+        general communication activities (receiving/producing messages via language/signs/symbols).
+        Target =, active RF2 production, SE synonym; SNOMED CT's direct observable for the communication
+        axis. subsumes the whole d3 communication chapter (receptive + expressive + verbal + non-verbal
+        + device use); one-level broader because SNOMED CT frames the ability rather than the
+        activity-instance and spans all communication modes. Broader (high): direct verified SNOMED CT
+        observable match on the communication axis, one-level broader; mirrors the d1 -> 69998004
+        chapter-root precedent at. mapping_type=broader.
+        """
+}
+mapping "d310.1" source="d310" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d310 SNOMED CT 405019005 = ICF d310 Communicating - receiving spoken messages: the 4-level
+        block parent for receiving decoded spoken language. Target =, active RF2 production, SE synonym;
+        SNOMED CT's direct observable for receiving/decoding communication. Receiving spoken messages is
+        the auditory-linguistic instance of receptive communication, so the target subsumes the source.
+        Broader (high): direct verified SNOMED CT function-observable match on the same receptive axis,
+        one-level broader because is the parent concept of the activity; mirrors the d115 -> 405019005
+        precedent at. mapping_type=broader.
+        """
+}
+mapping "d310-d329.1" source="d310-d329" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d310-d329 SNOMED CT 405019005 = ICF block d310-d329 Communication - receiving: the block
+        spanning all receiving-decoding-message activities (spoken d310, non-verbal d315, written d325,
+        sign language d320, symbols d330). Target =, active RF2 production. The block spans five
+        distinct modalities and the receptive-communication parent is the only concept that contains
+        every one of them. Broader (low): markedly broader (multi-modal block-level map to the
+        all-receptive parent), but nearest defensible standard ancestor; consistent with the multi-modal
+        block-level precedent (d110-d129 -> 311520005, d120 -> 106148006 at). mapping_type=broader.
+        """
+}
+mapping "d3101.1" source="d3101" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3101 SNOMED CT 405019005 (note: the SE label string is internally inconsistent - heading vs
+        body - the ICF canonical d3101 = Receiving complex spoken messages) = ICF d3101 Receiving
+        complex spoken messages: the 5-level child of d310 for decoding multistep/compound spoken
+        utterances. Target =, active RF2 production. SNOMED CT has no observable; the
+        receptive-communication parent is the nearest axis concept. Broader (moderate): receptive
+        communication subsumes complex-spoken reception but loses the qualifier; deep-climb as for the
+        d1550 regional subdivisions. mapping_type=broader.
+        """
+}
+mapping "d3102.1" source="d3102" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3102 SNOMED CT 405019005 (note: the SE label string is internally inconsistent - heading vs
+        body - the ICF canonical d3102 = Receiving human voice) = ICF d3102 Receiving human voice: the
+        5-level child of d310 for detecting/recognising the human voice as distinct from noise. Target
+        =, active RF2 production. SNOMED CT has no observable (the SNOMED CT hearing hierarchy covers voice
+        detection as auditory function, not as communication reception); the receptive-communication
+        parent is the nearest defensible axis concept. Broader (moderate): receptive communication
+        subsumes human-voice reception but loses the voice-detection specificity; deep-climb as for
+        d3101. mapping_type=broader.
+        """
+}
+mapping "d3103.1" source="d3103" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3103 SNOMED CT 405019005 = ICF d3103 Receiving human voice (the body-line for the d3102
+        heading, see d3102 note on the inconsistent SE label) = the 5-level child of d310 for
+        detecting/recognising the human voice. Target =, active RF2 production. Same reasoning as d3102:
+        SNOMED CT has no dedicated voice-reception observable; receptive-communication parent is nearest
+        axis concept. Broader (moderate): deep-climb as for d3101/d3102. mapping_type=broader.
+        """
+}
+mapping "d3108.1" source="d3108" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3108 SNOMED CT 405019005 = ICF d3108 Receiving spoken messages, other specified: the
+        residual SNOMED CT 405019005 5-level child of d310. Target =, active RF2 production, the nearest
+        axis concept (d310 parent maps here). Broader (moderate): receptive communication subsumes the
+        unspecified-other spoken-message bucket but cannot reflect the residual meaning; consistent with
+        the d310 parent map and the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d3109.1" source="d3109" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3109 SNOMED CT 405019005 = ICF d3109 Receiving spoken messages, unspecified: the SNOMED CT
+        405019005 5-level child of d310. Target =, active RF2 production, the nearest axis concept (d310
+        parent maps here). Broader (moderate): receptive communication subsumes the unspecified
+        spoken-message bucket; the source's unspecified framing maps naturally to the broader axis
+        concept (no narrower SNOMED CT concept exists), per the unspecified-source precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d315.1" source="d315" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d315 SNOMED CT 288580007 = ICF d315 Communicating - receiving nonverbal messages: the
+        4-level block parent for decoding body gestures, signs, symbols, drawings. Target =, active RF2
+        production, SE synonym; SNOMED CT's direct observable for non-verbal communication (receptive +
+        expressive). subsumes receiving nonverbal messages (use spans both sending and receiving);
+        one-level broader because the SNOMED CT concept is bidirectional (use) whereas the source is the
+        receptive direction only. Broader (high): direct verified SNOMED CT function-observable match on
+        the non-verbal axis, one-level broader; mirrors the d310 -> 405019005 precedent at.
+        mapping_type=broader.
+        """
+}
+mapping "d3150.1" source="d3150" target="SNOMED_CT:288586001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3150 SNOMED CT 288586001 = ICF d3150 Receiving bodily gestures: the 5-level child of d315
+        for decoding body-language/gestural messages. Target =, active RF2 production, SE synonym;
+        SNOMED CT's direct observable for body-language communication. subsumes receiving bodily gestures
+        (use spans sending + receiving); one-level broader because the SNOMED CT concept is bidirectional
+        whereas the source is the receptive direction only. Broader (high): direct verified SNOMED CT
+        function-observable match on the body-language axis, one-level broader; mirrors the d315 parent
+        and the d310 -> 405019005 precedent at. mapping_type=broader.
+        """
+}
+mapping "d3151.1" source="d3151" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3151 SNOMED CT 405019005 = ICF d3151 Communicating - receiving general signs and symbols:
+        the 4-level child of d315 for decoding/comprehending general (non-body-language) signs and
+        symbols as received messages. Target =, active RF2 production (sv), SNOMED CT's direct observable
+        for the receptive (input) communication axis. SNOMED CT has no concept; the receptive-communication
+        observable subsumes all input-side communication (spoken, written, non-verbal) and so fully
+        contains the source but loses the signs-and-symbols modality. Broader (low):
+        receptive-communication subsumes the receiving axis but the source's sign/symbol-modality
+        specificity is outside any SNOMED CT concept (deep climb, no narrower target); consistent with the
+        leaf-under-broad-parent precedent (d1600/d1700 at). mapping_type=broader.
+        """
+}
+mapping "d3152.1" source="d3152" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3152 SNOMED CT 405019005 = ICF d3152 Communicating - receiving drawings and photographs:
+        the 4-level child of d315 for comprehending pictures/drawings/photographs as received messages.
+        Target =, active RF2 production, the nearest axis concept (d315 parent group maps here). SNOMED CT
+        has no concept; receptive-communication subsumes the receiving axis but loses the
+        picture/drawing modality. Broader (low): receptive-communication subsumes the input axis but the
+        source's pictorial-modality specificity is outside any SNOMED CT concept; same deep-climb pattern
+        as d3151. mapping_type=broader.
+        """
+}
+mapping "d3158.1" source="d3158" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3158 SNOMED CT 405019005 = ICF d3158 Communicating - receiving non-verbal messages, other
+        specified: the residual SNOMED CT 405019005 4-level child of d315. Target =, active RF2 production,
+        the nearest axis concept (d315 parent group maps here). SNOMED CT has no receiving-non-verbal
+        concept; receptive-communication subsumes the receiving axis. Broader (moderate):
+        receptive-communication subsumes the unspecified-other receiving-non-verbal bucket; one-level
+        broader under the d315 parent axis; consistent with the residual-code precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d3159.1" source="d3159" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3159 SNOMED CT 405019005 = ICF d3159 Communicating - receiving non-verbal messages,
+        unspecified: the SNOMED CT 405019005 4-level child of d315. Target =, active RF2 production, the
+        nearest axis concept (d315 parent group maps here). SNOMED CT has no receiving-non-verbal concept;
+        receptive-communication subsumes the receiving axis. Broader (moderate): receptive-communication
+        subsumes the unspecified receiving-non-verbal bucket; the source's unspecified framing maps
+        naturally to the broader axis concept (no narrower SNOMED CT concept exists); per the
+        unspecified-source precedent (A009 -> 198677 at). mapping_type=broader.
+        """
+}
+mapping "d320.1" source="d320" target="SNOMED_CT:415807006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d320 SNOMED CT 415807006 = ICF d320 Communicating - receiving messages in sign language:
+        comprehending/decoding sign-language messages as a receiver. Target =, active RF2 production
+        (sv), SNOMED CT's direct observable for the sign-language communication axis. SNOMED CT does not
+        distinguish the receiving direction of sign-language use; subsumes both producing and receiving
+        sign-language messages, so the target fully contains the source (every act of receiving sign
+        language is part of using sign language) but is one level broader (covers the producing side
+        too). Broader (high): direct verified SNOMED CT observable match on the sign-language axis with an
+        sv-synonym match, one-level broader because SNOMED CT captures bidirectional sign-language use
+        rather than the receiving-only framing; mirrors the d155 one-level-broader precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d325.1" source="d325" target="SNOMED_CT:309250007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d325 SNOMED CT 309250007 = ICF d325 Communicating - receiving written messages:
+        comprehending/decoding written text as a receiver (= reading). Target =, active RF2 production,
+        SNOMED CT's direct observable for the reading (receiving-written) axis and the only child of
+        405019005. Both denote the receiving/comprehending-written-text concept; ICF frames the
+        activity, SNOMED CT the ability, same axis. Exact-equivalent : direct verified SNOMED CT observable
+        match on the receiving-written axis; mirrors the d166 Reading -> 50360004 exact precedent. mapping_type=exact_match.
+        """
+}
+mapping "d329.1" source="d329" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d329 SNOMED CT 405019005 = ICF d329 Communicating - receiving messages, other specified and
+        unspecified: the 3-level residual for the d310-d329 receiving block. Target =, active RF2
+        production, SNOMED CT's direct observable for the receptive communication axis. SNOMED CT has no
+        concept; receptive-communication subsumes the entire input axis. Broader (moderate):
+        receptive-communication subsumes the unspecified-other receiving bucket; one-level broader under
+        the receiving axis; consistent with the residual/unspecified-source precedent (A009 -> 198677
+        at) and the d315 parent-group mapping. mapping_type=broader.
+        """
+}
+mapping "d330.1" source="d330" target="SNOMED_CT:87335007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d330 SNOMED CT 87335007 = ICF d330 Speaking: producing verbal messages via speech. Target =,
+        active RF2 production (sv; synonyms), SNOMED CT's direct observable for the speaking activity. Both
+        denote the producing-spoken-language concept. Exact-equivalent : direct verified SNOMED CT
+        observable match with an exact sv-synonym match (/) confirming 1:1 equivalence; mirrors the
+        d166/d170 exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d330-d349.1" source="d330-d349" target="SNOMED_CT:405018002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d330-d349 SNOMED CT 405018002 = ICF block d330-d349 Communication - sending: the block-level
+        grouping of speaking (d330), preverbal vocalisation (d331), singing (d332), producing non-verbal
+        messages (d335), producing sign language (d340), writing messages (d345) and the d349 residual
+        -- the sender/expressive side of communication. Target =, active RF2 production (sv), SNOMED CT's
+        direct observable for the expressive (output/sender) communication axis and the parent of. No
+        single SNOMED CT concept spans the block's full range (spoken, vocal, sung, non-verbal, sign,
+        written); the expressive-communication observable is the nearest defensible standard ancestor
+        spanning the block's dominant theme (sending/expressing). Broader (low):
+        expressive-communication subsumes the sender axis of the multi-modal block and is markedly
+        broader (deep climb, partial coverage of speaking/singing/sign specifics); consistent with the
+        block-level map precedent (d110-d129 -> 311520005 at, d160-d179 -> 69998004 at).
+        mapping_type=broader.
+        """
+}
+mapping "d331.1" source="d331" target="SNOMED_CT:75382007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d331 SNOMED CT 75382007 = ICF d331 Preverbal vocalisation: producing sounds (cooing,
+        babbling) before the onset of intelligible speech. Target =, active RF2 production (sv),
+        SNOMED CT's direct observable for differentiated (non-speech) (87335007) (57206007) in the
+        vocalization hierarchy. SNOMED CT has no concept; differentiated-vocalization subsumes all non-word
+        vocal sound production (including preverbal babbling) but loses the developmental/preverbal
+        qualifier. Broader (moderate): differentiated-vocalization subsumes the preverbal-vocalization
+        axis with a one-level specificity loss; consistent with the leaf-under-axis-parent precedent
+        (d1720 at). mapping_type=broader.
+        """
+}
+mapping "d332.1" source="d332" target="SNOMED_CT:57206007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d332 SNOMED CT 57206007 = ICF d332 Singing: producing vocal music / singing. Target =,
+        active RF2 production (sv), SNOMED CT's direct observable for the singing activity. Both denote the
+        singing concept. Exact-equivalent : direct verified SNOMED CT observable match with an exact
+        sv-synonym match (/) confirming 1:1 equivalence; mirrors the d166/d170 exact-sv-synonym
+        precedent. mapping_type=exact_match.
+        """
+}
+mapping "d335.1" source="d335" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d335 SNOMED CT 288580007 = ICF d335 Producing non-verbal messages: expressing oneself by
+        producing non-verbal messages (body language, signs, drawings). Target =, active RF2 production
+        (sv) (288586001). SNOMED CT does not separate the producing direction of non-verbal communication;
+        is bidirectional and subsumes the producing side, so the target fully contains the source but is
+        one level broader (covers the receiving side too). Broader (high): direct verified SNOMED CT
+        observable match on the non-verbal axis with an sv-synonym match, one-level broader because
+        SNOMED CT captures bidirectional non-verbal use rather than the producing-only framing; mirrors the
+        d155/d320 one-level-broader precedent. mapping_type=broader.
+        """
+}
+mapping "d3350.1" source="d3350" target="SNOMED_CT:288586001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3350 SNOMED CT 288586001 = ICF d3350 Expressing oneself through body language: producing
+        messages via body movements, gestures, facial expressions. Target =, active RF2 production (sv),
+        SNOMED CT's direct observable for the body-language axis and the only child of 288580007. Both
+        denote the body-language-as-communication concept; ICF frames the producing activity, SNOMED CT the
+        ability, same axis (body language is inherently an expressive/producing act). Exact-equivalent :
+        direct verified SNOMED CT observable match with an exact sv-synonym match (/) confirming 1:1
+        equivalence; mirrors the d166/d170 exact-sv-synonym precedent.
+        mapping_type=exact_match.
+        """
+}
+mapping "d3351.1" source="d3351" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3351 SNOMED CT 288580007 = ICF d3351 Expressing oneself through signs and symbols: the
+        4-level child of d335 for producing messages via general (non-body-language) signs and symbols.
+        Target =, active RF2 production (d335 parent maps here). SNOMED CT has no concept; the
+        non-verbal-communication observable subsumes the non-verbal axis but loses the
+        sign/symbol-modality and the producing-direction specificity. Broader (low):
+        non-verbal-communication subsumes the producing axis but the source's sign/symbol-modality
+        specificity is outside any SNOMED CT concept (deep climb, no narrower target); consistent with the
+        leaf-under-broad-parent precedent (d1600/d1700 at). mapping_type=broader.
+        """
+}
+mapping "d3352.1" source="d3352" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3352 SNOMED CT 288580007 = ICF d3352 Expressing oneself through drawings and photographs:
+        the 4-level child of d335 for producing messages via pictures/drawings/photographs. Target =,
+        active RF2 production (d335 parent maps here). SNOMED CT has no concept; the
+        non-verbal-communication observable subsumes the non-verbal axis but loses the
+        pictorial-modality specificity. Broader (low): non-verbal-communication subsumes the producing
+        axis but the source's pictorial-modality specificity is outside any SNOMED CT concept; same
+        deep-climb pattern as d3351. mapping_type=broader.
+        """
+}
+mapping "d3358.1" source="d3358" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3358 SNOMED CT 288580007 = ICF d3358 Producing non-verbal messages, other specified: the
+        residual SNOMED CT 288580007 4-level child of d335. Target =, active RF2 production, the nearest
+        axis concept (d335 parent maps here). Broader (moderate): non-verbal-communication subsumes the
+        unspecified-other producing-non-verbal bucket; one-level broader under the d335 parent axis;
+        consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d3359.1" source="d3359" target="SNOMED_CT:288580007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3359 SNOMED CT 288580007 = ICF d3359 Producing non-verbal messages, unspecified: the SNOMED CT
+        288580007 4-level child of d335. Target =, active RF2 production, the nearest axis concept (d335
+        parent maps here). Broader (moderate): non-verbal-communication subsumes the unspecified
+        producing-non-verbal bucket; the source's unspecified framing maps naturally to the broader axis
+        concept (no narrower SNOMED CT concept exists); per the unspecified-source precedent (A009 ->
+        198677 at). mapping_type=broader.
+        """
+}
+mapping "d340.1" source="d340" target="SNOMED_CT:415807006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d340 SNOMED CT 415807006 = ICF d340 Producing messages in sign language: expressing oneself
+        by producing sign-language messages (the sender side of sign-language use). Target =, active RF2
+        production (sv), SNOMED CT's direct observable for the sign-language communication axis. SNOMED CT's
+        is the act of producing/using sign language for communication; ICF d340 is the core of that act,
+        and both denote the sign-language-producing concept. Exact-equivalent : direct verified SNOMED CT
+        observable match with an sv-synonym match (/) confirming 1:1 equivalence on the producing axis;
+        mirrors the d166/d170 exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d345.1" source="d345" target="SNOMED_CT:12261009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d345 SNOMED CT 12261009 = ICF d345 Writing messages: producing written messages. Target =,
+        active RF2 production (sv), SNOMED CT's direct observable for the writing activity. Both denote the
+        writing/producing-written-text concept; identical to the d170 Writing -> 12261009 mapping
+        (d170 -> 12261009 exact). Exact-equivalent : direct verified
+        SNOMED CT observable match with an exact sv-synonym match (/) confirming 1:1 equivalence; directly
+        mirrors the d170 precedent. mapping_type=exact_match.
+        """
+}
+mapping "d349.1" source="d349" target="SNOMED_CT:405018002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d349 SNOMED CT 405018002 = ICF d349 Communication - sending, other specified and
+        unspecified: the 3-level residual for the d330-d349 sender block. Target =, active RF2
+        production (sv), SNOMED CT's direct observable for the expressive (sender) communication axis.
+        SNOMED CT has no concept; expressive-communication subsumes the entire sender axis. Broader
+        (moderate): expressive-communication subsumes the unspecified-other sending bucket; one-level
+        broader under the sender axis; consistent with the residual/unspecified-source precedent (A009
+        -> 198677 at) and the d330-d349 block mapping. mapping_type=broader.
+        """
+}

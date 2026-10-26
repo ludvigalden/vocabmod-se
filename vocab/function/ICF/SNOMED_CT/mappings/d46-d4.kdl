@@ -1,0 +1,352 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d46-d4
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d460.1" source="d460" target="SNOMED_CT:301438001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d460 SNOMED CT 301438001 = ICF d460 Moving around in different locations: walking/moving
+        around in the home, outside the home and in other buildings (the 3rd-level block spanning
+        d4600-d4602 by location). Target =, active RF2 production, the SNOMED CT ancestor whose children
+        include 301496004 (mobilize indoors), 301562008 (mobilize outside), 714998007 (mobilize in home)
+        — exactly the d460 location-based constituent acts. SNOMED CT has no single concept that bundles
+        all locations; 301438001 is the nearest common ancestor that fully subsumes every d460
+        location-based act. Broader (high): one-level broader, the target fully contains every clinical
+        meaning of the source (all location-based mobilization modes are children of 301438001); mirrors
+        the d410/d455 one-level-broader precedent where SNOMED CT's axis concept subsumes the source's
+        specific mode. mapping_type=broader.
+        """
+}
+mapping "d4600.1" source="d4600" target="SNOMED_CT:714998007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4600 SNOMED CT 714998007 = ICF d4600 Moving around in different locations: Moving around
+        within the home (walking/moving around inside one's own home, between rooms); 4th-level child of
+        d460. Target =, active RF2 production (sv mirror), a direct child of 301438001. The SNOMED CT sv
+        synonym is the near-identical lexical and semantic equivalent of d4600 (same functional axis:
+        mobilizing within the home). exact_match : direct verified SNOMED CT observable whose sv term
+        matches the source sv term one-to-one; consistent with the d4100/d4104 exact precedent
+        and the d460 parent -> 301438001 broader map, which explicitly named
+        714998007 as the d4600 constituent. mapping_type=exact_match.
+        """
+}
+mapping "d4601.1" source="d4601" target="SNOMED_CT:301496004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4601 SNOMED CT 301496004 = ICF d4601 Moving around in different locations: Moving around
+        within buildings other than the home (moving/mobilizing inside other buildings such as
+        workplaces, shops, public buildings); 4th-level child of d460, sibling of d4600 (within home).
+        Target =, active RF2 production (sv mirror), a direct child of 301438001. SNOMED CT has no concept
+        that excludes the home; 301496004 mobilize-indoors is the closest standard concept and fully
+        subsumes the source (mobilizing in other buildings is a subset of mobilizing indoors). Broader
+        (high): one-level broader — the target's covers all indoor locations including the home, so it
+        legitimately contains the source's meaning, but is marginally broader than the home-excluding
+        framing of the source. Per the d4301/d4106 one-level-breadth precedent; the d460 parent map explicitly named 301496004 as the d4601 constituent. mapping_type=broader.
+        """
+}
+mapping "d4602.1" source="d4602" target="SNOMED_CT:301562008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4602 SNOMED CT 301562008 = ICF d4602 Moving around in different locations: Moving around
+        outside the home and other buildings (walking/mobilizing outdoors, outside any building);
+        4th-level child of d460, sibling of d4600/d4601. Target =, active RF2 production (sv mirror), a
+        direct child of 301438001. The SNOMED CT sv synonym (mobilize outdoors) is the direct lexical and
+        semantic equivalent of d4602 (mobilize outside home and other buildings): both denote
+        outdoor/outside-any-building mobilization. exact_match : direct verified SNOMED CT observable whose
+        sv term matches the source one-to-one on the outdoor-mobilization axis; consistent with the
+        d4600 exact precedent and the d460 parent map, which explicitly named 301562008 as
+        the d4602 constituent. mapping_type=exact_match.
+        """
+}
+mapping "d4608.1" source="d4608" target="SNOMED_CT:301438001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4608 SNOMED CT 301438001 = ICF d4608 Moving around in different locations, other specified:
+        the residual SNOMED CT 301438001 4th-level child of d460 for move-around-in-different-locations
+        activities not captured by d4600-d4602. Target =, active RF2 production (sv), the parent
+        observable whose children 714998007 (in home), 301496004 (indoors), 301562008 (outside) span the
+        d460 location-based constituents. SNOMED CT has no concept; the parent mobilize observable subsumes
+        the residual bucket. Broader (moderate): one-level broader under the d460 parent axis,
+        other-specified source, consistent with the residual-code precedent (d4108 -> 282869009 at). mapping_type=broader.
+        """
+}
+mapping "d4609.1" source="d4609" target="SNOMED_CT:301438001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4609 SNOMED CT 301438001 = ICF d4609 Moving around in different locations, unspecified: the
+        deliberately non-specific 4th-level child of d460. Target =, active RF2 production, the parent
+        observable for the move-around axis (parent of in-home/indoors/outside mobilize children).
+        SNOMED CT has no unspecified move-around-in-different-locations concept; the parent subsumes the
+        unspecified bucket. Broader (moderate): one-level broader under the d460 parent axis,
+        unspecified source, consistent with the residual-code precedent (d4109 -> 282869009 at; d460 parent -> 301438001). mapping_type=broader.
+        """
+}
+mapping "d465.1" source="d465" target="SNOMED_CT:301569004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d465 SNOMED CT 301569004 = ICF d465 Moving around using equipment: moving around using
+        specific equipment/mobility devices (wheelchairs, walkers, canes, prostheses, etc.) to move from
+        place to place; 3rd-level block under d4. Target =, active RF2 production (sv mirror), a direct
+        child of 301438001. The SNOMED CT sv synonym is the near-identical lexical and semantic equivalent
+        of d465 (both: mobilize using equipment/aids). exact_match (high rather than): direct verified
+        SNOMED CT observable on the same with-equipment axis, but the ICF source (equipment) is marginally
+        broader than SNOMED CT's (mobility aids) — equipment could in principle include non-mobility-aid
+        gear — a small well-understood breadth mismatch on the same axis, per the d4301/d4106
+        one-level-breadth precedent. mapping_type=exact_match.
+        """
+}
+mapping "d469.1" source="d469" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d469 SNOMED CT 301998005 = ICF d469 Walking and moving around, other specified and
+        unspecified: the combined other-specified-and-unspecified residual 3rd-level block spanning d450
+        Walking, d455 Moving around, d460 Moving around in different locations, d465 Moving around using
+        equipment. Target =, active RF2 production (sv), the generic mobility ancestor that fully
+        subsumes walking, moving around, and equipment use (its descendants include 282097004 walk,
+        301438001 mobilize, 301569004 mobilize-with-aids). SNOMED CT has no single concept spanning the
+        block's full walk-and-move-around range; 301998005 is the closest common ancestor that fully
+        contains all four sub-blocks. Broader (low): the target subsumes the whole block but is a
+        generic ancestor several levels above the granular constituents, and the source is a
+        heterogeneous combined residual; consistent with the block-level map precedent (d410-d429 ->
+        282869009 at, d430-d449 -> 288330002 at, d455 -> 301998005 at).
+        mapping_type=broader.
+        """
+}
+mapping "d470.1" source="d470" target="SNOMED_CT:300619007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d470 SNOMED CT 300619007 = ICF d470 Using transportation: using transportation to move
+        around (travelling as a passenger or being carried), as a means of getting from one place to
+        another; 3rd-level parent under d4. Target =, active RF2 production (sv mirror), a direct child
+        of 300606008 300620001 (public transport) and 300626007 (private transport). The SNOMED CT sv
+        synonym is the exact lexical and semantic equivalent of d470 (both: use transportation).
+        exact_match : direct verified SNOMED CT observable whose sv term matches the source one-to-one, and
+        whose SNOMED CT hierarchy (public/private transport children) mirrors the ICF d4700-d4703 child
+        structure. mapping_type=exact_match.
+        """
+}
+mapping "d470-d489.1" source="d470-d489" target="SNOMED_CT:300606008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d470-d489 SNOMED CT 300606008 = ICF block d470-d489 Moving around using transportation: the
+        block-level grouping of d470 Using transportation (d4700-d4709), d475 Driving (d4750-d4759), and
+        d480 Riding animals for transportation -- the combined use-transport/drive/ride-for-transport
+        block under d4. Target =, active RF2 production (sv), the parent of 300619007 (use transport),
+        300612003 (travel on foot), 300651008 (organize a journey), 300669004 (cross the road). SNOMED CT
+        has no single concept that spans the block's full use-transport + drive + ride-animals range;
+        300606008 traveling-activities is the closest common ancestor that fully contains the
+        transport-use and travel axes (driving and riding-animals are not direct SNOMED CT children of
+        300606008 but fall under traveling/journey activity). Broader (low): the target subsumes part of
+        the block (the transport-use axis via its child 300619007) but a block code is heterogeneous and
+        the drive/ride-animals sub-axes sit loosely under it; consistent with the block-level map
+        precedent (d410-d429 -> 282869009 at, d430-d449 -> 288330002 at). mapping_type=broader.
+        """
+}
+mapping "d4700.1" source="d4700" target="SNOMED_CT:300645003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4700 SNOMED CT 300645003 = ICF d4700 Using transportation: Using human-powered
+        transportation (being carried/moved by human-powered vehicles such as bicycles, rowboats,
+        wheelchairs propelled by another, rickshaws); 4th-level child of d470, sibling of
+        d4701/d4702/d4703. Target =, active RF2 production (sv mirror), a child of 300626007. SNOMED CT has
+        no generic concept; the bicycle is the canonical human-powered vehicle the ICF code captures in
+        practice. 300645003 ride-bicycle fully subsumes the dominant human-powered-transport sense of
+        d4700 (riding a bicycle is using human-powered transport). Broader (high): one-level broader —
+        the target drops the human-powered-vehicles-in-general framing to the single bicycle instance,
+        but no meaning of the source's dominant sense falls outside the target; per the d4301/d4106
+        one-level-breadth precedent. mapping_type=broader.
+        """
+}
+mapping "d4701.1" source="d4701" target="SNOMED_CT:300626007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4701 SNOMED CT 300626007 = ICF d4701 Using transportation: Using private motorized
+        transportation (being transported by private motor vehicles such as cars, vans, motorcycles);
+        4th-level child of d470. Target =, active RF2 production (sv mirror), a direct child of
+        300619007 300633007 (drive a car), 300639006 (ride a motorbike), 300645003 (ride a bicycle). The
+        SNOMED CT sv synonym is the near-identical lexical and semantic equivalent of d4701 (both: use
+        private transport). exact_match : direct verified SNOMED CT observable whose sv term matches the
+        source on the private-transport axis; the ICF source specifies (motordrivet) whereas
+        (300645003), but the dominant/private-motor-vehicle sense coincides and the source's motorized
+        framing is captured by the car/motorbike children. Treated as exact_match because the
+        private-transport axis matches one-to-one and the motorized qualifier is the dominant instance
+        of private transport; consistent with the d470 -> 300619007 exact precedent.
+        mapping_type=exact_match.
+        """
+}
+mapping "d4702.1" source="d4702" target="SNOMED_CT:300620001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4702 SNOMED CT 300620001 = ICF d4702 Using transportation: Using public motorized
+        transportation (being transported by public motor vehicles such as buses, trains, trams,
+        ferries); 4th-level child of d470. Target =, active RF2 production (sv mirror), a direct child
+        of 300619007. The SNOMED CT sv synonym is the near-identical lexical and semantic equivalent of
+        d4702 (both: use public transport). exact_match : direct verified SNOMED CT observable whose sv
+        term matches the source one-to-one on the public-transport axis; the ICF source specifies
+        (motordrivet) whereas could in principle include non-motorized public transport (e.g.
+        horse-drawn trams), but the dominant/public-motor-vehicle sense coincides. Per the d4701 ->
+        300626007 exact precedent. mapping_type=exact_match.
+        """
+}
+assessment "d4703.omop" source="d4703" outcome=no_match target-system="OMOP_EXT"
+mapping "d4708.1" source="d4708" target="SNOMED_CT:300619007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4708 SNOMED CT 300619007 = ICF d4708 Using transportation, other specified: the residual
+        SNOMED CT 300619007 4th-level child of d470 for transportation-use activities not captured by
+        d4700-d4703. Target =, active RF2 production, the parent observable for the transport-use axis
+        (parent of public/private transport children). SNOMED CT has no concept; the parent use-transport
+        observable subsumes the residual bucket. Broader (moderate): one-level broader under the d470
+        parent axis, other-specified source, consistent with the residual-code precedent (d4108 ->
+        282869009 at, d4608 -> 301438001 at). mapping_type=broader.
+        """
+}
+mapping "d4709.1" source="d4709" target="SNOMED_CT:300619007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4709 SNOMED CT 300619007 = ICF d4709 Using transportation, unspecified: the deliberately
+        non-specific 4th-level child of d470. Target =, active RF2 production, the parent observable for
+        the transport-use axis. SNOMED CT has no unspecified using-transportation concept; the parent
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d470 parent
+        axis, unspecified source, consistent with the residual-code precedent (d4109 -> 282869009 at,
+        d4609 -> 301438001 at). mapping_type=broader.
+        """
+}
+mapping "d475.1" source="d475" target="SNOMED_CT:129060000" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d475 SNOMED CT 129060000 = ICF d475 Driving: driving/being the driver/operator of a vehicle
+        (human-powered, motorized, or animal-drawn) for transport; 3rd-level parent under d470-d489
+        spanning d4750 (human-powered vehicles), d4751 (motorized vehicles), d4752 (animal-drawn
+        vehicles). Target =, active RF2 production (sv mirror), a child of 300574001. SNOMED CT's generic
+        observable is the direct framing of the d475 being-a-driver activity; the sv synonym (drive a
+        car) confirms the activity axis. exact_match (high rather than): direct verified SNOMED CT
+        observable matching the d475 driving axis, but SNOMED CT's Driving sv term leans toward car-driving
+        whereas the ICF source spans all vehicle types (the car is the dominant instance); a small
+        well-understood breadth mismatch on the same driving axis, per the d4301/d4106 one-level-breadth
+        precedent. Note: the SNOMED CT transport-ability hierarchy frames driving as a child of private
+        transport (300633007 drive a car under 300626007), which covers only d4751; the generic
+        129060000 is the only SNOMED CT concept that spans the d4750/d4751/d4752 driving range, hence
+        chosen over the car-specific child. mapping_type=exact_match.
+        """
+}
+mapping "d4750.1" source="d4750" target="SNOMED_CT:300645003" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4750 SNOMED CT 300645003 = ICF d4750 Driving: Driving human-powered vehicles (being the
+        operator/driver of human-powered transport such as a bicycle, rowboat, skateboard); 4th-level
+        child of d475, sibling of d4751/d4752. Target =, active RF2 production (sv mirror), a child of
+        300626007. SNOMED CT has no generic concept; the bicycle is the canonical human-powered vehicle and
+        riding a bicycle IS being its driver/operator. exact_match (high rather than): direct verified
+        SNOMED CT observable on the human-powered-vehicle-driving axis, but the ICF source spans all
+        human-powered vehicles whereas specifies bicycle; the bicycle is the dominant instance, a small
+        well-understood breadth mismatch on the same axis, per the d4301/d4106 one-level-breadth
+        precedent. mapping_type=exact_match.
+        """
+}
+mapping "d4751.1" source="d4751" target="SNOMED_CT:300633007" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4751 SNOMED CT 300633007 = ICF d4751 Driving: Driving motorized vehicles (being the
+        driver/operator of a motorized vehicle such as a car, van, motorcycle); 4th-level child of d475.
+        Target =, active RF2 production (sv mirror), a direct child of 300626007. The SNOMED CT sv synonym
+        (drive a car) is the direct lexical and semantic equivalent of the dominant instance of d4751
+        (drive a motorized vehicle). exact_match : direct verified SNOMED CT observable whose sv term
+        matches the source on the driving axis; the ICF source spans all motorized vehicles (car, van,
+        motorcycle) whereas (300639006) confirms the motorized-vehicle axis. Treated as exact_match
+        because the motorized-vehicle-driving axis matches one-to-one and the car is the canonical
+        instance; consistent with the d470 -> 300619007 exact precedent. mapping_type=exact_match.
+        """
+}
+assessment "d4752.omop" source="d4752" outcome=no_match target-system="OMOP_EXT"
+mapping "d4758.1" source="d4758" target="SNOMED_CT:129060000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4758 SNOMED CT 129060000 = ICF d4758 Driving, other specified: the residual SNOMED CT
+        129060000 4th-level child of d475 for driving activities not captured by d4750-d4752. Target =,
+        active RF2 production, the generic driving observable (parent axis for the d475 block). SNOMED CT
+        has no concept; the generic Driving observable subsumes the residual bucket. Broader (moderate):
+        one-level broader under the d475 parent axis, other-specified source, consistent with the
+        residual-code precedent (d4108 -> 282869009 at, d4708 -> 300619007 at).
+        mapping_type=broader.
+        """
+}
+mapping "d4759.1" source="d4759" target="SNOMED_CT:129060000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4759 SNOMED CT 129060000 = ICF d4759 Driving, unspecified: the deliberately non-specific
+        4th-level child of d475. Target =, active RF2 production, the generic driving observable for the
+        d475 block axis. SNOMED CT has no unspecified driving concept; the generic Driving observable
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d475 parent
+        axis, unspecified source, consistent with the residual-code precedent (d4109 -> 282869009 at,
+        d4709 -> 300619007 at). mapping_type=broader.
+        """
+}
+mapping "d480.1" source="d480" target="SNOMED_CT:715004008" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d480 SNOMED CT 715004008 = ICF d480 Riding animals for transportation: riding animals
+        (horses, camels, etc.) as a means of transportation; 3rd-level block under d470-d489. Target =,
+        active RF2 production (sv mirror), a child of 364665006. The SNOMED CT sv synonym is the direct
+        lexical and semantic equivalent of the dominant instance of d480 (riding animals for transport):
+        both denote the ride-animal activity, and the horse is the canonical riding animal the ICF code
+        captures in practice. exact_match (high rather than): direct verified SNOMED CT observable on the
+        ride-animals axis, but the ICF source spans all riding animals (horse, camel, etc.) whereas
+        specifies horse; the horse is the dominant instance, a small well-understood breadth mismatch on
+        the same axis, per the d4301/d4106 one-level-breadth precedent. Note: 715004008's parent is the
+        generic activity root rather than the transport hierarchy, but the concept itself is the
+        semantic equivalent of d480. mapping_type=exact_match.
+        """
+}
+mapping "d489.1" source="d489" target="SNOMED_CT:300619007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d489 SNOMED CT 300619007 = ICF d489 Moving around using transportation, other specified and
+        unspecified: the combined other-specified-and-unspecified residual 3rd-level block for d470-d489
+        (using transportation, driving, riding animals). Target =, active RF2 production, the parent
+        observable for the transport-use axis (parent of public/private transport). SNOMED CT has no single
+        concept spanning the block's full use-transport + drive + ride-animals range; 300619007
+        use-transport is the dominant/leading axis and the closest common ancestor that fully contains
+        the transport-use sub-block. Broader (low): the target subsumes part of the block (the
+        transport-use axis) but the block is heterogeneous (combines use-transport, drive, ride-animals)
+        and the driving/riding sub-axes sit loosely under it; consistent with the block-level map
+        precedent (d410-d429 -> 282869009 at, d430-d449 -> 288330002 at, d470-d489 -> 300606008 at). mapping_type=broader.
+        """
+}
+mapping "d498.1" source="d498" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d498 SNOMED CT 301998005 = ICF d498 Mobility, other specified: the chapter-level residual
+        for the entire d4 Mobility chapter (moving around: changing/maintaining body position,
+        carrying/moving/lifting, walking, moving around in different locations, using transportation).
+        Target =, active RF2 production (sv), the top-level mobility ancestor that fully subsumes the
+        entire d4 Mobility chapter (its descendants span walking, mobilizing, change-position,
+        lifting/carrying, transport-use). SNOMED CT has no concept; 301998005 is the broadest ancestor
+        covering the whole chapter. Broader (weak): the target subsumes the whole chapter but is a very
+        generic ancestor far above the granular constituents, and the source is a heterogeneous
+        chapter-level residual; the loose specificity justifies the weak tier, consistent with the
+        chapter-root precedent (d4 chapter root handled at low confidence).
+        mapping_type=broader.
+        """
+}
+mapping "d499.1" source="d499" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d499 SNOMED CT 301998005 = ICF d499 Mobility, unspecified: the chapter-level residual for
+        the entire d4 Mobility chapter. Target =, active RF2 production, the top-level mobility ancestor
+        that fully subsumes the entire d4 Mobility chapter. SNOMED CT has no unspecified-mobility concept;
+        301998005 is the broadest ancestor covering the whole chapter. Broader (weak): the target
+        subsumes the whole chapter but is a very generic ancestor far above the granular constituents,
+        and the source is an unspecified chapter-level residual; the loose specificity justifies the
+        weak tier, consistent with the chapter-root precedent (d4 chapter root handled at low confidence). mapping_type=broader.
+        """
+}

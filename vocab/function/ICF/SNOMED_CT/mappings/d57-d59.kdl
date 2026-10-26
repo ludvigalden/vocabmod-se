@@ -1,0 +1,176 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d57-d59
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d570.1" source="d570" target="SNOMED_CT:406211006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d570 SNOMED CT 406211006 = ICF d570 Looking after one's health (ensuring physical comfort,
+        managing diet and fitness, managing health, looking after mental and sexual health); 3rd-level
+        category under d5. Target =, active RF2 production (Athena 4247394), SNOMED CT's direct observable
+        for the personal-health-management activity axis and the parent of 1149051005 (Ability to
+        perform health maintenance) that the d5702 child maps to. denotes the same
+        looking-after-one's-health self-care activity at the same level of specificity as ICF d570. High
+        tier (exact): the target names the identical health-self-care activity at the same breadth; not
+        only because SNOMED CT frames it as a observable (a capacity/framing entity) where ICF d570 frames
+        the activity itself, and because no Athena crosswalk was independently re-verified; consistent
+        with the capacity-framing precedent across the d5 dressing/eating/drinking maps.
+        mapping_type=exact_match.
+        """
+}
+mapping "d5700.1" source="d5700" target="SNOMED_CT:440579007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5700 SNOMED CT 440579007 = ICF d5700 Looking after one's health: Ensuring one's physical
+        comfort (taking care of one's own comfort, e.g. by choosing a comfortable position or suitable
+        clothing); 4th-level child of d570. Target =, active RF2 production (Athena 4258826), the direct
+        observable for the physical-comfort axis. SNOMED CT has no self-care observable; 440579007 captures
+        the *state* of physical comfort that the source activity aims to ensure, not the
+        ensuring-activity itself. Related (low): the target is clinically associated with the source (it
+        is the very state the activity produces) and is the closest standard concept on this axis, but
+        it is a state-observable rather than the ICF self-care activity — a tight related link, not
+        identity or subsumption; the association is defensible enough for over a weaker.
+        mapping_type=related.
+        """
+}
+mapping "d5702.1" source="d5702" target="SNOMED_CT:1149051005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5702 SNOMED CT 1149051005 = ICF d5702 Looking after one's health: Maintaining one's health
+        (caring for oneself to stay healthy); 4th-level child of d570. Target =, active RF2 production
+        (Athena 607070), SNOMED CT's direct observable for the health-maintenance activity and a child of
+        406211006 (Personal health management behavior, the d570 parent target). Same functional
+        activity (maintaining one's own health) at the same level of specificity; is the lexical and
+        semantic equivalent of. High tier (exact): the target names the identical health-maintenance
+        activity; not only because SNOMED CT frames it as an ability/capacity observable where ICF frames
+        the activity itself — a minor model-framing difference. mapping_type=exact_match.
+        """
+}
+mapping "d5703.1" source="d5703" target="SNOMED_CT:439066001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5703 SNOMED CT 439066001 = ICF d5703 Looking after one's health: Choosing and consuming a
+        healthy diet (selecting nutritious food and eating it); 4th-level child of d570. Target =,
+        active RF2 production (Athena 4231356), SNOMED CT's direct observable for the healthy-diet
+        self-management axis. SNOMED CT has no combined self-care observable; 439066001 captures the
+        choosing-and-sticking-to axis (the dominant sense of d5703) but is framed as an
+        adherence-behavior observable and does not explicitly cover the half. Broader (moderate): the
+        target legitimately subsumes the choosing/adherence core of the source on the same axis, broader
+        because it is framed as an adherence-behavior observable (not the activity itself) and leaves
+        the intake sub-axis implicit; defensible closest standard concept, looser than an exact match.
+        mapping_type=broader.
+        """
+}
+assessment "d5704.omop" source="d5704" outcome=no_match target-system="OMOP_EXT"
+assessment "d5705.omop" source="d5705" outcome=no_match target-system="OMOP_EXT"
+mapping "d5706.1" source="d5706" target="SNOMED_CT:76859005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5706 SNOMED CT 76859005 = ICF d5706 Looking after one's health: Looking after one's sexual
+        health (maintaining sexual health and safe-sex practices); 4th-level child of d570. SNOMED CT has
+        NO defensible function/activity observable for the self-care activity of managing one's own
+        sexual health (no concept); the closest standard concepts are the sexual-function observables
+        76859005 (Sexual function) and its male/female children, which sit on the physiologic-function
+        axis rather than the ICF self-care/safe-sex axis. Related (weak): 76859005 is clinically
+        associated with sexual health and is the only standard concept on an adjacent axis worth
+        recording as a lead for reviewers, but it is NOT equivalent, broader, narrower, or a component
+        of the source's safe-sex/sexual-health self-care meaning — a loose related link, capped at per
+        the related rubric. (Not no_match because the clinical association to sexual function is real
+        and defensible, unlike the no-axis d5704/d5705 cases.) mapping_type=related.
+        """
+}
+mapping "d5708.1" source="d5708" target="SNOMED_CT:406211006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5708 SNOMED CT 406211006 = ICF d5708 Looking after one's health, other specified: a
+        specified-but-residual child of d570 (a health-self-care activity not captured by d5700-d5706).
+        Target =, active RF2 production (Athena 4247394), the direct ancestor used for the d570 parent.
+        The source is, by definition, a health-self-care activity under d570, so the
+        personal-health-management observable legitimately subsumes it. Broader (moderate): direct
+        SNOMED CT function-observable ancestor on the same axis, broader because the source is an
+        unspecified child whose exact meaning is undefined; consistent with the residual-child precedent
+        (d-code children mapped to the parent at). mapping_type=broader.
+        """
+}
+mapping "d5708A.1" source="d5708A" target="SNOMED_CT:386375006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5708A SNOMED CT 386375006 = ICF d5708A Looking after one's health, other specified: Looking
+        after one's oral health (a Swedish-extension sub-code specifying oral self-care — tooth/mouth
+        care as a health-maintenance activity); 4th-level child of d570 under the d5708 bucket. Target
+        =, active RF2 production (Athena 4302262), SNOMED CT's direct concept for the
+        oral-health-maintenance axis (the observable 364126007 captures only the resulting state, and
+        717778001 is the clinical-care regime, so 386375006 is the closest standard concept on the
+        self-maintenance axis). Broader (moderate): the target legitimately captures the
+        oral-health-maintenance meaning of the source on the same axis, broader because it is framed as
+        a regime/therapy rather than the ICF self-care activity itself, and because SNOMED CT lacks a
+        dedicated observable; defensible closest standard concept. mapping_type=broader.
+        """
+}
+mapping "d5709.1" source="d5709" target="SNOMED_CT:406211006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5709 SNOMED CT 406211006 = ICF d5709 Looking after one's health, unspecified: the
+        unspecified child of d570. Target =, active RF2 production (Athena 4247394), the direct ancestor
+        used for the d570 parent. The source is an unspecified health-self-care activity under d570, so
+        the personal-health-management observable legitimately subsumes it. Broader (moderate): direct
+        SNOMED CT function-observable ancestor on the same axis, broader because the source is explicitly
+        unspecified; consistent with the unspecified-child precedent (d-code children mapped to the
+        parent at). mapping_type=broader.
+        """
+}
+mapping "d598.1" source="d598" target="SNOMED_CT:286850002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d598 SNOMED CT 286850002 = ICF d598 Self-care, other specified: a specified-but-residual
+        child of the d5 chapter root (a self-care activity not captured by d510-d570). Target =, active
+        RF2 production (Athena 4113625), the direct self-care function observable used for the d5
+        chapter root. The source is, by definition, a self-care activity under the d5
+        chapter, so the personal-hygiene-activities function observable — SNOMED CT's canonical
+        self-care-activity parent — legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        self-care-observable ancestor, broader because the source is an unspecified child whose exact
+        meaning is undefined and because 286850002 spans the personal-hygiene core of d5
+        (washing/grooming) which does not cover every possible d598 residual; consistent with the
+        residual-child and d5-chapter-root precedents (d5 -> 286850002 at broader).
+        mapping_type=broader.
+        """
+}
+mapping "d598A.1" source="d598A" target="SNOMED_CT:405145004" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d598A SNOMED CT 405145004 = ICF d598A Self-care, other specified: Looking after one's own
+        safety (taking care to avoid injury/danger to oneself, a Swedish-extension sub-code under the
+        d598 bucket); 4th-level child of d5. Target =, active RF2 production (Athena 4234645), SNOMED CT's
+        direct observable for the personal-safety-behavior axis. SNOMED CT has no self-care observable;
+        405145004 is the closest standard concept on the personal-safety axis (the sibling 405113009 is
+        a knowledge observable, the Swedish extension 12681000202102 is a national finding). Related
+        (low): the target is clinically associated with the source (both denote the personal-safety
+        self-care axis) and is the closest standard concept on this axis, but it is framed as a behavior
+        observable rather than the ICF self-care activity — a tight related link; defensible enough for
+        over a weaker. mapping_type=related.
+        """
+}
+mapping "d599.1" source="d599" target="SNOMED_CT:286850002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d599 SNOMED CT 286850002 = ICF d599 Self-care, unspecified: the unspecified child of the d5
+        chapter root. Target =, active RF2 production (Athena 4113625), the direct self-care function
+        observable used for the d5 chapter root. The source is an unspecified self-care
+        activity under the d5 chapter, so the personal-hygiene-activities function observable — SNOMED CT's
+        canonical self-care-activity parent — legitimately subsumes it. Broader (moderate): direct
+        SNOMED CT self-care-observable ancestor, broader because the source is explicitly unspecified and
+        because 286850002 spans the personal-hygiene core of d5 (washing/grooming) which is the dominant
+        but not the only d5 axis (toileting/dressing fall outside it); consistent with the
+        unspecified-child and d5-chapter-root precedents (d5 -> 286850002 at broader).
+        mapping_type=broader.
+        """
+}

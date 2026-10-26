@@ -1,0 +1,82 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b8-d
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "b8.omop" source="b8" outcome=no_match target-system="OMOP_EXT"
+mapping "b810.1" source="b810" target="SNOMED_CT:64501009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b810 SNOMED CT 64501009 = ICF b810 Protective functions of the skin: skin functions
+        concerned with protection (barrier against physical/chemical/biological threats, water
+        retention). Target =, active RF2 production. SNOMED CT has no skin-barrier/protective-function
+        observable: 364535009 is narrower (it is the structural-integrity assessment, not the
+        protective-function axis) (77373002) (401861009). Broader (low): the whole skin-function
+        observable subsumes the protective axis but loses the protective specificity; same deep-climb
+        pattern as the b730 regional subdivisions. mapping_type=broader.
+        """
+}
+mapping "b810-b849.1" source="b810-b849" target="SNOMED_CT:64501009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b810-b849 SNOMED CT 64501009 = ICF block b810-b849 Functions of the skin: the block-level
+        grouping of skin protective (b810), repair (b820), other (b830) and skin-sensation (b840)
+        functions plus the b849 residual. Target =, active RF2 production, the direct standard concept
+        for skin function as a whole. Broader (low): the block is broad (four distinct skin-function
+        axes) and the target spans all skin function, so it is a one-concept climb but the block bundles
+        several axes the single observable flattens; consistent with the block-level map precedent
+        (b750-b789 -> Motor function at). mapping_type=broader.
+        """
+}
+mapping "b820.1" source="b820" target="SNOMED_CT:406214003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b820 SNOMED CT 406214003 = ICF b820 Repair functions of the skin: skin functions concerned
+        with wound healing/repair (scarring, restoration of skin integrity). Target =, active RF2
+        production, the nearest active standard concept for the skin-healing axis; the more specific
+        primary/secondary-intention observables (405041005/405042003) are narrower than the source's
+        general healing-function framing. Broader (low): wound-healing-status subsumes the skin-repair
+        axis but reframes the ICF as an observable status and spans all-wound healing (not only skin);
+        deep climb, but the closest defensible skin-healing concept. mapping_type=broader.
+        """
+}
+mapping "b830.1" source="b830" target="SNOMED_CT:64501009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b830 SNOMED CT 64501009 = ICF b830 Other skin functions: skin functions other than
+        protective/repair/sensation (e.g. secretion, temperature regulation via sweating). Target =,
+        active RF2 production. SNOMED CT has no observable and no single concept for the
+        secretion/thermoregulation axis of skin (sweating concepts 52526003/52613005 are findings, not
+        functions). Broader (weak): the whole skin-function observable subsumes this residual axis but
+        the source is a deliberately heterogeneous bucket, so the link is loose; recorded to preserve a
+        lead rather than assert identity. mapping_type=broader.
+        """
+}
+mapping "b840.1" source="b840" target="SNOMED_CT:297971001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b840 SNOMED CT 297971001 = ICF b840 Sensations related to the skin: sensations such as
+        itching, tingling, burning arising from the skin. Target =, active RF2 production, SNOMED CT's
+        direct concept for the same clinical axis (sensation felt in the skin); the more specific
+        altered/reduced/burning-skin-sensation children (247325003/398026008/762397008) are narrower
+        than the source's general sensation-of-skin framing. Broader (low): sensation-of-skin finding
+        subsumes the source axis but reframes the ICF as a finding; same one-level kind mismatch as b780
+        -> 298287007 but without a verified crosswalk, so low rather than. mapping_type=broader.
+        """
+}
+assessment "b849.omop" source="b849" outcome=no_match target-system="OMOP_EXT"
+assessment "b850.omop" source="b850" outcome=no_match target-system="OMOP_EXT"
+assessment "b850-b869.omop" source="b850-b869" outcome=no_match target-system="OMOP_EXT"
+assessment "b860.omop" source="b860" outcome=no_match target-system="OMOP_EXT"
+assessment "b869.omop" source="b869" outcome=no_match target-system="OMOP_EXT"
+assessment "b898.omop" source="b898" outcome=no_match target-system="OMOP_EXT"
+assessment "b899.omop" source="b899" outcome=no_match target-system="OMOP_EXT"
+assessment "d.omop" source="d" outcome=no_match target-system="OMOP_EXT"

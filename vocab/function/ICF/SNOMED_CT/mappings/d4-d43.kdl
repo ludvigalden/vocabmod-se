@@ -1,0 +1,526 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d4-d43
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d4.1" source="d4" target="SNOMED_CT:363803005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4 SNOMED CT 363803005 = ICF d4 Mobility: the Activities&Participation chapter root for
+        general mobility activities (changing/maintaining body position, carrying/moving/handling
+        objects, walking/moving around). Target =, active RF2 production, SNOMED CT's direct observable for
+        the mobility axis (parent of ability-to-assume-and-maintain-a-position, ability-to-walk,
+        ability-to-transfer-location, etc.). subsumes the whole d4 Mobility chapter (body position +
+        object handling + walking/moving); one-level broader because SNOMED CT frames the observable rather
+        than the activity-instance and spans all d4 sub-blocks. Broader (high): direct verified SNOMED CT
+        observable match on the mobility axis, one-level broader; mirrors the chapter-root precedent (d3
+        -> 288574004 at; d1 -> 69998004 at). mapping_type=broader.
+        """
+}
+mapping "d410.1" source="d410" target="SNOMED_CT:282869009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d410 SNOMED CT 282869009 = ICF d410 Changing basic body position: getting into and out of a
+        body position (lying down, squatting, kneeling, sitting, standing, bending, etc.); 3-level
+        parent under d4. Target =, active RF2 production, SNOMED CT's direct observable for the
+        change-position axis and the parent of
+        ability-to-stand-up/lie-down/sit-down/sit-up/bend/transfer-location. Both denote the
+        change-basic-body-position concept; ICF frames the activity, SNOMED CT the ability, same axis and
+        same level of specificity. Exact-equivalent : direct verified SNOMED CT observable match confirming
+        1:1 equivalence; mirrors the d415 -> 249868004 exact precedent and the d350 ->
+        288633005 exact precedent. mapping_type=exact_match.
+        """
+}
+mapping "d410-d429.1" source="d410-d429" target="SNOMED_CT:282869009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d410-d429 SNOMED CT 282869009 = ICF block d410-d429 Changing and maintaining body position:
+        the block-level grouping of d410 Changing basic body position (d4100-d4109) and d415 Maintaining
+        a body position (d4150-d4159) -- the combined change-and-maintain body position block under d4.
+        Target =, active RF2 production, the dominant change-position axis concept. SNOMED CT (249868004)
+        (249864002); no single SNOMED CT concept spans the block's full change+maintain range the way
+        d410-d429 does. The change-position axis is the block's leading/dominant theme (d410 sits before
+        d415 and the block is named); 282869009 is recorded as the broader representative of the
+        change-position sub-axis. Broader (low): the target subsumes part of the block (the
+        change-position axis) but a block code is heterogeneous and the maintain-position sub-axis
+        (d415) falls outside this single target, hence low confidence; consistent with the block-level
+        map precedent (d110-d129 -> 311520005 at, d430-d449 -> 288330002 at).
+        mapping_type=broader.
+        """
+}
+mapping "d4100.1" source="d4100" target="SNOMED_CT:282924002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4100 SNOMED CT 282924002 = ICF d4100 Changing basic body position: Lying down (the act of
+        getting into/assuming a lying position); 4th-level child of d410. Target =, active RF2
+        production, SNOMED CT's direct observable for the lie-down ability and a direct child of 282869009.
+        Same functional activity, same level of specificity; SNOMED CT's lie-down observable is the direct
+        lexical and semantic equivalent of d4100, mirroring d4104's place under d410. exact_match;
+        consistent with the d4104 -> 282870005 and d4107 -> 282631001 exact precedent.
+        mapping_type=exact_match.
+        """
+}
+mapping "d4101.1" source="d4101" target="SNOMED_CT:282958005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4101 SNOMED CT 282958005 = ICF d4101 Changing basic body position: Squatting (the act of
+        getting into a squatting/crouching position with knees bent and buttocks near the ground);
+        4th-level child of d410. Target =, active RF2 production, SNOMED CT's direct observable for the
+        squat ability (sibling of 282979005 kneel, 282964003 sit, under 301998005). Same functional
+        activity, same level of specificity; the SNOMED CT term is the direct lexical and semantic
+        equivalent of d4101 (note: ICF = squat/crouch). exact_match; consistent with the d4104/d4105
+        exact precedent. mapping_type=exact_match.
+        """
+}
+mapping "d4102.1" source="d4102" target="SNOMED_CT:282979005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4102 SNOMED CT 282979005 = ICF d4102 Changing basic body position: Kneeling (the act of
+        getting into a kneeling position with knees on the supporting surface); 4th-level child of d410.
+        Target =, active RF2 production, SNOMED CT's direct observable for the kneel ability (sibling of
+        282958005 squat, 282964003 sit, under 301998005). Same functional activity, same level of
+        specificity; the SNOMED CT term is the direct lexical and semantic equivalent of d4102 (note: ICF =
+        kneel). exact_match; consistent with the d4104/d4105 exact precedent.
+        mapping_type=exact_match.
+        """
+}
+mapping "d4103.1" source="d4103" target="SNOMED_CT:282912009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4103 SNOMED CT 282912009 = ICF d4103 Changing basic body position: Sitting (the act of
+        getting into/assuming a sitting position); 4th-level child of d410. Target =, active RF2
+        production, SNOMED CT's direct observable for the change-into-sitting ability and a direct child of
+        282869009. d4103 sits under d410 CHANGING basic body position (parallel to d4104 Standing ->
+        282870005), so it denotes the change-into-sitting act, not the maintain-sitting posture (which
+        is d4153 -> 282858006). Same functional activity, same level of specificity;
+        SNOMED CT's sit-down observable is the direct semantic equivalent of d4103, mirroring d4104's place
+        under d410. exact_match; consistent with the d4104/d4107 exact precedent.
+        mapping_type=exact_match.
+        """
+}
+mapping "d4104.1" source="d4104" target="SNOMED_CT:282870005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4104 SNOMED CT 282870005 = ICF d4104 Changing basic body position: Standing (the act of
+        getting into/staying in an upright position on the feet); 4th-level child of d410 Changing basic
+        body position. Target =, active RF2 production (sv mirror confirms), SNOMED CT's direct observable
+        for the ability to assume a standing position. The ICF d4104 and denote the same functional
+        activity at the same level of specificity (the change-position-to-standing axis); 282870005 is a
+        direct child of 282869009 Ability to change position in the SNOMED CT hierarchy, mirroring d4104's
+        place under d410. exact_match.
+        """
+}
+mapping "d4105.1" source="d4105" target="SNOMED_CT:282974000" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4105 SNOMED CT 282974000 = ICF d4105 Changing basic body position: Bending (tilting the
+        back/trunk downward or to one side); 4th-level child of d410. Target =, active RF2 production,
+        SNOMED CT's direct observable for the trunk-bending ability, a child of 282869009. Same functional
+        axis and same level of specificity as d4105; SNOMED CT also has a more specific child 282935007 but
+        the general is the exact match for d4105's general bending. exact_match.
+        """
+}
+mapping "d4106.1" source="d4106" target="SNOMED_CT:282651002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4106 SNOMED CT 282651002 = ICF d4106 Changing basic body position: Shifting the body's
+        center of gravity (adjusting the body's center of mass while sitting, standing or lying to
+        achieve balance/reach); 4th-level child of d410. Target =, active RF2 production, SNOMED CT's
+        observable for shifting/transferring body weight. SNOMED CT has no concept; 282651002
+        weight-transfer is the closest axis concept and subsumes the source's weight-shift meaning
+        (transferring weight includes shifting the body's center of gravity). Broader (high): one-level
+        broader, target fully contains the source's weight-shift axis; the center-of-gravity framing is
+        marginally more specific than but no meaning falls outside the target. mapping_type=broader.
+        """
+}
+mapping "d4107.1" source="d4107" target="SNOMED_CT:282631001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4107 SNOMED CT 282631001 = ICF d4107 Changing basic body position: Rolling over (turning
+        the body from one side/back to the other, i.e. rolling the trunk from supine/prone/side);
+        4th-level child of d410. Target =, active RF2 production, SNOMED CT's direct observable for the
+        roll-over ability (with child 301687007), under the change-position axis. Same functional
+        activity, same level; the SNOMED CT term is the direct lexical and semantic equivalent of d4107.
+        exact_match.
+        """
+}
+mapping "d4108.1" source="d4108" target="SNOMED_CT:282869009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4108 SNOMED CT 282869009 = ICF d4108 Changing basic body position, other specified: the
+        residual SNOMED CT 282869009 4th-level child of d410 for change-position activities not elsewhere
+        classified. Target =, active RF2 production, the parent observable for the change-position axis
+        (parent of stand up, bend, roll over, etc.). SNOMED CT has no concept; the parent change-position
+        observable subsumes the residual bucket. Broader (moderate): one-level broader under the d410
+        parent axis, unspecified/other-specified source, consistent with the residual-code precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d4109.1" source="d4109" target="SNOMED_CT:282869009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4109 SNOMED CT 282869009 = ICF d4109 Changing basic body position, unspecified: the
+        residual SNOMED CT 282869009 4th-level child of d410. Target =, active RF2 production, the parent
+        observable for the change-position axis. SNOMED CT has no unspecified change-position concept; the
+        parent subsumes the unspecified bucket. Broader (moderate): one-level broader under the d410
+        parent axis, unspecified source, consistent with the residual-code precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d415.1" source="d415" target="SNOMED_CT:249868004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d415 SNOMED CT 249868004 = ICF d415 Maintaining a body position (staying in the same body
+        position as required: lying, squatting, kneeling, sitting, standing); 3rd-level parent under d4
+        Changing/maintaining body position. Target =, active RF2 production, SNOMED CT's direct observable
+        for maintaining a body position (with specific children for maintain
+        lying/squatting/kneeling/sitting/standing). Same functional axis, same level of specificity;
+        SNOMED CT's maintain-position observable is the direct equivalent of ICF d415. exact_match.
+        """
+}
+mapping "d4150.1" source="d4150" target="SNOMED_CT:714865003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4150 SNOMED CT 714865003 = ICF d4150 Maintaining a lying position (staying in a
+        supine/prone/side-lying position as required); 4th-level child of d415. Target =, active RF2
+        production, SNOMED CT's direct observable for maintaining a lying position. Same functional
+        activity, same level of specificity; the SNOMED CT term is the direct lexical and semantic
+        equivalent of d4150. exact_match.
+        """
+}
+mapping "d4151.1" source="d4151" target="SNOMED_CT:714866002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4151 SNOMED CT 714866002 = ICF d4151 Maintaining a squatting position (staying in a
+        crouching/squatting posture with knees bent and buttocks close to the ground); 4th-level child
+        of d415. Target =, active RF2 production, SNOMED CT's direct observable for maintaining a squatting
+        position. Same functional activity, same level; the SNOMED CT term is the direct equivalent of
+        d4151 (note: ICF = squatting/crouching). exact_match.
+        """
+}
+mapping "d4152.1" source="d4152" target="SNOMED_CT:714867006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4152 SNOMED CT 714867006 = ICF d4152 Maintaining a kneeling position (staying in a kneeling
+        posture with knees on the supporting surface); 4th-level child of d415. Target =, active RF2
+        production, SNOMED CT's direct observable for maintaining a kneeling position. Same functional
+        activity, same level; the SNOMED CT term is the direct lexical and semantic equivalent of d4152.
+        exact_match.
+        """
+}
+mapping "d4153.1" source="d4153" target="SNOMED_CT:282858006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4153 SNOMED CT 282858006 = ICF d4153 Maintaining a sitting position (staying in a seated
+        position with/without back/foot support); 4th-level child of d415. Target =, active RF2
+        production, SNOMED CT's direct observable for maintaining a sitting position. Same functional
+        activity, same level; the SNOMED CT term is the direct lexical and semantic equivalent of d4153.
+        exact_match.
+        """
+}
+mapping "d4154.1" source="d4154" target="SNOMED_CT:282852007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4154 SNOMED CT 282852007 = ICF d4154 Maintaining a standing position (staying in an upright
+        position on the feet as required); 4th-level child of d415. Target =, active RF2 production,
+        SNOMED CT's direct observable for maintaining a standing position (distinct from 282870005 which is
+        the change-into-standing act). Same functional activity, same level; d4154's maintain-standing
+        is the direct equivalent of 282852007. exact_match.
+        """
+}
+mapping "d4155.1" source="d4155" target="SNOMED_CT:284108003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4155 SNOMED CT 284108003 = ICF d4155 Maintaining head position (holding the head upright
+        and aligned against gravity); 4th-level child of d415. Target =, active RF2 production, SNOMED CT's
+        observable for controlling head posture (under the control-posture axis 284100005). SNOMED CT has
+        no exact concept; is the closest axis concept and subsumes the source's
+        head-position-maintenance meaning (controlling head posture includes holding/maintaining head
+        position against gravity). Broader (high): one-level broader, target fully contains the source;
+        the framing is marginally broader than but no meaning falls outside. mapping_type=broader.
+        """
+}
+mapping "d4158.1" source="d4158" target="SNOMED_CT:249868004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4158 SNOMED CT 249868004 = ICF d4158 Maintaining a body position, other specified: the
+        residual SNOMED CT 249868004 4th-level child of d415. Target =, active RF2 production, the parent
+        observable for the maintain-position axis. SNOMED CT has no concept; the parent subsumes the
+        residual bucket. Broader (moderate): one-level broader under the d415 parent axis,
+        other-specified source, consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d4159.1" source="d4159" target="SNOMED_CT:249868004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4159 SNOMED CT 249868004 = ICF d4159 Maintaining a body position, unspecified: the residual
+        SNOMED CT 249868004 4th-level child of d415. Target =, active RF2 production, the parent observable
+        for the maintain-position axis. SNOMED CT has no unspecified maintain-position concept; the parent
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d415 parent
+        axis, unspecified source, consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d420.1" source="d420" target="SNOMED_CT:364666007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d420 SNOMED CT 364666007 = ICF d420 Transferring oneself (moving from one surface to another
+        without changing body position: sliding along a bench/bed, moving from a bed to a chair, etc.);
+        3rd-level parent under d4. Target =, active RF2 production, SNOMED CT's direct observable for
+        transferring one's body from one location/surface to another (with children for transfer
+        location with/without assistance and wheelchair transfers). Same functional axis, same level of
+        specificity; SNOMED CT's transfer-location observable is the direct equivalent of ICF d420.
+        exact_match.
+        """
+}
+mapping "d4200.1" source="d4200" target="SNOMED_CT:364666007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4200 SNOMED CT 364666007 = ICF d4200 Transferring oneself while sitting (moving/scooting
+        the body while in a seated position, e.g. sliding along a bench or chair); 4th-level child of
+        d420. Target =, active RF2 production, the parent observable for the transfer-location axis.
+        SNOMED CT has no specific concept (its children are about assistance level / wheelchair, not
+        posture); the transfer-location parent subsumes the sitting-position transfer. Broader
+        (moderate): one-level broader under the d420 parent axis, the source's sitting-modality
+        specificity is outside any SNOMED CT child concept. mapping_type=broader.
+        """
+}
+mapping "d4201.1" source="d4201" target="SNOMED_CT:364666007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4201 SNOMED CT 364666007 = ICF d4201 Transferring oneself while lying (moving/sliding the
+        body while supine/prone, e.g. sliding up/down in bed or across a bed); 4th-level child of d420.
+        Target =, active RF2 production, the parent observable for the transfer-location axis. SNOMED CT
+        has no specific concept; the closest related concept is 301680009 (a bed-mobility concept) but
+        the transfer-location parent is the co-level match for d4201's slide-while-lying transfer.
+        Broader (moderate): one-level broader under the d420 parent axis, the source's lying-modality
+        specificity is outside any SNOMED CT child concept. mapping_type=broader.
+        """
+}
+mapping "d4208.1" source="d4208" target="SNOMED_CT:364666007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4208 SNOMED CT 364666007 = ICF d4208 Transferring oneself, other specified: the residual
+        SNOMED CT 364666007 4th-level child of d420. Target =, active RF2 production, the parent observable
+        for the transfer-location axis. SNOMED CT has no concept; the parent subsumes the residual bucket.
+        Broader (moderate): one-level broader under the d420 parent axis, other-specified source,
+        consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d4209.1" source="d4209" target="SNOMED_CT:364666007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4209 SNOMED CT 364666007 = ICF d4209 Transferring oneself, unspecified: the residual SNOMED CT
+        364666007 4th-level child of d420. Target =, active RF2 production, the parent observable for
+        the transfer-location axis. SNOMED CT has no unspecified transfer-location concept; the parent
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d420 parent
+        axis, unspecified source, consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d429.1" source="d429" target="SNOMED_CT:249864002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d429 SNOMED CT 249864002 = ICF d429 Changing and maintaining body position, other specified
+        and unspecified: the residual SNOMED CT 249864002 3rd-level child spanning BOTH d410 (changing) and
+        d415 (maintaining) under the d41 block. Target =, active RF2 production, SNOMED CT's observable
+        that combines the assume (change) and maintain axes - the only SNOMED CT concept that spans both
+        the change-position and maintain-position axes the way d429 does. SNOMED CT has no combined
+        residual; 249864002 is the nearest axis-spanning concept. Broader (low): the target spans the
+        change+maintain axes but the source's residual scope is heterogeneous and the target does not
+        perfectly match a combined residual; deep climb over a heterogeneous source, real doubt remains.
+        mapping_type=broader.
+        """
+}
+mapping "d430.1" source="d430" target="SNOMED_CT:288330002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d430 SNOMED CT 288330002 = ICF d430 Lifting and carrying objects (raising up an object and
+        moving it from one place to another: lifting, carrying in hands/arms, putting down); 3rd-level
+        parent under d4. SNOMED CT has two co-level observables for the two verbs: 288330002 and 288342007.
+        For the combined d430 parent the primary axis is lifting (the leading act); 288330002, active
+        RF2 production, is recorded as the strongest target. Same functional axis (the lift-and-carry
+        object-handling activity); SNOMED CT splits the single ICF parent into two sibling concepts so the
+        match is to the leading/representative lift axis. See d430 children (d4300 lift, d4301 carry)
+        which map to the two respective SNOMED CT siblings. exact_match on the lift axis (the dominant
+        component of d430's lifting-and-carrying).
+        """
+}
+mapping "d430-d449.1" source="d430-d449" target="SNOMED_CT:288330002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d430-d449 SNOMED CT 288330002 288342007 = ICF block-range covering d430 Lifting and carrying
+        objects, d439, d440 Fine hand use, d441, d445 Hand and arm use, d449 (i.e. the whole SNOMED CT
+        288330002 288342007 2nd-level group under d4 Mobility). This is a block/range code, not a single
+        leaf. SNOMED CT has no single observable; the d430 portion (lifting/carrying) maps to the
+        lift/carry siblings (288330002/288342007) but the d440-d449 fine-hand-use and hand/arm-use
+        portion (grasping, manipulating, pulling, pushing) has no single representative SNOMED CT
+        observable. Primary target 288330002, active RF2 production, recorded
+        as broader (it subsumes the lift/carry axis of the block but not the hand-use axis). Second
+        target 288342007 as partial (covers only the carry sub-axis of the multi-part block). Broader on
+        lift (low): the target subsumes part of the block but a block code is heterogeneous and much of
+        its scope (hand/arm use) falls outside the target, hence low confidence. The d440-d449 portion
+        falls outside this mapping. mapping_type=broader (lift), partial (carry).
+        """
+}
+mapping "d430-d449.2" source="d430-d449" target="SNOMED_CT:288342007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "d4300.1" source="d4300" target="SNOMED_CT:288330002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4300 SNOMED CT 288330002 = ICF d4300 Lifting (raising up an object, moving or raising it
+        from a lower to a higher level); 4th-level child of d430. Target =, active RF2 production,
+        SNOMED CT's direct observable for the lifting ability. Same functional activity, same level of
+        specificity; the SNOMED CT term is the direct lexical and semantic equivalent of d4300.
+        exact_match.
+        """
+}
+mapping "d4301.1" source="d4301" target="SNOMED_CT:714968000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4301 SNOMED CT 714968000 = ICF d4301 Carrying in the hands (holding, supporting or moving
+        an object in the hands from one place to another); 4th-level child of d430. Target =, active RF2
+        production, SNOMED CT's observable for carrying an object with both hands (sibling of 714969008,
+        714970009). d4301 maps to 714968000 as the closest hand-level carry concept; the SNOMED CT term is
+        slightly more specific (both hands vs hands generally) but denotes the same hand-carry activity.
+        exact_match : high rather than because the SNOMED CT concept specifies whereas the ICF source is
+        the general (one or both); a small well-understood breadth mismatch on the same hand-carry axis.
+        mapping_type=exact_match.
+        """
+}
+mapping "d4302.1" source="d4302" target="SNOMED_CT:714970009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4302 SNOMED CT 714970009 = ICF d4302 Lifting and carrying: Carrying in arms
+        (holding/lifting objects against the body supported by the arms). 5th-level child of d430.
+        Target =, active RF2 production (sv mirror), a child of 288342007. SNOMED CT has 714970009 (both
+        arms), 714971008 (one arm), 714968000 (both hands) but no generic concept; d4302 implies both
+        arms cradling the object, which 714970009 (both arms) subsumes. The target is marginally more
+        specific (both-arms) than the source's generic, but no meaning of the source falls outside the
+        target, so the relationship is broader-from-source-perspective is incorrect — rather the target
+        is slightly narrower. Correct framing: target 714970009 is the closest single SNOMED CT equivalent
+        and is co-extensive with the dominant sense of (two-armed cradling); scored high because no
+        exact concept exists and the match is one-level specific. mapping_type=broader (target's
+        both-arms superclass 288342007 would be the strictly broader parent, but 714970009 itself is the
+        best semantic fit).
+        """
+}
+mapping "d4303.1" source="d4303" target="SNOMED_CT:714972001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4303 SNOMED CT 714972001 = ICF d4303 Lifting and carrying: Carrying on shoulder, hip or
+        back (supporting/transporting an object on these body parts). 5th-level child of d430; bundles
+        THREE body sites (shoulder, hip, back). Target =, active RF2 production (sv), child of
+        288342007. SNOMED CT has 714972001 (back), 714973006 (head) but NO concepts for carrying on
+        shoulder or hip. The target covers only ONE of the three bundled sites (back), so it is a
+        partial map (one aspect of a multi-part source), not a broader ancestor. Low confidence: real
+        doubt remains because two of three source sites (shoulder, hip) have no SNOMED CT representation at
+        all. mapping_type=partial.
+        """
+}
+mapping "d4304.1" source="d4304" target="SNOMED_CT:714973006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4304 SNOMED CT 714973006 = ICF d4304 Lifting and carrying: Carrying on head (transporting
+        an object balanced on the head). 5th-level child of d430. Target =, active RF2 production (sv
+        mirror), child of 288342007. Same functional activity, same body site, same level of specificity
+        — direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4305.1" source="d4305" target="SNOMED_CT:284305009" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4305 SNOMED CT 284305009 = ICF d4305 Lifting and carrying: Putting down objects
+        (releasing/depositing an object onto a surface after lifting/carrying, i.e. controlled lowering
+        and placement). 5th-level child of d430. No SNOMED CT exists in the mirror or Athena. The closest
+        lead is (sv) — but releasing grip is the act of opening the hand to let go, which is only
+        loosely associated with the controlled lowering/placement that d4305 denotes (putting down
+        typically involves bending/reaching while maintaining then releasing contact). This is a related
+        link (a lead worth recording), not an equivalence, broader, narrower, or component. Weak per the
+        rubric for related family-history-style/contextual links. mapping_type=related.
+        """
+}
+mapping "d4308.1" source="d4308" target="SNOMED_CT:288329007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4308 SNOMED CT 288329007 = ICF d4308 Lifting and carrying, other specified (a residual
+        4th-level bucket under d430 for specified lifting/carrying activities not captured by
+        d4300-d4305). Target =, active RF2 production (sv), the direct parent of 288330002 (lift) and
+        288342007 (carry) in the SNOMED CT hierarchy. Because d4308 is an unspecified-residual category, no
+        specific SNOMED CT child fits; the parent 288329007 fully subsumes all specified lifting/carrying
+        activities. Broader (one level above the lift/carry pair, two levels above the granular
+        children). Low because the source is a heterogeneous residual bucket and the target is a generic
+        ancestor several levels up. mapping_type=broader.
+        """
+}
+mapping "d4309.1" source="d4309" target="SNOMED_CT:288329007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4309 SNOMED CT 288329007 = ICF d4309 Lifting and carrying, unspecified (the deliberately
+        non-specific 4th-level code under d430). Target =, active RF2 production; parent of 288330002
+        (lift) and 288342007 (carry). SNOMED CT has no combined concept; 288329007 is the closest common
+        ancestor that fully subsumes both axes. Broader (the unspecified source climbs to the nearest
+        covering ancestor). Low : unspecified source mapped several levels up to a generic
+        physical-activity ancestor. mapping_type=broader.
+        """
+}
+mapping "d435.1" source="d435" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d435 SNOMED CT 301998005 = ICF d435 Moving objects with legs (performing actions to
+        move/propel objects with the legs, e.g. kicking, pushing with legs). 3rd-level block under d4.
+        SNOMED CT has no single concept; the constituent acts (kick 284167005, kick legs 302020009, push
+        303361009) are children of 301998005 (sv). 301998005 fully subsumes the leg-driven object-moving
+        axis (it is the common ancestor of push/kick). Broader (one to two levels above the specific
+        leg-act children). Low because 301998005 is a generic mobility ancestor that does not encode the
+        with-legs/object-moving specificity. mapping_type=broader.
+        """
+}
+mapping "d4350.1" source="d4350" target="SNOMED_CT:303361009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4350 SNOMED CT 303361009 = ICF d4350 Moving objects with legs: Pushing with legs (using the
+        legs to push/propel an object). 5th-level child of d435. Target =, active RF2 production (sv),
+        child of 301998005. SNOMED CT has no sub-concept; 303361009 push is the direct activity and the
+        legs-as-effector detail is subsumed (pushing includes pushing with the legs). Broader (target
+        drops the with-legs specifier). Moderate : one-level broader, mechanical fit, not independently
+        re-verified for the legs axis. mapping_type=broader.
+        """
+}
+mapping "d4351.1" source="d4351" target="SNOMED_CT:284167005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d4351 SNOMED CT 284167005 = ICF d4351 Moving objects with legs: Kicking (using the legs/feet
+        to strike or propel an object). 5th-level child of d435. Target =, active RF2 production (sv
+        mirror), child of 301998005. Same functional activity, same effector (legs), same level of
+        specificity — direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4358.1" source="d4358" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4358 SNOMED CT 301998005 = ICF d4358 Moving objects with legs, other specified (residual
+        4th-level bucket under d435 for specified leg-driven object-moving not captured by d4350/d4351).
+        Target =, active RF2 production; parent of kick/push/etc. No specific SNOMED CT child fits a
+        heterogeneous residual bucket; 301998005 is the nearest common ancestor that subsumes all
+        leg-driven object-moving acts. Broader. Low : residual source mapped to a generic mobility
+        ancestor. mapping_type=broader.
+        """
+}
+mapping "d4359.1" source="d4359" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4359 SNOMED CT 301998005 = ICF d4359 Moving objects with legs, unspecified (deliberately
+        non-specific 4th-level code under d435). Target =, active RF2 production; the nearest common
+        ancestor of the constituent leg-act concepts (kick 284167005, push 303361009). SNOMED CT has no
+        concept. Broader (unspecified source climbs to nearest covering ancestor). Low : unspecified
+        source, generic ancestor, no legs/object specificity preserved. mapping_type=broader.
+        """
+}

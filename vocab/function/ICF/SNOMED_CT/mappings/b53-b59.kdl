@@ -1,0 +1,346 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b53-b59
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b530.1" source="b530" target="SNOMED_CT:27113001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b530 SNOMED CT 27113001 = ICF b530: the body functions of WEIGHT MAINTENANCE — the
+        physiological functions that regulate and maintain appropriate body weight, per WHO ICF
+        definition. Target =, active RF2 production 20260701, the SNOMED CT observable that names body
+        weight. This is the closest defensible standard concept: no SNOMED CT observable exists (the
+        weight-maintenance hits 33861001/388962008 are regimen/therapy concepts, not functions;
+        405089001 is a behavior observable, not the maintenance function; 102492002 is a pathological
+        finding). 27113001 is the measurable correlate that the maintenance function regulates. Broader
+        rather than exact: SNOMED CT models body weight as an OBSERVABLE (a measurement) where ICF b530
+        frames it as a FUNCTION (the physiological weight-regulating mechanism), and is broader than —
+        the target is the regulated quantity, not the regulating function. Low tier : the closest
+        defensible weight-related observable, term-verified active, but a real semantic gap exists
+        between the ICF framing and the SNOMED CT measurement observable, and no independent crosswalk
+        exists; recorded as the best available lead rather than a strong map.
+        """
+}
+mapping "b535.1" source="b535" target="SNOMED_CT:251378002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b535 SNOMED CT 251378002 = ICF b535: the body functions of SENSATIONS associated with the
+        digestive system — the felt/qualitative sensations arising from digestive-system activity, per
+        WHO ICF definition, with children b5350 nausea, b5351 feeling bloated, b5352 abdominal cramp.
+        Target =, active RF2 production 20260701, the direct SNOMED CT observable that names the
+        gastrointestinal sensation. This is the closest standard equivalent; the valued correlates
+        251379005 altered and 251380008 unchanged sit beneath as findings, and 366259001 is the finding
+        framing. Broader rather than exact: ICF b535 is a multi-child sensation block (b5350-b5352:
+        nausea, bloating, cramp) where is a single observable for the general GI sensation; the target
+        sits above the children as the umbrella concept and one level away in model framing (observable
+        of sensation vs ICF sensation function). High tier : direct term-and-scope match
+        (gastrointestinal sensation = sensations associated with the digestive system) verified active
+        in the mirror, one-level-broader in model granularity, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b5350.1" source="b5350" target="SNOMED_CT:422587007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5350 SNOMED CT 422587007 = ICF b5350: the specific body function/sensation of NAUSEA — the
+        sensation of feeling sick / the urge to vomit, per WHO ICF definition. Target =, active RF2
+        production 20260701, the active SNOMED CT concept that names nausea (the prior concept 73879007 was
+        inactivated 2007-01-31 and 422587007 is its active successor in the mirror). This is the closest
+        standard equivalent; the related 16932000 bundles vomiting which the source does not. Broader
+        rather than exact: SNOMED CT models nausea as a FINDING (clinical observation) where ICF b5350
+        frames it as a SENSATION FUNCTION (the physiological felt experience), and the finding fully
+        contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (nausea = sensation of nausea) verified active in the mirror,
+        one-level-broader in model framing, no independent Athena crosswalk re-verified. (Inactive
+        73879007 was rejected in favour of its active replacement 422587007.)
+        """
+}
+mapping "b5351.1" source="b5351" target="SNOMED_CT:41931001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5351 SNOMED CT 41931001 = ICF b5351: the specific body function/sensation of FEELING
+        BLOATED — the sensation of abdominal fullness/distension, per WHO ICF definition. Target =,
+        active RF2 production 20260701, the canonical SNOMED CT concept that names abdominal distension.
+        This is the closest standard equivalent; 271835004 is a gas-specific child and 248490000 is a
+        near-synonym finding. Broader rather than exact: SNOMED CT models abdominal distension as a FINDING
+        (the observable swelling) where ICF b5351 frames it as a SENSATION (the felt experience of being
+        bloated) — distension is the objective correlate of the subjective bloating sensation, so the
+        target fully contains the objective axis but is one level away from the felt-sensation framing.
+        Moderate tier : direct term-and-scope match (abdominal distension = feeling bloated),
+        term-verified active, but a real framing gap between the subjective ICF and the objective SNOMED CT
+        finding, and no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5352.1" source="b5352" target="SNOMED_CT:9991008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5352 SNOMED CT 9991008 = ICF b5352: the specific body function/sensation of ABDOMINAL CRAMP
+        — the sensation of cramping/colicky pain in the abdomen, per WHO ICF definition. Target =,
+        active RF2 production 20260701, the direct SNOMED CT concept that names abdominal colic (cramping
+        abdominal pain). This is the closest standard equivalent; 60043000 and 371102005 are
+        location-specific children, and 139306005 is a legacy duplicate. Broader rather than exact:
+        SNOMED CT models abdominal colic as a FINDING (the clinical observation of cramping) where ICF
+        b5352 frames it as a SENSATION (the felt experience of abdominal cramp), and the finding fully
+        contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (abdominal colic = abdominal cramp) verified active in the mirror,
+        one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b5358.omop" source="b5358" outcome=no_match target-system="OMOP_EXT"
+assessment "b5359.omop" source="b5359" outcome=no_match target-system="OMOP_EXT"
+assessment "b539.omop" source="b539" outcome=no_match target-system="OMOP_EXT"
+mapping "b540.1" source="b540" target="SNOMED_CT:47722004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b540 SNOMED CT 47722004 = ICF b540: the body functions of GENERAL METABOLISM — the general
+        metabolic functions of the body (basal metabolism, carbohydrate/protein/fat metabolism), per WHO
+        ICF definition, with children b5400 basal metabolism, b5401 carbohydrate metabolism, b5402
+        protein metabolism, b5403 fat metabolism. Target =, active RF2 production 20260701, the direct
+        SNOMED CT function-observable that names general metabolic function. This is the closest standard
+        equivalent and the function-oriented framing; 366354008 and 165106000/165105001 are valued-range
+        correlates. Broader rather than exact: ICF b540 is a multi-child function block (b5400-b5403)
+        where is a single observable for general metabolic function; the target names the same concept
+        but sits as a flat observable above the metabolism-specific children, and there is no
+        independent Athena crosswalk re-verified. High tier : direct term-and-scope match (general
+        metabolic function = general metabolism functions) verified active in the mirror.
+        """
+}
+assessment "b540-b559.omop" source="b540-b559" outcome=no_match target-system="OMOP_EXT"
+mapping "b5400.1" source="b5400" target="SNOMED_CT:165109007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5400 SNOMED CT 165109007 = ICF b5400: the specific body function of BASAL METABOLISM (BMR)
+        — the basal metabolic rate, the energy expenditure of the body at rest, per WHO ICF definition.
+        Target =, active RF2 production 20260701, the direct SNOMED CT observable that names basal
+        metabolic rate. This is the closest standard equivalent and matches the source term exactly (BMR
+        = BMR); the valued correlates 165107009 fast, 165108004 slow, 165110002 above range sit beneath
+        as findings, and 366354008 is the finding framing. Broader rather than exact: SNOMED CT models BMR
+        as an OBSERVABLE (the measured rate) where ICF b5400 frames it as a FUNCTION (the physiological
+        basal-metabolism mechanism), and the observable fully contains the source domain but is one
+        level away in model framing. High tier : direct term-and-scope match (basal metabolic rate =
+        basal-metabolism function) verified active in the mirror, one-level-broader in model framing, no
+        independent Athena crosswalk re-verified.
+        """
+}
+assessment "b5401.omop" source="b5401" outcome=no_match target-system="OMOP_EXT"
+assessment "b5402.omop" source="b5402" outcome=no_match target-system="OMOP_EXT"
+assessment "b5403.omop" source="b5403" outcome=no_match target-system="OMOP_EXT"
+assessment "b5408.omop" source="b5408" outcome=no_match target-system="OMOP_EXT"
+assessment "b5409.omop" source="b5409" outcome=no_match target-system="OMOP_EXT"
+mapping "b545.1" source="b545" target="SNOMED_CT:16379007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b545 SNOMED CT 16379007 = ICF b545: the body functions of WATER, MINERAL AND ELECTROLYTE
+        BALANCE — the maintenance of water, mineral and electrolyte balance, with children b5450 water
+        balance, b5451 mineral balance, b5452 electrolyte balance. Target =, active RF2 production, the
+        direct SNOMED CT function-observable that names water-and-electrolyte balance AS A FUNCTION (the
+        function framing matching ICF's perspective). This is the closest standard equivalent; no or
+        observable exists in the mirror (the only mineral function observables are bone/tooth
+        mineralization, and there is no three-axis combined concept). Broader rather than exact:
+        16379007 covers the water AND electrolyte axes but NOT the mineral axis of the three-part
+        source, so the target subsumes two of three components — a partial/broader hybrid. Recorded as
+        broader (single best target) because the water+electrolyte containment is the dominant axis and
+        a separate mineral target is undefensible; the mineral axis is left implicit rather than forcing
+        a second weak target. Moderate tier : direct term-and-scope match on the water+electrolyte
+        balance function, term-verified active, but the target omits the mineral axis of the source and
+        there is no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5450.1" source="b5450" target="SNOMED_CT:16379007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5450 SNOMED CT 16379007 = ICF b5450: the specific body function of WATER BALANCE — the
+        maintenance of the body's water/fluid balance (with sub-children b54500 water retention, b54501
+        maintenance of water balance, b54508/b54509 residuals). Target =, active RF2 production, the
+        only SNOMED CT function-observable in the mirror that names a water-balance function. This is the
+        closest standard equivalent; a plain observable does not exist — the closest plain water-balance
+        concept (39252001) is an inactive pharmaceutical product, and the fluid-balance observables
+        (364396009, 251856003) are status/observable concepts without the function framing. Broader
+        rather than exact: 16379007 denotes water-and-electrolyte balance (two axes) where the source is
+        water balance alone (one axis); the target fully contains the source but adds the electrolyte
+        axis. Moderate tier : direct term-and-scope match on the water-balance function, term-verified
+        active, but one-level-broader (electrolyte axis added) and no independent Athena crosswalk
+        re-verified.
+        """
+}
+assessment "b54500.omop" source="b54500" outcome=no_match target-system="OMOP_EXT"
+mapping "b54501.1" source="b54501" target="SNOMED_CT:16379007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b54501 SNOMED CT 16379007 = ICF b54501: the specific body function of MAINTENANCE of water
+        balance — the homeostatic regulatory function that keeps water balance within normal range.
+        Target =, active RF2 production, the only SNOMED CT function-observable in the mirror that names a
+        water-balance function. This is the closest standard equivalent; no dedicated or observable
+        exists — the regulation concepts (276026009, 266704000) are PROCEDURES (clinical management),
+        not physiological functions. Broader rather than exact: 16379007 denotes the water-electrolyte
+        balance function generally where the source is specifically the
+        maintenance/homeostatic-regulation sub-function; the target fully contains the source but is one
+        level broader and adds the electrolyte axis. Low tier : the closest defensible water-balance
+        function observable, term-verified active, but real semantic gap between the ICF framing
+        (homeostatic regulation) and the SNOMED CT observable, and no independent crosswalk.
+        """
+}
+assessment "b54508.omop" source="b54508" outcome=no_match target-system="OMOP_EXT"
+assessment "b54509.omop" source="b54509" outcome=no_match target-system="OMOP_EXT"
+assessment "b5451.omop" source="b5451" outcome=no_match target-system="OMOP_EXT"
+mapping "b5452.1" source="b5452" target="SNOMED_CT:16379007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5452 SNOMED CT 16379007 = ICF b5452: the specific body function of ELECTROLYTE BALANCE —
+        the maintenance of the body's electrolyte balance (sodium, potassium, chloride, etc.). Target =,
+        active RF2 production, the only SNOMED CT function-observable in the mirror that names electrolyte
+        balance AS A FUNCTION. This is the closest standard equivalent; no dedicated observable exists
+        (the regulation concepts 276025008 266704000 are PROCEDURES; 405005005 is a status observable
+        without the function framing; 105593004 is a disorder). Broader rather than exact: 16379007
+        denotes water-and-electrolyte balance (two axes) where the source is electrolyte balance alone
+        (one axis); the target fully contains the source but adds the water axis. High tier : direct
+        term-and-scope match on the electrolyte-balance function, term-verified active,
+        one-level-broader (water axis added), and no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b5458.omop" source="b5458" outcome=no_match target-system="OMOP_EXT"
+assessment "b5459.omop" source="b5459" outcome=no_match target-system="OMOP_EXT"
+mapping "b550.1" source="b550" target="SNOMED_CT:386726008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b550 SNOMED CT 386726008 = ICF b550: the body functions of THERMOREGULATION — the regulation
+        of body temperature (per WHO definition: functions related to the regulation of body
+        temperature), with children b5500 body temperature functions, b5501 maintenance of body
+        temperature, b5508/b5509 residuals. Target =, active RF2 production, the direct SNOMED CT
+        OBSERVABLE that names thermoregulation AS A FUNCTION — the closest framing to ICF's function
+        perspective. This is the closest standard equivalent; sibling observables (405014000, 46483001)
+        are status- or sub-function-framed. Broader rather than exact only because ICF b550 is a
+        multi-child function block (b5500-b5509) where is a single flat observable, and there is no
+        independent Athena crosswalk re-verified. High tier : direct term-and-scope match
+        (thermoregulation = heat-regulating functions) verified active in the mirror, the
+        function-oriented observable (preferred over the status observable per the b4500
+        function-vs-finding precedent).
+        """
+}
+mapping "b5500.1" source="b5500" target="SNOMED_CT:386726008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5500 SNOMED CT 386726008 = ICF b5500: the specific body functions of BODY TEMPERATURE — the
+        functions related to body temperature (the internal core temperature). Target =, active RF2
+        production. This is the closest standard equivalent; a dedicated observable does NOT exist in
+        the mirror — the once-existing 1942004 is INACTIVE (retired 2002), and the active 386725007 is a
+        value/quantity observable (the temperature reading itself), not the function. The
+        thermoregulation function observable 386726008 is the only active function-observable in the
+        body-temperature domain. Broader rather than exact: 386726008 denotes thermoregulation (the
+        regulation of body temperature) where the source is body-temperature functions broadly (which
+        may include sensing, generation, and regulation); the target fully contains the regulatory core
+        of the source. Moderate tier : direct term-and-scope match on the body-temperature function
+        domain, term-verified active, but one-level-broader (regulation framing vs general function) and
+        no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b5501.1" source="b5501" target="SNOMED_CT:386726008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5501 SNOMED CT 386726008 = ICF b5501: the specific body function of MAINTENANCE of body
+        temperature — the homeostatic regulatory function that keeps body temperature within normal
+        range. Target =, active RF2 production. This is the closest standard equivalent; no dedicated
+        observable exists — thermoregulation IS the maintenance function. The sibling 405014000 is a
+        status observable, not the function. Broader rather than exact: 386726008 denotes
+        thermoregulation generally where the source is specifically the maintenance sub-function; the
+        target fully contains the source but is one level broader in model framing. Moderate tier :
+        direct term-and-scope match (thermoregulation = maintenance of body temperature), term-verified
+        active, one-level-broader in model framing, and no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b5508.omop" source="b5508" outcome=no_match target-system="OMOP_EXT"
+assessment "b5509.omop" source="b5509" outcome=no_match target-system="OMOP_EXT"
+mapping "b555.1" source="b555" target="SNOMED_CT:123036008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b555 SNOMED CT 123036008 = ICF b555: the body functions of the ENDOCRINE SYSTEM — the
+        production and regulation of hormones, with children b5550 puberty functions (and its
+        sub-children b55500-b55502 secondary-sex-character development) and b5558/b5559 residuals.
+        Target =, active RF2 production, the direct SNOMED CT observable that names endocrine function.
+        This is the closest standard equivalent. Broader rather than exact only because ICF b555 is a
+        multi-child function block (b5550-b5559, covering endocrine glands generally PLUS
+        puberty-specific development) where is a single flat observable, and there is no independent
+        Athena crosswalk re-verified. High tier : direct term-and-scope match (endocrine function =
+        endokrina funktioner) verified active in the mirror, one-level-broader in model granularity.
+        """
+}
+mapping "b5550.1" source="b5550" target="SNOMED_CT:112092002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b5550 SNOMED CT 112092002 = ICF b5550: the specific body functions of PUBERTY — the
+        physiological functions of puberty (the hormonal and physical developmental changes of sexual
+        maturation), with sub-children b55500 development of body and sex hair, b55501 development of
+        breast and nipple, b55502 development of penis/testicles/scrotum, b55508/b55509 residuals.
+        Target =, active RF2 production, the direct SNOMED CT OBSERVABLE that names sexual development AS A
+        FUNCTION — the closest standard equivalent to the ICF framing (puberty being the developmental
+        phase of sexual development). This is the closest function-oriented target; sibling concepts
+        (251804006, 419960003) are staging/finding observables without the function framing. Broader
+        rather than exact: ICF b5550 denotes specifically the pubertal phase of sexual development where
+        112092002 denotes sexual-development function more broadly (includes pre- and post-pubertal
+        sexual development); the target fully contains the source but is one level broader. High tier :
+        direct term-and-scope match on the sexual-development function domain, term-verified active,
+        one-level-broader, and no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b55500.1" source="b55500" target="SNOMED_CT:247529008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b55500 SNOMED CT 247529008 = ICF b55500: the specific body function of DEVELOPMENT OF BODY
+        AND SEXUAL HAIR — the pubertal development of body hair and secondary sexual (pubic/axillary)
+        hair. Target =, active RF2 production, the SNOMED CT observable that names secondary-sexual-hair
+        growth (the Tanner-tracked pubic/axillary hair development). This is the closest standard
+        equivalent for the dominant sex-hair axis; the general 88911008 was considered but 247529008
+        captures the puberty-specific secondary-sexual-hair axis that defines b55500. Broader rather
+        than exact: the source is (two components) where 247529008 denotes specifically the
+        secondary-sexual-hair axis; the body-hair (non-sexual) component has no defensible standard
+        target and is left implicit. Moderate tier : direct term-and-scope match on the
+        secondary-sexual-hair-growth axis, term-verified active, but the source bundles body-hair +
+        sex-hair and the target covers only the sex-hair component (partial-into-broader), and no
+        independent Athena crosswalk re-verified.
+        """
+}
+mapping "b55501.1" source="b55501" target="SNOMED_CT:251811005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b55501 SNOMED CT 251811005 = ICF b55501: the specific body function of DEVELOPMENT OF BREAST
+        AND NIPPLE — the pubertal mammary/breast development (Tanner-tracked breast-development stage
+        progression). Target =, active RF2 production, the SNOMED CT observable that captures
+        breast-development staging (the standard clinical correlate of pubertal breast development).
+        This is the closest standard equivalent; no dedicated observable exists — 418286009 472992004
+        are valued findings, not the function. Broader rather than exact: 251811005 is a STAGING
+        observable (the Tanner stage value) where the source is the development FUNCTION generally; the
+        target is one level away in model framing (an assessment of development rather than the function
+        itself) and gender-specific (girls). Low tier : the closest defensible breast-development
+        standard concept, term-verified active, but real semantic gap between the ICF framing and the
+        SNOMED CT Tanner-staging observable, and no independent crosswalk.
+        """
+}
+mapping "b55502.1" source="b55502" target="SNOMED_CT:251805007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b55502 SNOMED CT 251805007 = ICF b55502: the specific body function of DEVELOPMENT OF PENIS,
+        TESTICLES AND SCROTUM — the pubertal male genital development (Tanner-tracked
+        genital-development stage progression). Target =, active RF2 production, the SNOMED CT observable
+        that captures male-genital-development staging (the standard clinical correlate of pubertal
+        penis/testes/scrotum development). This is the closest standard equivalent; no dedicated
+        observable exists. Broader rather than exact: 251805007 is a STAGING observable (the Tanner
+        stage value) where the source is the development FUNCTION generally; the target is one level
+        away in model framing (an assessment of development rather than the function itself) and
+        gender-specific (boys). Low tier : the closest defensible male-genital-development standard
+        concept, term-verified active, but real semantic gap between the ICF framing and the SNOMED CT
+        Tanner-staging observable, and no independent crosswalk.
+        """
+}
+assessment "b55508.omop" source="b55508" outcome=no_match target-system="OMOP_EXT"
+assessment "b55509.omop" source="b55509" outcome=no_match target-system="OMOP_EXT"
+assessment "b559.omop" source="b559" outcome=no_match target-system="OMOP_EXT"
+assessment "b598.omop" source="b598" outcome=no_match target-system="OMOP_EXT"
+assessment "b599.omop" source="b599" outcome=no_match target-system="OMOP_EXT"

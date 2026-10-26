@@ -1,0 +1,431 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d7-d8
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d7.1" source="d7" target="SNOMED_CT:225597007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d7 SNOMED CT 225597007 = ICF chapter-1 d7 root (interpersonal interactions and
+        relationships) — a navigational/category code spanning all of d710-d799. SNOMED CT has no
+        equivalent activity/capacity chapter concept. The closest genuine functioning construct is
+        225597007, which underlies the whole chapter but is far broader and on a different axis
+        (observable vs ICF activity). Recorded as a loose related lead, not an identity. Confidence per
+        rubric (related/aspect-level); consistent with d740/d750 precedent.
+        """
+}
+mapping "d710.1" source="d710" target="SNOMED_CT:225597007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d710 SNOMED CT 225597007 = ICF activity of engaging in basic interpersonal interactions
+        (respect/warmth, appreciation, tolerance, criticism, social cues, physical contact,
+        distinguishing acquaintances). Target is a genuine functioning construct that fully subsumes the
+        d710 domain — every basic-interaction capacity is an aspect of the general ability to interact
+        with others. Broader: target legitimately subsumes the source (target covers all interaction,
+        source is the basic-interaction slice). Axis-different (observable entity vs ICF activity;
+        SNOMED CT models no activity) caps confidence at low tier per rubric. Closer fit than the generic
+        405074005 used for d740/d750 because d710 is the general basic-interaction block the observable
+        directly models.
+        """
+}
+assessment "d710-d729.omop" source="d710-d729" outcome=no_match target-system="OMOP_EXT"
+assessment "d7100.omop" source="d7100" outcome=no_match target-system="OMOP_EXT"
+assessment "d7101.omop" source="d7101" outcome=no_match target-system="OMOP_EXT"
+assessment "d7102.omop" source="d7102" outcome=no_match target-system="OMOP_EXT"
+assessment "d7103.omop" source="d7103" outcome=no_match target-system="OMOP_EXT"
+assessment "d7104.omop" source="d7104" outcome=no_match target-system="OMOP_EXT"
+assessment "d7105.omop" source="d7105" outcome=no_match target-system="OMOP_EXT"
+assessment "d7106.omop" source="d7106" outcome=no_match target-system="OMOP_EXT"
+assessment "d7108.omop" source="d7108" outcome=no_match target-system="OMOP_EXT"
+assessment "d7109.omop" source="d7109" outcome=no_match target-system="OMOP_EXT"
+mapping "d720.1" source="d720" target="SNOMED_CT:225597007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d720 SNOMED CT 225597007 = ICF activity of engaging in complex interpersonal interactions
+        (forming/maintaining/ending relationships, regulating behaviours, social rules, personal space).
+        Target is the genuine functioning construct that subsumes the d720 domain — complex
+        relationship-management interactions are all aspects of the general ability to interact with
+        others. Broader: target legitimately subsumes the source (target covers all interaction, source
+        is the complex-interaction slice). Axis-different (observable entity vs ICF activity; SNOMED CT
+        models no relationship-management activity) caps confidence at low tier per rubric. Same fit and
+        tier as d710.
+        """
+}
+assessment "d7200.omop" source="d7200" outcome=no_match target-system="OMOP_EXT"
+assessment "d7201.omop" source="d7201" outcome=no_match target-system="OMOP_EXT"
+assessment "d7202.omop" source="d7202" outcome=no_match target-system="OMOP_EXT"
+assessment "d7203.omop" source="d7203" outcome=no_match target-system="OMOP_EXT"
+assessment "d7204.omop" source="d7204" outcome=no_match target-system="OMOP_EXT"
+assessment "d7208.omop" source="d7208" outcome=no_match target-system="OMOP_EXT"
+assessment "d7209.omop" source="d7209" outcome=no_match target-system="OMOP_EXT"
+assessment "d729.omop" source="d729" outcome=no_match target-system="OMOP_EXT"
+assessment "d730.omop" source="d730" outcome=no_match target-system="OMOP_EXT"
+assessment "d730-d779.omop" source="d730-d779" outcome=no_match target-system="OMOP_EXT"
+mapping "d740.1" source="d740" target="SNOMED_CT:405074005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d740 SNOMED CT 405074005 = ICF activity of engaging in formal relationships (with superiors,
+        subordinates, equals). SNOMED CT has no equivalent activity/capacity concept for formal-role
+        relationships; it has only impairment findings and role persons (no activity). The closest
+        genuine *functioning* construct is 405074005, which measures the same underlying capacity at a
+        generic level. This is a loose related link (different breadth and axis), recorded as a lead —
+        not an asserted identity. Confidence per rubric (related/aspect-level).
+        """
+}
+assessment "d7400.omop" source="d7400" outcome=no_match target-system="OMOP_EXT"
+assessment "d7401.omop" source="d7401" outcome=no_match target-system="OMOP_EXT"
+assessment "d7402.omop" source="d7402" outcome=no_match target-system="OMOP_EXT"
+assessment "d7408.omop" source="d7408" outcome=no_match target-system="OMOP_EXT"
+assessment "d7409.omop" source="d7409" outcome=no_match target-system="OMOP_EXT"
+mapping "d750.1" source="d750" target="SNOMED_CT:405074005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d750 SNOMED CT 405074005 = ICF activity of engaging in informal social relationships
+        (friends, neighbours, acquaintances, peers). SNOMED CT has no equivalent activity/capacity
+        concept for informal-social engagement; only impairment findings (225706007) on the disability
+        axis. The closest genuine functioning construct is 405074005 — same underlying capacity, much
+        broader. Recorded as a loose related lead per boundary rules, not an identity. Confidence
+        (related/aspect-level).
+        """
+}
+assessment "d7500.omop" source="d7500" outcome=no_match target-system="OMOP_EXT"
+assessment "d7501.omop" source="d7501" outcome=no_match target-system="OMOP_EXT"
+assessment "d7502.omop" source="d7502" outcome=no_match target-system="OMOP_EXT"
+assessment "d7503.omop" source="d7503" outcome=no_match target-system="OMOP_EXT"
+assessment "d7504.omop" source="d7504" outcome=no_match target-system="OMOP_EXT"
+assessment "d7508.omop" source="d7508" outcome=no_match target-system="OMOP_EXT"
+assessment "d7509.omop" source="d7509" outcome=no_match target-system="OMOP_EXT"
+assessment "d760.omop" source="d760" outcome=no_match target-system="OMOP_EXT"
+assessment "d7600.omop" source="d7600" outcome=no_match target-system="OMOP_EXT"
+assessment "d7601.omop" source="d7601" outcome=no_match target-system="OMOP_EXT"
+assessment "d7602.omop" source="d7602" outcome=no_match target-system="OMOP_EXT"
+assessment "d7603.omop" source="d7603" outcome=no_match target-system="OMOP_EXT"
+assessment "d7608.omop" source="d7608" outcome=no_match target-system="OMOP_EXT"
+assessment "d7609.omop" source="d7609" outcome=no_match target-system="OMOP_EXT"
+assessment "d770.omop" source="d770" outcome=no_match target-system="OMOP_EXT"
+assessment "d7700.omop" source="d7700" outcome=no_match target-system="OMOP_EXT"
+assessment "d7701.omop" source="d7701" outcome=no_match target-system="OMOP_EXT"
+assessment "d7702.omop" source="d7702" outcome=no_match target-system="OMOP_EXT"
+assessment "d7708.omop" source="d7708" outcome=no_match target-system="OMOP_EXT"
+assessment "d7709.omop" source="d7709" outcome=no_match target-system="OMOP_EXT"
+assessment "d779.omop" source="d779" outcome=no_match target-system="OMOP_EXT"
+assessment "d798.omop" source="d798" outcome=no_match target-system="OMOP_EXT"
+assessment "d799.omop" source="d799" outcome=no_match target-system="OMOP_EXT"
+assessment "d8.omop" source="d8" outcome=no_match target-system="OMOP_EXT"
+mapping "d810.1" source="d810" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d810 SNOMED CT 301442003 = ICF d8 education sub-activity of engaging in informal education
+        (learning outside formal structures). Target, SE. The SNOMED CT concept covers the general
+        education axis and does not distinguish informal/formal modality, so the target legitimately
+        subsumes the source (broader); the informal-modality specificity is lost. Moderate tier per §1:
+        solid topical match and SE-term alignment, but the informal-education specificity is not
+        captured by the general educational-activities observable. Crosswalk-verified (sctid 301442003
+        -> Athena 4103499).
+        """
+}
+mapping "d810-d839.1" source="d810-d839" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d810-d839 SNOMED CT 301442003 = ICF d8 chapter block spanning all education sub-activities
+        (d810 informal, d815 preschool, d820 school, d825 vocational, d830 higher, d835
+        education-around-life). Target, SE synonym. The SNOMED CT concept sits in the ICF-aligned
+        functional-disability observable hierarchy (sibling to 286040004) and denotes the same education
+        topic axis. SNOMED CT frames it as the ability-assessment rather than the activity itself, so the
+        target subsumes the topic (broader), not a 1:1 exact equivalent. High tier per §1: tight SE-term
+        alignment, verified crosswalk, one-level broader. Crosswalk-verified via sctid_to_athena_id.tdl
+        -> Athena concept_id 4103499.
+        """
+}
+mapping "d815.1" source="d815" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d815 SNOMED CT 301442003 = ICF d8 education sub-activity of engaging in preschool education.
+        Target, SE. The SNOMED CT concept is the general educational-activities observable with no
+        preschool-level specificity; the target subsumes the source (broader) but loses the preschool
+        life-stage specificity. Low tier per §1: topical match is real (preschool is an educational
+        activity) but the equivalence is loose because the preschool/early-childhood specificity is
+        absent on the SNOMED CT side. No preschool-specific SNOMED CT functioning observable exists.
+        Crosswalk-verified (sctid 301442003 -> Athena 4103499).
+        """
+}
+mapping "d820.1" source="d820" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d820 SNOMED CT 301442003 = ICF d8 education sub-activity of engaging in school education
+        (primary/secondary schooling). Target, SE. The SNOMED CT concept covers the general education axis
+        and subsumes school education (broader); school-level specificity is partially captured since
+        most commonly denotes school-based learning. Moderate tier per §1: clear topical and SE-term
+        alignment, one-level broader, school is the prototypical educational activity.
+        Crosswalk-verified (sctid 301442003 -> Athena 4103499).
+        """
+}
+mapping "d825.1" source="d825" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d825 SNOMED CT 301442003 = ICF d8 education sub-activity of engaging in vocational
+        education/training. Target, SE. Vocational education is a subset of educational activities, so
+        the target subsumes the source (broader), but the vocational/occupational-training specificity
+        is lost. (The vocational-training *procedure* concepts 54106008/44943004 are interventions, not
+        the activity of engaging as a learner, and sit on the wrong axis.) Low tier per §1: real topical
+        overlap but loose equivalence due to lost vocational specificity. Crosswalk-verified (sctid
+        301442003 -> Athena 4103499).
+        """
+}
+mapping "d830.1" source="d830" target="SNOMED_CT:301442003" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d830 SNOMED CT 301442003 = ICF d8 education sub-activity of engaging in higher education
+        (university/college). Target, SE. Higher education is a subset of educational activities, so the
+        target subsumes the source (broader), but the higher-education/university-level specificity is
+        lost. No higher-education-specific SNOMED CT functioning observable exists. Low tier per §1: real
+        topical overlap but loose equivalence due to lost higher-education specificity.
+        Crosswalk-verified (sctid 301442003 -> Athena 4103499).
+        """
+}
+mapping "d835.1" source="d835" target="SNOMED_CT:301441005" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d835 SNOMED CT 301441005 = ICF d8 education sub-activity of engaging in life around
+        education (the non-instructional aspects of educational life — using educational facilities,
+        school-life participation). Target, SE synonym. The SNOMED CT concept sits in the same ICF-aligned
+        education observable hierarchy and captures the facilities/resources-access aspect of. SNOMED CT
+        frames it as the ability-assessment rather than the activity, so broader (subsumes the topic);
+        the SE-term alignment is tight. Moderate tier per §1: clear topical match, one-level broader,
+        SE-term verified. Crosswalk-verified (sctid 301441005 -> Athena 4103498).
+        """
+}
+assessment "d838.omop" source="d838" outcome=no_match target-system="OMOP_EXT"
+assessment "d839.omop" source="d839" outcome=no_match target-system="OMOP_EXT"
+mapping "d840.1" source="d840" target="SNOMED_CT:301707001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d840 SNOMED CT 301707001 = ICF d8 work/employment sub-activity of engaging in
+        apprenticeship/work-preparation. Target, SE synonym. The SNOMED CT concept sits in the ICF-aligned
+        employment observable hierarchy and covers the general occupation/employment axis;
+        apprenticeship is a work-preparation subset, so the target subsumes the source (broader), but
+        the apprenticeship/preparatory specificity is lost. No apprenticeship-specific SNOMED CT
+        functioning observable exists (the vocational-training *procedures* 54106008/44943004 are
+        interventions, not the activity axis). Low tier per §1: real topical overlap, SE-term alignment,
+        but loose equivalence due to lost apprenticeship specificity. Crosswalk-verified (sctid
+        301707001 -> Athena 4200501).
+        """
+}
+mapping "d840-d859.1" source="d840-d859" target="SNOMED_CT:301707001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d840-d859 SNOMED CT 301707001 = ICF d8 chapter block spanning all work/employment
+        sub-activities (d840 apprenticeship, d845 acquiring/keeping/leaving a job, d850 remunerative
+        employment, d855 non-remunerative employment, d859 work/employment unspecified). Target, SE
+        synonym. The SNOMED CT concept sits in the ICF-aligned functional-disability observable hierarchy
+        and denotes the exact same occupation/employment topic axis. SNOMED CT frames it as the
+        ability-assessment rather than the activity itself, so the target subsumes the topic (broader),
+        not a 1:1 exact equivalent. High tier per §1: tight SE-term alignment (<->), verified crosswalk,
+        one-level broader. Crosswalk-verified (sctid 301707001 -> Athena 4200501).
+        """
+}
+mapping "d845.1" source="d845" target="SNOMED_CT:301707001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d845 SNOMED CT 301707001 = ICF d8 work/employment sub-activity covering seeking, obtaining,
+        maintaining, and leaving a job (a composite of the d8450-d8452 fourth-level codes). Target, SE.
+        The SNOMED CT concept covers the general employment axis and subsumes the source (broader); the
+        seeking/obtaining/maintaining/leaving job-transition specificity is only partially captured
+        (SNOMED CT has 301718001 for the seeking sub-aspect but no single observable for the full
+        acquire-keep-leave composite). Moderate tier per §1: clear topical match and SE-term alignment,
+        one-level broader, composite source partially captured. Crosswalk-verified (sctid 301707001 ->
+        Athena 4200501).
+        """
+}
+mapping "d8450.1" source="d8450" target="SNOMED_CT:301718001" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8450 SNOMED CT 301718001 = ICF d845 sub-activity of seeking employment. Target, SE synonym.
+        The SNOMED CT concept sits in the ICF-aligned employment observable hierarchy and denotes the exact
+        same seeking-employment topic axis; the SE synonym is a near-exact match to the ICF SE name.
+        SNOMED CT frames it as the ability-assessment rather than the activity itself, so the target
+        subsumes the topic (broader), not a 1:1 exact equivalent (different axis). High tier per §1:
+        tight SE-term alignment, verified crosswalk, one-level broader. Crosswalk-verified (sctid
+        301718001 -> Athena 4199262).
+        """
+}
+mapping "d8451.1" source="d8451" target="SNOMED_CT:301707001" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8451 SNOMED CT 301707001 = ICF d845 sub-activity of retaining/maintaining a job. Target,
+        SE. SNOMED CT has no retain-job-specific functioning observable (the only concepts are unrelated,
+        e.g. 288900003); the general employment-activities observable subsumes the source (broader) but
+        loses the job-retention specificity entirely. Low tier per §1: real topical overlap (retaining a
+        job is an employment activity) but loose equivalence due to absent retain-job specificity.
+        Crosswalk-verified (sctid 301707001 -> Athena 4200501).
+        """
+}
+assessment "d8452.omop" source="d8452" outcome=no_match target-system="OMOP_EXT"
+assessment "d8458.omop" source="d8458" outcome=no_match target-system="OMOP_EXT"
+mapping "d8459.1" source="d8459" target="SNOMED_CT:224363007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8459 SNOMED CT 224363007 = ICF activity — a multi-part activities/participation concept
+        bundling obtaining, retaining, and ending employment. Target, an employment-STATUS finding (not
+        the activity). No single SNOMED CT concept expresses the bundled acquire/keep/terminate activity;
+        aspect concepts exist (224381005, 266956001) but each covers only one slice. Chosen as a related
+        lead capturing the employment domain. Confidence weak : source is activity vs target status
+        finding, and the source is a heterogeneous unspecified residual.
+        """
+}
+mapping "d850.1" source="d850" target="SNOMED_CT:406156006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d850 SNOMED CT 406156006 = ICF activity — engaging in all aspects of paid work. Target, an
+        employment-status finding. Same life domain and the SNOMED CT concept is the closest standard
+        representation of paid-employment status, but it is a finding/state whereas the source is the
+        activity of engaging in paid work (status-vs-activity gap). Related, not equivalent. Confidence
+        low : tight domain match with a well-understood granularity mismatch.
+        """
+}
+mapping "d8500.1" source="d8500" target="SNOMED_CT:160906004" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8500 SNOMED CT 160906004 = ICF activity — engaging in work as one's own
+        employer/self-employed. Target, the employment-status finding for self-employed persons. Same
+        domain; target is the status finding, source is the activity. Related, confidence low : tight,
+        specific domain match with the status-vs-activity mismatch.
+        """
+}
+mapping "d8501.1" source="d8501" target="SNOMED_CT:160904001" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8501 SNOMED CT 160904001 = ICF activity — engaging in part-time paid work. Target, the
+        employment-status finding. Same domain; target is status finding, source is activity. Related,
+        confidence low : specific domain match with status-vs-activity mismatch.
+        """
+}
+mapping "d8502.1" source="d8502" target="SNOMED_CT:160903007" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8502 SNOMED CT 160903007 = ICF activity — engaging in full-time paid work. Target, the
+        employment-status finding. Same domain; target is status finding, source is activity. Related,
+        confidence low : specific domain match with status-vs-activity mismatch.
+        """
+}
+mapping "d8508.1" source="d8508" target="SNOMED_CT:406156006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8508 SNOMED CT 406156006 = ICF — a residual paid-employment activity whose specific form is
+        not named. Target. Generic paid-employment status finding is the closest standard lead; source
+        is an unspecified residual activity. Related, confidence weak : residual source plus
+        status-vs-activity gap.
+        """
+}
+mapping "d8509.1" source="d8509" target="SNOMED_CT:406156006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d8509 SNOMED CT 406156006 = ICF — engaging in paid employment, form unspecified. Target, the
+        closest standard status finding for paid employment. Same domain; status-vs-activity mismatch.
+        Related, confidence low : unspecified source but a tight domain match to the general
+        paid-employment finding.
+        """
+}
+mapping "d855.1" source="d855" target="SNOMED_CT:276061003" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d855 SNOMED CT 276061003 = ICF activity — engaging in unpaid work (e.g. volunteer work,
+        unpaid household production). Target, the status/activity finding for unpaid work. Same domain;
+        SNOMED CT concept is the closest standard representation. Related, confidence low : tight domain
+        match with the status-vs-activity gap (and 224372004 is a narrower volunteer-specific alternate
+        kept off to avoid over-asserting).
+        """
+}
+mapping "d859.1" source="d859" target="SNOMED_CT:224363007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d859 SNOMED CT 224363007 = ICF — a chapter-level residual covering all of work/employment
+        not elsewhere classified. Target, the most general employment-status finding. Heterogeneous
+        residual source; chosen as a weak related lead for the employment domain. Confidence weak :
+        residual bucket plus status-vs-activity mismatch.
+        """
+}
+mapping "d860.1" source="d860" target="SNOMED_CT:224200006" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d860 SNOMED CT 224200006 = ICF activity — engaging in basic financial exchanges (paying for
+        goods/services, banking). Target, the closest standard concept covering handling of personal
+        finances. Same broad domain (personal-finance handling) but the target is an observable entity
+        about managing finances, not the activity of transacting; loose overlap. Related, confidence
+        weak.
+        """
+}
+mapping "d860-d879.1" source="d860-d879" target="SNOMED_CT:73831000" relationship=related_to effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d860-d879 SNOMED CT 73831000 = ICF chapter — the chapter-3/4-digit aggregate spanning
+        basic/complex economic transactions and economic self-sufficiency. Target (social concept), the
+        most general economic-life standard concept. Chapter-level aggregate mapped to a broad status
+        concept; loose related lead. Confidence weak : chapter root plus status-vs-activity mismatch.
+        """
+}
+mapping "d865.1" source="d865" target="SNOMED_CT:224200006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d865 SNOMED CT 224200006 = ICF activity — engaging in complex financial exchanges (e.g.
+        insurance, mortgages, long-term contracts). Target, the closest standard concept covering
+        handling of personal finances broadly. Same domain (personal-finance handling) but target is an
+        observable entity, not the transacting activity, and no SNOMED CT concept captures transactions
+        specifically. Related, confidence weak.
+        """
+}
+mapping "d870.1" source="d870" target="SNOMED_CT:113168001" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d870 SNOMED CT 113168001 = ICF activity — engaging in economic self-sufficiency / having
+        command over economic resources to meet needs. Target (economic status) (social concept), sv
+        synonym. Same domain; target is the economic-status concept for independence, source is the
+        activity of being self-sufficient. Related, confidence low : tight domain match (sv synonym
+        aligns) with status-vs-activity mismatch.
+        """
+}
+mapping "d8700.1" source="d8700" target="SNOMED_CT:113168001" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d8700 SNOMED CT 113168001 = ICF activity — having control over one's own economic resources.
+        Target (economic status). Related but looser than d870: is an aspect/precursor of economic
+        independence, not identical to being independent; partial semantic overlap. Related, confidence
+        weak.
+        """
+}
+assessment "d8701.omop" source="d8701" outcome=no_match target-system="OMOP_EXT"
+mapping "d8708.1" source="d8708" target="SNOMED_CT:73831000" relationship=related_to effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d8708 SNOMED CT 73831000 = ICF — a residual economic-self-sufficiency activity. Target
+        (social concept), the broad economic-status parent. Residual source; chosen as a weak related
+        lead for the economic-status domain. Confidence weak : residual plus status-vs-activity
+        mismatch.
+        """
+}
+mapping "d8709.1" source="d8709" target="SNOMED_CT:73831000" relationship=related_to effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d8709 SNOMED CT 73831000 = ICF — engaging in economic self-sufficiency, form unspecified.
+        Target (social concept), the broad economic-status parent. Unspecified source; chosen as a weak
+        related lead. Confidence weak : unspecified source plus status-vs-activity mismatch.
+        """
+}
+mapping "d879.1" source="d879" target="SNOMED_CT:73831000" relationship=related_to effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d879 SNOMED CT 73831000 = ICF — the chapter-level residual for economic life. Target (social
+        concept), the broad economic-status parent. Heterogeneous residual source; weak related lead for
+        the economic domain. Confidence weak : chapter residual plus status-vs-activity mismatch.
+        """
+}
+assessment "d898.omop" source="d898" outcome=no_match target-system="OMOP_EXT"
+assessment "d899.omop" source="d899" outcome=no_match target-system="OMOP_EXT"

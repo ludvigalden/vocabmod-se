@@ -1,0 +1,340 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d2.1" source="d2" target="SNOMED_CT:258156005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2 SNOMED CT 258156005 = ICF chapter root for the task-execution/activity-demand domain. No
+        single SNOMED CT concept denotes the ICF d2 chapter as a whole. Target (@sv: vardagsuppgifter) is
+        the closest ICF-aligned observable — its name closely mirrors the chapter's task-execution scope
+        and it sits in the SNOMED CT functional observable hierarchy. Broader climb from chapter root to
+        observable; low tier per rubric (deeper climb, chapter-level generality).
+        """
+}
+mapping "d210.1" source="d210" target="SNOMED_CT:716467004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d210 SNOMED CT 716467004 = ICF activity of carrying out a single task independently or in a
+        group. Target; Swedish mirror synonym @sv: kan utföra en enstaka uppgift matches the ICF source
+        name verbatim — this is an explicit ICF-aligned SNOMED CT concept. Paradigm breadth mismatch: the
+        SNOMED CT finding asserts a positive capability, whereas the ICF d-code denotes the activity domain
+        assessed for capacity AND performance (with or without difficulty). The target captures the
+        capability aspect but is not fully co-extensive with the ICF domain; broader at high tier
+        (one-level breadth mismatch, name-verified).
+        """
+}
+mapping "d2100.1" source="d2100" target="SNOMED_CT:716467004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2100 SNOMED CT 716467004 = ICF activity of carrying out a simple, uncomplicated task.
+        Target (@sv: kan utföra en enstaka uppgift). SNOMED CT has no concept distinguishing from other
+        single tasks, so the ICF-aligned parent finding subsumes this source. One-level broader;
+        moderate tier (no distinction, paradigm breadth mismatch as in d210).
+        """
+}
+mapping "d2101.1" source="d2101" target="SNOMED_CT:716467004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2101 SNOMED CT 716467004 = ICF activity of carrying out a complicated, multi-component
+        task. Target (@sv: kan utföra en enstaka uppgift). SNOMED CT has no concept distinguishing from
+        other single tasks, so the ICF-aligned parent finding subsumes this source. One-level broader;
+        moderate tier (no distinction, paradigm breadth mismatch).
+        """
+}
+mapping "d2102.1" source="d2102" target="SNOMED_CT:716467004" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2102 SNOMED CT 716467004 = ICF activity of carrying out a single task without assistance.
+        Target (@sv: kan utföra en enstaka uppgift) covers the task-execution axis but does NOT capture
+        the qualifier — SNOMED CT has no equivalent independence modifier for task execution. The target
+        represents one component (the task) of a two-part source (task + independence); partial. Weak
+        tier — only the task axis is represented.
+        """
+}
+mapping "d2103.1" source="d2103" target="SNOMED_CT:716467004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2103 SNOMED CT 716467004 = ICF activity of carrying out a single task together with others.
+        Target (@sv: kan utföra en enstaka uppgift) covers the task-execution axis but does NOT capture
+        the (social context) qualifier — SNOMED CT has no equivalent group-context modifier for task
+        execution. The target represents one component (the task) of a two-part source (task + group
+        context); partial. Weak tier — only the task axis is represented.
+        """
+}
+mapping "d2108.1" source="d2108" target="SNOMED_CT:716467004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2108 SNOMED CT 716467004 = ICF residual for other specified single-task activities. Target
+        (@sv: kan utföra en enstaka uppgift) is the ICF-aligned parent. Residual source mapped to the
+        general single-task concept; moderate tier (residual source, paradigm breadth mismatch).
+        """
+}
+mapping "d2109.1" source="d2109" target="SNOMED_CT:716467004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2109 SNOMED CT 716467004 = ICF unspecified residual for the single-task activity. Target
+        (@sv: kan utföra en enstaka uppgift) is the ICF-aligned parent. Unspecified source mapped to the
+        general concept; moderate tier per rubric (unspecified source).
+        """
+}
+mapping "d220.1" source="d220" target="SNOMED_CT:719383001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d220 SNOMED CT 719383001 = ICF activity of carrying out several tasks together. Target;
+        Swedish mirror synonym @sv: kan ta på sig flera uppgifter matches the ICF source name verbatim —
+        explicit ICF-aligned SNOMED CT concept. Paradigm breadth mismatch: the SNOMED CT finding asserts a
+        positive capability, whereas the ICF d-code denotes the activity domain assessed for capacity
+        AND performance (with or without difficulty). The target captures the capability aspect but is
+        not fully co-extensive with the ICF domain; broader at high tier (one-level breadth mismatch,
+        name-verified).
+        """
+}
+mapping "d2200.1" source="d2200" target="SNOMED_CT:719383001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2200 SNOMED CT 719383001 = ICF activity of executing several tasks together. Target (@sv:
+        kan ta på sig flera uppgifter). SNOMED CT has no concept distinguishing the phase of multiple-task
+        performance, so the ICF-aligned parent finding subsumes this source. One-level broader; moderate
+        tier (paradigm breadth mismatch).
+        """
+}
+mapping "d2201.1" source="d2201" target="SNOMED_CT:719383001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2201 SNOMED CT 719383001 = ICF activity of finishing several tasks. Target (@sv: kan ta på
+        sig flera uppgifter). SNOMED CT has no concept distinguishing the phase of multiple-task
+        performance, so the ICF-aligned parent finding subsumes this source. One-level broader; moderate
+        tier (paradigm breadth mismatch).
+        """
+}
+mapping "d2202.1" source="d2202" target="SNOMED_CT:719383001" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2202 SNOMED CT 719383001 = ICF activity of carrying out several tasks without assistance.
+        Target (@sv: kan ta på sig flera uppgifter) covers the multiple-task axis but does NOT capture
+        the qualifier — SNOMED CT has no equivalent independence modifier for multiple-task execution. The
+        target represents one component (the tasks) of a two-part source (tasks + independence);
+        partial. Weak tier — only the task axis is represented.
+        """
+}
+mapping "d2203.1" source="d2203" target="SNOMED_CT:719383001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2203 SNOMED CT 719383001 = ICF activity of carrying out several tasks together with others.
+        Target (@sv: kan ta på sig flera uppgifter) covers the multiple-task axis but does NOT capture
+        the (social context) qualifier — SNOMED CT has no equivalent group-context modifier for
+        multiple-task execution. The target represents one component (the tasks) of a two-part source
+        (tasks + group context); partial. Weak tier — only the task axis is represented.
+        """
+}
+mapping "d2208.1" source="d2208" target="SNOMED_CT:719383001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2208 SNOMED CT 719383001 = ICF residual for other specified multiple-task activities.
+        Target (@sv: kan ta på sig flera uppgifter) is the ICF-aligned parent. Residual source mapped to
+        the general multiple-tasks concept; moderate tier (residual source, paradigm breadth mismatch).
+        """
+}
+mapping "d2209.1" source="d2209" target="SNOMED_CT:719383001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2209 SNOMED CT 719383001 = ICF unspecified residual for the multiple-tasks activity. Target
+        (@sv: kan ta på sig flera uppgifter) is the ICF-aligned parent. Unspecified source mapped to the
+        general concept; moderate tier per rubric (unspecified source).
+        """
+}
+mapping "d230.1" source="d230" target="SNOMED_CT:716398003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d230 SNOMED CT 716398003 = ICF activity of managing and carrying out daily activities in a
+        routine. Target; Swedish mirror synonym @sv: kan utföra daglig rutin matches the ICF source name
+        verbatim — explicit ICF-aligned SNOMED CT concept. Paradigm breadth mismatch: the SNOMED CT finding
+        asserts a positive capability, whereas the ICF d-code denotes the activity domain assessed for
+        capacity AND performance (with or without difficulty). The target captures the capability aspect
+        but is not fully co-extensive with the ICF domain; broader at high tier (one-level breadth
+        mismatch, name-verified).
+        """
+}
+mapping "d2301.1" source="d2301" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2301 SNOMED CT 284545001 = ICF d2301 Carrying out daily routine: the 4-level child of d230
+        for action-sequence behaviour to plan, manage and complete the daily routine. Target =, active
+        RF2 production, SE synonym; SNOMED CT's direct observable for performing daily-life activities.
+        subsumes the carrying-out-daily-routine activity (routine execution is the paradigmatic
+        everyday-life activity); one-level broader because the SNOMED CT concept frames the ability rather
+        than the activity-instance and spans all ADL/IADL not just routine sequencing. Broader (high):
+        direct verified SNOMED CT observable match on the same daily-routine axis, one-level broader;
+        mirrors the d115 -> 405019005 receptive-comm precedent at. mapping_type=broader.
+        """
+}
+mapping "d2302.1" source="d2302" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2302 SNOMED CT 284545001 = ICF d2302 Completing the daily routine: the 4-level child of
+        d230 for finishing/terminating the daily routine sequence. Target =, active RF2 production.
+        SNOMED CT has no observable; the daily-life-ability parent is the nearest axis concept. Broader
+        (moderate): daily-life ability subsumes routine completion but loses the phase-specificity;
+        consistent with the d2301 sibling and the residual-code/deep-climb precedent (A009 -> 198677
+        at). mapping_type=broader.
+        """
+}
+mapping "d2303.1" source="d2303" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2303 SNOMED CT 284545001 = ICF d2303 Managing one's own activity level: the 4-level child
+        of d230 for regulating/modulating one's own daily activity level over time. Target =, active RF2
+        production. SNOMED CT has no observable; the daily-life-ability parent is the nearest axis concept.
+        Broader (moderate): daily-life ability subsumes activity-level management but loses the
+        specificity; same deep-climb pattern as d2302. mapping_type=broader.
+        """
+}
+mapping "d2304.1" source="d2304" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2304 SNOMED CT 284545001 = ICF d2304 Adapting to changes in daily routine: the 4-level
+        child of d230 for adjusting the routine when conditions change. Target =, active RF2 production.
+        SNOMED CT has no observable; the (4452006) is physiological acclimation, not routine adaptation, so
+        the daily-life-ability parent is the nearest defensible axis concept. Broader (low): daily-life
+        ability subsumes routine adaptation only weakly (loses the specificity entirely); markedly
+        broader, but nearest defensible standard ancestor per the multi-modal block-level precedent
+        (d120 -> 106148006 at). mapping_type=broader.
+        """
+}
+mapping "d2308.1" source="d2308" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2308 SNOMED CT 284545001 = ICF d2308 Carrying out daily routine, other specified: the
+        residual SNOMED CT 284545001 4-level child of d230. Target =, active RF2 production, the nearest
+        axis concept (d2301 sibling maps here). Broader (moderate): daily-life ability subsumes the
+        unspecified-other routine bucket but cannot reflect the residual meaning; consistent with the
+        d2301 parent map and the residual-code precedent (d1558 -> 69998004 at). mapping_type=broader.
+        """
+}
+mapping "d2309.1" source="d2309" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2309 SNOMED CT 284545001 = ICF d2309 Carrying out daily routine, unspecified: the SNOMED CT
+        284545001 4-level child of d230. Target =, active RF2 production, the nearest axis concept
+        (d2301 sibling maps here). Broader (moderate): daily-life ability subsumes the unspecified
+        routine bucket; the source's unspecified framing maps naturally to the broader axis concept (no
+        narrower SNOMED CT concept exists), per the unspecified-source precedent (A009 -> 198677 at).
+        mapping_type=broader.
+        """
+}
+mapping "d240.1" source="d240" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d240 SNOMED CT 364667003 = ICF d240 Handling stress and other psychological demands:
+        carrying out single or multi-task actions to manage responsibilities, schedule, and to manage
+        stress, crisis, and psychological demands. Target =, active RF2 production, SE synonym; SNOMED CT's
+        direct observable for coping/managing demanding situations. subsumes handling stress and other
+        psychological demands (coping is the umbrella over stress/demands management); one-level broader
+        because the SNOMED CT concept frames coping generally whereas ICF d240 specifically scopes stress +
+        psychological demands. Broader (high): direct verified SNOMED CT observable match on the same
+        coping/handling axis, one-level broader; mirrors the d115 -> 405019005 precedent at.
+        mapping_type=broader.
+        """
+}
+mapping "d2400.1" source="d2400" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2400 SNOMED CT 364667003 = ICF d2400 Handling responsibility: the 4-level child of d240 for
+        taking on and discharging duties/obligations. Target =, active RF2 production. SNOMED CT has no
+        observable; the coping parent is the nearest axis concept. Broader (moderate): coping subsumes
+        responsibility-handling but loses the specificity; consistent with the d240 parent map and the
+        residual/deep-climb precedent. mapping_type=broader.
+        """
+}
+mapping "d2401.1" source="d2401" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2401 SNOMED CT 364667003 = ICF d2401 Handling stress: the 4-level child of d240 for
+        managing the psychological load of pressure/stress. Target =, active RF2 production, SE synonym.
+        directly subsumes stress-handling (stress management is a paradigmatic coping situation);
+        one-level broader because coping is the general ability whereas the source scopes stress
+        specifically. Broader (high): direct verified SNOMED CT observable match on the
+        stress-handling/coping axis, one-level broader; mirrors the d240 parent. mapping_type=broader.
+        """
+}
+mapping "d2402.1" source="d2402" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2402 SNOMED CT 364667003 = ICF d2402 Handling crises: the 4-level child of d240 for
+        managing acute crisis situations (psychological/social upheaval). Target =, active RF2
+        production. SNOMED CT has no observable (crisis concepts are disease-state findings); the coping
+        parent is the nearest defensible axis concept. Broader (low): coping subsumes crisis-handling
+        only loosely (crisis is an extreme coping context not directly named); markedly broader but
+        nearest defensible standard ancestor, per the multi-modal block-level precedent (d120 ->
+        106148006 at). mapping_type=broader.
+        """
+}
+mapping "d2408.1" source="d2408" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2408 SNOMED CT 364667003 = ICF d2408 Handling stress and other psychological demands, other
+        specified: the residual SNOMED CT 364667003 4-level child of d240. Target =, active RF2 production,
+        the nearest axis concept (d240 parent maps here). Broader (moderate): coping subsumes the
+        unspecified-other psychological-demands bucket but cannot reflect the residual meaning;
+        consistent with the d240 parent map and the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d2409.1" source="d2409" target="SNOMED_CT:364667003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d2409 SNOMED CT 364667003 = ICF d2409 Handling stress and other psychological demands,
+        unspecified: the SNOMED CT 364667003 4-level child of d240. Target =, active RF2 production, the
+        nearest axis concept (d240 parent maps here). Broader (moderate): coping subsumes the
+        unspecified stress/demands bucket; the source's unspecified framing maps naturally to the
+        broader axis concept (no narrower SNOMED CT concept exists), per the unspecified-source precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d298.1" source="d298" target="SNOMED_CT:364665006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d298 SNOMED CT 364665006 = ICF d298 General tasks and demands, other specified: the
+        chapter-level residual for d2. Target =, active RF2 production, SE synonym; SNOMED CT's broad
+        observable for performing any function/activity, the d2 chapter anchor. Broader (low): markedly
+        broader (chapter-level residual over the whole general-tasks-and-demands chapter mapped to the
+        all-activity parent), but nearest defensible standard ancestor; consistent with the chapter-root
+        precedent (d1 -> 69998004 at, here lower because the source is an unspecified residual).
+        mapping_type=broader.
+        """
+}
+mapping "d298A.1" source="d298A" target="SNOMED_CT:284474008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d298A SNOMED CT 284474008 = ICF d298A (Swedish SE-extension) Managing one's own behaviour:
+        the Swedish-extension concept under d298 for self-regulation/management of own conduct. Target
+        =, active RF2 production, SE synonym; SNOMED CT's direct observable for self-regulation of
+        behaviour. is the SNOMED CT equivalent axis for managing one's own behaviour; one-level broader
+        because SNOMED CT frames it as control (inhibition/regulation) whereas the SE source frames active
+        management. Broader (high): direct verified SNOMED CT observable match on the same self-regulation
+        axis, one-level broader; mirrors the d115 -> 405019005 precedent at. Note: SE-extension source,
+        but invalid_reason is empty because a defensible SNOMED CT target exists (the
+        icf_swedish_extension_no_target enum is reserved for SE-extensions WITH no analogue,).
+        mapping_type=broader.
+        """
+}
+mapping "d299.1" source="d299" target="SNOMED_CT:364665006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d299 SNOMED CT 364665006 = ICF d299 General tasks and demands, unspecified: the
+        chapter-level residual for d2. Target =, active RF2 production, the d2 chapter anchor. Broader
+        (low): markedly broader (chapter-level unspecified residual over the whole
+        general-tasks-and-demands chapter mapped to the all-activity parent); the source's unspecified
+        framing maps naturally to the broadest defensible axis concept; consistent with the
+        chapter-root/unspecified precedent. mapping_type=broader.
+        """
+}

@@ -1,0 +1,305 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "s3.1" source="s3" target="SNOMED_CT:110724007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3 SNOMED CT 110724007 74262004 = ICF Chapter 3 chapter root: structures involved in voice
+        and speech. This is a heterogeneous classification grouping spanning the larynx, pharynx, oral
+        cavity (incl. tongue, palate, teeth), nasal cavity and respiratory structures. SNOMED CT has no
+        single body-structure concept. Per the partial multi-component rule, emit the two dominant
+        component groupings: SNOMED CT 110724007 (Athena 4007135) = covers the phonatory/airway axis (the
+        core voice source); SNOMED CT 74262004 (Athena 4253672) = Oral cavity structure covers the
+        articulatory/resonatory axis. Each partial target covers one slice of the multi-part chapter
+        root; neither subsumes the whole. Low tier : the chapter root is a classification grouping, not
+        a single anatomical concept, so each component is a defensible-but-loose lead. (69536005)
+        alternative was considered and rejected as too coarse.
+        """
+}
+mapping "s3.2" source="s3" target="SNOMED_CT:74262004" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s310.1" source="s310" target="SNOMED_CT:45206002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s310 SNOMED CT 45206002 = ICF s3 subdivision: structure of the nose (the nose as an
+        anatomical structure). Target (Athena 4164276) =, active standard. Exact 1:1 anatomical
+        equivalence between the ICF and SNOMED CT's nasal body structure; direct concept-name match.
+        """
+}
+mapping "s3100.1" source="s3100" target="SNOMED_CT:44032009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3100 SNOMED CT 44032009 = ICF s3 subdivision: the external nose. Target (Athena 4185723) =,
+        active standard. Exact 1:1 anatomical equivalence between the ICF and SNOMED CT's external-nose
+        body structure; direct concept-name match.
+        """
+}
+mapping "s3101.1" source="s3101" target="SNOMED_CT:68426009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3101 SNOMED CT 68426009 = ICF s3 subdivision: the nasal septum. Target (Athena 4287099) =,
+        active standard. Exact 1:1 anatomical equivalence between the ICF and SNOMED CT's nasal-septum body
+        structure; direct concept-name match.
+        """
+}
+mapping "s3102.1" source="s3102" target="SNOMED_CT:279549004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3102 SNOMED CT 279549004 = ICF s3 subdivision: the nasal cavities (Swedish = nasal
+        cavities, plural of). Target (Athena 4088327) =, active standard. Exact 1:1 anatomical
+        equivalence between the ICF (nasal cavities) and SNOMED CT's nasal-cavity body structure; direct
+        concept-name match. Note is occasionally used for paranasal sinuses in lay Swedish, but in ICF's
+        anatomical taxonomy s3102 is the canonical entry.
+        """
+}
+mapping "s3108.1" source="s3108" target="SNOMED_CT:45206002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3108 SNOMED CT 45206002 = ICF residual under s310 Structure of nose. Target (Athena
+        4164276) =, active standard. The residual denotes some unspecified part of the nose; the
+        nasal-structure target fully subsumes any such part, so the target is broader. High tier : clean
+        parent-subsumes-residual, one-level broader map to the verified parent body-structure concept.
+        """
+}
+mapping "s3109.1" source="s3109" target="SNOMED_CT:45206002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3109 SNOMED CT 45206002 = ICF residual under s310 Structure of nose. Target (Athena
+        4164276) =, active standard. The unspecified source is fully contained by the nasal-structure
+        target; broader one-level map. High tier : parent subsumes the unspecified residual cleanly.
+        """
+}
+mapping "s320.1" source="s320" target="SNOMED_CT:74262004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s320 SNOMED CT 74262004 = ICF s3 subdivision: structure of the mouth (the mouth/oral cavity
+        as an anatomical structure). Target (Athena 4253672) =, active standard. Exact 1:1 anatomical
+        equivalence between the ICF and SNOMED CT's oral-cavity body structure; direct concept-name match.
+        """
+}
+mapping "s3200.1" source="s3200" target="SNOMED_CT:38199008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3200 SNOMED CT 38199008 = ICF s3 subdivision: the teeth. Target (Athena 4244368) =, active
+        standard. Exact 1:1 anatomical equivalence between the ICF (teeth) and SNOMED CT's tooth body
+        structure; direct concept-name match (SNOMED CT's tooth-structure concept denotes the dentition as
+        a class).
+        """
+}
+mapping "s32000.1" source="s32000" target="SNOMED_CT:245612004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32000 SNOMED CT 245612004 = ICF s3 subdivision: the deciduous/primary teeth (milk teeth).
+        Target (Athena 4076141) =, active standard. The ICF (deciduous dentition) and SNOMED CT's
+        deciduous-tooth concept denote the same anatomical concept set; direct concept-name match but no
+        independent Athena crosswalk re-verified, so high tier rather than.
+        """
+}
+mapping "s32001.1" source="s32001" target="SNOMED_CT:38199008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32001 SNOMED CT 38199008 = ICF s3 subdivision: the permanent teeth (secondary dentition).
+        The SNOMED CT mirror contains no single body-structure concept (only specific permanent-tooth
+        concepts and a finding, which is a finding not a body structure). Best available standard target
+        is (Athena 4244368) =, which fully subsumes the permanent subset (every permanent tooth is a
+        tooth), so the target is broader. Low tier : the target is the general tooth-structure concept,
+        broader than the source's permanent-only framing; SNOMED CT models permanent-vs-deciduous via
+        individual tooth concepts rather than a single permanent-dentition concept.
+        """
+}
+mapping "s32008.1" source="s32008" target="SNOMED_CT:38199008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32008 SNOMED CT 38199008 = ICF residual under s3200 Teeth. Target (Athena 4244368) =,
+        active standard. The residual denotes some unspecified tooth/teeth; the tooth-structure target
+        fully subsumes any such tooth, so the target is broader. High tier : clean
+        parent-subsumes-residual, one-level broader map to the verified parent body-structure concept.
+        """
+}
+mapping "s32009.1" source="s32009" target="SNOMED_CT:38199008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32009 SNOMED CT 38199008 = ICF residual under s3200 Teeth. Target (Athena 4244368) =,
+        active standard. The unspecified source is fully contained by the tooth-structure target;
+        broader one-level map. High tier : parent subsumes the unspecified residual cleanly.
+        """
+}
+mapping "s3201.1" source="s3201" target="SNOMED_CT:113279002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3201 SNOMED CT 113279002 = ICF s3 subdivision: the gums/gingiva. Target (Athena 4034272) =,
+        active standard. Exact 1:1 anatomical equivalence between the ICF (gums) and SNOMED CT's gingival
+        body structure; direct concept-name match.
+        """
+}
+mapping "s3202.1" source="s3202" target="SNOMED_CT:181227004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3202 SNOMED CT 181227004 = ICF s3 subdivision: structure of the palate (the palate as a
+        whole). Target (Athena 4108117) =, active standard. Exact 1:1 anatomical equivalence between the
+        ICF (palate structure) and SNOMED CT's entire-palate body structure; direct concept-name match.
+        """
+}
+mapping "s32020.1" source="s32020" target="SNOMED_CT:90228003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32020 SNOMED CT 90228003 = ICF s3 subdivision: the hard palate. Target (Athena 4234542) =,
+        active standard. Exact 1:1 anatomical equivalence between the ICF (hard palate) and SNOMED CT's
+        hard-palate body structure; direct concept-name match.
+        """
+}
+mapping "s32021.1" source="s32021" target="SNOMED_CT:49460000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32021 SNOMED CT 49460000 = ICF s3 subdivision: the soft palate. Target (Athena 4177005) =,
+        active standard. Exact 1:1 anatomical equivalence between the ICF (soft palate) and SNOMED CT's
+        soft-palate body structure; direct concept-name match.
+        """
+}
+mapping "s3203.1" source="s3203" target="SNOMED_CT:21974007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3203 SNOMED CT 21974007 = ICF s3 subdivision: the tongue. Target (Athena 4071678) =, active
+        standard. Exact 1:1 anatomical equivalence between the ICF (tongue) and SNOMED CT's tongue body
+        structure; direct concept-name match.
+        """
+}
+mapping "s3204.1" source="s3204" target="SNOMED_CT:48477009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3204 SNOMED CT 48477009 = ICF s3 subdivision: structure of the lip. Target (Athena 4168155)
+        =, active standard. Exact 1:1 anatomical equivalence between the ICF (lip structure) and
+        SNOMED CT's lip body structure; direct concept-name match.
+        """
+}
+mapping "s32040.1" source="s32040" target="SNOMED_CT:11681001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32040 SNOMED CT 11681001 = ICF body-structure s320.4 upper lip. Target (Athena 4022155) =,
+        active standard. Exact 1:1 equivalence between ICF upper lip and SNOMED CT upper lip body
+        structure.
+        """
+}
+mapping "s32041.1" source="s32041" target="SNOMED_CT:32032005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s32041 SNOMED CT 32032005 = ICF body-structure s320.4 lower lip. Target (Athena 4135698) =,
+        active standard. Exact 1:1 equivalence between ICF lower lip and SNOMED CT lower lip body
+        structure.
+        """
+}
+mapping "s3205.1" source="s3205" target="SNOMED_CT:32087006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3205 SNOMED CT 32087006 = ICF body-structure s320.5 philtrum (the vertical groove between
+        nose and upper lip). Target (Athena 4135709) =, active standard. Exact 1:1 equivalence between
+        ICF philtrum and SNOMED CT philtrum body structure.
+        """
+}
+mapping "s3208.1" source="s3208" target="SNOMED_CT:74262004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3208 SNOMED CT 74262004 = ICF residual (the WHO.8 NEC bucket for s320 mouth structures). No
+        single SNOMED CT concept exists for the residual itself; the defensible target is the parent mouth
+        concept. Target (Athena 4253672) =, active standard; it fully subsumes any specific mouth part
+        the source denotes. Broader (one-level ancestor), tier per the residual-to-parent rule.
+        """
+}
+mapping "s3209.1" source="s3209" target="SNOMED_CT:74262004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3209 SNOMED CT 74262004 = ICF residual (the WHO.9 unspecified bucket for s320). No
+        unspecified-level SNOMED CT target exists; the defensible target is the parent mouth concept.
+        Target (Athena 4253672) =, active standard; it fully subsumes the unspecified source. Broader
+        (one-level ancestor), tier.
+        """
+}
+mapping "s330.1" source="s330" target="SNOMED_CT:54066008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s330 SNOMED CT 54066008 = ICF body-structure s33 chapter root. Target (Athena 4207370) =,
+        active standard; the canonical SNOMED CT pharynx concept. Exact 1:1 equivalence between ICF pharynx
+        and SNOMED CT pharyngeal structure.
+        """
+}
+mapping "s3300.1" source="s3300" target="SNOMED_CT:71836000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3300 SNOMED CT 71836000 = ICF body-structure s330.0 nasopharynx. Target (Athena 4216712) =,
+        active standard. Exact 1:1 equivalence between ICF nasopharynx and SNOMED CT nasopharyngeal body
+        structure.
+        """
+}
+mapping "s3301.1" source="s3301" target="SNOMED_CT:31389004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3301 SNOMED CT 31389004 = ICF body-structure s330.1 oropharynx. Target (Athena 4151149) =,
+        active standard. Exact 1:1 equivalence between ICF oropharynx and SNOMED CT oropharyngeal body
+        structure.
+        """
+}
+mapping "s3308.1" source="s3308" target="SNOMED_CT:54066008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3308 SNOMED CT 54066008 = ICF residual (WHO.8 NEC bucket for s330). No single SNOMED CT
+        concept for the residual; the defensible target is the parent pharynx concept. Target (Athena
+        4207370) =, active standard; fully subsumes any specific pharyngeal part the source denotes.
+        Broader (one-level ancestor), tier.
+        """
+}
+mapping "s3309.1" source="s3309" target="SNOMED_CT:54066008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3309 SNOMED CT 54066008 = ICF residual (WHO.9 unspecified bucket for s330). No
+        unspecified-level SNOMED CT target exists; the defensible target is the parent pharynx concept.
+        Target (Athena 4207370) =, active standard; fully subsumes the unspecified source. Broader
+        (one-level ancestor), tier.
+        """
+}
+mapping "s340.1" source="s340" target="SNOMED_CT:4596009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s340 SNOMED CT 4596009 = ICF body-structure s34 chapter root. Target (Athena 4262229) =,
+        active standard; the canonical SNOMED CT larynx concept. Exact 1:1 equivalence between ICF larynx
+        and SNOMED CT laryngeal structure.
+        """
+}
+mapping "s3400.1" source="s3400" target="SNOMED_CT:46105003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3400 SNOMED CT 46105003 = ICF body-structure s340.0 vocal folds/vocal cords. Target (Athena
+        4263612) =, active standard. Exact 1:1 equivalence between ICF vocal cords and SNOMED CT vocal cord
+        body structure.
+        """
+}
+mapping "s3408.1" source="s3408" target="SNOMED_CT:4596009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3408 SNOMED CT 4596009 = ICF residual (WHO.8 NEC bucket for s340). No single SNOMED CT concept
+        for the residual; the defensible target is the parent larynx concept. Target (Athena 4262229) =,
+        active standard; fully subsumes any specific laryngeal part the source denotes. Broader
+        (one-level ancestor), tier.
+        """
+}
+mapping "s3409.1" source="s3409" target="SNOMED_CT:4596009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s3409 SNOMED CT 4596009 = ICF residual (WHO.9 unspecified bucket for s340). No
+        unspecified-level SNOMED CT target exists; the defensible target is the parent larynx concept.
+        Target (Athena 4262229) =, active standard; fully subsumes the unspecified source. Broader
+        (one-level ancestor), tier.
+        """
+}
+assessment "s398.omop" source="s398" outcome=no_match target-system="OMOP_EXT"
+assessment "s399.omop" source="s399" outcome=no_match target-system="OMOP_EXT"

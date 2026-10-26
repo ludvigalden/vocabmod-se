@@ -1,0 +1,413 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b16-b18
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b160.1" source="b160" target="SNOMED_CT:88952004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b160 SNOMED CT 88952004 (Thought functions) = ICF b160: the specific mental functions of
+        thinking (pace/form/content/control of thought, b1600-b1603). Target (Athena 4230784) =, active
+        standard. 1:1 scope equivalence: ICF and SNOMED CT denote the same construct, and the SNOMED CT
+        sub-hierarchy includes the same children (form of thinking 44831001, speed of thought 247626007,
+        thought content 363877005) that ICF b160 enumerates. Exact_match : identical clinical concept,
+        verified active in both mirrors via the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "b1600.1" source="b1600" target="SNOMED_CT:247626007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1600 SNOMED CT 247626007 (Tempo of thought / rate of thinking) = ICF b1600: mental
+        functions governing the SPEED/rate/pace at which thoughts succeed one another. Target (Athena
+        4085508) =, active standard, Swedish synonym (thought speed), English synonyms /. The SNOMED CT
+        concept directly names the same construct. Broader rather than exact (high): SNOMED CT is an
+        observable whereas ICF b1600 is explicitly a FUNCTION construct (the regulatory function
+        governing thought tempo) — same domain, paradigm-broader; the target fully subsumes the source.
+        High tier: strong Swedish-synonym and English-synonym match and verified crosswalk.
+        """
+}
+mapping "b1601.1" source="b1601" target="SNOMED_CT:44831001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1601 SNOMED CT 44831001 (Form of thought) = ICF b1601: mental functions governing the
+        FORM/organization/structure of thought (logical flow, goal-directedness, continuity). Target
+        (Athena 4259259) =, active standard. The SNOMED CT concept directly names the same construct (form
+        of thought). Broader rather than exact (high): SNOMED CT is an observable whereas ICF b1601 is the
+        FUNCTION governing thought form — paradigm-broader; the target fully subsumes the source's
+        domain. High tier: direct term match (ICF =) and verified crosswalk.
+        """
+}
+mapping "b1602.1" source="b1602" target="SNOMED_CT:363877005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1602 SNOMED CT 363877005 (Content of thought) = ICF b1602: mental functions governing the
+        CONTENT of thought (what the thoughts are about, including presence of
+        obsessions/compulsions/delusions as content disturbances). Target (Athena 4238641) =, active
+        standard, Swedish synonym. The SNOMED CT concept directly names the same construct. Broader rather
+        than exact (high): SNOMED CT is an observable (the content itself, around which findings like
+        55956009 are recorded) whereas ICF b1602 is the FUNCTION governing thought content —
+        paradigm-broader; the target fully subsumes the source's domain. High tier: direct
+        Swedish-synonym match and verified crosswalk.
+        """
+}
+mapping "b1603.1" source="b1603" target="SNOMED_CT:88952004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1603 SNOMED CT 88952004 (Control of thought) = ICF b1603: mental functions governing
+        voluntary CONTROL over one's thought processes (the ability to direct, stop, or dismiss
+        thoughts; its disturbance is thought insertion/broadcast/blocking). Target (Athena 4230784) =,
+        active standard. SNOMED CT has no dedicated observable (the only control-of-thought concept is
+        1332403005, a pathological finding, not a function); the thinking-function parent observable is
+        the nearest ancestor and fully contains the source. Broader, low tier : the specific control
+        sub-function is not modelled separately in SNOMED CT, so the map loses the control/volition
+        distinction the ICF code makes — real specificity loss.
+        """
+}
+mapping "b1608.1" source="b1608" target="SNOMED_CT:88952004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1608 SNOMED CT 88952004 = ICF b1608: other specified thought functions — a
+        specified-but-uncoded residual under b160. Target (Athena 4230784) =, active standard. The
+        thinking-function parent observable fully subsumes any specified thought sub-function. Broader,
+        low tier : residual source (heterogeneous by definition), mapped to the verified parent
+        observable.
+        """
+}
+mapping "b1609.1" source="b1609" target="SNOMED_CT:88952004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1609 SNOMED CT 88952004 = ICF b1609: unspecified thought functions — thought function,
+        unspecified aspect. Target (Athena 4230784) =, active standard. The thinking-function observable
+        is the correct unspecified-level target and fully subsumes the source. Broader, low tier :
+        unspecified residual mapped to the verified parent observable.
+        """
+}
+mapping "b164.1" source="b164" target="SNOMED_CT:311507007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b164 SNOMED CT 311507007 (Higher-level cognitive functions) = ICF b164: the higher-level
+        (executive) cognitive functions — abstraction, organization and planning, time management,
+        cognitive flexibility, insight, judgment (b1640-b1644). Target (Athena 4207631) = (a broad class
+        including abstraction b1640 and insight b1644 which are not strictly), while names the narrower
+        subset; however the SNOMED CT concept is the closest standard function-level grouping of higher
+        cognition and its child hierarchy (planning, goal-setting, awareness) substantially overlaps ICF
+        b164's children. The target captures the executive core of higher cognition; the broader
+        (non-executive) higher functions like pure abstraction are only implicit. High tier: strong
+        scope overlap, verified active in both mirrors via the sctid_to_athena_id crosswalk; one-level
+        broader because is slightly wider than.
+        """
+}
+mapping "b1640.1" source="b1640" target="SNOMED_CT:363878000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1640 SNOMED CT 363878000 = ICF b1640: the higher cognitive function of ABSTRACTION /
+        abstract thinking (the ability to form abstract concepts and reason symbolically, beyond the
+        concrete). Target (Athena 4239427) =, active standard, Swedish synonym (ability to think
+        abstractly). The SNOMED CT concept directly names the same construct (the active replacement for
+        the now-inactive 58092009). Broader rather than exact (high): SNOMED CT models abstract thinking as
+        an ABILITY/observable, whereas ICF b1640 models it as a higher cognitive FUNCTION —
+        paradigm-broader; the target fully subsumes the source's domain. High tier: direct
+        Swedish-synonym match and verified crosswalk.
+        """
+}
+mapping "b1641.1" source="b1641" target="SNOMED_CT:312011006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1641 SNOMED CT 312011006 (Organization and planning) = ICF b1641: the higher cognitive
+        functions of organizing and planning (the ability to mentally sequence, prioritize, and
+        formulate plans to achieve goals). Target (Athena 4209826) =, active standard, the dedicated
+        SNOMED CT executive-cognitive planning observable. Broader rather than exact (high): ICF b1641
+        explicitly spans BOTH organization AND planning, while names only the planning axis (SNOMED CT has
+        no dedicated observable); the target captures the planning axis and fully subsumes it, leaving
+        the organization axis implicit. High tier: strong direct match on the planning axis and verified
+        crosswalk; one-level-broader because organization is not separately modelled (cf. the b126
+        temperament+personality precedent).
+        """
+}
+mapping "b1642.1" source="b1642" target="SNOMED_CT:311507007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1642 SNOMED CT 311507007 (Time management / time planning) = ICF b1642: the higher
+        cognitive function of managing/planning the use of time (allocating time to tasks, sequencing
+        activities temporally, meeting time-based goals). Target (Athena 4207631) =, active standard.
+        SNOMED CT has no dedicated or observable (the only time-management concept is the procedure
+        228572007); the executive-cognitive-functions parent observable is the nearest ancestor that
+        fully contains time management as an executive skill. Broader, low tier : the specific
+        time-management sub-function is not modelled separately in SNOMED CT, so the map loses the
+        time-allocation distinction the ICF code makes — real specificity loss, mapped up to the
+        executive-cognitive parent.
+        """
+}
+mapping "b1643.1" source="b1643" target="SNOMED_CT:311507007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1643 SNOMED CT 311507007 (Cognitive flexibility) = ICF b1643: the higher cognitive function
+        of cognitive flexibility / mental set-shifting (the ability to switch between tasks, mental
+        sets, or strategies adaptively). Target (Athena 4207631) =, active standard. SNOMED CT has no
+        dedicated observable (no concept named or or exists in the mirror); the
+        executive-cognitive-functions parent observable is the nearest ancestor that fully contains
+        cognitive flexibility as a core executive skill. Broader, low tier : the specific
+        cognitive-flexibility sub-function is not modelled separately in SNOMED CT, so the map loses the
+        set-shifting distinction the ICF code makes — real specificity loss, mapped up to the
+        executive-cognitive parent.
+        """
+}
+mapping "b1644.1" source="b1644" target="SNOMED_CT:66216009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1644 SNOMED CT 66216009 (Comprehension / understanding) = ICF b1644: the higher cognitive
+        function of understanding/comprehension — the ability to grasp meaning, comprehend situations
+        and information (insight/understanding). Target (Athena 4282173) =, active standard, Swedish
+        synonym. The SNOMED CT concept directly names the same construct. Broader rather than exact (high):
+        SNOMED CT is an observable (the broader comprehension-function construct) whereas ICF b1644 is
+        positioned specifically within higher-level cognitive functions as an executive-level
+        comprehension — paradigm-broader; the target fully subsumes the source. High tier: direct
+        Swedish-synonym match and verified crosswalk.
+        """
+}
+mapping "b1645.1" source="b1645" target="SNOMED_CT:61254005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1645 SNOMED CT 61254005 = ICF judgement function: mental function of evaluating the
+        consequences of actions or events. Target is the closest standard concept — a broader observable
+        entity that covers the same domain. One-level broader: SNOMED CT does not model as a separate
+        mental-function construct; 61254005 subsumes it. High tier: correct domain, verified in Swedish
+        SNOMED CT mirror as active.
+        """
+}
+mapping "b1646.1" source="b1646" target="SNOMED_CT:247581008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1646 SNOMED CT 247581008 = ICF problem-solving function: goal-directed thinking involving
+        identifying and solving problems. Target is the closest standard concept. SNOMED CT models problem
+        solving as an observable entity rather than a body-function construct; the target is one level
+        broader in model granularity. High tier: exact term match on, active in both Athena and Swedish
+        mirrors.
+        """
+}
+mapping "b1648.1" source="b1648" target="SNOMED_CT:311507007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1648 SNOMED CT 311507007 = other specified higher-level cognitive functions — a
+        heterogeneous residual ICF bucket. Target is the best available ancestor: ICF b164 codes fall
+        under executive cognitive functions in the ICF hierarchy, and is the nearest standard parent.
+        Moderate tier: residual source, best-defensible ancestor.
+        """
+}
+mapping "b1649.1" source="b1649" target="SNOMED_CT:311507007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1649 SNOMED CT 311507007 = unspecified higher-level cognitive functions. Target as the best
+        available ancestor. Low tier: unspecified residual source with real doubt — the source
+        deliberately avoids specificity, and the ancestor is several levels above.
+        """
+}
+mapping "b167.1" source="b167" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b167 SNOMED CT 61909002 = ICF mental functions of language: the higher-level cortical
+        functions for decoding and encoding spoken/written/sign/gesture messages. Target is the SNOMED CT
+        equivalent of the ICF language-function chapter. High tier: direct term match on; subsumes all
+        language modalities.
+        """
+}
+mapping "b1670.1" source="b1670" target="SNOMED_CT:46977006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1670 SNOMED CT 46977006 = ICF receptive language functions: decoding spoken, written, sign,
+        and body language messages. Target is the closest standard concept — receptive language =
+        language comprehension. One-level broader: is the single comprehension concept that covers all
+        reception modalities. High tier: verified term match.
+        """
+}
+mapping "b16700.1" source="b16700" target="SNOMED_CT:46977006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16700 SNOMED CT 46977006 = receptive spoken language: understanding spoken words and
+        sentences. Target is the nearest standard concept. SNOMED CT has no separate observable entity —
+        46977006 covers all language comprehension including spoken. Moderate tier: no modality-specific
+        SNOMED CT concept exists; source is a modality-specific slice of a broader target.
+        """
+}
+mapping "b16701.1" source="b16701" target="SNOMED_CT:309250007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16701 SNOMED CT 309250007 = receptive written language: understanding written text. Target
+        directly models reading comprehension as a function. High tier: reading is the natural SNOMED CT
+        analogue of receptive written language; concept is active in Swedish mirror.
+        """
+}
+assessment "b16702.omop" source="b16702" outcome=no_match target-system="OMOP_EXT"
+mapping "b16703.1" source="b16703" target="SNOMED_CT:284536002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16703 SNOMED CT 284536002 = receptive body language: understanding non-verbal communication
+        through gestures, facial expressions, and postures. Target directly covers body language as a
+        communication function. High tier: direct term match on, active in Swedish mirror.
+        """
+}
+assessment "b16708.omop" source="b16708" outcome=no_match target-system="OMOP_EXT"
+assessment "b16709.omop" source="b16709" outcome=no_match target-system="OMOP_EXT"
+mapping "b1671.1" source="b1671" target="SNOMED_CT:32650004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1671 SNOMED CT 32650004 = ICF expressive language functions: producing spoken, written,
+        sign, and body-language messages. Target is the closest standard concept. In SNOMED CT, language
+        production/fluency is the expressive counterpart of language comprehension. High tier: active
+        concept, covers language production across modalities.
+        """
+}
+mapping "b16710.1" source="b16710" target="SNOMED_CT:32650004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16710 SNOMED CT 32650004 = expressive spoken language: producing spoken words and
+        sentences. Target is the nearest standard concept. SNOMED CT has no separate observable entity —
+        32650004 covers all language fluency including spoken. Moderate tier: modality-specific source
+        maps to a broader fluency target.
+        """
+}
+mapping "b16711.1" source="b16711" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16711 SNOMED CT 307124006 = expressive written language: producing written text. Target
+        directly models writing as a function. High tier: writing is the natural SNOMED CT analogue of
+        expressive written language; active in Swedish mirror.
+        """
+}
+assessment "b16712.omop" source="b16712" outcome=no_match target-system="OMOP_EXT"
+mapping "b16713.1" source="b16713" target="SNOMED_CT:284536002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b16713 SNOMED CT 284536002 = expressive body language: using gestures, facial expressions,
+        and postures to communicate. Target covers both reception and production of body language. Same
+        target as b16703 (receptive). High tier: verified term match.
+        """
+}
+assessment "b16718.omop" source="b16718" outcome=no_match target-system="OMOP_EXT"
+assessment "b16719.omop" source="b16719" outcome=no_match target-system="OMOP_EXT"
+assessment "b1672.omop" source="b1672" outcome=no_match target-system="OMOP_EXT"
+assessment "b1678.omop" source="b1678" outcome=no_match target-system="OMOP_EXT"
+assessment "b1679.omop" source="b1679" outcome=no_match target-system="OMOP_EXT"
+mapping "b172.1" source="b172" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b172 SNOMED CT 304659002 = ICF calculation functions: mental computation and manipulation of
+        numbers and mathematical symbols. Target is the closest standard concept — arithmetic reasoning
+        is the SNOMED CT analogue of ICF calculation. High tier: direct domain match, active in Swedish
+        mirror.
+        """
+}
+mapping "b1720.1" source="b1720" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1720 SNOMED CT 304659002 = simple arithmetic calculation functions: basic operations like
+        addition, subtraction, multiplication, division. Target is the nearest standard concept. SNOMED CT
+        has no separate vs breakdown. Moderate tier: modality-specific slice (simple arithmetic) of the
+        broader target.
+        """
+}
+mapping "b1721.1" source="b1721" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1721 SNOMED CT 304659002 = complex calculation functions: multi-step mathematical
+        reasoning, algebra, applied mathematics. Target is the nearest standard concept. SNOMED CT does not
+        separate simple vs complex arithmetic. Moderate tier: source specificity (complex) is lost in
+        the target which covers all arithmetic reasoning.
+        """
+}
+assessment "b1728.omop" source="b1728" outcome=no_match target-system="OMOP_EXT"
+assessment "b1729.omop" source="b1729" outcome=no_match target-system="OMOP_EXT"
+mapping "b176.1" source="b176" target="SNOMED_CT:304645009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b176 SNOMED CT 304645009 = ICF b176 Mental function of sequencing complex movements: the
+        higher-level mental (frontal/executive) function of planning and ordering complex, sequential,
+        coordinated voluntary movements (a cognitive-motor sequencing function, NOT raw motor
+        coordination itself — clinically the function impaired in ideomotor/ideational dyspraxia).
+        Target SNOMED CT 4128100 (sctid 304645009) =, active RF2 production. This is the only SNOMED CT
+        observable that captures sequencing-as-a-mental-ability (rather than 106164003 is the
+        motor-execution side, not the cognitive-sequencing side). Broader rather than exact: 304645009
+        is a generic logical-sequencing ability (any domain) where ICF b176 is specifically movement
+        sequencing; the target fully subsumes the source's domain but is not co-extensive with it. Low
+        tier : defensible but real doubt — is broader and more cognitive than the motor-sequencing
+        specificity of b176, and there is no independent Athena crosswalk re-verified. (Alternate
+        106164003 was rejected: it denotes motor execution, not the mental sequencing ICF b176
+        specifies.)
+        """
+}
+mapping "b180.1" source="b180" target="SNOMED_CT:285231000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b180 SNOMED CT 285231000 = ICF b180 Experience of self and time functions: the chapter-level
+        grouping of b1800 Experience of self, b1801 Body image, b1802 Experience of time (a multi-block
+        chapter anchor). No single SNOMED CT observable spans both self-experience AND time-experience; the
+        only defensible standard target is the broader mental-function observable. Target SNOMED CT 4111207
+        (sctid 285231000) =, active, which fully subsumes all b180 sub-functions as mental functions.
+        Broader: the target is a true ancestor (every self/time experience function is a mental
+        function) but many levels above, and also covers unrelated mental functions, so it is a deep
+        broader climb. Low tier : clinically defensible ancestor but loose (multi-hop climb, no
+        independent crosswalk); the specific children b1800/b1801/b1802 each get their own tighter
+        proposals below. Mapping the chapter block to the general mental-function observable preserves
+        the ancestor lead without over-claiming equivalence.
+        """
+}
+mapping "b1800.1" source="b1800" target="SNOMED_CT:225510008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1800 SNOMED CT 225510008 = ICF b1800 Experience of self: the mental function of being aware
+        of one's own identity and of one's separate distinctness from others and from the environment
+        (self-awareness / self-identity as a function). Target SNOMED CT 4021351 (sctid 225510008) =,
+        active. This is the closest SNOMED CT observable to a self-experience concept; it captures the
+        self-as-experienced (one's image/representation of self), which overlaps heavily with ICF's
+        experience-of-self function. Broader rather than exact: is narrower than ICF b1800 in one axis
+        (self-image is a component of the broader experience-of-self, which also includes
+        self-identity-as-distinct-from-others), but SNOMED CT's only adjacent findings (704447001,
+        24340004) are deficit findings, not functions. Because the chosen target is the most-correct
+        single observable and is one axis of a multi-axis source, but is the best available standard
+        concept, this is assessed as broader (self-image subsumes the representational core of
+        experience-of-self) at moderate tier : best-available defensible target, term-verified in the
+        mirror, but the SNOMED CT self-image concept does not fully denote the ICF experience-of-self
+        function and there is no independent crosswalk. (Note direction: target is broader — it is a
+        single observable representing the closest standard lead.)
+        """
+}
+mapping "b1801.1" source="b1801" target="SNOMED_CT:405045001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1801 SNOMED CT 405045001 (Kroppsbild) = ICF b1801 Body image: the mental function
+        representing one's physical self — the experience and representation of one's own body. Target
+        SNOMED CT 4234505 (sctid 405045001) =, active RF2 production, exact literal term match. Exact 1:1
+        equivalence: identical clinical concept (body image as an experienced representation of one's
+        body), confirmed by literal FSN term match in the Swedish SNOMED CT mirror. (277813003 is a
+        finding, not the function/observable; 405045001 is the function-level observable that matches
+        ICF b1801.) High tier : exact term match and clear concept equivalence, but no independent
+        Athena crosswalk re-verified, so snapped just below. mapping_type=exact_match.
+        """
+}
+mapping "b1802.1" source="b1802" target="SNOMED_CT:247723007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1802 SNOMED CT 247723007 = ICF b1802 Experience of time: the mental function of the
+        subjective experience of time (duration, rate, passage of time) — a function/ability. Target
+        SNOMED CT 4085034 (sctid 247723007) =, active, Swedish synonym. This is the only SNOMED CT concept
+        covering subjective time-experience, and it is a deficit FINDING (changed/abnormal perception of
+        time), not a normal function/observable. The source is a FUNCTION (b1802, including normal time
+        experience); the target is the abnormal finding associated with its impairment. This is a
+        clinical association, not identity/ancestor/descendant/component — the target is the disorder
+        counterpart of the source function. Per the related-vs-no_match boundary rule, there IS a real
+        defensible clinical association worth a reviewer's time (the only time-experience concept in
+        SNOMED CT), so this is related at low tier, not no_match. (No function-level time-perception
+        observable exists in SNOMED CT; a no_match would discard the only lead.)
+        """
+}
+assessment "b1808.omop" source="b1808" outcome=no_match target-system="OMOP_EXT"
+assessment "b1809.omop" source="b1809" outcome=no_match target-system="OMOP_EXT"
+assessment "b189.omop" source="b189" outcome=no_match target-system="OMOP_EXT"

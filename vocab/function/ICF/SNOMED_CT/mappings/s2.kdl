@@ -1,0 +1,317 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s2
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "s2.1" source="s2" target="SNOMED_CT:81745001" relationship=partial_overlap effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2 SNOMED CT 117590005 81745001 = ICF Ch.2 chapter root: the eye, the ear, and related
+        structures (a heterogeneous grouping of special-sense-organ anatomy). SNOMED CT has NO single
+        concept denoting — the eye and ear are separate body-structure branches sharing only the loose /
+        ancestors. Multi-target partial: SNOMED CT 81745001 (OMOP id 4305329) covers the eye axis;
+        117590005 (OMOP id 4037611) covers the ear axis. Each target is one component of the multi-part
+        source (partial); neither subsumes the whole. Low tier : the chapter root is a classification
+        grouping, not a single anatomical concept, so each component target is a defensible-but-loose
+        lead. (69536005) alternative was considered and rejected as too coarse.
+        """
+}
+mapping "s2.2" source="s2" target="SNOMED_CT:117590005" relationship=partial_overlap effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s210.1" source="s210" target="SNOMED_CT:87716009" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s210 SNOMED CT 87716009 = ICF body structure: structure of orbit (bony orbit / orbital
+        region). Target (OMOP id 40641217). Same anatomical concept; SNOMED CT's is the canonical
+        body-structure concept for the orbit. The (110528008) (362901003) as narrower substructures, but
+        87716009 is the region-level equivalent matching the ICF s210 granularity. High tier : exact
+        term match at the same granularity, not independently crosswalk-verified beyond the mirror.
+        """
+}
+mapping "s220.1" source="s220" target="SNOMED_CT:81745001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s220 SNOMED CT 81745001 = ICF body-structure chapter s22 (globe of eyeball as a whole).
+        Target (Athena 4305329) =, active standard; its synonyms are / and it is the canonical SNOMED CT
+        concept for the globe of the eyeball. Exact 1:1 equivalence between the ICF and SNOMED CT's eyeball
+        body structure; web-confirmed via SNOMED CT browser that 81745001 is the established active eyeball
+        concept.
+        """
+}
+mapping "s2200.1" source="s2200" target="SNOMED_CT:29445007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2200 SNOMED CT 18619003 29445007 68703001 = ICF s220 subdivision bundling THREE distinct
+        eyeball coats: conjunctiva (bindhinna), sclera (senhinna) and choroid (åderhinna). No single
+        SNOMED CT concept denotes this exact trio (the tunica concepts group differently: fibrosa =
+        sclera+cornea; vasculosa = choroid+iris+ciliary body). Per the partial multi-component rule,
+        emit one target per component: SNOMED CT 29445007 (Athena 4105319) =; SNOMED CT 18619003 (Athena
+        4091162) =; SNOMED CT 68703001 (Athena 4287575) = — all active standard body structures. Each
+        partial target covers one slice of the multi-part source; tier per the partial-multi-target
+        guidance.
+        """
+}
+mapping "s2200.2" source="s2200" target="SNOMED_CT:18619003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s2200.3" source="s2200" target="SNOMED_CT:68703001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s2201.1" source="s2201" target="SNOMED_CT:28726007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2201 SNOMED CT 28726007 = cornea. Target (Athena 4102766) =, active standard. Exact 1:1
+        equivalence between the ICF cornea and the SNOMED CT corneal body structure.
+        """
+}
+mapping "s2202.1" source="s2202" target="SNOMED_CT:41296002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2202 SNOMED CT 41296002 = iris. Target (Athena 4184817) =, active standard. Exact 1:1
+        equivalence between the ICF iris and the SNOMED CT iris body structure.
+        """
+}
+mapping "s2203.1" source="s2203" target="SNOMED_CT:5665001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2203 SNOMED CT 5665001 = retina. Target (Athena 4208981) =, active standard. Exact 1:1
+        equivalence between the ICF retina and the SNOMED CT retinal body structure.
+        """
+}
+mapping "s2204.1" source="s2204" target="SNOMED_CT:78076003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2204 SNOMED CT 78076003 = crystalline lens of the eye. Target (Athena 4301506, OMOP
+        preferred name) =, active standard. Exact 1:1 equivalence; the OMOP term is the Athena preferred
+        name for the same lens body-structure concept.
+        """
+}
+mapping "s2205.1" source="s2205" target="SNOMED_CT:47538007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2205 SNOMED CT 47538007 = vitreous body. Target (Athena 4165531) =, active standard. Exact
+        1:1 equivalence between the ICF vitreous body and the SNOMED CT vitreous body structure.
+        """
+}
+mapping "s2208.1" source="s2208" target="SNOMED_CT:81745001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2208 SNOMED CT 81745001 = ICF residual (a specific eyeball substructure not separately
+        listed). Target (Athena 4305329) =, the eyeball parent. Why this target: the only defensible
+        standard concept for an unspecified eyeball substructure is the eyeball itself. Why broader/ :
+        the eyeball parent legitimately subsumes any eyeball substructure, but the residual source gives
+        no indication WHICH substructure is meant, so the map loses real specificity — deeper climb than
+        a one-level broader drop, hence rather than.
+        """
+}
+mapping "s2209.1" source="s2209" target="SNOMED_CT:81745001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2209 SNOMED CT 81745001 = ICF. Target (Athena 4305329) =, the eyeball parent. Why this
+        target: an is, by definition, the eyeball as a whole. Why broader/ : the parent eyeball concept
+        fully subsumes the source and is the standard fallback for an unspecified-within-eyeball code
+        (one-level broader, unspecified source per the moderate tier).
+        """
+}
+mapping "s230.1" source="s230" target="SNOMED_CT:44888004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s230 SNOMED CT 44888004 = ICF s23 (eyelids, lacrimal apparatus, extraocular muscles,
+        eyebrows). Target (Athena 4264500) =, active standard. Exact 1:1 equivalence: (that which
+        surrounds the eye) is the Swedish ICF term for the ocular adnexa.
+        """
+}
+mapping "s2300.1" source="s2300" target="SNOMED_CT:314802006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2300 SNOMED CT 314802006 = ICF (lacrimal gland plus the lacrimal apparatus — ducts,
+        canaliculi, sac). Target (Athena 4152565) =, active standard. Why broader/ : the lacrimal
+        apparatus fully subsumes the lacrimal gland (the gland is a part of the apparatus) and its
+        related structures — a one-level broader map with no clinical meaning lost; high tier per the
+        rubric.
+        """
+}
+mapping "s2301.1" source="s2301" target="SNOMED_CT:80243003" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2301 SNOMED CT 80243003 = eyelid. Target (Athena 4196657) =, active standard. Exact 1:1
+        equivalence between the ICF eyelid and the SNOMED CT eyelid body structure.
+        """
+}
+mapping "s2303.1" source="s2303" target="SNOMED_CT:67833000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2303 SNOMED CT 67833000 = extraocular muscles. Target (Athena 4285885) =, active standard.
+        Exact 1:1 equivalence between the ICF extraocular muscles and the SNOMED CT extraocular-muscle body
+        structure.
+        """
+}
+mapping "s2308.1" source="s2308" target="SNOMED_CT:44888004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2308 SNOMED CT 44888004 = ICF residual. Target (Athena 4264500) =, the adnexa parent. Why
+        broader/ : the adnexa parent subsumes any periocular substructure, but the residual source gives
+        no indication WHICH periocular structure is meant; deeper specificity loss than a one-level
+        broader drop, hence.
+        """
+}
+mapping "s2309.1" source="s2309" target="SNOMED_CT:44888004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2309 SNOMED CT 44888004 = ICF. Target (Athena 4264500) =, the adnexa parent. Why broader/ :
+        an is, by definition, the adnexa as a whole; the parent fully subsumes the source (one-level
+        broader, unspecified source per the moderate tier).
+        """
+}
+mapping "s240.1" source="s240" target="SNOMED_CT:28347008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s240 SNOMED CT 28347008 = ICF s24. Target (Athena 4153243) =, active standard. Exact 1:1
+        equivalence between the ICF external ear and the SNOMED CT external-ear body structure.
+        """
+}
+mapping "s250.1" source="s250" target="SNOMED_CT:25342003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s250 SNOMED CT 25342003 = ICF s25. Target (Athena 4100253) =, active standard. Exact 1:1
+        equivalence between the ICF middle ear and the SNOMED CT middle-ear body structure.
+        """
+}
+mapping "s2500.1" source="s2500" target="SNOMED_CT:42859004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2500 SNOMED CT 42859004 = tympanic membrane (eardrum). Target (Athena 4178172) =, active
+        standard. Exact 1:1 equivalence between the ICF tympanic membrane and the SNOMED CT
+        tympanic-membrane body structure.
+        """
+}
+mapping "s2501.1" source="s2501" target="SNOMED_CT:91207004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2501 SNOMED CT 91207004 = Eustachian/auditory tube (tuba auditiva). Target (Athena 4238728)
+        =, active standard; the Swedish synonym (sctid 181186004) confirms the SE alignment. Exact 1:1
+        equivalence between the ICF Eustachian tube and the SNOMED CT pharyngotympanic-tube body structure.
+        """
+}
+mapping "s2502.1" source="s2502" target="SNOMED_CT:41845008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2502 SNOMED CT 41845008 = auditory ossicles (malleus, incus, stapes). Target (Athena
+        4222565) =, active standard; the SE synonym recurs across ossicular-chain concepts, confirming
+        alignment. Exact 1:1 equivalence between the ICF ossicles and the SNOMED CT ear-ossicle body
+        structure.
+        """
+}
+mapping "s2508.1" source="s2508" target="SNOMED_CT:25342003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2508 SNOMED CT 25342003 = ICF residual. Target (Athena 4100253) =, the middle-ear parent.
+        Why broader/ : the parent subsumes any middle-ear substructure, but the residual source gives no
+        indication WHICH substructure is meant; deeper specificity loss than a one-level broader drop,
+        hence.
+        """
+}
+mapping "s2509.1" source="s2509" target="SNOMED_CT:25342003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2509 SNOMED CT 25342003 = ICF. Target (Athena 4100253) =, the middle-ear parent. Why
+        broader/ : an is, by definition, the middle ear as a whole; the parent fully subsumes the source
+        (one-level broader, unspecified source per the moderate tier).
+        """
+}
+mapping "s260.1" source="s260" target="SNOMED_CT:22945000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s260 SNOMED CT 22945000 = ICF s26. Target (Athena 4042536) =, active standard. Exact 1:1
+        equivalence between the ICF inner ear and the SNOMED CT inner-ear body structure.
+        """
+}
+mapping "s2600.1" source="s2600" target="SNOMED_CT:80169004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2600 SNOMED CT 80169004 = cochlea. Target (Athena 4196642) =, active standard. Exact 1:1
+        equivalence between the ICF cochlea and the SNOMED CT cochlear body structure.
+        """
+}
+mapping "s2601.1" source="s2601" target="SNOMED_CT:302462009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2601 SNOMED CT 302462009 = (inner-ear) labyrinth. Target (Athena 4121004) =, active
+        standard; the SE synonym (sctid 302462009) is an exact string match. Exact 1:1 equivalence
+        between the ICF labyrinth and the SNOMED CT labyrinth body structure.
+        """
+}
+mapping "s2602.1" source="s2602" target="SNOMED_CT:279726004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2602 SNOMED CT 279726004 = ICF s2 inner-ear subdivision: the semicircular canals (the three
+        bony vestibular canals of the inner ear). Target (Athena 4088955) =, active standard. Exact 1:1
+        anatomical equivalence between the ICF and SNOMED CT's semicircular-canal body structure; direct
+        concept-name match.
+        """
+}
+mapping "s2603.1" source="s2603" target="SNOMED_CT:61671002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2603 SNOMED CT 61671002 = ICF s2 inner-ear subdivision: the internal auditory canal/meatus
+        (the bony canal transmitting CN VII/VIII through the petrous bone). Target (Athena 4267855) =,
+        active standard. The ICF and SNOMED CT denote the same anatomical structure; equivalence is direct
+        but no independent Athena crosswalk was re-verified, so high tier rather than.
+        """
+}
+mapping "s2608.1" source="s2608" target="SNOMED_CT:22945000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2608 SNOMED CT 22945000 = ICF residual under s26 Structure of inner ear. Target (Athena
+        4042536) =, active standard. The residual denotes some unspecified part of the inner ear; the
+        inner-ear-structure target fully subsumes any such part, so the target is broader. High tier :
+        clean parent-subsumes-residual, one-level broader map to the verified parent body-structure
+        concept.
+        """
+}
+mapping "s2609.1" source="s2609" target="SNOMED_CT:22945000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s2609 SNOMED CT 22945000 = ICF residual under s26 Structure of inner ear. Target (Athena
+        4042536) =, active standard. The unspecified source is fully contained by the
+        inner-ear-structure target; broader one-level map. High tier : parent subsumes the unspecified
+        residual cleanly.
+        """
+}
+mapping "s298.1" source="s298" target="SNOMED_CT:81745001" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s298 SNOMED CT 117590005 81745001 = ICF residual under the s2 chapter block (the eye, the
+        ear, and related structures). The s2 block is heterogeneous: SNOMED CT has no single concept
+        denoting (separate body-structure branches sharing only loose / ancestors). Per the partial
+        multi-component rule, emit one target per component: SNOMED CT 81745001 (Athena 4305329) =
+        Structure of eye proper covers the eye axis; SNOMED CT 117590005 (Athena 4037611) = Ear structure
+        covers the ear axis. Each partial target covers one slice of the multi-part residual; tier per
+        partial-multi-target guidance.
+        """
+}
+mapping "s298.2" source="s298" target="SNOMED_CT:117590005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s299.1" source="s299" target="SNOMED_CT:81745001" relationship=partial_overlap {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s299 SNOMED CT 117590005 81745001 = ICF residual under the s2 chapter block (the eye, the
+        ear, and related structures). Same heterogeneous-residual situation as s298: SNOMED CT has no
+        single eye+ear grouping concept. Multi-target partial: SNOMED CT 81745001 (Athena 4305329) =
+        Structure of eye proper covers the eye axis; SNOMED CT 117590005 (Athena 4037611) = Ear structure
+        covers the ear axis. Each target is one component of the multi-part unspecified source; tier.
+        """
+}
+mapping "s299.2" source="s299" target="SNOMED_CT:117590005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

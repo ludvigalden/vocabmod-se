@@ -1,0 +1,497 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b7-b74
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "b7.omop" source="b7" outcome=no_match target-system="OMOP_EXT"
+mapping "b710.1" source="b710" target="SNOMED_CT:364564000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b710 SNOMED CT 364564000 = ICF b710: the body functions of JOINT MOBILITY — the
+        mobility/range of motion of joints (per WHO ICF definition), with children b7100 mobility of
+        single joint, b7101 mobility of several joints, b7102 mobility generalized, b7108/b7109
+        residuals. Target =, active RF2 production 20260701, the direct SNOMED CT observable that names the
+        range of joint movement as the GENERAL joint-mobility concept (it is the IS_A parent of the
+        joint-specific ROM observables: 298773006 shoulder, 298878008 elbow, 298946001 wrist, 299062003
+        finger, 404979006 neck, etc. — 14 joint-specific children verified in the ancestors mirror).
+        This is the closest standard equivalent and matches the ICF joint-mobility scope at the general
+        level. Broader rather than exact: ICF b710 is a multi-child function block (b7100-b7109)
+        bundling single-joint, multi-joint AND generalized mobility where is a single observable for the
+        range of joint movement; the target names the central joint-ROM axis but does not subsume the
+        generalized-mobility / multi-joint-pattern sub-functions, so it stands broader as the single
+        best umbrella for the block. High tier : direct term-and-scope match (range of joint movement =
+        joint mobility functions) verified active in the mirror with confirmed
+        parent-of-joint-specific-ROM hierarchy, one-level-broader in model granularity, no independent
+        Athena crosswalk re-verified.
+        """
+}
+mapping "b710-b729.1" source="b710-b729" target="SNOMED_CT:106029005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b710-b729 SNOMED CT 106029005 = ICF block b710-b729 Functions of the joints and bones: the
+        block-level grouping of joint-mobility functions (b710), joint-stability functions (b715),
+        skeletal-mobility functions (b720) and the b729 residual. Target =, active RF2 production. No
+        single SNOMED CT observable exists; the nearest standard ancestor that contains the joint-mobility,
+        joint-stability and skeletal-mobility axes together is the general musculoskeletal-function
+        observable. Broader (low): a block-level joint-and-bone grouping mapped up to the whole
+        musculoskeletal function is a deeper climb than the b710 block map, and the target subsumes far
+        more (muscle tone, muscle power, etc.) than the joint/bone block — but it is the nearest
+        defensible ancestor. Per the chapter/block precedent the
+        moderate-or-lower tier applies; low chosen because the target is markedly broader than the
+        source block. mapping_type=broader.
+        """
+}
+mapping "b7100.1" source="b7100" target="SNOMED_CT:364564000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7100 SNOMED CT 364564000 = ICF b7100 Mobility of SINGLE joint functions: the specific
+        function of the range of movement of one individual joint. Target =, active RF2 production, the
+        SNOMED CT observable for joint range of movement. No dedicated function-observable exists in the
+        mirror (the active/passive range concepts 786071002/830146005 are measurement observables, and
+        33836004 is the broader function-framed parent covering the whole MSK system, not one joint).
+        Broader rather than exact: 364564000 is the generic joint-range observable where the source is
+        specifically the function of ONE joint (a more specific framing), so the target subsumes the
+        source; and 364564000 is a range/measurement observable whereas ICF b7100 is the function
+        framing. Low tier : best available specific joint-movement observable, term-verified active, but
+        real semantic gap between the ICF single-joint function framing and the SNOMED CT generic
+        range-of-joint-movement observable. mapping_type=broader.
+        """
+}
+mapping "b7101.1" source="b7101" target="SNOMED_CT:364564000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7101 SNOMED CT 364564000 = ICF b7101 Mobility of SEVERAL joints functions: the specific
+        function of the range of movement of multiple joints together. Target =, active RF2 production.
+        No dedicated function-observable exists in the mirror; 364564000 (range of joint movement,
+        generic) is the nearest standard concept and 33836004 (Musculoskeletal mobility, function) is
+        the broader MSK function parent. Broader: the generic joint-range observable subsumes the
+        several-joints framing; and the measurement-observable vs function framing gap applies as for
+        b7100. Low tier : best available joint-movement observable, term-verified active, but the ICF
+        several-joints function framing has no exact SNOMED CT analogue. mapping_type=broader.
+        """
+}
+mapping "b7102.1" source="b7102" target="SNOMED_CT:33836004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7102 SNOMED CT 33836004 = ICF b7102 General joint mobility functions: the function of joint
+        mobility considered generally across the body. Target =, active RF2 production, the
+        function-framed SNOMED CT observable for generalised musculoskeletal mobility — the direct
+        function-framed match for ICF's general-joint-mobility framing. This is the closest standard
+        equivalent; no dedicated observable exists, but 33836004 names MSK mobility AS A FUNCTION
+        (matching ICF's function perspective) at the general level. Broader rather than exact: 33836004
+        spans the whole MSK system (muscles + joints + bones) where the source is specifically the
+        general JOINT mobility axis; the target fully contains the source but adds the muscle/bone
+        mobility axes. Moderate tier : direct function-and-scope match (general MSK mobility function),
+        term-verified active, but one-level-broader (muscle/bone axes added) and no independent Athena
+        crosswalk re-verified. mapping_type=broader.
+        """
+}
+assessment "b7108.omop" source="b7108" outcome=no_match target-system="OMOP_EXT"
+assessment "b7109.omop" source="b7109" outcome=no_match target-system="OMOP_EXT"
+mapping "b715.1" source="b715" target="SNOMED_CT:43471007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b715 SNOMED CT 43471007 = ICF b715 Joint stability functions: the body functions of the
+        stability of a joint, with children b7150 single joint, b7151 several joints, b7152 general,
+        b7158/b7159 residuals. Target =, active RF2 production, the direct function-framed SNOMED CT
+        observable that names stability AS A FUNCTION (matching ICF's function perspective) — the
+        joint-stability observables (276329005, 250100005.) are measurement observables, not function
+        framing. Broader rather than exact: 43471007 spans the whole MSK system's stability (joints +
+        bones + muscle attachments) where the source is specifically JOINT stability; the target fully
+        contains the source but adds the bone/MSK-structure stability axes. High tier : direct
+        function-and-scope match (MSK stability function), term-verified active, but one-level-broader
+        and no independent Athena crosswalk re-verified. mapping_type=broader.
+        """
+}
+mapping "b7150.1" source="b7150" target="SNOMED_CT:276329005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7150 SNOMED CT 276329005 = ICF b7150 Stability of SINGLE joint functions: the specific
+        function of the stability of one individual joint. Target =, active RF2 production, the generic
+        joint-stability observable. No dedicated function-observable exists; the joint-specific
+        stability observables (250100005 hip, 250101009 knee, 298853009 shoulder, etc.) are each for a
+        NAMED joint, not the generic single-joint framing of the source. Broader: the generic
+        joint-stability observable subsumes the single-joint framing, and the measurement-observable vs
+        ICF-function framing gap applies. Moderate tier : best available joint-stability observable,
+        term-verified active, but the ICF single-joint function framing has no exact SNOMED CT analogue and
+        the target is a measurement observable. mapping_type=broader.
+        """
+}
+mapping "b7151.1" source="b7151" target="SNOMED_CT:276329005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7151 SNOMED CT 276329005 = ICF b7151 Stability of SEVERAL joints functions: the specific
+        function of the stability of multiple joints together. Target =, active RF2 production, the
+        generic joint-stability observable. No dedicated function-observable exists; 276329005 (joint
+        stability, generic) is the nearest standard concept and 43471007 (Musculoskeletal stability,
+        function) is the broader MSK function parent. Broader: the generic joint-stability observable
+        subsumes the several-joints framing; the measurement-observable vs ICF-function framing gap
+        applies. Moderate tier : best available joint-stability observable, term-verified active, but
+        the ICF several-joints function framing has no exact SNOMED CT analogue. mapping_type=broader.
+        """
+}
+mapping "b7152.1" source="b7152" target="SNOMED_CT:43471007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7152 SNOMED CT 43471007 = ICF b7152 General joint stability functions: the function of
+        joint stability considered generally across the body. Target =, active RF2 production, the
+        function-framed SNOMED CT observable for generalised MSK stability — the direct function-framed
+        match for ICF's general-joint-stability framing. This is the closest standard equivalent; no
+        dedicated function-observable exists, but 43471007 names MSK stability AS A FUNCTION at the
+        general level. Broader rather than exact: 43471007 spans the whole MSK system's stability
+        (joints + bones + MSK-structure) where the source is specifically the general JOINT-stability
+        axis; the target fully contains the source but adds the bone/MSK-structure stability axes.
+        Moderate tier : direct function-and-scope match (general MSK stability function), term-verified
+        active, but one-level-broader and no independent Athena crosswalk re-verified.
+        mapping_type=broader.
+        """
+}
+assessment "b7158.omop" source="b7158" outcome=no_match target-system="OMOP_EXT"
+assessment "b7159.omop" source="b7159" outcome=no_match target-system="OMOP_EXT"
+mapping "b720.1" source="b720" target="SNOMED_CT:364577009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b720 SNOMED CT 364577009 = ICF b720 Mobility of bone functions: the body functions of the
+        mobility between skeletal parts (bone-on-bone movement at non-synovial articulations such as
+        scapula, pelvis, carpals, tarsals), with children b7200 scapula, b7201 pelvis, b7202 carpal
+        bones, b7203 tarsal bones, b7208/b7209 residuals. Target =, active RF2 production, the direct
+        SNOMED CT observable that names bone movement — the closest standard equivalent of ICF b720's
+        skeletal-part-mobility framing. Broader rather than exact: 364577009 is a flat observable for
+        any bone movement where the source is specifically the function of movement BETWEEN skeletal
+        parts; the target subsumes the source and the measurement-observable vs ICF-function framing gap
+        applies. High tier : direct term-and-scope match (movement of bone), term-verified active, but
+        one-level-broader in model framing and no independent Athena crosswalk re-verified.
+        mapping_type=broader.
+        """
+}
+mapping "b7200.1" source="b7200" target="SNOMED_CT:364577009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7200 SNOMED CT 364577009 = ICF b7200 Mobility of scapula functions: the specific function
+        of the movement of the scapula (scapulothoracic mobility). Target =, active RF2 production, the
+        generic bone-movement observable. No dedicated or function-observable exists in the mirror (the
+        scapula concepts present are body structures or procedures); 364577009 is the nearest standard
+        ancestor. Broader: the generic bone-movement observable subsumes the scapula-specific framing;
+        the measurement-observable vs ICF-function framing gap applies. Low tier : the closest
+        defensible ancestor, term-verified active, but a deeper climb (generic bone movement vs
+        scapula-specific function) and no exact scapula-mobility function analogue.
+        mapping_type=broader.
+        """
+}
+mapping "b7201.1" source="b7201" target="SNOMED_CT:364577009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7201 SNOMED CT 364577009 = ICF b7201 Mobility of pelvis functions: the specific function of
+        the movement of the pelvis (pelvic-girdle mobility). Target =, active RF2 production, the
+        generic bone-movement observable. No dedicated function-observable exists in the mirror
+        (229262002 is a regime/therapy procedure; 771392003 is a stability observable, not a mobility
+        function); 364577009 is the nearest standard ancestor. Broader: the generic bone-movement
+        observable subsumes the pelvis-specific framing; the measurement-observable vs ICF-function
+        framing gap applies. Low tier : closest defensible ancestor, term-verified active, but deeper
+        climb and no exact pelvic-mobility function analogue. mapping_type=broader.
+        """
+}
+mapping "b7202.1" source="b7202" target="SNOMED_CT:364577009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7202 SNOMED CT 364577009 = ICF b7202 Mobility between carpal bones functions: the specific
+        function of the movement between the carpal bones (wrist/carpal interosseous mobility). Target
+        =, active RF2 production, the generic bone-movement observable. No dedicated function-observable
+        exists in the mirror (the carpal concepts present are body structures or fracture disorders; the
+        wrist-specific range concepts are joint-range observables at the radiocarpal joint, not the
+        intercarpal mobility the source names); 364577009 is the nearest standard ancestor. Broader: the
+        generic bone-movement observable subsumes the intercarpal-mobility framing; the
+        measurement-observable vs ICF-function framing gap applies. Low tier : closest defensible
+        ancestor, term-verified active, but deeper climb and no exact intercarpal-mobility function
+        analogue. mapping_type=broader.
+        """
+}
+mapping "b7203.1" source="b7203" target="SNOMED_CT:364577009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7203 SNOMED CT 364577009 = ICF b7203 Mobility between tarsal bones functions: the specific
+        function of the movement between the tarsal bones (ankle/foot intertarsal mobility). Target =,
+        active RF2 production, the generic bone-movement observable. No dedicated function-observable
+        exists in the mirror (the tarsal concepts present are body structures, fracture disorders, or
+        single-axis range concepts like 299486007 Range of midtarsal pronation — none of which name the
+        general intertarsal mobility function the source denotes); 364577009 is the nearest standard
+        ancestor. Broader: the generic bone-movement observable subsumes the intertarsal-mobility
+        framing; the measurement-observable vs ICF-function framing gap applies. Low tier : closest
+        defensible ancestor, term-verified active, but deeper climb and no exact intertarsal-mobility
+        function analogue. mapping_type=broader.
+        """
+}
+assessment "b7208.omop" source="b7208" outcome=no_match target-system="OMOP_EXT"
+assessment "b729.omop" source="b729" outcome=no_match target-system="OMOP_EXT"
+mapping "b730.1" source="b730" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b730 SNOMED CT 78718001 = ICF b730 Muscle power functions: the body functions related to the
+        power generated by muscles, with children b7300 single muscles/groups, b7301 one limb, b7302 one
+        side of body, b7303 lower body, b7304/b7308/b7309 residuals. Target =, active RF2 production,
+        the direct function-framed SNOMED CT observable that names muscle AS A FUNCTION — the closest
+        standard equivalent of ICF b730's muscle-power framing. No dedicated observable exists in the
+        mirror (the muscle-power concepts present are findings/scales — 249948009, 26544005, 298286003
+        Skeletal muscle power problem — none of which is the function observable). Broader rather than
+        exact: 78718001 spans ALL muscle function (power + tone + endurance + control) where the source
+        is specifically the POWER axis; the target fully contains the source but adds the
+        tone/endurance/control axes. High tier : direct function-and-scope match (muscle function),
+        term-verified active, but one-level-broader and no independent Athena crosswalk re-verified.
+        mapping_type=broader.
+        """
+}
+mapping "b730-b749.1" source="b730-b749" target="SNOMED_CT:106029005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b730-b749 SNOMED CT 106029005 = ICF block b730-b749 Muscle functions: the block-level
+        grouping of muscle-power functions (b730), muscle-tone functions (b735), muscle-control
+        functions (b740) and the b749 residual. Target =, active RF2 production. No single SNOMED CT block
+        observable exists; 78718001 is the closer parent but is itself a single function observable for
+        the muscle system, while the b730-b749 block is the multi-axis muscle-function grouping whose
+        nearest single SNOMED CT grouping concept is the general MSK function. Broader (moderate): a
+        block-level muscle-function grouping mapped up to the general MSK function is one level broader
+        than the b730 map and the target subsumes the joint/bone axes too, but it is the nearest
+        defensible grouping ancestor. Per the chapter/block precedent the
+        moderate tier applies for this best-available block-level map. mapping_type=broader.
+        """
+}
+mapping "b7300.1" source="b7300" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7300 SNOMED CT 78718001 = ICF b7300 Power of isolated muscles and muscle groups functions:
+        the specific function of the power of individual named muscles or muscle groups. Target =,
+        active RF2 production, the function-framed SNOMED CT observable for muscle function. No dedicated
+        function-observable exists; the muscle-power concepts present are findings/scales (249948009,
+        249956007) or localised weakness findings (713512009 upper limb, 1137405009 upper arm), none of
+        which is the single-muscle-group power function observable. Broader: the general muscle-function
+        observable subsumes the single-muscle-group power framing; the function-observable vs
+        ICF-function framing is aligned (both functions), but the target adds the tone/endurance/control
+        axes. Moderate tier : closest defensible function-framed muscle observable, term-verified
+        active, but one-level-broader and the source's single-muscle-group specificity is lost.
+        mapping_type=broader.
+        """
+}
+mapping "b7301.1" source="b7301" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7301 SNOMED CT 78718001 = ICF b7301 Power of muscles of one limb functions: the specific
+        function of the muscle power of ONE limb (one arm or one leg). Target =, active RF2 production,
+        the function-framed SNOMED CT observable for muscle function. No dedicated function-observable
+        exists; the limb-muscle-power concepts present are PATHOLOGICAL findings (713514005, 713512009
+        of upper limb) which denote WEAKNESS as a disorder, not the ICF function-capacity framing —
+        mapping a function code to a disorder finding would conflate capacity with pathology. Broader:
+        the general muscle-function observable is the nearest defensible function-framed ancestor; the
+        source's one-limb specificity is lost (the limb-weakness findings were rejected as
+        disorder-framed). Low tier : the only defensible function-framed muscle ancestor, term-verified
+        active, but a deeper climb (whole-muscle function vs one-limb power) and the regional
+        specificity is sacrificed to avoid a disorder-finding conflation. mapping_type=broader.
+        """
+}
+mapping "b7302.1" source="b7302" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7302 SNOMED CT 78718001 = ICF b7302 Power of muscles of one side of body functions: the
+        specific function of the muscle power of ONE side of the body (hemipower, ipsilateral arm +
+        leg). Target =, active RF2 production, the function-framed SNOMED CT observable for muscle
+        function. No dedicated function-observable exists; the one-side-muscle-power concepts present
+        are PATHOLOGICAL disorders (20022000, 50582007) which denote one-sided WEAKNESS/PARALYSIS as
+        disorders, not the ICF function-capacity framing — mapping a function code to a disorder finding
+        would conflate capacity with pathology. Broader: the general muscle-function observable is the
+        nearest defensible function-framed ancestor; the source's one-side specificity is lost
+        (hemiparesis was rejected as disorder-framed). Low tier : the only defensible function-framed
+        muscle ancestor, term-verified active, but a deeper climb (whole-muscle function vs one-side
+        power) and the regional specificity is sacrificed to avoid a disorder-finding conflation.
+        mapping_type=broader.
+        """
+}
+mapping "b7303.1" source="b7303" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7303 SNOMED CT 78718001 = ICF b7303 Power of muscles of lower half of body functions: the
+        specific function of the muscle power of the LOWER half of the body (both legs / parapower).
+        Target =, active RF2 production, the function-framed SNOMED CT observable for muscle function. No
+        dedicated function-observable exists; the lower-half-muscle-power concepts present are
+        PATHOLOGICAL disorders (1845001, 60389000) which denote lower-half WEAKNESS/PARALYSIS as
+        disorders, not the ICF function-capacity framing — mapping a function code to a disorder finding
+        would conflate capacity with pathology. Broader: the general muscle-function observable is the
+        nearest defensible function-framed ancestor; the source's lower-half specificity is lost
+        (paraparesis was rejected as disorder-framed). Low tier : the only defensible function-framed
+        muscle ancestor, term-verified active, but a deeper climb (whole-muscle function vs lower-half
+        power) and the regional specificity is sacrificed to avoid a disorder-finding conflation.
+        mapping_type=broader.
+        """
+}
+mapping "b7304.1" source="b7304" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7304 SNOMED CT 78718001 = ICF b7304 Power of muscles of all four limbs: the regional
+        subdivision of muscle-power functions covering all four extremities together. Target =, active
+        RF2 production. SNOMED CT has no observable entity for muscle power of all limbs specifically --
+        the closest power concept (249948009) has no regional children, and the b7300-b7303
+        mappings use 78718001 as the standard target for the b730 muscle-power family.
+        Broader (low): the target subsumes b7304 (muscle power is the central muscle function) but a
+        regional power-of-all-limbs function is mapped up to the whole muscle-function observable, the
+        same climb applied to b7301/b7302/b7303. mapping_type=broader.
+        """
+}
+mapping "b7305.1" source="b7305" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7305 SNOMED CT 78718001 = ICF b7305 Power of muscles of the trunk: regional subdivision of
+        muscle-power functions for trunk (axial) musculature. Target =. SNOMED CT has no trunk-muscle-power
+        observable (only SNOMED CT 78718001 249542000 exists as a regional muscle observable, in the tone
+        branch). Following the b730 regional precedent (b7301/b7302/b7303 -> 78718001 at broader), map
+        b7305 up to the muscle-function observable. Broader (low): regional trunk-power function mapped
+        up to whole muscle function; consistent climb as the sibling regional codes.
+        mapping_type=broader.
+        """
+}
+mapping "b7306.1" source="b7306" target="SNOMED_CT:78718001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7306 SNOMED CT 78718001 = ICF b7306 Power of all muscles of the body: the whole-body
+        subdivision of muscle-power functions. Target =. Although b7306 is whole-body (closest in scope
+        to the general muscle-function observable), it denotes the POWER axis specifically, whereas
+        78718001 spans all muscle functions (contraction, tone, relaxation, motor units). Broader (low):
+        the target subsumes b7306 but loses the power-specificity; same family precedent as b7301-b7303.
+        mapping_type=broader.
+        """
+}
+assessment "b7308.omop" source="b7308" outcome=no_match target-system="OMOP_EXT"
+assessment "b7309.omop" source="b7309" outcome=no_match target-system="OMOP_EXT"
+mapping "b735.1" source="b735" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b735 SNOMED CT 6918002 = ICF b735 Muscle tone functions: the second-level parent of the
+        muscle-tone family (functions related to the tension of resting muscles and the resistance
+        offered to passive movement). Target =, active RF2 production, the direct SNOMED CT concept for
+        muscle tone. Broader (high): SNOMED CT models tone as an observable property (under SNOMED CT 6918002
+        364568002) rather than as a, so the target denotes the same clinical idea (muscle tone) but
+        framed as an observable; one-level kind mismatch, direct concept match. This mirrors the
+        b715/b720 parent-level precedent (broader for the direct-observable match).
+        mapping_type=broader.
+        """
+}
+mapping "b7350.1" source="b7350" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7350 SNOMED CT 6918002 = ICF b7350 Tone of isolated muscles and muscle groups: regional
+        subdivision of muscle-tone functions for individual muscles or specific groups. Target =. SNOMED CT
+        has no observable for (only abdominal 249542000 and pelvic 248908009 regional tone observables
+        exist). Broader (low): the regional/group-specific tone function is mapped up to the general
+        muscle-tone observable; same climb as the b730 regional power codes. mapping_type=broader.
+        """
+}
+mapping "b7351.1" source="b7351" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7351 SNOMED CT 6918002 = ICF b7351 Tone of muscles of one limb: regional subdivision of
+        muscle-tone functions for a single limb. Target =. SNOMED CT has no single-limb muscle-tone
+        observable. Broader (low): single-limb tone function mapped up to the general muscle-tone
+        observable. mapping_type=broader.
+        """
+}
+mapping "b7352.1" source="b7352" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7352 SNOMED CT 6918002 = ICF b7352 Tone of muscles on one side of body: regional
+        subdivision of muscle-tone functions for one body half (hemiplegic/hemiparetic distribution).
+        Target =. SNOMED CT has no observable; the lateralised findings (e.g. 422966009) are findings, not
+        the function, and are asymmetry-specific. Broader (low): one-side tone function mapped up to the
+        general muscle-tone observable. mapping_type=broader.
+        """
+}
+mapping "b7353.1" source="b7353" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7353 SNOMED CT 6918002 = ICF b7353 Tone of muscles of lower half of body: regional
+        subdivision of muscle-tone functions for the lower body half (paraplegic/paraparetic
+        distribution). Target =. SNOMED CT has no lower-body-half muscle-tone observable. Broader (low):
+        lower-half tone function mapped up to the general muscle-tone observable. mapping_type=broader.
+        """
+}
+mapping "b7354.1" source="b7354" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7354 SNOMED CT 6918002 = ICF b7354 Tone of muscles of all four limbs: regional subdivision
+        of muscle-tone functions for all four extremities together. Target =. SNOMED CT has no all-limbs
+        muscle-tone observable. Broader (low): all-limbs tone function mapped up to the general
+        muscle-tone observable. mapping_type=broader.
+        """
+}
+mapping "b7355.1" source="b7355" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7355 SNOMED CT 6918002 = ICF b7355 Tone of trunk muscles: regional subdivision of
+        muscle-tone functions for the trunk. Target =. SNOMED CT's only trunk-region tone observable is
+        SNOMED CT 6918002 249542000 (abdominal wall, not the whole trunk); the general muscle-tone
+        observable is the better ancestor for trunk tone as a whole. Broader (low): trunk tone function
+        mapped up to the general muscle-tone observable. mapping_type=broader.
+        """
+}
+mapping "b7356.1" source="b7356" target="SNOMED_CT:6918002" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7356 SNOMED CT 6918002 = ICF b7356 Tone of all muscles of the body: the whole-body
+        subdivision of muscle-tone functions. Target =. b7356 is whole-body in scope (closest to the
+        general tone observable), but the SNOMED CT concept spans the observable as assessed; mapping the
+        ICF whole-body tone function to the single tone observable is the direct match at one small
+        framing remove. Broader (low): per the regional-code precedent in this family, the consistent
+        tier is. mapping_type=broader.
+        """
+}
+assessment "b7358.omop" source="b7358" outcome=no_match target-system="OMOP_EXT"
+assessment "b7359.omop" source="b7359" outcome=no_match target-system="OMOP_EXT"
+mapping "b740.1" source="b740" target="SNOMED_CT:406203001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b740 SNOMED CT 406203001 = ICF b740 Muscle endurance functions: functions related to
+        sustaining muscle contraction over the required period (muscle fatigability). Target =, active
+        RF2 production, the SNOMED CT concept for endurance (sits under SNOMED CT 406203001 359755007).
+        Broader (moderate): SNOMED CT has no muscle-specific endurance observable (88965008 is a
+        therapy/exercise, not a function), so the general endurance observable is the best containing
+        concept -- it subsumes muscle endurance but is not muscle-specific, losing the muscle axis. This
+        is a one-axis broader climb (endurance observable subsumes all endurance kinds including
+        muscular), so moderate rather than low. mapping_type=broader.
+        """
+}
+mapping "b7400.1" source="b7400" target="SNOMED_CT:406203001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7400 SNOMED CT 406203001 = ICF b7400 Endurance of isolated muscles: regional subdivision of
+        muscle-endurance functions for a single muscle. Target =. SNOMED CT has no isolated-muscle
+        endurance observable. Broader (low): isolated-muscle endurance function mapped up to the general
+        endurance observable; the regional climb from the b740 parent drops the tier, consistent with
+        the b730/b735 regional pattern. mapping_type=broader.
+        """
+}
+mapping "b7401.1" source="b7401" target="SNOMED_CT:406203001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7401 SNOMED CT 406203001 = ICF b7401 Endurance of muscle groups: regional subdivision of
+        muscle-endurance functions for a muscle group. Target =. SNOMED CT has no muscle-group endurance
+        observable. Broader (low): muscle-group endurance function mapped up to the general endurance
+        observable. mapping_type=broader.
+        """
+}
+mapping "b7402.1" source="b7402" target="SNOMED_CT:406203001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b7402 SNOMED CT 406203001 = ICF b7402 Endurance of all muscles of the body: the whole-body
+        subdivision of muscle-endurance functions. Target =. Although b7402 is whole-body in scope
+        (closest to the general endurance observable), the SNOMED CT concept is not muscle-specific, so the
+        muscle axis is lost. Broader (low): same regional-code tier as b7400/b7401 for consistency
+        within the family. mapping_type=broader.
+        """
+}
+assessment "b7408.omop" source="b7408" outcome=no_match target-system="OMOP_EXT"
+assessment "b7409.omop" source="b7409" outcome=no_match target-system="OMOP_EXT"
+assessment "b749.omop" source="b749" outcome=no_match target-system="OMOP_EXT"

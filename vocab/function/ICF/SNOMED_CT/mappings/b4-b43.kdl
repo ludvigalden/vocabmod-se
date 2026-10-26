@@ -1,0 +1,414 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b4-b43
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "b4.omop" source="b4" outcome=no_match target-system="OMOP_EXT"
+mapping "b410.1" source="b410" target="SNOMED_CT:86185002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b410 SNOMED CT 86185002 = ICF b410 Heart functions: the body functions of the heart,
+        including b4100 heart rate, b4101 heart rhythm, b4102 contraction of ventricles, b4103 pumping
+        of ventricles, b4104 cardiac output, b4105 blood pressure. Target =, active RF2 production. This
+        is the direct SNOMED CT observable that captures heart-as-a-function and is the closest standard
+        equivalent of ICF b410; it is the functional observable where 25848009 Increased/43650005
+        Decreased/1148838007 105981003 are its valued/pathological correlates. Broader rather than exact
+        only because ICF b410 is a multi-child function block (b4100-b4105) where the SNOMED CT concept is
+        a single flat observable, and ICF uses (Hjärtfunktioner) vs SNOMED CT. High tier : direct
+        term-and-scope match (cardiac function = heart functions) verified active in the mirror, but
+        one-level-broader in model granularity with no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b410-b429.1" source="b410-b429" target="SNOMED_CT:86185002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b410-b429 SNOMED CT 86185002 = ICF block b410-b429 Functions of the cardiovascular system:
+        the block-level grouping of heart functions (b410) AND blood vessel functions (b415) AND
+        heart/blood-vessel functions (b420-b429). Target =, active. No single SNOMED CT observable exists
+        (733741005 is an *finding*, not the function observable; 268902002 is inactive/D); the nearest
+        standard ancestor that contains the heart-function core of this block is cardiac function.
+        Broader (moderate): a block-level cardiovascular-system grouping mapped up to the heart-function
+        observable is a deeper climb than the b410 chapter map, and the target covers only the heart
+        (b410) axis fully — the blood-vessel axes (b415/b420) are only partially contained — but cardiac
+        function is the nearest defensible ancestor and the dominant axis. Per the rubric, the moderate
+        tier applies for this best-available but looser block-level map.
+        """
+}
+mapping "b4100.1" source="b4100" target="SNOMED_CT:364075005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4100 SNOMED CT 364075005 = ICF b4100 Heart rate functions: the heart sub-function of the
+        rate (beats per unit time) at which the heart contracts. Target =, active RF2 production. Exact
+        1:1 equivalence: identical clinical concept (heart rate as a cardiac function), confirmed by
+        literal FSN term match; ICF = heart rate = SNOMED CT. The SNOMED CT concept is the direct functional
+        observable where 78564009, 428531008, 10675001/76863003 111972009/248630007 abnormal are its
+        valued correlates. (The legacy 76539000 is inactive/D; 364075005 is the active heart-rate
+        observable.) exact_match: same concept, term-verified.
+        """
+}
+mapping "b4101.1" source="b4101" target="SNOMED_CT:364074009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4101 SNOMED CT 364074009 = ICF b4101 Heart rhythm functions: the heart sub-function of the
+        rhythmic pattern of cardiac contraction (regularity of the heartbeat, the underlying rhythm).
+        Target =, active RF2 production. No dedicated observable exists in SNOMED CT as a single concept:
+        the legacy 76539000 is inactive/D (valid_end 2006-07-31), and the active heart-rhythm
+        observables are 364074009 251149006. 364074009 is the closest functional observable (it captures
+        the regularity-of-rhythm axis that is the clinical core of the heart-rhythm function). Broader
+        rather than exact: the SNOMED CT concept is specifically the *regularity* of heart rhythm (one axis
+        of the broader ICF b4101 heart-rhythm function, which also encompasses rhythm pattern/type), and
+        the active rhythm-function concept was retired. High tier : the closest active defensible
+        heart-rhythm observable, term-verified, direct cardiac domain, but one-level-broader (regularity
+        axis only) with no independent crosswalk; 251149006 is the alternate axis but equally
+        one-level-broader.
+        """
+}
+mapping "b4102.1" source="b4102" target="SNOMED_CT:8997002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4102 SNOMED CT 8997002 = ICF b4102: the heart sub-function of the contraction FORCE of the
+        ventricular muscles (the strength/inotropy of ventricular contraction that ejects blood). Target
+        =, active RF2 production, a direct child of 111973004 86185002. This is the only SNOMED CT
+        observable that names the ventricular-contraction function as such (sibling to 59972007); no
+        dedicated / observable exists in the mirror (the legacy 373129009/432439005 inotrope hits are
+        substances/findings, not functions). Broader rather than exact: 8997002 denotes the ventricular
+        systole/contraction-phase function, which captures the contraction axis but not the ICF
+        (inotropic strength) specificity the source asserts. Low tier : the closest defensible
+        ventricular-contraction observable, term-verified active in both mirrors, but it models the
+        contraction phase rather than the contraction-force function, and there is no independent Athena
+        crosswalk; real doubt remains. (404986003 Cardiac pump effectiveness considered: it is a global
+        pump-effectiveness observable, one step further from the ventricular-contraction-force function
+        than 8997002.)
+        """
+}
+mapping "b4103.1" source="b4103" target="SNOMED_CT:251053005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4103 SNOMED CT 251053005 = ICF b4103: the heart sub-function of the BLOOD SUPPLY to the
+        heart (the coronary/perfusion supply that nourishes the myocardium). Target =, active RF2
+        production. This is the direct SNOMED CT functional observable for blood supply/perfusion to the
+        heart muscle and is the closest standard equivalent of ICF b4103; the adjacent 427751006 is a
+        defect-measurement concept, not the perfusion function. Broader rather than exact only because
+        ICF b4103 frames (the supply function) where SNOMED CT frames (the perfusion observable), and ICF
+        uses (heart's blood supply) vs SNOMED CT — same clinical domain, slightly different framing. High
+        tier : direct term-and-scope match (myocardial perfusion = heart blood supply), verified active
+        in both mirrors, but one-level model-granularity difference and no independent Athena crosswalk
+        re-verified.
+        """
+}
+assessment "b4108.omop" source="b4108" outcome=no_match target-system="OMOP_EXT"
+assessment "b4109.omop" source="b4109" outcome=no_match target-system="OMOP_EXT"
+mapping "b415.1" source="b415" target="SNOMED_CT:106075002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b415 SNOMED CT 106075002 = ICF b415 Blood vessel functions: the body functions of the blood
+        vessels (vascular system), including b4150 arterial, b4151 capillary, b4152 venous functions.
+        Target =, active RF2 production, a direct child of 70337006. Exact 1:1 equivalence: identical
+        clinical concept (blood vessel / vascular function), confirmed by literal FSN term-and-scope
+        match (=); the SNOMED CT concept is the direct functional observable whose children are 3962002,
+        40619007, 58190003. exact_match: same concept, term-verified active in both mirrors.
+        """
+}
+mapping "b4150.1" source="b4150" target="SNOMED_CT:106075002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4150 SNOMED CT 106075002 = ICF b4150 Arterial functions: the blood-vessel sub-function of
+        the arteries (the function of arteries as conducting/vessel vessels, distinct from capillaries
+        b4151 and veins b4152). No dedicated observable entity exists in SNOMED CT: the mirror has many
+        specific arterial observables (252061002, 72313002, 386534000, 87179004) but no single grouping
+        observable, and no arterial-function child sits under 106075002. Target =, active, is the
+        nearest standard ancestor that fully contains the arterial-function domain (arteries are blood
+        vessels, so arterial function is subsumed by vascular function). Broader: a one-to-two-level
+        climb (arterial function ⊂ vascular function), with the target fully containing the source. Low
+        tier : the best-available defensible ancestor, term-verified active, but the climb loses the
+        arterial-vs-capillary-vs-venous specificity the ICF code makes, and there is no independent
+        crosswalk. (Mapping to a single narrower arterial observable such as 252061002 was considered
+        and rejected: that would be a narrower aspect, not the function as a whole.)
+        """
+}
+mapping "b4151.1" source="b4151" target="SNOMED_CT:106075002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4151 SNOMED CT 106075002 = ICF b4151 Capillary functions: the blood-vessel sub-function of
+        the capillaries (the function of capillaries — exchange vessels — distinct from arteries b4150
+        and veins b4152). No dedicated grouping observable exists in SNOMED CT: the mirror has
+        capillary-aspect observables (15527001, 19381008, 34529001) but no single parent, and these
+        aspect observables are children of 58190003 Vascular flow / 40619007. Target =, active, is the
+        nearest standard ancestor that fully contains the capillary-function domain (capillaries are
+        blood vessels). Broader: a one-to-two-level climb (capillary function ⊂ vascular function). Low
+        tier : the best-available defensible ancestor, term-verified active, but the climb loses the
+        capillary specificity the ICF code makes, and the three capillary-aspect observables
+        (filling/permeability/resistance) are narrower aspects rather than the function as a whole; no
+        independent crosswalk.
+        """
+}
+mapping "b4152.1" source="b4152" target="SNOMED_CT:106075002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4152 SNOMED CT 106075002 = ICF b4152 Venous functions: the blood-vessel sub-function of the
+        veins (the function of veins as return vessels, distinct from arteries b4150 and capillaries
+        b4151). No dedicated grouping observable exists in SNOMED CT: the mirror has venous-aspect
+        observables (252081001, 252076005, 22921004) but no single parent under 106075002. Target =,
+        active, is the nearest standard ancestor that fully contains the venous-function domain (veins
+        are blood vessels). Broader: a one-to-two-level climb (venous function ⊂ vascular function). Low
+        tier : the best-available defensible ancestor, term-verified active, but the climb loses the
+        venous specificity the ICF code makes, and the venous-aspect observables (flow/pressure/pulse)
+        are narrower aspects rather than the function as a whole; no independent crosswalk.
+        """
+}
+assessment "b4158.omop" source="b4158" outcome=no_match target-system="OMOP_EXT"
+assessment "b4159.omop" source="b4159" outcome=no_match target-system="OMOP_EXT"
+mapping "b420.1" source="b420" target="SNOMED_CT:75367002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b420 SNOMED CT 75367002 = ICF b420 Blood pressure functions: the body functions of blood
+        pressure (the pressure exerted by circulating blood on the blood-vessel walls), including b4200
+        increased, b4201 decreased, b4202 maintenance of blood pressure. Target =, active RF2
+        production. Exact 1:1 equivalence: identical clinical concept (blood pressure), confirmed by
+        literal FSN term match (=); the SNOMED CT concept is the direct functional observable whose
+        children are 271649006, 271650006, 6797001, 386534000. exact_match: same concept, term-verified
+        active in both mirrors.
+        """
+}
+mapping "b4200.1" source="b4200" target="SNOMED_CT:75367002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4200 SNOMED CT 75367002 = ICF b4200: the blood-pressure sub-function of INCREASED blood
+        pressure (the regulatory function that raises blood pressure — clinically the function whose
+        dysregulation is hypertension). No dedicated observable exists in SNOMED CT: the mirror's
+        increased-BP hits are findings/disorders (18050000, 81308009, 38341003), not functions; the BP
+        observables under 75367002 are measurement concepts (systolic/diastolic/mean), not the
+        increase-regulatory function. Target =, active, is the nearest standard ancestor that fully
+        contains the increased-BP function domain. Broader: the target subsumes the source (increased BP
+        ⊂ blood pressure). Low tier : the best-available defensible ancestor, term-verified active, but
+        the SNOMED CT concept is the measurable quantity rather than the increase-regulatory function, and
+        there is no independent crosswalk; real doubt remains.
+        """
+}
+mapping "b4201.1" source="b4201" target="SNOMED_CT:75367002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4201 SNOMED CT 75367002 = ICF b4201: the blood-pressure sub-function of DECREASED blood
+        pressure (the regulatory function that lowers blood pressure — clinically the function whose
+        dysregulation is hypotension). No dedicated observable exists in SNOMED CT: the mirror's
+        decreased-BP hits are findings/disorders (42689008, 45007003, 419646002), not functions; the BP
+        observables under 75367002 are measurement concepts, not the decrease-regulatory function.
+        Target =, active, is the nearest standard ancestor that fully contains the decreased-BP function
+        domain. Broader: the target subsumes the source (decreased BP ⊂ blood pressure). Low tier : the
+        best-available defensible ancestor, term-verified active, but the SNOMED CT concept is the
+        measurable quantity rather than the decrease-regulatory function, and there is no independent
+        crosswalk; real doubt remains.
+        """
+}
+mapping "b4202.1" source="b4202" target="SNOMED_CT:75367002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4202 SNOMED CT 75367002 = ICF b4202: the blood-pressure sub-function of MAINTENANCE of
+        blood pressure (the regulatory/baroreflex function that maintains/defends blood pressure
+        homeostasis, e.g. orthostatic compensation). No dedicated / observable exists in SNOMED CT: the
+        mirror's BP-regulation hits are procedures/regimes (12569007, 183413003), and 713982009 is
+        heart-rate not BP; there is no BP-maintenance observable entity. Target =, active, is the
+        nearest standard ancestor that fully contains the BP-maintenance function domain. Broader: the
+        target subsumes the source (BP maintenance ⊂ blood pressure). Low tier : the best-available
+        defensible ancestor, term-verified active, but the SNOMED CT concept is the measurable quantity
+        rather than the maintenance/regulatory function, and there is no independent crosswalk; real
+        doubt remains.
+        """
+}
+assessment "b4208.omop" source="b4208" outcome=no_match target-system="OMOP_EXT"
+assessment "b4209.omop" source="b4209" outcome=no_match target-system="OMOP_EXT"
+assessment "b429.omop" source="b429" outcome=no_match target-system="OMOP_EXT"
+mapping "b430.1" source="b430" target="SNOMED_CT:86084001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b430 SNOMED CT 86084001 = ICF b430 Haematological functions: the body functions of the
+        haematological system (blood), including b4300 blood formation, b4301 oxygen transport, b4302
+        metabolism transport, b4303 coagulation. Target =, active RF2 production. This is the direct
+        SNOMED CT functional observable that captures blood-as-a-function and is the closest standard
+        equivalent of ICF b430; it is the functional observable whose children are 178224005, 74848003,
+        417313007, 103228002. Broader rather than exact: ICF b430 is a multi-child function block
+        (b4300-b4303) where the SNOMED CT concept is a single observable, and ICF (blood-forming functions)
+        vs SNOMED CT differ slightly in framing — the ICF name leans on blood-formation while the block
+        also covers transport (b4301/b4302), which the SNOMED CT Hematologic-function hierarchy covers only
+        partially. High tier : direct term-and-scope match (hematologic function = blood functions)
+        verified active in both mirrors, but one-level-broader in model granularity with no independent
+        Athena crosswalk re-verified.
+        """
+}
+mapping "b430-b439.1" source="b430-b439" target="SNOMED_CT:86084001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b430-b439 SNOMED CT 86084001 = ICF block b430-b439 Functions of the haematological and
+        immunological systems: the block-level grouping of haematological functions (b430) AND
+        immunological-system functions (b435, handled). Target =, active. No single SNOMED CT
+        observable spans haematological AND immunological functions together (the immunological
+        functions resolve to 52480002; SNOMED CT has no co-extensive grouping observable). Broader (low): a
+        block-level two-system grouping mapped up to the haematological-function observable is a deeper
+        climb — the target covers only the haematological (b430) axis and does not contain the
+        immunological (b435) axis — but Hematologic function is the nearest defensible ancestor for the
+        dominant (haematological) axis of this block. Per the rubric, the low tier applies for this
+        best-available but loose two-system block map.
+        """
+}
+mapping "b4300.1" source="b4300" target="SNOMED_CT:178224005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4300 SNOMED CT 178224005 = ICF b4300 Blood formation: the haematological sub-function of
+        blood formation (the production of blood cells — haematopoiesis). Target =, active RF2
+        production, a direct child of 86084001. Exact 1:1 equivalence: identical clinical concept (blood
+        formation = haematopoiesis as a function), confirmed by literal FSN term-and-scope match (=);
+        ICF = blood formation = SNOMED CT. The SNOMED CT concept is the active functional observable where
+        15722009 is the retired (D) predecessor and 33038002 Normal hematopoiesis / 73241006 are its
+        valued findings. exact_match: same concept, term-verified active in both mirrors.
+        """
+}
+mapping "b4301.1" source="b4301" target="SNOMED_CT:16206004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4301 SNOMED CT 16206004 = ICF b4301: the haematological sub-function of BLOOD'S OXYGEN
+        TRANSPORT (the carrier function by which blood — via haemoglobin in erythrocytes —
+        transports/carries oxygen from lungs to tissues). No dedicated observable exists in SNOMED CT: the
+        mirror has 103228002 (one component observable under Hematologic function), 123820005 373631004;
+        the disorder 238160003 is absent. Target =, active RF2 production, is the nearest functional
+        observable for the oxygen-transport/delivery domain (it sits as a metabolic observable; its
+        children are oxygen-therapy observables). Broader rather than exact: 16206004 frames oxygen
+        delivery (the end-to-end delivery of oxygen to tissue, of which blood transport is one stage)
+        where ICF b4301 frames specifically the blood's transport/carriage function — the target is
+        broader than the blood-transport specificity the source asserts. Low tier : the closest
+        defensible oxygen-transport-related observable, term-verified active in both mirrors, but it is
+        a delivery concept rather than the blood-transport function, and there is no independent
+        crosswalk; real doubt remains.
+        """
+}
+mapping "b4302.1" source="b4302" target="SNOMED_CT:86084001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4302 SNOMED CT 86084001 = ICF b4302: the haematological sub-function of BLOOD'S TRANSPORT
+        OF METABOLIC PRODUCTS (the carrier function by which blood transports metabolic products —
+        nutrients in and waste products out — to and from tissues). No dedicated observable exists in
+        SNOMED CT: the mirror has no blood-metabolite-transport function observable (the
+        intestinal-epithelial transport observables 12591000/40944002/42447007 are gut-cell transport,
+        not blood; 111394006 is a disorder). The only defensible standard ancestor in the haematological
+        domain is the broad blood-function root. Target =, active, is the nearest standard ancestor that
+        loosely contains the blood-carrier-function domain. Broader: a deep climb (blood metabolite
+        transport ⊂ hematologic function), and Hematologic function is primarily a
+        blood-cell/haematopoiesis/coagulation hierarchy that covers the plasma-carrier axis only
+        loosely. Weak tier : only a loose aspect-level relationship is defensible — the target is
+        recorded to preserve the blood-domain lead rather than asserted as a real map, and no
+        independent crosswalk exists.
+        """
+}
+mapping "b4303.1" source="b4303" target="SNOMED_CT:74848003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4303 SNOMED CT 74848003 = ICF b4303 Coagulation functions: the haematological sub-function
+        of blood coagulation (the clotting/haemostasis function — the function whose impairment is a
+        bleeding/clotting disorder). Target =, active RF2 production, a direct child of 86084001. This
+        is the direct SNOMED CT functional observable for the coagulation/haemostasis function and is the
+        closest standard equivalent of ICF b4303; sibling/adjacent concepts are 404995006 (a status
+        observable), 51308000, 385538006 417313007. Broader rather than exact: ICF b4303 frames (the
+        clotting function specifically) where frames (the broader haemostatic function that encompasses
+        coagulation PLUS platelet plug formation PLUS vasoconstriction), so the target is one level
+        broader than the coagulation-specific source. High tier : direct term-and-scope match in the
+        same functional hierarchy (hemostatic function subsumes coagulation), verified active in both
+        mirrors, but one-level-broader with no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b4308.omop" source="b4308" outcome=no_match target-system="OMOP_EXT"
+assessment "b4309.omop" source="b4309" outcome=no_match target-system="OMOP_EXT"
+mapping "b435.1" source="b435" target="SNOMED_CT:56393004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b435 SNOMED CT 56393004 = ICF b435 Immunological functions: the body functions of the immune
+        system, including b4350 immune reaction (b43500 specific, b43501 non-specific), b4351
+        hypersensitivity reactions, b4352 lymphatic vessel functions, b4353 lymph node functions. Target
+        =, active RF2 production. This is the direct SNOMED CT observable that captures the
+        immune-system-as-a-function grouping and is the closest standard equivalent of ICF b435; it is
+        the parent observable of 35024006 (b4350) and the active-immunity observables, and its
+        valued/pathological correlates are 414029004, 1148806002 Normal/399371000112100. Broader rather
+        than exact only because ICF b435 is a multi-child function block (b4350-b4353) that also
+        includes lymphatic-vessel/node functions (b4352/b4353) which have NO SNOMED CT function observable
+        (SNOMED CT's lymphatic concepts are structural/observable groupings 364107004/364108009, not
+        function observables), so 56393004 covers the immune-reaction axis but not the
+        lymphatic-structure axis. High tier : direct term-and-scope match (immunologic reaction function
+        = immunological functions) verified active in the mirror, but one-level-broader in model
+        granularity with no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b4350.1" source="b4350" target="SNOMED_CT:35024006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4350 SNOMED CT 35024006 = ICF b4350 Immune reaction: the immune sub-function of the body's
+        reaction to foreign/antigenic substances, encompassing specific (b43500) and non-specific
+        (b43501) immune responses. Target =, active RF2 production. Exact 1:1 equivalence: ICF (the WHO
+        ICF English term) is denotationally the same clinical concept as SNOMED CT — both denote the
+        physiological function of the immune system responding to antigen. The SNOMED CT concept is the
+        direct functional observable where 940000, 62299004, 3359009, 54512006 are its valued/sub-type
+        correlates, and its parent is 56393004 (the b435 grouping). exact_match: same concept (immune
+        reaction = immune response, function), literal term-and-scope match verified active in the
+        mirror.
+        """
+}
+mapping "b43500.1" source="b43500" target="SNOMED_CT:35123003" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b43500 SNOMED CT 35123003 = ICF b43500 Specific immune reaction: the immune sub-function of
+        SPECIFIC (adaptive/antigen-directed) immune response, the counterpart of b43501 non-specific
+        (innate) immunity. Target =, active RF2 production. This is the only SNOMED CT observable that
+        names the specific/adaptive immune axis as a function: 35123003 is the active (host-produced,
+        antigen-specific) immunity function, sibling to 112122005; 191441008 is the broader
+        adaptive-immunity term. Narrower rather than exact: SNOMED CT is one axis of the ICF (active vs
+        passive acquisition is a dimension the ICF code does not assert), so the target is more specific
+        than the source's. Low tier : the closest defensible specific-immunity function observable,
+        term-verified active, but the active-vs-passive framing adds specificity the ICF source does not
+        assert, and there is no independent crosswalk. (35024006; 35123003 chosen as it captures the
+        specific/adaptive axis that is the clinical core of.)
+        """
+}
+mapping "b43501.1" source="b43501" target="SNOMED_CT:35024006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b43501 SNOMED CT 35024006 = ICF b43501 Non-specific immune reaction: the immune sub-function
+        of NON-SPECIFIC (innate) immune response, the counterpart of b43500 specific (adaptive)
+        immunity. Target =, active RF2 production. No dedicated or function observable exists in SNOMED CT:
+        the candidate 54512006 is a *finding* (a pathology), not a function observable, and the
+        active-immunity observables (35123003, 191441008) are all adaptive/specific. The nearest
+        defensible FUNCTION ancestor is 35024006 (every non-specific immune reaction is an immune
+        response). Broader (low): the target subsumes the source but at the cost of dropping the
+        defining qualifier (the SNOMED CT function hierarchy does not separately model innate immunity as a
+        function), so the climb loses the source's clinical specificity; 54512006 recorded as the
+        related-axis alternate below.
+        """
+}
+assessment "b43508.omop" source="b43508" outcome=no_match target-system="OMOP_EXT"
+assessment "b43509.omop" source="b43509" outcome=no_match target-system="OMOP_EXT"
+mapping "b4351.1" source="b4351" target="SNOMED_CT:406212004" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b4351 SNOMED CT 406212004 (Hypersensitivity reactions) = ICF b4351: the immune sub-function
+        of hypersensitivity (allergic) reactions — excessive/inappropriate immune responses to antigens
+        (allergens), encompassing Type I-IV hypersensitivity. Target =, active RF2 production. This is
+        the only active SNOMED CT observable that names the immune-hypersensitivity axis directly; the
+        legacy 142172000 Type 1 / 142173005 are inactive/D. Related rather than exact/broader: 406212004
+        is a *status* observable (a categorical assessment of whether a hypersensitivity response is
+        present), not the physiological *function* of hypersensitivity reactions that ICF b4351 denotes
+        — the SNOMED CT function hierarchy does not model hypersensitivity-as-a-function separately, so the
+        target captures the same clinical domain but as a status rather than a function. Low tier : the
+        closest defensible hypersensitivity observable, term-verified active, but a status-vs-function
+        model mismatch and no independent crosswalk. (124929000 is a function observable but is one
+        specific test-type, not the general hypersensitivity function.)
+        """
+}
+assessment "b4352.omop" source="b4352" outcome=no_match target-system="OMOP_EXT"
+assessment "b4353.omop" source="b4353" outcome=no_match target-system="OMOP_EXT"
+assessment "b4358.omop" source="b4358" outcome=no_match target-system="OMOP_EXT"
+assessment "b4359.omop" source="b4359" outcome=no_match target-system="OMOP_EXT"
+assessment "b439.omop" source="b439" outcome=no_match target-system="OMOP_EXT"

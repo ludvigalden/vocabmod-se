@@ -1,0 +1,265 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s8
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "s8.1" source="s8" target="SNOMED_CT:39937001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8 = ICF Chapter 8 SNOMED CT 39937001 (skin, glands, nails, hair). SNOMED CT has no single
+        aggregate that also folds in nails/hair; closest standard concept is SCTID 39937001 (OMOP
+        4219601), which covers the skin axis but is broader than the chapter that additionally includes
+        nails/hair/glands. broader (skin structure subsumes the skin portion of the chapter), high : a
+        verified SNOMED CT body-structure concept and the legitimate ancestor of the chapter's skin
+        members, though it does not subsume the nail/hair/gland members. Used as the chapter anchor;
+        component-specific siblings (s820/s830/s840) get their own exact equivalents.
+        """
+}
+mapping "s810.1" source="s810" target="SNOMED_CT:39937001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s810 SNOMED CT 39937001 = ICF mid-level, the generic regional-skin grouping whose children
+        are s8100-s8105 (skin of head/neck, shoulder, upper limb, pelvis, lower limb, trunk). SNOMED CT
+        models regional skin as a flat sibling set (etc.) with no single aggregate parent above them
+        other than itself. SCTID 39937001 (OMOP 4219601) fully contains the regional-skin scope.
+        broader, high : one-level climb from the generic regional grouping to its verified SNOMED CT
+        ancestor.
+        """
+}
+mapping "s8100.1" source="s8100" target="SNOMED_CT:58308009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8100 SNOMED CT 58308009 = skin of head and neck. Target 58308009 (OMOP 4237609) denotes the
+        same anatomical region at the same specificity. Exact 1:1 body-structure equivalence,
+        confidence.
+        """
+}
+mapping "s8101.1" source="s8101" target="SNOMED_CT:76552005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8101 SNOMED CT 76552005 = skin of shoulder region. Target 76552005 (OMOP 4297782) is the
+        same body structure. Exact equivalence.
+        """
+}
+mapping "s8102.1" source="s8102" target="SNOMED_CT:19255007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8102 SNOMED CT 19255007 = skin of upper extremity. Target 19255007 (OMOP 40389228) is the
+        same body structure. Exact equivalence.
+        """
+}
+mapping "s8103.1" source="s8103" target="SNOMED_CT:281730006" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8103 SNOMED CT 281730006 = skin of pelvic region. SNOMED CT's nearest standard concept is
+        SCTID 281730006 (OMOP 4083649); is slightly narrower than the ICF full pelvic region. The target
+        is the closest available; treated as broader (the regional concept legitimately covers the
+        pelvic skin scope) at high rather than exact because of the qualifier. SE mirror not consulted;
+        Athena body-structure hierarchy confirms the anchor.
+        """
+}
+mapping "s8104.1" source="s8104" target="SNOMED_CT:28053004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8104 SNOMED CT 28053004 = skin of lower extremity. Target 28053004 (OMOP 40363394) is the
+        same body structure. Exact equivalence.
+        """
+}
+mapping "s8105.1" source="s8105" target="SNOMED_CT:86381001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8105 SNOMED CT 86381001 = skin of trunk and back. Target 86381001 (OMOP 4313445) covers the
+        trunk including the back; the SNOMED CT concept is the standard equivalent of the ICF bål-och-rygg
+        region. Exact equivalence.
+        """
+}
+mapping "s8108.1" source="s8108" target="SNOMED_CT:39937001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8108 SNOMED CT 39937001 = residual bucket under s810. No per-instance SNOMED CT concept; maps
+        up to the chapter anchor SCTID 39937001 (OMOP 4219601). broader, moderate : residual source
+        climbed to nearest ancestor.
+        """
+}
+mapping "s8109.1" source="s8109" target="SNOMED_CT:39937001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8109 SNOMED CT 39937001 = unspecified skin area under s810. No per-instance SNOMED CT concept;
+        maps up to SCTID 39937001 (OMOP 4219601). broader, moderate : unspecified source mapped to
+        nearest ancestor.
+        """
+}
+mapping "s820.1" source="s820" target="SNOMED_CT:314821003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s820 SNOMED CT 314821003 = structure of skin glands (sweat + sebaceous). Target 314821003
+        (OMOP 4152570) is the same body structure. Exact equivalence.
+        """
+}
+mapping "s8200.1" source="s8200" target="SNOMED_CT:10410005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8200 SNOMED CT 10410005 = sweat glands. Target 10410005 (OMOP 4015167) is the same body
+        structure. Exact equivalence.
+        """
+}
+mapping "s8201.1" source="s8201" target="SNOMED_CT:1028005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8201 SNOMED CT 1028005 = sebaceous glands. Target 1028005 (OMOP 4009566) is the same body
+        structure. Exact equivalence.
+        """
+}
+mapping "s8208.1" source="s8208" target="SNOMED_CT:314821003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8208 SNOMED CT 314821003 = residual bucket under s820. No per-instance SNOMED CT concept; maps
+        up to SCTID 314821003 (OMOP 4152570). broader, moderate : residual source climbed to nearest
+        ancestor.
+        """
+}
+mapping "s8209.1" source="s8209" target="SNOMED_CT:314821003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8209 SNOMED CT 314821003 = unspecified skin gland under s820. No per-instance SNOMED CT
+        concept; maps up to SCTID 314821003 (OMOP 4152570). broader, moderate : unspecified source
+        mapped to nearest ancestor.
+        """
+}
+mapping "s830.1" source="s830" target="SNOMED_CT:72651009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s830 SNOMED CT 72651009 = structure of nails. Target 72651009 (OMOP 4219505) is the same
+        body structure. Exact equivalence.
+        """
+}
+mapping "s8300.1" source="s8300" target="SNOMED_CT:91456000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8300 SNOMED CT 91456000 = fingernails. Target 91456000 (OMOP 4237207) is the same body
+        structure. Exact equivalence.
+        """
+}
+mapping "s8301.1" source="s8301" target="SNOMED_CT:76578001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8301 SNOMED CT 76578001 = toenails. Target 76578001 (OMOP 4297175) is the same body
+        structure. Exact equivalence.
+        """
+}
+mapping "s8308.1" source="s8308" target="SNOMED_CT:72651009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8308 SNOMED CT 72651009 = residual bucket under s830. No per-instance SNOMED CT concept; maps
+        up to SCTID 72651009 (OMOP 4219505). broader, moderate : residual source climbed to nearest
+        ancestor.
+        """
+}
+mapping "s8309.1" source="s8309" target="SNOMED_CT:72651009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8309 SNOMED CT 72651009 = unspecified nail under s830. No per-instance SNOMED CT concept; maps
+        up to SCTID 72651009 (OMOP 4219505). broader, moderate : unspecified source mapped to nearest
+        ancestor.
+        """
+}
+mapping "s840.1" source="s840" target="SNOMED_CT:58240005" relationship=equivalent {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source s840 SNOMED CT 58240005 = structure of hair. Target 58240005 (OMOP 40613672) is the same
+        body structure. Exact equivalence.
+        """
+}
+mapping "s8400.1" source="s8400" target="SNOMED_CT:64013008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8400 SNOMED CT 64013008 = hair of head/scalp. Target 64013008 (OMOP 4271675) is the same
+        body structure. Exact equivalence.
+        """
+}
+mapping "s8401.1" source="s8401" target="SNOMED_CT:62961004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8401 SNOMED CT 62961004 = facial hair. Target 62961004 (OMOP 4268326) is the same body
+        structure. Exact equivalence.
+        """
+}
+mapping "s8402.1" source="s8402" target="SNOMED_CT:75703003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8402 SNOMED CT 75703003 = ICF s840 subdivision: hair of the axilla (axillary hair), a body
+        structure. Target (Athena 4192729) =, active standard, Swedish synonym. Exact 1:1 anatomical
+        equivalence: ICF and SNOMED CT denote the same structure, confirmed by direct concept-name and
+        Swedish-synonym match plus the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "s8403.1" source="s8403" target="SNOMED_CT:75776007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8403 SNOMED CT 75776007 = ICF s840 subdivision: hair of the pubis (pubic hair), a body
+        structure. Target (Athena 4328072) =, active standard, Swedish synonym. Exact 1:1 anatomical
+        equivalence: ICF and SNOMED CT denote the same structure, confirmed by direct concept-name and
+        Swedish-synonym match plus the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "s8404.1" source="s8404" target="SNOMED_CT:256423008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8404 SNOMED CT 256423008 = ICF s840 subdivision: body hair (hair over the body generally,
+        as distinct from scalp s8401, facial, axillary s8402 and pubic s8403 hair which have their own
+        codes). Target (Athena 4107478) =, active standard, Swedish synonym. No dedicated body-structure
+        concept exists in SNOMED CT; 256423008 is the co-extensive general-regional hair concept (hair on a
+        skin region = body hair). High tier : strong concept and Swedish-synonym equivalence, but no
+        independent Athena crosswalk re-verified and is marginally more generic than, so rather than.
+        """
+}
+mapping "s8408.1" source="s8408" target="SNOMED_CT:386045008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8408 SNOMED CT 386045008 = ICF residual under s840 Structures of hair: denotes some
+        specified-but-uncoded part of the hair. Target (Athena 4300948) =, active standard, Swedish
+        synonym (note: older sctid 58240005 is inactive/D, 386045008 is the active concept). The parent
+        hair-structure concept fully subsumes any hair part, so the target is broader. High tier : clean
+        one-level broader map of a residual to its verified parent body-structure concept. Mirrors the
+        s2608 precedent.
+        """
+}
+mapping "s8409.1" source="s8409" target="SNOMED_CT:386045008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s8409 SNOMED CT 386045008 = ICF residual under s840 Structures of hair: hair structure,
+        unspecified part. Target (Athena 4300948) =, active standard, Swedish synonym (older sctid
+        58240005 is inactive/D; 386045008 is the active concept). The parent hair-structure concept is
+        the correct unspecified-level target and fully subsumes the source, so the target is broader.
+        High tier : clean one-level broader map of an unspecified residual to its verified parent
+        body-structure concept.
+        """
+}
+mapping "s898.1" source="s898" target="SNOMED_CT:48075008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s898 SNOMED CT 48075008 = ICF chapter-s8 residual: a specified-but-uncoded structure within
+        skin, hair, or nails. Target (Athena 4170047) =, active standard, Swedish synonym. The
+        (39937001) (386045008) and nails, matching the ICF s8 chapter scope exactly; it fully subsumes
+        any skin/hair/nail structure, so the target is broader. High tier : clean one-level broader map
+        of a chapter residual to the verified system-level equivalent.
+        """
+}
+mapping "s899.1" source="s899" target="SNOMED_CT:48075008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s899 SNOMED CT 48075008 = ICF chapter-s8 residual: skin, hair and nails, unspecified. Target
+        (Athena 4170047) =, active standard, Swedish synonym. The (39937001) (386045008) and nails,
+        matching the ICF s8 chapter scope exactly; it fully subsumes the unspecified chapter residual,
+        so the target is broader. High tier : clean one-level broader map of an unspecified chapter
+        residual to the verified system-level equivalent.
+        """
+}

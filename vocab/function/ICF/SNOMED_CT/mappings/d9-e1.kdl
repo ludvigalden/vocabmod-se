@@ -1,0 +1,355 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d9-e1
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "d9.omop" source="d9" outcome=no_match target-system="OMOP_EXT"
+mapping "d910.1" source="d910" target="SNOMED_CT:737353005" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d910 SNOMED CT 737353005 = ICF activity — engaging in community/social life. Target. Same
+        participation domain but a substantial framing mismatch: the target is a disability/difficulty
+        finding, whereas the source is the (positive) activity of engaging in community life. Recorded
+        as a weak related lead (participation domain), not an equivalence; a reviewer should note SNOMED CT
+        lacks a positive community-participation activity concept. Confidence weak.
+        """
+}
+assessment "d9100.omop" source="d9100" outcome=no_match target-system="OMOP_EXT"
+assessment "d9101.omop" source="d9101" outcome=no_match target-system="OMOP_EXT"
+assessment "d9102.omop" source="d9102" outcome=no_match target-system="OMOP_EXT"
+mapping "d9108.1" source="d9108" target="SNOMED_CT:870688007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9108 SNOMED CT 870688007 = ICF d910 Community life, other specified (an
+        unspecified-residual entry under the d910 Community/social/civic-life activities block). Target.
+        Best available standard target: SNOMED CT's ICF-aligned participation concepts are the only
+        concepts that map the d9 community/social-life block. Broader: the SNOMED CT ability concept covers
+        the functional dimension of the d910 activity domain. Low tier : source is an residual with no
+        specific SNOMED CT equivalent, so the link is loose.
+        """
+}
+mapping "d9109.1" source="d9109" target="SNOMED_CT:870688007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9109 SNOMED CT 870688007 = ICF d910 Community life, unspecified. Target = Ability to
+        participate in community social life, the ICF-aligned functioning concept for the d910 domain.
+        Best available standard target. Broader: ability concept covers the functional dimension of the
+        activity domain. Low tier : unspecified source mapped to the general participation concept, no
+        specific equivalent.
+        """
+}
+mapping "d920.1" source="d920" target="SNOMED_CT:300737003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d920 SNOMED CT 300737003 = ICF d920 Recreation and leisure (engaging in recreation/leisure
+        activities). Target. Best available standard target: SNOMED CT's ICF participation concept family.
+        Broader: the SNOMED CT ability concept covers the functional dimension of the d920
+        recreation/leisure activity domain. Moderate tier : best available standard concept and
+        clinically defensible; the framing is a one-step breadth shift from the framing, not an exact
+        identity.
+        """
+}
+mapping "d9200.1" source="d9200" target="SNOMED_CT:300779009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9200 SNOMED CT 300779009 = ICF d9200 Play (engaging in games and play). Target. Best
+        available standard target. Broader: SNOMED CT ability concept covers the functional dimension of
+        the play/games activity domain. Moderate tier : defensible best match; framing is a one-step
+        breadth shift from the activity domain.
+        """
+}
+mapping "d9201.1" source="d9201" target="SNOMED_CT:300797001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9201 SNOMED CT 300797001 = ICF d9201 Sports (engaging in sports/athletics). Target. Best
+        available standard target. Broader: SNOMED CT ability concept covers the functional dimension of
+        the sport activity domain. Moderate tier : defensible best match; framing is a one-step breadth
+        shift from the activity domain.
+        """
+}
+assessment "d9202.omop" source="d9202" outcome=no_match target-system="OMOP_EXT"
+mapping "d9204.1" source="d9204" target="SNOMED_CT:300755007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9204 SNOMED CT 300755007 = ICF d9204 Hobbies (engaging in hobbies). Target. Best available
+        standard target: SNOMED CT has a dedicated hobby-engagement concept family (300755007 ability,
+        365371000 finding). Broader: SNOMED CT ability concept covers the functional dimension of the hobby
+        activity domain. Moderate tier : defensible best match; framing is a one-step breadth shift from
+        the activity domain.
+        """
+}
+mapping "d9205.1" source="d9205" target="SNOMED_CT:225597007" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9205 SNOMED CT 225597007 = ICF d9205 Socializing (engaging in informal social
+        gatherings/interaction with others). Target. Related (not broader): (870688007) is broader-still
+        rather than a match for informal socializing. Weak tier : the link is a loose clinical
+        association (the target is the interaction-capacity concept the source suggests), not an
+        equivalence.
+        """
+}
+mapping "d9208.1" source="d9208" target="SNOMED_CT:300737003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9208 SNOMED CT 300737003 = ICF d920 Recreation and leisure, other specified (residual
+        entry). Target = Ability to participate in leisure activities, the ICF-aligned functioning
+        concept for the d920 domain. Best available standard target. Broader: ability concept covers the
+        functional dimension of the recreation/leisure domain. Low tier : source is an residual with no
+        specific SNOMED CT equivalent, so the link is loose.
+        """
+}
+mapping "d9209.1" source="d9209" target="SNOMED_CT:300737003" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d9209 SNOMED CT 300737003 = ICF d920 Recreation and leisure, unspecified. Target = Ability
+        to participate in leisure activities, the ICF-aligned functioning concept for the d920 domain.
+        Best available standard target. Broader: ability concept covers the functional dimension of the
+        recreation/leisure domain. Low tier : unspecified source mapped to the general leisure
+        participation concept, no specific equivalent.
+        """
+}
+assessment "d930.omop" source="d930" outcome=no_match target-system="OMOP_EXT"
+assessment "d9300.omop" source="d9300" outcome=no_match target-system="OMOP_EXT"
+assessment "d9301.omop" source="d9301" outcome=no_match target-system="OMOP_EXT"
+assessment "d9308.omop" source="d9308" outcome=no_match target-system="OMOP_EXT"
+assessment "d9309.omop" source="d9309" outcome=no_match target-system="OMOP_EXT"
+assessment "d940.omop" source="d940" outcome=no_match target-system="OMOP_EXT"
+assessment "d950.omop" source="d950" outcome=no_match target-system="OMOP_EXT"
+mapping "d998.1" source="d998" target="SNOMED_CT:870688007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d998 SNOMED CT 870688007 = ICF d9 Community, social and civic life, other specified (the d9
+        chapter-level residual). Target = Ability to participate in community social life, the closest
+        ICF-aligned functioning concept for the d9 chapter block. Best available standard target.
+        Broader: ability concept covers the functional dimension of the chapter's community-life domain.
+        Low tier : chapter-level residual mapped to the general participation concept, no specific
+        equivalent.
+        """
+}
+mapping "d999.1" source="d999" target="SNOMED_CT:870688007" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d999 SNOMED CT 870688007 = ICF d9 Community, social and civic life, unspecified (the d9
+        chapter-level unspecified). Target = Ability to participate in community social life, the
+        closest ICF-aligned functioning concept for the d9 chapter block. Best available standard
+        target. Broader: ability concept covers the functional dimension of the chapter's community-life
+        domain. Low tier : chapter-level unspecified source mapped to the general participation concept.
+        """
+}
+assessment "e.omop" source="e" outcome=no_match target-system="OMOP_EXT"
+assessment "e1.omop" source="e1" outcome=no_match target-system="OMOP_EXT"
+assessment "e110.omop" source="e110" outcome=no_match target-system="OMOP_EXT"
+mapping "e1100.1" source="e1100" target="SNOMED_CT:762766007" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1100 SNOMED CT 762766007 = ICF e1100 Food (food as an environmental-factor product for
+        personal consumption). Target. Related (not equivalent): SNOMED CT models food as a substance
+        (clinical/chemistry framing), whereas ICF e1100 models food as an environmental
+        facilitator/barrier (social-framework framing) — the two share the referent but differ in
+        ontological role. Weak tier : a loose aspect-level link recorded to preserve the lead; the
+        target is the underlying substance, not the environmental-factor concept.
+        """
+}
+mapping "e1101.1" source="e1101" target="SNOMED_CT:373873005" relationship=related_to effect=omitted quality=60 {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source e1101 SNOMED CT 373873005 = ICF e1101 Drugs/Medicines (medicines as an environmental-factor
+        product for personal consumption). Target. Related (not equivalent): SNOMED CT models medicines as
+        clinical products/substances, whereas ICF e1101 models them as environmental
+        facilitators/barriers — the two share the referent but differ in ontological role. Weak tier : a
+        loose aspect-level link; the target is the underlying product, not the environmental-factor
+        concept.
+        """
+}
+mapping "e1102.1" source="e1102" target="SNOMED_CT:890302005" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1102 SNOMED CT 890302005 = ICF e1102 Drinking water (drinking water as an
+        environmental-factor product for personal consumption). Target. Related (not equivalent): SNOMED CT
+        models potable water as a substance (clinical/chemistry framing), whereas ICF e1102 models it as
+        an environmental facilitator/barrier — the two share the referent but differ in ontological
+        role. Weak tier : a loose aspect-level link; the target is the underlying substance, not the
+        environmental-factor concept.
+        """
+}
+assessment "e1108.omop" source="e1108" outcome=no_match target-system="OMOP_EXT"
+assessment "e1109.omop" source="e1109" outcome=no_match target-system="OMOP_EXT"
+assessment "e115.omop" source="e115" outcome=no_match target-system="OMOP_EXT"
+assessment "e1150.omop" source="e1150" outcome=no_match target-system="OMOP_EXT"
+assessment "e1151.omop" source="e1151" outcome=no_match target-system="OMOP_EXT"
+assessment "e1158.omop" source="e1158" outcome=no_match target-system="OMOP_EXT"
+assessment "e1159.omop" source="e1159" outcome=no_match target-system="OMOP_EXT"
+assessment "e120.omop" source="e120" outcome=no_match target-system="OMOP_EXT"
+assessment "e1200.omop" source="e1200" outcome=no_match target-system="OMOP_EXT"
+assessment "e1201.omop" source="e1201" outcome=no_match target-system="OMOP_EXT"
+assessment "e1208.omop" source="e1208" outcome=no_match target-system="OMOP_EXT"
+assessment "e1209.omop" source="e1209" outcome=no_match target-system="OMOP_EXT"
+mapping "e125.1" source="e125" target="SNOMED_CT:224900001" relationship=related_to effect=omitted quality=40 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e125 SNOMED CT 224900001 = ICF environmental factor: products and technology for
+        communication. Target (Device/Physical Object, standard_concept=S; sv synonym). This is the only
+        standard SNOMED CT concept with direct semantic overlap to e125. Relationship is, not identity: the
+        ICF code is an ENVIRONMENTAL FACTOR (contextual product/technology), whereas the SNOMED CT concept
+        denotes the physical device object itself. A contextual/source-of-environment code mapped to the
+        referenced object is a loose link, capped at (weak). Not exact/broader/narrower because source
+        and target are different semantic kinds (context vs object).
+        """
+}
+mapping "e1250.1" source="e1250" target="SNOMED_CT:224900001" relationship=related_to effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1250 SNOMED CT 224900001 = ICF environmental factor: general (non-adapted) communication
+        products/technology. Target (standard device; sv). General communication products are loosely
+        associated with communication aids but the source is a contextual environmental factor, the
+        target is a device object; link at. The qualifier slightly weakens the fit versus e125 but the
+        same standard concept remains the only defensible target.
+        """
+}
+mapping "e1251.1" source="e1251" target="SNOMED_CT:705438004" relationship=related_to effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1251 SNOMED CT 705438004 = ICF environmental factor: assistive (adapted) communication
+        products/technology. Target (standard_concept=S). This is the assistive-communication device
+        concept and the closest standard match for the meaning. Relationship is : the ICF code is a
+        contextual environmental factor, the SNOMED CT concept is the physical device object; loose link
+        capped at. Not exact because of the context-vs-object semantic gap.
+        """
+}
+assessment "e1258.omop" source="e1258" outcome=no_match target-system="OMOP_EXT"
+mapping "e1259.1" source="e1259" target="SNOMED_CT:224900001" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1259 SNOMED CT 224900001 = ICF environmental factor: unspecified communication
+        products/technology. Unspecified residual of e125; inherits the parent's only defensible
+        standard target (standard device; sv). at (context-vs-object gap); unspecified source slightly
+        weaker than the parent but same target.
+        """
+}
+assessment "e130.omop" source="e130" outcome=no_match target-system="OMOP_EXT"
+assessment "e1300.omop" source="e1300" outcome=no_match target-system="OMOP_EXT"
+assessment "e1301.omop" source="e1301" outcome=no_match target-system="OMOP_EXT"
+assessment "e1308.omop" source="e1308" outcome=no_match target-system="OMOP_EXT"
+assessment "e1309.omop" source="e1309" outcome=no_match target-system="OMOP_EXT"
+assessment "e135.omop" source="e135" outcome=no_match target-system="OMOP_EXT"
+assessment "e1350.omop" source="e1350" outcome=no_match target-system="OMOP_EXT"
+assessment "e1351.omop" source="e1351" outcome=no_match target-system="OMOP_EXT"
+mapping "e1358.1" source="e1358" target="SNOMED_CT:705347008" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1358 SNOMED CT 705347008 = ICF e135 residual (any product/technology used in employment,
+        both general and assistive). Target (Athena 45767788), active, standard. Why this target: only
+        SNOMED CT concept in the employment-device space. Why narrower/ : SNOMED CT target covers only the
+        ASSISTIVE-device slice of e135, which also subsumes general (non-assistive) employment
+        technology; target is more specific than the source's full scope, so the map silently drops the
+        general-product axis. Residual code adds further ambiguity about which specific product is
+        meant.
+        """
+}
+mapping "e1359.1" source="e1359" target="SNOMED_CT:705347008" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1359 SNOMED CT 705347008 = ICF e135 residual. Target (Athena 45767788) =, active, standard.
+        Why this target: only SNOMED CT concept in the employment-device space. Why narrower/ : SNOMED CT
+        target is the assistive-device subset only, while the ICF source spans all employment products
+        and technology; forced down to the assistive slice because no general employment-product concept
+        exists. Unspecified source compounds the fit loss.
+        """
+}
+mapping "e140.1" source="e140" target="SNOMED_CT:70793005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e140 SNOMED CT 705386007 70793005 = ICF chapter-level (general + assistive products).
+        Targets: SNOMED CT 70793005 (Athena 4321852), active, standard; SNOMED CT 705386007 (Athena 45767812)
+        =, active, standard. Why partial: is broader than either target — 70793005 captures the
+        general-equipment slice, 705386007 the assistive-device slice; neither subsumes culture/sport
+        products in full and there is no single encompassing SNOMED CT concept. 70793005 listed first as it
+        covers more of the source (general recreation/culture/sport equipment). per partial multi-target
+        guidance.
+        """
+}
+mapping "e140.2" source="e140" target="SNOMED_CT:705386007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "e1400.1" source="e1400" target="SNOMED_CT:70793005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1400 SNOMED CT 70793005 = ICF e140 (the non-assistive, general-product sub-code). Target
+        (Athena 4321852), active, standard. Why this target: closest standard concept to general
+        recreation/culture/sport products; (49062001). Why broader/ : target legitimately subsumes the
+        source's general-product meaning (every general recreation product is recreation equipment),
+        though SNOMED CT's term says and omits explicit culture/sport breadth — a small semantic stretch,
+        hence moderate not high tier.
+        """
+}
+mapping "e1401.1" source="e1401" target="SNOMED_CT:705386007" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1401 SNOMED CT 705386007 = ICF e140. Target (Athena 45767812) (1141802005). Why
+        exact_match/ : source's and target denote the same clinical concept (assistive devices for
+        recreation); strong term and hierarchy alignment. High rather than because the ICF source
+        explicitly spans culture+recreation+sport while the SNOMED CT term names only, a minor breadth
+        nuance not independently crosswalk-verified.
+        """
+}
+mapping "e1408.1" source="e1408" target="SNOMED_CT:70793005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1408 SNOMED CT 70793005 = ICF e140 residual. Target (Athena 4321852) =, active, standard.
+        Why partial/ : residual source is heterogeneous and the single target captures only the
+        general-equipment slice of the broader products-and-technology domain; weak lead, not an
+        asserted identity. (705386007) not added as a second target because the framing gives no basis
+        to weight the assistive slice. Documented as a reviewer lead.
+        """
+}
+mapping "e1409.1" source="e1409" target="SNOMED_CT:70793005" relationship=partial_overlap effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e1409 SNOMED CT 70793005 = ICF e140 residual. Target (Athena 4321852) =, active, standard.
+        Why partial/ : unspecified source over a broad products-and-technology domain, with the single
+        target covering only the general-equipment slice; weak lead recorded for review, not an
+        identity. No crosswalk; no encompassing SNOMED CT concept for the full ICF scope.
+        """
+}
+assessment "e145.omop" source="e145" outcome=no_match target-system="OMOP_EXT"
+assessment "e1450.omop" source="e1450" outcome=no_match target-system="OMOP_EXT"
+assessment "e1451.omop" source="e1451" outcome=no_match target-system="OMOP_EXT"
+assessment "e1458.omop" source="e1458" outcome=no_match target-system="OMOP_EXT"
+assessment "e1459.omop" source="e1459" outcome=no_match target-system="OMOP_EXT"
+assessment "e150.omop" source="e150" outcome=no_match target-system="OMOP_EXT"
+assessment "e1500.omop" source="e1500" outcome=no_match target-system="OMOP_EXT"
+assessment "e1501.omop" source="e1501" outcome=no_match target-system="OMOP_EXT"
+assessment "e1502.omop" source="e1502" outcome=no_match target-system="OMOP_EXT"
+assessment "e1503.omop" source="e1503" outcome=no_match target-system="OMOP_EXT"
+assessment "e1508.omop" source="e1508" outcome=no_match target-system="OMOP_EXT"
+assessment "e1509.omop" source="e1509" outcome=no_match target-system="OMOP_EXT"
+assessment "e155.omop" source="e155" outcome=no_match target-system="OMOP_EXT"
+assessment "e1550.omop" source="e1550" outcome=no_match target-system="OMOP_EXT"
+assessment "e1551.omop" source="e1551" outcome=no_match target-system="OMOP_EXT"
+assessment "e1552.omop" source="e1552" outcome=no_match target-system="OMOP_EXT"
+assessment "e1553.omop" source="e1553" outcome=no_match target-system="OMOP_EXT"
+assessment "e1558.omop" source="e1558" outcome=no_match target-system="OMOP_EXT"
+assessment "e1559.omop" source="e1559" outcome=no_match target-system="OMOP_EXT"
+assessment "e160.omop" source="e160" outcome=no_match target-system="OMOP_EXT"
+assessment "e1600.omop" source="e1600" outcome=no_match target-system="OMOP_EXT"
+assessment "e1601.omop" source="e1601" outcome=no_match target-system="OMOP_EXT"
+assessment "e1602.omop" source="e1602" outcome=no_match target-system="OMOP_EXT"
+assessment "e1603.omop" source="e1603" outcome=no_match target-system="OMOP_EXT"
+assessment "e1608.omop" source="e1608" outcome=no_match target-system="OMOP_EXT"
+assessment "e1609.omop" source="e1609" outcome=no_match target-system="OMOP_EXT"
+assessment "e165.omop" source="e165" outcome=no_match target-system="OMOP_EXT"
+assessment "e1650.omop" source="e1650" outcome=no_match target-system="OMOP_EXT"
+assessment "e1651.omop" source="e1651" outcome=no_match target-system="OMOP_EXT"
+assessment "e1652.omop" source="e1652" outcome=no_match target-system="OMOP_EXT"
+assessment "e1658.omop" source="e1658" outcome=no_match target-system="OMOP_EXT"
+assessment "e1659.omop" source="e1659" outcome=no_match target-system="OMOP_EXT"
+assessment "e198.omop" source="e198" outcome=no_match target-system="OMOP_EXT"
+assessment "e199.omop" source="e199" outcome=no_match target-system="OMOP_EXT"

@@ -1,0 +1,423 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d5-d56
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d5.1" source="d5" target="SNOMED_CT:286850002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5 SNOMED CT 286850002 = ICF chapter d5 Self-care: the second-level chapter for caring for
+        oneself (washing/drying, caring for body/skin/teeth/hair/nails, toileting, dressing). Target =,
+        active RF2 production (Athena 4113625) (286852005) (286854006) (286855007) function observables
+        that the d5 children map to. Broader (high): the target legitimately subsumes the
+        personal-hygiene core of the d5 chapter, but d5 also spans toileting and dressing which the
+        single observable does not cover, so it is one-level broader than the chapter root; mirrors the
+        d1 chapter-root precedent (69998004, broader). mapping_type=broader.
+        """
+}
+mapping "d510.1" source="d510" target="SNOMED_CT:286852005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d510 SNOMED CT 286852005 = ICF d510 Washing oneself (washing whole body and body parts, and
+        drying oneself); 3rd-level category. Target =, active RF2 production (Athena 4120580), SNOMED CT's
+        direct function observable for the washing-self activity, a child of 286850002. Same functional
+        activity, same level of specificity — direct 1:1 equivalent (the d510 category is dominated by
+        washing, with drying split out as the sibling d5102 but also bundled here; 286852005 is the
+        canonical match for the category's primary axis). exact_match.
+        """
+}
+mapping "d5100.1" source="d5100" target="SNOMED_CT:286852005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5100 SNOMED CT 286852005 = ICF d5100 Washing oneself: Washing body parts (washing specific
+        body parts such as face, hands, feet, trunk); 4th-level child of d510. Target =, active RF2
+        production (Athena 4120580). SNOMED CT has 258154008 (one specific part) but no generic observable;
+        286852005 is the direct parent that fully subsumes washing body parts (washing body parts is a
+        part of washing self). Broader (moderate): one-level broader climb from the wash-body-parts
+        child to the wash-self parent, target fully contains the source; the dedicated hand-wash child
+        258154008 confirms the axis but covers only one of several body parts. mapping_type=broader.
+        """
+}
+mapping "d5101.1" source="d5101" target="SNOMED_CT:286852005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5101 SNOMED CT 286852005 = ICF d5101 Washing oneself: Washing whole body (bathing/showering
+        to clean the entire body); 4th-level child of d510. Target =, active RF2 production (Athena
+        4120580). SNOMED CT has the sibling ability observable 165250009 but no dedicated; 286852005
+        denotes the same whole-body washing activity at the same level of specificity (whole-body
+        washing is the dominant sense of). exact_match.
+        """
+}
+mapping "d5102.1" source="d5102" target="SNOMED_CT:284827006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5102 SNOMED CT 284827006 = ICF d5102 Washing oneself: Drying oneself (using a towel to
+        remove water from the body after washing); 4th-level child of d510. Target =, active RF2
+        production (Athena 4109983), SNOMED CT's direct self-care observable for the drying-self activity.
+        SNOMED CT has no standalone observable; 284827006 is the precise single-axis observable for drying
+        oneself (it also sits beside 286851003 which bundles wash+dry). Same functional activity (drying
+        self), same single axis. High tier (exact): the target names the identical drying-self activity;
+        not only because the SNOMED CT observable is framed as (capacity framing) where ICF d5102 frames
+        the activity itself — a minor model-framing difference, no Athena crosswalk re-verified.
+        mapping_type=exact_match.
+        """
+}
+mapping "d5108.1" source="d5108" target="SNOMED_CT:286851003" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5108 SNOMED CT 286851003 = ICF d5108 Washing oneself, other specified: a
+        specified-but-residual child of d510 (a washing-self activity not captured by d5100-d5102).
+        Target =, active RF2 production (Athena 4117540), the broader function observable spanning the
+        full wash+dry self-care block. The source is, by definition, a washing-self activity under d510,
+        so the wash-and-dry-self function observable legitimately subsumes it. Broader (moderate):
+        direct SNOMED CT function-observable ancestor on the same axis, broader because the source is an
+        unspecified child whose exact meaning is undefined; consistent with the residual-child precedent
+        (d-code children mapped to the parent at). mapping_type=broader.
+        """
+}
+mapping "d5109.1" source="d5109" target="SNOMED_CT:286852005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5109 SNOMED CT 286852005 = ICF d5109 Washing oneself, unspecified: the unspecified child of
+        d510. Target =, active RF2 production (Athena 4120580), the direct ancestor used for the d510
+        parent. The source is an unspecified washing-self activity under d510, so the washing-self
+        function observable legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        function-observable ancestor on the same axis, broader because the source is explicitly
+        unspecified; consistent with the unspecified-child precedent (d-code children mapped to the
+        parent at). mapping_type=broader.
+        """
+}
+mapping "d520.1" source="d520" target="SNOMED_CT:704435007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d520 SNOMED CT 704435007 = ICF d520 Caring for body parts (skin care, dental care, hair
+        care, nail care); 3rd-level category. Target =, active RF2 production (Athena 45767121)
+        (286854006) (286855007) function observables that the d520 children map to. denotes the same
+        caring-for-body activity at the same level of specificity as ICF d520 (skin/teeth/hair/nails).
+        exact_match.
+        """
+}
+mapping "d5200.1" source="d5200" target="SNOMED_CT:704435007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5200 SNOMED CT 704435007 = ICF d5200 Caring for body parts: Caring for skin (looking after
+        the texture/moisture/cleanliness of the skin); 4th-level child of d520. SNOMED CT has NO dedicated
+        observable in the self-care/grooming family (the skin-care concepts present are procedure-level
+        regime/therapy or wound-care, or skin findings, not a self-care function observable). Target =,
+        active RF2 production (Athena 45767121), the parent grooming-activities observable that subsumes
+        the skin-care axis. Broader (low): target is two levels broader (skin-care →
+        grooming-activities) and the source's specific body-part axis (skin) is only loosely captured by
+        the generic grooming observable; real doubt remains because SNOMED CT's self-care family has no
+        skin-care-specific function observable. mapping_type=broader.
+        """
+}
+mapping "d5201.1" source="d5201" target="SNOMED_CT:704435007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5201 SNOMED CT 704435007 = ICF d5201 Caring for body parts: Caring for teeth (brushing
+        teeth, dental hygiene); 4th-level child of d520. SNOMED CT has NO dedicated self-care observable in
+        the grooming family (the oral-hygiene concepts present are findings — 110298001, 278543008 Good
+        oral hygiene — or the unrelated 110300001, not a tooth-caring activity function). Target =,
+        active RF2 production (Athena 45767121), the parent grooming-activities observable that subsumes
+        the dental-care axis. Broader (low): target is two levels broader (dental-care →
+        grooming-activities) and the source's specific axis (teeth/oral hygiene) is only loosely
+        captured by the generic grooming observable; real doubt remains. mapping_type=broader.
+        """
+}
+mapping "d5202.1" source="d5202" target="SNOMED_CT:286854006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5202 SNOMED CT 286854006 = ICF d5202 Caring for body parts: Caring for hair (grooming,
+        washing, brushing and trimming hair); 4th-level child of d520. Target =, active RF2 production
+        (Athena 4113627), a direct child of 704435007. Same functional activity, same level of
+        specificity — direct 1:1 equivalent (SNOMED CT's sibling ability observable 284861008 confirms the
+        hair-care axis). exact_match.
+        """
+}
+mapping "d5203.1" source="d5203" target="SNOMED_CT:286855007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5203 SNOMED CT 286855007 = ICF d5203 Caring for body parts: Caring for fingernails
+        (cleaning, trimming and grooming fingernails); 4th-level child of d520. Target =, active RF2
+        production (Athena 4117705), a direct child of 704435007. SNOMED CT's nail-care function observable
+        covers both finger- and toe-nail care (the dedicated single-axis observable 225124001 sits at a
+        finer cut); 286855007 is the canonical match for the d5203 fingernail-caring activity.
+        exact_match.
+        """
+}
+mapping "d5204.1" source="d5204" target="SNOMED_CT:286855007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5204 SNOMED CT 286855007 = ICF d5204 Caring for body parts: Caring for toenails (cleaning,
+        trimming and grooming toenails); 4th-level child of d520. Target =, active RF2 production
+        (Athena 4117705), a direct child of 704435007. SNOMED CT's single nail-care function observable
+        spans finger- and toe-nail care with no separate toenail concept, so 286855007 is the direct
+        equivalent for d5204 toenail caring; the sibling 225124001 confirms the axis but is finer. High
+        tier (exact): same functional activity (nail care covering toenails), no separate toenail
+        observable exists; not only because the source is toenail-specific where the target spans all
+        nails. mapping_type=exact_match.
+        """
+}
+mapping "d5205.1" source="d5205" target="SNOMED_CT:704435007" relationship=related_to effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5205 SNOMED CT 704435007 = ICF d5205 Caring for body parts: Caring for nose (cleaning the
+        nose); 4th-level child of d520. SNOMED CT has NO dedicated self-care observable in the
+        grooming/self-care family (nose concepts are nasal-findings or ENT procedures, not a nose-caring
+        activity function). Target =, active RF2 production (Athena 45767121), is the closest
+        ICF-aligned grooming observable but only loosely associates the nose-caring axis — it does not
+        denote nose care specifically. Per the related-vs-no_match boundary rule: there is a real but
+        loose clinical association worth recording (nose care is one personal-grooming activity among
+        several), so rather than no_match. Weak tier : loose aspect-level link only; the target records
+        a lead for reviewers, not an asserted mapping. mapping_type=related.
+        """
+}
+mapping "d5206.1" source="d5206" target="SNOMED_CT:704435007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5206 SNOMED CT 704435007 = ICF d5206 Caring for body parts: Caring for ears (cleaning the
+        ears); 4th-level child of d520. SNOMED CT has NO dedicated self-care observable in the
+        grooming/self-care family (ear concepts are ear-findings or ENT procedures such as 286856008,
+        not an ear-caring activity function). Target =, active RF2 production (Athena 45767121), is the
+        closest ICF-aligned grooming observable but only loosely associates the ear-caring axis — it
+        does not denote ear care specifically. Per the related-vs-no_match boundary rule: there is a
+        real but loose clinical association worth recording (ear care is one personal-grooming activity
+        among several), so rather than no_match. Weak tier : loose aspect-level link only.
+        mapping_type=related.
+        """
+}
+mapping "d5208.1" source="d5208" target="SNOMED_CT:704435007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5208 SNOMED CT 704435007 = ICF d5208 Caring for body parts, other specified: a
+        specified-but-residual child of d520 (a body-care activity not captured by d5200-d5206). Target
+        =, active RF2 production (Athena 45767121), the direct ancestor used for the d520 parent. The
+        source is, by definition, a caring-for-body activity under d520, so the grooming-activities
+        function observable legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        function-observable ancestor on the same axis, broader because the source is an unspecified
+        child whose exact meaning is undefined; consistent with the residual-child precedent (d-code
+        children mapped to the parent at). mapping_type=broader.
+        """
+}
+mapping "d5209.1" source="d5209" target="SNOMED_CT:704435007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5209 SNOMED CT 704435007 = ICF d5209 Caring for body parts, unspecified: the unspecified
+        child of d520. Target =, active RF2 production (Athena 45767121), the direct ancestor used for
+        the d520 parent. The source is an unspecified caring-for-body activity under d520, so the
+        grooming-activities function observable legitimately subsumes it. Broader (moderate): direct
+        SNOMED CT function-observable ancestor on the same axis, broader because the source is explicitly
+        unspecified; consistent with the unspecified-child precedent (d-code children mapped to the
+        parent at). mapping_type=broader.
+        """
+}
+mapping "d530.1" source="d530" target="SNOMED_CT:284899001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d530 SNOMED CT 284899001 = ICF d530 Toileting (planning and completing the regulation of
+        urination and defecation, and managing menstrual care); 3rd-level category. Target =, active RF2
+        production (Athena 4110612), SNOMED CT's direct self-care observable for the toileting activity.
+        The SNOMED CT toileting hierarchy is observable-framed (284899001 129004006 observable); 284899001
+        is the direct equivalent of the ICF d530 toileting activity. exact_match.
+        """
+}
+mapping "d5300.1" source="d5300" target="SNOMED_CT:129009001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5300 SNOMED CT 129009001 = ICF d5300 Toileting: Controlling urination (coordinating and
+        managing the voiding of urine); 4th-level child of d530. Target =, active RF2 production (Athena
+        4044713), SNOMED CT's direct function observable for urinary-bladder-control / the
+        control-of-urination function. Same functional activity (controlling urination via bladder
+        control), same single axis, same level of specificity. exact_match.
+        """
+}
+mapping "d5301.1" source="d5301" target="SNOMED_CT:129008009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5301 SNOMED CT 129008009 = ICF d5301 Toileting: Controlling defecation (coordinating and
+        managing the passage of bowel movements); 4th-level child of d530. Target =, active RF2
+        production (Athena 4043373), SNOMED CT's direct function observable for bowel-control / the
+        control-of-defecation function (sibling to 129009001 16490003). Same functional activity
+        (controlling defecation via bowel control), same single axis, same level of specificity.
+        exact_match.
+        """
+}
+mapping "d5302.1" source="d5302" target="SNOMED_CT:248957007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5302 SNOMED CT 248957007 = ICF d5302 Toileting: Caring for menstruation (coordinating,
+        managing and protecting the body during menstrual periods); 4th-level child of d530. Target =,
+        active RF2 production (Athena 4088436), SNOMED CT's direct function observable for the menstruation
+        function. SNOMED CT also has the self-care sibling 284955009 which is the precise
+        menstrual-hygiene-management observable; 248957007 is the underlying menstruation function the
+        ICF d5302 menstrual-care activity manages. Both denote the same menstrual axis; 248957007 is the
+        function-observable equivalent (matching the ICF function framing) and 284955009 the ability
+        framing. exact_match.
+        """
+}
+mapping "d5308.1" source="d5308" target="SNOMED_CT:284899001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5308 SNOMED CT 284899001 = ICF d5308 Toileting, other specified: a specified-but-residual
+        child of d530 (a toileting activity not captured by d5300-d5302). Target =, active RF2
+        production (Athena 4110612), the direct ancestor used for the d530 parent. The source is, by
+        definition, a toileting activity under d530, so the toileting-activities observable legitimately
+        subsumes it. Broader (moderate): direct SNOMED CT self-care-observable ancestor on the same axis,
+        broader because the source is an unspecified child whose exact meaning is undefined; consistent
+        with the residual-child precedent (d-code children mapped to the parent at).
+        mapping_type=broader.
+        """
+}
+mapping "d5309.1" source="d5309" target="SNOMED_CT:284899001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5309 SNOMED CT 284899001 = ICF d5309 Toileting, unspecified: the unspecified child of d530.
+        Target =, active RF2 production (Athena 4110612), the direct ancestor used for the d530 parent.
+        The source is an unspecified toileting activity under d530, so the toileting-activities
+        observable legitimately subsumes it. Broader (moderate): direct SNOMED CT self-care-observable
+        ancestor on the same axis, broader because the source is explicitly unspecified; consistent with
+        the unspecified-child precedent (d-code children mapped to the parent at). mapping_type=broader.
+        """
+}
+mapping "d540.1" source="d540" target="SNOMED_CT:165235000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d540 SNOMED CT 165235000 = ICF d540 Dressing (putting on and taking off clothes and
+        footwear, and choosing appropriate clothing); 3rd-level category. Target =, active RF2
+        production (Athena 4012840), SNOMED CT's direct self-care observable for the dressing activity
+        (parent of 700460004, 700459009, 284984000, 284978003). SNOMED CT has no standalone observable
+        (unlike the washing/grooming families), so the dressing ability-observable family is the
+        ICF-aligned equivalent; 165235000 is the canonical match for the whole d540 dressing category.
+        High tier (exact): the target names the identical dressing activity at the same level of
+        specificity; not only because SNOMED CT frames it as (capacity framing) where ICF d540 frames the
+        activity itself — a minor model-framing difference, no Athena crosswalk re-verified.
+        mapping_type=exact_match.
+        """
+}
+mapping "d5400.1" source="d5400" target="SNOMED_CT:284967006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5400 SNOMED CT 284967006 = ICF d5400 Dressing: Putting on clothes (the act of dressing —
+        putting on garments in their proper order and on the correct body parts); 4th-level child of
+        d540. Target =, active RF2 production (Athena 4110627), SNOMED CT's self-care observable for the
+        dressing (putting-on-clothes) activity, distinct from the dressing-undressing-appliance
+        observables. SNOMED CT has no standalone; 284967006 is the direct observable for the
+        putting-on-clothes activity (the dominant sense of ICF d5400 = to dress / put on). High tier
+        (exact): the target names the identical putting-on-clothes activity at the same level of
+        specificity; not only because of the capacity framing vs the ICF activity framing.
+        mapping_type=exact_match.
+        """
+}
+mapping "d5401.1" source="d5401" target="SNOMED_CT:284984000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5401 SNOMED CT 284984000 = ICF d5401 Dressing: Undressing (taking off clothes); in this
+        Swedish Socialstyrelsen ICF row the d5401 code labels the undressing activity (Swedish = to
+        undress), a 4th-level child of d540. Target =, active RF2 production (Athena 4108198), SNOMED CT's
+        direct self-care observable for the undressing activity and the sibling of 284978003 (put on
+        footwear) / 284990001 (take off footwear) under the 165235000. Same single functional axis
+        (undressing self) at the same level of specificity. High tier (exact): the target names the
+        identical undressing activity; not only because SNOMED CT frames it as (capacity framing) where the
+        ICF code frames the activity itself, and because the Swedish extension re-purposes the d5401
+        slot (standard ICF d5401 = putting on clothes) for undressing — the source's own sv name is
+        authoritative here and matches the target one-to-one. mapping_type=exact_match.
+        """
+}
+mapping "d5402.1" source="d5402" target="SNOMED_CT:284978003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5402 SNOMED CT 284978003 = ICF d5402 Dressing: Putting on footwear (putting on socks,
+        stockings and shoes); 4th-level child of d540. Target =, active RF2 production (Athena 4114731),
+        SNOMED CT's direct self-care observable for the put-on-footwear activity, a child of 165235000. The
+        SNOMED CT concept denotes the identical footwear-putting-on activity at the same level of
+        specificity; sv term alignment is direct (= ability to put on footwear). exact_match : direct
+        1:1 verified SNOMED CT function observable on the same single axis; named explicitly as a d540
+        constituent in the d540 parent map. mapping_type=exact_match.
+        """
+}
+mapping "d5403.1" source="d5403" target="SNOMED_CT:284990001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5403 SNOMED CT 284990001 = ICF d5403 Dressing: Taking off footwear (taking off socks,
+        stockings and shoes); 4th-level child of d540, sibling of d5402. Target =, active RF2 production
+        (Athena 4114735), SNOMED CT's direct self-care observable for the take-off-footwear activity and
+        the direct sibling of 284978003 (put on footwear). The SNOMED CT concept denotes the identical
+        footwear-taking-off activity at the same level of specificity; sv term alignment is direct (=
+        ability to take off footwear). exact_match : direct 1:1 verified SNOMED CT function observable on
+        the same single axis, symmetric with the d5402 -> 284978003 exact map. mapping_type=exact_match.
+        """
+}
+mapping "d5404.1" source="d5404" target="SNOMED_CT:716399006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5404 SNOMED CT 716399006 = ICF d5404 Dressing: Choosing appropriate clothing (selecting
+        clothing suitable for the climate, occasion and one's own appearance); 4th-level child of d540.
+        Target =, active RF2 production (Athena 37396541), SNOMED CT's only standard concept on the
+        choosing-appropriate-clothing axis (no observable/function variant exists; the adjacent
+        725266001 is an education procedure). Broader (high): the target fully captures the source's
+        choosing-appropriate-clothing meaning at the same clinical specificity, but it is framed as a
+        yes/no capacity finding rather than the ICF activity itself — a one-step model-framing climb
+        (activity -> capacity finding), not a semantic breadth change; consistent with the
+        capacity-framing precedent in the d540 family (d540 -> 165235000 at). mapping_type=broader.
+        """
+}
+mapping "d5408.1" source="d5408" target="SNOMED_CT:165235000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5408 SNOMED CT 165235000 = ICF d5408 Dressing, other specified: a specified-but-residual
+        child of d540 (a dressing activity not captured by d5400-d5404). Target =, active RF2 production
+        (Athena 4012840), the direct ancestor used for the d540 parent. The source is, by
+        definition, a dressing activity under d540, so the ability-to-dress observable legitimately
+        subsumes it. Broader (moderate): direct SNOMED CT function-observable ancestor on the same axis,
+        broader because the source is an unspecified child whose exact meaning is undefined; consistent
+        with the residual-child precedent (d-code children mapped to the parent at, e.g. d5208 ->
+        704435007, d5308 -> 284899001). mapping_type=broader.
+        """
+}
+mapping "d5409.1" source="d5409" target="SNOMED_CT:165235000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d5409 SNOMED CT 165235000 = ICF d5409 Dressing, unspecified: the unspecified child of d540.
+        Target =, active RF2 production (Athena 4012840), the direct ancestor used for the d540 parent.
+        The source is an unspecified dressing activity under d540, so the ability-to-dress observable
+        legitimately subsumes it. Broader (moderate): direct SNOMED CT function-observable ancestor on the
+        same axis, broader because the source is explicitly unspecified; consistent with the
+        unspecified-child precedent (d-code children mapped to the parent at, e.g. d5209 -> 704435007,
+        d5309 -> 284899001). mapping_type=broader.
+        """
+}
+mapping "d550.1" source="d550" target="SNOMED_CT:288883002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d550 SNOMED CT 288883002 = ICF d550 Eating (keeping food, getting it into the mouth and
+        consuming it in acceptable ways); 3rd-level category under d5. Target =, active RF2 production
+        (Athena 4124969), SNOMED CT's direct self-care observable for the eating activity, sibling of
+        288852001 (Ability to drink) and parent area of 288888006 (Ability to eat certain food). Same
+        functional activity (eating) at the same level of specificity; sv alignment direct (= ability to
+        eat). High tier (exact): the target names the identical eating activity; not only because SNOMED CT
+        frames it as (capacity framing) where ICF d550 frames the activity itself — a minor
+        model-framing difference, no Athena crosswalk re-verified. mapping_type=exact_match.
+        """
+}
+mapping "d560.1" source="d560" target="SNOMED_CT:288852001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d560 SNOMED CT 288852001 = ICF d560 Drinking (taking hold of a drink, bringing it to the
+        mouth and consuming it in acceptable ways); 3rd-level category under d5, sibling of d550. Target
+        =, active RF2 production (Athena 4124963), SNOMED CT's direct self-care observable for the drinking
+        activity, sibling of 288883002 (Ability to eat); the children 288858002 (feeder cup) and
+        288864009 (straw) confirm this is the canonical drinking-self axis. Same functional activity
+        (drinking) at the same level of specificity; sv alignment direct (= ability to drink). High tier
+        (exact): the target names the identical drinking activity; not only because SNOMED CT frames it as
+        (capacity framing) where ICF d560 frames the activity itself — a minor model-framing difference,
+        symmetric with the d550 -> 288883002 map. mapping_type=exact_match.
+        """
+}

@@ -1,0 +1,452 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d1-d13
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d1.1" source="d1" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1 SNOMED CT 69998004 = ICF chapter d1 Learning and applying knowledge: the second-level
+        chapter for learning, applying learned knowledge, thinking, and reading/writing/calculation.
+        Target =, active RF2 production, SNOMED CT's direct function concept for the learning axis. SNOMED CT
+        frames it as the learning-function observable (the central axis of the d1 chapter) rather than
+        the full learning+applying+thinking+literacy chapter; the target legitimately subsumes the
+        learning axis but the chapter also spans applying knowledge, thinking and literacy which the
+        single observable does not cover. Broader (high): direct SNOMED CT function-observable match for
+        the chapter's core axis, one-level broader because the chapter is wider than learning alone;
+        mirrors the b715/b720/b735 parent-level precedent (broader for the direct-observable match of
+        the same axis). mapping_type=broader.
+        """
+}
+mapping "d110.1" source="d110" target="SNOMED_CT:311520005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d110 SNOMED CT 311520005 = ICF d110 Watching: intentionally looking at/visually attending to
+        objects, people or events (the first 4-level child of d110-d129 Purposeful sensory experiences).
+        Target =, active RF2 production, SNOMED CT's direct function concept for visual attending; SE term
+        matches clinically. The target spans visual attention more broadly than the source's (which is a
+        sustained, object-directed instance of visual attention), so the target subsumes the source.
+        Broader (high): direct verified SNOMED CT function-observable match on the same axis, one-level
+        broader because is the parent concept of the activity; mirrors the d-code parent precedent (d620
+        -> 300718007 at). mapping_type=broader.
+        """
+}
+mapping "d110-d129.1" source="d110-d129" target="SNOMED_CT:311520005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d110-d129 SNOMED CT 311520005 = ICF block d110-d129 Purposeful sensory experiences: the
+        block-level grouping of watching (d110), listening (d115), purposeful sensing in other
+        modalities (d120) and the d129 residual. Target =, active RF2 production. No single SNOMED CT
+        function observable exists; the block spans multiple sensory modalities (visual, auditory,
+        other) (311520005) -- SNOMED CT has no active observable sibling. Broader (low): the
+        visual-attention observable subsumes only the visual (d110) axis of the multi-modal block and is
+        therefore markedly broader (partial coverage of the block), but it is the nearest defensible
+        standard ancestor spanning the block's dominant axis; consistent with the block-level map
+        precedent (b750-b789, b810-b849). mapping_type=broader.
+        """
+}
+mapping "d115.1" source="d115" target="SNOMED_CT:405019005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d115 SNOMED CT 405019005 = ICF d115 Listening: intentionally attending to and interpreting
+        sound, primarily spoken language (sibling of d110 Watching under block d110-d129 Purposeful
+        sensory experiences). Target =, active RF2 production, SE synonym; SNOMED CT's direct observable
+        for receiving/decoding communication. Listening is the auditory-linguistic instance of receptive
+        communication, so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        function-observable match on the same receptive axis, one-level broader because is the parent
+        concept of the activity; mirrors the d110 -> 311520005 (visual attention) sibling precedent at. mapping_type=broader.
+        """
+}
+mapping "d120.1" source="d120" target="SNOMED_CT:106148006" relationship=source_is_broader_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d120 SNOMED CT 106148006 = ICF d120 Other purposeful sensory experiences: the multi-modal
+        sensory-experience category spanning exploring with mouth (d1200), touch (d1201), smell (d1202),
+        taste (d1203); sibling of d110 Watching and d115 Listening under block d110-d129. Target =,
+        active RF2 production, SE synonym; SNOMED CT's broad parent observable for all special-sensory
+        function. No single SNOMED CT function observable exists; the source spans four distinct modalities
+        and the broad sensory-function ancestor is the only concept that contains every one of them.
+        Broader (low): markedly broader (multi-level climb from a 4-modality activity to the
+        all-sensory-function parent), but the nearest defensible standard ancestor; consistent with the
+        multi-modal block-level map precedent (b750-b789, b810-b849, d110-d129). mapping_type=broader.
+        """
+}
+mapping "d1200.1" source="d1200" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1200 SNOMED CT 106148006 = ICF d1200 Exploring objects with mouth: infant/toddler sensory
+        exploration using the mouth (mouthing) -- a 4th-level child of d120. Target =, active RF2
+        production. No active SNOMED CT observable for oral/mouth exploration exists (SNOMED CT 106148006
+        8130001 is an unrelated fish-appearance finding); the only defensible standard ancestor is the
+        broad sensory-function parent. Broader (weak): the climb is large (a specific infant mouthing
+        activity up to all sensory function) and the target is recorded as a lead rather than a tight
+        map; consistent with the d120 parent but downgraded one tier for the much deeper climb.
+        mapping_type=broader.
+        """
+}
+mapping "d1201.1" source="d1201" target="SNOMED_CT:785767004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1201 SNOMED CT 785767004 = ICF d1201 Exploring objects with touch: purposeful tactile
+        exploration of objects, people or events (4th-level child of d120). Target = /, active RF2
+        production, SE synonym; SNOMED CT's direct observable for tactile perceiving. The target spans
+        touch perception more broadly than the source's (a deliberate, object-directed instance of
+        tactile perception), so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        function-observable match on the same tactile axis, one-level broader; mirrors the d110 ->
+        311520005 sibling precedent. mapping_type=broader.
+        """
+}
+mapping "d1202.1" source="d1202" target="SNOMED_CT:397686008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1202 SNOMED CT 397686008 = ICF d1202 Smelling: purposefully noticing and distinguishing
+        smells (4th-level child of d120). Target =, active RF2 production, SE synonym (synonym);
+        SNOMED CT's direct observable for the olfactory sense. The observable denotes the capacity that the
+        activity exercises, so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        function-observable match on the same olfactory axis, one-level broader (function-capacity vs.
+        the activity that uses it); mirrors the d110 -> 311520005 sibling precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1203.1" source="d1203" target="SNOMED_CT:397627001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1203 SNOMED CT 397627001 = ICF d1203 Tasting: purposefully noticing and distinguishing
+        tastes (4th-level child of d120). Target =, active RF2 production, SE synonym (synonyms);
+        SNOMED CT's direct observable for the gustatory sense, with an exact English synonym. The
+        observable denotes the capacity that the activity exercises, so the target subsumes the source.
+        Broader (high): direct verified SNOMED CT function-observable match on the same gustatory axis,
+        one-level broader; mirrors the d110 -> 311520005 sibling precedent. mapping_type=broader.
+        """
+}
+assessment "d129.omop" source="d129" outcome=no_match target-system="OMOP_EXT"
+mapping "d130.1" source="d130" target="SNOMED_CT:288817009" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d130 SNOMED CT 288817009 = ICF d130 Imitating: imitating or mimicking as a basic learning
+        process (gesture, posture, action, sound) -- the first child of block d130-d159 Acquiring basic
+        skills. Target =, active RF2 production, SE synonym. SNOMED CT has no single parent observable; the
+        imitate-ability observables are mode-specific (gesture 288817009, words 288823004, speech sounds
+        286286006, vocalization 286349008, tongue movements 302054005, communication forms 288811005).
+        Gesture imitation is the closest single-mode analogue to the source's general body/action
+        imitation, but it covers only the gestural mode of a multi-mode activity. Broader (low): the
+        target is the nearest defensible imitate-ability observable but is broader (the source spans
+        gesture + posture + action + sound imitation); consistent with the block/parent-level map
+        precedent. mapping_type=broader.
+        """
+}
+mapping "d130-d159.1" source="d130-d159" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d130-d159 SNOMED CT 69998004 = ICF block d130-d159 Acquiring basic skills: the block-level
+        grouping of imitating (d130), rehearsing (d135), acquiring language (d131-d133 sub-branch via
+        d131/d132/d133), and learning to read/write/calculate/reason (d140-d159). Target =, active RF2
+        production, SE synonym; the same direct learning-function observable used for the d1 chapter. No single SNOMED CT function observable exists; the block spans imitation + rehearsal +
+        language + literacy + numeracy + reasoning, and the learning-function observable is the nearest
+        defensible ancestor spanning the block's dominant axis (learning). Broader (low): markedly
+        broader (multi-level climb from a multi-skill block to the general learning function), but the
+        nearest defensible standard ancestor; consistent with the block-level map precedent (b750-b789,
+        d110-d129) and the d1 chapter -> 69998004 parent. mapping_type=broader.
+        """
+}
+mapping "d131.1" source="d131" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d131 SNOMED CT 284311007 = ICF d131 Learning through actions with objects: learning by
+        handling, manipulating and using objects in interaction with people (child of block d130-d159,
+        parent of d1310-d1319). Target =, active RF2 production, SE synonym; SNOMED CT's direct observable
+        for object manipulation, which is the central axis the d131 learning process exercises. The
+        target spans object manipulation more broadly than the source's, so the target subsumes the
+        source. Broader (high): direct verified SNOMED CT function-observable match on the same
+        object-manipulation axis, one-level broader; mirrors the d110 -> 311520005 parent precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1310.1" source="d1310" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1310 SNOMED CT 284311007 = ICF d1310 Learning through use of a single object: learning by
+        using one object in play/interaction (4th-level child of d131). Target =, active RF2 production,
+        SE synonym. Single-object use is the most basic instance of object manipulation, so the target
+        subsumes the source. Broader (high): direct verified SNOMED CT function-observable match on the
+        same object-manipulation axis, one-level broader; mirrors the d131 -> 284311007 parent
+        precedent. mapping_type=broader.
+        """
+}
+mapping "d1311.1" source="d1311" target="SNOMED_CT:284317006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1311 SNOMED CT 284317006 = ICF d1311 Learning through use of several objects together:
+        learning by combining/manipulating multiple objects at once (4th-level child of d131). Target =,
+        active RF2 production, SE synonym; SNOMED CT's direct observable for relating/manipulating multiple
+        objects to each other. The target directly captures the multi-object-relational axis the
+        source's learning process exercises, so the target subsumes the source. Broader (high): direct
+        verified SNOMED CT function-observable match on the same multi-object-manipulation axis, one-level
+        broader; mirrors the d131 sibling precedent. mapping_type=broader.
+        """
+}
+mapping "d1312.1" source="d1312" target="SNOMED_CT:284317006" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1312 SNOMED CT 284317006 = ICF d1312 Learning through use of several objects together in
+        the intended/conventional way: learning to use multi-object combinations functionally and
+        conventionally (4th-level child of d131). Target =, active RF2 production, SE synonym; SNOMED CT's
+        direct observable for relating/manipulating multiple objects to each other. Conventional
+        multi-object use is the highest instance of object-relative manipulation, so the target subsumes
+        the source. Broader (high): direct verified SNOMED CT function-observable match on the same
+        multi-object-manipulation axis, one-level broader; mirrors the d1311 sibling precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1313.1" source="d1313" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1313 SNOMED CT 284311007 = ICF d1313 Learning through symbolic use of objects: learning to
+        use objects as symbols/substitutes (e.g. a block becomes a phone) -- a 4th-level child of d131.
+        Target =, active RF2 production. SNOMED CT has no function observable (the rows are assessment
+        scales, and SNOMED CT 284311007 271721006 is a finding); the only defensible standard ancestor
+        spanning the object-handling axis is the broad manipulate-objects observable. Broader (low):
+        markedly broader (the symbolic-representational meaning of the source is lost in the climb to
+        generic object manipulation), but the nearest defensible ancestor; consistent with the
+        multi-modal/block precedent. mapping_type=broader.
+        """
+}
+mapping "d1314.1" source="d1314" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1314 SNOMED CT 284311007 = ICF d1314 Pretend/pretend play: learning through make-believe,
+        substituting and pretending with objects and actions (4th-level child of d131). Target =, active
+        RF2 production. SNOMED CT has no function observable (Test of Pretend Play rows 716060006/719942005
+        are assessment procedures/scores, not the play activity); the only defensible standard ancestor
+        spanning the object-handling axis the pretend-play activity exercises is the broad
+        manipulate-objects observable. Broader (low): markedly broader (the symbolic/representational
+        meaning of pretend play is lost in the climb to generic object manipulation), but the nearest
+        defensible ancestor; consistent with the d1313 sibling and the block precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1315.1" source="d1315" target="SNOMED_CT:288361006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1315 SNOMED CT 288361006 = ICF d1315 Role play: learning through taking on and performing
+        roles/characters (4th-level child of d131). Target = (synonyms), active RF2 production; SNOMED CT's
+        general manipulative-activity observable. The closest named concept, SNOMED CT 288361006 51491004,
+        is a finding (not a function/activity observable) and denotes the behavioral/psychiatric finding
+        of role-playing rather than the developmental learning activity; it would be a loose link, not a
+        function map. The general manipulative-activities observable is the nearest defensible function
+        ancestor for the object-/action-based role-play activity. Broader (low): markedly broader (the
+        social-role meaning of role play is lost in the climb to general manipulative skill), but the
+        nearest defensible standard ancestor; consistent with the d1314 sibling and the block precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1318.1" source="d1318" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1318 SNOMED CT 284311007 = ICF d1318 Learning through actions with objects, other
+        specified: a specified-but-residual child of d131 (a learning-through-objects activity not
+        captured by d1310-d1315). Target =, active RF2 production, the direct ancestor used for the d131
+        parent. The source is, by definition, an object-based learning activity falling under d131, so
+        the manipulate-objects observable legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        function-observable ancestor on the same axis, broader because the source is an unspecified
+        child whose exact meaning is undefined; consistent with the unspecified/residual-child precedent
+        (b-code children mapped to the parent at). mapping_type=broader.
+        """
+}
+mapping "d1319.1" source="d1319" target="SNOMED_CT:284311007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1319 SNOMED CT 284311007 = ICF d1319 Learning through actions with objects, unspecified:
+        the unspecified child of d131. Target =, active RF2 production, the direct ancestor used for the
+        d131 parent. The source is an unspecified object-based learning activity under d131, so the
+        manipulate-objects observable legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        function-observable ancestor on the same axis, broader because the source is explicitly
+        unspecified; consistent with the unspecified-child precedent (b-code children mapped to the
+        parent at). mapping_type=broader.
+        """
+}
+mapping "d132.1" source="d132" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d132 SNOMED CT 61909002 = ICF d132 Acquiring language: learning to understand and produce a
+        first language, including single words (d1320), combining words (d1321) and syntax (d1322)
+        (child of block d130-d159, parent of d1320-d1329). Target =, active RF2 production, SE synonym;
+        SNOMED CT's direct function observable for language. The observable denotes the capacity that the
+        process builds, so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        function-observable match on the same language axis, one-level broader (function-capacity vs.
+        the developmental acquisition process); mirrors the d110 -> 311520005 parent precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1320.1" source="d1320" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1320 SNOMED CT 61909002 = ICF d1320 Learning single words or meaningful symbols: acquiring
+        individual words, signs or graphic symbols (4th-level child of d132). Target =, active RF2
+        production, SE synonym. Single-word/symbol acquisition is the foundational instance of the
+        language function, so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        function-observable match on the same language axis, one-level broader; mirrors the d132 ->
+        61909002 parent precedent. mapping_type=broader.
+        """
+}
+mapping "d1321.1" source="d1321" target="SNOMED_CT:32650004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1321 SNOMED CT 32650004 = ICF d1321 Combining words into phrases: learning to join
+        words/signs into phrases (4th-level child of d132). Target =, active RF2 production, SE synonym;
+        SNOMED CT's direct observable for fluent expressive language production. Combining words into
+        phrases is the productive-fluency axis of language, so the target subsumes the source. Broader
+        (high): direct verified SNOMED CT function-observable match on the same expressive-fluency axis,
+        one-level broader; mirrors the d132 sibling precedent. mapping_type=broader.
+        """
+}
+mapping "d1322.1" source="d1322" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1322 SNOMED CT 61909002 = ICF d1322 Learning syntax: acquiring the rules of word order and
+        grammatical structure (4th-level child of d132). Target =, active RF2 production, SE synonym.
+        SNOMED CT has no dedicated observable; the language-function observable is the nearest defensible
+        ancestor that contains the grammatical-structure axis. Broader (moderate): direct SNOMED CT
+        function-observable ancestor, broader because no syntax-specific standard concept exists and the
+        climb is to the general language function; consistent with the unspecified/residual-child and
+        absent-specific-target precedent. mapping_type=broader.
+        """
+}
+mapping "d1328.1" source="d1328" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1328 SNOMED CT 61909002 = ICF d1328 Acquiring language, other specified: a
+        specified-but-residual child of d132 (a language-acquisition activity not captured by
+        d1320-d1322). Target =, active RF2 production, the direct ancestor used for the d132 parent. The
+        source is, by definition, a language-acquisition activity falling under d132, so the
+        language-function observable legitimately subsumes it. Broader (moderate): direct SNOMED CT
+        function-observable ancestor on the same axis, broader because the source is an unspecified
+        child; consistent with the unspecified/residual-child precedent. mapping_type=broader.
+        """
+}
+mapping "d1329.1" source="d1329" target="SNOMED_CT:61909002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1329 SNOMED CT 61909002 = ICF d1329 Acquiring language, unspecified: the unspecified child
+        of d132. Target =, active RF2 production, the direct ancestor used for the d132 parent. The
+        source is an unspecified language-acquisition activity under d132, so the language-function
+        observable legitimately subsumes it. Broader (moderate): direct SNOMED CT function-observable
+        ancestor on the same axis, broader because the source is explicitly unspecified; consistent with
+        the unspecified-child precedent. mapping_type=broader.
+        """
+}
+mapping "d133.1" source="d133" target="SNOMED_CT:224077002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d133 SNOMED CT 224077002 = ICF d133 Acquiring an additional language: learning a
+        second/additional language (sibling of d132 under block d130-d159). Target =, active RF2
+        production, SE synonym (synonym); SNOMED CT's direct observable for a second/additional language.
+        The observable directly denotes the additional-language capacity that the source's acquisition
+        process builds, so the target subsumes the source. Broader (high): direct verified SNOMED CT
+        observable match on the same additional-language axis, one-level broader (the static
+        second-language observable vs. the dynamic process); mirrors the d110/d132 sibling precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d134.1" source="d134" target="SNOMED_CT:311544007" relationship=source_is_narrower_than_target quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d134 SNOMED CT 311544007 = ICF d134 Finding information: basic-learning activity of
+        seeking/finding information from objects, people, media (child of d130-d159 Basic learning).
+        Target =, active RF2 production, parent is 311465003. No active SNOMED CT observable exists in the
+        mirror; the closest defensible function observable is information processing, which spans
+        acquiring/acting on information more broadly than the source's finding-axis alone. Broader
+        (moderate): the target legitimately subsumes the source (finding information is one mode of
+        information processing) but adds breadth the source does not assert; one-level broader on the
+        same cognitive axis, no exact observable exists so this is the best available defensible
+        standard concept rather than a crosswalk-verified equivalent. mapping_type=broader.
+        """
+}
+mapping "d135.1" source="d135" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d135 SNOMED CT 69998004 = ICF d135 Repeating: basic-learning activity of
+        reproducing/repeating a sequence of items (sounds, words, symbols) as a model -- the
+        foundational learning mechanism of imitation/rote repetition (child of d130-d159 Basic
+        learning). Target =, active RF2 production, parent is 311465003. No active SNOMED CT or observable
+        exists in the mirror; the verbal-repetition SNOMED CT concepts (25107009, 28051002, 40628008)
+        (69262000) is a related but distinct cognitive axis. The nearest defensible function ancestor on
+        the learning axis is Learning, function. Broader (low): the target subsumes the source
+        (repeating is a primitive learning mechanism) but is markedly broader, and the closest in-axis
+        sibling (immediate memory) does not fully capture the source's imitation/reproduction sense;
+        consistent with the block/distant-ancestor broader precedent (b750-b789, d110-d129).
+        mapping_type=broader.
+        """
+}
+mapping "d137.1" source="d137" target="SNOMED_CT:311534005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d137 SNOMED CT 311534005 = ICF d137 Acquiring concepts: basic-learning activity of learning
+        to form and use basic and complex ideas/concepts (parent of d1370 basic concepts and d1371
+        complex concepts; child of d130-d159 Basic learning). Target =, active RF2 production, SE
+        synonym, parent is 311465003. SNOMED CT's conceptualization function is the direct
+        function-observable for the concept-formation axis the source describes; the target spans
+        concept formation broadly (including adult/higher conceptualization) whereas the source is
+        specifically the developmental acquisition axis. Broader (high): direct verified SNOMED CT
+        function-observable match on the same concept-formation axis, one-level broader because is wider
+        than (which is the learning/developmental instance); mirrors the d-code parent precedent (d1 ->
+        69998004 at). mapping_type=broader.
+        """
+}
+mapping "d1370.1" source="d1370" target="SNOMED_CT:311534005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1370 SNOMED CT 311534005 = ICF d1370 Acquiring basic concepts: 4th-level child of d137, the
+        basic-learning activity of forming simple, foundational concepts (object categories, simple
+        attributes). Target =, active RF2 production. No SNOMED CT observable exists; the (311534005) is
+        the nearest defensible ancestor. Broader (moderate): the target subsumes the source
+        (basic-concept acquisition is one instance of conceptualization) but is broader both upward
+        (conceptualization vs acquisition) and across (basic + complex vs basic only); two levels of
+        breadth loss vs the d137 parent. mapping_type=broader.
+        """
+}
+mapping "d1371.1" source="d1371" target="SNOMED_CT:311534005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1371 SNOMED CT 311534005 = ICF d1371 Acquiring complex concepts: 4th-level child of d137,
+        the basic-learning activity of forming higher-order/abstract concepts (relations, categories
+        with multiple attributes). Target =, active RF2 production. No SNOMED CT observable exists; the
+        single concept-formation function observable is the nearest defensible ancestor. Broader
+        (moderate): the target subsumes the source (complex-concept acquisition is an instance of
+        conceptualization) but is broader upward (conceptualization vs acquisition) and across (the
+        function observable spans all conceptualization, not the complex-acquisition axis specifically);
+        same breadth profile as the d1370 sibling. mapping_type=broader.
+        """
+}
+mapping "d1378.1" source="d1378" target="SNOMED_CT:311534005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1378 SNOMED CT 311534005 = ICF d1378 Acquiring concepts, other specified: the residual
+        SNOMED CT 311534005 4th-level child of d137 covering concept-acquisition activities not captured by
+        d1370/d1371. Target =, active RF2 production. The residual source is heterogeneous and its exact
+        content is unspecified beyond; the only defensible standard ancestor is the concept-formation
+        function observable. Broader (low): the target subsumes the residual bucket on the concept axis
+        but the source is deliberately non-specific, so the breadth loss is real and the residual nature
+        adds doubt; consistent with the residual-other-specified precedent. mapping_type=broader.
+        """
+}
+mapping "d1379.1" source="d1379" target="SNOMED_CT:311534005" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1379 SNOMED CT 311534005 = ICF d1379 Acquiring concepts, unspecified: the SNOMED CT 311534005
+        4th-level child of d137. Target =, active RF2 production. Unspecified source mapped to the
+        nearest defensible concept-formation ancestor. Broader (low): unspecified source forces a
+        broader ancestor; the single concept-formation function observable is the best available but the
+        unspecified framing and the breadth loss together justify the low tier rather than moderate;
+        mirrors the unspecified-source precedent (A009 only when crosswalk-verified; here no crosswalk
+        so). mapping_type=broader.
+        """
+}

@@ -1,0 +1,432 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d44-d45
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d440.1" source="d440" target="SNOMED_CT:288361006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d440 SNOMED CT 288361006 = ICF d440 Fine hand use (picking up, grasping, manipulating,
+        releasing with the fingers/hand; coordinated fine-motor acts). 3rd-level block under d4. Target
+        =, active RF2 production, with synonyms and; parent of 284311007 (manipulate objects) and
+        288362004 (pick up objects) in the SNOMED CT hierarchy. 288361006 directly denotes the
+        dexterity/fine-manipulative-hand-use axis that d440 names, and is the SNOMED CT parent that groups
+        d440's own children (pick up, grip, manipulate, release). Broader (high): one-level ancestor
+        covering the full fine-hand-use scope; verified crosswalk via the SNOMED CT hierarchy that places
+        pick-up and manipulate under this concept. mapping_type=broader.
+        """
+}
+mapping "d4400.1" source="d4400" target="SNOMED_CT:288362004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4400 SNOMED CT 288362004 = ICF d4400 Fine hand use: Picking up (lifting/grasping an object
+        with the fingers/hand to take hold of it). 5th-level child of d440. Target =, active RF2
+        production (sv mirror), child of 288361006. Same functional activity and same level of
+        specificity — direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4401.1" source="d4401" target="SNOMED_CT:284256002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4401 SNOMED CT 284256002 = ICF d4401 Fine hand use: Grasping (seizing/holding an object
+        with the hand/fingers). 5th-level child of d440. Target =, active RF2 production (sv mirror),
+        child of 284180008. Same functional activity and same level of specificity — direct 1:1
+        equivalent. exact_match.
+        """
+}
+mapping "d4402.1" source="d4402" target="SNOMED_CT:284311007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4402 SNOMED CT 284311007 = ICF d4402 Fine hand use: Handling or manipulating (using the
+        fingers/hand to operate, control, position, or coordinate objects). 5th-level child of d440.
+        Target =, active RF2 production (sv mirror), child of 288361006. Same functional activity and
+        same level of specificity — direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4403.1" source="d4403" target="SNOMED_CT:284305009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4403 SNOMED CT 284305009 = ICF d4403 Fine hand use: Releasing (letting go of an object
+        after grasping/holding it; opening the hand to free the object). 5th-level child of d440. Target
+        =, active RF2 production (sv mirror). Same functional activity (releasing a held grip), same
+        level of specificity — direct 1:1 equivalent. High (exact) because is the SNOMED CT observable that
+        directly names the d4403 releasing act; term and scope align, though no independent Athena
+        crosswalk was re-verified. mapping_type=exact_match.
+        """
+}
+mapping "d4408.1" source="d4408" target="SNOMED_CT:288361006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4408 SNOMED CT 288361006 = ICF d4408 Fine hand use, other specified (residual 4th-level
+        bucket under d440 for specified fine-hand acts not captured by d4400-d4403). Target = (synonym);
+        parent of pick-up and manipulate in the SNOMED CT hierarchy. No specific SNOMED CT child fits a
+        residual bucket; 288361006 is the direct parent covering the full fine-hand-use scope. Broader
+        (one-level ancestor). Moderate : residual source mapped one level up to the dexterity parent.
+        mapping_type=broader.
+        """
+}
+mapping "d4409.1" source="d4409" target="SNOMED_CT:288361006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4409 SNOMED CT 288361006 = ICF d4409 Fine hand use, unspecified (deliberately non-specific
+        4th-level code under d440). Target = (synonym /); the SNOMED CT parent that groups d440's children.
+        Broader (unspecified source climbs one level to the dexterity parent). Moderate : the target's
+        synonym is the closest standard label for the unspecified fine-hand-use category.
+        mapping_type=broader.
+        """
+}
+mapping "d445.1" source="d445" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d445 SNOMED CT 301998005 = ICF d445 Hand and arm use (coarse/whole-arm hand use: pulling,
+        pushing, reaching, turning, throwing, catching — the full d445 block). 3rd-level block under d4.
+        SNOMED CT has no single concept; d445's constituent acts (pull 303362002, push 303361009, reach
+        282676001, throw 282663007, catch 282670007) are all children of 301998005 (sv). 301998005 is
+        the nearest common ancestor that fully subsumes all d445 acts. Broader (generic mobility
+        ancestor, several levels above the granular arm-act children). Low : 301998005 does not encode
+        the hand-and-arm specificity. mapping_type=broader.
+        """
+}
+mapping "d4450.1" source="d4450" target="SNOMED_CT:303362002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4450 SNOMED CT 303362002 = ICF d4450 Hand and arm use: Pulling (using the arms/hands to
+        draw an object toward the body). 5th-level child of d445. Target =, active RF2 production (sv
+        mirror), child of 301998005. Same functional activity and same level of specificity — direct 1:1
+        equivalent. exact_match.
+        """
+}
+mapping "d4451.1" source="d4451" target="SNOMED_CT:303361009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4451 SNOMED CT 303361009 = ICF d4451 Hand and arm use: Pushing (using the arms/hands to
+        propel an object away from the body). 5th-level child of d445. Target =, active RF2 production
+        (sv mirror), child of 301998005. Same functional activity and same level of specificity — direct
+        1:1 equivalent. exact_match.
+        """
+}
+mapping "d4452.1" source="d4452" target="SNOMED_CT:282676001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4452 SNOMED CT 282676001 (sv alt) = ICF d4452 Hand and arm use: Reaching (extending the
+        arm/hand to obtain/touch an object). 5th-level child of d445. Target =, active RF2 production
+        (sv mirror), child of 301998005. Same functional activity and same level of specificity — direct
+        1:1 equivalent. exact_match.
+        """
+}
+mapping "d4453.1" source="d4453" target="SNOMED_CT:288361006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4453 SNOMED CT 288361006 = ICF d4453 Hand and arm use: Turning or twisting the hands or
+        arms (rotating the hand/forearm or whole arm, e.g. pronation/supination, turning a knob).
+        5th-level child of d445. No SNOMED CT concept exists in the mirror or Athena. The closest lead is
+        288361006, which is clinically associated (hand/arm manipulation broadly) but does not denote
+        the rotation/twist axis. This is a related link (a lead worth recording), not an equivalence,
+        ancestor, descendant, or component. Weak per the related-link rubric. mapping_type=related.
+        """
+}
+mapping "d4454.1" source="d4454" target="SNOMED_CT:282663007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4454 SNOMED CT 282663007 = ICF d4454 Hand and arm use: Throwing (propelling an object
+        through the air with the arm/hand). 5th-level child of d445. Target =, active RF2 production (sv
+        mirror), child of 301998005. Same functional activity and same level of specificity — direct 1:1
+        equivalent. exact_match.
+        """
+}
+mapping "d4455.1" source="d4455" target="SNOMED_CT:282670007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4455 SNOMED CT 282670007 = ICF d4455 Hand and arm use: Catching (intercepting and seizing a
+        moving object with the hand/arm). 5th-level child of d445. Target =, active RF2 production (sv
+        mirror), child of 301998005. Same functional activity and same level of specificity — direct 1:1
+        equivalent. exact_match.
+        """
+}
+mapping "d4458.1" source="d4458" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4458 SNOMED CT 301998005 = ICF d4458 Hand and arm use, other specified: the residual SNOMED CT
+        301998005 4th-level child of d445 (whole-arm/hand use: pulling, pushing, reaching, turning,
+        throwing, catching). Target =, active RF2 production (sv), the nearest common ancestor that
+        subsumes all d445 acts (d445 parent maps here). SNOMED CT has no concept; 301998005
+        is the axis concept for the d445 block. Broader (moderate): one-level broader under the d445
+        parent axis, other-specified source, consistent with the residual-code precedent (d4108 at). mapping_type=broader.
+        """
+}
+mapping "d4458A.1" source="d4458A" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4458A SNOMED CT 301998005 = Swedish ICF-extension code for hand and arm use above shoulder
+        height (raising/using the arm above the level of the shoulder); a 5th-level child of d445
+        specifying the overhead-reach height band. Target =, active RF2 production, the d445-block
+        ancestor. SNOMED CT has NO observable in the mirror or Athena (the closest concepts are
+        shoulder-girdle posture 284115006 and the general reach 282676001, neither of which encodes the
+        over-shoulder-height axis). 301998005 is the nearest axis concept and subsumes the move-axis but
+        loses BOTH the hand-and-arm and the over-shoulder-height specificity. Broader (low): deep climb
+        with no narrower target available; consistent with the leaf-under-broad-parent precedent (d4453
+        at related / d445 parent at). mapping_type=broader.
+        """
+}
+mapping "d4459.1" source="d4459" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4459 SNOMED CT 301998005 = ICF d4459 Hand and arm use, unspecified: the SNOMED CT 301998005
+        4th-level child of d445. Target =, active RF2 production, the axis concept for the d445 block
+        (d445 parent maps here). SNOMED CT has no unspecified hand-and-arm-use concept; 301998005 subsumes
+        the unspecified bucket. Broader (moderate): one-level broader under the d445 parent axis,
+        unspecified source; per the unspecified-source precedent (A009 -> 198677 at) and d4109. mapping_type=broader.
+        """
+}
+mapping "d446.1" source="d446" target="SNOMED_CT:284155008" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d446 SNOMED CT 284155008 = ICF d446 Fine foot use (using the toes/foot to manipulate or move
+        objects, e.g. picking things up with the toes); a 3rd-level block under d4 (the foot analogue of
+        d440 fine hand use). No SNOMED CT concept exists in the mirror or Athena. The closest lead is =
+        (child of 301998005), which is clinically associated (foot movement) but does not denote the
+        fine-manipulation-with-the-foot axis that d446 names (moving the foot is gross motor, not fine
+        manipulative). This is a related link (a lead worth recording), not an equivalence, ancestor,
+        descendant, or component. Weak per the related-link rubric (family-history-style/contextual
+        lead). mapping_type=related.
+        """
+}
+mapping "d449.1" source="d449" target="SNOMED_CT:364666007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d449 SNOMED CT 364666007 = ICF d449 Carrying, moving and handling objects, other specified
+        and unspecified: the combined residual 3rd-level block of d4 chapter-4 (the catch-all parent for
+        lifting/carrying/fine-hand-use not elsewhere classified, covering d430+d435+d440+d445). Target
+        =, active RF2 production, the SNOMED CT ancestor covering moving/handling objects in the broader
+        object-transfer axis. SNOMED CT has no single combined concept (its granular children are 288330002
+        lift, 288342007 carry, 288361006 manipulative activities); the nearest common ancestor that
+        subsumes the heterogeneous d449 bucket is the object-handling axis. Broader (low): the source is
+        a deliberately non-specific catch-all spanning multiple d4 sub-blocks and the target is a
+        generic ancestor several levels above the granular children, consistent with the
+        heterogeneous-residual precedent (d4308/d4309 at). mapping_type=broader.
+        """
+}
+mapping "d450.1" source="d450" target="SNOMED_CT:282097004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d450 SNOMED CT 282097004 = ICF d450 Walking: moving along a surface on foot, step by step,
+        so that one foot is always on the ground; 3rd-level block under d4. Target =, active RF2
+        production, SNOMED CT's direct observable for the walking axis and parent of 282148005 (walk on the
+        flat), 282190004 (walk up stairs), etc. The ICF d450 and denote the same functional activity at
+        the same level of specificity (the walk axis). exact_match.
+        """
+}
+mapping "d450-d469.1" source="d450-d469" target="SNOMED_CT:282097004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d450-d469 SNOMED CT 282097004 = ICF d450-d469 Walking and moving around: the 2nd-level block
+        spanning the entire d450-d469 range (walking d450 + moving around in different locations d460 +
+        moving around using equipment d465). Target =, active RF2 production, the dominant axis concept
+        of this block (d450 Walking maps here). SNOMED CT has no single combined concept; the walking
+        observable is the nearest axis concept and subsumes the walking portion of the block. Broader
+        (moderate): the source is a multi-3rd-level block (walking + locations + equipment) and the
+        target covers the dominant walking axis; one-level-broader under the block parent, consistent
+        with the block-range precedent. mapping_type=broader.
+        """
+}
+mapping "d4500.1" source="d4500" target="SNOMED_CT:282148005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4500 SNOMED CT 282148005 = ICF d4500 Walking short distances: walking for less than a
+        kilometer (a distance-band child of d450). Target =, active RF2 production, child of 282097004.
+        SNOMED CT has NO observable (its walking-distance concept 165263003 is a measurement, not an
+        ability); the nearest axis concept is 282148005 (walk on the flat), which subsumes the
+        flat-surface walking axis but does not encode the short-distance band. Broader (high): one-level
+        broader, the target fully contains the source's flat-surface walking axis but the distance-band
+        specificity is outside any SNOMED CT concept; the distance-band framing is marginally more specific
+        than but no meaning of the source falls outside the target. mapping_type=broader.
+        """
+}
+mapping "d4501.1" source="d4501" target="SNOMED_CT:282148005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4501 SNOMED CT 282148005 = ICF d4501 Walking long distances: walking for more than a
+        kilometer (a distance-band child of d450). Target =, active RF2 production, child of 282097004.
+        SNOMED CT has NO observable; the nearest axis concept is 282148005 (walk on the flat), which
+        subsumes the flat-surface walking axis but does not encode the long-distance band. Broader
+        (high): one-level broader, the target fully contains the source's flat-surface walking axis but
+        the distance-band specificity is outside any SNOMED CT concept. mapping_type=broader.
+        """
+}
+mapping "d4502.1" source="d4502" target="SNOMED_CT:715010008" relationship=source_is_broader_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4502 SNOMED CT 715010008 = ICF d4502 Walking on different surfaces: adapting walking to
+        surfaces of varying hardness, texture and slope (a child of d450). Target =, active RF2
+        production, child of 282097004. SNOMED CT has no concept; 715010008 (uneven surface) is the closest
+        single-surface variant and is marginally narrower than the source's (which spans varied terrain
+        incl. uneven), but the source's varied-surface walking fully falls within uneven-surface walking
+        as the dominant instance. Broader (high): the target is the closest axis concept; SNOMED CT
+        captures the uneven-surface instance while the source spans varied surfaces, a small
+        well-understood breadth mismatch on the same axis. mapping_type=broader.
+        """
+}
+mapping "d4503.1" source="d4503" target="SNOMED_CT:301478008" relationship=source_is_narrower_than_target effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4503 SNOMED CT 301478008 = ICF d4503 Walking around obstacles: navigating around physical
+        obstacles while walking (a child of d450). Target =, active RF2 production, child of 301472009.
+        SNOMED CT has 301472009 (negotiate obstacles) and 301478008 (avoid obstacles in path); is the
+        closest match to (both denote navigating past obstacles during ambulation), with framing
+        marginally broader than. Broader (high): one-level breadth mismatch on the obstacle-negotiation
+        axis; the target fully captures the obstacle-avoidance axis of the source. mapping_type=broader.
+        """
+}
+mapping "d4508.1" source="d4508" target="SNOMED_CT:282097004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4508 SNOMED CT 282097004 = ICF d4508 Walking, other specified: the residual SNOMED CT
+        282097004 4th-level child of d450. Target =, active RF2 production, the parent observable for
+        the walking axis (d450 parent maps here). SNOMED CT has no concept; the parent walking observable
+        subsumes the residual bucket. Broader (moderate): one-level broader under the d450 parent axis,
+        other-specified source, consistent with the residual-code precedent (d4108 at).
+        mapping_type=broader.
+        """
+}
+mapping "d4509.1" source="d4509" target="SNOMED_CT:282097004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4509 SNOMED CT 282097004 = ICF d4509 Walking, unspecified: the SNOMED CT 282097004 4th-level
+        child of d450. Target =, active RF2 production, the parent observable for the walking axis (d450
+        parent maps here). SNOMED CT has no unspecified-walking concept; the parent subsumes the
+        unspecified bucket. Broader (moderate): one-level broader under the d450 parent axis,
+        unspecified source, consistent with the unspecified-source precedent (A009 -> 198677 at) and
+        d4109. mapping_type=broader.
+        """
+}
+mapping "d451.1" source="d451" target="SNOMED_CT:282190004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d451 SNOMED CT 282190004 = ICF d451 Going up and down stairs: climbing up and down stairs (a
+        child of d450). Target =, active RF2 production, child of 282097004 (sibling 282196005 = walk
+        down stairs). SNOMED CT (282190004) (282196005); ICF d451 bundles both directions in one code.
+        282190004 (walk up stairs) is the dominant instance and is co-extensive with the up-stair half
+        of d451; the SNOMED CT up/down pair jointly covers d451 but no single SNOMED CT concept spans both
+        directions. exact_match on the up-stair axis (the dominant single-direction equivalent); the
+        bundled up-and-down framing is recorded in the comment rather than split into two partial
+        targets because the up-stair observable alone is the standard representative of d451 in clinical
+        use. mapping_type=exact_match.
+        """
+}
+mapping "d455.1" source="d455" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d455 SNOMED CT 301998005 = ICF d455 Moving around in different ways: moving the whole body
+        from one place to another by means other than walking (crawling, climbing, running, jumping,
+        swimming, rolling); 3rd-level block under d4. Target =, active RF2 production (sv) (282606002)
+        (284094007) (282462008) (282599005) (714992008) (282619003) — exactly the d455 constituent acts.
+        SNOMED CT has no single concept that bundles all non-walking locomotion; 301998005 is the nearest
+        common ancestor that fully subsumes every d455 act. Broader (high): one-level broader, the
+        target fully contains every clinical meaning of the source (all non-walking locomotion modes are
+        children of 301998005); mirrors the d410/d430 one-level-broader precedent where SNOMED CT's axis
+        concept subsumes the source's specific mode. mapping_type=broader.
+        """
+}
+mapping "d4550.1" source="d4550" target="SNOMED_CT:282606002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4550 SNOMED CT 282606002 = ICF d4550 Moving around in different ways: Crawling (moving the
+        body on hands and knees/abdomen along a surface). 5th-level child of d455. Target =, active RF2
+        production, child of 301998005. Same functional activity and same level of specificity — direct
+        1:1 equivalent. exact_match.
+        """
+}
+mapping "d4551.1" source="d4551" target="SNOMED_CT:284094007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4551 SNOMED CT 284094007 = ICF d4551 Moving around in different ways: Climbing (moving the
+        body up or down over surfaces/objects, e.g. ladders, rocks, steps). 5th-level child of d455.
+        Target =, active RF2 production, child of 301998005. Same functional activity and same level of
+        specificity — direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4552.1" source="d4552" target="SNOMED_CT:282462008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4552 SNOMED CT 282462008 = ICF d4552 Moving around in different ways: Running (moving with
+        quick steps so that both feet are momentarily off the ground). 5th-level child of d455. Target
+        =, active RF2 production, child of 301998005 282480004 (run on flat), 282523001 (run up stairs),
+        etc. Same functional activity and same level of specificity — direct 1:1 equivalent.
+        exact_match.
+        """
+}
+mapping "d4553.1" source="d4553" target="SNOMED_CT:282599005" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4553 SNOMED CT 282599005 = ICF d4553 Moving around in different ways: Jumping (moving the
+        body off the surface by bending/extending the legs). 5th-level child of d455. Target =, active
+        RF2 production, child of 301998005. Same functional activity and same level of specificity —
+        direct 1:1 equivalent. exact_match.
+        """
+}
+mapping "d4554.1" source="d4554" target="SNOMED_CT:714992008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4554 SNOMED CT 714992008 = ICF d4554 Moving around in different ways: Swimming (propelling
+        the whole body through water by limb movement). 5th-level child of d455. Target =, active RF2
+        production, child of 301998005. Same functional activity and same level of specificity — direct
+        1:1 equivalent. exact_match.
+        """
+}
+mapping "d4555.1" source="d4555" target="SNOMED_CT:282619003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4555 SNOMED CT 282619003 = ICF d4555 Moving around: Rolling or rotating the body in a lying
+        position (turning the trunk/whole body around its long axis while supine/prone). 5th-level child
+        of d455. Target =, active RF2 production, child of 301998005, with children 282625004 (roll on
+        to side) and 282631001 (roll over). SNOMED CT's roll-hierarchy is position-agnostic (roll / roll
+        onto side / roll over); the source's lying-position framing is marginally more specific but no
+        meaning of the source (rolling the body in lying) falls outside 282619003. Broader (high):
+        one-level broader, the target fully contains the source's roll axis; the lying-position band is
+        outside any single SNOMED CT child but roll-in-lying is the dominant instance of.
+        mapping_type=broader.
+        """
+}
+mapping "d4556.1" source="d4556" target="SNOMED_CT:282619003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4556 SNOMED CT 282619003 = ICF d4556 Moving around: Rolling or rotating the body in a
+        sitting position (turning the trunk/whole body around its long axis while seated). 5th-level
+        child of d455. Target =, active RF2 production, child of 301998005, with children 282625004
+        (roll on to side) and 282631001 (roll over). SNOMED CT's roll-hierarchy is position-agnostic; the
+        source's sitting-position framing is marginally more specific but no meaning of the source
+        (rotating the body while seated) falls outside 282619003. Broader (high): one-level broader, the
+        target fully contains the source's roll axis; the sitting-position band is outside any single
+        SNOMED CT child but roll is the dominant axis concept. mapping_type=broader.
+        """
+}
+mapping "d4558.1" source="d4558" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4558 SNOMED CT 301998005 = ICF d4558 Moving around in different ways, other specified: the
+        residual SNOMED CT 301998005 4th-level child of d455. Target =, active RF2 production, the axis
+        concept for the d455 block (d455 parent maps here). SNOMED CT has no concept; 301998005 subsumes
+        the residual bucket. Broader (moderate): one-level broader under the d455 parent axis,
+        other-specified source, consistent with the residual-code precedent (d4108 at).
+        mapping_type=broader.
+        """
+}
+mapping "d4559.1" source="d4559" target="SNOMED_CT:301998005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d4559 SNOMED CT 301998005 = ICF d4559 Moving around in different ways, unspecified: the
+        SNOMED CT 301998005 4th-level child of d455. Target =, active RF2 production, the axis concept for
+        the d455 block (d455 parent maps here). SNOMED CT has no unspecified move-around concept; 301998005
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d455 parent
+        axis, unspecified source, consistent with the unspecified-source precedent (A009 -> 198677 at)
+        and d4109. mapping_type=broader.
+        """
+}

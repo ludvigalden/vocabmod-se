@@ -1,0 +1,521 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b1-b13
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b1.1" source="b1" target="SNOMED_CT:285231000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1 SNOMED CT 285231000 = ICF chapter b1 Mental functions (the entire mental-functions
+        chapter: consciousness b110, orientation b114, intellect b117, psychosocial b122,
+        temperament/personality b126, cognitive b140-b189, etc.). Target (Athena 4111207) =, active
+        standard, Swedish synonym. The SNOMED CT mental-function observable is the direct chapter-level
+        equivalent of ICF b1 and fully subsumes every b1 sub-chapter (in the SNOMED CT observable hierarchy
+        it sits under 18373002). Broader rather than exact only because ICF b1 is a multi-block
+        classification chapter (b110-b189) and the SNOMED CT concept is a single flat observable;
+        one-level-broader. High tier : direct term-and-scope match, verified active in both mirrors via
+        the sctid_to_athena_id crosswalk, but no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b110.1" source="b110" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b110 SNOMED CT 248217000 (Consciousness functions) = ICF b110: the mental functions of the
+        state of awareness and alertness, including maintain, sustain, and quality of consciousness.
+        Target (Athena 4093831) =, active standard, Swedish synonym. This is the active SNOMED CT
+        observable capturing consciousness as a state/function (the older 3551008 is inactive/D). The
+        SNOMED CT concept models the consciousness state where ICF models the function of maintaining it;
+        the target fully subsumes the source's domain. Broader: SNOMED CT does not separate from. High tier
+        : strong term + Swedish-synonym match and verified crosswalk; one-level-broader in model
+        granularity.
+        """
+}
+mapping "b110-b139.1" source="b110-b139" target="SNOMED_CT:285231000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b110-b139 SNOMED CT 285231000 = ICF block b110-b139 Global mental functions: the block-level
+        grouping of global mental functions (consciousness b110, orientation b114, intellect b117,
+        psychosocial b122, temperament/personality b126, energy/drive b130). Target (Athena 4111207) =,
+        active standard, Swedish synonym. The SNOMED CT mental-function observable is the nearest standard
+        ancestor that fully contains the whole global-mental-functions block. Broader (moderate): a
+        block-level ICF grouping mapped up to the chapter-level SNOMED CT observable is a deeper climb than
+        the b1 chapter map, and the source is a deliberately coarse block anchor, so per the rubric the
+        moderate tier applies.
+        """
+}
+mapping "b1100.1" source="b1100" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1100 SNOMED CT 248217000 = ICF b1100: mental functions of MAINTAINING consciousness and
+        wakefulness (the function that sustains the awake/alert state). Target (Athena 4093831) =,
+        active standard, sv. SNOMED CT has no dedicated observable; the consciousness-state observable is
+        the nearest ancestor and fully contains the source. Broader, low tier : the specific
+        sub-function (maintaining) is not modelled separately in SNOMED CT, so the map loses the
+        maintain/continuity/quality distinction the ICF code makes.
+        """
+}
+mapping "b1101.1" source="b1101" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1101 SNOMED CT 248217000 = ICF b1101: mental functions sustaining CONTINUITY of
+        consciousness and wakefulness (the function preventing fluctuation/gaps in consciousness).
+        Target (Athena 4093831) =, active standard, sv. SNOMED CT has no dedicated observable (continuity
+        is captured only as the finding 830285008); the consciousness-state observable is the nearest
+        ancestor and fully contains the source. Broader, low tier : the specific continuity sub-function
+        is not modelled separately in SNOMED CT.
+        """
+}
+mapping "b1102.1" source="b1102" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1102 SNOMED CT 248217000 = ICF b1102: mental functions maintaining the QUALITY of
+        consciousness and wakefulness (clarity/coherence of the conscious state). Target (Athena
+        4093831) =, active standard, sv. SNOMED CT has no dedicated observable (quality is captured only as
+        findings like 40917007); the consciousness-state observable is the nearest ancestor and fully
+        contains the source. Broader, low tier : the specific quality sub-function is not modelled
+        separately in SNOMED CT.
+        """
+}
+mapping "b1108.1" source="b1108" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1108 SNOMED CT 248217000 = ICF b1108: other specified consciousness functions — a
+        specified-but-uncoded residual under b110. Target (Athena 4093831) =, active standard. The
+        consciousness-state parent observable fully subsumes any specified consciousness sub-function.
+        Broader, low tier : residual source (heterogeneous by definition), mapped to the verified parent
+        observable.
+        """
+}
+mapping "b1109.1" source="b1109" target="SNOMED_CT:248217000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1109 SNOMED CT 248217000 = ICF b1109: unspecified consciousness functions — consciousness
+        function, unspecified aspect. Target (Athena 4093831) =, active standard. The
+        consciousness-state observable is the correct unspecified-level target and fully subsumes the
+        source. Broader, low tier : unspecified residual mapped to the verified parent observable.
+        """
+}
+mapping "b114.1" source="b114" target="SNOMED_CT:43173001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b114 SNOMED CT 43173001 (Orientation functions) = ICF b114: general mental functions of
+        knowing and ascertaining one's relation to time, to place, to self, to others, to objects and to
+        surrounding context. Target (Athena 4183166) =, active standard, Swedish synonym (and English
+        synonyms). The SNOMED CT concept's own synonyms enumerate the same axes (time, place, people) that
+        ICF b114 enumerates, confirming 1:1 scope equivalence. Exact_match : identical clinical
+        construct, verified active in both mirrors via the sctid_to_athena_id crosswalk, concept-synonym
+        match.
+        """
+}
+mapping "b1140.1" source="b1140" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1140 SNOMED CT 43173001 = ICF b1140: orientation to TIME specifically. Target (Athena
+        4183166) =, active standard, sv. SNOMED CT has no dedicated observable (the only time-specific
+        SNOMED CT concept is the finding 39538002); the general orientation-function observable is the
+        nearest ancestor and fully contains temporal orientation. Broader, moderate : the source is a
+        specific axis (time) mapped up to the general orientation observable — clean one-level broader
+        but unspecified-source breadth.
+        """
+}
+mapping "b1141.1" source="b1141" target="SNOMED_CT:311552005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1141 SNOMED CT 311552005 (Orientation to space) = ICF b1141: orientation to PLACE/space.
+        Target (Athena 4210271) =, active standard, Swedish synonym. 1:1 scope equivalence: ICF and
+        SNOMED CT denote the same construct. Exact_match : identical clinical concept, verified active in
+        both mirrors via crosswalk, concept + Swedish-synonym match.
+        """
+}
+mapping "b1142.1" source="b1142" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1142 SNOMED CT 43173001 = ICF b1142: orientation to PERSON (self and others) specifically.
+        Target (Athena 4183166) =, active standard, sv; the SNOMED CT synonym explicitly includes people.
+        SNOMED CT has no dedicated observable; the general orientation-function observable is the nearest
+        ancestor and fully contains person orientation. Broader, moderate : specific axis (person)
+        mapped up to the general orientation observable.
+        """
+}
+mapping "b11420.1" source="b11420" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b11420 SNOMED CT 43173001 = ICF b11420: orientation to SELF specifically (a 5th-level code
+        under b1142 Orientation to person). Target (Athena 4183166) =, active standard. SNOMED CT has no
+        dedicated observable; the general orientation-function observable is the nearest ancestor that
+        fully contains self-orientation. Broader, low tier : a 5th-level specific axis mapped up two
+        levels to the general orientation observable — real specificity loss.
+        """
+}
+mapping "b11421.1" source="b11421" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b11421 SNOMED CT 43173001 = ICF b11421: orientation to OTHERS specifically (5th-level code
+        under b1142 Orientation to person). Target (Athena 4183166) =, active standard; synonym. SNOMED CT
+        has no dedicated observable; the general orientation-function observable is the nearest ancestor
+        that fully contains other-orientation. Broader, low tier : a 5th-level specific axis mapped up
+        to the general orientation observable — real specificity loss.
+        """
+}
+mapping "b11428.1" source="b11428" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b11428 SNOMED CT 43173001 = ICF b11428: other specified orientation-to-person functions — a
+        specified-but-uncoded residual under b1142. Target (Athena 4183166) =, active standard. The
+        orientation-function parent observable fully subsumes any specified person-orientation
+        sub-function. Broader, low tier : residual source mapped to the verified parent observable.
+        """
+}
+mapping "b11429.1" source="b11429" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b11429 SNOMED CT 43173001 = ICF b11429: unspecified orientation-to-person functions. Target
+        (Athena 4183166) =, active standard. The orientation-function observable is the correct
+        unspecified-level target and fully subsumes the source. Broader, low tier : unspecified residual
+        mapped to the verified parent observable.
+        """
+}
+mapping "b1143.1" source="b1143" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1143 SNOMED CT 43173001 = ICF b1143: orientation to OBJECTS specifically. Target (Athena
+        4183166) =, active standard. SNOMED CT has no dedicated observable; the general
+        orientation-function observable is the nearest ancestor and fully contains object-orientation.
+        Broader, moderate : specific axis (objects) mapped up one level to the general orientation
+        observable.
+        """
+}
+mapping "b1144.1" source="b1144" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1144 SNOMED CT 43173001 = ICF b1144: orientation to immediate SURROUNDINGS/environment
+        specifically. Target (Athena 4183166) =, active standard. SNOMED CT has no dedicated observable;
+        the general orientation-function observable is the nearest ancestor and fully contains
+        surroundings-orientation. Broader, moderate : specific axis (surroundings) mapped up one level
+        to the general orientation observable.
+        """
+}
+mapping "b1148.1" source="b1148" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1148 SNOMED CT 43173001 = ICF b1148: other specified orientation functions — a
+        specified-but-uncoded residual under b114. Target (Athena 4183166) =, active standard. The
+        orientation-function parent observable fully subsumes any specified orientation sub-function.
+        Broader, low tier : residual source mapped to the verified parent observable.
+        """
+}
+mapping "b1149.1" source="b1149" target="SNOMED_CT:43173001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1149 SNOMED CT 43173001 = ICF b1149: unspecified orientation functions. Target (Athena
+        4183166) =, active standard. The orientation-function observable is the correct
+        unspecified-level target and fully subsumes the source. Broader, low tier : unspecified residual
+        mapped to the verified parent observable.
+        """
+}
+mapping "b117.1" source="b117" target="SNOMED_CT:247572002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b117 SNOMED CT 247572002 (Intellectual functions) = ICF b117: general mental functions
+        required to understand and integrate mental functions constructing all the components of the
+        human intellect (intelligence). Target (Athena 4083335) =, active standard, Swedish synonym. 1:1
+        scope equivalence: ICF and SNOMED CT denote the same construct. Exact_match : identical clinical
+        concept, verified active in both mirrors via the sctid_to_athena_id crosswalk, concept +
+        Swedish-synonym match.
+        """
+}
+mapping "b122.1" source="b122" target="SNOMED_CT:363910003" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b122 SNOMED CT 363910003 (Global psychosocial functions) = ICF b122: the mental functions
+        that develop over time as the integration of all mental functions, oriented to self and others,
+        forming a coherent overall personality. Target (Athena 4239440) =, active standard, Swedish
+        synonym (characteristic relating to psychosocial function). SNOMED CT has no observable; it
+        (363910003) or a grouping observable (363870007). The target is about characterizing
+        psychosocial functioning — clinically associated with the source but not equivalent, broader,
+        narrower, or a component. Related link, weak tier : a recorded lead, not an identity; the SNOMED CT
+        concept does not assert the function itself, only a characteristic of it. Cap at per the
+        related-vs-no_match boundary (the association is real and defensible, so related rather than
+        no_match).
+        """
+}
+mapping "b126.1" source="b126" target="SNOMED_CT:71565002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b126 SNOMED CT 71565002 (Temperament and personality functions) = ICF b126: mental functions
+        of the person's enduring personality traits and temperament (extraversion b1260, openness,
+        conscientiousness, etc.). Target (Athena 4324252) =, active standard, Swedish synonym. The
+        SNOMED CT personality-function observable is the direct equivalent of the personality axis of ICF
+        b126 and fully subsumes all b126 sub-functions (it sits under 3850002 311465003). Broader rather
+        than exact: ICF b126 explicitly spans BOTH temperament AND personality, while the SNOMED CT concept
+        names only personality (there is no dedicated SNOMED CT observable), so the target captures the
+        personality axis and leaves the temperament axis implicit. High tier : strong term +
+        Swedish-synonym match and verified crosswalk; one-level-broader because temperament is not
+        separately modelled.
+        """
+}
+mapping "b1260.1" source="b1260" target="SNOMED_CT:286692009" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1260 SNOMED CT 286692009 = ICF b1260: extraversion specifically — a personality trait, the
+        degree to which a person is outward-oriented/sociable. Target (Athena 4113478) =, active
+        standard, Swedish synonym (degree of extraversion). The SNOMED CT concept is the only standard
+        concept that names extraversion; its Swedish synonym directly matches the source. Related rather
+        than exact/narrower: ICF b1260 models extraversion as a personality FUNCTION (a body-function
+        construct), whereas models it as a LEVEL/observable (a measurable degree). These are the same
+        construct in different modelling paradigms — the level-of-extraversion observable is clinically
+        associated with and the closest standard representation of the extraversion function, but it is
+        not a function concept, so it is a related link. Moderate-to-low tier : tight, defensible
+        association with a direct Swedish-synonym match, capped below broader because the paradigm gap
+        (function vs level/observable) is real.
+        """
+}
+assessment "b1261.omop" source="b1261" outcome=no_match target-system="OMOP_EXT"
+assessment "b1262.omop" source="b1262" outcome=no_match target-system="OMOP_EXT"
+assessment "b1263.omop" source="b1263" outcome=no_match target-system="OMOP_EXT"
+assessment "b1264.omop" source="b1264" outcome=no_match target-system="OMOP_EXT"
+assessment "b1265.omop" source="b1265" outcome=no_match target-system="OMOP_EXT"
+mapping "b1266.1" source="b1266" target="SNOMED_CT:225487001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1266 SNOMED CT 225487001 (Self-confidence) = the global mental functions of confidence
+        in oneself, one's abilities and self-worth (a temperament/personality trait function under
+        b126). Target (Athena 4023041) =, active standard, Swedish synonym (direct synonym of the
+        Swedish source). Exact 1:1 equivalence: ICF (self-confidence function) and SNOMED CT denote the
+        same construct, confirmed by direct concept-name match in both the English FSN and the Swedish
+        synonym. This is the ONLY b126 trait sub-code with a true SNOMED CT function/observable equivalent
+        (the others have only findings). Exact-equivalent tier.
+        """
+}
+assessment "b1267.omop" source="b1267" outcome=no_match target-system="OMOP_EXT"
+mapping "b1268.1" source="b1268" target="SNOMED_CT:71565002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1268 SNOMED CT 71565002 = an ICF residual code for temperament and personality
+        functions (b126 block) capturing a specified personality-function variant not separately
+        classified. Target (Athena 4324252) =, active standard, Swedish synonym — the nearest single
+        SNOMED CT function concept that fully subsumes any specified personality-function variant. The
+        target is one-to-two levels broader (a residual source mapped to the personality-function
+        parent), and the source is a residual code rather than a clinical concept. Low tier :
+        best-defensible ancestor for a residual source, with real specificity loss. Note the b126 trait
+        sub-codes themselves (b1261-b1267) mostly lack SNOMED CT function equivalents, so this residual is
+        anchored at the block parent only.
+        """
+}
+mapping "b1269.1" source="b1269" target="SNOMED_CT:71565002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1269 SNOMED CT 71565002 = an ICF residual code for temperament and personality
+        functions (b126 block) used when the personality-function impairment is recorded without further
+        specification. Target (Athena 4324252) =, active standard, Swedish synonym — the nearest single
+        SNOMED CT function concept covering the unspecified block. The target is broader (an unspecified
+        source mapped up to the personality-function parent), and the source is a deliberately
+        non-specific residual. Low tier : best-defensible ancestor; specificity loss inherent in the
+        unspecified source. Broader rather than narrower because the parent fully contains the
+        unspecified meaning.
+        """
+}
+mapping "b130.1" source="b130" target="SNOMED_CT:247750002" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b130 SNOMED CT 247750002 (Energy and drive functions) = the ICF block-spanning mental
+        functions of energy level (b1300), motivation (b1301), appetite (b1302) and impulse control
+        (b1304) — a multi-axis block, not a single concept. SNOMED CT has NO single observable: 247750002
+        (@sv: drivkraft) covers only the drive/motivation axis, 359755007 covers the energy axis, and
+        appetite/impulse-control have their own concepts. No one SNOMED CT concept subsumes all four axes,
+        so any single target is partial. Recorded 247750002 as the best single anchor (the
+        drive/motivation axis is the block's conceptual core and is named in the source), partial at
+        weak tier : it captures one slice of a multi-part source and is recorded to preserve a lead, not
+        asserted as an equivalence. A single partial target without a companion is weak.
+        mapping_type=partial.
+        """
+}
+mapping "b1300.1" source="b1300" target="SNOMED_CT:359755007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1300 SNOMED CT 359755007 (Energy level functions) = the mental functions related to the
+        amount or level of energy available to the individual for sustaining work, activity and effort.
+        Target (Athena 4234875) =, active standard, Swedish synonym. The SNOMED CT concept directly
+        captures energy level as an observable but additionally bundles stamina/endurance, so the target
+        is one level broader than the ICF energy-level function. High tier : direct concept-and-synonym
+        match with the target legitimately subsuming the source; no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b1301.1" source="b1301" target="SNOMED_CT:363882003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1301 SNOMED CT 363882003 (Motivation functions) = the mental functions that result in
+        the goal-directed pursuit of an action or object (the drive to act). Target (Athena 4239752) =,
+        active standard, Swedish synonym (identical to the source term). The active SNOMED CT motivation
+        observable is the direct equivalent of the ICF motivation function (the older 87824005 is
+        inactive/D; 29944002 is narrower). Scored exact_match at the high tier rather than only because
+        the SNOMED CT concept is a flat observable where ICF is a body-function construct (one-level
+        model-granularity breadth, matching the b140 attention-function precedent in proposal-0003); the
+        clinical domain is identical and Swedish-synonym-verified.
+        """
+}
+mapping "b1302.1" source="b1302" target="SNOMED_CT:33911006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1302 SNOMED CT 33911006 (Appetite functions) = the mental functions of the desire to
+        eat, including craving and the regulation of food intake. Target (Athena 4143454) =, active
+        standard, Swedish synonym (identical to the source term). The SNOMED CT concept is the direct
+        appetite-function equivalent (chosen over the broader 364663004 and the regulatory 78005000
+        because it is the appetite-function concept proper). High tier : exact concept-and-synonym match
+        (/), but model-granularity breadth (observable vs ICF body function) and no independent Athena
+        crosswalk re-verified.
+        """
+}
+mapping "b1304.1" source="b1304" target="SNOMED_CT:1145228009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1304 SNOMED CT 1145228009 (Impulse control functions) = the mental functions that
+        regulate and resist sudden urges, desires or impulses. Target (Athena 606555) =, active
+        standard, Swedish synonym (identical to the source term). Exact 1:1 equivalence: ICF
+        (impulse-control function) and SNOMED CT denote the same construct, confirmed by direct
+        concept-name match in both the English FSN and the Swedish synonym. Exact-equivalent tier.
+        """
+}
+mapping "b1308.1" source="b1308" target="SNOMED_CT:247750002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1308 SNOMED CT 247750002 = an ICF residual code for the energy and drive functions
+        block (b130) capturing a specified energy/drive function variant not separately classified.
+        Target (Athena 4084559) =, active standard, Swedish synonym — the nearest single SNOMED CT function
+        concept that anchors the block's drive/motivation axis. The target is broader (a residual source
+        mapped up to the drive observable, which is the closest single anchor for the energy-and-drive
+        block) and the source is a residual code. Low tier : best-defensible anchor for a residual
+        source with real specificity loss. (Drive covers only the drive axis of the multi-axis b130
+        block, but it is the block's named core.)
+        """
+}
+mapping "b1309.1" source="b1309" target="SNOMED_CT:247750002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1309 SNOMED CT 247750002 = an ICF residual code for the energy and drive functions
+        block (b130) used when an energy/drive-function impairment is recorded without further
+        specification. Target (Athena 4084559) =, active standard, Swedish synonym — the nearest single
+        SNOMED CT function concept anchoring the block's drive/motivation axis. The target is broader (an
+        unspecified source mapped up to the drive observable) and the source is a deliberately
+        non-specific residual. Low tier : best-defensible anchor; specificity loss inherent in the
+        unspecified source. Broader rather than narrower because the drive observable fully contains the
+        drive-axis meaning of the unspecified block.
+        """
+}
+mapping "b134.1" source="b134" target="SNOMED_CT:258158006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b134 SNOMED CT 258158006 (Sleep functions) = the mental functions of periodic,
+        reversible physical and mental suspension of consciousness, including amount, quality, onset,
+        maintenance, cycle of sleep. Target (Athena 4123007) =, active standard, Swedish synonym
+        (identical to the source stem). Exact 1:1 equivalence: ICF (sleep functions) and SNOMED CT denote
+        the same construct (the older 86636006 is inactive/D). Exact-equivalent tier : direct
+        concept-name and Swedish-synonym match, verified active in the mirror.
+        """
+}
+mapping "b1340.1" source="b1340" target="SNOMED_CT:248263006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1340 SNOMED CT 248263006 (Amount of sleep functions) = the mental functions related to
+        the quantity/amount of sleep obtained, including total sleep time. Target (Athena 4086504) =,
+        active standard, Swedish synonym. Sleep duration is the direct measurable equivalent of the ICF
+        function (the two terms denote the same sleep-quantity construct). High tier : exact
+        concept-and-synonym match, but the SNOMED CT concept is a duration observable where ICF is a body
+        function (one-level model-granularity breadth) and no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b1341.1" source="b1341" target="SNOMED_CT:258158006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1341 SNOMED CT 258158006 (Falling asleep / sleep onset functions) = the mental
+        functions of initiating sleep, transitioning from wakefulness to sleep (sleep onset / sleep
+        latency). The SNOMED CT mirror has NO observable-entity/function concept specifically for sleep
+        onset or the function of falling asleep: the only adjacent concepts are clinical findings
+        (401161007, 248219002), which are disorder/findings, not the ICF body-function construct. The
+        nearest function-level standard concept is the parent 258158006 (Athena 4123007), which fully
+        subsumes the sleep-onset function. Low tier : best-defensible function-level ancestor; real
+        specificity loss (no onset-specific concept) and the source is a sub-function forced up to the
+        block parent.
+        """
+}
+mapping "b1342.1" source="b1342" target="SNOMED_CT:258158006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1342 SNOMED CT 258158006 (Sleep maintenance functions) = the mental functions of
+        staying asleep, sustaining sleep across the night and returning to sleep after waking (sleep
+        continuity). The SNOMED CT mirror has NO observable-entity/function concept specifically for sleep
+        maintenance, sleep continuity or staying asleep (grep for, returned no observable hits). The
+        nearest function-level standard concept is the parent 258158006 (Athena 4123007), which fully
+        subsumes the sleep-maintenance function. Low tier : best-defensible function-level ancestor;
+        real specificity loss (no maintenance-specific concept) and the source is a sub-function forced
+        up to the block parent.
+        """
+}
+mapping "b1343.1" source="b1343" target="SNOMED_CT:248254009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1343 SNOMED CT 248254009 (Quality of sleep functions) = the mental functions related to
+        the subjective and objective quality of sleep, including restorative value and depth. Target
+        (Athena 4086501) =, active standard, Swedish synonym (identical to the source stem). Exact 1:1
+        equivalence: ICF (sleep-quality function) and SNOMED CT denote the same construct. Exact-equivalent
+        tier : direct concept-name and Swedish-synonym match, verified active in the mirror.
+        """
+}
+mapping "b1344.1" source="b1344" target="SNOMED_CT:30920001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1344 SNOMED CT 30920001 (Sleep cycle functions) = the mental functions governing the
+        cyclical alternation of sleep stages and the sleep-wake cycle, including the orderly progression
+        through NREM/REM cycles. Target (Athena 4149418) =, active standard, Swedish synonyms. The
+        SNOMED CT concept is the standard function-level concept that governs the sleep-wake cycle and
+        stage cycling (sleep cyclicity is a manifestation of the circadian rhythm); the target is
+        broader because circadian rhythm also covers the full 24-hour sleep-wake and biological-rhythm
+        organization, not just the within-night sleep cycle. High tier : direct functional-domain match
+        with the target legitimately subsuming the source's sleep-cycle mechanism; no independent Athena
+        crosswalk re-verified.
+        """
+}
+mapping "b1348.1" source="b1348" target="SNOMED_CT:258158006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1348 SNOMED CT 258158006 = an ICF residual code for the sleep-functions block (b134)
+        capturing a specified sleep-function variant not separately classified. Target (Athena 4123007)
+        =, active standard, Swedish synonym — the nearest single SNOMED CT function concept that fully
+        subsumes any specified sleep-function variant. The target is broader (a residual source mapped
+        up to the sleep-function parent) and the source is a residual code. Low tier : best-defensible
+        function-level ancestor for a residual source with real specificity loss.
+        """
+}
+mapping "b1349.1" source="b1349" target="SNOMED_CT:258158006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1349 SNOMED CT 258158006 = an ICF residual code for the sleep-functions block (b134)
+        used when a sleep-function impairment is recorded without further specification. Target (Athena
+        4123007) =, active standard, Swedish synonym — the nearest single SNOMED CT function concept
+        covering the unspecified block. The target is broader (an unspecified source mapped up to the
+        sleep-function parent) and the source is a deliberately non-specific residual. Low tier :
+        best-defensible function-level ancestor; specificity loss inherent in the unspecified source.
+        Broader rather than narrower because the parent fully contains the unspecified meaning.
+        """
+}
+mapping "b139.1" source="b139" target="SNOMED_CT:285231000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b139 SNOMED CT 285231000 = a combined residual code spanning the WHOLE b1
+        global-mental-functions chapter (any mental function not separately classified under b110-b134).
+        Target (Athena 4111207) =, active standard — the direct SNOMED CT chapter-level equivalent of ICF
+        b1 (used as the b1 chapter-equivalent in proposal-0001 precedent). The target is several levels
+        broader (a single top-level mental-function observable over a heterogeneous multi-block
+        residual) and the source is a structural residual rather than a clinical concept. Low tier :
+        best-defensible ancestor for a chapter-wide residual, with real specificity loss.
+        """
+}

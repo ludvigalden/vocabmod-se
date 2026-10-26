@@ -1,0 +1,525 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s4-s5
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "s4.omop" source="s4" outcome=no_match target-system="OMOP_EXT"
+mapping "s410.1" source="s410" target="SNOMED_CT:113257007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s410 SNOMED CT 113257007 = ICF body-structure s41 chapter root. Target (Athena 4014241) =,
+        active standard; the canonical SNOMED CT cardiovascular system concept. Exact 1:1 equivalence:
+        source and target denote the same body system at the same specificity.
+        """
+}
+mapping "s4100.1" source="s4100" target="SNOMED_CT:80891009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4100 SNOMED CT 80891009 = ICF body-structure s410.0 heart. Target (Athena 4217142) =,
+        active standard; the canonical SNOMED CT heart concept. Exact 1:1 equivalence between ICF heart and
+        SNOMED CT heart structure.
+        """
+}
+mapping "s41000.1" source="s41000" target="SNOMED_CT:59652004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s41000 SNOMED CT 59652004 = ICF body-structure s4100.0 atrium (the upper heart chambers).
+        Target (Athena 4242112) =, active standard; the canonical SNOMED CT concept for the cardiac atria
+        (covers both left and right atrium). Exact 1:1 equivalence between ICF atrium and SNOMED CT atrial
+        structure.
+        """
+}
+mapping "s41001.1" source="s41001" target="SNOMED_CT:21814001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s41001 SNOMED CT 21814001 = ICF body-structure s4100.1 ventricle (the lower heart chambers /
+        cardiac ventricles). Target (Athena 4070760) =, active standard; the canonical SNOMED CT concept
+        for the cardiac ventricles (covers both left and right ventricle). Exact 1:1 equivalence between
+        ICF heart ventricle and SNOMED CT cardiac ventricular structure.
+        """
+}
+mapping "s41008.1" source="s41008" target="SNOMED_CT:80891009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s41008 SNOMED CT 80891009 = ICF residual (WHO.8 NEC bucket for s4100). No single SNOMED CT
+        concept for the residual; the defensible target is the parent heart concept. Target (Athena
+        4217142) =, active standard; fully subsumes any specific cardiac part the source denotes.
+        Broader (one-level ancestor), tier.
+        """
+}
+mapping "s41009.1" source="s41009" target="SNOMED_CT:80891009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s41009 SNOMED CT 80891009 = ICF residual (WHO.9 unspecified bucket for s4100). No
+        unspecified-level SNOMED CT target exists; the defensible target is the parent heart concept.
+        Target (Athena 4217142) =, active standard; fully subsumes the unspecified source. Broader
+        (one-level ancestor), tier.
+        """
+}
+mapping "s4101.1" source="s4101" target="SNOMED_CT:51114001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4101 SNOMED CT 51114001 = ICF body-structure s410.1 arteries. Target (Athena 4199457) =,
+        active standard; the canonical SNOMED CT concept for arteries as a body-structure class. Exact 1:1
+        equivalence between ICF arteries and SNOMED CT arterial structure.
+        """
+}
+mapping "s4102.1" source="s4102" target="SNOMED_CT:29092000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4102 SNOMED CT 29092000 = ICF body-structure s410.2 veins. Target (Athena 4104340) =,
+        active standard; the canonical SNOMED CT concept for veins as a body-structure class. Exact 1:1
+        equivalence between ICF veins and SNOMED CT venous structure.
+        """
+}
+mapping "s4103.1" source="s4103" target="SNOMED_CT:20982000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4103 SNOMED CT 20982000 = capillaries (ICF body structure, blood/lymph capillaries). Target
+        SNOMED CT 4051453 (sctid 20982000), FSN. 1:1 equivalent; SE mirror synonym is. The generic sctid
+        87914000 is absent/retired in both mirrors; 20982000 is the active SNOMED CT concept for
+        capillaries. Exact-equivalent tier.
+        """
+}
+mapping "s4108.1" source="s4108" target="SNOMED_CT:113257007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4108 = SNOMED CT 113257007 (residual ICF category). Target SNOMED CT 4014241 (sctid
+        113257007). The source is a residual bucket for any specified CV structure without its own code;
+        the system-level concept legitimately subsumes every member. Broader (one-level up to the system
+        parent); high tier — verified standard concept, small well-understood breadth mismatch.
+        """
+}
+mapping "s4109.1" source="s4109" target="SNOMED_CT:113257007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4109 = SNOMED CT 113257007. Target SNOMED CT 4014241 (sctid 113257007). Unspecified source
+        maps up to the system-level concept; nothing in the source falls outside the target. Broader,
+        one level; high tier for the same reason as s4108.
+        """
+}
+mapping "s420.1" source="s420" target="SNOMED_CT:116003000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s420 = structure of immune system (ICF chapter-level body structure). Target SNOMED CT
+        4021240 (sctid 116003000), FSN SNOMED CT 116003000. 1:1 equivalent at the same hierarchy level.
+        Exact-equivalent tier.
+        """
+}
+mapping "s4200.1" source="s4200" target="SNOMED_CT:83555006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4200 SNOMED CT 83555006 = lymph vessels. Target SNOMED CT 4308890 (sctid 83555006), FSN. SE
+        mirror synonyms /. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4201.1" source="s4201" target="SNOMED_CT:59441001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4201 SNOMED CT 59441001 = lymph nodes. Target SNOMED CT 4241958 (sctid 59441001). SE mirror
+        synonym. 1:1 equivalent; the singular SNOMED CT concept denotes the class of lymph nodes (plural
+        source). Exact-equivalent tier.
+        """
+}
+mapping "s4202.1" source="s4202" target="SNOMED_CT:9875009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4202 = thymus. Target SNOMED CT 4321259 (sctid 9875009). SE mirror synonym SNOMED CT 9875009.
+        1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4203.1" source="s4203" target="SNOMED_CT:78961009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4203 SNOMED CT 78961009 = spleen. Target SNOMED CT 4302605 (sctid 78961009). SE mirror
+        synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4204.1" source="s4204" target="SNOMED_CT:14016003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4204 SNOMED CT 14016003 = bone marrow. Target SNOMED CT 4029619 (sctid 14016003). SE mirror
+        synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4208.1" source="s4208" target="SNOMED_CT:116003000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4208 = SNOMED CT 116003000 (residual ICF category). Target SNOMED CT 4021240 (sctid
+        116003000). Residual bucket subsumed by the system-level concept. Broader, one level; high tier.
+        """
+}
+mapping "s4209.1" source="s4209" target="SNOMED_CT:116003000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4209 = SNOMED CT 116003000. Target SNOMED CT 4021240 (sctid 116003000). Unspecified source
+        maps to the system parent; total subsumption. Broader, one level; high tier.
+        """
+}
+mapping "s430.1" source="s430" target="SNOMED_CT:20139000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s430 = structure of respiratory system (ICF chapter-level body structure). Target SNOMED CT
+        4065366 (sctid 20139000). 1:1 equivalent at the same hierarchy level. Exact-equivalent tier.
+        """
+}
+mapping "s4300.1" source="s4300" target="SNOMED_CT:44567001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4300 SNOMED CT 44567001 = trachea. Target SNOMED CT 4195956 (sctid 44567001). SE mirror
+        synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4301.1" source="s4301" target="SNOMED_CT:39607008" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4301 SNOMED CT 39607008 = lungs. Target SNOMED CT 4213162 (sctid 39607008). SE mirror synonym.
+        1:1 equivalent; singular SNOMED CT concept denotes the paired organ. Exact-equivalent tier.
+        """
+}
+mapping "s43010.1" source="s43010" target="SNOMED_CT:955009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43010 SNOMED CT 955009 = bronchial tree (the branching bronchial system distal to the
+        trachea). Target SNOMED CT 4317407 (sctid 955009), FSN; SE synonyms /. SNOMED CT's concept denotes the
+        bronchial tree. The closer-named vs) and absence of a dedicated body-structure concept.
+        """
+}
+mapping "s43011.1" source="s43011" target="SNOMED_CT:361364000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43011 SNOMED CT 361364000 = pulmonary alveoli (plural). Target SNOMED CT 4178048 (sctid
+        361364000), FSN. This is the only alveolar body-structure concept in the mirror; the qualifier
+        denotes the complete set of alveoli, which aligns with the plural ICF source (= all alveoli).
+        Effectively 1:1; high (not) tier because the only available concept carries the qualifier rather
+        than a plain.
+        """
+}
+mapping "s43018.1" source="s43018" target="SNOMED_CT:39607008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43018 = SNOMED CT 39607008 (residual ICF category). Target SNOMED CT 4213162 (sctid 39607008).
+        Residual lung-structure bucket subsumed by the lung parent. Broader, one level; high tier.
+        """
+}
+mapping "s43019.1" source="s43019" target="SNOMED_CT:39607008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43019 = SNOMED CT 39607008. Target SNOMED CT 4213162 (sctid 39607008). Unspecified source maps
+        to the lung parent; total subsumption. Broader, one level; high tier.
+        """
+}
+mapping "s4302.1" source="s4302" target="SNOMED_CT:60413009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4302 SNOMED CT 60413009 = thoracic cage / rib cage. Target SNOMED CT 4244854 (sctid 60413009).
+        SE mirror synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s4303.1" source="s4303" target="SNOMED_CT:15187006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4303 SNOMED CT 15187006 = respiratory muscles (the muscles of breathing: diaphragm,
+        intercostals, accessory muscles). No dedicated group concept exists in SNOMED CT. Target SNOMED CT
+        4035175 (sctid 15187006); SE synonyms /. This (4236847) (4311536) and is the best available
+        standard target. Broader, because it also includes non-respiratory thoracic skeletal muscles
+        (e.g. pectoral); the subsumption is not total, but no narrower defensible target exists, so the
+        nearest ancestor is the correct choice. High tier for a one-level broader map; could not justify
+        because some thoracic muscles are not respiratory.
+        """
+}
+mapping "s43030.1" source="s43030" target="SNOMED_CT:86419007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43030 SNOMED CT 86419007 = intercostal muscles (rib muscles). Target SNOMED CT 4311536 (sctid
+        86419007). SE mirror synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s43031.1" source="s43031" target="SNOMED_CT:5798000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43031 SNOMED CT 5798000 = diaphragm. Target SNOMED CT 4236847 (sctid 5798000). SE mirror
+        synonym. 1:1 equivalent. Exact-equivalent tier.
+        """
+}
+mapping "s43038.1" source="s43038" target="SNOMED_CT:15187006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43038 = SNOMED CT 15187006 (residual ICF category). Target SNOMED CT 4035175 (sctid 15187006),
+        the nearest ancestor that covers respiratory muscles (same target and reasoning as s4303).
+        Broader, one level; high tier.
+        """
+}
+mapping "s43039.1" source="s43039" target="SNOMED_CT:15187006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s43039 = SNOMED CT 15187006. Target SNOMED CT 4035175 (sctid 15187006); nearest ancestor
+        covering respiratory muscles. Broader, one level; high tier (same reasoning as s4303).
+        """
+}
+mapping "s4308.1" source="s4308" target="SNOMED_CT:20139000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4308 = SNOMED CT 20139000 (residual ICF category). Target SNOMED CT 4065366 (sctid 20139000).
+        Residual bucket subsumed by the system-level concept. Broader, one level; high tier.
+        """
+}
+mapping "s4309.1" source="s4309" target="SNOMED_CT:20139000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s4309 SNOMED CT 20139000 = ICF unspecified structure of the respiratory system (ICF chapter
+        s4.30, respiratory-system block, parent s430). Target SNOMED CT 4065366 (concept_code 20139000) =,
+        the canonical SNOMED CT body structure for the respiratory system as a whole. Broader: target
+        subsumes the source; an code maps up to its parent system concept. Moderate tier: source,
+        defensible best-available parent but not an exact 1:1 (the source is the residual-unspecified
+        child, not the system itself). Resolved via Athena-local mirror.
+        """
+}
+mapping "s498.1" source="s498" target="SNOMED_CT:113257007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s498 SNOMED CT 113257007 116003000 20139000 = ICF chapter-4 residual spanning THREE systems:
+        cardiovascular + immune + respiratory. No single SNOMED CT body structure combines all three (the
+        only candidate, SNOMED CT 113257007 116003000 20139000 264048004, is inactive and omits the immune
+        system). Targets: SNOMED CT 4014241 (113257007) Structure of cardiovascular system; 4021240
+        (116003000) Structure of immune system; 4065366 (20139000) Structure of respiratory system. Each
+        is partial: each target covers only one of the three system axes bundled in the source. Weak
+        tier per rubric: partial/aspect-level, recorded to preserve the leads rather than asserted as a
+        mapping. Multi-target decomposition ordered by chapter order (CV, immune, respiratory). Resolved
+        via Athena-local mirror.
+        """
+}
+mapping "s498.2" source="s498" target="SNOMED_CT:116003000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s498.3" source="s498" target="SNOMED_CT:20139000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s499.1" source="s499" target="SNOMED_CT:113257007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s499 SNOMED CT 113257007 116003000 20139000 = ICF chapter-4 residual spanning cardiovascular
+        + immune + respiratory. Same three-system decomposition as s498: SNOMED CT 4014241 (113257007)
+        Structure of cardiovascular system; 4021240 (116003000) Structure of immune system; 4065366
+        (20139000) Structure of respiratory system. Each is partial (one axis of three). Weak tier:
+        partial multi-target. residual source, no single combining SNOMED CT concept exists. Resolved via
+        Athena-local mirror.
+        """
+}
+mapping "s499.2" source="s499" target="SNOMED_CT:116003000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s499.3" source="s499" target="SNOMED_CT:20139000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s5.1" source="s5" target="SNOMED_CT:86762007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5 SNOMED CT 387910009 86762007 = ICF chapter-5 root spanning digestive/metabolic AND
+        endocrine systems. No single SNOMED CT body structure combines digestive and endocrine (no concept
+        exists). Targets: SNOMED CT 4314892 (86762007) Structure of digestive system; 4302834 (387910009)
+        Endocrine gland structure. Each is partial: each target covers only one of the two system axes
+        bundled in the source. Weak tier: partial/aspect-level decomposition. (has no separate body
+        structure — it is a function, handled in ICF chapter b5, not a structure.) Resolved via
+        Athena-local mirror.
+        """
+}
+mapping "s5.2" source="s5" target="SNOMED_CT:387910009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s510.1" source="s510" target="SNOMED_CT:385294005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s510 SNOMED CT 385294005 = ICF structure of salivary gland. Target SNOMED CT 4294042
+        (concept_code 385294005) =, the canonical SNOMED CT body structure for the salivary gland. Exact
+        1:1 semantic equivalence (same organ, same body-structure level). Exact-equivalent tier.
+        Resolved via Athena-local mirror.
+        """
+}
+mapping "s520.1" source="s520" target="SNOMED_CT:32849002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s520 SNOMED CT 32849002 = ICF structure of esophagus (matstrupen = the esophagus). Target
+        SNOMED CT 4140098 (concept_code 32849002) =, the canonical SNOMED CT body structure for the esophagus.
+        Exact 1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s530.1" source="s530" target="SNOMED_CT:69695003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s530 SNOMED CT 69695003 = ICF structure of stomach (magsäcken = the stomach). Target SNOMED CT
+        4288283 (concept_code 69695003) =, the canonical SNOMED CT body structure for the stomach. Exact
+        1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s540.1" source="s540" target="SNOMED_CT:113276009" relationship=equivalent effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s540 SNOMED CT 113276009 = ICF structure of intestine (tarm = intestine, the general bowel).
+        Target SNOMED CT 4034270 (concept_code 113276009) =, the canonical general SNOMED CT body structure
+        for the intestine. Exact 1:1 equivalence at the same level of generality. Exact-equivalent tier.
+        Resolved via Athena-local mirror.
+        """
+}
+mapping "s5400.1" source="s5400" target="SNOMED_CT:30315005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5400 SNOMED CT 30315005 = ICF small intestine (tunntarm = small intestine). Target SNOMED CT
+        4146765 (concept_code 30315005) =, the canonical SNOMED CT body structure for the small intestine.
+        Exact 1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5401.1" source="s5401" target="SNOMED_CT:71854001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5401 SNOMED CT 71854001 = ICF large intestine / colon (tjocktarm = large intestine =
+        colon). Target SNOMED CT 4215634 (concept_code 71854001) =, the canonical SNOMED CT body structure for
+        the large intestine / colon. Exact 1:1 equivalence (colon structure is SNOMED CT's body-structure
+        concept for the large intestine). Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5408.1" source="s5408" target="SNOMED_CT:113276009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5408 SNOMED CT 113276009 = ICF residual of the intestine block (parent s540). The code
+        carries no distinct anatomy beyond the intestine itself; no specific SNOMED CT child can be chosen
+        without knowing which specified structure. Target SNOMED CT 4034270 (113276009) =, the parent that
+        fully subsumes any intestinal structure. Broader: target subsumes the source. Moderate tier:
+        residual source mapped to its parent, defensible but with specificity loss. Resolved via
+        Athena-local mirror.
+        """
+}
+mapping "s5409.1" source="s5409" target="SNOMED_CT:113276009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5409 SNOMED CT 113276009 = ICF residual of the intestine block (parent s540). The code
+        asserts no specific intestinal structure. Target SNOMED CT 4034270 (113276009) =, the parent that
+        fully subsumes the unspecified-intestine child. Broader: target subsumes the source. Moderate
+        tier: source mapped to its parent. Resolved via Athena-local mirror.
+        """
+}
+mapping "s550.1" source="s550" target="SNOMED_CT:15776009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s550 SNOMED CT 15776009 = ICF structure of pancreas (bukspottkörteln = the pancreas). Target
+        SNOMED CT 4049768 (concept_code 15776009) =, the canonical SNOMED CT body structure for the pancreas.
+        Exact 1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s560.1" source="s560" target="SNOMED_CT:10200004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s560 SNOMED CT 10200004 = ICF structure of liver (levern = the liver). Target SNOMED CT 4009105
+        (concept_code 10200004) =, the canonical SNOMED CT body structure for the liver. Exact 1:1
+        equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s570.1" source="s570" target="SNOMED_CT:28231008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s570 SNOMED CT 28231008 34707002 = ICF structure of gallbladder AND bile ducts (gallblåsa =
+        gallbladder; gallgångar = bile ducts). This is a combination source bundling two distinct
+        anatomical structures; no single SNOMED CT body structure combines both. Targets: SNOMED CT 4151384
+        (28231008) Gallbladder structure; 4146820 (34707002) Biliary tract structure (the biliary tree
+        including bile ducts). Each is partial: each target covers only one of the two axes.
+        High/moderate tiers: gallbladder is the dominant named structure, biliary tract is the secondary
+        axis. Multi-target decomposition per rubric. Resolved via Athena-local mirror.
+        """
+}
+mapping "s570.2" source="s570" target="SNOMED_CT:34707002" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s580.1" source="s580" target="SNOMED_CT:387910009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s580 SNOMED CT 387910009 = ICF structure of endocrine glands (endokrina körtlar = endocrine
+        glands, the class). Target SNOMED CT 4302834 (concept_code 387910009) =, SNOMED CT's body-structure
+        concept for the endocrine gland as a class (the grouping concept that subsumes pituitary,
+        thyroid, parathyroid, adrenal, etc.). Exact 1:1 equivalence at the class level. Exact-equivalent
+        tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5800.1" source="s5800" target="SNOMED_CT:56329008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5800 SNOMED CT 56329008 = ICF pituitary gland (hypofys = pituitary). Target SNOMED CT 4209428
+        (concept_code 56329008) =, the canonical SNOMED CT body structure for the pituitary gland. Exact
+        1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5801.1" source="s5801" target="SNOMED_CT:69748006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5801 SNOMED CT 69748006 = ICF thyroid gland (sköldkörtel = thyroid). Target SNOMED CT 4321375
+        (concept_code 69748006) =, the canonical SNOMED CT body structure for the thyroid gland. Exact 1:1
+        equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5802.1" source="s5802" target="SNOMED_CT:111002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5802 SNOMED CT 111002 = ICF parathyroid gland (bisköldkörtel = parathyroid). Target SNOMED CT
+        4006785 (concept_code 111002) =, the canonical SNOMED CT body structure for the parathyroid gland.
+        Exact 1:1 equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5803.1" source="s5803" target="SNOMED_CT:23451007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5803 SNOMED CT 23451007 = ICF adrenal gland (binjure = adrenal). Target SNOMED CT 4051774
+        (concept_code 23451007) =, the canonical SNOMED CT body structure for the adrenal gland. Exact 1:1
+        equivalence. Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s5808.1" source="s5808" target="SNOMED_CT:387910009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5808 SNOMED CT 387910009 = ICF residual of the endocrine-glands block (parent s580). The
+        code names no specific gland; no specific SNOMED CT child can be chosen without that information.
+        Target SNOMED CT 4302834 (387910009) =, the parent class that fully subsumes any endocrine gland.
+        Broader: target subsumes the source. Moderate tier: residual source mapped to its parent class.
+        Resolved via Athena-local mirror.
+        """
+}
+mapping "s5809.1" source="s5809" target="SNOMED_CT:387910009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s5809 SNOMED CT 387910009 = ICF residual of the endocrine-glands block (parent s580). The
+        code asserts no specific gland. Target SNOMED CT 4302834 (387910009) =, the parent class that fully
+        subsumes the unspecified endocrine-gland child. Broader: target subsumes the source. Moderate
+        tier: source mapped to its parent class. Resolved via Athena-local mirror.
+        """
+}
+mapping "s598.1" source="s598" target="SNOMED_CT:86762007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s598 SNOMED CT 387910009 86762007 = ICF chapter-5 residual spanning digestive/metabolic AND
+        endocrine. Same two-axis decomposition as the s5 root: SNOMED CT 4314892 (86762007) Structure of
+        digestive system; 4302834 (387910009) Endocrine gland structure. Each is partial (one axis of
+        two). Weak tier: partial multi-target, residual source. No single combining SNOMED CT concept
+        exists. Resolved via Athena-local mirror.
+        """
+}
+mapping "s598.2" source="s598" target="SNOMED_CT:387910009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s599.1" source="s599" target="SNOMED_CT:86762007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s599 SNOMED CT 387910009 86762007 = ICF chapter-5 residual spanning digestive/metabolic AND
+        endocrine. Same two-axis decomposition: SNOMED CT 4314892 (86762007) Structure of digestive system;
+        4302834 (387910009) Endocrine gland structure. Each is partial (one axis of two). Weak tier:
+        partial multi-target, residual source. Resolved via Athena-local mirror.
+        """
+}
+mapping "s599.2" source="s599" target="SNOMED_CT:387910009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}

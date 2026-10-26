@@ -1,0 +1,396 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d14-d16
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d140.1" source="d140" target="SNOMED_CT:309250007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d140 SNOMED CT 309250007 = ICF d140 Learning to read: the activity of learning to read
+        written language (parent of d1400-d1402; child of d130-d159 Basic learning). Target =, active
+        RF2 production, SE synonym, parent is 405019005. The SNOMED CT function observable denotes the same
+        clinical concept as the ICF reading-ability axis -- the SE term is a direct Swedish match for
+        the source's läsning axis; SNOMED CT frames it as the (acquired) ability where ICF frames the
+        parallel learning activity, but both denote the read-function axis. exact_match : direct
+        verified function-observable match on the identical reading-ability axis, SE-synonym confirmed,
+        same level of specificity. mapping_type=exact_match.
+        """
+}
+mapping "d1400.1" source="d1400" target="SNOMED_CT:312020002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1400 SNOMED CT 312020002 = ICF d1400 Learning to recognize symbols: 4th-level child of
+        d140, the component reading-skill of recognizing written symbols (letters, characters). Target
+        =, active RF2 production, SE synonym, parent is 303116000. The SNOMED CT recognition function
+        observable is the direct function concept for the recognition axis the source describes
+        (recognizing symbols is one instance of the recognition function). Broader (high): direct
+        verified function-observable match on the recognition axis, one-level broader because spans all
+        modalities (objects, faces, symbols, routes) whereas the source is symbol-recognition
+        specifically; SE synonym confirms the axis. mapping_type=broader.
+        """
+}
+mapping "d1401.1" source="d1401" target="SNOMED_CT:309250007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1401 SNOMED CT 309250007 = ICF d1401 Learning to pronounce written words: 4th-level child
+        of d140, the component reading-skill of sounding out/phonologically decoding written words.
+        Target =, active RF2 production. No SNOMED CT observable exists; the nearest defensible ancestor on
+        the reading axis is the read-ability function observable. Broader (moderate): the target
+        subsumes the source (word-pronunciation is a sub-skill of reading ability) but the source is a
+        single decoding sub-skill where the target is the full read-ability axis; one-level broader on
+        the reading axis, no exact sub-skill observable exists. mapping_type=broader.
+        """
+}
+mapping "d1402.1" source="d1402" target="SNOMED_CT:309250007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1402 SNOMED CT 309250007 = ICF d1402 Learning to understand written words and phrases:
+        4th-level child of d140, the component reading-skill of reading comprehension. Target =, active
+        RF2 production. No SNOMED CT observable exists; the nearest defensible ancestor on the reading axis
+        is the read-ability function observable. Broader (moderate): the target subsumes the source
+        (reading comprehension is the core of reading ability) but the source is the comprehension
+        sub-skill where the target is the full read-ability axis; one-level broader on the reading axis.
+        mapping_type=broader.
+        """
+}
+mapping "d1408.1" source="d1408" target="SNOMED_CT:309250007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1408 SNOMED CT 309250007 = ICF d1408 Learning to read, other specified: the residual SNOMED CT
+        309250007 4th-level child of d140. Target =, active RF2 production. Residual source mapped to
+        the nearest defensible reading-ability ancestor. Broader (low): the target subsumes the residual
+        bucket on the reading axis but the source is deliberately non-specific, so the breadth loss is
+        real and the residual nature adds doubt; consistent with the residual-other-specified precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1409.1" source="d1409" target="SNOMED_CT:309250007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1409 SNOMED CT 309250007 = ICF d1409 Learning to read, unspecified: the SNOMED CT 309250007
+        4th-level child of d140. Target =, active RF2 production. Unspecified source mapped to the
+        nearest defensible reading-ability ancestor. Broader (low): unspecified source forces a broader
+        ancestor; the read-ability function observable is the best available but the unspecified framing
+        and the breadth loss together justify the low tier. mapping_type=broader.
+        """
+}
+mapping "d145.1" source="d145" target="SNOMED_CT:307124006" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d145 SNOMED CT 307124006 = ICF d145 Learning to write: the activity of learning to produce
+        written language (parent of d1450-d1452; child of d130-d159 Basic learning). Target =, active
+        RF2 production, SE synonym, parent is 405018002. The SNOMED CT function observable denotes the same
+        clinical concept as the ICF writing-ability axis -- the SE term is a direct Swedish match for
+        the source's skrivning axis; SNOMED CT frames it as the (acquired) ability where ICF frames the
+        parallel learning activity, but both denote the write-function axis. exact_match : direct
+        verified function-observable match on the identical writing-ability axis, SE-synonym confirmed,
+        same level of specificity. mapping_type=exact_match.
+        """
+}
+mapping "d1450.1" source="d1450" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1450 SNOMED CT 307124006 = ICF d1450 Learning to use writing implements/tools: 4th-level
+        child of d145, the component writing-skill of handling pens, pencils and other writing
+        instruments. Target =, active RF2 production. No SNOMED CT observable exists; the nearest
+        defensible ancestor on the writing axis is the write-ability function observable. Broader
+        (moderate): the target subsumes the source (tool-handling is a prerequisite sub-skill of writing
+        ability) but the source is the tool-use sub-skill where the target is the full write-ability
+        axis; one-level broader on the writing axis, no exact sub-skill observable exists.
+        mapping_type=broader.
+        """
+}
+mapping "d1451.1" source="d1451" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1451 SNOMED CT 307124006 = ICF d1451 Learning to write symbols, signs and letters:
+        4th-level child of d145, the component writing-skill of producing single symbols/letters. Target
+        =, active RF2 production. No SNOMED CT observable exists; the nearest defensible ancestor on the
+        writing axis is the write-ability function observable. Broader (moderate): the target subsumes
+        the source (letter-writing is a sub-skill of writing ability) but the source is the
+        single-symbol sub-skill where the target is the full write-ability axis; one-level broader on
+        the writing axis. mapping_type=broader.
+        """
+}
+mapping "d1452.1" source="d1452" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1452 SNOMED CT 307124006 = ICF d1452 Learning to write words and phrases: 4th-level child
+        of d145, the component writing-skill of composing connected words/phrases. Target =, active RF2
+        production. No SNOMED CT observable exists; the nearest defensible ancestor on the writing axis is
+        the write-ability function observable. Broader (moderate): the target subsumes the source
+        (word/phrase writing is a sub-skill of writing ability) but the source is the connected-text
+        sub-skill where the target is the full write-ability axis; one-level broader on the writing
+        axis. mapping_type=broader.
+        """
+}
+mapping "d1458.1" source="d1458" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1458 SNOMED CT 307124006 = ICF d1458 Learning to write, other specified: the residual
+        SNOMED CT 307124006 4th-level child of d145. Target =, active RF2 production. Residual source
+        mapped to the nearest defensible writing-ability ancestor. Broader (low): the target subsumes
+        the residual bucket on the writing axis but the source is deliberately non-specific, so the
+        breadth loss is real and the residual nature adds doubt; consistent with the
+        residual-other-specified precedent. mapping_type=broader.
+        """
+}
+mapping "d1459.1" source="d1459" target="SNOMED_CT:307124006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1459 SNOMED CT 307124006 = ICF d1459 Learning to write, unspecified: the SNOMED CT 307124006
+        4th-level child of d145. Target =, active RF2 production. Unspecified source mapped to the
+        nearest defensible writing-ability ancestor. Broader (low): unspecified source forces a broader
+        ancestor; the write-ability function observable is the best available but the unspecified
+        framing and the breadth loss together justify the low tier. mapping_type=broader.
+        """
+}
+mapping "d150.1" source="d150" target="SNOMED_CT_SE_EXT:61511000052104" relationship=equivalent {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d150 SNOMED CT 61511000052104 = ICF d150 Learning to count and calculate: the activity of
+        learning arithmetic -- counting and calculation (parent of d1500-d1502; child of d130-d159 Basic
+        learning). Target =, active RF2 SE-extension (SE1000052), SE synonym, parent is 413384008. The
+        SNOMED CT SE concept is a direct Swedish-clinical match for the ICF counting axis -- the SE term
+        directly mirrors the source's räkning axis. The target nominally covers the count axis while the
+        source also spans calculation (beräkna); however in SE clinical usage denotes the basic
+        numeracy/calculation function the source describes, and no separate SNOMED CT observable exists in
+        the mirror (calculation disorders like 47916000 are disorders, not function observables).
+        exact_match : direct verified SE function-observable match on the identical numeracy axis,
+        SE-synonym directly confirmed. mapping_type=exact_match.
+        """
+}
+mapping "d1500.1" source="d1500" target="SNOMED_CT_SE_EXT:61511000052104" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d1500 SNOMED CT 61511000052104 = ICF d1500 Learning basic skills in mathematics: 4th-level
+        child of d150, the component numeracy-skill of acquiring foundational arithmetic operations
+        (addition, subtraction). Target =, active RF2 SE-extension. The SE function observable is the
+        nearest defensible ancestor on the numeracy axis; no SNOMED CT observable exists. Broader (high):
+        direct SE function-observable match on the numeracy axis, one-level broader because (basic
+        numeracy) is the parent framing of the source's acquisition sub-axis; SE synonym confirms the
+        axis, and basic-math acquisition is the developmental instance of the count/numerate ability.
+        mapping_type=broader.
+        """
+}
+mapping "d1501.1" source="d1501" target="SNOMED_CT:312020002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1501 SNOMED CT 312020002 = ICF d1501 Learning to recognize numerals, arithmetic signs and
+        symbols: 4th-level child of d150, the component numeracy-skill of recognizing numeric notation.
+        Target =, active RF2 production, SE synonym. The source is fundamentally a
+        symbol/notation-recognition skill (numerals and arithmetic signs are symbols); the SNOMED CT
+        recognition function observable is the direct function concept for this recognition axis -- the
+        same target used for the parallel d1400 (symbol recognition in reading). No SNOMED CT observable
+        exists. Broader (moderate): the target subsumes the source (numeral/sign recognition is one
+        instance of the recognition function) but spans all modalities (objects, faces, symbols, routes)
+        where the source is numeric-notation recognition specifically; two levels of breadth
+        (recognition > symbol recognition > numeral recognition). mapping_type=broader.
+        """
+}
+mapping "d1502.1" source="d1502" target="SNOMED_CT_SE_EXT:61511000052104" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d1502 SNOMED CT 61511000052104 = ICF d1502 Learning to perform basic calculations: 4th-level
+        child of d150, the component numeracy-skill of executing arithmetic operations. Target =, active
+        RF2 SE-extension. No SNOMED CT observable exists; the nearest defensible ancestor on the numeracy
+        axis is the SE count-ability function observable. Broader (moderate): the target subsumes the
+        source (performing basic calculations is a sub-skill of the count/numerate ability) but the
+        source is the calculation sub-skill where the target is the broader count axis, and the SE
+        concept nominally emphasizes counting over calculation; one-level broader on the numeracy axis
+        with a small breadth mismatch. mapping_type=broader.
+        """
+}
+mapping "d1508.1" source="d1508" target="SNOMED_CT_SE_EXT:61511000052104" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d1508 SNOMED CT 61511000052104 = ICF d1508 Learning to count and calculate, other specified:
+        the residual SNOMED CT 61511000052104 4th-level child of d150. Target =, active RF2 SE-extension.
+        Residual source mapped to the nearest defensible numeracy ancestor. Broader (low): the target
+        subsumes the residual bucket on the numeracy axis but the source is deliberately non-specific,
+        so the breadth loss is real and the residual nature adds doubt; consistent with the
+        residual-other-specified precedent. mapping_type=broader.
+        """
+}
+mapping "d1509.1" source="d1509" target="SNOMED_CT_SE_EXT:61511000052104" relationship=source_is_narrower_than_target {
+    confidence 3 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source d1509 SNOMED CT 61511000052104 = ICF d1509 Learning to count and calculate, unspecified: the
+        SNOMED CT 61511000052104 4th-level child of d150. Target =, active RF2 SE-extension. Unspecified
+        source mapped to the nearest defensible numeracy ancestor. Broader (low): unspecified source
+        forces a broader ancestor; the count-ability function observable is the best available but the
+        unspecified framing and the breadth loss together justify the low tier. mapping_type=broader.
+        """
+}
+mapping "d155.1" source="d155" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d155 SNOMED CT 69998004 = ICF d155 Acquiring skills: gaining basic or complex skills through
+        learning, integrating what was learned into a competent performance. Target =, active RF2
+        production (sv synonym), SNOMED CT's direct function concept for the learning axis that produces
+        skill acquisition. SNOMED CT frames it as the learning function (the cognitive acquisition process)
+        whereas ICF d155 frames the output of that process (the skills gained); the learning function
+        observably subsumes skill acquisition as its direct product, so the target is broader (one-level
+        kind mismatch: process-observable over activity/output). Broader (high): direct verified SNOMED CT
+        function-observable match on the same axis, one-level broader because SNOMED CT captures the
+        learning process rather than the acquired-skill activity; mirrors the d1 chapter root precedent
+        (d1 -> 69998004 at). mapping_type=broader.
+        """
+}
+mapping "d1550.1" source="d1550" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1550 SNOMED CT 69998004 = ICF d1550 Acquiring basic skills: the 4-level child of d155 for
+        gaining elementary/foundational skills (e.g. basic tool use, primary literacy/numeracy). Target
+        =, active RF2 production. SNOMED CT has no observable; the only SNOMED CT concept covering the axis is
+        the parent learning function, two levels above this leaf. Broader (moderate): the learning
+        function subsumes basic-skill acquisition but loses both the skill-specificity and the
+        qualifier; deep climb as for the b730 regional subdivisions.
+        mapping_type=broader.
+        """
+}
+mapping "d1551.1" source="d1551" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1551 SNOMED CT 69998004 = ICF d1551 Acquiring complex skills: the 4-level child of d155 for
+        gaining multistep/compound skills (e.g. complex tool sequences, advanced literacy). Target =,
+        active RF2 production. SNOMED CT has no observable; the only axis concept is the parent learning
+        function two levels above. Broader (moderate): learning function subsumes complex-skill
+        acquisition but loses the skill-specificity and the qualifier; same deep-climb pattern as d1550.
+        mapping_type=broader.
+        """
+}
+mapping "d1558.1" source="d1558" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1558 SNOMED CT 69998004 = ICF d1558 Acquiring skills, other specified: the residual SNOMED CT
+        69998004 4-level child of d155. Target =, active RF2 production, the nearest axis concept (d155
+        parent maps here). Broader (moderate): learning function subsumes the unspecified-other
+        skill-acquisition bucket but cannot reflect the residual meaning; consistent with the d155
+        parent map and the residual-code precedent (one-level broader under a verified parent).
+        mapping_type=broader.
+        """
+}
+mapping "d1559.1" source="d1559" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1559 SNOMED CT 69998004 = ICF d1559 Acquiring skills, unspecified: the SNOMED CT 69998004
+        4-level child of d155. Target =, active RF2 production, the nearest axis concept (d155 parent
+        maps here). Broader (moderate): learning function subsumes the unspecified skill-acquisition
+        bucket; the source's unspecified framing maps naturally to the broader axis concept (no narrower
+        SNOMED CT concept exists), per the unspecified-source precedent (A009 -> 198677 at).
+        mapping_type=broader.
+        """
+}
+mapping "d159.1" source="d159" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d159 SNOMED CT 69998004 = ICF d159 Basic learning: the 3-level sibling of d155 covering
+        elementary learning at the start of life/education. Target =, active RF2 production (sv),
+        SNOMED CT's direct function concept for the learning axis. SNOMED CT has no concept distinct from
+        learning; the general learning function subsumes basic learning as its elementary end. Broader
+        (high): direct verified SNOMED CT function-observable match on the learning axis, one-level broader
+        because SNOMED CT does not separate from general learning; mirrors the d155/d1 parent precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d160.1" source="d160" target="SNOMED_CT:311517002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d160 SNOMED CT 311517002 = ICF d160 Focusing attention: intentionally focusing on a specific
+        external stimulus or group of stimuli. Target =, active RF2 production, with Swedish synonym
+        which is the exact Swedish rendering of the ICF source term. SNOMED CT frames it as the
+        attention-function observable for the same clinical axis (selectively focusing attention); ICF
+        frames the activity, SNOMED CT the function, but both denote the same focusing-attention concept.
+        Exact-equivalent : direct verified SNOMED CT function-observable match with an exact sv-synonym
+        match confirming 1:1 equivalence. mapping_type=exact_match.
+        """
+}
+mapping "d160-d179.1" source="d160-d179" target="SNOMED_CT:69998004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d160-d179 SNOMED CT 69998004 = ICF block d160-d179 Applying knowledge: the block-level
+        grouping of focusing attention (d160), thinking (d163), reading (d166), writing (d170),
+        calculating (d172) and residuals -- the activities. Target =, active RF2 production. No single
+        SNOMED CT function observable exists; the block spans five distinct cognitive/literacy axes
+        (attention, thinking, reading, writing, calculation), each with its own SNOMED CT function concept
+        (311517002/88952004/50360004/12261009/304659002). The nearest defensible single standard
+        ancestor spanning the block's dominant theme (knowledge/learning) is the learning function.
+        Broader (low): the learning observable subsumes only the acquisition axis of the multi-axis
+        block and is markedly broader (deep climb, partial coverage of applying/thinking/literacy);
+        consistent with the block-level map precedent (d110-d129 -> 311520005 at).
+        mapping_type=broader.
+        """
+}
+mapping "d1600.1" source="d1600" target="SNOMED_CT:311517002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1600 SNOMED CT 311517002 = ICF d1600 Focusing attention on a person: the 4-level child of
+        d160 for focusing attention on a specific person (social object). Target =, active RF2
+        production (d160 parent maps here exactly). SNOMED CT has no concept; the focused-attention
+        function subsumes the act of focusing but loses the social-object target. Broader (low):
+        focused-attention subsumes the focusing axis but the source's person-target specificity is
+        outside any SNOMED CT concept; deep climb as for the d160 regional subdivisions, consistent with
+        the leaf-under-exact-parent precedent at. mapping_type=broader.
+        """
+}
+mapping "d1601.1" source="d1601" target="SNOMED_CT:311517002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1601 SNOMED CT 311517002 = ICF d1601 Focusing attention on the environment: the 4-level
+        child of d160 for focusing attention on the surroundings/environment. Target =, active RF2
+        production (d160 parent maps here exactly). SNOMED CT has no concept; the focused-attention
+        function subsumes the focusing act but loses the environmental target. Broader (low):
+        focused-attention subsumes the focusing axis but the source's environment-target specificity is
+        outside any SNOMED CT concept; same deep-climb pattern as d1600. mapping_type=broader.
+        """
+}
+mapping "d1608.1" source="d1608" target="SNOMED_CT:311517002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1608 SNOMED CT 311517002 = ICF d1608 Focusing attention, other specified: the residual
+        SNOMED CT 311517002 4-level child of d160. Target =, active RF2 production, the nearest axis
+        concept (d160 parent maps here exactly). Broader (moderate): focused-attention subsumes the
+        unspecified-other focusing bucket; one-level broader under the exact-matched parent; consistent
+        with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d1609.1" source="d1609" target="SNOMED_CT:311517002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1609 SNOMED CT 311517002 = ICF d1609 Focusing attention, unspecified: the SNOMED CT 311517002
+        4-level child of d160. Target =, active RF2 production, the nearest axis concept (d160 parent
+        maps here exactly). Broader (moderate): focused-attention subsumes the unspecified focusing
+        bucket; the source's unspecified framing maps naturally to the broader axis concept (no narrower
+        SNOMED CT concept exists); per the unspecified-source precedent (A009 -> 198677 at).
+        mapping_type=broader.
+        """
+}
+mapping "d163.1" source="d163" target="SNOMED_CT:88952004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d163 SNOMED CT 88952004 = ICF d163 Thinking: forming ideas, concepts and mental images.
+        Target =, active RF2 production (synonyms /), SNOMED CT's direct function concept for the thinking
+        axis. SNOMED CT frames it as the cognitive-function observable; ICF frames the activity, but both
+        denote the same thinking concept. Exact-equivalent : direct verified SNOMED CT function-observable
+        match with a direct term-equivalent (/) confirming 1:1 equivalence. mapping_type=exact_match.
+        """
+}
+mapping "d166.1" source="d166" target="SNOMED_CT:50360004" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d166 SNOMED CT 50360004 = ICF d166 Reading: performing activities involved in comprehending
+        written language. Target =, active RF2 production (sv synonym), SNOMED CT's direct observable for
+        the reading activity. Both denote the reading-of-written-text concept. Exact-equivalent : direct
+        verified SNOMED CT observable match with a direct sv-synonym match (/) confirming 1:1 equivalence.
+        mapping_type=exact_match.
+        """
+}

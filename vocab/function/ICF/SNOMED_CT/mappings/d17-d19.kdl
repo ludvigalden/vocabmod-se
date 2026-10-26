@@ -1,0 +1,212 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d17-d19
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d170.1" source="d170" target="SNOMED_CT:12261009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d170 SNOMED CT 12261009 = ICF d170 Writing: producing written language. Target =, active RF2
+        production (sv synonym), SNOMED CT's direct observable for the writing activity. Both denote the
+        writing-of-text concept. Exact-equivalent : direct verified SNOMED CT observable match with a
+        direct sv-synonym match (/) confirming 1:1 equivalence. mapping_type=exact_match.
+        """
+}
+mapping "d1700.1" source="d1700" target="SNOMED_CT:12261009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1700 SNOMED CT 12261009 = ICF d1700 Using general skills and strategies in the writing
+        process: the 4-level child of d170 for applying general writing-process skills/strategies.
+        Target =, active RF2 production (d170 parent maps here exactly). SNOMED CT has no concept; the
+        writing observable subsumes the writing act but loses the process-skills/strategy qualifier.
+        Broader (low): writing subsumes the activity axis but the source's process-skill/strategy
+        specificity is outside any SNOMED CT concept; deep climb as for the d160 regional subdivisions.
+        mapping_type=broader.
+        """
+}
+mapping "d1701.1" source="d1701" target="SNOMED_CT:12261009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1701 SNOMED CT 12261009 = ICF d1701 Using accepted grammatical language in written text:
+        the 4-level child of d170 for applying correct grammar in writing. Target =, active RF2
+        production (d170 parent maps here exactly). SNOMED CT has no concept; the writing observable
+        subsumes the writing act but loses the grammar qualifier. Broader (low): writing subsumes the
+        activity axis but the source's grammatical-correctness specificity is outside any SNOMED CT
+        concept; same deep-climb pattern as d1700. mapping_type=broader.
+        """
+}
+mapping "d1702.1" source="d1702" target="SNOMED_CT:12261009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1702 SNOMED CT 12261009 = ICF d1702 Using general skills and strategies to write text: the
+        4-level child of d170 for applying general text-production skills. Target =, active RF2
+        production (d170 parent maps here exactly). SNOMED CT has no concept distinct from writing; the
+        writing observable subsumes the act but loses the strategy qualifier. Broader (low): writing
+        subsumes the activity axis but the source's text-production-strategy specificity is outside any
+        SNOMED CT concept; same deep-climb pattern as d1700/d1701. mapping_type=broader.
+        """
+}
+mapping "d1708.1" source="d1708" target="SNOMED_CT:12261009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1708 SNOMED CT 12261009 = ICF d1708 Writing, other specified: the residual SNOMED CT 12261009
+        4-level child of d170. Target =, active RF2 production, the nearest axis concept (d170 parent
+        maps here exactly). Broader (moderate): writing subsumes the unspecified-other writing bucket;
+        one-level broader under the exact-matched parent; consistent with the residual-code precedent.
+        mapping_type=broader.
+        """
+}
+mapping "d1709.1" source="d1709" target="SNOMED_CT:12261009" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1709 SNOMED CT 12261009 = ICF d1709 Writing, unspecified: the SNOMED CT 12261009 4-level child
+        of d170. Target =, active RF2 production, the nearest axis concept (d170 parent maps here
+        exactly). Broader (moderate): writing subsumes the unspecified writing bucket; the source's
+        unspecified framing maps naturally to the broader axis concept (no narrower SNOMED CT concept
+        exists); per the unspecified-source precedent (A009 -> 198677 at). mapping_type=broader.
+        """
+}
+mapping "d172.1" source="d172" target="SNOMED_CT:304659002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d172 SNOMED CT 304659002 = ICF d172 Calculating: performing computations (counting,
+        arithmetic). Target =, active RF2 production (sv synonym), SNOMED CT's direct observable for the
+        arithmetic/calculation ability. Both denote the arithmetic-reasoning/calculation concept.
+        Exact-equivalent : direct verified SNOMED CT observable match with a direct sv-synonym match
+        confirming 1:1 equivalence. mapping_type=exact_match.
+        """
+}
+mapping "d1720.1" source="d1720" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1720 SNOMED CT 304659002 = ICF d1720 Using skills/strategies to perform simple numeric
+        calculations: the 4-level child of d172 for simple arithmetic. Target =, active RF2 production
+        (d172 parent maps here exactly). SNOMED CT has no concept distinct from arithmetic reasoning; the
+        arithmetic-reasoning observable subsumes simple calculations but loses the qualifier. Broader
+        (moderate): arithmetic-reasoning subsumes the simple-calculation axis with a one-level
+        specificity loss; consistent with the leaf-under-exact-parent precedent. mapping_type=broader.
+        """
+}
+mapping "d1721.1" source="d1721" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1721 SNOMED CT 304659002 = ICF d1721 Using skills/strategies to perform complex numeric
+        calculations: the 4-level child of d172 for complex/multistep arithmetic. Target =, active RF2
+        production (d172 parent maps here exactly). SNOMED CT has no concept; the arithmetic-reasoning
+        observable subsumes complex calculations but loses the qualifier. Broader (moderate):
+        arithmetic-reasoning subsumes the complex-calculation axis with a one-level specificity loss;
+        same pattern as d1720. mapping_type=broader.
+        """
+}
+mapping "d1728.1" source="d1728" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1728 SNOMED CT 304659002 = ICF d1728 Calculating, other specified: the residual SNOMED CT
+        304659002 4-level child of d172. Target =, active RF2 production, the nearest axis concept (d172
+        parent maps here exactly). Broader (moderate): arithmetic-reasoning subsumes the
+        unspecified-other calculating bucket; one-level broader under the exact-matched parent;
+        consistent with the residual-code precedent. mapping_type=broader.
+        """
+}
+mapping "d1729.1" source="d1729" target="SNOMED_CT:304659002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1729 SNOMED CT 304659002 = ICF d1729 Calculating, unspecified: the SNOMED CT 304659002 4-level
+        child of d172. Target =, active RF2 production, the nearest axis concept (d172 parent maps here
+        exactly). Broader (moderate): arithmetic-reasoning subsumes the unspecified calculating bucket;
+        the source's unspecified framing maps naturally to the broader axis concept (no narrower SNOMED CT
+        concept exists); per the unspecified-source precedent (A009 -> 198677 at). mapping_type=broader.
+        """
+}
+mapping "d175.1" source="d175" target="SNOMED_CT:247581008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d175 SNOMED CT 247581008 = ICF activity domain of recognizing and resolving problems.
+        Target; Swedish mirror synonym @sv: problemlösning matches the ICF source name verbatim. SNOMED CT
+        observable entity denotes the same cognitive activity/function the ICF d-code denotes; this is
+        an ICF-aligned concept. Exact-equivalent tier: same concept, name-verified in the Swedish SNOMED CT
+        mirror.
+        """
+}
+mapping "d1750.1" source="d1750" target="SNOMED_CT:247581008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1750 SNOMED CT 247581008 = ICF activity of resolving simple/single-step problems. Target
+        (@sv: problemlösning). SNOMED CT has no concept distinguishing problem solving, so the parent
+        observable subsumes this more specific source. One-level broader with the ICF-aligned parent;
+        high tier per rubric.
+        """
+}
+mapping "d1751.1" source="d1751" target="SNOMED_CT:247581008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1751 SNOMED CT 247581008 = ICF activity of resolving complex/multi-step problems. Target
+        (@sv: problemlösning). SNOMED CT has no concept distinguishing problem solving, so the ICF-aligned
+        parent observable fully subsumes it. One-level broader; high tier. (Note: target id string is.)
+        """
+}
+mapping "d1758.1" source="d1758" target="SNOMED_CT:247581008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1758 SNOMED CT 247581008 = ICF residual for other specified problem-solving activities.
+        Target (@sv: problemlösning) is the ICF-aligned parent observable. Residual source mapped to the
+        general problem-solving concept; moderate tier because the source is deliberately non-specific.
+        """
+}
+mapping "d1759.1" source="d1759" target="SNOMED_CT:247581008" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d1759 SNOMED CT 247581008 = ICF unspecified residual for the problem-solving activity.
+        Target (@sv: problemlösning) is the ICF-aligned parent observable. Unspecified source mapped to
+        the general concept; moderate tier per rubric (unspecified source,
+        Athena/SNOMED CT-browser-verified).
+        """
+}
+mapping "d177.1" source="d177" target="SNOMED_CT:247583006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d177 SNOMED CT 247583006 = ICF activity domain of making choices and decisions. Target;
+        Swedish mirror synonym @sv: beslutsfattande matches the ICF source name verbatim. SNOMED CT
+        observable entity denotes the same activity/function the ICF d-code denotes; ICF-aligned
+        concept. Exact-equivalent tier: same concept, name-verified in the Swedish SNOMED CT mirror.
+        """
+}
+mapping "d179.1" source="d179" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d179 SNOMED CT 284545001 = ICF chapter-block residual spanning the entire (d1) domain. No
+        single SNOMED CT concept denotes this multi-domain residual. Target (@sv: förmåga att utföra
+        aktiviteter i vardagslivet) is the canonical SNOMED CT observable for the ICF
+        Activities/Participation domain and legitimately subsumes any d1 activity. Very broad climb
+        (chapter-block residual to domain-level ability); weak tier — recorded as a lead, not an
+        asserted identity.
+        """
+}
+mapping "d198.1" source="d198" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d198 SNOMED CT 284545001 = ICF chapter-block residual spanning the whole d1 (Learning and
+        applying knowledge) domain. No single SNOMED CT concept denotes this multi-domain residual. Target
+        (@sv: förmåga att utföra aktiviteter i vardagslivet) is the canonical SNOMED CT observable for the
+        ICF Activities/Participation domain and subsumes any d1 activity. Very broad climb; weak tier —
+        a lead, not an identity.
+        """
+}
+mapping "d199.1" source="d199" target="SNOMED_CT:284545001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d199 SNOMED CT 284545001 = ICF unspecified chapter-block residual spanning the whole d1
+        (Learning and applying knowledge) domain. No single SNOMED CT concept denotes this multi-domain
+        residual. Target (@sv: förmåga att utföra aktiviteter i vardagslivet) is the canonical SNOMED CT
+        observable for the ICF Activities/Participation domain and subsumes any d1 activity. Very broad
+        climb, unspecified source; weak tier — a lead, not an identity.
+        """
+}

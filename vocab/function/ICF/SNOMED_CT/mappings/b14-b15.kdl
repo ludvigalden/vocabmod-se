@@ -1,0 +1,353 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b14-b15
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b140.1" source="b140" target="SNOMED_CT:6769007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b140 SNOMED CT 6769007 = attention functions: the mental functions of focusing on an
+        external stimulus or internal experience for a sustained period. Target (Athena 4195864) =,
+        active standard, in both Athena and Swedish mirrors. SNOMED CT models attention as an observable
+        entity rather than an ICF body-function construct, so the target is one level broader in model
+        granularity; the clinical domain is identical. High tier : direct concept-name match, verified
+        active, but no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b140-b189.1" source="b140-b189" target="SNOMED_CT:285231000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b140-b189 SNOMED CT 285231000 is a chapter-block range code spanning all specific mental
+        functions (attention, memory, psychomotor, emotional, perceptual, thought, higher-level
+        cognitive, language, calculation). Target (Athena 4111207) =, active standard, the nearest
+        single SNOMED CT concept covering the whole block. The target is several levels broader (a single
+        top-level observable over a heterogeneous multi-domain block), and the source is a structural
+        range code rather than a clinical concept. Low tier : best-defensible ancestor, but real
+        specificity loss and the source is a range/aggregation, not a clinical concept.
+        """
+}
+mapping "b1400.1" source="b1400" target="SNOMED_CT:311518007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1400 SNOMED CT 311518007 = sustaining attention: maintaining attention over time on a
+        task or stimulus. Target (Athena 4207637) =, active standard. Exact 1:1 equivalence: ICF and
+        SNOMED CT denote the same mental function, confirmed by direct concept-name match in both mirrors.
+        Exact-equivalent tier.
+        """
+}
+mapping "b1401.1" source="b1401" target="SNOMED_CT:6769007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1401 SNOMED CT 6769007 = shifting attention: mentally moving focus from one
+        stimulus/task to another. SNOMED CT has no function-level concept; the only SNOMED CT match is
+        716443007 which is a finding, not a function construct. Target (Athena 4195864) = is the best
+        defensible function-level ancestor. Low tier : one-level broader climb loses the specific
+        shifting construct, and the function-level SNOMED CT analogue is absent (only a finding exists).
+        """
+}
+mapping "b1402.1" source="b1402" target="SNOMED_CT:311519004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1402 SNOMED CT 311519004 = divided attention: attending to two or more stimuli/tasks
+        simultaneously. Target (Athena 4205822) =, active standard. Exact 1:1 equivalence: ICF and
+        SNOMED CT denote the same mental function, confirmed by direct concept-name match in both mirrors.
+        Exact-equivalent tier.
+        """
+}
+assessment "b1403.omop" source="b1403" outcome=no_match target-system="OMOP_EXT"
+assessment "b1408.omop" source="b1408" outcome=no_match target-system="OMOP_EXT"
+mapping "b1409.1" source="b1409" target="SNOMED_CT:6769007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1409 SNOMED CT 6769007 = unspecified attention functions. Target (Athena 4195864) =,
+        the verified parent concept. The parent fully subsumes the unspecified residual, so the target
+        is broader. Low tier : unspecified source deliberately avoids specificity, and the climb to the
+        parent loses the (unspecified) subtype detail.
+        """
+}
+mapping "b144.1" source="b144" target="SNOMED_CT:303116000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b144 SNOMED CT 303116000 = memory functions: registration and retrieval of information.
+        Target (Athena 4116469) =, active standard. Exact domain match: both denote the memory function
+        at the parent level. SNOMED CT models it as an observable entity rather than an ICF body-function
+        construct (model-granularity mismatch), so confidence is (high) rather than : strong
+        concept-name equivalence but no independent Athena crosswalk re-verified and the
+        observable-entity vs body-function framing is a small breadth difference.
+        """
+}
+mapping "b1440.1" source="b1440" target="SNOMED_CT:247589005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1440 SNOMED CT 247589005 = short-term memory: remembering over a span of a few seconds
+        to ~30 seconds. Target (Athena 4091974) =, active standard. Direct domain match on; the SNOMED CT
+        concept captures the same temporal-window memory construct. High tier : exact domain match,
+        verified active; target is one level broader in model framing (performance observable vs body
+        function).
+        """
+}
+mapping "b1441.1" source="b1441" target="SNOMED_CT:247586003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1441 SNOMED CT 247586003 = long-term memory: remembering over an extended period (hours
+        to years). Target (Athena 4085375) =, active standard. Direct domain match on; the SNOMED CT
+        concept captures the same long-term memory construct. High tier : exact domain match, verified
+        active; target is one level broader in model framing (performance observable vs body function).
+        """
+}
+mapping "b1442.1" source="b1442" target="SNOMED_CT:363889007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1442 SNOMED CT 363889007 = memory retrieval and processing: recalling and mentally
+        working with stored information. Target (Athena 4239431) =, active standard. The SNOMED CT concept
+        covers the recall/retrieval axis but not the (processing/working-with) axis of the source, so it
+        is broader (single-axis ancestor of a two-axis source). Moderate tier : clean domain match on
+        the retrieval axis, but the processing component is outside the target.
+        """
+}
+mapping "b1443.1" source="b1443" target="SNOMED_CT:69262000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1443 SNOMED CT 69262000 = working memory: the limited-capacity system for temporarily
+        holding and manipulating information over seconds (distinct from short-term memory in its
+        manipulation component). SNOMED CT has no dedicated function concept. Target (Athena 4239348) =,
+        active standard, is the nearest function-level ancestor: immediate/short-term memory is the
+        closest SNOMED CT construct, but it does not capture the manipulation component that distinguishes
+        working memory. Low tier : forced climb to a related-but-not-equivalent memory subtype; real
+        specificity loss (the manipulation axis is absent in the target).
+        """
+}
+assessment "b1448.omop" source="b1448" outcome=no_match target-system="OMOP_EXT"
+mapping "b1449.1" source="b1449" target="SNOMED_CT:303116000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1449 SNOMED CT 303116000 = unspecified memory functions. Target (Athena 4116469) =, the
+        verified parent concept. The parent fully subsumes the unspecified residual, so the target is
+        broader. Moderate tier : clean one-level broader map of an unspecified residual to its verified
+        parent function concept; the source is unspecified but the parent is the natural defensible
+        target (cf. the residual precedent at - depending on climb depth; here the climb is one level).
+        """
+}
+mapping "b147.1" source="b147" target="SNOMED_CT:404952007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b147 SNOMED CT 404952007 = psychomotor functions: the mental functions of control and
+        coordination of motor and psychological behavior (covering psychomotor control b1470 and
+        psychomotor quality b1471). SNOMED CT has no observable entity; the closest standard concept is
+        404952007 (Athena 4225702) =, active standard, which captures only the energy/drive aspect of
+        psychomotor functioning. Low tier : the target covers one aspect (energy) of the broader
+        psychomotor-functions source and is the only function-level psychomotor observable in SNOMED CT;
+        the control and quality axes are absent, so this is a defensible-but-imperfect broader link
+        rather than an equivalence.
+        """
+}
+assessment "b1470.omop" source="b1470" outcome=no_match target-system="OMOP_EXT"
+assessment "b1471.omop" source="b1471" outcome=no_match target-system="OMOP_EXT"
+assessment "b1478.omop" source="b1478" outcome=no_match target-system="OMOP_EXT"
+mapping "b1479.1" source="b1479" target="SNOMED_CT:404952007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1479 SNOMED CT 404952007 = unspecified psychomotor functions. Target (Athena 4225702) =
+        is the only function-level psychomotor observable in SNOMED CT and serves as a weak defensible
+        fallback for the unspecified residual. Weak tier : the target covers only the energy/drive
+        aspect of psychomotor functioning and the source is unspecified over the whole b147 domain
+        (control + quality + energy), so this is an honest aspect-level broader link, not a defensible
+        equivalence.
+        """
+}
+mapping "b152.1" source="b152" target="SNOMED_CT:285854004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b152 SNOMED CT 285854004 = emotional functions: the mental functions producing feelings
+        and affect, including appropriateness, regulation and range. Target (Athena 4112897) =, active
+        standard, is the SNOMED CT parent covering emotion at the observable level. The target is one level
+        broader in model framing (observable entity vs ICF body function) but the clinical domain is
+        identical. High tier : direct concept-name match, verified active; the alternative 1155970002 is
+        a newer concept present in the Swedish mirror but 285854004 is the established, widely-anchored
+        parent observable.
+        """
+}
+mapping "b1520.1" source="b1520" target="SNOMED_CT:225008000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1520 SNOMED CT 225008000 = appropriateness of emotion: producing emotions that fit the
+        context/cue. SNOMED CT has no dedicated function concept. Target (Athena 4075223) =, active
+        standard, is the nearest standard concept: controlling emotions (inhibiting/regulating) is the
+        closest SNOMED CT analogue to producing context-appropriate emotion, but it captures regulation
+        rather than appropriateness per se. Low tier : one-level broader climb to a related
+        regulation/control construct; appropriateness and control overlap but are not equivalent.
+        """
+}
+mapping "b1521.1" source="b1521" target="SNOMED_CT:225008000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1521 SNOMED CT 225008000 = regulation of emotion: controlling the intensity and
+        expression of emotion. Target (Athena 4075223) =, active standard. Direct domain match: emotion
+        regulation and the ability to control emotions denote the same construct at the function level.
+        Moderate tier : strong concept-name and semantic equivalence, but target is framed as an
+        ability/observable rather than an ICF body function and no independent Athena crosswalk is
+        re-verified; the reflects the observable-vs-body-function model framing.
+        """
+}
+mapping "b1522.1" source="b1522" target="SNOMED_CT:1193647000" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source ICF b1522 SNOMED CT 1193647000 = range of emotion: the spectrum and variety of emotions that
+        can be produced. Target (Athena 37162470) =, active standard. Direct 1:1 domain match: ICF and
+        SNOMED CT denote the same construct, and SNOMED CT explicitly models a observable (alongside sibling
+        Intensity and Type of emotion observables, mirroring ICF's structure). High tier : exact domain
+        and structural equivalence; rather than because the target is an observable entity (not a
+        body-function construct) and no independent Athena crosswalk is re-verified.
+        """
+}
+assessment "b1528.omop" source="b1528" outcome=no_match target-system="OMOP_EXT"
+mapping "b1528B.1" source="b1528B" target="SNOMED_CT:267076002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1528B SNOMED CT 267076002 = ICF b1528 (other specified emotional functions)
+        Swedish-extension 5th-level code: the feeling of INVOLUNTARY loneliness (loneliness not
+        chosen/wanted). Target (Athena 4147192) =, active standard, Swedish synonyms. The SNOMED CT concept
+        is the direct named equivalent of the loneliness construct and sits under 106126000. Broader
+        rather than exact (high): SNOMED CT does not encode the qualifier the ICF code carries (involuntary
+        = loneliness experienced as imposed/unwanted, a valence SNOMED CT omits); the target legitimately
+        subsumes the source and the qualifier gap is small and well-understood. High tier: strong
+        Swedish-synonym match and verified active in both mirrors via the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "b1528C.1" source="b1528C" target="SNOMED_CT:54038000" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1528C SNOMED CT 54038000 = ICF b1528 (other specified emotional functions)
+        Swedish-extension 5th-level code: the emotional feeling of insecurity / unsafety (otrygghet =
+        feeling unsafe/insecure, an affective state distinct from cognitive osäkerhet/uncertainty).
+        Target (Athena 4204229) =, active standard; sits under 106126000 is an emotional-state concept.
+        Related rather than broader/exact: is a generic finding whose Swedish synonym is (uncertainty) —
+        it overlaps the source but does not reliably denote the affective feeling-of-unsafety the ICF
+        code names, and SNOMED CT has no dedicated / concept (the concepts 159891000146105 etc. are all
+        situational child-care self-efficacy Likert items). Weak tier : a defensible clinical lead (the
+        only standard insecurity concept, in the emotional-state hierarchy) but with a real
+        paradigm/scope gap, so recorded as a related lead not an identity, per the related-vs-no_match
+        boundary rule.
+        """
+}
+mapping "b1529.1" source="b1529" target="SNOMED_CT:1155970002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1529 SNOMED CT 1155970002 = ICF b1529: unspecified emotional functions — the unspecified
+        residual under b152 Emotional functions (b152 covers the specific feeling components of affect:
+        appropriateness/regulation/appropriateness of emotion). Target (Athena 603072) =, active
+        standard, Swedish synonym. The SNOMED CT emotion-function observable is the correct
+        unspecified-level parent and fully subsumes the source. Broader, low tier : unspecified residual
+        mapped to the verified parent observable (the older 24039005 is inactive/D, so 1155970002 is the
+        active function-level equivalent).
+        """
+}
+mapping "b156.1" source="b156" target="SNOMED_CT:81742003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b156 SNOMED CT 81742003 (Perceptual functions) = ICF b156: general mental functions of
+        recognizing and interpreting sensory stimuli (auditory b1560, visual b1561, olfactory b1562,
+        gustatory b1563, tactile b1564, visuospatial b1565). Target (Athena 4304678) =, active standard.
+        1:1 scope equivalence: ICF and SNOMED CT denote the same construct and the SNOMED CT concept's
+        sub-hierarchy includes the same modality children (auditory/visual/olfactory/gustatory/tactile
+        perception functions) that ICF b156 enumerates. Exact_match : identical clinical concept,
+        verified active in both mirrors via the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "b1560.1" source="b1560" target="SNOMED_CT:1173048002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1560 SNOMED CT 1173048002 (Auditory perception) = ICF b1560: mental functions of
+        recognizing and interpreting sounds (audition as perception, distinct from hearing sensation
+        b230). Target (Athena 37161051) =, active standard. 1:1 scope equivalence: ICF and SNOMED CT denote
+        the same construct. Exact_match : identical clinical concept, verified active in both mirrors
+        via the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "b1561.1" source="b1561" target="SNOMED_CT:311886005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1561 SNOMED CT 311886005 (Visual perception) = ICF b1561: mental functions of recognizing
+        and interpreting visual stimuli (sight as perception). Target (Athena 4206886) =, active
+        standard, Swedish synonym. 1:1 scope equivalence. Exact_match : identical clinical concept,
+        verified active in both mirrors via the sctid_to_athena_id crosswalk, concept + Swedish-synonym
+        match.
+        """
+}
+mapping "b1562.1" source="b1562" target="SNOMED_CT:1173081001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1562 SNOMED CT 1173081001 (Olfactory perception) = ICF b1562: mental functions of
+        recognizing and interpreting smells (olfaction as perception). Target (Athena 37161057) =,
+        active standard, Swedish synonym. 1:1 scope equivalence. Exact_match : identical clinical
+        concept, verified active in both mirrors via the sctid_to_athena_id crosswalk, concept +
+        Swedish-synonym match.
+        """
+}
+mapping "b1563.1" source="b1563" target="SNOMED_CT:1173082008" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1563 SNOMED CT 1173082008 (Gustatory perception) = ICF b1563: mental functions of
+        recognizing and interpreting tastes (gustation as perception). Target (Athena 37161058) =,
+        active standard. 1:1 scope equivalence. Exact_match : identical clinical concept, verified
+        active in both mirrors via the sctid_to_athena_id crosswalk.
+        """
+}
+mapping "b1564.1" source="b1564" target="SNOMED_CT:785767004" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1564 SNOMED CT 785767004 (Tactile perception) = ICF b1564: mental functions of recognizing
+        and interpreting touch stimuli (the perceptual/cortical processing of touch, as a body
+        function). Target (Athena 37206160) =, active standard, Swedish synonym. The SNOMED CT concept is
+        the only standard touch-perception observable and its Swedish synonym directly matches the
+        source. Broader rather than exact (high): SNOMED CT is an observable (a measurable/perceptible
+        characteristic) whereas ICF b1564 is explicitly a FUNCTION construct — same domain, different
+        modelling paradigm, with the target fully subsuming the source's meaning. High tier: strong
+        Swedish-synonym match and verified crosswalk; one-level paradigm-broader (cf. the
+        function-vs-observable convention used for b1560-b1563 where a FSN exists; here no observable
+        exists so 785767004 is the closest standard concept).
+        """
+}
+mapping "b1565.1" source="b1565" target="SNOMED_CT:304653001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1565 SNOMED CT 304653001 (Visuospatial perception) = ICF b1565: mental functions of
+        recognizing and interpreting the spatial relationships of objects and the visual field. Target
+        (Athena 4121496) =, active standard. SNOMED CT has no dedicated observable (the visuospatial
+        concepts are either agnosia findings 285758006, or reasoning/ability observables
+        304653001/304655008/304656009, or assessment subscales). Related rather than broader/narrower:
+        304653001 models visuospatial REASONING (a higher cognitive ability), whereas the source models
+        visuospatial PERCEPTION (a sensory-perceptual function); these are clinically associated but not
+        the same construct, neither subsumes the other cleanly (perception and reasoning are distinct
+        cognitive tiers). Low tier : the only standard visuospatial observable in the cognitive
+        hierarchy, with a defensible association but a real perception-vs-reasoning scope gap, per the
+        related-vs-no_match boundary (association is real and defensible, so related not no_match).
+        """
+}
+mapping "b1568.1" source="b1568" target="SNOMED_CT:81742003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1568 SNOMED CT 81742003 = ICF b1568: other specified perceptual functions — a
+        specified-but-uncoded residual under b156. Target (Athena 4304678) =, active standard. The
+        perception-function parent observable fully subsumes any specified perceptual sub-function.
+        Broader, low tier : residual source (heterogeneous by definition), mapped to the verified parent
+        observable.
+        """
+}
+mapping "b1569.1" source="b1569" target="SNOMED_CT:81742003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b1569 SNOMED CT 81742003 = ICF b1569: unspecified perceptual functions — perceptual
+        function, unspecified aspect. Target (Athena 4304678) =, active standard. The
+        perception-function observable is the correct unspecified-level target and fully subsumes the
+        source. Broader, low tier : unspecified residual mapped to the verified parent observable.
+        """
+}

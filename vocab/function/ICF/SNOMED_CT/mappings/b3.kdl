@@ -1,0 +1,217 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b3.1" source="b3" target="SNOMED_CT:43914001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3 SNOMED CT 286367001 43914001 = the ICF chapter-3 root combining TWO distinct function
+        domains: voice functions (b310, phonation/laryngeal) and speech functions (b320, articulated
+        spoken language), plus fluency/rhythm (b330) and pre-lingual vocal functions. No single SNOMED CT
+        standard concept spans both voice AND speech; the source is a multi-component chapter. Per the
+        multi-target rule, emit one partial target per axis. (1) SNOMED CT 4184650 (sctid 43914001) =,
+        active, covers the voice/phonation axis. (2) SNOMED CT 4118706 (sctid 286367001) =, active, covers
+        the speech axis. Each captures one aspect (partial); the active SNOMED CT 286367001 43914001
+        7787002 is retired (invalid=D) so 286367001 is the active speech-capability observable. Weak
+        tier per partial-without-companion-cap on each axis: the chapter is a heterogeneous grouping,
+        and each target covers only one of its components.
+        """
+}
+mapping "b3.2" source="b3" target="SNOMED_CT:286367001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "b310.1" source="b310" target="SNOMED_CT:43914001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b310 SNOMED CT 43914001 = ICF b310 Voice functions: the body functions of producing sound
+        through the larynx (phonation), including production, quality, pitch, loudness, resonance.
+        Target =, active RF2 production. This is the direct SNOMED CT observable that captures
+        voice-as-a-laryngeal-function and is the closest standard equivalent of ICF b310; it sits under
+        the voice/observable hierarchy alongside 30976009, 52583008, 44523003. Broader rather than exact
+        only because ICF b310 is a multi-child function block (b3100 production, b3101 quality, b3102
+        pitch, b3103 loudness, b3104 resonance) where the SNOMED CT concept is a single flat observable,
+        and SNOMED CT does not separately name as a grouping. High tier : direct term-and-scope match
+        (laryngeal voice function = voice functions) verified active in the mirror, but no independent
+        Athena crosswalk re-verified, and one-level-broader in model granularity.
+        """
+}
+mapping "b3100.1" source="b3100" target="SNOMED_CT:363917000" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3100 SNOMED CT 363917000 = ICF b3100: the specific voice sub-function of PRODUCTION of
+        voice (the act of generating voice sound via laryngeal phonation — onset, continuity,
+        coordination of phonation). Target =, active. This is the only SNOMED CT observable that names
+        voice production as such; sibling concepts (228144006, 289186000) are finding/impairment
+        concepts, not the production function. Broader rather than exact: 363917000 denotes the
+        *characteristic* of the type of voice production (a quality/feature observable), which is one
+        axis of the broader ICF b3100 production function; the target fully contains the production
+        domain but models it as a characteristic rather than as the production function itself. Low tier
+        : the closest defensible voice-production observable, term-verified active, but the SNOMED CT
+        concept is a framing that does not fully denote the ICF production function, and there is no
+        independent crosswalk. (286325005 considered and rejected: it is a capability/assessment
+        observable, one step further from the production function than 363917000.)
+        """
+}
+mapping "b3101.1" source="b3101" target="SNOMED_CT:286343009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3101 SNOMED CT 286343009 = ICF b3101: the voice sub-function of voice QUALITY (the
+        timbre/texture/features of the produced voice, distinct from pitch/loudness). Target =, active.
+        This is the only SNOMED CT observable that names voice quality as a function/capability; the
+        adjacent findings (289188004, 56505000, 76412005) are specific quality findings, not the quality
+        function. Broader: 286343009 frames voice quality as an (capability assessment) where ICF b3101
+        frames it as the function itself; the target fully subsumes the source domain. Moderate tier :
+        best-available defensible voice-quality observable, term-verified active, but the framing is one
+        level of granularity away from the ICF, and no independent crosswalk.
+        """
+}
+assessment "b3108.omop" source="b3108" outcome=no_match target-system="OMOP_EXT"
+assessment "b3109.omop" source="b3109" outcome=no_match target-system="OMOP_EXT"
+mapping "b320.1" source="b320" target="SNOMED_CT:286259006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b320 SNOMED CT 286259006 = ICF b320 Articulation functions: the body functions of
+        coordinating laryngeal, oral, nasal and respiratory structures to produce speech sounds
+        (articulation), including b3200 articulation of phonemes, b3201 articulation of words, etc.
+        Target =, active RF2 production. This is the direct SNOMED CT observable capturing
+        articulation-as-a-function/capability and is the closest standard equivalent of ICF b320; it
+        sits under a rich articulation-observable hierarchy (286260001 place, 286264005 manner,
+        286274008 words, 286293005 clearly). Broader rather than exact only because ICF b320 frames and
+        SNOMED CT frames (a capability framing), and ICF b320 is a multi-child block where the SNOMED CT
+        concept is a single observable. High tier : direct term-and-scope match (ability to articulate =
+        articulation functions), verified active, but the capability framing plus block-vs-single
+        granularity makes it one-level-broader with no independent crosswalk. (The legacy 53026004 is
+        inactive/D; 286259006 is its active successor family.)
+        """
+}
+mapping "b330.1" source="b330" target="SNOMED_CT:35622009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b330 SNOMED CT 35622009 = ICF b330 Fluency and rhythm of speech functions: the chapter-level
+        grouping covering b3300 fluency, b3301 rhythm, b3302 rate, b3303 melody (a multi-child block
+        anchor spanning fluency AND rhythm AND rate AND melody/prosody). No single SNOMED CT observable
+        spans all four sub-functions; the only defensible single standard target that subsumes the whole
+        block is the broader prosody observable. Target =, active. Prosody (the combination of rhythm,
+        rate, stress, intonation/melody in speech) is the nearest standard ancestor that fully contains
+        the fluency-and-rhythm-of-speech block: rhythm, rate and melody are all components of prosody,
+        and fluency is its clinical correlate. Broader: a deep broader climb (the target covers the
+        rhythm/rate/melody axis and overlaps fluency, but is the nearest ancestor that contains the
+        block). Low tier : clinically defensible ancestor but loose (multi-hop, the block bundles four
+        sub-functions each of which has its own tighter SNOMED CT observable — 363921007, 37129003,
+        1197010003 Rate — and no independent crosswalk).
+        """
+}
+mapping "b3300.1" source="b3300" target="SNOMED_CT:363921007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3300 SNOMED CT 363921007 = ICF b3300 Fluency of speech: the speech sub-function of
+        producing smooth, continuous, appropriately-paced speech without interruption (the fluency
+        function, clinically the function whose impairment is stuttering/cluttering). Target =, active
+        RF2 production. Exact 1:1 equivalence: identical clinical concept (fluency of speech as a speech
+        function), confirmed by literal FSN term match in the mirror. The SNOMED CT concept is the direct
+        functional observable where 289196009 and 39423001 are its finding/impairment correlates.
+        exact_match: same concept, term-verified.
+        """
+}
+mapping "b3301.1" source="b3301" target="SNOMED_CT:37129003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3301 SNOMED CT 37129003 = ICF b3301 Speech rhythm: the speech sub-function of the rhythmic
+        patterning of speech (the temporal pattern of stress and timing between syllables/words). Target
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (speech rhythm as a
+        speech function), confirmed by literal FSN term match. The SNOMED CT concept is the direct
+        functional observable where 82883008 is its impairment correlate. exact_match: same concept,
+        term-verified.
+        """
+}
+mapping "b3302.1" source="b3302" target="SNOMED_CT:1197010003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3302 SNOMED CT 1197010003 = ICF b3302 Speed/rate of speech: the speech sub-function of the
+        speed (words/min) at which speech is produced. Target =, active RF2 production (sctid
+        1197010003, a post-2018 SNOMED CT International concept). Exact 1:1 equivalence: identical clinical
+        concept (rate of speech as a function), confirmed by literal FSN term match; ICF = speech
+        speed/rate = SNOMED CT. The SNOMED CT concept is the direct functional observable where
+        690461000220106 and 690471000220100 are its valued findings. exact_match: same concept,
+        term-verified.
+        """
+}
+mapping "b3303.1" source="b3303" target="SNOMED_CT:35622009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3303 SNOMED CT 35622009 = ICF b3303 Melody of speech (speech prosody/melody): the speech
+        sub-function of the melodic/intonational contour of speech (variation in pitch/stress over an
+        utterance = the melodic aspect of prosody). Target =, active RF2 production. No dedicated /
+        observable exists in SNOMED CT (the mirror has no or observable entity); prosody is the nearest
+        standard ancestor and fully contains the melody-of-speech function (melody/intonation is a
+        primary component of prosody). Broader: prosody is a true ancestor (melody ⊂ prosody) but also
+        covers rhythm, rate, and stress, so it is one level broader than the melody-specific source.
+        Moderate tier : best-available defensible ancestor, term-verified active, but the target is
+        broader (covers rhythm/rate/stress too) and there is no independent crosswalk. (The deficit
+        correlates 20937004, 112089001 are findings, not functions.)
+        """
+}
+assessment "b3308.omop" source="b3308" outcome=no_match target-system="OMOP_EXT"
+assessment "b3309.omop" source="b3309" outcome=no_match target-system="OMOP_EXT"
+mapping "b340.1" source="b340" target="SNOMED_CT:75382007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b340 SNOMED CT 75382007 = ICF b340 Alternative vocalization functions: the chapter-level
+        block covering b3400 production of tones (sustained phonation/singing-like tones) and b3401
+        making a range of sounds (non-speech vocalization: humming, growling, sound-making beyond
+        conventional speech). No single SNOMED CT observable spans both sub-functions exactly. Target =,
+        active RF2 production. This is the only SNOMED CT observable that captures non-speech / alternative
+        vocalization as a function (it sits in the vocalization hierarchy distinct from speech
+        articulation and denotes vocalization beyond undifferentiated cry). Broader rather than exact:
+        75382007 is a developmental-vocalization concept (the stage beyond reflexive cry, including
+        sustained sounds and sound play) that overlaps but is not co-extensive with the ICF b340 (which
+        is a lifelong functional category for non-speech voice use such as singing/humming/growling).
+        Low tier : the only defensible non-speech-vocalization observable, term-verified active, but the
+        SNOMED CT concept is developmental-vocalization-framed and only partially denotes the ICF concept;
+        no independent crosswalk. The specific children b3400/b3401 each get their own tighter proposals
+        below.
+        """
+}
+mapping "b3400.1" source="b3400" target="SNOMED_CT:39140000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3400 SNOMED CT 39140000 = ICF b3400: the alternative-vocalization sub-function of
+        PRODUCTION OF TONES (sustained vocal-tone production, e.g. singing a sustained note, humming a
+        tone — the function of generating and sustaining pitched vocal tones). Target =, active RF2
+        production. No dedicated / observable exists in SNOMED CT; the nearest standard observable that
+        captures the pitched-tone-production domain is vocal pitch (the closest adjacent observables
+        24220009, 5660006 are duration/volition aspects, not tone production). Broader: 39140000
+        captures the pitch/tonal axis of tone production but does not denote the sustained-production
+        function the ICF code specifies. Low tier : the closest defensible pitched-tone observable,
+        term-verified active, but it is a pitch (frequency) characteristic rather than a production
+        function, and there is no independent crosswalk; real doubt remains.
+        """
+}
+mapping "b3401.1" source="b3401" target="SNOMED_CT:306753009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b3401 SNOMED CT 306753009 = ICF b3401: the alternative-vocalization sub-function of MAKING A
+        RANGE OF SOUNDS (producing a variety/sequence of vocal sounds beyond speech — sound play,
+        non-speech sound sequences, varied vocal sound-making). Target =, active RF2 production. No
+        dedicated / observable exists in SNOMED CT; the nearest standard observable in the sound-production
+        hierarchy is the ability to produce voiced sounds (sibling to 306757005 voiceless sounds,
+        306761004 voice/voiceless combinations, 286349008 imitate vocalization). Broader: 306753009
+        captures the production of voiced sounds as a capability but does not denote the specificity the
+        ICF code makes (it is one axis of the broader b3401 function). Low tier : the closest defensible
+        sound-production observable, term-verified active, but the SNOMED CT concept is a single-sound-type
+        capability rather than the range/sequence function, and no independent crosswalk.
+        """
+}
+assessment "b3408.omop" source="b3408" outcome=no_match target-system="OMOP_EXT"
+assessment "b3409.omop" source="b3409" outcome=no_match target-system="OMOP_EXT"
+assessment "b398.omop" source="b398" outcome=no_match target-system="OMOP_EXT"
+assessment "b399.omop" source="b399" outcome=no_match target-system="OMOP_EXT"

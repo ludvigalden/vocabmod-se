@@ -1,0 +1,297 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "s6.1" source="s6" target="SNOMED_CT:21514008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6 SNOMED CT 21514008 = ICF chapter-6 root: structures related to the genitourinary system
+        (köns- och urinorganens system = genital and urinary organs system = genitourinary system).
+        Target SNOMED CT 4069509 (concept_code 21514008) =, the canonical SNOMED CT body structure combining
+        genital and urinary systems. Exact 1:1 equivalence (SNOMED CT has a single combined genitourinary
+        concept, unlike chapter 5). Exact-equivalent tier. Resolved via Athena-local mirror.
+        """
+}
+mapping "s610.1" source="s610" target="SNOMED_CT:122489005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s610 SNOMED CT 122489005 = ICF urinary system body structure (chapter s610 root, the urinary
+        tract as a whole). Target 4047487 (sctid 122489005) = SNOMED CT, the canonical top-level urinary
+        system anatomy concept. Exact 1:1 anatomical equivalence; same organ system at the same
+        hierarchy level. Exact-equivalent tier.
+        """
+}
+mapping "s6100.1" source="s6100" target="SNOMED_CT:64033007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6100 SNOMED CT 64033007 = ICF kidney structure. Target 4271678 (sctid 64033007) = SNOMED CT,
+        the canonical kidney anatomy concept. Same organ, same level; exact-equivalent.
+        """
+}
+mapping "s6101.1" source="s6101" target="SNOMED_CT:87953007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6101 SNOMED CT 87953007 = ICF ureter structure. Target 4337115 (sctid 87953007) = SNOMED CT.
+        Same organ, exact-equivalent.
+        """
+}
+mapping "s6102.1" source="s6102" target="SNOMED_CT:89837001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6102 SNOMED CT 89837001 = ICF urinary bladder structure. Target 4232481 (sctid 89837001) =
+        SNOMED CT. Same organ, exact-equivalent.
+        """
+}
+mapping "s6103.1" source="s6103" target="SNOMED_CT:13648007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6103 SNOMED CT 13648007 = ICF urethra structure. Target 4029306 (sctid 13648007) = SNOMED CT.
+        Same organ, exact-equivalent.
+        """
+}
+mapping "s6108.1" source="s6108" target="SNOMED_CT:122489005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6108 SNOMED CT 122489005 = ICF, a residual category for urinary-system anatomical parts not
+        separately listed. No single specific SNOMED CT concept exists for this residual bucket; the best
+        defensible standard target is Athena 4047487 (sctid 122489005), which legitimately subsumes
+        every urinary-system part the residual could denote. One-level broader; high tier.
+        """
+}
+mapping "s6109.1" source="s6109" target="SNOMED_CT:122489005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6109 SNOMED CT 122489005 = ICF, deliberately non-specific. No specific SNOMED CT concept
+        matches an unspecified framing; best standard target is Athena 4047487 (sctid 122489005), which
+        fully contains the source. One-level broader; high tier.
+        """
+}
+mapping "s620.1" source="s620" target="SNOMED_CT:87770006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s620 SNOMED CT 87770006 = ICF pelvic floor structure. Target 4226999 (sctid 87770006) =
+        SNOMED CT, the canonical pelvic floor anatomy concept. Same structure, exact-equivalent.
+        """
+}
+mapping "s630.1" source="s630" target="SNOMED_CT:245500007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s630 SNOMED CT 245500007 = ICF genital system structure (chapter root spanning both male and
+        female genital systems). SNOMED CT body structure splits genital anatomy into and with no single
+        combined concept at that level; the closest single standard concept that fully contains the ICF
+        source is Athena 4076121 (sctid 245500007), a legitimate ancestor of both. Target subsumes
+        source; broader, high tier.
+        """
+}
+mapping "s6300.1" source="s6300" target="SNOMED_CT:15497006" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6300 SNOMED CT 15497006 (plural ovaries) = ICF ovary structure. Target 4049448 (sctid
+        15497006) = SNOMED CT, the canonical ovary anatomy concept (covers both ovaries; SNOMED CT is
+        non-laterality-specific at this level). Same organ, exact-equivalent.
+        """
+}
+mapping "s6301.1" source="s6301" target="SNOMED_CT:35039007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6301 SNOMED CT 35039007 = ICF uterus structure. Target 4149192 (sctid 35039007) = SNOMED CT,
+        the canonical uterus anatomy concept. Same organ, exact-equivalent.
+        """
+}
+mapping "s63010.1" source="s63010" target="SNOMED_CT:23952005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63010 SNOMED CT 23952005 = ICF uterine body (corpus uteri) structure. Target 4034303 (sctid
+        23952005) = SNOMED CT. Same anatomical sub-region, exact-equivalent.
+        """
+}
+mapping "s63011.1" source="s63011" target="SNOMED_CT:71252005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63011 SNOMED CT 71252005 = ICF uterine cervix structure. Target 4325271 (sctid 71252005) =
+        SNOMED CT. Same anatomical region, exact-equivalent.
+        """
+}
+mapping "s63012.1" source="s63012" target="SNOMED_CT:31435000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63012 SNOMED CT 31435000 (fallopian tubes) = ICF fallopian tube structure. Target 4151444
+        (sctid 31435000) = SNOMED CT. Same organ, exact-equivalent.
+        """
+}
+mapping "s63018.1" source="s63018" target="SNOMED_CT:35039007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63018 SNOMED CT 35039007 = ICF, a residual for uterine sub-parts not separately listed. No
+        single specific SNOMED CT concept covers the residual; best standard target is Athena 4149192
+        (sctid 35039007), which fully contains any uterine part. One-level broader; high tier.
+        """
+}
+mapping "s63019.1" source="s63019" target="SNOMED_CT:35039007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63019 SNOMED CT 35039007 = ICF, deliberately non-specific. No specific SNOMED CT concept
+        matches the unspecified framing; best standard target is Athena 4149192 (sctid 35039007), which
+        fully contains the source. One-level broader; high tier.
+        """
+}
+mapping "s6302.1" source="s6302" target="SNOMED_CT:76752008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6302 SNOMED CT 24142002 76752008 = ICF, a multi-part body-structure code bundling two
+        adjacent structures. No single SNOMED CT concept expresses the combination; decomposed into one
+        target per component. Target 1 Athena 4298444 (sctid 76752008) = covers the breast axis
+        (partial). Target 2 Athena 4082856 (sctid 24142002) = covers the nipple axis (partial). Each
+        target captures one component of the multi-part source. High tier per component.
+        """
+}
+mapping "s6302.2" source="s6302" target="SNOMED_CT:24142002" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "s6303.1" source="s6303" target="SNOMED_CT:76784001" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6303 SNOMED CT 45292006 76784001 = ICF, a multi-part code bundling the vagina with the
+        external female genitalia/vulva. No single SNOMED CT concept expresses the combination; decomposed
+        per multi-target rule. Target 1 Athena 4296022 (sctid 76784001) = covers the vagina axis
+        (partial). Target 2 Athena 4166066 (sctid 45292006) = covers the external-genitalia axis
+        (partial). High tier per component.
+        """
+}
+mapping "s6303.2" source="s6303" target="SNOMED_CT:45292006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s63030.1" source="s63030" target="SNOMED_CT:65439009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63030 SNOMED CT 65439009 = ICF clitoris structure. Target 4276496 (sctid 65439009) =
+        SNOMED CT. Same organ, exact-equivalent.
+        """
+}
+mapping "s63031.1" source="s63031" target="SNOMED_CT:82462005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63031 SNOMED CT 82462005 (labia majora, outer lips) = ICF labia majora structure. Target
+        4219641 (sctid 82462005) = SNOMED CT. SNOMED CT models this anatomy in the singular (labium majus);
+        the singular concept denotes the paired structure class, so the plural ICF source maps 1:1. Same
+        structure, exact-equivalent.
+        """
+}
+mapping "s63032.1" source="s63032" target="SNOMED_CT:32104003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63032 SNOMED CT 32104003 (labia minora, inner lips) = ICF labia minora structure. Target
+        4137758 (sctid 32104003) = SNOMED CT. SNOMED CT singular-form concept denotes the paired structure
+        class; plural ICF source maps 1:1. Same structure, exact-equivalent.
+        """
+}
+mapping "s63033.1" source="s63033" target="SNOMED_CT:48001003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63033 SNOMED CT 48001003 = ICF vaginal canal structure. Target 4173083 (sctid 48001003) =
+        SNOMED CT. Same anatomical structure, exact-equivalent.
+        """
+}
+mapping "s6304.1" source="s6304" target="SNOMED_CT:40689003" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6304 SNOMED CT 20233005 40689003 = ICF, a multi-part code bundling the testes with the
+        scrotum. No single SNOMED CT concept expresses the combination; decomposed per multi-target rule.
+        Target 1 Athena 4238088 (sctid 40689003) = covers the testes axis (partial). Target 2 Athena
+        4066714 (sctid 20233005) = covers the scrotum axis (partial). High tier per component.
+        """
+}
+mapping "s6304.2" source="s6304" target="SNOMED_CT:20233005" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s6305.1" source="s6305" target="SNOMED_CT:18911002" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6305 SNOMED CT 18911002 = ICF penis structure. Target 4077311 (sctid 18911002) = SNOMED CT.
+        Same organ, exact-equivalent.
+        """
+}
+mapping "s63050.1" source="s63050" target="SNOMED_CT:60319009" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63050 SNOMED CT 60319009 = ICF glans penis structure. Target 4247281 (sctid 60319009) =
+        SNOMED CT. Same anatomical structure, exact-equivalent.
+        """
+}
+mapping "s63051.1" source="s63051" target="SNOMED_CT:18911002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63051 SNOMED CT 18911002 = ICF shaft of penis body structure. The exact SNOMED CT equivalent
+        sctid 272664008 was inactivated in RF2 (end-dated 2002-01-31, no single active replacement; the
+        modern model decomposes the shaft into proximal/middle/distal thirds). The best defensible
+        active standard target is Athena 4077311 (sctid 18911002), which legitimately subsumes the shaft
+        as the parent penile concept. One-level broader; high tier (active concept, exact source region,
+        slight specificity loss because exact shaft concept retired).
+        """
+}
+mapping "s63058.1" source="s63058" target="SNOMED_CT:18911002" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63058 SNOMED CT 18911002 = ICF, a residual for penile sub-parts not separately listed. No
+        single specific SNOMED CT concept covers this residual bucket; best standard target is Athena
+        4077311 (sctid 18911002), which fully contains any penile part. One-level broader; high tier.
+        """
+}
+mapping "s63059.1" source="s63059" target="SNOMED_CT:18911002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s63059 SNOMED CT 18911002 = ICF, deliberately non-specific. No specific SNOMED CT concept
+        matches an unspecified framing; best standard target is Athena 4077311 (sctid 18911002), which
+        fully contains the source. One-level broader; high tier.
+        """
+}
+mapping "s6306.1" source="s6306" target="SNOMED_CT:181422007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6306 SNOMED CT 181422007 = ICF prostate structure. Target 4110208 (sctid 181422007) =
+        SNOMED CT, the canonical prostate anatomy concept. Same organ, same level; exact-equivalent.
+        """
+}
+mapping "s6308.1" source="s6308" target="SNOMED_CT:245500007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6308 SNOMED CT 245500007 = ICF, a residual for genital-system parts not separately listed
+        (the s630 chapter spans both male and female genitalia). Consistent with the s630 root
+        mapping, the best defensible single standard target is Athena 4076121 (sctid
+        245500007), a legitimate ancestor of every genital part. One-level broader; high tier.
+        """
+}
+mapping "s6309.1" source="s6309" target="SNOMED_CT:245500007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s6309 SNOMED CT 245500007 = ICF, deliberately non-specific. No specific SNOMED CT concept
+        matches the unspecified framing; best standard target is Athena 4076121 (sctid 245500007), which
+        fully contains the source. One-level broader; high tier.
+        """
+}
+mapping "s698.1" source="s698" target="SNOMED_CT:21514008" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s698 SNOMED CT 21514008 = ICF, a residual for genitourinary anatomical parts not separately
+        listed. The best defensible standard target is Athena 4069509 (sctid 21514008), the canonical
+        top-level genitourinary anatomy concept that legitimately subsumes every genitourinary part the
+        residual could denote. One-level broader; high tier.
+        """
+}
+mapping "s699.1" source="s699" target="SNOMED_CT:21514008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s699 SNOMED CT 21514008 = ICF, deliberately non-specific. No specific SNOMED CT concept matches
+        the unspecified framing; best standard target is Athena 4069509 (sctid 21514008), which fully
+        contains the source. One-level broader; high tier.
+        """
+}

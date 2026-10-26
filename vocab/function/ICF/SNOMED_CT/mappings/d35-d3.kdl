@@ -1,0 +1,311 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes d35-d3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "d350.1" source="d350" target="SNOMED_CT:288633005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d350 SNOMED CT 288633005 = ICF d350 Conversation: starting, sustaining and ending an
+        interaction/dialogue; exchanging thoughts and ideas through conversation. Target =, active RF2
+        production (sv), SNOMED CT's direct observable for the conversation ability and the parent of
+        initiate/maintain/terminate-conversation. Both denote the conversation concept; ICF frames the
+        activity, SNOMED CT the ability, same axis. Exact-equivalent : direct verified SNOMED CT observable
+        match with an exact sv-synonym match (/) confirming 1:1 equivalence; mirrors the d166/d170
+        exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d350-d369.1" source="d350-d369" target="SNOMED_CT:288574004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d350-d369 SNOMED CT 288574004 = ICF block d350-d369 Conversation and use of communication
+        devices and techniques: the block-level grouping of conversation (d350-d359) and use of
+        communication devices/techniques (d360-d369). Target =, active RF2 production (sv), SNOMED CT's top
+        observable for the communication ability axis (parent of receptive, expressive, verbal,
+        non-verbal communication and device-use). No single SNOMED CT concept spans the block's full range
+        (conversation + device/technique use); ability-to-communicate is the nearest defensible standard
+        ancestor spanning the block's dominant theme (communication). Broader (low):
+        ability-to-communicate subsumes the block's communication axis and is markedly broader (deep
+        climb, partial coverage of conversation-specifics and device-use); consistent with the
+        block-level map precedent (d110-d129 -> 311520005 at, d160-d179 -> 69998004 at).
+        mapping_type=broader.
+        """
+}
+mapping "d3500.1" source="d3500" target="SNOMED_CT:288639009" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3500 SNOMED CT 288639009 = ICF d3500 Starting a conversation: the 4-level child of d350 for
+        initiating/beginning a conversation. Target =, active RF2 production (sv), SNOMED CT's direct
+        observable for the initiate-conversation ability and a child of 288633005. Both denote the
+        starting/initiating-a-conversation concept. Exact-equivalent : direct verified SNOMED CT observable
+        match with an exact sv-synonym match (/) confirming 1:1 equivalence; mirrors the d166/d170
+        exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d3501.1" source="d3501" target="SNOMED_CT:288663001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3501 SNOMED CT 288663001 = ICF d3501 Sustaining a conversation: the 4-level child of d350
+        for keeping a conversation going. Target =, active RF2 production (sv), SNOMED CT's direct
+        observable for the maintain-conversation ability and a child of 288633005. Both denote the
+        sustaining/maintaining-a-conversation concept. Exact-equivalent : direct verified SNOMED CT
+        observable match with an exact sv-synonym match (/) confirming 1:1 equivalence; mirrors the
+        d166/d170 exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d3502.1" source="d3502" target="SNOMED_CT:288676007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3502 SNOMED CT 288676007 = ICF d3502 Ending a conversation: the 4-level child of d350 for
+        finishing/terminating a conversation. Target =, active RF2 production (sv), SNOMED CT's direct
+        observable for the terminate-conversation ability and a child of 288633005. Both denote the
+        ending/terminating-a-conversation concept. Exact-equivalent : direct verified SNOMED CT observable
+        match with an exact sv-synonym match (/) confirming 1:1 equivalence; mirrors the d166/d170
+        exact-sv-synonym precedent. mapping_type=exact_match.
+        """
+}
+mapping "d3503.1" source="d3503" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3503 SNOMED CT 288633005 = ICF d3503 Conversation with one person: the 4-level child of
+        d350 for starting/sustaining/ending a dialogue with a single interlocutor. Target =, active RF2
+        production (sv), SNOMED CT's direct observable for the conversation axis and the d350 parent.
+        SNOMED CT's conversation children are about conversation stages
+        (initiate/maintain/terminate/join/take turns) and contexts (different people/places/occasions),
+        NOT about the number of interlocutors; no SNOMED CT concept distinguishes one-vs-many
+        conversational partners. Ability to make conversation subsumes the conversation axis but the
+        source's single-interlocutor specificity is outside any SNOMED CT child. Broader (low):
+        conversation subsumes the conversation axis but the source's one-person-modality specificity is
+        outside any SNOMED CT concept (deep climb, no narrower target); consistent with the
+        leaf-under-broad-parent precedent (d3351/d3352 at). mapping_type=broader.
+        """
+}
+mapping "d3504.1" source="d3504" target="SNOMED_CT:288694001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3504 SNOMED CT 288694001 = ICF d3504 Conversation with many people: the 4-level child of
+        d350 for carrying on a conversation with multiple interlocutors (a group). Target =, active RF2
+        production, SNOMED CT's direct observable for the multi-interlocutor communication axis and a child
+        of 288633005. Both denote the conversation-with-varied/multiple-people axis; SNOMED CT frames the
+        ability to communicate across different people, ICF the activity of conversing with several.
+        exact_match (high rather than): direct verified SNOMED CT observable match on the
+        multi-interlocutor axis, but SNOMED CT's is marginally broader than ICF's (communication vs
+        conversation; different-people vs many-at-once) — a small well-understood breadth mismatch on
+        the same axis, per the d4301 one-level-breadth precedent. mapping_type=exact_match.
+        """
+}
+mapping "d3508.1" source="d3508" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3508 SNOMED CT 288633005 = ICF d3508 Conversation, other specified: the residual SNOMED CT
+        288633005 4-level child of d350. Target =, active RF2 production, the nearest axis concept (d350
+        parent maps here). SNOMED CT has no concept; ability-to-make-conversation subsumes the residual
+        bucket. Broader (moderate): one-level broader under the d350 parent axis, other-specified
+        source; consistent with the residual-code precedent (d3158/d3358 at).
+        mapping_type=broader.
+        """
+}
+mapping "d3509.1" source="d3509" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3509 SNOMED CT 288633005 = ICF d3509 Conversation, unspecified: the SNOMED CT 288633005
+        4-level child of d350. Target =, active RF2 production, the nearest axis concept (d350 parent
+        maps here). SNOMED CT has no unspecified-conversation concept; ability-to-make-conversation
+        subsumes the unspecified bucket. Broader (moderate): one-level broader under the d350 parent
+        axis, unspecified source; per the unspecified-source precedent (A009 -> 198677 at) and
+        d3159/d3359. mapping_type=broader.
+        """
+}
+mapping "d355.1" source="d355" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d355 SNOMED CT 288633005 = ICF d355 Discussion: starting, sustaining and ending an
+        examination of a topic/examining issues through argument/debate; exchanging views with one or
+        more people (a more argumentative/deliberative mode than d350 conversation). Target =, active
+        RF2 production, SNOMED CT's direct observable for the conversation/dialogue axis and the nearest
+        axis concept. SNOMED CT has NO observable (its concepts are procedures or clinical-content
+        situations, not functional abilities); discussion is a mode of conversation, so
+        ability-to-make-conversation subsumes it but loses the argumentative/deliberative quality that
+        distinguishes discussion from ordinary conversation. Broader (high): direct verified SNOMED CT
+        observable match on the conversational-dialogue axis, one-level broader because SNOMED CT captures
+        generic conversation ability rather than the discussion-specific mode; mirrors the d320/d335
+        one-level-broader precedent where SNOMED CT's axis concept subsumes the source's specific mode.
+        mapping_type=broader.
+        """
+}
+mapping "d3550.1" source="d3550" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3550 SNOMED CT 288633005 = ICF d3550 Discussion with one person: the 4-level child of d355
+        for examining a topic through argument/debate with a single interlocutor. Target =, active RF2
+        production (d355 parent maps here). SNOMED CT has no discuss-with-one-person concept (no discussion
+        observable at all); ability-to-make-conversation is the nearest axis concept and subsumes the
+        dialogue axis but loses BOTH the discussion-mode and the single-interlocutor specificity.
+        Broader (low): conversation subsumes the dialogue axis but the source's discussion-mode +
+        one-person-modality specificity is outside any SNOMED CT concept (deep climb, no narrower target);
+        consistent with the leaf-under-broad-parent precedent (d3351 at).
+        mapping_type=broader.
+        """
+}
+mapping "d3551.1" source="d3551" target="SNOMED_CT:288694001" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3551 SNOMED CT 288694001 = ICF d3551 Discussion with several people: the 4-level child of
+        d355 for examining a topic through argument/debate with multiple interlocutors. Target =, active
+        RF2 production, SNOMED CT's direct observable for the multi-interlocutor communication axis and a
+        child of 288633005. SNOMED CT has no discussion observable; 288694001 is the nearest
+        multi-interlocutor axis concept but loses the discussion-mode (argument/debate) specificity that
+        distinguishes d3551 from ordinary multi-person conversation. Broader (low): the target subsumes
+        the multi-interlocutor axis but the source's discussion-mode specificity is outside any SNOMED CT
+        concept (deep climb over a doubly-specific leaf); consistent with the leaf-under-broad-parent
+        precedent (d3351 at). mapping_type=broader.
+        """
+}
+mapping "d3558.1" source="d3558" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3558 SNOMED CT 288633005 = ICF d3558 Discussion, other specified: the residual SNOMED CT
+        288633005 4-level child of d355. Target =, active RF2 production, the nearest axis concept (d355
+        parent maps here). SNOMED CT has no concept; ability-to-make-conversation subsumes the residual
+        discussion bucket (discussion being a mode of conversation). Broader (moderate): one-level
+        broader under the d355 parent axis, other-specified source; consistent with the residual-code
+        precedent (d3158/d3358 at). mapping_type=broader.
+        """
+}
+mapping "d3559.1" source="d3559" target="SNOMED_CT:288633005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3559 SNOMED CT 288633005 = ICF d3559 Discussion, unspecified: the SNOMED CT 288633005 4-level
+        child of d355. Target =, active RF2 production, the nearest axis concept (d355 parent maps
+        here). SNOMED CT has no unspecified-discussion concept; ability-to-make-conversation subsumes the
+        unspecified discussion bucket (discussion being a mode of conversation). Broader (moderate):
+        one-level broader under the d355 parent axis, unspecified source; per the unspecified-source
+        precedent (A009 -> 198677 at) and d3159/d3359. mapping_type=broader.
+        """
+}
+mapping "d360.1" source="d360" target="SNOMED_CT:1384200005" relationship=source_is_broader_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d360 SNOMED CT 1384200005 = ICF d360 Using communication devices and techniques: using
+        devices and techniques for communication (telecommunications equipment, typewriters,
+        communication techniques); 3-level parent under d3. Target =, active RF2 production, SNOMED CT's
+        direct observable for the communication-device-use axis and a child of 288574004. SNOMED CT has no
+        combined concept; 1384200005 subsumes the device-use axis of d360 but is one level broader (does
+        not cover the sub-axis, and SNOMED CT frames the ability rather than the activity-instance).
+        Broader (high): direct verified SNOMED CT observable match on the communication-device axis,
+        one-level broader because the source spans devices AND techniques while the target covers
+        devices only; mirrors the d320/d335 one-level-broader precedent. mapping_type=broader.
+        """
+}
+mapping "d3600.1" source="d3600" target="SNOMED_CT:300730001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3600 SNOMED CT 300730001 = ICF d3600 Using telecommunication devices: using
+        telecommunication devices (telephones and similar equipment for distance communication); 4-level
+        child of d360. Target =, active RF2 production, SNOMED CT's direct observable for the telephone-use
+        axis and the only child of 300724001. The telephone is the canonical telecommunication device
+        the ICF code captures in practice; both denote the
+        use-telecom-equipment-for-distance-communication activity. exact_match (high rather than):
+        direct verified SNOMED CT observable match on the telecommunication-use axis, but the SNOMED CT
+        concept specifies whereas the ICF source is the slightly broader (phones plus historically
+        teletype/fax); a small well-understood breadth mismatch on the same axis, per the d4301
+        one-level-breadth precedent. mapping_type=exact_match.
+        """
+}
+mapping "d3601.1" source="d3601" target="SNOMED_CT:1384200005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3601 SNOMED CT 1384200005 = ICF d3601 Using typewriters: using typewriters and similar
+        keyboard-based writing devices for written communication; 4-level child of d360. Target =,
+        active RF2 production (d360 parent maps here). SNOMED CT has NO observable (only physical-object
+        typewriter concepts 701339004/701340002/701351002/701359000 exist, no functional-ability
+        observable); the communication-device observable is the nearest axis concept and subsumes the
+        typewriter-as-communication-device axis but loses the typewriter/keyboard-writing specificity.
+        Broader (low): the target subsumes the communication-device axis but the source's
+        typewriter-modality specificity is outside any SNOMED CT concept (deep climb, no narrower target);
+        consistent with the leaf-under-broad-parent precedent (d3351/d3352 at).
+        mapping_type=broader.
+        """
+}
+mapping "d3602.1" source="d3602" target="SNOMED_CT:1384200005" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3602 SNOMED CT 1384200005 = ICF d3602 Using communication techniques: using specific
+        techniques for communication (e.g. lip-reading, signing without a device); 4-level child of
+        d360. Target =, active RF2 production (d360 parent maps here). SNOMED CT has no observable; the two
+        AAC-related observables (870684009; 288592007) are NARROWER than d3602 (they are specific to
+        AAC/non-speech systems, not the general communication-techniques axis), so they cannot subsume
+        the source. 1384200005 is the nearest broader axis concept but it covers devices, whereas the
+        source is techniques — a partial axis mismatch (the target does not perfectly cover the
+        techniques sub-axis). Broader (low): the target subsumes the communication axis but the source's
+        techniques-modality (device-free methods) is partially outside the device-use target; deep climb
+        with real axis mismatch, consistent with the leaf-under-broad-parent precedent (d3351 at). mapping_type=broader.
+        """
+}
+mapping "d3608.1" source="d3608" target="SNOMED_CT:1384200005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3608 SNOMED CT 1384200005 = ICF d3608 Using communication devices and techniques, other
+        specified: the residual SNOMED CT 1384200005 4-level child of d360. Target =, active RF2
+        production, the nearest axis concept (d360 parent maps here). SNOMED CT has no concept; the
+        communication-device observable subsumes the residual bucket. Broader (moderate): one-level
+        broader under the d360 parent axis, other-specified source; consistent with the residual-code
+        precedent (d3158/d3358 at). mapping_type=broader.
+        """
+}
+mapping "d3609.1" source="d3609" target="SNOMED_CT:1384200005" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d3609 SNOMED CT 1384200005 = ICF d3609 Using communication devices and techniques,
+        unspecified: the SNOMED CT 1384200005 4-level child of d360. Target =, active RF2 production, the
+        nearest axis concept (d360 parent maps here). SNOMED CT has no unspecified
+        communication-device/technique concept; the communication-device observable subsumes the
+        unspecified bucket. Broader (moderate): one-level broader under the d360 parent axis,
+        unspecified source; per the unspecified-source precedent (A009 -> 198677 at) and d3159/d3359. mapping_type=broader.
+        """
+}
+mapping "d369.1" source="d369" target="SNOMED_CT:288574004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d369 SNOMED CT 288574004 = ICF d369 Conversation and use of communication devices and
+        techniques, other specified and unspecified: the 3-level residual spanning BOTH the d350-d359
+        conversation block and the d360-d369 device/technique block. Target =, active RF2 production,
+        SNOMED CT's top observable for the communication axis (parent of conversation and device-use).
+        SNOMED CT has no combined residual; ability-to-communicate is the nearest defensible standard
+        ancestor spanning both sub-blocks. Broader (moderate): one-level broader under the d350-d369
+        combined axis, unspecified/other-specified heterogeneous source; consistent with the
+        residual/unspecified-source precedent and the d349 single-block residual mapping.
+        mapping_type=broader.
+        """
+}
+mapping "d398.1" source="d398" target="SNOMED_CT:288574004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d398 SNOMED CT 288574004 = ICF d398 Communication, other specified: the residual SNOMED CT
+        288574004 2-level child for the d3 Communication chapter. Target =, active RF2 production,
+        SNOMED CT's top observable for the communication axis and the d3 chapter-root concept (d3 maps to
+        288574004, broader). SNOMED CT has no concept; ability-to-communicate subsumes the
+        entire d3 axis. Broader (moderate): one-level broader under the d3 chapter axis, other-specified
+        heterogeneous source; consistent with the residual/unspecified-source precedent (A009 -> 198677
+        at) and the d329 residual mapping. mapping_type=broader.
+        """
+}
+mapping "d399.1" source="d399" target="SNOMED_CT:288574004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source d399 SNOMED CT 288574004 = ICF d399 Communication, unspecified: the SNOMED CT 288574004 2-level
+        child for the d3 Communication chapter. Target =, active RF2 production, SNOMED CT's top observable
+        for the communication axis and the d3 chapter-root concept (d3 maps to 288574004,
+        broader). SNOMED CT has no unspecified-communication concept; ability-to-communicate subsumes the
+        entire d3 axis. Broader (moderate): one-level broader under the d3 chapter axis, unspecified
+        source; per the unspecified-source precedent (A009 -> 198677 at) and the d329 residual mapping. mapping_type=broader.
+        """
+}

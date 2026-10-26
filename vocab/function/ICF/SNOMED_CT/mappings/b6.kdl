@@ -1,0 +1,460 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b6
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b6.1" source="b6" target="SNOMED_CT:302249008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6 SNOMED CT 302249008 = ICF chapter-6 root: GENITOURINARY AND REPRODUCTIVE FUNCTIONS — the
+        umbrella chapter spanning urinary excretory (b610), urination (b620), urinary sensations (b630),
+        sexual (b640) and genital/reproductive (b640-b679) functions, per WHO ICF chapter structure.
+        Target =, active RF2 production 20260701, the direct SNOMED CT function-observable that names the
+        combined urological+genital function as a single observable. This is the closest standard
+        equivalent to the chapter umbrella; the urinary-only sibling 50741009 covers half the chapter,
+        and 118255001 covers the other half, but 302249008 is the only single concept that spans both
+        axes. Broader rather than exact: 302249008 is one observable where the ICF chapter bundles
+        urinary+genital+reproductive+menstrual as distinct sub-functions; the target is a single
+        flattened function name, and SNOMED CT's urogenital function observable does not explicitly name
+        the reproductive/menstrual sub-functions, so it stands broader as the single best umbrella. Low
+        tier : the closest defensible single-target umbrella for a multi-axis chapter root,
+        term-verified active, but a chapter root is inherently coarse and no independent Athena
+        crosswalk exists for an ICF chapter-level code.
+        """
+}
+mapping "b610.1" source="b610" target="SNOMED_CT:63911002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b610 SNOMED CT 63911002 = ICF b610: the body functions of URINARY EXCRETION —, per WHO ICF
+        definition, with children b6100 filtration of urine, b6101 collection of urine, b6108/b6109
+        residuals. Target =, active RF2 production 20260701, the direct SNOMED CT function-observable that
+        names excretion AS A FUNCTION. This is the closest standard equivalent; no dedicated observable
+        exists in the mirror (the urinary-specific candidates are 130953005 which is the output-rate
+        sub-function, and 55200000 which is the concentration sub-function). Broader rather than exact:
+        63911002 is the general excretory function (covers renal AND other excretory pathways) where ICF
+        b610 is specifically urinary excretion (filtration + collection of urine); the target fully
+        contains the source but adds non-urinary excretory scope. High tier : direct term-and-scope
+        match (excretory function = urinary excretory functions), one-level-broader in system scope,
+        term-verified active, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b610-b639.1" source="b610-b639" target="SNOMED_CT:50741009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b610-b639 SNOMED CT 50741009 = ICF b610-b639: the URINARY FUNCTIONS sub-block range of
+        chapter 6 — the contiguous span b610 (urinary excretory functions) through b639 (other
+        specified/unspecified urinary functions), i.e. all urinary functions (excretion, urination,
+        urinary sensations), excluding the genital/reproductive functions b640+. Target =, active RF2
+        production 20260701, the direct SNOMED CT function-observable that names urinary-tract function AS
+        A FUNCTION. This is the closest standard equivalent; 302249008 is broader (adds genital axis the
+        range excludes), and 42111002 is narrower (bladder-only). Broader rather than exact: 50741009 is
+        a single flattened urinary-tract-function observable where the range b610-b639 bundles excretion
+        + urination + urinary sensation as distinct sub-functions; the target fully contains the urinary
+        domain but is one level coarser in granularity. Moderate tier : direct term-and-scope match
+        (urinary tract function = urinary functions range), one-level-broader in granularity,
+        term-verified active, but a range code is inherently coarse and no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b6100.1" source="b6100" target="SNOMED_CT:88024006" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6100 SNOMED CT 88024006 = ICF b6100: the specific body function of FILTRATION OF URINE —,
+        per WHO ICF definition (the glomerular ultrafiltration that forms the primary urine). Target =,
+        active RF2 production 20260701, the direct SNOMED CT function-observable that names glomerular
+        filtration AS A FUNCTION. This is the standard equivalent: ICF b6100 urine filtration IS renal
+        glomerular filtration, and 88024006 denotes exactly that function; the sibling 7015005 is the
+        fraction-derivative sub-measure and 405004009 is the status framing. Exact match: source
+        (filtration of urine by kidneys) and target (glomerular filtration function) denote the same
+        physiological function at the same specificity; crosswalk-equivalent term-and-scope match
+        verified active in the mirror.
+        """
+}
+mapping "b6101.1" source="b6101" target="SNOMED_CT:33480009" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6101 SNOMED CT 33480009 = ICF b6101: the specific body function of COLLECTION OF URINE —,
+        per WHO ICF definition; this spans the renal-pelvis collecting system, ureters AND bladder
+        storage. Target =, active RF2 production 20260701, the SNOMED CT function-observable that names
+        bladder FILLING/Storage. This is only a partial fit: no single SNOMED CT concept spans the
+        renal-pelvis + ureter + bladder collection/storage axis that ICF b6101 names. 33480009 covers
+        ONLY the bladder-filling (storage) component of the source; the renal-pelvis/ureter collection
+        axis has no dedicated function observable in the mirror. Partial (weak): the target captures one
+        slice (bladder storage) of a multi-structure source, recorded to preserve the lead; per the
+        broader-vs-partial boundary rule the target does NOT fully contain the source (renal
+        pelvis/ureter collection is outside it), so this is partial not broader.
+        """
+}
+assessment "b6108.omop" source="b6108" outcome=no_match target-system="OMOP_EXT"
+assessment "b6109.omop" source="b6109" outcome=no_match target-system="OMOP_EXT"
+mapping "b620.1" source="b620" target="SNOMED_CT:364196001" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b620 SNOMED CT 364196001 = ICF b620: the body functions of URINATION —, per WHO ICF
+        definition, with children b6200 urination/bladder emptying, b6201 frequency of urination, b6202
+        urinary continence, b6208/b6209 residuals. Target =, active RF2 production 20260701, the SNOMED CT
+        observable that names the general micturition/urination characteristic. This is the closest
+        standard equivalent: the direct SNOMED CT 364196001 28278009 is INACTIVE (retired 2017-01-31) and
+        was rejected; 364196001 is the active umbrella micturition-feature observable whose children
+        include 364197005, 364198000, 364199008. Broader rather than exact: ICF b620 is a multi-child
+        function block (b6200-b6209) bundling voiding, frequency AND continence where 364196001 is a
+        single micturition-feature observable; the target names the central act-family but does not
+        subsume the continence sub-function (which maps to its own target 405002008). High tier : direct
+        term-and-scope match (micturition feature = urination functions), one-level-broader in
+        granularity, term-verified active, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6200.1" source="b6200" target="SNOMED_CT:249278006" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6200 SNOMED CT 249278006 = ICF b6200: the specific body function of URINATION / BLADDER
+        EMPTYING — (the voiding/emptying act), per WHO ICF definition. Target =, active RF2 production
+        20260701, the SNOMED CT function-oriented observable that names the ability to pass urine (the
+        function framing matching ICF's perspective). This is the closest standard equivalent and the
+        function-oriented framing (an ability, not a contractile event); sibling 130952000 is the
+        detrusor-contraction mechanism (narrower, mechanical), 48089003 is the inhibitory control (one
+        sub-aspect), and 17328006 is the flow-rate characteristic. Broader rather than exact: 249278006
+        is an ability/status framing where ICF b6200 frames bladder emptying as the physiological
+        voiding function (the act of transferring urine out); the target fully contains the source
+        domain but is one level away in model framing (ability vs function). High tier : direct
+        term-and-scope match (ability to pass urine = bladder-emptying function), one-level-broader in
+        model framing, term-verified active, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6201.1" source="b6201" target="SNOMED_CT:364198000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6201 SNOMED CT 364198000 = ICF b6201: the specific body function of URINATION FREQUENCY —
+        the physiological function governing the frequency of urination / micturition, per WHO ICF
+        definition. Target =, active RF2 production 20260701, the direct SNOMED CT observable that names
+        urination frequency (child of 364196001). This is the closest standard equivalent; the valued
+        correlates (increased/decreased frequency) sit beneath as findings. Broader rather than exact:
+        SNOMED CT models urination frequency as an OBSERVABLE (the assessed rate) where ICF b6201 frames it
+        as a FUNCTION (the physiological mechanism governing voiding frequency); the observable fully
+        contains the source domain but is one level away in model framing. High tier : direct
+        term-and-scope match (frequency of urination = urination-frequency function), one-level-broader
+        in model framing, term-verified active, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6202.1" source="b6202" target="SNOMED_CT:405002008" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6202 SNOMED CT 405002008 = ICF b6202: the specific body function of URINARY CONTINENCE —
+        the functions involved in voluntarily controlling the discharge of urine / maintaining
+        continence, per WHO ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT
+        function-oriented observable that names the ability to maintain urinary continence. This is the
+        standard equivalent: ICF b6202 (the continence function) IS the ability to maintain urinary
+        continence, and 405002008 denotes exactly that function-oriented concept; the sibling 406218000
+        is the state framing (vs the ability/function framing) and the pathological inverse is
+        urinary-incontinence findings. Exact match: source (urinary continence function) and target
+        (ability to maintain urinary continence) denote the same function at the same specificity;
+        crosswalk-equivalent term-and-scope match verified active in the mirror.
+        """
+}
+assessment "b6208.omop" source="b6208" outcome=no_match target-system="OMOP_EXT"
+assessment "b6209.omop" source="b6209" outcome=no_match target-system="OMOP_EXT"
+mapping "b630.1" source="b630" target="SNOMED_CT:364189003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b630 SNOMED CT 364189003 = ICF b630: the body functions of SENSATIONS ASSOCIATED WITH
+        URINARY FUNCTIONS — sensations such as feeling of urgency, of bladder fullness, of incomplete
+        emptying, per WHO ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT
+        observable that names bladder sensation; the related child 364199008 is the urge/desire
+        sensation (a sub-aspect). This is the closest standard equivalent; no dedicated observable
+        exists and 364189003 is the only bladder-sensation observable. Broader rather than exact:
+        364189003 is the bladder-sensation observable where ICF b630 spans sensations across ALL urinary
+        functions (urgency, fullness, incomplete-emptying sensation, not just bladder sensation); the
+        target names the dominant sensation axis but the source's scope includes non-bladder urinary
+        sensations. High tier : direct term-and-scope match (sensation of urinary bladder = sensations
+        associated with urinary functions), one-level-broader in scope, term-verified active, no
+        independent Athena crosswalk re-verified.
+        """
+}
+assessment "b639.omop" source="b639" outcome=no_match target-system="OMOP_EXT"
+mapping "b640.1" source="b640" target="SNOMED_CT:76859005" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b640 SNOMED CT 76859005 = ICF b640: the body functions of SEXUAL FUNCTIONS —, per WHO ICF
+        definition, with children b6400 arousal, b6401 preparatory, b6402 orgasm, b6403
+        resolution/relaxation. Target =, active RF2 production 20260701, the direct SNOMED CT
+        function-observable that names sexual function as a single observable. This is the standard
+        equivalent: ICF b640 sexual functions IS sexual function, and 76859005 denotes exactly that
+        umbrella concept; the sex-specific children 31255002 and 32689005 and phase-specific children
+        (33105009 excitation, 37690006 orgasm) sit beneath. Exact match: source (sexual functions) and
+        target (sexual function) denote the same concept at the same specificity; crosswalk-equivalent
+        term-and-scope match verified active in the mirror.
+        """
+}
+mapping "b640-b679.1" source="b640-b679" target="SNOMED_CT:118255001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b640-b679 SNOMED CT 118255001 = ICF b640-b679: the GENITAL AND REPRODUCTIVE FUNCTIONS
+        sub-block range of chapter 6 — the contiguous span b640 (sexual functions) through b679,
+        bundling sexual functions (b640) AND the genital/reproductive functions (procreation,
+        menstruation b650, etc.), per WHO ICF chapter structure. Target =, active RF2 production
+        20260701, the direct SNOMED CT function-observable that names reproductive function AS A FUNCTION.
+        This is the closest standard single-target umbrella; 302249008 adds the urinary axis the range
+        excludes, and the sex-specific 61923000 / 66523006 are narrower. Broader rather than exact:
+        118255001 names the reproductive axis where the range b640-b679 also includes the
+        sexual-function (b640) axis and the broader genital axis; the reproductive target covers the
+        dominant procreative axis but does not fully subsume the sexual-function sub-axis (which maps to
+        its own target 76859005). Recorded as broader (single best umbrella) rather than partial because
+        the reproductive axis is the dominant, fully-contained component of the range. Low tier : the
+        closest defensible single-target umbrella for a multi-axis range code, term-verified active, but
+        the target omits the sexual-function axis and a range code is inherently coarse.
+        """
+}
+mapping "b6400.1" source="b6400" target="SNOMED_CT:33105009" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6400 SNOMED CT 33105009 = ICF b6400: the specific body function of the SEXUAL AROUSAL PHASE
+        —, per WHO ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT
+        function-observable that names sexual excitation AS A FUNCTION. This is the standard equivalent:
+        ICF b6400 sexual arousal IS sexual excitation, and 33105009 denotes exactly that function; the
+        sibling 18480004 is the desire/interest phase (distinct from the arousal/excitation phase).
+        Exact match: source (sexual arousal function) and target (sexual excitation function) denote the
+        same function at the same specificity (arousal = excitation); crosswalk-equivalent
+        term-and-scope match verified active in the mirror.
+        """
+}
+mapping "b6401.1" source="b6401" target="SNOMED_CT:18480004" relationship=partial_overlap effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6401 SNOMED CT 18480004 = ICF b6401: the specific body function of the SEXUAL PREPARATORY
+        PHASE —, per WHO ICF definition (the readiness/desire-to-engagement transition). Target =,
+        active RF2 production 20260701, the SNOMED CT function-observable that names libido (sexual desire)
+        AS A FUNCTION. This is only a partial fit: no dedicated or observable exists in the mirror.
+        18480004 covers the desire/libido axis that drives the preparatory phase, but libido is
+        conceptually distinct from (and precedes) the preparatory acts the source names — libido is the
+        desire, not the preparation. Partial (weak): the target captures only one associated aspect
+        (desire) of the preparatory-phase source, recorded to preserve a lead for reviewers; per the
+        related-vs-no_match and broader-vs-partial boundary rules the target is clinically associated
+        but not an ancestor, descendant, or full equivalent, and the association is loose enough to
+        warrant weak tier. No stronger target is defensible.
+        """
+}
+mapping "b6402.1" source="b6402" target="SNOMED_CT:37690006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6402 SNOMED CT 37690006 = ICF b6402: the specific body function of the ORGASM PHASE —, per
+        WHO ICF definition. Target =, active RF2 production 20260701, the direct SNOMED CT
+        function-observable that names sexual orgasm AS A FUNCTION; the sex-specific children 91367000
+        and 69618000 sit beneath. This is the standard equivalent: ICF b6402 orgasm function IS sexual
+        orgasm function, and 37690006 denotes exactly that function. Exact match: source (orgasm-phase
+        function) and target (sexual orgasm function) denote the same function at the same specificity;
+        crosswalk-equivalent term-and-scope match verified active in the mirror.
+        """
+}
+mapping "b6403.1" source="b6403" target="SNOMED_CT:18472006" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6403 SNOMED CT 18472006 = ICF b6403: the specific body function of the SEXUAL
+        RESOLUTION/RELAXATION PHASE —, per WHO ICF definition (the post-orgasm refractory/relaxation
+        phase). Target =, active RF2 production 20260701, the only SNOMED CT concept that names sexual
+        relaxation. This is only a partial fit: 18472006 is a FINDING (an observed state of sexual
+        relaxation) where ICF b6403 frames it as a FUNCTION (the physiological resolution phase); no
+        dedicated or observable exists in the mirror. Partial (weak): the target captures the relaxation
+        concept the source names but as a finding (state) rather than a function (mechanism), recorded
+        to preserve a lead for reviewers; the finding framing is one level away from the function
+        framing the source asserts. No stronger target is defensible.
+        """
+}
+assessment "b6408.omop" source="b6408" outcome=no_match target-system="OMOP_EXT"
+assessment "b6409.omop" source="b6409" outcome=no_match target-system="OMOP_EXT"
+mapping "b650.1" source="b650" target="SNOMED_CT:248957007" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b650 SNOMED CT 248957007 = ICF b650: the body functions of MENSTRUATION —, per WHO ICF
+        definition, with child b6500 regularity of menstrual cycle. Target =, active RF2 production
+        20260701, the direct SNOMED CT function-observable that names menstruation AS A FUNCTION (the
+        function framing matching ICF's perspective). This is the standard equivalent: ICF b650
+        menstruation function IS menstruation function, and 248957007 denotes exactly that function; the
+        sibling 364304004 is the characteristic umbrella and 364305003 is the pattern sub-aspect. Exact
+        match: source (menstruation functions) and target (menstruation function) denote the same
+        function at the same specificity; crosswalk-equivalent term-and-scope match verified active in
+        the mirror.
+        """
+}
+mapping "b6500.1" source="b6500" target="SNOMED_CT:364307006" relationship=equivalent quality=100 {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6500 SNOMED CT 364307006 = ICF b6500: the specific body function of REGULARITY OF THE
+        MENSTRUAL CYCLE — the physiological function governing the regularity/periodicity of the
+        menstrual cycle, per WHO ICF definition (child of b650 menstruation). Target =, active RF2
+        production 20260701, the direct SNOMED CT observable that names the regularity of the menstrual
+        cycle. This is the standard equivalent: ICF b6500 menstrual-cycle regularity function IS
+        regularity of menstrual cycle, and 364307006 denotes exactly that concept; the valued correlates
+        (regular/irregular cycle) sit beneath as findings. Exact match: source (menstrual-cycle
+        regularity function) and target (regularity of menstrual cycle) denote the same concept at the
+        same specificity; crosswalk-equivalent term-and-scope match verified active in the mirror.
+        """
+}
+mapping "b6501.1" source="b6501" target="SNOMED_CT:161716008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6501 SNOMED CT 161716008 = ICF b6501: the specific body function of the INTERVAL between
+        menstruations (the cycle-length / inter-menstrual interval function, a child of b650 menstrual
+        functions). Target =, active RF2 production 20260701, the direct SNOMED CT observable that names
+        the menstrual-cycle interval length. This is the closest standard equivalent; sibling
+        observables 248961001 and 364310004 are near-synonyms covering the same axis. Broader rather
+        than exact: SNOMED CT models the inter-menstrual interval as an OBSERVABLE (the assessed cycle
+        length) where ICF b6501 frames it as a FUNCTION (the physiological cycle-interval mechanism),
+        and the observable fully contains the source domain but is one level away in model framing;
+        there is no dedicated observable distinct from the cycle-length observable. High tier : direct
+        term-and-scope match (menstrual cycle length = interval between menstruations) verified active
+        in the mirror, one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6502.1" source="b6502" target="SNOMED_CT:364308001" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6502 SNOMED CT 364308001 = ICF b6502: the specific body function of the DEGREE/AMOUNT of
+        menstrual bleeding (the menstrual-flow quantity function, a child of b650). Target =, active RF2
+        production 20260701, the direct SNOMED CT observable that names the quantity of menstrual blood
+        loss. This is the closest standard equivalent; the finding correlate 248970003 is its valued
+        form, and 161715007/161720007 cover the duration axis rather than quantity. Broader rather than
+        exact: SNOMED CT models menstrual-blood-loss quantity as an OBSERVABLE (the measured amount) where
+        ICF b6502 frames it as a FUNCTION (the physiological mechanism governing bleeding degree), and
+        the observable fully contains the source domain but is one level away in model framing; there is
+        no dedicated observable. High tier : direct term-and-scope match (quantity of menstrual blood
+        loss = degree of menstrual bleeding) verified active in the mirror, one-level-broader in model
+        framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6503.1" source="b6503" target="SNOMED_CT:20016009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6503 SNOMED CT 20016009 = ICF b6503: the specific body function of the ONSET of
+        menstruation (menarche — the function of menstruation starting / first occurrence of menses, a
+        child of b650). Target =, active RF2 production 20260701, the canonical SNOMED CT concept naming
+        menarche (the onset/first menstruation). This is the closest standard equivalent; the observable
+        364314008 is the measurable correlate (age at onset, a narrower measurement than the onset
+        function itself), and 44063004/83017007 are early/late variants. Broader rather than exact:
+        SNOMED CT models menarche as a FINDING (the clinical event/observation) where ICF b6503 frames it
+        as a FUNCTION (the physiological onset mechanism), and the finding fully contains the source
+        domain but is one level away in model framing; there is no dedicated observable. High tier :
+        direct term-and-scope match (menarche = onset of menstruation) verified active in the mirror,
+        one-level-broader in model framing, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6504.1" source="b6504" target="SNOMED_CT:161712005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6504 SNOMED CT 161712005 = ICF b6504: the specific body function of the CESSATION of
+        menstruation (menopause — the function of menstruation ending, a child of b650). Target =,
+        active RF2 production 20260701, the direct SNOMED CT FUNCTION-observable that names menopause AS A
+        FUNCTION. This is the closest standard equivalent and matches the ICF function framing directly;
+        the finding correlates 237123000 and 364314008-style age observables are its valued/qualified
+        forms, and 20045006 is a variant. Broader rather than exact: ICF b6504 frames the cessation of
+        menstruation as a body function (the physiological termination of menses) where 161712005
+        denotes the function observable; the target fully contains the source domain but is one level
+        away in model framing (observable vs function), and there is no independent Athena crosswalk
+        re-verified. High tier : direct term-and-scope match (menopause function = cessation of
+        menstruation function) verified active in the mirror, one-level-broader in model framing.
+        """
+}
+assessment "b6508.omop" source="b6508" outcome=no_match target-system="OMOP_EXT"
+assessment "b6509.omop" source="b6509" outcome=no_match target-system="OMOP_EXT"
+mapping "b660.1" source="b660" target="SNOMED_CT:118255001" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b660 SNOMED CT 118255001 = ICF b660: the body functions of REPRODUCTION — the functions
+        involved in human reproduction (per WHO ICF definition), with children b6600 fertility, b6601
+        pregnancy, b6602 childbirth, b6603 milk production. Target =, active RF2 production 20260701,
+        the direct SNOMED CT observable that names reproductive function overall. This is the closest
+        standard equivalent; the sex-specific children 66523006 and 61923000 sit beneath it. Broader
+        rather than exact: ICF b660 is a multi-child function block (b6600-b6603) bundling fertility,
+        pregnancy, childbirth AND lactation, where is a single observable for reproductive function; the
+        target names the central reproductive axis but does not subsume the
+        pregnancy/childbirth/lactation sub-functions (which have their own SNOMED CT observables), so it
+        stands broader as the single best umbrella for the block. High tier : direct term-and-scope
+        match (reproductive function = reproduction functions) verified active in the mirror,
+        one-level-broader in model granularity, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b6600.1" source="b6600" target="SNOMED_CT:397594008" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6600 SNOMED CT 397594008 = ICF b6600: the specific body function of FERTILITY — the
+        functions related to the capacity to conceive and produce offspring (a child of b660). Target =,
+        active RF2 production 20260701, the direct SNOMED CT FUNCTION-observable that names fertility AS A
+        FUNCTION (the active successor of the retired 48840007). This is the closest standard equivalent
+        and matches the ICF function framing directly; 118183008 is the finding framing, and 397647009
+        is the related capacity observable. Broader rather than exact: ICF b6600 frames fertility as a
+        body function (the physiological reproductive capacity) where 397594008 denotes the
+        fertility-function observable; the target fully contains the source domain but is one level away
+        in model framing (observable vs function), and there is no independent Athena crosswalk
+        re-verified. High tier : direct term-and-scope match (fertility function = fertility-related
+        functions) verified active in the mirror, the function-oriented observable preferred over the
+        finding per the b450 voice/endurance-function precedent.
+        """
+}
+mapping "b6601.1" source="b6601" target="SNOMED_CT:289908002" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6601 SNOMED CT 289908002 = ICF b6601: the specific body function of PREGNANCY — the
+        functions associated with being pregnant / carrying a pregnancy (a child of b660). Target =,
+        active RF2 production 20260701, the direct SNOMED CT FUNCTION-observable that names pregnancy AS A
+        FUNCTION. This is the closest standard equivalent and matches the ICF function framing directly;
+        77386006 is the state framing and 364319003 is the broader-bucket observable. Broader rather
+        than exact: ICF b6601 frames pregnancy as a body function (the physiological carrying of a
+        pregnancy) where 289908002 denotes the pregnancy-function observable; the target fully contains
+        the source domain but is one level away in model framing (observable vs function), and there is
+        no independent Athena crosswalk re-verified. High tier : direct term-and-scope match (pregnancy
+        function = functions associated with pregnancy) verified active in the mirror, the
+        function-oriented observable preferred.
+        """
+}
+mapping "b6602.1" source="b6602" target="SNOMED_CT:386216000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6602 SNOMED CT 386216000 = ICF b6602: the specific body function of CHILDBIRTH — the
+        functions associated with labour and delivery / parturition (a child of b660). Target =, active
+        RF2 production 20260701, the direct SNOMED CT FUNCTION-observable that names human parturition
+        (childbirth) AS A FUNCTION. This is the closest standard equivalent and matches the ICF function
+        framing directly; 289909005 is the labour-stage-specific sibling (labor = the
+        uterine-contraction stage preceding delivery) and is a near-synonym covering the same axis, with
+        386216000 the broader parturition concept preferred for the ICF /childbirth scope. Broader
+        rather than exact: ICF b6602 frames childbirth as a body function (the physiological delivery
+        mechanism) where 386216000 denotes the parturition-function observable; the target fully
+        contains the source domain but is one level away in model framing (observable vs function), and
+        there is no independent Athena crosswalk re-verified. High tier : direct term-and-scope match
+        (parturition function = functions associated with childbirth) verified active in the mirror.
+        """
+}
+mapping "b6603.1" source="b6603" target="SNOMED_CT:63158009" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b6603 SNOMED CT 63158009 = ICF b6603: the specific body function of MILK PRODUCTION —
+        lactation / the production of breast milk (a child of b660). Target =, active RF2 production
+        20260701, the direct SNOMED CT FUNCTION-observable that names lactation AS A FUNCTION. This is the
+        closest standard equivalent and matches the ICF function framing directly; sibling observables
+        364381005, 364383008, 364385001 are its valued/measurement children. Broader rather than exact:
+        ICF b6603 frames milk production as a body function (the physiological lactation mechanism)
+        where 63158009 denotes the lactation-function observable; the target fully contains the source
+        domain (lactation = milk production) but is one level away in model framing (observable vs
+        function), and there is no independent Athena crosswalk re-verified. High tier : direct
+        term-and-scope match (lactation function = milk-production function) verified active in the
+        mirror, the function-oriented observable preferred.
+        """
+}
+assessment "b6608.omop" source="b6608" outcome=no_match target-system="OMOP_EXT"
+assessment "b6609.omop" source="b6609" outcome=no_match target-system="OMOP_EXT"
+assessment "b670.omop" source="b670" outcome=no_match target-system="OMOP_EXT"
+assessment "b6700.omop" source="b6700" outcome=no_match target-system="OMOP_EXT"
+assessment "b6701.omop" source="b6701" outcome=no_match target-system="OMOP_EXT"
+assessment "b6702.omop" source="b6702" outcome=no_match target-system="OMOP_EXT"
+assessment "b6703.omop" source="b6703" outcome=no_match target-system="OMOP_EXT"
+assessment "b6708.omop" source="b6708" outcome=no_match target-system="OMOP_EXT"
+assessment "b6709.omop" source="b6709" outcome=no_match target-system="OMOP_EXT"
+assessment "b679.omop" source="b679" outcome=no_match target-system="OMOP_EXT"
+assessment "b698.omop" source="b698" outcome=no_match target-system="OMOP_EXT"
+assessment "b699.omop" source="b699" outcome=no_match target-system="OMOP_EXT"

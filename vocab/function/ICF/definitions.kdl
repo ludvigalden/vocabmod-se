@@ -9,4 +9,18 @@ context {
 category "code" {
     name "en" "ICF code"
 }
+collection "icf-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICF to SNOMED CT"
+    authors "ludvig-alden"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            claim-scope "icf-snomed-ct@2026.1"
+        }
+    }
+    import "SNOMED_CT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment

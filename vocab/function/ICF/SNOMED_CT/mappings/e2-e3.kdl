@@ -1,0 +1,196 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes e2-e3
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+assessment "e2.omop" source="e2" outcome=no_match target-system="OMOP_EXT"
+assessment "e210.omop" source="e210" outcome=no_match target-system="OMOP_EXT"
+assessment "e2100.omop" source="e2100" outcome=no_match target-system="OMOP_EXT"
+assessment "e2101.omop" source="e2101" outcome=no_match target-system="OMOP_EXT"
+assessment "e2102.omop" source="e2102" outcome=no_match target-system="OMOP_EXT"
+assessment "e2108.omop" source="e2108" outcome=no_match target-system="OMOP_EXT"
+assessment "e2109.omop" source="e2109" outcome=no_match target-system="OMOP_EXT"
+assessment "e215.omop" source="e215" outcome=no_match target-system="OMOP_EXT"
+assessment "e2150.omop" source="e2150" outcome=no_match target-system="OMOP_EXT"
+assessment "e2151.omop" source="e2151" outcome=no_match target-system="OMOP_EXT"
+assessment "e2158.omop" source="e2158" outcome=no_match target-system="OMOP_EXT"
+assessment "e2159.omop" source="e2159" outcome=no_match target-system="OMOP_EXT"
+assessment "e220.omop" source="e220" outcome=no_match target-system="OMOP_EXT"
+assessment "e2200.omop" source="e2200" outcome=no_match target-system="OMOP_EXT"
+assessment "e2201.omop" source="e2201" outcome=no_match target-system="OMOP_EXT"
+assessment "e2208.omop" source="e2208" outcome=no_match target-system="OMOP_EXT"
+assessment "e2209.omop" source="e2209" outcome=no_match target-system="OMOP_EXT"
+assessment "e225.omop" source="e225" outcome=no_match target-system="OMOP_EXT"
+assessment "e2250.omop" source="e2250" outcome=no_match target-system="OMOP_EXT"
+assessment "e2251.omop" source="e2251" outcome=no_match target-system="OMOP_EXT"
+assessment "e2252.omop" source="e2252" outcome=no_match target-system="OMOP_EXT"
+assessment "e2253.omop" source="e2253" outcome=no_match target-system="OMOP_EXT"
+assessment "e2254.omop" source="e2254" outcome=no_match target-system="OMOP_EXT"
+assessment "e2255.omop" source="e2255" outcome=no_match target-system="OMOP_EXT"
+assessment "e2258.omop" source="e2258" outcome=no_match target-system="OMOP_EXT"
+assessment "e2259.omop" source="e2259" outcome=no_match target-system="OMOP_EXT"
+assessment "e230.omop" source="e230" outcome=no_match target-system="OMOP_EXT"
+assessment "e235.omop" source="e235" outcome=no_match target-system="OMOP_EXT"
+assessment "e240.omop" source="e240" outcome=no_match target-system="OMOP_EXT"
+assessment "e2400.omop" source="e2400" outcome=no_match target-system="OMOP_EXT"
+assessment "e2401.omop" source="e2401" outcome=no_match target-system="OMOP_EXT"
+assessment "e2408.omop" source="e2408" outcome=no_match target-system="OMOP_EXT"
+assessment "e2409.omop" source="e2409" outcome=no_match target-system="OMOP_EXT"
+assessment "e245.omop" source="e245" outcome=no_match target-system="OMOP_EXT"
+assessment "e2450.omop" source="e2450" outcome=no_match target-system="OMOP_EXT"
+assessment "e2451.omop" source="e2451" outcome=no_match target-system="OMOP_EXT"
+assessment "e2458.omop" source="e2458" outcome=no_match target-system="OMOP_EXT"
+assessment "e2459.omop" source="e2459" outcome=no_match target-system="OMOP_EXT"
+mapping "e250.1" source="e250" target="SNOMED_CT:102412001" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e250 SNOMED CT 102412001 = ICF environmental factor: sound (the acoustic environment as
+        determinant of functioning, e2 Natural environment chapter). Target = (sctid 102412001, active).
+        The SNOMED CT concept names a corresponding acoustic environmental referent, but is framed as a
+        clinical event of pollution rather than a functioning-determinant; relationship is loose
+        association, not identity/subsumption. Per standards related-vs-no_match boundary: a real,
+        defensible environmental-clinical link exists, so record as related at (weak) rather than
+        discard. Mapping-type=related (target clinically associated but on a different ontological
+        axis).
+        """
+}
+mapping "e2500.1" source="e2500" target="SNOMED_CT:250888003" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e2500 SNOMED CT 250888003 = ICF environmental factor: sound intensity/volume (e250
+        sub-block). Target = (sctid 250888003, active). The SNOMED CT concept is the directly corresponding
+        real-world observable for sound intensity; it is framed as a measurable observable rather than a
+        functioning-determinant. Defensible related link at (weak): same physical referent, different
+        ontological axis. mapping_type=related.
+        """
+}
+assessment "e2501.omop" source="e2501" outcome=no_match target-system="OMOP_EXT"
+assessment "e2508.omop" source="e2508" outcome=no_match target-system="OMOP_EXT"
+assessment "e2509.omop" source="e2509" outcome=no_match target-system="OMOP_EXT"
+mapping "e255.1" source="e255" target="SNOMED_CT:735932007" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e255 SNOMED CT 735932007 = ICF environmental factor: vibration (e2 Natural environment
+        chapter). Target = (sctid 735932007, active). The SNOMED CT concept names the same physical
+        environmental referent (vibration as exposure), but is scoped to occupational exposure (a
+        narrower framing) and modeled as a clinical event rather than a functioning-determinant.
+        Defensible related link at (weak): same physical referent, different axis and framing.
+        mapping_type=related.
+        """
+}
+mapping "e260.1" source="e260" target="SNOMED_CT:102413006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e260 SNOMED CT 102413006 = ICF environmental factor: air quality (e2 Natural environment
+        chapter). Target = (sctid 102413006, active). The SNOMED CT concept is the directly corresponding
+        air-environment referent, but is framed as a pollution event (a negative/quality-degraded state)
+        rather than the neutral functioning-determinant (which can be a facilitator or barrier).
+        Defensible related link at (weak): same environmental axis, different framing.
+        mapping_type=related.
+        """
+}
+assessment "e2600.omop" source="e2600" outcome=no_match target-system="OMOP_EXT"
+assessment "e2601.omop" source="e2601" outcome=no_match target-system="OMOP_EXT"
+assessment "e2608.omop" source="e2608" outcome=no_match target-system="OMOP_EXT"
+assessment "e2609.omop" source="e2609" outcome=no_match target-system="OMOP_EXT"
+assessment "e298.omop" source="e298" outcome=no_match target-system="OMOP_EXT"
+assessment "e299.omop" source="e299" outcome=no_match target-system="OMOP_EXT"
+assessment "e3.omop" source="e3" outcome=no_match target-system="OMOP_EXT"
+assessment "e310.omop" source="e310" outcome=no_match target-system="OMOP_EXT"
+assessment "e315.omop" source="e315" outcome=no_match target-system="OMOP_EXT"
+mapping "e320.1" source="e320" target="SNOMED_CT:113163005" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source e320 SNOMED CT 113163005 = ICF environmental factor: support from friends (e3 chapter).
+        Target = (sctid 113163005, active). The SNOMED CT concept names the corresponding social referent
+        (friend) but is a person/relationship record, not a support-as-functioning-determinant; the
+        source is about the support relationship, the target is the person role. Defensible related link
+        at (weak) per the related-vs-no_match boundary (a real social-clinical association exists,
+        analogous to the Z800 family-history pattern). mapping_type=related.
+        """
+}
+mapping "e325.1" source="e325" target="SNOMED_CT:48385004" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source e325 SNOMED CT 48385004 = ICF environmental factor: support from acquaintances, peers,
+        colleagues, neighbours and community members (e3 chapter). Target = (sctid 48385004, active).
+        The SNOMED CT concept names one social-referent role within this broad source grouping
+        (acquaintance), not the support relationship itself; source is about support, target is a person
+        role. Heterogeneous source (five roles) and only one role has a direct SNOMED CT person concept, so
+        a single partial/related target is weak but defensible as a lead. mapping_type=related at
+        (weak).
+        """
+}
+assessment "e330.omop" source="e330" outcome=no_match target-system="OMOP_EXT"
+assessment "e335.omop" source="e335" outcome=no_match target-system="OMOP_EXT"
+mapping "e340.1" source="e340" target="SNOMED_CT:133932002" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source e340 SNOMED CT 133932002 158881006 = ICF environmental factor: support from personal care
+        providers and personal assistants (e3 chapter). Targets: SNOMED CT 133932002 = and SNOMED CT 158881006
+        = (both active). The SNOMED CT concepts name the corresponding caregiver/assistant roles, but are
+        person/occupation records, not a support-as-functioning-determinant; the source is about the
+        support relationship, the targets are the roles. Each target covers one facet of the two-part
+        source (caregiver facet, assistant facet); recorded as two related links (strongest-first) at
+        (weak) per the multi-target rule and related-vs-no_match boundary. mapping_type=related for
+        both.
+        """
+}
+mapping "e340.2" source="e340" target="SNOMED_CT:158881006" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+assessment "e345.omop" source="e345" outcome=no_match target-system="OMOP_EXT"
+assessment "e350.omop" source="e350" outcome=no_match target-system="OMOP_EXT"
+mapping "e355.1" source="e355" target="SNOMED_CT:223366009" relationship=related_to {
+    confidence 1 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Source e355 = ICF environmental factor SNOMED CT 223366009 (Stöd från yrkesutövare inom hälso- och
+        sjukvård) — a contextual determinant. Target (person concept). Why this target: it is the only
+        SNOMED CT concept identifying the *category of person* the source describes as the support
+        provider; no SNOMED CT concept represents. Why : the source is an ICF environmental factor, not a
+        person or finding — the link is a loose clinical association (related), recorded as a lead for
+        reviewers, not an identity. Semantic mismatch (contextual factor vs person) caps confidence at
+        weak.
+        """
+}
+assessment "e360.omop" source="e360" outcome=no_match target-system="OMOP_EXT"
+mapping "e398.1" source="e398" target="SNOMED_CT:445051000124100" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e398 = ICF environmental-factor chapter-e3 residual SNOMED CT 445051000124100 (andra
+        specificerade). Target. Why this target: it is the closest SNOMED CT concept to the ICF
+        personal/social-support idea; it is a *status/finding about* social support, not the
+        environmental factor itself. Why : source is an ICF contextual factor and a residual bucket —
+        loose related link, recorded as a reviewer lead, not an identity. No exact or broader target
+        exists because the ICF factor semantics are absent in SNOMED CT.
+        """
+}
+mapping "e398A.1" source="e398A" target="SNOMED_CT:365498000" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e398A = Swedish ICF-extension environmental factor SNOMED CT 365498000 (Personligt stöd från
+        person som vårdar eller stödjer en närstående) — i.e. support from an informal carer. Target.
+        Why this target: it is the only SNOMED CT concept directly about support for/from informal
+        caregivers; it is a *finding about* support availability, not the ICF environmental factor
+        itself. Why : contextual-factor vs finding semantic mismatch; related link recorded as a
+        reviewer lead, not identity. Defensible association, but weak.
+        """
+}
+mapping "e399.1" source="e399" target="SNOMED_CT:445051000124100" relationship=related_to {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source e399 = ICF environmental-factor chapter-e3 SNOMED CT 445051000124100 (ospecificerade).
+        Target. Why this target: closest SNOMED CT concept to the broad personal/social-support idea, but
+        it is a status/finding-about, not the environmental factor. Why : source is an unspecified ICF
+        contextual factor — loose related link for reviewer follow-up, not an identity; the unspecified
+        framing plus the semantic mismatch cap confidence at weak.
+        """
+}

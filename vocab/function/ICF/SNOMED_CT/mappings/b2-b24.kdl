@@ -1,0 +1,493 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes b2-b24
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "b2.1" source="b2" target="SNOMED_CT:106148006" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2 SNOMED CT 106148006 = ICF chapter b2 Sensory functions and pain (the entire sensory/pain
+        chapter: b210 Vision, b215 Sensations related to the eye, b220 Hearing, b230 Vestibular, b235
+        Proprioceptive, b240 Sensation of pain, b250-b279 other senses). Target SNOMED CT 4024711 (sctid
+        106148006) =, active standard, the direct SNOMED CT observable for sensory function. Broader
+        (multi-level): every b2 sensory sub-function is a sensory function, and the SNOMED CT concept fully
+        subsumes the sensory axis of b2, but it does not cover the pain axis (ICF b2 uniquely bundles —
+        pain is modeled in SNOMED CT as a separate sensation/feeling, e.g. 816065002). So the target is a
+        true ancestor for most of b2 but does not fully subsume the whole b2 bundle. Low tier :
+        defensible chapter-level ancestor lead (the SNOMED CT sensory-function observable is the closest
+        standard concept to the ICF b2 chapter title), but loose because (a) the source bundles pain
+        which the target does not subsume and (b) a chapter root is classification scaffolding. Recorded
+        as broader rather than no_match because is a direct, defensible term-and-scope match for the
+        dominant (sensory) axis of b2 and is the chapter-level standard concept a reviewer would expect.
+        """
+}
+mapping "b210.1" source="b210" target="SNOMED_CT:281004000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b210 SNOMED CT 281004000 (Syn) = ICF b210 Seeing functions: the sensory functions of the eye
+        and related structures — visual function as a sense. Target SNOMED CT 4094031 (sctid 281004000) =,
+        active RF2 production. Exact 1:1 equivalence: identical clinical concept (visual function as a
+        sensory/physiological function of the eye). Note 61402003 was inactivated (invalid_reason=D,
+        2006) and 281004000 is its active successor; 405183003 is a status-evaluation observable, not
+        the function itself. 281004000 is the active function-level observable matching b210. High tier
+        : exact term match and clear concept equivalence verified in both mirrors via the
+        sctid_to_athena_id crosswalk, but no independent Athena crosswalk re-verified, so snapped just
+        below. mapping_type=exact_match.
+        """
+}
+mapping "b210-b229.1" source="b210-b229" target="SNOMED_CT:281004000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b210-b229 SNOMED CT 281004000 = ICF block-range anchor for the block (b210 Seeing + b215
+        Sensations related to the eye and adjoining functions) — a classification range/heading, not a
+        single clinical concept. The best available standard target is the vision function observable.
+        Target SNOMED CT 4094031 (sctid 281004000) =, active. Broader: the target fully subsumes the b210
+        vision axis but only partially covers b215 (sensations related to the eye — discomfort, dryness
+        etc. — which are not all); the range anchor is also classification scaffolding, not a clinical
+        concept. Low tier : defensible as the closest standard concept for the dominant vision axis of
+        the range, but loose because it does not cover the b215 eye-sensation axis and the source is a
+        range heading. Recorded as broader to preserve the lead for the vision axis a reviewer would
+        expect; the b210 and b215 children get their own tighter proposals.
+        """
+}
+mapping "b2100.1" source="b2100" target="SNOMED_CT:363983007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2100 SNOMED CT 363983007 (Synskärpa) = ICF b2100 Acuity functions: the visual functions of
+        sensing form and contour at given distances — visual acuity as a sensory function. Target SNOMED CT
+        4239582 (sctid 363983007) =, active RF2 production. Exact 1:1 equivalence: identical clinical
+        concept (visual acuity as an observable visual function), literal FSN term match. High tier :
+        exact term match and clear concept equivalence verified in both mirrors via the
+        sctid_to_athena_id crosswalk, but no independent Athena crosswalk re-verified, so snapped just
+        below. mapping_type=exact_match.
+        """
+}
+mapping "b21000.1" source="b21000" target="SNOMED_CT:251742009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21000 SNOMED CT 251742009 = ICF b21000 Binocular acuity of distant vision: the acuity
+        function of both eyes together for far/distance vision. Target SNOMED CT 4089821 (sctid 251742009)
+        =, active RF2 production. Exact 1:1 equivalence: identical clinical concept (binocular distance
+        visual acuity as an observable), literal FSN term match (binocular + distance). High tier :
+        exact term match and clear concept equivalence verified in both mirrors, no independent Athena
+        crosswalk re-verified. mapping_type=exact_match.
+        """
+}
+mapping "b21001.1" source="b21001" target="SNOMED_CT:251739003" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21001 SNOMED CT 251739003 = ICF b21001 Monocular acuity of distant vision: the acuity
+        function of one eye for far/distance vision (eye-unspecified — left OR right). Target SNOMED CT
+        4090514 (sctid 251739003) =, active RF2 production. Broader: SNOMED CT's active monocular
+        distance-acuity observables are eye-laterality-specific (386714003, 386716001; the older
+        251740001/251741002 are inactive/D). The ICF source is laterality-unspecified (either eye), so
+        no single eye-specific SNOMED CT concept matches; 251739003 is the broader, laterality-agnostic
+        parent that fully subsumes the monocular-distance axis. Low tier : defensible best-available
+        broader target, but real doubt — the target is a deeper climb and also covers binocular distance
+        acuity, and there is no independent crosswalk. (Rejecting a single eye-specific concept would
+        silently assert laterality the source withholds.)
+        """
+}
+mapping "b21002.1" source="b21002" target="SNOMED_CT:251746007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21002 SNOMED CT 251746007 = ICF b21002 Binocular acuity of near vision: the acuity function
+        of both eyes together for near vision. Target SNOMED CT 4092478 (sctid 251746007) =, active RF2
+        production. Exact 1:1 equivalence: identical clinical concept (binocular near visual acuity as
+        an observable), literal FSN term match (binocular + near). High tier : exact term match and
+        clear concept equivalence verified in both mirrors, no independent Athena crosswalk re-verified.
+        mapping_type=exact_match.
+        """
+}
+mapping "b21003.1" source="b21003" target="SNOMED_CT:251743004" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21003 SNOMED CT 251743004 = ICF b21003 Monocular acuity of near vision: the acuity function
+        of one eye for near vision (eye-unspecified — left OR right). Target SNOMED CT 4089822 (sctid
+        251743004) =, active RF2 production. Broader: SNOMED CT's active monocular near-acuity observables
+        are eye-specific (386711006, 386712004; the older 251744005/251745006 are inactive/D). The ICF
+        source is laterality-unspecified, so no single eye-specific SNOMED CT concept matches; 251743004 is
+        the broader, laterality-agnostic parent fully subsuming the monocular-near axis. Low tier :
+        defensible best-available broader target, but real doubt — deeper climb, also covers binocular
+        near acuity, no independent crosswalk.
+        """
+}
+assessment "b21008.omop" source="b21008" outcome=no_match target-system="OMOP_EXT"
+assessment "b21009.omop" source="b21009" outcome=no_match target-system="OMOP_EXT"
+mapping "b2101.1" source="b2101" target="SNOMED_CT:73750009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2101 SNOMED CT 73750009 (Synfält) = ICF b2101 Visual field functions: the sensory functions
+        of the full area visible to the eye(s) — visual field as a function. Target SNOMED CT 4249889
+        (sctid 73750009) =, active RF2 production. Exact 1:1 equivalence: identical clinical concept
+        (visual field as an observable visual function), literal FSN term match. (Visual-field DEFECTS
+        12184005 etc. are findings, not the field function.) High tier : exact term match and clear
+        concept equivalence verified in both mirrors via the sctid_to_athena_id crosswalk, but no
+        independent Athena crosswalk re-verified, so snapped just below. mapping_type=exact_match.
+        """
+}
+mapping "b2102.1" source="b2102" target="SNOMED_CT:281004000" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2102 SNOMED CT 281004000 = ICF b2102 Quality of vision functions: the visual functions
+        underlying the quality of the visual image — encompasses b21020 light sensitivity, b21021 color
+        vision, b21022 contrast sensitivity. This is a grouping/quality-of-vision function that has NO
+        single direct SNOMED CT equivalent (the sub-functions b21020-b21022 each have exact SNOMED CT
+        observables, but their parent grouping does not). Target SNOMED CT 4094031 (sctid 281004000) =,
+        active — the broader parent visual-function observable that fully subsumes the quality-of-vision
+        axis. Broader: the target is a true ancestor (all quality-of-vision functions are visual
+        functions) but a multi-level climb and also covers acuity/field. Low tier : defensible
+        best-available ancestor, but loose — no observable exists in SNOMED CT and the target is a deep
+        climb; the b21020-b21022 children each get their own exact_match proposals. Recorded as broader
+        (not no_match) because the visual-function observable is the defensible standard ancestor a
+        reviewer would expect for a vision-quality grouping.
+        """
+}
+mapping "b21020.1" source="b21020" target="SNOMED_CT:41701000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21020 SNOMED CT 41701000 = ICF b21020 Light sensitivity: the visual functions of sensing a
+        minimum amount of light (the minimum luminance generating a visual sensation) and adapting to
+        varying light levels — i.e. scotopic/photopic sensitivity and dark adaptation as visual
+        functions. Target SNOMED CT 4218321 (sctid 41701000) =, active RF2 production. Broader rather than
+        exact: ICF b21020 spans BOTH the absolute light-detection threshold AND adaptation to changing
+        light; SNOMED CT has no single observable, and captures only the adaptation half of b21020, not the
+        absolute-threshold half. Because the chosen target covers only one component (adaptation) of a
+        two-component source, the target does NOT fully subsume the source, so this is assessed as
+        broader at low tier — it is the closest standard observable in the vision/light-sensitivity
+        domain and fully contains one axis (adaptation) of the source, defensible as a reviewer lead.
+        (90128006 rejected: it is a cutaneous/light-skin finding, not visual light sensitivity; 27073006
+        rejected: a stimulus-property function, not visual light sensitivity.) The split-axis nature of
+        b21020 keeps this at low confidence rather than exact.
+        """
+}
+mapping "b21021.1" source="b21021" target="SNOMED_CT:271726001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21021 SNOMED CT 271726001 = ICF color vision function (the visual-sensory function of
+        discriminating hues). Target SNOMED CT 4155901 (sctid 271726001) =, active RF2 production concept.
+        Exact 1:1 equivalence: identical clinical concept (color vision as a sensory function),
+        confirmed by literal term match in the richer Swedish SNOMED CT mirror (FSN). Note sctid 765005 is
+        the legacy dropped (invalid_reason=D, valid_end 2005) equivalent; 271726001 is its active
+        successor. exact_match: same concept, term-verified.
+        """
+}
+mapping "b21022.1" source="b21022" target="SNOMED_CT:251686008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b21022 SNOMED CT 251686008 = ICF contrast sensitivity function (ability to detect luminance
+        contrast between adjacent areas). Target SNOMED CT 4090077 (sctid 251686008) =, active. Exact 1:1
+        equivalence: identical clinical concept, literal FSN term match. exact_match.
+        """
+}
+assessment "b21023.omop" source="b21023" outcome=no_match target-system="OMOP_EXT"
+assessment "b21028.omop" source="b21028" outcome=no_match target-system="OMOP_EXT"
+assessment "b21029.omop" source="b21029" outcome=no_match target-system="OMOP_EXT"
+mapping "b2108.1" source="b2108" target="SNOMED_CT:281004000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2108 SNOMED CT 281004000 = ICF residual under b210 Synfunktioner (visual functions) — a
+        heterogeneous residual bucket for visual functions not elsewhere classified. Target SNOMED CT
+        4094031 (sctid 281004000) =, active, the parent visual-function concept. Broader: the target
+        subsumes the residual bucket's domain (all are visual functions). Low tier: residual source with
+        no concrete content; the map climbs to the chapter parent and loses any specific clinical
+        meaning. Per rubric, a residual bucket maps to its parent at low confidence rather than no_match
+        when a defensible parent exists.
+        """
+}
+mapping "b2109.1" source="b2109" target="SNOMED_CT:281004000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2109 SNOMED CT 281004000 = ICF under b210 Synfunktioner — deliberately non-specific
+        visual-function residual. Target SNOMED CT 4094031 (sctid 281004000) =, active. Broader: the parent
+        visual-function concept subsumes the unspecified source. Low tier: unspecified source forced up
+        to the chapter parent; no specific clinical content to preserve. A defensible parent exists
+        (unlike the targetless visual-quality residual), so broader-at-low-confidence rather than
+        no_match.
+        """
+}
+mapping "b215.1" source="b215" target="SNOMED_CT:414302002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b215 SNOMED CT 414302002 = ICF functions of structures adjoining the eye (a grouping
+        covering eyelid, extraocular/intraocular muscles, lacrimal glands, etc.). Target SNOMED CT 4185760
+        (sctid 414302002) =, active. Broader: the target is the SNOMED CT eye-region-function grouping that
+        subsumes this ICF grouping. Low tier: the source is itself a heterogeneous grouping (muscle +
+        gland + lid functions) and the target is the only defensible grouping-level standard concept;
+        one-level broader but the breadth mismatch is real. No single more-specific SNOMED CT concept
+        covers the whole grouping.
+        """
+}
+mapping "b2150.1" source="b2150" target="SNOMED_CT:4209008" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2150 SNOMED CT 4209008 = ICF functions of the internal (intraocular) muscles of the eye =
+        sphincter/dilator pupillae (pupillary light response) AND ciliary muscle (accommodation). Target
+        (sctid 56777005) =, active. Partial: the target covers only the pupillary axis of a
+        two-component source; the accommodation (ciliary-muscle) axis has no separate SNOMED CT observable
+        in the mirror. Per the boundary rule, a multi-part source mapped to one component is partial,
+        not broader. Low tier: partial coverage with the second axis (accommodation) unrepresentable;
+        cap at.
+        """
+}
+mapping "b2151.1" source="b2151" target="SNOMED_CT:8521004" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2151 SNOMED CT 8521004 = ICF functions of the eyelid. Target SNOMED CT 4310258 (sctid 8521004)
+        =, active. Exact 1:1 equivalence: identical clinical concept (eyelid function as an observable
+        body function), literal FSN term match. exact_match.
+        """
+}
+mapping "b2152.1" source="b2152" target="SNOMED_CT:312024006" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2152 SNOMED CT 312024006 = ICF functions of the external (extraocular) muscles of the eye,
+        i.e. the muscles that execute eye movement/oculomotor control. Target SNOMED CT 4207030 (sctid
+        312024006) =, active. Exact functional equivalence: the EOMs' function IS oculomotor control;
+        the SNOMED CT concept denotes the function those muscles perform. High tier rather than : strong
+        functional identity but not a literal term-for-term match (ICF names the muscles, SNOMED CT names
+        the control function they produce); no independent crosswalk. (31763002) is the movement-itself
+        concept and a weaker fit than the function concept.
+        """
+}
+mapping "b2153.1" source="b2153" target="SNOMED_CT:363978004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2153 SNOMED CT 363978004 = ICF functions of the lacrimal (tear) glands — i.e. tear
+        production / lacrimation. Target SNOMED CT 4237873 (sctid 363978004) =, active.
+        Broader/functional-proxy: the target is the standard observable for the lacrimation that the
+        tear glands produce; no standalone exists in the mirror (421730004 is the gland-as-observable,
+        less functional). The target captures the gland's output function. Low tier: the target is a
+        measure/observable proxy for the gland function, not a clean function concept; one semantic step
+        removed.
+        """
+}
+assessment "b2158.omop" source="b2158" outcome=no_match target-system="OMOP_EXT"
+assessment "b2159.omop" source="b2159" outcome=no_match target-system="OMOP_EXT"
+mapping "b220.1" source="b220" target="SNOMED_CT:301910004" relationship=related_to {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b220 SNOMED CT 301910004 = ICF sensations associated with the eye and adjoining structures
+        (a body-function code for sensing feelings such as pain, burning, foreign-body sensation in/near
+        the eye). Target SNOMED CT 4201555 (sctid 301910004) =, active. Related: the target is a
+        finding-clinic concept clinically associated with the source's sensation function, but it is a
+        finding (not a function/observable), and covers the eye proper rather than. Per the
+        related-vs-no_match boundary rule, a defensible clinical association exists (the source is about
+        the sensation the target records), so related at weak rather than no_match; not
+        equivalent/broader/narrower.
+        """
+}
+assessment "b229.omop" source="b229" outcome=no_match target-system="OMOP_EXT"
+mapping "b230.1" source="b230" target="SNOMED_CT:47078008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b230 SNOMED CT 47078008 = ICF hearing functions. Target SNOMED CT 4186287 (sctid 47078008) =,
+        active. Exact 1:1 equivalence: identical clinical concept (hearing as a sensory function),
+        literal FSN term match. exact_match.
+        """
+}
+assessment "b230-b249.omop" source="b230-b249" outcome=no_match target-system="OMOP_EXT"
+mapping "b2300.1" source="b2300" target="SNOMED_CT:47078008" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2300 SNOMED CT 47078008 = ICF detecting sound — the most elementary hearing function
+        (awareness of the presence of sound). Target SNOMED CT 4186287 (sctid 47078008) =, active. Broader:
+        the parent hearing-function concept subsumes sound detection (detection is the floor of hearing
+        function); no standalone observable exists in the mirror (only an assistive physical object,
+        1263778003). Moderate tier: the source is the most basic sub-function and the target is its
+        one-level parent; a defensible parent exists so broader rather than no_match, but specificity is
+        lost climbing to the whole hearing function.
+        """
+}
+mapping "b2301.1" source="b2301" target="SNOMED_CT:364025008" relationship=related_to {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2301 SNOMED CT 364025008 = ICF auditory discrimination — the function of
+        distinguishing/discriminating sounds (incl. speech vs non-speech, patterns). No SNOMED CT exists in
+        the mirror. Target SNOMED CT 4238798 (sctid 364025008) =, active — a related observable recording
+        an auditory-discrimination feature/attribute, not the function itself. Related: clinically
+        associated with the source but denotes a feature/observable rather than the discrimination
+        function. Per the related-vs-no_match boundary rule a real clinical association exists, so
+        related at weak rather than no_match; the alternatives are discrimination-test procedures or
+        aphasia/disorder concepts, which are weaker.
+        """
+}
+mapping "b2302.1" source="b2302" target="SNOMED_CT:247297002" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2302 SNOMED CT 247297002 = ICF locating a sound source — the function of determining where
+        a sound originates. Target SNOMED CT 4090413 (sctid 247297002) =, active. Exact functional
+        equivalence: identical clinical concept (sound-source localization as a hearing function),
+        near-literal FSN term match. High tier: strong term and clinical-scope match without an
+        independent crosswalk. Distinguished from b2303 (lateralization, left-vs-right) which has its
+        own concept.
+        """
+}
+mapping "b2303.1" source="b2303" target="SNOMED_CT:247310003" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2303 SNOMED CT 247310003 = ICF lateralization of sound — the function of perceiving whether
+        a sound is left or right of the midline. Target SNOMED CT 4090418 (sctid 247310003) =, active.
+        Exact 1:1 equivalence: identical clinical concept, literal FSN term match. High tier: exact term
+        and clinical-scope match without an independent crosswalk.
+        """
+}
+mapping "b2304.1" source="b2304" target="SNOMED_CT:128542002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2304 SNOMED CT 128542002 = ICF speech discrimination / discernment of speech — the function
+        of discriminating/recognizing speech (separating the speech-hearing axis from b2300-b2303 sound
+        processing). Target SNOMED CT 4029823 (sctid 128542002) =, active. Exact functional equivalence:
+        the SNOMED CT speech-hearing-function concept is the standard representation of the
+        speech-discrimination/understanding function. High tier: strong clinical-scope identity without
+        a literal term match (the closest literal term, SNOMED CT 128542002 251361006, is a test score, not
+        a function).
+        """
+}
+assessment "b2308.omop" source="b2308" outcome=no_match target-system="OMOP_EXT"
+assessment "b2309.omop" source="b2309" outcome=no_match target-system="OMOP_EXT"
+mapping "b235.1" source="b235" target="SNOMED_CT:249982003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b235 SNOMED CT 249982003 = ICF b235 Vestibular functions: the sensory functions of the inner
+        ear related to position, balance, and movement (vestibular apparatus function — distinct from
+        b230 hearing). SNOMED CT has no dedicated observable (only procedure-level SNOMED CT 249982003
+        42987007 and deprecated disorder concepts). Target SNOMED CT 4097169 (sctid 249982003) =, active
+        RF2 production. The balance observable is the only active SNOMED CT function-level/observable
+        concept covering the vestibular-equilibrium axis; it subsumes the dominant (balance) component
+        of b235. Broader rather than exact: ICF b235 spans position + balance + movement; the balance
+        observable covers the balance axis but does not denote the full vestibular-function scope
+        (position/movement sub-functions b2350/b2352 are only loosely captured). Moderate tier :
+        best-available defensible function-level target, verified active in both mirrors, but a real
+        breadth mismatch (balance ⊂ vestibular functions) and no independent Athena crosswalk.
+        """
+}
+mapping "b2350.1" source="b2350" target="SNOMED_CT:397641005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2350 SNOMED CT 397641005 = ICF b2350 Vestibular function of position: the vestibular
+        sensory function signalling the position of the head in space (gravitational/positional). No
+        dedicated observable exists in SNOMED CT. Target SNOMED CT 4265876 (sctid 397641005) =, active, the
+        SNOMED CT function-level concept for position/movement sense. Broader: the target fully subsumes
+        the source's position axis (and adds a movement axis the source does not assert). Low tier : the
+        only defensible function-level position-sense observable, but it conflates vestibular position
+        with general somatic position+movement sense and is one-level broader than the
+        vestibular-specific source.
+        """
+}
+mapping "b2351.1" source="b2351" target="SNOMED_CT:249982003" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2351 SNOMED CT 249982003 = ICF b2351 Vestibular function of balance: the vestibular
+        function supporting equilibrium/upright posture (the balance output of the vestibular
+        apparatus). Target SNOMED CT 4097169 (sctid 249982003) =, active RF2 production. The balance
+        observable is the direct SNOMED CT analogue of the balance-as-a-function concept; it captures the
+        equilibrium function that b2351 denotes. Broader rather than exact only because ICF models this
+        as a vestibular sub-function (mechanism-specific) where SNOMED CT models as a domain observable
+        (mechanism-agnostic); the target fully subsumes the source. High tier : strong term-and-scope
+        match, active in both mirrors, no independent Athena crosswalk re-verified.
+        """
+}
+mapping "b2352.1" source="b2352" target="SNOMED_CT:397641005" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2352 SNOMED CT 397641005 = ICF b2352 Vestibular function of movement: the vestibular
+        sensory function signalling movement/linear-and-angular acceleration of the head. No dedicated
+        observable exists in SNOMED CT. Target SNOMED CT 4265876 (sctid 397641005) =, active. Broader: the
+        target's movement axis fully covers the source's movement-sense meaning (and adds a position
+        axis the source does not assert). Low tier : only defensible function-level movement-sense
+        observable, but it conflates vestibular movement with general somatic position+movement sense;
+        one-level broader.
+        """
+}
+assessment "b2358.omop" source="b2358" outcome=no_match target-system="OMOP_EXT"
+assessment "b2359.omop" source="b2359" outcome=no_match target-system="OMOP_EXT"
+assessment "b240.omop" source="b240" outcome=no_match target-system="OMOP_EXT"
+mapping "b2400.1" source="b2400" target="SNOMED_CT:60862001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2400 SNOMED CT 60862001 = ICF b2400 Sensation of ringing in the ears or tinnitus. Target
+        SNOMED CT 377575 (sctid 60862001) =, active RF2 production, the active successor of the deprecated
+        194393005/155248003 tinnitus concepts. Exact 1:1 equivalence: identical clinical concept
+        (tinnitus as a sensation/finding), literal term match. exact_match.
+        """
+}
+mapping "b2401.1" source="b2401" target="SNOMED_CT:399153001" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2401 SNOMED CT 399153001 = ICF b2401 Sensation of dizziness. Swedish denotes
+        vertigo/dizziness. Target SNOMED CT 439383 (sctid 399153001) =, active RF2 production (the active
+        successor of deprecated 11778002). The SNOMED CT Vertigo finding is the direct standard concept for
+        the dizzy/vertiginous sensation ICF b2401 denotes. Assessed exact_match at high tier rather than
+        : (271789005), so 399153001 is the best single target but carries a small vertigo-vs-dizziness
+        breadth nuance; term-verified active in both mirrors, no independent Athena crosswalk
+        re-verified.
+        """
+}
+mapping "b2402.1" source="b2402" target="SNOMED_CT:249989007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2402 SNOMED CT 249989007 = ICF b2402 Sensation of falling. Target SNOMED CT 4093692 (sctid
+        249989007) =, active RF2 production. Exact 1:1 equivalence: identical clinical concept, literal
+        term match. exact_match.
+        """
+}
+mapping "b2403.1" source="b2403" target="SNOMED_CT:422587007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2403 SNOMED CT 422587007 = ICF b2403 Sensation of nausea associated with dizziness or
+        vertigo — a multi-part symptom bundling nausea WITH a vestibular trigger (dizziness/vertigo).
+        Target SNOMED CT 31967 (sctid 422587007) =, active RF2 production (the active successor of
+        deprecated 73879007). Partial: the nausea finding covers only the nausea axis of the source and
+        drops the qualifier; no single SNOMED CT concept denotes nausea-with-vertigo. Low tier : defensible
+        single-axis target, but real semantic overlap (one component of a two-part symptom). (Alternate
+        16932000 rejected — adds vomiting the source does not assert.)
+        """
+}
+mapping "b2404.1" source="b2404" target="SNOMED_CT:162360008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2404 SNOMED CT 162360008 = ICF b2404 Sensation of irritation in the ear. Target SNOMED CT
+        4038039 (sctid 162360008) =, active RF2 production (the active successor of deprecated
+        139629006). Exact 1:1 equivalence: identical clinical concept, literal term match. High tier :
+        strong term match and active in both mirrors; held at rather than because the source is phrased
+        as a subjective sensation where the target is an objective finding, a minor framing nuance, and
+        no independent Athena crosswalk was re-verified.
+        """
+}
+mapping "b2405.1" source="b2405" target="SNOMED_CT:162403009" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2405 SNOMED CT 162403009 = ICF b2405 Sensation of ear pressure (aural fullness/pressure).
+        Target SNOMED CT 4036969 (sctid 162403009) =, active RF2 production (the active successor of
+        deprecated 139673005). Exact 1:1 equivalence: identical clinical concept, literal term match.
+        High tier : strong term match and active in both mirrors; held at rather than due to a minor
+        sensation-vs-finding framing nuance and no independent Athena crosswalk re-verified.
+        """
+}
+assessment "b2408.omop" source="b2408" outcome=no_match target-system="OMOP_EXT"
+mapping "b2408A.1" source="b2408A" target="SNOMED_CT:25289003" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source b2408A SNOMED CT 25289003 = a Swedish-extension ICF code (the suffix marks a national
+        extension) denoting sound sensitivity / hyperacusis. Target SNOMED CT 378163 (sctid 25289003) =,
+        active RF2 production, the standard SNOMED CT concept for abnormal sound sensitivity. Exact 1:1
+        equivalence: (sound sensitivity) is the Swedish clinical term for hyperacusis, which 25289003
+        denotes. Note: although the source is a Swedish-extension ICF code, a defensible standard target
+        EXISTS (Hyperacusis), so this is mapped rather than given icf_swedish_extension_no_target (that
+        reason is reserved for Swedish-extension rows with NO SNOMED CT analogue). High tier : strong
+        term-and-scope match, active in both mirrors; held at rather than because hyperacusis is
+        modelled as a disorder where the source is a sensation/function-level concept, a minor
+        model-granularity nuance, and no independent Athena crosswalk was re-verified.
+        """
+}
+assessment "b2409.omop" source="b2409" outcome=no_match target-system="OMOP_EXT"
+assessment "b249.omop" source="b249" outcome=no_match target-system="OMOP_EXT"

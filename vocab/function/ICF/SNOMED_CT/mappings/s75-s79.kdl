@@ -1,0 +1,320 @@
+// ICF codes, Socialstyrelsen inventory to SNOMED CT mappings, codes s75-s79
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "icf-snomed-ct" version="2026.1"
+    source system="ICF" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "s750.1" source="s750" target="SNOMED_CT:61685007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s750 SNOMED CT 61685007 = ICF structure of the lower extremity (s750, chapter-root for lower
+        limb body structures). Target SNOMED CT 4267861 (sctid 61685007) = Lower limb structure — exact 1:1
+        equivalent. Athena-local body-structure concept.
+        """
+}
+mapping "s7500.1" source="s7500" target="SNOMED_CT:68367000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7500 SNOMED CT 68367000 = ICF structure of thigh (s750.0). Target SNOMED CT 4285289 (sctid
+        68367000) = Thigh structure — exact 1:1 equivalent. Athena-local body-structure concept.
+        """
+}
+mapping "s75000.1" source="s75000" target="SNOMED_CT:71341001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75000 SNOMED CT 71341001 = ICF bones of thigh (s750.00), i.e. the femur. Target SNOMED CT
+        4323581 (sctid 71341001) = Bone structure of femur — exact 1:1 equivalent. Athena-local
+        body-structure concept.
+        """
+}
+mapping "s75001.1" source="s75001" target="SNOMED_CT:24136001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75001 SNOMED CT 24136001 = ICF hip joint (s750.01). Target SNOMED CT 4082516 (sctid 24136001)
+        = Hip joint structure — exact 1:1 equivalent. Athena-local body-structure concept.
+        """
+}
+mapping "s75002.1" source="s75002" target="SNOMED_CT:50092008" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75002 SNOMED CT 50092008 = ICF muscles of thigh (s750.02). Target SNOMED CT 4177041 (sctid
+        50092008) = Skeletal muscle structure of thigh — exact 1:1 equivalent. Athena-local
+        body-structure concept.
+        """
+}
+mapping "s75003.1" source="s75003" target="SNOMED_CT:181782009" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75003 SNOMED CT 181782009 bundles ligaments AND fasciae of the thigh (s750.03). Target
+        SNOMED CT 4057709 (sctid 181782009) = Fascia of thigh covers only the fascia/muscle-membrane axis;
+        no single SNOMED CT concept combines thigh ligaments + fasciae (thigh ligaments attach at the
+        hip/knee joints rather than as a stand-alone concept). Partial (single-axis target of a
+        multi-part source), low tier per rubric.
+        """
+}
+assessment "s75008.omop" source="s75008" outcome=no_match target-system="OMOP_EXT"
+mapping "s75009.1" source="s75009" target="SNOMED_CT:68367000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75009 SNOMED CT 68367000 = ICF unspecified structure of thigh (s750.09), a deliberately
+        non-specific catch-all. Target SNOMED CT 4285289 (sctid 68367000) = Thigh structure, the standard
+        thigh body-structure concept; it subsumes any thigh structure (broader). Moderate tier:
+        unspecified source mapped to the general anatomical category.
+        """
+}
+mapping "s7501.1" source="s7501" target="SNOMED_CT:30021000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7501 SNOMED CT 30021000 = ICF structure of lower leg (s750.1). Target SNOMED CT 4107527 (sctid
+        30021000) = Lower leg structure — exact 1:1 equivalent. Athena-local body-structure concept.
+        """
+}
+mapping "s75010.1" source="s75010" target="SNOMED_CT:702468001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75010 SNOMED CT 702468001 = ICF bones of lower leg (s750.10), i.e. tibia and fibula. Target
+        SNOMED CT 45773372 (sctid 702468001) = Bone structure of lower leg — exact 1:1 equivalent covering
+        both the tibia and fibula. Athena-local body-structure concept.
+        """
+}
+mapping "s75011.1" source="s75011" target="SNOMED_CT:49076000" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75011 SNOMED CT 49076000 = ICF knee joint (s750.11). Target SNOMED CT 4169744 (sctid 49076000)
+        = Knee joint structure — exact 1:1 equivalent. Athena-local body-structure concept.
+        """
+}
+mapping "s75012.1" source="s75012" target="SNOMED_CT:41123005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75012 SNOMED CT 41123005 = ICF muscles of lower leg (s750.12). Target SNOMED CT 4165423 (sctid
+        41123005) = Skeletal muscle structure of lower leg — exact 1:1 equivalent. Athena-local
+        body-structure concept.
+        """
+}
+mapping "s75013.1" source="s75013" target="SNOMED_CT:410773000" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75013 SNOMED CT 410773000 bundles ligaments AND fasciae of the lower leg (s750.13). Target
+        SNOMED CT 4253897 (sctid 410773000) = Structure of fascia of lower leg covers only the
+        fascia/muscle-membrane axis; no single SNOMED CT concept combines lower-leg ligaments + fasciae
+        (ligaments of this region attach at the knee/ankle joints). Partial (single-axis target of a
+        multi-part source), low tier per rubric.
+        """
+}
+assessment "s75018.omop" source="s75018" outcome=no_match target-system="OMOP_EXT"
+mapping "s75019.1" source="s75019" target="SNOMED_CT:30021000" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75019 SNOMED CT 30021000 = ICF unspecified structure of lower leg (s750.19), a deliberately
+        non-specific catch-all. Target SNOMED CT 4107527 (sctid 30021000) = Lower leg structure, the
+        standard lower-leg body-structure concept; it subsumes any lower-leg structure (broader).
+        Moderate tier: unspecified source mapped to the general anatomical category.
+        """
+}
+mapping "s7502.1" source="s7502" target="SNOMED_CT:56459004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7502 SNOMED CT 56459004 70258002 = ICF structure of ankle and foot (s750.2), a two-part
+        region. Primary target SNOMED CT 4211098 (sctid 56459004) = Foot structure (exact for the foot
+        axis). Secondary target SNOMED CT 4289928 (sctid 70258002) = Ankle joint structure covers the ankle
+        axis; no single SNOMED CT concept combines ankle + foot, so the ankle target is recorded as
+        broader/secondary. Each target carries its own type per multi-target rules; strongest first.
+        """
+}
+mapping "s7502.2" source="s7502" target="SNOMED_CT:70258002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s75020.1" source="s75020" target="SNOMED_CT:304691001" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75020 SNOMED CT 304691001 = ICF bones of ankle and foot (s750.20). Target SNOMED CT 4121506
+        (sctid 304691001) = Bone structure of ankle and/or foot — exact 1:1 equivalent (the SNOMED CT bone
+        concept matches the ICF scope). Athena-local body-structure concept.
+        """
+}
+mapping "s75021.1" source="s75021" target="SNOMED_CT:312816002" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75021 SNOMED CT 312816002 = ICF ankle and joints of foot AND toes (s750.21), a three-part
+        region (ankle + foot joints + toe joints). Target SNOMED CT 4194884 (sctid 312816002) = Joint
+        structure of ankle and/or foot covers the ankle and foot-joint axes but is the closest single
+        standard concept and legitimately subsumes the source's joint set (broader); toe interphalangeal
+        joints are themselves foot-region joints in SNOMED CT, so the target contains the source. High
+        tier: one-level broader, verified body-structure concept.
+        """
+}
+mapping "s75022.1" source="s75022" target="SNOMED_CT:67240005" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75022 SNOMED CT 67240005 = ICF muscles of ankle and foot (s750.22); in ICF the ankle is
+        treated as part of the foot region, so this denotes the intrinsic/extrinsic muscles of the foot
+        and ankle. Target SNOMED CT 4281987 (sctid 67240005) = Muscle structure of foot — exact equivalent
+        for the dominant foot-muscle axis (ankle has no separate muscle group; ankle movers are
+        lower-leg muscles acting via tendons). Athena-local body-structure concept.
+        """
+}
+mapping "s75023.1" source="s75023" target="SNOMED_CT:304570002" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s75023 SNOMED CT 304570002 30882006 = ligaments and fasciae (muskelhinnor) of ankle and
+        foot; ICF bundles two tissue kinds. Target 4119961 = (sctid 304570002) covers the ligament axis
+        (partial). Target 4149260 = (sctid 30882006) covers the fascia axis (partial). No single SNOMED CT
+        concept expresses the combined ligament+fascia bundle, so both are partial. (moderate/low):
+        direct anatomical equivalents for each axis but ICF combines them; multi-target.
+        """
+}
+mapping "s75023.2" source="s75023" target="SNOMED_CT:30882006" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+assessment "s75028.omop" source="s75028" outcome=no_match target-system="OMOP_EXT"
+assessment "s75029.omop" source="s75029" outcome=no_match target-system="OMOP_EXT"
+mapping "s7508.1" source="s7508" target="SNOMED_CT:61685007" relationship=source_is_narrower_than_target {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7508 SNOMED CT 61685007 = ICF, a residual catch-all for structures of the lower limb not
+        elsewhere classified. Target 4267861 = (sctid 61685007) is the broad lower-limb body structure
+        that subsumes any structure the residual might denote (broader). (weak): target is a legitimate
+        ancestor but the source names no specific structure, so the link is loose; recorded as a lead,
+        not an identity.
+        """
+}
+assessment "s7509.omop" source="s7509" outcome=no_match target-system="OMOP_EXT"
+mapping "s760.1" source="s760" target="SNOMED_CT:22943007" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+}
+mapping "s7600.1" source="s7600" target="SNOMED_CT:44300000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s76000.1" source="s76000" target="SNOMED_CT:122494005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s76000 SNOMED CT 122494005 = cervical vertebral column (the entire cervical spine structure:
+        bones, joints, soft tissues). Target 4046743 = (sctid 122494005) is the SNOMED CT body-structure
+        concept for the cervical spine region. Athena-local term match confirms the anatomical
+        equivalence; the SNOMED CT FSN names the cervical vertebral column as a whole, which fully contains
+        the source. (high): exact anatomical correspondence, term-verified against the SE mirror, not an
+        independent crosswalk.
+        """
+}
+mapping "s76001.1" source="s76001" target="SNOMED_CT:122495006" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s76001 SNOMED CT 122495006 = thoracic vertebral column. Target 4047490 = (sctid 122495006)
+        is the SNOMED CT body-structure concept for the thoracic vertebral column. Athena-local term match;
+        the SNOMED CT FSN fully contains the source. (high): term-verified anatomical equivalence without
+        an independent crosswalk.
+        """
+}
+mapping "s76002.1" source="s76002" target="SNOMED_CT:122496007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s76002 SNOMED CT 122496007 = lumbar vertebral column. Target 4045660 = (sctid 122496007) is
+        the SNOMED CT body-structure concept for the lumbar vertebral column. Athena-local term match;
+        SNOMED CT FSN fully contains the source. (high): term-verified anatomical equivalence without an
+        independent crosswalk.
+        """
+}
+mapping "s76003.1" source="s76003" target="SNOMED_CT:54735007" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s76003 SNOMED CT 54735007 = sacrum (the bone). Target 4185240 = (sctid 54735007) is the
+        SNOMED CT body-structure concept for the sacrum. SNOMED CT names the bone specifically; ICF denotes
+        the sacrum as a structure, fully contained. (high): term-verified via Athena-local, no
+        independent crosswalk; the SNOMED CT FSN is slightly narrower (bony element) than the ICF but is
+        the canonical SNOMED CT representation.
+        """
+}
+mapping "s76004.1" source="s76004" target="SNOMED_CT:64688005" relationship=source_is_narrower_than_target {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s76004 SNOMED CT 64688005 = coccyx (tailbone). Target 4276201 = (sctid 64688005) is the
+        SNOMED CT body-structure concept for the coccyx. SNOMED CT FSN fully contains the source. (high):
+        term-verified via Athena-local, no independent crosswalk.
+        """
+}
+assessment "s76008.omop" source="s76008" outcome=no_match target-system="OMOP_EXT"
+assessment "s76009.omop" source="s76009" outcome=no_match target-system="OMOP_EXT"
+mapping "s7601.1" source="s7601" target="SNOMED_CT:68230005" relationship=equivalent {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7601 SNOMED CT 68230005 = muscles of the trunk. Target 4195397 = (sctid 68230005) is the
+        SNOMED CT body-structure concept denoting the skeletal muscles of the trunk. Anatomical equivalence
+        confirmed via Athena-local term match. (high): exact term correspondence, not an independent
+        crosswalk; SNOMED CT specifies which is the relevant muscle type for trunk locomotor function (ICF
+        s7 chapter = movement-related structures).
+        """
+}
+mapping "s7602.1" source="s7602" target="SNOMED_CT:77638007" relationship=partial_overlap {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7602 SNOMED CT 72666007 77638007 = ligaments and fasciae (muskelhinnor) of trunk; ICF
+        bundles two tissue kinds. Target 4300857 = (sctid 77638007) covers the ligament axis (partial).
+        Target 4217796 = (sctid 72666007) covers the fascia axis (partial). No single SNOMED CT concept
+        expresses the combined ligament+fascia bundle. : each axis is a direct anatomical equivalent but
+        the source combines them, so both are partial (multi-target).
+        """
+}
+mapping "s7602.2" source="s7602" target="SNOMED_CT:72666007" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+assessment "s7608.omop" source="s7608" outcome=no_match target-system="OMOP_EXT"
+assessment "s7609.omop" source="s7609" outcome=no_match target-system="OMOP_EXT"
+mapping "s770.1" source="s770" target="SNOMED_CT:278858007" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s770 SNOMED CT 278858007 = ICF — the ICF chapter-s7 grouping for musculoskeletal structures
+        tied to movement that are not bones/joints/muscles of a specific region (e.g. extra-articular
+        ligaments, fasciae, bursae of the locomotor system). Target 4132782 = (sctid 278858007) is the
+        SNOMED CT top-level musculoskeletal body structure that subsumes all of these (broader).
+        (moderate): legitimate ancestor covering the full scope of the source, but a deep, non-specific
+        climb; the source is itself a category, not a single structure.
+        """
+}
+mapping "s7700.1" source="s7700" target="SNOMED_CT:272673000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s7701.1" source="s7701" target="SNOMED_CT:39352004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "s7702.1" source="s7702" target="SNOMED_CT:127954009" relationship=source_is_narrower_than_target effect=omitted quality=60 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s7702 SNOMED CT 127954009 = muscles (general). Target 4133963 = (sctid 127954009) is the
+        SNOMED CT body-structure concept for skeletal muscle as a whole. SNOMED CT specifies whereas ICF is
+        underspecified for muscle type; skeletal muscle is the locomotor-relevant type in the ICF s7
+        (movement) context, so the target fully contains the source's clinical scope. (high):
+        term-verified, slight type-narrowing (skeletal vs unspecified muscle) is intentional for the
+        movement chapter.
+        """
+}
+assessment "s7703.omop" source="s7703" outcome=no_match target-system="OMOP_EXT"
+assessment "s7708.omop" source="s7708" outcome=no_match target-system="OMOP_EXT"
+assessment "s7709.omop" source="s7709" outcome=no_match target-system="OMOP_EXT"
+mapping "s798.1" source="s798" target="SNOMED_CT:26107004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s798 SNOMED CT 26107004 = ICF Chapter 7 (bones, joints, muscles of head, trunk, limbs),
+        residual bucket. SNOMED CT has no ICF-aligned aggregate; the defensible anchor is SCTID 26107004
+        (OMOP 4095277), the SNOMED CT body-structure parent that fully subsumes the skeletal/joint/muscular
+        scope of ICF s7. broader (target subsumes residual source), moderate : residual source with no
+        per-instance SNOMED CT concept, and the SE RF2 mirror (26107004 active, valid 2026-07-01) confirms
+        the anchor is current.
+        """
+}
+mapping "s799.1" source="s799" target="SNOMED_CT:26107004" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Source s799 SNOMED CT 26107004 = ICF Chapter 7, deliberately unspecified. Same anchor as s798:
+        SCTID 26107004 (OMOP 4095277), the SNOMED CT body-structure parent covering the
+        skeletal/joint/muscular scope of ICF s7. broader (parent fully contains the unspecified bucket),
+        moderate : unspecified source mapped up one level to the nearest ancestor.
+        """
+}
