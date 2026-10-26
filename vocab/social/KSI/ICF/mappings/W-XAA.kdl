@@ -1,0 +1,305 @@
+// KSI social-service codes to ICF mappings, codes W-XAA
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+ collection "ksi-icf" version="2026.1"
+ source system="KSI" release="2026"
+ target system="ICF"
+}
+defaults {
+ mappings {
+ preference "primary"
+ assessment-method "source-default-granularity"
+ }
+}
+assessment "WA-WZ.omop" source="WA-WZ" outcome=no_match target-system="OMOP_EXT"
+mapping "WXA.1" source="WXA" target="d5705" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXA = the KSI domain code for mental-health-focused activities (a
+ health-domain framing). Target ICF d5705 (Looking after one's
+ mental health) is the canonical ICF self-care concept for mental health. The KSI source is a
+ health-domain framing of the same area that d5705 represents as a self-care activity (different
+ axis: domain-of-focus vs self-care-activity), so related rather than exact_match or broader per
+ the about/concept-axis-mismatch pattern established for sibling KSI domain parents (VEC/VED in
+ proposal-0007, VEE in proposal-0008); weak. d5705 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "WXA.AM.ZZ.1" source="WXA.AM.ZZ" target="d5705" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXA.AM.ZZ = observation activity regarding mental health.
+ Target ICF d5705 (Looking after one's mental health), the
+ canonical mental-health self-care concept. Source is an observation ABOUT the mental-health
+ domain, not a case of it; related, weak per the about/observation pattern. d5705 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "WXA.AS.ZZ.1" source="WXA.AS.ZZ" target="d5705" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXA.AS.ZZ = investigative/assessment conversation
+ regarding mental health. Target ICF d5705 (Looking after one's
+ mental health). Source is an assessment activity ABOUT the mental-health domain; related, weak.
+ d5705 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WXA.AT.ZZ.1" source="WXA.AT.ZZ" target="d5705" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXA.AT.ZZ = gathering
+ information from a professional about mental health. Target ICF d5705 (Looking after one's mental health). Source is an information-gathering activity ABOUT
+ the mental-health domain; related, weak. d5705 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WXA.AU.ZZ.1" source="WXA.AU.ZZ" target="d5705" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXA.AU.ZZ = gathering information
+ from another person about mental health. Target ICF d5705
+ (Looking after one's mental health). Source is an information-gathering activity ABOUT the
+ mental-health domain; related, weak. d5705 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WXB.1" source="WXB" target="d5702" relationship=related_to effect=omitted quality=60 {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXB = the KSI domain code for physical-health-focused activities (a
+ health-domain framing). ICF has no dedicated 'physical health' self-care child; the closest
+ standard concept is d5702 (Maintaining one's own health), the
+ general health-maintenance self-care concept. The KSI source is a physical-health-domain framing
+ of the area d5702 represents as a self-care activity (different axis: domain-of-focus vs
+ self-care-activity), so related rather than exact_match or broader per the
+ about/concept-axis-mismatch pattern established for sibling KSI domain parents; weak. d5702
+ verified present in source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "WXB.AM.ZZ.1" source="WXB.AM.ZZ" target="d5702" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXB.AM.ZZ = observation activity regarding physical health.
+ Target ICF d5702 (Maintaining one's own health), the closest
+ standard health-maintenance concept (no dedicated physical-health self-care child exists).
+ Source is an observation ABOUT the physical-health domain; related, weak. d5702 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "WXB.AS.ZZ.1" source="WXB.AS.ZZ" target="d5702" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXB.AS.ZZ = investigative/assessment conversation
+ regarding physical health. Target ICF d5702 (Maintaining one's
+ own health). Source is an assessment activity ABOUT the physical-health domain; related, weak.
+ d5702 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WXB.AT.ZZ.1" source="WXB.AT.ZZ" target="d5702" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXB.AT.ZZ = gathering
+ information from a professional about physical health. Target ICF d5702 (Maintaining one's own health). Source is an information-gathering activity ABOUT
+ the physical-health domain; related, weak. d5702 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WXB.AU.ZZ.1" source="WXB.AU.ZZ" target="d5702" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WXB.AU.ZZ = gathering information
+ from another person about physical health. Target ICF d5702
+ (Maintaining one's own health). Source is an information-gathering activity ABOUT the
+ physical-health domain; related, weak. d5702 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.1" source="WZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ = the KSI domain code for activities with an unspecified
+ focus area (a residual/unspecified-focus framing). Target ICF d5709 (Looking after one's own health, unspecified) is the ICF unspecified-level
+ self-care concept — the closest standard concept thematically (both are 'unspecified'
+ health/wellbeing activity). The KSI source is an unspecified-social-service-activity framing
+ (axis: social-service activity focus) vs d5709's unspecified-self-care framing (axis: personal
+ self-care), so related rather than exact_match (different granularity axis despite shared
+ 'unspecified' qualifier); weak per the concept-axis-mismatch pattern. d5709 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AA.ZZ.1" source="WZZ.AA.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AA.ZZ = assessment activity with unspecified
+ focus. Target ICF d5709 (Looking after one's own
+ health, unspecified), the closest standard unspecified self-care concept. Source is an
+ assessment ABOUT an unspecified-focus area; related, weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AC.ZZ.1" source="WZZ.AC.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AC.ZZ = manual-based test
+ or conversation with unspecified focus. Target ICF d5709 (Looking after one's own health, unspecified). Source is a test/conversation
+ ABOUT an unspecified-focus area; related, weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AM.ZZ.1" source="WZZ.AM.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AM.ZZ = observation activity with unspecified
+ focus. Target ICF d5709 (Looking after one's own
+ health, unspecified). Source is an observation ABOUT an unspecified-focus area; related, weak.
+ d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AS.ZZ.1" source="WZZ.AS.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AS.ZZ = investigative/assessment
+ conversation with unspecified focus. Target ICF d5709
+ (Looking after one's own health, unspecified). Source is an assessment ABOUT an
+ unspecified-focus area; related, weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AT.ZZ.1" source="WZZ.AT.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AT.ZZ =
+ gathering information from a professional with unspecified focus. Target ICF d5709 (Looking after one's own health, unspecified). Source is an
+ information-gathering activity ABOUT an unspecified-focus area; related, weak. d5709 verified in
+ ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AU.ZZ.1" source="WZZ.AU.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AU.ZZ = gathering
+ information from another person with unspecified focus. Target ICF d5709 (Looking after one's own health, unspecified). Source is an
+ information-gathering activity ABOUT an unspecified-focus area; related, weak. d5709 verified in
+ ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AV.ZZ.1" source="WZZ.AV.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AV.ZZ = follow-up conversation with
+ unspecified focus. Target ICF d5709 (Looking after
+ one's own health, unspecified). Source is a follow-up activity ABOUT an unspecified-focus area;
+ related, weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.AZ.ZZ.1" source="WZZ.AZ.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.AZ.ZZ 'Utredande aktivitet, annan specificerad och ospecificerad, ospecificerad
+ inriktning' = investigative activity (other specified and unspecified) with unspecified focus.
+ Target ICF d5709 (Looking after one's own health,
+ unspecified). Source is an investigative activity ABOUT an unspecified-focus area; related,
+ weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.PM.ZZ.1" source="WZZ.PM.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.PM.ZZ = education activity with unspecified
+ focus. Target ICF d5709 (Looking after one's own
+ health, unspecified). Source is an education intervention ABOUT an unspecified-focus area;
+ related, weak. d5709 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "WZZ.PN.ZZ.1" source="WZZ.PN.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.PN.ZZ = a Swedish social-service
+ ACTIVITY of giving advice or information with unspecified focus (WZZ = unspecified-focus
+ qualifier, KSI source confirmed in source/social/KSI/concepts.tdl). Target ICF d5709 (Looking after one's own health, unspecified). The source is an
+ advisory/informational intervention ABOUT an unspecified health/life-management domain (not the
+ self-care act itself), so a related link per the family-history/about pattern (weak). The
+ unspecified-focus qualifier prevents asserting a more specific ICF domain; d5709 is the
+ canonical unspecified-health-management concept. d5709 verified present in
+ source/function/ICF/concepts.tdl. Consistent with WZZ.* unspecified-focus convention in
+ proposal-0010.
+ """ suspect=quoted-text
+}
+mapping "WZZ.PU.ZZ.1" source="WZZ.PU.ZZ" target="d350" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.PU.ZZ = supporting conversation with
+ unspecified focus (samtal = conversation/dialogue). Target ICF d350
+ (Conversation), the canonical ICF communication concept for conversation. The source is a
+ conversational intervention ABOUT an unspecified domain (not the conversation act the client
+ performs themselves), so related, weak per the about/counseling pattern. d350 verified present
+ in source/function/ICF/concepts.tdl. Differentiated from PN/WZZ support codes because PU is
+ explicitly a samtal (conversation) act, mapping to the conversation domain rather than the
+ unspecified-health-management concept.
+ """ suspect=quoted-text
+}
+mapping "WZZ.PV.ZZ.1" source="WZZ.PV.ZZ" target="d350" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.PV.ZZ = treatment/therapeutic
+ conversation with unspecified focus (samtal = conversation/dialogue). Target ICF d350 'Att
+ konversera' (Conversation), the canonical ICF communication concept. Source is a therapeutic
+ conversational intervention ABOUT an unspecified domain (not the client's own conversation), so
+ related, weak per the about/counseling pattern. d350 verified in
+ source/function/ICF/concepts.tdl. Differentiated from WZZ unspecified-focus support codes
+ because PV is explicitly a samtal act.
+ """ suspect=quoted-text
+}
+mapping "WZZ.RA.ZZ.1" source="WZZ.RA.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.RA.ZZ = compensatory support with
+ unspecified focus (providing compensatory help to offset a functional limitation). Target ICF
+ d5709 (Looking after one's own health, unspecified).
+ Source is a compensatory-support intervention ABOUT an unspecified health/life domain (not the
+ self-care act itself), so related, weak. d5709 verified in source/function/ICF/concepts.tdl. WZZ
+ unspecified-focus convention from proposal-0010.
+ """ suspect=quoted-text
+}
+mapping "WZZ.RB.ZZ.1" source="WZZ.RB.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.RB.ZZ = practical support with unspecified
+ focus (help with practical daily tasks). Target ICF d5709 (Looking after one's own health, unspecified). Source is a practical-support
+ intervention ABOUT an unspecified health/life-management domain (not the self-care act itself),
+ so related, weak. d5709 verified in source/function/ICF/concepts.tdl. WZZ unspecified-focus
+ convention from proposal-0010.
+ """ suspect=quoted-text
+}
+mapping "WZZ.RD.ZZ.1" source="WZZ.RD.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.RD.ZZ = provision/supply (of a
+ service/resource) with unspecified focus. Target ICF d5709 (Looking after one's own health, unspecified). Source is a service-provision
+ intervention ABOUT an unspecified health/life domain (not the self-care act itself), so related,
+ weak. d5709 verified in source/function/ICF/concepts.tdl. WZZ unspecified-focus convention from
+ proposal-0010.
+ """ suspect=quoted-text
+}
+mapping "WZZ.SM.ZZ.1" source="WZZ.SM.ZZ" target="d5709" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source WZZ.SM.ZZ =
+ management of equipment or surrounding environment with unspecified focus (adapting the client's
+ physical environment/aids). Target ICF d5709 (Looking
+ after one's own health, unspecified). Source is an environmental/equipment-management
+ intervention ABOUT an unspecified health/life-management domain (not the self-care act itself),
+ so related, weak. d5709 verified in source/function/ICF/concepts.tdl. WZZ unspecified-focus
+ convention from proposal-0010.
+ """ suspect=quoted-text
+}
+assessment "XAA.20.ZZ.omop" source="XAA.20.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.25.ZZ.omop" source="XAA.25.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.40.ZZ.omop" source="XAA.40.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.45.ZZ.omop" source="XAA.45.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.46.ZZ.omop" source="XAA.46.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.47.ZZ.omop" source="XAA.47.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.55.ZZ.omop" source="XAA.55.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.60.ZZ.omop" source="XAA.60.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.65.ZZ.omop" source="XAA.65.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.70.ZZ.omop" source="XAA.70.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.75.ZZ.omop" source="XAA.75.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.80.00.omop" source="XAA.80.00" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.80.05.omop" source="XAA.80.05" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.80.15.omop" source="XAA.80.15" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.80.25.omop" source="XAA.80.25" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.85.ZZ.omop" source="XAA.85.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "XAA.99.ZZ.omop" source="XAA.99.ZZ" outcome=no_match target-system="OMOP_EXT"

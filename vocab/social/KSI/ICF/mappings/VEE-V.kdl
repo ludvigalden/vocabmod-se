@@ -1,0 +1,497 @@
+// KSI social-service codes to ICF mappings, codes VEE-V
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+ collection "ksi-icf" version="2026.1"
+ source system="KSI" release="2026"
+ target system="ICF"
+}
+defaults {
+ mappings {
+ preference "primary"
+ assessment-method "source-default-granularity"
+ }
+}
+mapping "VEE.1" source="VEE" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE = behaviors and habits regarding oral health.
+ Target ICF d5708A (Looking after one's oral health) is the Swedish ICF
+ extension concept that is the exact topical home for oral health. The KSI source is a
+ behavioral/social-service framing of the same domain (an about-relationship), so related, weak
+ rather than exact_match (different granularity axis: activity-vs-function). d5708A verified
+ present in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEE.AM.ZZ.1" source="VEE.AM.ZZ" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE.AM.ZZ = observation activity
+ regarding oral-health behavior. Target ICF d5708A (oral health care).
+ Source is an observation ABOUT oral-health behavior; related, weak. d5708A verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEE.AS.ZZ.1" source="VEE.AS.ZZ" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE.AS.ZZ = investigative
+ conversation regarding oral-health behavior. Target ICF d5708A (oral
+ health care). Source is an assessment activity ABOUT oral-health behavior; related, weak. d5708A
+ verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEE.AT.ZZ.1" source="VEE.AT.ZZ" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE.AT.ZZ = gathering information from a professional about oral-health behavior. Target ICF
+ d5708A the imported designation. Source is an information-gathering activity ABOUT oral-health
+ behavior; related, weak. d5708A verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEE.AU.ZZ.1" source="VEE.AU.ZZ" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE.AU.ZZ
+ = gathering information from another person about oral-health behavior. Target ICF d5708A . Source is an information-gathering activity ABOUT oral-health behavior;
+ related, weak. d5708A verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEE.AV.ZZ.1" source="VEE.AV.ZZ" target="d5708A" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEE.AV.ZZ = follow-up
+ conversation regarding oral-health behavior. Target ICF d5708A. Source
+ is a follow-up activity ABOUT oral-health behavior; related, weak. d5708A verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.1" source="VEI" target="d570" relationship=source_is_narrower_than_target {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI = behaviors and habits regarding
+ medication use. ICF has NO dedicated medication-adherence concept; the closest standard concept
+ is d570 (Looking after one's health), the
+ self-care/health-maintenance parent that legitimately subsumes medication adherence (no clinical
+ meaning of medication-use behavior falls outside self-health management). Target subsumes source
+ => broader. Confidence low: the subsumption is real but loose (medication adherence is one slice
+ of d570; one-level broader with no dedicated target and no crosswalk). d570 verified present in
+ ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.AC.ZZ.1" source="VEI.AC.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI.AC.ZZ = manual-based test/conversation about medication-use behavior. Target ICF
+ d570 (self-health care), the closest parent to medication adherence.
+ Source is a test/conversation ABOUT the behavior (not the behavior), so related, weak. d570
+ verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.AM.ZZ.1" source="VEI.AM.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI.AM.ZZ =
+ observation of medication-use behavior. Target ICF d570. Source is an
+ observation ABOUT the behavior; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.AS.ZZ.1" source="VEI.AS.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI.AS.ZZ =
+ investigative conversation about medication-use behavior. Target ICF d570 . Source is an assessment ABOUT the behavior; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.AT.ZZ.1" source="VEI.AT.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI.AT.ZZ = gathering information from a professional about medication-use behavior.
+ Target ICF d570. Source is an information-gathering activity ABOUT
+ the behavior; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEI.AU.ZZ.1" source="VEI.AU.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEI.AU.ZZ = gathering information from another person about medication-use behavior.
+ Target ICF d570. Source is an information-gathering activity ABOUT
+ the behavior; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.1" source="VEN" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN = norm-breaking behaviors (conduct/rule-breaking). ICF has
+ no conduct-disorder concept; the closest standard concept is d7203 (Interacting according to social rules), the d720
+ complex-interaction child whose inverse domain norm-breaking behavior violates. Source is the
+ inverse/associated domain of d7203 (a behavior ABOUT/against social-rule-following); related
+ link, weak, not broader/narrower (norm-breaking is not subsumed by rule-following; it is its
+ violation). d7203 verified present in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AA.ZZ.1" source="VEN.AA.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AA.ZZ = assessment of norm-breaking behavior.
+ Target ICF d7203 (interacting per social
+ rules). Source is an assessment ABOUT the inverse of d7203; related, weak. d7203 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AC.ZZ.1" source="VEN.AC.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AC.ZZ = manual-based
+ test/conversation about norm-breaking behavior. Target ICF d7203 . Source is a test ABOUT the inverse of d7203; related,
+ weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AM.ZZ.1" source="VEN.AM.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AM.ZZ = observation of norm-breaking
+ behavior. Target ICF d7203. Source is an
+ observation ABOUT the inverse of d7203; related, weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AS.ZZ.1" source="VEN.AS.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AS.ZZ = investigative conversation about
+ norm-breaking behavior. Target ICF d7203.
+ Source is an assessment ABOUT the inverse of d7203; related, weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AT.ZZ.1" source="VEN.AT.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AT.ZZ =
+ gathering information from a professional about norm-breaking behavior. Target ICF d7203 . Source is an information-gathering activity
+ ABOUT the inverse of d7203; related, weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AU.ZZ.1" source="VEN.AU.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AU.ZZ = gathering
+ information from another person about norm-breaking behavior. Target ICF d7203 . Source is an information-gathering activity ABOUT the
+ inverse of d7203; related, weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.AV.ZZ.1" source="VEN.AV.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.AV.ZZ = follow-up conversation about
+ norm-breaking behavior. Target ICF d7203.
+ Source is a follow-up activity ABOUT the inverse of d7203; related, weak. d7203 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.PN.ZZ.1" source="VEN.PN.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.PN.ZZ = advice/information about
+ norm-breaking behavior. Target ICF d7203.
+ Source is advice ABOUT the inverse of d7203; related, weak. d7203 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEN.PU.ZZ.1" source="VEN.PU.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.PU.ZZ = a Swedish social-service
+ supporting-counseling activity about norm-breaking behavior (not the behavior itself). Target
+ ICF d7203 (Interacting according to
+ social rules), the d720 complex-interaction child whose domain norm-breaking behavior
+ violates/inverts. Source is an intervention ABOUT the inverse of the d7203 domain (an
+ about-relationship across the activity-vs-participation axis), so related per the
+ family-history/about pattern (weak), not broader/narrower (supporting counseling is not subsumed
+ by social-rule-following). d7203 verified present in source/function/ICF/concepts.tdl;
+ consistent with VEN parent and sibling VEN.* children mapped to d7203 in proposals 0008/0010.
+ """ suspect=quoted-text
+}
+mapping "VEN.PV.ZZ.1" source="VEN.PV.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.PV.ZZ = a therapeutic/treatment
+ conversation about norm-breaking behavior. Target ICF d7203 (Interacting according to social rules), whose domain norm-breaking behavior
+ inverts. Source is a therapeutic intervention ABOUT the inverse of the d7203 domain; related,
+ weak per the about/counseling pattern. d7203 verified in ICF mirror; consistent with VEN parent
+ and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEN.RC.ZZ.1" source="VEN.RC.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.RC.ZZ = emotional support regarding
+ norm-breaking behavior. Target ICF d7203
+ (Interacting according to social rules), whose domain norm-breaking behavior inverts. Source is
+ an emotional-support intervention ABOUT the inverse of the d7203 domain; related, weak per the
+ about/counseling pattern. d7203 verified in ICF mirror; consistent with VEN parent and sibling
+ children.
+ """ suspect=quoted-text
+}
+mapping "VEN.SZ.ZZ.1" source="VEN.SZ.ZZ" target="d7203" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEN.SZ.ZZ = unspecified support regarding
+ norm-breaking behavior. Target ICF d7203
+ (Interacting according to social rules), whose domain norm-breaking behavior inverts. Source is
+ a support intervention ABOUT the inverse of the d7203 domain; related, weak per the
+ about/counseling pattern. d7203 verified in ICF mirror; consistent with VEN parent and sibling
+ children.
+ """ suspect=quoted-text
+}
+mapping "VEO.1" source="VEO" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO = risk-taking behaviors (a KSI behavioral/social-service
+ domain code covering self-endangering/reckless conduct). ICF has no risk-taking-behavior
+ concept; the closest standard concept is d570 (Looking after one's
+ own health), the d5 self-care concept whose domain risk-taking behavior inverts/violates
+ (reckless and self-endangering conduct is precisely the failure to look after one's own health).
+ Source is the inverse/associated domain of d570 (a behavior-domain framing of the area d570
+ represents as a self-care activity), so related rather than exact_match or broader per the
+ about/concept-axis-mismatch pattern established for sibling KSI domain parents (VEC/VED in
+ proposal-0007, VEE/VEN in proposal-0008, VEP in proposal-0010); weak, not broader/narrower
+ (risk-taking is not subsumed by health self-care; it is its violation). d570 verified present in
+ source/function/ICF/concepts.tdl. Note: b1304 Impulskontroll is a body-function (b-code), not an
+ activity/participation code, and does not match the KSI behavioral-domain axis; d570 is the
+ canonical d-level inverse.
+ """ suspect=quoted-text
+}
+mapping "VEO.AM.ZZ.1" source="VEO.AM.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.AM.ZZ = observation of risk-taking behavior.
+ Target ICF d570 (Looking after one's own health), whose domain
+ risk-taking behavior inverts. Source is an observation intervention ABOUT the inverse of the
+ d570 domain; related, weak per the about/counseling pattern. d570 verified in ICF mirror;
+ consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.AS.ZZ.1" source="VEO.AS.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.AS.ZZ = investigative conversation about
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is an investigative-conversation
+ intervention ABOUT the inverse of the d570 domain; related, weak per the about/counseling
+ pattern. d570 verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.AT.ZZ.1" source="VEO.AT.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.AT.ZZ =
+ gathering information from a professional about risk-taking behavior. Target ICF d570 (Looking after one's own health), whose domain risk-taking behavior inverts.
+ Source is an information-gathering intervention ABOUT the inverse of the d570 domain; related,
+ weak per the about/counseling pattern. d570 verified in ICF mirror; consistent with VEO parent
+ target.
+ """ suspect=quoted-text
+}
+mapping "VEO.AU.ZZ.1" source="VEO.AU.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.AU.ZZ = gathering
+ information from another party about risk-taking behavior. Target ICF d570 (Looking after one's own health), whose domain risk-taking behavior inverts. Source is an
+ information-gathering intervention ABOUT the inverse of the d570 domain; related, weak per the
+ about/counseling pattern. d570 verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.AV.ZZ.1" source="VEO.AV.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.AV.ZZ = follow-up conversation about
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is a follow-up-conversation
+ intervention ABOUT the inverse of the d570 domain; related, weak per the about/counseling
+ pattern. d570 verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.PN.ZZ.1" source="VEO.PN.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.PN.ZZ = advice or information about
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is an advice/information intervention
+ ABOUT the inverse of the d570 domain; related, weak per the about/counseling pattern. d570
+ verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.PU.ZZ.1" source="VEO.PU.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.PU.ZZ = supporting counseling about
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is a supporting-counseling
+ intervention ABOUT the inverse of the d570 domain; related, weak per the about/counseling
+ pattern. d570 verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.PV.ZZ.1" source="VEO.PV.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.PV.ZZ = a therapeutic/treatment
+ conversation about risk-taking behavior. Target ICF d570 (Looking
+ after one's own health), whose domain risk-taking behavior inverts. Source is a
+ therapeutic-conversation intervention ABOUT the inverse of the d570 domain; related, weak per
+ the about/counseling pattern. d570 verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.RC.ZZ.1" source="VEO.RC.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.RC.ZZ = emotional support regarding
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is an emotional-support intervention
+ ABOUT the inverse of the d570 domain; related, weak per the about/counseling pattern. d570
+ verified in ICF mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEO.SZ.ZZ.1" source="VEO.SZ.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEO.SZ.ZZ = unspecified support regarding
+ risk-taking behavior. Target ICF d570 (Looking after one's own
+ health), whose domain risk-taking behavior inverts. Source is a support intervention ABOUT the
+ inverse of the d570 domain; related, weak per the about/counseling pattern. d570 verified in ICF
+ mirror; consistent with VEO parent target.
+ """ suspect=quoted-text
+}
+mapping "VEP.1" source="VEP" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP = behaviors and habits regarding school
+ absence (a KSI behavioral/social-service domain code). Target ICF d820 'Att engagera sig i
+ skolutbildning' (Engaging in school education), the canonical ICF major-life-area concept for
+ school participation; school absence is the inverse/disruption of d820 participation. Source is
+ the inverse/associated domain of d820 (a behavior-domain framing of the area d820 represents as
+ a participation activity), so related rather than exact_match or broader per the
+ about/concept-axis-mismatch pattern established for sibling KSI domain parents (VEC/VED in
+ proposal-0007, VEE/VEN in proposal-0008); weak, not broader/narrower (school-absence behavior is
+ not subsumed by school participation; it is its disruption). d820 verified present in
+ source/function/ICF/concepts.tdl; consistent with VEP.* children mapped to d820 in
+ proposal-0010.
+ """ suspect=quoted-text
+}
+mapping "VEP.AA.ZZ.1" source="VEP.AA.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AA.ZZ = assessment of
+ behaviors and habits regarding school absence. Target ICF d820 'Att engagera sig i
+ skolutbildning' (Engaging in school education), the canonical school-participation concept;
+ school absence is its inverse/disruption. Source is an assessment intervention ABOUT the inverse
+ of the d820 domain (an about-relationship across the activity-vs-participation axis); related,
+ weak per the about/counseling pattern. d820 verified in ICF mirror; consistent with VEP parent
+ and sibling VEP.* children.
+ """ suspect=quoted-text
+}
+mapping "VEP.AM.ZZ.1" source="VEP.AM.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AM.ZZ = observation of
+ behaviors and habits regarding school absence. Target ICF d820 'Att engagera sig i
+ skolutbildning' (Engaging in school education); school absence is its inverse/disruption. Source
+ is an observation intervention ABOUT the inverse of the d820 domain; related, weak per the
+ about/counseling pattern. d820 verified in ICF mirror; consistent with VEP parent and sibling
+ children.
+ """ suspect=quoted-text
+}
+mapping "VEP.AS.ZZ.1" source="VEP.AS.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AS.ZZ = investigative
+ conversation about behaviors and habits regarding school absence. Target ICF d820 'Att engagera
+ sig i skolutbildning' (Engaging in school education); school absence is its inverse/disruption.
+ Source is an investigative-conversation intervention ABOUT the inverse of the d820 domain;
+ related, weak per the about/counseling pattern. d820 verified in ICF mirror; consistent with VEP
+ parent and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.AT.ZZ.1" source="VEP.AT.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AT.ZZ = gathering information from a professional about behaviors and habits regarding
+ school absence. Target ICF d820 (Engaging in school
+ education); school absence is its inverse/disruption. Source is an information-gathering
+ intervention ABOUT the inverse of the d820 domain; related, weak per the about/counseling
+ pattern. d820 verified in ICF mirror; consistent with VEP parent and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.AU.ZZ.1" source="VEP.AU.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AU.ZZ = gathering information from another party about behaviors and habits regarding
+ school absence. Target ICF d820 (Engaging in school
+ education); school absence is its inverse/disruption. Source is an information-gathering
+ intervention ABOUT the inverse of the d820 domain; related, weak per the about/counseling
+ pattern. d820 verified in ICF mirror; consistent with VEP parent and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.AV.ZZ.1" source="VEP.AV.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.AV.ZZ = follow-up
+ conversation about behaviors and habits regarding school absence. Target ICF d820 'Att engagera
+ sig i skolutbildning' (Engaging in school education); school absence is its inverse/disruption.
+ Source is a follow-up-conversation intervention ABOUT the inverse of the d820 domain; related,
+ weak per the about/counseling pattern. d820 verified in ICF mirror; consistent with VEP parent
+ and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.PN.ZZ.1" source="VEP.PN.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.PN.ZZ = advice
+ or information about behaviors and habits regarding school absence. Target ICF d820 'Att
+ engagera sig i skolutbildning' (Engaging in school education); school absence is its
+ inverse/disruption. Source is an advice/information intervention ABOUT the inverse of the d820
+ domain; related, weak per the about/counseling pattern. d820 verified in ICF mirror; consistent
+ with VEP parent and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.PU.ZZ.1" source="VEP.PU.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.PU.ZZ = supporting
+ counseling about behaviors and habits regarding school absence. Target ICF d820 'Att engagera
+ sig i skolutbildning' (Engaging in school education); school absence is its inverse/disruption.
+ Source is a supporting-counseling intervention ABOUT the inverse of the d820 domain; related,
+ weak per the about/counseling pattern. d820 verified in ICF mirror; consistent with VEP parent
+ and sibling children.
+ """ suspect=quoted-text
+}
+mapping "VEP.PV.ZZ.1" source="VEP.PV.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.PV.ZZ = a Swedish
+ social-service therapeutic/treatment conversation about behaviors and habits regarding school
+ absence. Target ICF d820 (Engaging in school education) is
+ the canonical ICF major-life-area concept for school participation; school absence is the
+ inverse/disruption of d820 participation. Source is an intervention ABOUT the
+ school-participation domain (an about-relationship across the activity-vs-participation axis),
+ so related per the family-history/about pattern (weak), not broader (treatment conversation is
+ not subsumed by school participation). d820 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "VEP.RC.ZZ.1" source="VEP.RC.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.RC.ZZ = emotional
+ support regarding school-absence behavior. Target ICF d820
+ (Engaging in school education), the canonical school-participation concept. Source is an
+ emotional-support intervention ABOUT the school-participation domain (its inverse); related,
+ weak per the about/counseling pattern. d820 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEP.SZ.ZZ.1" source="VEP.SZ.ZZ" target="d820" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEP.SZ.ZZ = unspecified support
+ regarding school-absence behavior. Target ICF d820 (Engaging
+ in school education), the canonical school-participation concept. Source is a support
+ intervention ABOUT the school-participation domain (its inverse); related, weak. d820 verified
+ in ICF mirror.
+ """ suspect=quoted-text
+}

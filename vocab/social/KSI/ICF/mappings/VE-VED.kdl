@@ -1,0 +1,479 @@
+// KSI social-service codes to ICF mappings, codes VE-VED
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+ collection "ksi-icf" version="2026.1"
+ source system="KSI" release="2026"
+ target system="ICF"
+}
+defaults {
+ mappings {
+ preference "primary"
+ assessment-method "source-default-granularity"
+ }
+}
+assessment "VE2.omop" source="VE2" outcome=no_match target-system="OMOP_EXT"
+assessment "VE2.AC.ZZ.omop" source="VE2.AC.ZZ" outcome=no_match target-system="OMOP_EXT"
+assessment "VE2.AM.ZZ.omop" source="VE2.AM.ZZ" outcome=no_match target-system="OMOP_EXT"
+mapping "VE2.AS.ZZ.1" source="VE2.AS.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.AS.ZZ = a Swedish social-service
+ ACTIVITY (investigative/assessment conversation) about 'other behaviors and habits' not covered
+ by the specific VEA/VEB/VEE subdomains. Target ICF d570 (Looking
+ after one's health) is the parent self-care/health-management concept under which d5703-diet,
+ d5704-physical-activity, d5708A-oral sit; the residual the imported designation bucket maps to this parent.
+ Source is an assessment ABOUT the d570 concept (counseling on it), not a case of it, so related
+ per the about/counseling pattern (weak). d570 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "VE2.AT.ZZ.1" source="VE2.AT.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.AT.ZZ =
+ gathering information from a professional about 'other behaviors and habits'. Target ICF d570
+ (Looking after one's health), the parent health-management concept
+ for the residual the imported designation bucket. Source is an information-gathering activity ABOUT the concept
+ (not the concept); related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.AU.ZZ.1" source="VE2.AU.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.AU.ZZ =
+ gathering information from another person about 'other behaviors and habits'. Target ICF d570
+ (Looking after one's health), parent for the residual the imported designation
+ bucket. Source is an information-gathering activity ABOUT the concept; related, weak. d570
+ verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.AV.ZZ.1" source="VE2.AV.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.AV.ZZ = follow-up conversation
+ about 'other behaviors and habits'. Target ICF d570 (Looking after
+ one's health), parent for the residual the imported designation bucket. Source is a follow-up activity ABOUT the
+ concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.PH.ZZ.1" source="VE2.PH.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.PH.ZZ = skills training
+ regarding 'other behaviors and habits'. Target ICF d570 (Looking
+ after one's health), parent for the residual the imported designation bucket. Source is an intervention
+ ABOUT/training-for the concept (not the concept); related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.PM.ZZ.1" source="VE2.PM.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.PM.ZZ = education about 'other behaviors
+ and habits'. Target ICF d570 (Looking after one's health), parent for
+ the residual the imported designation bucket. Source is an educational activity ABOUT the concept; related,
+ weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.PN.ZZ.1" source="VE2.PN.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.PN.ZZ = advice/information
+ about 'other behaviors and habits'. Target ICF d570 (Looking after
+ one's health), parent for the residual the imported designation bucket. Source is an advice activity ABOUT the
+ concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.PU.ZZ.1" source="VE2.PU.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.PU.ZZ = supporting counseling about
+ 'other behaviors and habits'. Target ICF d570 (Looking after one's
+ health), parent for the residual the imported designation bucket. Source is a supporting-counseling activity
+ ABOUT the concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.PV.ZZ.1" source="VE2.PV.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.PV.ZZ = therapeutic/treatment
+ conversation about 'other behaviors and habits'. Target ICF d570
+ (Looking after one's health), parent for the residual the imported designation bucket. Source is a
+ therapeutic-conversation activity ABOUT the concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.RB.ZZ.1" source="VE2.RB.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.RB.ZZ = practical support
+ regarding 'other behaviors and habits'. Target ICF d570 (Looking
+ after one's health), parent for the residual the imported designation bucket. Source is practical-support
+ activity ABOUT the concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.RC.ZZ.1" source="VE2.RC.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.RC.ZZ = emotional support
+ regarding 'other behaviors and habits'. Target ICF d570 (Looking
+ after one's health), parent for the residual the imported designation bucket. Source is emotional-support
+ activity ABOUT the concept; related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VE2.SZ.ZZ.1" source="VE2.SZ.ZZ" target="d570" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VE2.SZ.ZZ = unspecified support regarding
+ 'other behaviors and habits'. Target ICF d570 (Looking after one's
+ health), parent for the residual the imported designation bucket. Source is support activity ABOUT the concept;
+ related, weak. d570 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.1" source="VEA" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA = behaviors and habits regarding
+ food, diet and nutrition. Target ICF d5703 (Choosing and
+ consuming a healthy diet) is the canonical ICF health-management concept for diet/food intake.
+ The KSI source is a behavioral/social-service framing of the same domain (an about-relationship:
+ KSI codes social-service activities around the behavior), so related, weak rather than
+ exact_match (different granularity axis: activity-vs-function). d5703 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "VEA.AA.ZZ.1" source="VEA.AA.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AA.ZZ = assessment of
+ food/diet behavior. Target ICF d5703 (Choosing and consuming
+ a healthy diet). Source is an assessment ABOUT the d5703 concept, not a case of it, so related,
+ weak per the about/counseling pattern. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.AM.ZZ.1" source="VEA.AM.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AM.ZZ = observation
+ of food/diet behavior. Target ICF d5703 (Choosing and
+ consuming a healthy diet). Source is an observation activity ABOUT the d5703 concept; related,
+ weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.AS.ZZ.1" source="VEA.AS.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AS.ZZ =
+ investigative/assessment conversation about food/diet behavior. Target ICF d5703 (Choosing and consuming a healthy diet). Source is an assessment activity
+ ABOUT the d5703 concept; related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.AT.ZZ.1" source="VEA.AT.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AT.ZZ = gathering information from a professional about food/diet behavior. Target
+ ICF d5703 (Choosing and consuming a healthy diet). Source is
+ an information-gathering activity ABOUT the d5703 concept; related, weak. d5703 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.AU.ZZ.1" source="VEA.AU.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AU.ZZ = gathering information from another person about food/diet behavior. Target ICF d5703
+ (Choosing and consuming a healthy diet). Source is an
+ information-gathering activity ABOUT the d5703 concept; related, weak. d5703 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.AV.ZZ.1" source="VEA.AV.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.AV.ZZ =
+ follow-up conversation about food/diet behavior. Target ICF d5703 (Choosing and consuming a healthy diet). Source is a follow-up activity ABOUT the d5703
+ concept; related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.PN.ZZ.1" source="VEA.PN.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.PN.ZZ =
+ advice/information about food/diet behavior. Target ICF d5703
+ (Choosing and consuming a healthy diet). Source is an advice activity ABOUT the d5703 concept;
+ related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.PU.ZZ.1" source="VEA.PU.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.PU.ZZ =
+ supporting counseling about food/diet behavior. Target ICF d5703 (Choosing and consuming a healthy diet). Source is a supporting-counseling activity ABOUT
+ the d5703 concept; related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.RC.ZZ.1" source="VEA.RC.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.RC.ZZ =
+ emotional support regarding food/diet behavior. Target ICF d5703 (Choosing and consuming a healthy diet). Source is emotional-support activity ABOUT the
+ d5703 concept; related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEA.SZ.ZZ.1" source="VEA.SZ.ZZ" target="d5703" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEA.SZ.ZZ = unspecified
+ support regarding food/diet behavior. Target ICF d5703
+ (Choosing and consuming a healthy diet). Source is support activity ABOUT the d5703 concept;
+ related, weak. d5703 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.1" source="VEB" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB = behaviors and habits regarding
+ physical activity. Target ICF d5704 (Looking after one's
+ physical activity) is the canonical ICF health-management concept for physical activity. The KSI
+ source is a behavioral/social-service framing of the same domain (an about-relationship), so
+ related, weak rather than exact_match (different granularity axis: activity-vs-function). d5704
+ verified present in source/function/ICF/concepts.tdl; consistent with the VEB.* mapping
+ established in proposal-0007.
+ """ suspect=quoted-text
+}
+mapping "VEB.AM.ZZ.1" source="VEB.AM.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.AM.ZZ = observation of
+ physical-activity behavior. Target ICF d5704 (Looking after
+ one's physical activity). Source is an observation activity ABOUT the d5704 concept; related,
+ weak. d5704 verified in ICF mirror; consistent with VEB.* pattern in proposal-0007.
+ """ suspect=quoted-text
+}
+mapping "VEB.AS.ZZ.1" source="VEB.AS.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.AS.ZZ = a Swedish
+ social-service ACTIVITY (investigative/assessment conversation) about physical-activity
+ behavior, not the behavior itself. Target ICF d5704 (Looking
+ after one's physical activity) is the canonical ICF self-care concept for physical-activity
+ management. Source is an assessment ABOUT the d5704 concept (counseling on it), not a case of
+ it, so related per the family-history/about pattern (weak). d5704 verified present in
+ source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "VEB.AT.ZZ.1" source="VEB.AT.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.AT.ZZ = gathering information from a professional about physical-activity behavior.
+ Target ICF d5704 (Looking after one's physical activity).
+ Source is an information-gathering activity ABOUT the behavior (not the behavior); related,
+ weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.AU.ZZ.1" source="VEB.AU.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.AU.ZZ = gathering information from another person about physical-activity behavior. Target
+ ICF d5704 (Looking after one's physical activity). Source is
+ an information-gathering activity ABOUT the behavior; related, weak. d5704 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.AV.ZZ.1" source="VEB.AV.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.AV.ZZ =
+ follow-up conversation about physical-activity behavior. Target ICF d5704 (Looking after one's physical activity). Source is a follow-up activity ABOUT the
+ behavior; related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.PH.ZZ.1" source="VEB.PH.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.PH.ZZ =
+ skills training regarding physical-activity behavior. Target ICF d5704 (Looking after one's physical activity). Source is an intervention ABOUT/training-for
+ the behavior (not the behavior); related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.PM.ZZ.1" source="VEB.PM.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.PM.ZZ = education about
+ physical-activity behavior. Target ICF d5704 (Looking after
+ one's physical activity). Source is education ABOUT the behavior; related, weak. d5704 verified
+ in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.PU.ZZ.1" source="VEB.PU.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.PU.ZZ =
+ supporting counseling about physical-activity behavior. Target ICF d5704 (Looking after one's physical activity). Source is a supportive conversation ABOUT
+ the behavior; related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.RB.ZZ.1" source="VEB.RB.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.RB.ZZ =
+ practical support regarding physical-activity behavior. Target ICF d5704 (Looking after one's physical activity). Source is a practical-support intervention
+ ABOUT the behavior; related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.RC.ZZ.1" source="VEB.RC.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.RC.ZZ =
+ emotional support regarding physical-activity behavior. Target ICF d5704 (Looking after one's physical activity). Source is an emotional-support intervention
+ ABOUT the behavior; related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEB.SZ.ZZ.1" source="VEB.SZ.ZZ" target="d5704" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEB.SZ.ZZ = unspecified
+ support regarding physical-activity behavior. Target ICF d5704
+ (Looking after one's physical activity). Source is a support intervention ABOUT the behavior;
+ related, weak. d5704 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AA.ZZ.1" source="VEC.AA.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AA.ZZ = assessment of sleep
+ behavior/habits. Target ICF b134 (Sleep functions) is the closest standard
+ concept for the sleep domain (no ICF sleep-hygiene activity code exists). Source is an
+ assessment ABOUT the sleep domain that b134 represents; related, weak. b134 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AM.ZZ.1" source="VEC.AM.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AM.ZZ = observation of sleep
+ behavior/habits. Target ICF b134 (Sleep functions), the closest sleep-domain
+ standard concept. Source is an observation ABOUT the sleep domain; related, weak. b134 verified
+ in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AS.ZZ.1" source="VEC.AS.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AS.ZZ = investigative
+ conversation about sleep behavior/habits. Target ICF b134 (Sleep functions),
+ the closest sleep-domain standard concept. Source is an assessment ABOUT the sleep domain;
+ related, weak. b134 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AT.ZZ.1" source="VEC.AT.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AT.ZZ = gathering information from a professional about sleep behavior/habits. Target ICF b134
+ (Sleep functions), the closest sleep-domain standard concept. Source is an
+ information-gathering activity ABOUT the sleep domain; related, weak. b134 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AU.ZZ.1" source="VEC.AU.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AU.ZZ =
+ gathering information from another person about sleep behavior/habits. Target ICF b134
+ (Sleep functions), the closest sleep-domain standard concept. Source is an
+ information-gathering activity ABOUT the sleep domain; related, weak. b134 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VEC.AV.ZZ.1" source="VEC.AV.ZZ" target="b134" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VEC.AV.ZZ = follow-up
+ conversation about sleep behavior/habits. Target ICF b134 (Sleep functions),
+ the closest sleep-domain standard concept. Source is a follow-up activity ABOUT the sleep
+ domain; related, weak. b134 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.1" source="VED" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED = behaviors and habits regarding hygiene.
+ Target ICF d510 (Washing oneself) is the canonical ICF self-care concept for
+ hygiene. The KSI source is a behavioral/habits framing of the same domain (an about-relationship
+ across the behavior-vs-self-care-activity axis), so related rather than exact_match or broader;
+ weak per the about/concept-axis-mismatch pattern (consistent with sibling VEE parent in
+ proposal-0008). d510 verified present in source/function/ICF/concepts.tdl.
+ """ suspect=quoted-text
+}
+mapping "VED.AA.ZZ.1" source="VED.AA.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AA.ZZ = assessment of hygiene
+ behavior/habits. Target ICF d510 (Washing oneself), the canonical ICF hygiene
+ concept. Source is an assessment ABOUT the d510 concept; related, weak per the about/counseling
+ pattern. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.AM.ZZ.1" source="VED.AM.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AM.ZZ = observation of hygiene
+ behavior/habits. Target ICF d510 (Washing oneself). Source is an observation
+ ABOUT the d510 concept; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.AS.ZZ.1" source="VED.AS.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AS.ZZ = investigative
+ conversation about hygiene behavior/habits. Target ICF d510 (Washing oneself).
+ Source is an assessment ABOUT the d510 concept; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.AT.ZZ.1" source="VED.AT.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AT.ZZ = gathering information from a professional about hygiene behavior/habits. Target ICF
+ d510 (Washing oneself). Source is an information-gathering activity ABOUT the
+ d510 concept; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.AU.ZZ.1" source="VED.AU.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AU.ZZ =
+ gathering information from another person about hygiene behavior/habits. Target ICF d510 (Washing oneself). Source is an information-gathering activity ABOUT the d510
+ concept; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.AV.ZZ.1" source="VED.AV.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.AV.ZZ = follow-up
+ conversation about hygiene behavior/habits. Target ICF d510 (Washing oneself).
+ Source is a follow-up activity ABOUT the d510 concept; related, weak. d510 verified in ICF
+ mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.PU.ZZ.1" source="VED.PU.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.PU.ZZ = supporting
+ counseling about hygiene behavior. Target ICF d510 (Washing oneself) is the
+ canonical hygiene concept. Source is an activity ABOUT the behavior; related link, weak per the
+ about/counseling pattern. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.RC.ZZ.1" source="VED.RC.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.RC.ZZ = emotional
+ support regarding hygiene behavior. Target ICF d510 (Washing oneself). Source
+ is an intervention ABOUT the behavior; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}
+mapping "VED.SZ.ZZ.1" source="VED.SZ.ZZ" target="d510" relationship=related_to {
+ confidence 2 scheme="vocabmod-se-confidence-unassessable@1"
+ comment "en" """
+ Source VED.SZ.ZZ = unspecified support
+ regarding hygiene behavior. Target ICF d510 (Washing oneself). Source is
+ support ABOUT the behavior; related, weak. d510 verified in ICF mirror.
+ """ suspect=quoted-text
+}

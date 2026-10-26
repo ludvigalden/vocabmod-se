@@ -15,4 +15,18 @@ category "group" {
 category "code" {
     name "en" "Activity code"
 }
+collection "ksi-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KSI to ICF"
+    authors "ludvig-alden"
+    source system="KSI" release="2026"
+    target system="ICF"
+    defaults {
+        mappings {
+            claim-scope "ksi-icf@2026.1"
+        }
+    }
+    import "ICF/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
