@@ -10,6 +10,15 @@ context {
 category "status" {
     name "en" "Civil status"
 }
+collection "civil-status-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "SCB civil status to LOINC"
+    authors "ludvig-alden"
+    source system="CIVIL_STATUS_SE" release="2024"
+    target system="LOINC"
+    import "LOINC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "civil-status-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "SCB civil status to SNOMED CT"
     authors "ludvig-alden"

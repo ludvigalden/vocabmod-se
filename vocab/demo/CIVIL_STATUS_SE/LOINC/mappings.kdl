@@ -1,0 +1,33 @@
+// Swedish civil status codes to LOINC mappings, misc: codes with no filename-safe letter range, -N parts numbered in file order
+context {
+    collection "civil-status-se-loinc" version="2026.1"
+    source system="CIVIL_STATUS_SE" release="2024"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "G.1" source="G" target="45876756" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
+mapping "OG.1" source="OG" target="45881671" relationship=equivalent quality=100 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        OG = Ogift (Unmarried). Exact match to SNOMED CT 4053854 (125725006) in Observation domain.
+        Verified standard_concept=S.
+        """
+}
+mapping "S.1" source="S" target="45883375" relationship=partial_overlap {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        (20295000) not imported into OMOP Athena. Best available standard SNOMED CT in Observation domain
+        is UK extension concept that conflates divorce with civil-partnership dissolution. Semantic core
+        (divorced) is correct.
+        """
+}
+mapping "Ä.1" source="Ä" target="45883711" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+}
