@@ -10,4 +10,13 @@ context {
 category "status" {
     name "en" "Civil status"
 }
+collection "civil-status-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "SCB civil status to SNOMED CT"
+    authors "ludvig-alden"
+    source system="CIVIL_STATUS_SE" release="2024"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment
