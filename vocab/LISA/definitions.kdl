@@ -1,0 +1,16 @@
+// The lisa bridge: the collection and its mappings; both systems are
+// declared elsewhere (code-only for the bridge system).
+collection "lisa-geo-se" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "LISA to Swedish county and municipality codes"
+    authors "ludvig-alden"
+    source system="LISA" release="2024"
+    target system="GEO_SE"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "GEO_SE/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
