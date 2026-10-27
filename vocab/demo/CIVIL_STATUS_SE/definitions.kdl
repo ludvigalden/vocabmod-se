@@ -1,0 +1,13 @@
+// Civilståndskoder: the civil-status value set the LISA register carries (SCB register data).
+// Small register-local code set; no shared classification exists upstream.
+system "CIVIL_STATUS_SE" kind=classification distribution=published publisher="se.scb" default-locale="sv" {
+    name "sv" "Civilståndskoder (SCB)"
+}
+release "2024" system="CIVIL_STATUS_SE" label-source=registry
+context {
+    system "CIVIL_STATUS_SE" release="2024"
+}
+category "status" {
+    name "en" "Civil status"
+}
+import "concepts.kdl" kind=fragment
