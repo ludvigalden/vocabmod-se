@@ -10,4 +10,18 @@ context {
 category "specialty" {
     name "en" "Medical specialty"
 }
+collection "spkod-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "Socialstyrelsen specialty codes to SNOMED CT"
+    authors "ludvig-alden"
+    source system="SPKOD" release="2017"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            relationship "equivalent"
+        }
+    }
+    import "SNOMED_CT/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment
