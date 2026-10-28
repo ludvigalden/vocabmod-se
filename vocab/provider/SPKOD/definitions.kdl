@@ -1,0 +1,13 @@
+// SoS specialitetskoder: the National Board of Health and Welfare's medical specialty codes. The
+// source files them under lab/; their domain is PROVIDER, so the tree places them under provider/.
+system "SPKOD" kind=classification distribution=published publisher="se.socialstyrelsen" default-locale="sv" {
+    name "sv" "Socialstyrelsens specialitetskoder"
+}
+release "2017" system="SPKOD" label-source=registry
+context {
+    system "SPKOD" release="2017"
+}
+category "specialty" {
+    name "en" "Medical specialty"
+}
+import "concepts.kdl" kind=fragment
