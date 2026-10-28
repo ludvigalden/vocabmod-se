@@ -1,0 +1,55 @@
+// LISA education levels to SNOMED CT mappings, codes 1-7
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "lisa-education-snomed-ct" version="2026.1"
+    source system="LISA_EDUCATION" release="2024"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "1.1" source="1" target="342271000000107" preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 code 1 = Pre-primary education (Förskoleutbildning). Bare numeric code conflates across
+        attributes; weak-only. Closest standard is one ISCED level above.
+        """
+}
+mapping "2.1" source="2" target="342271000000107" preference=alternative {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 code 2 = Grundutbildning (Primary education). Bare numeric code conflatable across
+        attributes. Closest SNOMED CT: 44800023. Weak due to numeric ambiguity.
+        """
+}
+mapping "3.1" source="3" target="224297003" preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 code 3 = Lower secondary education. Bare numeric code conflates; weak-only. Concept
+        conflates lower/upper secondary.
+        """
+}
+mapping "4.1" source="4" target="224297003" preference=alternative effect=omitted quality=40 {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 level 4 (Upper secondary). Bare numeric code conflates with other attributes in profiled
+        column. SNOMED CT 224297003 is approximate (not specifically upper secondary).
+        """
+}
+mapping "5.1" source="5" target="224299000" preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 code 5 = Post-secondary non-tertiary education. Bare numeric code conflatable. No exact
+        SNOMED CT match; closest conflates with tertiary. Weak due to numeric ambiguity + imperfect match.
+        """
+}
+mapping "7.1" source="7" target="38861000087100" preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        SUN2000 level 7 (Bachelor's or equivalent). Bare numeric code conflates with other attributes in
+        profiled column. SNOMED CT match is reasonable but conflation forces weak-only.
+        """
+}
