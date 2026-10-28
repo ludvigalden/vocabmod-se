@@ -10,4 +10,18 @@ context {
 category "code" {
     name "en" "Oncology code"
 }
+collection "icd-o-3-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-O-3 to SNOMED CT"
+    authors "ludvig-alden"
+    source system="ICD_O_3" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    defaults {
+        mappings {
+            claim-scope "icd-o-3-snomed-ct@2026.1"
+        }
+    }
+    import "SNOMED_CT/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment
