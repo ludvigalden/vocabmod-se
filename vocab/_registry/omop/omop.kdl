@@ -1,0 +1,178 @@
+// OMOP CDM export constants.
+//
+// This document is the OMOP constants layer the vocabmod-se tool reads:
+// vocabulary_id, domain_id, relationship_id, invalid_reason, validity
+// defaults, language_concept_id spellings, and the per-system generated
+// custom-id bands. It binds under the schema's omop profile
+// (schema/omop.kdl) and the tool reads it through the
+// generated processor; its tables use the translation-table shape the
+// tree's own _registry/conventions.kdl uses.
+//
+// Every OMOP spelling below is an authored decision of this project, not
+// OHDSI content: the export writes only Athena-complementary rows
+// (concept_id >= 2,000,000,000, standard_concept NULL), so these spellings
+// never overwrite Athena's own. They are reviewable here, in one place.
+
+// The registry's own version marker: every export manifest records it,
+// so a table merged beside Athena files is auditable against the exact
+// constants in force when it was written.
+omop-registry version="1"
+
+// The vocabulary_id each tree-defined system's concepts carry. A system
+// missing from this table fails the export closed, so a new system forces
+// a spelling decision instead of inheriting a guess.
+translation-table "omop-vocabulary-id" version="1" source-column="system" target-field="vocabulary_id" {
+    description "en" "The OMOP vocabulary_id spelling for each system defined in vocab."
+    entry "ATC_YCODE" "ATC_YCODE"
+    entry "CIVIL_STATUS_SE" "CIVIL_STATUS_SE"
+    entry "GEO_SE" "GEO_SE"
+    entry "ICD_10" "ICD_10"
+    entry "ICD_10_SE" "ICD_10_SE"
+    entry "ICD_O_3" "ICD_O_3"
+    entry "ICF" "ICF"
+    entry "KKA" "KKA"
+    entry "KMA" "KMA"
+    entry "KSI" "KSI"
+    entry "LAB_SE" "LAB_SE"
+    entry "LISA_EDUCATION" "LISA_EDUCATION"
+    entry "NCSP" "NCSP"
+    entry "NPU" "NPU"
+    entry "RXNORM" "RXNORM"
+    entry "SPKOD" "SPKOD"
+    entry "TLV_FBA" "TLV_FBA"
+    entry "TLV_VGR" "TLV_VGR"
+    entry "TLV_VNR" "TLV_VNR"
+    entry "TLV_VNR_DOSE_FORM" "TLV_VNR_DOSE_FORM"
+    entry "TRIAGE_SE" "TRIAGE_SE"
+    entry "UNIT_SE" "UNIT_SE"
+}
+
+// The OMOP domain_id each system's concepts carry. Domain assignment is
+// an authored mapping decision (a Swedish classification's home in the
+// OMOP domain model), collected here for review.
+translation-table "omop-domain-id" version="1" source-column="system" target-field="domain_id" {
+    description "en" "The OMOP domain_id for each system: conditions, drugs, procedures, measurements, observations, geography, provider, demographics."
+    entry "ATC_YCODE" "Drug"
+    entry "CIVIL_STATUS_SE" "Demographic"
+    entry "GEO_SE" "Geography"
+    entry "ICD_10" "Condition"
+    entry "ICD_10_SE" "Condition"
+    entry "ICD_O_3" "Condition"
+    entry "ICF" "Observation"
+    entry "KKA" "Procedure"
+    entry "KMA" "Procedure"
+    entry "KSI" "Observation"
+    entry "LAB_SE" "Measurement"
+    entry "LISA_EDUCATION" "Demographic"
+    entry "NCSP" "Procedure"
+    entry "NPU" "Measurement"
+    entry "RXNORM" "Drug"
+    entry "SPKOD" "Provider"
+    entry "TLV_FBA" "Drug"
+    entry "TLV_VGR" "Drug"
+    entry "TLV_VNR" "Drug"
+    entry "TLV_VNR_DOSE_FORM" "Drug"
+    entry "TRIAGE_SE" "Observation"
+    entry "UNIT_SE" "Measurement"
+}
+
+// The relationship_id spelling each mapping relationship kind carries in
+// CONCEPT_RELATIONSHIP. Every OMOP spelling below is an authored
+// decision of this project, collected here for review.
+translation-table "omop-relationship-id" version="1" source-column="relationship" target-field="relationship_id" {
+    description "en" "OMOP relationship_id spellings for the six mapping relationship kinds."
+    entry "equivalent" "Maps to"
+    entry "source_is_narrower_than_target" "Narrower than"
+    entry "source_is_broader_than_target" "Broader than"
+    entry "related_to" "Related to"
+    entry "not_related_to" "Not related to"
+    entry "partial_overlap" "Partially overlaps"
+}
+
+// RELATIONSHIP.csv rows for our own relationship spellings, with the
+// inverse spelling each CONCEPT_RELATIONSHIP pair's reverse row carries
+// (every pair is emitted in both directions). is_hierarchical marks the
+// two ordering relationships; none of ours defines ancestry —
+// CONCEPT_ANCESTOR is derived from declared parent links, not from
+// mapping assertions, so no "Is a"/"Subsumes" rows are implied.
+omop-relationship "Maps to" name="Maps to a standard concept" hierarchical=#false defines-ancestry=#false inverse="Mapped from"
+omop-relationship "Mapped from" name="Standard concept a source maps to" hierarchical=#false defines-ancestry=#false inverse="Maps to"
+omop-relationship "Narrower than" name="Source is narrower than target" hierarchical=#true defines-ancestry=#false inverse="Broader than"
+omop-relationship "Broader than" name="Source is broader than target" hierarchical=#true defines-ancestry=#false inverse="Narrower than"
+omop-relationship "Related to" name="Related to" hierarchical=#false defines-ancestry=#false inverse="Related to"
+omop-relationship "Not related to" name="Not related to" hierarchical=#false defines-ancestry=#false inverse="Not related to"
+omop-relationship "Partially overlaps" name="Partially overlaps" hierarchical=#false defines-ancestry=#false inverse="Partially overlaps"
+
+// The target_vocabulary_id a standard endpoint system's target concepts
+// carry in SOURCE_TO_CONCEPT_MAP. The keys are exactly the standard
+// endpoint systems: a mapping target in one of them carries an OMOP
+// concept id as its code. OMOP concepts ids span several vocabularies and the
+// tree does not resolve them per id, so it maps to the empty value — the
+// column is left empty, never guessed. Every other external system
+// (SNOMED CT, ATC, LOINC, MedDRA, ...) has codes that are not OMOP ids and
+// is never used as an id source.
+translation-table "omop-target-vocabulary" version="1" source-column="endpoint-system" target-field="target_vocabulary_id" {
+    description "en" "target_vocabulary_id per standard OMOP endpoint system; OMOP_EXT resolves per id and maps to empty."
+    entry "OMOP_SNOMED_CT" "SNOMED"
+    entry "OMOP_ICD_10_CM" "ICD10CM"
+    entry "OMOP_EXT" ""
+}
+
+// invalid_reason from concept status (the inverse of the import direction
+// in _registry/conventions.kdl): an empty value is OMOP NULL.
+translation-table "omop-invalid-reason" version="1" source-column="status" target-field="invalid_reason" {
+    description "en" "OMOP invalid_reason per concept status; active and unknown concepts carry none."
+    entry "active" ""
+    entry "unknown" ""
+    entry "inactive" "D"
+    entry "retired" "U"
+}
+
+// language_concept_id per designation locale (CONCEPT_SYNONYM). English
+// is OMOP concept 4180186; Swedish is OMOP concept 4175777 ("Swedish
+// language", SNOMED CT 297483007, domain Language, standard), pinned from
+// the Athena release in use — designations in any other unmapped locale
+// are skipped from CONCEPT_SYNONYM with a per-locale count in the
+// summary and manifest, never exported under a guessed id.
+translation-table "omop-language-concept-id" version="1" source-column="locale" target-field="language_concept_id" {
+    description "en" "OMOP language concept ids per designation locale; designations in unmapped locales are skipped with a count."
+    entry "en" "4180186"
+    entry "sv" "4175777"
+}
+
+// Validity defaults for rows whose concepts carry no explicit validity:
+// OMOP's open-ended convention.
+omop-validity start="1970-01-01" end="2099-12-31"
+
+// Generated custom-id bands: one band per tree-defined system
+// for export-time id allocation. A concept with no committed OMOP custom concepts
+// binding receives id = first + (stable-hash of system and code) mod span,
+// collisions resolved by deterministic rehash — ids are derived at export
+// time only and never written back into the tree. The block starts at
+// 2,110,000,000, disjoint from every committed band (2100100001-2100130445,
+// 2100400006-2100400406), so a generated id can never collide with a
+// committed one. Bands are explicit rows, not index-derived: adding a
+// system never shifts another system's band, so exported ids stay stable
+// under insertions.
+omop-id-band "ATC_YCODE" first=2110000000 last=2110099999
+omop-id-band "CIVIL_STATUS_SE" first=2110100000 last=2110199999
+omop-id-band "GEO_SE" first=2110200000 last=2110299999
+omop-id-band "ICD_10" first=2110300000 last=2110399999
+omop-id-band "ICD_10_SE" first=2110400000 last=2110499999
+omop-id-band "ICD_O_3" first=2110500000 last=2110599999
+omop-id-band "ICF" first=2110600000 last=2110699999
+omop-id-band "KKA" first=2110700000 last=2110799999
+omop-id-band "KMA" first=2110800000 last=2110899999
+omop-id-band "KSI" first=2110900000 last=2110999999
+omop-id-band "LAB_SE" first=2111000000 last=2111099999
+omop-id-band "LISA_EDUCATION" first=2111100000 last=2111199999
+omop-id-band "NCSP" first=2111200000 last=2111299999
+omop-id-band "NPU" first=2111300000 last=2111399999
+omop-id-band "RXNORM" first=2111400000 last=2111499999
+omop-id-band "SPKOD" first=2111500000 last=2111599999
+omop-id-band "TLV_FBA" first=2111600000 last=2111699999
+omop-id-band "TLV_VGR" first=2111700000 last=2111799999
+omop-id-band "TLV_VNR" first=2111800000 last=2111899999
+omop-id-band "TLV_VNR_DOSE_FORM" first=2111900000 last=2111999999
+omop-id-band "TRIAGE_SE" first=2112000000 last=2112099999
+omop-id-band "UNIT_SE" first=2112100000 last=2112199999
