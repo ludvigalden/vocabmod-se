@@ -1,0 +1,19 @@
+// RETTS triage codes to OMOP custom-concept mappings, codes RETTS-0-YELLOW
+context {
+    collection "triage-se-omop-custom" version="2026.1"
+    source system="TRIAGE_SE" release="2024"
+    target system="OMOP_CUSTOM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+omop-binding "RETTS-0.omop" concept="RETTS-0" omop="OMOP_CUSTOM:2100400006"
+omop-binding "YELLOW_DEATH_72H.omop" concept="YELLOW_DEATH_72H" omop="OMOP_CUSTOM:2100400402"
+omop-binding "YELLOW_ICU_24H.omop" concept="YELLOW_ICU_24H" omop="OMOP_CUSTOM:2100400401"
+omop-binding "YELLOW_READMIT_72H.omop" concept="YELLOW_READMIT_72H" omop="OMOP_CUSTOM:2100400405"
+omop-binding "YELLOW_UNPLANNED_ADMIT.omop" concept="YELLOW_UNPLANNED_ADMIT" omop="OMOP_CUSTOM:2100400406"
+omop-binding "YELLOW_UPGRADE_ORANGE.omop" concept="YELLOW_UPGRADE_ORANGE" omop="OMOP_CUSTOM:2100400404"
+omop-binding "YELLOW_UPGRADE_RED.omop" concept="YELLOW_UPGRADE_RED" omop="OMOP_CUSTOM:2100400403"
