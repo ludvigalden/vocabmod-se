@@ -1,0 +1,104 @@
+// RETTS triage codes to SNOMED CT mappings, codes ESS-01-RLS-85
+// Several sources map to the same target; each mapping is its own assertion.
+context {
+    collection "triage-se-snomed-ct" version="2026.1"
+    source system="TRIAGE_SE" release="2024"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ESS-01.1" source="ESS-01" target="49436004" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HIGH: ESS-01 = Förmaksflimmer (Atrial fibrillation), confirmed from Samverkan 112 prehospital
+        treatment guidelines PDF listing SNOMED CT 2100400101 49436004. Exact clinical match to SNOMED CT
+        313217 (Disorder
+        """
+}
+mapping "ESS-04.1" source="ESS-04" target="267036007" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Verified standard concept S in SNOMED CT Condition domain; Faithful match for ESS-04 chief
+        complaint (breathing difficulty).
+        """
+}
+mapping "ESS-06.1" source="ESS-06" target="698247007" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" "ESS-06 = Arytmi per legacy RETTS mapping spec; SNOMED CT 698247007 verified standard and"
+}
+mapping "ESS-11.1" source="ESS-11" target="21522001" relationship=equivalent {
+    confidence 0.71 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ESS-11 = Abdominala besvär (Abdominal pain), confirmed by RETTS documentation. Standard SNOMED CT
+        """
+}
+mapping "ESS-19.1" source="ESS-19" target="25064002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HIGH: ESS-19 = Huvudvärk (Headache), confirmed from Samverkan 112 prehospital PDF listing SNOMED CT
+        2100400119 25064002. Exact clinical match to SNOMED CT 378253 (Clinical Finding, Note: ESS-28 also
+        maps to headache (ESS-28 and ESS-19 share the same algorithm per Samverkan
+        112).
+        """
+}
+mapping "ESS-28.1" source="ESS-28" target="25064002" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HIGH confidence: ESS-28 = Huvudvärk (Headache). Exact clinical match to SNOMED CT 378253
+        (25064002), Confirmed via Samverkan 112 RETTS prehospital guideline PDF which lists ESS-28 as
+        Huvudvärk.
+        """
+}
+mapping "ESS-30.1" source="ESS-30" target="1149222004" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Custom retained as target; ESS-30 is a RETTS-specific overdose/poisoning chief complaint
+        algorithm with no exact SNOMED CT equivalent. SNOMED CT (1149222004) is standard but loose (a disorder
+        not a chief-complaint code) and
+        """
+}
+mapping "ESS-32.1" source="ESS-32" target="91175000" relationship=equivalent {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ESS-32 = Kramper per legacy RETTS mapping spec; SNOMED CT 91175000 verified standard and Note:
+        current RETTS renumbering places seizures at ESS-109 but corpus data uses older numbering.
+        """
+}
+mapping "ESS-47.1" source="ESS-47" target="7520000" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        ESS-47 = Infection/Fever algorithm (fever, localized infection, dental infection, sepsis
+        screening). Best standard SNOMED CT: Pyrexia of unknown origin. ESS-47 is broader (covers local
+        infections too) but pyrexia is the most faithful single standard concept.
+        """
+}
+mapping "ESS-52.1" source="ESS-52" target="271596009" relationship=source_is_narrower_than_target {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        HIGH: ESS-52 = Ospecifik psykisk ohälsa (Nonspecific mental health distress), confirmed from
+        Samverkan 112 prehospital PDF listing SNOMED CT 2100400152 271596009. SNOMED CT 4154767 (Clinical
+        Finding) is the closest standard concept. Confidence because the ESS-52 algorithm is broader
+        (covers anxiety, depression, suicidal ideation, self-harm, psychotic symptoms) than th
+        """
+}
+mapping "ESS-80.1" source="ESS-80" target="225457007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        Custom retained as target; ESS-80 is the RETTS psychiatric/mental health chief complaint
+        algorithm covering suicide risk self-harm agitation psychosis. SNOMED CT (225457007) is standard
+        but captures only one facet of the broad ESS-80 algorithm
+        """
+}
+mapping "RLS-85.1" source="RLS-85" target="365929007" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        RLS-85 is the Swedish Reaction Level Scale 85 (8-level coma/consciousness scale). Proprietary
+        instrument, no exact SNOMED CT equivalent. Weak target 440213 is and captures the
+        consciousness-assessment domain. Confidence low because RLS-85 is an ordinal scale while the
+        SNOMED CT concept is a finding category.
+        """
+}
