@@ -1,0 +1,13 @@
+// RETTS triage levels as the source dataset carries them. Codes that spell SNOMED CT concepts
+// keep the Swedish chief-complaint names; the English SNOMED CT terms are not republished.
+system "TRIAGE_SE" kind=classification distribution=published default-locale="sv" {
+    name "sv" "RETTS triage levels"
+}
+release "2024" system="TRIAGE_SE" label-source=registry
+context {
+    system "TRIAGE_SE" release="2024"
+}
+category "code" {
+    name "en" "Triage code"
+}
+import "concepts.kdl" kind=fragment
