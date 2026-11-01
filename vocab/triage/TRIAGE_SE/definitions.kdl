@@ -10,6 +10,15 @@ context {
 category "code" {
     name "en" "Triage code"
 }
+collection "triage-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "RETTS triage levels to LOINC"
+    authors "ludvig-alden"
+    source system="TRIAGE_SE" release="2024"
+    target system="LOINC"
+    import "LOINC/mappings.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "triage-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "RETTS triage levels to SNOMED CT"
     authors "ludvig-alden"

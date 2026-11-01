@@ -1,0 +1,32 @@
+// RETTS triage codes to LOINC mappings, codes 263259005-RETTS-1
+context {
+    collection "triage-se-loinc" version="2026.1"
+    source system="TRIAGE_SE" release="2024"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "263259005.1" source="263259005" target="80288-4" relationship=equivalent preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" "Raw SNOMED CT code 263259005 not loaded in Athena; best standard is LOINC 80288-4"
+}
+mapping "78853006.1" source="78853006" target="94037-9" relationship=partial_overlap preference=alternative {
+    confidence 4 scheme="vocabmod-se-confidence-unassessable@1"
+    comment "en" """
+        Raw SNOMED CT code 78853006 not loaded in Athena. Closest standard: LOINC 1001799 \"Suicidal
+        ideation\" (clinical observation). Cross-vocab weak link; original is SNOMED CT clinical finding,
+        not questionnaire.
+        """
+}
+mapping "RETTS-1.1" source="RETTS-1" target="LA21567-5" relationship=equivalent preference=alternative {
+    confidence 0.03 scheme="vocabmod-se-confidence@1"
+    comment "en" """
+        DUAL: RETTS-1 is proprietary ordinal triage level (immediate life threat). Custom concept
+        preserved as canonical target. Weak link to LOINC concept capturing \"requires immediate
+        life-saving intervention\" semantics. (proprietary RETTS instrument).
+        """
+}
