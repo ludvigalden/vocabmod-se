@@ -36,4 +36,13 @@ collection "npu-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
+collection "npu-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "NPU to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="NPU" release="2025"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
