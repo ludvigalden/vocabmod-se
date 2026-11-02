@@ -116,4 +116,13 @@ collection "icd-10-se-omop-icd-10-cm-truncation" version="2026.1" kind=mapping p
         project "defaults"
     }
 }
+collection "icd-10-se-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ICD-10-SE to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="ICD_10_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
