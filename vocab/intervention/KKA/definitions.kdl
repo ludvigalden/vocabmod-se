@@ -33,4 +33,13 @@ collection "kka-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden
         project "defaults"
     }
 }
+collection "kka-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KVÅ surgical procedures (KKÅ) to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="KKA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
