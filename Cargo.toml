@@ -1,0 +1,27 @@
+[workspace]
+resolver = "2"
+members = [
+    "pkg/rs/vocab-proc",
+    "tests/tools/vocabmod-se-fixture",
+    "tools/vocabmod-se",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+authors = ["Ludvig Aldén"]
+repository = "https://github.com/ludvigalden/vocabmod-se"
+license = "Apache-2.0"
+
+[workspace.dependencies]
+clap = { version = "=4.6.7", features = ["derive"] }
+kdlith-diagnostic = { git = "https://github.com/ludvigalden/kdlith", rev = "9ea0ca54bfad653f3755997d30991a178a1d636d" }
+kdlith-engine = { git = "https://github.com/ludvigalden/kdlith", rev = "9ea0ca54bfad653f3755997d30991a178a1d636d" }
+kdlith-model = { git = "https://github.com/ludvigalden/kdlith", rev = "9ea0ca54bfad653f3755997d30991a178a1d636d" }
+kdlith-schema-kdl = { git = "https://github.com/ludvigalden/kdlith", rev = "9ea0ca54bfad653f3755997d30991a178a1d636d" }
+serde_json = "=1.0.151"
+vocab-proc = { path = "pkg/rs/vocab-proc" }
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
