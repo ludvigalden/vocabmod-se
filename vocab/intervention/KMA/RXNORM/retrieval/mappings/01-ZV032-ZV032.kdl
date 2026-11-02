@@ -1,0 +1,18 @@
+// KVÅ medical procedure retrieval adjudication mappings to RxNorm, codes ZV032-ZV032
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+context {
+    collection "kma-rxnorm-retrieval" version="2026.1"
+    source system="KMA" release="2026"
+    target system="RXNORM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "ZV032.retr.1" source="ZV032" target="14448" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this RxNorm concept. Evidence: Substance; metaiodobenzylguanidine (MIBG) without specified isotope; 19019942 is the same unlabeled compound."
+}

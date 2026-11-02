@@ -37,6 +37,15 @@ collection "kma-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
+collection "kma-rxnorm-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KVÅ medical procedures (KMÅ) to RxNorm (retrieval)"
+    authors "ludvig-alden"
+    source system="KMA" release="2026"
+    target system="RXNORM"
+    import "RXNORM/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "kma-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "KVÅ medical procedures (KMÅ) to SNOMED CT (retrieval)"
     authors "ludvig-alden"

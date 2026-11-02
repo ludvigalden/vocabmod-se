@@ -1,0 +1,18 @@
+// KVÅ medical procedure retrieval adjudication mappings to RxNorm, codes DV039-DV039
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+context {
+    collection "kma-rxnorm-retrieval" version="2026.1"
+    source system="KMA" release="2026"
+    target system="RXNORM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "DV039.retr.1" source="DV039" target="239166" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text. Omissions recorded: concentrated strength not specified."
+}
