@@ -27,4 +27,13 @@ collection "npu-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
         project "defaults"
     }
 }
+collection "npu-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "NPU to LOINC (retrieval)"
+    authors "ludvig-alden"
+    source system="NPU" release="2025"
+    target system="LOINC"
+    import "LOINC/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
