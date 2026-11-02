@@ -1,0 +1,30 @@
+// KVÅ medical procedure retrieval adjudication mappings to LOINC, codes AK104-AV072
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+// Individual Swedish procedure titles quoted in the rationales below are quotations from
+// E-hälsomyndigheten, Klassifikation av medicinska åtgärder (KVÅ), release 2026. They serve
+// as adjudication evidence for the individual mappings; the classification itself is not
+// redistributed.
+context {
+    collection "kma-loinc-retrieval" version="2026.1"
+    source system="KMA" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "AK104.retr.1" source="AK104" target="35456-3" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: Measurement: examination of the Y chromosome with the question of deletion; designation matches Y chromosome deletion [Identifier] in Blood or Tissue."
+}
+mapping "AP042.retr.1" source="AP042" target="37972-7" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: KMÅ/AP042 'Flebografi av vena mesenterica superior' -> 3049262 (LOINC, Procedure)."
+}
+mapping "AV072.retr.1" source="AV072" target="34536-3" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: KMÅ/AV072 'Dygnsmätning av dryckes- och urinvolymer' -> 3044903 (LOINC). Omissions recorded: intake generalized beyond drinking (all fluids); output generalized beyond urine (all fluid outputs)."
+}
