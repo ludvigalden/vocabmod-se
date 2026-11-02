@@ -28,4 +28,13 @@ collection "kma-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden
         project "defaults"
     }
 }
+collection "kma-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KVÅ medical procedures (KMÅ) to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="KMA" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
