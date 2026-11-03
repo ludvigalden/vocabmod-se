@@ -1,0 +1,35 @@
+// KSI retrieval adjudication mappings to LOINC, codes VEB-YAA.75.ZZ
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+// Individual Swedish activity titles quoted in the rationales below are quotations from
+// E-hälsomyndigheten, Klassifikation av socialtjänstens insatser och aktiviteter (KSI),
+// release 2026 (published by Socialstyrelsen until June 2026). They serve as
+// adjudication evidence for the individual mappings; the classification itself is not
+// redistributed.
+context {
+    collection "ksi-loinc-retrieval" version="2026.1"
+    source system="KSI" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VEB.retr.1" source="VEB" target="77242-6" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: Observation; LOINC 46235931 matches behaviors and habits regarding physical activity."
+}
+mapping "XAA.85.ZZ.retr.1" source="XAA.85.ZZ" target="77999-1" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: Observation; LOINC 46236968 adds information to a case notification. Omissions recorded: ongoing-investigation context."
+}
+mapping "XAC.02.ZZ.retr.1" source="XAC.02.ZZ" target="92842-4" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: Observation; LOINC 37019821 matches a statement on the individual's situation. Omissions recorded: recipient (another authority); yttrande framing."
+}
+mapping "YAA.75.ZZ.retr.1" source="YAA.75.ZZ" target="80392-4" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this LOINC concept. Evidence: Accommodation type (särskilt boende: special residence for those needing care/support); H denotes an accommodation type matching the source's level of generality; all ot."
+}

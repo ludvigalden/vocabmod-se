@@ -1,0 +1,22 @@
+// KSI retrieval adjudication mappings to LOINC, codes VEB.AM.ZZ-YAB.45.25
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+context {
+    collection "ksi-loinc-retrieval" version="2026.1"
+    source system="KSI" release="2026"
+    target system="LOINC"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "VEB.AM.ZZ.retr.1" source="VEB.AM.ZZ" target="77242-6" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text."
+}
+mapping "YAB.45.25.retr.1" source="YAB.45.25" target="80392-4" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text. Omissions recorded: specially-adapted-for-adults (LSS) specificity."
+}

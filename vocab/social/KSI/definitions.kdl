@@ -57,6 +57,15 @@ collection "ksi-snomed-ct-via-icf" version="2026.1" kind=mapping publisher="ludv
         project "defaults"
     }
 }
+collection "ksi-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "KSI to LOINC (retrieval)"
+    authors "ludvig-alden"
+    source system="KSI" release="2026"
+    target system="LOINC"
+    import "LOINC/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 collection "ksi-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
     title "en" "KSI to SNOMED CT (retrieval)"
     authors "ludvig-alden"
