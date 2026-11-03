@@ -1,0 +1,22 @@
+// Socialstyrelsen specialty code retrieval adjudication mappings to SNOMED CT, codes 25-2599
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+context {
+    collection "spkod-snomed-ct-retrieval" version="2026.1"
+    source system="SPKOD" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "25.retr.1" source="25" target="394611003" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Specialty designation (Socialstyrelsen specialty codes 25) matches candidate 4190433 (SNOMED CT, FSN) in entity type and meaning."
+}
+mapping "2599.retr.1" source="2599" target="394611003" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+     rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Specialty designation (Socialstyrelsen specialty codes 2599) matches candidate 4190433 (SNOMED CT, FSN) in entity type and meaning."
+}
