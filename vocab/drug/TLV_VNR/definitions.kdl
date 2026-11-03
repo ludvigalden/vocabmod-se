@@ -56,4 +56,13 @@ collection "tlv-vnr-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alde
         project "defaults"
     }
 }
+collection "tlv-vnr-rxnorm-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV product numbers to RxNorm (retrieval)"
+    authors "ludvig-alden"
+    source system="TLV_VNR" release="2026"
+    target system="RXNORM"
+    import "RXNORM/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
