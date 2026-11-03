@@ -1,0 +1,18 @@
+// RETTS triage level retrieval adjudication mappings to SNOMED CT, codes YELLOW_ICU_24H-YELLOW_ICU_24H
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+context {
+    collection "triage-se-snomed-ct-retrieval" version="2026.1"
+    source system="TRIAGE_SE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "YELLOW_ICU_24H.retr.1" source="YELLOW_ICU_24H" target="310032008" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: RETTS triage levels YELLOW_ICU_24H designation text. Omissions recorded: the within-24-hours triage timeframe/urgency restriction."
+}

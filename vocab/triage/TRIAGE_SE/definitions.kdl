@@ -37,4 +37,13 @@ collection "triage-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
+collection "triage-se-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "RETTS triage levels to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="TRIAGE_SE" release="2024"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts.kdl" kind=fragment
