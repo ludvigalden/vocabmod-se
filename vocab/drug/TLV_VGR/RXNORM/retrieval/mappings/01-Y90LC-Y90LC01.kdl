@@ -1,0 +1,22 @@
+// TLV product group retrieval adjudication mappings to RxNorm, codes Y90LC-Y90LC01
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+context {
+    collection "tlv-vgr-rxnorm-retrieval" version="2026.1"
+    source system="TLV_VGR" release="2026"
+    target system="RXNORM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Y90LC.retr.1" source="Y90LC" target="90737" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text. Omissions recorded: specific bensin (gasoline) fraction and medical-grade qualification lost."
+}
+mapping "Y90LC01.retr.1" source="Y90LC01" target="90737" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text. Omissions recorded: specific bensin (gasoline) fraction and medical-grade qualification lost."
+}

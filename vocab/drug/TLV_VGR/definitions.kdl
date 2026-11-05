@@ -22,4 +22,13 @@ collection "tlv-vgr-snomed-ct-retrieval" version="2026.1" kind=mapping publisher
         project "defaults"
     }
 }
+collection "tlv-vgr-rxnorm-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "TLV product groups to RxNorm (retrieval)"
+    authors "ludvig-alden"
+    source system="TLV_VGR" release="2025-10-02"
+    target system="RXNORM"
+    import "RXNORM/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment
