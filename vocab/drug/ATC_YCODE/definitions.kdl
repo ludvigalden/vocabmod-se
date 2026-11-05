@@ -10,4 +10,13 @@ context {
 category "y-code" {
     name "en" "ATC Y-code"
 }
+collection "atc-ycode-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ATC Y-codes to SNOMED CT (retrieval)"
+    authors "ludvig-alden"
+    source system="ATC_YCODE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+    import "SNOMED_CT/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment

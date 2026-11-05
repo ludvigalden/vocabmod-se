@@ -1,0 +1,75 @@
+// ATC Y-code retrieval adjudication mappings to SNOMED CT, codes Y85CA00-Y93JA01
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+// Individual Swedish product-group names quoted in the rationales below are quotations
+// from TLV, ATC Y-koder (produktgrupper för förbrukningsartiklar), release 2026 — data
+// that TLV offers for reuse in its price-and-decision database. They serve as
+// adjudication evidence for the individual mappings; the classification itself is not
+// redistributed.
+context {
+    collection "atc-ycode-snomed-ct-retrieval" version="2026.1"
+    source system="ATC_YCODE" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Y85CA00.retr.1" source="Y85CA00" target="32711007" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text (English designation 'Ostomy - drainable bag'). Omissions recorded: drainable (emptyable) bag property; candidate covers both drainable and closed ostomy collection bags."
+}
+mapping "Y90KC02.retr.1" source="Y90KC02" target="705679009" relationship=source_is_broader_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Absorberande förband'). Omissions recorded: general absorbent-dressing scope of the source; candidate is restricted to exudate (wound exudate) absorption, which the source designation does not state."
+}
+mapping "Y90KC05.retr.1" source="Y90KC05" target="705679009" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Absorberande förband med superabsorbent'). Omissions recorded: superabsorbent material restriction explicitly stated in the source."
+}
+mapping "Y90MB02.retr.1" source="Y90MB02" target="421720008" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Spray')."
+}
+mapping "Y90ME02.retr.1" source="Y90ME02" target="702027002" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Stomikragar')."
+}
+mapping "Y90NB02.retr.1" source="Y90NB02" target="1141997006" relationship=equivalent preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass recorded both as equally defensible alternatives. Evidence: designation text ('Stöd-/bråckgördel'). Omissions recorded: covers only the bråckgördel branch; the stödgördel (non-hernia support girdle) branch is outside scope."
+}
+mapping "Y90NB02.retr.2" source="Y90NB02" target="68597009" relationship=source_is_narrower_than_target preference=alternative {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass recorded both as equally defensible alternatives. Evidence: designation text ('Stöd-/bråckgördel'). Omissions recorded: hernia-specific truss function of the bråckgördel branch and the girdle (gördel) garment form are omitted in the generic support belt."
+}
+mapping "Y92AB01.retr.1" source="Y92AB01" target="336953004" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Förfyllbar injektionsspruta med fast kanyl, 0,1 ml'). Omissions recorded: prefilled-with-medication status, fixed (integrated) needle, and the 0,1 ml fill volume."
+}
+mapping "Y92AB02.retr.1" source="Y92AB02" target="336953004" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Förfyllbar injektionsspruta med fast kanyl, 0,3 ml'). Omissions recorded: prefilled-with-medication status, fixed (integrated) needle, and the 0,3 ml fill volume."
+}
+mapping "Y92AE01.retr.1" source="Y92AE01" target="12150006" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Kvarliggande kanyl'). Omissions recorded: kvarliggande (indwelling/retained-in-place) placement restriction."
+}
+mapping "Y93BF06.retr.1" source="Y93BF06" target="706836001" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Fjärrkontroll')."
+}
+mapping "Y93DC01.retr.1" source="Y93DC01" target="26397000" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Andningsbehållare')."
+}
+mapping "Y93GA01.retr.1" source="Y93GA01" target="1285730007" relationship=equivalent preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Urinkateter för införande av läkemedel i urinblåsan')."
+}
+mapping "Y93JA01.retr.1" source="Y93JA01" target="705383004" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Sväljhjälpmedel'). Omissions recorded: restriction to the swallowing (sväljning) function; candidate spans eating/drinking assistive devices generally."
+}
