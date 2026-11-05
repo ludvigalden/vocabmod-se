@@ -19,4 +19,13 @@ collection "atc-ycode-snomed-ct-retrieval" version="2026.1" kind=mapping publish
         project "defaults"
     }
 }
+collection "atc-ycode-rxnorm-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+    title "en" "ATC Y-codes to RxNorm (retrieval)"
+    authors "ludvig-alden"
+    source system="ATC_YCODE" release="2026"
+    target system="RXNORM"
+    import "RXNORM/retrieval/mappings/**/*.kdl" kind=fragment {
+        project "defaults"
+    }
+}
 import "concepts/**/*.kdl" kind=fragment

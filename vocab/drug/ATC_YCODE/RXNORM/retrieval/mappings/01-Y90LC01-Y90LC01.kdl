@@ -1,0 +1,23 @@
+// ATC Y-code retrieval adjudication mappings to RxNorm, codes Y90LC01-Y90LC01
+// Each mapping records a third blinded tie-break pass;
+// targets referenced by code only.
+// Individual Swedish product-group names quoted in the rationales below are quotations
+// from TLV, ATC Y-koder (produktgrupper för förbrukningsartiklar), release 2026 — data
+// that TLV offers for reuse in its price-and-decision database. They serve as
+// adjudication evidence for the individual mappings; the classification itself is not
+// redistributed.
+context {
+    collection "atc-ycode-rxnorm-retrieval" version="2026.1"
+    source system="ATC_YCODE" release="2026"
+    target system="RXNORM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "Y90LC01.retr.1" source="Y90LC01" target="324028" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Blinded rubric adjudication, third tie-break pass: the two prior blinded passes each chose a different defensible target; this pass resolved the tie-break. Evidence: designation text ('Medicinsk bensin'). Omissions recorded: medical-grade light petroleum fraction specification (purity/boiling-range refinement distinguishing medicinsk bensin from fuel-grade product)."
+}
