@@ -1,0 +1,50 @@
+// TLV product number retrieval adjudication mappings to SNOMED CT, codes 160730-5494
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+// Individual product names quoted in the rationales below are quotations from TLV,
+// varunummer for reimbursed medicinal products (TLV läkemedel, release 2026), data that
+// TLV offers for reuse in its price-and-decision database. They serve as adjudication
+// evidence for the individual mappings; the full dataset is not redistributed.
+context {
+    collection "tlv-vnr-snomed-ct-retrieval" version="2026.1"
+    source system="TLV_VNR" release="2026"
+    target system="SNOMED_CT" release="20251130"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "160730.retr.1" source="160730" target="346535003" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product: TLV product numbers 160730 = Nutriflex Lipid 38/120/40, lipid-containing intravenous nutrition (extract designation ). Omissions recorded: specific lipid composition, amino-acid/glucose components, strengths, brand Nutriflex."
+}
+mapping "22845.retr.1" source="22845" target="470091001" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product: TLV product numbers 22845 = Oftagel, carbomer eye gel, tear substitute (extract designation ). Omissions recorded: active substance carbomer 2.5 mg/g, gel formulation, brand Oftagel."
+}
+mapping "23635.retr.1" source="23635" target="470091001" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product: TLV product numbers 23635 = Oftagel, carbomer eye gel, tear substitute (extract designation ). Omissions recorded: active substance carbomer 2.5 mg/g, gel formulation, brand Oftagel."
+}
+mapping "366415.retr.1" source="366415" target="438431000124107" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product, designation 'Multivitamindroppar Unimedic': multivitamin oral drops; SNOMED CT 763310 is the product class Omissions recorded: vitamin composition, dose form, brand."
+}
+mapping "376097.retr.1" source="376097" target="346535003" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product, designation 'Nutriflex Lipid 38/120/40': triple-chamber parenteral nutrition (amino acids/glucose/lipid); SNOMED CT 4224381 is the parent substance class. Omissions recorded: amino acid component, glucose component, lipid proportions, brand."
+}
+mapping "404426.retr.1" source="404426" target="470091001" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Branded drug product, designation 'Oftagel': carbomer eye gel (lubricant ophthalmic gel); SNOMED CT 45763103 is the product class. Omissions recorded: active substance (carbomer), dose form (gel), brand."
+}
+mapping "454477.retr.1" source="454477" target="346535003" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Drug product, designation 'Nutriflex Lipid 38/120/40': triple-chamber parenteral nutrition (amino acids/glucose/lipid); SNOMED CT 4224381 is the parent substance class. Omissions recorded: amino acid component, glucose component, lipid proportions, brand."
+}
+mapping "5494.retr.1" source="5494" target="470091001" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this SNOMED CT concept. Evidence: Medicinal product; TLV product numbers 5494 resolves (repo KDL tlv-vnr concept -> NPL 19991007000019) to NPL registry designation 'Oftagel' (ATC S01XA20, form EYEGEL); NPL 4.5 registry export npl.mpa.se 2026-11-0. Omissions recorded: active substance carbomer 2,5 mg/g, eye-gel dose form, brand Oftagel."
+}
