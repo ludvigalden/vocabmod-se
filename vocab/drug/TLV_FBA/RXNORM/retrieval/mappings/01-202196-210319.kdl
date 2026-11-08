@@ -1,0 +1,30 @@
+// TLV consumables retrieval adjudication mappings to RxNorm, codes 202196-210319
+// Each mapping records a two-pass blinded rubric adjudication;
+// targets referenced by code only.
+// Individual article and product names quoted in the rationales below are quotations from
+// TLV, TLV förbrukningsartiklar (release 2026), data that TLV offers for reuse in its
+// price-and-decision database. They serve as adjudication evidence for the individual
+// mappings; the full dataset is not redistributed.
+context {
+    collection "tlv-fba-rxnorm-retrieval" version="2026.1"
+    source system="TLV_FBA" release="2026"
+    target system="RXNORM"
+}
+defaults {
+    mappings {
+        preference "primary"
+        assessment-method "source-default-granularity"
+    }
+}
+mapping "202196.retr.1" source="202196" target="1735493" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this RxNorm concept. Evidence: Device/drug product: 'Genotropin Pen' = somatropin pen injector; target 35603483 Omissions recorded: brand (Genotropin)."
+}
+mapping "202197.retr.1" source="202197" target="1735493" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this RxNorm concept. Evidence: Device/drug product: 'Genotropin Pen' = somatropin pen injector; target 35603483 Omissions recorded: brand (Genotropin)."
+}
+mapping "210319.retr.1" source="210319" target="1735495" relationship=source_is_narrower_than_target preference=primary {
+    confidence 0.87 scheme="vocabmod-se-confidence@1"
+    rationale "en" "Two-pass blinded rubric adjudication: both passes accepted this RxNorm concept. Evidence: Drug-device product (somatropin pen): Nutropin Aq Pen is the Nutropin somatropin pen injector; B 35603485 RxNorm, matches ingredient, brand and pen-injector form. Omissions recorded: aqueous (Aq) formulation specifier (candidate brand Nutropin does not state Aq)."
+}
