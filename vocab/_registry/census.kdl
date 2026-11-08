@@ -1,0 +1,389 @@
+// Census of the vocab tree under scheme census@1 (declared in
+// _registry/conventions.kdl): emitted by the importer on every
+// run, never hand-edited. concepts counts `concept` declarations;
+// inactive/retired count concepts whose own status spells it (all
+// others are active by the file default); named/sv/en count
+// concepts carrying a name designation (sv/en: with that
+// locale). mappings counts `mapping` declarations per collection
+// with their effective relationship kind (own relationship, else
+// bindings counts omop-binding nodes apart; assessed = carries a
+// the collection's projected default). census-tier rows count the
+// mappings' confidence tiers: scheme vocabmod-se-confidence@1
+// scores 0.87/0.71/else -> H/M/L, scheme
+// vocabmod-se-confidence-unassessable@1 -> U; a mapping carrying
+// no confidence enters no tier.
+census "vocab-tree" version="1" scheme="census@1" {
+    name "en" "vocabmod-se tree census (importer-emitted)"
+    census-system "ATC_YCODE" release="2026" concepts=298 inactive=38 retired=0 named=0 sv=0 en=0
+    census-system "CIVIL_STATUS_SE" release="2024" concepts=7 inactive=0 retired=0 named=7 sv=7 en=7
+    census-system "GEO_SE" release="2024" concepts=311 inactive=0 retired=0 named=308 sv=308 en=0
+    census-system "ICD_10" release="2016" concepts=12591 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "ICD_10_SE" release="2026" concepts=26446 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "ICD_O_3" release="2026" concepts=266 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "ICF" release="2026" concepts=1632 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "KKA" release="2026" concepts=6899 inactive=149 retired=0 named=6075 sv=0 en=6075
+    census-system "KMA" release="2026" concepts=3497 inactive=0 retired=0 named=3428 sv=0 en=3428
+    census-system "KSI" release="2026" concepts=2074 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "LAB_SE" release="2026" concepts=1320 inactive=0 retired=0 named=208 sv=208 en=0
+    census-system "LISA_EDUCATION" release="2024" concepts=9 inactive=0 retired=0 named=9 sv=9 en=9
+    census-system "NCSP" release="1.16" concepts=5254 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "NPU" release="2025" concepts=9878 inactive=542 retired=0 named=9878 sv=9878 en=0
+    census-system "SPKOD" release="2017" concepts=152 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "TLV_FBA" release="2026" concepts=4339 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "TLV_VGR" release="2025-10-02" concepts=388 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "TLV_VNR" release="2026" concepts=13852 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "TLV_VNR_DOSE_FORM" release="2026" concepts=240 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "TRIAGE_SE" release="2024" concepts=29 inactive=0 retired=0 named=0 sv=0 en=0
+    census-system "UNIT_SE" release="2017" concepts=15 inactive=0 retired=0 named=15 sv=0 en=15
+    census-collection "atc-ycode-rxnorm-retrieval@2026.1" source="ATC_YCODE" target="RXNORM" mappings=1 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=1
+        census-tier "H" count=1
+    }
+    census-collection "atc-ycode-snomed-ct-retrieval@2026.1" source="ATC_YCODE" target="SNOMED_CT" mappings=164 bindings=0 assessed=0 {
+        census-kind "equivalent" count=51
+        census-kind "source_is_broader_than_target" count=1
+        census-kind "source_is_narrower_than_target" count=112
+        census-tier "H" count=164
+    }
+    census-collection "civil-status-se-loinc@2026.1" source="CIVIL_STATUS_SE" target="LOINC" mappings=4 bindings=0 assessed=1 {
+        census-kind "equivalent" count=3
+        census-kind "partial_overlap" count=1
+        census-tier "L" count=4
+    }
+    census-collection "civil-status-se-snomed-ct@2026.1" source="CIVIL_STATUS_SE" target="SNOMED_CT" mappings=6 bindings=0 assessed=2 {
+        census-kind "equivalent" count=5
+        census-kind "partial_overlap" count=1
+        census-tier "H" count=3
+        census-tier "L" count=3
+    }
+    census-collection "geo-se-omop-ext@2026.1" source="GEO_SE" target="OMOP_EXT" mappings=0 bindings=311 assessed=0 {
+    }
+    census-collection "icd-10-meddra@2026.1" source="ICD_10" target="MEDDRA" mappings=0 bindings=0 assessed=0 {
+    }
+    census-collection "icd-10-omop-ext@2026.1" source="ICD_10" target="OMOP_EXT" mappings=0 bindings=0 assessed=0 {
+    }
+    census-collection "icd-10-omop-snomed-ct@2026.1" source="ICD_10" target="OMOP_SNOMED_CT" mappings=0 bindings=0 assessed=0 {
+    }
+    census-collection "icd-10-orphanet@2026.1" source="ICD_10" target="ORPHANET" mappings=0 bindings=0 assessed=0 {
+    }
+    census-collection "icd-10-se-snomed-ct-retrieval@2026.1" source="ICD_10_SE" target="SNOMED_CT" mappings=55 bindings=0 assessed=0 {
+        census-kind "equivalent" count=3
+        census-kind "source_is_narrower_than_target" count=52
+        census-tier "H" count=55
+    }
+    census-collection "icd-10-snomed-ct@2026.1" source="ICD_10" target="SNOMED_CT" mappings=0 bindings=0 assessed=0 {
+    }
+    census-collection "icd-10-se-omop-icd-10-cm-truncation@2026.1" source="ICD_10_SE" target="OMOP_ICD_10_CM" mappings=451 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=451
+        census-tier "L" count=315
+        census-tier "M" count=136
+    }
+    census-collection "icd-10-se-meddra@2026.1" source="ICD_10_SE" target="MEDDRA" mappings=177 bindings=0 assessed=0 {
+        census-kind "equivalent" count=177
+        census-tier "U" count=177
+    }
+    census-collection "icd-10-se-omop-ext@2026.1" source="ICD_10_SE" target="OMOP_EXT" mappings=0 bindings=1 assessed=0 {
+    }
+    census-collection "icd-10-se-omop-icd-10-cm@2026.1" source="ICD_10_SE" target="OMOP_ICD_10_CM" mappings=320 bindings=0 assessed=0 {
+        census-kind "equivalent" count=319
+        census-kind "partial_overlap" count=1
+        census-tier "H" count=1
+        census-tier "L" count=303
+        census-tier "U" count=16
+    }
+    census-collection "icd-10-se-omop-snomed-ct@2026.1" source="ICD_10_SE" target="OMOP_SNOMED_CT" mappings=1022 bindings=0 assessed=41 {
+        census-kind "equivalent" count=1011
+        census-kind "source_is_narrower_than_target" count=11
+        census-tier "H" count=59
+        census-tier "L" count=685
+        census-tier "M" count=41
+        census-tier "U" count=237
+    }
+    census-collection "icd-10-se-orphanet@2026.1" source="ICD_10_SE" target="ORPHANET" mappings=230 bindings=0 assessed=0 {
+        census-kind "equivalent" count=4
+        census-kind "source_is_narrower_than_target" count=226
+        census-tier "U" count=230
+    }
+    census-collection "icd-10-se-snomed-ct@2026.1" source="ICD_10_SE" target="SNOMED_CT" mappings=29272 bindings=0 assessed=1763 {
+        census-kind "equivalent" count=4313
+        census-kind "partial_overlap" count=618
+        census-kind "related_to" count=26
+        census-kind "source_is_broader_than_target" count=38
+        census-kind "source_is_narrower_than_target" count=24277
+        census-tier "H" count=3440
+        census-tier "L" count=18424
+        census-tier "M" count=6523
+        census-tier "U" count=885
+    }
+    census-collection "icd-o-3-snomed-ct@2026.1" source="ICD_O_3" target="SNOMED_CT" mappings=300 bindings=0 assessed=7 {
+        census-kind "equivalent" count=2
+        census-kind "partial_overlap" count=296
+        census-kind "source_is_narrower_than_target" count=2
+        census-tier "U" count=300
+    }
+    census-collection "icf-loinc-retrieval@2026.1" source="ICF" target="LOINC" mappings=6 bindings=0 assessed=0 {
+        census-kind "equivalent" count=1
+        census-kind "source_is_broader_than_target" count=1
+        census-kind "source_is_narrower_than_target" count=4
+        census-tier "H" count=6
+    }
+    census-collection "icf-snomed-ct-retrieval@2026.1" source="ICF" target="SNOMED_CT" mappings=280 bindings=0 assessed=0 {
+        census-kind "equivalent" count=34
+        census-kind "related_to" count=8
+        census-kind "source_is_broader_than_target" count=20
+        census-kind "source_is_narrower_than_target" count=218
+        census-tier "H" count=280
+    }
+    census-collection "icf-snomed-ct@2026.1" source="ICF" target="SNOMED_CT" mappings=1119 bindings=0 assessed=108 {
+        census-kind "equivalent" count=340
+        census-kind "partial_overlap" count=67
+        census-kind "related_to" count=66
+        census-kind "source_is_broader_than_target" count=13
+        census-kind "source_is_narrower_than_target" count=633
+        census-tier "H" count=347
+        census-tier "L" count=567
+        census-tier "M" count=186
+        census-tier "U" count=19
+    }
+    census-collection "kka-omop-custom@2026.1" source="KKA" target="OMOP_CUSTOM" mappings=0 bindings=4915 assessed=0 {
+    }
+    census-collection "kka-snomed-ct-retrieval@2026.1" source="KKA" target="SNOMED_CT" mappings=2313 bindings=0 assessed=0 {
+        census-kind "equivalent" count=750
+        census-kind "related_to" count=3
+        census-kind "source_is_broader_than_target" count=10
+        census-kind "source_is_narrower_than_target" count=1550
+        census-tier "H" count=2313
+    }
+    census-collection "kka-snomed-ct@2026.1" source="KKA" target="SNOMED_CT" mappings=2933 bindings=0 assessed=472 {
+        census-kind "equivalent" count=2417
+        census-kind "partial_overlap" count=83
+        census-kind "related_to" count=4
+        census-kind "source_is_broader_than_target" count=12
+        census-kind "source_is_narrower_than_target" count=417
+        census-tier "H" count=810
+        census-tier "L" count=1664
+        census-tier "M" count=403
+        census-tier "U" count=56
+    }
+    census-collection "kma-loinc-retrieval@2026.1" source="KMA" target="LOINC" mappings=5 bindings=0 assessed=0 {
+        census-kind "equivalent" count=3
+        census-kind "source_is_narrower_than_target" count=2
+        census-tier "H" count=5
+    }
+    census-collection "kma-omop-custom@2026.1" source="KMA" target="OMOP_CUSTOM" mappings=0 bindings=3089 assessed=0 {
+    }
+    census-collection "kma-rxnorm-retrieval@2026.1" source="KMA" target="RXNORM" mappings=2 bindings=0 assessed=0 {
+        census-kind "equivalent" count=1
+        census-kind "source_is_narrower_than_target" count=1
+        census-tier "H" count=2
+    }
+    census-collection "kma-snomed-ct-retrieval@2026.1" source="KMA" target="SNOMED_CT" mappings=1205 bindings=0 assessed=0 {
+        census-kind "equivalent" count=375
+        census-kind "related_to" count=36
+        census-kind "source_is_broader_than_target" count=92
+        census-kind "source_is_narrower_than_target" count=702
+        census-tier "H" count=1205
+    }
+    census-collection "kma-snomed-ct@2026.1" source="KMA" target="SNOMED_CT" mappings=1593 bindings=0 assessed=333 {
+        census-kind "equivalent" count=1204
+        census-kind "partial_overlap" count=98
+        census-kind "related_to" count=2
+        census-kind "source_is_broader_than_target" count=2
+        census-kind "source_is_narrower_than_target" count=287
+        census-tier "H" count=187
+        census-tier "L" count=1144
+        census-tier "M" count=257
+        census-tier "U" count=5
+    }
+    census-collection "ksi-icf@2026.1" source="KSI" target="ICF" mappings=1681 bindings=0 assessed=4 {
+        census-kind "equivalent" count=1512
+        census-kind "related_to" count=138
+        census-kind "source_is_narrower_than_target" count=31
+        census-tier "U" count=1681
+    }
+    census-collection "ksi-loinc-retrieval@2026.1" source="KSI" target="LOINC" mappings=6 bindings=0 assessed=0 {
+        census-kind "equivalent" count=3
+        census-kind "source_is_narrower_than_target" count=3
+        census-tier "H" count=6
+    }
+    census-collection "ksi-snomed-ct-retrieval@2026.1" source="KSI" target="SNOMED_CT" mappings=323 bindings=0 assessed=0 {
+        census-kind "equivalent" count=27
+        census-kind "related_to" count=7
+        census-kind "source_is_broader_than_target" count=23
+        census-kind "source_is_narrower_than_target" count=266
+        census-tier "H" count=323
+    }
+    census-collection "ksi-snomed-ct-via-icf@2026.1" source="KSI" target="SNOMED_CT" mappings=1170 bindings=0 assessed=0 {
+        census-kind "equivalent" count=276
+        census-kind "partial_overlap" count=19
+        census-kind "related_to" count=212
+        census-kind "source_is_broader_than_target" count=14
+        census-kind "source_is_narrower_than_target" count=649
+        census-tier "H" count=17
+        census-tier "L" count=1086
+        census-tier "M" count=67
+    }
+    census-collection "ksi-snomed-ct@2026.1" source="KSI" target="SNOMED_CT" mappings=153 bindings=0 assessed=26 {
+        census-kind "equivalent" count=14
+        census-kind "related_to" count=70
+        census-kind "source_is_broader_than_target" count=4
+        census-kind "source_is_narrower_than_target" count=65
+        census-tier "H" count=10
+        census-tier "L" count=112
+        census-tier "M" count=7
+        census-tier "U" count=24
+    }
+    census-collection "lab-se-loinc@2026.1" source="LAB_SE" target="LOINC" mappings=1996 bindings=0 assessed=520 {
+        census-kind "equivalent" count=1844
+        census-kind "partial_overlap" count=142
+        census-kind "source_is_narrower_than_target" count=10
+        census-tier "H" count=7
+        census-tier "L" count=543
+        census-tier "M" count=17
+        census-tier "U" count=1429
+    }
+    census-collection "lab-se-npu@2026.1" source="LAB_SE" target="NPU" mappings=103 bindings=0 assessed=32 {
+        census-kind "equivalent" count=101
+        census-kind "partial_overlap" count=1
+        census-kind "source_is_narrower_than_target" count=1
+        census-tier "U" count=103
+    }
+    census-collection "lisa-education-snomed-ct@2026.1" source="LISA_EDUCATION" target="SNOMED_CT" mappings=6 bindings=0 assessed=1 {
+        census-kind "partial_overlap" count=6
+        census-tier "L" count=5
+        census-tier "M" count=1
+    }
+    census-collection "lisa-geo-se@2026.1" source="LISA" target="GEO_SE" mappings=311 bindings=0 assessed=0 {
+        census-kind "equivalent" count=311
+        census-tier "U" count=311
+    }
+    census-collection "npu-loinc-retrieval@2026.1" source="NPU" target="LOINC" mappings=2042 bindings=0 assessed=0 {
+        census-kind "equivalent" count=994
+        census-kind "related_to" count=13
+        census-kind "source_is_broader_than_target" count=96
+        census-kind "source_is_narrower_than_target" count=939
+        census-tier "H" count=2042
+    }
+    census-collection "npu-loinc@2026.1" source="NPU" target="LOINC" mappings=78 bindings=0 assessed=0 {
+        census-kind "equivalent" count=78
+        census-tier "H" count=5
+        census-tier "L" count=54
+        census-tier "M" count=19
+    }
+    census-collection "npu-snomed-ct-retrieval@2026.1" source="NPU" target="SNOMED_CT" mappings=2152 bindings=0 assessed=0 {
+        census-kind "equivalent" count=302
+        census-kind "source_is_broader_than_target" count=13
+        census-kind "source_is_narrower_than_target" count=1837
+        census-tier "H" count=2152
+    }
+    census-collection "rxnorm-atc@2026.1" source="RXNORM" target="ATC" mappings=24154 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=24154
+        census-tier "U" count=24154
+    }
+    census-collection "snomed-ct-edqm@2026.1" source="SNOMED_CT" target="EDQM" mappings=314 bindings=0 assessed=0 {
+        census-kind "equivalent" count=314
+        census-tier "U" count=314
+    }
+    census-collection "spkod-snomed-ct-retrieval@2026.1" source="SPKOD" target="SNOMED_CT" mappings=2 bindings=0 assessed=0 {
+        census-kind "equivalent" count=2
+        census-tier "H" count=2
+    }
+    census-collection "spkod-snomed-ct@2026.1" source="SPKOD" target="SNOMED_CT" mappings=152 bindings=0 assessed=1 {
+        census-kind "equivalent" count=152
+        census-tier "H" count=101
+        census-tier "L" count=40
+        census-tier "M" count=7
+        census-tier "U" count=4
+    }
+    census-collection "tlv-fba-atc-ycode@2026.1" source="TLV_FBA" target="ATC_YCODE" mappings=4339 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=4339
+        census-tier "U" count=4339
+    }
+    census-collection "tlv-fba-rxnorm-retrieval@2026.1" source="TLV_FBA" target="RXNORM" mappings=3 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=3
+        census-tier "H" count=3
+    }
+    census-collection "tlv-fba-snomed-ct-retrieval@2026.1" source="TLV_FBA" target="SNOMED_CT" mappings=1027 bindings=0 assessed=0 {
+        census-kind "equivalent" count=17
+        census-kind "source_is_narrower_than_target" count=1010
+        census-tier "H" count=1027
+    }
+    census-collection "tlv-fba-tlv-vgr@2026.1" source="TLV_FBA" target="TLV_VGR" mappings=216 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=216
+        census-tier "U" count=216
+    }
+    census-collection "tlv-vgr-rxnorm-retrieval@2026.1" source="TLV_VGR" target="RXNORM" mappings=2 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=2
+        census-tier "H" count=2
+    }
+    census-collection "tlv-vgr-snomed-ct-retrieval@2026.1" source="TLV_VGR" target="SNOMED_CT" mappings=198 bindings=0 assessed=0 {
+        census-kind "equivalent" count=64
+        census-kind "source_is_broader_than_target" count=3
+        census-kind "source_is_narrower_than_target" count=131
+        census-tier "H" count=198
+    }
+    census-collection "tlv-vnr-atc@2026.1" source="TLV_VNR" target="ATC" mappings=13791 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=13791
+        census-tier "H" count=4197
+        census-tier "L" count=7979
+        census-tier "M" count=1171
+        census-tier "U" count=444
+    }
+    census-collection "tlv-vnr-dose-form-edqm@2026.1" source="TLV_VNR_DOSE_FORM" target="EDQM" mappings=200 bindings=0 assessed=0 {
+        census-kind "equivalent" count=147
+        census-kind "related_to" count=17
+        census-kind "source_is_broader_than_target" count=8
+        census-kind "source_is_narrower_than_target" count=28
+        census-tier "U" count=200
+    }
+    census-collection "tlv-vnr-dose-form-rxnorm@2026.1" source="TLV_VNR_DOSE_FORM" target="RXNORM" mappings=236 bindings=0 assessed=0 {
+        census-kind "equivalent" count=236
+        census-tier "U" count=236
+    }
+    census-collection "tlv-vnr-dose-form-snomed-ct@2026.1" source="TLV_VNR_DOSE_FORM" target="SNOMED_CT" mappings=4 bindings=0 assessed=0 {
+        census-kind "equivalent" count=4
+        census-tier "U" count=4
+    }
+    census-collection "tlv-vnr-npl@2026.1" source="TLV_VNR" target="NPL" mappings=13795 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=13795
+        census-tier "U" count=13795
+    }
+    census-collection "tlv-vnr-rxnorm-retrieval@2026.1" source="TLV_VNR" target="RXNORM" mappings=92 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=92
+        census-tier "H" count=92
+    }
+    census-collection "tlv-vnr-rxnorm@2026.1" source="TLV_VNR" target="RXNORM" mappings=57 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=57
+        census-tier "L" count=57
+    }
+    census-collection "tlv-vnr-snomed-ct-retrieval@2026.1" source="TLV_VNR" target="SNOMED_CT" mappings=8 bindings=0 assessed=0 {
+        census-kind "source_is_narrower_than_target" count=8
+        census-tier "H" count=8
+    }
+    census-collection "triage-se-loinc@2026.1" source="TRIAGE_SE" target="LOINC" mappings=3 bindings=0 assessed=0 {
+        census-kind "equivalent" count=2
+        census-kind "partial_overlap" count=1
+        census-tier "L" count=1
+        census-tier "U" count=2
+    }
+    census-collection "triage-se-omop-custom@2026.1" source="TRIAGE_SE" target="OMOP_CUSTOM" mappings=0 bindings=7 assessed=0 {
+    }
+    census-collection "triage-se-snomed-ct-retrieval@2026.1" source="TRIAGE_SE" target="SNOMED_CT" mappings=3 bindings=0 assessed=0 {
+        census-kind "equivalent" count=1
+        census-kind "source_is_narrower_than_target" count=2
+        census-tier "H" count=3
+    }
+    census-collection "triage-se-snomed-ct@2026.1" source="TRIAGE_SE" target="SNOMED_CT" mappings=12 bindings=0 assessed=0 {
+        census-kind "equivalent" count=10
+        census-kind "source_is_narrower_than_target" count=2
+        census-tier "L" count=10
+        census-tier "M" count=2
+    }
+    census-collection "unit-se-omop-ext@2026.1" source="UNIT_SE" target="OMOP_EXT" mappings=0 bindings=14 assessed=0 {
+    }
+    census-collection "unit-se-ucum@2026.1" source="UNIT_SE" target="UCUM" mappings=14 bindings=0 assessed=0 {
+        census-kind "equivalent" count=12
+        census-kind "related_to" count=2
+        census-tier "U" count=14
+    }
+}
