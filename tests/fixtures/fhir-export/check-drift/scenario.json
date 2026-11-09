@@ -1,0 +1,40 @@
+{
+  "binary": "vocabmod-se",
+  "description": "--check compares the selected documents against the existing files without writing: an unchanged tree is identical (exit 0), and a document the harness corrupts is detected by name (exit 1); --collection scopes the export to exactly the named collection",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "write",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--collection", "triage-se-snomed-ct", "--include-unassessed", "--out", "out-a", "--manifest"],
+        "stdout-contains": ["1 ConceptMap document(s)", "ConceptMap-triage-se-snomed-ct.json"]
+      }
+    },
+    {
+      "run": {
+        "id": "check-clean",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--collection", "triage-se-snomed-ct", "--include-unassessed", "--out", "out-a", "--check"],
+        "stdout-contains": ["1 document(s) identical"]
+      }
+    },
+    {"corrupt": {"path": "out-a/ConceptMap-triage-se-snomed-ct.json"}},
+    {
+      "run": {
+        "id": "check-drifted",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--collection", "triage-se-snomed-ct", "--include-unassessed", "--out", "out-a", "--check"],
+        "exit": 1,
+        "stderr-contains": ["ConceptMap-triage-se-snomed-ct.json differs"]
+      }
+    }
+  ],
+  "checks": [
+    {"row-count": {"file": "out-a/MANIFEST.csv", "equals": 1}},
+    {
+      "column-uniform": {
+        "file": "out-a/MANIFEST.csv",
+        "column": "collection",
+        "value": "triage-se-snomed-ct"
+      }
+    }
+  ]
+}

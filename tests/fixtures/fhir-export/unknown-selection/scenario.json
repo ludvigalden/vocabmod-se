@@ -1,0 +1,28 @@
+{
+  "binary": "vocabmod-se",
+  "description": "an unknown --collection or --system fails closed (exit 1) after the corpus read, naming the rejected spelling, and writes nothing",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "unknown-collection",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--collection", "nope", "--out", "out-a"],
+        "exit": 1,
+        "stderr-contains": ["--collection \"nope\" names no collection the corpus asserts"],
+        "stdout-not-contains": ["wrote"]
+      }
+    },
+    {
+      "run": {
+        "id": "unknown-system",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--system", "NOPE", "--out", "out-b"],
+        "exit": 1,
+        "stderr-contains": ["--system \"NOPE\" names no system the corpus declares"],
+        "stdout-not-contains": ["wrote"]
+      }
+    }
+  ],
+  "checks": [
+    {"files-absent": {"paths": ["out-a", "out-b"]}}
+  ]
+}

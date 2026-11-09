@@ -1,0 +1,44 @@
+{
+  "binary": "vocabmod-se",
+  "description": "the default fhir-export run (require-assessed) writes one ConceptMap document per collection carrying an assessed mapping and nothing for the rest: the manifest names exactly the fourteen documents (the census pin: collections with assessed > 0 in the committed census), every row carries the default filters, and a collection with no assessed mapping (rxnorm-atc) emits no document",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "default",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--out", "out-a", "--manifest"],
+        "stdout-contains": ["14 ConceptMap document(s)", "mapping quality gate"]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "files-exist": {
+        "paths": [
+          "out-a/MANIFEST.csv",
+          "out-a/ConceptMap-icd-10-se-snomed-ct.json",
+          "out-a/ConceptMap-lab-se-loinc.json",
+          "out-a/ConceptMap-lab-se-npu.json",
+          "out-a/ConceptMap-spkod-snomed-ct.json"
+        ]
+      }
+    },
+    {
+      "files-absent": {
+        "paths": [
+          "out-a/ConceptMap-rxnorm-atc.json",
+          "out-a/ConceptMap-tlv-vnr-npl.json",
+          "out-a/ConceptMap-triage-se-snomed-ct.json"
+        ]
+      }
+    },
+    {"row-count": {"file": "out-a/MANIFEST.csv", "equals": 14}},
+    {
+      "column-uniform": {
+        "file": "out-a/MANIFEST.csv",
+        "column": "filters",
+        "value": "systems=all;collections=all;assessed=required"
+      }
+    }
+  ]
+}

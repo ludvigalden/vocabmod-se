@@ -1,0 +1,27 @@
+{
+  "binary": "vocabmod-se",
+  "description": "usage errors are rejected before the corpus is read (exit 2): fhir-export takes no --tables selection, and the two assessment flags are mutually exclusive",
+  "steps": [
+    {
+      "run": {
+        "id": "no-tables",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--tables", "concept", "--out", "out"],
+        "exit": 2,
+        "stderr-contains": ["unexpected argument '--tables'"],
+        "stdout-not-contains": ["wrote"]
+      }
+    },
+    {
+      "run": {
+        "id": "both-flags",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--require-assessed", "--include-unassessed", "--out", "out"],
+        "exit": 2,
+        "stderr-contains": ["cannot be used with"],
+        "stdout-not-contains": ["wrote"]
+      }
+    }
+  ],
+  "checks": [
+    {"files-absent": {"paths": ["out"]}}
+  ]
+}

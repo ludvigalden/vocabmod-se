@@ -1,0 +1,39 @@
+{
+  "binary": "vocabmod-se",
+  "description": "the full fhir-export with --include-unassessed runs twice into separate scratch directories and every document and the manifest must be byte-identical; the manifest names the fifty-three collections that carry at least one mapping (the census pin: collections with mappings > 0 in the committed census)",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "run-a",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--include-unassessed", "--out", "out-a", "--manifest"],
+        "stdout-contains": ["55 ConceptMap document(s)"],
+        "stdout-not-contains": ["mapping quality gate"]
+      }
+    },
+    {
+      "run": {
+        "id": "run-b",
+        "args": ["--root", "{fx-repo}", "fhir-export", "--include-unassessed", "--out", "out-b", "--manifest"]
+      }
+    }
+  ],
+  "checks": [
+    {"determinism": {"trees": ["out-a", "out-b"]}},
+    {"row-count": {"file": "out-a/MANIFEST.csv", "equals": 55}},
+    {
+      "files-exist": {
+        "paths": [
+          "out-a/ConceptMap-rxnorm-atc.json",
+          "out-a/ConceptMap-snomed-ct-edqm.json",
+          "out-a/ConceptMap-triage-se-snomed-ct.json"
+        ]
+      }
+    },
+    {
+      "files-absent": {
+        "paths": ["out-a/ConceptMap-geo-se-omop-ext.json", "out-a/ConceptMap-kka-omop-custom.json"]
+      }
+    }
+  ]
+}
