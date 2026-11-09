@@ -1,0 +1,40 @@
+{
+  "binary": "vocabmod-se",
+  "description": "the suite's one full-table scenario (two ~50 s runs): the seven-table export with MANIFEST runs twice into separate scratch directories and every file must be byte-identical; the manifest must name exactly the emitted tables with their true row counts; the Athena-complementary invariants hold with the CONCEPT row count reconciled against the harness's own tree census (concept declarations minus `OMOP_EXT` bindings)",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "run-a",
+        "args": ["--root", "{fx-repo}", "omop-export", "--out", "out-a", "--manifest"]
+      }
+    },
+    {
+      "run": {
+        "id": "run-b",
+        "args": ["--root", "{fx-repo}", "omop-export", "--out", "out-b", "--manifest"]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "determinism": {"trees": ["out-a", "out-b"]}
+    },
+    {
+      "files-exist": {
+        "paths": [
+          "out-a/CONCEPT.csv",
+          "out-a/CONCEPT_RELATIONSHIP.csv",
+          "out-a/SOURCE_TO_CONCEPT_MAP.csv",
+          "out-a/CONCEPT_SYNONYM.csv",
+          "out-a/CONCEPT_ANCESTOR.csv",
+          "out-a/CONCEPT_CLASS.csv",
+          "out-a/RELATIONSHIP.csv",
+          "out-a/MANIFEST.csv"
+        ]
+      }
+    },
+    {"manifest-rows": {"dir": "out-a"}},
+    {"omop-invariants": {"dir": "out-a", "reconcile-tree": true}}
+  ]
+}

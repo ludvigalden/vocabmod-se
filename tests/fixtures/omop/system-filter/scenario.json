@@ -1,0 +1,31 @@
+{
+  "binary": "vocabmod-se",
+  "description": "--system scopes the export to one system's concepts and mapping rows: two `TRIAGE_SE` runs are byte-identical, the manifest reconciles, and the concept count is the census pin for `TRIAGE_SE` (29 concepts, none `OMOP_EXT`-bound); `TRIAGE_SE`'s mapping targets are plain external codes, which the contract never uses as ids, so CONCEPT_RELATIONSHIP is empty under this filter — a pin of the external-code skip rule itself; the Athena invariants hold over the scoped population without the whole-tree reconciliation",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "run-a",
+        "args": ["--root", "{fx-repo}", "omop-export", "--system", "TRIAGE_SE", "--tables", "concept,concept-relationship", "--out", "out-a", "--manifest"]
+      }
+    },
+    {
+      "run": {
+        "id": "run-b",
+        "args": ["--root", "{fx-repo}", "omop-export", "--system", "TRIAGE_SE", "--tables", "concept,concept-relationship", "--out", "out-b", "--manifest"]
+      }
+    }
+  ],
+  "checks": [
+    {"determinism": {"trees": ["out-a", "out-b"]}},
+    {
+      "files-exist": {
+        "paths": ["out-a/CONCEPT.csv", "out-a/CONCEPT_RELATIONSHIP.csv", "out-a/MANIFEST.csv"]
+      }
+    },
+    {"manifest-rows": {"dir": "out-a"}},
+    {"omop-invariants": {"dir": "out-a", "reconcile-tree": false}},
+    {"row-count": {"file": "out-a/CONCEPT.csv", "equals": 29}},
+    {"row-count": {"file": "out-a/CONCEPT_RELATIONSHIP.csv", "equals": 0}}
+  ]
+}

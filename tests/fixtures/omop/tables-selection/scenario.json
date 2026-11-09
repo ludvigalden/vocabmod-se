@@ -1,0 +1,39 @@
+{
+  "binary": "vocabmod-se",
+  "description": "--tables selects exactly the named tables: concept and concept-class export twice byte-identically, the two table files and the manifest exist, and no unselected table file is emitted",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "run-a",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "concept,concept-class", "--out", "out-a", "--manifest"]
+      }
+    },
+    {
+      "run": {
+        "id": "run-b",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "concept,concept-class", "--out", "out-b", "--manifest"]
+      }
+    }
+  ],
+  "checks": [
+    {"determinism": {"trees": ["out-a", "out-b"]}},
+    {
+      "files-exist": {
+        "paths": ["out-a/CONCEPT.csv", "out-a/CONCEPT_CLASS.csv", "out-a/MANIFEST.csv"]
+      }
+    },
+    {
+      "files-absent": {
+        "paths": [
+          "out-a/CONCEPT_RELATIONSHIP.csv",
+          "out-a/SOURCE_TO_CONCEPT_MAP.csv",
+          "out-a/CONCEPT_SYNONYM.csv",
+          "out-a/CONCEPT_ANCESTOR.csv",
+          "out-a/RELATIONSHIP.csv"
+        ]
+      }
+    },
+    {"manifest-rows": {"dir": "out-a"}}
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "binary": "vocabmod-se",
+  "description": "--check compares the selected tables against the existing files without writing: an unchanged tree is identical (exit 0), and a file the harness corrupts is detected by name (exit 1); the written RELATIONSHIP table carries the registry's seven definitions",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "write",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "relationship", "--out", "out-a"]
+      }
+    },
+    {
+      "run": {
+        "id": "check-clean",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "relationship", "--out", "out-a", "--check"],
+        "stdout-contains": ["identical"]
+      }
+    },
+    {"corrupt": {"path": "out-a/RELATIONSHIP.csv"}},
+    {
+      "run": {
+        "id": "check-drifted",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "relationship", "--out", "out-a", "--check"],
+        "exit": 1,
+        "stderr-contains": ["RELATIONSHIP.csv"]
+      }
+    }
+  ],
+  "checks": [
+    {"row-count": {"file": "out-a/RELATIONSHIP.csv", "equals": 7}}
+  ]
+}

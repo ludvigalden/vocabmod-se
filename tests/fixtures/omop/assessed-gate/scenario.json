@@ -1,0 +1,90 @@
+{
+ "binary": "vocabmod-se",
+ "description": "the assessment gate changes row counts in the documented direction with exact census pins: --include-unassessed emits strictly more CONCEPT_RELATIONSHIP and SOURCE_TO_CONCEPT_MAP rows than the default require-assessed gate (the pins are the independently verified counts 90 / 15,496 and 41 / 1,792), and both manifests reconcile with their emitted rows",
+ "heavy": true,
+ "steps": [
+  {
+   "run": {
+    "id": "require-assessed",
+    "args": [
+     "--root",
+     "{fx-repo}",
+     "omop-export",
+     "--tables",
+     "concept-relationship,source-to-concept-map",
+     "--out",
+     "out-require",
+     "--manifest"
+    ]
+   }
+  },
+  {
+   "run": {
+    "id": "include-unassessed",
+    "args": [
+     "--root",
+     "{fx-repo}",
+     "omop-export",
+     "--tables",
+     "concept-relationship,source-to-concept-map",
+     "--include-unassessed",
+     "--out",
+     "out-include",
+     "--manifest"
+    ]
+   }
+  }
+ ],
+ "checks": [
+  {
+   "row-count": {
+    "file": "out-require/CONCEPT_RELATIONSHIP.csv",
+    "equals": 90
+   }
+  },
+  {
+   "row-count": {
+    "file": "out-include/CONCEPT_RELATIONSHIP.csv",
+    "equals": 15496
+   }
+  },
+  {
+   "row-count": {
+    "file": "out-require/SOURCE_TO_CONCEPT_MAP.csv",
+    "equals": 41
+   }
+  },
+  {
+   "row-count": {
+    "file": "out-include/SOURCE_TO_CONCEPT_MAP.csv",
+    "equals": 1792
+   }
+  },
+  {
+   "row-counts": {
+    "expect": [
+     {
+      "file": "out-include/CONCEPT_RELATIONSHIP.csv",
+      "op": ">",
+      "than": "out-require/CONCEPT_RELATIONSHIP.csv"
+     },
+     {
+      "file": "out-include/SOURCE_TO_CONCEPT_MAP.csv",
+      "op": ">",
+      "than": "out-require/SOURCE_TO_CONCEPT_MAP.csv"
+     }
+    ]
+   }
+  },
+  {
+   "manifest-rows": {
+    "dir": "out-require"
+   }
+  },
+  {
+   "manifest-rows": {
+    "dir": "out-include"
+   }
+  }
+ ]
+}
