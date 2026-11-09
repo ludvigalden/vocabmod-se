@@ -1,0 +1,15 @@
+{
+  "binary": "vocabmod-se",
+  "description": "an unknown --system filter fails closed (exit 1) against the registry before the corpus is read, naming the rejected spelling",
+  "steps": [
+    {
+      "run": {
+        "id": "unknown-system",
+        "args": ["--root", "{fx-repo}", "omop-export", "--system", "NOPE", "--tables", "concept", "--out", "out"],
+        "exit": 1,
+        "stderr-contains": ["NOPE", "names no system"],
+        "stdout-not-contains": ["wrote"]
+      }
+    }
+  ]
+}

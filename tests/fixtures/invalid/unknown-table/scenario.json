@@ -1,0 +1,15 @@
+{
+  "binary": "vocabmod-se",
+  "description": "an unknown --tables spelling fails closed as a usage error naming the spelling and the accepted list, before any corpus reading",
+  "steps": [
+    {
+      "run": {
+        "id": "unknown-table",
+        "args": ["--root", "{fx-repo}", "omop-export", "--tables", "bogus", "--out", "out"],
+        "exit": 2,
+        "stderr-contains": ["unknown table \"bogus\"", "the spellings are:"],
+        "stdout-not-contains": ["wrote"]
+      }
+    }
+  ]
+}

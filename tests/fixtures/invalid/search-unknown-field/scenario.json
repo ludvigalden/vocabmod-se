@@ -1,0 +1,14 @@
+{
+  "binary": "vocabmod-se",
+  "description": "an unknown --field spelling is a usage error naming the accepted spellings, before any corpus reading",
+  "steps": [
+    {
+      "run": {
+        "id": "unknown-field",
+        "args": ["--root", "{fx-repo}", "search", "q", "--field", "bogus"],
+        "exit": 2,
+        "stderr-contains": ["unknown field \"bogus\"", "names, synonyms, codes, all"]
+      }
+    }
+  ]
+}

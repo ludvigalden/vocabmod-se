@@ -1,0 +1,23 @@
+{
+  "binary": "vocabmod-se",
+  "description": "a read error fails nonzero: with --root pointed at the empty scratch directory both index and search fail (exit 1) naming the schema they cannot read",
+  "steps": [
+    {
+      "run": {
+        "id": "index-read-error",
+        "args": ["--root", ".", "index", "--out", "out"],
+        "exit": 1,
+        "stderr-contains": ["vocab.kdl"],
+        "stdout-not-contains": ["wrote"]
+      }
+    },
+    {
+      "run": {
+        "id": "search-read-error",
+        "args": ["--root", ".", "search", "x"],
+        "exit": 1,
+        "stdout-not-contains": ["hit(s)"]
+      }
+    }
+  ]
+}

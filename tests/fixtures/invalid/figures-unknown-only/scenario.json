@@ -1,0 +1,15 @@
+{
+  "binary": "vocabmod-se",
+  "description": "an unknown --only figure is a usage error naming the figure and the figures that exist, validated against the figure documents before the corpus read",
+  "steps": [
+    {
+      "run": {
+        "id": "unknown-only",
+        "args": ["--root", "{fx-repo}", "figures", "--only", "nope", "--out", "out"],
+        "exit": 2,
+        "stderr-contains": ["--only \"nope\" names no figure", "the figures are:"],
+        "stdout-not-contains": ["wrote"]
+      }
+    }
+  ]
+}

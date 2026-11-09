@@ -1,0 +1,14 @@
+{
+  "binary": "vocabmod-se",
+  "description": "the two assessment flags are mutually exclusive: giving both is a usage error before anything runs",
+  "steps": [
+    {
+      "run": {
+        "id": "both-flags",
+        "args": ["--root", "{fx-repo}", "omop-export", "--require-assessed", "--include-unassessed", "--out", "out"],
+        "exit": 2,
+        "stderr-contains": ["cannot be used with"]
+      }
+    }
+  ]
+}
