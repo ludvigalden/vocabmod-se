@@ -1,0 +1,22 @@
+{
+  "binary": "vocabmod-se",
+  "description": "search probes with independently verified answers: the codes field for \"c21\" under ICD_10 returns exactly the five codes C21, C210, C211, C212, C218 (verified by a line census of the committed ICD_10 tree) byte-pinned by a golden, and a query nothing matches answers cleanly with exit 0",
+  "heavy": true,
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "codes-c21",
+        "args": ["--root", "{fx-repo}", "search", "c21", "--field", "codes", "--system", "ICD_10"],
+        "stdout-golden": "golden-c21-codes.tsv"
+      }
+    },
+    {
+      "run": {
+        "id": "no-match",
+        "args": ["--root", "{fx-repo}", "search", "zzzqqqxx"],
+        "stdout-contains": ["no matches for \"zzzqqqxx\""]
+      }
+    }
+  ]
+}
