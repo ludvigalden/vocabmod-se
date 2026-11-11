@@ -1,0 +1,10 @@
+// Layer-precedence fixture: an imported layer restating one committed
+// concept exactly, so the merged reading deduplicates it.
+system "TRIAGE_SE" kind=classification distribution=local-only {
+    name "en" "imported layer fixture (identical)"
+}
+release "2024" system="TRIAGE_SE" label-source=registry
+context {
+    system "TRIAGE_SE" release="2024"
+}
+import "concepts.kdl" kind=fragment

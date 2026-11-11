@@ -1,0 +1,122 @@
+{
+ "binary": "vocabmod-se",
+ "description": "the import verb end to end: every v1 format (csv, tdl, claml, pdf-text, rf2) renders an invented operator-local source into the landing zone and the merged search reading finds its designations under the imported layer; the committed tree is never an import target (the guard refuses with a finding); --dry-run writes nothing; an imported layer restating a committed concept with identical content deduplicates (committed wins) and one restating it with differing content is a finding",
+ "heavy": true,
+ "steps": [
+  {
+   "run": {
+    "id": "import-csv",
+    "args": ["--root", "{fx-repo}", "import", "csv", "--source", "{fx-repo}/tests/fixtures/import/source-csv.csv", "--into", "out-csv/demo/1", "--system", "DEMO_SE", "--release", "2026", "--manifest"]
+   }
+  },
+  {
+   "run": {
+    "id": "search-csv",
+    "args": ["--root", "{fx-repo}", "search", "Demokod ett", "--imports", "out-csv"],
+    "stdout-contains": ["DEMO_SE\tD001\tnames\tsv\tDemokod ett\timported"]
+   }
+  },
+  {
+   "run": {
+    "id": "import-tdl",
+    "args": ["--root", "{fx-repo}", "import", "tdl", "--source", "{fx-repo}/tests/fixtures/import/source-tdl.tdl", "--into", "out-tdl/demo/1", "--system", "DEMO_SE", "--release", "2026", "--manifest"]
+   }
+  },
+  {
+   "run": {
+    "id": "search-tdl",
+    "args": ["--root", "{fx-repo}", "search", "Demokod hundra", "--imports", "out-tdl"],
+    "stdout-contains": ["DEMO_SE\tD100\tnames\tsv\tDemokod hundra\timported"]
+   }
+  },
+  {
+   "run": {
+    "id": "import-claml",
+    "args": ["--root", "{fx-repo}", "import", "claml", "--source", "{fx-repo}/tests/fixtures/import/source-claml.xml", "--into", "out-claml/demo/1", "--system", "DEMO_SE", "--release", "2026", "--manifest"]
+   }
+  },
+  {
+   "run": {
+    "id": "search-claml",
+    "args": ["--root", "{fx-repo}", "search", "Demo category one", "--imports", "out-claml"],
+    "stdout-contains": ["DEMO_SE\tC01.1\tnames\ten\tDemo category one\timported"]
+   }
+  },
+  {
+   "run": {
+    "id": "import-pdf-text",
+    "args": ["--root", "{fx-repo}", "import", "pdf-text", "--source", "{fx-repo}/tests/fixtures/import/source-pdf.txt", "--into", "out-pdf/demo/1", "--system", "DEMO_SE", "--release", "2026", "--manifest"]
+   }
+  },
+  {
+   "run": {
+    "id": "search-pdf-text",
+    "args": ["--root", "{fx-repo}", "search", "Demo subtitle", "--imports", "out-pdf"],
+    "stdout-contains": ["DEMO_SE\tC01.1\tnames\tsv\tDemo subtitle\timported"]
+   }
+  },
+  {
+   "run": {
+    "id": "import-rf2",
+    "args": ["--root", "{fx-repo}", "import", "rf2", "--source", "{fx-repo}/tests/fixtures/import/rf2", "--into", "out-rf2/demo/1", "--system", "DEMO_SE", "--release", "2026", "--manifest"]
+   }
+  },
+  {
+   "run": {
+    "id": "search-rf2",
+    "args": ["--root", "{fx-repo}", "search", "Demo finding", "--imports", "out-rf2"],
+    "stdout-contains": ["names\ten\tDemo finding\timported"]
+   }
+  },
+  {
+   "run": {
+    "id": "dry-run",
+    "args": ["--root", "{fx-repo}", "import", "csv", "--source", "{fx-repo}/tests/fixtures/import/source-csv.csv", "--into", "out-dry/demo/1", "--system", "DEMO_SE", "--release", "2026", "--dry-run"]
+   }
+  },
+  {
+   "run": {
+    "id": "guard-refusal",
+    "args": ["--root", "{fx-repo}", "import", "csv", "--source", "{fx-repo}/tests/fixtures/import/source-csv.csv", "--into", "{fx-repo}/vocab", "--system", "DEMO_SE", "--release", "2026"],
+    "exit": 1
+   }
+  },
+  {
+   "run": {
+    "id": "precedence-identical",
+    "args": ["--root", "{fx-repo}", "search", "263259005", "--field", "codes", "--imports", "{fx-repo}/tests/fixtures/import/layer-tree"],
+    "stdout-contains": ["TRIAGE_SE\t263259005\tcodes\t-\t263259005\tcommitted", "1 hit(s) for \"263259005\""]
+   }
+  },
+  {
+   "run": {
+    "id": "precedence-conflict",
+    "args": ["--root", "{fx-repo}", "search", "263259005", "--imports", "{fx-repo}/tests/fixtures/import/layer-conflict"],
+    "exit": 1
+   }
+  }
+ ],
+ "checks": [
+  {
+   "files-exist": {
+    "paths": [
+     "out-csv/demo/1/definitions.kdl",
+     "out-csv/demo/1/manifest.kdl",
+     "out-tdl/demo/1/definitions.kdl",
+     "out-claml/demo/1/definitions.kdl",
+     "out-pdf/demo/1/definitions.kdl",
+     "out-rf2/demo/1/definitions.kdl",
+     "out-rf2/demo/1/manifest.kdl"
+    ]
+   }
+  },
+  {
+   "files-absent": {
+    "paths": [
+     "out-dry",
+     "out-csv/demo/1/concepts/0000-D001-D002.kdl.bak"
+    ]
+   }
+  }
+ ]
+}

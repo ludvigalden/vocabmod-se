@@ -1,0 +1,10 @@
+// Layer-precedence fixture: an imported layer restating one committed
+// concept with differing content, so the merged reading is a finding.
+system "TRIAGE_SE" kind=classification distribution=local-only {
+    name "en" "imported layer fixture (conflicting)"
+}
+release "2024" system="TRIAGE_SE" label-source=registry
+context {
+    system "TRIAGE_SE" release="2024"
+}
+import "concepts.kdl" kind=fragment
