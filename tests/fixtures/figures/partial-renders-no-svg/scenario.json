@@ -1,0 +1,23 @@
+{
+  "binary": "vocabmod-se",
+  "description": "a rendered figure whose Athena input is absent names it on stderr, exits 1, writes its partial data file, and renders no SVG, so a partial run never replaces a complete rendering",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "missing-athena",
+        "args": ["--root", "{fx-repo}", "figures", "--only", "vocab-coverage-standard", "--athena", "no-athena", "--out", "out"],
+        "exit": 1,
+        "stderr-contains": ["needs the local Athena release"]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "files-exist": {"paths": ["out/vocab-coverage-standard.csv", "out/MANIFEST.csv"]}
+    },
+    {
+      "files-absent": {"paths": ["out/vocab-coverage-standard.svg"]}
+    }
+  ]
+}

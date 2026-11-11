@@ -1,0 +1,20 @@
+{
+  "binary": "vocabmod-se",
+  "description": "a figure needing a local dataset this host does not carry names it on stderr and exits 1 while still writing its partial results: vocab-coverage computes its by-code numbers and skips the dataset-dependent rows",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "missing-dataset",
+        "args": ["--root", "{fx-repo}", "figures", "--only", "vocab-coverage", "--out", "out"],
+        "exit": 1,
+        "stderr-contains": ["needs local dataset", "local:ed-usage"]
+      }
+    }
+  ],
+  "checks": [
+    {
+      "files-exist": {"paths": ["out/vocab-coverage.csv", "out/MANIFEST.csv"]}
+    }
+  ]
+}

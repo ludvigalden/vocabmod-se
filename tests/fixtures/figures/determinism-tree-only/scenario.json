@@ -1,0 +1,25 @@
+{
+  "binary": "vocabmod-se",
+  "description": "the tree-only figure computes deterministically: stcm-composition needs no local dataset, exits 0, and two runs are byte-identical",
+  "heavy": true,
+  "steps": [
+    {
+      "run": {
+        "id": "run-a",
+        "args": ["--root", "{fx-repo}", "figures", "--only", "stcm-composition", "--out", "out-a"]
+      }
+    },
+    {
+      "run": {
+        "id": "run-b",
+        "args": ["--root", "{fx-repo}", "figures", "--only", "stcm-composition", "--out", "out-b"]
+      }
+    }
+  ],
+  "checks": [
+    {"determinism": {"trees": ["out-a", "out-b"]}},
+    {
+      "files-exist": {"paths": ["out-a/stcm-composition.csv", "out-a/MANIFEST.csv"]}
+    }
+  ]
+}
