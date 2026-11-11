@@ -1,0 +1,14 @@
+// Using the corpus — reading a mapping record, the companion tool,
+// the ICD-11 paths held outside the corpus, and citing it.
+
+= 4. Using the corpus
+
+The corpus can be read without running any software. It is plain text under `vocab/`, one directory per code system, and each system's `definitions.kdl` names its release and its mapping collections with their source and target systems. The tree can be re-validated against the committed schema with the kdlith document processor, whose revision `sources.kdl` pins. To cite the corpus, cite the commit you used rather than a branch; `CITATION.cff` carries the citation metadata.
+
+A mapping record says what it connects (a `source` code and a `target`), what it claims (its `relationship`), whether it is the first choice or a fallback (`preference`, `primary` or `alternative`), and why it exists, in its comment. The comment is the whole basis of the mapping and the only input to its quality score, so it is also where a reader who disagrees can point to the fault. An `omop-binding` record is weaker: it gives a code an OMOP concept id without claiming a relationship of meaning, and should not be read as a mapping.
+
+The companion command-line tool, `vocabmod-se`, turns the corpus into the formats other systems load. `omop-export` writes the seven OMOP vocabulary tables the corpus can fill, ready to load beside OHDSI's Athena vocabularies: one CONCEPT row for every concept without an official OMOP id (89,171 rows), with ids from 2,000,000,000 upwards derived from each code by a stable hash. `fhir-export` writes one FHIR R5 ConceptMap per mapping collection, its targets referenced by code, with display text only where the corpus carries its own designation. `search` looks up names and codes, and `import` turns a locally held source, such as a licensed designation file, into a layer that never enters the repository.
+
+Two further layers, for a reader moving Swedish diagnosis data towards ICD-11, are read by the tool but not published in the repository. Both are built from WHO's ICD-10↔ICD-11 mapping tables for the ICD-11 MMS 2026-01 release and joined on WHO's version-stable Foundation identifiers. WHO's terms reserve crosswalks to ICD-10 to a separate agreement, so these layers are held outside the committed corpus and merged into a local reading with the tool's `--imports` option.
+
+The ICD-10 layer holds 28,227 paths over 12,597 ICD-10 entities and reaches every one of ICD-10's 11,243 categories. The paths are evidence for a reviewer, never mapping targets in their own right. The Swedish layer holds 56,262 paths for the 25,158 rows of the Swedish 2026 diagnosis extract that have no mapping of their own. A Swedish extension code never matches an ICD-10 code exactly, but 25,013 of the rows (99.4%) reach ICD-11 through their ICD-10 parent. The 145 rows without a path are national extensions with no ICD-10 parent, and they are left without one.
