@@ -1,0 +1,57 @@
+// Coverage of each source vocabulary by
+// unique code and by recorded events, in two nested reach stages.
+figure "vocab-coverage" kind=coverage-funnel dataset="local:ed-usage" locale="en" {
+    title "en" "Vocabulary coverage"
+    caption "en" "Share of each source vocabulary reaching a standard concept, by unique code and by recorded events."
+    output "assets/figures/dist/vocab-coverage" width="16cm" {
+        formats pdf svg png
+    }
+    style palette="default" font="Work Sans"
+    track by-code denominator=release color="red" numbers=percent {
+        title "en" "By unique code (of full vocabulary)"
+    }
+    track by-count count="events" color="teal" numbers=percent-and-count {
+        title "en" "By patient frequency (of recorded events)"
+    }
+    stage "standard" color="red!28" {
+        title "en" "Reaches standard concept"
+        claims {
+            all {
+                target "SNOMED_CT" chain=#true
+                preference primary
+                not {
+                    relationship not_related_to
+                }
+            }
+        }
+    }
+    tier "weak" line="dotted" {
+        title "en" "Extra standard reach (weak tier)"
+        claims {
+            target "SNOMED_CT" chain=#true
+        }
+    }
+    bands threshold=5 unit=distinct-patients {
+        present "en" "Present in corpus"
+        below "en" "Present, fewer than 5 distinct patients"
+        never "en" "Defined, never recorded"
+    }
+    section "swedish" {
+        title "en" "Swedish-specific vocabularies"
+        row "icd-10-se" target="SNOMED_CT" {
+            title "en" "ICD-10-SE ext. → SNOMED CT"
+            population {
+                system "ICD_10_SE"
+            }
+        }
+        row "ksi" target="SNOMED_CT" {
+            title "en" "KSI → SNOMED CT"
+            population {
+                all {
+                    system "KSI"
+                    class "KSI:code"
+                }
+            }
+        }
+    }
+}

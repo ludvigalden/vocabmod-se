@@ -1,0 +1,204 @@
+// Coverage by system under the target-standard rule: the share
+// of each Swedish source vocabulary's codes where at least one
+// committed claim on the code — a mapping or an omop binding — has a
+// target that resolves in the local Athena release to an OMOP-standard
+// concept, by id or by code, directly or through one valid `Maps to`.
+// The standardness resolution is the tool's (figures verb, fed by the
+// local Athena release through --athena); nothing here carries a
+// number. The high-confidence and medium-plus stages carve the covered
+// share by the confidence tiers of the covering claims; the direct,
+// high-direct, and medium-plus-direct stages carve it by whether the
+// resolving claim's target system is itself a standard OMOP vocabulary
+// (SNOMED CT, RxNorm, LOINC, or the official OMOP extension ids) or
+// resolves only through one `Maps to` hop. TLV_VNR_DOSE_FORM is out of
+// scope and is carried as an attribute row, not a gap.
+figure "vocab-coverage-standard" kind=coverage-funnel locale="en" {
+    title "en" "Vocabulary coverage (standard reach)"
+    caption "en" "Share of each Swedish source vocabulary whose codes reach an OMOP-standard concept in the local Athena release, directly or through one valid Maps to."
+    output "assets/figures/dist/vocab-coverage-standard" width="16cm" {
+        formats pdf svg png
+    }
+    track by-code denominator=release color="red" numbers=percent {
+        title "en" "By unique code (of full vocabulary)"
+    }
+    stage "target-standard" color="red!28" {
+        title "en" "Reaches OMOP-standard concept"
+        claims {
+            target-standard
+        }
+    }
+    stage "high-confidence" color="red!70" {
+        title "en" "Covered by at least one high-tier claim"
+        claims {
+            all {
+                target-standard
+                min-confidence 0.87 scheme="vocabmod-se-confidence@1"
+            }
+        }
+    }
+    stage "medium-plus" color="red!85" {
+        title "en" "Covered by at least one medium-or-high-tier claim"
+        claims {
+            all {
+                target-standard
+                min-confidence 0.71 scheme="vocabmod-se-confidence@1"
+            }
+        }
+    }
+    stage "direct" color="red!40" {
+        title "en" "Covered by a claim whose target system is a standard OMOP vocabulary"
+        claims {
+            all {
+                target-standard
+                any {
+                    target "SNOMED_CT" chain=#false
+                    target "RXNORM" chain=#false
+                    target "LOINC" chain=#false
+                    target "OMOP_EXT" chain=#false
+                }
+            }
+        }
+    }
+    stage "high-direct" color="red!40" {
+        title "en" "High-tier coverage with a direct standard target"
+        claims {
+            all {
+                target-standard
+                min-confidence 0.87 scheme="vocabmod-se-confidence@1"
+                any {
+                    target "SNOMED_CT" chain=#false
+                    target "RXNORM" chain=#false
+                    target "LOINC" chain=#false
+                    target "OMOP_EXT" chain=#false
+                }
+            }
+        }
+    }
+    stage "medium-plus-direct" color="red!40" {
+        title "en" "Medium-or-high-tier coverage with a direct standard target"
+        claims {
+            all {
+                target-standard
+                min-confidence 0.71 scheme="vocabmod-se-confidence@1"
+                any {
+                    target "SNOMED_CT" chain=#false
+                    target "RXNORM" chain=#false
+                    target "LOINC" chain=#false
+                    target "OMOP_EXT" chain=#false
+                }
+            }
+        }
+    }
+    section "swedish" {
+        title "en" "Swedish vocabularies"
+        row "icd-10-se" target="OMOP_ICD_10_CM" {
+            title "en" "ICD-10-SE"
+            population {
+                system "ICD_10_SE"
+            }
+        }
+        row "tlv-vnr" target="RXNORM" {
+            title "en" "TLV package numbers"
+            population {
+                system "TLV_VNR"
+            }
+        }
+        row "npu" target="LOINC" {
+            title "en" "NPU laboratory codes"
+            population {
+                system "NPU"
+            }
+        }
+        row "kka" target="SNOMED_CT" {
+            title "en" "KKÅ procedures"
+            population {
+                system "KKA"
+            }
+        }
+        row "tlv-fba" target="ATC_YCODE" {
+            title "en" "TLV consumables and aids"
+            population {
+                system "TLV_FBA"
+            }
+        }
+        row "kma" target="SNOMED_CT" {
+            title "en" "KMÅ procedures"
+            population {
+                system "KMA"
+            }
+        }
+        row "ksi" target="SNOMED_CT" {
+            title "en" "KSI social services"
+            population {
+                system "KSI"
+            }
+        }
+        row "icf" target="SNOMED_CT" {
+            title "en" "ICF function"
+            population {
+                system "ICF"
+            }
+        }
+        row "lab-se" target="LOINC" {
+            title "en" "Hospital laboratory catalogues"
+            population {
+                system "LAB_SE"
+            }
+        }
+        row "tlv-vgr" target="ATC" {
+            title "en" "TLV product groups"
+            population {
+                system "TLV_VGR"
+            }
+        }
+        row "geo-se" target="OMOP_EXT" {
+            title "en" "Counties and municipalities"
+            population {
+                system "GEO_SE"
+            }
+        }
+        row "atc-ycode" target="ATC" {
+            title "en" "ATC Y-codes"
+            population {
+                system "ATC_YCODE"
+            }
+        }
+        row "tlv-vnr-dose-form" target="EDQM" {
+            title "en" "TLV dose forms"
+            note "en" "Dose forms are out of scope: reported as attributes, not gaps."
+            population {
+                system "TLV_VNR_DOSE_FORM"
+            }
+        }
+        row "spkod" target="SNOMED_CT" {
+            title "en" "SPKOD"
+            population {
+                system "SPKOD"
+            }
+        }
+        row "triage-se" target="SNOMED_CT" {
+            title "en" "Triage levels"
+            population {
+                system "TRIAGE_SE"
+            }
+        }
+        row "unit-se" target="UCUM" {
+            title "en" "Swedish units"
+            population {
+                system "UNIT_SE"
+            }
+        }
+        row "lisa-education" target="SNOMED_CT" {
+            title "en" "Education"
+            population {
+                system "LISA_EDUCATION"
+            }
+        }
+        row "civil-status-se" target="SNOMED_CT" {
+            title "en" "Civil status"
+            population {
+                system "CIVIL_STATUS_SE"
+            }
+        }
+    }
+}

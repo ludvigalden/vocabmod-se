@@ -1,0 +1,40 @@
+// The assembled source-to-concept map by where each claim came from.
+figure "stcm-composition" kind=composition-bar unit=mappings locale="en" {
+    title "en" "Composition of the assembled source-to-concept map"
+    output "assets/figures/dist/stcm-composition" {
+        formats svg png
+    }
+    population {
+        any {
+            target "OMOP_SNOMED_CT" chain=#true
+            target "OMOP_ICD_10_CM" chain=#true
+            target "OMOP_EXT" chain=#true
+            target "OMOP_CUSTOM" chain=#true
+        }
+    }
+    segment "inherited" color="teal!85" {
+        title "en" "Inherited"
+        description "en" "OHDSI ETL Sweden 2017 starter corpus, taken off the shelf"
+        claims {
+            imported table="source-provenance@1" "athena"
+        }
+    }
+    segment "adapted-automated" color="purple!72" {
+        title "en" "Adapted, automated"
+        description "en" "Term matches against Swedish synonyms, mostly unreviewed"
+        claims {
+            method "usagi"
+        }
+    }
+    segment "authored" color="green!78" {
+        title "en" "Authored, standard"
+        description "en" "Swedish code hand-mapped onto an existing standard concept"
+        claims {
+            imported table="source-provenance@1" "curated" "manual"
+        }
+    }
+    brace "adapted" {
+        title "en" "Adapted from other Swedish sources"
+        members "adapted-automated"
+    }
+}
