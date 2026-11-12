@@ -1,0 +1,199 @@
+vocabmod-se
+Copyright (c) 2026 Ludvig Aldén
+
+Licensing, per source. The declarative form of this text lives with the
+data: see vocab/_registry/external.kdl and agents.kdl (system
+declarations, license records) and, where present, the `license`
+attribute on each `system` node. The full license texts are in
+LICENSES/.
+
+1. The authored tree
+
+The author's own work in this repository carries two licenses.
+
+Code is licensed under the Apache License, Version 2.0
+(SPDX-License-Identifier: Apache-2.0; full text in
+LICENSES/Apache-2.0.txt): the tooling under tools/ and tests/, the
+generated processor under pkg/rs/, the schema under
+schema/, the figure configurations under
+assets/figures/, the OMOP constants registry under vocab/_registry/,
+the document templates under pkg/typ/common/, and the build files at the
+repository root (Cargo.toml, Cargo.lock, sources.kdl, .gitignore) and
+under .github/.
+
+Data and text are licensed under Creative Commons Attribution 4.0
+International (SPDX-License-Identifier: CC-BY-4.0; full text in
+LICENSES/CC-BY-4.0.txt): the registries under vocab/_registry/,
+the project-authored mapping assertions, comments, and designations (the
+English renderings of the KVÅ surgical and medical codes; quoted source
+titles excepted, see 8), the curation
+of the laboratory catalogue titles in lab/LAB_SE and lab/UNIT_SE (see
+9), the README and the other Markdown files at the repository root, and
+the data descriptor under content/. Attribute as: Ludvig Aldén,
+vocabmod-se, https://github.com/ludvigalden/vocabmod-se.
+
+The vendored fonts under pkg/typ/assets/fonts/ are third-party work
+under the SIL Open Font License 1.1, reproduced beside them.
+
+Neither license extends to third-party material. No license over any
+third-party classification or registry is claimed or implied; every
+body carried from outside this project is stated under its own heading
+below, with exactly what this tree carries of it.
+
+2. WHO ICD-10 and ICD-O-3
+
+The base codes under vocab/condition/ICD_10 are referenced from
+WHO's International Statistical Classification of Diseases, 10th
+revision; the tree carries codes and hierarchy only — no WHO designation
+text is present in the committed corpus. The ICD-10 crosswalk collections
+(icd-10-snomed-ct, icd-10-meddra, icd-10-orphanet, icd-10-omop-snomed-ct,
+icd-10-omop-ext) are likewise not committed: WHO's ICD-10 license reserves
+crosswalks to ICD-10 to a separate written agreement, so that mapping
+surface lives in the operator's local imports/ directory and merges
+into the tool's local readings only through its --imports option.
+ICD-10, ICF, and ICD-O-3 remain subject to WHO's own terms. The WHO ICD-10
+Volume 2 (6th edition, 2019) is published under CC BY-ND 3.0 IGO, whose
+license does not cover mappings or crosslinks to ICD-10 ("subject to a
+separate written agreement from WHO"); this tree therefore claims no
+grant over WHO content and relicenses nothing of it. The ICD-O-3
+morphology codes under vocab/condition/ICD_O_3 are carried as a
+code-only placeholder inventory in the same position; the classification
+belongs to WHO and remains subject to its terms.
+
+3. Orphanet
+
+Orphanet is referenced under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/): free to reference and
+share with attribution, as recorded beside its system declaration in
+_registry/external.kdl.
+
+The ICD-10-SE to Orphanet mappings (icd-10-se-orphanet) are derived from
+Orphanet's ICD-10 alignment, Orphadata en_product1, data version
+2026-06-23, accessed 2026-11-04: each Swedish extension code inherits
+its ICD-10 parent's exact alignment as a narrower claim. They carry
+ORPHAcodes only, no Orphanet text. Attribution: "Orphanet: an online
+rare disease and orphan drug data base. © INSERM 1999. Available on
+http://www.orpha.net."
+
+4. Reference-only terminologies: codes, never text
+
+SNOMED CT and MedDRA are licensed terminologies whose license records
+in _registry/external.kdl mark them `distribution=reference-only` with
+redistribution prohibited. LOINC is likewise declared
+`distribution=reference-only` but carries no license record in the
+tree: LOINC terms remain governed by the Regenstrief LOINC license.
+None of the three has its text copied into this tree: their codes
+appear only as mapping endpoints, and each remains governed by its own
+license (SNOMED CT Affiliate License, the Regenstrief LOINC license,
+the MedDRA license held by the MSSO). Use of those codes requires your
+own license with the respective owner.
+
+This material includes SNOMED Clinical Terms® (SNOMED CT®) which is
+used by permission of the International Health Terminology Standards
+Development Organisation (IHTSDO). All rights reserved. The SNOMED CT
+Swedish extension (edition SE1000052) shares the SNOMED position: it is
+declared `SNOMED_SE_EXT` as reference-only, its concepts are referenced
+by SCTID alone, and its licensed synonyms and descriptions are never
+copied here.
+
+5. UCUM
+
+UCUM codes are referenced verbatim as mapping endpoints; the UCUM
+standard and its unit tables are not copied into this tree. The
+UCUM Copyright Notice and License 1.1 (https://ucum.org/license) is
+recorded as `org.regenstrief.ucum` with redistribution conditional.
+Codes used as mapping endpoints interoperate with the UCUM Work and are
+not derivatives of it.
+
+6. Other external systems; OMOP; RxNorm
+
+ATC, NPL, EDQM, and ICD-10-CM are public systems referenced by
+code; no license constraint is recorded against them in the tree. OMOP_EXT
+(official OHDSI Athena extension concept ids) is likewise declared
+`distribution=reference-only` — referenced by numeric concept id only,
+with no English labels and no standard flags — with no license record;
+OMOP_CUSTOM is this project's own id space and claims nothing
+from OHDSI. RxNorm (`drug/RXNORM/`) is produced by
+the U.S. National Library of Medicine; the RxNorm normalized names and
+codes are in the public domain as works of the U.S. Government. The
+rxnorm-atc collection carries RxNorm codes and product names with
+acknowledgement of NLM; this tree is a snapshot (2026.1) and does not
+reflect the most current RxNorm data available from NLM, and nothing
+here implies NLM endorsement.
+
+7. NCSP
+
+The codes under vocab/intervention/NCSP are carried from the
+NOMESCO Classification of Surgical Procedures (NCSP), version 1.16
+(2011), maintained by the Nordic Medico-Statistical Committee (NOMESCO)
+under the Nordic Council of Ministers, which claims copyright in the
+classification. This tree carries the code identifiers only — the
+official English designations are not present in the committed corpus —
+for interoperability with the Nordic procedure classifications the
+Swedish KVÅ surgical codes extend. No public reuse license over the
+classification has been found; nothing here claims a grant over it, and
+its includes/excludes notes and internal relationships are not copied
+here.
+
+8. TLV (statutory basis); the Swedish national classifications
+
+The TLV registers (drug/TLV_VNR/, drug/TLV_FBA/, drug/TLV_VGR/,
+drug/TLV_VNR_DOSE_FORM/, drug/ATC_YCODE/) are carried as code
+identifiers: TLV publishes these datasamlingar as open data
+"för vidareutnyttjande" under lag (2022:818) om företag som förmedlar
+läkemedel m.m. (https://tlv.se/om-tlv/oppna-data); no explicit license
+accompanies them. This tree carries no TLV product, article, or group
+designation catalogue — codes, hierarchy, and this project's own
+mapping assertions — and claims no grant over TLV's records; the
+list's undantag column is carried only as the flags' `scope` where the
+listing narrows.
+
+The Swedish national classifications — ICD-10-SE, KVÅ (KKÅ and KMÅ),
+the Swedish ICF, and KSI, published by E-hälsomyndigheten since
+1 June 2026, and SPKOD, published by Socialstyrelsen — are carried as
+codes, hierarchy, and validity; their designation catalogues are not
+redistributed. ICF is WHO's classification; Socialstyrelsen holds the
+rights to its Swedish translation.
+
+Quotation as review evidence. Where a mapping was judged in review, its
+rationale may quote the single title it judged from the Swedish
+national classifications or TLV's published lists, with the source
+named, under the quotation right of the Swedish Copyright Act
+(lag (1960:729) om upphovsrätt till litterära och konstnärliga verk,
+22 §, with attribution under 11 §). These quotations remain the
+publishers' material; they are not licensed here under CC BY 4.0.
+RETTS triage titles are not quoted (see 10).
+
+9. NPU; SCB; the local laboratory material
+
+The `lab/NPU/` codes are reproduced from the public NPU terminology
+service of Equalis AB (https://npu.equalis.se): for each code, the
+IFCC/IUPAC property definition, the report name, and the measurement
+unit — nothing else. The NPU Terminology is the property of the
+IFCC/IUPAC committee on Nomenclature for Properties and Units and is
+published at www.labterm.dk; the Swedish SWE codes are the national
+extensions maintained by Equalis. The designation strings are
+reproduced as published for interoperability, associated with their
+NPU codes, and the tree claims no grant over the registry itself.
+
+Geographic area codes (geo/GEO_SE/), civil-status codes
+(demo/CIVIL_STATUS_SE/), and education codes (demo/LISA_EDUCATION/) come from
+Statistics Sweden (SCB) registers that SCB publishes as open data under
+Creative Commons CC0 1.0 Universal; the Swedish names of those codes
+are carried as published, with credit to SCB. No English municipal or
+county names are carried; SCB publishes no English names.
+
+The local laboratory catalogue titles in lab/LAB_SE/ and the unit
+spellings in lab/UNIT_SE/ originate in the GMLF research project's
+evaluation of the laboratory data it had access to, and its attempt to
+map that data to OMOP. They are not drawn from a public register. They
+are published here by Ludvig Aldén; their canonicalization, mappings,
+and assessments in this tree are the author's own work.
+
+10. RETTS triage
+
+The triage/TRIAGE_SE/ codes are carried from the RETTS triage
+instrument (© Omda Predicare AB) as code identifiers only — the RETTS
+chief-complaint and priority designations are not present in the
+committed corpus — for interoperability. Nothing here claims a grant
+over RETTS; the instrument remains subject to its owner's terms.
