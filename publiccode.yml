@@ -1,0 +1,96 @@
+# publiccode.yml — machine-readable metadata for this repository, in the
+# publiccode.yml standard, version 0.5. The corpus is a data resource
+# with a companion command-line tool; the standard expects software, so
+# it is declared as a standalone product of type standalone/other, in
+# beta, running where the tool builds (linux, mac, windows).
+publiccodeYmlVersion: "0.5"
+
+name: vocabmod-se
+url: https://github.com/ludvigalden/vocabmod-se
+landingPage: https://github.com/ludvigalden/vocabmod-se
+softwareVersion: "1.0"
+releaseDate: "2026-11-12"
+platforms:
+  - linux
+  - mac
+  - windows
+developmentStatus: beta
+softwareType: standalone/other
+
+description:
+  sv:
+    shortDescription: >-
+      Svenska kodverk för hälsodata med mappningar till internationella
+      referensterminologier och OMOP, samt ett kommandoradsverktyg.
+    longDescription: |
+      vocabmod-se kopplar koderna i svenska hälsodata till internationella
+      terminologier som SNOMED CT, LOINC, ATC och RxNorm och till
+      standardbegreppen i datamodellen OMOP. Samlingen omfattar 23
+      svenska kodverk – nationella klassifikationer, register och
+      laboratorieterminologier – som klartext i KDL, kontrollerad mot ett
+      gemensamt schema.
+
+      Mappningarna är projektets egna och ingen auktoritativ källa; ingen
+      expert eller myndighet har granskat dem. Varje mappning har en
+      konfidensnivå eller ett angivet skäl till att ingen kunde sättas.
+
+      Ett kommandoradsverktyg läser samlingen, exporterar sju
+      OMOP CDM-tabeller och FHIR ConceptMaps, indexerar den
+      deterministiskt och söker i namn, synonymer och koder.
+    features:
+      - 23 kodverk med hierarkier, benämningar, varianter och
+        mappningssamlingar
+      - Export av sju OMOP CDM-tabeller som kompletterar Athenas egna
+        vokabulärer
+      - Export av en FHIR R5 ConceptMap per mappningssamling
+      - Deterministiskt statistikindex som kontrolleras mot ett
+        medföljande antalsregister
+      - Skiftlägesokänslig sökning i namn, synonymer och koder
+  en:
+    shortDescription: >-
+      Swedish health-data code systems with mappings to international
+      reference terminologies and OMOP, with a command-line tool.
+    longDescription: |
+      vocabmod-se links the codes used in Swedish health data to
+      international terminologies such as SNOMED CT, LOINC, ATC, and
+      RxNorm, and to the standard concepts of the OMOP common data model.
+      It holds 23 Swedish code systems (national classifications,
+      registers, and laboratory terminologies) as plain-text KDL documents
+      checked against one committed schema.
+
+      The mappings are this project's own and not an authoritative
+      source; no expert or agency has reviewed them. Every mapping carries
+      a confidence tier or a named reason why none could be assigned.
+
+      A companion command-line tool reads the corpus, exports seven OMOP
+      CDM tables and FHIR ConceptMaps, indexes it deterministically, and
+      searches names, synonyms, and codes.
+    features:
+      - 23 code systems with hierarchies, designations, variants, and
+        mapping collections
+      - Export of seven OMOP CDM tables alongside Athena's own
+        vocabularies
+      - Export of one FHIR R5 ConceptMap per mapping collection
+      - Deterministic statistical index cross-checked against a
+        committed census
+      - Case-insensitive search over names, synonyms, and codes
+
+legal:
+  # The code (tools, tests, the generated processor, the schema, the
+  # templates) is Apache-2.0. The author's own data and texts are
+  # CC BY 4.0, and the carried source data keeps its own terms, stated
+  # per source in LICENSE with full texts in LICENSES/. The standard
+  # has one license field, so it names the code license.
+  license: Apache-2.0
+
+maintenance:
+  type: internal
+  contacts:
+    - name: Ludvig Aldén
+      email: vocabmod-se@ludvigalden.com
+
+localisation:
+  localisationReady: true
+  availableLanguages:
+    - sv
+    - en
