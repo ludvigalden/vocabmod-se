@@ -1,6 +1,7 @@
 // VNR dose-form abbreviations as the source dataset carries them; the SNOMED CT-keyed rows are
 // dose-form code lists and are imported as cross-system claims only.
-system "TLV_VNR_DOSE_FORM" kind=classification distribution=published publisher="se.tlv" default-locale="sv" {
+system "TLV_VNR_DOSE_FORM" kind=classification distribution=published \
+        publisher="se.tlv" default-locale="sv" {
     name "en" "Varunummer dose form codes"
 }
 release "2026" system="TLV_VNR_DOSE_FORM" label-source=registry
@@ -10,7 +11,8 @@ context {
 category "dose-form" {
     name "en" "Dose form"
 }
-collection "tlv-vnr-dose-form-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-dose-form-rxnorm" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV dose forms to RxNorm"
     authors "ludvig-alden"
     source system="TLV_VNR_DOSE_FORM" release="2026"
@@ -24,7 +26,8 @@ collection "tlv-vnr-dose-form-rxnorm" version="2026.1" kind=mapping publisher="l
         project "defaults"
     }
 }
-collection "tlv-vnr-dose-form-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-dose-form-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV dose forms to SNOMED CT"
     authors "ludvig-alden"
     source system="TLV_VNR_DOSE_FORM" release="2026"
@@ -40,7 +43,8 @@ collection "tlv-vnr-dose-form-snomed-ct" version="2026.1" kind=mapping publisher
 }
 // Targets are EDQM Standard Terms dose-form codes, referenced by code
 // only (standardterms.edqm.eu); no EDQM Standard Terms term text is carried.
-collection "tlv-vnr-dose-form-edqm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-dose-form-edqm" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV dose forms to EDQM Standard Terms"
     authors "ludvig-alden"
     source system="TLV_VNR_DOSE_FORM" release="2026"

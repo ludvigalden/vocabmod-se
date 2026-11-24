@@ -87,23 +87,69 @@
 //      stay untouched by that grading; the classified loss language
 //      is already re-derived by the quality rubric.
 //
-score-scheme "vocabmod-se-confidence" version="1" kind=confidence direction=higher-is-better minimum=0 maximum=1 {
-    description "en" "Derived mapping confidence, tier H/M/L, fitted on a 588-case training batch of blinded assessments under the documented assessment rubric and reported on a held-out 291-case sample. The score is the tier's Wilson 95% lower bound of exact agreement with the concept the blinded assessment accepts (training batch): 0.87 H, 0.71 M, 0.03 L. Signals: the target resolves in the local Athena release to an OMOP-standard concept, directly or through one valid Maps to, and BioLORD-2023-M (frozen dictionary) ranks that concept among the top-100 candidates for the source designation. H: rank 1 and top-1 score >= 0.85. M: rank 1 below that score, or rank 2-3. L: rank 4 or worse, including absent from the top 100 — the assessment presents only the top 10, so L's near-zero measured rate reflects that no independent signal corroborates the target, not that the target is wrong. The ICD-10-SE truncation path (icd10se-icd10cm-trunc) is capped at M. A score is a population rate over the tier, never a per-mapping probability, and the reference standard is blinded assessment under the documented rubric (first- and second-pass blind agreement about 81%), not expert clinical review."
+score-scheme "vocabmod-se-confidence" version="1" kind=confidence \
+        direction=higher-is-better minimum=0 maximum=1 {
+    description "en" """
+        Derived mapping confidence, tier H/M/L, fitted on a 588-case training batch of \
+        blinded assessments under the documented assessment rubric and reported on a \
+        held-out 291-case sample. The score is the tier's Wilson 95% lower bound of \
+        exact agreement with the concept the blinded assessment accepts (training \
+        batch): 0.87 H, 0.71 M, 0.03 L. Signals: the target resolves in the local \
+        Athena release to an OMOP-standard concept, directly or through one valid Maps \
+        to, and BioLORD-2023-M (frozen dictionary) ranks that concept among the \
+        top-100 candidates for the source designation. H: rank 1 and top-1 score >= \
+        0.85. M: rank 1 below that score, or rank 2-3. L: rank 4 or worse, including \
+        absent from the top 100 — the assessment presents only the top 10, so L's \
+        near-zero measured rate reflects that no independent signal corroborates the \
+        target, not that the target is wrong. The ICD-10-SE truncation path \
+        (icd10se-icd10cm-trunc) is capped at M. A score is a population rate over the \
+        tier, never a per-mapping probability, and the reference standard is blinded \
+        assessment under the documented rubric (first- and second-pass blind agreement \
+        about 81%), not expert clinical review.
+        """
 }
-score-scheme "vocabmod-se-confidence-unassessable" version="1" kind=confidence direction=unordered minimum=1 maximum=5 {
-    description "en" "Explicit no-assessment marker for mappings that carry no confidence under vocabmod-se-confidence@1. The score is the reason: 1 target-not-standard (the target resolves in the local Athena release but is neither OMOP-standard nor one Maps to away from a standard concept), 2 target-outside-athena (the target system is not among the release's OMOP vocabularies), 3 target-unresolved (the target code is absent from the release), 4 source-designation-less (the source code has no designation text to retrieve with), 5 source-outside-population (the source is not one of the corpus's Swedish systems). Unassessable is a property of the evidence, never a verdict on the mapping."
+score-scheme "vocabmod-se-confidence-unassessable" version="1" kind=confidence \
+        direction=unordered minimum=1 maximum=5 {
+    description "en" """
+        Explicit no-assessment marker for mappings that carry no confidence under \
+        vocabmod-se-confidence@1. The score is the reason: 1 target-not-standard (the \
+        target resolves in the local Athena release but is neither OMOP-standard nor \
+        one Maps to away from a standard concept), 2 target-outside-athena (the target \
+        system is not among the release's OMOP vocabularies), 3 target-unresolved (the \
+        target code is absent from the release), 4 source-designation-less (the source \
+        code has no designation text to retrieve with), 5 source-outside-population \
+        (the source is not one of the corpus's Swedish systems). Unassessable is a \
+        property of the evidence, never a verdict on the mapping.
+        """
 }
-score-scheme "mapping-quality" version="1" kind=quality direction=higher-is-better minimum=0 maximum=100 {
-    description "en" "Derived mapping quality under rubric mapping-quality@1: 100 where the claim's comment states a verified or exact basis (crosswalk-verified, exact match, dict-resident) and states no loss class; 60 where the comment states a hierarchy step (the target called loose, broad, general or coarse near parent/target/concept) or, beside a verified basis, concedes a granularity loss; 40 where the comment states an approximation (only parent, no closer, broad parent, closest available/match/is, not exact, approximations, imprecision), a lost facet beside a verified basis (a named facet the target does not carry: the loss/loses/lost, drops/dropped, omits/omitted, not preserved, does not distinguish, does not separate, less specific family), or any other loss statement beside a verified basis — a stated loss never sits under a 100 stamp; absent where no class matches (not assessed). Each of the 60- and 40-band mappings pairs quality with effect=omitted."
+score-scheme "mapping-quality" version="1" kind=quality \
+        direction=higher-is-better minimum=0 maximum=100 {
+    description "en" """
+        Derived mapping quality under rubric mapping-quality@1: 100 where the claim's \
+        comment states a verified or exact basis (crosswalk-verified, exact match, \
+        dict-resident) and states no loss class; 60 where the comment states a \
+        hierarchy step (the target called loose, broad, general or coarse near \
+        parent/target/concept) or, beside a verified basis, concedes a granularity \
+        loss; 40 where the comment states an approximation (only parent, no closer, \
+        broad parent, closest available/match/is, not exact, approximations, \
+        imprecision), a lost facet beside a verified basis (a named facet the target \
+        does not carry: the loss/loses/lost, drops/dropped, omits/omitted, not \
+        preserved, does not distinguish, does not separate, less specific family), or \
+        any other loss statement beside a verified basis — a stated loss never sits \
+        under a 100 stamp; absent where no class matches (not assessed). Each of the \
+        60- and 40-band mappings pairs quality with effect=omitted.
+        """
 }
-translation-table "mapping-kind" version="1" source-column="maps_to_mapping_type" target-field="relationship" {
+translation-table "mapping-kind" version="1" \
+        source-column="maps_to_mapping_type" target-field="relationship" {
     description "en" "The source names the target's extent relative to the source."
     entry "exact_match" "equivalent"
     entry "broader" "source_is_narrower_than_target" note="the target is broader"
     entry "narrower" "source_is_broader_than_target" note="the target is narrower"
     entry "related" "related_to"
     entry "partial" "partial_overlap"
-    entry "no_match" drop=#true note="Imported as a no-match assessment for the target system"
+    entry "no_match" drop=#true \
+            note="Imported as a no-match assessment for the target system"
 }
 // SNOMED CT targets retired after a mapping was authored stay in place: a
 // mapping records the standard concept that carried the source's
@@ -125,7 +171,8 @@ translation-table "mapping-kind" version="1" source-column="maps_to_mapping_type
 // evidence, below the equivalence bar), and 1 is dropped to a no_match
 // assessment because the invalid target contradicts the source term
 // (S065, traumatic vs nontraumatic subdural hemorrhage).
-translation-table "invalid-reason" version="1" source-column="invalid_reason" target-field="status|assessment|flag" {
+translation-table "invalid-reason" version="1" source-column="invalid_reason" \
+        target-field="status|assessment|flag" {
     description "en" "Source invalid_reason values split by what they describe."
     entry "D" "status:inactive"
     entry "U" "status:retired"
@@ -135,8 +182,12 @@ translation-table "invalid-reason" version="1" source-column="invalid_reason" ta
     entry "icf_swedish_extension_no_target" "assessment:no_match"
     entry "no_ucum_equivalent" "assessment:no_match"
 }
-translation-table "source-provenance" version="1" source-column="mapping_provenance" target-field="imported" {
-    description "en" "The source's mapping_provenance, kept as the imported label of each claim it produced."
+translation-table "source-provenance" version="1" \
+        source-column="mapping_provenance" target-field="imported" {
+    description "en" """
+        The source's mapping_provenance, kept as the imported label of each claim it \
+        produced.
+        """
     entry "athena" "athena" note="Athena Maps-to crosswalk, inherited"
     entry "automated" "automated"
     entry "curated" "curated"
@@ -148,15 +199,25 @@ translation-table "source-provenance" version="1" source-column="mapping_provena
 // source keys to their declared systems. The key is the source column
 // (a bare key applies to every source); the value the system the
 // target code really belongs to.
-translation-table "target-key" version="1" source-column="maps_to key" target-field="target system" {
-    description "en" "Source map-cell keys, per source vocabulary, translated to the system the target code belongs to. A bare key (no source prefix) applies to every source."
-    entry "TLV_FBA/ICD-10" "ATC Y-codes" note="Y90 codes are ATC Y-codes, not ICD-10"
-    entry "UNIT_SE/UCUM" "OMOP concepts" note="The values are official OMOP unit concept ids, not UCUM codes"
-    entry "RX_NORM" "RxNorm" note="Declared code-only in drug/RXNORM/definitions.kdl"
+translation-table "target-key" version="1" source-column="maps_to key" \
+        target-field="target system" {
+    description "en" """
+        Source map-cell keys, per source vocabulary, translated to the system the \
+        target code belongs to. A bare key (no source prefix) applies to every source.
+        """
+    entry "TLV_FBA/ICD-10" "ATC Y-codes" \
+            note="Y90 codes are ATC Y-codes, not ICD-10"
+    entry "UNIT_SE/UCUM" "OMOP concepts" \
+            note="The values are official OMOP unit concept ids, not UCUM codes"
+    entry "RX_NORM" "RxNorm" \
+            note="Declared code-only in drug/RXNORM/definitions.kdl"
     entry "MedDRA" "MedDRA" note="Declared code-only in _registry/external.kdl"
     entry "Orphanet" "Orphanet" note="Declared code-only in _registry/external.kdl"
-    entry "ICD_10_SE/ICD-10-CM" "OMOP ICD-10-CM concepts" note="The cell values are OMOP concept ids for ICD-10-CM concepts, not ICD-10-CM codes"
-    entry "ICD-10-CM" "ICD-10-CM" note="Declared code-only in _registry/external.kdl"
+    entry "ICD_10_SE/ICD-10-CM" "OMOP ICD-10-CM concepts" note="""
+        The cell values are OMOP concept ids for ICD-10-CM concepts, not ICD-10-CM codes
+        """
+    entry "ICD-10-CM" "ICD-10-CM" \
+            note="Declared code-only in _registry/external.kdl"
 }
 // OMOP custom concept ids: the reserved bands live beside the
 // OMOP custom concepts system declaration in _registry/external.kdl (edges

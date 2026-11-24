@@ -1,9 +1,11 @@
 // ICD-10-SE extension codes: the Swedish codes with no WHO analogue. Shared codes live in ICD-10;
 // an extension code's parent may be one.
-system "ICD_10_SE" kind=classification distribution=published publisher="se.ehalsomyndigheten" extends="ICD_10" default-locale="sv" {
+system "ICD_10_SE" kind=classification distribution=published \
+        publisher="se.ehalsomyndigheten" default-locale="sv" extends="ICD_10" {
     name "sv" "ICD-10-SE, svenska tilläggskoder"
 }
-release "2026" system="ICD_10_SE" label-source=registry imported-version="2017" {
+release "2026" system="ICD_10_SE" imported-version="2017" \
+        label-source=registry {
     dependencies "ICD_10@2016"
 }
 context {
@@ -12,7 +14,8 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
-collection "icd-10-se-meddra" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-meddra" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to MedDRA"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -27,7 +30,8 @@ collection "icd-10-se-meddra" version="2026.1" kind=mapping publisher="ludvig-al
         project "defaults"
     }
 }
-collection "icd-10-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-omop-ext" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to OMOP concepts"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -39,7 +43,8 @@ collection "icd-10-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-
 // Fallback tier: the source grades every row icd10cm_base_fallback
 // (non-standard ICD-10-CM billing concepts), so the collection is
 // preference=alternative throughout.
-collection "icd-10-se-omop-icd-10-cm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-omop-icd-10-cm" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to OMOP ICD-10-CM concepts"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -56,7 +61,8 @@ collection "icd-10-se-omop-icd-10-cm" version="2026.1" kind=mapping publisher="l
 // Standard targets: the OMOP ids resolve to SNOMED CT
 // Condition concepts (standard in the OMOP CDM by domain knowledge;
 // the source itself carries no standard flag).
-collection "icd-10-se-omop-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-omop-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to OMOP SNOMED CT concepts"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -65,7 +71,8 @@ collection "icd-10-se-omop-snomed-ct" version="2026.1" kind=mapping publisher="l
         project "defaults"
     }
 }
-collection "icd-10-se-orphanet" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-orphanet" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to Orphanet"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -82,7 +89,8 @@ collection "icd-10-se-orphanet" version="2026.1" kind=mapping publisher="ludvig-
         project "defaults"
     }
 }
-collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to SNOMED CT"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -102,7 +110,8 @@ collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig
 // truncated one; the collection is preference=alternative throughout
 // and its confidence never exceeds medium. Codes the source already
 // assessed as no_match toward OMOP ICD-10-CM concepts are left out.
-collection "icd-10-se-omop-icd-10-cm-truncation" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-omop-icd-10-cm-truncation" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to OMOP ICD-10-CM concepts by truncation"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"
@@ -116,7 +125,8 @@ collection "icd-10-se-omop-icd-10-cm-truncation" version="2026.1" kind=mapping p
         project "defaults"
     }
 }
-collection "icd-10-se-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-snomed-ct-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to SNOMED CT (retrieval)"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"

@@ -1,5 +1,6 @@
 // Swedish geographic area codes (SCB), as the source dataset carries them.
-system "GEO_SE" kind=classification distribution=published publisher="se.scb" default-locale="sv" {
+system "GEO_SE" kind=classification distribution=published publisher="se.scb" \
+        default-locale="sv" {
     name "en" "Swedish geographic area codes (county/municipality)"
 }
 release "2024" system="GEO_SE" label-source=registry
@@ -13,7 +14,8 @@ category "code" {
 // Athena OSM concept (standard, Geography domain), checked against the
 // local Athena release with the area names compared. Ids only: OSM
 // content is not copied.
-collection "geo-se-omop-ext" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "geo-se-omop-ext" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "Swedish county and municipality codes to OMOP concepts"
     authors "ludvig-alden"
     source system="GEO_SE" release="2024"

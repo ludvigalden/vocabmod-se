@@ -14,13 +14,16 @@ schema vocab version="0" {
     types {
         enum ReleaseFormat {
             member rf2-snapshot description="SNOMED CT RF2 snapshot directory"
-            member athena-csv description="OHDSI Athena vocabulary download (CONCEPT.csv and companions)"
+            member athena-csv \
+                    description="OHDSI Athena vocabulary download (CONCEPT.csv and companions)"
             member tdl-export description="NDJSON written by `tdl export` from a TDL corpus"
             member code-list description="One code per line, UTF-8"
         }
         enum VerifyMode {
-            member presence description="Check that every referenced code exists in the release"
-            member presence-and-status description="Also report referenced codes the release marks inactive"
+            member presence \
+                    description="Check that every referenced code exists in the release"
+            member presence-and-status \
+                    description="Also report referenced codes the release marks inactive"
         }
         enum CountingUnit {
             member events description="Recorded events (rows), patient-frequency weighting"
@@ -28,8 +31,10 @@ schema vocab version="0" {
             member distinct-encounters
         }
         enum UsageFormat {
-            member ndjson description="One object per line: system, code, and one key per declared count"
-            member csv description="Header row naming system, code, and one column per declared count"
+            member ndjson \
+                    description="One object per line: system, code, and one key per declared count"
+            member csv \
+                    description="Header row naming system, code, and one column per declared count"
         }
 
         // A local copy of one release of a system, usually reference-only.
@@ -87,10 +92,6 @@ schema vocab version="0" {
     //       format=rf2-snapshot location="$licensed/SnomedCT_SE1000052_20251130" \
     //       edition="SE1000052" verify=presence-and-status
     node release-source role=declaration type=ReleaseSource profile=local {
-        identity {
-            domain release-sources
-            compose qualified-name id
-        }
         field id arg=0
         field release property=release
         field format property=format
@@ -100,6 +101,10 @@ schema vocab version="0" {
         field digest property=digest
         field verify property=verify
         field vocabulary-id property=vocabulary-id
+        identity {
+            domain release-sources
+            compose qualified-name id
+        }
     }
 
     //   dataset "local:ed-usage" format=ndjson location="$usage/ed-codes.ndjson" \
@@ -110,10 +115,6 @@ schema vocab version="0" {
     //       count "patients" unit=distinct-patients
     //   }
     node dataset role=declaration type=Dataset profile=local {
-        identity {
-            domain datasets
-            compose qualified-name id
-        }
         field id arg=0
         field site property=site
         field format property=format
@@ -145,6 +146,10 @@ schema vocab version="0" {
                 entries count key="arg(0)" value=Count
             }
             duplicate-keys reject
+        }
+        identity {
+            domain datasets
+            compose qualified-name id
         }
         children title min-occurs=1
         children period max-occurs=1

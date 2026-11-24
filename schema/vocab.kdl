@@ -60,10 +60,14 @@ schema vocab version="0" {
     // the contributing documents. One group per contributor because a
     // node's argument list cannot wrap.
     group body-control import imports context defaults clear-defaults package scope
-    group body-definitions agent license access-policy system release artifact predicate category routing-domain property-definition concept
-    group body-claims relationship designation property-value mapping assessment flag evidence review
-    group body-collections collection score-scheme dimension translation-table value-set member omop-snapshot omop-binding custom-id-range
-    group body-facets measurement-definition measurement-constraint lab-context drug-product drug-strength
+    group body-definitions agent license access-policy system release artifact \
+            predicate category routing-domain property-definition concept
+    group body-claims relationship designation property-value mapping assessment \
+            flag evidence review
+    group body-collections collection score-scheme dimension translation-table \
+            value-set member omop-snapshot omop-binding custom-id-range
+    group body-facets measurement-definition measurement-constraint lab-context \
+            drug-product drug-strength
     group body-amendments amend
 
     // The definitions profile is declared before `vocab` so its
@@ -77,8 +81,8 @@ schema vocab version="0" {
     // stays machine-visible; a literal import still fails when its
     // document is missing.
     profile definitions {
-        match {
-            path-suffix "definitions.kdl"
+        locations allow-empty=#true {
+            patterns star=#true doublestar=#true
         }
         roots {
             allow ImportRequest
@@ -96,8 +100,8 @@ schema vocab version="0" {
             allow Flag
             allow OmopBinding
         }
-        locations allow-empty=#true {
-            patterns star=#true doublestar=#true
+        match {
+            path-suffix "definitions.kdl"
         }
     }
     // The omop profile is declared before `vocab`: its documents sit
@@ -108,11 +112,11 @@ schema vocab version="0" {
         }
     }
     profile vocab default=#true {
-        match {
-            path-prefix "vocab"
-        }
         locations allow-empty=#true {
             patterns star=#true doublestar=#true
+        }
+        match {
+            path-prefix "vocab"
         }
     }
     profile local extends=vocab {

@@ -41,15 +41,15 @@ schema vocab version="0" {
     //   omop-relationship "Maps to" name="Maps to a standard concept" \
     //       hierarchical=#false defines-ancestry=#false inverse="Mapped from"
     node omop-relationship role=declaration type=OmopRelationship profile=omop {
-        identity {
-            domain omop-relationships
-            compose qualified-name id
-        }
         field id arg=0
         field name property=name
         field hierarchical property=hierarchical
         field defines-ancestry property=defines-ancestry
         field inverse property=inverse
+        identity {
+            domain omop-relationships
+            compose qualified-name id
+        }
     }
 
     //   omop-validity start="1970-01-01" end="2099-12-31"
@@ -60,12 +60,12 @@ schema vocab version="0" {
 
     //   omop-id-band "ATC Y-codes" first=2110000000 last=2110099999
     node omop-id-band role=declaration type=OmopIdBand profile=omop {
+        field system arg=0
+        field first property=first
+        field last property=last
         identity {
             domain omop-id-bands
             compose qualified-name system
         }
-        field system arg=0
-        field first property=first
-        field last property=last
     }
 }

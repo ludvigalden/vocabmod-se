@@ -279,7 +279,8 @@ schema vocab version="0" {
     }
 
     // "COLLECTION@VERSION/ID", e.g. "ksi-icf@2026.1/m-SA1".
-    reference AssertionRef target=Mapping codec=AssertionName lookup=assertions qualification=explicit
+    reference AssertionRef target=Mapping codec=AssertionName lookup=assertions \
+            qualification=explicit
 
     // ---- Collections and catalogs --------------------------------------
     //
@@ -302,12 +303,8 @@ schema vocab version="0" {
     // uniform collection states its relationship kind once while the
     // mapping files omit the property.
 
-    node collection root=#true role=declaration type=Collection {
+    node collection role=declaration type=Collection root=#true {
         parents group=containers
-        identity {
-            domain collections
-            compose qualified-name id version
-        }
         field id arg=0
         field version property=version
         field kind property=kind
@@ -366,6 +363,10 @@ schema vocab version="0" {
                 }
             }
         }
+        identity {
+            domain collections
+            compose qualified-name id version
+        }
         children title min-occurs=1
         children authors max-occurs=1
         children derived-from max-occurs=1
@@ -381,12 +382,8 @@ schema vocab version="0" {
     }
 
     //   score-scheme "reviewer-tiers" version="1" kind=confidence direction=higher-is-better minimum=0 maximum=1
-    node score-scheme root=#true role=declaration type=ScoreScheme {
+    node score-scheme role=declaration type=ScoreScheme root=#true {
         parents group=containers
-        identity {
-            domain score-schemes
-            compose qualified-name id version
-        }
         field id arg=0
         field version property=version
         field kind property=kind
@@ -398,6 +395,10 @@ schema vocab version="0" {
                 children description
             }
         }
+        identity {
+            domain score-schemes
+            compose qualified-name id version
+        }
         children description min-occurs=1
     }
     node description type=Text {
@@ -406,12 +407,8 @@ schema vocab version="0" {
         field text arg=1
     }
 
-    node dimension root=#true role=declaration type=Dimension {
+    node dimension role=declaration type=Dimension root=#true {
         parents group=containers
-        identity {
-            domain dimensions
-            compose qualified-name id
-        }
         field id arg=0
         field effects {
             from {
@@ -430,6 +427,10 @@ schema vocab version="0" {
                 children description
             }
         }
+        identity {
+            domain dimensions
+            compose qualified-name id
+        }
         children name min-occurs=1
         children description min-occurs=1
         children effects min-occurs=1 max-occurs=1
@@ -444,12 +445,8 @@ schema vocab version="0" {
     //       entry "broader" "source_is_narrower_than_target"
     //       entry "no_match" drop=#true note="becomes a no-match assessment"
     //   }
-    node translation-table root=#true role=declaration type=TranslationTable {
+    node translation-table role=declaration type=TranslationTable root=#true {
         parents group=containers
-        identity {
-            domain translation-tables
-            compose qualified-name id version
-        }
         field id arg=0
         field version property=version
         field source-column property=source-column
@@ -464,6 +461,10 @@ schema vocab version="0" {
                 entries entry key="arg(0)" value=TranslationEntry
             }
             duplicate-keys reject
+        }
+        identity {
+            domain translation-tables
+            compose qualified-name id version
         }
         children description min-occurs=1
         children entry min-occurs=1
@@ -524,12 +525,8 @@ schema vocab version="0" {
     // `relationship` may likewise be omitted where the collection
     // states it once through its defaults; an explicit property wins.
 
-    node mapping root=#true role=declaration type=Mapping {
+    node mapping role=declaration type=Mapping root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -594,6 +591,10 @@ schema vocab version="0" {
                 children comment
             }
         }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children confidence max-occurs=1
         children validity max-occurs=1
         children effects max-occurs=1
@@ -628,12 +629,8 @@ schema vocab version="0" {
     // bare string, not a one-element list); consumers normalizing the
     // field treat ["x"] and "x" as the same value.
 
-    node assessment root=#true role=declaration type=Assessment {
+    node assessment role=declaration type=Assessment root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -686,6 +683,10 @@ schema vocab version="0" {
                 children comment
             }
         }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children claim-scope max-occurs=1
         children validity max-occurs=1
     }
@@ -693,12 +694,8 @@ schema vocab version="0" {
     //   flag "DISP-17.review" kind=needs-review concept="17"
     //   flag "0.1.review" kind=needs-clinical-review assertion="spkod-snomed-ct@2026.1/0.1"
     //   flag "mikrog/dos.ucum" kind=unmapped concept="mikrog/dos" target-system="UCUM"
-    node flag root=#true role=declaration type=Flag {
+    node flag role=declaration type=Flag root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -727,14 +724,14 @@ schema vocab version="0" {
                 children comment
             }
         }
-    }
-
-    node evidence root=#true role=declaration type=Evidence {
-        parents group=containers
         identity {
             domain assertions
             compose qualified-name collection collection-version id
         }
+    }
+
+    node evidence role=declaration type=Evidence root=#true {
+        parents group=containers
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -752,16 +749,16 @@ schema vocab version="0" {
                 }
             }
         }
-        children rationale min-occurs=1
-        children sources max-occurs=1
-    }
-
-    node review root=#true role=declaration type=Review {
-        parents group=containers
         identity {
             domain assertions
             compose qualified-name collection collection-version id
         }
+        children rationale min-occurs=1
+        children sources max-occurs=1
+    }
+
+    node review role=declaration type=Review root=#true {
+        parents group=containers
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -782,17 +779,17 @@ schema vocab version="0" {
                 children rationale
             }
         }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children scope min-occurs=1 max-occurs=1
     }
 
     // ---- Value sets -------------------------------------------------------
 
-    node value-set root=#true role=declaration type=ValueSet {
+    node value-set role=declaration type=ValueSet root=#true {
         parents group=containers
-        identity {
-            domain value-sets
-            compose qualified-name id version
-        }
         field id arg=0
         field version property=version
         field membership property=membership
@@ -807,16 +804,16 @@ schema vocab version="0" {
                 children purpose
             }
         }
+        identity {
+            domain value-sets
+            compose qualified-name id version
+        }
         children title min-occurs=1
     }
 
     //   member "GPS.A00" concept="ICD-10:A00" membership=include
-    node member root=#true role=declaration type=Member {
+    node member role=declaration type=Member root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -828,28 +825,28 @@ schema vocab version="0" {
                 context member-set policy=fallback
             }
         }
-    }
-
-    // ---- OMOP -------------------------------------------------------------
-
-    node omop-snapshot root=#true role=declaration type=OmopSnapshot {
-        parents group=containers
-        identity {
-            domain omop-snapshots
-            compose qualified-name id
-        }
-        field id arg=0
-        field published-on property=published-on
-        field license property=license
-    }
-
-    //   omop-binding "KKA.AAA00" concept="AAA00" omop="OMOP_CUSTOM:2100120000"
-    node omop-binding root=#true role=declaration type=OmopBinding {
-        parents group=containers
         identity {
             domain assertions
             compose qualified-name collection collection-version id
         }
+    }
+
+    // ---- OMOP -------------------------------------------------------------
+
+    node omop-snapshot role=declaration type=OmopSnapshot root=#true {
+        parents group=containers
+        field id arg=0
+        field published-on property=published-on
+        field license property=license
+        identity {
+            domain omop-snapshots
+            compose qualified-name id
+        }
+    }
+
+    //   omop-binding "KKA.AAA00" concept="AAA00" omop="OMOP_CUSTOM:2100120000"
+    node omop-binding role=declaration type=OmopBinding root=#true {
+        parents group=containers
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -867,20 +864,24 @@ schema vocab version="0" {
                 children comment
             }
         }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children validity max-occurs=1
     }
 
     //   custom-id-range "omop-custom-intervention" first=2100100001 last=2100130445 publisher="ludvig-alden"
-    node custom-id-range root=#true role=declaration type=CustomIdRange {
+    node custom-id-range role=declaration type=CustomIdRange root=#true {
         parents group=containers
-        identity {
-            domain custom-id-ranges
-            compose qualified-name id
-        }
         field id arg=0
         field first property=first
         field last property=last
         field domain property=domain
         field publisher property=publisher
+        identity {
+            domain custom-id-ranges
+            compose qualified-name id
+        }
     }
 }

@@ -173,7 +173,8 @@ schema vocab version="0" {
     //   }
 
     node unit type=UnitInput {
-        parents measurement-definition lab-context amount numerator denominator lower upper quantity
+        parents measurement-definition lab-context amount numerator denominator lower \
+                upper quantity
         field code arg=0
         field namespace property=namespace
         field version property=version
@@ -230,12 +231,9 @@ schema vocab version="0" {
     //       unit "µkat/L" namespace="npu"
     //   }
 
-    node measurement-definition root=#true role=declaration type=MeasurementDefinition {
+    node measurement-definition role=declaration type=MeasurementDefinition \
+            root=#true {
         parents group=containers
-        identity {
-            domain measurement-definitions
-            compose qualified-name system code
-        }
         field code arg=0
         field system context=namespace
         field release context=system-release
@@ -252,18 +250,19 @@ schema vocab version="0" {
                 children comment
             }
         }
+        identity {
+            domain measurement-definitions
+            compose qualified-name system code
+        }
         children unit max-occurs=1
     }
 
     //   measurement-constraint "NPU01121.ref" concept="NPU01121" kind=reference-range {
     //       upper 0.76 { unit "µkat/L" namespace="npu" }
     //   }
-    node measurement-constraint root=#true role=declaration type=MeasurementConstraint {
+    node measurement-constraint role=declaration type=MeasurementConstraint \
+            root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -277,17 +276,17 @@ schema vocab version="0" {
                 children rationale
             }
         }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children lower max-occurs=1
         children upper max-occurs=1
         children validity max-occurs=1
     }
 
-    node lab-context root=#true role=declaration type=LabContext {
+    node lab-context role=declaration type=LabContext root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -298,6 +297,10 @@ schema vocab version="0" {
         field instrument property=instrument
         field unit child=unit
         field validity child=validity
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children unit max-occurs=1
         children validity max-occurs=1
     }
@@ -308,12 +311,8 @@ schema vocab version="0" {
     //       ingredients "ATC:N05AX08"
     //   }
 
-    node drug-product root=#true role=declaration type=DrugProduct {
+    node drug-product role=declaration type=DrugProduct root=#true {
         parents group=containers
-        identity {
-            domain drug-products
-            compose qualified-name system code
-        }
         field code arg=0
         field system context=namespace
         field release context=system-release
@@ -327,18 +326,18 @@ schema vocab version="0" {
                 }
             }
         }
+        identity {
+            domain drug-products
+            compose qualified-name system code
+        }
         children ingredients max-occurs=1
     }
 
     //   drug-strength "5.risperidone" product="NPL:19980529000140" ingredient="ATC:N05AX08" {
     //       amount 1 { unit "mg" namespace="ucum" }
     //   }
-    node drug-strength root=#true role=declaration type=DrugStrength {
+    node drug-strength role=declaration type=DrugStrength root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -348,6 +347,10 @@ schema vocab version="0" {
         field numerator child=numerator
         field denominator child=denominator
         field validity child=validity
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
+        }
         children amount max-occurs=1
         children numerator max-occurs=1
         children denominator max-occurs=1
@@ -367,12 +370,8 @@ schema vocab version="0" {
     // that spells no code fails to bind one. The parent is `concept`
     // alone (not the containers group): the derived code reads the
     // enclosing concept, and no container binds a `code` field.
-    node drug-package root=#true role=declaration type=DrugPackage {
+    node drug-package role=declaration type=DrugPackage root=#true {
         parents concept
-        identity {
-            domain drug-packages
-            compose qualified-name system code
-        }
         field code arg=0 {
             from {
                 parent code
@@ -389,6 +388,10 @@ schema vocab version="0" {
             from {
                 children comment
             }
+        }
+        identity {
+            domain drug-packages
+            compose qualified-name system code
         }
         children quantity max-occurs=1
     }
