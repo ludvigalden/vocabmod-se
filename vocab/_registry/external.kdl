@@ -1,6 +1,7 @@
 // Licensed and private systems: declared, never defined. Their codes
 // appear only as claim endpoints.
-system "SNOMED_CT" kind=terminology distribution=reference-only license="snomed-ct-affiliate" {
+system "SNOMED_CT" kind=terminology distribution=reference-only \
+        license="snomed-ct-affiliate" {
     name "en" "SNOMED CT"
 }
 release "20251130" system="SNOMED_CT" edition="SE1000052"
@@ -9,7 +10,8 @@ release "20251130" system="SNOMED_CT" edition="SE1000052"
 // endpoints without their definitions: it ships in edition SE1000052
 // with the SNOMED CT release above, and its synonyms and descriptions are
 // licensed and never land in this tree.
-system "SNOMED_CT_SE_EXT" kind=terminology distribution=reference-only license="snomed-ct-affiliate" {
+system "SNOMED_CT_SE_EXT" kind=terminology distribution=reference-only \
+        license="snomed-ct-affiliate" {
     name "en" "SNOMED CT Swedish extension"
 }
 // The Swedish extension's full content is expected external input that
@@ -46,11 +48,14 @@ system "OMOP_EXT" kind=vocabulary distribution=reference-only {
 // 2100400006-2100400406. A custom binding outside every declared
 // band is an error; the containment check is vocabmod-side (the
 // schema assigns it to vocabmod — kdlith vet does not flag it).
-system "OMOP_CUSTOM" kind=vocabulary distribution=reference-only publisher="ludvig-alden" {
+system "OMOP_CUSTOM" kind=vocabulary distribution=reference-only \
+        publisher="ludvig-alden" {
     name "en" "vocabmod-se local OMOP custom concepts (reserved id bands)"
 }
-custom-id-range "omop-custom-intervention" first=2100100001 last=2100130445 publisher="ludvig-alden"
-custom-id-range "omop-custom-triage" first=2100400006 last=2100400406 publisher="ludvig-alden"
+custom-id-range "omop-custom-intervention" first=2100100001 last=2100130445 \
+        publisher="ludvig-alden"
+custom-id-range "omop-custom-triage" first=2100400006 last=2100400406 \
+        publisher="ludvig-alden"
 // LOINC terms carry the Regenstrief licence: codes only.
 system "LOINC" kind=terminology distribution=reference-only {
     name "en" "LOINC"
@@ -87,11 +92,14 @@ import "external/EDQM/**/*.kdl" kind=fragment
 // base. © INSERM 1999. Available on http://www.orpha.net. The
 // icd10se-orphanet mappings derive from Orphanet's ICD-10 alignment
 // (Orphadata en_product1, data version 2026-06-23), accessed 2026-11-04.
-system "ORPHANET" kind=terminology distribution=external publisher="inserm.orphanet" license="cc-by-4.0" {
+system "ORPHANET" kind=terminology distribution=external \
+        publisher="inserm.orphanet" license="cc-by-4.0" {
     name "en" "Orphanet nomenclature of rare diseases"
 }
-system "ICD_10_CM" kind=classification distribution=external publisher="us.nchs" {
-    name "en" "International Classification of Diseases, 10th Revision, Clinical Modification"
+system "ICD_10_CM" kind=classification distribution=external \
+        publisher="us.nchs" {
+    name "en" \
+            "International Classification of Diseases, 10th Revision, Clinical Modification"
 }
 // ICD-10-SE extension codes resolve to ICD-10-CM concepts through
 // OMOP's concept ids (OHDSI Athena), not through ICD-10-CM codes —
@@ -119,7 +127,8 @@ system "OMOP_SNOMED_CT" kind=vocabulary distribution=reference-only {
 }
 // UCUM is public under its own license: codes are referenced verbatim,
 // the standard and its unit table are not copied into the tree.
-system "UCUM" kind=terminology distribution=external publisher="org.regenstrief" license="org.regenstrief.ucum" case-sensitive=#true {
+system "UCUM" kind=terminology distribution=external publisher="org.regenstrief" \
+        license="org.regenstrief.ucum" case-sensitive=#true {
     name "en" "Unified Code for Units of Measure"
 }
 release "2.2" system="UCUM"

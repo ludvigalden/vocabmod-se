@@ -1,7 +1,9 @@
-system "ICD_10_SE" kind=classification distribution=published publisher="se.ehalsomyndigheten" extends="ICD_10" default-locale="sv" {
+system "ICD_10_SE" kind=classification distribution=published \
+        publisher="se.ehalsomyndigheten" default-locale="sv" extends="ICD_10" {
     name "sv" "ICD-10-SE, svenska tilläggskoder"
 }
-release "2026" system="ICD_10_SE" label-source=header published-on="2026-01-01" {
+release "2026" system="ICD_10_SE" published-on="2026-01-01" \
+        label-source=header {
     dependencies "ICD_10@2016"
 }
 context {
@@ -10,7 +12,8 @@ context {
 category "extension" {
     name "en" "Swedish five-character extension"
 }
-collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "icd-10-se-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "ICD-10-SE to SNOMED CT"
     authors "ludvig-alden"
     source system="ICD_10_SE" release="2026"

@@ -11,7 +11,9 @@ pub(crate) struct TreeCensus {
 }
 
 /// Count concept declarations (`concept "..."` lines) and `OMOP_EXT`
-/// `omop-binding` lines under the repository's `vocab` tree.
+/// `omop-binding` lines under the repository's `vocab` tree. A node
+/// header continued over several lines with a trailing `\` counts as
+/// the one line it continues.
 pub(crate) fn tree_census(repo: &Path) -> Result<TreeCensus, String> {
     let vocab = repo.join("vocab");
     if !vocab.is_dir() {
@@ -25,7 +27,7 @@ pub(crate) fn tree_census(repo: &Path) -> Result<TreeCensus, String> {
     for path in &kdl_files {
         let text = std::fs::read_to_string(path)
             .map_err(|e| format!("cannot read {}: {e}", path.display()))?;
-        for line in text.lines() {
+        for line in logical_lines(&text) {
             let trimmed = line.trim_start();
             if trimmed.starts_with("concept \"") {
                 concepts += 1;
@@ -38,6 +40,29 @@ pub(crate) fn tree_census(repo: &Path) -> Result<TreeCensus, String> {
         concepts,
         ext_bindings,
     })
+}
+
+/// The text's lines, each `\`-continued line joined with the next: a
+/// node header the formatter wrapped reads as the line it was.
+fn logical_lines(text: &str) -> Vec<String> {
+    let mut out = Vec::new();
+    let mut pending = String::new();
+    for line in text.lines() {
+        match line.strip_suffix('\\') {
+            Some(head) => {
+                pending.push_str(head);
+                pending.push(' ');
+            }
+            None => {
+                pending.push_str(if pending.is_empty() { line } else { line.trim_start() });
+                out.push(std::mem::take(&mut pending));
+            }
+        }
+    }
+    if !pending.is_empty() {
+        out.push(pending);
+    }
+    out
 }
 
 fn collect_kdl(dir: &Path, out: &mut Vec<PathBuf>) -> Result<(), String> {

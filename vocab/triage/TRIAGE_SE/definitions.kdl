@@ -1,6 +1,7 @@
 // RETTS triage levels as the source dataset carries them. Codes that spell SNOMED CT concepts
 // keep the Swedish chief-complaint names; the English SNOMED CT terms are not republished.
-system "TRIAGE_SE" kind=classification distribution=published default-locale="sv" {
+system "TRIAGE_SE" kind=classification distribution=published \
+        default-locale="sv" {
     name "sv" "RETTS triage levels"
 }
 release "2024" system="TRIAGE_SE" label-source=registry
@@ -10,7 +11,8 @@ context {
 category "code" {
     name "en" "Triage code"
 }
-collection "triage-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "triage-se-loinc" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "RETTS triage levels to LOINC"
     authors "ludvig-alden"
     source system="TRIAGE_SE" release="2024"
@@ -19,7 +21,8 @@ collection "triage-se-loinc" version="2026.1" kind=mapping publisher="ludvig-ald
         project "defaults"
     }
 }
-collection "triage-se-omop-custom" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "triage-se-omop-custom" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "RETTS triage levels to OMOP custom concepts"
     authors "ludvig-alden"
     source system="TRIAGE_SE" release="2024"
@@ -28,7 +31,8 @@ collection "triage-se-omop-custom" version="2026.1" kind=mapping publisher="ludv
         project "defaults"
     }
 }
-collection "triage-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "triage-se-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "RETTS triage levels to SNOMED CT"
     authors "ludvig-alden"
     source system="TRIAGE_SE" release="2024"
@@ -37,7 +41,8 @@ collection "triage-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
-collection "triage-se-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "triage-se-snomed-ct-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "RETTS triage levels to SNOMED CT (retrieval)"
     authors "ludvig-alden"
     source system="TRIAGE_SE" release="2024"

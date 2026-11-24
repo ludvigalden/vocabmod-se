@@ -1,6 +1,7 @@
 // TLV förbrukningsartiklar: reimbursed medical consumables, one code
 // per article. The source header names the release.
-system "TLV_FBA" kind=identifier-namespace distribution=published publisher="se.tlv" default-locale="sv" {
+system "TLV_FBA" kind=identifier-namespace distribution=published \
+        publisher="se.tlv" default-locale="sv" {
     name "sv" "TLV förbrukningsartiklar"
 }
 release "2026" system="TLV_FBA" label-source=header
@@ -14,7 +15,8 @@ category "article" {
 category "stomi" {
     name "sv" "Stomi"
 }
-collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping publisher="ludvig-alden" purpose-id="omop-etl" {
+collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" purpose-id="omop-etl" {
     title "en" "TLV consumables to their ATC Y-code product group"
     authors "ludvig-alden"
     source system="TLV_FBA" release="2026"
@@ -29,7 +31,8 @@ collection "tlv-fba-atc-ycode" version="2026.1" kind=mapping publisher="ludvig-a
     }
 }
 import "concepts.kdl" kind=fragment
-collection "tlv-fba-tlv-vgr" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-fba-tlv-vgr" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV consumables to their varugrupp (2026 stoma list)"
     authors "ludvig-alden"
     source system="TLV_FBA" release="2026"

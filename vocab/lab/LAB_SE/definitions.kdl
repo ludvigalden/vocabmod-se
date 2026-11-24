@@ -8,7 +8,8 @@
 // provenance and the code readings live in the concepts' comments; the mapping files carry the
 // LOINC/NPU mapping basis. The source dataset's numeric tier/confidence columns are not published
 // (each mapping's comment states its basis and the shared rubric derives effect/quality).
-system "LAB_SE" kind=classification distribution=published publisher="ludvig-alden" default-locale="sv" {
+system "LAB_SE" kind=classification distribution=published \
+        publisher="ludvig-alden" default-locale="sv" {
     name "sv" "Lokala laboratoriekataloger (svenska sjukhus)"
 }
 release "2026" system="LAB_SE" label-source=registry
@@ -18,7 +19,8 @@ context {
 category "lab-test" {
     name "en" "Laboratory test"
 }
-collection "lab-se-loinc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "lab-se-loinc" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "Swedish hospital laboratory catalogues to LOINC"
     authors "ludvig-alden"
     source system="LAB_SE" release="2026"

@@ -26,14 +26,22 @@ schema vocab version="0" {
             member png
         }
         enum FigureKind {
-            member coverage-funnel description="Per row: by-code and by-weight tracks, nested stages, tiers, presence bands"
-            member composition-bar description="One 100% stacked bar of a claim population by category, with group braces"
+            member coverage-funnel description="""
+                Per row: by-code and by-weight tracks, nested stages, tiers, presence bands
+                """
+            member composition-bar description="""
+                One 100% stacked bar of a claim population by category, with group braces
+                """
         }
         // The denominator of a by-code track.
         enum Denominator {
-            member release description="T: every code of the row's source release, from a complete definitions capability or a release source"
+            member release description="""
+                T: every code of the row's source release, from a complete definitions \
+                capability or a release source
+                """
             member present description="P: codes the dataset records at all"
-            member visible description="V: codes the dataset records at or above the visibility threshold"
+            member visible \
+                    description="V: codes the dataset records at or above the visibility threshold"
             member defined description="Codes the tree defines under the row's selection"
         }
         enum Weighting {
@@ -126,8 +134,7 @@ schema vocab version="0" {
         // this leaf and names the missing input. On which Athena
         // vocabulary each target system resolves against, see the
         // computation's standardness resolver.
-        object SelectTargetStandard {
-        }
+        object SelectTargetStandard {}
         object SelectRelationship {
             field relationships "list<SemanticRelationship>"
         }
@@ -263,10 +270,6 @@ schema vocab version="0" {
     // `sections`; kdlith offers no way to do that without repeating every
     // common field binding per case.
     node figure role=declaration type=Figure profile=figure {
-        identity {
-            domain figures
-            compose qualified-name id
-        }
         field id arg=0
         field kind property=kind
         field dataset property=dataset
@@ -344,6 +347,10 @@ schema vocab version="0" {
                 entries brace key="arg(0)" value=Brace
             }
             duplicate-keys reject
+        }
+        identity {
+            domain figures
+            compose qualified-name id
         }
         children title min-occurs=1
         children output min-occurs=1 max-occurs=1

@@ -4,17 +4,19 @@
 // to the ATC code of its product as recorded in the TLV pharmaceutical registry, one derivation
 // applied across the whole collection with no per-mapping review beyond it, so its mappings carry
 // no per-mapping basis and the shared rubric derives no effect or quality for them.
-system "TLV_VNR" kind=classification distribution=published publisher="se.tlv" default-locale="sv" {
+system "TLV_VNR" kind=classification distribution=published publisher="se.tlv" \
+        default-locale="sv" {
     name "sv" "Varunummer"
 }
-release "2026" system="TLV_VNR" label-source=header imported-version="2017"
+release "2026" system="TLV_VNR" imported-version="2017" label-source=header
 context {
     system "TLV_VNR" release="2026"
 }
 category "package" {
     name "en" "Medicinal product package"
 }
-collection "tlv-vnr-atc" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-atc" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV product numbers to ATC"
     authors "ludvig-alden"
     source system="TLV_VNR" release="2026"
@@ -28,7 +30,8 @@ collection "tlv-vnr-atc" version="2026.1" kind=mapping publisher="ludvig-alden" 
         project "defaults"
     }
 }
-collection "tlv-vnr-npl" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-npl" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV product numbers to NPL"
     authors "ludvig-alden"
     source system="TLV_VNR" release="2026"
@@ -42,7 +45,8 @@ collection "tlv-vnr-npl" version="2026.1" kind=mapping publisher="ludvig-alden" 
         project "defaults"
     }
 }
-collection "tlv-vnr-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-rxnorm" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV product numbers to RxNorm"
     authors "ludvig-alden"
     source system="TLV_VNR" release="2026"
@@ -56,7 +60,8 @@ collection "tlv-vnr-rxnorm" version="2026.1" kind=mapping publisher="ludvig-alde
         project "defaults"
     }
 }
-collection "tlv-vnr-rxnorm-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-rxnorm-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV product numbers to RxNorm (retrieval)"
     authors "ludvig-alden"
     source system="TLV_VNR" release="2026"
@@ -65,7 +70,8 @@ collection "tlv-vnr-rxnorm-retrieval" version="2026.1" kind=mapping publisher="l
         project "defaults"
     }
 }
-collection "tlv-vnr-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "tlv-vnr-snomed-ct-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "TLV product numbers to SNOMED CT (retrieval)"
     authors "ludvig-alden"
     source system="TLV_VNR" release="2026"

@@ -21,8 +21,10 @@ omop-registry version="1"
 // The vocabulary_id each tree-defined system's concepts carry. A system
 // missing from this table fails the export closed, so a new system forces
 // a spelling decision instead of inheriting a guess.
-translation-table "omop-vocabulary-id" version="1" source-column="system" target-field="vocabulary_id" {
-    description "en" "The OMOP vocabulary_id spelling for each system defined in vocab."
+translation-table "omop-vocabulary-id" version="1" source-column="system" \
+        target-field="vocabulary_id" {
+    description "en" \
+            "The OMOP vocabulary_id spelling for each system defined in vocab."
     entry "ATC_YCODE" "ATC_YCODE"
     entry "CIVIL_STATUS_SE" "CIVIL_STATUS_SE"
     entry "GEO_SE" "GEO_SE"
@@ -50,8 +52,12 @@ translation-table "omop-vocabulary-id" version="1" source-column="system" target
 // The OMOP domain_id each system's concepts carry. Domain assignment is
 // an authored mapping decision (a Swedish classification's home in the
 // OMOP domain model), collected here for review.
-translation-table "omop-domain-id" version="1" source-column="system" target-field="domain_id" {
-    description "en" "The OMOP domain_id for each system: conditions, drugs, procedures, measurements, observations, geography, provider, demographics."
+translation-table "omop-domain-id" version="1" source-column="system" \
+        target-field="domain_id" {
+    description "en" """
+        The OMOP domain_id for each system: conditions, drugs, procedures, \
+        measurements, observations, geography, provider, demographics.
+        """
     entry "ATC_YCODE" "Drug"
     entry "CIVIL_STATUS_SE" "Demographic"
     entry "GEO_SE" "Geography"
@@ -79,8 +85,10 @@ translation-table "omop-domain-id" version="1" source-column="system" target-fie
 // The relationship_id spelling each mapping relationship kind carries in
 // CONCEPT_RELATIONSHIP. Every OMOP spelling below is an authored
 // decision of this project, collected here for review.
-translation-table "omop-relationship-id" version="1" source-column="relationship" target-field="relationship_id" {
-    description "en" "OMOP relationship_id spellings for the six mapping relationship kinds."
+translation-table "omop-relationship-id" version="1" \
+        source-column="relationship" target-field="relationship_id" {
+    description "en" \
+            "OMOP relationship_id spellings for the six mapping relationship kinds."
     entry "equivalent" "Maps to"
     entry "source_is_narrower_than_target" "Narrower than"
     entry "source_is_broader_than_target" "Broader than"
@@ -95,13 +103,20 @@ translation-table "omop-relationship-id" version="1" source-column="relationship
 // two ordering relationships; none of ours defines ancestry —
 // CONCEPT_ANCESTOR is derived from declared parent links, not from
 // mapping assertions, so no "Is a"/"Subsumes" rows are implied.
-omop-relationship "Maps to" name="Maps to a standard concept" hierarchical=#false defines-ancestry=#false inverse="Mapped from"
-omop-relationship "Mapped from" name="Standard concept a source maps to" hierarchical=#false defines-ancestry=#false inverse="Maps to"
-omop-relationship "Narrower than" name="Source is narrower than target" hierarchical=#true defines-ancestry=#false inverse="Broader than"
-omop-relationship "Broader than" name="Source is broader than target" hierarchical=#true defines-ancestry=#false inverse="Narrower than"
-omop-relationship "Related to" name="Related to" hierarchical=#false defines-ancestry=#false inverse="Related to"
-omop-relationship "Not related to" name="Not related to" hierarchical=#false defines-ancestry=#false inverse="Not related to"
-omop-relationship "Partially overlaps" name="Partially overlaps" hierarchical=#false defines-ancestry=#false inverse="Partially overlaps"
+omop-relationship "Maps to" name="Maps to a standard concept" \
+        hierarchical=#false defines-ancestry=#false inverse="Mapped from"
+omop-relationship "Mapped from" name="Standard concept a source maps to" \
+        hierarchical=#false defines-ancestry=#false inverse="Maps to"
+omop-relationship "Narrower than" name="Source is narrower than target" \
+        hierarchical=#true defines-ancestry=#false inverse="Broader than"
+omop-relationship "Broader than" name="Source is broader than target" \
+        hierarchical=#true defines-ancestry=#false inverse="Narrower than"
+omop-relationship "Related to" name="Related to" hierarchical=#false \
+        defines-ancestry=#false inverse="Related to"
+omop-relationship "Not related to" name="Not related to" hierarchical=#false \
+        defines-ancestry=#false inverse="Not related to"
+omop-relationship "Partially overlaps" name="Partially overlaps" \
+        hierarchical=#false defines-ancestry=#false inverse="Partially overlaps"
 
 // The target_vocabulary_id a standard endpoint system's target concepts
 // carry in SOURCE_TO_CONCEPT_MAP. The keys are exactly the standard
@@ -111,8 +126,12 @@ omop-relationship "Partially overlaps" name="Partially overlaps" hierarchical=#f
 // column is left empty, never guessed. Every other external system
 // (SNOMED CT, ATC, LOINC, MedDRA, ...) has codes that are not OMOP ids and
 // is never used as an id source.
-translation-table "omop-target-vocabulary" version="1" source-column="endpoint-system" target-field="target_vocabulary_id" {
-    description "en" "target_vocabulary_id per standard OMOP endpoint system; OMOP_EXT resolves per id and maps to empty."
+translation-table "omop-target-vocabulary" version="1" \
+        source-column="endpoint-system" target-field="target_vocabulary_id" {
+    description "en" """
+        target_vocabulary_id per standard OMOP endpoint system; OMOP_EXT resolves per \
+        id and maps to empty.
+        """
     entry "OMOP_SNOMED_CT" "SNOMED"
     entry "OMOP_ICD_10_CM" "ICD10CM"
     entry "OMOP_EXT" ""
@@ -120,8 +139,11 @@ translation-table "omop-target-vocabulary" version="1" source-column="endpoint-s
 
 // invalid_reason from concept status (the inverse of the import direction
 // in _registry/conventions.kdl): an empty value is OMOP NULL.
-translation-table "omop-invalid-reason" version="1" source-column="status" target-field="invalid_reason" {
-    description "en" "OMOP invalid_reason per concept status; active and unknown concepts carry none."
+translation-table "omop-invalid-reason" version="1" source-column="status" \
+        target-field="invalid_reason" {
+    description "en" """
+        OMOP invalid_reason per concept status; active and unknown concepts carry none.
+        """
     entry "active" ""
     entry "unknown" ""
     entry "inactive" "D"
@@ -134,8 +156,12 @@ translation-table "omop-invalid-reason" version="1" source-column="status" targe
 // the Athena release in use — designations in any other unmapped locale
 // are skipped from CONCEPT_SYNONYM with a per-locale count in the
 // summary and manifest, never exported under a guessed id.
-translation-table "omop-language-concept-id" version="1" source-column="locale" target-field="language_concept_id" {
-    description "en" "OMOP language concept ids per designation locale; designations in unmapped locales are skipped with a count."
+translation-table "omop-language-concept-id" version="1" source-column="locale" \
+        target-field="language_concept_id" {
+    description "en" """
+        OMOP language concept ids per designation locale; designations in unmapped \
+        locales are skipped with a count.
+        """
     entry "en" "4180186"
     entry "sv" "4175777"
 }

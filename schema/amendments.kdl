@@ -174,12 +174,8 @@ schema vocab version="0" {
     //
     // The `scope` (required) defaults to the subject when absent;
     // vocabmod fills it, so a one-subject amendment omits it.
-    node amend root=#true role=declaration type=Amendment {
+    node amend role=declaration type=Amendment root=#true {
         parents group=containers
-        identity {
-            domain assertions
-            compose qualified-name collection collection-version id
-        }
         field id arg=0
         field collection context=collection
         field collection-version context=collection-version
@@ -228,6 +224,10 @@ schema vocab version="0" {
                     args
                 }
             }
+        }
+        identity {
+            domain assertions
+            compose qualified-name collection collection-version id
         }
         children subject min-occurs=1 max-occurs=1
         children changes min-occurs=1 max-occurs=1

@@ -14,7 +14,10 @@
 // scope and is carried as an attribute row, not a gap.
 figure "vocab-coverage-standard" kind=coverage-funnel locale="en" {
     title "en" "Vocabulary coverage (standard reach)"
-    caption "en" "Share of each Swedish source vocabulary whose codes reach an OMOP-standard concept in the local Athena release, directly or through one valid Maps to."
+    caption "en" """
+        Share of each Swedish source vocabulary whose codes reach an OMOP-standard \
+        concept in the local Athena release, directly or through one valid Maps to.
+        """
     output "assets/figures/dist/vocab-coverage-standard" width="16cm" {
         formats pdf svg png
     }
@@ -46,7 +49,8 @@ figure "vocab-coverage-standard" kind=coverage-funnel locale="en" {
         }
     }
     stage "direct" color="red!40" {
-        title "en" "Covered by a claim whose target system is a standard OMOP vocabulary"
+        title "en" \
+                "Covered by a claim whose target system is a standard OMOP vocabulary"
         claims {
             all {
                 target-standard

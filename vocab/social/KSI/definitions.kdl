@@ -1,5 +1,6 @@
 // KSI: Klassifikation av socialtjänstens insatser och aktiviteter.
-system "KSI" kind=classification distribution=published publisher="se.ehalsomyndigheten" default-locale="sv" {
+system "KSI" kind=classification distribution=published \
+        publisher="se.ehalsomyndigheten" default-locale="sv" {
     name "sv" "Klassifikation av socialtjänstens insatser och aktiviteter"
 }
 release "2026" system="KSI" label-source=registry
@@ -29,7 +30,8 @@ collection "ksi-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
         project "defaults"
     }
 }
-collection "ksi-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "ksi-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "KSI to SNOMED CT"
     authors "ludvig-alden"
     source system="KSI" release="2026"
@@ -42,7 +44,8 @@ collection "ksi-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden
 // by composing ksi-icf with icf-snomed. Relationships compose
 // conservatively (equivalent keeps the other leg's kind; opposite
 // directions or any related/partial leg give related_to or partial_overlap).
-collection "ksi-snomed-ct-via-icf" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "ksi-snomed-ct-via-icf" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "KSI to SNOMED CT via ICF"
     authors "ludvig-alden"
     derived-from "ksi-icf@2026.1" "icf-snomed-ct@2026.1"
@@ -57,7 +60,8 @@ collection "ksi-snomed-ct-via-icf" version="2026.1" kind=mapping publisher="ludv
         project "defaults"
     }
 }
-collection "ksi-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "ksi-loinc-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "KSI to LOINC (retrieval)"
     authors "ludvig-alden"
     source system="KSI" release="2026"
@@ -66,7 +70,8 @@ collection "ksi-loinc-retrieval" version="2026.1" kind=mapping publisher="ludvig
         project "defaults"
     }
 }
-collection "ksi-snomed-ct-retrieval" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "ksi-snomed-ct-retrieval" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "KSI to SNOMED CT (retrieval)"
     authors "ludvig-alden"
     source system="KSI" release="2026"

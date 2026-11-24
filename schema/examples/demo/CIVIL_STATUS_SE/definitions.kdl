@@ -1,6 +1,7 @@
 // Civilståndskoder: the civil-status value set the LISA register carries (SCB register data).
 // Small register-local code set; no shared classification exists upstream.
-system "CIVIL_STATUS_SE" kind=classification distribution=published publisher="se.scb" default-locale="sv" {
+system "CIVIL_STATUS_SE" kind=classification distribution=published \
+        publisher="se.scb" default-locale="sv" {
     name "sv" "Civilståndskoder (SCB)"
 }
 release "2024" system="CIVIL_STATUS_SE" label-source=registry
@@ -10,7 +11,8 @@ context {
 category "status" {
     name "en" "Civil status"
 }
-collection "civil-status-se-snomed-ct" version="2026.1" kind=mapping publisher="ludvig-alden" {
+collection "civil-status-se-snomed-ct" version="2026.1" kind=mapping \
+        publisher="ludvig-alden" {
     title "en" "SCB civil status to SNOMED CT"
     authors "ludvig-alden"
     source system="CIVIL_STATUS_SE" release="2024"
