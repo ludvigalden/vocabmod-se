@@ -171,7 +171,8 @@ schema vocab version="0" {
         slot mapping-assessor String namespace=defaults duplicates=last-wins
         slot mapping-assessment-method String namespace=defaults duplicates=last-wins
         slot relationship-predicate String namespace=defaults duplicates=last-wins
-        slot mapping-relationship SemanticRelationship namespace=defaults duplicates=last-wins
+        slot mapping-relationship SemanticRelationship namespace=defaults \
+                duplicates=last-wins
         slot claim-scope CollectionRef namespace=defaults duplicates=last-wins
         slot member-set String namespace=defaults duplicates=last-wins
         slot amendment-author String namespace=defaults duplicates=last-wins
@@ -184,10 +185,6 @@ schema vocab version="0" {
     // ---- Roots and containers -----------------------------------------
 
     node module role=declaration type=Module {
-        identity {
-            domain modules
-            compose qualified-name id
-        }
         field id arg=0
         field version property=version
         field title {
@@ -222,48 +219,52 @@ schema vocab version="0" {
                 }
             }
         }
+        identity {
+            domain modules
+            compose qualified-name id
+        }
         children title min-occurs=1
         children description
         children access max-occurs=1
         children maintainers max-occurs=1
         children publishers max-occurs=1
         children provides max-occurs=1
+        children rebind
         children-group body-control
         children-group body-definitions
         children-group body-claims
         children-group body-collections
         children-group body-facets
         children-group body-amendments
-        children rebind
     }
 
-    node package root=#true role=context-control type=Package {
+    node package role=context-control type=Package root=#true {
         parents group=containers
         field id arg=0
         field role property=role
+        children rebind
         children-group body-control
         children-group body-definitions
         children-group body-claims
         children-group body-collections
         children-group body-facets
         children-group body-amendments
-        children rebind
     }
 
-    node scope root=#true role=context-control type=Scope {
+    node scope role=context-control type=Scope root=#true {
         parents group=containers
         field label property=label
+        children rebind
         children-group body-control
         children-group body-definitions
         children-group body-claims
         children-group body-collections
         children-group body-facets
         children-group body-amendments
-        children rebind
     }
 
     // Pure ordered grouping of imports; no environment of its own.
-    node imports root=#true role=container {
+    node imports role=container root=#true {
         parents group=containers
         children import
     }
@@ -272,7 +273,7 @@ schema vocab version="0" {
     // block it serves (the mapping tree import of a claims collection).
     // A nested import is where the system document names the documents
     // that resolve the collection, so the system needs no second entry.
-    node import root=#true role=source-import type=ImportRequest {
+    node import role=source-import type=ImportRequest root=#true {
         parents imports collection group=containers
         field path arg=0
         field kind property=kind
@@ -340,7 +341,7 @@ schema vocab version="0" {
     //       target system="SNOMED_CT" release="20251130"
     //   }
 
-    node context root=#true role=context-control type=ContextBlock {
+    node context role=context-control type=ContextBlock root=#true {
         parents group=containers
         field system {
             from {
@@ -353,6 +354,20 @@ schema vocab version="0" {
             from {
                 child system {
                     property release
+                }
+            }
+        }
+        field collection {
+            from {
+                child collection {
+                    argument 0
+                }
+            }
+        }
+        field collection-version {
+            from {
+                child collection {
+                    property version
                 }
             }
         }
@@ -384,20 +399,6 @@ schema vocab version="0" {
                 }
             }
         }
-        field collection {
-            from {
-                child collection {
-                    argument 0
-                }
-            }
-        }
-        field collection-version {
-            from {
-                child collection {
-                    property version
-                }
-            }
-        }
         field locale {
             from {
                 child locale {
@@ -419,13 +420,6 @@ schema vocab version="0" {
                 }
             }
         }
-        children system max-occurs=1
-        children source max-occurs=1
-        children target max-occurs=1
-        children collection max-occurs=1
-        children locale max-occurs=1
-        children purpose-id max-occurs=1
-        children publisher max-occurs=1
         effects target=following {
             set namespace field=system
             set namespace field=source-system
@@ -439,27 +433,27 @@ schema vocab version="0" {
             set purpose-id field=purpose-id
             set publisher field=publisher
         }
+        children system max-occurs=1
+        children source max-occurs=1
+        children target max-occurs=1
+        children collection max-occurs=1
+        children locale max-occurs=1
+        children purpose-id max-occurs=1
+        children publisher max-occurs=1
     }
-    node system parent=context {
-    }
-    node source parent=context {
-    }
-    node target parent=context {
-    }
-    node collection parent=context {
-    }
-    node locale parent=context {
-    }
-    node purpose-id parent=context {
-    }
-    node publisher parent=context {
-    }
+    node system parent=context {}
+    node source parent=context {}
+    node target parent=context {}
+    node collection parent=context {}
+    node locale parent=context {}
+    node purpose-id parent=context {}
+    node publisher parent=context {}
 
     // Explicit rebinding: `rebind { system "KSI" release="2027" }`
     // replaces bound keys instead of failing. kdlith has no per-effect
     // replace, so a rebind removes every key it might touch, not only
     // the keys the block spells.
-    node rebind root=#true role=context-control type=ContextBlock {
+    node rebind role=context-control type=ContextBlock root=#true {
         parents group=containers
         field release {
             from {
@@ -492,7 +486,7 @@ schema vocab version="0" {
     // the same way; an assessment's explicit claim-scope child still
     // wins over the hoisted value.
 
-    node defaults root=#true role=context-control type=DefaultsBlock {
+    node defaults role=context-control type=DefaultsBlock root=#true {
         parents collection group=containers
         field concept-status {
             from {
@@ -593,11 +587,6 @@ schema vocab version="0" {
                 }
             }
         }
-        children concepts max-occurs=1
-        children mappings max-occurs=1
-        children relationships max-occurs=1
-        children members max-occurs=1
-        children amendments max-occurs=1
         effects target=following {
             set concept-status field=concept-status
             set concept-class field=concept-class
@@ -611,15 +600,18 @@ schema vocab version="0" {
             set member-set field=member-set
             set amendment-author field=amendment-author
         }
+        children concepts max-occurs=1
+        children mappings max-occurs=1
+        children relationships max-occurs=1
+        children members max-occurs=1
+        children amendments max-occurs=1
     }
     node concepts parent=defaults {
         children status max-occurs=1
         children class max-occurs=1
     }
-    node status parent=concepts {
-    }
-    node class parent=concepts {
-    }
+    node status parent=concepts {}
+    node class parent=concepts {}
     node mappings parent=defaults {
         children preference max-occurs=1
         children confidence-scheme max-occurs=1
@@ -628,38 +620,29 @@ schema vocab version="0" {
         children relationship max-occurs=1
         children claim-scope max-occurs=1
     }
-    node preference parent=mappings {
-    }
-    node confidence-scheme parent=mappings {
-    }
-    node assessor parent=mappings {
-    }
-    node assessment-method parent=mappings {
-    }
-    node relationship parent=mappings {
-    }
-    node claim-scope parent=mappings {
-    }
+    node preference parent=mappings {}
+    node confidence-scheme parent=mappings {}
+    node assessor parent=mappings {}
+    node assessment-method parent=mappings {}
+    node relationship parent=mappings {}
+    node claim-scope parent=mappings {}
     node relationships parent=defaults {
         children predicate max-occurs=1
     }
-    node predicate parent=relationships {
-    }
+    node predicate parent=relationships {}
     node members parent=defaults {
         children set max-occurs=1
     }
-    node set parent=members {
-    }
+    node set parent=members {}
     node amendments parent=defaults {
         children author max-occurs=1
     }
-    node author parent=amendments {
-    }
+    node author parent=amendments {}
 
     // `clear-defaults` with no children clears every default. The
     // selective form, `clear-defaults { concepts "status" }`, which removes
     // the slots its arguments name, is not supported.
-    node clear-defaults root=#true role=context-control {
+    node clear-defaults role=context-control root=#true {
         parents group=containers
         effects target=following {
             clear defaults
